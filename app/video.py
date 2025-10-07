@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import List
 
 from yt_dlp import YoutubeDL
+from yt_dlp.utils import DownloadError
 
 
 async def download_game_video(video_url: str, destination: Path) -> None:
@@ -22,8 +23,11 @@ async def download_game_video(video_url: str, destination: Path) -> None:
             "quiet": True,
             "no_warnings": True,
         }
-        with YoutubeDL(ydl_opts) as ydl:
-            ydl.download([video_url])
+        try:
+            with YoutubeDL(ydl_opts) as ydl:
+                ydl.download([video_url])
+        except DownloadError as exc:
+            raise RuntimeError(f"yt_dlp failed to download video: {exc}") from exc
 
     await asyncio.to_thread(_run)
 
@@ -31,6 +35,7 @@ async def download_game_video(video_url: str, destination: Path) -> None:
 async def generate_clips(input_path: Path, timestamps: List[float], clips_dir: Path) -> List[Path]:
     """Extract short clips around each timestamp using ffmpeg."""
 
+    clips_dir.mkdir(parents=True, exist_ok=True)
     clip_paths: List[Path] = []
     for index, timestamp in enumerate(timestamps, start=1):
         clip_start = max(timestamp - 1.0, 0.0)
