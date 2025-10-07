@@ -431,11 +431,20 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
         raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=f"Failed to download video: {exc}") from exc
 
     try:
-        play_timestamps = await _fetch_offensive_play_times(request.espn_game_id, request.team_name)
+        play_timestamps = await _fetch_offensive_play_times(
+            request.espn_game_id,
+            request.team_name,
+        )
     except httpx.HTTPStatusError as exc:
-        raise HTTPException(status_code=exc.response.status_code, detail="Unable to fetch play-by-play data from ESPN") from exc
+        raise HTTPException(
+            status_code=exc.response.status_code,
+            detail="Unable to fetch play-by-play data from ESPN",
+        ) from exc
     except Exception as exc:  # pragma: no cover - network/JSON issues
-        raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=f"Failed to parse play-by-play data: {exc}") from exc
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail=f"Failed to parse play-by-play data: {exc}",
+        ) from exc
 
     if not play_timestamps:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No offensive plays found for the requested team")
