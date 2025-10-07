@@ -53,9 +53,6 @@ async def extract_clip(input_path: Path, start_time: float, end_time: float, des
     cmd = [
         "ffmpeg",
         "-y",
-        "-hide_banner",
-        "-loglevel",
-        "error",
         "-ss",
         f"{start_time:.3f}",
         "-i",
@@ -91,9 +88,6 @@ async def concatenate_clips(clips: List[Path], output_path: Path) -> None:
         cmd = [
             "ffmpeg",
             "-y",
-            "-hide_banner",
-            "-loglevel",
-            "error",
             "-f",
             "concat",
             "-safe",
@@ -111,20 +105,9 @@ async def _run_subprocess(cmd: List[str]) -> None:
     """Execute a subprocess command in a worker thread and raise on failure."""
 
     def _execute() -> None:
-        result = subprocess.run(
-            cmd,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.PIPE,
-            text=True,
-        )
+        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         if result.returncode != 0:
             command = shlex.join(cmd)
-            stderr_output = (result.stderr or "").strip()
-            if stderr_output:
-                tail = "\n".join(stderr_output.splitlines()[-10:])
-                message = f"Command {command} failed: {tail}"
-            else:
-                message = f"Command {command} failed with return code {result.returncode}"
-            raise RuntimeError(message)
+            raise RuntimeError(f"Command {command} failed: {result.stderr.strip()}")
 
     await asyncio.to_thread(_execute)
