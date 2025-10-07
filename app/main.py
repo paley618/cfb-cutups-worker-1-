@@ -9,7 +9,7 @@ from typing import Dict
 
 import httpx
 from fastapi import FastAPI, HTTPException, status
-from pydantic import BaseModel, Field, HttpUrl
+from pydantic import BaseModel, Field, HttpUrl, validator
 
 from .espn import fetch_offensive_play_times
 from .video import concatenate_clips, download_game_video, generate_clips
@@ -24,6 +24,14 @@ class ProcessRequest(BaseModel):
     video_url: HttpUrl
     team_name: str = Field(..., min_length=1)
     espn_game_id: str = Field(..., min_length=1)
+
+    @validator("team_name", "espn_game_id")
+    def _strip_whitespace(cls, value: str) -> str:  # noqa: D401 - short validator description
+        """Normalize string fields by stripping surrounding whitespace."""
+        normalized = value.strip()
+        if not normalized:
+            raise ValueError("Value must not be blank")
+        return normalized
 
 
 @app.get("/health", tags=["health"])
