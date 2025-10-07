@@ -4,10 +4,11 @@ from __future__ import annotations
 
 import asyncio
 import shlex
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, Iterable, List
 
 import httpx
 from fastapi import FastAPI, HTTPException, status
@@ -15,7 +16,7 @@ from pydantic import BaseModel, Field, HttpUrl
 from yt_dlp import YoutubeDL
 
 
-app = FastAPI(title="CFB Cutups Worker", version="1.0.0")
+app = FastAPI(title="CFB Cutups Worker", version="1.1.0")
 
 
 class ProcessRequest(BaseModel):
@@ -44,23 +45,14 @@ async def read_root() -> Dict[str, str]:
 async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     """End-to-end pipeline that generates an offensive cut-up for a team."""
 
-    input_path = Path("input.mp4").resolve()
-    output_path = Path("output.mp4").resolve()
+    final_output_path = Path("output.mp4").resolve()
 
     try:
-        await _download_game_video(str(request.video_url), input_path)
-    except Exception as exc:  # pragma: no cover - network/IO heavy
-        raise HTTPException(
-            status_code=status.HTTP_502_BAD_GATEWAY,
-            detail=f"Failed to download video: {exc}",
-        ) from exc
-
-    try:
-        play_timestamps = await _fetch_offensive_play_times(
+        timestamps = await _fetch_offensive_play_times(
             request.espn_game_id,
             request.team_name,
         )
-    except httpx.HTTPStatusError as exc:
+    except httpx.HTTPStatusError as exc:  # pragma: no cover - external HTTP
         raise HTTPException(
             status_code=exc.response.status_code,
             detail="Unable to fetch play-by-play data from ESPN",
@@ -71,47 +63,42 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             detail=f"Failed to parse play-by-play data: {exc}",
         ) from exc
 
-    if not play_timestamps:
+    if not timestamps:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="No offensive plays found for the requested team",
         )
 
     try:
-        with tempfile.TemporaryDirectory() as clip_dir:
-            clip_paths: List[Path] = []
-            for index, timestamp in enumerate(play_timestamps, start=1):
-                clip_start = max(timestamp - 1.0, 0.0)
-                clip_end = timestamp + 2.0
-                clip_path = Path(clip_dir) / f"clip_{index:04d}.mp4"
-                await _extract_clip(input_path, clip_start, clip_end, clip_path)
-                clip_paths.append(clip_path.resolve())
+        with tempfile.TemporaryDirectory(prefix="cutup_") as work_dir:
+            work_path = Path(work_dir)
+            input_path = work_path / "input.mp4"
+            clips_dir = work_path / "clips"
+            clips_dir.mkdir(parents=True, exist_ok=True)
 
-            if output_path.exists():
-                output_path.unlink()
+            await _download_game_video(str(request.video_url), input_path)
 
-            await _concatenate_clips(clip_paths, output_path)
+            clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
+
+            temp_output = work_path / "output.mp4"
+            await _concatenate_clips(clip_paths, temp_output)
+
+            if final_output_path.exists():
+                final_output_path.unlink()
+            shutil.move(str(temp_output), final_output_path)
     except RuntimeError as exc:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=str(exc),
         ) from exc
-    finally:
-        # Optionally clean up the source download to avoid disk bloat
-        if input_path.exists():
-            input_path.unlink()
 
-    return {"message": "Done", "output_path": str(output_path)}
+    return {"message": "Done", "output_path": str(final_output_path)}
 
 
 async def _download_game_video(video_url: str, destination: Path) -> None:
     """Download the full game video to the provided destination using yt_dlp."""
 
-    destination.parent.mkdir(parents=True, exist_ok=True)
-
     def _run() -> None:
-        if destination.exists():
-            destination.unlink()
         ydl_opts = {
             "outtmpl": str(destination),
             "merge_output_format": "mp4",
@@ -139,7 +126,6 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
     normalized_team = team_name.strip().lower()
     drives_payload = payload.get("drives") or {}
 
-    timestamps: List[float] = []
     drives: List[Dict[str, object]] = []
     previous_drives = drives_payload.get("previous") or []
     if isinstance(previous_drives, list):
@@ -148,29 +134,36 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
     if isinstance(current_drive, dict):
         drives.append(current_drive)
 
+    timestamps: List[float] = []
+    for play in _iter_plays(drives):
+        play_team = ((play.get("team") or {}).get("displayName") or "").strip().lower()
+        if not play_team or play_team != normalized_team:
+            continue
+
+        clock = (play.get("clock") or {}).get("displayValue")
+        period = (play.get("period") or {}).get("number")
+        if not clock or not isinstance(clock, str) or not isinstance(period, int):
+            continue
+        try:
+            timestamp = _clock_display_to_game_seconds(period, clock)
+        except ValueError:
+            continue
+        timestamps.append(timestamp)
+
+    timestamps.sort()
+    return timestamps
+
+
+def _iter_plays(drives: Iterable[Dict[str, object]]) -> Iterable[Dict[str, object]]:
+    """Yield play dictionaries from the nested ESPN drives payload."""
+
     for drive in drives:
         plays = drive.get("plays") if isinstance(drive, dict) else None
         if not isinstance(plays, list):
             continue
         for play in plays:
-            if not isinstance(play, dict):
-                continue
-            play_team = ((play.get("team") or {}).get("displayName") or "").strip().lower()
-            if not play_team or play_team != normalized_team:
-                continue
-
-            clock = (play.get("clock") or {}).get("displayValue")
-            period = (play.get("period") or {}).get("number")
-            if not clock or not isinstance(clock, str) or not isinstance(period, int):
-                continue
-            try:
-                timestamp = _clock_display_to_game_seconds(period, clock)
-            except ValueError:
-                continue
-            timestamps.append(timestamp)
-
-    timestamps.sort()
-    return timestamps
+            if isinstance(play, dict):
+                yield play
 
 
 def _clock_display_to_game_seconds(period: int, display_value: str) -> float:
@@ -187,6 +180,19 @@ def _clock_display_to_game_seconds(period: int, display_value: str) -> float:
         raise ValueError("Clock produced negative elapsed time")
     total_elapsed = (period - 1) * quarter_length + elapsed_in_period
     return float(total_elapsed)
+
+
+async def _generate_clips(input_path: Path, timestamps: List[float], clips_dir: Path) -> List[Path]:
+    """Extract short clips around each timestamp using ffmpeg."""
+
+    clip_paths: List[Path] = []
+    for index, timestamp in enumerate(timestamps, start=1):
+        clip_start = max(timestamp - 1.0, 0.0)
+        clip_end = timestamp + 2.0
+        clip_path = clips_dir / f"clip_{index:04d}.mp4"
+        await _extract_clip(input_path, clip_start, clip_end, clip_path)
+        clip_paths.append(clip_path)
+    return clip_paths
 
 
 async def _extract_clip(input_path: Path, start_time: float, end_time: float, destination: Path) -> None:
@@ -221,12 +227,12 @@ async def _concatenate_clips(clips: List[Path], output_path: Path) -> None:
     """Combine all generated clips into a single mp4 using ffmpeg concat."""
 
     if not clips:
-        raise ValueError("No clips provided for concatenation")
+        raise RuntimeError("No clips provided for concatenation")
 
-    with tempfile.TemporaryDirectory() as manifest_dir:
+    with tempfile.TemporaryDirectory(prefix="cutup_manifest_") as manifest_dir:
         manifest_path = Path(manifest_dir) / "clips.txt"
-        manifest_content = "\n".join(f"file {shlex.quote(str(clip))}" for clip in clips)
-        manifest_path.write_text(manifest_content, encoding="utf-8")
+        manifest_lines = [f"file {shlex.quote(str(path))}" for path in clips]
+        manifest_path.write_text("\n".join(manifest_lines), encoding="utf-8")
 
         cmd = [
             "ffmpeg",
@@ -250,7 +256,8 @@ async def _run_subprocess(cmd: List[str]) -> None:
     def _execute() -> None:
         result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         if result.returncode != 0:
-            raise RuntimeError(f"Command {' '.join(cmd)} failed: {result.stderr.strip()}")
+            command = shlex.join(cmd)
+            raise RuntimeError(f"Command {command} failed: {result.stderr.strip()}")
 
     await asyncio.to_thread(_execute)
 
