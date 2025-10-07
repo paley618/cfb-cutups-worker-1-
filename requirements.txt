@@ -1,2 +1,4 @@
 fastapi
+httpx
 uvicorn[standard]
+yt-dlp
