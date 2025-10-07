@@ -16,14 +16,6 @@ product experience.
 - `GET /health` – lightweight readiness endpoint for platform probes.
 - `GET /` – friendly confirmation that the service is online.
 
-The implementation is split across small modules so merge conflicts are easier
-to resolve:
-
-- `app/espn.py` parses ESPN play-by-play data and yields offensive timestamps.
-- `app/video.py` handles downloading the source game and running `ffmpeg` to
-  produce clips and the final cut-up.
-- `app/main.py` wires the helpers into the FastAPI routes.
-
 ## Local development
 
 1. **Install prerequisites**
@@ -57,10 +49,8 @@ file with your preferred video player.
 
 1. Fork or import the repository into your GitHub account.
 2. Create a new Railway project and select the GitHub repository when prompted.
-3. Railway builds the included Dockerfile and exposes the FastAPI server. The
-   container installs `ffmpeg` during the build so the `/process` pipeline can
-   trim and stitch clips without manual intervention. Append `/docs` to the
-   generated URL to access the live API documentation.
+3. Railway builds the included Dockerfile and exposes the FastAPI server. Append
+   `/docs` to the generated URL to access the live API documentation.
 
 The worker does not rely on environment variables today, but you can extend it
 with object storage uploads, authentication, or persistent job tracking as your
