@@ -1,29 +1,20 @@
 """Helpers for downloading videos and generating ffmpeg cut-ups."""
 
+from __future__ import annotations
+
 import asyncio
 import shlex
+import subprocess
 import tempfile
-from asyncio.subprocess import DEVNULL, PIPE
 from pathlib import Path
 from typing import List
 
-try:  # pragma: no cover - exercised implicitly during runtime
-    from yt_dlp import YoutubeDL  # type: ignore
-    from yt_dlp.utils import DownloadError  # type: ignore
-except ImportError:  # pragma: no cover - optional dependency missing at startup
-    YoutubeDL = None  # type: ignore[assignment]
-    DownloadError = RuntimeError  # type: ignore[assignment]
+from yt_dlp import YoutubeDL
+from yt_dlp.utils import DownloadError
 
 
 async def download_game_video(video_url: str, destination: Path) -> None:
     """Download the full game video to the provided destination using yt_dlp."""
-
-    destination.parent.mkdir(parents=True, exist_ok=True)
-
-    if YoutubeDL is None:  # pragma: no cover - depends on deployment environment
-        raise RuntimeError(
-            "yt_dlp is not installed. Install the 'yt-dlp' dependency to download videos."
-        )
 
     def _run() -> None:
         ydl_opts = {
@@ -62,9 +53,6 @@ async def extract_clip(input_path: Path, start_time: float, end_time: float, des
     cmd = [
         "ffmpeg",
         "-y",
-        "-hide_banner",
-        "-loglevel",
-        "error",
         "-ss",
         f"{start_time:.3f}",
         "-i",
@@ -100,9 +88,6 @@ async def concatenate_clips(clips: List[Path], output_path: Path) -> None:
         cmd = [
             "ffmpeg",
             "-y",
-            "-hide_banner",
-            "-loglevel",
-            "error",
             "-f",
             "concat",
             "-safe",
@@ -117,27 +102,12 @@ async def concatenate_clips(clips: List[Path], output_path: Path) -> None:
 
 
 async def _run_subprocess(cmd: List[str]) -> None:
-    """Execute a subprocess command asynchronously and raise on failure."""
+    """Execute a subprocess command in a worker thread and raise on failure."""
 
-    try:
-        process = await asyncio.create_subprocess_exec(
-            *cmd,
-            stdout=DEVNULL,
-            stderr=PIPE,
-        )
-    except FileNotFoundError as exc:  # pragma: no cover - depends on environment
-        raise RuntimeError(f"Required command '{cmd[0]}' is not available on PATH") from exc
+    def _execute() -> None:
+        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        if result.returncode != 0:
+            command = shlex.join(cmd)
+            raise RuntimeError(f"Command {command} failed: {result.stderr.strip()}")
 
-    _, stderr = await process.communicate()
-
-    if process.returncode != 0:
-        command = shlex.join(cmd)
-        stderr_output = (stderr.decode("utf-8", errors="ignore") if stderr else "").strip()
-        if stderr_output:
-            tail = "\n".join(stderr_output.splitlines()[-10:])
-            message = f"Command {command} failed: {tail}"
-        else:
-            message = (
-                f"Command {command} failed with return code {process.returncode}"
-            )
-        raise RuntimeError(message)
+    await asyncio.to_thread(_execute)

@@ -1,37 +1,23 @@
 """Helpers for retrieving and parsing ESPN play-by-play data."""
 
-import asyncio
-import json
-from dataclasses import dataclass
-from typing import Any, Dict, Iterable, List
-from urllib import error, request
+from __future__ import annotations
 
+from typing import Dict, Iterable, List
 
-USER_AGENT = (
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/122.0 Safari/537.36"
-)
-
-
-class ESPNError(RuntimeError):
-    """Base exception for ESPN play-by-play failures."""
-
-
-@dataclass(slots=True)
-class ESPNHTTPError(ESPNError):
-    """Raised when ESPN responds with a non-successful HTTP status."""
-
-    status_code: int
-    message: str
-
-    def __str__(self) -> str:  # pragma: no cover - simple dataclass repr
-        return self.message
+import httpx
 
 
 async def fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List[float]:
     """Return sorted timestamps (in seconds) for the team's offensive plays."""
 
-    payload = await _fetch_play_by_play_payload(espn_game_id)
+    url = (
+        "https://site.api.espn.com/apis/site/v2/sports/football/college-football/playbyplay"
+        f"?event={espn_game_id}"
+    )
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        response = await client.get(url)
+    response.raise_for_status()
+    payload = response.json()
 
     normalized_team = team_name.strip().lower()
     drives_payload = payload.get("drives") or {}
@@ -62,45 +48,6 @@ async def fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List[
 
     timestamps.sort()
     return timestamps
-
-
-async def _fetch_play_by_play_payload(espn_game_id: str) -> Dict[str, Any]:
-    """Retrieve and deserialize the raw play-by-play JSON from ESPN."""
-
-    url = (
-        "https://site.api.espn.com/apis/site/v2/sports/football/college-football/playbyplay"
-        f"?event={espn_game_id}"
-    )
-
-    def _request() -> Dict[str, Any]:
-        http_request = request.Request(
-            url,
-            headers={
-                "User-Agent": USER_AGENT,
-                "Accept": "application/json",
-            },
-            method="GET",
-        )
-        try:
-            with request.urlopen(http_request, timeout=30.0) as response:  # noqa: S310 - trusted domain
-                body = response.read()
-                status_code = getattr(response, "status", 200)
-        except error.HTTPError as exc:  # pragma: no cover - network failure
-            raise ESPNHTTPError(exc.code, f"ESPN responded with HTTP {exc.code}") from exc
-        except error.URLError as exc:  # pragma: no cover - network failure
-            raise ESPNError(f"Unable to reach ESPN: {exc.reason}") from exc
-
-        if status_code >= 400:  # pragma: no cover - network failure
-            raise ESPNHTTPError(status_code, f"ESPN responded with HTTP {status_code}")
-
-        try:
-            payload: Dict[str, Any] = json.loads(body)
-        except json.JSONDecodeError as exc:  # pragma: no cover - payload issue
-            raise ESPNError("ESPN returned invalid JSON") from exc
-
-        return payload
-
-    return await asyncio.to_thread(_request)
 
 
 def _iter_plays(drives: Iterable[Dict[str, object]]) -> Iterable[Dict[str, object]]:
