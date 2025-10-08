@@ -92,4 +92,9 @@ Let this serve as helpful **context**, not a fence.
 **Fallback Behavior:**
 - If the log file is not found, fetch from:
 
+- **Pre-check Commands (always run before analyzing logs):**
+```bash
+git fetch origin main
+git reset --hard origin/main
+
 _Last updated via ChatGPT Sept 26, 2025._
