@@ -73,4 +73,23 @@ Let this serve as helpful **context**, not a fence.
 
 ---
 
+### Agent: Deployment Log Reviewer
+
+**Purpose:** Automatically locate and analyze Railway deployment logs for errors.
+
+**Behavior:**
+- Always look for the log file at `/railway-deploy.log` in the root directory of the `paley618/cfb-cutups-worker-1-` repository.
+- If the file path changes or the log has a numeric suffix (e.g. `logs.123456.log`), attempt to match any `.log` file in the repo’s root or `logs/` directory.
+- Read the entire contents of the log before giving analysis.
+- Summarize the deployment error by identifying:
+  1. The **root cause** (missing module, import failure, syntax error, bad uvicorn entrypoint, etc.)
+  2. The **line of failure** from the traceback.
+  3. The **recommended fix** (e.g., update Dockerfile, requirements.txt, or main.py).
+
+**Example Instruction:**
+> Review the most recent deployment log at `/railway-deploy.log` and summarize the error cause and fix.
+
+**Fallback Behavior:**
+- If the log file is not found, fetch from:
+
 _Last updated via ChatGPT Sept 26, 2025._
