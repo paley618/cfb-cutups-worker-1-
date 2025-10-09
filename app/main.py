@@ -359,6 +359,8 @@ async def _download_game_video(video_url: str, destination: Path) -> None:
 async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List[float]:
     """Pull ESPN play-by-play data and return offensive play timestamps in seconds."""
 
+    import urllib.parse  # keep inside function for now
+
     url = (
         "https://site.api.espn.com/apis/site/v2/sports/football/college-football/playbyplay"
         f"?event={espn_game_id}"
@@ -374,19 +376,22 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
         "Referer": "https://www.espn.com/",
     }
 
-import urllib.parse
+    # --- proxy setup (✅ properly indented inside the function)
+    async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
+        encoded_target = urllib.parse.quote_plus(url)
+        proxy_url = (
+            "https://api.scraperapi.com"
+            "?api_key=d59341f75d2918af3902e3e58ddccd"
+            f"&url={encoded_target}"
+        )
+        response = await client.get(proxy_url)
 
-async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
-    encoded_target = urllib.parse.quote_plus(url)
-    proxy_url = f"https://api.scraperapi.com?api_key=d59341f75d2918af3902e3e58ddccd&url={encoded_target}"
-    response = await client.get(proxy_url)
+    response.raise_for_status()
+    payload = response.json()
 
-response.raise_for_status()
-payload = response.json()
+    print(">>> ESPN response keys:", list(payload.keys())[:5])
+    print(">>> ESPN raw snippet:", str(payload)[:300])
 
-print(">>> ESPN response keys:", list(payload.keys())[:5])
-print(">>> ESPN raw snippet:", str(payload)[:300])
-    
     normalized_team = team_name.strip().lower()
     drives_payload = payload.get("drives") or {}
 
@@ -405,7 +410,6 @@ print(">>> ESPN raw snippet:", str(payload)[:300])
     timestamps: List[float] = []
     for play in plays:
         play_team = ((play.get("team") or {}).get("displayName") or "").strip().lower()
-        # allow partial matches: "wisconsin" matches "wisconsin badgers"
         if not play_team or normalized_team not in play_team:
             continue
 
