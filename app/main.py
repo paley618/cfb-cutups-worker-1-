@@ -386,6 +386,9 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
         )
         response = await client.get(proxy_url)
 
+    print(">>> Proxy response status:", response.status_code)
+    print(">>> Proxy response text (first 200):", response.text[:200])
+    
     response.raise_for_status()
     payload = response.json()
 
