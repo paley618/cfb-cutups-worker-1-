@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import asyncio
-import urllib.parse
 import shlex
 import shutil
 import subprocess
@@ -375,16 +374,18 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
         "Referer": "https://www.espn.com/",
     }
 
+import urllib.parse
+
 async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
     encoded_target = urllib.parse.quote_plus(url)
     proxy_url = f"https://api.scraperapi.com?api_key=d59341f75d2918af3902e3e58ddccd&url={encoded_target}"
     response = await client.get(proxy_url)
-    
-    response.raise_for_status()
-    payload = response.json()
 
-    print(">>> ESPN response keys:", list(payload.keys())[:5])
-    print(">>> ESPN raw snippet:", str(payload)[:300])
+response.raise_for_status()
+payload = response.json()
+
+print(">>> ESPN response keys:", list(payload.keys())[:5])
+print(">>> ESPN raw snippet:", str(payload)[:300])
     
     normalized_team = team_name.strip().lower()
     drives_payload = payload.get("drives") or {}
