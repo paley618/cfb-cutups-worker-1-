@@ -379,8 +379,8 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
     response.raise_for_status()
     payload = response.json()
 
-print(">>> ESPN response keys:", list(payload.keys())[:5])
-print(">>> ESPN raw snippet:", str(payload)[:300])
+    print(">>> ESPN response keys:", list(payload.keys())[:5])
+    print(">>> ESPN raw snippet:", str(payload)[:300])
     
     normalized_team = team_name.strip().lower()
     drives_payload = payload.get("drives") or {}
