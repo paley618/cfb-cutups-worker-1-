@@ -359,12 +359,16 @@ async def _download_game_video(video_url: str, destination: Path) -> None:
 async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List[float]:
     """Pull ESPN play-by-play data and return offensive play timestamps in seconds."""
 
-    import urllib.parse  # keep inside function for now
+    import os
+    import urllib.parse
 
+    # ESPN API URL
     url = (
         "https://site.api.espn.com/apis/site/v2/sports/football/college-football/playbyplay"
         f"?event={espn_game_id}"
     )
+
+    # Browser-like headers
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -376,21 +380,34 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
         "Referer": "https://www.espn.com/",
     }
 
-    # --- proxy setup (✅ properly indented inside the function)
+    # ✅ Get ScraperAPI key (Railway variable preferred)
+    SCRAPERAPI_KEY = os.getenv("SCRAPERAPI_KEY") or "YOUR_FALLBACK_KEY_HERE"
+
+    # Encode target URL for the proxy
+    encoded_target = urllib.parse.quote_plus(url)
+    proxy_url = f"https://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={encoded_target}"
+
+    # Request through proxy with logging and fallback
     async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
-        encoded_target = urllib.parse.quote_plus(url)
-        proxy_url = (
-            "https://api.scraperapi.com"
-            "?api_key=d59341f75d2918af3902e3e58ddccd"
-            f"&url={encoded_target}"
-        )
         response = await client.get(proxy_url)
 
     print(">>> Proxy response status:", response.status_code)
     print(">>> Proxy response text (first 200):", response.text[:200])
-    
-    response.raise_for_status()
-    payload = response.json()
+
+    if response.status_code != 200:
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail=f"Proxy failed (status {response.status_code}): {response.text[:100]}",
+        )
+
+    # Parse ESPN payload
+    try:
+        payload = response.json()
+    except Exception:
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail="Failed to parse ESPN JSON via proxy.",
+        )
 
     print(">>> ESPN response keys:", list(payload.keys())[:5])
     print(">>> ESPN raw snippet:", str(payload)[:300])
@@ -398,7 +415,7 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
     normalized_team = team_name.strip().lower()
     drives_payload = payload.get("drives") or {}
 
-    # Robustly collect drives: ESPN uses "previous", "current", or "items"
+    # Collect drives (ESPN may use previous/current/items)
     drives: List[Dict[str, object]] = []
     for key in ("previous", "current", "items"):
         block = drives_payload.get(key)
@@ -436,7 +453,6 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
 
     timestamps.sort()
     return timestamps
-
 
 def _iter_plays(drives: Iterable[Dict[str, object]]) -> Iterable[Dict[str, object]]:
     """Yield play dictionaries from the nested ESPN drives payload."""
