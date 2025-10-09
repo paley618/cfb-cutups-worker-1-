@@ -362,13 +362,10 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
     import os
     import urllib.parse
 
-    # ESPN API URL
     url = (
         "https://site.api.espn.com/apis/site/v2/sports/football/college-football/playbyplay"
         f"?event={espn_game_id}"
     )
-
-    # Browser-like headers
     headers = {
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -380,42 +377,56 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
         "Referer": "https://www.espn.com/",
     }
 
-    # ✅ Get ScraperAPI key (Railway variable preferred)
-    SCRAPERAPI_KEY = os.getenv("SCRAPERAPI_KEY") or "YOUR_FALLBACK_KEY_HERE"
+    # Load proxy key (if available)
+    SCRAPERAPI_KEY = os.getenv("SCRAPERAPI_KEY")
+    payload = {}
 
-    # Encode target URL for the proxy
-    encoded_target = urllib.parse.quote_plus(url)
-    proxy_url = f"https://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={encoded_target}"
+    # Try through proxy first
+    try:
+        async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
+            if SCRAPERAPI_KEY:
+                encoded_target = urllib.parse.quote_plus(url)
+                proxy_url = f"https://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={encoded_target}"
+                proxy_response = await client.get(proxy_url)
+                print(">>> Proxy response status:", proxy_response.status_code)
+                print(">>> Proxy response text (first 200):", proxy_response.text[:200])
 
-    # Request through proxy with logging and fallback
-    async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
-        response = await client.get(proxy_url)
+                if proxy_response.status_code == 200:
+                    try:
+                        payload = proxy_response.json()
+                    except Exception:
+                        payload = {}
 
-    print(">>> Proxy response status:", response.status_code)
-    print(">>> Proxy response text (first 200):", response.text[:200])
+        # Fallback: if proxy returned {} or failed, try direct ESPN
+        if not payload:
+            print(">>> Proxy returned empty or failed, retrying direct ESPN fetch...")
+            async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
+                direct_response = await client.get(url)
+                print(">>> Direct ESPN response status:", direct_response.status_code)
+                print(">>> Direct ESPN snippet:", direct_response.text[:200])
+                direct_response.raise_for_status()
+                payload = direct_response.json()
 
-    if response.status_code != 200:
+    except Exception as exc:
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
-            detail=f"Proxy failed (status {response.status_code}): {response.text[:100]}",
+            detail=f"Proxy and fallback failed: {exc}",
         )
 
-    # Parse ESPN payload
-    try:
-        payload = response.json()
-    except Exception:
+    # If still empty, abort
+    if not payload:
         raise HTTPException(
-            status_code=status.HTTP_502_BAD_GATEWAY,
-            detail="Failed to parse ESPN JSON via proxy.",
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No ESPN data available for this game ID (proxy and direct both empty).",
         )
 
     print(">>> ESPN response keys:", list(payload.keys())[:5])
     print(">>> ESPN raw snippet:", str(payload)[:300])
 
+    # --- existing logic for play extraction ---
     normalized_team = team_name.strip().lower()
     drives_payload = payload.get("drives") or {}
 
-    # Collect drives (ESPN may use previous/current/items)
     drives: List[Dict[str, object]] = []
     for key in ("previous", "current", "items"):
         block = drives_payload.get(key)
