@@ -7,12 +7,17 @@ import shlex
 import shutil
 import subprocess
 import tempfile
+from contextlib import asynccontextmanager
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from enum import Enum
 from pathlib import Path
-from typing import Dict, Iterable, List
+from typing import AsyncIterator, Dict, Iterable, List, Optional, cast
+from uuid import uuid4
 
 import httpx
-from fastapi import FastAPI, HTTPException, status
-from pydantic import BaseModel, Field, HttpUrl
+from fastapi import Depends, FastAPI, HTTPException, Request, status
+from pydantic import BaseModel, Field, HttpUrl, validator
 from yt_dlp import YoutubeDL
 
 
@@ -25,18 +30,6 @@ class ProcessRequest(BaseModel):
     video_url: HttpUrl
     team_name: str = Field(..., min_length=1)
     espn_game_id: str = Field(..., min_length=1)
-from __future__ import annotations
-
-import asyncio
-from contextlib import asynccontextmanager
-from dataclasses import dataclass, field
-from datetime import datetime
-from enum import Enum
-from typing import AsyncIterator, Dict, List, Optional, cast
-from uuid import uuid4
-
-from fastapi import Depends, FastAPI, HTTPException, Request, status
-from pydantic import BaseModel, Field, HttpUrl, validator
 
 
 class JobStatus(str, Enum):
@@ -295,7 +288,9 @@ async def read_root() -> Dict[str, str]:
 async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     """End-to-end pipeline that generates an offensive cut-up for a team."""
 
-    final_output_path = Path("output.mp4").resolve()
+    output_dir = Path("outputs").resolve()
+    output_dir.mkdir(parents=True, exist_ok=True)
+    final_output_path = output_dir / f"cutup_{uuid4().hex}.mp4"
 
     try:
         timestamps = await _fetch_offensive_play_times(
@@ -384,21 +379,34 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
     if isinstance(current_drive, dict):
         drives.append(current_drive)
 
+    plays = list(_iter_plays(drives))
+    wall_clock_anchor = _find_wall_clock_anchor(plays)
+
     timestamps: List[float] = []
-    for play in _iter_plays(drives):
+    for play in plays:
         play_team = ((play.get("team") or {}).get("displayName") or "").strip().lower()
         if not play_team or play_team != normalized_team:
             continue
 
-        clock = (play.get("clock") or {}).get("displayValue")
-        period = (play.get("period") or {}).get("number")
-        if not clock or not isinstance(clock, str) or not isinstance(period, int):
+        timestamp: Optional[float] = None
+        if wall_clock_anchor is not None:
+            wall_clock = _extract_wall_clock(play)
+            if wall_clock is not None:
+                timestamp = (wall_clock - wall_clock_anchor).total_seconds()
+
+        if timestamp is None:
+            clock = (play.get("clock") or {}).get("displayValue")
+            period = (play.get("period") or {}).get("number")
+            if isinstance(clock, str) and isinstance(period, int):
+                try:
+                    timestamp = _clock_display_to_game_seconds(period, clock)
+                except ValueError:
+                    timestamp = None
+
+        if timestamp is None:
             continue
-        try:
-            timestamp = _clock_display_to_game_seconds(period, clock)
-        except ValueError:
-            continue
-        timestamps.append(timestamp)
+
+        timestamps.append(max(timestamp, 0.0))
 
     timestamps.sort()
     return timestamps
@@ -414,6 +422,51 @@ def _iter_plays(drives: Iterable[Dict[str, object]]) -> Iterable[Dict[str, objec
         for play in plays:
             if isinstance(play, dict):
                 yield play
+
+
+def _find_wall_clock_anchor(plays: Iterable[Dict[str, object]]) -> Optional[datetime]:
+    """Return the earliest available wall-clock timestamp from the provided plays."""
+
+    anchor: Optional[datetime] = None
+    for play in plays:
+        wall_clock = _extract_wall_clock(play)
+        if wall_clock is None:
+            continue
+        if anchor is None or wall_clock < anchor:
+            anchor = wall_clock
+    return anchor
+
+
+def _extract_wall_clock(play: Dict[str, object]) -> Optional[datetime]:
+    """Extract and parse a wall-clock timestamp from a play if present."""
+
+    for key in ("start", "end"):
+        segment = play.get(key)
+        if not isinstance(segment, dict):
+            continue
+        candidate = segment.get("wallClock")
+        if isinstance(candidate, str):
+            parsed = _parse_wall_clock(candidate)
+            if parsed is not None:
+                return parsed
+
+    candidate = play.get("wallClock")
+    if isinstance(candidate, str):
+        return _parse_wall_clock(candidate)
+    return None
+
+
+def _parse_wall_clock(value: str) -> Optional[datetime]:
+    """Parse an ISO8601 wall-clock timestamp into an aware datetime."""
+
+    normalized = f"{value[:-1]}+00:00" if value.endswith("Z") else value
+    try:
+        parsed = datetime.fromisoformat(normalized)
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
 
 
 def _clock_display_to_game_seconds(period: int, display_value: str) -> float:
