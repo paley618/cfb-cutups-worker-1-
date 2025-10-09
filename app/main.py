@@ -363,7 +363,18 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
         "https://site.api.espn.com/apis/site/v2/sports/football/college-football/playbyplay"
         f"?event={espn_game_id}"
     )
-    async with httpx.AsyncClient(timeout=30.0) as client:
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/120.0.0.0 Safari/537.36"
+        ),
+        "Accept": "application/json, text/plain, */*",
+        "Origin": "https://www.espn.com",
+        "Referer": "https://www.espn.com/",
+    }
+
+    async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
         response = await client.get(url)
     response.raise_for_status()
     payload = response.json()
@@ -371,13 +382,14 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
     normalized_team = team_name.strip().lower()
     drives_payload = payload.get("drives") or {}
 
+    # Robustly collect drives: ESPN uses "previous", "current", or "items"
     drives: List[Dict[str, object]] = []
-    previous_drives = drives_payload.get("previous") or []
-    if isinstance(previous_drives, list):
-        drives.extend(previous_drives)
-    current_drive = drives_payload.get("current")
-    if isinstance(current_drive, dict):
-        drives.append(current_drive)
+    for key in ("previous", "current", "items"):
+        block = drives_payload.get(key)
+        if isinstance(block, list):
+            drives.extend(block)
+        elif isinstance(block, dict):
+            drives.append(block)
 
     plays = list(_iter_plays(drives))
     wall_clock_anchor = _find_wall_clock_anchor(plays)
@@ -385,7 +397,8 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
     timestamps: List[float] = []
     for play in plays:
         play_team = ((play.get("team") or {}).get("displayName") or "").strip().lower()
-        if not play_team or play_team != normalized_team:
+        # allow partial matches: "wisconsin" matches "wisconsin badgers"
+        if not play_team or normalized_team not in play_team:
             continue
 
         timestamp: Optional[float] = None
@@ -403,10 +416,8 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
                 except ValueError:
                     timestamp = None
 
-        if timestamp is None:
-            continue
-
-        timestamps.append(max(timestamp, 0.0))
+        if timestamp is not None:
+            timestamps.append(max(timestamp, 0.0))
 
     timestamps.sort()
     return timestamps
