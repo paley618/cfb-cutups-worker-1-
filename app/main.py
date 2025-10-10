@@ -20,7 +20,7 @@ from uuid import uuid4
 from video import download_game_video
 
 import httpx
-from fastapi import Depends, FastAPI, HTTPException, Request, status, BackgroundTasks
+from fastapi import Depends, FastAPI, HTTPException, Request, status
 from pydantic import BaseModel, Field, HttpUrl, validator
 from yt_dlp import YoutubeDL
 
@@ -273,21 +273,67 @@ class JobProcessor:
 async def _job_worker(job_id: str, req: ProcessRequest):
     _set_job(job_id, status="running")
     try:
-        result = await _run_cutups_and_upload(req)
+        result = await _run_cutups_and_upload(req, job_id)
         _set_job(job_id, status="finished", result=result)
     except Exception as e:
         _set_job(job_id, status="failed", error=str(e))
 
-# This should call your existing CFBD + download + ffmpeg code and end with `output_path`
+async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[str, Any]:
+    # 1) Build timestamps (CFBD)
+    timestamps = await _fetch_offensive_play_times_cfbd(
+        request.espn_game_id,
+        request.team_name,
+        year=request.year,
+        season_type=(request.season_type or None),
+        week=request.week,
+        opponent=request.opponent,
+        cfbd_game_id=request.cfbd_game_id,
+    )
+    if not timestamps:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="No offensive plays found for the requested team",
+        )
 
-_set_job(job_id, status="running", step="downloading")
-await download_game_video(request.video_url, source_path, job_id=job_id)
-_set_job(job_id, step="cutting")
+    # 2) Prepare workspace
+    output_dir = Path("outputs").resolve()
+    output_dir.mkdir(parents=True, exist_ok=True)
+    final_output_path = output_dir / f"cutup_{uuid4().hex}.mp4"
 
-async def _run_cutups_and_upload(request: ProcessRequest) -> Dict[str, Any]:
-    # Reuse the existing end-to-end pipeline implemented by your /process handler.
-    # IMPORTANT: this assumes your /process route function is named process_offensive_cutups.
-    return await process_offensive_cutups(request)
+    with tempfile.TemporaryDirectory(prefix="cutup_") as work_dir:
+        work_path = Path(work_dir)
+        input_path = work_path / "input.mp4"
+        clips_dir = work_path / "clips"
+        clips_dir.mkdir(parents=True, exist_ok=True)
+
+        # 3) Download with progress (720p) — shows up in /jobs/<id>
+        _set_job(job_id, status="running", step="downloading")
+        await download_game_video(request.video_url, input_path, job_id=job_id)
+
+        # 4) Cut & concat
+        _set_job(job_id, step="cutting")
+        clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
+        temp_output = work_path / "output.mp4"
+        await _concatenate_clips(clip_paths, temp_output)
+
+        if final_output_path.exists():
+            final_output_path.unlink()
+        shutil.move(str(temp_output), final_output_path)
+
+    # 5) Upload to S3
+    _set_job(job_id, step="uploading")
+    prefix = _s3_prefix()
+    safe_team = request.team_name.lower().replace(" ", "-")
+    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{final_output_path.name}"
+    cloud_url = upload_video_to_object_store(str(final_output_path), key)
+
+    # 6) Cleanup & return
+    try:
+        final_output_path.unlink(missing_ok=True)
+    except Exception:
+        pass
+
+    return {"message": "Done", "cloud_url": cloud_url, "key": key}
 
 async def _simulate_processing(record: CutupJobRecord) -> None:
     """Pretend to perform the heavy cut-up work for each segment."""
@@ -381,6 +427,7 @@ async def read_root() -> Dict[str, str]:
 
 
 @app.post("/process", tags=["processing"])
+
 async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     """End-to-end pipeline that generates an offensive cut-up for a team."""
 
@@ -420,6 +467,7 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             input_path = work_path / "input.mp4"
             clips_dir = work_path / "clips"
             clips_dir.mkdir(parents=True, exist_ok=True)
+            await download_game_video(request.video_url, input_path, job_id=None)
 
             clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
 
