@@ -15,14 +15,13 @@ from yt_dlp import YoutubeDL
 from yt_dlp.utils import DownloadError
 
 def _yt_progress_hook_factory(job_id: Optional[str]):
-    # import here to avoid circulars
-    from main import _set_job  # we only update the in-memory job store
+    # import inside to avoid circular import at module load
+    from main import _set_job
     def _hook(d):
         try:
             status = d.get("status")
             if status == "downloading":
-                pct = d.get("_percent_str") or ""
-                pct = pct.strip().replace("%", "")
+                pct = (d.get("_percent_str") or "").strip().replace("%", "")
                 percent = float(pct) if pct else None
                 _set_job(
                     job_id,
@@ -37,6 +36,7 @@ def _yt_progress_hook_factory(job_id: Optional[str]):
             elif status == "finished":
                 _set_job(job_id, step="cutting")
         except Exception:
+            # never let a hook crash the download
             pass
     return _hook
 
@@ -45,26 +45,29 @@ async def download_game_video(video_url: str, destination: Path, *, job_id: Opti
     Download the source video to `destination` using yt-dlp, with 720p cap and live progress.
     """
     ydl_opts = {
-        # save to the exact path FastAPI expects
         "outtmpl": str(destination),
-        # ✅ cap input to 720p so download is faster/lighter
-        "format": "bv*[height<=720]+ba/b[height<=720]/best",
-        # resiliency
+        "merge_output_format": "mp4",
+        "quiet": True,
+        "no_warnings": True,
+
+        # ✅ speed/resilience
         "retries": 3,
         "fragment_retries": 3,
         "concurrent_fragment_downloads": 4,
-        "nopart": True,           # avoid .part files confusion
-        "no_warnings": True,
+        "nopart": True,
+
+        # ✅ cap input to 720p so download is faster/lighter
+        "format": "bv*[height<=720]+ba/b[height<=720]/best",
     }
     if job_id:
         ydl_opts["progress_hooks"] = [_yt_progress_hook_factory(job_id)]
 
-    def _do_download():
+    def _run():
         with YoutubeDL(ydl_opts) as ydl:
             ydl.download([video_url])
 
     # run blocking yt-dlp in a worker thread
-    await asyncio.to_thread(_do_download)
+    await asyncio.to_thread(_run)
 
 async def generate_clips(input_path: Path, timestamps: List[float], clips_dir: Path) -> List[Path]:
     """Extract short clips around each timestamp using ffmpeg."""
