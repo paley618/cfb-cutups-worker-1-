@@ -280,6 +280,10 @@ async def _job_worker(job_id: str, req: ProcessRequest):
 
 # This should call your existing CFBD + download + ffmpeg code and end with `output_path`
 
+_set_job(job_id, status="running", step="downloading")
+await download_game_video(request.video_url, source_path, job_id=job_id)
+_set_job(job_id, step="cutting")
+
 async def _run_cutups_and_upload(request: ProcessRequest) -> Dict[str, Any]:
     # Reuse the existing end-to-end pipeline implemented by your /process handler.
     # IMPORTANT: this assumes your /process route function is named process_offensive_cutups.
@@ -417,8 +421,6 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             clips_dir = work_path / "clips"
             clips_dir.mkdir(parents=True, exist_ok=True)
 
-            await _download_game_video(str(request.video_url), input_path)
-
             clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
 
             temp_output = work_path / "output.mp4"
@@ -448,26 +450,6 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
         pass
 
     return {"message": "Done", "cloud_url": cloud_url, "key": key}
-
-async def _download_game_video(video_url: str, destination: Path) -> None:
-    """Download the full game video to the provided destination using yt_dlp."""
-
-    def _run() -> None:
-        ydl_opts = {
-            "outtmpl": str(destination),
-            "merge_output_format": "mp4",
-            "quiet": True,
-            "no_warnings": True,
-        }
-        with YoutubeDL(ydl_opts) as ydl:
-            ydl.download([video_url])
-
-    await asyncio.to_thread(_run)
-
-    # ... inside _job_worker or your processing function ...
-    _set_job(job_id, status="running", step="downloading")
-    await download_game_video(request.video_url, source_path, job_id=job_id)  # <-- pass job_id
-    _set_job(job_id, step="cutting")
 
 async def _fetch_offensive_play_times_cfbd(
     espn_game_id: str,
