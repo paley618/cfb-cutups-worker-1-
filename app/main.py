@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-import asyncio
+import asyncio, uuid
 import shlex
 import shutil
 import subprocess
@@ -19,10 +19,17 @@ from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
 
 import httpx
-from fastapi import Depends, FastAPI, HTTPException, Request, status
+from fastapi import Depends, FastAPI, HTTPException, Request, status, BackgroundTasks
 from pydantic import BaseModel, Field, HttpUrl, validator
 from yt_dlp import YoutubeDL
 
+JOBS: Dict[str, Dict[str, Any]] = {}  # { job_id: {"status": "...", "result": {...}, "error": "..."} }
+
+def _new_job() -> str:
+    return uuid.uuid4().hex
+
+def _set_job(job_id: str, **kwargs):
+    JOBS.setdefault(job_id, {}).update(kwargs)
 
 class ProcessRequest(BaseModel):
     # existing fields (we keep espn_game_id for backward compat, but ignore it in CFBD flow)
@@ -261,6 +268,63 @@ class JobProcessor:
 
             _copy_with_status(record, status=JobStatus.COMPLETED)
             await self._store.update(record)
+
+from fastapi import BackgroundTasks, status
+
+async def _job_worker(job_id: str, req: ProcessRequest):
+    _set_job(job_id, status="running")
+    try:
+        result = await _run_cutups_and_upload(req)
+        _set_job(job_id, status="finished", result=result)
+    except Exception as e:
+        _set_job(job_id, status="failed", error=str(e))
+
+@app.post("/jobs", status_code=status.HTTP_202_ACCEPTED)
+async def submit_job(req: ProcessRequest, background: BackgroundTasks):
+    job_id = _new_job()
+    _set_job(job_id, status="queued")
+    # spawn worker (non-blocking)
+    background.add_task(asyncio.create_task, _job_worker(job_id, req))
+    return {"message": "accepted", "job_id": job_id, "status_url": f"/jobs/{job_id}"}
+
+@app.get("/jobs/{job_id}")
+async def job_status(job_id: str):
+    j = JOBS.get(job_id)
+    if not j:
+        return {"job_id": job_id, "status": "not_found"}
+    return {"job_id": job_id, **j}
+
+# This should call your existing CFBD + download + ffmpeg code and end with `output_path`
+async def _run_cutups_and_upload(request: ProcessRequest) -> Dict[str, Any]:
+    # 1) timestamps
+    timestamps = await _fetch_offensive_play_times_cfbd(
+        request.espn_game_id,
+        request.team_name,
+        year=request.year,
+        season_type=(request.season_type or None),
+        week=request.week,
+        opponent=request.opponent,
+        cfbd_game_id=request.cfbd_game_id,
+    )
+
+    # 2) download + ffmpeg -> output_path (this is YOUR existing code)
+    # ... your current logic that ends with: output_path = "<local file path>"
+
+    # 3) S3 upload (uses your S3_PREFIX)
+    from pathlib import Path
+    prefix = _s3_prefix()
+    safe_team = request.team_name.lower().replace(" ", "-")
+    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{Path(output_path).name}"
+
+    cloud_url = upload_video_to_object_store(output_path, key)
+
+    # optional: cleanup
+    try:
+        Path(output_path).unlink(missing_ok=True)
+    except Exception:
+        pass
+
+    return {"message": "Done", "cloud_url": cloud_url, "key": key}
 
 
 async def _simulate_processing(record: CutupJobRecord) -> None:
