@@ -684,8 +684,23 @@ async def _fetch_offensive_play_times_cfbd(
                 except Exception as exc:
                     print(">>> CFBD MODE: /games fallback error:", exc)
 
-            if found_gid:
-                plays = await _fetch_plays_by_game_id(int(found_gid))
+if found_gid:
+    # Look up meta for this game ID so we know the year/week for /plays
+    meta = await _find_game_meta_by_id(int(found_gid))
+    if meta:
+        params = {
+            "gameId": int(found_gid),
+            "year": int(meta.get("season")),
+            "week": int(meta.get("week")),
+        }
+        st = meta.get("seasonType")
+        if st:
+            params["seasonType"] = st
+
+        pr2 = await client.get(f"{base}/plays", params=params)
+        print(">>> CFBD MODE: fallback /plays status =", pr2.status_code, "params=", params)
+        pr2.raise_for_status()
+        plays = pr2.json() or []
     
     # 3) Build timestamps for team offense
     timestamps: List[float] = []
