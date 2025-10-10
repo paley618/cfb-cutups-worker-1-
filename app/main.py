@@ -7,6 +7,9 @@ import shlex
 import shutil
 import subprocess
 import tempfile
+import os
+import boto3
+from botocore.config import Config
 from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -126,6 +129,55 @@ def _record_to_response(record: CutupJobRecord) -> CutupJobResponse:
         error=record.error,
     )
 
+def _env(name: str, fallback: str = "") -> str:
+    return os.getenv(name) or fallback
+
+def _make_s3_client():
+    # Read either AWS_* or S3_* variable names
+    access_key = _env("S3_ACCESS_KEY_ID") or _env("AWS_ACCESS_KEY_ID")
+    secret_key = _env("S3_SECRET_ACCESS_KEY") or _env("AWS_SECRET_ACCESS_KEY")
+    region     = _env("S3_REGION") or _env("AWS_REGION") or "us-east-2"
+    endpoint   = _env("S3_ENDPOINT") or None  # leave empty for AWS S3
+
+    if not access_key or not secret_key:
+        raise RuntimeError("Missing AWS/S3 credentials in env (ACCESS_KEY_ID / SECRET_ACCESS_KEY).")
+
+    return boto3.client(
+        "s3",
+        aws_access_key_id=access_key,
+        aws_secret_access_key=secret_key,
+        region_name=region,
+        endpoint_url=endpoint,
+        config=Config(signature_version="s3v4"),
+    )
+
+def upload_video_to_object_store(local_path: str, key: str) -> str:
+    """
+    Upload local file to S3 (or S3-compatible) and return a URL.
+    Uses signed URL by default unless PUBLIC_BASE_URL is set and USE_SIGNED_URLS=false.
+    """
+    bucket = _env("S3_BUCKET") or _env("S3_BUCKET_NAME")
+    if not bucket:
+        raise RuntimeError("S3 bucket not set (S3_BUCKET or S3_BUCKET_NAME).")
+
+    s3 = _make_s3_client()
+
+    # Upload
+    s3.upload_file(local_path, bucket, key, ExtraArgs={"ContentType": "video/mp4"})
+
+    # Decide which URL to return
+    use_signed   = (_env("USE_SIGNED_URLS", "true").lower() == "true")
+    public_base  = _env("PUBLIC_BASE_URL").rstrip("/") if _env("PUBLIC_BASE_URL") else ""
+
+    if not use_signed and public_base:
+        return f"{public_base}/{key}"
+
+    ttl = int(_env("SIGNED_URL_TTL", "86400"))
+    return s3.generate_presigned_url(
+        "get_object",
+        Params={"Bucket": bucket, "Key": key},
+        ExpiresIn=ttl,
+    )
 
 def _copy_with_status(record: CutupJobRecord, *, status: JobStatus, error: Optional[str] = None) -> None:
     """Update the provided record with a new status and optional error."""
@@ -342,8 +394,20 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             detail=str(exc),
         ) from exc
 
-    return {"message": "Done", "output_path": str(final_output_path)}
+    # Build a stable object key
+    safe_team = request.team_name.lower().replace(" ", "-")
+    key = f"{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{Path(output_path).name}"
 
+    # Upload to S3 and get a URL
+    cloud_url = upload_video_to_object_store(output_path, key)
+
+    # (Optional) delete local file to save disk
+    try:
+        Path(output_path).unlink(missing_ok=True)
+    except Exception:
+        pass
+
+    return {"message": "Done", "cloud_url": cloud_url, "key": key}
 
 async def _download_game_video(video_url: str, destination: Path) -> None:
     """Download the full game video to the provided destination using yt_dlp."""
