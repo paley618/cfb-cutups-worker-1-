@@ -269,8 +269,6 @@ class JobProcessor:
             _copy_with_status(record, status=JobStatus.COMPLETED)
             await self._store.update(record)
 
-from fastapi import BackgroundTasks, status
-
 async def _job_worker(job_id: str, req: ProcessRequest):
     _set_job(job_id, status="running")
     try:
@@ -279,53 +277,12 @@ async def _job_worker(job_id: str, req: ProcessRequest):
     except Exception as e:
         _set_job(job_id, status="failed", error=str(e))
 
-@app.post("/jobs", status_code=status.HTTP_202_ACCEPTED)
-async def submit_job(req: ProcessRequest, background: BackgroundTasks):
-    job_id = _new_job()
-    _set_job(job_id, status="queued")
-    # spawn worker (non-blocking)
-    background.add_task(asyncio.create_task, _job_worker(job_id, req))
-    return {"message": "accepted", "job_id": job_id, "status_url": f"/jobs/{job_id}"}
-
-@app.get("/jobs/{job_id}")
-async def job_status(job_id: str):
-    j = JOBS.get(job_id)
-    if not j:
-        return {"job_id": job_id, "status": "not_found"}
-    return {"job_id": job_id, **j}
-
 # This should call your existing CFBD + download + ffmpeg code and end with `output_path`
+
 async def _run_cutups_and_upload(request: ProcessRequest) -> Dict[str, Any]:
-    # 1) timestamps
-    timestamps = await _fetch_offensive_play_times_cfbd(
-        request.espn_game_id,
-        request.team_name,
-        year=request.year,
-        season_type=(request.season_type or None),
-        week=request.week,
-        opponent=request.opponent,
-        cfbd_game_id=request.cfbd_game_id,
-    )
-
-    # 2) download + ffmpeg -> output_path (this is YOUR existing code)
-    # ... your current logic that ends with: output_path = "<local file path>"
-
-    # 3) S3 upload (uses your S3_PREFIX)
-    from pathlib import Path
-    prefix = _s3_prefix()
-    safe_team = request.team_name.lower().replace(" ", "-")
-    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{Path(output_path).name}"
-
-    cloud_url = upload_video_to_object_store(output_path, key)
-
-    # optional: cleanup
-    try:
-        Path(output_path).unlink(missing_ok=True)
-    except Exception:
-        pass
-
-    return {"message": "Done", "cloud_url": cloud_url, "key": key}
-
+    # Reuse the existing end-to-end pipeline implemented by your /process handler.
+    # IMPORTANT: this assumes your /process route function is named process_offensive_cutups.
+    return await process_offensive_cutups(request)
 
 async def _simulate_processing(record: CutupJobRecord) -> None:
     """Pretend to perform the heavy cut-up work for each segment."""
@@ -350,14 +307,26 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
 
+@app.post("/jobs", status_code=status.HTTP_202_ACCEPTED)
+async def submit_job(req: ProcessRequest, background: BackgroundTasks):
+    job_id = _new_job()
+    _set_job(job_id, status="queued")
+    # spawn worker (non-blocking)
+    background.add_task(asyncio.create_task, _job_worker(job_id, req))
+    return {"message": "accepted", "job_id": job_id, "status_url": f"/jobs/{job_id}"}
+
+@app.get("/jobs/{job_id}")
+async def job_status(job_id: str):
+    j = JOBS.get(job_id)
+    if not j:
+        return {"job_id": job_id, "status": "not_found"}
+    return {"job_id": job_id, **j}
 
 def _get_store(request: Request) -> InMemoryJobStore:
     return cast(InMemoryJobStore, request.app.state.store)
 
-
 def _get_processor(request: Request) -> JobProcessor:
     return cast(JobProcessor, request.app.state.processor)
-
 
 @app.get("/health", tags=["health"])
 async def healthcheck() -> Dict[str, str]:
@@ -464,26 +433,17 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             detail=str(exc),
         ) from exc
 
-    # Build a stable object key
+    # Build a stable object key (with optional S3_PREFIX)
+    prefix = _s3_prefix()  # "" if not set, or e.g. "outputs/"
     safe_team = request.team_name.lower().replace(" ", "-")
-    key = f"{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{Path(output_path).name}"
+    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{final_output_path.name}"
 
     # Upload to S3 and get a URL
-    cloud_url = upload_video_to_object_store(output_path, key)
+    cloud_url = upload_video_to_object_store(str(final_output_path), key)
 
-    # 1) read the env var S3_PREFIX (e.g., "outputs"), and normalize it to end with "/"
-    prefix = _s3_prefix()  # "" if not set, "outputs/" if you set S3_PREFIX=outputs
-
-    # 2) build the rest of the path
-    safe_team = request.team_name.lower().replace(" ", "-")
-    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{Path(output_path).name}"
-
-    # 3) upload using that key
-    cloud_url = upload_video_to_object_store(output_path, key)
-    
     # (Optional) delete local file to save disk
     try:
-        Path(output_path).unlink(missing_ok=True)
+        final_output_path.unlink(missing_ok=True)
     except Exception:
         pass
 
