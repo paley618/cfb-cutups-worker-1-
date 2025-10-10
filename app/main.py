@@ -129,8 +129,14 @@ def _record_to_response(record: CutupJobRecord) -> CutupJobResponse:
         error=record.error,
     )
 
+# near your upload helper
 def _env(name: str, fallback: str = "") -> str:
+    import os
     return os.getenv(name) or fallback
+
+def _s3_prefix() -> str:
+    p = _env("S3_PREFIX", "").strip()
+    return (p + "/") if (p and not p.endswith("/")) else p
 
 def _make_s3_client():
     # Read either AWS_* or S3_* variable names
@@ -401,6 +407,16 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     # Upload to S3 and get a URL
     cloud_url = upload_video_to_object_store(output_path, key)
 
+    # 1) read the env var S3_PREFIX (e.g., "outputs"), and normalize it to end with "/"
+    prefix = _s3_prefix()  # "" if not set, "outputs/" if you set S3_PREFIX=outputs
+
+    # 2) build the rest of the path
+    safe_team = request.team_name.lower().replace(" ", "-")
+    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{Path(output_path).name}"
+
+    # 3) upload using that key
+    cloud_url = upload_video_to_object_store(output_path, key)
+    
     # (Optional) delete local file to save disk
     try:
         Path(output_path).unlink(missing_ok=True)
