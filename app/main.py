@@ -299,7 +299,7 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     final_output_path = output_dir / f"cutup_{uuid4().hex}.mp4"
 
     try:
-        timestamps = await _fetch_offensive_play_times(
+        timestamps = await _fetch_offensive_play_times_cfbd(
             request.espn_game_id,
             request.team_name,
             year=request.year,
@@ -307,18 +307,16 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             week=request.week,
             opponent=request.opponent,
             cfbd_game_id=request.cfbd_game_id,
-)
-
-    except httpx.HTTPStatusError as exc:  # pragma: no cover - external HTTP
+        )
+    except HTTPException as e:
+        # If our CFBD helper already raised a clean HTTP error, bubble it up unchanged.
+        raise
+    except Exception as e:
+        # Anything else: surface a neutral, generic error.
         raise HTTPException(
-            status_code=exc.response.status_code,
-            detail="Unable to fetch play-by-play data from ESPN",
-        ) from exc
-    except Exception as exc:  # pragma: no cover - network/JSON issues
-        raise HTTPException(
-            status_code=status.HTTP_502_BAD_GATEWAY,
-            detail=f"Failed to parse play-by-play data: {exc}",
-        ) from exc
+            status_code=502,
+            detail=f"Failed to parse play-by-play data: {e}"
+        )
 
     if not timestamps:
         raise HTTPException(
@@ -368,7 +366,7 @@ async def _download_game_video(video_url: str, destination: Path) -> None:
     await asyncio.to_thread(_run)
 
 
-async def _fetch_offensive_play_times(
+async def _fetch_offensive_play_times_cfbd(
     espn_game_id: str,
     team_name: str,
     *,
