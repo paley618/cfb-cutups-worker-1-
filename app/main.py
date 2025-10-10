@@ -378,80 +378,107 @@ async def _fetch_offensive_play_times(
     opponent: Optional[str] = None,
     cfbd_game_id: Optional[int] = None,
 ) -> List[float]:
-    """Use CollegeFootballData to fetch play-by-play and return timestamps for team's offensive plays."""
+    """
+    CFBD-only implementation (ESPN disabled).
+    Logs clearly so you can verify in Railway.
+    """
 
     import os
     from datetime import datetime
     import httpx
 
-    CFBD_API_KEY = os.getenv("CFBD_API_KEY")
+    CFBD_API_KEY = (os.getenv("CFBD_API_KEY") or "").replace("\r", "").replace("\n", "").strip()
     if not CFBD_API_KEY:
-        raise HTTPException(status_code=500, detail="CFBD_API_KEY is not set in environment variables (Railway).")
+        raise HTTPException(status_code=500, detail="CFBD_API_KEY is not set")
 
     headers = {"Authorization": f"Bearer {CFBD_API_KEY}"}
     base = "https://api.collegefootballdata.com"
 
-    def _norm(s: Optional[str]) -> str:
+    def _n(s: Optional[str]) -> str:
         return (s or "").strip().lower()
 
-    target = _norm(team_name)
+    target = _n(team_name)
+    print(">>> CFBD MODE: starting fetch for team:", team_name, "cfbd_game_id:", cfbd_game_id)
 
     async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
-        # 1) Resolve a game id (priority: explicit cfbd_game_id → filtered search → recent fallback)
+        # 1) Resolve game_id
         game_id: Optional[int] = cfbd_game_id
 
-        # A) Direct override
-        if game_id is None:
-            # B) Try filtered search if caller gave any of (year/season_type/week/opponent)
+        # A) If caller gave an id, use it directly
+        if game_id is not None:
+            print(">>> CFBD MODE: using provided game_id =", game_id)
+        else:
+            # B) Try filtered /games
             params: Dict[str, object] = {"team": team_name}
             if year is not None: params["year"] = year
             if season_type is not None: params["seasonType"] = season_type
             if week is not None: params["week"] = week
 
-            if any(k in params for k in ("year", "seasonType", "week")):
-                r = await client.get(f"{base}/games", params=params)
+            async def _fetch_games(p: Dict[str, object]) -> List[Dict[str, Any]]:
+                r = await client.get(f"{base}/games", params=p)
                 r.raise_for_status()
-                games = r.json() or []
-                # Optionally filter by opponent if provided
-                if opponent:
-                    opp = _norm(opponent)
-                    games = [g for g in games if opp in (_norm(g.get("home_team")), _norm(g.get("away_team")))]
-                # Find first where team is involved
-                games = [g for g in games if target in (_norm(g.get("home_team")), _norm(g.get("away_team")))]
+                return r.json() or []
+
+            games: List[Dict[str, Any]] = []
+            if any(k in params for k in ("year", "seasonType", "week")):
+                try:
+                    games = await _fetch_games(params)
+                    print(">>> CFBD MODE: filtered games found:", len(games))
+                except Exception as exc:
+                    print(">>> CFBD MODE: filtered games error:", exc)
+
+                # retry without week if nothing
+                if not games and "week" in params:
+                    p2 = {k: v for k, v in params.items() if k != "week"}
+                    try:
+                        games = await _fetch_games(p2)
+                        print(">>> CFBD MODE: retry without week found:", len(games))
+                    except Exception as exc:
+                        print(">>> CFBD MODE: retry without week error:", exc)
+
+                # narrow by opponent if given
+                if games and opponent:
+                    opp = _n(opponent)
+                    games = [g for g in games if opp in (_n(g.get("home_team")), _n(g.get("away_team")))]
+                    print(">>> CFBD MODE: after opponent filter:", len(games))
+
+                # keep only games with our team
+                games = [g for g in games if target in (_n(g.get("home_team")), _n(g.get("away_team")))]
+
                 if games:
-                    # Choose the most recent by start_date
                     games.sort(key=lambda g: g.get("start_date") or "", reverse=True)
                     game_id = games[0].get("id")
 
-        # C) Fallback: recent seasons, postseason first then regular
-        if game_id is None:
-            now_year = datetime.utcnow().year
-            years = [now_year, now_year - 1, now_year - 2, now_year - 3]
-            for st in ("postseason", "regular"):
-                for yr in years:
-                    r = await client.get(f"{base}/games", params={"year": yr, "seasonType": st, "team": team_name})
-                    r.raise_for_status()
-                    games = r.json() or []
-                    games = [g for g in games if target in (_norm(g.get("home_team")), _norm(g.get("away_team")))]
-                    if games:
-                        games.sort(key=lambda g: g.get("start_date") or "", reverse=True)
-                        game_id = games[0].get("id")
+            # C) Fallback recent seasons if still none
+            if game_id is None:
+                now_year = datetime.utcnow().year
+                for st in ("regular", "postseason"):
+                    for yr in (now_year, now_year - 1, now_year - 2, now_year - 3):
+                        r = await client.get(f"{base}/games", params={"year": yr, "seasonType": st, "team": team_name})
+                        r.raise_for_status()
+                        gjs = r.json() or []
+                        gjs = [g for g in gjs if target in (_n(g.get("home_team")), _n(g.get("away_team")))]
+                        if gjs:
+                            gjs.sort(key=lambda g: g.get("start_date") or "", reverse=True)
+                            game_id = gjs[0].get("id")
+                            break
+                    if game_id is not None:
                         break
-                if game_id is not None:
-                    break
 
         if game_id is None:
             raise HTTPException(status_code=404, detail=f"No CFBD game found for team '{team_name}' with given filters.")
 
         # 2) Fetch plays for that game
         pr = await client.get(f"{base}/plays", params={"gameId": game_id})
+        print(">>> CFBD MODE: /plays status =", pr.status_code)
         pr.raise_for_status()
         plays = pr.json() or []
+        print(">>> CFBD MODE: plays returned =", len(plays))
 
-    # 3) Convert offensive plays to absolute game seconds
+    # 3) Build timestamps for team offense
     timestamps: List[float] = []
     for p in plays:
-        if _norm(p.get("offense")) and target in _norm(p.get("offense")):
+        if target in _n(p.get("offense")):
             period = p.get("period")
             clock = p.get("clock") or {}
             minutes = clock.get("minutes")
@@ -464,6 +491,7 @@ async def _fetch_offensive_play_times(
                     timestamps.append(float((period - 1) * quarter + elapsed))
 
     timestamps.sort()
+    print(">>> CFBD MODE: offensive timestamps =", len(timestamps))
 
     if not timestamps:
         raise HTTPException(status_code=404, detail=f"No offensive plays found for '{team_name}' in CFBD game {game_id}.")
