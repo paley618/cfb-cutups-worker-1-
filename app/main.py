@@ -12,16 +12,13 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from enum import Enum
 from pathlib import Path
-from typing import AsyncIterator, Dict, Iterable, List, Optional, cast
+from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status
 from pydantic import BaseModel, Field, HttpUrl, validator
 from yt_dlp import YoutubeDL
-
-
-app = FastAPI(title="CFB Cutups Worker", version="1.1.0")
 
 
 class ProcessRequest(BaseModel):
@@ -242,13 +239,11 @@ def _get_processor(request: Request) -> JobProcessor:
 
 @app.get("/health", tags=["health"])
 async def healthcheck() -> Dict[str, str]:
-    """Simple readiness endpoint used by infrastructure probes."""
-
-    return {"status": "ok"}
-    """Basic readiness probe for the service."""
-
     return {"status": "ok"}
 
+@app.get("/debug/mode")
+async def debug_mode():
+    return {"mode": "CFBD", "version": "cutups-cfbd-1"}
 
 @app.post("/cutups", status_code=status.HTTP_202_ACCEPTED, response_model=CutupJobResponse, tags=["cutups"])
 async def create_cutup_job(
