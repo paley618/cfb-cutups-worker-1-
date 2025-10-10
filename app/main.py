@@ -461,20 +461,57 @@ async def _fetch_offensive_play_times_cfbd(
         if game_id is None:
             raise HTTPException(status_code=404, detail=f"No CFBD game found for team '{team_name}' with given filters.")
 
-        # 2) Fetch plays for that game (with fallback for conference titles)
-        async def _fetch_plays_by_game_id(gid: int) -> List[Dict[str, Any]]:
-            pr = await client.get(f"{base}/plays", params={"gameId": gid})
-            print(">>> CFBD MODE: /plays status =", pr.status_code, "for gameId", gid)
-            if pr.status_code != 200:
-                print(">>> CFBD MODE: /plays error text:", (pr.text or "")[:200])
-                return []
-            try:
-                return pr.json() or []
-            except Exception as exc:
-                print(">>> CFBD MODE: /plays json parse error:", exc)
-                return []
+        # --- determine year/week for the chosen game_id (needed by CFBD /plays) ---
+        game_meta: Optional[Dict[str, Any]] = None
+        # If we already have year/week from the request, keep them; otherwise fetch game meta
+        year_needed = year
+        week_needed = week
+        season_type_needed = season_type
 
-        plays: List[Dict[str, Any]] = await _fetch_plays_by_game_id(int(game_id))
+        async def _find_game_meta_by_id(gid: int) -> Optional[Dict[str, Any]]:
+            # CFBD supports filtering by id on /games
+            gr = await client.get(f"{base}/games", params={"id": gid})
+            if gr.status_code == 200:
+                js = gr.json() or []
+                if isinstance(js, list) and js:
+                    return js[0]
+            return None
+
+        if year_needed is None or week_needed is None or season_type_needed is None:
+            game_meta = await _find_game_meta_by_id(int(game_id))
+            if game_meta:
+                year_needed = year_needed or game_meta.get("season")
+                week_needed = week_needed or game_meta.get("week")
+                season_type_needed = season_type_needed or game_meta.get("seasonType")
+
+        if year_needed is None or week_needed is None:
+            # Last-resort: try to infer via regular-season sweep (13..16)
+            print(">>> CFBD MODE: inferring year/week via sweep…")
+            yr = year or datetime.utcnow().year
+            for wk in (13, 14, 15, 16):
+                gr = await client.get(
+                    f"{base}/games",
+                    params={"year": yr, "seasonType": "regular", "week": wk, "id": game_id},
+                )
+                if gr.status_code == 200:
+                    arr = gr.json() or []
+                    if isinstance(arr, list) and arr:
+                        year_needed, week_needed, season_type_needed = yr, wk, "regular"
+                        break
+
+        if year_needed is None or week_needed is None:
+            raise HTTPException(status_code=502, detail="Could not determine year/week for CFBD /plays request.")
+
+        # --- fetch plays WITH year/week (and seasonType if we have it) ---
+        plays_params = {"gameId": int(game_id), "year": int(year_needed), "week": int(week_needed)}
+        if season_type_needed:
+            plays_params["seasonType"] = season_type_needed
+
+        pr = await client.get(f"{base}/plays", params=plays_params)
+        print(">>> CFBD MODE: /plays status =", pr.status_code, "params=", plays_params)
+        pr.raise_for_status()
+        plays = pr.json() or []
+        print(">>> CFBD MODE: plays returned =", len(plays))
 
         # Fallback: some conf championships are stored as REGULAR season week 13..16
         if not plays:
