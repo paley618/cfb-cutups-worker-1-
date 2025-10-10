@@ -16,7 +16,7 @@ from yt_dlp.utils import DownloadError
 
 def _yt_progress_hook_factory(job_id: Optional[str]):
     # import inside to avoid circular import at module load
-    from main import _set_job
+    from .main import _set_job
     def _hook(d):
         try:
             status = d.get("status")
