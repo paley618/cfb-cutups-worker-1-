@@ -309,7 +309,6 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             cfbd_game_id=request.cfbd_game_id,
 )
 
-        )
     except httpx.HTTPStatusError as exc:  # pragma: no cover - external HTTP
         raise HTTPException(
             status_code=exc.response.status_code,
