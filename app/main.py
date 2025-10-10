@@ -302,6 +302,13 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
         timestamps = await _fetch_offensive_play_times(
             request.espn_game_id,
             request.team_name,
+            year=request.year,
+            season_type=(request.season_type or None),
+            week=request.week,
+            opponent=request.opponent,
+            cfbd_game_id=request.cfbd_game_id,
+)
+
         )
     except httpx.HTTPStatusError as exc:  # pragma: no cover - external HTTP
         raise HTTPException(
