@@ -25,11 +25,17 @@ app = FastAPI(title="CFB Cutups Worker", version="1.1.0")
 
 
 class ProcessRequest(BaseModel):
-    """Request body for generating an offensive cut-up from a full game feed."""
-
+    # existing fields (we keep espn_game_id for backward compat, but ignore it in CFBD flow)
     video_url: HttpUrl
     team_name: str = Field(..., min_length=1)
     espn_game_id: str = Field(..., min_length=1)
+
+    # NEW: optional CFBD filters
+    year: Optional[int] = None                 # e.g., 2023
+    season_type: Optional[str] = None          # "regular" | "postseason"
+    week: Optional[int] = None                 # integer; postseason often uses week=1
+    opponent: Optional[str] = None             # e.g., "Georgia"
+    cfbd_game_id: Optional[int] = None         # if you know CFBD game id, skip search
 
 
 class JobStatus(str, Enum):
