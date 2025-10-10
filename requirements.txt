@@ -3,3 +3,4 @@ httpx
 uvicorn[standard]
 yt-dlp
 uvicorn[standard]
+boto3
