@@ -357,112 +357,131 @@ async def _download_game_video(video_url: str, destination: Path) -> None:
 
 
 async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List[float]:
-    """Pull ESPN play-by-play data and return offensive play timestamps in seconds."""
+    """
+    CFBD-backed implementation:
+    - Finds the most recent game for the given team (postseason first, then regular) across recent years.
+    - Fetches plays from CFBD /plays?gameId=...
+    - Returns timestamps (in seconds) for the team's offensive snaps.
+    NOTE: espn_game_id is ignored in this CFBD fallback (kept for signature compatibility).
+    """
 
     import os
-    import urllib.parse
+    from datetime import datetime
+    import httpx
 
-    url = (
-        "https://site.api.espn.com/apis/site/v2/sports/football/college-football/playbyplay"
-        f"?event={espn_game_id}"
-    )
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/120.0.0.0 Safari/537.36"
-        ),
-        "Accept": "application/json, text/plain, */*",
-        "Origin": "https://www.espn.com",
-        "Referer": "https://www.espn.com/",
-    }
-
-    # Load proxy key (if available)
-    SCRAPERAPI_KEY = os.getenv("SCRAPERAPI_KEY")
-    payload = {}
-
-    # Try through proxy first
-    try:
-        async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
-            if SCRAPERAPI_KEY:
-                encoded_target = urllib.parse.quote_plus(url)
-                proxy_url = f"https://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&url={encoded_target}"
-                proxy_response = await client.get(proxy_url)
-                print(">>> Proxy response status:", proxy_response.status_code)
-                print(">>> Proxy response text (first 200):", proxy_response.text[:200])
-
-                if proxy_response.status_code == 200:
-                    try:
-                        payload = proxy_response.json()
-                    except Exception:
-                        payload = {}
-
-        # Fallback: if proxy returned {} or failed, try direct ESPN
-        if not payload:
-            print(">>> Proxy returned empty or failed, retrying direct ESPN fetch...")
-            async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
-                direct_response = await client.get(url)
-                print(">>> Direct ESPN response status:", direct_response.status_code)
-                print(">>> Direct ESPN snippet:", direct_response.text[:200])
-                direct_response.raise_for_status()
-                payload = direct_response.json()
-
-    except Exception as exc:
+    CFBD_API_KEY = os.getenv("CFBD_API_KEY")
+    if not CFBD_API_KEY:
         raise HTTPException(
-            status_code=status.HTTP_502_BAD_GATEWAY,
-            detail=f"Proxy and fallback failed: {exc}",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="CFBD_API_KEY is not set in environment variables (Railway).",
         )
 
-    # If still empty, abort
-    if not payload:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="No ESPN data available for this game ID (proxy and direct both empty).",
-        )
+    headers = {"Authorization": f"Bearer {CFBD_API_KEY}"}
+    base = "https://api.collegefootballdata.com"
 
-    print(">>> ESPN response keys:", list(payload.keys())[:5])
-    print(">>> ESPN raw snippet:", str(payload)[:300])
+    def _norm(s: Optional[str]) -> str:
+        return (s or "").strip().lower()
 
-    # --- existing logic for play extraction ---
-    normalized_team = team_name.strip().lower()
-    drives_payload = payload.get("drives") or {}
+    target = _norm(team_name)
 
-    drives: List[Dict[str, object]] = []
-    for key in ("previous", "current", "items"):
-        block = drives_payload.get(key)
-        if isinstance(block, list):
-            drives.extend(block)
-        elif isinstance(block, dict):
-            drives.append(block)
+    # 1) Pick a game: search recent years, postseason first, then regular
+    now_year = datetime.utcnow().year
+    years = [now_year, now_year - 1, now_year - 2, now_year - 3]
+    season_types = ["postseason", "regular"]
 
-    plays = list(_iter_plays(drives))
-    wall_clock_anchor = _find_wall_clock_anchor(plays)
+    chosen_game_id: Optional[int] = None
+    chosen_game_date: Optional[str] = None
 
+    async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
+        for season_type in season_types:
+            if chosen_game_id:
+                break
+            for yr in years:
+                try:
+                    # Query games for this team & year/season
+                    r = await client.get(
+                        f"{base}/games",
+                        params={"year": yr, "seasonType": season_type, "team": team_name},
+                    )
+                    r.raise_for_status()
+                    games = r.json() or []
+                except Exception:
+                    continue
+
+                # Choose most recent (by start_date) where team_name appears
+                # (CFBD returns both home and away team fields)
+                candidates = []
+                for g in games:
+                    home = _norm(g.get("home_team"))
+                    away = _norm(g.get("away_team"))
+                    if target in home or target in away:
+                        candidates.append(g)
+
+                if not candidates:
+                    continue
+
+                # Most recent by start_date
+                candidates.sort(key=lambda g: g.get("start_date") or "", reverse=True)
+                g = candidates[0]
+                chosen_game_id = g.get("id")
+                chosen_game_date = g.get("start_date")
+                break  # found a game in this season_type/year
+
+        if not chosen_game_id:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"No CFBD game found for team '{team_name}' in recent seasons.",
+            )
+
+        # 2) Pull plays for that game
+        try:
+            pr = await client.get(f"{base}/plays", params={"gameId": chosen_game_id})
+            pr.raise_for_status()
+            plays = pr.json() or []
+        except httpx.HTTPError as exc:
+            raise HTTPException(
+                status_code=status.HTTP_502_BAD_GATEWAY,
+                detail=f"CFBD /plays fetch failed: {exc}",
+            )
+
+    # 3) Filter for your team's offensive plays and convert to seconds
     timestamps: List[float] = []
-    for play in plays:
-        play_team = ((play.get("team") or {}).get("displayName") or "").strip().lower()
-        if not play_team or normalized_team not in play_team:
+    for p in plays:
+        offense = _norm(p.get("offense"))
+        if not offense or target not in offense:
             continue
 
-        timestamp: Optional[float] = None
-        if wall_clock_anchor is not None:
-            wall_clock = _extract_wall_clock(play)
-            if wall_clock is not None:
-                timestamp = (wall_clock - wall_clock_anchor).total_seconds()
+        period = p.get("period")
+        clock = p.get("clock") or {}
+        minutes = clock.get("minutes")
+        seconds = clock.get("seconds")
 
-        if timestamp is None:
-            clock = (play.get("clock") or {}).get("displayValue")
-            period = (play.get("period") or {}).get("number")
-            if isinstance(clock, str) and isinstance(period, int):
-                try:
-                    timestamp = _clock_display_to_game_seconds(period, clock)
-                except ValueError:
-                    timestamp = None
+        if not isinstance(period, int) or minutes is None or seconds is None:
+            continue
 
-        if timestamp is not None:
-            timestamps.append(max(timestamp, 0.0))
+        try:
+            # CFBD clock is time *remaining* in the period.
+            quarter_len = 15 * 60
+            remaining = int(minutes) * 60 + int(seconds)
+            elapsed_in_period = quarter_len - remaining
+            if elapsed_in_period < 0:
+                continue
+            total_elapsed = (period - 1) * quarter_len + elapsed_in_period
+            timestamps.append(float(max(total_elapsed, 0)))
+        except Exception:
+            continue
 
     timestamps.sort()
+
+    if not timestamps:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=(
+                f"No offensive plays found for '{team_name}' in CFBD game {chosen_game_id} "
+                f"(date {chosen_game_date})."
+            ),
+        )
+
     return timestamps
 
 def _iter_plays(drives: Iterable[Dict[str, object]]) -> Iterable[Dict[str, object]]:
