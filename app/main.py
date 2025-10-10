@@ -308,11 +308,10 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
 
 @app.post("/jobs", status_code=status.HTTP_202_ACCEPTED)
-async def submit_job(req: ProcessRequest, background: BackgroundTasks):
+async def submit_job(req: ProcessRequest):
     job_id = _new_job()
     _set_job(job_id, status="queued")
-    # spawn worker (non-blocking)
-    background.add_task(asyncio.create_task, _job_worker(job_id, req))
+    asyncio.create_task(_job_worker(job_id, req))  # ✅ schedule on the current event loop
     return {"message": "accepted", "job_id": job_id, "status_url": f"/jobs/{job_id}"}
 
 @app.get("/jobs/{job_id}")
