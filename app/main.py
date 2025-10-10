@@ -461,13 +461,57 @@ async def _fetch_offensive_play_times_cfbd(
         if game_id is None:
             raise HTTPException(status_code=404, detail=f"No CFBD game found for team '{team_name}' with given filters.")
 
-        # 2) Fetch plays for that game
-        pr = await client.get(f"{base}/plays", params={"gameId": game_id})
-        print(">>> CFBD MODE: /plays status =", pr.status_code)
-        pr.raise_for_status()
-        plays = pr.json() or []
-        print(">>> CFBD MODE: plays returned =", len(plays))
+        # 2) Fetch plays for that game (with fallback for conference titles)
+        async def _fetch_plays_by_game_id(gid: int) -> List[Dict[str, Any]]:
+            pr = await client.get(f"{base}/plays", params={"gameId": gid})
+            print(">>> CFBD MODE: /plays status =", pr.status_code, "for gameId", gid)
+            if pr.status_code != 200:
+                print(">>> CFBD MODE: /plays error text:", (pr.text or "")[:200])
+                return []
+            try:
+                return pr.json() or []
+            except Exception as exc:
+                print(">>> CFBD MODE: /plays json parse error:", exc)
+                return []
 
+        plays: List[Dict[str, Any]] = await _fetch_plays_by_game_id(int(game_id))
+
+        # Fallback: some conf championships are stored as REGULAR season week 13..16
+        if not plays:
+            print(">>> CFBD MODE: empty/errored plays; trying regular-season week sweep for opponent match...")
+            # if caller gave explicit year/opponent, use them; else try to infer a sensible year
+            from datetime import datetime
+            yr = year or datetime.utcnow().year
+            opp_norm = _n(opponent) if opponent else None
+
+            found_gid: Optional[int] = None
+            for wk in (13, 14, 15, 16):
+                try:
+                    gr = await client.get(
+                        f"{base}/games",
+                        params={"year": yr, "seasonType": "regular", "week": wk, "team": team_name},
+                    )
+                    if gr.status_code != 200:
+                        print(f">>> CFBD MODE: /games w{wk} status:", gr.status_code, (gr.text or "")[:120])
+                        continue
+                    gjs = gr.json() or []
+                    # narrow by opponent if provided
+                    if opp_norm:
+                        gjs = [g for g in gjs if opp_norm in (_n(g.get("home_team")), _n(g.get("away_team")))]
+                    # keep only games with our team (defensive)
+                    gjs = [g for g in gjs if target in (_n(g.get("home_team")), _n(g.get("away_team")))]
+                    if gjs:
+                        # prefer the closest by date
+                        gjs.sort(key=lambda g: g.get("start_date") or "", reverse=True)
+                        found_gid = gjs[0].get("id")
+                        print(f">>> CFBD MODE: fallback resolved gameId={found_gid} via week={wk}")
+                        break
+                except Exception as exc:
+                    print(">>> CFBD MODE: /games fallback error:", exc)
+
+            if found_gid:
+                plays = await _fetch_plays_by_game_id(int(found_gid))
+    
     # 3) Build timestamps for team offense
     timestamps: List[float] = []
     for p in plays:
