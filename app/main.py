@@ -17,6 +17,7 @@ from enum import Enum
 from pathlib import Path
 from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
+from video import download_game_video
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status, BackgroundTasks
@@ -463,6 +464,10 @@ async def _download_game_video(video_url: str, destination: Path) -> None:
 
     await asyncio.to_thread(_run)
 
+    # ... inside _job_worker or your processing function ...
+    _set_job(job_id, status="running", step="downloading")
+    await download_game_video(request.video_url, source_path, job_id=job_id)  # <-- pass job_id
+    _set_job(job_id, step="cutting")
 
 async def _fetch_offensive_play_times_cfbd(
     espn_game_id: str,
