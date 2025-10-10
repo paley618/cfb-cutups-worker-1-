@@ -356,14 +356,17 @@ async def _download_game_video(video_url: str, destination: Path) -> None:
     await asyncio.to_thread(_run)
 
 
-async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List[float]:
-    """
-    CFBD-backed implementation:
-    - Finds the most recent game for the given team (postseason first, then regular) across recent years.
-    - Fetches plays from CFBD /plays?gameId=...
-    - Returns timestamps (in seconds) for the team's offensive snaps.
-    NOTE: espn_game_id is ignored in this CFBD fallback (kept for signature compatibility).
-    """
+async def _fetch_offensive_play_times(
+    espn_game_id: str,
+    team_name: str,
+    *,
+    year: Optional[int] = None,
+    season_type: Optional[str] = None,
+    week: Optional[int] = None,
+    opponent: Optional[str] = None,
+    cfbd_game_id: Optional[int] = None,
+) -> List[float]:
+    """Use CollegeFootballData to fetch play-by-play and return timestamps for team's offensive plays."""
 
     import os
     from datetime import datetime
@@ -371,10 +374,7 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
 
     CFBD_API_KEY = os.getenv("CFBD_API_KEY")
     if not CFBD_API_KEY:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="CFBD_API_KEY is not set in environment variables (Railway).",
-        )
+        raise HTTPException(status_code=500, detail="CFBD_API_KEY is not set in environment variables (Railway).")
 
     headers = {"Authorization": f"Bearer {CFBD_API_KEY}"}
     base = "https://api.collegefootballdata.com"
@@ -384,103 +384,77 @@ async def _fetch_offensive_play_times(espn_game_id: str, team_name: str) -> List
 
     target = _norm(team_name)
 
-    # 1) Pick a game: search recent years, postseason first, then regular
-    now_year = datetime.utcnow().year
-    years = [now_year, now_year - 1, now_year - 2, now_year - 3]
-    season_types = ["postseason", "regular"]
-
-    chosen_game_id: Optional[int] = None
-    chosen_game_date: Optional[str] = None
-
     async with httpx.AsyncClient(timeout=30.0, headers=headers) as client:
-        for season_type in season_types:
-            if chosen_game_id:
-                break
-            for yr in years:
-                try:
-                    # Query games for this team & year/season
-                    r = await client.get(
-                        f"{base}/games",
-                        params={"year": yr, "seasonType": season_type, "team": team_name},
-                    )
+        # 1) Resolve a game id (priority: explicit cfbd_game_id → filtered search → recent fallback)
+        game_id: Optional[int] = cfbd_game_id
+
+        # A) Direct override
+        if game_id is None:
+            # B) Try filtered search if caller gave any of (year/season_type/week/opponent)
+            params: Dict[str, object] = {"team": team_name}
+            if year is not None: params["year"] = year
+            if season_type is not None: params["seasonType"] = season_type
+            if week is not None: params["week"] = week
+
+            if any(k in params for k in ("year", "seasonType", "week")):
+                r = await client.get(f"{base}/games", params=params)
+                r.raise_for_status()
+                games = r.json() or []
+                # Optionally filter by opponent if provided
+                if opponent:
+                    opp = _norm(opponent)
+                    games = [g for g in games if opp in (_norm(g.get("home_team")), _norm(g.get("away_team")))]
+                # Find first where team is involved
+                games = [g for g in games if target in (_norm(g.get("home_team")), _norm(g.get("away_team")))]
+                if games:
+                    # Choose the most recent by start_date
+                    games.sort(key=lambda g: g.get("start_date") or "", reverse=True)
+                    game_id = games[0].get("id")
+
+        # C) Fallback: recent seasons, postseason first then regular
+        if game_id is None:
+            now_year = datetime.utcnow().year
+            years = [now_year, now_year - 1, now_year - 2, now_year - 3]
+            for st in ("postseason", "regular"):
+                for yr in years:
+                    r = await client.get(f"{base}/games", params={"year": yr, "seasonType": st, "team": team_name})
                     r.raise_for_status()
                     games = r.json() or []
-                except Exception:
-                    continue
+                    games = [g for g in games if target in (_norm(g.get("home_team")), _norm(g.get("away_team")))]
+                    if games:
+                        games.sort(key=lambda g: g.get("start_date") or "", reverse=True)
+                        game_id = games[0].get("id")
+                        break
+                if game_id is not None:
+                    break
 
-                # Choose most recent (by start_date) where team_name appears
-                # (CFBD returns both home and away team fields)
-                candidates = []
-                for g in games:
-                    home = _norm(g.get("home_team"))
-                    away = _norm(g.get("away_team"))
-                    if target in home or target in away:
-                        candidates.append(g)
+        if game_id is None:
+            raise HTTPException(status_code=404, detail=f"No CFBD game found for team '{team_name}' with given filters.")
 
-                if not candidates:
-                    continue
+        # 2) Fetch plays for that game
+        pr = await client.get(f"{base}/plays", params={"gameId": game_id})
+        pr.raise_for_status()
+        plays = pr.json() or []
 
-                # Most recent by start_date
-                candidates.sort(key=lambda g: g.get("start_date") or "", reverse=True)
-                g = candidates[0]
-                chosen_game_id = g.get("id")
-                chosen_game_date = g.get("start_date")
-                break  # found a game in this season_type/year
-
-        if not chosen_game_id:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail=f"No CFBD game found for team '{team_name}' in recent seasons.",
-            )
-
-        # 2) Pull plays for that game
-        try:
-            pr = await client.get(f"{base}/plays", params={"gameId": chosen_game_id})
-            pr.raise_for_status()
-            plays = pr.json() or []
-        except httpx.HTTPError as exc:
-            raise HTTPException(
-                status_code=status.HTTP_502_BAD_GATEWAY,
-                detail=f"CFBD /plays fetch failed: {exc}",
-            )
-
-    # 3) Filter for your team's offensive plays and convert to seconds
+    # 3) Convert offensive plays to absolute game seconds
     timestamps: List[float] = []
     for p in plays:
-        offense = _norm(p.get("offense"))
-        if not offense or target not in offense:
-            continue
-
-        period = p.get("period")
-        clock = p.get("clock") or {}
-        minutes = clock.get("minutes")
-        seconds = clock.get("seconds")
-
-        if not isinstance(period, int) or minutes is None or seconds is None:
-            continue
-
-        try:
-            # CFBD clock is time *remaining* in the period.
-            quarter_len = 15 * 60
-            remaining = int(minutes) * 60 + int(seconds)
-            elapsed_in_period = quarter_len - remaining
-            if elapsed_in_period < 0:
-                continue
-            total_elapsed = (period - 1) * quarter_len + elapsed_in_period
-            timestamps.append(float(max(total_elapsed, 0)))
-        except Exception:
-            continue
+        if _norm(p.get("offense")) and target in _norm(p.get("offense")):
+            period = p.get("period")
+            clock = p.get("clock") or {}
+            minutes = clock.get("minutes")
+            seconds = clock.get("seconds")
+            if isinstance(period, int) and isinstance(minutes, (int, float)) and isinstance(seconds, (int, float)):
+                quarter = 15 * 60
+                remaining = int(minutes) * 60 + int(seconds)
+                elapsed = quarter - remaining
+                if elapsed >= 0:
+                    timestamps.append(float((period - 1) * quarter + elapsed))
 
     timestamps.sort()
 
     if not timestamps:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=(
-                f"No offensive plays found for '{team_name}' in CFBD game {chosen_game_id} "
-                f"(date {chosen_game_date})."
-            ),
-        )
+        raise HTTPException(status_code=404, detail=f"No offensive plays found for '{team_name}' in CFBD game {game_id}.")
 
     return timestamps
 
