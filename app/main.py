@@ -308,7 +308,7 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
 
         # 3) Download with progress (720p) — shows up in /jobs/<id>
         _set_job(job_id, status="running", step="downloading")
-        await download_game_video(request.video_url, input_path, job_id=job_id)
+        await download_game_video(str(request.video_url), input_path, job_id=job_id)
 
         # 4) Cut & concat
         _set_job(job_id, step="cutting")
@@ -467,7 +467,7 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             input_path = work_path / "input.mp4"
             clips_dir = work_path / "clips"
             clips_dir.mkdir(parents=True, exist_ok=True)
-            await download_game_video(request.video_url, input_path, job_id=None)
+            await download_game_video(str(request.video_url), input_path, job_id=None)
 
             clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
 
