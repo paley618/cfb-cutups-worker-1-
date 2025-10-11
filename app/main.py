@@ -2,14 +2,15 @@
 
 from __future__ import annotations
 
-import asyncio, uuid
+import asyncio, uuid, functools
 import shlex
 import shutil
 import subprocess
 import tempfile
-import os
+import os, logging
 import boto3
 from botocore.config import Config
+from botocore.exceptions import ClientError
 from contextlib import asynccontextmanager
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -146,24 +147,27 @@ def _s3_prefix() -> str:
     p = _env("S3_PREFIX", "").strip()
     return (p + "/") if (p and not p.endswith("/")) else p
 
+log = logging.getLogger(__name__)
+
 def _make_s3_client():
-    # Read either AWS_* or S3_* variable names
-    access_key = _env("S3_ACCESS_KEY_ID") or _env("AWS_ACCESS_KEY_ID")
-    secret_key = _env("S3_SECRET_ACCESS_KEY") or _env("AWS_SECRET_ACCESS_KEY")
-    region     = _env("S3_REGION") or _env("AWS_REGION") or "us-east-2"
-    endpoint   = _env("S3_ENDPOINT") or None  # leave empty for AWS S3
+    # Trim whitespace/newlines just in case
+    ak = (os.getenv("AWS_ACCESS_KEY_ID") or "").strip()
+    sk = (os.getenv("AWS_SECRET_ACCESS_KEY") or "").strip()
+    region = (os.getenv("S3_REGION") or "us-east-2").strip()
 
-    if not access_key or not secret_key:
-        raise RuntimeError("Missing AWS/S3 credentials in env (ACCESS_KEY_ID / SECRET_ACCESS_KEY).")
+    if not ak or not sk:
+        raise RuntimeError("Missing AWS credentials in env")
 
-    return boto3.client(
-        "s3",
-        aws_access_key_id=access_key,
-        aws_secret_access_key=secret_key,
-        region_name=region,
-        endpoint_url=endpoint,
-        config=Config(signature_version="s3v4"),
-    )
+    cfg = Config(signature_version="s3v4", region_name=region, s3={"addressing_style": "virtual"})
+    s3 = boto3.client("s3", aws_access_key_id=ak, aws_secret_access_key=sk, config=cfg)
+
+    # Optional: sanity check region/bucket
+    try:
+        s3.head_bucket(Bucket=os.getenv("S3_BUCKET_NAME"))
+    except Exception as e:
+        log.error("S3 head_bucket failed: %s", e)
+        # still return client; upload code will surface details
+    return s3
 
 def upload_video_to_object_store(local_path: str, key: str) -> str:
     """
@@ -277,6 +281,20 @@ async def _job_worker(job_id: str, req: ProcessRequest):
         _set_job(job_id, status="finished", result=result)
     except Exception as e:
         _set_job(job_id, status="failed", error=str(e))
+
+async def _upload_with_retry(local_path: str, bucket: str, key: str, *, content_type="video/mp4", tries=3):
+    s3 = _make_s3_client()
+    def _do():
+        s3.upload_file(local_path, bucket, key, ExtraArgs={"ContentType": content_type})
+    last_err = None
+    for i in range(1, tries+1):
+        try:
+            return await asyncio.to_thread(_do)
+        except ClientError as e:
+            last_err = e
+            # Signature/region/creds issues won’t be fixed by retry, but this covers transient network issues
+            await asyncio.sleep(0.8 * i)
+    raise last_err
 
 async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[str, Any]:
     # 1) Build timestamps (CFBD)
