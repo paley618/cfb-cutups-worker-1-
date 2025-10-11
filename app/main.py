@@ -150,26 +150,24 @@ def _s3_prefix() -> str:
 log = logging.getLogger(__name__)
 
 def _make_s3_client():
-    # Trim whitespace/newlines just in case
     ak = (os.getenv("AWS_ACCESS_KEY_ID") or "").strip()
     sk = (os.getenv("AWS_SECRET_ACCESS_KEY") or "").strip()
     region = (os.getenv("S3_REGION") or "us-east-2").strip()
-    cfg = Config(signature_version="s3v4", region_name=region, s3={"addressing_style": "virtual"})
-    return boto3.client("s3", aws_access_key_id=ak, aws_secret_access_key=sk, config=cfg)
 
     if not ak or not sk:
         raise RuntimeError("Missing AWS credentials in env")
 
-    cfg = Config(signature_version="s3v4", region_name=region, s3={"addressing_style": "virtual"})
-    s3 = boto3.client("s3", aws_access_key_id=ak, aws_secret_access_key=sk, config=cfg)
+    cfg = Config(signature_version="s3v4",
+                 region_name=region,
+                 s3={"addressing_style": "virtual"})
+    # pin the endpoint to the region we expect, avoids cross-region redirects
+    endpoint = f"https://s3.{region}.amazonaws.com"
 
-    # Optional: sanity check region/bucket
-    try:
-        s3.head_bucket(Bucket=os.getenv("S3_BUCKET_NAME"))
-    except Exception as e:
-        log.error("S3 head_bucket failed: %s", e)
-        # still return client; upload code will surface details
-    return s3
+    return boto3.client("s3",
+                        endpoint_url=endpoint,
+                        aws_access_key_id=ak,
+                        aws_secret_access_key=sk,
+                        config=cfg)
 
 def upload_video_to_object_store(local_path: str, key: str) -> str:
     """
@@ -392,6 +390,53 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
+
+@app.get("/debug/aws")
+async def debug_aws():
+    import json, time
+    s3 = _make_s3_client()
+    bucket = (os.getenv("S3_BUCKET_NAME") or "").strip()
+    region = (os.getenv("S3_REGION") or "").strip()
+
+    out = {"bucket": bucket, "env_region": region}
+
+    # Who am I?
+    try:
+        sts = boto3.client("sts",
+                           aws_access_key_id=(os.getenv("AWS_ACCESS_KEY_ID") or "").strip(),
+                           aws_secret_access_key=(os.getenv("AWS_SECRET_ACCESS_KEY") or "").strip())
+        ident = sts.get_caller_identity()
+        out["caller"] = {
+            "account": ident.get("Account"),
+            "arn": ident.get("Arn")[-32:],  # last bits only
+        }
+    except Exception as e:
+        out["caller_error"] = str(e)
+
+    # Bucket location
+    try:
+        loc = s3.get_bucket_location(Bucket=bucket)
+        out["bucket_location"] = loc.get("LocationConstraint") or "us-east-1"
+    except Exception as e:
+        out["bucket_location_error"] = str(e)
+
+    # Head bucket
+    try:
+        s3.head_bucket(Bucket=bucket)
+        out["head_bucket"] = "ok"
+    except Exception as e:
+        out["head_bucket_error"] = str(e)
+
+    # Tiny write test (no multipart): proves creds/signature
+    try:
+        key = f"{_s3_prefix()}health/aws-check-{int(time.time())}.txt"
+        body = b"ok\n"
+        s3.put_object(Bucket=bucket, Key=key, Body=body, ContentType="text/plain")
+        out["put_object"] = {"ok": True, "key": key}
+    except Exception as e:
+        out["put_object_error"] = str(e)
+
+    return out
 
 @app.post("/jobs", status_code=status.HTTP_202_ACCEPTED)
 async def submit_job(req: ProcessRequest):
