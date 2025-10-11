@@ -154,6 +154,8 @@ def _make_s3_client():
     ak = (os.getenv("AWS_ACCESS_KEY_ID") or "").strip()
     sk = (os.getenv("AWS_SECRET_ACCESS_KEY") or "").strip()
     region = (os.getenv("S3_REGION") or "us-east-2").strip()
+    cfg = Config(signature_version="s3v4", region_name=region, s3={"addressing_style": "virtual"})
+    return boto3.client("s3", aws_access_key_id=ak, aws_secret_access_key=sk, config=cfg)
 
     if not ak or not sk:
         raise RuntimeError("Missing AWS credentials in env")
@@ -287,15 +289,14 @@ async def _upload_with_retry(local_path: str, bucket: str, key: str, *, content_
     def _do():
         s3.upload_file(local_path, bucket, key, ExtraArgs={"ContentType": content_type})
     last_err = None
-    for i in range(1, tries+1):
+    for i in range(1, tries + 1):
         try:
             return await asyncio.to_thread(_do)
         except ClientError as e:
             last_err = e
-            # Signature/region/creds issues won’t be fixed by retry, but this covers transient network issues
             await asyncio.sleep(0.8 * i)
     raise last_err
-
+    
 async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[str, Any]:
     # 1) Build timestamps (CFBD)
     timestamps = await _fetch_offensive_play_times_cfbd(
@@ -338,13 +339,29 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
             final_output_path.unlink()
         shutil.move(str(temp_output), final_output_path)
 
-    # 5) Upload to S3
     _set_job(job_id, step="uploading")
+
+    bucket = (os.getenv("S3_BUCKET_NAME") or "").strip()
+    region = (os.getenv("S3_REGION") or "us-east-2").strip()
+
     prefix = _s3_prefix()
     safe_team = request.team_name.lower().replace(" ", "-")
     key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{final_output_path.name}"
-    cloud_url = upload_video_to_object_store(str(final_output_path), key)
 
+    try:
+        # uses the helper we added earlier (_make_s3_client + _upload_with_retry)
+        await _upload_with_retry(str(final_output_path), bucket, key)
+        cloud_url = f"https://{bucket}.s3.{region}.amazonaws.com/{key}"
+    except Exception as e:
+        _set_job(
+            job_id,
+            status="failed",
+            step="uploading",
+            error=f"Failed to upload {final_output_path} to {bucket}/{key}: {e}",
+        )
+        raise
+
+    
     # 6) Cleanup & return
     try:
         final_output_path.unlink(missing_ok=True)
