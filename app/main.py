@@ -19,7 +19,7 @@ from enum import Enum
 from pathlib import Path
 from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
-from video import download_game_video
+from .video import download_game_video
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status
