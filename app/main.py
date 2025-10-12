@@ -19,7 +19,7 @@ from enum import Enum
 from pathlib import Path
 from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
-from .video import download_game_video
+from video import download_game_video
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status
@@ -333,14 +333,12 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
         cfbd_game_id=request.cfbd_game_id,
     )
 
-    # --- NEW: decide and apply video offset ---
+    # 2) Apply optional offset (manual or ?t= hint on the URL)
     offset = 0.0
     try:
-        # caller override
         if request.video_offset_sec is not None:
             offset = float(request.video_offset_sec)
         else:
-            # auto-read ?t= from the YouTube URL if present
             offset = _parse_yt_start_hint(str(request.video_url))
     except Exception:
         offset = 0.0
@@ -349,21 +347,11 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
         timestamps = [ts + offset for ts in timestamps]
 
     print(f">>> CUTUPS: using offset={offset:.1f}s; first 3 after offset = {timestamps[:3]}")
-    # --- end NEW ---
 
-    # now proceed to cut with the shifted timestamps
-    clips = await _generate_clips(
-        source_path, timestamps,  # your existing cut function
-        # (keep whatever pre/post padding args you already have)
-    )    
-    
     if not timestamps:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="No offensive plays found for the requested team",
-        )
+        raise HTTPException(status_code=404, detail="No offensive plays found for the requested team")
 
-    # 2) Prepare workspace
+    # 3) Workspace
     output_dir = Path("outputs").resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     final_output_path = output_dir / f"cutup_{uuid4().hex}.mp4"
@@ -374,11 +362,11 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
         clips_dir = work_path / "clips"
         clips_dir.mkdir(parents=True, exist_ok=True)
 
-        # 3) Download with progress (720p) — shows up in /jobs/<id>
+        # 4) Download full game (shows progress in /jobs/<id>)
         _set_job(job_id, status="running", step="downloading")
         await download_game_video(str(request.video_url), input_path, job_id=job_id)
 
-        # 4) Cut & concat
+        # 5) Cut & concat
         _set_job(job_id, step="cutting")
         clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
         temp_output = work_path / "output.mp4"
@@ -388,30 +376,24 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
             final_output_path.unlink()
         shutil.move(str(temp_output), final_output_path)
 
+    # 6) Upload to S3
     _set_job(job_id, step="uploading")
 
     bucket = (os.getenv("S3_BUCKET_NAME") or "").strip()
     region = (os.getenv("S3_REGION") or "us-east-2").strip()
-
     prefix = _s3_prefix()
     safe_team = request.team_name.lower().replace(" ", "-")
     key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{final_output_path.name}"
 
     try:
-        # uses the helper we added earlier (_make_s3_client + _upload_with_retry)
         await _upload_with_retry(str(final_output_path), bucket, key)
         cloud_url = f"https://{bucket}.s3.{region}.amazonaws.com/{key}"
     except Exception as e:
-        _set_job(
-            job_id,
-            status="failed",
-            step="uploading",
-            error=f"Failed to upload {final_output_path} to {bucket}/{key}: {e}",
-        )
+        _set_job(job_id, status="failed", step="uploading",
+                 error=f"Failed to upload {final_output_path} to {bucket}/{key}: {e}")
         raise
 
-    
-    # 6) Cleanup & return
+    # 7) Cleanup & return
     try:
         final_output_path.unlink(missing_ok=True)
     except Exception:
@@ -558,14 +540,14 @@ async def read_root() -> Dict[str, str]:
 
 
 @app.post("/process", tags=["processing"])
-
 async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
-    """End-to-end pipeline that generates an offensive cut-up for a team."""
+    """End-to-end pipeline that generates an offensive cut-up for a team (foreground path)."""
 
     output_dir = Path("outputs").resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     final_output_path = output_dir / f"cutup_{uuid4().hex}.mp4"
 
+    # 1) Fetch CFBD timestamps
     try:
         timestamps = await _fetch_offensive_play_times_cfbd(
             request.espn_game_id,
@@ -576,15 +558,17 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             opponent=request.opponent,
             cfbd_game_id=request.cfbd_game_id,
         )
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"Failed to parse play-by-play data: {e}")
 
-    # --- NEW: decide and apply video offset ---
+    # 2) Apply optional offset
     offset = 0.0
     try:
-        # caller override
         if request.video_offset_sec is not None:
             offset = float(request.video_offset_sec)
         else:
-            # auto-read ?t= from the YouTube URL if present
             offset = _parse_yt_start_hint(str(request.video_url))
     except Exception:
         offset = 0.0
@@ -593,38 +577,19 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
         timestamps = [ts + offset for ts in timestamps]
 
     print(f">>> CUTUPS: using offset={offset:.1f}s; first 3 after offset = {timestamps[:3]}")
-    # --- end NEW ---
-
-    # now proceed to cut with the shifted timestamps
-    clips = await _generate_clips(
-        source_path, timestamps,  # your existing cut function
-        # (keep whatever pre/post padding args you already have)
-    )    
-    
-    except HTTPException as e:
-        # If our CFBD helper already raised a clean HTTP error, bubble it up unchanged.
-        raise
-    except Exception as e:
-        # Anything else: surface a neutral, generic error.
-        raise HTTPException(
-            status_code=502,
-            detail=f"Failed to parse play-by-play data: {e}"
-        )
 
     if not timestamps:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="No offensive plays found for the requested team",
-        )
+        raise HTTPException(status_code=404, detail="No offensive plays found for the requested team")
 
+    # 3) Download, cut, concat
     try:
         with tempfile.TemporaryDirectory(prefix="cutup_") as work_dir:
             work_path = Path(work_dir)
             input_path = work_path / "input.mp4"
             clips_dir = work_path / "clips"
             clips_dir.mkdir(parents=True, exist_ok=True)
-            await download_game_video(str(request.video_url), input_path, job_id=None)
 
+            await download_game_video(str(request.video_url), input_path, job_id=None)
             clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
 
             temp_output = work_path / "output.mp4"
@@ -634,20 +599,15 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
                 final_output_path.unlink()
             shutil.move(str(temp_output), final_output_path)
     except RuntimeError as exc:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=str(exc),
-        ) from exc
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
 
-    # Build a stable object key (with optional S3_PREFIX)
-    prefix = _s3_prefix()  # "" if not set, or e.g. "outputs/"
+    # 4) Upload to S3
+    prefix = _s3_prefix()
     safe_team = request.team_name.lower().replace(" ", "-")
     key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{final_output_path.name}"
-
-    # Upload to S3 and get a URL
     cloud_url = upload_video_to_object_store(str(final_output_path), key)
 
-    # (Optional) delete local file to save disk
+    # 5) Cleanup local
     try:
         final_output_path.unlink(missing_ok=True)
     except Exception:
