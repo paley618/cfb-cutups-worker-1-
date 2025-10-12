@@ -9,6 +9,7 @@ import subprocess
 import tempfile
 import os, logging
 import boto3
+import re
 from botocore.config import Config
 from botocore.exceptions import ClientError
 from contextlib import asynccontextmanager
@@ -33,6 +34,29 @@ def _new_job() -> str:
 def _set_job(job_id: str, **kwargs):
     JOBS.setdefault(job_id, {}).update(kwargs)
 
+_YT_T_PATTERN = re.compile(r"[?&#]t=([0-9hms]+|\d+)", re.I)
+
+def _parse_yt_start_hint(url: str) -> float:
+    """
+    Supports t=123, t=90s, or t=1h2m3s. Returns seconds (float).
+    """
+    m = _YT_T_PATTERN.search(url)
+    if not m:
+        return 0.0
+    raw = m.group(1)
+    if raw.isdigit():
+        return float(int(raw))
+    total = 0
+    for n, unit in re.findall(r"(\d+)([hms])", raw.lower()):
+        v = int(n)
+        if unit == "h":
+            total += v * 3600
+        elif unit == "m":
+            total += v * 60
+        else:
+            total += v
+    return float(total)
+
 class ProcessRequest(BaseModel):
     # existing fields (we keep espn_game_id for backward compat, but ignore it in CFBD flow)
     video_url: HttpUrl
@@ -46,6 +70,8 @@ class ProcessRequest(BaseModel):
     opponent: Optional[str] = None             # e.g., "Georgia"
     cfbd_game_id: Optional[int] = None         # if you know CFBD game id, skip search
 
+    # NEW: shift all plays by this many seconds (can be negative)
+    video_offset_sec: Optional[float] = None
 
 class JobStatus(str, Enum):
     """Lifecycle states for a cut-up processing job."""
@@ -306,6 +332,31 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
         opponent=request.opponent,
         cfbd_game_id=request.cfbd_game_id,
     )
+
+    # --- NEW: decide and apply video offset ---
+    offset = 0.0
+    try:
+        # caller override
+        if request.video_offset_sec is not None:
+            offset = float(request.video_offset_sec)
+        else:
+            # auto-read ?t= from the YouTube URL if present
+            offset = _parse_yt_start_hint(str(request.video_url))
+    except Exception:
+        offset = 0.0
+
+    if offset != 0.0:
+        timestamps = [ts + offset for ts in timestamps]
+
+    print(f">>> CUTUPS: using offset={offset:.1f}s; first 3 after offset = {timestamps[:3]}")
+    # --- end NEW ---
+
+    # now proceed to cut with the shifted timestamps
+    clips = await _generate_clips(
+        source_path, timestamps,  # your existing cut function
+        # (keep whatever pre/post padding args you already have)
+    )    
+    
     if not timestamps:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -525,6 +576,31 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             opponent=request.opponent,
             cfbd_game_id=request.cfbd_game_id,
         )
+
+    # --- NEW: decide and apply video offset ---
+    offset = 0.0
+    try:
+        # caller override
+        if request.video_offset_sec is not None:
+            offset = float(request.video_offset_sec)
+        else:
+            # auto-read ?t= from the YouTube URL if present
+            offset = _parse_yt_start_hint(str(request.video_url))
+    except Exception:
+        offset = 0.0
+
+    if offset != 0.0:
+        timestamps = [ts + offset for ts in timestamps]
+
+    print(f">>> CUTUPS: using offset={offset:.1f}s; first 3 after offset = {timestamps[:3]}")
+    # --- end NEW ---
+
+    # now proceed to cut with the shifted timestamps
+    clips = await _generate_clips(
+        source_path, timestamps,  # your existing cut function
+        # (keep whatever pre/post padding args you already have)
+    )    
+    
     except HTTPException as e:
         # If our CFBD helper already raised a clean HTTP error, bubble it up unchanged.
         raise
