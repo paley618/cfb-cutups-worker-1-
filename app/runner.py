@@ -16,26 +16,60 @@ class JobRunner:
         self._worker_task: Optional[asyncio.Task] = None
         self._stop = asyncio.Event()
 
+    def is_running(self) -> bool:
+        return self._worker_task is not None and not self._worker_task.done()
+
     def start(self):
-        if self._worker_task and not self._worker_task.done():
+        if self.is_running():
+            logger.info("worker_start_noop", extra={"reason": "already_running"})
             return
+        self._stop = asyncio.Event()
         self._worker_task = asyncio.create_task(self._worker_loop(), name="jobrunner-worker")
+        logger.info("worker_start_requested")
+
+    def ensure_started(self):
+        if not self.is_running():
+            self.start()
 
     async def stop(self):
+        if not self._worker_task:
+            logger.info("worker_stop_noop", extra={"reason": "not_running"})
+            return
+
+        logger.info("worker_stop_requested")
         self._stop.set()
-        if self._worker_task:
+        try:
             await self._worker_task
+        finally:
+            self._worker_task = None
+            logger.info("worker_stopped")
 
     async def _worker_loop(self):
         logger.info("worker_started")
-        while not self._stop.is_set():
-            try:
-                job_id, submission = await self.queue.get()
-                await self._run_one(job_id, submission)
-            except Exception as e:
-                logger.exception("worker_loop_error")
-            finally:
-                await asyncio.sleep(0)  # yield
+        try:
+            while True:
+                if self._stop.is_set():
+                    break
+                try:
+                    job = await asyncio.wait_for(self.queue.get(), timeout=1.0)
+                except asyncio.TimeoutError:
+                    continue
+
+                if job is None:
+                    continue
+
+                job_id, submission = job
+                try:
+                    await self._run_one(job_id, submission)
+                except Exception:
+                    logger.exception("worker_loop_error", extra={"job_id": job_id})
+                finally:
+                    await asyncio.sleep(0)  # yield
+        except asyncio.CancelledError:
+            logger.info("worker_cancelled")
+            raise
+        finally:
+            logger.info("worker_exit")
 
     def enqueue(self, submission) -> str:
         job_id = uuid.uuid4().hex

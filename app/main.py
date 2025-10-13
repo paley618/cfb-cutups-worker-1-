@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 import os
 import uuid
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile, status
 from fastapi.responses import FileResponse
@@ -18,9 +19,6 @@ from .uploads import destination_for, public_path, register_upload, resolve_uplo
 
 logger = logging.getLogger(__name__)
 
-app = FastAPI()
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
-
 
 def _max_concurrency() -> int:
     raw = os.getenv("MAX_CONCURRENCY")
@@ -34,18 +32,20 @@ def _max_concurrency() -> int:
 RUNNER = JobRunner(max_concurrency=_max_concurrency())
 
 
-@app.on_event("startup")
-async def _startup() -> None:
+@asynccontextmanager
+async def lifespan(app: FastAPI):
     write_cookies_if_any()
     write_drive_cookies_if_any()
     RUNNER.start()
     logger.info("app_startup")
+    try:
+        yield
+    finally:
+        await RUNNER.stop()
 
 
-@app.on_event("shutdown")
-async def _shutdown() -> None:
-    await RUNNER.stop()
-
+app = FastAPI(lifespan=lifespan)
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 @app.get("/healthz")
 def healthz():
@@ -102,6 +102,7 @@ async def create_job(request: Request):
         if resolved is None:
             raise HTTPException(status_code=422, detail="Upload not found")
 
+    RUNNER.ensure_started()
     job_id = RUNNER.enqueue(submission)
     return {"job_id": job_id, "status": "queued"}
 
