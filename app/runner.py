@@ -1,134 +1,147 @@
-import asyncio
-import json
-import logging
-import os
-import shutil
-import time
-import zipfile
-from typing import Any, Dict, List, Optional
-
-from .detector import detect_plays
-from .segment import cut_clip, make_thumb
-from .storage import get_storage
+import os, json, zipfile, uuid, asyncio, time, logging, shutil
+from typing import Dict, Any, List, Optional
 from .video import download_game_video
-from .schemas import JobSubmission
+from .segment import cut_clip, make_thumb
+from .detector import detect_plays
+from .storage import get_storage
+from .uploads import resolve_upload
 
 logger = logging.getLogger(__name__)
 
-
 class JobRunner:
-    def __init__(self) -> None:
-        self.storage = get_storage()
+    def __init__(self, max_concurrency: int = 2):
+        self.queue: "asyncio.Queue[tuple[str, Any]]" = asyncio.Queue()
+        self.jobs: Dict[str, Dict[str, Any]] = {}  # {job_id: {"status":..., "error":..., "result":...}}
+        self.sema = asyncio.Semaphore(max_concurrency)
+        self._worker_task: Optional[asyncio.Task] = None
+        self._stop = asyncio.Event()
 
-    async def process(
-        self,
-        job_id: str,
-        submission: JobSubmission,
-        *,
-        upload_path: Optional[str] = None,
-    ) -> Dict[str, Any]:
-        return await self._process_job(job_id, submission, upload_path=upload_path)
+    def start(self):
+        if self._worker_task and not self._worker_task.done():
+            return
+        self._worker_task = asyncio.create_task(self._worker_loop(), name="jobrunner-worker")
 
-    async def _process_job(
-        self,
-        job_id: str,
-        submission: JobSubmission,
-        *,
-        upload_path: Optional[str] = None,
-    ) -> Dict[str, Any]:
-        started = time.time()
-        tmp_dir = f"/tmp/{job_id}"
-        if os.path.exists(tmp_dir):
-            shutil.rmtree(tmp_dir)
-        os.makedirs(tmp_dir, exist_ok=True)
-        video_path = os.path.join(tmp_dir, "source.mp4")
+    async def stop(self):
+        self._stop.set()
+        if self._worker_task:
+            await self._worker_task
 
-        logger.info("job_fetch_start", extra={"job_id": job_id})
+    async def _worker_loop(self):
+        logger.info("worker_started")
+        while not self._stop.is_set():
+            try:
+                job_id, submission = await self.queue.get()
+                await self._run_one(job_id, submission)
+            except Exception as e:
+                logger.exception("worker_loop_error")
+            finally:
+                await asyncio.sleep(0)  # yield
 
-        if upload_path:
-            await asyncio.to_thread(shutil.copyfile, upload_path, video_path)
-        else:
-            source = submission.video_url or submission.presigned_url
-            if not source:
-                raise RuntimeError("No downloadable source provided")
-            await download_game_video(str(source), video_path)
+    def enqueue(self, submission) -> str:
+        job_id = uuid.uuid4().hex
+        self.jobs[job_id] = {"status": "queued", "error": None, "result": None, "created": time.time()}
+        self.queue.put_nowait((job_id, submission))
+        logger.info("job_queued", extra={"job_id": job_id})
+        return job_id
 
-        opts = submission.options
-        windows = detect_plays(
-            video_path,
-            padding_pre=opts.play_padding_pre,
-            padding_post=opts.play_padding_post,
-            min_duration=opts.min_duration,
-            max_duration=opts.max_duration,
-            scene_thresh=opts.scene_thresh,
-        )
-        if not windows:
-            windows = [(3.0, 15.0)]
+    def get_job(self, job_id: str) -> Optional[Dict[str, Any]]:
+        return self.jobs.get(job_id)
 
-        clips_meta: List[Dict[str, Any]] = []
-        clips_dir = os.path.join(tmp_dir, "clips")
-        thumbs_dir = os.path.join(tmp_dir, "thumbs")
-        os.makedirs(clips_dir, exist_ok=True)
-        os.makedirs(thumbs_dir, exist_ok=True)
+    async def _run_one(self, job_id: str, submission):
+        async with self.sema:
+            try:
+                self.jobs[job_id]["status"] = "downloading"
+                logger.info("job_start", extra={"job_id": job_id})
 
-        for idx, (start, end) in enumerate(windows, start=1):
-            clip_id = f"{idx:04d}"
-            clip_path = os.path.join(clips_dir, f"{clip_id}.mp4")
-            thumb_path = os.path.join(thumbs_dir, f"{clip_id}.jpg")
-            await cut_clip(video_path, clip_path, start, end)
-            await make_thumb(video_path, max(0.0, start + 1.0), thumb_path)
-            clips_meta.append(
-                {
-                    "id": clip_id,
-                    "start": round(start, 3),
-                    "end": round(end, 3),
-                    "duration": round(end - start, 3),
-                    "file": f"clips/{clip_id}.mp4",
-                    "thumb": f"thumbs/{clip_id}.jpg",
+                t0 = time.time()
+                tmp_dir = f"/tmp/{job_id}"
+                os.makedirs(tmp_dir, exist_ok=True)
+                video_path = os.path.join(tmp_dir, "source.mp4")
+
+                # 1) fetch
+                src_url = str(submission.video_url or submission.presigned_url or "")
+                if src_url:
+                    await download_game_video(src_url, video_path)
+                elif submission.upload_id:
+                    upload_path = resolve_upload(submission.upload_id)
+                    if not upload_path:
+                        raise RuntimeError("Upload not found")
+                    await asyncio.to_thread(shutil.copyfile, upload_path, video_path)
+                else:
+                    raise RuntimeError("No source provided")
+
+                # 2) detect windows
+                self.jobs[job_id]["status"] = "processing"
+                opts = submission.options
+                windows = detect_plays(
+                    video_path,
+                    padding_pre=opts.play_padding_pre,
+                    padding_post=opts.play_padding_post,
+                    min_duration=opts.min_duration,
+                    max_duration=opts.max_duration,
+                    scene_thresh=opts.scene_thresh,
+                )
+                if not windows:
+                    windows = [(3.0, 15.0)]
+
+                # 3) segment + thumbs
+                clips_meta: List[Dict[str, Any]] = []
+                clips_dir = os.path.join(tmp_dir, "clips")
+                thumbs_dir = os.path.join(tmp_dir, "thumbs")
+                os.makedirs(clips_dir, exist_ok=True)
+                os.makedirs(thumbs_dir, exist_ok=True)
+
+                for idx, (start, end) in enumerate(windows, start=1):
+                    cid = f"{idx:04d}"
+                    cpath = os.path.join(clips_dir, f"{cid}.mp4")
+                    tpath = os.path.join(thumbs_dir, f"{cid}.jpg")
+                    await cut_clip(video_path, cpath, start, end)
+                    await make_thumb(video_path, max(0.0, start + 1.0), tpath)
+                    clips_meta.append({
+                        "id": cid,
+                        "start": round(start, 3),
+                        "end": round(end, 3),
+                        "duration": round(end - start, 3),
+                        "file": f"clips/{cid}.mp4",
+                        "thumb": f"thumbs/{cid}.jpg",
+                    })
+
+                # 4) manifest + zip
+                manifest = {
+                    "job_id": job_id,
+                    "source_url": src_url or f"upload:{submission.upload_id}",
+                    "clips": clips_meta,
+                    "metrics": {
+                        "num_clips": len(clips_meta),
+                        "total_runtime_sec": round(sum(c["duration"] for c in clips_meta), 3),
+                        "processing_sec": round(time.time() - t0, 3),
+                    },
                 }
-            )
+                with open(os.path.join(tmp_dir, "manifest.json"), "w", encoding="utf-8") as f:
+                    json.dump(manifest, f, indent=2)
 
-        manifest = {
-            "job_id": job_id,
-            "source_url": str(
-                submission.video_url
-                or submission.presigned_url
-                or (f"upload:{submission.upload_id}" if submission.upload_id else "")
-            ),
-            "clips": clips_meta,
-            "metrics": {
-                "num_clips": len(clips_meta),
-                "total_runtime_sec": round(sum(c["duration"] for c in clips_meta), 3),
-                "processing_sec": round(time.time() - started, 3),
-            },
-        }
+                zip_path = os.path.join(tmp_dir, "output.zip")
+                with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+                    z.write(os.path.join(tmp_dir, "manifest.json"), "manifest.json")
+                    for c in clips_meta:
+                        z.write(os.path.join(tmp_dir, c["file"]), c["file"])
+                        z.write(os.path.join(tmp_dir, c["thumb"]), c["thumb"])
 
-        manifest_path = os.path.join(tmp_dir, "manifest.json")
-        with open(manifest_path, "w", encoding="utf-8") as fh:
-            json.dump(manifest, fh, indent=2)
+                # 5) store
+                storage = get_storage()
+                archive_key = f"{job_id}/output.zip"
+                manifest_key = f"{job_id}/manifest.json"
+                await asyncio.to_thread(storage.write_file, zip_path, archive_key)
+                await asyncio.to_thread(storage.write_file, os.path.join(tmp_dir, "manifest.json"), manifest_key)
 
-        zip_path = os.path.join(tmp_dir, "output.zip")
-        with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
-            zf.write(manifest_path, "manifest.json")
-            for clip in clips_meta:
-                zf.write(os.path.join(tmp_dir, clip["file"]), clip["file"])
-                zf.write(os.path.join(tmp_dir, clip["thumb"]), clip["thumb"])
-
-        storage = self.storage
-        archive_key = f"{job_id}/output.zip"
-        manifest_key = f"{job_id}/manifest.json"
-        await asyncio.to_thread(storage.write_file, zip_path, archive_key)
-        await asyncio.to_thread(storage.write_file, manifest_path, manifest_key)
-
-        logger.info(
-            "job_process_complete",
-            extra={"job_id": job_id, "clips": len(clips_meta)},
-        )
-
-        return {
-            "manifest_url": storage.url_for(manifest_key),
-            "archive_url": storage.url_for(archive_key),
-            "manifest": manifest,
-            "manifest_path": manifest_path,
-            "archive_path": zip_path,
-        }
+                result = {
+                    "manifest_url": storage.url_for(manifest_key),
+                    "archive_url": storage.url_for(archive_key),
+                }
+                self.jobs[job_id]["status"] = "completed"
+                self.jobs[job_id]["result"] = result
+                logger.info("job_complete", extra={"job_id": job_id})
+            except Exception as e:
+                self.jobs[job_id]["status"] = "failed"
+                self.jobs[job_id]["error"] = str(e)
+                logger.exception("job_failed", extra={"job_id": job_id})
