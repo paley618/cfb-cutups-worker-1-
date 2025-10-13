@@ -59,38 +59,37 @@ document.addEventListener('DOMContentLoaded', async () => {
     const poll = async (tries = 0) => {
       const manifestResp = await fetch(`/jobs/${jobId}/manifest`, { cache: 'no-store' });
       if (manifestResp.ok) {
-        const meta = await manifestResp.json();
         let manifest;
-        if (meta.redirect) {
-          try {
+        try {
+          const meta = await manifestResp.json();
+          if (meta.redirect) {
             const follow = await fetch(meta.redirect, { cache: 'no-store' });
+            if (!follow.ok) {
+              throw new Error('follow_failed');
+            }
             manifest = await follow.json();
-          } catch (err) {
-            statusEl.textContent = 'Completed, but failed to fetch manifest.';
-            btn.disabled = false;
-            return;
+          } else {
+            manifest = meta;
           }
-        } else {
-          manifest = meta;
+        } catch (err) {
+          statusEl.textContent = 'Completed, but failed to fetch manifest.';
+          btn.disabled = false;
+          return;
         }
 
         statusEl.textContent = 'Completed.';
         resultEl.style.display = 'block';
         resultEl.textContent = JSON.stringify(manifest, null, 2);
         const link = document.createElement('a');
-        link.href = `/jobs/${jobId}/download`;
+        link.href = '#';
         link.textContent = 'Download ZIP';
         link.className = 'link';
         link.addEventListener('click', async (event) => {
           event.preventDefault();
           try {
-            const resp = await fetch(`/jobs/${jobId}/download`, { cache: 'no-store' });
-            if (!resp.ok) {
-              return;
-            }
-            const info = await resp.json();
-            if (info.redirect) {
-              window.location = info.redirect;
+            const redirect = (await (await fetch(`/jobs/${jobId}/download`, { cache: 'no-store' })).json()).redirect;
+            if (redirect) {
+              window.location = redirect;
             }
           } catch (_) {}
         });
