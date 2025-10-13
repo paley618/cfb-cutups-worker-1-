@@ -29,7 +29,7 @@ def _yt_progress_hook_factory(job_id: Optional[str]):
                 percent = float(pct) if pct else None
                 _set_job(
                     job_id,
-                    status="running",
+                    status="downloading",
                     step="downloading",
                     percent=percent,
                     eta_sec=d.get("eta"),
@@ -38,7 +38,7 @@ def _yt_progress_hook_factory(job_id: Optional[str]):
                     total=d.get("total_bytes") or d.get("total_bytes_estimate"),
                 )
             elif status == "finished":
-                _set_job(job_id, step="cutting")
+                _set_job(job_id, status="processing", step="cutting")
         except Exception:
             # never let a hook crash the download
             pass
