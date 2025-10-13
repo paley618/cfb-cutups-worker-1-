@@ -27,7 +27,7 @@ from .video import download_game_video
 from .settings import settings
 
 import httpx
-from fastapi import Depends, FastAPI, HTTPException, Request, status
+from fastapi import Depends, FastAPI, HTTPException, Request, UploadFile, File, status
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, HttpUrl, ValidationError, validator
@@ -42,6 +42,7 @@ from .logging import (
 )
 from .runner import JobRunner
 from .schemas import JobSubmission
+from .uploads import destination_for, public_path, register_upload, resolve_upload, UPLOAD_ROOT
 
 JOBS: Dict[str, Dict[str, Any]] = {}  # { job_id: {"status": "...", "result": {...}, "error": "..."} }
 _JOB_HISTORY: deque[Dict[str, Any]] = deque(maxlen=100)
@@ -729,6 +730,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.mount("/uploads", StaticFiles(directory=str(UPLOAD_ROOT)), name="uploads")
 
 _SUBMIT_FORM = Path(__file__).resolve().parent / "static" / "submit.html"
 
@@ -745,6 +747,29 @@ async def submit_form() -> HTMLResponse:
     except FileNotFoundError:  # pragma: no cover - deployment guard
         raise HTTPException(status_code=500, detail="submit.html missing")
     return HTMLResponse(content=html)
+
+
+@app.post("/upload")
+async def upload_file(file: UploadFile = File(...)) -> Dict[str, str]:
+    """Accept a file upload and expose it via the /uploads static mount."""
+
+    upload_id = uuid.uuid4().hex
+    destination = destination_for(upload_id, file.filename)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+
+    try:
+        with destination.open("wb") as buffer:
+            while True:
+                chunk = await file.read(1024 * 1024)
+                if not chunk:
+                    break
+                buffer.write(chunk)
+    finally:
+        await file.close()
+
+    register_upload(upload_id, destination)
+    src = public_path(destination)
+    return {"upload_id": upload_id, "src": src}
 
 @app.get("/debug/aws")
 async def debug_aws():
@@ -831,10 +856,16 @@ async def submit_job(request: Request):
             if post_val not in (None, ""):
                 options_payload["play_padding_post"] = post_val
 
-        payload = {
-            "video_url": form.get("video_url"),
-            "webhook_url": form.get("webhook_url"),
-        }
+        payload = {}
+        video_url = (form.get("video_url") or "").strip()
+        if video_url:
+            payload["video_url"] = video_url
+        upload_id = (form.get("upload_id") or "").strip()
+        if upload_id:
+            payload["upload_id"] = upload_id
+        webhook_url = form.get("webhook_url")
+        if webhook_url not in (None, ""):
+            payload["webhook_url"] = webhook_url
         if options_payload:
             payload["options"] = options_payload
 
@@ -873,15 +904,30 @@ async def submit_job(request: Request):
     except ValidationError as exc:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
 
-    video_url = str(job_submission.video_url)
-    _validate_video_source(video_url, request_id)
+    if job_submission.upload_id:
+        upload_path = resolve_upload(job_submission.upload_id)
+        if upload_path is None:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail="Upload not found. Please re-upload the file.",
+            )
+        job_submission.set_upload_details(upload_path, public_path(upload_path))
+
+    video_url = str(job_submission.video_url) if job_submission.video_url else None
+    if video_url:
+        _validate_video_source(video_url, request_id)
     holder: Dict[str, str] = {}
 
     def _log_job_create(job_id: str) -> None:
         holder["job_id"] = job_id
         jobs_log.info(
             "job_create",
-            extra={"request_id": request_id, "job_id": job_id, "video_url": video_url},
+            extra={
+                "request_id": request_id,
+                "job_id": job_id,
+                "video_url": video_url,
+                "upload_id": job_submission.upload_id,
+            },
         )
 
     result = await runner.run(job_submission, request_id=request_id, on_job_id=_log_job_create)
@@ -889,7 +935,12 @@ async def submit_job(request: Request):
     if "job_id" not in holder:
         jobs_log.info(
             "job_create",
-            extra={"request_id": request_id, "job_id": job_id, "video_url": video_url},
+            extra={
+                "request_id": request_id,
+                "job_id": job_id,
+                "video_url": video_url,
+                "upload_id": job_submission.upload_id,
+            },
         )
     manifest_path = str(result["manifest_path"])
     archive_path = str(result["archive_path"])
@@ -908,6 +959,8 @@ async def submit_job(request: Request):
         completed_at=datetime.now(timezone.utc).isoformat(),
         request_id=request_id,
         video_url=video_url,
+        upload_id=job_submission.upload_id,
+        source=job_submission.source_descriptor,
     )
     return {"job_id": job_id, "status": "completed"}
 
