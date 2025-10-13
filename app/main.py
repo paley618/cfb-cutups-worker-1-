@@ -73,6 +73,9 @@ class ProcessRequest(BaseModel):
     # NEW: shift all plays by this many seconds (can be negative)
     video_offset_sec: Optional[float] = None
 
+    # Optional inline YouTube cookies (base64-encoded Netscape cookies.txt)
+    yt_cookies_b64: Optional[str] = None
+
 class JobStatus(str, Enum):
     """Lifecycle states for a cut-up processing job."""
 
@@ -306,7 +309,12 @@ async def _job_worker(job_id: str, req: ProcessRequest):
         result = await _run_cutups_and_upload(req, job_id)
         _set_job(job_id, status="finished", result=result)
     except Exception as e:
-        _set_job(job_id, status="failed", error=str(e))
+        message = str(e)
+        if "needs_cookies=true" in message:
+            error_label = message.split(":", 1)[0].strip() or message
+            _set_job(job_id, status="failed", error=error_label, needs_cookies=True)
+        else:
+            _set_job(job_id, status="failed", error=message)
 
 async def _upload_with_retry(local_path: str, bucket: str, key: str, *, content_type="video/mp4", tries=3):
     s3 = _make_s3_client()
@@ -364,7 +372,12 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
 
         # 4) Download full game (shows progress in /jobs/<id>)
         _set_job(job_id, status="running", step="downloading")
-        await download_game_video(str(request.video_url), input_path, job_id=job_id)
+        await download_game_video(
+            str(request.video_url),
+            input_path,
+            job_id=job_id,
+            cookies_b64=request.yt_cookies_b64,
+        )
 
         # 5) Cut & concat
         _set_job(job_id, step="cutting")
