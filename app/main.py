@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio, uuid, functools
+import json
 import shlex
 import shutil
 import subprocess
@@ -20,11 +21,17 @@ from pathlib import Path
 from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
 from .video import download_game_video
+from .settings import settings
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status
-from pydantic import BaseModel, Field, HttpUrl, validator
+from fastapi.responses import HTMLResponse
+from pydantic import BaseModel, Field, HttpUrl, ValidationError, validator
 from yt_dlp import YoutubeDL
+
+from .schemas import JobSubmission
+
+logging.basicConfig(level=getattr(logging, settings.logging_level, logging.INFO))
 
 JOBS: Dict[str, Dict[str, Any]] = {}  # { job_id: {"status": "...", "result": {...}, "error": "..."} }
 
@@ -35,6 +42,8 @@ def _set_job(job_id: str, **kwargs):
     JOBS.setdefault(job_id, {}).update(kwargs)
 
 _YT_T_PATTERN = re.compile(r"[?&#]t=([0-9hms]+|\d+)", re.I)
+_TIME_PATTERN = re.compile(r"\b(?:(\d+):)?([0-5]?\d):([0-5]\d)\b")
+_KEYWORDS = ("kickoff", "1st quarter", "first quarter", "q1", "start", "opening")
 
 def _parse_yt_start_hint(url: str) -> float:
     """
@@ -59,7 +68,7 @@ def _parse_yt_start_hint(url: str) -> float:
 
 class ProcessRequest(BaseModel):
     # existing fields (we keep espn_game_id for backward compat, but ignore it in CFBD flow)
-    video_url: HttpUrl
+    video_url: Optional[HttpUrl] = None
     team_name: str = Field(..., min_length=1)
     espn_game_id: str = Field(..., min_length=1)
 
@@ -72,6 +81,67 @@ class ProcessRequest(BaseModel):
 
     # NEW: shift all plays by this many seconds (can be negative)
     video_offset_sec: Optional[float] = None
+
+    # NEW: auto-detect offset when manual value absent
+    auto_offset: bool = True
+
+    # Optional inline YouTube cookies (base64-encoded Netscape cookies.txt)
+    yt_cookies_b64: Optional[str] = None
+
+
+def _parse_hms(match: re.Match) -> float:
+    hours = int(match.group(1) or 0)
+    minutes = int(match.group(2) or 0)
+    seconds = int(match.group(3) or 0)
+    return float(hours * 3600 + minutes * 60 + seconds)
+
+
+def _extract_info(url: str) -> dict:
+    # metadata only; no download
+    with YoutubeDL({"quiet": True, "no_warnings": True, "skip_download": True}) as ydl:
+        return ydl.extract_info(url, download=False)
+
+
+def infer_video_offset(url: str) -> tuple[float, str]:
+    # 1) URL ?t= hint
+    start_hint = _parse_yt_start_hint(url)
+    if start_hint > 0:
+        return start_hint, "hint:t-param"
+
+    # 2) Chapters
+    try:
+        info = _extract_info(url) or {}
+    except Exception:
+        info = {}
+
+    chapters = info.get("chapters") or []
+    for chapter in chapters:
+        title = (chapter.get("title") or "").lower()
+        if any(keyword in title for keyword in _KEYWORDS):
+            start_time = chapter.get("start_time")
+            if isinstance(start_time, (int, float)) and start_time >= 0:
+                return float(start_time), f"chapters:{title}"
+    if chapters:
+        first_title = (chapters[0].get("title") or "").lower()
+        if "quarter" in first_title or re.search(r"\bq1\b", first_title):
+            start_time = chapters[0].get("start_time")
+            if isinstance(start_time, (int, float)) and start_time >= 0:
+                return float(start_time), f"chapters:first:{first_title}"
+
+    # 3) Description timecodes
+    description = info.get("description") or ""
+    lines = description.splitlines()
+    preferred_lines = [
+        line for line in lines if any(keyword in line.lower() for keyword in _KEYWORDS)
+    ]
+    search_lines = preferred_lines or lines
+    for line in search_lines:
+        match = _TIME_PATTERN.search(line)
+        if match:
+            return _parse_hms(match), "desc:timecode"
+
+    # 4) No match
+    return 0.0, "none"
 
 class JobStatus(str, Enum):
     """Lifecycle states for a cut-up processing job."""
@@ -165,58 +235,72 @@ def _record_to_response(record: CutupJobRecord) -> CutupJobResponse:
     )
 
 # near your upload helper
-def _env(name: str, fallback: str = "") -> str:
-    import os
-    return os.getenv(name) or fallback
+LOCAL_OBJECT_ROOT = Path("object-store")
+
 
 def _s3_prefix() -> str:
-    p = _env("S3_PREFIX", "").strip()
-    return (p + "/") if (p and not p.endswith("/")) else p
+    prefix = settings.s3_prefix
+    return f"{prefix}/" if prefix else ""
+
+
+def _build_storage_key(request: ProcessRequest, filename: str) -> str:
+    prefix = _s3_prefix()
+    safe_team = request.team_name.lower().replace(" ", "-")
+    year_part = str(request.year or "unknown")
+    game_identifier = str(request.cfbd_game_id or request.espn_game_id or "unknown")
+    body = f"{safe_team}/{year_part}/{game_identifier}/{filename}"
+    return f"{prefix}{body}" if prefix else body
+
 
 log = logging.getLogger(__name__)
 
 def _make_s3_client():
-    ak = (os.getenv("AWS_ACCESS_KEY_ID") or "").strip()
-    sk = (os.getenv("AWS_SECRET_ACCESS_KEY") or "").strip()
-    region = (os.getenv("S3_REGION") or "us-east-2").strip()
+    if settings.storage_backend != "s3":
+        raise RuntimeError("S3 client requested but STORAGE_BACKEND is not 's3'")
 
-    if not ak or not sk:
-        raise RuntimeError("Missing AWS credentials in env")
+    if not settings.aws_access_key_id or not settings.aws_secret_access_key:
+        raise RuntimeError("Missing AWS credentials in environment configuration")
 
-    cfg = Config(signature_version="s3v4",
-                 region_name=region,
-                 s3={"addressing_style": "virtual"})
-    # pin the endpoint to the region we expect, avoids cross-region redirects
-    endpoint = f"https://s3.{region}.amazonaws.com"
+    cfg = Config(
+        signature_version="s3v4",
+        region_name=settings.aws_region,
+        s3={"addressing_style": "virtual"},
+    )
+    endpoint = f"https://s3.{settings.aws_region}.amazonaws.com"
 
-    return boto3.client("s3",
-                        endpoint_url=endpoint,
-                        aws_access_key_id=ak,
-                        aws_secret_access_key=sk,
-                        config=cfg)
+    return boto3.client(
+        "s3",
+        endpoint_url=endpoint,
+        aws_access_key_id=settings.aws_access_key_id,
+        aws_secret_access_key=settings.aws_secret_access_key,
+        config=cfg,
+    )
 
 def upload_video_to_object_store(local_path: str, key: str) -> str:
     """
-    Upload local file to S3 (or S3-compatible) and return a URL.
-    Uses signed URL by default unless PUBLIC_BASE_URL is set and USE_SIGNED_URLS=false.
+    Upload a local file to the configured object store and return its accessible URL.
     """
-    bucket = _env("S3_BUCKET") or _env("S3_BUCKET_NAME")
+
+    if settings.storage_backend == "local":
+        destination = (LOCAL_OBJECT_ROOT / Path(key)).resolve()
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(local_path, destination)
+        return str(destination)
+
+    bucket = settings.s3_bucket
     if not bucket:
-        raise RuntimeError("S3 bucket not set (S3_BUCKET or S3_BUCKET_NAME).")
+        raise RuntimeError("S3 bucket not configured (set S3_BUCKET).")
 
     s3 = _make_s3_client()
-
-    # Upload
     s3.upload_file(local_path, bucket, key, ExtraArgs={"ContentType": "video/mp4"})
 
-    # Decide which URL to return
-    use_signed   = (_env("USE_SIGNED_URLS", "true").lower() == "true")
-    public_base  = _env("PUBLIC_BASE_URL").rstrip("/") if _env("PUBLIC_BASE_URL") else ""
+    use_signed = (os.getenv("USE_SIGNED_URLS", "true").lower() == "true")
+    public_base = (os.getenv("PUBLIC_BASE_URL") or "").rstrip("/")
 
     if not use_signed and public_base:
         return f"{public_base}/{key}"
 
-    ttl = int(_env("SIGNED_URL_TTL", "86400"))
+    ttl = int(os.getenv("SIGNED_URL_TTL", "86400"))
     return s3.generate_presigned_url(
         "get_object",
         Params={"Bucket": bucket, "Key": key},
@@ -306,7 +390,12 @@ async def _job_worker(job_id: str, req: ProcessRequest):
         result = await _run_cutups_and_upload(req, job_id)
         _set_job(job_id, status="finished", result=result)
     except Exception as e:
-        _set_job(job_id, status="failed", error=str(e))
+        message = str(e)
+        if "needs_cookies=true" in message:
+            error_label = message.split(":", 1)[0].strip() or message
+            _set_job(job_id, status="failed", error=error_label, needs_cookies=True)
+        else:
+            _set_job(job_id, status="failed", error=message)
 
 async def _upload_with_retry(local_path: str, bucket: str, key: str, *, content_type="video/mp4", tries=3):
     s3 = _make_s3_client()
@@ -333,20 +422,35 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
         cfbd_game_id=request.cfbd_game_id,
     )
 
-    # 2) Apply optional offset (manual or ?t= hint on the URL)
+    # 2) Apply optional offset (manual or inferred)
     offset = 0.0
-    try:
-        if request.video_offset_sec is not None:
+    offset_reason = "manual"
+    if request.video_offset_sec is not None:
+        try:
             offset = float(request.video_offset_sec)
+        except Exception:
+            offset = 0.0
+            offset_reason = "manual-invalid"
+    else:
+        if request.auto_offset:
+            if request.video_url is not None:
+                try:
+                    offset, offset_reason = infer_video_offset(str(request.video_url))
+                except Exception:
+                    offset, offset_reason = 0.0, "auto-error"
+            else:
+                offset, offset_reason = 0.0, "auto-missing-url"
         else:
-            offset = _parse_yt_start_hint(str(request.video_url))
-    except Exception:
-        offset = 0.0
+            offset, offset_reason = 0.0, "auto-disabled"
 
     if offset != 0.0:
         timestamps = [ts + offset for ts in timestamps]
 
-    print(f">>> CUTUPS: using offset={offset:.1f}s; first 3 after offset = {timestamps[:3]}")
+    print(
+        f">>> CUTUPS: using offset={offset:.1f}s ({offset_reason}); first 3 after offset = {timestamps[:3]}"
+    )
+
+    _set_job(job_id, offset={"value": offset, "reason": offset_reason})
 
     if not timestamps:
         raise HTTPException(status_code=404, detail="No offensive plays found for the requested team")
@@ -364,7 +468,15 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
 
         # 4) Download full game (shows progress in /jobs/<id>)
         _set_job(job_id, status="running", step="downloading")
-        await download_game_video(str(request.video_url), input_path, job_id=job_id)
+        if request.video_url is None:
+            raise RuntimeError("video_url is required to download game video")
+
+        await download_game_video(
+            str(request.video_url),
+            input_path,
+            job_id=job_id,
+            cookies_b64=request.yt_cookies_b64,
+        )
 
         # 5) Cut & concat
         _set_job(job_id, step="cutting")
@@ -376,21 +488,36 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
             final_output_path.unlink()
         shutil.move(str(temp_output), final_output_path)
 
-    # 6) Upload to S3
+    # 6) Upload to configured storage backend
     _set_job(job_id, step="uploading")
-
-    bucket = (os.getenv("S3_BUCKET_NAME") or "").strip()
-    region = (os.getenv("S3_REGION") or "us-east-2").strip()
-    prefix = _s3_prefix()
-    safe_team = request.team_name.lower().replace(" ", "-")
-    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{final_output_path.name}"
+    key = _build_storage_key(request, final_output_path.name)
 
     try:
-        await _upload_with_retry(str(final_output_path), bucket, key)
-        cloud_url = f"https://{bucket}.s3.{region}.amazonaws.com/{key}"
+        if settings.storage_backend == "s3":
+            bucket = settings.s3_bucket or ""
+            region = settings.aws_region
+            await _upload_with_retry(str(final_output_path), bucket, key)
+            cloud_url = f"https://{bucket}.s3.{region}.amazonaws.com/{key}"
+        else:
+            cloud_url = await asyncio.to_thread(
+                upload_video_to_object_store, str(final_output_path), key
+            )
     except Exception as e:
-        _set_job(job_id, status="failed", step="uploading",
-                 error=f"Failed to upload {final_output_path} to {bucket}/{key}: {e}")
+        if settings.storage_backend == "s3":
+            bucket = settings.s3_bucket or ""
+            _set_job(
+                job_id,
+                status="failed",
+                step="uploading",
+                error=f"Failed to upload {final_output_path} to {bucket}/{key}: {e}",
+            )
+        else:
+            _set_job(
+                job_id,
+                status="failed",
+                step="uploading",
+                error=f"Failed to store output locally for key {key}: {e}",
+            )
         raise
 
     # 7) Cleanup & return
@@ -424,40 +551,67 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
 
+_SUBMIT_FORM = Path(__file__).resolve().parent / "static" / "submit.html"
+
+
+@app.get("/healthz")
+async def healthz() -> Dict[str, bool]:
+    return {"ok": True}
+
+
+@app.get("/", response_class=HTMLResponse)
+async def submit_form() -> HTMLResponse:
+    try:
+        html = _SUBMIT_FORM.read_text(encoding="utf-8")
+    except FileNotFoundError:  # pragma: no cover - deployment guard
+        raise HTTPException(status_code=500, detail="submit.html missing")
+    return HTMLResponse(content=html)
+
 @app.get("/debug/aws")
 async def debug_aws():
     import json, time
+    if settings.storage_backend != "s3":
+        return {
+            "storage_backend": settings.storage_backend,
+            "detail": "S3 backend disabled",
+        }
+
     s3 = _make_s3_client()
-    bucket = (os.getenv("S3_BUCKET_NAME") or "").strip()
-    region = (os.getenv("S3_REGION") or "").strip()
+    bucket = settings.s3_bucket or ""
+    region = settings.aws_region
 
     out = {"bucket": bucket, "env_region": region}
 
     # Who am I?
     try:
-        sts = boto3.client("sts",
-                           aws_access_key_id=(os.getenv("AWS_ACCESS_KEY_ID") or "").strip(),
-                           aws_secret_access_key=(os.getenv("AWS_SECRET_ACCESS_KEY") or "").strip())
-        ident = sts.get_caller_identity()
-        out["caller"] = {
-            "account": ident.get("Account"),
-            "arn": ident.get("Arn")[-32:],  # last bits only
-        }
-    except Exception as e:
+        if settings.aws_access_key_id and settings.aws_secret_access_key:
+            sts = boto3.client(
+                "sts",
+                aws_access_key_id=settings.aws_access_key_id,
+                aws_secret_access_key=settings.aws_secret_access_key,
+            )
+            ident = sts.get_caller_identity()
+            out["caller"] = {
+                "account": ident.get("Account"),
+                "arn": (ident.get("Arn") or "")[-32:],
+            }
+        else:  # pragma: no cover - configuration safeguard
+            out["caller_error"] = "AWS credentials missing"
+    except Exception as e:  # pragma: no cover - diagnostic endpoint
         out["caller_error"] = str(e)
 
     # Bucket location
     try:
         loc = s3.get_bucket_location(Bucket=bucket)
         out["bucket_location"] = loc.get("LocationConstraint") or "us-east-1"
-    except Exception as e:
+    except Exception as e:  # pragma: no cover - diagnostic endpoint
         out["bucket_location_error"] = str(e)
 
     # Head bucket
     try:
         s3.head_bucket(Bucket=bucket)
         out["head_bucket"] = "ok"
-    except Exception as e:
+    except Exception as e:  # pragma: no cover - diagnostic endpoint
         out["head_bucket_error"] = str(e)
 
     # Tiny write test (no multipart): proves creds/signature
@@ -466,17 +620,62 @@ async def debug_aws():
         body = b"ok\n"
         s3.put_object(Bucket=bucket, Key=key, Body=body, ContentType="text/plain")
         out["put_object"] = {"ok": True, "key": key}
-    except Exception as e:
+    except Exception as e:  # pragma: no cover - diagnostic endpoint
         out["put_object_error"] = str(e)
 
     return out
 
 @app.post("/jobs", status_code=status.HTTP_202_ACCEPTED)
-async def submit_job(req: ProcessRequest):
+async def submit_job(request: Request):
+    content_type = request.headers.get("content-type", "")
+    payload: Dict[str, Any]
+
+    if "application/json" in content_type:
+        try:
+            payload = await request.json()
+        except (json.JSONDecodeError, ValueError) as exc:  # pragma: no cover - invalid JSON
+            raise HTTPException(status_code=400, detail="Invalid JSON body") from exc
+    else:
+        form = await request.form()
+        options_payload: Dict[str, Any] = {}
+        if "play_padding_pre" in form:
+            pre_val = form.get("play_padding_pre")
+            if pre_val not in (None, ""):
+                options_payload["play_padding_pre"] = pre_val
+        if "play_padding_post" in form:
+            post_val = form.get("play_padding_post")
+            if post_val not in (None, ""):
+                options_payload["play_padding_post"] = post_val
+
+        payload = {
+            "video_url": form.get("video_url"),
+            "webhook_url": form.get("webhook_url"),
+        }
+        if options_payload:
+            payload["options"] = options_payload
+
+    if not isinstance(payload, dict):
+        raise HTTPException(status_code=400, detail="Body must be a JSON object or form data")
+
+    if any(key in payload for key in ("team_name", "espn_game_id", "cfbd_game_id")):
+        try:
+            process_request = ProcessRequest.parse_obj(payload)
+        except ValidationError as exc:
+            raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
+
+        job_id = _new_job()
+        _set_job(job_id, status="queued")
+        asyncio.create_task(_job_worker(job_id, process_request))
+        return {"job_id": job_id, "status": "queued"}
+
+    try:
+        job_submission = JobSubmission.parse_obj(payload)
+    except ValidationError as exc:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
+
     job_id = _new_job()
-    _set_job(job_id, status="queued")
-    asyncio.create_task(_job_worker(job_id, req))  # ✅ schedule on the current event loop
-    return {"message": "accepted", "job_id": job_id, "status_url": f"/jobs/{job_id}"}
+    _set_job(job_id, status="queued", payload=job_submission.dict())
+    return {"job_id": job_id, "status": "queued"}
 
 @app.get("/jobs/{job_id}")
 async def job_status(job_id: str):
@@ -532,13 +731,6 @@ async def get_cutup_job(job_id: str, store: InMemoryJobStore = Depends(_get_stor
     return _record_to_response(record)
 
 
-@app.get("/")
-async def read_root() -> Dict[str, str]:
-    """Default route providing a friendly greeting."""
-
-    return {"message": "CFB Cutups worker is online."}
-
-
 @app.post("/process", tags=["processing"])
 async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     """End-to-end pipeline that generates an offensive cut-up for a team (foreground path)."""
@@ -565,18 +757,31 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
 
     # 2) Apply optional offset
     offset = 0.0
-    try:
-        if request.video_offset_sec is not None:
+    offset_reason = "manual"
+    if request.video_offset_sec is not None:
+        try:
             offset = float(request.video_offset_sec)
+        except Exception:
+            offset = 0.0
+            offset_reason = "manual-invalid"
+    else:
+        if request.auto_offset:
+            if request.video_url is not None:
+                try:
+                    offset, offset_reason = infer_video_offset(str(request.video_url))
+                except Exception:
+                    offset, offset_reason = 0.0, "auto-error"
+            else:
+                offset, offset_reason = 0.0, "auto-missing-url"
         else:
-            offset = _parse_yt_start_hint(str(request.video_url))
-    except Exception:
-        offset = 0.0
+            offset, offset_reason = 0.0, "auto-disabled"
 
     if offset != 0.0:
         timestamps = [ts + offset for ts in timestamps]
 
-    print(f">>> CUTUPS: using offset={offset:.1f}s; first 3 after offset = {timestamps[:3]}")
+    print(
+        f">>> CUTUPS: using offset={offset:.1f}s ({offset_reason}); first 3 after offset = {timestamps[:3]}"
+    )
 
     if not timestamps:
         raise HTTPException(status_code=404, detail="No offensive plays found for the requested team")
@@ -588,6 +793,9 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             input_path = work_path / "input.mp4"
             clips_dir = work_path / "clips"
             clips_dir.mkdir(parents=True, exist_ok=True)
+
+            if request.video_url is None:
+                raise HTTPException(status_code=400, detail="video_url is required")
 
             await download_game_video(str(request.video_url), input_path, job_id=None)
             clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
@@ -601,10 +809,8 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     except RuntimeError as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
-    # 4) Upload to S3
-    prefix = _s3_prefix()
-    safe_team = request.team_name.lower().replace(" ", "-")
-    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{final_output_path.name}"
+    # 4) Upload to configured storage backend
+    key = _build_storage_key(request, final_output_path.name)
     cloud_url = upload_video_to_object_store(str(final_output_path), key)
 
     # 5) Cleanup local
@@ -613,7 +819,12 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     except Exception:
         pass
 
-    return {"message": "Done", "cloud_url": cloud_url, "key": key}
+    return {
+        "message": "Done",
+        "cloud_url": cloud_url,
+        "key": key,
+        "offset": {"value": offset, "reason": offset_reason},
+    }
 
 # --- CFBD play fetcher (indentation-safe, with fallback) ---
 async def _fetch_offensive_play_times_cfbd(

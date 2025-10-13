@@ -4,3 +4,4 @@ uvicorn[standard]
 yt-dlp
 uvicorn[standard]
 boto3
+pydantic-settings
