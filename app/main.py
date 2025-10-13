@@ -37,7 +37,33 @@ def _new_job() -> str:
     return uuid.uuid4().hex
 
 def _set_job(job_id: str, **kwargs):
-    JOBS.setdefault(job_id, {}).update(kwargs)
+    record = JOBS.setdefault(job_id, {})
+
+    request_id = kwargs.get("request_id") or record.get("request_id") or current_request_id()
+    if request_id:
+        record.setdefault("request_id", request_id)
+
+    if "debug" in kwargs:
+        record["debug"] = bool(kwargs["debug"])
+    elif "debug" not in record and is_request_debug_enabled():
+        record["debug"] = True
+
+    for key, value in kwargs.items():
+        if key in {"request_id", "debug"}:
+            if key == "request_id" and value:
+                record[key] = value
+            continue
+        record[key] = value
+
+    log_request_id = request_id or record.get("request_id") or current_request_id() or "unknown"
+    jobs_log.info(
+        "job.update",
+        extra={
+            "request_id": log_request_id,
+            "job_id": job_id,
+            "fields": sorted(kwargs.keys()),
+        },
+    )
 
 _YT_T_PATTERN = re.compile(r"[?&#]t=([0-9hms]+|\d+)", re.I)
 _TIME_PATTERN = re.compile(r"\b(?:(\d+):)?([0-5]?\d):([0-5]\d)\b")
@@ -193,6 +219,8 @@ def _build_storage_key(request: ProcessRequest, filename: str) -> str:
 
 
 log = logging.getLogger(__name__)
+request_log = logging.getLogger("app.request")
+jobs_log = logging.getLogger("app.jobs")
 
 def _make_s3_client():
     if settings.storage_backend != "s3":
@@ -325,10 +353,27 @@ class JobProcessor:
             await self._store.update(record)
 
 async def _job_worker(job_id: str, req: ProcessRequest):
-    _set_job(job_id, status="running")
+    meta = JOBS.get(job_id, {})
+    request_id = meta.get("request_id") or current_request_id()
+    debug_flag = bool(meta.get("debug"))
+
+    if request_id:
+        token_request, token_debug = bind_request_context(request_id, debug_flag)
+    else:
+        token_request = token_debug = None
+
+    effective_request_id = request_id or "unknown"
+
+    jobs_log.info("job.start", extra={"request_id": effective_request_id, "job_id": job_id})
+
     try:
+        _set_job(job_id, status="running", request_id=request_id)
         result = await _run_cutups_and_upload(req, job_id)
-        _set_job(job_id, status="finished", result=result)
+        _set_job(job_id, status="finished", result=result, request_id=request_id)
+        jobs_log.info(
+            "job.complete",
+            extra={"request_id": effective_request_id, "job_id": job_id},
+        )
     except Exception as e:
         message = str(e)
         if "needs_cookies=true" in message:
@@ -805,7 +850,7 @@ async def _fetch_offensive_play_times_cfbd(
 
         # A) Use provided ID directly
         if game_id is not None:
-            print(">>> CFBD MODE: using provided game_id =", game_id)
+            log.debug("cfbd.game_id.provided", extra={"cfbd_game_id": game_id})
         else:
             # B) Filtered search if any filters were passed
             params: Dict[str, object] = {"team": team_name}
@@ -823,7 +868,10 @@ async def _fetch_offensive_play_times_cfbd(
                     r.raise_for_status()
                     games = r.json() or []
                 except Exception as exc:
-                    print(">>> CFBD MODE: filtered /games error:", exc)
+                    log.warning(
+                        "cfbd.games.filtered_error",
+                        extra={"error": str(exc), "params": params},
+                    )
                     games = []
 
                 # narrow by opponent (optional)
@@ -846,7 +894,10 @@ async def _fetch_offensive_play_times_cfbd(
                             games = [g for g in games if opp in (_n(g.get("home_team")), _n(g.get("away_team")))]
                         games = [g for g in games if target in (_n(g.get("home_team")), _n(g.get("away_team")))]
                     except Exception as exc:
-                        print(">>> CFBD MODE: retry /games w/o week error:", exc)
+                        log.warning(
+                            "cfbd.games.retry_without_week_error",
+                            extra={"error": str(exc), "params": p2},
+                        )
                         games = []
 
                 if games:
@@ -882,7 +933,7 @@ async def _fetch_offensive_play_times_cfbd(
 
         if year_needed is None or week_needed is None:
             # final attempt: try regular-season weeks 13..16 (conf championships)
-            print(">>> CFBD MODE: inferring year/week via sweep…")
+            log.debug("cfbd.games.inferring_year_week")
             yr = year or (game_meta.get("season") if game_meta else datetime.utcnow().year)
             found_gid: Optional[int] = None
             for wk in (13, 14, 15, 16):
@@ -924,7 +975,10 @@ async def _fetch_offensive_play_times_cfbd(
             plays_params["seasonType"] = season_type_needed
 
         pr = await client.get(f"{base}/plays", params=plays_params)
-        print(">>> CFBD MODE: /plays status =", pr.status_code, "params=", plays_params)
+        log.debug(
+            "cfbd.plays.response",
+            extra={"status_code": pr.status_code, "params": plays_params},
+        )
         pr.raise_for_status()
         plays = pr.json() or []
 
