@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
 from .video import download_game_video
+from .settings import settings
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status
@@ -174,58 +175,72 @@ def _record_to_response(record: CutupJobRecord) -> CutupJobResponse:
     )
 
 # near your upload helper
-def _env(name: str, fallback: str = "") -> str:
-    import os
-    return os.getenv(name) or fallback
+LOCAL_OBJECT_ROOT = Path("object-store")
+
 
 def _s3_prefix() -> str:
-    p = _env("S3_PREFIX", "").strip()
-    return (p + "/") if (p and not p.endswith("/")) else p
+    prefix = settings.s3_prefix
+    return f"{prefix}/" if prefix else ""
+
+
+def _build_storage_key(request: ProcessRequest, filename: str) -> str:
+    prefix = _s3_prefix()
+    safe_team = request.team_name.lower().replace(" ", "-")
+    year_part = str(request.year or "unknown")
+    game_identifier = str(request.cfbd_game_id or request.espn_game_id or "unknown")
+    body = f"{safe_team}/{year_part}/{game_identifier}/{filename}"
+    return f"{prefix}{body}" if prefix else body
+
 
 log = logging.getLogger(__name__)
 
 def _make_s3_client():
-    ak = (os.getenv("AWS_ACCESS_KEY_ID") or "").strip()
-    sk = (os.getenv("AWS_SECRET_ACCESS_KEY") or "").strip()
-    region = (os.getenv("S3_REGION") or "us-east-2").strip()
+    if settings.storage_backend != "s3":
+        raise RuntimeError("S3 client requested but STORAGE_BACKEND is not 's3'")
 
-    if not ak or not sk:
-        raise RuntimeError("Missing AWS credentials in env")
+    if not settings.aws_access_key_id or not settings.aws_secret_access_key:
+        raise RuntimeError("Missing AWS credentials in environment configuration")
 
-    cfg = Config(signature_version="s3v4",
-                 region_name=region,
-                 s3={"addressing_style": "virtual"})
-    # pin the endpoint to the region we expect, avoids cross-region redirects
-    endpoint = f"https://s3.{region}.amazonaws.com"
+    cfg = Config(
+        signature_version="s3v4",
+        region_name=settings.aws_region,
+        s3={"addressing_style": "virtual"},
+    )
+    endpoint = f"https://s3.{settings.aws_region}.amazonaws.com"
 
-    return boto3.client("s3",
-                        endpoint_url=endpoint,
-                        aws_access_key_id=ak,
-                        aws_secret_access_key=sk,
-                        config=cfg)
+    return boto3.client(
+        "s3",
+        endpoint_url=endpoint,
+        aws_access_key_id=settings.aws_access_key_id,
+        aws_secret_access_key=settings.aws_secret_access_key,
+        config=cfg,
+    )
 
 def upload_video_to_object_store(local_path: str, key: str) -> str:
     """
-    Upload local file to S3 (or S3-compatible) and return a URL.
-    Uses signed URL by default unless PUBLIC_BASE_URL is set and USE_SIGNED_URLS=false.
+    Upload a local file to the configured object store and return its accessible URL.
     """
-    bucket = _env("S3_BUCKET") or _env("S3_BUCKET_NAME")
+
+    if settings.storage_backend == "local":
+        destination = (LOCAL_OBJECT_ROOT / Path(key)).resolve()
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(local_path, destination)
+        return str(destination)
+
+    bucket = settings.s3_bucket
     if not bucket:
-        raise RuntimeError("S3 bucket not set (S3_BUCKET or S3_BUCKET_NAME).")
+        raise RuntimeError("S3 bucket not configured (set S3_BUCKET).")
 
     s3 = _make_s3_client()
-
-    # Upload
     s3.upload_file(local_path, bucket, key, ExtraArgs={"ContentType": "video/mp4"})
 
-    # Decide which URL to return
-    use_signed   = (_env("USE_SIGNED_URLS", "true").lower() == "true")
-    public_base  = _env("PUBLIC_BASE_URL").rstrip("/") if _env("PUBLIC_BASE_URL") else ""
+    use_signed = (os.getenv("USE_SIGNED_URLS", "true").lower() == "true")
+    public_base = (os.getenv("PUBLIC_BASE_URL") or "").rstrip("/")
 
     if not use_signed and public_base:
         return f"{public_base}/{key}"
 
-    ttl = int(_env("SIGNED_URL_TTL", "86400"))
+    ttl = int(os.getenv("SIGNED_URL_TTL", "86400"))
     return s3.generate_presigned_url(
         "get_object",
         Params={"Bucket": bucket, "Key": key},
@@ -410,21 +425,36 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
             final_output_path.unlink()
         shutil.move(str(temp_output), final_output_path)
 
-    # 6) Upload to S3
+    # 6) Upload to configured storage backend
     _set_job(job_id, step="uploading")
-
-    bucket = (os.getenv("S3_BUCKET_NAME") or "").strip()
-    region = (os.getenv("S3_REGION") or "us-east-2").strip()
-    prefix = _s3_prefix()
-    safe_team = request.team_name.lower().replace(" ", "-")
-    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{final_output_path.name}"
+    key = _build_storage_key(request, final_output_path.name)
 
     try:
-        await _upload_with_retry(str(final_output_path), bucket, key)
-        cloud_url = f"https://{bucket}.s3.{region}.amazonaws.com/{key}"
+        if settings.storage_backend == "s3":
+            bucket = settings.s3_bucket or ""
+            region = settings.aws_region
+            await _upload_with_retry(str(final_output_path), bucket, key)
+            cloud_url = f"https://{bucket}.s3.{region}.amazonaws.com/{key}"
+        else:
+            cloud_url = await asyncio.to_thread(
+                upload_video_to_object_store, str(final_output_path), key
+            )
     except Exception as e:
-        _set_job(job_id, status="failed", step="uploading",
-                 error=f"Failed to upload {final_output_path} to {bucket}/{key}: {e}")
+        if settings.storage_backend == "s3":
+            bucket = settings.s3_bucket or ""
+            _set_job(
+                job_id,
+                status="failed",
+                step="uploading",
+                error=f"Failed to upload {final_output_path} to {bucket}/{key}: {e}",
+            )
+        else:
+            _set_job(
+                job_id,
+                status="failed",
+                step="uploading",
+                error=f"Failed to store output locally for key {key}: {e}",
+            )
         raise
 
     # 7) Cleanup & return
@@ -477,37 +507,48 @@ async def submit_form() -> HTMLResponse:
 @app.get("/debug/aws")
 async def debug_aws():
     import json, time
+    if settings.storage_backend != "s3":
+        return {
+            "storage_backend": settings.storage_backend,
+            "detail": "S3 backend disabled",
+        }
+
     s3 = _make_s3_client()
-    bucket = (os.getenv("S3_BUCKET_NAME") or "").strip()
-    region = (os.getenv("S3_REGION") or "").strip()
+    bucket = settings.s3_bucket or ""
+    region = settings.aws_region
 
     out = {"bucket": bucket, "env_region": region}
 
     # Who am I?
     try:
-        sts = boto3.client("sts",
-                           aws_access_key_id=(os.getenv("AWS_ACCESS_KEY_ID") or "").strip(),
-                           aws_secret_access_key=(os.getenv("AWS_SECRET_ACCESS_KEY") or "").strip())
-        ident = sts.get_caller_identity()
-        out["caller"] = {
-            "account": ident.get("Account"),
-            "arn": ident.get("Arn")[-32:],  # last bits only
-        }
-    except Exception as e:
+        if settings.aws_access_key_id and settings.aws_secret_access_key:
+            sts = boto3.client(
+                "sts",
+                aws_access_key_id=settings.aws_access_key_id,
+                aws_secret_access_key=settings.aws_secret_access_key,
+            )
+            ident = sts.get_caller_identity()
+            out["caller"] = {
+                "account": ident.get("Account"),
+                "arn": (ident.get("Arn") or "")[-32:],
+            }
+        else:  # pragma: no cover - configuration safeguard
+            out["caller_error"] = "AWS credentials missing"
+    except Exception as e:  # pragma: no cover - diagnostic endpoint
         out["caller_error"] = str(e)
 
     # Bucket location
     try:
         loc = s3.get_bucket_location(Bucket=bucket)
         out["bucket_location"] = loc.get("LocationConstraint") or "us-east-1"
-    except Exception as e:
+    except Exception as e:  # pragma: no cover - diagnostic endpoint
         out["bucket_location_error"] = str(e)
 
     # Head bucket
     try:
         s3.head_bucket(Bucket=bucket)
         out["head_bucket"] = "ok"
-    except Exception as e:
+    except Exception as e:  # pragma: no cover - diagnostic endpoint
         out["head_bucket_error"] = str(e)
 
     # Tiny write test (no multipart): proves creds/signature
@@ -516,7 +557,7 @@ async def debug_aws():
         body = b"ok\n"
         s3.put_object(Bucket=bucket, Key=key, Body=body, ContentType="text/plain")
         out["put_object"] = {"ok": True, "key": key}
-    except Exception as e:
+    except Exception as e:  # pragma: no cover - diagnostic endpoint
         out["put_object_error"] = str(e)
 
     return out
@@ -705,10 +746,8 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     except RuntimeError as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
-    # 4) Upload to S3
-    prefix = _s3_prefix()
-    safe_team = request.team_name.lower().replace(" ", "-")
-    key = f"{prefix}{safe_team}/{request.year or 'unknown'}/{request.cfbd_game_id or request.espn_game_id}/{final_output_path.name}"
+    # 4) Upload to configured storage backend
+    key = _build_storage_key(request, final_output_path.name)
     cloud_url = upload_video_to_object_store(str(final_output_path), key)
 
     # 5) Cleanup local
