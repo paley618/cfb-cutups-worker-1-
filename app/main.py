@@ -819,10 +819,10 @@ async def submit_job(request: Request):
 
 @app.get("/jobs/{job_id}")
 async def job_status(job_id: str):
-    j = JOBS.get(job_id)
-    if not j:
-        return {"job_id": job_id, "status": "not_found"}
-    return {"job_id": job_id, **j}
+    job = JOBS.get(job_id)
+    if not job:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Not found")
+    return {"job_id": job_id, "status": job.get("status", "unknown")}
 
 
 @app.get("/jobs/{job_id}/manifest")
