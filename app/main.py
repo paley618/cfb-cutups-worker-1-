@@ -11,6 +11,7 @@ import tempfile
 import os, logging
 import boto3
 import re
+from collections import Counter, deque
 from botocore.config import Config
 from botocore.exceptions import ClientError
 from contextlib import asynccontextmanager, suppress
@@ -18,6 +19,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from enum import Enum
 from pathlib import Path
+from time import perf_counter
 from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
 from .video import download_game_video
@@ -29,10 +31,17 @@ from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel, Field, HttpUrl, ValidationError, validator
 from yt_dlp import YoutubeDL
 
+from .logging import (
+    bind_request_context,
+    current_request_id,
+    is_request_debug_enabled,
+    reset_request_context,
+)
 from .runner import JobRunner
 from .schemas import JobSubmission
 
 JOBS: Dict[str, Dict[str, Any]] = {}  # { job_id: {"status": "...", "result": {...}, "error": "..."} }
+_JOB_HISTORY: deque[Dict[str, Any]] = deque(maxlen=100)
 
 def _resolve_concurrency() -> int:
     raw = os.getenv("MAX_CONCURRENCY")
@@ -80,6 +89,29 @@ def _set_job(job_id: str, **kwargs):
             "fields": sorted(kwargs.keys()),
         },
     )
+
+
+def _record_job_metrics(job_id: str) -> None:
+    data = JOBS.get(job_id, {})
+    status = data.get("status")
+    if status not in {"completed", "failed"}:
+        return
+
+    entry = {
+        "job_id": job_id,
+        "status": status,
+        "download_seconds": data.get("download_seconds"),
+        "processing_seconds": data.get("processing_seconds"),
+        "error": data.get("error"),
+    }
+    _JOB_HISTORY.append(entry)
+
+
+def _average(values: Iterable[float]) -> float:
+    items = [float(v) for v in values if isinstance(v, (int, float))]
+    if not items:
+        return 0.0
+    return sum(items) / len(items)
 
 _YT_T_PATTERN = re.compile(r"[?&#]t=([0-9hms]+|\d+)", re.I)
 _TIME_PATTERN = re.compile(r"\b(?:(\d+):)?([0-5]?\d):([0-5]\d)\b")
@@ -422,6 +454,9 @@ async def _job_worker(job_id: str, req: ProcessRequest):
                 error=message,
                 failed_at=datetime.now(timezone.utc).isoformat(),
             )
+    finally:
+        _record_job_metrics(job_id)
+        reset_request_context(token_request, token_debug)
 
 async def _upload_with_retry(local_path: str, bucket: str, key: str, *, content_type="video/mp4", tries=3):
     s3 = _make_s3_client()
@@ -486,63 +521,79 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
     output_dir.mkdir(parents=True, exist_ok=True)
     final_output_path = output_dir / f"cutup_{uuid4().hex}.mp4"
 
-    with tempfile.TemporaryDirectory(prefix="cutup_") as work_dir:
-        work_path = Path(work_dir)
-        input_path = work_path / "input.mp4"
-        clips_dir = work_path / "clips"
-        clips_dir.mkdir(parents=True, exist_ok=True)
-
-        # 4) Download full game (shows progress in /jobs/<id>)
-        _set_job(job_id, status="downloading", step="downloading")
-        await download_game_video(
-            str(request.video_url),
-            input_path,
-            job_id=job_id,
-            cookies_b64=request.yt_cookies_b64,
-        )
-
-        # 5) Cut & concat
-        _set_job(job_id, status="processing", step="cutting")
-        clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
-        temp_output = work_path / "output.mp4"
-        _set_job(job_id, status="processing", step="concatenating")
-        await _concatenate_clips(clip_paths, temp_output)
-
-        if final_output_path.exists():
-            final_output_path.unlink()
-        shutil.move(str(temp_output), final_output_path)
-
-    # 6) Upload to configured storage backend
-    _set_job(job_id, status="processing", step="uploading")
-    key = _build_storage_key(request, final_output_path.name)
+    processing_start: Optional[float] = None
 
     try:
-        if settings.storage_backend == "s3":
-            bucket = settings.s3_bucket or ""
-            region = settings.aws_region
-            await _upload_with_retry(str(final_output_path), bucket, key)
-            cloud_url = f"https://{bucket}.s3.{region}.amazonaws.com/{key}"
-        else:
-            cloud_url = await asyncio.to_thread(
-                upload_video_to_object_store, str(final_output_path), key
-            )
-    except Exception as e:
-        if settings.storage_backend == "s3":
-            bucket = settings.s3_bucket or ""
-            _set_job(
-                job_id,
-                status="failed",
-                step="uploading",
-                error=f"Failed to upload {final_output_path} to {bucket}/{key}: {e}",
-            )
-        else:
-            _set_job(
-                job_id,
-                status="failed",
-                step="uploading",
-                error=f"Failed to store output locally for key {key}: {e}",
-            )
-        raise
+        with tempfile.TemporaryDirectory(prefix="cutup_") as work_dir:
+            work_path = Path(work_dir)
+            input_path = work_path / "input.mp4"
+            clips_dir = work_path / "clips"
+            clips_dir.mkdir(parents=True, exist_ok=True)
+
+            # 4) Download full game (shows progress in /jobs/<id>)
+            if request.video_url is None:
+                raise HTTPException(status_code=400, detail="video_url is required")
+
+            _set_job(job_id, status="downloading", step="downloading")
+            download_start = perf_counter()
+            try:
+                await download_game_video(
+                    str(request.video_url),
+                    input_path,
+                    job_id=job_id,
+                    cookies_b64=request.yt_cookies_b64,
+                )
+            finally:
+                download_end = perf_counter()
+                _set_job(job_id, download_seconds=download_end - download_start)
+
+            processing_start = perf_counter()
+
+            # 5) Cut & concat
+            _set_job(job_id, status="processing", step="cutting")
+            clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
+            temp_output = work_path / "output.mp4"
+            _set_job(job_id, status="processing", step="concatenating")
+            await _concatenate_clips(clip_paths, temp_output)
+
+            if final_output_path.exists():
+                final_output_path.unlink()
+            shutil.move(str(temp_output), final_output_path)
+
+        # 6) Upload to configured storage backend
+        _set_job(job_id, status="processing", step="uploading")
+        key = _build_storage_key(request, final_output_path.name)
+
+        try:
+            if settings.storage_backend == "s3":
+                bucket = settings.s3_bucket or ""
+                region = settings.aws_region
+                await _upload_with_retry(str(final_output_path), bucket, key)
+                cloud_url = f"https://{bucket}.s3.{region}.amazonaws.com/{key}"
+            else:
+                cloud_url = await asyncio.to_thread(
+                    upload_video_to_object_store, str(final_output_path), key
+                )
+        except Exception as e:
+            if settings.storage_backend == "s3":
+                bucket = settings.s3_bucket or ""
+                _set_job(
+                    job_id,
+                    status="failed",
+                    step="uploading",
+                    error=f"Failed to upload {final_output_path} to {bucket}/{key}: {e}",
+                )
+            else:
+                _set_job(
+                    job_id,
+                    status="failed",
+                    step="uploading",
+                    error=f"Failed to store output locally for key {key}: {e}",
+                )
+            raise
+    finally:
+        if processing_start is not None:
+            _set_job(job_id, processing_seconds=perf_counter() - processing_start)
 
     # 7) Cleanup & return
     try:
@@ -790,6 +841,24 @@ async def job_download(job_id: str):
         filename=f"{job_id}.zip",
         media_type="application/zip",
     )
+
+
+@app.get("/metrics")
+async def service_metrics() -> Dict[str, Any]:
+    status_counts = Counter((job.get("status") or "unknown") for job in JOBS.values())
+    download_avg = _average(job.get("download_seconds") for job in JOBS.values())
+    processing_avg = _average(job.get("processing_seconds") for job in JOBS.values())
+
+    recent_error_counts = Counter(
+        entry["error"] for entry in list(_JOB_HISTORY) if entry.get("error")
+    )
+
+    return {
+        "status_counts": dict(status_counts),
+        "avg_download_seconds": download_avg,
+        "avg_processing_seconds": processing_avg,
+        "recent_error_counts": dict(recent_error_counts),
+    }
 
 
 def _get_store(request: Request) -> InMemoryJobStore:
