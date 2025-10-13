@@ -1,6 +1,7 @@
-fastapi
+pydantic>=2.7,<3
+fastapi>=0.111,<1
 httpx
-uvicorn[standard]
+uvicorn[standard]>=0.30,<1
 yt-dlp==2024.08.06
 boto3
 pydantic-settings

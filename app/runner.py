@@ -66,13 +66,15 @@ class JobRunner:
         *,
         request_id: Optional[str] = None,
         on_job_id: Optional[Callable[[str], None]] = None,
+        upload_path: Optional[Path] = None,
+        upload_src: Optional[str] = None,
     ) -> Dict[str, object]:
         """Run the full pipeline for the provided submission."""
 
-        hash_key = self._hash_submission(submission)
+        source_descriptor = self._source_descriptor(submission, upload_src)
+        hash_key = self._hash_submission(submission, source_descriptor)
         webhook_url = str(submission.webhook_url) if submission.webhook_url else None
         video_url = str(submission.video_url) if submission.video_url else None
-        source_descriptor = submission.source_descriptor
 
         cached_result: Optional[Dict[str, object]] = None
 
@@ -135,7 +137,12 @@ class JobRunner:
 
             logger.info("job_start", extra=log_extra)
             try:
-                manifest, manifest_url, archive_url = await self._process_job(job_id, submission)
+                manifest, manifest_url, archive_url = await self._process_job(
+                    job_id,
+                    submission,
+                    upload_path=upload_path,
+                    source_descriptor=source_descriptor,
+                )
             except Exception as exc:
                 logger.exception("job_failed", extra=log_extra)
                 await self._dispatch_webhook(
@@ -177,6 +184,19 @@ class JobRunner:
             webhook_payload,
             settings.webhook_hmac_secret,
         )
+
+    def _source_descriptor(
+        self, submission: JobSubmission, upload_src: Optional[str]
+    ) -> str:
+        if submission.video_url:
+            return str(submission.video_url)
+        if upload_src:
+            return upload_src
+        if submission.presigned_url:
+            return str(submission.presigned_url)
+        if submission.upload_id:
+            return f"upload:{submission.upload_id}"
+        return "unknown"
 
     def _sanitize_payload(self, payload: Dict[str, object]) -> Dict[str, object]:
         sanitized: Dict[str, object] = {}
@@ -233,7 +253,12 @@ class JobRunner:
         return self.base_dir / job_id / "job.zip"
 
     async def _process_job(
-        self, job_id: str, submission: JobSubmission
+        self,
+        job_id: str,
+        submission: JobSubmission,
+        *,
+        upload_path: Optional[Path],
+        source_descriptor: str,
     ) -> tuple[Dict[str, object], str, str]:
         job_dir = self.base_dir / job_id
         if job_dir.exists():
@@ -244,11 +269,14 @@ class JobRunner:
         thumbs_dir.mkdir(parents=True, exist_ok=True)
 
         source_path = job_dir / "source.mp4"
-        if submission.upload_path is not None:
-            await asyncio.to_thread(shutil.copyfile, submission.upload_path, source_path)
+        if upload_path is not None:
+            await asyncio.to_thread(shutil.copyfile, upload_path, source_path)
         else:
+            source_url = submission.presigned_url or submission.video_url
+            if not source_url:
+                raise RuntimeError("No downloadable source URL provided for job submission")
             await download_game_video(
-                str(submission.video_url),
+                str(source_url),
                 source_path,
                 job_id=job_id,
             )
@@ -300,7 +328,7 @@ class JobRunner:
 
         manifest: Dict[str, object] = {
             "job_id": job_id,
-            "source_url": submission.source_descriptor,
+            "source_url": source_descriptor,
             "clips": clips,
             "metrics": {
                 "num_clips": len(clips),
@@ -383,10 +411,12 @@ class JobRunner:
 
         return await asyncio.to_thread(_run)
 
-    def _hash_submission(self, submission: JobSubmission) -> str:
+    def _hash_submission(
+        self, submission: JobSubmission, source_descriptor: str
+    ) -> str:
         payload = {
-            "video_url": submission.source_descriptor,
-            "options": submission.options.dict(),
+            "video_url": source_descriptor,
+            "options": submission.options.model_dump(),
         }
         normalized = json.dumps(payload, sort_keys=True)
         return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
