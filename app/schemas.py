@@ -1,17 +1,20 @@
 from typing import Optional
+
 from pydantic import BaseModel, HttpUrl, model_validator
 
 
 class Options(BaseModel):
     play_padding_pre: float = 3.0
     play_padding_post: float = 5.0
+    scene_thresh: float = 0.30
+    min_duration: float = 4.0
+    max_duration: float = 20.0
 
 
 class JobSubmission(BaseModel):
-    # Provide EITHER video_url OR upload_id OR presigned_url
-    video_url: Optional[HttpUrl] = None          # e.g., YouTube/Vimeo/Drive/Dropbox/etc.
-    upload_id: Optional[str] = None              # server-side uploaded file handle
-    presigned_url: Optional[HttpUrl] = None      # direct download (S3/Cloud Storage)
+    video_url: Optional[HttpUrl] = None
+    upload_id: Optional[str] = None
+    presigned_url: Optional[HttpUrl] = None
     webhook_url: Optional[HttpUrl] = None
     options: Options = Options()
 
