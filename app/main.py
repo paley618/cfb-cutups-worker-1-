@@ -35,6 +35,8 @@ def _set_job(job_id: str, **kwargs):
     JOBS.setdefault(job_id, {}).update(kwargs)
 
 _YT_T_PATTERN = re.compile(r"[?&#]t=([0-9hms]+|\d+)", re.I)
+_TIME_PATTERN = re.compile(r"\b(?:(\d+):)?([0-5]?\d):([0-5]\d)\b")
+_KEYWORDS = ("kickoff", "1st quarter", "first quarter", "q1", "start", "opening")
 
 def _parse_yt_start_hint(url: str) -> float:
     """
@@ -59,7 +61,7 @@ def _parse_yt_start_hint(url: str) -> float:
 
 class ProcessRequest(BaseModel):
     # existing fields (we keep espn_game_id for backward compat, but ignore it in CFBD flow)
-    video_url: HttpUrl
+    video_url: Optional[HttpUrl] = None
     team_name: str = Field(..., min_length=1)
     espn_game_id: str = Field(..., min_length=1)
 
@@ -72,6 +74,67 @@ class ProcessRequest(BaseModel):
 
     # NEW: shift all plays by this many seconds (can be negative)
     video_offset_sec: Optional[float] = None
+
+    # NEW: auto-detect offset when manual value absent
+    auto_offset: bool = True
+
+    # Optional inline YouTube cookies (base64-encoded Netscape cookies.txt)
+    yt_cookies_b64: Optional[str] = None
+
+
+def _parse_hms(match: re.Match) -> float:
+    hours = int(match.group(1) or 0)
+    minutes = int(match.group(2) or 0)
+    seconds = int(match.group(3) or 0)
+    return float(hours * 3600 + minutes * 60 + seconds)
+
+
+def _extract_info(url: str) -> dict:
+    # metadata only; no download
+    with YoutubeDL({"quiet": True, "no_warnings": True, "skip_download": True}) as ydl:
+        return ydl.extract_info(url, download=False)
+
+
+def infer_video_offset(url: str) -> tuple[float, str]:
+    # 1) URL ?t= hint
+    start_hint = _parse_yt_start_hint(url)
+    if start_hint > 0:
+        return start_hint, "hint:t-param"
+
+    # 2) Chapters
+    try:
+        info = _extract_info(url) or {}
+    except Exception:
+        info = {}
+
+    chapters = info.get("chapters") or []
+    for chapter in chapters:
+        title = (chapter.get("title") or "").lower()
+        if any(keyword in title for keyword in _KEYWORDS):
+            start_time = chapter.get("start_time")
+            if isinstance(start_time, (int, float)) and start_time >= 0:
+                return float(start_time), f"chapters:{title}"
+    if chapters:
+        first_title = (chapters[0].get("title") or "").lower()
+        if "quarter" in first_title or re.search(r"\bq1\b", first_title):
+            start_time = chapters[0].get("start_time")
+            if isinstance(start_time, (int, float)) and start_time >= 0:
+                return float(start_time), f"chapters:first:{first_title}"
+
+    # 3) Description timecodes
+    description = info.get("description") or ""
+    lines = description.splitlines()
+    preferred_lines = [
+        line for line in lines if any(keyword in line.lower() for keyword in _KEYWORDS)
+    ]
+    search_lines = preferred_lines or lines
+    for line in search_lines:
+        match = _TIME_PATTERN.search(line)
+        if match:
+            return _parse_hms(match), "desc:timecode"
+
+    # 4) No match
+    return 0.0, "none"
 
 class JobStatus(str, Enum):
     """Lifecycle states for a cut-up processing job."""
@@ -306,7 +369,12 @@ async def _job_worker(job_id: str, req: ProcessRequest):
         result = await _run_cutups_and_upload(req, job_id)
         _set_job(job_id, status="finished", result=result)
     except Exception as e:
-        _set_job(job_id, status="failed", error=str(e))
+        message = str(e)
+        if "needs_cookies=true" in message:
+            error_label = message.split(":", 1)[0].strip() or message
+            _set_job(job_id, status="failed", error=error_label, needs_cookies=True)
+        else:
+            _set_job(job_id, status="failed", error=message)
 
 async def _upload_with_retry(local_path: str, bucket: str, key: str, *, content_type="video/mp4", tries=3):
     s3 = _make_s3_client()
@@ -333,20 +401,35 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
         cfbd_game_id=request.cfbd_game_id,
     )
 
-    # 2) Apply optional offset (manual or ?t= hint on the URL)
+    # 2) Apply optional offset (manual or inferred)
     offset = 0.0
-    try:
-        if request.video_offset_sec is not None:
+    offset_reason = "manual"
+    if request.video_offset_sec is not None:
+        try:
             offset = float(request.video_offset_sec)
+        except Exception:
+            offset = 0.0
+            offset_reason = "manual-invalid"
+    else:
+        if request.auto_offset:
+            if request.video_url is not None:
+                try:
+                    offset, offset_reason = infer_video_offset(str(request.video_url))
+                except Exception:
+                    offset, offset_reason = 0.0, "auto-error"
+            else:
+                offset, offset_reason = 0.0, "auto-missing-url"
         else:
-            offset = _parse_yt_start_hint(str(request.video_url))
-    except Exception:
-        offset = 0.0
+            offset, offset_reason = 0.0, "auto-disabled"
 
     if offset != 0.0:
         timestamps = [ts + offset for ts in timestamps]
 
-    print(f">>> CUTUPS: using offset={offset:.1f}s; first 3 after offset = {timestamps[:3]}")
+    print(
+        f">>> CUTUPS: using offset={offset:.1f}s ({offset_reason}); first 3 after offset = {timestamps[:3]}"
+    )
+
+    _set_job(job_id, offset={"value": offset, "reason": offset_reason})
 
     if not timestamps:
         raise HTTPException(status_code=404, detail="No offensive plays found for the requested team")
@@ -364,7 +447,15 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
 
         # 4) Download full game (shows progress in /jobs/<id>)
         _set_job(job_id, status="running", step="downloading")
-        await download_game_video(str(request.video_url), input_path, job_id=job_id)
+        if request.video_url is None:
+            raise RuntimeError("video_url is required to download game video")
+
+        await download_game_video(
+            str(request.video_url),
+            input_path,
+            job_id=job_id,
+            cookies_b64=request.yt_cookies_b64,
+        )
 
         # 5) Cut & concat
         _set_job(job_id, step="cutting")
@@ -565,18 +656,31 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
 
     # 2) Apply optional offset
     offset = 0.0
-    try:
-        if request.video_offset_sec is not None:
+    offset_reason = "manual"
+    if request.video_offset_sec is not None:
+        try:
             offset = float(request.video_offset_sec)
+        except Exception:
+            offset = 0.0
+            offset_reason = "manual-invalid"
+    else:
+        if request.auto_offset:
+            if request.video_url is not None:
+                try:
+                    offset, offset_reason = infer_video_offset(str(request.video_url))
+                except Exception:
+                    offset, offset_reason = 0.0, "auto-error"
+            else:
+                offset, offset_reason = 0.0, "auto-missing-url"
         else:
-            offset = _parse_yt_start_hint(str(request.video_url))
-    except Exception:
-        offset = 0.0
+            offset, offset_reason = 0.0, "auto-disabled"
 
     if offset != 0.0:
         timestamps = [ts + offset for ts in timestamps]
 
-    print(f">>> CUTUPS: using offset={offset:.1f}s; first 3 after offset = {timestamps[:3]}")
+    print(
+        f">>> CUTUPS: using offset={offset:.1f}s ({offset_reason}); first 3 after offset = {timestamps[:3]}"
+    )
 
     if not timestamps:
         raise HTTPException(status_code=404, detail="No offensive plays found for the requested team")
@@ -588,6 +692,9 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             input_path = work_path / "input.mp4"
             clips_dir = work_path / "clips"
             clips_dir.mkdir(parents=True, exist_ok=True)
+
+            if request.video_url is None:
+                raise HTTPException(status_code=400, detail="video_url is required")
 
             await download_game_video(str(request.video_url), input_path, job_id=None)
             clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
@@ -613,7 +720,12 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
     except Exception:
         pass
 
-    return {"message": "Done", "cloud_url": cloud_url, "key": key}
+    return {
+        "message": "Done",
+        "cloud_url": cloud_url,
+        "key": key,
+        "offset": {"value": offset, "reason": offset_reason},
+    }
 
 # --- CFBD play fetcher (indentation-safe, with fallback) ---
 async def _fetch_offensive_play_times_cfbd(
