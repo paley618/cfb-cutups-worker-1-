@@ -9,6 +9,7 @@ import shutil
 import subprocess
 import tempfile
 import os, logging
+from urllib.parse import urlparse
 import boto3
 import re
 from collections import Counter, deque
@@ -118,6 +119,22 @@ def _average(values: Iterable[float]) -> float:
 _YT_T_PATTERN = re.compile(r"[?&#]t=([0-9hms]+|\d+)", re.I)
 _TIME_PATTERN = re.compile(r"\b(?:(\d+):)?([0-5]?\d):([0-5]\d)\b")
 _KEYWORDS = ("kickoff", "1st quarter", "first quarter", "q1", "start", "opening")
+
+_ALLOWED_VIDEO_DOMAINS = {
+    "youtube.com",
+    "youtu.be",
+    "vimeo.com",
+    "dropbox.com",
+    "drive.google.com",
+    "storage.googleapis.com",
+    "s3.amazonaws.com",
+    "amazonaws.com",
+    "box.com",
+}
+
+_UNSUPPORTED_SOURCE_MESSAGE = (
+    "This source isn’t supported. Please upload a file or use Dropbox/Drive/S3/Vimeo/YouTube (with cookies)."
+)
 
 def _parse_yt_start_hint(url: str) -> float:
     """
@@ -273,6 +290,38 @@ request_log = logging.getLogger("app.request")
 jobs_log = logging.getLogger("app.jobs")
 
 runner = JobRunner()
+
+
+def _is_allowed_video_url(url: str) -> bool:
+    parsed = urlparse(url)
+    hostname = (parsed.hostname or "").strip().rstrip(".")
+    if not hostname:
+        return False
+    hostname = hostname.lower()
+    return any(
+        hostname == domain or hostname.endswith(f".{domain}")
+        for domain in _ALLOWED_VIDEO_DOMAINS
+    )
+
+
+def _validate_video_source(video_url: str, request_id: Optional[str]) -> None:
+    if _is_allowed_video_url(video_url):
+        return
+
+    hostname = (urlparse(video_url).hostname or "").lower()
+    log_request_id = request_id or current_request_id() or "unknown"
+    jobs_log.info(
+        "job_unsupported_source",
+        extra={
+            "request_id": log_request_id,
+            "video_url": video_url,
+            "domain": hostname,
+        },
+    )
+    raise HTTPException(
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        detail=_UNSUPPORTED_SOURCE_MESSAGE,
+    )
 
 def _make_s3_client():
     if settings.storage_backend != "s3":
@@ -802,6 +851,8 @@ async def submit_job(request: Request):
         queued_at = datetime.now(timezone.utc).isoformat()
         queue_position = _JOB_QUEUE.qsize() + 1
         video_url = str(process_request.video_url) if process_request.video_url else None
+        if video_url:
+            _validate_video_source(video_url, request_id)
         _set_job(
             job_id,
             status="queued",
@@ -823,6 +874,7 @@ async def submit_job(request: Request):
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
 
     video_url = str(job_submission.video_url)
+    _validate_video_source(video_url, request_id)
     holder: Dict[str, str] = {}
 
     def _log_job_create(job_id: str) -> None:
