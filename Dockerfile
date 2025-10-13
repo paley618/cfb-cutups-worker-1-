@@ -2,12 +2,7 @@
 FROM python:3.10-slim as base
 
 ARG FFMPEG_VERSION=6.1.1
-# The yt-dlp FFmpeg builds are released under tags like `ffmpeg-n6.1.1-latest`
-# and the assets follow the same naming scheme. The previous URL attempted to
-# fetch from a `v${FFMPEG_VERSION}` tag which does not exist and resulted in a
-# 404 at deploy time. Point directly at the `ffmpeg-n${FFMPEG_VERSION}-latest`
-# tag to ensure the asset is resolvable.
-ARG FFMPEG_DOWNLOAD_URL=https://github.com/yt-dlp/FFmpeg-Builds/releases/download/ffmpeg-n${FFMPEG_VERSION}-latest/ffmpeg-n${FFMPEG_VERSION}-latest-linux64-gpl.tar.xz
+ARG FFMPEG_DOWNLOAD_URL=https://github.com/yt-dlp/FFmpeg-Builds/releases/download/v${FFMPEG_VERSION}/ffmpeg-n${FFMPEG_VERSION}-latest-linux64-gpl.tar.xz
 ARG FFMPEG_SHA256=
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
