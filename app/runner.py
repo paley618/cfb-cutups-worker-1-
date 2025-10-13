@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import asyncio
+import logging
 import hashlib
 import json
 import shutil
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List, Optional, Sequence
+from typing import Callable, Dict, List, Optional, Sequence
 from uuid import uuid4
 from zipfile import ZIP_DEFLATED, ZipFile
 
@@ -19,6 +20,9 @@ from .video import download_game_video
 from .settings import settings
 from .webhook import send_webhook
 from .storage import Storage, get_storage
+
+
+logger = logging.getLogger("app.jobs")
 
 
 @dataclass(frozen=True)
@@ -56,11 +60,18 @@ class JobRunner:
         default_storage_dir = str(self.base_dir)
         self.storage: Storage = storage or get_storage(default_storage_dir)
 
-    async def run(self, submission: JobSubmission) -> Dict[str, object]:
+    async def run(
+        self,
+        submission: JobSubmission,
+        *,
+        request_id: Optional[str] = None,
+        on_job_id: Optional[Callable[[str], None]] = None,
+    ) -> Dict[str, object]:
         """Run the full pipeline for the provided submission."""
 
         hash_key = self._hash_submission(submission)
         webhook_url = str(submission.webhook_url) if submission.webhook_url else None
+        video_url = str(submission.video_url)
 
         cached_result: Optional[Dict[str, object]] = None
 
@@ -83,7 +94,20 @@ class JobRunner:
                 self._hash_index[hash_key] = job_id
                 self._write_index()
 
+        if on_job_id is not None:
+            on_job_id(job_id)
+
+        log_request_id = request_id or "unknown"
+        log_extra = {
+            "request_id": log_request_id,
+            "job_id": job_id,
+            "video_url": video_url,
+        }
+
         if cached_result is not None:
+            cached_extra = {**log_extra, "cached": True}
+            logger.info("job_start", extra=cached_extra)
+            logger.info("job_complete", extra=cached_extra)
             await self._dispatch_webhook(webhook_url, job_id, "completed", cached_result)
             return cached_result
 
@@ -100,12 +124,17 @@ class JobRunner:
                     zip_path,
                     hash_key,
                 )
+                cached_extra = {**log_extra, "cached": True}
+                logger.info("job_start", extra=cached_extra)
+                logger.info("job_complete", extra=cached_extra)
                 await self._dispatch_webhook(webhook_url, job_id, "completed", result)
                 return result
 
+            logger.info("job_start", extra=log_extra)
             try:
                 manifest, manifest_url, archive_url = await self._process_job(job_id, submission)
             except Exception as exc:
+                logger.exception("job_failed", extra=log_extra)
                 await self._dispatch_webhook(
                     webhook_url,
                     job_id,
@@ -123,6 +152,7 @@ class JobRunner:
                 manifest_url=manifest_url,
                 archive_url=archive_url,
             )
+            logger.info("job_complete", extra=log_extra)
             await self._dispatch_webhook(webhook_url, job_id, "completed", result)
             return result
 

@@ -33,6 +33,7 @@ from pydantic import BaseModel, Field, HttpUrl, ValidationError, validator
 from yt_dlp import YoutubeDL
 
 from .logging import (
+    REQUEST_ID_HEADER,
     bind_request_context,
     current_request_id,
     is_request_debug_enabled,
@@ -414,8 +415,12 @@ async def _job_worker(job_id: str, req: ProcessRequest):
         token_request = token_debug = None
 
     effective_request_id = request_id or "unknown"
+    video_url = meta.get("video_url") or (str(req.video_url) if req.video_url else None)
 
-    jobs_log.info("job.start", extra={"request_id": effective_request_id, "job_id": job_id})
+    jobs_log.info(
+        "job_start",
+        extra={"request_id": effective_request_id, "job_id": job_id, "video_url": video_url},
+    )
 
     try:
         _set_job(
@@ -434,8 +439,12 @@ async def _job_worker(job_id: str, req: ProcessRequest):
             completed_at=datetime.now(timezone.utc).isoformat(),
         )
         jobs_log.info(
-            "job.complete",
-            extra={"request_id": effective_request_id, "job_id": job_id},
+            "job_complete",
+            extra={
+                "request_id": effective_request_id,
+                "job_id": job_id,
+                "video_url": video_url,
+            },
         )
     except Exception as e:
         message = str(e)
@@ -455,6 +464,10 @@ async def _job_worker(job_id: str, req: ProcessRequest):
                 error=message,
                 failed_at=datetime.now(timezone.utc).isoformat(),
             )
+        jobs_log.exception(
+            "job_failed",
+            extra={"request_id": effective_request_id, "job_id": job_id, "video_url": video_url},
+        )
     finally:
         _record_job_metrics(job_id)
         reset_request_context(token_request, token_debug)
@@ -746,6 +759,11 @@ async def debug_aws():
 async def submit_job(request: Request):
     content_type = request.headers.get("content-type", "")
     payload: Dict[str, Any]
+    request_id = request.headers.get(REQUEST_ID_HEADER)
+    if not request_id:
+        request_id = current_request_id()
+    if not request_id:
+        request_id = uuid.uuid4().hex
 
     if "application/json" in content_type:
         try:
@@ -783,11 +801,18 @@ async def submit_job(request: Request):
         job_id = _new_job()
         queued_at = datetime.now(timezone.utc).isoformat()
         queue_position = _JOB_QUEUE.qsize() + 1
+        video_url = str(process_request.video_url) if process_request.video_url else None
         _set_job(
             job_id,
             status="queued",
             queued_at=queued_at,
             queue_position=queue_position,
+            request_id=request_id,
+            video_url=video_url,
+        )
+        jobs_log.info(
+            "job_create",
+            extra={"request_id": request_id, "job_id": job_id, "video_url": video_url},
         )
         await _JOB_QUEUE.put((job_id, process_request))
         return {"job_id": job_id, "status": "queued"}
@@ -797,8 +822,23 @@ async def submit_job(request: Request):
     except ValidationError as exc:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
 
-    result = await runner.run(job_submission)
+    video_url = str(job_submission.video_url)
+    holder: Dict[str, str] = {}
+
+    def _log_job_create(job_id: str) -> None:
+        holder["job_id"] = job_id
+        jobs_log.info(
+            "job_create",
+            extra={"request_id": request_id, "job_id": job_id, "video_url": video_url},
+        )
+
+    result = await runner.run(job_submission, request_id=request_id, on_job_id=_log_job_create)
     job_id = result["job_id"]
+    if "job_id" not in holder:
+        jobs_log.info(
+            "job_create",
+            extra={"request_id": request_id, "job_id": job_id, "video_url": video_url},
+        )
     manifest_path = str(result["manifest_path"])
     archive_path = str(result["archive_path"])
     manifest = result["manifest"]
@@ -814,6 +854,8 @@ async def submit_job(request: Request):
         archive_url=archive_url,
         manifest=manifest,
         completed_at=datetime.now(timezone.utc).isoformat(),
+        request_id=request_id,
+        video_url=video_url,
     )
     return {"job_id": job_id, "status": "completed"}
 
