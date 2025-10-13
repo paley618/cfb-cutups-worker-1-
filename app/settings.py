@@ -61,6 +61,12 @@ class Settings(BaseSettings):
         description="Domains permitted when the allowlist is enabled.",
     )
 
+    DRIVE_COOKIES_B64: str | None = None
+    DRIVE_COOKIES_PATH: str = "/tmp/drive_cookies.txt"
+    HTTP_CONNECT_TIMEOUT: float = 10.0
+    HTTP_READ_TIMEOUT: float = 60.0
+    HTTP_TOTAL_TIMEOUT: float = 600.0
+
     @field_validator("log_level")
     @classmethod
     def _normalize_log_level(cls, value: str) -> str:

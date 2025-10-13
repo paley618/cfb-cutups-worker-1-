@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import asyncio
 import base64
+import logging
 import os
 import re
 import shlex
@@ -21,7 +22,11 @@ from yt_dlp.utils import DownloadError
 import httpx
 
 from .segment import cut_clip, make_thumb
+from .fetcher_drive import download_from_google_drive
+from .settings import settings
 
+
+logger = logging.getLogger(__name__)
 
 _ENV_COOKIES_KEY = "YTDLP_COOKIES_B64"
 _CONSENT_MESSAGE = (
@@ -100,7 +105,11 @@ async def _stream_download(
 ) -> None:
     owns_client = client is None
     if client is None:
-        timeout = httpx.Timeout(60.0, connect=10.0)
+        timeout = httpx.Timeout(
+            settings.HTTP_TOTAL_TIMEOUT,
+            connect=settings.HTTP_CONNECT_TIMEOUT,
+            read=settings.HTTP_READ_TIMEOUT,
+        )
         client = httpx.AsyncClient(timeout=timeout, follow_redirects=True)
 
     try:
@@ -123,7 +132,11 @@ async def _stream_download(
 
 
 async def _download_presigned_s3(url: str, destination: Path, job_id: Optional[str]) -> None:
-    timeout = httpx.Timeout(60.0, connect=10.0)
+    timeout = httpx.Timeout(
+        settings.HTTP_TOTAL_TIMEOUT,
+        connect=settings.HTTP_CONNECT_TIMEOUT,
+        read=settings.HTTP_READ_TIMEOUT,
+    )
     async with httpx.AsyncClient(timeout=timeout, follow_redirects=True) as client:
         head = await client.head(url)
         total: Optional[int] = None
@@ -196,87 +209,6 @@ def _normalize_dropbox_url(url: str) -> str:
             parsed.fragment,
         )
     )
-
-
-def _extract_drive_id(url: str) -> Optional[str]:
-    parsed = urlparse(url)
-    if not parsed.netloc:
-        return None
-
-    query_params = dict(parse_qsl(parsed.query))
-    if "id" in query_params:
-        return query_params.get("id") or None
-
-    parts = [p for p in parsed.path.split("/") if p]
-    for index, value in enumerate(parts):
-        if value == "d" and index + 1 < len(parts):
-            return parts[index + 1]
-    return None
-
-
-def _extract_drive_confirm_token(html: str) -> Optional[str]:
-    match = re.search(r"confirm=([0-9A-Za-z_\-]+)", html)
-    if match:
-        return match.group(1)
-    return None
-
-
-def _detect_drive_error(html: str) -> Optional[str]:
-    lowered = html.lower()
-    if "quota exceeded" in lowered or "download quota" in lowered:
-        return (
-            "Google Drive download quota has been exceeded for this file. "
-            "Make a copy of the video in your own Drive or generate a new direct link."
-        )
-    if "can't scan this file for viruses" in lowered and "sign in" in lowered:
-        return (
-            "Google Drive requires a virus-scan confirmation that cannot be automated. "
-            "Request a direct download link or host the video on another service."
-        )
-    if "you need access" in lowered:
-        return "Google Drive denied access to the file. Share it publicly or provide a direct download link."
-    return None
-
-
-async def _download_google_drive(url: str, destination: Path, job_id: Optional[str]) -> None:
-    file_id = _extract_drive_id(url)
-    if not file_id:
-        raise RuntimeError("Unable to extract Google Drive file ID from the provided URL.")
-
-    base_url = "https://drive.google.com/uc"
-    params: Dict[str, str] = {"export": "download", "id": file_id}
-    timeout = httpx.Timeout(60.0, connect=10.0)
-
-    async with httpx.AsyncClient(timeout=timeout, follow_redirects=True) as client:
-        initial = await client.get(base_url, params=params)
-        if initial.status_code >= 400:
-            initial.raise_for_status()
-
-        content_type = initial.headers.get("Content-Type", "").lower()
-        if content_type.startswith("text/html"):
-            html = initial.text
-            drive_error = _detect_drive_error(html)
-            if drive_error:
-                raise RuntimeError(drive_error)
-
-            token = _extract_drive_confirm_token(html)
-            if token:
-                params["confirm"] = token
-            else:
-                raise RuntimeError(
-                    "Google Drive returned a confirmation page that could not be automated. "
-                    "Open the link in a browser, complete the confirmation, and supply the final download URL."
-                )
-        else:
-            # The first response already contained the file; stream it directly.
-            download_url = str(initial.request.url)
-            await _stream_download(download_url, destination, client=client, job_id=job_id)
-            return
-
-        download_url = httpx.URL(base_url).copy_with(params=params)
-        await _stream_download(str(download_url), destination, client=client, job_id=job_id)
-
-
 # ---------- progress -> /jobs/<id> ----------
 def _yt_progress_hook_factory(job_id: Optional[str]):
     # import inside to avoid circular import at module load
@@ -338,7 +270,14 @@ async def download_game_video(
             return
 
         if hostname.endswith("drive.google.com") or hostname.endswith("docs.google.com"):
-            await _download_google_drive(video_url, destination, job_id)
+            cookies_path = (
+                settings.DRIVE_COOKIES_PATH if settings.DRIVE_COOKIES_B64 else None
+            )
+            await download_from_google_drive(video_url, str(destination), cookies_path)
+            if job_id:
+                logger.info("ingest_gdrive_ok", extra={"job_id": job_id})
+            else:
+                logger.info("ingest_gdrive_ok")
             return
 
         await _stream_download(video_url, destination, job_id=job_id)

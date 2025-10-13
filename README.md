@@ -103,6 +103,13 @@ Advanced CFBD workflow that accepts team + season filters, optional `yt_cookies_
 
 ---
 
+### Google Drive sources
+- Paste the Drive share link (either `drive.google.com/file/d/<id>/view` or `docs.google.com/uc?export=download&id=<id>`).
+- For very large files, Drive shows a “can’t scan for viruses” interstitial; the app auto-confirms and downloads.
+- Private files may require setting a share link (“Anyone with the link”) or providing Drive cookies via `DRIVE_COOKIES_B64` (Netscape format, base64-encoded).
+
+---
+
 ## Common download failures & fixes
 
 | Symptom | What it means | How to fix |
