@@ -59,7 +59,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     const poll = async (tries = 0) => {
       const manifestResp = await fetch(`/jobs/${jobId}/manifest`, { cache: 'no-store' });
       if (manifestResp.ok) {
-        const manifest = await manifestResp.json();
+        const meta = await manifestResp.json();
+        let manifest;
+        if (meta.redirect) {
+          try {
+            const follow = await fetch(meta.redirect, { cache: 'no-store' });
+            manifest = await follow.json();
+          } catch (err) {
+            statusEl.textContent = 'Completed, but failed to fetch manifest.';
+            btn.disabled = false;
+            return;
+          }
+        } else {
+          manifest = meta;
+        }
+
         statusEl.textContent = 'Completed.';
         resultEl.style.display = 'block';
         resultEl.textContent = JSON.stringify(manifest, null, 2);
@@ -67,8 +81,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         link.href = `/jobs/${jobId}/download`;
         link.textContent = 'Download ZIP';
         link.className = 'link';
-        statusEl.appendChild(document.createTextNode(' '));
-        statusEl.appendChild(link);
+        link.addEventListener('click', async (event) => {
+          event.preventDefault();
+          try {
+            const resp = await fetch(`/jobs/${jobId}/download`, { cache: 'no-store' });
+            if (!resp.ok) {
+              return;
+            }
+            const info = await resp.json();
+            if (info.redirect) {
+              window.location = info.redirect;
+            }
+          } catch (_) {}
+        });
+        statusEl.append(' ', link);
         btn.disabled = false;
         return;
       }
