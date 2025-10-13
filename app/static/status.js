@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('job-form');
   const statusEl = document.getElementById('status');
   const resultEl = document.getElementById('result');
+  const fileInput = document.getElementById('video_file');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -14,11 +15,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const play_padding_pre = parseFloat(document.getElementById('play_padding_pre').value || '3');
     const play_padding_post = parseFloat(document.getElementById('play_padding_post').value || '5');
 
+    const file = fileInput.files[0];
+    if (!video_url && !file) {
+      statusEl.textContent = 'Provide either a video URL or upload a file.';
+      return;
+    }
+
     const payload = {
-      video_url,
-      webhook_url: webhook_url || null,
       options: { play_padding_pre, play_padding_post }
     };
+
+    if (webhook_url) {
+      payload.webhook_url = webhook_url;
+    }
+
+    let sourceLabel = video_url;
+
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+      let uploadResp;
+      try {
+        uploadResp = await fetch('/upload', {
+          method: 'POST',
+          body: formData
+        });
+      } catch (err) {
+        statusEl.textContent = 'Network error uploading file.';
+        return;
+      }
+
+      if (!uploadResp.ok) {
+        statusEl.textContent = `Upload failed (HTTP ${uploadResp.status}).`;
+        return;
+      }
+
+      const uploadData = await uploadResp.json();
+      payload.upload_id = uploadData.upload_id;
+      sourceLabel = uploadData.src;
+    } else {
+      payload.video_url = video_url;
+    }
 
     let resp;
     try {
@@ -39,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const data = await resp.json();
     const jobId = data.job_id;
-    statusEl.textContent = `Job queued: ${jobId}. Processing...`;
+    statusEl.textContent = `Job queued: ${jobId}. Processing ${sourceLabel}...`;
 
     const poll = async () => {
       try {

@@ -71,7 +71,8 @@ class JobRunner:
 
         hash_key = self._hash_submission(submission)
         webhook_url = str(submission.webhook_url) if submission.webhook_url else None
-        video_url = str(submission.video_url)
+        video_url = str(submission.video_url) if submission.video_url else None
+        source_descriptor = submission.source_descriptor
 
         cached_result: Optional[Dict[str, object]] = None
 
@@ -102,6 +103,8 @@ class JobRunner:
             "request_id": log_request_id,
             "job_id": job_id,
             "video_url": video_url,
+            "upload_id": submission.upload_id,
+            "source": source_descriptor,
         }
 
         if cached_result is not None:
@@ -241,11 +244,14 @@ class JobRunner:
         thumbs_dir.mkdir(parents=True, exist_ok=True)
 
         source_path = job_dir / "source.mp4"
-        await download_game_video(
-            str(submission.video_url),
-            source_path,
-            job_id=job_id,
-        )
+        if submission.upload_path is not None:
+            await asyncio.to_thread(shutil.copyfile, submission.upload_path, source_path)
+        else:
+            await download_game_video(
+                str(submission.video_url),
+                source_path,
+                job_id=job_id,
+            )
 
         duration = await self._probe_duration(source_path)
         play_windows = await self._detect_play_windows(source_path, duration)
@@ -294,7 +300,7 @@ class JobRunner:
 
         manifest: Dict[str, object] = {
             "job_id": job_id,
-            "source_url": str(submission.video_url),
+            "source_url": submission.source_descriptor,
             "clips": clips,
             "metrics": {
                 "num_clips": len(clips),
@@ -379,7 +385,7 @@ class JobRunner:
 
     def _hash_submission(self, submission: JobSubmission) -> str:
         payload = {
-            "video_url": str(submission.video_url),
+            "video_url": submission.source_descriptor,
             "options": submission.options.dict(),
         }
         normalized = json.dumps(payload, sort_keys=True)
