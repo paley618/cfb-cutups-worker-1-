@@ -31,8 +31,6 @@ from yt_dlp import YoutubeDL
 
 from .schemas import JobSubmission
 
-logging.basicConfig(level=getattr(logging, settings.logging_level, logging.INFO))
-
 JOBS: Dict[str, Dict[str, Any]] = {}  # { job_id: {"status": "...", "result": {...}, "error": "..."} }
 
 def _new_job() -> str:
@@ -82,66 +80,8 @@ class ProcessRequest(BaseModel):
     # NEW: shift all plays by this many seconds (can be negative)
     video_offset_sec: Optional[float] = None
 
-    # NEW: auto-detect offset when manual value absent
-    auto_offset: bool = True
-
     # Optional inline YouTube cookies (base64-encoded Netscape cookies.txt)
     yt_cookies_b64: Optional[str] = None
-
-
-def _parse_hms(match: re.Match) -> float:
-    hours = int(match.group(1) or 0)
-    minutes = int(match.group(2) or 0)
-    seconds = int(match.group(3) or 0)
-    return float(hours * 3600 + minutes * 60 + seconds)
-
-
-def _extract_info(url: str) -> dict:
-    # metadata only; no download
-    with YoutubeDL({"quiet": True, "no_warnings": True, "skip_download": True}) as ydl:
-        return ydl.extract_info(url, download=False)
-
-
-def infer_video_offset(url: str) -> tuple[float, str]:
-    # 1) URL ?t= hint
-    start_hint = _parse_yt_start_hint(url)
-    if start_hint > 0:
-        return start_hint, "hint:t-param"
-
-    # 2) Chapters
-    try:
-        info = _extract_info(url) or {}
-    except Exception:
-        info = {}
-
-    chapters = info.get("chapters") or []
-    for chapter in chapters:
-        title = (chapter.get("title") or "").lower()
-        if any(keyword in title for keyword in _KEYWORDS):
-            start_time = chapter.get("start_time")
-            if isinstance(start_time, (int, float)) and start_time >= 0:
-                return float(start_time), f"chapters:{title}"
-    if chapters:
-        first_title = (chapters[0].get("title") or "").lower()
-        if "quarter" in first_title or re.search(r"\bq1\b", first_title):
-            start_time = chapters[0].get("start_time")
-            if isinstance(start_time, (int, float)) and start_time >= 0:
-                return float(start_time), f"chapters:first:{first_title}"
-
-    # 3) Description timecodes
-    description = info.get("description") or ""
-    lines = description.splitlines()
-    preferred_lines = [
-        line for line in lines if any(keyword in line.lower() for keyword in _KEYWORDS)
-    ]
-    search_lines = preferred_lines or lines
-    for line in search_lines:
-        match = _TIME_PATTERN.search(line)
-        if match:
-            return _parse_hms(match), "desc:timecode"
-
-    # 4) No match
-    return 0.0, "none"
 
 class JobStatus(str, Enum):
     """Lifecycle states for a cut-up processing job."""
@@ -468,9 +408,6 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
 
         # 4) Download full game (shows progress in /jobs/<id>)
         _set_job(job_id, status="running", step="downloading")
-        if request.video_url is None:
-            raise RuntimeError("video_url is required to download game video")
-
         await download_game_video(
             str(request.video_url),
             input_path,
