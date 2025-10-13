@@ -1,23 +1,24 @@
-"""Helpers for downloading videos and generating ffmpeg cut-ups."""
+# app/video.py
+"""Helpers for downloading videos and generating ffmpeg cut-ups (no-cookies YouTube)."""
 
 from __future__ import annotations
 
 import asyncio
-import os, base64, tempfile
+import os
 import shlex
 import subprocess
 import tempfile
 from pathlib import Path
-from typing import List
-
-# video.py
 from typing import Optional, List
+
 from yt_dlp import YoutubeDL
 from yt_dlp.utils import DownloadError
 
+# ---------- progress -> /jobs/<id> ----------
 def _yt_progress_hook_factory(job_id: Optional[str]):
     # import inside to avoid circular import at module load
     from .main import _set_job
+
     def _hook(d):
         try:
             status = d.get("status")
@@ -39,52 +40,70 @@ def _yt_progress_hook_factory(job_id: Optional[str]):
         except Exception:
             # never let a hook crash the download
             pass
+
     return _hook
 
-def _youtube_cookiefile_from_env() -> str | None:
-    """
-    If YTDLP_COOKIES_B64 is set (base64 Netscape cookies.txt), write it to a temp file
-    and return the file path for yt-dlp. Otherwise return None.
-    """
-    b64 = os.getenv("YTDLP_COOKIES_B64")
-    if not b64:
-        return None
-    try:
-        data = base64.b64decode(b64)
-        tmp = tempfile.NamedTemporaryFile(prefix="ytcookies_", suffix=".txt", delete=False)
-        tmp.write(data)
-        tmp.flush()
-        tmp.close()
-        return tmp.name
-    except Exception:
-        return None
 
-async def download_game_video(video_url: str, destination: Path, *, job_id: str | None) -> None:
-    cookiefile = _youtube_cookiefile_from_env()
+# ---------- download full game ----------
+async def download_game_video(video_url: str, destination: Path, *, job_id: Optional[str]) -> None:
+    """
+    Download a YouTube video (best <=720p) without cookies.
+    We bias yt-dlp toward non-web clients (android/tv) to dodge consent/bot pages.
+    """
+    destination.parent.mkdir(parents=True, exist_ok=True)
 
     ydl_opts = {
         "outtmpl": str(destination),
-        # prefer <=720p to keep size down
         "format": "bv*[height<=720]+ba/b[height<=720]/best",
         "merge_output_format": "mp4",
         "quiet": True,
         "no_warnings": True,
 
-        # This makes yt-dlp use the Android client API, which often avoids web consent pages
-        "extractor_args": {"youtube": {"player_client": ["android"]}},
+        # Make yt-dlp avoid the web client (where the consent wall usually lives)
+        "extractor_args": {
+            "youtube": {
+                "player_client": ["android", "android_embedded", "tv"],
+                "player_skip": ["webpage"],
+            }
+        },
 
-        # supply cookies if we have them
-        **({"cookiefile": cookiefile} if cookiefile else {}),
+        # Mobile-ish headers help some regions
+        "http_headers": {
+            "User-Agent": "com.google.android.youtube/19.17.36 (Linux; U; Android 13)",
+            "Accept-Language": "en-US,en;q=0.9",
+        },
+
+        # Be resilient to throttling / transient network flakiness
+        "retries": 10,
+        "fragment_retries": 10,
+        "retry_sleep": "3,8,20",
+        "throttledratelimit": 0,
+        "ratelimit": None,
+        "nocheckcertificate": True,
+        "geo_bypass": True,
+
+        # Progress reporting back to the job store
+        "progress_hooks": [_yt_progress_hook_factory(job_id)] if job_id else [],
     }
 
-    # ... rest of your function unchanged; call yt_dlp.YoutubeDL(ydl_opts).download([video_url])
+    def _run():
+        with YoutubeDL(ydl_opts) as ydl:
+            ydl.download([video_url])
 
+    try:
+        await asyncio.to_thread(_run)
+    except DownloadError as e:
+        # bubble up a clean error; main will mark the job as failed with this message
+        raise RuntimeError(f"yt-dlp error: {e}") from e
+
+
+# ---------- cut & concat ----------
 async def generate_clips(input_path: Path, timestamps: List[float], clips_dir: Path) -> List[Path]:
     """Extract short clips around each timestamp using ffmpeg."""
-
     clips_dir.mkdir(parents=True, exist_ok=True)
     clip_paths: List[Path] = []
     for index, timestamp in enumerate(timestamps, start=1):
+        # tweak these if you want more pre/post-roll around each play
         clip_start = max(timestamp - 1.0, 0.0)
         clip_end = timestamp + 2.0
         clip_path = clips_dir / f"clip_{index:04d}.mp4"
@@ -95,27 +114,15 @@ async def generate_clips(input_path: Path, timestamps: List[float], clips_dir: P
 
 async def extract_clip(input_path: Path, start_time: float, end_time: float, destination: Path) -> None:
     """Use ffmpeg to extract a clip from the input video."""
-
     duration = max(end_time - start_time, 0.1)
     cmd = [
-        "ffmpeg",
-        "-y",
-        "-ss",
-        f"{start_time:.3f}",
-        "-i",
-        str(input_path),
-        "-t",
-        f"{duration:.3f}",
-        "-c:v",
-        "libx264",
-        "-preset",
-        "veryfast",
-        "-crf",
-        "23",
-        "-c:a",
-        "aac",
-        "-movflags",
-        "+faststart",
+        "ffmpeg", "-y",
+        "-ss", f"{start_time:.3f}",
+        "-i", str(input_path),
+        "-t", f"{duration:.3f}",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
+        "-c:a", "aac",
+        "-movflags", "+faststart",
         str(destination),
     ]
     await _run_subprocess(cmd)
@@ -123,7 +130,6 @@ async def extract_clip(input_path: Path, start_time: float, end_time: float, des
 
 async def concatenate_clips(clips: List[Path], output_path: Path) -> None:
     """Combine all generated clips into a single mp4 using ffmpeg concat."""
-
     if not clips:
         raise RuntimeError("No clips provided for concatenation")
 
@@ -133,16 +139,10 @@ async def concatenate_clips(clips: List[Path], output_path: Path) -> None:
         manifest_path.write_text("\n".join(manifest_lines), encoding="utf-8")
 
         cmd = [
-            "ffmpeg",
-            "-y",
-            "-f",
-            "concat",
-            "-safe",
-            "0",
-            "-i",
-            str(manifest_path),
-            "-c",
-            "copy",
+            "ffmpeg", "-y",
+            "-f", "concat", "-safe", "0",
+            "-i", str(manifest_path),
+            "-c", "copy",
             str(output_path),
         ]
         await _run_subprocess(cmd)
@@ -150,11 +150,14 @@ async def concatenate_clips(clips: List[Path], output_path: Path) -> None:
 
 async def _run_subprocess(cmd: List[str]) -> None:
     """Execute a subprocess command in a worker thread and raise on failure."""
-
     def _execute() -> None:
         result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         if result.returncode != 0:
             command = shlex.join(cmd)
             raise RuntimeError(f"Command {command} failed: {result.stderr.strip()}")
-
     await asyncio.to_thread(_execute)
+
+
+# Optional compatibility aliases (if main.py uses underscored names)
+_generate_clips = generate_clips
+_concatenate_clips = concatenate_clips
