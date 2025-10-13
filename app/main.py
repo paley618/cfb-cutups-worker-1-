@@ -1084,6 +1084,17 @@ async def _generate_clips(input_path: Path, timestamps: List[float], clips_dir: 
         clip_end = timestamp + 2.0
         clip_path = clips_dir / f"clip_{index:04d}.mp4"
         await _extract_clip(input_path, clip_start, clip_end, clip_path)
+        duration = max(clip_end - clip_start, 0.1)
+        thumb_time = clip_start + 1.0
+        if thumb_time >= clip_end:
+            thumb_time = clip_start + min(duration / 2, 0.5)
+        thumb_path = clip_path.with_suffix(".jpg")
+        await asyncio.to_thread(
+            make_thumb,
+            str(input_path),
+            thumb_time,
+            str(thumb_path),
+        )
         clip_paths.append(clip_path)
     return clip_paths
 
@@ -1091,29 +1102,13 @@ async def _generate_clips(input_path: Path, timestamps: List[float], clips_dir: 
 async def _extract_clip(input_path: Path, start_time: float, end_time: float, destination: Path) -> None:
     """Use ffmpeg to extract a clip from the input video."""
 
-    duration = max(end_time - start_time, 0.1)
-    cmd = [
-        "ffmpeg",
-        "-y",
-        "-ss",
-        f"{start_time:.3f}",
-        "-i",
+    await asyncio.to_thread(
+        cut_clip,
         str(input_path),
-        "-t",
-        f"{duration:.3f}",
-        "-c:v",
-        "libx264",
-        "-preset",
-        "veryfast",
-        "-crf",
-        "23",
-        "-c:a",
-        "aac",
-        "-movflags",
-        "+faststart",
         str(destination),
-    ]
-    await _run_subprocess(cmd)
+        float(start_time),
+        float(end_time),
+    )
 
 
 async def _concatenate_clips(clips: List[Path], output_path: Path) -> None:
