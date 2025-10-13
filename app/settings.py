@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from functools import lru_cache
-from typing import Literal, Optional
+from typing import List, Literal, Optional
 
 from pydantic import AliasChoices, Field, ValidationError, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -37,6 +37,24 @@ class Settings(BaseSettings):
     )
     webhook_hmac_secret: Optional[str] = Field(
         default=None, description="Optional secret used to sign outbound webhooks."
+    )
+    ALLOWLIST_ENABLED: bool = Field(
+        default=False,
+        description="Enable domain allowlist checks for incoming video URLs.",
+    )
+    ALLOWLIST_DOMAINS: List[str] = Field(
+        default_factory=lambda: [
+            "youtube.com",
+            "youtu.be",
+            "vimeo.com",
+            "dropbox.com",
+            "drive.google.com",
+            "storage.googleapis.com",
+            "s3.amazonaws.com",
+            "amazonaws.com",
+            "box.com",
+        ],
+        description="Domains permitted when the allowlist is enabled.",
     )
 
     @field_validator("log_level")

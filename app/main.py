@@ -30,7 +30,7 @@ import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, UploadFile, File, status
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field, HttpUrl, ValidationError, validator
+from pydantic import BaseModel, Field, HttpUrl, ValidationError, model_validator
 from yt_dlp import YoutubeDL
 
 from .logging import (
@@ -121,22 +121,6 @@ _YT_T_PATTERN = re.compile(r"[?&#]t=([0-9hms]+|\d+)", re.I)
 _TIME_PATTERN = re.compile(r"\b(?:(\d+):)?([0-5]?\d):([0-5]\d)\b")
 _KEYWORDS = ("kickoff", "1st quarter", "first quarter", "q1", "start", "opening")
 
-_ALLOWED_VIDEO_DOMAINS = {
-    "youtube.com",
-    "youtu.be",
-    "vimeo.com",
-    "dropbox.com",
-    "drive.google.com",
-    "storage.googleapis.com",
-    "s3.amazonaws.com",
-    "amazonaws.com",
-    "box.com",
-}
-
-_UNSUPPORTED_SOURCE_MESSAGE = (
-    "This source isn’t supported. Please upload a file or use Dropbox/Drive/S3/Vimeo/YouTube (with cookies)."
-)
-
 def _parse_yt_start_hint(url: str) -> float:
     """
     Supports t=123, t=90s, or t=1h2m3s. Returns seconds (float).
@@ -157,6 +141,16 @@ def _parse_yt_start_hint(url: str) -> float:
         else:
             total += v
     return float(total)
+
+
+def _domain_allowed(url: str) -> bool:
+    host = (urlparse(url).hostname or "").lower()
+    return any(host.endswith(domain) for domain in settings.ALLOWLIST_DOMAINS)
+
+
+def _enforce_allowlist_if_enabled(video_url: str):
+    if settings.ALLOWLIST_ENABLED and video_url and not _domain_allowed(video_url):
+        raise HTTPException(status_code=422, detail="Source not supported by allowlist.")
 
 class ProcessRequest(BaseModel):
     # existing fields (we keep espn_game_id for backward compat, but ignore it in CFBD flow)
@@ -217,14 +211,11 @@ class Segment(BaseModel):
     end_time: float = Field(..., gt=0, description="End position in seconds.")
     label: Optional[str] = Field(None, max_length=100)
 
-    @validator("end_time")
-    def validate_segment_window(cls, end_time: float, values: Dict[str, float]) -> float:
-        start_time = values.get("start_time")
-        if start_time is None:
-            return end_time
-        if end_time <= start_time:
+    @model_validator(mode="after")
+    def validate_segment_window(self) -> "Segment":
+        if self.end_time <= self.start_time:
             raise ValueError("end_time must be greater than start_time")
-        return end_time
+        return self
 
 
 class CreateCutupRequest(BaseModel):
@@ -293,36 +284,21 @@ jobs_log = logging.getLogger("app.jobs")
 runner = JobRunner()
 
 
-def _is_allowed_video_url(url: str) -> bool:
-    parsed = urlparse(url)
-    hostname = (parsed.hostname or "").strip().rstrip(".")
-    if not hostname:
-        return False
-    hostname = hostname.lower()
-    return any(
-        hostname == domain or hostname.endswith(f".{domain}")
-        for domain in _ALLOWED_VIDEO_DOMAINS
-    )
-
-
 def _validate_video_source(video_url: str, request_id: Optional[str]) -> None:
-    if _is_allowed_video_url(video_url):
-        return
-
-    hostname = (urlparse(video_url).hostname or "").lower()
-    log_request_id = request_id or current_request_id() or "unknown"
-    jobs_log.info(
-        "job_unsupported_source",
-        extra={
-            "request_id": log_request_id,
-            "video_url": video_url,
-            "domain": hostname,
-        },
-    )
-    raise HTTPException(
-        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-        detail=_UNSUPPORTED_SOURCE_MESSAGE,
-    )
+    try:
+        _enforce_allowlist_if_enabled(video_url)
+    except HTTPException as exc:
+        hostname = (urlparse(video_url).hostname or "").lower()
+        log_request_id = request_id or current_request_id() or "unknown"
+        jobs_log.info(
+            "job_unsupported_source",
+            extra={
+                "request_id": log_request_id,
+                "video_url": video_url,
+                "domain": hostname,
+            },
+        )
+        raise exc
 
 def _make_s3_client():
     if settings.storage_backend != "s3":
@@ -732,6 +708,12 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
+
+
+@app.get("/__schema_ok")
+def schema_ok():
+    _ = JobSubmission(upload_id="dummy")
+    return {"ok": True}
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.mount("/uploads", StaticFiles(directory=str(UPLOAD_ROOT)), name="uploads")
 
@@ -877,7 +859,7 @@ async def submit_job(request: Request):
 
     if any(key in payload for key in ("team_name", "espn_game_id", "cfbd_game_id")):
         try:
-            process_request = ProcessRequest.parse_obj(payload)
+            process_request = ProcessRequest.model_validate(payload)
         except ValidationError as exc:
             raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
 
@@ -903,10 +885,12 @@ async def submit_job(request: Request):
         return {"job_id": job_id, "status": "queued"}
 
     try:
-        job_submission = JobSubmission.parse_obj(payload)
+        job_submission = JobSubmission.model_validate(payload)
     except ValidationError as exc:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
 
+    resolved_upload_path: Optional[Path] = None
+    resolved_upload_src: Optional[str] = None
     if job_submission.upload_id:
         upload_path = resolve_upload(job_submission.upload_id)
         if upload_path is None:
@@ -914,7 +898,8 @@ async def submit_job(request: Request):
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                 detail="Upload not found. Please re-upload the file.",
             )
-        job_submission.set_upload_details(upload_path, public_path(upload_path))
+        resolved_upload_path = upload_path
+        resolved_upload_src = public_path(upload_path)
 
     video_url = str(job_submission.video_url) if job_submission.video_url else None
     if video_url:
@@ -933,7 +918,13 @@ async def submit_job(request: Request):
             },
         )
 
-    result = await runner.run(job_submission, request_id=request_id, on_job_id=_log_job_create)
+    result = await runner.run(
+        job_submission,
+        request_id=request_id,
+        on_job_id=_log_job_create,
+        upload_path=resolved_upload_path,
+        upload_src=resolved_upload_src,
+    )
     job_id = result["job_id"]
     if "job_id" not in holder:
         jobs_log.info(
@@ -953,7 +944,7 @@ async def submit_job(request: Request):
     _set_job(
         job_id,
         status="completed",
-        payload=job_submission.dict(),
+        payload=job_submission.model_dump(),
         manifest_path=manifest_path,
         archive_path=archive_path,
         manifest_url=manifest_url,
@@ -963,7 +954,7 @@ async def submit_job(request: Request):
         request_id=request_id,
         video_url=video_url,
         upload_id=job_submission.upload_id,
-        source=job_submission.source_descriptor,
+        source=manifest.get("source_url"),
     )
     return {"job_id": job_id, "status": "completed"}
 
