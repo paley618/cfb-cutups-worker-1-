@@ -4,15 +4,17 @@
 from __future__ import annotations
 
 import asyncio
-import os
+import base64
 import shlex
 import subprocess
 import tempfile
 from pathlib import Path
-from typing import Optional, List
+from typing import Dict, Iterable, Optional, List
 
 from yt_dlp import YoutubeDL
 from yt_dlp.utils import DownloadError
+
+from .segment import cut_clip, make_thumb
 
 # ---------- progress -> /jobs/<id> ----------
 def _yt_progress_hook_factory(job_id: Optional[str]):
@@ -45,56 +47,129 @@ def _yt_progress_hook_factory(job_id: Optional[str]):
 
 
 # ---------- download full game ----------
-async def download_game_video(video_url: str, destination: Path, *, job_id: Optional[str]) -> None:
+async def download_game_video(
+    video_url: str,
+    destination: Path,
+    *,
+    job_id: Optional[str],
+    cookies_b64: Optional[str] = None,
+) -> None:
     """
-    Download a YouTube video (best <=720p) without cookies.
-    We bias yt-dlp toward non-web clients (android/tv) to dodge consent/bot pages.
+    Download a YouTube video (best <=720p), trying multiple player clients to avoid
+    consent walls. Optionally accepts an inline cookies.txt payload (base64-encoded).
     """
     destination.parent.mkdir(parents=True, exist_ok=True)
 
-    ydl_opts = {
+    clients: Iterable[str]
+    if cookies_b64:
+        clients = ["android"]
+    else:
+        clients = ("android", "android_embedded", "tv", "ios", "web_embedded")
+
+    ydl_base: Dict[str, object] = {
         "outtmpl": str(destination),
         "format": "bv*[height<=720]+ba/b[height<=720]/best",
         "merge_output_format": "mp4",
         "quiet": True,
         "no_warnings": True,
-
-        # Make yt-dlp avoid the web client (where the consent wall usually lives)
-        "extractor_args": {
-            "youtube": {
-                "player_client": ["android", "android_embedded", "tv"],
-                "player_skip": ["webpage"],
-            }
-        },
-
-        # Mobile-ish headers help some regions
-        "http_headers": {
-            "User-Agent": "com.google.android.youtube/19.17.36 (Linux; U; Android 13)",
-            "Accept-Language": "en-US,en;q=0.9",
-        },
-
-        # Be resilient to throttling / transient network flakiness
         "retries": 10,
         "fragment_retries": 10,
         "retry_sleep": "3,8,20",
-        "throttledratelimit": 0,
-        "ratelimit": None,
         "nocheckcertificate": True,
         "geo_bypass": True,
-
-        # Progress reporting back to the job store
         "progress_hooks": [_yt_progress_hook_factory(job_id)] if job_id else [],
     }
 
-    def _run():
-        with YoutubeDL(ydl_opts) as ydl:
-            ydl.download([video_url])
+    consent_hints = (
+        "sign in to confirm you're not a bot",
+        "consent",
+        "not made this video available in your country",
+    )
+
+    cookies_dir: Optional[tempfile.TemporaryDirectory[str]] = None
+    cookie_path: Optional[Path] = None
+
+    if cookies_b64:
+        cookies_dir = tempfile.TemporaryDirectory(prefix="yt_cookies_")
+        cookie_path = Path(cookies_dir.name) / "cookies.txt"
+        decoded = base64.b64decode(cookies_b64)
+        cookie_path.write_bytes(decoded)
 
     try:
-        await asyncio.to_thread(_run)
-    except DownloadError as e:
-        # bubble up a clean error; main will mark the job as failed with this message
-        raise RuntimeError(f"yt-dlp error: {e}") from e
+        last_error: Optional[Exception] = None
+        for client in clients:
+            ydl_opts = {
+                **ydl_base,
+                "extractor_args": {
+                    "youtube": {
+                        "player_client": [client],
+                        "player_skip": ["webpage"],
+                    }
+                },
+                "http_headers": _headers_for(client),
+            }
+            if cookie_path is not None:
+                ydl_opts["cookiefile"] = str(cookie_path)
+
+            def _run() -> None:
+                with YoutubeDL(ydl_opts) as ydl:
+                    ydl.download([video_url])
+
+            try:
+                await asyncio.to_thread(_run)
+                return
+            except DownloadError as err:
+                last_error = err
+                message = str(err).lower()
+                if cookies_b64:
+                    break
+                if not any(hint in message for hint in consent_hints):
+                    raise RuntimeError(f"yt-dlp error ({client}): {err}") from err
+                continue
+
+        if cookies_b64 and last_error is not None:
+            raise RuntimeError(f"yt-dlp error (cookies/android): {last_error}") from last_error
+
+        if last_error is not None:
+            if job_id:
+                try:
+                    from .main import _set_job
+
+                    _set_job(job_id, needs_cookies=True)
+                except Exception:
+                    pass
+            raise RuntimeError("YOUTUBE_CONSENT_BLOCK: needs_cookies=true; see /docs/cookies") from last_error
+    finally:
+        if cookies_dir is not None:
+            cookies_dir.cleanup()
+
+
+def _headers_for(client: str) -> Dict[str, str]:
+    common = {"Accept-Language": "en-US,en;q=0.9"}
+    if client in {"android", "android_embedded"}:
+        return {
+            **common,
+            "User-Agent": "com.google.android.youtube/19.17.36 (Linux; U; Android 13)",
+        }
+    if client == "ios":
+        return {
+            **common,
+            "User-Agent": "com.google.ios.youtube/19.17.36 (iPhone; CPU iPhone OS 17_5 like Mac OS X)",
+        }
+    if client == "tv":
+        return {
+            **common,
+            "User-Agent": "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) TV Safari",
+        }
+    if client == "web_embedded":
+        return {
+            **common,
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+            ),
+        }
+    return common
 
 
 # ---------- cut & concat ----------
@@ -108,24 +183,30 @@ async def generate_clips(input_path: Path, timestamps: List[float], clips_dir: P
         clip_end = timestamp + 2.0
         clip_path = clips_dir / f"clip_{index:04d}.mp4"
         await extract_clip(input_path, clip_start, clip_end, clip_path)
+        duration = max(clip_end - clip_start, 0.1)
+        thumb_time = clip_start + 1.0
+        if thumb_time >= clip_end:
+            thumb_time = clip_start + min(duration / 2, 0.5)
+        thumb_path = clip_path.with_suffix(".jpg")
+        await asyncio.to_thread(
+            make_thumb,
+            str(input_path),
+            thumb_time,
+            str(thumb_path),
+        )
         clip_paths.append(clip_path)
     return clip_paths
 
 
 async def extract_clip(input_path: Path, start_time: float, end_time: float, destination: Path) -> None:
     """Use ffmpeg to extract a clip from the input video."""
-    duration = max(end_time - start_time, 0.1)
-    cmd = [
-        "ffmpeg", "-y",
-        "-ss", f"{start_time:.3f}",
-        "-i", str(input_path),
-        "-t", f"{duration:.3f}",
-        "-c:v", "libx264", "-preset", "veryfast", "-crf", "23",
-        "-c:a", "aac",
-        "-movflags", "+faststart",
+    await asyncio.to_thread(
+        cut_clip,
+        str(input_path),
         str(destination),
-    ]
-    await _run_subprocess(cmd)
+        float(start_time),
+        float(end_time),
+    )
 
 
 async def concatenate_clips(clips: List[Path], output_path: Path) -> None:
