@@ -45,6 +45,27 @@ The endpoint returns a JSON payload with `"output_path": "<absolute path>"`
 that points to the concatenated cut-up. When running locally you can open that
 file with your preferred video player.
 
+## Reproducible media tooling
+
+The Docker image installs a static `ffmpeg` build (version 6.1.1) and pins
+`yt-dlp==2024.08.06`. The Docker build logs include `ffmpeg -version` and
+`yt-dlp --version`, which makes the versions visible in CI and deployment
+artifacts.
+
+## Continuous integration & deployment
+
+GitHub Actions drives the workflow for this repository:
+
+- Every pull request and push runs a Python syntax check and attempts to build
+  the Docker image.
+- Pushes to `main` additionally deploy the freshly built image to Railway via
+  the Railway CLI.
+
+To enable the deployment step, add a `RAILWAY_TOKEN` secret to your repository
+or organization settings. The token should have access to the Railway project
+that hosts this service. The included `railway.json` config instructs Railway to
+build from the Dockerfile and restart the worker when new images are deployed.
+
 ## Deploying to Railway
 
 1. Fork or import the repository into your GitHub account.

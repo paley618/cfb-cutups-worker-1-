@@ -1,7 +1,6 @@
 fastapi
 httpx
 uvicorn[standard]
-yt-dlp
-uvicorn[standard]
+yt-dlp==2024.08.06
 boto3
 pydantic-settings
