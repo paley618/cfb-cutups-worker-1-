@@ -1,100 +1,116 @@
-## Agent Behavior for `cfb-cutups-worker`
+# CFB Cutups — Agents Guide
 
-This agent is designed to assist in the automated generation of cutups and highlights from college football video footage. It serves as a backend FastAPI worker service for a larger pipeline that ingests game footage, processes it, and returns structured highlight clips.
+## What this agent does (MVP)
+Given a link or an uploaded game video, the agent:
+1) **Downloads** the source (YouTube with cookies, Google Drive with confirm flow, ok.ru/others via yt-dlp fallback, direct HTTP, or uploaded file).
+2) **Detects plays** using a fast heuristic (scene-change clustering) with configurable paddings and duration filters.
+3) **Segments** each play into an MP4 clip, generates a thumbnail, builds a `manifest.json`, and zips outputs.
+4) **Publishes** artifacts to the configured storage backend (Local or S3) and (optionally) sends a webhook.
+
+## Inputs
+- **video_url** *(URL, optional)* — YouTube/Drive/ok.ru/Dropbox/etc.
+- **upload_id** *(string, optional)* — from `/upload`.
+- **presigned_url** *(URL, optional)* — direct download (S3/Cloud).
+- **options** *(object, optional)*:
+  - `play_padding_pre` *(float, default 3.0s)*
+  - `play_padding_post` *(float, default 5.0s)*
+  - `scene_thresh` *(float, default 0.30)* — higher = fewer cuts.
+  - `min_duration` *(float, default 4.0s)*
+  - `max_duration` *(float, default 20.0s)*
+- **webhook_url** *(URL, optional)* — notified on `completed` or `failed`.
+
+## Outputs
+- `manifest.json`:
+  ```json
+  {
+    "job_id": "UUID",
+    "source_url": "string",
+    "clips": [{"id":"0001","start":12.3,"end":18.9,"duration":6.6,"file":"clips/0001.mp4","thumb":"thumbs/0001.jpg"}],
+    "metrics": {"num_clips": 17, "total_runtime_sec": 102.3, "processing_sec": 89.5}
+  }
+
+
+output.zip containing /clips, /thumbs, manifest.json.
+
+API surface (HTTP)
+
+GET / — web form
+
+POST /jobs — submit job (JSON body as per inputs)
+
+GET /jobs/{id} — status
+
+GET /jobs/{id}/manifest — manifest (200 when ready)
+
+GET /jobs/{id}/download — ZIP
+
+GET /jobs/{id}/error — error message (if failed)
+
+POST /upload — multipart file upload (if enabled)
+
+GET /healthz, GET /__schema_ok — healthchecks
+
+Behavior & constraints
+
+Downloads attempt direct HTTP; if server returns HTML, fallback to yt-dlp for site extraction.
+
+YouTube: supports cookies via YTDLP_COOKIES_B64 (Netscape format, base64).
+
+Google Drive: handles large-file confirm pages automatically.
+
+Concurrency limited; idempotency by (video_url, options) key.
+
+Storage is pluggable via STORAGE_BACKEND=local|s3.
+
+Tuning the detector
+
+Increase scene_thresh (e.g., 0.45) to reduce noisy cuts.
+
+Adjust min_duration/max_duration to the expected play length window.
+
+Padding pre/post controls how much “lead-in/out” you capture.
+
+Roadmap (post-MVP)
+
+Audio whistle edge + motion energy fusion.
+
+Scoreboard OCR (clock decreases) to refine boundaries.
+
+Better UI (clip previews, inline player).
+
+Persistent queue/state (Redis) and per-domain heuristics.
+
 
 ---
 
-### 🎯 Core Purpose
-- Detect key events (plays, scores, penalties, etc.) from long-form video content.
-- Trim and return video clips that correspond to those events.
-- Provide programmatic responses to video processing API requests.
+## 9) SMALL LOGGING POLISH (optional)
+
+- In `video.py`/`runner.py`, keep **INFO** logs short & structured: `{"evt":"ytdlp_ok","variant":1,"job_id":...}`; move raw command lines to DEBUG only.
 
 ---
 
-### 🧠 Agent Guidelines
-Codex should follow the principles below, **but may go beyond them as needed** to improve performance, efficiency, or maintainability.
+## ✅ DEFINITION OF DONE
 
-#### 1. Understand the Flow
-- A POST request is sent to `/process` with a `video_url`.
-- The app downloads or accesses the video.
-- It analyzes the content for significant moments.
-- It outputs cutup clips, timestamps, or links to those highlights.
-
-#### 2. Modify Only Relevant Code
-- Keep `main.py` focused on lightweight routing and handler delegation.
-- Use `app/` directory for all non-routing logic (e.g. `ffmpeg`, video models, heuristics).
-- Reuse utility functions and isolate video I/O from business logic when possible.
-
-#### 3. Embrace External Libraries
-- Use `ffmpeg` and similar proven tools for video handling.
-- Use `pydantic`, `httpx`, etc. for clean API handling.
-
-#### 4. Write for Portability
-- Keep Railway compatibility (expose port 8000, no Procfile).
-- Avoid hardcoded local paths — use relative paths or environment-based configurations.
+- Submitting a URL or upload yields:
+  - `download_game_video` runs (HTTP or yt-dlp fallback),
+  - `detect_plays` returns windows (or 1 fallback window),
+  - `cut_clip` + `make_thumb` run for each window,
+  - `manifest.json` & `output.zip` published,
+  - UI shows **Completed** with metrics and a **Download ZIP** link.
+- No duplicate ffmpeg helpers left in `main.py`.
+- `agents.md` reflects the real MVP and how to operate it.
+- Homepage looks clean (dark theme), fields grouped, statuses readable.
 
 ---
 
-### 🧪 Codex Can:
-- Propose and implement agent architecture changes
-- Add new endpoints (e.g., `/status`, `/clip`, `/summary`)
-- Refactor the directory structure for modularity
-- Add caching or batching logic
-- Use `async` if it improves speed and scalability
+## 🚦 QUICK TESTS
+
+1) **Health:** `GET /__schema_ok` → `{"ok":true}`  
+2) **Direct small file:** Upload a <50MB MP4 via `/` → verify clips/ZIP.  
+3) **ok.ru page:** paste a watch URL → logs show `fallback_ytdlp_html_page` → `ytdlp_ok`.  
+4) **Google Drive:** share link for a large file → logs show `gdrive_confirm` (if you kept that path) → success.  
+5) **Detector:** Try `scene_thresh=0.45` and see clip count drop (fewer cuts).
 
 ---
 
-### 🛠️ Implementation Notes
-- Use `uvicorn` to serve the app (`CMD` is defined in Dockerfile)
-- Dependencies are managed via `requirements.txt`
-- Current repo assumes input is a public video URL (e.g., YouTube, S3, Dropbox)
-
----
-
-### 📁 File Responsibilities
-| File/Dir        | Purpose                                       |
-|----------------|-----------------------------------------------|
-| `main.py`      | FastAPI entrypoint + basic routing            |
-| `app/`         | All video processing logic, models, utils     |
-| `Dockerfile`   | Container spec, exposes port 8000             |
-| `railway.json` | Railway-specific deploy config                |
-| `README.md`    | Overview and context for human collaborators  |
-| `agents.md`    | Agent-specific design and behavior guide      |
-
----
-
-### 🔓 Final Note
-This doc is a **starting point, not a constraint**. Codex should feel empowered to:
-- Go outside these bounds if it improves the result.
-- Propose new designs or workflows.
-- Modify the API shape if it leads to better UX or performance.
-
-Let this serve as helpful **context**, not a fence.
-
----
-
-### Agent: Deployment Log Reviewer
-
-**Purpose:** Automatically locate and analyze Railway deployment logs for errors.
-
-**Behavior:**
-- Always look for the log file at `/railway-deploy.log` in the root directory of the `paley618/cfb-cutups-worker-1-` repository.
-- If the file path changes or the log has a numeric suffix (e.g. `logs.123456.log`), attempt to match any `.log` file in the repo’s root or `logs/` directory.
-- Read the entire contents of the log before giving analysis.
-- Summarize the deployment error by identifying:
-  1. The **root cause** (missing module, import failure, syntax error, bad uvicorn entrypoint, etc.)
-  2. The **line of failure** from the traceback.
-  3. The **recommended fix** (e.g., update Dockerfile, requirements.txt, or main.py).
-
-**Example Instruction:**
-> Review the most recent deployment log at `/railway-deploy.log` and summarize the error cause and fix.
-
-**Fallback Behavior:**
-- If the log file is not found, fetch from:
-
-- **Pre-check Commands (always run before analyzing logs):**
-```bash
-git fetch origin main
-git reset --hard origin/main
-
-_Last updated via ChatGPT Sept 26, 2025._
+If you’d like, I can produce a second pass later to add inline clip previews on the page and a nicer job status list.
