@@ -23,7 +23,7 @@ from pathlib import Path
 from time import perf_counter
 from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
-from .video import download_game_video
+from .video import YoutubeConsentRequired, download_game_video
 from .settings import settings
 
 import httpx
@@ -498,8 +498,11 @@ async def _job_worker(job_id: str, req: ProcessRequest):
         )
     except Exception as e:
         message = str(e)
-        if "needs_cookies=true" in message:
-            error_label = message.split(":", 1)[0].strip() or message
+        if isinstance(e, YoutubeConsentRequired) or "needs_cookies=true" in message:
+            if isinstance(e, YoutubeConsentRequired):
+                error_label = message or "This video requires sign-in. Add cookies or use an uploaded file / Dropbox / Drive."
+            else:
+                error_label = message.split(":", 1)[0].strip() or message
             _set_job(
                 job_id,
                 status="failed",
@@ -1123,7 +1126,12 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             if request.video_url is None:
                 raise HTTPException(status_code=400, detail="video_url is required")
 
-            await download_game_video(str(request.video_url), input_path, job_id=None)
+            await download_game_video(
+                str(request.video_url),
+                input_path,
+                job_id=None,
+                cookies_b64=request.yt_cookies_b64,
+            )
             clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
 
             temp_output = work_path / "output.mp4"
@@ -1132,6 +1140,8 @@ async def process_offensive_cutups(request: ProcessRequest) -> Dict[str, str]:
             if final_output_path.exists():
                 final_output_path.unlink()
             shutil.move(str(temp_output), final_output_path)
+    except YoutubeConsentRequired as exc:
+        raise HTTPException(status_code=403, detail=str(exc)) from exc
     except RuntimeError as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 

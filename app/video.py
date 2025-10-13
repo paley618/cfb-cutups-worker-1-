@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import asyncio
 import base64
+import os
 import re
 import shlex
 import subprocess
@@ -20,6 +21,19 @@ from yt_dlp.utils import DownloadError
 import httpx
 
 from .segment import cut_clip, make_thumb
+
+
+_ENV_COOKIES_KEY = "YTDLP_COOKIES_B64"
+_CONSENT_MESSAGE = (
+    "This video requires sign-in. Add cookies or use an uploaded file / Dropbox / Drive."
+)
+
+
+class YoutubeConsentRequired(RuntimeError):
+    """Raised when YouTube blocks playback until the user signs in."""
+
+    def __init__(self, message: str = _CONSENT_MESSAGE) -> None:
+        super().__init__(message)
 
 # Default chunk sizes tuned for large remote objects.
 _RANGE_CHUNK_SIZE = 8 * 1024 * 1024  # 8 MiB per ranged request
@@ -330,8 +344,11 @@ async def download_game_video(
         await _stream_download(video_url, destination, job_id=job_id)
         return
 
+    env_cookies = (os.getenv(_ENV_COOKIES_KEY) or "").strip() or None
+    effective_cookies = cookies_b64 or env_cookies
+
     clients: Iterable[str]
-    if cookies_b64:
+    if effective_cookies:
         clients = ["android"]
     else:
         clients = ("android", "android_embedded", "tv", "ios", "web_embedded")
@@ -359,10 +376,10 @@ async def download_game_video(
     cookies_dir: Optional[tempfile.TemporaryDirectory[str]] = None
     cookie_path: Optional[Path] = None
 
-    if cookies_b64:
+    if effective_cookies:
         cookies_dir = tempfile.TemporaryDirectory(prefix="yt_cookies_")
         cookie_path = Path(cookies_dir.name) / "cookies.txt"
-        decoded = base64.b64decode(cookies_b64)
+        decoded = base64.b64decode(effective_cookies)
         cookie_path.write_bytes(decoded)
 
     try:
@@ -391,13 +408,13 @@ async def download_game_video(
             except DownloadError as err:
                 last_error = err
                 message = str(err).lower()
-                if cookies_b64:
+                if effective_cookies:
                     break
                 if not any(hint in message for hint in consent_hints):
                     raise RuntimeError(f"yt-dlp error ({client}): {err}") from err
                 continue
 
-        if cookies_b64 and last_error is not None:
+        if effective_cookies and last_error is not None:
             raise RuntimeError(f"yt-dlp error (cookies/android): {last_error}") from last_error
 
         if last_error is not None:
@@ -408,6 +425,8 @@ async def download_game_video(
                     _set_job(job_id, needs_cookies=True)
                 except Exception:
                     pass
+            if not effective_cookies:
+                raise YoutubeConsentRequired() from last_error
             raise RuntimeError("YOUTUBE_CONSENT_BLOCK: needs_cookies=true; see /docs/cookies") from last_error
     finally:
         if cookies_dir is not None:
