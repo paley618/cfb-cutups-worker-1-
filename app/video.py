@@ -5,16 +5,263 @@ from __future__ import annotations
 
 import asyncio
 import base64
+import re
 import shlex
 import subprocess
 import tempfile
 from pathlib import Path
 from typing import Dict, Iterable, Optional, List
 
+from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
+
 from yt_dlp import YoutubeDL
 from yt_dlp.utils import DownloadError
 
+import httpx
+
 from .segment import cut_clip, make_thumb
+
+# Default chunk sizes tuned for large remote objects.
+_RANGE_CHUNK_SIZE = 8 * 1024 * 1024  # 8 MiB per ranged request
+_STREAM_CHUNK_SIZE = 1 * 1024 * 1024  # 1 MiB when streaming responses
+
+
+def _is_youtube_host(hostname: str) -> bool:
+    hostname = hostname.lower()
+    return any(
+        hostname == domain or hostname.endswith(f".{domain}")
+        for domain in ("youtube.com", "youtu.be")
+    )
+
+
+def _validate_video_content_type(content_type: Optional[str]) -> None:
+    """Ensure the remote response advertises a downloadable video payload."""
+
+    if not content_type:
+        raise RuntimeError(
+            "Remote file is missing a Content-Type header. Configure the URL to "
+            "serve video files with a video/* or application/octet-stream type."
+        )
+
+    normalized = content_type.split(";")[0].strip().lower()
+    if not (normalized.startswith("video/") or normalized == "application/octet-stream"):
+        raise RuntimeError(
+            "Remote file must be served as video/* or application/octet-stream. "
+            f"Received Content-Type: {normalized or content_type!r}."
+        )
+
+
+def _report_direct_download_progress(
+    job_id: Optional[str], downloaded: int, total: Optional[int]
+) -> None:
+    if not job_id:
+        return
+
+    percent = None
+    if total and total > 0:
+        percent = (downloaded / total) * 100.0
+
+    try:
+        from .main import _set_job
+
+        _set_job(
+            job_id,
+            status="downloading",
+            step="downloading",
+            percent=percent,
+            downloaded=downloaded,
+            total=total,
+        )
+    except Exception:
+        # Progress reporting should never break the download flow.
+        pass
+
+
+async def _stream_download(
+    url: str,
+    destination: Path,
+    *,
+    client: Optional[httpx.AsyncClient] = None,
+    job_id: Optional[str] = None,
+) -> None:
+    owns_client = client is None
+    if client is None:
+        timeout = httpx.Timeout(60.0, connect=10.0)
+        client = httpx.AsyncClient(timeout=timeout, follow_redirects=True)
+
+    try:
+        async with client.stream("GET", url) as response:
+            response.raise_for_status()
+            _validate_video_content_type(response.headers.get("Content-Type"))
+            total = response.headers.get("Content-Length")
+            total_int = int(total) if total and total.isdigit() else None
+            downloaded = 0
+            with destination.open("wb") as f:
+                async for chunk in response.aiter_bytes(chunk_size=_STREAM_CHUNK_SIZE):
+                    if not chunk:
+                        continue
+                    f.write(chunk)
+                    downloaded += len(chunk)
+                    _report_direct_download_progress(job_id, downloaded, total_int)
+    finally:
+        if owns_client:
+            await client.aclose()
+
+
+async def _download_presigned_s3(url: str, destination: Path, job_id: Optional[str]) -> None:
+    timeout = httpx.Timeout(60.0, connect=10.0)
+    async with httpx.AsyncClient(timeout=timeout, follow_redirects=True) as client:
+        head = await client.head(url)
+        total: Optional[int] = None
+        if head.status_code < 400:
+            content_type = head.headers.get("Content-Type")
+            if content_type:
+                _validate_video_content_type(content_type)
+            length_header = head.headers.get("Content-Length")
+            if length_header and length_header.isdigit():
+                total = int(length_header)
+
+        if not total:
+            # Some pre-signed URLs disallow HEAD requests or omit lengths.
+            await _stream_download(url, destination, client=client, job_id=job_id)
+            return
+
+        downloaded = 0
+        with destination.open("wb") as f:
+            while downloaded < total:
+                end = min(downloaded + _RANGE_CHUNK_SIZE - 1, total - 1)
+                attempt = 0
+                last_exc: Optional[Exception] = None
+                while attempt < 3:
+                    headers = {"Range": f"bytes={downloaded}-{end}"}
+                    response = await client.get(url, headers=headers)
+                    if response.status_code in (200, 206):
+                        try:
+                            _validate_video_content_type(response.headers.get("Content-Type"))
+                        except RuntimeError:
+                            if downloaded == 0:
+                                raise
+                        chunk = await response.aread()
+                        if response.status_code == 200 and downloaded == 0 and len(chunk) >= total:
+                            f.seek(0)
+                            f.write(chunk)
+                            downloaded = len(chunk)
+                            _report_direct_download_progress(job_id, downloaded, total)
+                            return
+                        if not chunk:
+                            last_exc = RuntimeError("Empty response body during S3 ranged download")
+                            attempt += 1
+                            continue
+                        f.seek(downloaded)
+                        f.write(chunk)
+                        downloaded += len(chunk)
+                        _report_direct_download_progress(job_id, downloaded, total)
+                        break
+                    else:
+                        last_exc = RuntimeError(
+                            f"S3 ranged request failed with status {response.status_code}"
+                        )
+                        attempt += 1
+
+                if attempt >= 3 and last_exc is not None:
+                    raise last_exc
+
+
+def _normalize_dropbox_url(url: str) -> str:
+    parsed = urlparse(url)
+    query = dict(parse_qsl(parsed.query, keep_blank_values=True))
+    query["dl"] = "1"
+    normalized_query = urlencode(query)
+    return urlunparse(
+        (
+            parsed.scheme or "https",
+            parsed.netloc,
+            parsed.path,
+            parsed.params,
+            normalized_query,
+            parsed.fragment,
+        )
+    )
+
+
+def _extract_drive_id(url: str) -> Optional[str]:
+    parsed = urlparse(url)
+    if not parsed.netloc:
+        return None
+
+    query_params = dict(parse_qsl(parsed.query))
+    if "id" in query_params:
+        return query_params.get("id") or None
+
+    parts = [p for p in parsed.path.split("/") if p]
+    for index, value in enumerate(parts):
+        if value == "d" and index + 1 < len(parts):
+            return parts[index + 1]
+    return None
+
+
+def _extract_drive_confirm_token(html: str) -> Optional[str]:
+    match = re.search(r"confirm=([0-9A-Za-z_\-]+)", html)
+    if match:
+        return match.group(1)
+    return None
+
+
+def _detect_drive_error(html: str) -> Optional[str]:
+    lowered = html.lower()
+    if "quota exceeded" in lowered or "download quota" in lowered:
+        return (
+            "Google Drive download quota has been exceeded for this file. "
+            "Make a copy of the video in your own Drive or generate a new direct link."
+        )
+    if "can't scan this file for viruses" in lowered and "sign in" in lowered:
+        return (
+            "Google Drive requires a virus-scan confirmation that cannot be automated. "
+            "Request a direct download link or host the video on another service."
+        )
+    if "you need access" in lowered:
+        return "Google Drive denied access to the file. Share it publicly or provide a direct download link."
+    return None
+
+
+async def _download_google_drive(url: str, destination: Path, job_id: Optional[str]) -> None:
+    file_id = _extract_drive_id(url)
+    if not file_id:
+        raise RuntimeError("Unable to extract Google Drive file ID from the provided URL.")
+
+    base_url = "https://drive.google.com/uc"
+    params: Dict[str, str] = {"export": "download", "id": file_id}
+    timeout = httpx.Timeout(60.0, connect=10.0)
+
+    async with httpx.AsyncClient(timeout=timeout, follow_redirects=True) as client:
+        initial = await client.get(base_url, params=params)
+        if initial.status_code >= 400:
+            initial.raise_for_status()
+
+        content_type = initial.headers.get("Content-Type", "").lower()
+        if content_type.startswith("text/html"):
+            html = initial.text
+            drive_error = _detect_drive_error(html)
+            if drive_error:
+                raise RuntimeError(drive_error)
+
+            token = _extract_drive_confirm_token(html)
+            if token:
+                params["confirm"] = token
+            else:
+                raise RuntimeError(
+                    "Google Drive returned a confirmation page that could not be automated. "
+                    "Open the link in a browser, complete the confirmation, and supply the final download URL."
+                )
+        else:
+            # The first response already contained the file; stream it directly.
+            download_url = str(initial.request.url)
+            await _stream_download(download_url, destination, client=client, job_id=job_id)
+            return
+
+        download_url = httpx.URL(base_url).copy_with(params=params)
+        await _stream_download(str(download_url), destination, client=client, job_id=job_id)
+
 
 # ---------- progress -> /jobs/<id> ----------
 def _yt_progress_hook_factory(job_id: Optional[str]):
@@ -59,6 +306,29 @@ async def download_game_video(
     consent walls. Optionally accepts an inline cookies.txt payload (base64-encoded).
     """
     destination.parent.mkdir(parents=True, exist_ok=True)
+
+    parsed = urlparse(video_url)
+    hostname = (parsed.hostname or "").lower()
+
+    if not _is_youtube_host(hostname):
+        if job_id:
+            _report_direct_download_progress(job_id, 0, None)
+
+        if "amazonaws.com" in hostname:
+            await _download_presigned_s3(video_url, destination, job_id)
+            return
+
+        if hostname.endswith("dropbox.com") or hostname.endswith("dropboxusercontent.com"):
+            normalized = _normalize_dropbox_url(video_url)
+            await _stream_download(normalized, destination, job_id=job_id)
+            return
+
+        if hostname.endswith("drive.google.com") or hostname.endswith("docs.google.com"):
+            await _download_google_drive(video_url, destination, job_id)
+            return
+
+        await _stream_download(video_url, destination, job_id=job_id)
+        return
 
     clients: Iterable[str]
     if cookies_b64:
