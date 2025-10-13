@@ -18,6 +18,7 @@ from .segment import cut_clip, make_thumb
 from .video import download_game_video
 from .settings import settings
 from .webhook import send_webhook
+from .storage import Storage, get_storage
 
 
 @dataclass(frozen=True)
@@ -40,13 +41,20 @@ class PlayWindow:
 class JobRunner:
     """Coordinates downloading, trimming, thumbnailing, and packaging outputs."""
 
-    def __init__(self, base_dir: Path | str = Path("jobs")) -> None:
+    def __init__(
+        self,
+        base_dir: Path | str = Path("jobs"),
+        *,
+        storage: Optional[Storage] = None,
+    ) -> None:
         self.base_dir = Path(base_dir).resolve()
         self.base_dir.mkdir(parents=True, exist_ok=True)
         self._index_path = self.base_dir / "index.json"
         self._hash_index: Dict[str, str] = self._load_index()
         self._index_lock = asyncio.Lock()
         self._job_locks: Dict[str, asyncio.Lock] = {}
+        default_storage_dir = str(self.base_dir)
+        self.storage: Storage = storage or get_storage(default_storage_dir)
 
     async def run(self, submission: JobSubmission) -> Dict[str, object]:
         """Run the full pipeline for the provided submission."""
@@ -96,7 +104,7 @@ class JobRunner:
                 return result
 
             try:
-                manifest = await self._process_job(job_id, submission)
+                manifest, manifest_url, archive_url = await self._process_job(job_id, submission)
             except Exception as exc:
                 await self._dispatch_webhook(
                     webhook_url,
@@ -112,6 +120,8 @@ class JobRunner:
                 manifest_path,
                 zip_path,
                 hash_key,
+                manifest_url=manifest_url,
+                archive_url=archive_url,
             )
             await self._dispatch_webhook(webhook_url, job_id, "completed", result)
             return result
@@ -151,13 +161,20 @@ class JobRunner:
         manifest_path: Path,
         archive_path: Path,
         hash_key: str,
+        *,
+        manifest_url: Optional[str] = None,
+        archive_url: Optional[str] = None,
     ) -> Dict[str, object]:
+        remote_manifest_path = self._storage_path(job_id, "manifest.json")
+        remote_archive_path = self._storage_path(job_id, "job.zip")
         return {
             "job_id": job_id,
             "manifest": manifest,
             "manifest_path": manifest_path,
             "archive_path": archive_path,
             "hash_key": hash_key,
+            "manifest_url": manifest_url or self.storage.url_for(remote_manifest_path),
+            "archive_url": archive_url or self.storage.url_for(remote_archive_path),
         }
 
     def get_manifest(self, job_id: str) -> Optional[Dict[str, object]]:
@@ -182,7 +199,9 @@ class JobRunner:
     def _archive_path(self, job_id: str) -> Path:
         return self.base_dir / job_id / "job.zip"
 
-    async def _process_job(self, job_id: str, submission: JobSubmission) -> Dict[str, object]:
+    async def _process_job(
+        self, job_id: str, submission: JobSubmission
+    ) -> tuple[Dict[str, object], str, str]:
         job_dir = self.base_dir / job_id
         if job_dir.exists():
             shutil.rmtree(job_dir)
@@ -243,7 +262,7 @@ class JobRunner:
                 }
             )
 
-        manifest = {
+        manifest: Dict[str, object] = {
             "job_id": job_id,
             "source_url": str(submission.video_url),
             "clips": clips,
@@ -253,9 +272,25 @@ class JobRunner:
             },
         }
 
+        for clip in manifest["clips"]:
+            clip_rel = clip["file"]
+            clip_source = job_dir / clip_rel
+            clip_dest = self._storage_path(job_id, clip_rel)
+            await asyncio.to_thread(self.storage.write_file, str(clip_source), clip_dest)
+            clip["file_url"] = self.storage.url_for(clip_dest)
+
+            thumb_rel = clip["thumb"]
+            thumb_source = job_dir / thumb_rel
+            thumb_dest = self._storage_path(job_id, thumb_rel)
+            await asyncio.to_thread(self.storage.write_file, str(thumb_source), thumb_dest)
+            clip["thumb_url"] = self.storage.url_for(thumb_dest)
+
+        manifest_bytes = json.dumps(manifest, indent=2).encode("utf-8")
         manifest_path = self._manifest_path(job_id)
         manifest_path.parent.mkdir(parents=True, exist_ok=True)
-        manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+        manifest_path.write_bytes(manifest_bytes)
+        manifest_remote_path = self._storage_path(job_id, "manifest.json")
+        await asyncio.to_thread(self.storage.write_bytes, manifest_remote_path, manifest_bytes)
 
         archive_path = self._archive_path(job_id)
         with ZipFile(archive_path, "w", ZIP_DEFLATED) as zf:
@@ -265,7 +300,13 @@ class JobRunner:
             for thumb_file in sorted(thumbs_dir.glob("*.jpg")):
                 zf.write(thumb_file, arcname=f"thumbs/{thumb_file.name}")
 
-        return manifest
+        archive_remote_path = self._storage_path(job_id, "job.zip")
+        await asyncio.to_thread(self.storage.write_file, str(archive_path), archive_remote_path)
+
+        manifest_url = self.storage.url_for(manifest_remote_path)
+        archive_url = self.storage.url_for(archive_remote_path)
+
+        return manifest, manifest_url, archive_url
 
     async def _detect_play_windows(self, _source_path: Path, duration: float) -> List[PlayWindow]:
         naive_length = 20.0
@@ -331,4 +372,8 @@ class JobRunner:
             return json.loads(path.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
             return {}
+
+    def _storage_path(self, job_id: str, relative_path: str | Path) -> str:
+        relative = Path(relative_path).as_posix().lstrip("/")
+        return f"{job_id}/{relative}"
 
