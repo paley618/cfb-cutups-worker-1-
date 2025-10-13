@@ -2,6 +2,7 @@ pydantic>=2.7,<3
 fastapi>=0.111,<1
 httpx
 uvicorn[standard]>=0.30,<1
+python-multipart>=0.0.9,<0.0.10
 yt-dlp==2024.08.06
 boto3
 pydantic-settings

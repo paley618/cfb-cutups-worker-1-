@@ -38,6 +38,10 @@ class Settings(BaseSettings):
     webhook_hmac_secret: Optional[str] = Field(
         default=None, description="Optional secret used to sign outbound webhooks."
     )
+    ENABLE_UPLOADS: bool = Field(
+        default=True,
+        description="Toggle for enabling the /upload endpoint without requiring python-multipart.",
+    )
     ALLOWLIST_ENABLED: bool = Field(
         default=False,
         description="Enable domain allowlist checks for incoming video URLs.",

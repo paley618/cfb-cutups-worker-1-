@@ -725,6 +725,11 @@ async def healthz() -> Dict[str, bool]:
     return {"ok": True}
 
 
+@app.get("/__multipart_ok")
+def multipart_ok() -> Dict[str, Any]:
+    return {"ok": True, "uploads_enabled": settings.ENABLE_UPLOADS}
+
+
 @app.get("/", response_class=HTMLResponse)
 async def submit_form() -> HTMLResponse:
     try:
@@ -734,27 +739,29 @@ async def submit_form() -> HTMLResponse:
     return HTMLResponse(content=html)
 
 
-@app.post("/upload")
-async def upload_file(file: UploadFile = File(...)) -> Dict[str, str]:
-    """Accept a file upload and expose it via the /uploads static mount."""
+if settings.ENABLE_UPLOADS:
 
-    upload_id = uuid.uuid4().hex
-    destination = destination_for(upload_id, file.filename)
-    destination.parent.mkdir(parents=True, exist_ok=True)
+    @app.post("/upload")
+    async def upload_file(file: UploadFile = File(...)) -> Dict[str, str]:
+        """Accept a file upload and expose it via the /uploads static mount."""
 
-    try:
-        with destination.open("wb") as buffer:
-            while True:
-                chunk = await file.read(1024 * 1024)
-                if not chunk:
-                    break
-                buffer.write(chunk)
-    finally:
-        await file.close()
+        upload_id = uuid.uuid4().hex
+        destination = destination_for(upload_id, file.filename)
+        destination.parent.mkdir(parents=True, exist_ok=True)
 
-    register_upload(upload_id, destination)
-    src = public_path(destination)
-    return {"upload_id": upload_id, "src": src}
+        try:
+            with destination.open("wb") as buffer:
+                while True:
+                    chunk = await file.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    buffer.write(chunk)
+        finally:
+            await file.close()
+
+        register_upload(upload_id, destination)
+        src = public_path(destination)
+        return {"upload_id": upload_id, "src": src}
 
 @app.get("/debug/aws")
 async def debug_aws():

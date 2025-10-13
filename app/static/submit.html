@@ -1,8 +1,13 @@
 <!-- app/static/submit.html -->
+<form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+  <label>Upload game file <input type="file" name="file" id="upload_file" accept="video/*" required></label>
+  <button type="submit">Upload</button>
+</form>
+<div id="upload-status"></div>
 <form id="job-form">
-  <p>Select a video URL or upload a file to process.</p>
+  <p>Select a video URL or use an uploaded file to process.</p>
+  <input id="upload_id" type="hidden">
   <label>Video URL <input id="video_url" type="url" placeholder="https://example.com/video.mp4"></label>
-  <label>Upload Video <input id="video_file" type="file" accept="video/*"></label>
   <label>Webhook URL (optional) <input id="webhook_url" type="url"></label>
   <label>Pre padding (s) <input id="play_padding_pre" type="number" step="0.1" value="3"></label>
   <label>Post padding (s) <input id="play_padding_post" type="number" step="0.1" value="5"></label>
