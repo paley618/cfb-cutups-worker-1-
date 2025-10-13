@@ -13,7 +13,7 @@ import boto3
 import re
 from botocore.config import Config
 from botocore.exceptions import ClientError
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, suppress
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from enum import Enum
@@ -33,6 +33,21 @@ from .runner import JobRunner
 from .schemas import JobSubmission
 
 JOBS: Dict[str, Dict[str, Any]] = {}  # { job_id: {"status": "...", "result": {...}, "error": "..."} }
+
+def _resolve_concurrency() -> int:
+    raw = os.getenv("MAX_CONCURRENCY")
+    try:
+        value = int(raw) if raw is not None else 2
+    except (TypeError, ValueError):
+        value = 2
+    return max(value, 1)
+
+
+_MAX_CONCURRENCY = _resolve_concurrency()
+_JOB_SEMAPHORE = asyncio.Semaphore(_MAX_CONCURRENCY)
+_JOB_QUEUE: asyncio.Queue = asyncio.Queue()
+_QUEUE_WORKER_TASK: Optional[asyncio.Task[None]] = None
+_RUNNING_JOB_TASKS: set[asyncio.Task[None]] = set()
 
 def _new_job() -> str:
     return uuid.uuid4().hex
@@ -370,9 +385,21 @@ async def _job_worker(job_id: str, req: ProcessRequest):
     jobs_log.info("job.start", extra={"request_id": effective_request_id, "job_id": job_id})
 
     try:
-        _set_job(job_id, status="running", request_id=request_id)
+        _set_job(
+            job_id,
+            status="downloading",
+            request_id=request_id,
+            started_at=datetime.now(timezone.utc).isoformat(),
+            queue_position=None,
+        )
         result = await _run_cutups_and_upload(req, job_id)
-        _set_job(job_id, status="finished", result=result, request_id=request_id)
+        _set_job(
+            job_id,
+            status="completed",
+            result=result,
+            request_id=request_id,
+            completed_at=datetime.now(timezone.utc).isoformat(),
+        )
         jobs_log.info(
             "job.complete",
             extra={"request_id": effective_request_id, "job_id": job_id},
@@ -381,9 +408,20 @@ async def _job_worker(job_id: str, req: ProcessRequest):
         message = str(e)
         if "needs_cookies=true" in message:
             error_label = message.split(":", 1)[0].strip() or message
-            _set_job(job_id, status="failed", error=error_label, needs_cookies=True)
+            _set_job(
+                job_id,
+                status="failed",
+                error=error_label,
+                needs_cookies=True,
+                failed_at=datetime.now(timezone.utc).isoformat(),
+            )
         else:
-            _set_job(job_id, status="failed", error=message)
+            _set_job(
+                job_id,
+                status="failed",
+                error=message,
+                failed_at=datetime.now(timezone.utc).isoformat(),
+            )
 
 async def _upload_with_retry(local_path: str, bucket: str, key: str, *, content_type="video/mp4", tries=3):
     s3 = _make_s3_client()
@@ -455,7 +493,7 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
         clips_dir.mkdir(parents=True, exist_ok=True)
 
         # 4) Download full game (shows progress in /jobs/<id>)
-        _set_job(job_id, status="running", step="downloading")
+        _set_job(job_id, status="downloading", step="downloading")
         await download_game_video(
             str(request.video_url),
             input_path,
@@ -464,9 +502,10 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
         )
 
         # 5) Cut & concat
-        _set_job(job_id, step="cutting")
+        _set_job(job_id, status="processing", step="cutting")
         clip_paths = await _generate_clips(input_path, timestamps, clips_dir)
         temp_output = work_path / "output.mp4"
+        _set_job(job_id, status="processing", step="concatenating")
         await _concatenate_clips(clip_paths, temp_output)
 
         if final_output_path.exists():
@@ -474,7 +513,7 @@ async def _run_cutups_and_upload(request: ProcessRequest, job_id: str) -> Dict[s
         shutil.move(str(temp_output), final_output_path)
 
     # 6) Upload to configured storage backend
-    _set_job(job_id, step="uploading")
+    _set_job(job_id, status="processing", step="uploading")
     key = _build_storage_key(request, final_output_path.name)
 
     try:
@@ -521,6 +560,32 @@ async def _simulate_processing(record: CutupJobRecord) -> None:
         await asyncio.sleep(min(simulated_duration, 2))
 
 
+def _on_job_task_done(task: asyncio.Task[None]) -> None:
+    _RUNNING_JOB_TASKS.discard(task)
+    try:
+        task.result()
+    except asyncio.CancelledError:  # pragma: no cover - cancellation path
+        pass
+    except Exception:  # pragma: no cover - defensive logging
+        jobs_log.exception("job.task_error")
+
+
+async def _run_job_with_semaphore(job_id: str, req: ProcessRequest) -> None:
+    async with _JOB_SEMAPHORE:
+        await _job_worker(job_id, req)
+
+
+async def _job_queue_dispatcher() -> None:
+    while True:
+        try:
+            job_id, req = await _JOB_QUEUE.get()
+        except asyncio.CancelledError:  # pragma: no cover - shutdown path
+            break
+
+        task = asyncio.create_task(_run_job_with_semaphore(job_id, req))
+        _RUNNING_JOB_TASKS.add(task)
+        task.add_done_callback(_on_job_task_done)
+
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     store = InMemoryJobStore()
@@ -528,10 +593,24 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     await processor.start()
     app.state.store = store
     app.state.processor = processor
+    global _QUEUE_WORKER_TASK
+    if _QUEUE_WORKER_TASK is None or _QUEUE_WORKER_TASK.done():
+        _QUEUE_WORKER_TASK = asyncio.create_task(_job_queue_dispatcher())
+    app.state.job_queue_task = _QUEUE_WORKER_TASK
     try:
         yield
     finally:
         await processor.stop()
+        if _QUEUE_WORKER_TASK is not None:
+            _QUEUE_WORKER_TASK.cancel()
+            with suppress(asyncio.CancelledError):
+                await _QUEUE_WORKER_TASK
+            _QUEUE_WORKER_TASK = None
+        if _RUNNING_JOB_TASKS:
+            pending = list(_RUNNING_JOB_TASKS)
+            if pending:
+                await asyncio.gather(*pending, return_exceptions=True)
+            _RUNNING_JOB_TASKS.clear()
 
 
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
@@ -649,8 +728,15 @@ async def submit_job(request: Request):
             raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
 
         job_id = _new_job()
-        _set_job(job_id, status="queued")
-        asyncio.create_task(_job_worker(job_id, process_request))
+        queued_at = datetime.now(timezone.utc).isoformat()
+        queue_position = _JOB_QUEUE.qsize() + 1
+        _set_job(
+            job_id,
+            status="queued",
+            queued_at=queued_at,
+            queue_position=queue_position,
+        )
+        await _JOB_QUEUE.put((job_id, process_request))
         return {"job_id": job_id, "status": "queued"}
 
     try:
@@ -667,15 +753,16 @@ async def submit_job(request: Request):
     archive_url = str(result["archive_url"])
     _set_job(
         job_id,
-        status="finished",
+        status="completed",
         payload=job_submission.dict(),
         manifest_path=manifest_path,
         archive_path=archive_path,
         manifest_url=manifest_url,
         archive_url=archive_url,
         manifest=manifest,
+        completed_at=datetime.now(timezone.utc).isoformat(),
     )
-    return {"job_id": job_id, "status": "finished"}
+    return {"job_id": job_id, "status": "completed"}
 
 @app.get("/jobs/{job_id}")
 async def job_status(job_id: str):
