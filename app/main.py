@@ -25,10 +25,11 @@ from .settings import settings
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel, Field, HttpUrl, ValidationError, validator
 from yt_dlp import YoutubeDL
 
+from .runner import JobRunner
 from .schemas import JobSubmission
 
 JOBS: Dict[str, Dict[str, Any]] = {}  # { job_id: {"status": "...", "result": {...}, "error": "..."} }
@@ -221,6 +222,8 @@ def _build_storage_key(request: ProcessRequest, filename: str) -> str:
 log = logging.getLogger(__name__)
 request_log = logging.getLogger("app.request")
 jobs_log = logging.getLogger("app.jobs")
+
+runner = JobRunner()
 
 def _make_s3_client():
     if settings.storage_backend != "s3":
@@ -655,9 +658,20 @@ async def submit_job(request: Request):
     except ValidationError as exc:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
 
-    job_id = _new_job()
-    _set_job(job_id, status="queued", payload=job_submission.dict())
-    return {"job_id": job_id, "status": "queued"}
+    result = await runner.run(job_submission)
+    job_id = result["job_id"]
+    manifest_path = str(result["manifest_path"])
+    archive_path = str(result["archive_path"])
+    manifest = result["manifest"]
+    _set_job(
+        job_id,
+        status="finished",
+        payload=job_submission.dict(),
+        manifest_path=manifest_path,
+        archive_path=archive_path,
+        manifest=manifest,
+    )
+    return {"job_id": job_id, "status": "finished"}
 
 @app.get("/jobs/{job_id}")
 async def job_status(job_id: str):
@@ -665,6 +679,27 @@ async def job_status(job_id: str):
     if not j:
         return {"job_id": job_id, "status": "not_found"}
     return {"job_id": job_id, **j}
+
+
+@app.get("/jobs/{job_id}/manifest")
+async def job_manifest(job_id: str):
+    manifest = runner.get_manifest(job_id)
+    if manifest is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Manifest not found")
+    return manifest
+
+
+@app.get("/jobs/{job_id}/download")
+async def job_download(job_id: str):
+    archive_path = runner.get_archive_path(job_id)
+    if archive_path is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Archive not found")
+    return FileResponse(
+        archive_path,
+        filename=f"{job_id}.zip",
+        media_type="application/zip",
+    )
+
 
 def _get_store(request: Request) -> InMemoryJobStore:
     return cast(InMemoryJobStore, request.app.state.store)
