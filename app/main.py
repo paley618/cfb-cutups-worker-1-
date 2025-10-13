@@ -28,6 +28,7 @@ from .settings import settings
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status
 from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, HttpUrl, ValidationError, validator
 from yt_dlp import YoutubeDL
 
@@ -665,6 +666,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 _SUBMIT_FORM = Path(__file__).resolve().parent / "static" / "submit.html"
 
