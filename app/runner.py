@@ -16,6 +16,8 @@ from zipfile import ZIP_DEFLATED, ZipFile
 from .schemas import JobSubmission
 from .segment import cut_clip, make_thumb
 from .video import download_game_video
+from .settings import settings
+from .webhook import send_webhook
 
 
 @dataclass(frozen=True)
@@ -50,6 +52,9 @@ class JobRunner:
         """Run the full pipeline for the provided submission."""
 
         hash_key = self._hash_submission(submission)
+        webhook_url = str(submission.webhook_url) if submission.webhook_url else None
+
+        cached_result: Optional[Dict[str, object]] = None
 
         async with self._index_lock:
             job_id = self._hash_index.get(hash_key)
@@ -58,17 +63,21 @@ class JobRunner:
                 zip_path = self._archive_path(job_id)
                 if manifest_path.exists() and zip_path.exists():
                     manifest = self._load_manifest_file(manifest_path)
-                    return {
-                        "job_id": job_id,
-                        "manifest": manifest,
-                        "manifest_path": manifest_path,
-                        "archive_path": zip_path,
-                        "hash_key": hash_key,
-                    }
+                    cached_result = self._format_result(
+                        job_id,
+                        manifest,
+                        manifest_path,
+                        zip_path,
+                        hash_key,
+                    )
             else:
                 job_id = uuid4().hex
                 self._hash_index[hash_key] = job_id
                 self._write_index()
+
+        if cached_result is not None:
+            await self._dispatch_webhook(webhook_url, job_id, "completed", cached_result)
+            return cached_result
 
         lock = self._job_locks.setdefault(job_id, asyncio.Lock())
         async with lock:
@@ -76,22 +85,80 @@ class JobRunner:
             zip_path = self._archive_path(job_id)
             if manifest_path.exists() and zip_path.exists():
                 manifest = self._load_manifest_file(manifest_path)
-                return {
-                    "job_id": job_id,
-                    "manifest": manifest,
-                    "manifest_path": manifest_path,
-                    "archive_path": zip_path,
-                    "hash_key": hash_key,
-                }
+                result = self._format_result(
+                    job_id,
+                    manifest,
+                    manifest_path,
+                    zip_path,
+                    hash_key,
+                )
+                await self._dispatch_webhook(webhook_url, job_id, "completed", result)
+                return result
 
-            manifest = await self._process_job(job_id, submission)
-            return {
-                "job_id": job_id,
-                "manifest": manifest,
-                "manifest_path": manifest_path,
-                "archive_path": zip_path,
-                "hash_key": hash_key,
-            }
+            try:
+                manifest = await self._process_job(job_id, submission)
+            except Exception as exc:
+                await self._dispatch_webhook(
+                    webhook_url,
+                    job_id,
+                    "failed",
+                    {"hash_key": hash_key, "error": str(exc)},
+                )
+                raise
+
+            result = self._format_result(
+                job_id,
+                manifest,
+                manifest_path,
+                zip_path,
+                hash_key,
+            )
+            await self._dispatch_webhook(webhook_url, job_id, "completed", result)
+            return result
+
+    async def _dispatch_webhook(
+        self,
+        webhook_url: Optional[str],
+        job_id: str,
+        status: str,
+        payload: Dict[str, object],
+    ) -> None:
+        if not webhook_url:
+            return
+
+        webhook_payload = {"job_id": job_id, "status": status}
+        webhook_payload.update(self._sanitize_payload(payload))
+        await asyncio.to_thread(
+            send_webhook,
+            webhook_url,
+            webhook_payload,
+            settings.webhook_hmac_secret,
+        )
+
+    def _sanitize_payload(self, payload: Dict[str, object]) -> Dict[str, object]:
+        sanitized: Dict[str, object] = {}
+        for key, value in payload.items():
+            if isinstance(value, Path):
+                sanitized[key] = str(value)
+            else:
+                sanitized[key] = value
+        return sanitized
+
+    def _format_result(
+        self,
+        job_id: str,
+        manifest: Dict[str, object],
+        manifest_path: Path,
+        archive_path: Path,
+        hash_key: str,
+    ) -> Dict[str, object]:
+        return {
+            "job_id": job_id,
+            "manifest": manifest,
+            "manifest_path": manifest_path,
+            "archive_path": archive_path,
+            "hash_key": hash_key,
+        }
 
     def get_manifest(self, job_id: str) -> Optional[Dict[str, object]]:
         """Load the manifest for the provided job identifier, if present."""
