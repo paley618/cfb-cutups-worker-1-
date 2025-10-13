@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio, uuid, functools
+import json
 import shlex
 import shutil
 import subprocess
@@ -23,8 +24,11 @@ from .video import download_game_video
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, status
-from pydantic import BaseModel, Field, HttpUrl, validator
+from fastapi.responses import HTMLResponse
+from pydantic import BaseModel, Field, HttpUrl, ValidationError, validator
 from yt_dlp import YoutubeDL
+
+from .schemas import JobSubmission
 
 JOBS: Dict[str, Dict[str, Any]] = {}  # { job_id: {"status": "...", "result": {...}, "error": "..."} }
 
@@ -454,6 +458,22 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
 
+_SUBMIT_FORM = Path(__file__).resolve().parent / "static" / "submit.html"
+
+
+@app.get("/healthz")
+async def healthz() -> Dict[str, bool]:
+    return {"ok": True}
+
+
+@app.get("/", response_class=HTMLResponse)
+async def submit_form() -> HTMLResponse:
+    try:
+        html = _SUBMIT_FORM.read_text(encoding="utf-8")
+    except FileNotFoundError:  # pragma: no cover - deployment guard
+        raise HTTPException(status_code=500, detail="submit.html missing")
+    return HTMLResponse(content=html)
+
 @app.get("/debug/aws")
 async def debug_aws():
     import json, time
@@ -502,11 +522,56 @@ async def debug_aws():
     return out
 
 @app.post("/jobs", status_code=status.HTTP_202_ACCEPTED)
-async def submit_job(req: ProcessRequest):
+async def submit_job(request: Request):
+    content_type = request.headers.get("content-type", "")
+    payload: Dict[str, Any]
+
+    if "application/json" in content_type:
+        try:
+            payload = await request.json()
+        except (json.JSONDecodeError, ValueError) as exc:  # pragma: no cover - invalid JSON
+            raise HTTPException(status_code=400, detail="Invalid JSON body") from exc
+    else:
+        form = await request.form()
+        options_payload: Dict[str, Any] = {}
+        if "play_padding_pre" in form:
+            pre_val = form.get("play_padding_pre")
+            if pre_val not in (None, ""):
+                options_payload["play_padding_pre"] = pre_val
+        if "play_padding_post" in form:
+            post_val = form.get("play_padding_post")
+            if post_val not in (None, ""):
+                options_payload["play_padding_post"] = post_val
+
+        payload = {
+            "video_url": form.get("video_url"),
+            "webhook_url": form.get("webhook_url"),
+        }
+        if options_payload:
+            payload["options"] = options_payload
+
+    if not isinstance(payload, dict):
+        raise HTTPException(status_code=400, detail="Body must be a JSON object or form data")
+
+    if any(key in payload for key in ("team_name", "espn_game_id", "cfbd_game_id")):
+        try:
+            process_request = ProcessRequest.parse_obj(payload)
+        except ValidationError as exc:
+            raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
+
+        job_id = _new_job()
+        _set_job(job_id, status="queued")
+        asyncio.create_task(_job_worker(job_id, process_request))
+        return {"job_id": job_id, "status": "queued"}
+
+    try:
+        job_submission = JobSubmission.parse_obj(payload)
+    except ValidationError as exc:
+        raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=exc.errors())
+
     job_id = _new_job()
-    _set_job(job_id, status="queued")
-    asyncio.create_task(_job_worker(job_id, req))  # ✅ schedule on the current event loop
-    return {"message": "accepted", "job_id": job_id, "status_url": f"/jobs/{job_id}"}
+    _set_job(job_id, status="queued", payload=job_submission.dict())
+    return {"job_id": job_id, "status": "queued"}
 
 @app.get("/jobs/{job_id}")
 async def job_status(job_id: str):
@@ -560,13 +625,6 @@ async def get_cutup_job(job_id: str, store: InMemoryJobStore = Depends(_get_stor
     if record is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Job not found")
     return _record_to_response(record)
-
-
-@app.get("/")
-async def read_root() -> Dict[str, str]:
-    """Default route providing a friendly greeting."""
-
-    return {"message": "CFB Cutups worker is online."}
 
 
 @app.post("/process", tags=["processing"])
