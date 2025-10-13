@@ -25,6 +25,7 @@ from typing import AsyncIterator, Dict, Iterable, List, Optional, cast, Any
 from uuid import uuid4
 from .video import YoutubeConsentRequired, download_game_video
 from .settings import settings
+from .cookies import write_cookies_if_any, write_drive_cookies_if_any
 
 import httpx
 from fastapi import Depends, FastAPI, HTTPException, Request, UploadFile, File, status
@@ -708,6 +709,12 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 
 app = FastAPI(title="CFB Cutups Worker", version="1.0.0", lifespan=lifespan)
+
+
+@app.on_event("startup")
+async def _init_cookies() -> None:
+    write_cookies_if_any()        # YouTube
+    write_drive_cookies_if_any()  # Drive
 
 
 @app.get("/__schema_ok")
