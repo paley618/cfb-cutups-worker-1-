@@ -63,6 +63,8 @@ class Settings(BaseSettings):
 
     DRIVE_COOKIES_B64: str | None = None
     DRIVE_COOKIES_PATH: str = "/tmp/drive_cookies.txt"
+    YTDLP_COOKIES_B64: str | None = None
+    YTDLP_COOKIES_PATH: str = "/tmp/yt_cookies.txt"
     HTTP_CONNECT_TIMEOUT: float = 10.0
     HTTP_READ_TIMEOUT: float = 60.0
     HTTP_TOTAL_TIMEOUT: float = 600.0
