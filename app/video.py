@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import os, base64, tempfile
 import shlex
 import subprocess
 import tempfile
@@ -40,34 +41,43 @@ def _yt_progress_hook_factory(job_id: Optional[str]):
             pass
     return _hook
 
-async def download_game_video(video_url: str, destination: Path, *, job_id: Optional[str] = None) -> None:
+def _youtube_cookiefile_from_env() -> str | None:
     """
-    Download the source video to `destination` using yt-dlp, with 720p cap and live progress.
+    If YTDLP_COOKIES_B64 is set (base64 Netscape cookies.txt), write it to a temp file
+    and return the file path for yt-dlp. Otherwise return None.
     """
+    b64 = os.getenv("YTDLP_COOKIES_B64")
+    if not b64:
+        return None
+    try:
+        data = base64.b64decode(b64)
+        tmp = tempfile.NamedTemporaryFile(prefix="ytcookies_", suffix=".txt", delete=False)
+        tmp.write(data)
+        tmp.flush()
+        tmp.close()
+        return tmp.name
+    except Exception:
+        return None
+
+async def download_game_video(video_url: str, destination: Path, *, job_id: str | None) -> None:
+    cookiefile = _youtube_cookiefile_from_env()
+
     ydl_opts = {
         "outtmpl": str(destination),
+        # prefer <=720p to keep size down
+        "format": "bv*[height<=720]+ba/b[height<=720]/best",
         "merge_output_format": "mp4",
         "quiet": True,
         "no_warnings": True,
 
-        # ✅ speed/resilience
-        "retries": 3,
-        "fragment_retries": 3,
-        "concurrent_fragment_downloads": 4,
-        "nopart": True,
+        # This makes yt-dlp use the Android client API, which often avoids web consent pages
+        "extractor_args": {"youtube": {"player_client": ["android"]}},
 
-        # ✅ cap input to 720p so download is faster/lighter
-        "format": "bv*[height<=720]+ba/b[height<=720]/best",
+        # supply cookies if we have them
+        **({"cookiefile": cookiefile} if cookiefile else {}),
     }
-    if job_id:
-        ydl_opts["progress_hooks"] = [_yt_progress_hook_factory(job_id)]
 
-    def _run():
-        with YoutubeDL(ydl_opts) as ydl:
-            ydl.download([video_url])
-
-    # run blocking yt-dlp in a worker thread
-    await asyncio.to_thread(_run)
+    # ... rest of your function unchanged; call yt_dlp.YoutubeDL(ydl_opts).download([video_url])
 
 async def generate_clips(input_path: Path, timestamps: List[float], clips_dir: Path) -> List[Path]:
     """Extract short clips around each timestamp using ffmpeg."""
