@@ -663,12 +663,16 @@ async def submit_job(request: Request):
     manifest_path = str(result["manifest_path"])
     archive_path = str(result["archive_path"])
     manifest = result["manifest"]
+    manifest_url = str(result["manifest_url"])
+    archive_url = str(result["archive_url"])
     _set_job(
         job_id,
         status="finished",
         payload=job_submission.dict(),
         manifest_path=manifest_path,
         archive_path=archive_path,
+        manifest_url=manifest_url,
+        archive_url=archive_url,
         manifest=manifest,
     )
     return {"job_id": job_id, "status": "finished"}
