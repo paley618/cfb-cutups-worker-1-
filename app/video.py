@@ -7,6 +7,7 @@ import asyncio
 import base64
 import logging
 import os
+import random
 import re
 import shlex
 import subprocess
@@ -17,7 +18,7 @@ from typing import Dict, Iterable, Optional, List
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 from yt_dlp import YoutubeDL
-from yt_dlp.utils import DownloadError
+from yt_dlp.utils import DownloadError, ExtractorError
 
 import httpx
 
@@ -27,6 +28,9 @@ from .settings import settings
 
 
 logger = logging.getLogger(__name__)
+
+class NotDirectVideoContent(Exception):
+    """Raised when a remote response indicates non-video content."""
 
 _ENV_COOKIES_KEY = "YTDLP_COOKIES_B64"
 _CONSENT_MESSAGE = (
@@ -57,17 +61,19 @@ def _validate_video_content_type(content_type: Optional[str]) -> None:
     """Ensure the remote response advertises a downloadable video payload."""
 
     if not content_type:
-        raise RuntimeError(
-            "Remote file is missing a Content-Type header. Configure the URL to "
-            "serve video files with a video/* or application/octet-stream type."
-        )
+        return
 
     normalized = content_type.split(";")[0].strip().lower()
-    if not (normalized.startswith("video/") or normalized == "application/octet-stream"):
-        raise RuntimeError(
-            "Remote file must be served as video/* or application/octet-stream. "
-            f"Received Content-Type: {normalized or content_type!r}."
+    if normalized.startswith("video/") or normalized == "application/octet-stream":
+        return
+    if normalized.startswith("text/html"):
+        raise NotDirectVideoContent(
+            f"HTML page detected (Content-Type: {normalized}); use extractor."
         )
+    raise RuntimeError(
+        "Remote file must be served as video/* or application/octet-stream. "
+        f"Received Content-Type: {normalized or content_type!r}."
+    )
 
 
 def _report_direct_download_progress(
@@ -103,14 +109,23 @@ async def _stream_download(
     client: Optional[httpx.AsyncClient] = None,
     job_id: Optional[str] = None,
 ) -> None:
+    """Stream a direct file over HTTP, raising NotDirectVideoContent on HTML pages."""
+
     owns_client = client is None
     if client is None:
+        headers = {
+            "User-Agent": "Mozilla/5.0",
+            "Accept": "*/*",
+            "Accept-Language": "en-US,en;q=0.9",
+        }
         timeout = httpx.Timeout(
             settings.HTTP_TOTAL_TIMEOUT,
             connect=settings.HTTP_CONNECT_TIMEOUT,
             read=settings.HTTP_READ_TIMEOUT,
         )
-        client = httpx.AsyncClient(timeout=timeout, follow_redirects=True)
+        client = httpx.AsyncClient(
+            headers=headers, timeout=timeout, follow_redirects=True
+        )
 
     try:
         async with client.stream("GET", url) as response:
@@ -126,6 +141,7 @@ async def _stream_download(
                     f.write(chunk)
                     downloaded += len(chunk)
                     _report_direct_download_progress(job_id, downloaded, total_int)
+        logger.info("http_stream_ok", extra={"job_id": job_id})
     finally:
         if owns_client:
             await client.aclose()
@@ -165,7 +181,7 @@ async def _download_presigned_s3(url: str, destination: Path, job_id: Optional[s
                     if response.status_code in (200, 206):
                         try:
                             _validate_video_content_type(response.headers.get("Content-Type"))
-                        except RuntimeError:
+                        except (RuntimeError, NotDirectVideoContent):
                             if downloaded == 0:
                                 raise
                         chunk = await response.aread()
@@ -192,6 +208,108 @@ async def _download_presigned_s3(url: str, destination: Path, job_id: Optional[s
 
                 if attempt >= 3 and last_exc is not None:
                     raise last_exc
+
+
+_COMMON_YTDLP: Dict[str, object] = {
+    "quiet": True,
+    "no_warnings": True,
+    "noprogress": True,
+    "retries": 3,
+    "fragment_retries": 3,
+    "sleep_requests": 0.5,
+    "max_sleep_interval": 1.5,
+    "http_headers": {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+            "(KHTML, like Gecko) Chrome/120 Safari/537.36"
+        ),
+        "Accept-Language": "en-US,en;q=0.9",
+    },
+    "format": "bv*[height<=1080]+ba/b*[height<=1080]/best",
+    "merge_output_format": "mp4",
+}
+
+
+def _ensure_ytdlp_cookiefile() -> Optional[str]:
+    payload = settings.YTDLP_COOKIES_B64 or (os.getenv(_ENV_COOKIES_KEY) or "").strip() or None
+    if not payload:
+        return None
+
+    try:
+        decoded = base64.b64decode(payload)
+    except Exception:
+        logger.warning("ytdlp_cookie_decode_failed")
+        return None
+
+    path = Path(settings.YTDLP_COOKIES_PATH)
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(decoded)
+        os.chmod(path, 0o600)
+        return str(path)
+    except Exception:
+        logger.exception("ytdlp_cookie_write_failed")
+        return None
+
+
+def _yt_opts_for_dest(dest_path: str, cookies_path: Optional[str]) -> Dict[str, object]:
+    opts = dict(_COMMON_YTDLP)
+    dest_dir = os.path.dirname(dest_path) or "."
+    base = os.path.splitext(os.path.basename(dest_path))[0]
+    opts["outtmpl"] = os.path.join(dest_dir, base + ".%(ext)s")
+    if cookies_path:
+        opts["cookiefile"] = cookies_path
+    return opts
+
+
+async def _download_via_ytdlp(
+    url: str, destination: str | Path, job_id: Optional[str] = None
+) -> None:
+    dest_path = os.fspath(destination)
+    dest_dir = os.path.dirname(dest_path)
+    if dest_dir:
+        os.makedirs(dest_dir, exist_ok=True)
+    cookies_path = _ensure_ytdlp_cookiefile()
+    client_variants: List[Optional[Dict[str, Dict[str, List[str]]]]] = [
+        None,
+        {"youtube": {"player_client": ["web"]}},
+    ]
+    last_err: Optional[Exception] = None
+    for idx, extractor_args in enumerate(client_variants, start=1):
+        opts = _yt_opts_for_dest(dest_path, cookies_path)
+        if extractor_args:
+            opts["extractor_args"] = extractor_args
+        logger.info("ytdlp_try", extra={"job_id": job_id, "variant": idx})
+
+        def _run() -> None:
+            with YoutubeDL(opts) as ydl:
+                ydl.download([url])
+
+        try:
+            await asyncio.to_thread(_run)
+            base = os.path.splitext(os.path.basename(dest_path))[0]
+            candidates = [
+                fn
+                for fn in os.listdir(dest_dir or ".")
+                if fn.startswith(base + ".") and os.path.isfile(os.path.join(dest_dir or ".", fn))
+            ]
+            if not candidates:
+                raise RuntimeError("ytdlp: no output found")
+            picked = next((fn for fn in candidates if fn.endswith(".mp4")), candidates[0])
+            src = os.path.join(dest_dir or ".", picked)
+            if os.path.abspath(src) != os.path.abspath(dest_path):
+                os.replace(src, dest_path)
+            logger.info("ytdlp_ok", extra={"job_id": job_id, "variant": idx})
+            return
+        except (DownloadError, ExtractorError, Exception) as exc:
+            last_err = exc
+            logger.warning(
+                "ytdlp_fail",
+                extra={"job_id": job_id, "variant": idx, "err": str(exc)[:200]},
+            )
+            await asyncio.sleep(1.0 + random.random())
+
+    raise RuntimeError(f"yt-dlp fallback failed: {last_err}")
 
 
 def _normalize_dropbox_url(url: str) -> str:
@@ -259,29 +377,33 @@ async def download_game_video(
     if not _is_youtube_host(hostname):
         if job_id:
             _report_direct_download_progress(job_id, 0, None)
+        try:
+            if "amazonaws.com" in hostname:
+                await _download_presigned_s3(video_url, destination, job_id)
+                return
 
-        if "amazonaws.com" in hostname:
-            await _download_presigned_s3(video_url, destination, job_id)
+            if hostname.endswith("dropbox.com") or hostname.endswith("dropboxusercontent.com"):
+                normalized = _normalize_dropbox_url(video_url)
+                await _stream_download(normalized, destination, job_id=job_id)
+                return
+
+            if hostname.endswith("drive.google.com") or hostname.endswith("docs.google.com"):
+                cookies_path = (
+                    settings.DRIVE_COOKIES_PATH if settings.DRIVE_COOKIES_B64 else None
+                )
+                await download_from_google_drive(video_url, str(destination), cookies_path)
+                if job_id:
+                    logger.info("ingest_gdrive_ok", extra={"job_id": job_id})
+                else:
+                    logger.info("ingest_gdrive_ok")
+                return
+
+            await _stream_download(video_url, destination, job_id=job_id)
             return
-
-        if hostname.endswith("dropbox.com") or hostname.endswith("dropboxusercontent.com"):
-            normalized = _normalize_dropbox_url(video_url)
-            await _stream_download(normalized, destination, job_id=job_id)
+        except NotDirectVideoContent:
+            logger.info("fallback_ytdlp_html_page", extra={"job_id": job_id})
+            await _download_via_ytdlp(video_url, destination, job_id=job_id)
             return
-
-        if hostname.endswith("drive.google.com") or hostname.endswith("docs.google.com"):
-            cookies_path = (
-                settings.DRIVE_COOKIES_PATH if settings.DRIVE_COOKIES_B64 else None
-            )
-            await download_from_google_drive(video_url, str(destination), cookies_path)
-            if job_id:
-                logger.info("ingest_gdrive_ok", extra={"job_id": job_id})
-            else:
-                logger.info("ingest_gdrive_ok")
-            return
-
-        await _stream_download(video_url, destination, job_id=job_id)
-        return
 
     env_cookies = (os.getenv(_ENV_COOKIES_KEY) or "").strip() or None
     effective_cookies = cookies_b64 or env_cookies
