@@ -1,82 +1,97 @@
-// app/static/status.js
-document.addEventListener('DOMContentLoaded', async () => {
-  const STAGES = ['queued', 'downloading', 'detecting', 'bucketing', 'segmenting', 'packaging', 'completed', 'failed', 'canceled'];
+document.addEventListener('DOMContentLoaded', () => {
+  const stageChips = ['Queued', 'Downloading', 'Detecting', 'Bucketing', 'Segmenting', 'Packaging', 'Completed', 'Failed', 'Canceled'];
+
   const form = document.getElementById('job-form');
   const statusEl = document.getElementById('status');
   const resultEl = document.getElementById('result');
-  const btn = document.getElementById('submit_btn');
+  const errorEl = document.getElementById('error_box');
+  const submitBtn = document.getElementById('submit_btn');
   const cookieEl = document.getElementById('cookie_status');
 
-  const timelineEl = document.createElement('div');
-  timelineEl.id = 'stage_timeline';
-  timelineEl.className = 'timeline';
-  timelineEl.style.display = 'none';
-  statusEl.insertAdjacentElement('afterend', timelineEl);
+  const stageKey = (job) => (job.stage || job.status || 'queued').toLowerCase();
 
-  const renderTimeline = (stage) => {
-    if (!stage) {
-      timelineEl.style.display = 'none';
-      timelineEl.innerHTML = '';
-      return;
-    }
-    const foundIdx = STAGES.indexOf(stage);
-    if (foundIdx === -1) {
-      timelineEl.style.display = 'none';
-      timelineEl.innerHTML = '';
-      return;
-    }
-    const currentIdx = foundIdx;
-    timelineEl.innerHTML = '';
-    STAGES.forEach((name, idx) => {
-      const step = document.createElement('div');
-      step.className = 'timeline-step';
-      if (idx < currentIdx) step.classList.add('done');
-      if (idx === currentIdx) step.classList.add('active');
-      step.textContent = name;
-      timelineEl.appendChild(step);
+  const renderTimeline = (job) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'timeline';
+    const currentKey = stageKey(job);
+    const currentIdx = stageChips.findIndex((name) => name.toLowerCase() === currentKey);
+    stageChips.forEach((name, idx) => {
+      const span = document.createElement('span');
+      span.className = 'timeline-step';
+      span.textContent = name;
+      const lower = name.toLowerCase();
+      if (currentIdx !== -1 && idx < currentIdx) {
+        span.classList.add('done');
+      }
+      if (lower === currentKey) {
+        span.classList.add('active');
+      }
+      if (['completed', 'failed', 'canceled'].includes(lower) && (job.status || '').toLowerCase() === lower) {
+        span.classList.add('active');
+      }
+      wrap.appendChild(span);
     });
-    timelineEl.style.display = 'flex';
+    return wrap;
+  };
+
+  const humanEta = (seconds) => {
+    if (seconds == null) return '';
+    const m = Math.floor(seconds / 60);
+    const s = Math.max(0, Math.floor(seconds % 60));
+    return ` • ETA ${m}m ${s}s`;
   };
 
   const renderStatus = (job, cancelBtn) => {
-    const stage = job.stage || job.status || 'queued';
     const pct = typeof job.pct === 'number' ? job.pct : 0;
     const detail = job.detail ? ` • ${job.detail}` : '';
-    let etaTxt = '';
-    if (job.eta_sec != null) {
-      const m = Math.floor(job.eta_sec / 60);
-      const s = Math.max(0, Math.floor(job.eta_sec % 60));
-      etaTxt = ` • ETA ${m}m ${s}s`;
-    }
-    statusEl.textContent = `${stage} — ${pct.toFixed(1)}%${detail}${etaTxt}`;
-    const isTerminal = ['completed', 'failed', 'canceled'].includes(stage);
+    const etaTxt = humanEta(job.eta_sec);
+    const key = stageKey(job);
+    const label = stageChips.find((name) => name.toLowerCase() === key) || (job.stage || job.status || 'queued');
+
+    statusEl.innerHTML = '';
+    const line = document.createElement('div');
+    line.textContent = `${label} — ${pct.toFixed(1)}%${detail}${etaTxt}`;
+    statusEl.appendChild(line);
+    statusEl.appendChild(renderTimeline(job));
+
+    const isTerminal = ['completed', 'failed', 'canceled'].includes(key);
     if (cancelBtn) {
       if (isTerminal) {
-        cancelBtn.remove();
+        cancelBtn.disabled = true;
+        if (cancelBtn.parentElement) cancelBtn.parentElement.removeChild(cancelBtn);
       } else {
-        statusEl.appendChild(document.createTextNode(' '));
+        cancelBtn.disabled = cancelBtn.dataset.locked === '1';
+        cancelBtn.style.marginTop = '8px';
         statusEl.appendChild(cancelBtn);
       }
     }
-    renderTimeline(stage);
   };
 
-  try {
-    const resp = await fetch('/has_cookies');
-    if (resp.ok) {
-      const payload = await resp.json();
-      cookieEl.textContent = payload.has_cookies ? 'Server cookies: loaded' : 'Server cookies: not set';
+  const resetOutputs = () => {
+    resultEl.style.display = 'none';
+    resultEl.textContent = '';
+    errorEl.textContent = '';
+  };
+
+  const fetchCookieStatus = async () => {
+    try {
+      const resp = await fetch('/has_cookies');
+      if (resp.ok) {
+        const payload = await resp.json();
+        cookieEl.textContent = payload.has_cookies ? 'Server cookies: loaded' : 'Server cookies: not set';
+      }
+    } catch (_) {
+      /* noop */
     }
-  } catch (_) {}
+  };
+
+  fetchCookieStatus();
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    btn.disabled = true;
+    submitBtn.disabled = true;
     statusEl.textContent = 'Submitting job…';
-    timelineEl.style.display = 'none';
-    timelineEl.innerHTML = '';
-    resultEl.style.display = 'none';
-    resultEl.textContent = '';
+    resetOutputs();
 
     const payload = {
       video_url: document.getElementById('video_url').value.trim() || null,
@@ -87,7 +102,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         scene_thresh: parseFloat(document.getElementById('scene_thresh').value || '0.30'),
         min_duration: parseFloat(document.getElementById('min_duration').value || '4'),
         max_duration: parseFloat(document.getElementById('max_duration').value || '20'),
-      }
+      },
     };
 
     let response;
@@ -99,13 +114,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
     } catch (err) {
       statusEl.textContent = 'Network error creating job.';
-      btn.disabled = false;
+      submitBtn.disabled = false;
       return;
     }
 
     if (!response.ok) {
       statusEl.textContent = `Failed to create job (HTTP ${response.status}).`;
-      btn.disabled = false;
+      submitBtn.disabled = false;
       return;
     }
 
@@ -114,18 +129,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const cancelBtn = document.createElement('button');
     cancelBtn.textContent = 'Cancel';
-    cancelBtn.style.marginLeft = '12px';
     cancelBtn.addEventListener('click', async (e) => {
       e.preventDefault();
       cancelBtn.disabled = true;
+      cancelBtn.dataset.locked = '1';
       try {
         await fetch(`/jobs/${jobId}/cancel`, { method: 'POST' });
-      } catch (_) {}
+      } catch (_) {
+        /* noop */
+      }
     });
 
     statusEl.textContent = `Job queued: ${jobId}`;
-    statusEl.appendChild(cancelBtn);
-    renderTimeline('queued');
 
     const poll = async () => {
       let job;
@@ -142,12 +157,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       renderStatus(job, cancelBtn);
 
       if (job.status === 'completed') {
+        errorEl.textContent = '';
         try {
           const res = await fetch(`/jobs/${jobId}/result`, { cache: 'no-store' });
           if (!res.ok) throw new Error('result_not_ready');
           const payload = await res.json();
           const manifestUrl = payload.manifest_url;
-          const archiveUrl = payload.archive_url;
+          const zipUrl = payload.archive_url;
 
           if (manifestUrl) {
             try {
@@ -157,39 +173,26 @@ document.addEventListener('DOMContentLoaded', async () => {
               resultEl.textContent = JSON.stringify(manifest, null, 2);
             } catch (err) {
               console.error('manifest_fetch_error', err);
-              resultEl.style.display = 'block';
-              resultEl.textContent = 'Completed, but failed to fetch manifest (CORS/URL).';
+              errorEl.textContent = 'Completed, but failed to fetch manifest (CORS/URL).';
             }
           }
 
-          statusEl.textContent = 'completed — 100.0% • Ready';
-          renderTimeline('completed');
-          if (manifestUrl) {
-            const manifestLink = document.createElement('a');
-            manifestLink.href = manifestUrl;
-            manifestLink.textContent = 'Manifest JSON';
-            manifestLink.className = 'link';
-            manifestLink.target = '_blank';
-            statusEl.appendChild(document.createTextNode(' '));
-            statusEl.appendChild(manifestLink);
+          if (zipUrl) {
+            const link = document.createElement('a');
+            link.href = zipUrl;
+            link.textContent = 'Download ZIP';
+            link.className = 'link';
+            link.target = '_blank';
+            statusEl.append(' ', link);
           }
-          if (archiveUrl) {
-            const zipLink = document.createElement('a');
-            zipLink.href = archiveUrl;
-            zipLink.textContent = 'Download ZIP';
-            zipLink.className = 'link';
-            zipLink.target = '_blank';
-            statusEl.appendChild(document.createTextNode(' '));
-            statusEl.appendChild(zipLink);
-          }
-          btn.disabled = false;
+
+          submitBtn.disabled = false;
           cancelBtn.disabled = true;
           return;
         } catch (err) {
           console.error('result_fetch_error', err);
-          statusEl.textContent = 'Completed, but result is unavailable.';
-          renderTimeline('completed');
-          btn.disabled = false;
+          errorEl.textContent = 'Completed, but result is unavailable.';
+          submitBtn.disabled = false;
           cancelBtn.disabled = true;
           return;
         }
@@ -200,23 +203,21 @@ document.addEventListener('DOMContentLoaded', async () => {
           const er = await fetch(`/jobs/${jobId}/error`, { cache: 'no-store' });
           if (er.ok) {
             const ej = await er.json();
-            statusEl.textContent = 'failed — ' + (ej.error || 'Unknown');
+            errorEl.textContent = ej.error || 'Unknown error';
           } else {
-            statusEl.textContent = 'failed — Unknown error';
+            errorEl.textContent = 'Unknown error.';
           }
         } catch (_) {
-          statusEl.textContent = 'failed — Unknown error';
+          errorEl.textContent = 'Unknown error.';
         }
-        renderTimeline('failed');
-        btn.disabled = false;
+        submitBtn.disabled = false;
         cancelBtn.disabled = true;
         return;
       }
 
       if (job.status === 'canceled') {
-        statusEl.textContent = 'canceled';
-        renderTimeline('canceled');
-        btn.disabled = false;
+        errorEl.textContent = '';
+        submitBtn.disabled = false;
         cancelBtn.disabled = true;
         return;
       }

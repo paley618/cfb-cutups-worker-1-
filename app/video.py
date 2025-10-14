@@ -2,6 +2,7 @@ import asyncio
 import logging
 import os
 import random
+import subprocess
 from typing import Callable, Optional
 
 import httpx
@@ -163,3 +164,25 @@ async def download_game_video(video_url: str, dest: str, progress_cb=None, cance
     except NotDirectVideoContent:
         logger.info("fallback_ytdlp_html_page")
         await ytdlp_download(video_url, dest, progress_cb=progress_cb, cancel_ev=cancel_ev)
+
+
+def probe_duration_sec(path: str) -> float:
+    try:
+        result = subprocess.run(
+            [
+                "ffprobe",
+                "-v",
+                "error",
+                "-show_entries",
+                "format=duration",
+                "-of",
+                "default=nk=1:nw=1",
+                path,
+            ],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return max(0.0, float(result.stdout.strip()))
+    except Exception:
+        return 0.0
