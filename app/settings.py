@@ -65,6 +65,26 @@ class Settings(BaseSettings):
         default="auto",
         description="Play detector backend selection: auto, opencv, or ffprobe.",
     )
+    DETECTOR_TIMEOUT_BASE_SEC: int = Field(
+        default=300,
+        description="Minimum detector timeout in seconds (default 5 minutes).",
+    )
+    DETECTOR_TIMEOUT_PER_MIN: int = Field(
+        default=45,
+        description="Additional detector timeout (seconds) per minute of video runtime.",
+    )
+    DETECTOR_TIMEOUT_MAX_SEC: int = Field(
+        default=1800,
+        description="Maximum detector timeout in seconds (default 30 minutes).",
+    )
+    DETECTOR_SAMPLE_FPS: float = Field(
+        default=2.0,
+        description="Target sample rate for detector frame analysis (frames per second).",
+    )
+    DETECTOR_DOWNSCALE_W: int = Field(
+        default=640,
+        description="Detector frame downscale width used for OpenCV analysis.",
+    )
 
     DRIVE_COOKIES_B64: str | None = None
     DRIVE_COOKIES_PATH: str = "/tmp/drive_cookies.txt"

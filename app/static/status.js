@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     statusEl.innerHTML = '';
     const line = document.createElement('div');
-    line.textContent = `${label} — ${pct.toFixed(1)}%${detail}${etaTxt}`;
+    line.textContent = `${label} — ${pct.toFixed(1)}%${etaTxt}${detail}`;
     statusEl.appendChild(line);
     statusEl.appendChild(renderTimeline(job));
 
