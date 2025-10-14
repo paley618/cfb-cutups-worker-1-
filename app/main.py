@@ -12,6 +12,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import ValidationError
 
 from .cookies import write_cookies_if_any, write_drive_cookies_if_any
+from .logging_setup import setup_logging
 from .runner import JobRunner
 from .schemas import JobSubmission
 from .settings import settings
@@ -34,6 +35,7 @@ RUNNER = JobRunner(max_concurrency=_max_concurrency())
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    setup_logging()
     write_cookies_if_any()
     write_drive_cookies_if_any()
     RUNNER.start()
@@ -108,43 +110,51 @@ async def create_job(request: Request):
 
 
 @app.get("/jobs/{job_id}")
-def job_status(job_id: str):
-    record = RUNNER.get_job(job_id)
-    if not record:
+def get_job(job_id: str):
+    job = RUNNER.get_job(job_id)
+    if not job:
         raise HTTPException(status_code=404, detail="Not found")
-    data = {"job_id": job_id, "status": record.get("status")}
-    if record.get("error"):
-        data["error"] = record.get("error")
-    if record.get("result"):
-        data.update(record["result"])
-    return data
+    view = {
+        "job_id": job_id,
+        "status": job.get("status"),
+        "stage": job.get("stage"),
+        "progress": job.get("progress"),
+        "download": {
+            "bytes": job.get("dl_bytes"),
+            "total_bytes": job.get("dl_total"),
+            "speed_bps": job.get("dl_speed"),
+        }
+        if "dl_bytes" in job
+        else None,
+    }
+    return view
 
 
 @app.get("/jobs/{job_id}/manifest")
 async def job_manifest(job_id: str):
-    record = RUNNER.get_job(job_id)
-    if not record:
+    job = RUNNER.get_job(job_id)
+    if not job:
         raise HTTPException(status_code=404, detail="Not found")
-    if record.get("status") != "completed" or not record.get("result"):
+    if job.get("status") != "completed" or not job.get("result"):
         raise HTTPException(status_code=404, detail="Not ready")
-    return {"redirect": record["result"]["manifest_url"]}
+    return {"redirect": job["result"]["manifest_url"]}
 
 
 @app.get("/jobs/{job_id}/download")
 async def job_download(job_id: str):
-    record = RUNNER.get_job(job_id)
-    if not record:
+    job = RUNNER.get_job(job_id)
+    if not job:
         raise HTTPException(status_code=404, detail="Not found")
-    if record.get("status") != "completed" or not record.get("result"):
+    if job.get("status") != "completed" or not job.get("result"):
         raise HTTPException(status_code=404, detail="Not ready")
-    return {"redirect": record["result"]["archive_url"]}
+    return {"redirect": job["result"]["archive_url"]}
 
 
 @app.get("/jobs/{job_id}/error")
 def job_error(job_id: str):
-    record = RUNNER.get_job(job_id)
-    if not record:
+    job = RUNNER.get_job(job_id)
+    if not job:
         raise HTTPException(status_code=404, detail="Not found")
-    if record.get("status") != "failed":
+    if job.get("status") != "failed":
         raise HTTPException(status_code=409, detail="Job not failed")
-    return {"job_id": job_id, "error": record.get("error") or "Unknown"}
+    return {"job_id": job_id, "error": job.get("error", "Unknown")}
