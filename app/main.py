@@ -5,7 +5,8 @@ import os
 import uuid
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, File, HTTPException, Request, UploadFile, status
+import httpx
+from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile, status
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -50,6 +51,27 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+
+@app.get("/manifest-proxy")
+async def manifest_proxy(url: str = Query(..., min_length=10)):
+    """Fetch manifests server-side when the browser hits CORS barriers."""
+
+    timeout = httpx.Timeout(20, connect=10, read=10)
+    try:
+        async with httpx.AsyncClient(timeout=timeout, follow_redirects=True) as client:
+            response = await client.get(url)
+        if response.status_code != 200:
+            raise HTTPException(response.status_code, f"Upstream returned {response.status_code}")
+        try:
+            return response.json()
+        except Exception:
+            return response.text
+    except HTTPException:
+        raise
+    except Exception as exc:  # pragma: no cover - network reliability is runtime specific
+        raise HTTPException(502, f"Proxy error: {exc}") from exc
+
 
 @app.get("/healthz")
 def healthz():

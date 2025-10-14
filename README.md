@@ -65,7 +65,7 @@ If `pip install opencv-python-headless` fails, you can still run the app:
 
 ### Configure S3 CORS for direct browser access
 
-When `STORAGE_BACKEND=s3`, the UI fetches manifests and ZIPs directly from your bucket. Apply the bundled [s3-cors.json](./s3-cors.json) policy so browsers at your Railway domain and `localhost` can access those files:
+When `STORAGE_BACKEND=s3`, the UI fetches manifests and ZIPs directly from your bucket. Apply the bundled [s3-cors.json](./s3-cors.json) policy so browsers at your Railway domain (including wildcard subdomains) and `localhost` can access those files:
 
 ```bash
 aws s3api put-bucket-cors \
