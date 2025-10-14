@@ -181,25 +181,67 @@ document.addEventListener('DOMContentLoaded', () => {
           const manifestUrl = payload.manifest_url;
           const zipUrl = payload.archive_url;
 
+          let manifestLink;
           if (manifestUrl) {
-            try {
-              const manifestResp = await fetch(manifestUrl, { cache: 'no-store', mode: 'cors' });
-              const manifest = await manifestResp.json();
-              resultEl.style.display = 'block';
-              resultEl.textContent = JSON.stringify(manifest, null, 2);
-            } catch (err) {
-              console.error('manifest_fetch_error', err);
-              errorEl.textContent = 'Completed, but failed to fetch manifest (CORS/URL).';
-            }
+            manifestLink = document.createElement('a');
+            manifestLink.href = manifestUrl;
+            manifestLink.textContent = 'Manifest JSON';
+            manifestLink.className = 'link';
+            manifestLink.target = '_blank';
           }
 
+          let zipLink;
           if (zipUrl) {
-            const link = document.createElement('a');
-            link.href = zipUrl;
-            link.textContent = 'Download ZIP';
-            link.className = 'link';
-            link.target = '_blank';
-            statusEl.append(' ', link);
+            zipLink = document.createElement('a');
+            zipLink.href = zipUrl;
+            zipLink.textContent = 'Download ZIP';
+            zipLink.className = 'link';
+            zipLink.target = '_blank';
+          }
+
+          if (manifestLink || zipLink) {
+            const parts = [' '];
+            if (manifestLink) parts.push(manifestLink);
+            if (manifestLink && zipLink) parts.push(' ');
+            if (zipLink) parts.push(zipLink);
+            statusEl.append(...parts);
+          }
+
+          const showManifest = (manifest) => {
+            resultEl.style.display = 'block';
+            if (typeof manifest === 'string') {
+              resultEl.textContent = manifest;
+            } else {
+              resultEl.textContent = JSON.stringify(manifest, null, 2);
+            }
+            errorEl.textContent = '';
+          };
+
+          const parseManifestResponse = async (resp) => {
+            try {
+              return await resp.json();
+            } catch (_) {
+              return await resp.text();
+            }
+          };
+
+          if (manifestUrl) {
+            try {
+              const r2 = await fetch(manifestUrl, { mode: 'cors', cache: 'no-store' });
+              if (!r2.ok) throw new Error('HTTP ' + r2.status);
+              const manifest = await parseManifestResponse(r2);
+              showManifest(manifest);
+            } catch (e) {
+              try {
+                const pr = await fetch(`/manifest-proxy?url=${encodeURIComponent(manifestUrl)}`, { cache: 'no-store' });
+                if (!pr.ok) throw new Error('proxy ' + pr.status);
+                const manifest = await parseManifestResponse(pr);
+                showManifest(manifest);
+              } catch (e2) {
+                console.error('manifest_fetch_error', e, e2);
+                errorEl.textContent = 'Completed, but manifest fetch failed (CORS/URL). Use the Manifest JSON link above.';
+              }
+            }
           }
 
           submitBtn.disabled = false;
