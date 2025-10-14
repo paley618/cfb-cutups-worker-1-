@@ -272,6 +272,7 @@ class JobRunner:
                 result = {
                     "manifest_url": storage.url_for(manifest_key),
                     "archive_url": storage.url_for(archive_key),
+                    "manifest": manifest,
                 }
                 job["status"] = "completed"
                 job["stage"] = "completed"

@@ -144,7 +144,10 @@ async def job_manifest(job_id: str):
         raise HTTPException(status_code=404, detail="Not found")
     if job.get("status") != "completed" or not job.get("result"):
         raise HTTPException(status_code=404, detail="Not ready")
-    return {"redirect": job["result"]["manifest_url"]}
+    url = (job.get("result") or {}).get("manifest_url")
+    if not url:
+        raise HTTPException(status_code=500, detail="Manifest URL missing")
+    return {"redirect": url}
 
 
 @app.get("/jobs/{job_id}/download")
@@ -154,7 +157,10 @@ async def job_download(job_id: str):
         raise HTTPException(status_code=404, detail="Not found")
     if job.get("status") != "completed" or not job.get("result"):
         raise HTTPException(status_code=404, detail="Not ready")
-    return {"redirect": job["result"]["archive_url"]}
+    url = (job.get("result") or {}).get("archive_url")
+    if not url:
+        raise HTTPException(status_code=500, detail="Archive URL missing")
+    return {"redirect": url}
 
 
 @app.get("/jobs/{job_id}/error")
