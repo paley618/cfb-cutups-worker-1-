@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 class JobRunner:
     def __init__(self, max_concurrency: int = 2):
         self.queue: "asyncio.Queue[tuple[str, Any]]" = asyncio.Queue()
-        self.jobs: Dict[str, Dict[str, Any]] = {}  # {job_id: {"status":..., "error":..., "result":...}}
+        self.jobs: Dict[str, Dict[str, Any]] = {}  # {job_id: {"status":..., "stage":..., ...}}
         self.sema = asyncio.Semaphore(max_concurrency)
         self._worker_task: Optional[asyncio.Task] = None
         self._stop = asyncio.Event()
@@ -73,19 +73,43 @@ class JobRunner:
 
     def enqueue(self, submission) -> str:
         job_id = uuid.uuid4().hex
-        self.jobs[job_id] = {"status": "queued", "error": None, "result": None, "created": time.time()}
+        self.jobs[job_id] = {
+            "status": "queued",
+            "stage": "queued",
+            "progress": 0,
+            "error": None,
+            "result": None,
+            "created": time.time(),
+        }
         self.queue.put_nowait((job_id, submission))
-        logger.info("job_queued", extra={"job_id": job_id})
+        logger.info(f"job_queued {job_id}")
         return job_id
 
     def get_job(self, job_id: str) -> Optional[Dict[str, Any]]:
         return self.jobs.get(job_id)
 
+    def _set(self, job_id: str, **kv):
+        self.jobs[job_id].update(kv)
+
+    def update_download_progress(
+        self, job_id: str, bytes_done: int, total: int | None, speed_bps: float | None
+    ):
+        pct = None
+        if total and total > 0:
+            pct = int(min(100, max(0, (bytes_done / total) * 100)))
+        self._set(
+            job_id,
+            dl_bytes=bytes_done,
+            dl_total=total,
+            dl_speed=speed_bps,
+            progress=pct,
+        )
+
     async def _run_one(self, job_id: str, submission):
         async with self.sema:
             try:
-                self.jobs[job_id]["status"] = "downloading"
-                logger.info("job_start", extra={"job_id": job_id})
+                self._set(job_id, status="downloading", stage="downloading", progress=0)
+                logger.info(f"job_start {job_id}")
 
                 t0 = time.time()
                 tmp_dir = f"/tmp/{job_id}"
@@ -95,7 +119,15 @@ class JobRunner:
                 # 1) fetch
                 src_url = str(submission.video_url or submission.presigned_url or "")
                 if src_url:
-                    await download_game_video(src_url, video_path)
+                    async def _cb(meta: dict):
+                        self.update_download_progress(
+                            job_id,
+                            int(meta.get("downloaded", 0)),
+                            meta.get("total"),
+                            meta.get("speed"),
+                        )
+
+                    await download_game_video(src_url, video_path, progress_cb=_cb)
                 elif submission.upload_id:
                     upload_path = resolve_upload(submission.upload_id)
                     if not upload_path:
@@ -105,7 +137,7 @@ class JobRunner:
                     raise RuntimeError("No source provided")
 
                 # 2) detect windows
-                self.jobs[job_id]["status"] = "processing"
+                self._set(job_id, status="processing", stage="detecting", progress=None)
                 opts = submission.options
                 windows = detect_plays(
                     video_path,
@@ -119,6 +151,7 @@ class JobRunner:
                     windows = [(3.0, 15.0)]
 
                 # 3) segment + thumbs
+                self._set(job_id, stage="segmenting", progress=None)
                 clips_meta: List[Dict[str, Any]] = []
                 clips_dir = os.path.join(tmp_dir, "clips")
                 thumbs_dir = os.path.join(tmp_dir, "thumbs")
@@ -172,10 +205,8 @@ class JobRunner:
                     "manifest_url": storage.url_for(manifest_key),
                     "archive_url": storage.url_for(archive_key),
                 }
-                self.jobs[job_id]["status"] = "completed"
-                self.jobs[job_id]["result"] = result
-                logger.info("job_complete", extra={"job_id": job_id})
+                self._set(job_id, status="completed", stage="done", progress=100, result=result)
+                logger.info(f"job_complete {job_id}")
             except Exception as e:
-                self.jobs[job_id]["status"] = "failed"
-                self.jobs[job_id]["error"] = str(e)
-                logger.exception("job_failed", extra={"job_id": job_id})
+                self._set(job_id, status="failed", stage="failed", error=str(e), progress=None)
+                logger.exception(f"job_failed {job_id}")

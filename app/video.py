@@ -2,6 +2,7 @@ import asyncio
 import logging
 import os
 import random
+import time
 
 import httpx
 from yt_dlp import YoutubeDL
@@ -30,7 +31,7 @@ def _ok_content_type(ct: str | None):
     )
 
 
-async def http_stream(url: str, dest: str):
+async def http_stream(url: str, dest: str, progress_cb=None):
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     headers = {
         "User-Agent": "Mozilla/5.0",
@@ -47,10 +48,25 @@ async def http_stream(url: str, dest: str):
     ) as client:
         response = await client.get(url)
         _ok_content_type(response.headers.get("Content-Type"))
+        total = None
+        try:
+            total = int(response.headers.get("Content-Length") or "0") or None
+        except Exception:  # noqa: BLE001
+            pass
+        start = time.time()
+        done = 0
         with open(dest, "wb") as fh:
             async for chunk in response.aiter_bytes(1024 * 1024):
                 if chunk:
                     fh.write(chunk)
+                    done += len(chunk)
+                    if progress_cb:
+                        dt = max(0.001, time.time() - start)
+                        progress_cb({
+                            "downloaded": done,
+                            "total": total,
+                            "speed": done / dt,
+                        })
     logger.info("http_stream_ok")
 
 
@@ -72,7 +88,7 @@ _COMMON_YTDLP = {
 }
 
 
-def _ytdlp_opts(dest: str, cookie_path: str | None):
+def _ytdlp_opts(dest: str, cookie_path: str | None, progress_cb=None):
     dest_dir = os.path.dirname(dest)
     os.makedirs(dest_dir, exist_ok=True)
     base = os.path.splitext(os.path.basename(dest))[0]
@@ -80,15 +96,28 @@ def _ytdlp_opts(dest: str, cookie_path: str | None):
     opts["outtmpl"] = os.path.join(dest_dir, base + ".%(ext)s")
     if cookie_path and os.path.exists(cookie_path):
         opts["cookiefile"] = cookie_path
+    if progress_cb:
+        def hook(d):
+            if d.get("status") == "downloading":
+                progress_cb(
+                    {
+                        "downloaded": int(d.get("downloaded_bytes") or 0),
+                        "total": int(d.get("total_bytes") or d.get("total_bytes_estimate") or 0)
+                        or None,
+                        "speed": float(d.get("speed") or 0.0) or None,
+                    }
+                )
+
+        opts["progress_hooks"] = [hook]
     return opts
 
 
-async def ytdlp_download(url: str, dest: str):
+async def ytdlp_download(url: str, dest: str, progress_cb=None):
     cookie_path = settings.YTDLP_COOKIES_PATH if settings.YTDLP_COOKIES_B64 else None
     variants = [None, {"youtube": {"player_client": ["web"]}}]
     last_err: Exception | None = None
     for idx, extractor_args in enumerate(variants, start=1):
-        opts = _ytdlp_opts(dest, cookie_path)
+        opts = _ytdlp_opts(dest, cookie_path, progress_cb=progress_cb)
         if extractor_args:
             opts["extractor_args"] = extractor_args
         logger.info("ytdlp_try", extra={"variant": idx})
@@ -121,10 +150,10 @@ async def ytdlp_download(url: str, dest: str):
     raise RuntimeError(f"yt-dlp fallback failed: {last_err}")
 
 
-async def download_game_video(video_url: str, dest: str):
+async def download_game_video(video_url: str, dest: str, progress_cb=None):
     try:
-        await http_stream(video_url, dest)
+        await http_stream(video_url, dest, progress_cb=progress_cb)
         return
     except NotDirectVideoContent:
         logger.info("fallback_ytdlp_html_page")
-        await ytdlp_download(video_url, dest)
+        await ytdlp_download(video_url, dest, progress_cb=progress_cb)

@@ -56,59 +56,106 @@ document.addEventListener('DOMContentLoaded', async () => {
     const jobId = data.job_id;
     statusEl.textContent = `Job queued: ${jobId}. Processing…`;
 
-    const poll = async (tries = 0) => {
-      const manifestResp = await fetch(`/jobs/${jobId}/manifest`, { cache: 'no-store' });
-      if (manifestResp.ok) {
+    const humanStage = (job) => {
+      if (job.status === 'completed') return 'Completed';
+      if (job.status === 'failed') return 'Failed';
+      switch (job.stage) {
+        case 'downloading':
+          return 'Downloading video…';
+        case 'detecting':
+          return 'Detecting plays…';
+        case 'segmenting':
+          return 'Cutting clips…';
+        default:
+          return 'Queued…';
+      }
+    };
+
+    const poll = async () => {
+      let js;
+      try {
+        const sr = await fetch(`/jobs/${jobId}`, { cache: 'no-store' });
+        if (!sr.ok) {
+          throw new Error('status_not_ok');
+        }
+        js = await sr.json();
+      } catch (err) {
+        console.error('poll_failed', err);
+        setTimeout(poll, 2000);
+        return;
+      }
+
+      let line = humanStage(js);
+      if (js.progress !== null && js.progress !== undefined) {
+        line += ` ${js.progress}%`;
+      }
+      if (js.download && js.download.bytes) {
+        const mb = (js.download.bytes / 1048576).toFixed(1);
+        const tot = js.download.total_bytes ? (js.download.total_bytes / 1048576).toFixed(1) : '?';
+        line += ` — ${mb} / ${tot} MB`;
+      }
+      statusEl.textContent = line;
+
+      if (js.status === 'failed') {
+        try {
+          const er = await fetch(`/jobs/${jobId}/error`, { cache: 'no-store' });
+          if (er.ok) {
+            const ej = await er.json();
+            statusEl.textContent = 'Failed: ' + (ej.error || 'Unknown');
+          }
+        } catch (_) {}
+        btn.disabled = false;
+        return;
+      }
+
+      if (js.status === 'completed') {
         let manifest;
         try {
-          const meta = await manifestResp.json();
+          const mr = await fetch(`/jobs/${jobId}/manifest`, { cache: 'no-store' });
+          if (!mr.ok) {
+            throw new Error('manifest_not_ready');
+          }
+          const meta = await mr.json();
           if (meta.redirect) {
-            const follow = await fetch(meta.redirect, { cache: 'no-store' });
-            if (!follow.ok) {
-              throw new Error('follow_failed');
+            const r2 = await fetch(meta.redirect, { cache: 'no-store' });
+            if (!r2.ok) {
+              throw new Error('manifest_fetch_failed');
             }
-            manifest = await follow.json();
+            manifest = await r2.json();
           } else {
             manifest = meta;
           }
         } catch (err) {
+          console.error('manifest_fetch_error', err);
           statusEl.textContent = 'Completed, but failed to fetch manifest.';
           btn.disabled = false;
           return;
         }
 
-        statusEl.textContent = 'Completed.';
         resultEl.style.display = 'block';
         resultEl.textContent = JSON.stringify(manifest, null, 2);
         const link = document.createElement('a');
-        link.href = '#';
+        link.href = `/jobs/${jobId}/download`;
         link.textContent = 'Download ZIP';
         link.className = 'link';
         link.addEventListener('click', async (event) => {
           event.preventDefault();
           try {
-            const redirect = (await (await fetch(`/jobs/${jobId}/download`, { cache: 'no-store' })).json()).redirect;
-            if (redirect) {
-              window.location = redirect;
+            const dr = await fetch(`/jobs/${jobId}/download`, { cache: 'no-store' });
+            if (!dr.ok) return;
+            const dj = await dr.json();
+            if (dj.redirect) {
+              window.location = dj.redirect;
             }
           } catch (_) {}
         });
+        statusEl.textContent = 'Completed';
         statusEl.append(' ', link);
         btn.disabled = false;
         return;
       }
 
-      if (tries % 6 === 0) {
-        const errResp = await fetch(`/jobs/${jobId}/error`);
-        if (errResp.ok) {
-          const errJson = await errResp.json();
-          statusEl.textContent = 'Failed: ' + (errJson.error || 'Unknown');
-          btn.disabled = false;
-          return;
-        }
-      }
-
-      setTimeout(() => poll(tries + 1), 5000);
+      setTimeout(poll, 2000);
     };
 
     poll();
