@@ -8,6 +8,7 @@ from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
 from .detector import detect_plays
 from .storage import get_storage
 from .uploads import resolve_upload
+from .settings import settings
 
 logger = logging.getLogger(__name__)
 
@@ -232,28 +233,50 @@ class JobRunner:
                     return
 
                 opts = submission.options
+                base = settings.DETECTOR_TIMEOUT_BASE_SEC
+                per = settings.DETECTOR_TIMEOUT_PER_MIN
+                cap = settings.DETECTOR_TIMEOUT_MAX_SEC
+                detector_timeout = min(
+                    cap,
+                    max(base, base + per * (vid_dur / 60.0)),
+                )
+
                 self._start_stage(
                     job_id,
                     "detecting",
-                    est_sec=max(5.0, vid_dur * 0.08),
+                    est_sec=detector_timeout,
                     detail="Analyzing for plays",
                 )
 
-                async def _detect() -> List[Tuple[float, float]]:
-                    return await asyncio.to_thread(
-                        detect_plays,
+                def _det_prog(pct: float, eta: Optional[float], msg: str) -> None:
+                    self._set_stage(
+                        job_id,
+                        "detecting",
+                        pct=min(85.0, 12.0 + (pct * 0.73)),
+                        detail=msg,
+                        eta=self._eta(job_id),
+                    )
+
+                def _detect_task() -> List[Tuple[float, float]]:
+                    return detect_plays(
                         video_path,
-                        opts.play_padding_pre,
-                        opts.play_padding_post,
-                        opts.min_duration,
-                        opts.max_duration,
-                        opts.scene_thresh,
+                        padding_pre=opts.play_padding_pre,
+                        padding_post=opts.play_padding_post,
+                        min_duration=opts.min_duration,
+                        max_duration=opts.max_duration,
+                        scene_thresh=opts.scene_thresh,
+                        progress_cb=_det_prog,
                     )
 
                 try:
-                    windows = await asyncio.wait_for(_detect(), timeout=60 * 5)
+                    windows = await asyncio.wait_for(
+                        asyncio.to_thread(_detect_task),
+                        timeout=detector_timeout,
+                    )
                 except asyncio.TimeoutError:
-                    raise RuntimeError("Detector timed out") from None
+                    raise RuntimeError(
+                        f"Detector timed out (~{int(vid_dur / 60)}m video, timeout {int(detector_timeout)}s)"
+                    ) from None
 
                 if not windows:
                     windows = [(3.0, 15.0)]
@@ -261,8 +284,8 @@ class JobRunner:
                 self._set_stage(
                     job_id,
                     "detecting",
-                    pct=12.0,
-                    detail=f"Found {len(windows)} candidates",
+                    pct=85.0,
+                    detail=f"Found {len(windows)} plays",
                     eta=0.0,
                 )
 
