@@ -16,6 +16,8 @@ from .logging_setup import setup_logging
 from .runner import JobRunner
 from .schemas import JobSubmission
 from .settings import settings
+from .selftest import run_all
+from .storage import get_storage
 from .uploads import destination_for, public_path, register_upload, resolve_upload
 
 logger = logging.getLogger(__name__)
@@ -63,6 +65,12 @@ def schema_ok():
 @app.get("/has_cookies")
 def has_cookies():
     return {"has_cookies": bool(settings.YTDLP_COOKIES_B64)}
+
+
+@app.get("/__selftest")
+async def __selftest():
+    storage = get_storage()
+    return await run_all(storage)
 
 
 @app.get("/")
