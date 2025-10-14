@@ -14,3 +14,7 @@ button:disabled { opacity:.6; cursor:not-allowed; }
 .kv { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; background:#0e1220; border:1px solid #202636; padding:12px; border-radius:10px; overflow:auto; }
 .link { color: var(--ok); text-decoration: none; }
 .footer { margin-top: 16px; font-size:12px; color: var(--muted); }
+.timeline { margin-top:8px; display:flex; flex-wrap:wrap; gap:6px; }
+.timeline-step { font-size:11px; padding:4px 10px; border-radius:999px; border:1px solid #202636; background:#0b111f; color:var(--muted); text-transform:capitalize; }
+.timeline-step.done { border-color: var(--ok); color: var(--ok); }
+.timeline-step.active { border-color: var(--accent); color: var(--accent); }

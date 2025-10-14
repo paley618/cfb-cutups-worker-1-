@@ -1,5 +1,5 @@
 import os, json, zipfile, uuid, asyncio, time, logging, shutil
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Tuple
 
 from .video import download_game_video
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
@@ -8,6 +8,19 @@ from .storage import get_storage
 from .uploads import resolve_upload
 
 logger = logging.getLogger(__name__)
+
+
+STAGES = (
+    "queued",
+    "downloading",
+    "detecting",
+    "bucketing",
+    "segmenting",
+    "packaging",
+    "completed",
+    "failed",
+    "canceled",
+)
 
 
 class JobRunner:
@@ -22,15 +35,36 @@ class JobRunner:
     def _init_job(self, job_id: str):
         self.jobs[job_id] = {
             "status": "queued",
-            "error": None,
-            "result": None,
-            "created": time.time(),
             "stage": "queued",
             "pct": 0.0,
             "eta_sec": None,
             "detail": "",
+            "error": None,
+            "result": None,
+            "created": time.time(),
         }
         self._cancels[job_id] = asyncio.Event()
+
+    def _set_stage(
+        self,
+        job_id: str,
+        stage: str,
+        *,
+        pct: float | None = None,
+        detail: str | None = None,
+        eta: float | None = None,
+    ) -> None:
+        job = self.jobs.get(job_id)
+        if not job:
+            return
+        job["stage"] = stage
+        job["status"] = stage
+        pct_value = pct if pct is not None else job.get("pct")
+        if pct_value is not None:
+            job["pct"] = max(0.0, min(100.0, round(float(pct_value), 1)))
+        if detail is not None:
+            job["detail"] = detail
+        job["eta_sec"] = eta
 
     def is_running(self) -> bool:
         return self._worker_task is not None and not self._worker_task.done()
@@ -96,41 +130,36 @@ class JobRunner:
         if not ev:
             return False
         ev.set()
-        job = self.jobs.get(job_id)
-        if job:
-            job["status"] = "canceled"
-            job["stage"] = "canceled"
-            job["detail"] = "Canceled by user"
-            job["eta_sec"] = None
+        self._set_stage(job_id, "canceled", pct=self.jobs.get(job_id, {}).get("pct", 0.0), detail="Canceled by user", eta=0.0)
         return True
 
     async def _run_one(self, job_id: str, submission):
         cancel_ev = self._cancels[job_id]
         async with self.sema:
-            try:
-                job = self.jobs[job_id]
-                job["status"] = "downloading"
-                job["stage"] = "downloading"
-                job["pct"] = 0.0
-                job["eta_sec"] = None
-                job["detail"] = "Starting download"
-                logger.info("job_start", extra={"job_id": job_id})
+            watchdog_deadline = time.time() + 60 * 30  # 30 minutes
 
-                t0 = time.time()
+            try:
+                logger.info("job_start", extra={"job_id": job_id})
                 tmp_dir = f"/tmp/{job_id}"
                 os.makedirs(tmp_dir, exist_ok=True)
                 video_path = os.path.join(tmp_dir, "source.mp4")
 
                 src_url = str(submission.video_url or submission.presigned_url or "")
+                upload_id = submission.upload_id
 
-                def _dl_progress(pct: float, eta_sec: float | None, detail: str = ""):
-                    current = self.jobs.get(job_id)
-                    if not current or cancel_ev.is_set():
+                self._set_stage(job_id, "downloading", pct=0.0, detail="Starting download")
+
+                def _dl_progress(pct: float, eta_sec: float | None, detail: str = "") -> None:
+                    if cancel_ev.is_set():
                         return
-                    scaled = max(0.0, min(10.0, (pct / 100.0) * 10.0))
-                    current["pct"] = round(scaled, 1)
-                    current["eta_sec"] = eta_sec
-                    current["detail"] = detail or "Downloading video"
+                    scaled = min(10.0, max(0.0, pct * 0.10))
+                    self._set_stage(
+                        job_id,
+                        "downloading",
+                        pct=scaled,
+                        detail=detail or "Downloading video",
+                        eta=eta_sec,
+                    )
 
                 if src_url:
                     await download_game_video(
@@ -139,69 +168,90 @@ class JobRunner:
                         progress_cb=_dl_progress,
                         cancel_ev=cancel_ev,
                     )
-                elif submission.upload_id:
-                    upload_path = resolve_upload(submission.upload_id)
+                    self._set_stage(job_id, "downloading", pct=10.0, detail="Download complete", eta=0.0)
+                elif upload_id:
+                    upload_path = resolve_upload(upload_id)
                     if not upload_path:
                         raise RuntimeError("Upload not found")
-                    job["detail"] = "Copying upload"
+                    self._set_stage(job_id, "downloading", pct=2.0, detail="Copying upload")
                     await asyncio.to_thread(shutil.copyfile, upload_path, video_path)
-                    job["pct"] = 10.0
+                    self._set_stage(job_id, "downloading", pct=10.0, detail="Upload copied", eta=0.0)
                 else:
                     raise RuntimeError("No source provided")
 
-                job["pct"] = max(job.get("pct", 0.0), 10.0)
-                job["eta_sec"] = None
-
                 if cancel_ev.is_set():
-                    logger.info("job_canceled_after_download", extra={"job_id": job_id})
                     return
 
-                job["status"] = "processing"
-                job["stage"] = "detecting"
-                job["detail"] = "Analyzing video"
-                job["eta_sec"] = None
+                self._set_stage(job_id, "detecting", pct=12.0, detail="Analyzing video for plays")
                 opts = submission.options
-                windows = detect_plays(
-                    video_path,
-                    padding_pre=opts.play_padding_pre,
-                    padding_post=opts.play_padding_post,
-                    min_duration=opts.min_duration,
-                    max_duration=opts.max_duration,
-                    scene_thresh=opts.scene_thresh,
-                )
+
+                async def _detect() -> List[Tuple[float, float]]:
+                    return await asyncio.to_thread(
+                        detect_plays,
+                        video_path,
+                        opts.play_padding_pre,
+                        opts.play_padding_post,
+                        opts.min_duration,
+                        opts.max_duration,
+                        opts.scene_thresh,
+                    )
+
+                try:
+                    windows = await asyncio.wait_for(_detect(), timeout=60 * 5)
+                except asyncio.TimeoutError:
+                    raise RuntimeError("Detector timed out") from None
+
                 if not windows:
                     windows = [(3.0, 15.0)]
 
-                job["stage"] = "segmenting"
-                job["detail"] = "Preparing clips"
-                total_dur = sum(max(0.01, end - start) for start, end in windows)
-                done_dur = 0.0
-                seg_t0 = time.time()
+                if cancel_ev.is_set():
+                    return
 
+                self._set_stage(job_id, "bucketing", pct=15.0, detail="Grouping clips by duration buckets")
+
+                def _bucket(duration: float) -> str:
+                    if duration < 6:
+                        return "short"
+                    if duration < 12:
+                        return "medium"
+                    return "long"
+
+                buckets = {"short": [], "medium": [], "long": []}
+                total_dur = 0.0
+                for start, end in windows:
+                    if time.time() > watchdog_deadline:
+                        raise RuntimeError("Job watchdog expired")
+                    duration = max(0.01, end - start)
+                    buckets[_bucket(duration)].append((start, end))
+                    total_dur += duration
+
+                self._set_stage(job_id, "segmenting", pct=20.0, detail="Cutting clips")
+
+                ffmpeg_set_cancel(cancel_ev)
                 clips_meta: List[Dict[str, Any]] = []
                 clips_dir = os.path.join(tmp_dir, "clips")
                 thumbs_dir = os.path.join(tmp_dir, "thumbs")
                 os.makedirs(clips_dir, exist_ok=True)
                 os.makedirs(thumbs_dir, exist_ok=True)
 
-                ffmpeg_set_cancel(cancel_ev)
+                ordered = buckets["short"] + buckets["medium"] + buckets["long"]
+                total_clips = len(ordered)
+                done_dur = 0.0
+                seg_t0 = time.time()
 
-                for idx, (start, end) in enumerate(windows, start=1):
+                for idx, (start, end) in enumerate(ordered, start=1):
+                    if time.time() > watchdog_deadline:
+                        raise RuntimeError("Job watchdog expired")
                     if cancel_ev.is_set():
-                        logger.info("job_canceled_during_segment", extra={"job_id": job_id})
                         return
 
                     cid = f"{idx:04d}"
-                    cpath = os.path.join(clips_dir, f"{cid}.mp4")
-                    tpath = os.path.join(thumbs_dir, f"{cid}.jpg")
-
                     seg_dur = max(0.01, end - start)
-                    job["detail"] = f"Clip {idx}/{len(windows)}"
-                    done_ratio_before = done_dur / total_dur if total_dur else 0.0
-                    job["pct"] = round(10.0 + 80.0 * done_ratio_before, 1)
+                    clip_path = os.path.join(clips_dir, f"{cid}.mp4")
+                    thumb_path = os.path.join(thumbs_dir, f"{cid}.jpg")
 
-                    await cut_clip(video_path, cpath, start, end)
-                    await make_thumb(video_path, max(0.0, start + 1.0), tpath)
+                    await cut_clip(video_path, clip_path, start, end)
+                    await make_thumb(video_path, max(0.0, start + 1.0), thumb_path)
 
                     clips_meta.append(
                         {
@@ -214,40 +264,48 @@ class JobRunner:
                         }
                     )
                     done_dur += seg_dur
-                    job["pct"] = round(10.0 + 80.0 * (done_dur / total_dur if total_dur else 1.0), 1)
 
-                    elapsed = time.time() - seg_t0
-                    if done_dur > 0 and total_dur > done_dur and elapsed > 0:
-                        rate = done_dur / elapsed
+                    elapsed = max(0.001, time.time() - seg_t0)
+                    eta = None
+                    if total_dur > 0 and done_dur < total_dur:
+                        rate = done_dur / elapsed if elapsed > 0 else 0.0
                         if rate > 0:
-                            remaining = max(0.0, total_dur - done_dur)
-                            job["eta_sec"] = remaining / rate
-                    else:
-                        job["eta_sec"] = None
+                            eta = max(0.0, (total_dur - done_dur) / rate)
 
-                    if cancel_ev.is_set():
-                        logger.info("job_canceled_after_clip", extra={"job_id": job_id})
-                        return
+                    pct = 20.0 + 70.0 * (done_dur / max(0.01, total_dur))
+                    self._set_stage(
+                        job_id,
+                        "segmenting",
+                        pct=pct,
+                        detail=f"Cut {idx}/{total_clips} (≈{int(seg_dur)}s)",
+                        eta=eta,
+                    )
 
                 if cancel_ev.is_set():
-                    logger.info("job_canceled_before_packaging", extra={"job_id": job_id})
                     return
 
-                job["stage"] = "packaging"
-                job["detail"] = "Packaging outputs"
-                job["pct"] = 95.0
-                job["eta_sec"] = None
+                self._set_stage(job_id, "packaging", pct=95.0, detail="Packaging outputs", eta=0.0)
 
                 manifest = {
                     "job_id": job_id,
-                    "source_url": src_url or f"upload:{submission.upload_id}",
+                    "source_url": src_url or f"upload:{upload_id}",
+                    "buckets": {
+                        "short": len(buckets["short"]),
+                        "medium": len(buckets["medium"]),
+                        "long": len(buckets["long"]),
+                    },
                     "clips": clips_meta,
                     "metrics": {
                         "num_clips": len(clips_meta),
                         "total_runtime_sec": round(sum(c["duration"] for c in clips_meta), 3),
-                        "processing_sec": round(time.time() - t0, 3),
+                        "processing_sec": None,
                     },
                 }
+                manifest["metrics"]["processing_sec"] = round(
+                    time.time() - self.jobs[job_id]["created"],
+                    3,
+                )
+
                 manifest_path = os.path.join(tmp_dir, "manifest.json")
                 with open(manifest_path, "w", encoding="utf-8") as f:
                     json.dump(manifest, f, indent=2)
@@ -260,7 +318,6 @@ class JobRunner:
                         archive.write(os.path.join(tmp_dir, clip["thumb"]), clip["thumb"])
 
                 if cancel_ev.is_set():
-                    logger.info("job_canceled_before_storage", extra={"job_id": job_id})
                     return
 
                 storage = get_storage()
@@ -274,22 +331,23 @@ class JobRunner:
                     "archive_url": storage.url_for(archive_key),
                     "manifest": manifest,
                 }
-                job["status"] = "completed"
-                job["stage"] = "completed"
-                job["pct"] = 100.0
-                job["eta_sec"] = 0.0
-                job["detail"] = "Completed"
-                job["result"] = result
+                self.jobs[job_id]["result"] = result
+
+                self._set_stage(job_id, "completed", pct=100.0, detail="Ready", eta=0.0)
                 logger.info("job_complete", extra={"job_id": job_id})
             except Exception as exc:
-                if not cancel_ev.is_set():
-                    job = self.jobs.get(job_id)
-                    if job is not None:
-                        job["status"] = "failed"
-                        job["stage"] = "failed"
-                        job["error"] = str(exc)
-                        job["detail"] = "Failed"
-                        job["eta_sec"] = None
-                    logger.exception("job_failed", extra={"job_id": job_id})
+                if cancel_ev.is_set():
+                    return
+                job = self.jobs.get(job_id)
+                if job is not None:
+                    job["error"] = str(exc)
+                self._set_stage(
+                    job_id,
+                    "failed",
+                    pct=self.jobs.get(job_id, {}).get("pct", 0.0),
+                    detail=str(exc),
+                    eta=0.0,
+                )
+                logger.exception("job_failed", extra={"job_id": job_id})
             finally:
                 self._cancels.pop(job_id, None)
