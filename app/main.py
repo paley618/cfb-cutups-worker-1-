@@ -124,6 +124,16 @@ def get_job(job_id: str):
     }
 
 
+@app.get("/jobs/{job_id}/result")
+def job_result(job_id: str):
+    job = RUNNER.get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Not found")
+    if job.get("status") != "completed":
+        raise HTTPException(status_code=404, detail="Not ready")
+    return job.get("result") or {}
+
+
 @app.post("/jobs/{job_id}/cancel")
 def cancel_job(job_id: str):
     job = RUNNER.get_job(job_id)
