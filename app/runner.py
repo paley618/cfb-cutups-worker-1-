@@ -1,7 +1,9 @@
+from __future__ import annotations
+
 import os, json, zipfile, uuid, asyncio, time, logging, shutil
 from typing import Dict, Any, List, Optional, Tuple
 
-from .video import download_game_video
+from .video import download_game_video, probe_duration_sec
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
 from .detector import detect_plays
 from .storage import get_storage
@@ -42,6 +44,7 @@ class JobRunner:
             "error": None,
             "result": None,
             "created": time.time(),
+            "_stage_ends_at": None,
         }
         self._cancels[job_id] = asyncio.Event()
 
@@ -65,6 +68,37 @@ class JobRunner:
         if detail is not None:
             job["detail"] = detail
         job["eta_sec"] = eta
+        if stage in {"completed", "failed", "canceled"}:
+            job["_stage_ends_at"] = None
+
+    def _start_stage(
+        self,
+        job_id: str,
+        stage: str,
+        *,
+        est_sec: float,
+        detail: str,
+    ) -> None:
+        job = self.jobs.get(job_id)
+        if not job:
+            return
+        job["_stage_ends_at"] = time.time() + max(1.0, float(est_sec))
+        self._set_stage(
+            job_id,
+            stage,
+            pct=job.get("pct"),
+            detail=detail,
+            eta=self._eta(job_id),
+        )
+
+    def _eta(self, job_id: str) -> Optional[float]:
+        job = self.jobs.get(job_id)
+        if not job:
+            return None
+        ends_at = job.get("_stage_ends_at")
+        if not ends_at:
+            return None
+        return max(0.0, ends_at - time.time())
 
     def is_running(self) -> bool:
         return self._worker_task is not None and not self._worker_task.done()
@@ -147,9 +181,16 @@ class JobRunner:
                 src_url = str(submission.video_url or submission.presigned_url or "")
                 upload_id = submission.upload_id
 
-                self._set_stage(job_id, "downloading", pct=0.0, detail="Starting download")
+                vid_dur = 0.0
+                self.jobs[job_id]["status"] = "downloading"
+                self._start_stage(
+                    job_id,
+                    "downloading",
+                    est_sec=max(10.0, vid_dur * 0.15),
+                    detail="Starting download",
+                )
 
-                def _dl_progress(pct: float, eta_sec: float | None, detail: str = "") -> None:
+                def _dl_progress(pct: float, eta_sec: Optional[float], detail: str = "") -> None:
                     if cancel_ev.is_set():
                         return
                     scaled = min(10.0, max(0.0, pct * 0.10))
@@ -157,8 +198,8 @@ class JobRunner:
                         job_id,
                         "downloading",
                         pct=scaled,
-                        detail=detail or "Downloading video",
-                        eta=eta_sec,
+                        detail=detail or "Downloading",
+                        eta=self._eta(job_id),
                     )
 
                 if src_url:
@@ -173,17 +214,30 @@ class JobRunner:
                     upload_path = resolve_upload(upload_id)
                     if not upload_path:
                         raise RuntimeError("Upload not found")
-                    self._set_stage(job_id, "downloading", pct=2.0, detail="Copying upload")
+                    self._set_stage(
+                        job_id,
+                        "downloading",
+                        pct=2.0,
+                        detail="Copying upload",
+                        eta=self._eta(job_id),
+                    )
                     await asyncio.to_thread(shutil.copyfile, upload_path, video_path)
                     self._set_stage(job_id, "downloading", pct=10.0, detail="Upload copied", eta=0.0)
                 else:
                     raise RuntimeError("No source provided")
 
+                vid_dur = probe_duration_sec(video_path) or 0.0
+
                 if cancel_ev.is_set():
                     return
 
-                self._set_stage(job_id, "detecting", pct=12.0, detail="Analyzing video for plays")
                 opts = submission.options
+                self._start_stage(
+                    job_id,
+                    "detecting",
+                    est_sec=max(5.0, vid_dur * 0.08),
+                    detail="Analyzing for plays",
+                )
 
                 async def _detect() -> List[Tuple[float, float]]:
                     return await asyncio.to_thread(
@@ -204,10 +258,23 @@ class JobRunner:
                 if not windows:
                     windows = [(3.0, 15.0)]
 
+                self._set_stage(
+                    job_id,
+                    "detecting",
+                    pct=12.0,
+                    detail=f"Found {len(windows)} candidates",
+                    eta=0.0,
+                )
+
                 if cancel_ev.is_set():
                     return
 
-                self._set_stage(job_id, "bucketing", pct=15.0, detail="Grouping clips by duration buckets")
+                self._start_stage(
+                    job_id,
+                    "bucketing",
+                    est_sec=3.0,
+                    detail="Grouping by duration",
+                )
 
                 def _bucket(duration: float) -> str:
                     if duration < 6:
@@ -217,15 +284,24 @@ class JobRunner:
                     return "long"
 
                 buckets = {"short": [], "medium": [], "long": []}
-                total_dur = 0.0
                 for start, end in windows:
                     if time.time() > watchdog_deadline:
                         raise RuntimeError("Job watchdog expired")
                     duration = max(0.01, end - start)
                     buckets[_bucket(duration)].append((start, end))
-                    total_dur += duration
+                ordered = buckets["short"] + buckets["medium"] + buckets["long"]
 
-                self._set_stage(job_id, "segmenting", pct=20.0, detail="Cutting clips")
+                self._set_stage(job_id, "bucketing", pct=15.0, detail="Buckets ready", eta=0.0)
+
+                total_clip_dur = sum(max(0.01, end - start) for start, end in ordered)
+                encode_speed = float(os.getenv("ENCODE_SPEED", "2.0"))
+
+                self._start_stage(
+                    job_id,
+                    "segmenting",
+                    est_sec=max(8.0, total_clip_dur / max(0.25, encode_speed)),
+                    detail=f"Cutting {len(ordered)} clips",
+                )
 
                 ffmpeg_set_cancel(cancel_ev)
                 clips_meta: List[Dict[str, Any]] = []
@@ -234,10 +310,8 @@ class JobRunner:
                 os.makedirs(clips_dir, exist_ok=True)
                 os.makedirs(thumbs_dir, exist_ok=True)
 
-                ordered = buckets["short"] + buckets["medium"] + buckets["long"]
                 total_clips = len(ordered)
                 done_dur = 0.0
-                seg_t0 = time.time()
 
                 for idx, (start, end) in enumerate(ordered, start=1):
                     if time.time() > watchdog_deadline:
@@ -265,26 +339,24 @@ class JobRunner:
                     )
                     done_dur += seg_dur
 
-                    elapsed = max(0.001, time.time() - seg_t0)
-                    eta = None
-                    if total_dur > 0 and done_dur < total_dur:
-                        rate = done_dur / elapsed if elapsed > 0 else 0.0
-                        if rate > 0:
-                            eta = max(0.0, (total_dur - done_dur) / rate)
-
-                    pct = 20.0 + 70.0 * (done_dur / max(0.01, total_dur))
+                    progress = 20.0 + 70.0 * (done_dur / max(0.01, total_clip_dur))
                     self._set_stage(
                         job_id,
                         "segmenting",
-                        pct=pct,
-                        detail=f"Cut {idx}/{total_clips} (≈{int(seg_dur)}s)",
-                        eta=eta,
+                        pct=progress,
+                        detail=f"Cutting {idx}/{total_clips} (≈{int(seg_dur)}s)",
+                        eta=self._eta(job_id),
                     )
 
                 if cancel_ev.is_set():
                     return
 
-                self._set_stage(job_id, "packaging", pct=95.0, detail="Packaging outputs", eta=0.0)
+                self._start_stage(
+                    job_id,
+                    "packaging",
+                    est_sec=max(4.0, 1.0 + len(clips_meta) * 0.05),
+                    detail="Packaging ZIP/manifest",
+                )
 
                 manifest = {
                     "job_id": job_id,
@@ -323,6 +395,13 @@ class JobRunner:
                 storage = get_storage()
                 archive_key = f"{job_id}/output.zip"
                 manifest_key = f"{job_id}/manifest.json"
+                self._set_stage(
+                    job_id,
+                    "packaging",
+                    pct=95.0,
+                    detail="Uploading",
+                    eta=self._eta(job_id),
+                )
                 await asyncio.to_thread(storage.write_file, zip_path, archive_key)
                 await asyncio.to_thread(storage.write_file, manifest_path, manifest_key)
 

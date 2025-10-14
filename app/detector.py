@@ -1,81 +1,68 @@
-import subprocess
-import json
+from __future__ import annotations
+
 from typing import List, Tuple
 
-
-def _ffprobe_scenecuts(path: str, scene_thresh: float = 0.30) -> List[float]:
-    """Use ffprobe to detect scene-change timestamps."""
-    cmd = [
-        "ffprobe",
-        "-hide_banner",
-        "-loglevel",
-        "error",
-        "-select_streams",
-        "v:0",
-        "-show_frames",
-        "-show_entries",
-        "frame=pkt_pts_time",
-        "-of",
-        "json",
-        "-f",
-        "lavfi",
-        f"movie={path},select=gt(scene\\,{scene_thresh}),showinfo",
-    ]
-    out = subprocess.check_output(cmd, text=True)
-    payload = json.loads(out or "{}")
-    frames = payload.get("frames", [])
-    timestamps: List[float] = []
-    for frame in frames:
-        raw = frame.get("pkt_pts_time")
-        if raw is None:
-            continue
-        try:
-            timestamps.append(float(raw))
-        except Exception:
-            continue
-    timestamps.sort()
-
-    deduped: List[float] = []
-    last = -1e9
-    for ts in timestamps:
-        if ts - last > 0.7:
-            deduped.append(ts)
-            last = ts
-    return deduped
-
-
-def _group_to_windows(cuts: List[float], min_gap: float = 8.0) -> List[Tuple[float, float]]:
-    if not cuts:
-        return []
-    windows: List[Tuple[float, float]] = []
-    start = cuts[0]
-    prev = cuts[0]
-    for ts in cuts[1:]:
-        if ts - prev >= min_gap:
-            windows.append((start, prev))
-            start = ts
-        prev = ts
-    windows.append((start, prev))
-    return windows
+from .field_filter import detect_shot_cuts, field_present
 
 
 def detect_plays(
     video_path: str,
-    padding_pre: float = 3.0,
-    padding_post: float = 5.0,
-    min_duration: float = 4.0,
-    max_duration: float = 20.0,
-    scene_thresh: float = 0.30,
+    padding_pre: float,
+    padding_post: float,
+    min_duration: float,
+    max_duration: float,
+    scene_thresh_ignored: float = 0.0,
 ) -> List[Tuple[float, float]]:
-    """Heuristic: scene-change clusters ≈ play boundaries."""
-    cuts = _ffprobe_scenecuts(video_path, scene_thresh=scene_thresh)
-    raw_windows = _group_to_windows(cuts, min_gap=8.0)
-    plays: List[Tuple[float, float]] = []
-    for start_cut, end_cut in raw_windows:
-        start = max(0.0, start_cut - padding_pre)
-        end = end_cut + padding_post
-        duration = end - start
-        if duration < min_duration or duration > max_duration:
+    """Detect play windows using shot changes + field presence filtering."""
+
+    cuts = detect_shot_cuts(video_path, sample_fps=2.0, diff_thresh=14.0)
+
+    raw_segments: list[list[float]] = []
+    for start, end in zip(cuts[:-1], cuts[1:]):
+        duration = max(0.0, end - start)
+        if duration < 1.0:
             continue
-        plays.append((start, end))
-    return plays
+        raw_segments.append([start, end])
+
+    merged: list[list[float]] = []
+    current: list[float] | None = None
+    for start, end in raw_segments:
+        if current is None:
+            current = [start, end]
+            continue
+        if start - current[1] <= 1.0:
+            current[1] = end
+        else:
+            merged.append(current)
+            current = [start, end]
+    if current is not None:
+        merged.append(current)
+
+    keep: list[list[float]] = []
+    for start, end in merged:
+        if (end - start) < 2.0:
+            continue
+        if field_present(
+            video_path,
+            start,
+            end,
+            sample_every=0.6,
+            green_pct=0.06,
+            min_hit_ratio=0.25,
+        ):
+            keep.append([start, end])
+
+    plays: list[Tuple[float, float]] = []
+    for start, end in keep:
+        duration = end - start
+        if duration > max_duration:
+            split_start = start
+            while split_start < end:
+                split_end = min(end, split_start + max_duration)
+                plays.append((max(0.0, split_start - padding_pre), split_end + padding_post))
+                split_start = split_end
+        elif duration >= min_duration:
+            plays.append((max(0.0, start - padding_pre), end + padding_post))
+
+    deduped = sorted({(round(s, 3), round(e, 3)) for s, e in plays})
+    return list(deduped)[:400]
