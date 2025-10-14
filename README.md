@@ -50,6 +50,18 @@ The worker caches requests, so repeat submissions of the same payload return imm
 | `PUBLIC_BASE_URL` | No | `""` | External URL prefix for assets when presigned URLs are disabled. |
 | `SIGNED_URL_TTL` | No | `86400` | Expiration (seconds) for generated presigned URLs. |
 | `CFBD_API_KEY` | Optional advanced mode | `""` | Enables the `/process` endpoint to pull play data from CollegeFootballData. Leave empty for standard `/jobs` usage. |
+| `DETECTOR_BACKEND` | No | `auto` | Play detector backend: `auto`, `opencv`, or `ffprobe`. |
+
+### Detector backends
+- Default: **auto** (uses OpenCV if installed; otherwise falls back to ffprobe-only).
+- Force OpenCV: set `DETECTOR_BACKEND=opencv` and install `opencv-python-headless`.
+- Force fallback: `DETECTOR_BACKEND=ffprobe`.
+
+### Local testing behind a proxy
+If `pip install opencv-python-headless` fails, you can still run the app:
+- Keep OpenCV commented in `requirements.txt`.
+- Start server normally; it will use the ffprobe detector.
+- To enable OpenCV later, install the wheel (or pin a version) and set `DETECTOR_BACKEND=opencv`.
 
 ### Configure S3 CORS for direct browser access
 

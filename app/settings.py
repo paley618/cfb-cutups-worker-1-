@@ -61,6 +61,11 @@ class Settings(BaseSettings):
         description="Domains permitted when the allowlist is enabled.",
     )
 
+    DETECTOR_BACKEND: Literal["auto", "opencv", "ffprobe"] = Field(
+        default="auto",
+        description="Play detector backend selection: auto, opencv, or ffprobe.",
+    )
+
     DRIVE_COOKIES_B64: str | None = None
     DRIVE_COOKIES_PATH: str = "/tmp/drive_cookies.txt"
     YTDLP_COOKIES_B64: str | None = None

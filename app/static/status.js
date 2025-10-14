@@ -7,6 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const errorEl = document.getElementById('error_box');
   const submitBtn = document.getElementById('submit_btn');
   const cookieEl = document.getElementById('cookie_status');
+  const selftestBtn = document.getElementById('selftest');
+  const selftestOut = document.getElementById('selftest_out');
+
+  if (selftestBtn && selftestOut) {
+    selftestBtn.onclick = async () => {
+      selftestOut.style.display = 'block';
+      selftestOut.textContent = 'Running…';
+      try {
+        const r = await fetch('/__selftest', { cache: 'no-store' });
+        const j = await r.json();
+        selftestOut.textContent = JSON.stringify(j, null, 2);
+      } catch (e) {
+        selftestOut.textContent = 'Self-test failed to run: ' + e.message;
+      }
+    };
+  }
 
   const stageKey = (job) => (job.stage || job.status || 'queued').toLowerCase();
 
