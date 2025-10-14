@@ -114,20 +114,27 @@ def get_job(job_id: str):
     job = RUNNER.get_job(job_id)
     if not job:
         raise HTTPException(status_code=404, detail="Not found")
-    view = {
+    return {
         "job_id": job_id,
         "status": job.get("status"),
         "stage": job.get("stage"),
-        "progress": job.get("progress"),
-        "download": {
-            "bytes": job.get("dl_bytes"),
-            "total_bytes": job.get("dl_total"),
-            "speed_bps": job.get("dl_speed"),
-        }
-        if "dl_bytes" in job
-        else None,
+        "pct": job.get("pct"),
+        "eta_sec": job.get("eta_sec"),
+        "detail": job.get("detail"),
     }
-    return view
+
+
+@app.post("/jobs/{job_id}/cancel")
+def cancel_job(job_id: str):
+    job = RUNNER.get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Not found")
+    if job.get("status") in {"completed", "failed", "canceled"}:
+        raise HTTPException(status_code=409, detail=f"Job already {job['status']}")
+    ok = RUNNER.cancel(job_id)
+    if not ok:
+        raise HTTPException(status_code=500, detail="Unable to cancel")
+    return {"job_id": job_id, "status": "canceled"}
 
 
 @app.get("/jobs/{job_id}/manifest")

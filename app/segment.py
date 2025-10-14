@@ -1,17 +1,39 @@
 import asyncio
+import logging
 import os
+import signal
+
+logger = logging.getLogger(__name__)
+
+_CANCEL_EVENT: asyncio.Event | None = None
+
+
+def ffmpeg_set_cancel(ev):  # called by runner
+    global _CANCEL_EVENT
+    _CANCEL_EVENT = ev
 
 
 async def _run(cmd: list[str]):
     proc = await asyncio.create_subprocess_exec(
-        *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
+        *cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
     )
-    out, err = await proc.communicate()
-    if proc.returncode != 0:
-        raise RuntimeError(
-            f"ffmpeg error ({proc.returncode}): {err.decode(errors='ignore')[:400]}"
-        )
-    return out, err
+    while True:
+        if _CANCEL_EVENT is not None and _CANCEL_EVENT.is_set():
+            try:
+                proc.send_signal(signal.SIGTERM)
+            except ProcessLookupError:
+                pass
+        try:
+            out, err = await asyncio.wait_for(proc.communicate(), timeout=0.5)
+            if proc.returncode != 0:
+                raise RuntimeError(
+                    f"ffmpeg error ({proc.returncode}): {err.decode(errors='ignore')[:400]}"
+                )
+            return out, err
+        except asyncio.TimeoutError:
+            continue
 
 
 def _ensure_parent(path: str):
@@ -44,7 +66,7 @@ async def cut_clip(src: str, dst: str, start: float, end: float):
     try:
         await _run(fast)
         return
-    except Exception:
+    except Exception:  # noqa: BLE001
         pass
     accurate = [
         "ffmpeg",
@@ -121,7 +143,7 @@ async def concatenate_clips(filelist_path: str, dst: str):
     try:
         await _run(copy_cmd)
         return
-    except Exception:
+    except Exception:  # noqa: BLE001
         pass
     reencode_cmd = [
         "ffmpeg",

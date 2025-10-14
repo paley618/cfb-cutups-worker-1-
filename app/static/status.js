@@ -54,22 +54,20 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const data = await response.json();
     const jobId = data.job_id;
-    statusEl.textContent = `Job queued: ${jobId}. Processing…`;
 
-    const humanStage = (job) => {
-      if (job.status === 'completed') return 'Completed';
-      if (job.status === 'failed') return 'Failed';
-      switch (job.stage) {
-        case 'downloading':
-          return 'Downloading video…';
-        case 'detecting':
-          return 'Detecting plays…';
-        case 'segmenting':
-          return 'Cutting clips…';
-        default:
-          return 'Queued…';
-      }
-    };
+    const cancelBtn = document.createElement('button');
+    cancelBtn.textContent = 'Cancel';
+    cancelBtn.style.marginLeft = '12px';
+    cancelBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      cancelBtn.disabled = true;
+      try {
+        await fetch(`/jobs/${jobId}/cancel`, { method: 'POST' });
+      } catch (_) {}
+    });
+
+    statusEl.textContent = `Job queued: ${jobId}`;
+    statusEl.appendChild(cancelBtn);
 
     const poll = async () => {
       let js;
@@ -85,28 +83,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
       }
 
-      let line = humanStage(js);
-      if (js.progress !== null && js.progress !== undefined) {
-        line += ` ${js.progress}%`;
+      const stageLabel = js.detail ? `${js.stage || js.status} (${js.detail})` : (js.stage || js.status);
+      const pctValue = typeof js.pct === 'number' ? js.pct : 0;
+      let etaTxt = '';
+      if (js.eta_sec != null) {
+        const m = Math.floor(js.eta_sec / 60);
+        const s = Math.max(0, Math.floor(js.eta_sec % 60));
+        etaTxt = ` • ETA ${m}m ${s}s`;
       }
-      if (js.download && js.download.bytes) {
-        const mb = (js.download.bytes / 1048576).toFixed(1);
-        const tot = js.download.total_bytes ? (js.download.total_bytes / 1048576).toFixed(1) : '?';
-        line += ` — ${mb} / ${tot} MB`;
-      }
-      statusEl.textContent = line;
-
-      if (js.status === 'failed') {
-        try {
-          const er = await fetch(`/jobs/${jobId}/error`, { cache: 'no-store' });
-          if (er.ok) {
-            const ej = await er.json();
-            statusEl.textContent = 'Failed: ' + (ej.error || 'Unknown');
-          }
-        } catch (_) {}
-        btn.disabled = false;
-        return;
-      }
+      statusEl.textContent = `${stageLabel} — ${pctValue.toFixed(1)}%${etaTxt}`;
+      statusEl.appendChild(cancelBtn);
 
       if (js.status === 'completed') {
         let manifest;
@@ -116,8 +102,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw new Error('manifest_not_ready');
           }
           const meta = await mr.json();
-          if (meta.redirect) {
-            const r2 = await fetch(meta.redirect, { cache: 'no-store' });
+          const manifestUrl = meta.redirect || meta.url || null;
+          if (manifestUrl) {
+            const r2 = await fetch(manifestUrl, { cache: 'no-store' });
             if (!r2.ok) {
               throw new Error('manifest_fetch_failed');
             }
@@ -129,6 +116,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           console.error('manifest_fetch_error', err);
           statusEl.textContent = 'Completed, but failed to fetch manifest.';
           btn.disabled = false;
+          cancelBtn.disabled = true;
           return;
         }
 
@@ -138,20 +126,30 @@ document.addEventListener('DOMContentLoaded', async () => {
         link.href = `/jobs/${jobId}/download`;
         link.textContent = 'Download ZIP';
         link.className = 'link';
-        link.addEventListener('click', async (event) => {
-          event.preventDefault();
-          try {
-            const dr = await fetch(`/jobs/${jobId}/download`, { cache: 'no-store' });
-            if (!dr.ok) return;
-            const dj = await dr.json();
-            if (dj.redirect) {
-              window.location = dj.redirect;
-            }
-          } catch (_) {}
-        });
-        statusEl.textContent = 'Completed';
-        statusEl.append(' ', link);
+        statusEl.appendChild(document.createTextNode(' '));
+        statusEl.appendChild(link);
         btn.disabled = false;
+        cancelBtn.disabled = true;
+        return;
+      }
+
+      if (js.status === 'failed') {
+        try {
+          const er = await fetch(`/jobs/${jobId}/error`, { cache: 'no-store' });
+          if (er.ok) {
+            const ej = await er.json();
+            statusEl.textContent = 'Failed: ' + (ej.error || 'Unknown');
+          }
+        } catch (_) {}
+        btn.disabled = false;
+        cancelBtn.disabled = true;
+        return;
+      }
+
+      if (js.status === 'canceled') {
+        statusEl.textContent = 'Canceled';
+        btn.disabled = false;
+        cancelBtn.disabled = true;
         return;
       }
 
