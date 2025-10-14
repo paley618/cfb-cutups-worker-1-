@@ -95,42 +95,54 @@ document.addEventListener('DOMContentLoaded', async () => {
       statusEl.appendChild(cancelBtn);
 
       if (js.status === 'completed') {
-        let manifest;
         try {
           const mr = await fetch(`/jobs/${jobId}/manifest`, { cache: 'no-store' });
           if (!mr.ok) {
             throw new Error('manifest_not_ready');
           }
           const meta = await mr.json();
-          const manifestUrl = meta.redirect || meta.url || null;
-          if (manifestUrl) {
-            const r2 = await fetch(manifestUrl, { cache: 'no-store' });
-            if (!r2.ok) {
-              throw new Error('manifest_fetch_failed');
-            }
-            manifest = await r2.json();
-          } else {
-            manifest = meta;
+          const manifestUrl = meta.redirect || meta.url;
+          if (!manifestUrl) {
+            throw new Error('manifest_redirect_missing');
           }
+
+          const r2 = await fetch(manifestUrl, { cache: 'no-store', mode: 'cors' });
+          if (!r2.ok) {
+            throw new Error(`manifest_fetch_failed:${r2.status}`);
+          }
+          const manifest = await r2.json();
+
+          statusEl.textContent = 'Completed.';
+          resultEl.style.display = 'block';
+          resultEl.textContent = JSON.stringify(manifest, null, 2);
+
+          let zipUrl = null;
+          try {
+            const dlResp = await fetch(`/jobs/${jobId}/download`, { cache: 'no-store' });
+            if (dlResp.ok) {
+              const dlMeta = await dlResp.json();
+              zipUrl = dlMeta.redirect || dlMeta.url || null;
+            }
+          } catch (err) {
+            console.error('download_meta_fetch_error', err);
+          }
+
+          const link = document.createElement('a');
+          link.href = zipUrl || `/jobs/${jobId}/download`;
+          link.textContent = 'Download ZIP';
+          link.className = 'link';
+          statusEl.appendChild(document.createTextNode(' '));
+          statusEl.appendChild(link);
+          btn.disabled = false;
+          cancelBtn.disabled = true;
+          return;
         } catch (err) {
           console.error('manifest_fetch_error', err);
-          statusEl.textContent = 'Completed, but failed to fetch manifest.';
+          statusEl.textContent = 'Completed, but failed to fetch manifest (CORS or URL).';
           btn.disabled = false;
           cancelBtn.disabled = true;
           return;
         }
-
-        resultEl.style.display = 'block';
-        resultEl.textContent = JSON.stringify(manifest, null, 2);
-        const link = document.createElement('a');
-        link.href = `/jobs/${jobId}/download`;
-        link.textContent = 'Download ZIP';
-        link.className = 'link';
-        statusEl.appendChild(document.createTextNode(' '));
-        statusEl.appendChild(link);
-        btn.disabled = false;
-        cancelBtn.disabled = true;
-        return;
       }
 
       if (js.status === 'failed') {

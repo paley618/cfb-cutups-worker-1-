@@ -51,6 +51,18 @@ The worker caches requests, so repeat submissions of the same payload return imm
 | `SIGNED_URL_TTL` | No | `86400` | Expiration (seconds) for generated presigned URLs. |
 | `CFBD_API_KEY` | Optional advanced mode | `""` | Enables the `/process` endpoint to pull play data from CollegeFootballData. Leave empty for standard `/jobs` usage. |
 
+### Configure S3 CORS for direct browser access
+
+When `STORAGE_BACKEND=s3`, the UI fetches manifests and ZIPs directly from your bucket. Apply the bundled [s3-cors.json](./s3-cors.json) policy so browsers at your Railway domain and `localhost` can access those files:
+
+```bash
+aws s3api put-bucket-cors \
+  --bucket "$S3_BUCKET" \
+  --cors-configuration file://s3-cors.json
+```
+
+If you later add CloudFront in front of S3, mirror the same origins/headers in a Response Headers Policy to keep downloads working.
+
 Values are case-insensitive and whitespace is trimmed automatically. Missing mandatory S3 settings raise a startup error to keep deployments honest.
 
 ---
