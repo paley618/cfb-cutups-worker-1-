@@ -26,6 +26,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const stageKey = (job) => (job.stage || job.status || 'queued').toLowerCase();
 
+  const attachSummary = (manifest) => {
+    if (!manifest || typeof manifest !== 'object') return;
+    const line = statusEl.querySelector('.status-line');
+    if (!line) return;
+    line.querySelectorAll('.status-summary').forEach((el) => el.remove());
+    const src = manifest.source || {};
+    const meta = manifest.detector_meta || {};
+    const minutes = Math.round((Number(src.duration_sec) || 0) / 60);
+    const clipCount = manifest.metrics?.num_clips ?? meta.clips_found ?? 0;
+    const summary = document.createElement('span');
+    summary.className = 'status-summary muted';
+    let text = `Source ${minutes} min • ${clipCount} clips`;
+    if (meta.low_confidence) {
+      text += ' • Low confidence (relaxed thresholds)';
+    }
+    const detectors = [];
+    if (meta.audio_spikes_used != null) {
+      detectors.push(meta.audio_spikes_used ? 'Audio spikes' : 'Audio off');
+    }
+    if (meta.scorebug_used != null) {
+      detectors.push(meta.scorebug_used ? 'Scorebug ROI' : 'Scorebug off');
+    }
+    if (detectors.length) {
+      text += ` • Detectors: ${detectors.join(' + ')}`;
+    }
+    summary.textContent = text;
+    line.append(' — ', summary);
+  };
+
   const renderTimeline = (job) => {
     const wrap = document.createElement('div');
     wrap.className = 'timeline';
@@ -66,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     statusEl.innerHTML = '';
     const line = document.createElement('div');
+    line.className = 'status-line';
     line.textContent = `${label} — ${pct.toFixed(1)}%${etaTxt}${detail}`;
     statusEl.appendChild(line);
     statusEl.appendChild(renderTimeline(job));
@@ -231,12 +261,14 @@ document.addEventListener('DOMContentLoaded', () => {
               if (!r2.ok) throw new Error('HTTP ' + r2.status);
               const manifest = await parseManifestResponse(r2);
               showManifest(manifest);
+              attachSummary(manifest);
             } catch (e) {
               try {
                 const pr = await fetch(`/manifest-proxy?url=${encodeURIComponent(manifestUrl)}`, { cache: 'no-store' });
                 if (!pr.ok) throw new Error('proxy ' + pr.status);
                 const manifest = await parseManifestResponse(pr);
                 showManifest(manifest);
+                attachSummary(manifest);
               } catch (e2) {
                 console.error('manifest_fetch_error', e, e2);
                 errorEl.textContent = 'Completed, but manifest fetch failed (CORS/URL). Use the Manifest JSON link above.';

@@ -186,3 +186,10 @@ def probe_duration_sec(path: str) -> float:
         return max(0.0, float(result.stdout.strip()))
     except Exception:
         return 0.0
+
+
+def file_size_bytes(path: str) -> int:
+    try:
+        return os.path.getsize(path)
+    except Exception:
+        return 0

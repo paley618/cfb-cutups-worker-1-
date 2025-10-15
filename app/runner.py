@@ -3,9 +3,9 @@ from __future__ import annotations
 import os, json, zipfile, uuid, asyncio, time, logging, shutil
 from typing import Dict, Any, List, Optional, Tuple
 
-from .video import download_game_video, probe_duration_sec
+from .video import download_game_video, probe_duration_sec, file_size_bytes
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
-from .detector import detect_plays
+from .detector_snap import snap_detect
 from .storage import get_storage
 from .uploads import resolve_upload
 from .settings import settings
@@ -182,12 +182,12 @@ class JobRunner:
                 src_url = str(submission.video_url or submission.presigned_url or "")
                 upload_id = submission.upload_id
 
-                vid_dur = 0.0
+                src_dur = 0.0
                 self.jobs[job_id]["status"] = "downloading"
                 self._start_stage(
                     job_id,
                     "downloading",
-                    est_sec=max(10.0, vid_dur * 0.15),
+                    est_sec=max(10.0, src_dur * 0.15),
                     detail="Starting download",
                 )
 
@@ -227,18 +227,23 @@ class JobRunner:
                 else:
                     raise RuntimeError("No source provided")
 
-                vid_dur = probe_duration_sec(video_path) or 0.0
+                src_dur = probe_duration_sec(video_path) or 0.0
+                src_size = file_size_bytes(video_path)
+                source_info = {
+                    "duration_sec": round(src_dur, 3),
+                    "bytes": src_size,
+                }
+                self.jobs[job_id]["source"] = source_info
 
                 if cancel_ev.is_set():
                     return
 
-                opts = submission.options
                 base = settings.DETECTOR_TIMEOUT_BASE_SEC
                 per = settings.DETECTOR_TIMEOUT_PER_MIN
                 cap = settings.DETECTOR_TIMEOUT_MAX_SEC
                 detector_timeout = min(
                     cap,
-                    max(base, base + per * (vid_dur / 60.0)),
+                    max(base, base + per * (src_dur / 60.0)),
                 )
 
                 self._start_stage(
@@ -248,44 +253,61 @@ class JobRunner:
                     detail="Analyzing for plays",
                 )
 
-                def _det_prog(pct: float, eta: Optional[float], msg: str) -> None:
+                def _det_prog(pct: float, _eta: Optional[float], msg: str) -> None:
+                    scaled = 12.0 + (float(pct or 0.0) * 0.73)
                     self._set_stage(
                         job_id,
                         "detecting",
-                        pct=min(85.0, 12.0 + (pct * 0.73)),
-                        detail=msg,
+                        pct=min(85.0, scaled),
+                        detail=msg or "Detecting",
                         eta=self._eta(job_id),
                     )
 
-                def _detect_task() -> List[Tuple[float, float]]:
-                    return detect_plays(
-                        video_path,
-                        padding_pre=opts.play_padding_pre,
-                        padding_post=opts.play_padding_post,
-                        min_duration=opts.min_duration,
-                        max_duration=opts.max_duration,
-                        scene_thresh=opts.scene_thresh,
-                        progress_cb=_det_prog,
-                    )
+                def _run_detect(relax: bool) -> List[Tuple[float, float]]:
+                    return snap_detect(video_path, progress_cb=_det_prog, relax=relax)
 
+                low_conf = False
                 try:
                     windows = await asyncio.wait_for(
-                        asyncio.to_thread(_detect_task),
+                        asyncio.to_thread(_run_detect, False),
                         timeout=detector_timeout,
                     )
+                    if len(windows) < settings.MIN_TOTAL_CLIPS:
+                        self._set_stage(
+                            job_id,
+                            "detecting",
+                            pct=90.0,
+                            detail="Low clips; relaxing thresholds",
+                            eta=self._eta(job_id),
+                        )
+                        try:
+                            windows = await asyncio.wait_for(
+                                asyncio.to_thread(_run_detect, True),
+                                timeout=min(detector_timeout, 420.0),
+                            )
+                        except asyncio.TimeoutError as exc:
+                            raise RuntimeError("Detector timed out during relaxed retry") from exc
+                        low_conf = True
                 except asyncio.TimeoutError:
                     raise RuntimeError(
-                        f"Detector timed out (~{int(vid_dur / 60)}m video, timeout {int(detector_timeout)}s)"
+                        f"Detector timed out (~{int(src_dur / 60)}m video, timeout {int(detector_timeout)}s)"
                     ) from None
 
                 if not windows:
                     windows = [(3.0, 15.0)]
+                    low_conf = True
+
+                if len(windows) < settings.MIN_TOTAL_CLIPS:
+                    low_conf = True
 
                 self._set_stage(
                     job_id,
                     "detecting",
                     pct=85.0,
-                    detail=f"Found {len(windows)} plays",
+                    detail=(
+                        f"Found {len(windows)} plays"
+                        + (" (low confidence)" if low_conf else "")
+                    ),
                     eta=0.0,
                 )
 
@@ -381,9 +403,19 @@ class JobRunner:
                     detail="Packaging ZIP/manifest",
                 )
 
+                det_meta = {
+                    "low_confidence": bool(low_conf),
+                    "clips_found": len(ordered),
+                    "audio_spikes_used": bool(settings.AUDIO_ENABLE),
+                    "scorebug_used": bool(settings.SCOREBUG_ENABLE),
+                }
+                self.jobs[job_id]["detector_meta"] = det_meta
+
                 manifest = {
                     "job_id": job_id,
                     "source_url": src_url or f"upload:{upload_id}",
+                    "source": source_info,
+                    "detector_meta": det_meta,
                     "buckets": {
                         "short": len(buckets["short"]),
                         "medium": len(buckets["medium"]),
