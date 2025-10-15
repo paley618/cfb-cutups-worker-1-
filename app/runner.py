@@ -3,14 +3,22 @@ from __future__ import annotations
 import os, json, zipfile, uuid, asyncio, time, logging, shutil
 from typing import Dict, Any, List, Optional, Tuple
 
-from .video import download_game_video, probe_duration_sec, file_size_bytes
+from .video import (
+    download_game_video,
+    probe_duration_sec,
+    file_size_bytes,
+    estimate_period_durations,
+    coalesce_and_clamp,
+)
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
 from .detector_snap import snap_detect
-from .cfbd import get_game_id_or_raise, get_plays, normalize_plays
+from .cfbd import fetch_plays, CFBDClientError
 from .ocr_scorebug import sample_scorebug_series
-from .align_cfbd import fit_period_alignment, estimate_video_time
-from .audio_detect import whistle_crowd_spikes
-from .detector import detect_plays as scene_detect
+from .align_cfbd import (
+    build_mapping_from_ocr,
+    build_mapping_by_even_spread,
+    clock_to_video,
+)
 from .storage import get_storage
 from .uploads import resolve_upload
 from .settings import settings
@@ -251,18 +259,28 @@ class JobRunner:
                     max(base, base + per * (src_dur / 60.0)),
                 )
 
-                cfbd_meta: Dict[str, Any] = {}
+                cfbd_summary: Dict[str, Any] = {
+                    "requested": False,
+                    "used": False,
+                    "plays": 0,
+                    "error": None,
+                    "clips": 0,
+                    "fallback_clips": 0,
+                    "mapping": None,
+                    "ocr_samples": 0,
+                }
                 windows: Optional[List[Tuple[float, float]]] = None
                 low_conf = False
                 vid_dur = float(src_dur)
 
                 cfbd_in = getattr(submission, "cfbd", None)
+                guided_windows: List[Tuple[float, float]] = []
                 if (
                     settings.CFBD_ENABLED
                     and cfbd_in
                     and getattr(cfbd_in, "use_cfbd", False)
                 ):
-                    cfbd_meta["requested"] = True
+                    cfbd_summary["requested"] = True
                     self._set_stage(
                         job_id,
                         "detecting",
@@ -271,190 +289,151 @@ class JobRunner:
                         eta=self._eta(job_id),
                     )
                     plays: List[Dict[str, Any]] = []
+                    request_params: Dict[str, Any] = {}
                     try:
-                        game_id: Optional[int]
                         if cfbd_in.game_id:
-                            game_id = int(cfbd_in.game_id)
+                            request_params["game_id"] = int(cfbd_in.game_id)
                         else:
                             season = cfbd_in.season or settings.CFBD_SEASON
                             week = cfbd_in.week
-                            team = (cfbd_in.team or "").strip()
-                            season_type = (cfbd_in.season_type or "regular").lower()
+                            team = (cfbd_in.team or "").strip() or None
                             if not (season and week and team):
-                                raise RuntimeError(
-                                    "CFBD: provide game_id or season/week/team"
+                                raise CFBDClientError(
+                                    "provide game_id or season/week/team"
                                 )
-                            game_id = get_game_id_or_raise(
-                                season=int(season),
-                                week=int(week),
-                                team=team,
-                                season_type=season_type or "regular",
-                            )
-                        if game_id is None:
-                            raise RuntimeError("CFBD: missing game identifier")
-                        plays_raw = get_plays(game_id)
-                        plays = normalize_plays(plays_raw)
-                        cfbd_meta["game_id"] = game_id
-                        cfbd_meta["cfbd_plays"] = len(plays)
-                    except Exception as exc:
-                        cfbd_meta["error"] = f"CFBD fetch failed: {exc}"[:200]
+                            request_params = {
+                                "season": int(season),
+                                "week": int(week),
+                                "team": team,
+                            }
+                            season_type = getattr(cfbd_in, "season_type", None)
+                            if season_type:
+                                request_params["season_type"] = str(season_type)
+                        plays = fetch_plays(**request_params)
+                        cfbd_summary["plays"] = len(plays)
+                        cfbd_summary["request"] = request_params
+                        if "game_id" in request_params:
+                            cfbd_summary["game_id"] = request_params["game_id"]
+                        logger.info(
+                            "cfbd_fetch_complete",
+                            extra={"job_id": job_id, "plays": len(plays)},
+                        )
+                    except CFBDClientError as exc:
+                        message = str(exc)
+                        cfbd_summary["error"] = message
+                        logger.warning(
+                            "cfbd_fetch_error",
+                            extra={"job_id": job_id, "error": message},
+                        )
+                        self._set_stage(
+                            job_id,
+                            "detecting",
+                            pct=15.0,
+                            detail=f"CFBD error: {message[:120]}",
+                            eta=self._eta(job_id),
+                        )
+                        plays = []
+                    except Exception as exc:  # pragma: no cover - defensive
+                        cfbd_summary["error"] = str(exc)
+                        logger.exception(
+                            "cfbd_fetch_unexpected", extra={"job_id": job_id}
+                        )
+                        self._set_stage(
+                            job_id,
+                            "detecting",
+                            pct=15.0,
+                            detail="CFBD fetch crashed; using fallback",
+                            eta=self._eta(job_id),
+                        )
                         plays = []
 
-                    ocr_series: List[Tuple[float, int, int]] = []
-                    fits: Dict[int, Dict[str, float]] = {}
                     if plays and not cancel_ev.is_set():
                         self._set_stage(
                             job_id,
                             "detecting",
                             pct=20.0,
-                            detail="OCR: reading scorebug",
+                            detail="CFBD: building mapping",
                             eta=self._eta(job_id),
                         )
-                        ocr_series = sample_scorebug_series(video_path)
-                        cfbd_meta["ocr_samples"] = len(ocr_series)
-
-                        self._set_stage(
-                            job_id,
-                            "detecting",
-                            pct=30.0,
-                            detail="Aligning periods",
-                            eta=self._eta(job_id),
-                        )
-                        fits = fit_period_alignment(ocr_series)
-                        if fits:
-                            cfbd_meta["period_fits"] = {
-                                period: {
-                                    "a": round(coeffs["a"], 2),
-                                    "b": round(coeffs["b"], 4),
-                                }
-                                for period, coeffs in fits.items()
-                            }
-                        else:
-                            cfbd_meta["period_fits"] = {}
-
-                        self._set_stage(
-                            job_id,
-                            "detecting",
-                            pct=35.0,
-                            detail="Audio spikes",
-                            eta=self._eta(job_id),
-                        )
-                        spikes = whistle_crowd_spikes(video_path)
-                        if spikes:
-                            cfbd_meta["audio_spikes"] = len(spikes)
-                        scene_candidates: Optional[List[Tuple[float, float]]] = None
-                        cand_windows: List[Tuple[float, float]] = []
-                        for idx, play in enumerate(plays, start=1):
-                            if cancel_ev.is_set():
-                                break
-                            if idx % 20 == 0:
-                                self._set_stage(
-                                    job_id,
-                                    "detecting",
-                                    pct=min(
-                                        80.0,
-                                        35.0
-                                        + (idx / max(1, len(plays))) * 45.0,
-                                    ),
-                                    detail=f"Aligning {idx}/{len(plays)}",
-                                    eta=self._eta(job_id),
-                                )
-                            period = int(play.get("period") or 0)
-                            clock_sec = int(play.get("clock_sec") or 0)
-                            t_est = estimate_video_time(
-                                clock_sec,
-                                period,
-                                fits,
-                                ocr_series,
+                        raw_ocr = sample_scorebug_series(video_path)
+                        per_period: Dict[int, List[Tuple[float, float]]] = {}
+                        for ts, period, clock in raw_ocr:
+                            per_period.setdefault(int(period), []).append(
+                                (float(ts), float(clock))
                             )
-                            if t_est is None:
+                        cfbd_summary["ocr_samples"] = sum(
+                            len(samples) for samples in per_period.values()
+                        )
+
+                        mapping = build_mapping_from_ocr(per_period)
+                        if mapping:
+                            cfbd_summary["mapping"] = "ocr"
+                        else:
+                            mapping = build_mapping_by_even_spread(
+                                estimate_period_durations(vid_dur)
+                            )
+                            cfbd_summary["mapping"] = "even_spread"
+
+                        options = submission.options
+                        pre_pad = getattr(
+                            options, "play_padding_pre", settings.PLAY_PRE_PAD_SEC
+                        )
+                        post_pad = getattr(
+                            options, "play_padding_post", settings.PLAY_POST_PAD_SEC
+                        )
+
+                        for play in plays:
+                            try:
+                                period = int(play.get("period") or 0)
+                                clock_sec = int(
+                                    play.get("clockSec")
+                                    or play.get("clock_sec")
+                                    or 0
+                                )
+                            except (TypeError, ValueError):
                                 continue
-                            win_lo = max(0.0, t_est - settings.ALIGN_MAX_GAP_SEC)
-                            win_hi = min(vid_dur, t_est + settings.ALIGN_MAX_GAP_SEC)
-                            local_center: Optional[float] = None
-                            near_spikes = [
-                                spike for spike in spikes if win_lo <= spike <= win_hi
-                            ]
-                            if near_spikes:
-                                local_center = min(
-                                    near_spikes, key=lambda ts: abs(ts - t_est)
-                                )
-                            else:
-                                if scene_candidates is None:
-                                    try:
-                                        scene_candidates = scene_detect(
-                                            video_path,
-                                            padding_pre=0.5,
-                                            padding_post=0.5,
-                                            min_duration=2.0,
-                                            max_duration=8.0,
-                                            scene_thresh=0.30,
-                                            progress_cb=None,
-                                        )
-                                    except Exception:
-                                        scene_candidates = []
-                                if scene_candidates:
-                                    in_window = [
-                                        seg
-                                        for seg in scene_candidates
-                                        if not (seg[1] < win_lo or seg[0] > win_hi)
-                                    ]
-                                    if in_window:
-                                        best_seg = min(
-                                            in_window,
-                                            key=lambda seg: abs(
-                                                ((seg[0] + seg[1]) / 2.0) - t_est
-                                            ),
-                                        )
-                                        local_center = (best_seg[0] + best_seg[1]) / 2.0
+                            ts = clock_to_video(mapping, period, clock_sec)
+                            if ts is None:
+                                continue
+                            start = max(0.0, float(ts) - float(pre_pad))
+                            end = min(vid_dur, float(ts) + float(post_pad))
+                            if end <= start:
+                                continue
+                            guided_windows.append((start, end))
 
-                            center = (
-                                float(local_center)
-                                if isinstance(local_center, (int, float))
-                                else float(t_est)
+                        guided_windows = coalesce_and_clamp(
+                            guided_windows,
+                            settings.PLAY_MIN_SEC,
+                            settings.PLAY_MAX_SEC,
+                            bounds=(0.0, vid_dur),
+                        )
+                        cfbd_summary["clips"] = len(guided_windows)
+                        if guided_windows:
+                            cfbd_summary["used"] = True
+                            windows = guided_windows
+                            self._set_stage(
+                                job_id,
+                                "detecting",
+                                pct=40.0,
+                                detail=f"CFBD aligned {len(guided_windows)} plays",
+                                eta=self._eta(job_id),
                             )
-                            start = max(
-                                0.0,
-                                center - settings.PLAY_PRE_PAD_SEC,
-                            )
-                            end = min(
-                                vid_dur,
-                                center
-                                + settings.PLAY_POST_PAD_SEC
-                                + 6.0,
-                            )
-                            duration = end - start
-                            if (
-                                duration >= settings.PLAY_MIN_SEC
-                                and duration <= 60.0
-                            ):
-                                cand_windows.append(
-                                    (round(start, 3), round(end, 3))
-                                )
-
-                        if cand_windows:
-                            deduped: List[Tuple[float, float]] = []
-                            seen: set[Tuple[float, float]] = set()
-                            for start, end in sorted(cand_windows):
-                                key = (round(start, 2), round(end, 2))
-                                if key in seen:
-                                    continue
-                                seen.add(key)
-                                deduped.append((start, end))
-                            windows = deduped
-                            cfbd_meta["aligned_clips"] = len(windows)
-                            cfbd_meta["used"] = True
                         else:
-                            cfbd_meta["aligned_clips"] = 0
-
-                if cfbd_meta:
-                    cfbd_meta.setdefault("cfbd_plays", 0)
-                    cfbd_meta.setdefault("ocr_samples", 0)
-                    cfbd_meta.setdefault("period_fits", {})
-                    cfbd_meta.setdefault("audio_spikes", 0)
-                    cfbd_meta.setdefault("used", False)
-                    if "aligned_clips" not in cfbd_meta:
-                        cfbd_meta["aligned_clips"] = len(windows) if windows else 0
+                            self._set_stage(
+                                job_id,
+                                "detecting",
+                                pct=40.0,
+                                detail="CFBD plays fetched; using fallback detector",
+                                eta=self._eta(job_id),
+                            )
+                    elif cfbd_summary.get("requested") and not cancel_ev.is_set():
+                        self._set_stage(
+                            job_id,
+                            "detecting",
+                            pct=18.0,
+                            detail="CFBD returned 0 plays; running detector",
+                            eta=self._eta(job_id),
+                        )
 
                 if not windows:
                     base_stage_detail = "Analyzing for plays"
@@ -531,6 +510,11 @@ class JobRunner:
                         detail=f"CFBD aligned {len(windows)} plays",
                         eta=0.0,
                     )
+
+                if cfbd_summary.get("used"):
+                    cfbd_summary["fallback_clips"] = 0
+                else:
+                    cfbd_summary["fallback_clips"] = len(windows) if windows else 0
 
                 if cancel_ev.is_set():
                     return
@@ -629,7 +613,7 @@ class JobRunner:
                     "clips_found": len(ordered),
                     "audio_spikes_used": bool(settings.AUDIO_ENABLE),
                     "scorebug_used": bool(settings.SCOREBUG_ENABLE),
-                    "cfbd_guided": bool(cfbd_meta.get("used")),
+                    "cfbd_guided": bool(cfbd_summary.get("used")),
                 }
                 self.jobs[job_id]["detector_meta"] = det_meta
 
@@ -638,7 +622,7 @@ class JobRunner:
                     "source_url": src_url or f"upload:{upload_id}",
                     "source": source_info,
                     "detector_meta": det_meta,
-                    "cfbd": cfbd_meta,
+                    "cfbd": cfbd_summary,
                     "buckets": {
                         "short": len(buckets["short"]),
                         "medium": len(buckets["medium"]),

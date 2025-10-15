@@ -3,7 +3,7 @@ import logging
 import os
 import random
 import subprocess
-from typing import Callable, Optional
+from typing import Callable, Dict, List, Optional, Tuple
 
 import httpx
 from yt_dlp import YoutubeDL
@@ -193,3 +193,76 @@ def file_size_bytes(path: str) -> int:
         return os.path.getsize(path)
     except Exception:
         return 0
+
+
+def estimate_period_durations(total_duration: float) -> Dict[int, float]:
+    """Return an even four-period split of the provided duration."""
+
+    total = max(0.0, float(total_duration))
+    if total == 0.0:
+        return {period: 0.0 for period in range(1, 5)}
+    quarter = total / 4.0
+    return {period: quarter for period in range(1, 5)}
+
+
+def coalesce_and_clamp(
+    windows: List[Tuple[float, float]],
+    min_duration: float,
+    max_duration: float,
+    *,
+    bounds: Tuple[float, float] | None = None,
+) -> List[Tuple[float, float]]:
+    """Merge overlapping windows and clamp durations within configured limits."""
+
+    if not windows:
+        return []
+
+    epsilon = 0.35
+    merged: List[List[float]] = []
+    for start, end in sorted(windows, key=lambda item: item[0]):
+        start = float(start)
+        end = float(end)
+        if not merged or start > merged[-1][1] + epsilon:
+            merged.append([start, end])
+        else:
+            merged[-1][1] = max(merged[-1][1], end)
+
+    if bounds is not None:
+        low, high = bounds
+    else:
+        low, high = float("-inf"), float("inf")
+
+    clamped: List[Tuple[float, float]] = []
+    min_duration = max(0.0, float(min_duration))
+    max_duration = max(min_duration, float(max_duration))
+
+    for start, end in merged:
+        start = max(low, start)
+        end = min(high, end)
+        if end <= start:
+            continue
+
+        duration = end - start
+        if duration < min_duration:
+            deficit = min_duration - duration
+            extend_left = extend_right = deficit / 2.0
+            available_left = start - low
+            available_right = high - end
+            extend_left = min(extend_left, max(0.0, available_left))
+            extend_right = min(deficit - extend_left, max(0.0, available_right))
+            start -= extend_left
+            end += deficit - extend_left
+
+        duration = end - start
+        if duration > max_duration:
+            excess = duration - max_duration
+            start += excess / 2.0
+            end -= excess / 2.0
+
+        start = max(low, start)
+        end = min(high, end)
+        if end <= start:
+            continue
+        clamped.append((round(start, 3), round(end, 3)))
+
+    return clamped

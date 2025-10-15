@@ -1,54 +1,60 @@
-"""Utilities for aligning CFBD play clocks with video timelines."""
+"""Mapping helpers between CFBD clock values and video timestamps."""
 
 from __future__ import annotations
 
 from typing import Dict, List, Tuple
 
 import numpy as np
-from sklearn.linear_model import HuberRegressor
-
-from .settings import settings
 
 
-def fit_period_alignment(ocr: List[Tuple[float, int, int]]) -> Dict[int, Dict[str, float]]:
-    """Fit piecewise-linear mappings from clock seconds to video time per period."""
+def fit_linear(x: np.ndarray, y: np.ndarray) -> Tuple[float, float]:
+    """Return slope/intercept for the best-fit line mapping x → y."""
 
-    grouped: Dict[int, List[Tuple[float, int]]] = {}
-    for timestamp, period, clock_sec in ocr:
-        grouped.setdefault(period, []).append((timestamp, clock_sec))
+    X = np.vstack([x, np.ones_like(x)]).T
+    slope, intercept = np.linalg.lstsq(X, y, rcond=None)[0]
+    return float(slope), float(intercept)
 
-    fits: Dict[int, Dict[str, float]] = {}
-    for period, samples in grouped.items():
-        if len(samples) < settings.ALIGN_MIN_MATCHES_PER_PERIOD:
+
+def build_mapping_from_ocr(
+    ocr_samples: Dict[int, List[Tuple[float, float]]]
+) -> Dict[int, Tuple[float, float]] | None:
+    """Create a per-period mapping using OCR-derived (video, clock) samples."""
+
+    mapping: Dict[int, Tuple[float, float]] = {}
+    for period, samples in ocr_samples.items():
+        if len(samples) < 10:
+            return None
+        video = np.array([sample[0] for sample in samples], dtype=float)
+        clock = np.array([sample[1] for sample in samples], dtype=float)
+        slope, intercept = fit_linear(clock, video)
+        mapping[period] = (slope, intercept)
+    return mapping or None
+
+
+def build_mapping_by_even_spread(
+    period_durations: Dict[int, float]
+) -> Dict[int, Tuple[float, float]]:
+    """Fallback mapping that evenly spreads play clocks across each period."""
+
+    mapping: Dict[int, Tuple[float, float]] = {}
+    for period, duration in period_durations.items():
+        duration = float(max(0.0, duration))
+        if duration == 0.0:
             continue
-        x = np.array([[clock] for (_, clock) in samples], dtype=np.float32)
-        y = np.array([timestamp for (timestamp, _) in samples], dtype=np.float32)
-        try:
-            model = HuberRegressor().fit(x, y)
-        except Exception:
-            continue
-        fits[period] = {"a": float(model.intercept_), "b": float(model.coef_[0])}
-    return fits
+        slope = -duration / 900.0  # 900 seconds per regulation period
+        intercept = duration
+        mapping[period] = (slope, intercept)
+    return mapping
 
 
-def estimate_video_time(
-    clock_sec: int,
-    period: int,
-    fits: Dict[int, Dict[str, float]],
-    ocr_samples: List[Tuple[float, int, int]],
+def clock_to_video(
+    mapping: Dict[int, Tuple[float, float]], period: int, clock_sec: int
 ) -> float | None:
-    """Estimate a video timestamp for a given CFBD clock reading."""
+    """Convert a CFBD clock reading to an estimated video timestamp."""
 
-    mapping = fits.get(period)
-    if mapping:
-        return mapping["a"] + mapping["b"] * float(clock_sec)
-
-    candidates = [
-        (abs(clock_sec - sample_clock), sample_time)
-        for (sample_time, sample_period, sample_clock) in ocr_samples
-        if sample_period == period
-    ]
-    if not candidates:
+    coeffs = mapping.get(period)
+    if not coeffs:
         return None
-    candidates.sort(key=lambda item: item[0])
-    return candidates[0][1]
+    slope, intercept = coeffs
+    return slope * float(clock_sec) + intercept
+

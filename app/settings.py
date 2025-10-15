@@ -142,13 +142,27 @@ class Settings(BaseSettings):
         default=True,
         description="Enable CFBD-guided alignment pipeline when requested.",
     )
-    CFBD_API_KEY: Optional[str] = Field(
-        default=None,
-        description="Optional CollegeFootballData API key for higher rate limits.",
-    )
     CFBD_SEASON: Optional[int] = Field(
         default=None,
         description="Default CFBD season to use when not provided by the client.",
+    )
+
+    cfbd_api_base: str = Field(
+        default="https://api.collegefootballdata.com",
+        description="Base URL for CollegeFootballData API calls.",
+    )
+    cfbd_api_key: Optional[str] = Field(
+        default=None,
+        validation_alias=AliasChoices("CFBD_API_KEY"),
+        description="Bearer token used to authenticate with the CFBD API.",
+    )
+    cfbd_timeout_sec: int = Field(
+        default=15,
+        description="Timeout applied to CFBD HTTP requests (seconds).",
+    )
+    cfbd_max_plays: int = Field(
+        default=4000,
+        description="Maximum number of play rows to request from CFBD.",
     )
 
     OCR_SAMPLE_FPS: float = Field(
@@ -238,6 +252,10 @@ class Settings(BaseSettings):
     @property
     def logging_level(self) -> str:
         return self.log_level.upper()
+
+    @property
+    def CFBD_API_KEY(self) -> Optional[str]:  # pragma: no cover - backwards compat shim
+        return self.cfbd_api_key
 
 
 @lru_cache()
