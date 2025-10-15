@@ -138,6 +138,41 @@ class Settings(BaseSettings):
         description="Padding added after detected snaps (seconds).",
     )
 
+    CFBD_ENABLED: bool = Field(
+        default=True,
+        description="Enable CFBD-guided alignment pipeline when requested.",
+    )
+    CFBD_API_KEY: Optional[str] = Field(
+        default=None,
+        description="Optional CollegeFootballData API key for higher rate limits.",
+    )
+    CFBD_SEASON: Optional[int] = Field(
+        default=None,
+        description="Default CFBD season to use when not provided by the client.",
+    )
+
+    OCR_SAMPLE_FPS: float = Field(
+        default=1.5,
+        description="Sampling rate (frames per second) for scorebug OCR extraction.",
+    )
+    OCR_ROI_Y0: float = Field(
+        default=0.78,
+        description="Relative top of scorebug OCR region of interest (0..1).",
+    )
+    OCR_ROI_Y1: float = Field(
+        default=0.96,
+        description="Relative bottom of scorebug OCR region of interest (0..1).",
+    )
+
+    ALIGN_MAX_GAP_SEC: float = Field(
+        default=6.0,
+        description="Search window around CFBD-estimated snaps for local refinement (seconds).",
+    )
+    ALIGN_MIN_MATCHES_PER_PERIOD: int = Field(
+        default=8,
+        description="Minimum OCR samples per period required before fitting alignment.",
+    )
+
     MIN_TOTAL_CLIPS: int = Field(
         default=60,
         description="Minimum clips threshold before triggering relaxed low-confidence retry.",

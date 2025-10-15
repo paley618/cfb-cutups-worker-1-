@@ -6,6 +6,9 @@ python-multipart>=0.0.9,<0.0.10
 yt-dlp==2024.08.06
 boto3
 pydantic-settings
+requests>=2.31
+# Lightweight ML utils for CFBD alignment
+scikit-learn>=1.3
 # OpenCV is optional. Install locally if you want the green-field detector.
 # opencv-python-headless==4.9.0.80
 numpy>=1.23

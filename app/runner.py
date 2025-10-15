@@ -6,6 +6,11 @@ from typing import Dict, Any, List, Optional, Tuple
 from .video import download_game_video, probe_duration_sec, file_size_bytes
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
 from .detector_snap import snap_detect
+from .cfbd import get_game_id_or_raise, get_plays, normalize_plays
+from .ocr_scorebug import sample_scorebug_series
+from .align_cfbd import fit_period_alignment, estimate_video_time
+from .audio_detect import whistle_crowd_spikes
+from .detector import detect_plays as scene_detect
 from .storage import get_storage
 from .uploads import resolve_upload
 from .settings import settings
@@ -246,70 +251,286 @@ class JobRunner:
                     max(base, base + per * (src_dur / 60.0)),
                 )
 
-                self._start_stage(
-                    job_id,
-                    "detecting",
-                    est_sec=detector_timeout,
-                    detail="Analyzing for plays",
-                )
+                cfbd_meta: Dict[str, Any] = {}
+                windows: Optional[List[Tuple[float, float]]] = None
+                low_conf = False
+                vid_dur = float(src_dur)
 
-                def _det_prog(pct: float, _eta: Optional[float], msg: str) -> None:
-                    scaled = 12.0 + (float(pct or 0.0) * 0.73)
+                cfbd_in = getattr(submission, "cfbd", None)
+                if (
+                    settings.CFBD_ENABLED
+                    and cfbd_in
+                    and getattr(cfbd_in, "use_cfbd", False)
+                ):
+                    cfbd_meta["requested"] = True
                     self._set_stage(
                         job_id,
                         "detecting",
-                        pct=min(85.0, scaled),
-                        detail=msg or "Detecting",
+                        pct=12.0,
+                        detail="CFBD: fetching plays",
                         eta=self._eta(job_id),
                     )
+                    plays: List[Dict[str, Any]] = []
+                    try:
+                        game_id: Optional[int]
+                        if cfbd_in.game_id:
+                            game_id = int(cfbd_in.game_id)
+                        else:
+                            season = cfbd_in.season or settings.CFBD_SEASON
+                            week = cfbd_in.week
+                            team = (cfbd_in.team or "").strip()
+                            season_type = (cfbd_in.season_type or "regular").lower()
+                            if not (season and week and team):
+                                raise RuntimeError(
+                                    "CFBD: provide game_id or season/week/team"
+                                )
+                            game_id = get_game_id_or_raise(
+                                season=int(season),
+                                week=int(week),
+                                team=team,
+                                season_type=season_type or "regular",
+                            )
+                        if game_id is None:
+                            raise RuntimeError("CFBD: missing game identifier")
+                        plays_raw = get_plays(game_id)
+                        plays = normalize_plays(plays_raw)
+                        cfbd_meta["game_id"] = game_id
+                        cfbd_meta["cfbd_plays"] = len(plays)
+                    except Exception as exc:
+                        cfbd_meta["error"] = f"CFBD fetch failed: {exc}"[:200]
+                        plays = []
 
-                def _run_detect(relax: bool) -> List[Tuple[float, float]]:
-                    return snap_detect(video_path, progress_cb=_det_prog, relax=relax)
-
-                low_conf = False
-                try:
-                    windows = await asyncio.wait_for(
-                        asyncio.to_thread(_run_detect, False),
-                        timeout=detector_timeout,
-                    )
-                    if len(windows) < settings.MIN_TOTAL_CLIPS:
+                    ocr_series: List[Tuple[float, int, int]] = []
+                    fits: Dict[int, Dict[str, float]] = {}
+                    if plays and not cancel_ev.is_set():
                         self._set_stage(
                             job_id,
                             "detecting",
-                            pct=90.0,
-                            detail="Low clips; relaxing thresholds",
+                            pct=20.0,
+                            detail="OCR: reading scorebug",
                             eta=self._eta(job_id),
                         )
-                        try:
-                            windows = await asyncio.wait_for(
-                                asyncio.to_thread(_run_detect, True),
-                                timeout=min(detector_timeout, 420.0),
+                        ocr_series = sample_scorebug_series(video_path)
+                        cfbd_meta["ocr_samples"] = len(ocr_series)
+
+                        self._set_stage(
+                            job_id,
+                            "detecting",
+                            pct=30.0,
+                            detail="Aligning periods",
+                            eta=self._eta(job_id),
+                        )
+                        fits = fit_period_alignment(ocr_series)
+                        if fits:
+                            cfbd_meta["period_fits"] = {
+                                period: {
+                                    "a": round(coeffs["a"], 2),
+                                    "b": round(coeffs["b"], 4),
+                                }
+                                for period, coeffs in fits.items()
+                            }
+                        else:
+                            cfbd_meta["period_fits"] = {}
+
+                        self._set_stage(
+                            job_id,
+                            "detecting",
+                            pct=35.0,
+                            detail="Audio spikes",
+                            eta=self._eta(job_id),
+                        )
+                        spikes = whistle_crowd_spikes(video_path)
+                        if spikes:
+                            cfbd_meta["audio_spikes"] = len(spikes)
+                        scene_candidates: Optional[List[Tuple[float, float]]] = None
+                        cand_windows: List[Tuple[float, float]] = []
+                        for idx, play in enumerate(plays, start=1):
+                            if cancel_ev.is_set():
+                                break
+                            if idx % 20 == 0:
+                                self._set_stage(
+                                    job_id,
+                                    "detecting",
+                                    pct=min(
+                                        80.0,
+                                        35.0
+                                        + (idx / max(1, len(plays))) * 45.0,
+                                    ),
+                                    detail=f"Aligning {idx}/{len(plays)}",
+                                    eta=self._eta(job_id),
+                                )
+                            period = int(play.get("period") or 0)
+                            clock_sec = int(play.get("clock_sec") or 0)
+                            t_est = estimate_video_time(
+                                clock_sec,
+                                period,
+                                fits,
+                                ocr_series,
                             )
-                        except asyncio.TimeoutError as exc:
-                            raise RuntimeError("Detector timed out during relaxed retry") from exc
-                        low_conf = True
-                except asyncio.TimeoutError:
-                    raise RuntimeError(
-                        f"Detector timed out (~{int(src_dur / 60)}m video, timeout {int(detector_timeout)}s)"
-                    ) from None
+                            if t_est is None:
+                                continue
+                            win_lo = max(0.0, t_est - settings.ALIGN_MAX_GAP_SEC)
+                            win_hi = min(vid_dur, t_est + settings.ALIGN_MAX_GAP_SEC)
+                            local_center: Optional[float] = None
+                            near_spikes = [
+                                spike for spike in spikes if win_lo <= spike <= win_hi
+                            ]
+                            if near_spikes:
+                                local_center = min(
+                                    near_spikes, key=lambda ts: abs(ts - t_est)
+                                )
+                            else:
+                                if scene_candidates is None:
+                                    try:
+                                        scene_candidates = scene_detect(
+                                            video_path,
+                                            padding_pre=0.5,
+                                            padding_post=0.5,
+                                            min_duration=2.0,
+                                            max_duration=8.0,
+                                            scene_thresh=0.30,
+                                            progress_cb=None,
+                                        )
+                                    except Exception:
+                                        scene_candidates = []
+                                if scene_candidates:
+                                    in_window = [
+                                        seg
+                                        for seg in scene_candidates
+                                        if not (seg[1] < win_lo or seg[0] > win_hi)
+                                    ]
+                                    if in_window:
+                                        best_seg = min(
+                                            in_window,
+                                            key=lambda seg: abs(
+                                                ((seg[0] + seg[1]) / 2.0) - t_est
+                                            ),
+                                        )
+                                        local_center = (best_seg[0] + best_seg[1]) / 2.0
+
+                            center = (
+                                float(local_center)
+                                if isinstance(local_center, (int, float))
+                                else float(t_est)
+                            )
+                            start = max(
+                                0.0,
+                                center - settings.PLAY_PRE_PAD_SEC,
+                            )
+                            end = min(
+                                vid_dur,
+                                center
+                                + settings.PLAY_POST_PAD_SEC
+                                + 6.0,
+                            )
+                            duration = end - start
+                            if (
+                                duration >= settings.PLAY_MIN_SEC
+                                and duration <= 60.0
+                            ):
+                                cand_windows.append(
+                                    (round(start, 3), round(end, 3))
+                                )
+
+                        if cand_windows:
+                            deduped: List[Tuple[float, float]] = []
+                            seen: set[Tuple[float, float]] = set()
+                            for start, end in sorted(cand_windows):
+                                key = (round(start, 2), round(end, 2))
+                                if key in seen:
+                                    continue
+                                seen.add(key)
+                                deduped.append((start, end))
+                            windows = deduped
+                            cfbd_meta["aligned_clips"] = len(windows)
+                            cfbd_meta["used"] = True
+                        else:
+                            cfbd_meta["aligned_clips"] = 0
+
+                if cfbd_meta:
+                    cfbd_meta.setdefault("cfbd_plays", 0)
+                    cfbd_meta.setdefault("ocr_samples", 0)
+                    cfbd_meta.setdefault("period_fits", {})
+                    cfbd_meta.setdefault("audio_spikes", 0)
+                    cfbd_meta.setdefault("used", False)
+                    if "aligned_clips" not in cfbd_meta:
+                        cfbd_meta["aligned_clips"] = len(windows) if windows else 0
 
                 if not windows:
-                    windows = [(3.0, 15.0)]
-                    low_conf = True
+                    base_stage_detail = "Analyzing for plays"
+                    self._start_stage(
+                        job_id,
+                        "detecting",
+                        est_sec=detector_timeout,
+                        detail=base_stage_detail,
+                    )
 
-                if len(windows) < settings.MIN_TOTAL_CLIPS:
-                    low_conf = True
+                    def _det_prog(pct: float, _eta: Optional[float], msg: str) -> None:
+                        scaled = 12.0 + (float(pct or 0.0) * 0.73)
+                        self._set_stage(
+                            job_id,
+                            "detecting",
+                            pct=min(85.0, scaled),
+                            detail=msg or "Detecting",
+                            eta=self._eta(job_id),
+                        )
 
-                self._set_stage(
-                    job_id,
-                    "detecting",
-                    pct=85.0,
-                    detail=(
-                        f"Found {len(windows)} plays"
-                        + (" (low confidence)" if low_conf else "")
-                    ),
-                    eta=0.0,
-                )
+                    def _run_detect(relax: bool) -> List[Tuple[float, float]]:
+                        return snap_detect(video_path, progress_cb=_det_prog, relax=relax)
+
+                    try:
+                        windows = await asyncio.wait_for(
+                            asyncio.to_thread(_run_detect, False),
+                            timeout=detector_timeout,
+                        )
+                        if len(windows) < settings.MIN_TOTAL_CLIPS:
+                            self._set_stage(
+                                job_id,
+                                "detecting",
+                                pct=90.0,
+                                detail="Low clips; relaxing thresholds",
+                                eta=self._eta(job_id),
+                            )
+                            try:
+                                windows = await asyncio.wait_for(
+                                    asyncio.to_thread(_run_detect, True),
+                                    timeout=min(detector_timeout, 420.0),
+                                )
+                            except asyncio.TimeoutError as exc:
+                                raise RuntimeError(
+                                    "Detector timed out during relaxed retry"
+                                ) from exc
+                            low_conf = True
+                    except asyncio.TimeoutError:
+                        raise RuntimeError(
+                            f"Detector timed out (~{int(src_dur / 60)}m video, timeout {int(detector_timeout)}s)"
+                        ) from None
+
+                    if not windows:
+                        windows = [(3.0, 15.0)]
+                        low_conf = True
+
+                    if len(windows) < settings.MIN_TOTAL_CLIPS:
+                        low_conf = True
+
+                    self._set_stage(
+                        job_id,
+                        "detecting",
+                        pct=85.0,
+                        detail=(
+                            f"Found {len(windows)} plays"
+                            + (" (low confidence)" if low_conf else "")
+                        ),
+                        eta=0.0,
+                    )
+                else:
+                    self._set_stage(
+                        job_id,
+                        "detecting",
+                        pct=85.0,
+                        detail=f"CFBD aligned {len(windows)} plays",
+                        eta=0.0,
+                    )
 
                 if cancel_ev.is_set():
                     return
@@ -408,6 +629,7 @@ class JobRunner:
                     "clips_found": len(ordered),
                     "audio_spikes_used": bool(settings.AUDIO_ENABLE),
                     "scorebug_used": bool(settings.SCOREBUG_ENABLE),
+                    "cfbd_guided": bool(cfbd_meta.get("used")),
                 }
                 self.jobs[job_id]["detector_meta"] = det_meta
 
@@ -416,6 +638,7 @@ class JobRunner:
                     "source_url": src_url or f"upload:{upload_id}",
                     "source": source_info,
                     "detector_meta": det_meta,
+                    "cfbd": cfbd_meta,
                     "buckets": {
                         "short": len(buckets["short"]),
                         "medium": len(buckets["medium"]),
