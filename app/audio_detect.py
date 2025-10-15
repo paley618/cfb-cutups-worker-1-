@@ -11,6 +11,10 @@ import numpy as np
 from .settings import settings
 
 
+WHISTLE_DB = 5.5
+CROWD_DECAY_SEC = 2.0
+
+
 def _ffmpeg_to_wav(src: str, sr: int) -> str:
     tmp = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
     tmp.close()
@@ -94,10 +98,16 @@ def whistle_crowd_spikes(src: str) -> List[float]:
 
     median = float(np.median(energies))
     spikes: List[float] = []
+    threshold_db = min(float(settings.AUDIO_MIN_SPIKE_DB), WHISTLE_DB)
+    last_low_time = float("-inf")
     for i, energy in enumerate(energies):
-        if energy - median < settings.AUDIO_MIN_SPIKE_DB:
-            continue
         center = (i * hop + win // 2) / sr
+        if energy <= median:
+            last_low_time = center
+        if energy - median < threshold_db:
+            continue
+        if (center - last_low_time) < CROWD_DECAY_SEC:
+            continue
         if not spikes or (center - spikes[-1]) >= settings.AUDIO_MIN_GAP_SEC:
             spikes.append(center)
 

@@ -58,12 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const attachCfbdSummary = (manifest) => {
     if (!manifest || typeof manifest !== 'object') return;
     const cfbd = manifest.cfbd || {};
-    if (!(cfbd.cfbd_plays || cfbd.ocr_samples || cfbd.aligned_clips)) return;
+    if (!(cfbd.requested || cfbd.used || cfbd.error)) return;
     const line = statusEl.querySelector('.status-line');
     if (!line) return;
+    const parts = [
+      `requested=${cfbd.requested ? 'true' : 'false'}`,
+      `used=${cfbd.used ? 'true' : 'false'}`,
+      `plays=${cfbd.plays ?? 0}`,
+      `cfbd clips=${cfbd.clips ?? 0}`,
+      `fallback clips=${cfbd.fallback_clips ?? 0}`,
+    ];
+    if (cfbd.mapping) parts.push(`mapping=${cfbd.mapping}`);
+    if (cfbd.error) parts.push(`error=${cfbd.error}`);
     const meta = document.createElement('span');
     meta.className = 'status-summary muted';
-    meta.textContent = `CFBD plays: ${cfbd.cfbd_plays ?? 0} • OCR samples: ${cfbd.ocr_samples ?? 0} • Aligned: ${cfbd.aligned_clips ?? 0}`;
+    meta.textContent = `CFBD: ${parts.join(' • ')}`;
     line.append(' — ', meta);
   };
 
