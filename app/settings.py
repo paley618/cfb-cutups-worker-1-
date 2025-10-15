@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from functools import lru_cache
-from typing import List, Literal, Optional
+from typing import List, Literal, Optional, Tuple
 
 from pydantic import AliasChoices, Field, ValidationError, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -84,6 +84,67 @@ class Settings(BaseSettings):
     DETECTOR_DOWNSCALE_W: int = Field(
         default=640,
         description="Detector frame downscale width used for OpenCV analysis.",
+    )
+
+    AUDIO_ENABLE: bool = Field(
+        default=True,
+        description="Enable audio-based whistle/crowd spike detection for snap anchoring.",
+    )
+    AUDIO_SR: int = Field(default=16000, description="Sample rate for audio analysis (Hz).")
+    AUDIO_WHISTLE_BAND: Tuple[int, int] = Field(
+        default=(3500, 5500),
+        description="Frequency band (Hz) used to isolate whistle energy.",
+    )
+    AUDIO_MIN_SPIKE_DB: float = Field(
+        default=12.0,
+        description="Minimum dB above the rolling median required to register an audio spike.",
+    )
+    AUDIO_MIN_GAP_SEC: float = Field(
+        default=3.0,
+        description="Minimum separation in seconds between audio spikes (collapses near-duplicates).",
+    )
+
+    VISION_GREEN_PCT: float = Field(
+        default=0.06,
+        description="Minimum green-field pixel ratio per sampled frame to consider it a field shot.",
+    )
+    VISION_GREEN_HIT_RATIO: float = Field(
+        default=0.25,
+        description="Required ratio of frames that satisfy green-field detection within a window.",
+    )
+    SCOREBUG_ENABLE: bool = Field(
+        default=True,
+        description="Attempt to detect a persistent rectangular scorebug region when available.",
+    )
+    SCOREBUG_MIN_PERSIST_RATIO: float = Field(
+        default=0.5,
+        description="Minimum portion of sampled frames that must contain the scorebug candidate.",
+    )
+
+    PLAY_MIN_SEC: float = Field(
+        default=5.0,
+        description="Minimum allowed play window duration after padding (seconds).",
+    )
+    PLAY_MAX_SEC: float = Field(
+        default=40.0,
+        description="Maximum allowed play window duration after padding (seconds).",
+    )
+    PLAY_PRE_PAD_SEC: float = Field(
+        default=3.0,
+        description="Padding added before detected snaps (seconds).",
+    )
+    PLAY_POST_PAD_SEC: float = Field(
+        default=5.0,
+        description="Padding added after detected snaps (seconds).",
+    )
+
+    MIN_TOTAL_CLIPS: int = Field(
+        default=60,
+        description="Minimum clips threshold before triggering relaxed low-confidence retry.",
+    )
+    RELAX_FACTOR: float = Field(
+        default=0.7,
+        description="Factor applied to loosen detector thresholds on low-confidence retries.",
     )
 
     DRIVE_COOKIES_B64: str | None = None

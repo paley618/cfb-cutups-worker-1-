@@ -82,7 +82,13 @@ def _cuts_opencv(video_path: str, cb: ProgressCB) -> List[float]:
         cap.release()
 
 
-def _field_present(video_path: str, start: float, end: float) -> bool:
+def _field_present(
+    video_path: str,
+    start: float,
+    end: float,
+    min_green_ratio: float,
+    min_hit_ratio: float,
+) -> bool:
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         return False
@@ -98,11 +104,11 @@ def _field_present(video_path: str, start: float, end: float) -> bool:
             hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
             mask = cv2.inRange(hsv, (35, 30, 30), (90, 255, 255))
             ratio = mask.astype("uint8").mean() / 255.0
-            if ratio >= 0.06:
+            if ratio >= min_green_ratio:
                 hits += 1
             total += 1
             t += 0.6
-        return total > 0 and (hits / total) >= 0.25
+        return total > 0 and (hits / max(1, total)) >= min_hit_ratio
     finally:
         cap.release()
 
@@ -114,6 +120,8 @@ def _detect_opencv(
     min_duration: float,
     max_duration: float,
     cb: ProgressCB,
+    green_pct: float | None = None,
+    green_ratio: float | None = None,
 ) -> List[Tuple[float, float]]:
     cuts = _cuts_opencv(video_path, cb)
 
@@ -132,6 +140,9 @@ def _detect_opencv(
     if current is not None:
         merged.append(current)
 
+    min_green = green_pct if green_pct is not None else settings.VISION_GREEN_PCT
+    min_hits = green_ratio if green_ratio is not None else settings.VISION_GREEN_HIT_RATIO
+
     keep: List[List[float]] = []
     total = len(merged)
     for idx, (start, end) in enumerate(merged, start=1):
@@ -143,7 +154,7 @@ def _detect_opencv(
                 f"Filtering {idx}/{total}",
             )
             continue
-        if _field_present(video_path, start, end):
+        if _field_present(video_path, start, end, min_green, min_hits):
             keep.append([start, end])
         _heartbeat(
             cb,
@@ -231,6 +242,8 @@ def detect_plays(
     max_duration: float = 20.0,
     scene_thresh: float = 0.30,
     progress_cb: ProgressCB = None,
+    green_pct: float | None = None,
+    green_hit_ratio: float | None = None,
 ) -> List[Tuple[float, float]]:
     backend = (settings.DETECTOR_BACKEND or "auto").lower()
     use_cv = _OPENCV_OK and backend in {"auto", "opencv"}
@@ -243,6 +256,8 @@ def detect_plays(
             min_duration,
             max_duration,
             progress_cb,
+            green_pct,
+            green_hit_ratio,
         )
     else:
         plays = _detect_ffprobe(
