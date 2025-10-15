@@ -6,6 +6,7 @@ body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI,
 h1 { margin:0 0 8px; font-size: 28px; }
 .sub { color: var(--muted); margin-bottom: 20px; }
 .row { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+.grid { display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items:center; }
 label { display:block; font-size:14px; color: var(--muted); margin-bottom:6px; }
 input[type="url"], input[type="number"], input[type="text"] { width:100%; padding:12px 14px; background:#0e1220; border:1px solid #202636; color:var(--text); border-radius:10px; }
 button { appearance:none; border:none; background:var(--accent); color:white; padding:12px 16px; border-radius:10px; font-weight:600; cursor:pointer; }

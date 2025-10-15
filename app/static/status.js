@@ -55,6 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
     line.append(' — ', summary);
   };
 
+  const attachCfbdSummary = (manifest) => {
+    if (!manifest || typeof manifest !== 'object') return;
+    const cfbd = manifest.cfbd || {};
+    if (!(cfbd.cfbd_plays || cfbd.ocr_samples || cfbd.aligned_clips)) return;
+    const line = statusEl.querySelector('.status-line');
+    if (!line) return;
+    const meta = document.createElement('span');
+    meta.className = 'status-summary muted';
+    meta.textContent = `CFBD plays: ${cfbd.cfbd_plays ?? 0} • OCR samples: ${cfbd.ocr_samples ?? 0} • Aligned: ${cfbd.aligned_clips ?? 0}`;
+    line.append(' — ', meta);
+  };
+
   const renderTimeline = (job) => {
     const wrap = document.createElement('div');
     wrap.className = 'timeline';
@@ -150,6 +162,15 @@ document.addEventListener('DOMContentLoaded', () => {
         max_duration: parseFloat(document.getElementById('max_duration').value || '20'),
       },
     };
+
+    const cfbd = {
+      use_cfbd: document.getElementById('cfbd_use').checked,
+      game_id: parseInt(document.getElementById('cfbd_game_id').value || '0', 10) || null,
+      season: parseInt(document.getElementById('cfbd_season').value || '0', 10) || null,
+      week: parseInt(document.getElementById('cfbd_week').value || '0', 10) || null,
+      team: (document.getElementById('cfbd_team').value || '').trim() || null,
+    };
+    payload.cfbd = cfbd;
 
     let response;
     try {
@@ -262,6 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
               const manifest = await parseManifestResponse(r2);
               showManifest(manifest);
               attachSummary(manifest);
+              attachCfbdSummary(manifest);
             } catch (e) {
               try {
                 const pr = await fetch(`/manifest-proxy?url=${encodeURIComponent(manifestUrl)}`, { cache: 'no-store' });
@@ -269,6 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const manifest = await parseManifestResponse(pr);
                 showManifest(manifest);
                 attachSummary(manifest);
+                attachCfbdSummary(manifest);
               } catch (e2) {
                 console.error('manifest_fetch_error', e, e2);
                 errorEl.textContent = 'Completed, but manifest fetch failed (CORS/URL). Use the Manifest JSON link above.';
