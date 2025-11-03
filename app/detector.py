@@ -7,6 +7,7 @@ import time
 from typing import Callable, List, Optional, Tuple
 
 from .settings import settings
+from .utils import clamp_windows, merge_windows
 
 ProgressCB = Optional[Callable[[float, Optional[float], str], None]]
 
@@ -82,6 +83,24 @@ def _cuts_opencv(video_path: str, cb: ProgressCB) -> List[float]:
         cap.release()
 
 
+def center_green_ratio(frame_bgr) -> float:
+    """Return mean green ratio within the central strip of the frame."""
+
+    h, w = frame_bgr.shape[:2]
+    y0 = int(h * settings.GREEN_CENTER_Y0)
+    y1 = int(h * settings.GREEN_CENTER_Y1)
+    if y1 <= y0:
+        y0, y1 = 0, h
+    x0 = int(w * 0.05)
+    x1 = int(w * 0.95)
+    band = frame_bgr[y0:y1, x0:x1]
+    if band.size == 0:
+        return 0.0
+    hsv = cv2.cvtColor(band, cv2.COLOR_BGR2HSV)
+    mask = cv2.inRange(hsv, (35, 30, 30), (90, 255, 255))
+    return mask.mean() / 255.0
+
+
 def _field_present(
     video_path: str,
     start: float,
@@ -96,19 +115,22 @@ def _field_present(
         t = start
         hits = 0
         total = 0
+        green_sum = 0.0
         while t < end:
             cap.set(cv2.CAP_PROP_POS_MSEC, t * 1000.0)
             ok, frame = cap.read()
             if not ok:
                 break
-            hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-            mask = cv2.inRange(hsv, (35, 30, 30), (90, 255, 255))
-            ratio = mask.astype("uint8").mean() / 255.0
+            ratio = center_green_ratio(frame)
+            green_sum += ratio
             if ratio >= min_green_ratio:
                 hits += 1
             total += 1
             t += 0.6
-        return total > 0 and (hits / max(1, total)) >= min_hit_ratio
+        if total == 0:
+            return False
+        avg_green = green_sum / max(1, total)
+        return (hits / max(1, total)) >= min_hit_ratio and avg_green >= min_green_ratio
     finally:
         cap.release()
 
@@ -132,7 +154,7 @@ def _detect_opencv(
             continue
         if current is None:
             current = [start, end]
-        elif start - current[1] <= 1.0:
+        elif start - current[1] <= min(settings.MERGE_GAP_SEC, 0.75):
             current[1] = end
         else:
             merged.append(current)
@@ -163,21 +185,17 @@ def _detect_opencv(
             f"Filtering {idx}/{total}",
         )
 
-    plays: List[Tuple[float, float]] = []
+    raw_windows: List[Tuple[float, float]] = []
     for start, end in keep:
         duration = end - start
-        if duration > max_duration:
-            segment_start = start
-            while segment_start < end:
-                segment_end = min(end, segment_start + max_duration)
-                plays.append((max(0.0, segment_start - pre), segment_end + post))
-                segment_start = segment_end
-        elif duration >= min_duration:
-            plays.append((max(0.0, start - pre), end + post))
+        if duration < min_duration:
+            continue
+        raw_windows.append((max(0.0, start - pre), end + post))
 
-    deduped = sorted({(round(s, 3), round(e, 3)) for s, e in plays})
-    _heartbeat(cb, 85.0, None, f"{len(deduped)} plays")
-    return list(deduped)[:400]
+    merged_windows = merge_windows(raw_windows, min(settings.MERGE_GAP_SEC, 0.75))
+    plays = clamp_windows(merged_windows, min_duration, max_duration)
+    _heartbeat(cb, 85.0, None, f"{len(plays)} plays")
+    return plays[:400]
 
 
 def _detect_ffprobe(

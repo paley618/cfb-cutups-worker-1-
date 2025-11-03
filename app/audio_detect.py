@@ -112,3 +112,68 @@ def whistle_crowd_spikes(src: str) -> List[float]:
             spikes.append(center)
 
     return spikes
+
+
+def _band_energy_db(
+    x: np.ndarray, sr: int, f_lo: int, f_hi: int, win_ms: int = 32, hop_ms: int = 16
+):
+    win = int(sr * win_ms / 1000)
+    hop = int(sr * hop_ms / 1000)
+    if win <= 0 or hop <= 0:
+        return [], hop
+    e_db: List[float] = []
+    window = np.hanning(win)
+    for start in range(0, max(0, len(x) - win), hop):
+        segment = x[start : start + win]
+        if len(segment) < win:
+            continue
+        spec = np.fft.rfft(segment * window)
+        freqs = np.fft.rfftfreq(win, 1 / sr)
+        band = spec[(freqs >= f_lo) & (freqs <= f_hi)]
+        energy = float(np.sum(np.abs(band) ** 2) + 1e-9)
+        e_db.append(10 * math.log10(energy))
+    return e_db, hop
+
+
+def crowd_spikes(src: str) -> List[float]:
+    if not settings.AUDIO_ENABLE:
+        return []
+    try:
+        wav = _ffmpeg_to_wav(src, settings.AUDIO_SR)
+    except Exception:
+        return []
+
+    try:
+        import soundfile as sf  # type: ignore
+
+        samples, sr = sf.read(wav, dtype="float32")
+    except Exception:
+        return []
+    finally:
+        try:
+            os.unlink(wav)
+        except OSError:
+            pass
+
+    if getattr(samples, "size", 0) == 0:
+        return []
+
+    energies, hop = _band_energy_db(
+        np.asarray(samples, dtype="float32"),
+        int(sr),
+        *settings.AUDIO_CROWD_BAND,
+    )
+    if not energies:
+        return []
+
+    med = float(np.median(energies))
+    out: List[float] = []
+    last = float("-inf")
+    for idx, val in enumerate(energies):
+        if val - med < settings.AUDIO_MIN_SPIKE_DB:
+            continue
+        t = (idx * hop) / max(1, sr)
+        if t - last >= settings.AUDIO_MIN_GAP_SEC:
+            out.append(t)
+            last = t
+    return out

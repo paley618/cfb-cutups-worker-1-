@@ -15,6 +15,20 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=None, extra="ignore", case_sensitive=False)
 
     log_level: str = Field(default="INFO", description="Python logging level (e.g. INFO, DEBUG).")
+
+    # instrumentation
+    DEBUG_THUMBS: bool = Field(
+        default=True,
+        description="Enable uploading debug thumbnails for timeline/candidate inspection.",
+    )
+    DEBUG_THUMBS_TIMELINE: int = Field(
+        default=5,
+        description="Maximum number of evenly spaced timeline thumbnails to capture for debugging.",
+    )
+    DEBUG_THUMBS_CANDIDATES: int = Field(
+        default=5,
+        description="Maximum number of candidate window thumbnails to capture for debugging.",
+    )
     storage_backend: Literal["local", "s3"] = Field(
         default="s3", description="Persistent storage backend for rendered videos."
     )
@@ -95,22 +109,43 @@ class Settings(BaseSettings):
         default=(3500, 5500),
         description="Frequency band (Hz) used to isolate whistle energy.",
     )
+    AUDIO_CROWD_BAND: Tuple[int, int] = Field(
+        default=(400, 1200),
+        description="Frequency band (Hz) used to isolate crowd surges for secondary spikes.",
+    )
     AUDIO_MIN_SPIKE_DB: float = Field(
-        default=12.0,
+        default=6.0,
         description="Minimum dB above the rolling median required to register an audio spike.",
     )
     AUDIO_MIN_GAP_SEC: float = Field(
-        default=3.0,
+        default=2.5,
         description="Minimum separation in seconds between audio spikes (collapses near-duplicates).",
     )
 
+    # vision field heuristics
     VISION_GREEN_PCT: float = Field(
-        default=0.06,
+        default=0.07,
         description="Minimum green-field pixel ratio per sampled frame to consider it a field shot.",
     )
     VISION_GREEN_HIT_RATIO: float = Field(
-        default=0.25,
+        default=0.30,
         description="Required ratio of frames that satisfy green-field detection within a window.",
+    )
+    GREEN_CENTER_Y0: float = Field(
+        default=0.35,
+        description="Relative start of the central horizontal band inspected for field presence (0..1).",
+    )
+    GREEN_CENTER_Y1: float = Field(
+        default=0.65,
+        description="Relative end of the central horizontal band inspected for field presence (0..1).",
+    )
+    GREEN_MIN_PCT: float = Field(
+        default=0.07,
+        description="Minimum average green ratio within the inspected center band to treat a window as on-field.",
+    )
+    GREEN_MIN_HIT_RATIO: float = Field(
+        default=0.30,
+        description="Minimum fraction of sampled frames exceeding the green threshold within a window.",
     )
     SCOREBUG_ENABLE: bool = Field(
         default=True,
@@ -119,6 +154,11 @@ class Settings(BaseSettings):
     SCOREBUG_MIN_PERSIST_RATIO: float = Field(
         default=0.5,
         description="Minimum portion of sampled frames that must contain the scorebug candidate.",
+    )
+
+    MERGE_GAP_SEC: float = Field(
+        default=0.75,
+        description="Maximum gap in seconds when merging adjacent candidate windows.",
     )
 
     PLAY_MIN_SEC: float = Field(

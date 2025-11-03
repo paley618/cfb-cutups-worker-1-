@@ -1,24 +1,20 @@
 from __future__ import annotations
 
 import os, json, zipfile, uuid, asyncio, time, logging, shutil
-from typing import Dict, Any, List, Optional, Tuple
+from bisect import bisect_left, bisect_right
+from typing import Any, Dict, List, Optional, Tuple
 
-from .video import (
-    download_game_video,
-    probe_duration_sec,
-    file_size_bytes,
-    estimate_period_durations,
-    coalesce_and_clamp,
-)
+from .video import download_game_video, probe_duration_sec, file_size_bytes
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
-from .detector_snap import snap_detect
+from .detector import detect_plays
 from .cfbd import fetch_plays, CFBDClientError
 from .ocr_scorebug import sample_scorebug_series
-from .align_cfbd import (
-    build_mapping_from_ocr,
-    build_mapping_by_even_spread,
-    clock_to_video,
-)
+from .align_cfbd import build_mapping_from_ocr, even_spread_mapping, clock_to_video
+from .detector_ffprobe import scene_cut_times
+from .audio_detect import whistle_crowd_spikes, crowd_spikes
+from .utils import merge_windows, clamp_windows
+from .debug_dump import save_timeline_thumbs, save_candidate_thumbs
+from .fallback import timegrid_windows
 from .storage import get_storage
 from .uploads import resolve_upload
 from .settings import settings
@@ -37,6 +33,19 @@ STAGES = (
     "failed",
     "canceled",
 )
+
+
+def _nearest_in_window(values: List[float], start: float, end: float, target: float) -> Optional[float]:
+    if not values:
+        return None
+    if start > end:
+        start, end = end, start
+    lo = bisect_left(values, start)
+    hi = bisect_right(values, end)
+    if lo >= hi:
+        return None
+    window = values[lo:hi]
+    return min(window, key=lambda v: abs(v - target)) if window else None
 
 
 class JobRunner:
@@ -191,6 +200,7 @@ class JobRunner:
                 tmp_dir = f"/tmp/{job_id}"
                 os.makedirs(tmp_dir, exist_ok=True)
                 video_path = os.path.join(tmp_dir, "source.mp4")
+                storage = get_storage()
 
                 src_url = str(submission.video_url or submission.presigned_url or "")
                 upload_id = submission.upload_id
@@ -259,6 +269,15 @@ class JobRunner:
                     max(base, base + per * (src_dur / 60.0)),
                 )
 
+                metrics: Dict[str, int] = {
+                    "audio_spikes": 0,
+                    "ocr_samples": 0,
+                    "vision_candidates": 0,
+                    "pre_merge_windows": 0,
+                    "post_merge_windows": 0,
+                }
+                debug_urls: Dict[str, Any] = {}
+
                 cfbd_summary: Dict[str, Any] = {
                     "requested": False,
                     "used": False,
@@ -269,12 +288,112 @@ class JobRunner:
                     "mapping": None,
                     "ocr_samples": 0,
                 }
-                windows: Optional[List[Tuple[float, float]]] = None
-                low_conf = False
                 vid_dur = float(src_dur)
 
+                options = getattr(submission, "options", None)
+                pre_pad = max(
+                    0.0, float(getattr(options, "play_padding_pre", settings.PLAY_PRE_PAD_SEC))
+                )
+                post_pad = max(
+                    0.0, float(getattr(options, "play_padding_post", settings.PLAY_POST_PAD_SEC))
+                )
+                min_duration = max(
+                    0.5, float(getattr(options, "min_duration", settings.PLAY_MIN_SEC))
+                )
+                max_duration = max(
+                    min_duration,
+                    float(getattr(options, "max_duration", settings.PLAY_MAX_SEC)),
+                )
+                scene_thresh = max(
+                    0.05, float(getattr(options, "scene_thresh", 0.30))
+                )
+                merge_gap = min(settings.MERGE_GAP_SEC, 0.75)
+
+                self._start_stage(
+                    job_id,
+                    "detecting",
+                    est_sec=detector_timeout,
+                    detail="Analyzing for plays",
+                )
+
+                self._set_stage(
+                    job_id,
+                    "detecting",
+                    pct=18.0,
+                    detail="Audio: scanning spikes",
+                    eta=self._eta(job_id),
+                )
+                try:
+                    whistle = await asyncio.to_thread(whistle_crowd_spikes, video_path)
+                except Exception:
+                    whistle = []
+                try:
+                    crowd = await asyncio.to_thread(crowd_spikes, video_path)
+                except Exception:
+                    crowd = []
+                audio_spike_list = sorted({*whistle, *crowd})
+                metrics["audio_spikes"] = len(audio_spike_list)
+                self._set_stage(
+                    job_id,
+                    "detecting",
+                    pct=25.0,
+                    detail=f"Audio spikes: {metrics['audio_spikes']}",
+                    eta=self._eta(job_id),
+                )
+                if cancel_ev.is_set():
+                    return
+
+                self._set_stage(
+                    job_id,
+                    "detecting",
+                    pct=35.0,
+                    detail="Vision: coarse candidates",
+                    eta=self._eta(job_id),
+                )
+                try:
+                    vision_candidates = await asyncio.to_thread(
+                        detect_plays,
+                        video_path,
+                        pre_pad,
+                        post_pad,
+                        min_duration,
+                        max_duration,
+                        scene_thresh,
+                        None,
+                        None,
+                        None,
+                    )
+                except Exception:
+                    vision_candidates = []
+                vision_windows_raw = list(vision_candidates or [])
+                metrics["vision_candidates"] = len(vision_windows_raw)
+                self._set_stage(
+                    job_id,
+                    "detecting",
+                    pct=45.0,
+                    detail=f"Vision candidates: {metrics['vision_candidates']}",
+                    eta=self._eta(job_id),
+                )
+                if cancel_ev.is_set():
+                    return
+
+                try:
+                    scene_cuts = await asyncio.to_thread(
+                        scene_cut_times, video_path, max(0.05, scene_thresh)
+                    )
+                except Exception:
+                    scene_cuts = []
+                scene_cuts = sorted(scene_cuts)
+
                 cfbd_in = getattr(submission, "cfbd", None)
+                cfbd_plays: List[Dict[str, Any]] = []
+                cfbd_play_count = 0
+                cfbd_used = False
+                fallback_used = False
+                pre_merge_guided: List[Tuple[float, float]] = []
                 guided_windows: List[Tuple[float, float]] = []
+                mapping_source: Optional[str] = None
+
                 if (
                     settings.CFBD_ENABLED
                     and cfbd_in
@@ -284,11 +403,10 @@ class JobRunner:
                     self._set_stage(
                         job_id,
                         "detecting",
-                        pct=12.0,
+                        pct=50.0,
                         detail="CFBD: fetching plays",
                         eta=self._eta(job_id),
                     )
-                    plays: List[Dict[str, Any]] = []
                     request_params: Dict[str, Any] = {}
                     try:
                         if cfbd_in.game_id:
@@ -298,9 +416,7 @@ class JobRunner:
                             week = cfbd_in.week
                             team = (cfbd_in.team or "").strip() or None
                             if not (season and week and team):
-                                raise CFBDClientError(
-                                    "provide game_id or season/week/team"
-                                )
+                                raise CFBDClientError("provide game_id or season/week/team")
                             request_params = {
                                 "season": int(season),
                                 "week": int(week),
@@ -309,14 +425,15 @@ class JobRunner:
                             season_type = getattr(cfbd_in, "season_type", None)
                             if season_type:
                                 request_params["season_type"] = str(season_type)
-                        plays = fetch_plays(**request_params)
-                        cfbd_summary["plays"] = len(plays)
+                        cfbd_plays = fetch_plays(**request_params)
+                        cfbd_play_count = len(cfbd_plays)
+                        cfbd_summary["plays"] = cfbd_play_count
                         cfbd_summary["request"] = request_params
                         if "game_id" in request_params:
                             cfbd_summary["game_id"] = request_params["game_id"]
                         logger.info(
                             "cfbd_fetch_complete",
-                            extra={"job_id": job_id, "plays": len(plays)},
+                            extra={"job_id": job_id, "plays": cfbd_play_count},
                         )
                     except CFBDClientError as exc:
                         message = str(exc)
@@ -328,11 +445,11 @@ class JobRunner:
                         self._set_stage(
                             job_id,
                             "detecting",
-                            pct=15.0,
+                            pct=55.0,
                             detail=f"CFBD error: {message[:120]}",
                             eta=self._eta(job_id),
                         )
-                        plays = []
+                        cfbd_plays = []
                     except Exception as exc:  # pragma: no cover - defensive
                         cfbd_summary["error"] = str(exc)
                         logger.exception(
@@ -341,48 +458,41 @@ class JobRunner:
                         self._set_stage(
                             job_id,
                             "detecting",
-                            pct=15.0,
-                            detail="CFBD fetch crashed; using fallback",
+                            pct=55.0,
+                            detail="CFBD fetch crashed; continuing with fallback",
                             eta=self._eta(job_id),
                         )
-                        plays = []
+                        cfbd_plays = []
 
-                    if plays and not cancel_ev.is_set():
-                        self._set_stage(
-                            job_id,
-                            "detecting",
-                            pct=20.0,
-                            detail="CFBD: building mapping",
-                            eta=self._eta(job_id),
+                if cfbd_plays and not cancel_ev.is_set():
+                    self._set_stage(
+                        job_id,
+                        "detecting",
+                        pct=60.0,
+                        detail="CFBD: building mapping",
+                        eta=self._eta(job_id),
+                    )
+                    raw_ocr = sample_scorebug_series(video_path)
+                    per_period: Dict[int, List[Tuple[float, float]]] = {}
+                    for ts, period, clock in raw_ocr:
+                        per_period.setdefault(int(period), []).append(
+                            (float(ts), float(clock))
                         )
-                        raw_ocr = sample_scorebug_series(video_path)
-                        per_period: Dict[int, List[Tuple[float, float]]] = {}
-                        for ts, period, clock in raw_ocr:
-                            per_period.setdefault(int(period), []).append(
-                                (float(ts), float(clock))
-                            )
-                        cfbd_summary["ocr_samples"] = sum(
-                            len(samples) for samples in per_period.values()
-                        )
+                    metrics["ocr_samples"] = sum(
+                        len(samples) for samples in per_period.values()
+                    )
+                    cfbd_summary["ocr_samples"] = metrics["ocr_samples"]
 
-                        mapping = build_mapping_from_ocr(per_period)
-                        if mapping:
-                            cfbd_summary["mapping"] = "ocr"
-                        else:
-                            mapping = build_mapping_by_even_spread(
-                                estimate_period_durations(vid_dur)
-                            )
-                            cfbd_summary["mapping"] = "even_spread"
+                    mapping = build_mapping_from_ocr(per_period)
+                    if mapping:
+                        mapping_source = "ocr"
+                    else:
+                        mapping = even_spread_mapping(vid_dur)
+                        mapping_source = "even_spread"
+                    cfbd_summary["mapping"] = mapping_source
 
-                        options = submission.options
-                        pre_pad = getattr(
-                            options, "play_padding_pre", settings.PLAY_PRE_PAD_SEC
-                        )
-                        post_pad = getattr(
-                            options, "play_padding_post", settings.PLAY_POST_PAD_SEC
-                        )
-
-                        for play in plays:
+                    if mapping:
+                        for play in cfbd_plays:
                             try:
                                 period = int(play.get("period") or 0)
                                 clock_sec = int(
@@ -395,26 +505,37 @@ class JobRunner:
                             ts = clock_to_video(mapping, period, clock_sec)
                             if ts is None:
                                 continue
-                            start = max(0.0, float(ts) - float(pre_pad))
-                            end = min(vid_dur, float(ts) + float(post_pad))
+                            center = _nearest_in_window(
+                                audio_spike_list, ts - 3.0, ts + 3.0, ts
+                            )
+                            if center is None and scene_cuts:
+                                center = _nearest_in_window(
+                                    scene_cuts, ts - 3.0, ts + 3.0, ts
+                                )
+                            if center is None:
+                                center = float(ts)
+                            start = max(0.0, center - pre_pad)
+                            end = min(vid_dur, center + post_pad)
                             if end <= start:
                                 continue
-                            guided_windows.append((start, end))
+                            guided_windows.append((round(start, 3), round(end, 3)))
 
-                        guided_windows = coalesce_and_clamp(
-                            guided_windows,
-                            settings.PLAY_MIN_SEC,
-                            settings.PLAY_MAX_SEC,
-                            bounds=(0.0, vid_dur),
-                        )
-                        cfbd_summary["clips"] = len(guided_windows)
+                        pre_merge_guided = list(guided_windows)
                         if guided_windows:
-                            cfbd_summary["used"] = True
-                            windows = guided_windows
+                            guided_windows = clamp_windows(
+                                merge_windows(guided_windows, merge_gap),
+                                min_duration,
+                                max_duration,
+                            )
+                        else:
+                            guided_windows = []
+                        cfbd_summary["clips"] = len(guided_windows)
+                        cfbd_used = bool(guided_windows)
+                        if cfbd_used:
                             self._set_stage(
                                 job_id,
                                 "detecting",
-                                pct=40.0,
+                                pct=75.0,
                                 detail=f"CFBD aligned {len(guided_windows)} plays",
                                 eta=self._eta(job_id),
                             )
@@ -422,99 +543,120 @@ class JobRunner:
                             self._set_stage(
                                 job_id,
                                 "detecting",
-                                pct=40.0,
-                                detail="CFBD plays fetched; using fallback detector",
+                                pct=70.0,
+                                detail="CFBD mapping produced 0 clips; using fallback",
                                 eta=self._eta(job_id),
                             )
-                    elif cfbd_summary.get("requested") and not cancel_ev.is_set():
+                    else:
                         self._set_stage(
                             job_id,
                             "detecting",
-                            pct=18.0,
-                            detail="CFBD returned 0 plays; running detector",
+                            pct=65.0,
+                            detail="CFBD mapping unavailable; using fallback",
                             eta=self._eta(job_id),
                         )
+                elif cfbd_summary.get("requested") and not cancel_ev.is_set():
+                    self._set_stage(
+                        job_id,
+                        "detecting",
+                        pct=55.0,
+                        detail="CFBD returned 0 plays; using fallback",
+                        eta=self._eta(job_id),
+                    )
+
+                windows: List[Tuple[float, float]] = []
+                pre_merge_list: List[Tuple[float, float]] = []
+
+                if cfbd_used:
+                    pre_merge_list = pre_merge_guided
+                    windows = list(guided_windows)
+                else:
+                    candidate_windows = list(vision_windows_raw)
+                    if not candidate_windows or len(candidate_windows) < settings.MIN_TOTAL_CLIPS:
+                        fallback_used = True
+                        target = cfbd_play_count or int(vid_dur / 22.0) if vid_dur > 0 else settings.MIN_TOTAL_CLIPS
+                        target = max(settings.MIN_TOTAL_CLIPS, target)
+                        grid = timegrid_windows(vid_dur, target, pre_pad, post_pad)
+                        shifted: List[Tuple[float, float]] = []
+                        for start, end in grid:
+                            center = (start + end) / 2.0
+                            refined = _nearest_in_window(
+                                scene_cuts, center - 3.0, center + 3.0, center
+                            )
+                            if refined is None:
+                                refined = center
+                            s2 = max(0.0, refined - pre_pad)
+                            e2 = min(vid_dur, refined + post_pad)
+                            if e2 <= s2:
+                                continue
+                            shifted.append((round(s2, 3), round(e2, 3)))
+                        base_candidates = shifted + candidate_windows
+                        pre_merge_list = base_candidates
+                        merged = merge_windows(base_candidates, merge_gap)
+                        windows = clamp_windows(merged, min_duration, max_duration)
+                    else:
+                        pre_merge_list = candidate_windows
+                        merged = merge_windows(candidate_windows, merge_gap)
+                        windows = clamp_windows(merged, min_duration, max_duration)
 
                 if not windows:
-                    base_stage_detail = "Analyzing for plays"
-                    self._start_stage(
-                        job_id,
-                        "detecting",
-                        est_sec=detector_timeout,
-                        detail=base_stage_detail,
+                    fallback_used = True
+                    default_end = min(
+                        max_duration,
+                        max(min_duration, vid_dur if vid_dur > 0 else min_duration),
                     )
+                    windows = [(0.0, round(default_end, 3))]
 
-                    def _det_prog(pct: float, _eta: Optional[float], msg: str) -> None:
-                        scaled = 12.0 + (float(pct or 0.0) * 0.73)
-                        self._set_stage(
-                            job_id,
-                            "detecting",
-                            pct=min(85.0, scaled),
-                            detail=msg or "Detecting",
-                            eta=self._eta(job_id),
-                        )
+                metrics["pre_merge_windows"] = len(pre_merge_list)
+                metrics["post_merge_windows"] = len(windows)
 
-                    def _run_detect(relax: bool) -> List[Tuple[float, float]]:
-                        return snap_detect(video_path, progress_cb=_det_prog, relax=relax)
-
-                    try:
-                        windows = await asyncio.wait_for(
-                            asyncio.to_thread(_run_detect, False),
-                            timeout=detector_timeout,
-                        )
-                        if len(windows) < settings.MIN_TOTAL_CLIPS:
-                            self._set_stage(
-                                job_id,
-                                "detecting",
-                                pct=90.0,
-                                detail="Low clips; relaxing thresholds",
-                                eta=self._eta(job_id),
-                            )
-                            try:
-                                windows = await asyncio.wait_for(
-                                    asyncio.to_thread(_run_detect, True),
-                                    timeout=min(detector_timeout, 420.0),
-                                )
-                            except asyncio.TimeoutError as exc:
-                                raise RuntimeError(
-                                    "Detector timed out during relaxed retry"
-                                ) from exc
-                            low_conf = True
-                    except asyncio.TimeoutError:
-                        raise RuntimeError(
-                            f"Detector timed out (~{int(src_dur / 60)}m video, timeout {int(detector_timeout)}s)"
-                        ) from None
-
-                    if not windows:
-                        windows = [(3.0, 15.0)]
-                        low_conf = True
-
-                    if len(windows) < settings.MIN_TOTAL_CLIPS:
-                        low_conf = True
-
-                    self._set_stage(
-                        job_id,
-                        "detecting",
-                        pct=85.0,
-                        detail=(
-                            f"Found {len(windows)} plays"
-                            + (" (low confidence)" if low_conf else "")
-                        ),
-                        eta=0.0,
-                    )
+                detail = ""
+                if cfbd_used:
+                    detail = f"CFBD aligned {len(windows)} plays"
+                elif fallback_used:
+                    detail = f"Fallback grid produced {len(windows)} windows"
                 else:
-                    self._set_stage(
-                        job_id,
-                        "detecting",
-                        pct=85.0,
-                        detail=f"CFBD aligned {len(windows)} plays",
-                        eta=0.0,
+                    detail = f"Vision windows {len(windows)}"
+
+                self._set_stage(
+                    job_id,
+                    "detecting",
+                    pct=85.0,
+                    detail=detail,
+                    eta=0.0,
+                )
+
+                cfbd_summary["used"] = bool(cfbd_used)
+                cfbd_summary["plays"] = cfbd_play_count
+
+                debug_prefix = f"debug/{job_id}"
+                try:
+                    debug_urls["timeline"] = await asyncio.to_thread(
+                        save_timeline_thumbs,
+                        video_path,
+                        storage,
+                        debug_prefix,
+                        settings.DEBUG_THUMBS_TIMELINE,
+                        vid_dur,
                     )
+                except Exception:
+                    debug_urls["timeline"] = []
+                try:
+                    debug_urls["candidates"] = await asyncio.to_thread(
+                        save_candidate_thumbs,
+                        video_path,
+                        storage,
+                        debug_prefix,
+                        windows,
+                        settings.DEBUG_THUMBS_CANDIDATES,
+                    )
+                except Exception:
+                    debug_urls["candidates"] = []
 
                 if cfbd_summary.get("used"):
                     cfbd_summary["fallback_clips"] = 0
                 else:
-                    cfbd_summary["fallback_clips"] = len(windows) if windows else 0
+                    cfbd_summary["fallback_clips"] = len(windows) if fallback_used else 0
 
                 if cancel_ev.is_set():
                     return
@@ -609,7 +751,7 @@ class JobRunner:
                 )
 
                 det_meta = {
-                    "low_confidence": bool(low_conf),
+                    "low_confidence": bool(fallback_used and not cfbd_used),
                     "clips_found": len(ordered),
                     "audio_spikes_used": bool(settings.AUDIO_ENABLE),
                     "scorebug_used": bool(settings.SCOREBUG_ENABLE),
@@ -639,6 +781,11 @@ class JobRunner:
                     time.time() - self.jobs[job_id]["created"],
                     3,
                 )
+                manifest["metrics"].update(metrics)
+                manifest["debug"] = debug_urls
+                manifest.setdefault("cfbd", {}).update(
+                    {"used": bool(cfbd_used), "plays": int(cfbd_play_count)}
+                )
 
                 manifest_path = os.path.join(tmp_dir, "manifest.json")
                 with open(manifest_path, "w", encoding="utf-8") as f:
@@ -654,7 +801,6 @@ class JobRunner:
                 if cancel_ev.is_set():
                     return
 
-                storage = get_storage()
                 archive_key = f"{job_id}/output.zip"
                 manifest_key = f"{job_id}/manifest.json"
                 self._set_stage(
