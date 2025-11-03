@@ -60,3 +60,12 @@ def detect_plays_ffprobe(
         last = timestamp
 
     return windows[:200]
+
+
+def scene_cut_times(video_path: str, thresh: float = 0.30) -> list[float]:
+    """Return sorted scene cut timestamps using ffprobe heuristics."""
+
+    try:
+        return _scenes(video_path, thresh)
+    except Exception:
+        return []

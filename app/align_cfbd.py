@@ -47,6 +47,20 @@ def build_mapping_by_even_spread(
     return mapping
 
 
+def even_spread_mapping(total_duration_sec: float) -> Dict[int, Tuple[float, float]]:
+    """Evenly spread all four quarters across the provided total duration."""
+
+    q = float(max(0.0, total_duration_sec)) / 4.0 if total_duration_sec > 0 else 0.0
+    mapping: Dict[int, Tuple[float, float]] = {}
+    if q <= 0:
+        return mapping
+    for period in (1, 2, 3, 4):
+        slope = -q / 900.0
+        intercept = period * q
+        mapping[period] = (slope, intercept)
+    return mapping
+
+
 def clock_to_video(
     mapping: Dict[int, Tuple[float, float]], period: int, clock_sec: int
 ) -> float | None:

@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const selftestBtn = document.getElementById('selftest');
   const selftestOut = document.getElementById('selftest_out');
 
+  const addLine = (text) => {
+    if (!statusEl) return;
+    const line = document.createElement('div');
+    line.className = 'status-extra muted';
+    line.textContent = text;
+    statusEl.appendChild(line);
+  };
+
   if (selftestBtn && selftestOut) {
     selftestBtn.onclick = async () => {
       selftestOut.style.display = 'block';
@@ -30,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!manifest || typeof manifest !== 'object') return;
     const line = statusEl.querySelector('.status-line');
     if (!line) return;
+    statusEl.querySelectorAll('.status-extra').forEach((el) => el.remove());
     line.querySelectorAll('.status-summary').forEach((el) => el.remove());
     const src = manifest.source || {};
     const meta = manifest.detector_meta || {};
@@ -53,6 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     summary.textContent = text;
     line.append(' — ', summary);
+
+    const metrics = manifest.metrics || {};
+    const debug = manifest.debug || {};
+    addLine(
+      `Audio spikes: ${metrics.audio_spikes ?? 0} • OCR: ${metrics.ocr_samples ?? 0} • Candidates: ${metrics.vision_candidates ?? 0} • Windows: ${metrics.post_merge_windows ?? 0}`,
+    );
+    if (Array.isArray(debug.timeline) && debug.timeline.length) {
+      addLine(`Debug timeline: ${debug.timeline.length} imgs`);
+    }
+    if (Array.isArray(debug.candidates) && debug.candidates.length) {
+      addLine(`Debug candidates: ${debug.candidates.length} imgs`);
+    }
   };
 
   const attachCfbdSummary = (manifest) => {
