@@ -261,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const payload = await res.json();
           const manifestUrl = payload.manifest_url;
           const zipUrl = payload.archive_url;
+          const reelUrl = payload.reel_url;
 
           let manifestLink;
           if (manifestUrl) {
@@ -286,6 +287,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (manifestLink && zipLink) parts.push(' ');
             if (zipLink) parts.push(zipLink);
             statusEl.append(...parts);
+          }
+
+          if (reelUrl) {
+            const reelLink = document.createElement('a');
+            reelLink.href = reelUrl;
+            reelLink.textContent = 'Download Combined Video';
+            reelLink.className = 'link';
+            reelLink.target = '_blank';
+            statusEl.append(' • ', reelLink);
           }
 
           const showManifest = (manifest) => {

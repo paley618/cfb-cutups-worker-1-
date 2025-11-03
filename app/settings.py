@@ -75,6 +75,20 @@ class Settings(BaseSettings):
         description="Domains permitted when the allowlist is enabled.",
     )
 
+    CONCAT_REENCODE: bool = Field(
+        default=True,
+        description="Re-encode concatenated clips to uniform MP4 instead of stream copy.",
+    )
+    CONCAT_VCODEC: str = Field(default="libx264", description="Video codec used when re-encoding concat output.")
+    CONCAT_VCRF: int = Field(default=20, description="Constant rate factor applied during concat re-encode (lower = higher quality).")
+    CONCAT_VPRESET: str = Field(default="veryfast", description="FFmpeg preset used for concat re-encode.")
+    CONCAT_ACODEC: str = Field(default="aac", description="Audio codec used for concat re-encode.")
+    CONCAT_ABITRATE: str = Field(default="128k", description="Audio bitrate when re-encoding concat output.")
+    CONCAT_PROGRESS_HEARTBEAT_SEC: float = Field(
+        default=1.0,
+        description="Interval in seconds for concat progress heartbeats.",
+    )
+
     DETECTOR_BACKEND: Literal["auto", "opencv", "ffprobe"] = Field(
         default="auto",
         description="Play detector backend selection: auto, opencv, or ffprobe.",
