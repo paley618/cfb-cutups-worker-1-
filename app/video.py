@@ -35,7 +35,9 @@ def _ok_content_type(ct: str | None):
 async def http_stream(
     url: str,
     dest: str,
-    progress_cb: Optional[Callable[[float, Optional[float], str], None]] = None,
+    progress_cb: Optional[
+        Callable[[Optional[float], Optional[float], str, Optional[Dict[str, float]]], None]
+    ] = None,
     cancel_ev: Optional[asyncio.Event] = None,
 ):
     os.makedirs(os.path.dirname(dest), exist_ok=True)
@@ -68,14 +70,16 @@ async def http_stream(
                 fh.write(chunk)
                 got += len(chunk)
                 if progress_cb:
+                    meta: Dict[str, float] = {"downloaded_bytes": float(got)}
                     if total:
+                        meta["total_bytes"] = float(total)
                         pct = 100.0 * (got / total)
-                        progress_cb(pct, None, "HTTP download")
+                        progress_cb(pct, None, "HTTP download", meta)
                     else:
                         mb = got // (1024 * 1024)
                         if mb != last_mb:
                             last_mb = mb
-                            progress_cb(None, None, f"HTTP download {mb} MB")
+                            progress_cb(None, None, f"HTTP download {mb} MB", meta)
     logger.info("http_stream_ok")
 
 
@@ -112,13 +116,22 @@ def _ytdlp_opts(dest: str, cookie_path: str | None, progress_cb, cancel_ev):
             total = d.get("total_bytes") or d.get("total_bytes_estimate")
             downloaded = d.get("downloaded_bytes") or 0
             eta = d.get("eta")
+            meta: Dict[str, float] = {"downloaded_bytes": float(downloaded)}
             if total:
+                meta["total_bytes"] = float(total)
                 pct = 100.0 * (downloaded / total)
-                if progress_cb:
-                    progress_cb(pct, float(eta) if eta is not None else None, "Downloading video")
+            else:
+                pct = None
+            if progress_cb:
+                progress_cb(
+                    pct,
+                    float(eta) if eta is not None else None,
+                    "Downloading video",
+                    meta,
+                )
         elif status == "finished":
             if progress_cb:
-                progress_cb(100.0, 0.0, "Download complete")
+                progress_cb(100.0, 0.0, "Download complete", {"downloaded_bytes": float(downloaded)})
 
     opts["progress_hooks"] = [_hook]
     if cookie_path and os.path.exists(cookie_path):
@@ -153,7 +166,7 @@ async def ytdlp_download(url: str, dest: str, progress_cb=None, cancel_ev=None):
                 os.replace(src, dest)
             logger.info("ytdlp_ok", extra={"variant": idx})
             if progress_cb:
-                progress_cb(100.0, 0.0, "Download complete")
+                progress_cb(100.0, 0.0, "Download complete", None)
             return
         except (DownloadError, ExtractorError, Exception) as exc:  # noqa: BLE001
             if cancel_ev and cancel_ev.is_set():

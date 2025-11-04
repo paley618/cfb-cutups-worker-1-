@@ -102,6 +102,10 @@ class Settings(BaseSettings):
         default=0.75,
         description="Minimum interval in seconds between status heartbeat emissions.",
     )
+    ETA_SMOOTHING: float = Field(
+        default=0.25,
+        description="Smoothing factor (0..1) applied to ETA updates; higher reacts faster.",
+    )
 
     DETECTOR_BACKEND: Literal["auto", "opencv", "ffprobe"] = Field(
         default="auto",
