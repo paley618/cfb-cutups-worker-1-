@@ -184,7 +184,42 @@ document.addEventListener('DOMContentLoaded', () => {
     line.className = 'status-line';
     line.textContent = `${label} — ${pct.toFixed(1)}%${etaTxt}${detail}`;
     statusEl.appendChild(line);
+    const cfbdBadgeId = 'cfbd-badge';
+    let cfbd = document.getElementById(cfbdBadgeId);
+    if (!cfbd) {
+      cfbd = document.createElement('span');
+      cfbd.id = cfbdBadgeId;
+      cfbd.className = 'badge';
+      statusEl.appendChild(document.createTextNode(' '));
+      statusEl.appendChild(cfbd);
+    }
+    if (job.cfbd_state === 'ready') {
+      cfbd.textContent = 'CFBD: ready';
+      cfbd.className = 'badge badge-success';
+    } else if (job.cfbd_state === 'unavailable') {
+      cfbd.textContent = 'CFBD: unavailable';
+      cfbd.className = 'badge badge-warn';
+    } else if (job.cfbd_state === 'pending' || job.cfbd_state == null) {
+      cfbd.textContent = 'CFBD: syncing…';
+      cfbd.className = 'badge badge-info';
+    } else {
+      cfbd.textContent = 'CFBD: ' + job.cfbd_state;
+      cfbd.className = 'badge';
+    }
     statusEl.appendChild(renderTimeline(job));
+    const cfbdMsgId = 'cfbd-msg';
+    let cfbdMsg = document.getElementById(cfbdMsgId);
+    if (!cfbdMsg) {
+      cfbdMsg = document.createElement('div');
+      cfbdMsg.id = cfbdMsgId;
+      cfbdMsg.className = 'note';
+      statusEl.appendChild(cfbdMsg);
+    }
+    const cfbdText = (job.cfbd_state === 'unavailable' && job.cfbd_reason)
+      ? `Using vision-only: ${job.cfbd_reason}`
+      : '';
+    cfbdMsg.textContent = cfbdText;
+    cfbdMsg.style.display = cfbdText ? 'block' : 'none';
 
     const metaParts = [];
     if (job.elapsed_seconds != null) metaParts.push(`Elapsed: ${job.elapsed_seconds}s`);
