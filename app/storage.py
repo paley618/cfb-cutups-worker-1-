@@ -93,11 +93,21 @@ class S3Storage:
     def write_file(self, src_local: str, dest_path: str) -> None:
         key = self._object_key(dest_path)
         content_type, _ = mimetypes.guess_type(dest_path)
-        extra: dict[str, str] = {"ContentType": content_type or "application/octet-stream"}
+        extra: dict[str, str] = {}
+        if content_type:
+            extra["ContentType"] = content_type
+        else:
+            extra["ContentType"] = "application/octet-stream"
 
         if dest_path.endswith(".json"):
+            extra["ContentType"] = "application/json"
             extra.setdefault("CacheControl", "no-cache")
-        elif dest_path.endswith((".zip", ".mp4", ".jpg")):
+        elif dest_path.endswith(".mp4"):
+            extra["ContentType"] = "video/mp4"
+            extra.setdefault("CacheControl", "public, max-age=31536000, immutable")
+        elif dest_path.endswith(".zip"):
+            extra.setdefault("CacheControl", "public, max-age=31536000, immutable")
+        elif dest_path.endswith(".jpg"):
             extra.setdefault("CacheControl", "public, max-age=31536000, immutable")
 
         self._client.upload_file(

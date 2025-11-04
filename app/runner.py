@@ -18,6 +18,7 @@ from .fallback import timegrid_windows
 from .storage import get_storage
 from .uploads import resolve_upload
 from .settings import settings
+from .packager import concat_clips_to_mp4
 
 logger = logging.getLogger(__name__)
 
@@ -787,6 +788,44 @@ class JobRunner:
                     {"used": bool(cfbd_used), "plays": int(cfbd_play_count)}
                 )
 
+                clip_abs = [os.path.join(tmp_dir, clip["file"]) for clip in clips_meta]
+
+                reel_url: Optional[str] = None
+                reel_dur = 0.0
+                if clip_abs:
+                    reel_local = os.path.join(tmp_dir, "reel.mp4")
+                    try:
+                        self._set_stage(
+                            job_id,
+                            "packaging",
+                            pct=96.0,
+                            detail="Combining into reel.mp4",
+                            eta=self._eta(job_id),
+                        )
+                        reel_dur = concat_clips_to_mp4(
+                            clip_abs,
+                            reel_local,
+                            progress_cb=lambda pct, _eta, msg: self._set_stage(
+                                job_id,
+                                "packaging",
+                                pct=pct,
+                                detail=msg,
+                                eta=self._eta(job_id),
+                            ),
+                            reencode=settings.CONCAT_REENCODE,
+                        )
+                        reel_key = f"{job_id}/reel.mp4"
+                        await asyncio.to_thread(storage.write_file, reel_local, reel_key)
+                        reel_url = storage.url_for(reel_key)
+                    except Exception:
+                        reel_url = None
+                        reel_dur = 0.0
+                        logger.exception("reel_combine_failed", extra={"job_id": job_id})
+
+                manifest_outputs = manifest.setdefault("outputs", {})
+                manifest_outputs["reel_url"] = reel_url
+                manifest_outputs["reel_duration_sec"] = round(reel_dur, 3)
+
                 manifest_path = os.path.join(tmp_dir, "manifest.json")
                 with open(manifest_path, "w", encoding="utf-8") as f:
                     json.dump(manifest, f, indent=2)
@@ -806,7 +845,7 @@ class JobRunner:
                 self._set_stage(
                     job_id,
                     "packaging",
-                    pct=95.0,
+                    pct=99.0,
                     detail="Uploading",
                     eta=self._eta(job_id),
                 )
@@ -816,6 +855,7 @@ class JobRunner:
                 result = {
                     "manifest_url": storage.url_for(manifest_key),
                     "archive_url": storage.url_for(archive_key),
+                    "reel_url": reel_url,
                     "manifest": manifest,
                 }
                 self.jobs[job_id]["result"] = result
