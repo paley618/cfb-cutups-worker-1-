@@ -74,6 +74,48 @@ document.addEventListener('DOMContentLoaded', () => {
     if (Array.isArray(debug.candidates) && debug.candidates.length) {
       addLine(`Debug candidates: ${debug.candidates.length} imgs`);
     }
+
+    const confSummary = manifest.quality?.confidence || {};
+    const hideThreshold = manifest.settings?.CONF_HIDE_THRESHOLD ?? 40;
+    addLine(
+      `Confidence — median ${confSummary.median ?? 0} (p25 ${confSummary.p25 ?? 0}, p75 ${confSummary.p75 ?? 0}) • low (<${hideThreshold}): ${confSummary.low_count ?? 0}/${confSummary.total ?? 0}`,
+    );
+
+    if (statusEl) {
+      let toggleLabel = document.getElementById('hideLowConfLabel');
+      if (!toggleLabel) {
+        const chk = document.createElement('input');
+        chk.type = 'checkbox';
+        chk.id = 'hideLowConf';
+        chk.checked = true;
+        chk.dataset.threshold = String(hideThreshold);
+        toggleLabel = document.createElement('label');
+        toggleLabel.id = 'hideLowConfLabel';
+        toggleLabel.appendChild(chk);
+        toggleLabel.appendChild(document.createTextNode(` Hide clips < ${hideThreshold} confidence`));
+        statusEl.appendChild(document.createElement('br'));
+        statusEl.appendChild(toggleLabel);
+        const renderClips = () => {
+          const thresh = Number(chk.dataset.threshold ?? hideThreshold);
+          const minConf = chk.checked ? thresh : 0;
+          document.dispatchEvent(
+            new CustomEvent('clips-filter-change', { detail: { minConfidence: minConf } }),
+          );
+        };
+        chk.addEventListener('change', renderClips);
+        renderClips();
+      } else {
+        const chk = toggleLabel.querySelector('#hideLowConf');
+        if (chk) {
+          chk.dataset.threshold = String(hideThreshold);
+          chk.dispatchEvent(new Event('change'));
+        }
+        const textNode = toggleLabel.childNodes[toggleLabel.childNodes.length - 1];
+        if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+          textNode.textContent = ` Hide clips < ${hideThreshold} confidence`;
+        }
+      }
+    }
   };
 
   const attachCfbdSummary = (manifest) => {
