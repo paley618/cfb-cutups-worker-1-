@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const stageChips = ['Queued', 'Downloading', 'Detecting', 'Bucketing', 'Segmenting', 'Packaging', 'Completed', 'Failed', 'Canceled'];
+  const stageChips = ['Queued', 'Downloading', 'Detecting', 'Bucketing', 'Segmenting', 'Packaging', 'Uploading', 'Completed', 'Failed', 'Canceled'];
 
   const form = document.getElementById('job-form');
   const statusEl = document.getElementById('status');
@@ -171,9 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const renderStatus = (job, cancelBtn) => {
+    const progress = job.progress || {};
     const pct = typeof job.pct === 'number' ? job.pct : 0;
     const detail = job.detail ? ` • ${job.detail}` : '';
-    const etaTxt = humanEta(job.eta_sec);
+    const etaSource = job.eta_sec != null ? job.eta_sec : progress.eta_seconds;
+    const etaTxt = humanEta(etaSource);
     const key = stageKey(job);
     const label = stageChips.find((name) => name.toLowerCase() === key) || (job.stage || job.status || 'queued');
 
@@ -184,13 +186,25 @@ document.addEventListener('DOMContentLoaded', () => {
     statusEl.appendChild(line);
     statusEl.appendChild(renderTimeline(job));
 
-    if (job.elapsed_seconds != null || job.idle_seconds != null) {
+    const metaParts = [];
+    if (job.elapsed_seconds != null) metaParts.push(`Elapsed: ${job.elapsed_seconds}s`);
+    if (job.idle_seconds != null) metaParts.push(`Idle: ${job.idle_seconds}s`);
+    if (progress.eta_seconds != null) metaParts.push(`ETA: ${progress.eta_seconds}s`);
+    if (progress.clips_done != null && progress.clips_total != null) {
+      metaParts.push(`Clips: ${progress.clips_done}/${progress.clips_total}`);
+    }
+    if (progress.downloaded_mb != null) {
+      if (progress.total_mb != null) {
+        metaParts.push(`Downloaded: ${progress.downloaded_mb}/${progress.total_mb} MB`);
+      } else {
+        metaParts.push(`Downloaded: ${progress.downloaded_mb} MB`);
+      }
+    }
+    if (progress.last_uploaded) metaParts.push(`Last upload: ${progress.last_uploaded}`);
+    if (metaParts.length) {
       const metaLine = document.createElement('div');
       metaLine.className = 'status-extra muted';
-      const parts = [];
-      if (job.elapsed_seconds != null) parts.push(`Elapsed: ${job.elapsed_seconds}s`);
-      if (job.idle_seconds != null) parts.push(`Idle: ${job.idle_seconds}s`);
-      metaLine.textContent = parts.join(' • ');
+      metaLine.textContent = metaParts.join(' • ');
       statusEl.appendChild(metaLine);
     }
 
@@ -200,7 +214,14 @@ document.addEventListener('DOMContentLoaded', () => {
         cancelBtn.disabled = true;
         if (cancelBtn.parentElement) cancelBtn.parentElement.removeChild(cancelBtn);
       } else {
-        cancelBtn.disabled = cancelBtn.dataset.locked === '1';
+        if (job.cancel) {
+          cancelBtn.disabled = true;
+          cancelBtn.dataset.locked = '1';
+          cancelBtn.textContent = 'Cancel Requested';
+        } else {
+          cancelBtn.disabled = cancelBtn.dataset.locked === '1';
+          cancelBtn.textContent = 'Cancel';
+        }
         cancelBtn.style.marginTop = '8px';
         statusEl.appendChild(cancelBtn);
       }
@@ -278,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cancelBtn = document.createElement('button');
     cancelBtn.textContent = 'Cancel';
+    cancelBtn.className = 'btn-secondary';
     cancelBtn.addEventListener('click', async (e) => {
       e.preventDefault();
       cancelBtn.disabled = true;

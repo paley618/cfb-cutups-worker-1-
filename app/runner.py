@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-import os, json, zipfile, uuid, asyncio, time, logging, shutil
+import os, json, zipfile, uuid, asyncio, time, logging, shutil, contextlib
 from bisect import bisect_left, bisect_right
 from statistics import median
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Awaitable, Dict, List, Optional, Tuple
 
 from .video import download_game_video, probe_duration_sec, file_size_bytes
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
@@ -29,6 +29,10 @@ from .monitor import JobMonitor
 logger = logging.getLogger(__name__)
 
 
+class JobCancelled(Exception):
+    """Raised when a running job has been cancelled."""
+
+
 STAGES = (
     "queued",
     "downloading",
@@ -36,6 +40,7 @@ STAGES = (
     "bucketing",
     "segmenting",
     "packaging",
+    "uploading",
     "completed",
     "failed",
     "canceled",
@@ -78,6 +83,8 @@ class JobRunner:
             "submitted_at": now,
             "last_heartbeat_at": now,
             "_stage_ends_at": None,
+            "progress": {},
+            "cancel": False,
         }
         self._cancels[job_id] = asyncio.Event()
 
@@ -90,6 +97,8 @@ class JobRunner:
             job = self.jobs.get(job_id) or {}
             now = time.time()
             last = float(job.get("last_heartbeat_at") or job.get("submitted_at") or now)
+            if job.get("cancel"):
+                raise JobCancelled("Job cancelled")
             if now - last > ttl:
                 raise RuntimeError(
                     f"Job watchdog expired: idle {int(now - last)}s > {int(ttl)}s"
@@ -98,6 +107,22 @@ class JobRunner:
                 raise RuntimeError(
                     f"Job time limit exceeded: {int(now - start)}s > {int(hard)}s"
                 )
+
+    async def _run_with_watchdog(self, job_coro: Awaitable[Any], job_id: str):
+        watchdog = asyncio.create_task(self._watchdog(job_id))
+        try:
+            return await job_coro
+        finally:
+            watchdog.cancel()
+            with contextlib.suppress(asyncio.CancelledError):
+                await watchdog
+
+    def _ensure_not_cancelled(self, job_id: str, cancel_ev: asyncio.Event) -> None:
+        if cancel_ev.is_set():
+            raise JobCancelled("Job cancelled")
+        job = self.jobs.get(job_id)
+        if job and job.get("cancel"):
+            raise JobCancelled("Job cancelled")
 
     def _set_stage(
         self,
@@ -212,21 +237,36 @@ class JobRunner:
         return self.jobs.get(job_id)
 
     def cancel(self, job_id: str) -> bool:
-        ev = self._cancels.get(job_id)
-        if not ev:
+        job = self.jobs.get(job_id)
+        if not job:
             return False
-        ev.set()
-        self._set_stage(job_id, "canceled", pct=self.jobs.get(job_id, {}).get("pct", 0.0), detail="Canceled by user", eta=0.0)
+        job["cancel"] = True
+        job.setdefault("progress", {})
+        job["detail"] = job.get("detail") or "Cancel requested"
+        job["last_heartbeat_at"] = time.time()
+        self.jobs[job_id] = job
+        ev = self._cancels.get(job_id)
+        if ev:
+            ev.set()
         return True
 
-    async def _run_one(self, job_id: str, submission):
+    async def _job_exec(self, job_id: str, submission):
         cancel_ev = self._cancels[job_id]
-        monitor = JobMonitor(self.jobs, job_id, settings.JOB_STATUS_HEARTBEAT_MIN_INTERVAL)
+        monitor = JobMonitor(
+            self.jobs,
+            job_id,
+            settings.JOB_STATUS_HEARTBEAT_MIN_INTERVAL,
+            settings.ETA_SMOOTHING,
+        )
         async with self.sema:
-            watchdog_task: Optional[asyncio.Task] = None
-
-            def _heartbeat(stage: str, pct: Optional[float] = None, detail: Optional[str] = None) -> None:
-                monitor.touch(stage=stage, pct=pct, detail=detail)
+            
+            def _heartbeat(
+                stage: str,
+                pct: Optional[float] = None,
+                detail: Optional[str] = None,
+                fields: Optional[Dict[str, Any]] = None,
+            ) -> None:
+                monitor.touch(stage=stage, pct=pct, detail=detail, fields=fields)
 
             try:
                 logger.info("job_start", extra={"job_id": job_id})
@@ -236,8 +276,6 @@ class JobRunner:
                 storage = get_storage()
 
                 _heartbeat("queued", pct=0.0, detail="queued")
-                watchdog_task = asyncio.create_task(self._watchdog(job_id))
-
                 src_url = str(submission.video_url or submission.presigned_url or "")
                 upload_id = submission.upload_id
 
@@ -251,11 +289,23 @@ class JobRunner:
                 )
                 _heartbeat("downloading", pct=0.0, detail="Starting download")
 
-                def _dl_progress(pct: Optional[float], eta_sec: Optional[float], detail: str = "") -> None:
-                    if cancel_ev.is_set():
-                        return
+                def _dl_progress(
+                    pct: Optional[float],
+                    eta_sec: Optional[float],
+                    detail: str = "",
+                    meta: Optional[Dict[str, float]] = None,
+                ) -> None:
+                    self._ensure_not_cancelled(job_id, cancel_ev)
                     pct_value = float(pct or 0.0)
                     scaled = min(10.0, max(0.0, pct_value * 0.10))
+                    fields: Dict[str, Any] = {}
+                    if meta:
+                        downloaded = meta.get("downloaded_bytes")
+                        total_bytes = meta.get("total_bytes")
+                        if downloaded is not None:
+                            fields["downloaded_mb"] = int(float(downloaded) / (1024 * 1024))
+                        if total_bytes:
+                            fields["total_mb"] = int(float(total_bytes) / (1024 * 1024))
                     self._set_stage(
                         job_id,
                         "downloading",
@@ -263,17 +313,32 @@ class JobRunner:
                         detail=detail or "Downloading",
                         eta=self._eta(job_id),
                     )
-                    _heartbeat("downloading", pct=scaled, detail=detail or "Downloading")
+                    _heartbeat(
+                        "downloading",
+                        pct=scaled,
+                        detail=detail or "Downloading",
+                        fields=fields or None,
+                    )
 
                 if src_url:
-                    await download_game_video(
-                        src_url,
-                        video_path,
-                        progress_cb=_dl_progress,
-                        cancel_ev=cancel_ev,
-                    )
+                    try:
+                        await download_game_video(
+                            src_url,
+                            video_path,
+                            progress_cb=_dl_progress,
+                            cancel_ev=cancel_ev,
+                        )
+                    except Exception as exc:
+                        if cancel_ev.is_set() or self.jobs.get(job_id, {}).get("cancel"):
+                            raise JobCancelled("Job cancelled during download") from exc
+                        raise
                     self._set_stage(job_id, "downloading", pct=10.0, detail="Download complete", eta=0.0)
-                    _heartbeat("downloading", pct=10.0, detail="Download complete")
+                    _heartbeat(
+                        "downloading",
+                        pct=10.0,
+                        detail="Download complete",
+                        fields={"eta_seconds": None},
+                    )
                 elif upload_id:
                     upload_path = resolve_upload(upload_id)
                     if not upload_path:
@@ -287,7 +352,12 @@ class JobRunner:
                     )
                     await asyncio.to_thread(shutil.copyfile, upload_path, video_path)
                     self._set_stage(job_id, "downloading", pct=10.0, detail="Upload copied", eta=0.0)
-                    _heartbeat("downloading", pct=10.0, detail="Upload copied")
+                    _heartbeat(
+                        "downloading",
+                        pct=10.0,
+                        detail="Upload copied",
+                        fields={"eta_seconds": None},
+                    )
                 else:
                     raise RuntimeError("No source provided")
 
@@ -299,8 +369,7 @@ class JobRunner:
                 }
                 self.jobs[job_id]["source"] = source_info
 
-                if cancel_ev.is_set():
-                    return
+                self._ensure_not_cancelled(job_id, cancel_ev)
 
                 roi_box: Tuple[int, int, int, int] = (0, 0, 0, 0)
                 if settings.SCOREBUG_ENABLE:
@@ -364,11 +433,13 @@ class JobRunner:
                 merge_gap = min(settings.MERGE_GAP_SEC, 0.75)
 
                 def _det_prog(pct: Optional[float], _eta: Optional[float], msg: str | None):
-                    if cancel_ev.is_set():
-                        return
+                    self._ensure_not_cancelled(job_id, cancel_ev)
                     base_pct = float(pct or 0.0)
                     scaled = min(85.0, 12.0 + (0.73 * base_pct))
                     detail_msg = msg or "Detecting plays"
+                    fields: Dict[str, Any] = {}
+                    if _eta is not None:
+                        fields["eta_seconds"] = int(float(_eta))
                     self._set_stage(
                         job_id,
                         "detecting",
@@ -376,7 +447,12 @@ class JobRunner:
                         detail=detail_msg,
                         eta=self._eta(job_id),
                     )
-                    _heartbeat("detecting", pct=scaled, detail=detail_msg)
+                    _heartbeat(
+                        "detecting",
+                        pct=scaled,
+                        detail=detail_msg,
+                        fields=fields or None,
+                    )
 
                 self._start_stage(
                     job_id,
@@ -412,8 +488,7 @@ class JobRunner:
                     eta=self._eta(job_id),
                 )
                 _heartbeat("detecting", pct=25.0, detail=f"Audio spikes: {metrics['audio_spikes']}")
-                if cancel_ev.is_set():
-                    return
+                self._ensure_not_cancelled(job_id, cancel_ev)
 
                 self._set_stage(
                     job_id,
@@ -452,8 +527,7 @@ class JobRunner:
                     pct=45.0,
                     detail=f"Vision candidates: {metrics['vision_candidates']}",
                 )
-                if cancel_ev.is_set():
-                    return
+                self._ensure_not_cancelled(job_id, cancel_ev)
 
                 try:
                     scene_cuts = await asyncio.to_thread(
@@ -554,7 +628,8 @@ class JobRunner:
                         )
                         cfbd_plays = []
 
-                if cfbd_plays and not cancel_ev.is_set():
+                if cfbd_plays:
+                    self._ensure_not_cancelled(job_id, cancel_ev)
                     self._set_stage(
                         job_id,
                         "detecting",
@@ -764,7 +839,8 @@ class JobRunner:
                             pct=65.0,
                             detail="CFBD mapping unavailable; using fallback",
                         )
-                elif cfbd_summary.get("requested") and not cancel_ev.is_set():
+                elif cfbd_summary.get("requested"):
+                    self._ensure_not_cancelled(job_id, cancel_ev)
                     self._set_stage(
                         job_id,
                         "detecting",
@@ -873,8 +949,7 @@ class JobRunner:
                 else:
                     cfbd_summary["fallback_clips"] = len(windows) if fallback_used else 0
 
-                if cancel_ev.is_set():
-                    return
+                self._ensure_not_cancelled(job_id, cancel_ev)
 
                 if not clip_entries:
                     source_label = "fallback" if fallback_used else "vision"
@@ -1124,11 +1199,10 @@ class JobRunner:
                 os.makedirs(thumbs_dir, exist_ok=True)
 
                 total_clips = len(ordered)
-                done_dur = 0.0
+                clip_timer_start = monitor.now()
 
                 for idx, clip in enumerate(ordered, start=1):
-                    if cancel_ev.is_set():
-                        return
+                    self._ensure_not_cancelled(job_id, cancel_ev)
 
                     cid = f"{idx:04d}"
                     start = float(clip["start"])
@@ -1164,24 +1238,33 @@ class JobRunner:
                         }
                     )
                     clips_meta.append(clip)
-                    done_dur += seg_dur
-
-                    progress = 20.0 + 70.0 * (done_dur / max(0.01, total_clip_dur))
+                    frac = idx / max(1, total_clips)
+                    elapsed = max(0.0, monitor.now() - clip_timer_start)
+                    eta_seconds = None
+                    if frac > 0:
+                        eta_est = (elapsed / frac) - elapsed
+                        if eta_est >= 0:
+                            eta_seconds = int(eta_est)
+                    progress = 20.0 + 70.0 * frac
                     self._set_stage(
                         job_id,
                         "segmenting",
                         pct=progress,
                         detail=f"Cutting {idx}/{total_clips} (≈{int(seg_dur)}s)",
-                        eta=self._eta(job_id),
+                        eta=eta_seconds,
                     )
                     _heartbeat(
                         "segmenting",
                         pct=progress,
                         detail=f"Cutting {idx}/{total_clips} (≈{int(seg_dur)}s)",
+                        fields={
+                            "clips_done": idx,
+                            "clips_total": total_clips,
+                            "eta_seconds": eta_seconds,
+                        },
                     )
 
-                if cancel_ev.is_set():
-                    return
+                self._ensure_not_cancelled(job_id, cancel_ev)
 
                 conf_vals = [float(clip.get("confidence", 0.0)) for clip in clips_meta]
                 if conf_vals:
@@ -1216,6 +1299,7 @@ class JobRunner:
                     "packaging",
                     pct=self.jobs.get(job_id, {}).get("pct"),
                     detail="Packaging ZIP/manifest",
+                    fields={"eta_seconds": None},
                 )
 
                 det_meta = {
@@ -1276,6 +1360,7 @@ class JobRunner:
 
                 reel_url: Optional[str] = None
                 reel_dur = 0.0
+                reel_upload: Optional[Tuple[str, str]] = None
                 if clip_abs:
                     reel_local = os.path.join(tmp_dir, "reel.mp4")
                     try:
@@ -1289,14 +1374,20 @@ class JobRunner:
                         _heartbeat("packaging", pct=96.0, detail="Combining into reel.mp4")
                         def _packaging_progress(pct: float, _eta: Optional[float], msg: str | None):
                             detail_msg = msg or "Packaging"
+                            eta_val = int(float(_eta)) if _eta is not None else None
                             self._set_stage(
                                 job_id,
                                 "packaging",
                                 pct=pct,
                                 detail=detail_msg,
-                                eta=self._eta(job_id),
+                                eta=eta_val,
                             )
-                            _heartbeat("packaging", pct=pct, detail=detail_msg)
+                            _heartbeat(
+                                "packaging",
+                                pct=pct,
+                                detail=detail_msg,
+                                fields={"eta_seconds": eta_val},
+                            )
 
                         reel_dur = concat_clips_to_mp4(
                             clip_abs,
@@ -1305,7 +1396,7 @@ class JobRunner:
                             reencode=settings.CONCAT_REENCODE,
                         )
                         reel_key = f"{job_id}/reel.mp4"
-                        await asyncio.to_thread(storage.write_file, reel_local, reel_key)
+                        reel_upload = (reel_local, reel_key)
                         reel_url = storage.url_for(reel_key)
                     except Exception:
                         reel_url = None
@@ -1321,28 +1412,59 @@ class JobRunner:
                     json.dump(manifest, f, indent=2)
 
                 zip_path = os.path.join(tmp_dir, "output.zip")
-                _heartbeat("packaging", pct=92.0, detail="Zipping outputs")
+                _heartbeat(
+                    "packaging",
+                    pct=92.0,
+                    detail="Zipping outputs",
+                    fields={"eta_seconds": None},
+                )
                 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as archive:
                     archive.write(manifest_path, "manifest.json")
                     for clip in clips_meta:
                         archive.write(os.path.join(tmp_dir, clip["file"]), clip["file"])
                         archive.write(os.path.join(tmp_dir, clip["thumb"]), clip["thumb"])
 
-                if cancel_ev.is_set():
-                    return
+                    self._ensure_not_cancelled(job_id, cancel_ev)
 
                 archive_key = f"{job_id}/output.zip"
                 manifest_key = f"{job_id}/manifest.json"
+                uploads: List[Tuple[str, str, str]] = []
+                if reel_upload:
+                    reel_local, reel_key = reel_upload
+                    uploads.append(("reel.mp4", reel_key, reel_local))
+                uploads.append(("output.zip", archive_key, zip_path))
+                uploads.append(("manifest.json", manifest_key, manifest_path))
+
                 self._set_stage(
                     job_id,
-                    "packaging",
-                    pct=99.0,
-                    detail="Uploading",
-                    eta=self._eta(job_id),
+                    "uploading",
+                    pct=98.0,
+                    detail="Uploading artifacts",
+                    eta=None,
                 )
-                _heartbeat("packaging", pct=99.0, detail="Uploading")
-                await asyncio.to_thread(storage.write_file, zip_path, archive_key)
-                await asyncio.to_thread(storage.write_file, manifest_path, manifest_key)
+                _heartbeat(
+                    "uploading",
+                    pct=98.0,
+                    detail="Uploading artifacts",
+                    fields={"eta_seconds": None},
+                )
+                for idx, (label, key, path) in enumerate(uploads, start=1):
+                    self._ensure_not_cancelled(job_id, cancel_ev)
+                    await asyncio.to_thread(storage.write_file, path, key)
+                    pct = min(99.5, 98.0 + idx * 0.5)
+                    self._set_stage(
+                        job_id,
+                        "uploading",
+                        pct=pct,
+                        detail=f"Uploaded {label}",
+                        eta=None,
+                    )
+                    _heartbeat(
+                        "uploading",
+                        pct=pct,
+                        detail=f"Uploaded {label}",
+                        fields={"last_uploaded": label, "eta_seconds": None},
+                    )
 
                 result = {
                     "manifest_url": storage.url_for(manifest_key),
@@ -1353,11 +1475,31 @@ class JobRunner:
                 self.jobs[job_id]["result"] = result
 
                 self._set_stage(job_id, "completed", pct=100.0, detail="Ready", eta=0.0)
-                _heartbeat("completed", pct=100.0, detail="Ready")
+                _heartbeat(
+                    "completed",
+                    pct=100.0,
+                    detail="Ready",
+                    fields={"eta_seconds": None},
+                )
                 logger.info("job_complete", extra={"job_id": job_id})
+            except JobCancelled:
+                pct = self.jobs.get(job_id, {}).get("pct", 0.0)
+                self._set_stage(
+                    job_id,
+                    "canceled",
+                    pct=pct,
+                    detail="Canceled by user",
+                    eta=0.0,
+                )
+                _heartbeat(
+                    "canceled",
+                    pct=pct,
+                    detail="Canceled by user",
+                    fields={"eta_seconds": None},
+                )
+                logger.info("job_cancelled", extra={"job_id": job_id})
+                return
             except Exception as exc:
-                if cancel_ev.is_set():
-                    return
                 job = self.jobs.get(job_id)
                 if job is not None:
                     job["error"] = str(exc)
@@ -1372,13 +1514,11 @@ class JobRunner:
                     "failed",
                     pct=self.jobs.get(job_id, {}).get("pct", 0.0),
                     detail=str(exc),
+                    fields={"eta_seconds": None},
                 )
                 logger.exception("job_failed", extra={"job_id": job_id})
             finally:
-                if watchdog_task:
-                    watchdog_task.cancel()
-                    try:
-                        await watchdog_task
-                    except asyncio.CancelledError:
-                        pass
                 self._cancels.pop(job_id, None)
+
+    async def _run_one(self, job_id: str, submission):
+        await self._run_with_watchdog(self._job_exec(job_id, submission), job_id)

@@ -159,6 +159,8 @@ def get_job(job_id: str):
         "last_heartbeat_at": last,
         "idle_seconds": None if last is None else round(now - last),
         "elapsed_seconds": None if submitted is None else round(now - submitted),
+        "progress": job.get("progress") or {},
+        "cancel": bool(job.get("cancel", False)),
     }
 
 
