@@ -6,8 +6,6 @@ import subprocess
 from typing import Callable, Dict, List, Optional, Tuple
 
 import httpx
-from yt_dlp import YoutubeDL
-from yt_dlp.utils import DownloadError, ExtractorError
 
 from .settings import settings
 
@@ -16,6 +14,12 @@ logger = logging.getLogger(__name__)
 
 class NotDirectVideoContent(Exception):
     pass
+
+
+def _progress_bytes_to_pct(downloaded: int, total: int) -> Optional[float]:
+    if not total or total <= 0:
+        return None
+    return max(0.0, min(100.0, (downloaded / float(total)) * 100.0))
 
 
 def _ok_content_type(ct: str | None):
@@ -101,7 +105,13 @@ _COMMON_YTDLP = {
 }
 
 
-def _ytdlp_opts(dest: str, cookie_path: str | None, progress_cb, cancel_ev):
+def _ytdlp_opts(
+    dest: str,
+    cookie_path: str | None,
+    progress_cb,
+    cancel_ev,
+    download_error_cls,
+):
     dest_dir = os.path.dirname(dest)
     os.makedirs(dest_dir, exist_ok=True)
     base = os.path.splitext(os.path.basename(dest))[0]
@@ -109,19 +119,18 @@ def _ytdlp_opts(dest: str, cookie_path: str | None, progress_cb, cancel_ev):
     opts["outtmpl"] = os.path.join(dest_dir, base + ".%(ext)s")
 
     def _hook(d):
+        nonlocal downloaded, total
         if cancel_ev and cancel_ev.is_set():
-            raise DownloadError("canceled")
+            raise download_error_cls("canceled")
         status = d.get("status")
         if status == "downloading":
-            total = d.get("total_bytes") or d.get("total_bytes_estimate")
-            downloaded = d.get("downloaded_bytes") or 0
+            total = int(d.get("total_bytes") or d.get("total_bytes_estimate") or 0)
+            downloaded = int(d.get("downloaded_bytes") or 0)
             eta = d.get("eta")
             meta: Dict[str, float] = {"downloaded_bytes": float(downloaded)}
             if total:
                 meta["total_bytes"] = float(total)
-                pct = 100.0 * (downloaded / total)
-            else:
-                pct = None
+            pct = _progress_bytes_to_pct(downloaded, total)
             if progress_cb:
                 progress_cb(
                     pct,
@@ -131,8 +140,26 @@ def _ytdlp_opts(dest: str, cookie_path: str | None, progress_cb, cancel_ev):
                 )
         elif status == "finished":
             if progress_cb:
-                progress_cb(100.0, 0.0, "Download complete", {"downloaded_bytes": float(downloaded)})
+                finished_total = int(d.get("total_bytes") or total or 0)
+                finished_downloaded = int(
+                    d.get("downloaded_bytes")
+                    or d.get("total_bytes")
+                    or d.get("total_bytes_estimate")
+                    or downloaded
+                    or 0
+                )
+                if finished_total:
+                    total = finished_total
+                if finished_downloaded:
+                    downloaded = finished_downloaded
+                meta: Dict[str, float] = {"downloaded_bytes": float(downloaded)}
+                if total:
+                    meta["total_bytes"] = float(total)
+                pct = 100.0 if total else None
+                progress_cb(pct, 0.0, "Download complete", meta)
 
+    downloaded = 0
+    total = 0
     opts["progress_hooks"] = [_hook]
     if cookie_path and os.path.exists(cookie_path):
         opts["cookiefile"] = cookie_path
@@ -140,11 +167,17 @@ def _ytdlp_opts(dest: str, cookie_path: str | None, progress_cb, cancel_ev):
 
 
 async def ytdlp_download(url: str, dest: str, progress_cb=None, cancel_ev=None):
+    try:
+        from yt_dlp import YoutubeDL
+        from yt_dlp.utils import DownloadError, ExtractorError
+    except Exception as exc:  # pragma: no cover
+        raise RuntimeError(f"yt-dlp not available: {exc!r}") from exc
+
     cookie_path = settings.YTDLP_COOKIES_PATH if settings.YTDLP_COOKIES_B64 else None
     variants = [None, {"youtube": {"player_client": ["web"]}}]
-    last_err: Exception | None = None
+    last_err: BaseException | None = None
     for idx, extractor_args in enumerate(variants, start=1):
-        opts = _ytdlp_opts(dest, cookie_path, progress_cb, cancel_ev)
+        opts = _ytdlp_opts(dest, cookie_path, progress_cb, cancel_ev, DownloadError)
         if extractor_args:
             opts["extractor_args"] = extractor_args
         logger.info("ytdlp_try", extra={"variant": idx})
@@ -165,8 +198,6 @@ async def ytdlp_download(url: str, dest: str, progress_cb=None, cancel_ev=None):
             if os.path.abspath(src) != os.path.abspath(dest):
                 os.replace(src, dest)
             logger.info("ytdlp_ok", extra={"variant": idx})
-            if progress_cb:
-                progress_cb(100.0, 0.0, "Download complete", None)
             return
         except (DownloadError, ExtractorError, Exception) as exc:  # noqa: BLE001
             if cancel_ev and cancel_ev.is_set():
@@ -174,7 +205,7 @@ async def ytdlp_download(url: str, dest: str, progress_cb=None, cancel_ev=None):
             last_err = exc
             logger.warning("ytdlp_fail", extra={"variant": idx, "err": str(exc)[:200]})
             await asyncio.sleep(1.0 + random.random())
-    raise RuntimeError(f"yt-dlp fallback failed: {last_err}")
+    raise RuntimeError(f"yt-dlp fallback failed: {last_err!r}")
 
 
 async def download_game_video(video_url: str, dest: str, progress_cb=None, cancel_ev=None):
