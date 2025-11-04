@@ -220,7 +220,7 @@ class Settings(BaseSettings):
     )
 
     OCR_SAMPLE_FPS: float = Field(
-        default=1.5,
+        default=2.0,
         description="Sampling rate (frames per second) for scorebug OCR extraction.",
     )
     OCR_ROI_Y0: float = Field(
@@ -231,14 +231,35 @@ class Settings(BaseSettings):
         default=0.96,
         description="Relative bottom of scorebug OCR region of interest (0..1).",
     )
-
-    ALIGN_MAX_GAP_SEC: float = Field(
-        default=6.0,
-        description="Search window around CFBD-estimated snaps for local refinement (seconds).",
+    OCR_MIN_CONF: int = Field(
+        default=55,
+        description="Minimum OCR confidence (0-100) required to keep a detected token.",
     )
-    ALIGN_MIN_MATCHES_PER_PERIOD: int = Field(
+    OCR_DIGIT_ONLY: bool = Field(
+        default=True,
+        description="Restrict Tesseract scorebug OCR to digits and colon characters.",
+    )
+
+    ALIGN_MIN_SAMPLES_PER_PERIOD: int = Field(
+        default=30,
+        description="Minimum OCR samples per period required before fitting DTW alignment.",
+    )
+    ALIGN_DTW_RADIUS: int = Field(
         default=8,
-        description="Minimum OCR samples per period required before fitting alignment.",
+        description="Radius parameter passed to fastdtw when aligning scorebug clocks.",
+    )
+    ALIGN_MAX_SNAP_SHIFT_SEC: float = Field(
+        default=3.0,
+        description="Maximum allowed snap refinement shift away from the DTW estimate (seconds).",
+    )
+
+    REFINE_AUDIO_WINDOW_SEC: float = Field(
+        default=2.5,
+        description="Half-width of the search window for nearby audio spikes during snap refinement.",
+    )
+    REFINE_SCENE_WINDOW_SEC: float = Field(
+        default=2.5,
+        description="Half-width of the search window for local scene cuts during snap refinement.",
     )
 
     MIN_TOTAL_CLIPS: int = Field(

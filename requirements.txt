@@ -12,4 +12,6 @@ scikit-learn>=1.3
 # OpenCV is optional. Install locally if you want the green-field detector.
 # opencv-python-headless==4.9.0.80
 numpy>=1.23
+fastdtw>=0.3.4
+pytesseract>=0.3.10
 soundfile>=0.12
