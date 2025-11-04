@@ -142,6 +142,16 @@ document.addEventListener('DOMContentLoaded', () => {
     statusEl.appendChild(line);
     statusEl.appendChild(renderTimeline(job));
 
+    if (job.elapsed_seconds != null || job.idle_seconds != null) {
+      const metaLine = document.createElement('div');
+      metaLine.className = 'status-extra muted';
+      const parts = [];
+      if (job.elapsed_seconds != null) parts.push(`Elapsed: ${job.elapsed_seconds}s`);
+      if (job.idle_seconds != null) parts.push(`Idle: ${job.idle_seconds}s`);
+      metaLine.textContent = parts.join(' • ');
+      statusEl.appendChild(metaLine);
+    }
+
     const isTerminal = ['completed', 'failed', 'canceled'].includes(key);
     if (cancelBtn) {
       if (isTerminal) {

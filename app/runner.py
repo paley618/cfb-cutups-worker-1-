@@ -21,6 +21,7 @@ from .storage import get_storage
 from .uploads import resolve_upload
 from .settings import settings
 from .packager import concat_clips_to_mp4
+from .monitor import JobMonitor
 
 logger = logging.getLogger(__name__)
 
@@ -61,6 +62,7 @@ class JobRunner:
         self._cancels: Dict[str, asyncio.Event] = {}
 
     def _init_job(self, job_id: str):
+        now = time.time()
         self.jobs[job_id] = {
             "status": "queued",
             "stage": "queued",
@@ -69,10 +71,30 @@ class JobRunner:
             "detail": "",
             "error": None,
             "result": None,
-            "created": time.time(),
+            "created": now,
+            "submitted_at": now,
+            "last_heartbeat_at": now,
             "_stage_ends_at": None,
         }
         self._cancels[job_id] = asyncio.Event()
+
+    async def _watchdog(self, job_id: str) -> None:
+        start = time.time()
+        ttl = float(settings.JOB_HEARTBEAT_TTL_SECONDS)
+        hard = float(settings.JOB_WATCHDOG_SECONDS)
+        while True:
+            await asyncio.sleep(1.0)
+            job = self.jobs.get(job_id) or {}
+            now = time.time()
+            last = float(job.get("last_heartbeat_at") or job.get("submitted_at") or now)
+            if now - last > ttl:
+                raise RuntimeError(
+                    f"Job watchdog expired: idle {int(now - last)}s > {int(ttl)}s"
+                )
+            if now - start > hard:
+                raise RuntimeError(
+                    f"Job time limit exceeded: {int(now - start)}s > {int(hard)}s"
+                )
 
     def _set_stage(
         self,
@@ -94,6 +116,7 @@ class JobRunner:
         if detail is not None:
             job["detail"] = detail
         job["eta_sec"] = eta
+        job["last_heartbeat_at"] = time.time()
         if stage in {"completed", "failed", "canceled"}:
             job["_stage_ends_at"] = None
 
@@ -195,8 +218,12 @@ class JobRunner:
 
     async def _run_one(self, job_id: str, submission):
         cancel_ev = self._cancels[job_id]
+        monitor = JobMonitor(self.jobs, job_id, settings.JOB_STATUS_HEARTBEAT_MIN_INTERVAL)
         async with self.sema:
-            watchdog_deadline = time.time() + 60 * 30  # 30 minutes
+            watchdog_task: Optional[asyncio.Task] = None
+
+            def _heartbeat(stage: str, pct: Optional[float] = None, detail: Optional[str] = None) -> None:
+                monitor.touch(stage=stage, pct=pct, detail=detail)
 
             try:
                 logger.info("job_start", extra={"job_id": job_id})
@@ -204,6 +231,9 @@ class JobRunner:
                 os.makedirs(tmp_dir, exist_ok=True)
                 video_path = os.path.join(tmp_dir, "source.mp4")
                 storage = get_storage()
+
+                _heartbeat("queued", pct=0.0, detail="queued")
+                watchdog_task = asyncio.create_task(self._watchdog(job_id))
 
                 src_url = str(submission.video_url or submission.presigned_url or "")
                 upload_id = submission.upload_id
@@ -216,11 +246,13 @@ class JobRunner:
                     est_sec=max(10.0, src_dur * 0.15),
                     detail="Starting download",
                 )
+                _heartbeat("downloading", pct=0.0, detail="Starting download")
 
-                def _dl_progress(pct: float, eta_sec: Optional[float], detail: str = "") -> None:
+                def _dl_progress(pct: Optional[float], eta_sec: Optional[float], detail: str = "") -> None:
                     if cancel_ev.is_set():
                         return
-                    scaled = min(10.0, max(0.0, pct * 0.10))
+                    pct_value = float(pct or 0.0)
+                    scaled = min(10.0, max(0.0, pct_value * 0.10))
                     self._set_stage(
                         job_id,
                         "downloading",
@@ -228,6 +260,7 @@ class JobRunner:
                         detail=detail or "Downloading",
                         eta=self._eta(job_id),
                     )
+                    _heartbeat("downloading", pct=scaled, detail=detail or "Downloading")
 
                 if src_url:
                     await download_game_video(
@@ -237,6 +270,7 @@ class JobRunner:
                         cancel_ev=cancel_ev,
                     )
                     self._set_stage(job_id, "downloading", pct=10.0, detail="Download complete", eta=0.0)
+                    _heartbeat("downloading", pct=10.0, detail="Download complete")
                 elif upload_id:
                     upload_path = resolve_upload(upload_id)
                     if not upload_path:
@@ -250,6 +284,7 @@ class JobRunner:
                     )
                     await asyncio.to_thread(shutil.copyfile, upload_path, video_path)
                     self._set_stage(job_id, "downloading", pct=10.0, detail="Upload copied", eta=0.0)
+                    _heartbeat("downloading", pct=10.0, detail="Upload copied")
                 else:
                     raise RuntimeError("No source provided")
 
@@ -315,12 +350,28 @@ class JobRunner:
                 )
                 merge_gap = min(settings.MERGE_GAP_SEC, 0.75)
 
+                def _det_prog(pct: Optional[float], _eta: Optional[float], msg: str | None):
+                    if cancel_ev.is_set():
+                        return
+                    base_pct = float(pct or 0.0)
+                    scaled = min(85.0, 12.0 + (0.73 * base_pct))
+                    detail_msg = msg or "Detecting plays"
+                    self._set_stage(
+                        job_id,
+                        "detecting",
+                        pct=scaled,
+                        detail=detail_msg,
+                        eta=self._eta(job_id),
+                    )
+                    _heartbeat("detecting", pct=scaled, detail=detail_msg)
+
                 self._start_stage(
                     job_id,
                     "detecting",
                     est_sec=detector_timeout,
                     detail="Analyzing for plays",
                 )
+                _heartbeat("detecting", pct=12.0, detail="Analyzing for plays")
 
                 self._set_stage(
                     job_id,
@@ -329,6 +380,7 @@ class JobRunner:
                     detail="Audio: scanning spikes",
                     eta=self._eta(job_id),
                 )
+                _heartbeat("detecting", pct=18.0, detail="Audio: scanning spikes")
                 try:
                     whistle = await asyncio.to_thread(whistle_crowd_spikes, video_path)
                 except Exception:
@@ -346,6 +398,7 @@ class JobRunner:
                     detail=f"Audio spikes: {metrics['audio_spikes']}",
                     eta=self._eta(job_id),
                 )
+                _heartbeat("detecting", pct=25.0, detail=f"Audio spikes: {metrics['audio_spikes']}")
                 if cancel_ev.is_set():
                     return
 
@@ -356,6 +409,7 @@ class JobRunner:
                     detail="Vision: coarse candidates",
                     eta=self._eta(job_id),
                 )
+                _heartbeat("detecting", pct=35.0, detail="Vision: coarse candidates")
                 try:
                     vision_candidates = await asyncio.to_thread(
                         detect_plays,
@@ -365,7 +419,7 @@ class JobRunner:
                         min_duration,
                         max_duration,
                         scene_thresh,
-                        None,
+                        _det_prog,
                         None,
                         None,
                     )
@@ -379,6 +433,11 @@ class JobRunner:
                     pct=45.0,
                     detail=f"Vision candidates: {metrics['vision_candidates']}",
                     eta=self._eta(job_id),
+                )
+                _heartbeat(
+                    "detecting",
+                    pct=45.0,
+                    detail=f"Vision candidates: {metrics['vision_candidates']}",
                 )
                 if cancel_ev.is_set():
                     return
@@ -413,6 +472,7 @@ class JobRunner:
                         detail="CFBD: fetching plays",
                         eta=self._eta(job_id),
                     )
+                    _heartbeat("detecting", pct=50.0, detail="CFBD: fetching plays")
                     request_params: Dict[str, Any] = {}
                     try:
                         if cfbd_in.game_id:
@@ -455,6 +515,11 @@ class JobRunner:
                             detail=f"CFBD error: {message[:120]}",
                             eta=self._eta(job_id),
                         )
+                        _heartbeat(
+                            "detecting",
+                            pct=55.0,
+                            detail=f"CFBD error: {message[:120]}",
+                        )
                         cfbd_plays = []
                     except Exception as exc:  # pragma: no cover - defensive
                         cfbd_summary["error"] = str(exc)
@@ -468,6 +533,11 @@ class JobRunner:
                             detail="CFBD fetch crashed; continuing with fallback",
                             eta=self._eta(job_id),
                         )
+                        _heartbeat(
+                            "detecting",
+                            pct=55.0,
+                            detail="CFBD fetch crashed; continuing with fallback",
+                        )
                         cfbd_plays = []
 
                 if cfbd_plays and not cancel_ev.is_set():
@@ -478,6 +548,7 @@ class JobRunner:
                         detail="OCR: scorebug (Tesseract)",
                         eta=self._eta(job_id),
                     )
+                    _heartbeat("detecting", pct=58.0, detail="OCR: scorebug (Tesseract)")
                     ocr_engine = "tesseract" if TESSERACT_READY else "template"
                     raw_ocr: List[Tuple[float, int, int]] = []
                     if TESSERACT_READY:
@@ -497,6 +568,7 @@ class JobRunner:
                             detail="OCR fallback: template",
                             eta=self._eta(job_id),
                         )
+                        _heartbeat("detecting", pct=60.0, detail="OCR fallback: template")
                         try:
                             raw_ocr = await asyncio.to_thread(
                                 sample_scorebug_series, video_path
@@ -549,6 +621,15 @@ class JobRunner:
                                     ),
                                     detail=f"Aligning plays {idx}/{total}",
                                     eta=self._eta(job_id),
+                                )
+                                _heartbeat(
+                                    "detecting",
+                                    pct=min(
+                                        80.0,
+                                        60.0
+                                        + 15.0 * (idx / max(1, total)),
+                                    ),
+                                    detail=f"Aligning plays {idx}/{total}",
                                 )
                             try:
                                 period = int(play.get("period") or 0)
@@ -619,6 +700,11 @@ class JobRunner:
                                 detail=f"CFBD aligned {len(guided_windows)} plays",
                                 eta=self._eta(job_id),
                             )
+                            _heartbeat(
+                                "detecting",
+                                pct=80.0,
+                                detail=f"CFBD aligned {len(guided_windows)} plays",
+                            )
                         else:
                             self._set_stage(
                                 job_id,
@@ -626,6 +712,11 @@ class JobRunner:
                                 pct=70.0,
                                 detail="CFBD mapping produced 0 clips; using fallback",
                                 eta=self._eta(job_id),
+                            )
+                            _heartbeat(
+                                "detecting",
+                                pct=70.0,
+                                detail="CFBD mapping produced 0 clips; using fallback",
                             )
                     else:
                         self._set_stage(
@@ -635,6 +726,11 @@ class JobRunner:
                             detail="CFBD mapping unavailable; using fallback",
                             eta=self._eta(job_id),
                         )
+                        _heartbeat(
+                            "detecting",
+                            pct=65.0,
+                            detail="CFBD mapping unavailable; using fallback",
+                        )
                 elif cfbd_summary.get("requested") and not cancel_ev.is_set():
                     self._set_stage(
                         job_id,
@@ -642,6 +738,11 @@ class JobRunner:
                         pct=55.0,
                         detail="CFBD returned 0 plays; using fallback",
                         eta=self._eta(job_id),
+                    )
+                    _heartbeat(
+                        "detecting",
+                        pct=55.0,
+                        detail="CFBD returned 0 plays; using fallback",
                     )
 
                 windows: List[Tuple[float, float]] = []
@@ -705,6 +806,7 @@ class JobRunner:
                     detail=detail,
                     eta=0.0,
                 )
+                _heartbeat("detecting", pct=85.0, detail=detail)
 
                 cfbd_summary["used"] = bool(cfbd_used)
                 cfbd_summary["plays"] = cfbd_play_count
@@ -747,6 +849,7 @@ class JobRunner:
                     est_sec=3.0,
                     detail="Grouping by duration",
                 )
+                _heartbeat("bucketing", detail="Grouping by duration")
 
                 def _bucket(duration: float) -> str:
                     if duration < 6:
@@ -757,13 +860,12 @@ class JobRunner:
 
                 buckets = {"short": [], "medium": [], "long": []}
                 for start, end in windows:
-                    if time.time() > watchdog_deadline:
-                        raise RuntimeError("Job watchdog expired")
                     duration = max(0.01, end - start)
                     buckets[_bucket(duration)].append((start, end))
                 ordered = buckets["short"] + buckets["medium"] + buckets["long"]
 
                 self._set_stage(job_id, "bucketing", pct=15.0, detail="Buckets ready", eta=0.0)
+                _heartbeat("bucketing", pct=15.0, detail="Buckets ready")
 
                 total_clip_dur = sum(max(0.01, end - start) for start, end in ordered)
                 encode_speed = float(os.getenv("ENCODE_SPEED", "2.0"))
@@ -774,6 +876,7 @@ class JobRunner:
                     est_sec=max(8.0, total_clip_dur / max(0.25, encode_speed)),
                     detail=f"Cutting {len(ordered)} clips",
                 )
+                _heartbeat("segmenting", detail=f"Cutting {len(ordered)} clips")
 
                 ffmpeg_set_cancel(cancel_ev)
                 clips_meta: List[Dict[str, Any]] = []
@@ -786,8 +889,6 @@ class JobRunner:
                 done_dur = 0.0
 
                 for idx, (start, end) in enumerate(ordered, start=1):
-                    if time.time() > watchdog_deadline:
-                        raise RuntimeError("Job watchdog expired")
                     if cancel_ev.is_set():
                         return
 
@@ -819,6 +920,11 @@ class JobRunner:
                         detail=f"Cutting {idx}/{total_clips} (≈{int(seg_dur)}s)",
                         eta=self._eta(job_id),
                     )
+                    _heartbeat(
+                        "segmenting",
+                        pct=progress,
+                        detail=f"Cutting {idx}/{total_clips} (≈{int(seg_dur)}s)",
+                    )
 
                 if cancel_ev.is_set():
                     return
@@ -827,6 +933,11 @@ class JobRunner:
                     job_id,
                     "packaging",
                     est_sec=max(4.0, 1.0 + len(clips_meta) * 0.05),
+                    detail="Packaging ZIP/manifest",
+                )
+                _heartbeat(
+                    "packaging",
+                    pct=self.jobs.get(job_id, {}).get("pct"),
                     detail="Packaging ZIP/manifest",
                 )
 
@@ -862,10 +973,12 @@ class JobRunner:
                         "processing_sec": None,
                     },
                 }
-                manifest["metrics"]["processing_sec"] = round(
-                    time.time() - self.jobs[job_id]["created"],
-                    3,
+                started_at = (
+                    self.jobs[job_id].get("submitted_at")
+                    or self.jobs[job_id].get("created")
+                    or time.time()
                 )
+                manifest["metrics"]["processing_sec"] = round(time.time() - started_at, 3)
                 manifest["metrics"].update(metrics)
                 manifest["debug"] = debug_urls
                 manifest.setdefault("cfbd", {}).update(
@@ -886,16 +999,22 @@ class JobRunner:
                             detail="Combining into reel.mp4",
                             eta=self._eta(job_id),
                         )
-                        reel_dur = concat_clips_to_mp4(
-                            clip_abs,
-                            reel_local,
-                            progress_cb=lambda pct, _eta, msg: self._set_stage(
+                        _heartbeat("packaging", pct=96.0, detail="Combining into reel.mp4")
+                        def _packaging_progress(pct: float, _eta: Optional[float], msg: str | None):
+                            detail_msg = msg or "Packaging"
+                            self._set_stage(
                                 job_id,
                                 "packaging",
                                 pct=pct,
-                                detail=msg,
+                                detail=detail_msg,
                                 eta=self._eta(job_id),
-                            ),
+                            )
+                            _heartbeat("packaging", pct=pct, detail=detail_msg)
+
+                        reel_dur = concat_clips_to_mp4(
+                            clip_abs,
+                            reel_local,
+                            progress_cb=_packaging_progress,
                             reencode=settings.CONCAT_REENCODE,
                         )
                         reel_key = f"{job_id}/reel.mp4"
@@ -915,6 +1034,7 @@ class JobRunner:
                     json.dump(manifest, f, indent=2)
 
                 zip_path = os.path.join(tmp_dir, "output.zip")
+                _heartbeat("packaging", pct=92.0, detail="Zipping outputs")
                 with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as archive:
                     archive.write(manifest_path, "manifest.json")
                     for clip in clips_meta:
@@ -933,6 +1053,7 @@ class JobRunner:
                     detail="Uploading",
                     eta=self._eta(job_id),
                 )
+                _heartbeat("packaging", pct=99.0, detail="Uploading")
                 await asyncio.to_thread(storage.write_file, zip_path, archive_key)
                 await asyncio.to_thread(storage.write_file, manifest_path, manifest_key)
 
@@ -945,6 +1066,7 @@ class JobRunner:
                 self.jobs[job_id]["result"] = result
 
                 self._set_stage(job_id, "completed", pct=100.0, detail="Ready", eta=0.0)
+                _heartbeat("completed", pct=100.0, detail="Ready")
                 logger.info("job_complete", extra={"job_id": job_id})
             except Exception as exc:
                 if cancel_ev.is_set():
@@ -959,6 +1081,17 @@ class JobRunner:
                     detail=str(exc),
                     eta=0.0,
                 )
+                _heartbeat(
+                    "failed",
+                    pct=self.jobs.get(job_id, {}).get("pct", 0.0),
+                    detail=str(exc),
+                )
                 logger.exception("job_failed", extra={"job_id": job_id})
             finally:
+                if watchdog_task:
+                    watchdog_task.cancel()
+                    try:
+                        await watchdog_task
+                    except asyncio.CancelledError:
+                        pass
                 self._cancels.pop(job_id, None)

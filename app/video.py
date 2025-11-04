@@ -58,6 +58,7 @@ async def http_stream(
         except Exception:  # noqa: BLE001
             total = None
         got = 0
+        last_mb = -1
         with open(dest, "wb") as fh:
             async for chunk in response.aiter_bytes(1024 * 1024):
                 if cancel_ev and cancel_ev.is_set():
@@ -66,9 +67,15 @@ async def http_stream(
                     continue
                 fh.write(chunk)
                 got += len(chunk)
-                if progress_cb and total:
-                    pct = 100.0 * (got / total)
-                    progress_cb(pct, None, "HTTP download")
+                if progress_cb:
+                    if total:
+                        pct = 100.0 * (got / total)
+                        progress_cb(pct, None, "HTTP download")
+                    else:
+                        mb = got // (1024 * 1024)
+                        if mb != last_mb:
+                            last_mb = mb
+                            progress_cb(None, None, f"HTTP download {mb} MB")
     logger.info("http_stream_ok")
 
 
