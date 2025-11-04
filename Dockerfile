@@ -14,6 +14,8 @@ RUN apt-get update \
         curl \
         xz-utils \
         ffmpeg \
+        tesseract-ocr \
+        libtesseract-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # ffmpeg installed from Debian repos; smaller, reliable, auto-updates with base image

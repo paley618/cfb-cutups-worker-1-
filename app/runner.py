@@ -8,8 +8,10 @@ from .video import download_game_video, probe_duration_sec, file_size_bytes
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
 from .detector import detect_plays
 from .cfbd import fetch_plays, CFBDClientError
+from .ocr_tesseract import sample_series as sample_tesseract_series, TESSERACT_READY
 from .ocr_scorebug import sample_scorebug_series
-from .align_cfbd import build_mapping_from_ocr, even_spread_mapping, clock_to_video
+from .align_dtw import fit_period_dtw, map_clock
+from .local_refine import nearest_audio, nearest_scene
 from .detector_ffprobe import scene_cut_times
 from .audio_detect import whistle_crowd_spikes, crowd_spikes
 from .utils import merge_windows, clamp_windows
@@ -288,6 +290,9 @@ class JobRunner:
                     "fallback_clips": 0,
                     "mapping": None,
                     "ocr_samples": 0,
+                    "ocr_engine": None,
+                    "dtw_periods": [],
+                    "align_method": None,
                 }
                 vid_dur = float(src_dur)
 
@@ -469,31 +474,82 @@ class JobRunner:
                     self._set_stage(
                         job_id,
                         "detecting",
-                        pct=60.0,
-                        detail="CFBD: building mapping",
+                        pct=58.0,
+                        detail="OCR: scorebug (Tesseract)",
                         eta=self._eta(job_id),
                     )
-                    raw_ocr = sample_scorebug_series(video_path)
-                    per_period: Dict[int, List[Tuple[float, float]]] = {}
+                    ocr_engine = "tesseract" if TESSERACT_READY else "template"
+                    raw_ocr: List[Tuple[float, int, int]] = []
+                    if TESSERACT_READY:
+                        try:
+                            raw_ocr = await asyncio.to_thread(
+                                sample_tesseract_series, video_path
+                            )
+                        except Exception:
+                            logger.exception(
+                                "tesseract_ocr_failed", extra={"job_id": job_id}
+                            )
+                    if not raw_ocr:
+                        self._set_stage(
+                            job_id,
+                            "detecting",
+                            pct=60.0,
+                            detail="OCR fallback: template",
+                            eta=self._eta(job_id),
+                        )
+                        try:
+                            raw_ocr = await asyncio.to_thread(
+                                sample_scorebug_series, video_path
+                            )
+                        except Exception:
+                            raw_ocr = []
+                        if raw_ocr:
+                            ocr_engine = "template"
+                    metrics["ocr_samples"] = len(raw_ocr)
+                    cfbd_summary["ocr_samples"] = metrics["ocr_samples"]
+                    cfbd_summary["ocr_engine"] = ocr_engine
+
+                    per_period: Dict[int, List[Tuple[float, int]]] = {
+                        1: [],
+                        2: [],
+                        3: [],
+                        4: [],
+                    }
                     for ts, period, clock in raw_ocr:
                         per_period.setdefault(int(period), []).append(
-                            (float(ts), float(clock))
+                            (float(ts), int(clock))
                         )
-                    metrics["ocr_samples"] = sum(
-                        len(samples) for samples in per_period.values()
-                    )
-                    cfbd_summary["ocr_samples"] = metrics["ocr_samples"]
 
-                    mapping = build_mapping_from_ocr(per_period)
-                    if mapping:
-                        mapping_source = "ocr"
-                    else:
-                        mapping = even_spread_mapping(vid_dur)
-                        mapping_source = "even_spread"
-                    cfbd_summary["mapping"] = mapping_source
+                    mapping_dtw: Dict[int, Dict[str, float]] = {}
+                    for period, samples in per_period.items():
+                        if len(samples) < settings.ALIGN_MIN_SAMPLES_PER_PERIOD:
+                            continue
+                        fitted = fit_period_dtw(
+                            samples, radius=settings.ALIGN_DTW_RADIUS
+                        )
+                        if fitted:
+                            mapping_dtw[period] = fitted
 
-                    if mapping:
-                        for play in cfbd_plays:
+                    cfbd_summary["mapping"] = "dtw" if mapping_dtw else "fallback"
+                    cfbd_summary["align_method"] = cfbd_summary["mapping"]
+                    cfbd_summary["dtw_periods"] = sorted(mapping_dtw.keys())
+
+                    if mapping_dtw:
+                        guided: List[Tuple[float, float]] = []
+                        total = len(cfbd_plays)
+                        for idx, play in enumerate(cfbd_plays, start=1):
+                            if idx % 25 == 0:
+                                self._set_stage(
+                                    job_id,
+                                    "detecting",
+                                    pct=min(
+                                        80.0,
+                                        60.0
+                                        + 15.0 * (idx / max(1, total)),
+                                    ),
+                                    detail=f"Aligning plays {idx}/{total}",
+                                    eta=self._eta(job_id),
+                                )
                             try:
                                 period = int(play.get("period") or 0)
                                 clock_sec = int(
@@ -503,28 +559,51 @@ class JobRunner:
                                 )
                             except (TypeError, ValueError):
                                 continue
-                            ts = clock_to_video(mapping, period, clock_sec)
-                            if ts is None:
+                            ts_est = map_clock(mapping_dtw, period, clock_sec)
+                            if ts_est is None:
                                 continue
-                            center = _nearest_in_window(
-                                audio_spike_list, ts - 3.0, ts + 3.0, ts
+                            window_audio = max(
+                                0.0, float(settings.REFINE_AUDIO_WINDOW_SEC)
                             )
-                            if center is None and scene_cuts:
-                                center = _nearest_in_window(
-                                    scene_cuts, ts - 3.0, ts + 3.0, ts
+                            refined = None
+                            if audio_spike_list:
+                                refined = nearest_audio(
+                                    audio_spike_list,
+                                    ts_est,
+                                    ts_est - window_audio,
+                                    ts_est + window_audio,
                                 )
-                            if center is None:
-                                center = float(ts)
-                            start = max(0.0, center - pre_pad)
-                            end = min(vid_dur, center + post_pad)
+                            if refined is None:
+                                try:
+                                    refined = nearest_scene(
+                                        video_path,
+                                        ts_est,
+                                        window=max(
+                                            0.0,
+                                            float(settings.REFINE_SCENE_WINDOW_SEC),
+                                        ),
+                                    )
+                                except Exception:
+                                    refined = None
+                            if refined is None:
+                                refined = ts_est
+                            max_shift = max(0.0, float(settings.ALIGN_MAX_SNAP_SHIFT_SEC))
+                            if max_shift and abs(refined - ts_est) > max_shift:
+                                delta = refined - ts_est
+                                if delta > 0:
+                                    refined = ts_est + min(delta, max_shift)
+                                else:
+                                    refined = ts_est + max(delta, -max_shift)
+                            start = max(0.0, refined - pre_pad)
+                            end = min(vid_dur, refined + post_pad)
                             if end <= start:
                                 continue
-                            guided_windows.append((round(start, 3), round(end, 3)))
+                            guided.append((round(start, 3), round(end, 3)))
 
-                        pre_merge_guided = list(guided_windows)
-                        if guided_windows:
+                        pre_merge_guided = list(guided)
+                        if guided:
                             guided_windows = clamp_windows(
-                                merge_windows(guided_windows, merge_gap),
+                                merge_windows(guided, merge_gap),
                                 min_duration,
                                 max_duration,
                             )
@@ -536,7 +615,7 @@ class JobRunner:
                             self._set_stage(
                                 job_id,
                                 "detecting",
-                                pct=75.0,
+                                pct=80.0,
                                 detail=f"CFBD aligned {len(guided_windows)} plays",
                                 eta=self._eta(job_id),
                             )
@@ -756,7 +835,12 @@ class JobRunner:
                     "clips_found": len(ordered),
                     "audio_spikes_used": bool(settings.AUDIO_ENABLE),
                     "scorebug_used": bool(settings.SCOREBUG_ENABLE),
-                    "cfbd_guided": bool(cfbd_summary.get("used")),
+                    "cfbd_guided": bool(cfbd_used),
+                    "ocr_engine": cfbd_summary.get("ocr_engine")
+                    or ("tesseract" if metrics.get("ocr_samples") else "fallback"),
+                    "ocr_samples": int(metrics.get("ocr_samples", 0)),
+                    "cfbd_used": bool(cfbd_used),
+                    "align_method": "dtw" if cfbd_used else "fallback",
                 }
                 self.jobs[job_id]["detector_meta"] = det_meta
 
