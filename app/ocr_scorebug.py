@@ -63,8 +63,8 @@ def sample_scorebug_series(video_path: str) -> List[Tuple[float, int, int]]:
         fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
         frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
         step = max(1, int(round(fps / max(0.5, settings.OCR_SAMPLE_FPS))))
-        y0p = max(0.0, min(1.0, settings.OCR_ROI_Y0))
-        y1p = max(0.0, min(1.0, settings.OCR_ROI_Y1))
+        y0p = max(0.0, min(1.0, settings.ROI_SCAN_Y0))
+        y1p = max(0.0, min(1.0, settings.ROI_SCAN_Y1))
         if y1p <= y0p:
             y0p, y1p = 0.78, 0.96
 

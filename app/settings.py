@@ -150,6 +150,36 @@ class Settings(BaseSettings):
         description="Minimum separation in seconds between audio spikes (collapses near-duplicates).",
     )
 
+    # --- Auto-ROI (scoreboard locator) ---
+    ROI_SCAN_Y0: float = Field(
+        default=0.68,
+        description="Relative lower-band start (0..1) used when scanning for the scorebug ROI.",
+    )
+    ROI_SCAN_Y1: float = Field(
+        default=0.98,
+        description="Relative lower-band end (0..1) used when scanning for the scorebug ROI.",
+    )
+    ROI_GRID_COLS: int = Field(
+        default=6,
+        description="Number of horizontal grid cells to evaluate when searching for the scorebug ROI.",
+    )
+    ROI_GRID_ROWS: int = Field(
+        default=3,
+        description="Number of vertical grid cells to evaluate when searching for the scorebug ROI.",
+    )
+    ROI_SAMPLE_FRAMES: int = Field(
+        default=12,
+        description="Maximum number of frames sampled while estimating the scorebug ROI.",
+    )
+    ROI_MIN_STABILITY: float = Field(
+        default=0.55,
+        description="Minimum selection stability required before accepting the primary ROI winner (0..1).",
+    )
+    ROI_FALLBACK_RIGHT_BIAS: bool = Field(
+        default=True,
+        description="When ROI stability is low, bias toward the right-hand cells that commonly contain scorebugs.",
+    )
+
     # vision field heuristics
     VISION_GREEN_PCT: float = Field(
         default=0.07,
@@ -237,14 +267,6 @@ class Settings(BaseSettings):
         default=2.0,
         description="Sampling rate (frames per second) for scorebug OCR extraction.",
     )
-    OCR_ROI_Y0: float = Field(
-        default=0.78,
-        description="Relative top of scorebug OCR region of interest (0..1).",
-    )
-    OCR_ROI_Y1: float = Field(
-        default=0.96,
-        description="Relative bottom of scorebug OCR region of interest (0..1).",
-    )
     OCR_MIN_CONF: int = Field(
         default=55,
         description="Minimum OCR confidence (0-100) required to keep a detected token.",
@@ -276,6 +298,32 @@ class Settings(BaseSettings):
         description="Half-width of the search window for local scene cuts during snap refinement.",
     )
 
+    # --- Confidence ---
+    CONF_CLOCK_WEIGHT: int = Field(
+        default=40,
+        description="Maximum contribution from the clock alignment component when scoring clips.",
+    )
+    CONF_AUDIO_WEIGHT: int = Field(
+        default=25,
+        description="Contribution from detecting a nearby audio spike when scoring clips.",
+    )
+    CONF_SCENE_WEIGHT: int = Field(
+        default=20,
+        description="Contribution from locating a nearby scene cut when scoring clips.",
+    )
+    CONF_FIELD_WEIGHT: int = Field(
+        default=10,
+        description="Contribution from detecting field presence in the clip window when scoring clips.",
+    )
+    CONF_SCOREBUG_WEIGHT: int = Field(
+        default=5,
+        description="Contribution from detecting scorebug edges in the clip window when scoring clips.",
+    )
+    CONF_HIDE_THRESHOLD: int = Field(
+        default=40,
+        description="Default UI threshold for hiding clips below a given confidence score.",
+    )
+
     MIN_TOTAL_CLIPS: int = Field(
         default=60,
         description="Minimum clips threshold before triggering relaxed low-confidence retry.",
@@ -283,6 +331,24 @@ class Settings(BaseSettings):
     RELAX_FACTOR: float = Field(
         default=0.7,
         description="Factor applied to loosen detector thresholds on low-confidence retries.",
+    )
+
+    # --- Retry low-confidence ---
+    RETRY_LOWCONF_ENABLE: bool = Field(
+        default=True,
+        description="Enable secondary refinement/scoring for clips that fall below the configured confidence threshold.",
+    )
+    RETRY_LOWCONF_THRESHOLD: int = Field(
+        default=40,
+        description="Confidence score below which clips will be re-refined and rescored.",
+    )
+    RETRY_REFINE_AUDIO_WINDOW_SEC: float = Field(
+        default=4.0,
+        description="Half-width of the retry window when searching for nearby audio spikes.",
+    )
+    RETRY_REFINE_SCENE_WINDOW_SEC: float = Field(
+        default=4.0,
+        description="Half-width of the retry window when searching for nearby scene cuts.",
     )
 
     DRIVE_COOKIES_B64: str | None = None

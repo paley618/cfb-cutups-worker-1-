@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os, json, zipfile, uuid, asyncio, time, logging, shutil
 from bisect import bisect_left, bisect_right
+from statistics import median
 from typing import Any, Dict, List, Optional, Tuple
 
 from .video import download_game_video, probe_duration_sec, file_size_bytes
@@ -14,6 +15,8 @@ from .align_dtw import fit_period_dtw, map_clock
 from .local_refine import nearest_audio, nearest_scene
 from .detector_ffprobe import scene_cut_times
 from .audio_detect import whistle_crowd_spikes, crowd_spikes
+from .auto_roi import find_scorebug_roi
+from .confidence import score_clip
 from .utils import merge_windows, clamp_windows
 from .debug_dump import save_timeline_thumbs, save_candidate_thumbs
 from .fallback import timegrid_windows
@@ -299,6 +302,16 @@ class JobRunner:
                 if cancel_ev.is_set():
                     return
 
+                roi_box: Tuple[int, int, int, int] = (0, 0, 0, 0)
+                if settings.SCOREBUG_ENABLE:
+                    try:
+                        roi_box = find_scorebug_roi(video_path)
+                    except Exception:
+                        roi_box = (0, 0, 0, 0)
+                roi_for_ocr: Optional[Tuple[int, int, int, int]] = None
+                if roi_box[2] > roi_box[0] and roi_box[3] > roi_box[1]:
+                    roi_for_ocr = roi_box
+
                 base = settings.DETECTOR_TIMEOUT_BASE_SEC
                 per = settings.DETECTOR_TIMEOUT_PER_MIN
                 cap = settings.DETECTOR_TIMEOUT_MAX_SEC
@@ -457,7 +470,8 @@ class JobRunner:
                 fallback_used = False
                 pre_merge_guided: List[Tuple[float, float]] = []
                 guided_windows: List[Tuple[float, float]] = []
-                mapping_source: Optional[str] = None
+                clip_entries: List[Dict[str, Any]] = []
+                ocr_series: List[Tuple[float, int, int]] = []
 
                 if (
                     settings.CFBD_ENABLED
@@ -554,7 +568,7 @@ class JobRunner:
                     if TESSERACT_READY:
                         try:
                             raw_ocr = await asyncio.to_thread(
-                                sample_tesseract_series, video_path
+                                sample_tesseract_series, video_path, roi_for_ocr
                             )
                         except Exception:
                             logger.exception(
@@ -580,6 +594,7 @@ class JobRunner:
                     metrics["ocr_samples"] = len(raw_ocr)
                     cfbd_summary["ocr_samples"] = metrics["ocr_samples"]
                     cfbd_summary["ocr_engine"] = ocr_engine
+                    ocr_series = list(raw_ocr)
 
                     per_period: Dict[int, List[Tuple[float, int]]] = {
                         1: [],
@@ -607,7 +622,6 @@ class JobRunner:
                     cfbd_summary["dtw_periods"] = sorted(mapping_dtw.keys())
 
                     if mapping_dtw:
-                        guided: List[Tuple[float, float]] = []
                         total = len(cfbd_plays)
                         for idx, play in enumerate(cfbd_plays, start=1):
                             if idx % 25 == 0:
@@ -643,20 +657,22 @@ class JobRunner:
                             ts_est = map_clock(mapping_dtw, period, clock_sec)
                             if ts_est is None:
                                 continue
-                            window_audio = max(
+
+                            audio_window = max(
                                 0.0, float(settings.REFINE_AUDIO_WINDOW_SEC)
                             )
-                            refined = None
+                            audio_time: Optional[float] = None
                             if audio_spike_list:
-                                refined = nearest_audio(
+                                audio_time = nearest_audio(
                                     audio_spike_list,
                                     ts_est,
-                                    ts_est - window_audio,
-                                    ts_est + window_audio,
+                                    ts_est - audio_window,
+                                    ts_est + audio_window,
                                 )
-                            if refined is None:
+                            scene_time: Optional[float] = None
+                            if audio_time is None:
                                 try:
-                                    refined = nearest_scene(
+                                    scene_time = nearest_scene(
                                         video_path,
                                         ts_est,
                                         window=max(
@@ -665,45 +681,62 @@ class JobRunner:
                                         ),
                                     )
                                 except Exception:
-                                    refined = None
-                            if refined is None:
-                                refined = ts_est
-                            max_shift = max(0.0, float(settings.ALIGN_MAX_SNAP_SHIFT_SEC))
-                            if max_shift and abs(refined - ts_est) > max_shift:
-                                delta = refined - ts_est
-                                if delta > 0:
-                                    refined = ts_est + min(delta, max_shift)
-                                else:
-                                    refined = ts_est + max(delta, -max_shift)
-                            start = max(0.0, refined - pre_pad)
-                            end = min(vid_dur, refined + post_pad)
+                                    scene_time = None
+
+                            center_time = (
+                                audio_time
+                                if audio_time is not None
+                                else scene_time
+                                if scene_time is not None
+                                else ts_est
+                            )
+                            has_audio = audio_time is not None
+                            has_scene = (
+                                scene_time is not None
+                                and abs(scene_time - ts_est)
+                                <= float(settings.REFINE_SCENE_WINDOW_SEC)
+                            )
+
+                            start = max(0.0, center_time - pre_pad)
+                            end = min(vid_dur, center_time + post_pad + 6.0)
+                            if end - start < min_duration:
+                                end = min(vid_dur, start + min_duration)
+                            if end - start > max_duration:
+                                end = min(vid_dur, start + max_duration)
                             if end <= start:
                                 continue
-                            guided.append((round(start, 3), round(end, 3)))
 
-                        pre_merge_guided = list(guided)
-                        if guided:
-                            guided_windows = clamp_windows(
-                                merge_windows(guided, merge_gap),
-                                min_duration,
-                                max_duration,
+                            clip_entries.append(
+                                {
+                                    "start": round(start, 3),
+                                    "end": round(end, 3),
+                                    "period": int(period),
+                                    "clock_sec": int(clock_sec),
+                                    "center": float(center_time),
+                                    "has_audio": bool(has_audio),
+                                    "has_scene": bool(has_scene),
+                                    "source": "cfbd",
+                                }
                             )
-                        else:
-                            guided_windows = []
-                        cfbd_summary["clips"] = len(guided_windows)
-                        cfbd_used = bool(guided_windows)
+
+                        pre_merge_guided = [
+                            (clip["start"], clip["end"]) for clip in clip_entries
+                        ]
+                        guided_windows = list(pre_merge_guided)
+                        cfbd_summary["clips"] = len(clip_entries)
+                        cfbd_used = bool(clip_entries)
                         if cfbd_used:
                             self._set_stage(
                                 job_id,
                                 "detecting",
                                 pct=80.0,
-                                detail=f"CFBD aligned {len(guided_windows)} plays",
+                                detail=f"CFBD aligned {len(clip_entries)} plays",
                                 eta=self._eta(job_id),
                             )
                             _heartbeat(
                                 "detecting",
                                 pct=80.0,
-                                detail=f"CFBD aligned {len(guided_windows)} plays",
+                                detail=f"CFBD aligned {len(clip_entries)} plays",
                             )
                         else:
                             self._set_stage(
@@ -843,6 +876,209 @@ class JobRunner:
                 if cancel_ev.is_set():
                     return
 
+                if not clip_entries:
+                    source_label = "fallback" if fallback_used else "vision"
+                    for start, end in windows:
+                        start_f = round(float(start), 3)
+                        end_f = round(float(end), 3)
+                        if end_f <= start_f:
+                            continue
+                        clip_entries.append(
+                            {
+                                "start": start_f,
+                                "end": end_f,
+                                "period": None,
+                                "clock_sec": None,
+                                "center": float((start_f + end_f) / 2.0),
+                                "has_audio": False,
+                                "has_scene": False,
+                                "source": source_label,
+                            }
+                        )
+
+                samples_by_period: Dict[int, List[Tuple[float, int]]] = {}
+                for ts, per, clk in ocr_series:
+                    samples_by_period.setdefault(int(per), []).append(
+                        (float(ts), int(clk))
+                    )
+                for items in samples_by_period.values():
+                    items.sort(key=lambda item: item[0])
+
+                def _clock_delta(
+                    period: Optional[int],
+                    clock_val: Optional[int],
+                    center_time: float,
+                ) -> Optional[float]:
+                    if period is None or clock_val is None:
+                        return None
+                    period_samples = samples_by_period.get(int(period))
+                    if not period_samples:
+                        return None
+                    nearest_ts, nearest_clock = min(
+                        period_samples, key=lambda item: abs(center_time - item[0])
+                    )
+                    return float(nearest_clock - clock_val)
+
+                for clip in clip_entries:
+                    clip["start"] = round(float(clip.get("start", 0.0)), 3)
+                    clip["end"] = round(float(clip.get("end", 0.0)), 3)
+                    if clip["end"] <= clip["start"]:
+                        continue
+                    source_tag = clip.get("source") or "vision"
+                    center_time = float(
+                        clip.get("center")
+                        or (clip["start"] + clip["end"]) / 2.0
+                    )
+                    if source_tag != "cfbd":
+                        center_guess = (clip["start"] + clip["end"]) / 2.0
+                        audio_time = None
+                        if audio_spike_list:
+                            audio_time = nearest_audio(
+                                audio_spike_list,
+                                center_guess,
+                                center_guess
+                                - float(settings.REFINE_AUDIO_WINDOW_SEC),
+                                center_guess
+                                + float(settings.REFINE_AUDIO_WINDOW_SEC),
+                            )
+                        scene_time = None
+                        if audio_time is None:
+                            try:
+                                scene_time = nearest_scene(
+                                    video_path,
+                                    center_guess,
+                                    window=float(settings.REFINE_SCENE_WINDOW_SEC),
+                                )
+                            except Exception:
+                                scene_time = None
+                        if audio_time is not None:
+                            center_time = float(audio_time)
+                            clip["has_audio"] = True
+                            clip["has_scene"] = bool(
+                                clip.get("has_scene")
+                            )
+                        elif scene_time is not None:
+                            center_time = float(scene_time)
+                            clip["has_audio"] = bool(clip.get("has_audio"))
+                            clip["has_scene"] = bool(
+                                abs(scene_time - center_guess)
+                                <= float(settings.REFINE_SCENE_WINDOW_SEC)
+                            )
+                        else:
+                            clip["has_audio"] = bool(clip.get("has_audio"))
+                            clip["has_scene"] = bool(clip.get("has_scene"))
+                    else:
+                        clip["has_audio"] = bool(clip.get("has_audio"))
+                        clip["has_scene"] = bool(clip.get("has_scene"))
+                    clip["center"] = float(center_time)
+                    period_val = clip.get("period")
+                    clock_val = clip.get("clock_sec")
+                    clock_delta = _clock_delta(
+                        int(period_val) if period_val is not None else None,
+                        int(clock_val) if clock_val is not None else None,
+                        float(center_time),
+                    )
+                    clip["clock_delta_sec"] = clock_delta
+                    conf_parts = score_clip(
+                        video_path,
+                        (clip["start"], clip["end"]),
+                        roi_for_ocr,
+                        clock_delta,
+                        bool(clip.get("has_audio")),
+                        bool(clip.get("has_scene")),
+                    )
+                    clip["confidence"] = conf_parts.get("total", 0.0)
+                    clip["conf_parts"] = conf_parts
+                    clip["duration"] = round(
+                        max(0.0, clip["end"] - clip["start"]), 3
+                    )
+
+                if settings.RETRY_LOWCONF_ENABLE and clip_entries:
+                    retried: List[Dict[str, Any]] = []
+                    audio_retry = float(settings.RETRY_REFINE_AUDIO_WINDOW_SEC)
+                    scene_retry = float(settings.RETRY_REFINE_SCENE_WINDOW_SEC)
+                    for clip in clip_entries:
+                        if clip.get("confidence", 0.0) >= settings.RETRY_LOWCONF_THRESHOLD:
+                            retried.append(clip)
+                            continue
+                        center_guess = float(
+                            clip.get("center")
+                            or (clip["start"] + clip["end"]) / 2.0
+                        )
+                        audio_time = None
+                        if audio_spike_list:
+                            audio_time = nearest_audio(
+                                audio_spike_list,
+                                center_guess,
+                                center_guess - audio_retry,
+                                center_guess + audio_retry,
+                            )
+                        scene_time = None
+                        if audio_time is None:
+                            try:
+                                scene_time = nearest_scene(
+                                    video_path,
+                                    center_guess,
+                                    window=scene_retry,
+                                )
+                            except Exception:
+                                scene_time = None
+                        refined_center = (
+                            audio_time
+                            if audio_time is not None
+                            else scene_time
+                            if scene_time is not None
+                            else center_guess
+                        )
+                        start = max(0.0, refined_center - pre_pad)
+                        end = min(vid_dur, refined_center + post_pad + 6.0)
+                        if end - start < min_duration:
+                            end = min(vid_dur, start + min_duration)
+                        if end - start > max_duration:
+                            end = min(vid_dur, start + max_duration)
+                        clip["start"] = round(start, 3)
+                        clip["end"] = round(end, 3)
+                        clip["center"] = float(refined_center)
+                        clip["has_audio"] = bool(audio_time is not None)
+                        clip["has_scene"] = bool(
+                            scene_time is not None
+                            and abs(scene_time - center_guess) <= scene_retry
+                        )
+                        clock_delta = _clock_delta(
+                            int(clip.get("period"))
+                            if clip.get("period") is not None
+                            else None,
+                            int(clip.get("clock_sec"))
+                            if clip.get("clock_sec") is not None
+                            else None,
+                            float(refined_center),
+                        )
+                        clip["clock_delta_sec"] = clock_delta
+                        conf_parts = score_clip(
+                            video_path,
+                            (clip["start"], clip["end"]),
+                            roi_for_ocr,
+                            clock_delta,
+                            bool(clip.get("has_audio")),
+                            bool(clip.get("has_scene")),
+                        )
+                        clip["confidence"] = conf_parts.get("total", 0.0)
+                        clip["conf_parts"] = conf_parts
+                        clip["duration"] = round(
+                            max(0.0, clip["end"] - clip["start"]), 3
+                        )
+                        retried.append(clip)
+                    clip_entries = retried
+
+                clip_entries = [
+                    clip
+                    for clip in clip_entries
+                    if clip.get("end", 0.0) > clip.get("start", 0.0)
+                ]
+                clip_entries.sort(key=lambda clip: clip["start"])
+                windows = [(clip["start"], clip["end"]) for clip in clip_entries]
+                metrics["post_merge_windows"] = len(windows)
+
                 self._start_stage(
                     job_id,
                     "bucketing",
@@ -858,16 +1094,18 @@ class JobRunner:
                         return "medium"
                     return "long"
 
-                buckets = {"short": [], "medium": [], "long": []}
-                for start, end in windows:
-                    duration = max(0.01, end - start)
-                    buckets[_bucket(duration)].append((start, end))
-                ordered = buckets["short"] + buckets["medium"] + buckets["long"]
+                bucket_counts = {"short": 0, "medium": 0, "long": 0}
+                for clip in clip_entries:
+                    duration = max(0.01, clip["end"] - clip["start"])
+                    bucket_counts[_bucket(duration)] += 1
+                ordered = list(clip_entries)
 
                 self._set_stage(job_id, "bucketing", pct=15.0, detail="Buckets ready", eta=0.0)
                 _heartbeat("bucketing", pct=15.0, detail="Buckets ready")
 
-                total_clip_dur = sum(max(0.01, end - start) for start, end in ordered)
+                total_clip_dur = sum(
+                    max(0.01, clip["end"] - clip["start"]) for clip in ordered
+                )
                 encode_speed = float(os.getenv("ENCODE_SPEED", "2.0"))
 
                 self._start_stage(
@@ -888,28 +1126,44 @@ class JobRunner:
                 total_clips = len(ordered)
                 done_dur = 0.0
 
-                for idx, (start, end) in enumerate(ordered, start=1):
+                for idx, clip in enumerate(ordered, start=1):
                     if cancel_ev.is_set():
                         return
 
                     cid = f"{idx:04d}"
+                    start = float(clip["start"])
+                    end = float(clip["end"])
                     seg_dur = max(0.01, end - start)
-                    clip_path = os.path.join(clips_dir, f"{cid}.mp4")
-                    thumb_path = os.path.join(thumbs_dir, f"{cid}.jpg")
+                    period_val = clip.get("period")
+                    if isinstance(period_val, int) and period_val in {1, 2, 3, 4}:
+                        period_tag = f"Q{period_val}"
+                    else:
+                        period_tag = "QX"
+                    clock_val = clip.get("clock_sec")
+                    clock_tag = (
+                        f"{int(clock_val):03d}"
+                        if isinstance(clock_val, (int, float))
+                        else "000"
+                    )
+                    conf_val = int(round(float(clip.get("confidence", 0.0))))
+                    fname_base = f"{idx:05d}_{period_tag}_t{clock_tag}_conf-{conf_val:02d}"
+                    clip_path = os.path.join(clips_dir, f"{fname_base}.mp4")
+                    thumb_path = os.path.join(thumbs_dir, f"{fname_base}.jpg")
 
                     await cut_clip(video_path, clip_path, start, end)
                     await make_thumb(video_path, max(0.0, start + 1.0), thumb_path)
 
-                    clips_meta.append(
+                    clip.update(
                         {
                             "id": cid,
                             "start": round(start, 3),
                             "end": round(end, 3),
                             "duration": round(seg_dur, 3),
-                            "file": f"clips/{cid}.mp4",
-                            "thumb": f"thumbs/{cid}.jpg",
+                            "file": f"clips/{fname_base}.mp4",
+                            "thumb": f"thumbs/{fname_base}.jpg",
                         }
                     )
+                    clips_meta.append(clip)
                     done_dur += seg_dur
 
                     progress = 20.0 + 70.0 * (done_dur / max(0.01, total_clip_dur))
@@ -928,6 +1182,29 @@ class JobRunner:
 
                 if cancel_ev.is_set():
                     return
+
+                conf_vals = [float(clip.get("confidence", 0.0)) for clip in clips_meta]
+                if conf_vals:
+                    sorted_vals = sorted(conf_vals)
+                    p25_idx = max(0, min(len(sorted_vals) - 1, int(len(sorted_vals) * 0.25)))
+                    p75_idx = max(0, min(len(sorted_vals) - 1, int(len(sorted_vals) * 0.75)))
+                    confidence_summary = {
+                        "median": round(median(sorted_vals), 1),
+                        "p25": round(sorted_vals[p25_idx], 1),
+                        "p75": round(sorted_vals[p75_idx], 1),
+                        "low_count": sum(
+                            1 for value in conf_vals if value < settings.CONF_HIDE_THRESHOLD
+                        ),
+                        "total": len(conf_vals),
+                    }
+                else:
+                    confidence_summary = {
+                        "median": 0.0,
+                        "p25": 0.0,
+                        "p75": 0.0,
+                        "low_count": 0,
+                        "total": 0,
+                    }
 
                 self._start_stage(
                     job_id,
@@ -953,6 +1230,12 @@ class JobRunner:
                     "cfbd_used": bool(cfbd_used),
                     "align_method": "dtw" if cfbd_used else "fallback",
                 }
+                det_meta["roi"] = {
+                    "x0": int(roi_box[0]),
+                    "y0": int(roi_box[1]),
+                    "x1": int(roi_box[2]),
+                    "y1": int(roi_box[3]),
+                }
                 self.jobs[job_id]["detector_meta"] = det_meta
 
                 manifest = {
@@ -962,9 +1245,9 @@ class JobRunner:
                     "detector_meta": det_meta,
                     "cfbd": cfbd_summary,
                     "buckets": {
-                        "short": len(buckets["short"]),
-                        "medium": len(buckets["medium"]),
-                        "long": len(buckets["long"]),
+                        "short": bucket_counts.get("short", 0),
+                        "medium": bucket_counts.get("medium", 0),
+                        "long": bucket_counts.get("long", 0),
                     },
                     "clips": clips_meta,
                     "metrics": {
@@ -972,6 +1255,10 @@ class JobRunner:
                         "total_runtime_sec": round(sum(c["duration"] for c in clips_meta), 3),
                         "processing_sec": None,
                     },
+                }
+                manifest.setdefault("quality", {})["confidence"] = confidence_summary
+                manifest["settings"] = {
+                    "CONF_HIDE_THRESHOLD": int(settings.CONF_HIDE_THRESHOLD)
                 }
                 started_at = (
                     self.jobs[job_id].get("submitted_at")

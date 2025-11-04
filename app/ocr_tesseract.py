@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import logging
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 try:  # pragma: no cover - optional dependency handling
     import cv2  # type: ignore
@@ -117,7 +117,9 @@ def _parse_period(img: "np.ndarray") -> int | None:
     return None
 
 
-def sample_series(video_path: str) -> List[Tuple[float, int, int]]:
+def sample_series(
+    video_path: str, roi: Optional[Tuple[int, int, int, int]] = None
+) -> List[Tuple[float, int, int]]:
     """Sample the scorebug clock using Tesseract-based OCR."""
 
     if not TESSERACT_READY:
@@ -133,41 +135,49 @@ def sample_series(video_path: str) -> List[Tuple[float, int, int]]:
         fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
         frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT) or 0)
         step = max(1, int(round(fps / max(0.5, settings.OCR_SAMPLE_FPS))))
-        height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) or 1080)
-        width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) or 1920)
-        y0 = int(height * max(0.0, min(1.0, settings.OCR_ROI_Y0)))
-        y1 = int(height * max(0.0, min(1.0, settings.OCR_ROI_Y1)))
-        if y1 <= y0:
-            y0, y1 = int(height * 0.78), int(height * 0.96)
-        clock_x0 = int(width * 0.40)
-        clock_x1 = int(width * 0.98)
-        period_x0 = int(width * 0.02)
-        period_x1 = int(width * 0.35)
 
         for frame_idx in range(0, frame_count, step):
             cap.set(cv2.CAP_PROP_POS_FRAMES, frame_idx)
             ok, frame = cap.read()
             if not ok:
                 break
-            clock_roi = frame[y0:y1, clock_x0:clock_x1]
-            period_roi = frame[y0:y1, period_x0:period_x1]
-            if clock_roi.size == 0 or period_roi.size == 0:
+
+            if roi and roi[2] > roi[0] and roi[3] > roi[1]:
+                x0, y0, x1, y1 = roi
+                band = frame[y0:y1, x0:x1]
+                if band.size == 0:
+                    continue
+                width = band.shape[1]
+                left = band[:, : int(width * 0.42)]
+                right = band[:, int(width * 0.25) :]
+            else:
+                height, width = frame.shape[:2]
+                band = frame[int(height * 0.78) : int(height * 0.96), int(width * 0.02) : int(width * 0.98)]
+                if band.size == 0:
+                    continue
+                left = band[:, : int(band.shape[1] * 0.35)]
+                right = band[:, int(band.shape[1] * 0.50) :]
+
+            if left.size == 0 or right.size == 0:
                 continue
+
             try:
-                gray_clock = _prep(clock_roi)
-            except Exception:
-                continue
-            try:
+                period = _parse_period(left) or 0
+                clock_img = _prep(right)
                 clock_text = _read_text(
-                    gray_clock, digits_only=bool(settings.OCR_DIGIT_ONLY)
+                    clock_img, digits_only=bool(settings.OCR_DIGIT_ONLY)
                 )
                 clock_sec = _parse_clock(clock_text)
-                period = _parse_period(period_roi)
             except TesseractNotFoundError:
                 logger.warning("tesseract_binary_missing", extra={"path": video_path})
                 return []
-            if clock_sec is None or period not in {1, 2, 3, 4}:
+            except Exception:
+                logger.debug("tesseract_sample_failed", exc_info=True)
                 continue
+
+            if period not in {1, 2, 3, 4} or clock_sec is None:
+                continue
+
             timestamp = frame_idx / max(fps, 1.0)
             samples.append((float(timestamp), int(period), int(clock_sec)))
     finally:
