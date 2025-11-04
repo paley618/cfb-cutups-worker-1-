@@ -89,6 +89,20 @@ class Settings(BaseSettings):
         description="Interval in seconds for concat progress heartbeats.",
     )
 
+    # watchdog / heartbeats
+    JOB_WATCHDOG_SECONDS: int = Field(
+        default=1800,
+        description="Hard cap on total job runtime in seconds (default 30 minutes).",
+    )
+    JOB_HEARTBEAT_TTL_SECONDS: int = Field(
+        default=180,
+        description="Maximum allowable idle time between job heartbeats in seconds.",
+    )
+    JOB_STATUS_HEARTBEAT_MIN_INTERVAL: float = Field(
+        default=0.75,
+        description="Minimum interval in seconds between status heartbeat emissions.",
+    )
+
     DETECTOR_BACKEND: Literal["auto", "opencv", "ffprobe"] = Field(
         default="auto",
         description="Play detector backend selection: auto, opencv, or ffprobe.",

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import logging
 import os
+import time
 import uuid
 from contextlib import asynccontextmanager
 
@@ -144,6 +145,9 @@ def get_job(job_id: str):
     job = RUNNER.get_job(job_id)
     if not job:
         raise HTTPException(status_code=404, detail="Not found")
+    now = time.time()
+    last = job.get("last_heartbeat_at")
+    submitted = job.get("submitted_at")
     return {
         "job_id": job_id,
         "status": job.get("status"),
@@ -151,6 +155,10 @@ def get_job(job_id: str):
         "pct": job.get("pct"),
         "eta_sec": job.get("eta_sec"),
         "detail": job.get("detail"),
+        "submitted_at": submitted,
+        "last_heartbeat_at": last,
+        "idle_seconds": None if last is None else round(now - last),
+        "elapsed_seconds": None if submitted is None else round(now - submitted),
     }
 
 
