@@ -161,6 +161,8 @@ def get_job(job_id: str):
         "elapsed_seconds": None if submitted is None else round(now - submitted),
         "progress": job.get("progress") or {},
         "cancel": bool(job.get("cancel", False)),
+        "cfbd_state": job.get("cfbd_state"),
+        "cfbd_reason": job.get("cfbd_reason"),
     }
 
 

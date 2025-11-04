@@ -240,13 +240,28 @@ class Settings(BaseSettings):
         description="Padding added after detected snaps (seconds).",
     )
 
-    CFBD_ENABLED: bool = Field(
+    CFBD_ENABLE: bool = Field(
         default=True,
+        validation_alias=AliasChoices("CFBD_ENABLE", "CFBD_ENABLED"),
         description="Enable CFBD-guided alignment pipeline when requested.",
     )
     CFBD_SEASON: Optional[int] = Field(
         default=None,
         description="Default CFBD season to use when not provided by the client.",
+    )
+
+    CFBD_TIMEOUT_SECONDS: int = Field(
+        default=25,
+        validation_alias=AliasChoices("CFBD_TIMEOUT_SECONDS", "CFBD_TIMEOUT_SEC"),
+        description="Maximum wait in seconds for a single CFBD fetch attempt.",
+    )
+    CFBD_MAX_RETRIES: int = Field(
+        default=4,
+        description="Total CFBD fetch attempts before declaring failure.",
+    )
+    CFBD_BACKOFF_BASE_SEC: float = Field(
+        default=1.5,
+        description="Base delay in seconds for exponential CFBD retry backoff.",
     )
 
     cfbd_api_base: str = Field(
@@ -257,10 +272,6 @@ class Settings(BaseSettings):
         default=None,
         validation_alias=AliasChoices("CFBD_API_KEY"),
         description="Bearer token used to authenticate with the CFBD API.",
-    )
-    cfbd_timeout_sec: int = Field(
-        default=15,
-        description="Timeout applied to CFBD HTTP requests (seconds).",
     )
     cfbd_max_plays: int = Field(
         default=4000,
@@ -415,6 +426,14 @@ class Settings(BaseSettings):
     @property
     def CFBD_API_KEY(self) -> Optional[str]:  # pragma: no cover - backwards compat shim
         return self.cfbd_api_key
+
+    @property
+    def CFBD_ENABLED(self) -> bool:  # pragma: no cover - backwards compat shim
+        return bool(self.CFBD_ENABLE)
+
+    @property
+    def cfbd_timeout_sec(self) -> int:  # pragma: no cover - backwards compat shim
+        return int(self.CFBD_TIMEOUT_SECONDS)
 
 
 @lru_cache()
