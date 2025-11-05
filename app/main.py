@@ -122,16 +122,16 @@ async def __selftest():
 
 
 @app.get("/selftest/cfbd")
-async def cfbd_selftest(gameId: int):
+def cfbd_selftest(gameId: int):
+    url = f"https://api.collegefootballdata.com/plays?gameId={int(gameId)}"
     client = getattr(app.state, "cfbd", None)
     if client is None:
-        return {"ok": False, "error": "CFBD client unavailable"}
+        return {"ok": False, "url": url, "error": "CFBD client unavailable"}
     try:
-        plays = await client.get_plays_by_game(gameId)
+        plays = client.get_plays_by_game(int(gameId))
+        return {"ok": True, "url": url, "plays": len(plays)}
     except Exception as exc:  # pragma: no cover - network edge
-        return {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
-    count = len(plays) if isinstance(plays, list) else len(plays.get("plays", []))
-    return {"ok": True, "plays": count}
+        return {"ok": False, "url": url, "error": f"{type(exc).__name__}: {exc}"}
 
 
 @app.get("/")
