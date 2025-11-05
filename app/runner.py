@@ -25,6 +25,7 @@ from .storage import get_storage
 from .uploads import resolve_upload
 from .settings import CFBD_API_KEY, CFBD_ENABLED, settings
 from .packager import concat_clips_to_mp4
+from .bucketize import build_guided_windows
 from .monitor import JobMonitor
 
 logger = logging.getLogger(__name__)
@@ -59,6 +60,52 @@ def _nearest_in_window(values: List[float], start: float, end: float, target: fl
         return None
     window = values[lo:hi]
     return min(window, key=lambda v: abs(v - target)) if window else None
+
+
+def _clock_str_to_seconds(clock: object) -> Optional[int]:
+    if clock is None:
+        return None
+    if isinstance(clock, bool):
+        return None
+    if isinstance(clock, (int, float)):
+        return int(float(clock))
+    text = str(clock).strip()
+    if not text:
+        return None
+    if text.upper().startswith("PT") and text.upper().endswith("S"):
+        minutes = 0
+        seconds = 0
+        remainder = text.upper()[2:]
+        if "M" in remainder:
+            parts = remainder.split("M", 1)
+            try:
+                minutes = int(parts[0])
+            except ValueError:
+                minutes = 0
+            remainder = parts[1]
+        if remainder.endswith("S"):
+            remainder = remainder[:-1]
+        try:
+            seconds = int(float(remainder or 0))
+        except ValueError:
+            seconds = 0
+        return minutes * 60 + seconds
+    if ":" in text:
+        parts = text.split(":")
+        try:
+            parts = [int(float(p)) for p in parts]
+        except ValueError:
+            return None
+        if len(parts) == 2:
+            minutes, seconds = parts
+            return minutes * 60 + seconds
+        if len(parts) == 3:
+            hours, minutes, seconds = parts
+            return hours * 3600 + minutes * 60 + seconds
+    try:
+        return int(float(text))
+    except ValueError:
+        return None
 
 class JobRunner:
     def __init__(self, max_concurrency: int = 2):
@@ -425,6 +472,7 @@ class JobRunner:
                 guided_windows: List[Tuple[float, float]] = []
                 clip_entries: List[Dict[str, Any]] = []
                 ocr_series: List[Tuple[float, int, int]] = []
+                windows_with_meta: List[Tuple[float, float, Dict[str, Any]]] = []
 
                 job_state = self.jobs.get(job_id, {})
                 job_state["cfbd_state"] = None
@@ -751,121 +799,71 @@ class JobRunner:
                     cfbd_summary["dtw_periods"] = sorted(mapping_dtw.keys())
 
                     if mapping_dtw:
-                        total = len(cfbd_plays)
-                        for idx, play in enumerate(cfbd_plays, start=1):
-                            if idx % 25 == 0:
-                                self._set_stage(
-                                    job_id,
-                                    "detecting",
-                                    pct=min(
-                                        80.0,
-                                        60.0
-                                        + 15.0 * (idx / max(1, total)),
-                                    ),
-                                    detail=f"Aligning plays {idx}/{total}",
-                                    eta=self._eta(job_id),
-                                )
-                                _heartbeat(
-                                    "detecting",
-                                    pct=min(
-                                        80.0,
-                                        60.0
-                                        + 15.0 * (idx / max(1, total)),
-                                    ),
-                                    detail=f"Aligning plays {idx}/{total}",
-                                )
-                            try:
-                                period = int(play.get("period") or 0)
-                                clock_sec = int(
-                                    play.get("clockSec")
-                                    or play.get("clock_sec")
-                                    or 0
-                                )
-                            except (TypeError, ValueError):
-                                continue
-                            ts_est = map_clock(mapping_dtw, period, clock_sec)
-                            if ts_est is None:
-                                continue
+                        def _period_clock_to_video(period_value: int, clock_repr: str) -> float:
+                            seconds_val = _clock_str_to_seconds(clock_repr)
+                            if seconds_val is None:
+                                raise ValueError("clock_parse")
+                            mapped_val = map_clock(mapping_dtw, int(period_value), int(seconds_val))
+                            if mapped_val is None:
+                                raise ValueError("clock_map")
+                            return float(mapped_val)
 
-                            audio_window = max(
-                                0.0, float(settings.REFINE_AUDIO_WINDOW_SEC)
+                        monitor.touch(stage="detecting", detail="CFBD: bucketizing")
+                        try:
+                            bucketed = build_guided_windows(
+                                cfbd_plays,
+                                team_name=team or "",
+                                period_clock_to_video=_period_clock_to_video,
+                                pre_pad=pre_pad,
+                                post_pad=post_pad,
                             )
-                            audio_time: Optional[float] = None
-                            if audio_spike_list:
-                                audio_time = nearest_audio(
-                                    audio_spike_list,
-                                    ts_est,
-                                    ts_est - audio_window,
-                                    ts_est + audio_window,
-                                )
-                            scene_time: Optional[float] = None
-                            if audio_time is None:
-                                try:
-                                    scene_time = nearest_scene(
-                                        video_path,
-                                        ts_est,
-                                        window=max(
-                                            0.0,
-                                            float(settings.REFINE_SCENE_WINDOW_SEC),
-                                        ),
-                                    )
-                                except Exception:
-                                    scene_time = None
-
-                            center_time = (
-                                audio_time
-                                if audio_time is not None
-                                else scene_time
-                                if scene_time is not None
-                                else ts_est
+                        except Exception:
+                            logger.exception(
+                                "cfbd_bucketize_failed", extra={"job_id": job_id}
                             )
-                            has_audio = audio_time is not None
-                            has_scene = (
-                                scene_time is not None
-                                and abs(scene_time - ts_est)
-                                <= float(settings.REFINE_SCENE_WINDOW_SEC)
-                            )
+                            bucketed = {
+                                "team_offense": [],
+                                "opp_offense": [],
+                                "special_teams": [],
+                            }
 
-                            start = max(0.0, center_time - pre_pad)
-                            end = min(vid_dur, center_time + post_pad + 6.0)
-                            if end - start < min_duration:
-                                end = min(vid_dur, start + min_duration)
-                            if end - start > max_duration:
-                                end = min(vid_dur, start + max_duration)
-                            if end <= start:
-                                continue
-
-                            clip_entries.append(
-                                {
-                                    "start": round(start, 3),
-                                    "end": round(end, 3),
-                                    "period": int(period),
-                                    "clock_sec": int(clock_sec),
-                                    "center": float(center_time),
-                                    "has_audio": bool(has_audio),
-                                    "has_scene": bool(has_scene),
+                        windows_with_meta = []
+                        for bucket_name, items in bucketed.items():
+                            for start, end, score_weight, play in items:
+                                meta: Dict[str, Any] = {
+                                    "bucket": bucket_name,
+                                    "score": float(score_weight),
                                     "source": "cfbd",
                                 }
-                            )
+                                if isinstance(play, dict):
+                                    meta["play"] = play
+                                windows_with_meta.append(
+                                    (
+                                        max(0.0, float(start)),
+                                        max(0.0, float(end)),
+                                        meta,
+                                    )
+                                )
 
                         pre_merge_guided = [
-                            (clip["start"], clip["end"]) for clip in clip_entries
+                            (round(entry[0], 3), round(entry[1], 3))
+                            for entry in windows_with_meta
                         ]
                         guided_windows = list(pre_merge_guided)
-                        cfbd_summary["clips"] = len(clip_entries)
-                        cfbd_used = bool(clip_entries)
+                        cfbd_summary["clips"] = len(windows_with_meta)
+                        cfbd_used = bool(windows_with_meta)
                         if cfbd_used:
                             self._set_stage(
                                 job_id,
                                 "detecting",
                                 pct=80.0,
-                                detail=f"CFBD aligned {len(clip_entries)} plays",
+                                detail=f"CFBD aligned {len(windows_with_meta)} plays",
                                 eta=self._eta(job_id),
                             )
                             _heartbeat(
                                 "detecting",
                                 pct=80.0,
-                                detail=f"CFBD aligned {len(clip_entries)} plays",
+                                detail=f"CFBD aligned {len(windows_with_meta)} plays",
                             )
                         else:
                             self._set_stage(
@@ -954,6 +952,21 @@ class JobRunner:
                 metrics["pre_merge_windows"] = len(pre_merge_list)
                 metrics["post_merge_windows"] = len(windows)
 
+                if not cfbd_used:
+                    source_label = "fallback" if fallback_used else "vision"
+                    windows_with_meta = [
+                        (
+                            float(start),
+                            float(end),
+                            {
+                                "bucket": "team_offense",
+                                "score": 1.0,
+                                "source": source_label,
+                            },
+                        )
+                        for start, end in windows
+                    ]
+
                 detail = ""
                 if cfbd_used:
                     detail = f"CFBD aligned {len(windows)} plays"
@@ -1009,27 +1022,126 @@ class JobRunner:
 
                 self._ensure_not_cancelled(job_id, cancel_ev)
 
-                if not clip_entries:
-                    source_label = "fallback" if fallback_used else "vision"
-                    for start, end in windows:
-                        start_f = round(float(start), 3)
-                        end_f = round(float(end), 3)
-                        if end_f <= start_f:
-                            continue
-                        clip_entries.append(
+                clip_entries = []
+                if not windows_with_meta:
+                    windows_with_meta = [
+                        (
+                            float(start),
+                            float(end),
                             {
-                                "start": start_f,
-                                "end": end_f,
-                                "period": None,
-                                "clock_sec": None,
-                                "center": float((start_f + end_f) / 2.0),
-                                "has_audio": False,
-                                "has_scene": False,
-                                "source": source_label,
-                            }
+                                "bucket": "team_offense",
+                                "score": 1.0,
+                                "source": "fallback" if fallback_used else "vision",
+                            },
                         )
+                        for start, end in windows
+                    ]
+
+                for start, end, meta in windows_with_meta:
+                    start_val = max(0.0, float(start))
+                    end_val = min(vid_dur, float(end))
+                    if end_val <= start_val:
+                        continue
+                    meta_dict = meta if isinstance(meta, dict) else {}
+                    bucket_name = str(meta_dict.get("bucket", "team_offense"))
+                    score_val = float(meta_dict.get("score", 1.0))
+                    play = meta_dict.get("play") if isinstance(meta_dict.get("play"), dict) else None
+                    source_tag = meta_dict.get("source") or ("cfbd" if play else ("fallback" if fallback_used else "vision"))
+
+                    period_val: Optional[int] = None
+                    clock_sec_val: Optional[int] = None
+                    if play:
+                        try:
+                            period_val = int(play.get("period") or play.get("quarter") or 0)
+                        except (TypeError, ValueError):
+                            period_val = None
+                        clock_raw = play.get("clockSec") or play.get("clock_sec")
+                        if clock_raw is None:
+                            clock_field = play.get("clock")
+                            if isinstance(clock_field, dict):
+                                clock_raw = (
+                                    clock_field.get("displayValue")
+                                    or clock_field.get("text")
+                                )
+                            else:
+                                clock_raw = clock_field
+                        clock_parsed = _clock_str_to_seconds(clock_raw)
+                        if clock_parsed is not None:
+                            clock_sec_val = int(clock_parsed)
+
+                    if play:
+                        center_hint = play.get("_aligned_sec")
+                        center_guess = (
+                            float(center_hint)
+                            if isinstance(center_hint, (int, float))
+                            else (start_val + end_val) / 2.0
+                        )
+                        audio_window = max(0.0, float(settings.REFINE_AUDIO_WINDOW_SEC))
+                        audio_time = None
+                        if audio_spike_list:
+                            audio_time = nearest_audio(
+                                audio_spike_list,
+                                center_guess,
+                                center_guess - audio_window,
+                                center_guess + audio_window,
+                            )
+                        scene_time = None
+                        if audio_time is None:
+                            try:
+                                scene_time = nearest_scene(
+                                    video_path,
+                                    center_guess,
+                                    window=max(
+                                        0.0, float(settings.REFINE_SCENE_WINDOW_SEC)
+                                    ),
+                                )
+                            except Exception:
+                                scene_time = None
+                        center_time = (
+                            audio_time
+                            if audio_time is not None
+                            else scene_time
+                            if scene_time is not None
+                            else center_guess
+                        )
+                        has_audio = audio_time is not None
+                        has_scene = (
+                            scene_time is not None
+                            and abs(scene_time - center_guess)
+                            <= float(settings.REFINE_SCENE_WINDOW_SEC)
+                        )
+                        start_val = max(0.0, center_time - pre_pad)
+                        end_val = min(vid_dur, center_time + post_pad + 6.0)
+                        if end_val - start_val < min_duration:
+                            end_val = min(vid_dur, start_val + min_duration)
+                        if end_val - start_val > max_duration:
+                            end_val = min(vid_dur, start_val + max_duration)
+                        if end_val <= start_val:
+                            continue
+                        center_val = float(center_time)
+                    else:
+                        has_audio = False
+                        has_scene = False
+                        center_val = float((start_val + end_val) / 2.0)
+
+                    clip_entries.append(
+                        {
+                            "start": round(start_val, 3),
+                            "end": round(end_val, 3),
+                            "period": period_val,
+                            "clock_sec": clock_sec_val,
+                            "center": center_val,
+                            "has_audio": bool(has_audio),
+                            "has_scene": bool(has_scene),
+                            "source": source_tag,
+                            "bucket": bucket_name,
+                            "score": score_val,
+                        }
+                    )
 
                 samples_by_period: Dict[int, List[Tuple[float, int]]] = {}
+                if cfbd_used:
+                    cfbd_summary["clips"] = len(clip_entries)
                 for ts, per, clk in ocr_series:
                     samples_by_period.setdefault(int(per), []).append(
                         (float(ts), int(clk))
@@ -1216,21 +1328,11 @@ class JobRunner:
                     job_id,
                     "bucketing",
                     est_sec=3.0,
-                    detail="Grouping by duration",
+                    detail="Grouping by possession",
                 )
-                _heartbeat("bucketing", detail="Grouping by duration")
+                _heartbeat("bucketing", detail="Grouping by possession")
 
-                def _bucket(duration: float) -> str:
-                    if duration < 6:
-                        return "short"
-                    if duration < 12:
-                        return "medium"
-                    return "long"
-
-                bucket_counts = {"short": 0, "medium": 0, "long": 0}
-                for clip in clip_entries:
-                    duration = max(0.01, clip["end"] - clip["start"])
-                    bucket_counts[_bucket(duration)] += 1
+                
                 ordered = list(clip_entries)
 
                 self._set_stage(job_id, "bucketing", pct=15.0, detail="Buckets ready", eta=0.0)
@@ -1304,17 +1406,21 @@ class JobRunner:
                         if eta_est >= 0:
                             eta_seconds = int(eta_est)
                     progress = 20.0 + 70.0 * frac
+                    bucket_label = str(clip.get("bucket", "team_offense"))
+                    seg_detail = f"Cutting {idx}/{total_clips} ({bucket_label})"
+                    if seg_dur >= 1.0:
+                        seg_detail += f" (≈{int(seg_dur)}s)"
                     self._set_stage(
                         job_id,
                         "segmenting",
                         pct=progress,
-                        detail=f"Cutting {idx}/{total_clips} (≈{int(seg_dur)}s)",
+                        detail=seg_detail,
                         eta=eta_seconds,
                     )
                     _heartbeat(
                         "segmenting",
                         pct=progress,
-                        detail=f"Cutting {idx}/{total_clips} (≈{int(seg_dur)}s)",
+                        detail=seg_detail,
                         fields={
                             "clips_done": idx,
                             "clips_total": total_clips,
@@ -1347,6 +1453,32 @@ class JobRunner:
                         "total": 0,
                     }
 
+                manifest_buckets: Dict[str, List[Dict[str, Any]]] = {
+                    "team_offense": [],
+                    "opp_offense": [],
+                    "special_teams": [],
+                }
+                for clip in clips_meta:
+                    bucket_name = str(clip.get("bucket", "team_offense"))
+                    bucket_items = manifest_buckets.setdefault(bucket_name, [])
+                    bucket_items.append(
+                        {
+                            "id": clip.get("id", ""),
+                            "start": round(float(clip.get("start", 0.0)), 3),
+                            "end": round(float(clip.get("end", 0.0)), 3),
+                            "duration": round(float(clip.get("duration", 0.0)), 3),
+                            "file": clip.get("file", ""),
+                            "thumb": clip.get("thumb", ""),
+                            "bucket": bucket_name,
+                            "score": float(clip.get("score", 1.0)),
+                        }
+                    )
+
+                for items in manifest_buckets.values():
+                    items.sort(key=lambda item: (-item["score"], item["start"]))
+
+                bucket_counts = {key: len(items) for key, items in manifest_buckets.items()}
+
                 self._start_stage(
                     job_id,
                     "packaging",
@@ -1375,6 +1507,10 @@ class JobRunner:
                     "ocr_samples": int(metrics.get("ocr_samples", 0)),
                     "cfbd_used": bool(cfbd_used),
                     "align_method": "dtw" if cfbd_used else "fallback",
+                    "bucket_logic": "posteam/defteam+ST",
+                    "scoring_bias": True,
+                    "down_distance_bias": True,
+                    "pads": {"pre": float(pre_pad), "post": float(post_pad)},
                 }
                 if not cfbd_used and cfbd_reason:
                     det_meta["cfbd_disable_reason"] = cfbd_reason
@@ -1392,11 +1528,8 @@ class JobRunner:
                     "source": source_info,
                     "detector_meta": det_meta,
                     "cfbd": cfbd_summary,
-                    "buckets": {
-                        "short": bucket_counts.get("short", 0),
-                        "medium": bucket_counts.get("medium", 0),
-                        "long": bucket_counts.get("long", 0),
-                    },
+                    "buckets": manifest_buckets,
+                    "bucket_counts": bucket_counts,
                     "clips": clips_meta,
                     "metrics": {
                         "num_clips": len(clips_meta),
@@ -1471,6 +1604,7 @@ class JobRunner:
                 manifest_outputs = manifest.setdefault("outputs", {})
                 manifest_outputs["reel_url"] = reel_url
                 manifest_outputs["reel_duration_sec"] = round(reel_dur, 3)
+                manifest_outputs["reels_by_bucket"] = bucket_urls
 
                 manifest_path = os.path.join(tmp_dir, "manifest.json")
                 with open(manifest_path, "w", encoding="utf-8") as f:
@@ -1497,6 +1631,8 @@ class JobRunner:
                 if reel_upload:
                     reel_local, reel_key = reel_upload
                     uploads.append(("reel.mp4", reel_key, reel_local))
+                for label, key, path in bucket_reel_uploads:
+                    uploads.append((label, key, path))
                 uploads.append(("output.zip", archive_key, zip_path))
                 uploads.append(("manifest.json", manifest_key, manifest_path))
 

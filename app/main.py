@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import time
 import uuid
 from contextlib import asynccontextmanager
@@ -23,6 +24,33 @@ from .storage import get_storage
 from .uploads import destination_for, public_path, register_upload, resolve_upload
 
 logger = logging.getLogger(__name__)
+
+
+ESPN_GAMEID_RE = re.compile(r"/gameId/(\d+)")
+
+
+def _normalize_game_id(raw: str | int | None) -> int | None:
+    """Extract a numeric CFBD/ESPN game_id from user-provided input."""
+
+    if raw is None:
+        return None
+    if isinstance(raw, bool):
+        return None
+    if isinstance(raw, int):
+        return raw
+    text = str(raw).strip()
+    if not text:
+        return None
+    match = ESPN_GAMEID_RE.search(text)
+    if match:
+        try:
+            return int(match.group(1))
+        except ValueError:
+            return None
+    try:
+        return int(text)
+    except (TypeError, ValueError):
+        return None
 
 
 def _max_concurrency() -> int:
@@ -125,10 +153,20 @@ async def create_job(request: Request):
     except Exception as exc:  # pragma: no cover - invalid JSON guard
         raise HTTPException(status_code=400, detail="Invalid JSON body") from exc
 
+    cfbd_payload = payload.get("cfbd") if isinstance(payload, dict) else None
+    if isinstance(cfbd_payload, dict):
+        cfbd_payload = dict(cfbd_payload)
+        cfbd_payload["game_id"] = _normalize_game_id(cfbd_payload.get("game_id"))
+        payload["cfbd"] = cfbd_payload
+
     try:
         submission = JobSubmission.model_validate(payload)
     except ValidationError as exc:
         raise HTTPException(status_code=422, detail=exc.errors()) from exc
+
+    cfbd_input = getattr(submission, "cfbd", None)
+    if cfbd_input is not None:
+        cfbd_input.game_id = _normalize_game_id(getattr(cfbd_input, "game_id", None))
 
     if submission.upload_id:
         resolved = resolve_upload(submission.upload_id)

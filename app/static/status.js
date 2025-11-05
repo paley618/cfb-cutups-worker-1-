@@ -10,6 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const selftestBtn = document.getElementById('selftest');
   const selftestOut = document.getElementById('selftest_out');
 
+  const cfbdIdInput = document.getElementById('cfbd_game_id');
+  if (cfbdIdInput && !cfbdIdInput.dataset.espanhanced) {
+    cfbdIdInput.dataset.espanhanced = '1';
+    cfbdIdInput.addEventListener('change', () => {
+      const v = (cfbdIdInput.value || '').trim();
+      const m = v.match(/\/gameId\/(\d+)/i);
+      if (m) cfbdIdInput.value = m[1];
+    });
+  }
+
   const addLine = (text) => {
     if (!statusEl) return;
     const line = document.createElement('div');
@@ -140,6 +150,46 @@ document.addEventListener('DOMContentLoaded', () => {
     meta.className = 'status-summary muted';
     meta.textContent = `CFBD: ${parts.join(' • ')}`;
     line.append(' — ', meta);
+  };
+
+  const renderOutputs = (data) => {
+    if (!statusEl) return;
+    const manifest = data && data.manifest ? data.manifest : data;
+    if (!manifest || typeof manifest !== 'object') return;
+    const outputs = manifest.outputs || {};
+    const reels = outputs.reels_by_bucket || {};
+    const counts = manifest.bucket_counts || {};
+    const teamNameRaw =
+      (manifest.cfbd &&
+        ((manifest.cfbd.request && manifest.cfbd.request.team) || manifest.cfbd.team)) ||
+      '';
+    const teamName = (teamNameRaw || '').toString().trim() || 'Team';
+    const offenseLabel = `${teamName} Offense`;
+    const oppLabel = teamName ? `Opponent Offense` : 'Opponent Offense';
+    const specialLabel = 'Special Teams';
+    const ensureBox = () => {
+      const existing = document.getElementById('outputs');
+      if (existing) return existing;
+      const el = document.createElement('div');
+      el.id = 'outputs';
+      statusEl.appendChild(el);
+      return el;
+    };
+    const box = ensureBox();
+
+    const mk = (label, url, count) =>
+      url
+        ? `<a href="${url}" target="_blank">${label} (${count ?? 0})</a>`
+        : `<span class="muted">${label} (${count ?? 0})</span>`;
+
+    box.innerHTML = `
+    <div class="reels">
+      ${mk(offenseLabel, reels.team_offense, counts.team_offense)}
+      &nbsp;|&nbsp;
+      ${mk(oppLabel, reels.opp_offense, counts.opp_offense)}
+      &nbsp;|&nbsp;
+      ${mk(specialLabel, reels.special_teams, counts.special_teams)}
+    </div>`;
   };
 
   const renderTimeline = (job) => {
@@ -310,6 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
     resultEl.style.display = 'none';
     resultEl.textContent = '';
     errorEl.textContent = '';
+    const outBox = document.getElementById('outputs');
+    if (outBox) outBox.innerHTML = '';
   };
 
   const fetchCookieStatus = async () => {
@@ -454,10 +506,14 @@ document.addEventListener('DOMContentLoaded', () => {
             resultEl.style.display = 'block';
             if (typeof manifest === 'string') {
               resultEl.textContent = manifest;
-            } else {
-              resultEl.textContent = JSON.stringify(manifest, null, 2);
+              errorEl.textContent = '';
+              return;
             }
+            resultEl.textContent = JSON.stringify(manifest, null, 2);
             errorEl.textContent = '';
+            attachSummary(manifest);
+            attachCfbdSummary(manifest);
+            renderOutputs({ manifest });
           };
 
           const parseManifestResponse = async (resp) => {
@@ -474,16 +530,12 @@ document.addEventListener('DOMContentLoaded', () => {
               if (!r2.ok) throw new Error('HTTP ' + r2.status);
               const manifest = await parseManifestResponse(r2);
               showManifest(manifest);
-              attachSummary(manifest);
-              attachCfbdSummary(manifest);
             } catch (e) {
               try {
                 const pr = await fetch(`/manifest-proxy?url=${encodeURIComponent(manifestUrl)}`, { cache: 'no-store' });
                 if (!pr.ok) throw new Error('proxy ' + pr.status);
                 const manifest = await parseManifestResponse(pr);
                 showManifest(manifest);
-                attachSummary(manifest);
-                attachCfbdSummary(manifest);
               } catch (e2) {
                 console.error('manifest_fetch_error', e, e2);
                 errorEl.textContent = 'Completed, but manifest fetch failed (CORS/URL). Use the Manifest JSON link above.';
