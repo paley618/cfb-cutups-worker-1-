@@ -6,6 +6,7 @@ import re
 import time
 import uuid
 from contextlib import asynccontextmanager
+from typing import Any, Mapping
 
 import httpx
 from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile, status
@@ -15,9 +16,10 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import ValidationError
 
 from .cookies import write_cookies_if_any, write_drive_cookies_if_any
+from .diag_cfbd import router as diag_cfbd_router
 from .logging_setup import setup_logging
 from .runner import JobRunner
-from .schemas import JobSubmission
+from .schemas import CFBDInput, JobSubmission
 from .settings import settings
 from .selftest import run_all
 from .storage import get_storage
@@ -30,23 +32,62 @@ _ESPN_RE = re.compile(r"/gameId/(\d+)", re.I)
 
 
 def _normalize_game_id(raw: str | int | None) -> int | None:
-    """Extract a numeric CFBD/ESPN game_id from user-provided input."""
-
     if raw is None:
         return None
-    text = str(raw).strip()
-    if not text:
+    v = str(raw).strip()
+    if not v:
         return None
-    match = _ESPN_RE.search(text)
-    if match:
-        try:
-            return int(match.group(1))
-        except ValueError:
-            return None
+    m = _ESPN_RE.search(v)
+    if m:
+        return int(m.group(1))
     try:
-        return int(text)
-    except (TypeError, ValueError):
+        return int(v)
+    except Exception:  # pragma: no cover - defensive
         return None
+
+
+def _payload_from_form(form: Mapping[str, Any]) -> dict[str, Any]:
+    def _clean(name: str) -> str | None:
+        value = form.get(name)
+        if value is None:
+            return None
+        text = str(value).strip()
+        return text or None
+
+    def _float(name: str, default: float) -> float:
+        value = _clean(name)
+        if value is None:
+            return default
+        try:
+            return float(value)
+        except (TypeError, ValueError):  # pragma: no cover - user input guard
+            return default
+
+    payload: dict[str, Any] = {
+        "video_url": _clean("video_url"),
+        "webhook_url": _clean("webhook_url"),
+        "options": {
+            "play_padding_pre": _float("play_padding_pre", 3.0),
+            "play_padding_post": _float("play_padding_post", 5.0),
+            "scene_thresh": _float("scene_thresh", 0.30),
+            "min_duration": _float("min_duration", 4.0),
+            "max_duration": _float("max_duration", 20.0),
+        },
+        "cfbd": {
+            "use_cfbd": bool(form.get("use_cfbd")),
+            "require_cfbd": bool(form.get("require_cfbd")),
+        },
+    }
+
+    upload_id = _clean("upload_id")
+    if upload_id:
+        payload["upload_id"] = upload_id
+
+    presigned_url = _clean("presigned_url")
+    if presigned_url:
+        payload["presigned_url"] = presigned_url
+
+    return payload
 
 
 def _max_concurrency() -> int:
@@ -77,6 +118,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.include_router(diag_cfbd_router)
 
 
 @app.get("/manifest-proxy")
@@ -121,19 +163,6 @@ async def __selftest():
     return await run_all(storage)
 
 
-@app.get("/selftest/cfbd")
-def cfbd_selftest(gameId: int):
-    url = f"https://api.collegefootballdata.com/plays?gameId={int(gameId)}"
-    client = getattr(app.state, "cfbd", None)
-    if client is None:
-        return {"ok": False, "url": url, "error": "CFBD client unavailable"}
-    try:
-        plays = client.get_plays_by_game(int(gameId))
-        return {"ok": True, "url": url, "plays": len(plays)}
-    except Exception as exc:  # pragma: no cover - network edge
-        return {"ok": False, "url": url, "error": f"{type(exc).__name__}: {exc}"}
-
-
 @app.get("/")
 async def submit_page():
     return FileResponse("app/static/submit.html")
@@ -158,10 +187,21 @@ async def upload_file(file: UploadFile = File(...)):
 
 @app.post("/jobs", status_code=status.HTTP_202_ACCEPTED)
 async def create_job(request: Request):
-    try:
-        payload = await request.json()
-    except Exception as exc:  # pragma: no cover - invalid JSON guard
-        raise HTTPException(status_code=400, detail="Invalid JSON body") from exc
+    payload: dict[str, Any]
+    form_data = None
+    content_type = (request.headers.get("content-type") or "").lower()
+    is_form = "application/x-www-form-urlencoded" in content_type or "multipart/form-data" in content_type
+    if is_form:
+        try:
+            form_data = await request.form()
+        except Exception as exc:  # pragma: no cover - invalid form guard
+            raise HTTPException(status_code=400, detail="Invalid form body") from exc
+        payload = _payload_from_form(form_data)
+    else:
+        try:
+            payload = await request.json()
+        except Exception as exc:  # pragma: no cover - invalid JSON guard
+            raise HTTPException(status_code=400, detail="Invalid JSON body") from exc
 
     cfbd_payload = payload.get("cfbd") if isinstance(payload, dict) else None
     if isinstance(cfbd_payload, dict):
@@ -176,9 +216,26 @@ async def create_job(request: Request):
 
     cfbd_input = getattr(submission, "cfbd", None)
     if cfbd_input is not None:
-        cfbd_input.game_id = _normalize_game_id(getattr(cfbd_input, "game_id", None))
-        if cfbd_input.team is not None:
-            cfbd_input.team = cfbd_input.team.strip() or None
+        if form_data is not None:
+            if not isinstance(cfbd_input, CFBDInput):
+                cfbd_input = CFBDInput.model_validate(cfbd_input)
+                submission.cfbd = cfbd_input
+            cfbd_input.use_cfbd = bool(form_data.get("use_cfbd"))
+            cfbd_input.game_id = _normalize_game_id(form_data.get("cfbd_game_id"))
+            cfbd_input.team = (form_data.get("cfbd_team") or "").strip() or None
+            try:
+                cfbd_input.season = int(form_data.get("cfbd_year") or 0) or None
+            except Exception:  # pragma: no cover - user input guard
+                cfbd_input.season = None
+            try:
+                cfbd_input.week = int(form_data.get("cfbd_week") or 0) or None
+            except Exception:  # pragma: no cover - user input guard
+                cfbd_input.week = None
+            cfbd_input.require_cfbd = bool(form_data.get("require_cfbd"))
+        else:
+            cfbd_input.game_id = _normalize_game_id(getattr(cfbd_input, "game_id", None))
+            if cfbd_input.team is not None:
+                cfbd_input.team = cfbd_input.team.strip() or None
 
     if submission.upload_id:
         resolved = resolve_upload(submission.upload_id)
