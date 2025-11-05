@@ -8,7 +8,8 @@ from typing import Any, Awaitable, Dict, List, Optional, Tuple
 from .video import download_game_video, probe_duration_sec, file_size_bytes
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
 from .detector import detect_plays
-from .cfbd import CFBDClient, CFBDClientError
+from .cfbd_client import get_plays
+from .cfbd_game_finder import find_game_id
 from .ocr_tesseract import sample_series as sample_tesseract_series, TESSERACT_READY
 from .ocr_scorebug import sample_scorebug_series
 from .align_dtw import fit_period_dtw, map_clock
@@ -22,8 +23,9 @@ from .debug_dump import save_timeline_thumbs, save_candidate_thumbs
 from .fallback import timegrid_windows
 from .storage import get_storage
 from .uploads import resolve_upload
-from .settings import settings
+from .settings import CFBD_API_KEY, CFBD_ENABLED, settings
 from .packager import concat_clips_to_mp4
+from .bucketize import build_guided_windows
 from .monitor import JobMonitor
 
 logger = logging.getLogger(__name__)
@@ -59,6 +61,52 @@ def _nearest_in_window(values: List[float], start: float, end: float, target: fl
     window = values[lo:hi]
     return min(window, key=lambda v: abs(v - target)) if window else None
 
+
+def _clock_str_to_seconds(clock: object) -> Optional[int]:
+    if clock is None:
+        return None
+    if isinstance(clock, bool):
+        return None
+    if isinstance(clock, (int, float)):
+        return int(float(clock))
+    text = str(clock).strip()
+    if not text:
+        return None
+    if text.upper().startswith("PT") and text.upper().endswith("S"):
+        minutes = 0
+        seconds = 0
+        remainder = text.upper()[2:]
+        if "M" in remainder:
+            parts = remainder.split("M", 1)
+            try:
+                minutes = int(parts[0])
+            except ValueError:
+                minutes = 0
+            remainder = parts[1]
+        if remainder.endswith("S"):
+            remainder = remainder[:-1]
+        try:
+            seconds = int(float(remainder or 0))
+        except ValueError:
+            seconds = 0
+        return minutes * 60 + seconds
+    if ":" in text:
+        parts = text.split(":")
+        try:
+            parts = [int(float(p)) for p in parts]
+        except ValueError:
+            return None
+        if len(parts) == 2:
+            minutes, seconds = parts
+            return minutes * 60 + seconds
+        if len(parts) == 3:
+            hours, minutes, seconds = parts
+            return hours * 3600 + minutes * 60 + seconds
+    try:
+        return int(float(text))
+    except ValueError:
+        return None
+
 class JobRunner:
     def __init__(self, max_concurrency: int = 2):
         self.queue: "asyncio.Queue[tuple[str, Any]]" = asyncio.Queue()
@@ -67,48 +115,6 @@ class JobRunner:
         self._worker_task: Optional[asyncio.Task] = None
         self._stop = asyncio.Event()
         self._cancels: Dict[str, asyncio.Event] = {}
-        self.cfbd = CFBDClient(
-            api_key=settings.cfbd_api_key,
-            timeout=float(settings.CFBD_TIMEOUT_SECONDS),
-            base_url=settings.cfbd_api_base,
-        )
-
-    async def _fetch_cfbd_with_retries(
-        self,
-        job_id: str,
-        team_or_game: Dict[str, Any],
-        monitor: JobMonitor,
-    ) -> Dict[str, Any]:
-        """Attempt to fetch CFBD plays with retries and exponential backoff."""
-
-        attempts = max(1, int(settings.CFBD_MAX_RETRIES))
-        delay = max(0.0, float(settings.CFBD_BACKOFF_BASE_SEC))
-        last_err: Optional[BaseException] = None
-
-        for attempt in range(1, attempts + 1):
-            monitor.touch(stage="detecting", detail=f"CFBD fetch {attempt}/{attempts}")
-            try:
-                spec = dict(team_or_game)
-                payload = await asyncio.wait_for(
-                    self.cfbd.fetch(spec),
-                    timeout=float(settings.CFBD_TIMEOUT_SECONDS),
-                )
-                plays = list(payload.get("plays") or [])
-                if not plays:
-                    raise RuntimeError("CFBD returned no plays")
-                payload.setdefault("request", spec)
-                return payload
-            except Exception as exc:  # pragma: no cover - network/CFBD flake
-                last_err = exc
-                if attempt >= attempts:
-                    break
-                await asyncio.sleep(delay)
-                delay *= 2
-
-        raise RuntimeError(
-            f"CFBD unavailable after {attempts} attempts: {last_err!r}"
-        )
-
     def _init_job(self, job_id: str):
         now = time.time()
         self.jobs[job_id] = {
@@ -127,6 +133,7 @@ class JobRunner:
             "cancel": False,
             "cfbd_state": None,
             "cfbd_reason": None,
+            "meta": {},
         }
         self._cancels[job_id] = asyncio.Event()
 
@@ -440,6 +447,42 @@ class JobRunner:
                 }
                 debug_urls: Dict[str, Any] = {}
 
+                options = getattr(submission, "options", None)
+                try:
+                    pre_pad = max(
+                        0.0,
+                        float(getattr(options, "play_padding_pre", settings.PLAY_PRE_PAD_SEC)),
+                    )
+                except Exception:
+                    pre_pad = float(settings.PLAY_PRE_PAD_SEC)
+                try:
+                    post_pad = max(
+                        0.0,
+                        float(getattr(options, "play_padding_post", settings.PLAY_POST_PAD_SEC)),
+                    )
+                except Exception:
+                    post_pad = float(settings.PLAY_POST_PAD_SEC)
+                try:
+                    scene_thresh = float(getattr(options, "scene_thresh", 0.30))
+                except Exception:
+                    scene_thresh = 0.30
+                try:
+                    min_duration = max(
+                        0.1,
+                        float(getattr(options, "min_duration", settings.PLAY_MIN_SEC)),
+                    )
+                except Exception:
+                    min_duration = float(settings.PLAY_MIN_SEC)
+                try:
+                    max_duration = max(
+                        min_duration,
+                        float(getattr(options, "max_duration", settings.PLAY_MAX_SEC)),
+                    )
+                except Exception:
+                    max_duration = max(min_duration, float(settings.PLAY_MAX_SEC))
+                merge_gap = float(settings.MERGE_GAP_SEC)
+
+
                 cfbd_summary: Dict[str, Any] = {
                     "requested": False,
                     "used": False,
@@ -452,11 +495,9 @@ class JobRunner:
                     "ocr_engine": None,
                     "dtw_periods": [],
                     "align_method": None,
+                    "finder": None,
                 }
                 cfbd_in = getattr(submission, "cfbd", None)
-                cfbd_task: Optional[asyncio.Task] = None
-                cfbd_payload: Optional[Dict[str, Any]] = None
-                cfbd_request: Optional[Dict[str, Any]] = None
                 cfbd_reason: Optional[str] = None
                 cfbd_plays: List[Dict[str, Any]] = []
                 cfbd_play_count = 0
@@ -466,146 +507,180 @@ class JobRunner:
                 guided_windows: List[Tuple[float, float]] = []
                 clip_entries: List[Dict[str, Any]] = []
                 ocr_series: List[Tuple[float, int, int]] = []
+                windows_with_meta: List[Tuple[float, float, Dict[str, Any]]] = []
 
                 job_state = self.jobs.get(job_id, {})
                 job_state["cfbd_state"] = None
                 job_state["cfbd_reason"] = None
+                job_meta = job_state.setdefault("meta", {})
+                requested_cfbd = bool(cfbd_in and getattr(cfbd_in, "use_cfbd", False))
+                cfbd_job_meta: Dict[str, Any] = {"requested": requested_cfbd}
+                if cfbd_in:
+                    team_hint = (cfbd_in.team or "").strip() or None
+                    cfbd_job_meta.setdefault("team", team_hint)
+                    cfbd_job_meta.setdefault(
+                        "year",
+                        cfbd_in.year if cfbd_in.year is not None else settings.CFBD_SEASON,
+                    )
+                    cfbd_job_meta.setdefault("week", cfbd_in.week)
+                job_meta["cfbd"] = cfbd_job_meta
                 self.jobs[job_id] = job_state
 
-                if (
-                    settings.CFBD_ENABLE
-                    and cfbd_in
-                    and getattr(cfbd_in, "use_cfbd", False)
-                ):
+                global_cfbd_enabled = bool(settings.CFBD_ENABLE and CFBD_ENABLED)
+                use_cfbd = bool(global_cfbd_enabled and requested_cfbd)
+                if requested_cfbd:
                     cfbd_summary["requested"] = True
-                    try:
-                        if cfbd_in.game_id:
-                            cfbd_request = {"game_id": int(cfbd_in.game_id)}
-                        else:
-                            year = cfbd_in.season or settings.CFBD_SEASON
-                            week = cfbd_in.week
-                            team = (cfbd_in.team or "").strip() or None
-                            if not (year and week and team):
-                                raise CFBDClientError(
-                                    "provide game_id or season/week/team"
-                                )
-                            season_type = getattr(cfbd_in, "season_type", None) or "regular"
-                            cfbd_request = {
-                                "team": team,
-                                "year": int(year),
-                                "week": int(week),
-                                "season_type": str(season_type),
-                            }
-                    except CFBDClientError as exc:
-                        message = str(exc)
-                        cfbd_summary["error"] = message
-                        job_state = self.jobs.get(job_id, {})
-                        job_state["cfbd_state"] = "unavailable"
-                        job_state["cfbd_reason"] = message
-                        self.jobs[job_id] = job_state
-                        cfbd_reason = message
-                        logger.warning(
-                            "cfbd_fetch_error",
-                            extra={"job_id": job_id, "error": message},
-                        )
-                        monitor.touch(
-                            stage="detecting", detail=f"CFBD: {message[:120]}"
-                        )
-                    else:
-                        cfbd_summary["request"] = dict(cfbd_request)
-                        if "game_id" in cfbd_request:
-                            cfbd_summary["game_id"] = cfbd_request["game_id"]
-
-                        job_state = self.jobs.get(job_id, {})
-                        job_state["cfbd_state"] = "pending"
-                        job_state["cfbd_reason"] = None
-                        self.jobs[job_id] = job_state
-
-                        async def run_cfbd() -> Optional[Dict[str, Any]]:
-                            try:
-                                monitor.touch(stage="detecting", detail="CFBD: start")
-                                data = await self._fetch_cfbd_with_retries(
-                                    job_id, cfbd_request or {}, monitor
-                                )
-                                jj = self.jobs.get(job_id, {})
-                                if jj.get("cfbd_state") == "unavailable" and jj.get(
-                                    "cfbd_reason"
-                                ):
-                                    return None
-                                jj["cfbd_state"] = "ready"
-                                jj["cfbd_reason"] = None
-                                self.jobs[job_id] = jj
-                                return data
-                            except Exception as exc:
-                                logger.warning(
-                                    "cfbd_fetch_unavailable",
-                                    extra={"job_id": job_id, "error": str(exc)},
-                                )
-                                jj = self.jobs.get(job_id, {})
-                                jj["cfbd_state"] = "unavailable"
-                                jj["cfbd_reason"] = f"{type(exc).__name__}: {exc}"
-                                self.jobs[job_id] = jj
-                                monitor.touch(
-                                    stage="detecting", detail="CFBD: unavailable"
-                                )
-                                return None
-
-                        cfbd_task = asyncio.create_task(run_cfbd())
-
-                elif cfbd_in and getattr(cfbd_in, "use_cfbd", False):
-                    cfbd_summary["requested"] = True
-                    message = "CFBD disabled via settings"
-                    cfbd_summary["error"] = message
-                    cfbd_reason = message
-                    job_state = self.jobs.get(job_id, {})
+                if not requested_cfbd:
+                    cfbd_job_meta["status"] = "off"
+                elif not global_cfbd_enabled:
+                    cfbd_job_meta["status"] = "disabled"
+                    cfbd_job_meta["error"] = "disabled"
+                    cfbd_summary["error"] = "disabled"
+                    cfbd_reason = "disabled"
                     job_state["cfbd_state"] = "unavailable"
-                    job_state["cfbd_reason"] = message
+                    job_state["cfbd_reason"] = "disabled"
                     self.jobs[job_id] = job_state
-                    logger.info("cfbd_skipped", extra={"job_id": job_id, "reason": message})
                     monitor.touch(stage="detecting", detail="CFBD: disabled")
-
-                vid_dur = float(src_dur)
-
-                options = getattr(submission, "options", None)
-                pre_pad = max(
-                    0.0, float(getattr(options, "play_padding_pre", settings.PLAY_PRE_PAD_SEC))
-                )
-                post_pad = max(
-                    0.0, float(getattr(options, "play_padding_post", settings.PLAY_POST_PAD_SEC))
-                )
-                min_duration = max(
-                    0.5, float(getattr(options, "min_duration", settings.PLAY_MIN_SEC))
-                )
-                max_duration = max(
-                    min_duration,
-                    float(getattr(options, "max_duration", settings.PLAY_MAX_SEC)),
-                )
-                scene_thresh = max(
-                    0.05, float(getattr(options, "scene_thresh", 0.30))
-                )
-                merge_gap = min(settings.MERGE_GAP_SEC, 0.75)
-
-                def _det_prog(pct: Optional[float], _eta: Optional[float], msg: str | None):
-                    self._ensure_not_cancelled(job_id, cancel_ev)
-                    base_pct = float(pct or 0.0)
-                    scaled = min(85.0, 12.0 + (0.73 * base_pct))
-                    detail_msg = msg or "Detecting plays"
-                    fields: Dict[str, Any] = {}
-                    if _eta is not None:
-                        fields["eta_seconds"] = int(float(_eta))
-                    self._set_stage(
-                        job_id,
-                        "detecting",
-                        pct=scaled,
-                        detail=detail_msg,
-                        eta=self._eta(job_id),
+                    use_cfbd = False
+                elif not CFBD_API_KEY:
+                    cfbd_job_meta["status"] = "missing_api_key"
+                    cfbd_job_meta["error"] = "missing_api_key"
+                    cfbd_summary["error"] = "missing_api_key"
+                    cfbd_reason = "missing_api_key"
+                    job_state["cfbd_state"] = "unavailable"
+                    job_state["cfbd_reason"] = "missing_api_key"
+                    self.jobs[job_id] = job_state
+                    monitor.touch(stage="detecting", detail="CFBD: missing API key")
+                    logger.warning(
+                        "cfbd_unavailable",
+                        extra={
+                            "job_id": job_id,
+                            "error": "missing_api_key",
+                            "team": cfbd_job_meta.get("team"),
+                            "year": cfbd_job_meta.get("year"),
+                            "week": cfbd_job_meta.get("week"),
+                        },
                     )
-                    _heartbeat(
-                        "detecting",
-                        pct=scaled,
-                        detail=detail_msg,
-                        fields=fields or None,
-                    )
+                    use_cfbd = False
+                else:
+                    cfbd_job_meta["status"] = "resolving"
+                    team_raw = (cfbd_in.team or "") if cfbd_in else ""
+                    team = team_raw.strip()
+                    year_raw = None
+                    week_raw = None
+                    if cfbd_in:
+                        year_raw = (
+                            cfbd_in.year if cfbd_in.year is not None else settings.CFBD_SEASON
+                        )
+                        week_raw = cfbd_in.week
+                    else:
+                        year_raw = settings.CFBD_SEASON
+                        week_raw = None
+                    cfbd_job_meta["team"] = team or None
+                    cfbd_job_meta["year"] = year_raw
+                    cfbd_job_meta["week"] = week_raw
+
+                    def _fail_cfbd(error_code: str, detail: Optional[str] = None) -> None:
+                        nonlocal use_cfbd, cfbd_reason
+                        cfbd_reason = error_code
+                        cfbd_summary["error"] = error_code
+                        cfbd_job_meta["status"] = error_code
+                        cfbd_job_meta["error"] = error_code
+                        job_state["cfbd_state"] = "unavailable"
+                        job_state["cfbd_reason"] = error_code
+                        self.jobs[job_id] = job_state
+                        message = detail or f"CFBD: {error_code}"
+                        monitor.touch(stage="detecting", detail=message)
+                        logger.warning(
+                            "cfbd_unavailable",
+                            extra={
+                                "job_id": job_id,
+                                "error": error_code,
+                                "team": cfbd_job_meta.get("team"),
+                                "year": cfbd_job_meta.get("year"),
+                                "week": cfbd_job_meta.get("week"),
+                            },
+                        )
+                        use_cfbd = False
+
+                    try:
+                        if year_raw is None:
+                            raise ValueError
+                        year_val = int(year_raw)
+                    except Exception:
+                        _fail_cfbd("invalid_year", "CFBD: invalid year")
+                    else:
+                        try:
+                            if week_raw in (None, "", " "):
+                                week_val: Optional[int] = None
+                            else:
+                                week_val = int(week_raw)
+                        except Exception:
+                            _fail_cfbd("invalid_week", "CFBD: invalid week")
+                        else:
+                            monitor.touch(stage="detecting", detail="CFBD: resolving game id")
+                            try:
+                                game_id, finder_meta = await asyncio.to_thread(
+                                    find_game_id, team or "", year_val, week_val
+                                )
+                            except Exception as exc:  # pragma: no cover - network edge
+                                _fail_cfbd("finder_error", f"CFBD: finder error {exc}")
+                            else:
+                                finder_meta = finder_meta or {}
+                                cfbd_summary["finder"] = finder_meta
+                                cfbd_job_meta["finder"] = finder_meta
+                                request_payload = {
+                                    "team": team or None,
+                                    "year": year_val,
+                                    "week": week_val,
+                                }
+                                cfbd_summary["request"] = request_payload
+                                cfbd_job_meta["request"] = request_payload
+                                if not game_id:
+                                    error_code = finder_meta.get("error") or "no_match"
+                                    _fail_cfbd(
+                                        error_code,
+                                        f"CFBD: {error_code} — continuing vision-only",
+                                    )
+                                else:
+                                    cfbd_summary["game_id"] = game_id
+                                    cfbd_job_meta["game_id"] = game_id
+                                    cfbd_job_meta["season_type"] = finder_meta.get("seasonType")
+                                    logger.info("[CFBD] resolved game_id=%s", game_id)
+                                    try:
+                                        plays_payload = await asyncio.to_thread(get_plays, game_id)
+                                        plays_list = list(plays_payload or [])
+                                    except Exception as exc:  # pragma: no cover - network edge
+                                        _fail_cfbd(
+                                            "plays_error",
+                                            f"CFBD: plays fetch failed ({exc})",
+                                        )
+                                    else:
+                                        cfbd_plays = plays_list
+                                        cfbd_play_count = len(cfbd_plays)
+                                        cfbd_summary["plays"] = cfbd_play_count
+                                        cfbd_job_meta["plays_count"] = cfbd_play_count
+                                        if cfbd_play_count == 0:
+                                            _fail_cfbd("no_plays", "CFBD: no plays returned")
+                                        else:
+                                            cfbd_summary["error"] = None
+                                            cfbd_job_meta["status"] = "ready"
+                                            job_state["cfbd_state"] = "ready"
+                                            job_state["cfbd_reason"] = None
+                                            self.jobs[job_id] = job_state
+                self._set_stage(
+                    job_id,
+                    "detecting",
+                    pct=scaled,
+                    detail=detail_msg,
+                    eta=self._eta(job_id),
+                )
+                _heartbeat(
+                    "detecting",
+                    pct=scaled,
+                    detail=detail_msg,
+                    fields=fields or None,
+                )
 
                 self._start_stage(
                     job_id,
@@ -690,50 +765,6 @@ class JobRunner:
                     scene_cuts = []
                 scene_cuts = sorted(scene_cuts)
 
-                if cfbd_task:
-                    try:
-                        if cfbd_task.done():
-                            cfbd_payload = cfbd_task.result()
-                        else:
-                            cfbd_payload = await asyncio.wait_for(
-                                cfbd_task, timeout=0
-                            )
-                    except asyncio.TimeoutError:
-                        cfbd_payload = None
-                    except Exception:
-                        cfbd_payload = None
-
-                    snapshot = self.jobs.get(job_id, {})
-                    state = snapshot.get("cfbd_state")
-                    if (
-                        state == "ready"
-                        and cfbd_payload
-                        and cfbd_payload.get("plays")
-                    ):
-                        cfbd_plays = list(cfbd_payload.get("plays") or [])
-                        cfbd_play_count = len(cfbd_plays)
-                        cfbd_summary["plays"] = cfbd_play_count
-                        if cfbd_payload.get("request"):
-                            cfbd_summary["request"] = dict(cfbd_payload["request"])
-                        if cfbd_payload.get("game_id") is not None:
-                            cfbd_summary["game_id"] = cfbd_payload["game_id"]
-                        cfbd_summary["error"] = None
-                        logger.info(
-                            "cfbd_fetch_complete",
-                            extra={"job_id": job_id, "plays": cfbd_play_count},
-                        )
-                    else:
-                        cfbd_reason = snapshot.get("cfbd_reason") or "not ready in time"
-                        cfbd_summary["error"] = cfbd_reason
-                        if not snapshot.get("cfbd_reason"):
-                            snapshot["cfbd_state"] = "unavailable"
-                            snapshot["cfbd_reason"] = cfbd_reason
-                            self.jobs[job_id] = snapshot
-                        monitor.touch(
-                            stage="detecting",
-                            detail=f"CFBD: {cfbd_reason} — continuing vision-only",
-                        )
-
                 if cfbd_plays:
                     self._ensure_not_cancelled(job_id, cancel_ev)
                     self._set_stage(
@@ -803,121 +834,71 @@ class JobRunner:
                     cfbd_summary["dtw_periods"] = sorted(mapping_dtw.keys())
 
                     if mapping_dtw:
-                        total = len(cfbd_plays)
-                        for idx, play in enumerate(cfbd_plays, start=1):
-                            if idx % 25 == 0:
-                                self._set_stage(
-                                    job_id,
-                                    "detecting",
-                                    pct=min(
-                                        80.0,
-                                        60.0
-                                        + 15.0 * (idx / max(1, total)),
-                                    ),
-                                    detail=f"Aligning plays {idx}/{total}",
-                                    eta=self._eta(job_id),
-                                )
-                                _heartbeat(
-                                    "detecting",
-                                    pct=min(
-                                        80.0,
-                                        60.0
-                                        + 15.0 * (idx / max(1, total)),
-                                    ),
-                                    detail=f"Aligning plays {idx}/{total}",
-                                )
-                            try:
-                                period = int(play.get("period") or 0)
-                                clock_sec = int(
-                                    play.get("clockSec")
-                                    or play.get("clock_sec")
-                                    or 0
-                                )
-                            except (TypeError, ValueError):
-                                continue
-                            ts_est = map_clock(mapping_dtw, period, clock_sec)
-                            if ts_est is None:
-                                continue
+                        def _period_clock_to_video(period_value: int, clock_repr: str) -> float:
+                            seconds_val = _clock_str_to_seconds(clock_repr)
+                            if seconds_val is None:
+                                raise ValueError("clock_parse")
+                            mapped_val = map_clock(mapping_dtw, int(period_value), int(seconds_val))
+                            if mapped_val is None:
+                                raise ValueError("clock_map")
+                            return float(mapped_val)
 
-                            audio_window = max(
-                                0.0, float(settings.REFINE_AUDIO_WINDOW_SEC)
+                        monitor.touch(stage="detecting", detail="CFBD: bucketizing")
+                        try:
+                            bucketed = build_guided_windows(
+                                cfbd_plays,
+                                team_name=team or "",
+                                period_clock_to_video=_period_clock_to_video,
+                                pre_pad=pre_pad,
+                                post_pad=post_pad,
                             )
-                            audio_time: Optional[float] = None
-                            if audio_spike_list:
-                                audio_time = nearest_audio(
-                                    audio_spike_list,
-                                    ts_est,
-                                    ts_est - audio_window,
-                                    ts_est + audio_window,
-                                )
-                            scene_time: Optional[float] = None
-                            if audio_time is None:
-                                try:
-                                    scene_time = nearest_scene(
-                                        video_path,
-                                        ts_est,
-                                        window=max(
-                                            0.0,
-                                            float(settings.REFINE_SCENE_WINDOW_SEC),
-                                        ),
-                                    )
-                                except Exception:
-                                    scene_time = None
-
-                            center_time = (
-                                audio_time
-                                if audio_time is not None
-                                else scene_time
-                                if scene_time is not None
-                                else ts_est
+                        except Exception:
+                            logger.exception(
+                                "cfbd_bucketize_failed", extra={"job_id": job_id}
                             )
-                            has_audio = audio_time is not None
-                            has_scene = (
-                                scene_time is not None
-                                and abs(scene_time - ts_est)
-                                <= float(settings.REFINE_SCENE_WINDOW_SEC)
-                            )
+                            bucketed = {
+                                "team_offense": [],
+                                "opp_offense": [],
+                                "special_teams": [],
+                            }
 
-                            start = max(0.0, center_time - pre_pad)
-                            end = min(vid_dur, center_time + post_pad + 6.0)
-                            if end - start < min_duration:
-                                end = min(vid_dur, start + min_duration)
-                            if end - start > max_duration:
-                                end = min(vid_dur, start + max_duration)
-                            if end <= start:
-                                continue
-
-                            clip_entries.append(
-                                {
-                                    "start": round(start, 3),
-                                    "end": round(end, 3),
-                                    "period": int(period),
-                                    "clock_sec": int(clock_sec),
-                                    "center": float(center_time),
-                                    "has_audio": bool(has_audio),
-                                    "has_scene": bool(has_scene),
+                        windows_with_meta = []
+                        for bucket_name, items in bucketed.items():
+                            for start, end, score_weight, play in items:
+                                meta: Dict[str, Any] = {
+                                    "bucket": bucket_name,
+                                    "score": float(score_weight),
                                     "source": "cfbd",
                                 }
-                            )
+                                if isinstance(play, dict):
+                                    meta["play"] = play
+                                windows_with_meta.append(
+                                    (
+                                        max(0.0, float(start)),
+                                        max(0.0, float(end)),
+                                        meta,
+                                    )
+                                )
 
                         pre_merge_guided = [
-                            (clip["start"], clip["end"]) for clip in clip_entries
+                            (round(entry[0], 3), round(entry[1], 3))
+                            for entry in windows_with_meta
                         ]
                         guided_windows = list(pre_merge_guided)
-                        cfbd_summary["clips"] = len(clip_entries)
-                        cfbd_used = bool(clip_entries)
+                        cfbd_summary["clips"] = len(windows_with_meta)
+                        cfbd_used = bool(windows_with_meta)
                         if cfbd_used:
                             self._set_stage(
                                 job_id,
                                 "detecting",
                                 pct=80.0,
-                                detail=f"CFBD aligned {len(clip_entries)} plays",
+                                detail=f"CFBD aligned {len(windows_with_meta)} plays",
                                 eta=self._eta(job_id),
                             )
                             _heartbeat(
                                 "detecting",
                                 pct=80.0,
-                                detail=f"CFBD aligned {len(clip_entries)} plays",
+                                detail=f"CFBD aligned {len(windows_with_meta)} plays",
                             )
                         else:
                             self._set_stage(
@@ -1006,6 +987,21 @@ class JobRunner:
                 metrics["pre_merge_windows"] = len(pre_merge_list)
                 metrics["post_merge_windows"] = len(windows)
 
+                if not cfbd_used:
+                    source_label = "fallback" if fallback_used else "vision"
+                    windows_with_meta = [
+                        (
+                            float(start),
+                            float(end),
+                            {
+                                "bucket": "team_offense",
+                                "score": 1.0,
+                                "source": source_label,
+                            },
+                        )
+                        for start, end in windows
+                    ]
+
                 detail = ""
                 if cfbd_used:
                     detail = f"CFBD aligned {len(windows)} plays"
@@ -1061,27 +1057,126 @@ class JobRunner:
 
                 self._ensure_not_cancelled(job_id, cancel_ev)
 
-                if not clip_entries:
-                    source_label = "fallback" if fallback_used else "vision"
-                    for start, end in windows:
-                        start_f = round(float(start), 3)
-                        end_f = round(float(end), 3)
-                        if end_f <= start_f:
-                            continue
-                        clip_entries.append(
+                clip_entries = []
+                if not windows_with_meta:
+                    windows_with_meta = [
+                        (
+                            float(start),
+                            float(end),
                             {
-                                "start": start_f,
-                                "end": end_f,
-                                "period": None,
-                                "clock_sec": None,
-                                "center": float((start_f + end_f) / 2.0),
-                                "has_audio": False,
-                                "has_scene": False,
-                                "source": source_label,
-                            }
+                                "bucket": "team_offense",
+                                "score": 1.0,
+                                "source": "fallback" if fallback_used else "vision",
+                            },
                         )
+                        for start, end in windows
+                    ]
+
+                for start, end, meta in windows_with_meta:
+                    start_val = max(0.0, float(start))
+                    end_val = min(vid_dur, float(end))
+                    if end_val <= start_val:
+                        continue
+                    meta_dict = meta if isinstance(meta, dict) else {}
+                    bucket_name = str(meta_dict.get("bucket", "team_offense"))
+                    score_val = float(meta_dict.get("score", 1.0))
+                    play = meta_dict.get("play") if isinstance(meta_dict.get("play"), dict) else None
+                    source_tag = meta_dict.get("source") or ("cfbd" if play else ("fallback" if fallback_used else "vision"))
+
+                    period_val: Optional[int] = None
+                    clock_sec_val: Optional[int] = None
+                    if play:
+                        try:
+                            period_val = int(play.get("period") or play.get("quarter") or 0)
+                        except (TypeError, ValueError):
+                            period_val = None
+                        clock_raw = play.get("clockSec") or play.get("clock_sec")
+                        if clock_raw is None:
+                            clock_field = play.get("clock")
+                            if isinstance(clock_field, dict):
+                                clock_raw = (
+                                    clock_field.get("displayValue")
+                                    or clock_field.get("text")
+                                )
+                            else:
+                                clock_raw = clock_field
+                        clock_parsed = _clock_str_to_seconds(clock_raw)
+                        if clock_parsed is not None:
+                            clock_sec_val = int(clock_parsed)
+
+                    if play:
+                        center_hint = play.get("_aligned_sec")
+                        center_guess = (
+                            float(center_hint)
+                            if isinstance(center_hint, (int, float))
+                            else (start_val + end_val) / 2.0
+                        )
+                        audio_window = max(0.0, float(settings.REFINE_AUDIO_WINDOW_SEC))
+                        audio_time = None
+                        if audio_spike_list:
+                            audio_time = nearest_audio(
+                                audio_spike_list,
+                                center_guess,
+                                center_guess - audio_window,
+                                center_guess + audio_window,
+                            )
+                        scene_time = None
+                        if audio_time is None:
+                            try:
+                                scene_time = nearest_scene(
+                                    video_path,
+                                    center_guess,
+                                    window=max(
+                                        0.0, float(settings.REFINE_SCENE_WINDOW_SEC)
+                                    ),
+                                )
+                            except Exception:
+                                scene_time = None
+                        center_time = (
+                            audio_time
+                            if audio_time is not None
+                            else scene_time
+                            if scene_time is not None
+                            else center_guess
+                        )
+                        has_audio = audio_time is not None
+                        has_scene = (
+                            scene_time is not None
+                            and abs(scene_time - center_guess)
+                            <= float(settings.REFINE_SCENE_WINDOW_SEC)
+                        )
+                        start_val = max(0.0, center_time - pre_pad)
+                        end_val = min(vid_dur, center_time + post_pad + 6.0)
+                        if end_val - start_val < min_duration:
+                            end_val = min(vid_dur, start_val + min_duration)
+                        if end_val - start_val > max_duration:
+                            end_val = min(vid_dur, start_val + max_duration)
+                        if end_val <= start_val:
+                            continue
+                        center_val = float(center_time)
+                    else:
+                        has_audio = False
+                        has_scene = False
+                        center_val = float((start_val + end_val) / 2.0)
+
+                    clip_entries.append(
+                        {
+                            "start": round(start_val, 3),
+                            "end": round(end_val, 3),
+                            "period": period_val,
+                            "clock_sec": clock_sec_val,
+                            "center": center_val,
+                            "has_audio": bool(has_audio),
+                            "has_scene": bool(has_scene),
+                            "source": source_tag,
+                            "bucket": bucket_name,
+                            "score": score_val,
+                        }
+                    )
 
                 samples_by_period: Dict[int, List[Tuple[float, int]]] = {}
+                if cfbd_used:
+                    cfbd_summary["clips"] = len(clip_entries)
                 for ts, per, clk in ocr_series:
                     samples_by_period.setdefault(int(per), []).append(
                         (float(ts), int(clk))
@@ -1268,21 +1363,11 @@ class JobRunner:
                     job_id,
                     "bucketing",
                     est_sec=3.0,
-                    detail="Grouping by duration",
+                    detail="Grouping by possession",
                 )
-                _heartbeat("bucketing", detail="Grouping by duration")
+                _heartbeat("bucketing", detail="Grouping by possession")
 
-                def _bucket(duration: float) -> str:
-                    if duration < 6:
-                        return "short"
-                    if duration < 12:
-                        return "medium"
-                    return "long"
-
-                bucket_counts = {"short": 0, "medium": 0, "long": 0}
-                for clip in clip_entries:
-                    duration = max(0.01, clip["end"] - clip["start"])
-                    bucket_counts[_bucket(duration)] += 1
+                
                 ordered = list(clip_entries)
 
                 self._set_stage(job_id, "bucketing", pct=15.0, detail="Buckets ready", eta=0.0)
@@ -1356,17 +1441,21 @@ class JobRunner:
                         if eta_est >= 0:
                             eta_seconds = int(eta_est)
                     progress = 20.0 + 70.0 * frac
+                    bucket_label = str(clip.get("bucket", "team_offense"))
+                    seg_detail = f"Cutting {idx}/{total_clips} ({bucket_label})"
+                    if seg_dur >= 1.0:
+                        seg_detail += f" (≈{int(seg_dur)}s)"
                     self._set_stage(
                         job_id,
                         "segmenting",
                         pct=progress,
-                        detail=f"Cutting {idx}/{total_clips} (≈{int(seg_dur)}s)",
+                        detail=seg_detail,
                         eta=eta_seconds,
                     )
                     _heartbeat(
                         "segmenting",
                         pct=progress,
-                        detail=f"Cutting {idx}/{total_clips} (≈{int(seg_dur)}s)",
+                        detail=seg_detail,
                         fields={
                             "clips_done": idx,
                             "clips_total": total_clips,
@@ -1399,6 +1488,32 @@ class JobRunner:
                         "total": 0,
                     }
 
+                manifest_buckets: Dict[str, List[Dict[str, Any]]] = {
+                    "team_offense": [],
+                    "opp_offense": [],
+                    "special_teams": [],
+                }
+                for clip in clips_meta:
+                    bucket_name = str(clip.get("bucket", "team_offense"))
+                    bucket_items = manifest_buckets.setdefault(bucket_name, [])
+                    bucket_items.append(
+                        {
+                            "id": clip.get("id", ""),
+                            "start": round(float(clip.get("start", 0.0)), 3),
+                            "end": round(float(clip.get("end", 0.0)), 3),
+                            "duration": round(float(clip.get("duration", 0.0)), 3),
+                            "file": clip.get("file", ""),
+                            "thumb": clip.get("thumb", ""),
+                            "bucket": bucket_name,
+                            "score": float(clip.get("score", 1.0)),
+                        }
+                    )
+
+                for items in manifest_buckets.values():
+                    items.sort(key=lambda item: (-item["score"], item["start"]))
+
+                bucket_counts = {key: len(items) for key, items in manifest_buckets.items()}
+
                 self._start_stage(
                     job_id,
                     "packaging",
@@ -1412,8 +1527,49 @@ class JobRunner:
                     fields={"eta_seconds": None},
                 )
 
+                bucket_urls: Dict[str, str] = {}
+                bucket_reel_uploads: List[Tuple[str, str, str]] = []
+                for bucket_name, items in manifest_buckets.items():
+                    if not items:
+                        continue
+                    concat_list = [
+                        os.path.join(tmp_dir, item["file"])
+                        for item in items
+                        if item.get("file")
+                    ]
+                    if not concat_list:
+                        continue
+                    out_path = os.path.join(tmp_dir, f"reel_{bucket_name}.mp4")
+
+                    def _bucket_progress(pct: float, _eta: Optional[float], msg: str | None) -> None:
+                        detail_msg = f"{bucket_name} {(msg or '').strip()}".strip()
+                        monitor.touch(stage="packaging", pct=pct, detail=detail_msg)
+
+                    try:
+                        concat_clips_to_mp4(
+                            concat_list,
+                            out_path,
+                            progress_cb=_bucket_progress,
+                            reencode=settings.CONCAT_REENCODE,
+                        )
+                        bucket_key = f"{job_id}/reel_{bucket_name}.mp4"
+                        bucket_urls[bucket_name] = storage.url_for(bucket_key)
+                        bucket_reel_uploads.append((f"reel_{bucket_name}.mp4", bucket_key, out_path))
+                    except Exception:
+                        logger.exception(
+                            "bucket_reel_failed",
+                            extra={"job_id": job_id, "bucket": bucket_name},
+                        )
+
+                for bucket_name in list(manifest_buckets.keys()):
+                    bucket_urls.setdefault(bucket_name, None)
+
+                low_conf_flag = bool(fallback_used and not cfbd_used)
+                if cfbd_summary.get("requested") and not cfbd_used:
+                    low_conf_flag = True
+
                 det_meta = {
-                    "low_confidence": bool(fallback_used and not cfbd_used),
+                    "low_confidence": low_conf_flag,
                     "clips_found": len(ordered),
                     "audio_spikes_used": bool(settings.AUDIO_ENABLE),
                     "scorebug_used": bool(settings.SCOREBUG_ENABLE),
@@ -1423,6 +1579,10 @@ class JobRunner:
                     "ocr_samples": int(metrics.get("ocr_samples", 0)),
                     "cfbd_used": bool(cfbd_used),
                     "align_method": "dtw" if cfbd_used else "fallback",
+                    "bucket_logic": "posteam/defteam+ST",
+                    "scoring_bias": True,
+                    "down_distance_bias": True,
+                    "pads": {"pre": float(pre_pad), "post": float(post_pad)},
                 }
                 if not cfbd_used and cfbd_reason:
                     det_meta["cfbd_disable_reason"] = cfbd_reason
@@ -1440,11 +1600,8 @@ class JobRunner:
                     "source": source_info,
                     "detector_meta": det_meta,
                     "cfbd": cfbd_summary,
-                    "buckets": {
-                        "short": bucket_counts.get("short", 0),
-                        "medium": bucket_counts.get("medium", 0),
-                        "long": bucket_counts.get("long", 0),
-                    },
+                    "buckets": manifest_buckets,
+                    "bucket_counts": bucket_counts,
                     "clips": clips_meta,
                     "metrics": {
                         "num_clips": len(clips_meta),
@@ -1519,6 +1676,7 @@ class JobRunner:
                 manifest_outputs = manifest.setdefault("outputs", {})
                 manifest_outputs["reel_url"] = reel_url
                 manifest_outputs["reel_duration_sec"] = round(reel_dur, 3)
+                manifest_outputs["reels_by_bucket"] = bucket_urls
 
                 manifest_path = os.path.join(tmp_dir, "manifest.json")
                 with open(manifest_path, "w", encoding="utf-8") as f:
@@ -1545,6 +1703,8 @@ class JobRunner:
                 if reel_upload:
                     reel_local, reel_key = reel_upload
                     uploads.append(("reel.mp4", reel_key, reel_local))
+                for label, key, path in bucket_reel_uploads:
+                    uploads.append((label, key, path))
                 uploads.append(("output.zip", archive_key, zip_path))
                 uploads.append(("manifest.json", manifest_key, manifest_path))
 

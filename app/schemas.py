@@ -1,6 +1,6 @@
-from typing import Optional
+from typing import Dict, List, Literal, Optional, TypedDict
 
-from pydantic import BaseModel, HttpUrl, model_validator
+from pydantic import AliasChoices, BaseModel, Field, HttpUrl, model_validator
 
 
 class Options(BaseModel):
@@ -14,10 +14,16 @@ class Options(BaseModel):
 class CFBDInput(BaseModel):
     use_cfbd: bool = False
     game_id: Optional[int] = None
-    season: Optional[int] = None
-    week: Optional[int] = None
+    season: Optional[int] = Field(
+        default=None, validation_alias=AliasChoices("season", "year", "cfbd_year")
+    )
+    week: Optional[int] = Field(default=None, validation_alias=AliasChoices("week", "cfbd_week"))
     team: Optional[str] = None
     season_type: Optional[str] = "regular"
+
+    @property
+    def year(self) -> Optional[int]:
+        return self.season
 
 
 class JobSubmission(BaseModel):
@@ -33,3 +39,27 @@ class JobSubmission(BaseModel):
         if not (self.video_url or self.upload_id or self.presigned_url):
             raise ValueError("Provide either video_url, upload_id, or presigned_url.")
         return self
+
+
+BucketName = Literal["team_offense", "opp_offense", "special_teams"]
+
+
+class ClipItem(TypedDict):
+    id: str
+    start: float
+    end: float
+    duration: float
+    file: str
+    thumb: str
+    bucket: BucketName
+    score: float
+
+
+class Manifest(TypedDict, total=False):
+    job_id: str
+    source_url: str
+    source: Dict[str, object]
+    clips: List[Dict[str, object]]
+    buckets: Dict[BucketName, List[ClipItem]]
+    bucket_counts: Dict[BucketName, int]
+    detector_meta: Dict[str, object]

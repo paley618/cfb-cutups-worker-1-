@@ -10,6 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const selftestBtn = document.getElementById('selftest');
   const selftestOut = document.getElementById('selftest_out');
 
+  const cfbdIdInput = document.getElementById('cfbd_game_id');
+  if (cfbdIdInput && !cfbdIdInput.dataset.espanhanced) {
+    cfbdIdInput.dataset.espanhanced = '1';
+    cfbdIdInput.addEventListener('change', () => {
+      const v = (cfbdIdInput.value || '').trim();
+      const m = v.match(/\/gameId\/(\d+)/i);
+      if (m) cfbdIdInput.value = m[1];
+    });
+  }
+
   const addLine = (text) => {
     if (!statusEl) return;
     const line = document.createElement('div');
@@ -133,10 +143,53 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     if (cfbd.mapping) parts.push(`mapping=${cfbd.mapping}`);
     if (cfbd.error) parts.push(`error=${cfbd.error}`);
+    if (cfbd.finder?.match) parts.push(`finder=${cfbd.finder.match}`);
+    if (cfbd.finder?.usedWeek != null) parts.push(`usedWeek=${cfbd.finder.usedWeek}`);
+    if (cfbd.finder?.seasonType) parts.push(`seasonType=${cfbd.finder.seasonType}`);
     const meta = document.createElement('span');
     meta.className = 'status-summary muted';
     meta.textContent = `CFBD: ${parts.join(' • ')}`;
     line.append(' — ', meta);
+  };
+
+  const renderOutputs = (data) => {
+    if (!statusEl) return;
+    const manifest = data && data.manifest ? data.manifest : data;
+    if (!manifest || typeof manifest !== 'object') return;
+    const outputs = manifest.outputs || {};
+    const reels = outputs.reels_by_bucket || {};
+    const counts = manifest.bucket_counts || {};
+    const teamNameRaw =
+      (manifest.cfbd &&
+        ((manifest.cfbd.request && manifest.cfbd.request.team) || manifest.cfbd.team)) ||
+      '';
+    const teamName = (teamNameRaw || '').toString().trim() || 'Team';
+    const offenseLabel = `${teamName} Offense`;
+    const oppLabel = teamName ? `Opponent Offense` : 'Opponent Offense';
+    const specialLabel = 'Special Teams';
+    const ensureBox = () => {
+      const existing = document.getElementById('outputs');
+      if (existing) return existing;
+      const el = document.createElement('div');
+      el.id = 'outputs';
+      statusEl.appendChild(el);
+      return el;
+    };
+    const box = ensureBox();
+
+    const mk = (label, url, count) =>
+      url
+        ? `<a href="${url}" target="_blank">${label} (${count ?? 0})</a>`
+        : `<span class="muted">${label} (${count ?? 0})</span>`;
+
+    box.innerHTML = `
+    <div class="reels">
+      ${mk(offenseLabel, reels.team_offense, counts.team_offense)}
+      &nbsp;|&nbsp;
+      ${mk(oppLabel, reels.opp_offense, counts.opp_offense)}
+      &nbsp;|&nbsp;
+      ${mk(specialLabel, reels.special_teams, counts.special_teams)}
+    </div>`;
   };
 
   const renderTimeline = (job) => {
@@ -185,27 +238,58 @@ document.addEventListener('DOMContentLoaded', () => {
     line.textContent = `${label} — ${pct.toFixed(1)}%${etaTxt}${detail}`;
     statusEl.appendChild(line);
     const cfbdBadgeId = 'cfbd-badge';
-    let cfbd = document.getElementById(cfbdBadgeId);
-    if (!cfbd) {
-      cfbd = document.createElement('span');
-      cfbd.id = cfbdBadgeId;
-      cfbd.className = 'badge';
+    let cfbdBadge = document.getElementById(cfbdBadgeId);
+    if (!cfbdBadge) {
+      cfbdBadge = document.createElement('span');
+      cfbdBadge.id = cfbdBadgeId;
+      cfbdBadge.className = 'badge';
       statusEl.appendChild(document.createTextNode(' '));
-      statusEl.appendChild(cfbd);
+      statusEl.appendChild(cfbdBadge);
     }
-    if (job.cfbd_state === 'ready') {
-      cfbd.textContent = 'CFBD: ready';
-      cfbd.className = 'badge badge-success';
-    } else if (job.cfbd_state === 'unavailable') {
-      cfbd.textContent = 'CFBD: unavailable';
-      cfbd.className = 'badge badge-warn';
-    } else if (job.cfbd_state === 'pending' || job.cfbd_state == null) {
-      cfbd.textContent = 'CFBD: syncing…';
-      cfbd.className = 'badge badge-info';
-    } else {
-      cfbd.textContent = 'CFBD: ' + job.cfbd_state;
-      cfbd.className = 'badge';
+    const cfbdMeta = (job.meta && job.meta.cfbd) || {};
+    const cfbdRequested = !!cfbdMeta.requested;
+    const rawStatus = (cfbdMeta.status || job.cfbd_state || '').toString().toLowerCase();
+    const cfbdErrorRaw = (cfbdMeta.error || job.cfbd_reason || '').toString();
+    const cfbdError = cfbdErrorRaw.toLowerCase();
+    const cfbdGameId = cfbdMeta.game_id ?? cfbdMeta.gameId;
+    const statusLookup = rawStatus || (cfbdRequested ? 'pending' : 'off');
+    let cfbdLabel = 'CFBD: OFF';
+    let cfbdClass = 'badge';
+    if (cfbdRequested) {
+      if (statusLookup === 'ready') {
+        cfbdLabel = cfbdGameId ? `CFBD: READY (gameId ${cfbdGameId})` : 'CFBD: READY';
+        cfbdClass = 'badge badge-success';
+      } else if (statusLookup === 'missing_api_key' || cfbdError === 'missing_api_key') {
+        cfbdLabel = 'CFBD: MISSING API KEY';
+        cfbdClass = 'badge badge-warn';
+      } else if (statusLookup === 'invalid_year' || cfbdError === 'invalid_year') {
+        cfbdLabel = 'CFBD: INVALID INPUT (year)';
+        cfbdClass = 'badge badge-warn';
+      } else if (statusLookup === 'invalid_week' || cfbdError === 'invalid_week') {
+        cfbdLabel = 'CFBD: INVALID INPUT (week)';
+        cfbdClass = 'badge badge-warn';
+      } else if (
+        ['no_match', 'no_game_match', 'no_plays'].includes(statusLookup) ||
+        ['no_match', 'no_game_match', 'no_plays'].includes(cfbdError)
+      ) {
+        cfbdLabel = 'CFBD: NO MATCH (vision-only)';
+        cfbdClass = 'badge badge-warn';
+      } else if (statusLookup === 'disabled') {
+        cfbdLabel = 'CFBD: DISABLED';
+        cfbdClass = 'badge badge-warn';
+      } else if (statusLookup === 'resolving' || statusLookup === 'pending') {
+        cfbdLabel = 'CFBD: RESOLVING…';
+        cfbdClass = 'badge badge-info';
+      } else if (statusLookup === 'plays_error' || statusLookup === 'finder_error') {
+        cfbdLabel = 'CFBD: ERROR';
+        cfbdClass = 'badge badge-warn';
+      } else {
+        cfbdLabel = `CFBD: ${statusLookup.toUpperCase()}`;
+        cfbdClass = 'badge badge-info';
+      }
     }
+    cfbdBadge.textContent = cfbdLabel;
+    cfbdBadge.className = cfbdClass;
     statusEl.appendChild(renderTimeline(job));
     const cfbdMsgId = 'cfbd-msg';
     let cfbdMsg = document.getElementById(cfbdMsgId);
@@ -215,11 +299,20 @@ document.addEventListener('DOMContentLoaded', () => {
       cfbdMsg.className = 'note';
       statusEl.appendChild(cfbdMsg);
     }
-    const cfbdText = (job.cfbd_state === 'unavailable' && job.cfbd_reason)
-      ? `Using vision-only: ${job.cfbd_reason}`
-      : '';
-    cfbdMsg.textContent = cfbdText;
-    cfbdMsg.style.display = cfbdText ? 'block' : 'none';
+    let cfbdNote = '';
+    if (cfbdRequested) {
+      if (cfbdClass.includes('badge-success')) {
+        cfbdNote = '';
+      } else if (statusLookup === 'resolving' || statusLookup === 'pending') {
+        cfbdNote = 'Resolving game via CFBD…';
+      } else if (cfbdError) {
+        cfbdNote = `Using vision-only: ${cfbdErrorRaw}`;
+      } else if (['no_match', 'no_game_match', 'no_plays'].includes(statusLookup)) {
+        cfbdNote = 'Using vision-only: no CFBD match';
+      }
+    }
+    cfbdMsg.textContent = cfbdNote;
+    cfbdMsg.style.display = cfbdNote ? 'block' : 'none';
 
     const metaParts = [];
     if (job.elapsed_seconds != null) metaParts.push(`Elapsed: ${job.elapsed_seconds}s`);
@@ -267,6 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
     resultEl.style.display = 'none';
     resultEl.textContent = '';
     errorEl.textContent = '';
+    const outBox = document.getElementById('outputs');
+    if (outBox) outBox.innerHTML = '';
   };
 
   const fetchCookieStatus = async () => {
@@ -411,10 +506,14 @@ document.addEventListener('DOMContentLoaded', () => {
             resultEl.style.display = 'block';
             if (typeof manifest === 'string') {
               resultEl.textContent = manifest;
-            } else {
-              resultEl.textContent = JSON.stringify(manifest, null, 2);
+              errorEl.textContent = '';
+              return;
             }
+            resultEl.textContent = JSON.stringify(manifest, null, 2);
             errorEl.textContent = '';
+            attachSummary(manifest);
+            attachCfbdSummary(manifest);
+            renderOutputs({ manifest });
           };
 
           const parseManifestResponse = async (resp) => {
@@ -431,16 +530,12 @@ document.addEventListener('DOMContentLoaded', () => {
               if (!r2.ok) throw new Error('HTTP ' + r2.status);
               const manifest = await parseManifestResponse(r2);
               showManifest(manifest);
-              attachSummary(manifest);
-              attachCfbdSummary(manifest);
             } catch (e) {
               try {
                 const pr = await fetch(`/manifest-proxy?url=${encodeURIComponent(manifestUrl)}`, { cache: 'no-store' });
                 if (!pr.ok) throw new Error('proxy ' + pr.status);
                 const manifest = await parseManifestResponse(pr);
                 showManifest(manifest);
-                attachSummary(manifest);
-                attachCfbdSummary(manifest);
               } catch (e2) {
                 console.error('manifest_fetch_error', e, e2);
                 errorEl.textContent = 'Completed, but manifest fetch failed (CORS/URL). Use the Manifest JSON link above.';
