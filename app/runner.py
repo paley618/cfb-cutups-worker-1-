@@ -539,17 +539,33 @@ class JobRunner:
                 else:
                     cfbd_job_meta["status"] = "pending"
                     gid = getattr(cfbd_in, "game_id", None) if cfbd_in else None
+                    year_val = (
+                        cfbd_in.year
+                        if cfbd_in and cfbd_in.year is not None
+                        else settings.CFBD_SEASON
+                    )
+                    week_val = cfbd_in.week if cfbd_in else None
+                    team = (cfbd_in.team or "").strip() if cfbd_in else ""
+                    cfbd_job_meta["team"] = team or None
+                    cfbd_job_meta["year"] = year_val
+                    cfbd_job_meta["week"] = week_val
+
                     if gid:
                         set_cfbd_state("pending", None)
                         self.jobs[job_id] = job_state
                         try:
-                            url = f"https://api.collegefootballdata.com/plays?gameId={int(gid)}"
-                            logger.info(f"[CFBD] GET {url}")
+                            logger.info(
+                                f"[CFBD] /plays?gameId={gid} (will retry w/year={year_val},week={week_val} if validator demands)"
+                            )
                             plays_list = await asyncio.to_thread(
-                                self.cfbd.get_plays_by_game, int(gid)
+                                self.cfbd.get_plays_by_game,
+                                int(gid),
+                                year=year_val,
+                                week=week_val,
+                                season_type="regular",
                             )
                             if not plays_list:
-                                raise RuntimeError("empty plays[] from /plays")
+                                raise RuntimeError("empty plays[]")
                         except Exception as exc:  # pragma: no cover - network edge
                             cfbd_reason = f"/plays failed: {type(exc).__name__}: {exc}"
                             set_cfbd_state("error", cfbd_reason)
@@ -575,41 +591,32 @@ class JobRunner:
                             cfbd_summary["game_id"] = int(gid)
                             cfbd_summary["plays"] = cfbd_play_count
                     else:
-                        team = (cfbd_in.team or "").strip() if cfbd_in else ""
-                        year_val = (
-                            cfbd_in.year
-                            if cfbd_in and cfbd_in.year is not None
-                            else settings.CFBD_SEASON
-                        )
-                        week_val = cfbd_in.week if cfbd_in else None
-                        cfbd_job_meta["team"] = team or None
-                        cfbd_job_meta["year"] = year_val
-                        cfbd_job_meta["week"] = week_val
                         set_cfbd_state("pending", None)
                         self.jobs[job_id] = job_state
                         try:
                             logger.info(
                                 f"[CFBD] resolving via /games team={team or None} year={year_val} week={week_val}"
                             )
-                            if not (team and year_val and week_val):
-                                raise RuntimeError("No game found via resolver")
+                            if not year_val:
+                                raise RuntimeError("missing year for resolver")
                             gid = await asyncio.to_thread(
                                 self.cfbd.resolve_game_id,
-                                team=team,
                                 year=int(year_val),
-                                week=int(week_val),
+                                week=None if week_val is None else int(week_val),
+                                team=team or None,
                             )
                             if not gid:
-                                raise RuntimeError("No game found via resolver")
-                            logger.info(f"[CFBD] resolved game_id={gid} -> GET /plays")
-                            logger.info(
-                                f"[CFBD] GET https://api.collegefootballdata.com/plays?gameId={int(gid)}"
-                            )
+                                raise RuntimeError("no match via /games")
+                            logger.info(f"[CFBD] resolved game_id={gid} -> /plays")
                             plays_list = await asyncio.to_thread(
-                                self.cfbd.get_plays_by_game, int(gid)
+                                self.cfbd.get_plays_by_game,
+                                int(gid),
+                                year=year_val,
+                                week=week_val,
+                                season_type="regular",
                             )
                             if not plays_list:
-                                raise RuntimeError("empty plays[] from /plays")
+                                raise RuntimeError("empty plays[]")
                         except Exception as exc:  # pragma: no cover - network edge
                             cfbd_reason = f"resolver: {type(exc).__name__}: {exc}"
                             set_cfbd_state("unavailable", cfbd_reason)

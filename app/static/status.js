@@ -34,12 +34,25 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btn) {
     btn.onclick = async (e) => {
       e.preventDefault();
-      let gid = (gidInput?.value || '').trim();
+      const input = document.querySelector('input[name="cfbd_game_id"]');
+      let gid = (input?.value || '').trim();
       if (!gid) return alert('Enter a CFBD game_id or ESPN URL first.');
       const m = gid.match(/\/gameId\/(\d+)/i);
       if (m) gid = m[1];
-      const r = await fetch(`/diag/cfbd?gameId=${encodeURIComponent(gid)}`).then((x) => x.json());
-      alert(r.ok ? `CFBD OK\n${r.url}\nstatus ${r.status}` : `CFBD ERROR\n${r.url}\n${r.error || r.body_prefix}`);
+      const yearInput = document.querySelector('input[name="cfbd_year"]');
+      const weekInput = document.querySelector('input[name="cfbd_week"]');
+      const qs = new URLSearchParams({ gameId: gid });
+      const yearVal = (yearInput?.value || '').trim();
+      const weekVal = (weekInput?.value || '').trim();
+      if (yearVal) qs.set('year', yearVal);
+      if (weekVal) qs.set('week', weekVal);
+      const res = await fetch(`/diag/cfbd?${qs.toString()}`).then((x) => x.json());
+      const tried = (res.urls_tried || []).join('\n');
+      alert(
+        res.ok
+          ? `CFBD OK\n${res.url}\nplays: ${res.plays_sampled}\nTried:\n${tried}`
+          : `CFBD ERROR\n${res.url}\n${res.error || `status ${res.status}`}\nTried:\n${tried}`,
+      );
     };
   }
 
