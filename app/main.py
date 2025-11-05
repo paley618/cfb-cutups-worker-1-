@@ -26,7 +26,7 @@ from .uploads import destination_for, public_path, register_upload, resolve_uplo
 logger = logging.getLogger(__name__)
 
 
-ESPN_GAMEID_RE = re.compile(r"/gameId/(\d+)")
+_ESPN_RE = re.compile(r"/gameId/(\d+)", re.I)
 
 
 def _normalize_game_id(raw: str | int | None) -> int | None:
@@ -34,14 +34,10 @@ def _normalize_game_id(raw: str | int | None) -> int | None:
 
     if raw is None:
         return None
-    if isinstance(raw, bool):
-        return None
-    if isinstance(raw, int):
-        return raw
     text = str(raw).strip()
     if not text:
         return None
-    match = ESPN_GAMEID_RE.search(text)
+    match = _ESPN_RE.search(text)
     if match:
         try:
             return int(match.group(1))
@@ -70,6 +66,7 @@ async def lifespan(app: FastAPI):
     setup_logging()
     write_cookies_if_any()
     write_drive_cookies_if_any()
+    app.state.cfbd = RUNNER.cfbd
     RUNNER.start()
     logger.info("app_startup")
     try:
@@ -124,6 +121,19 @@ async def __selftest():
     return await run_all(storage)
 
 
+@app.get("/selftest/cfbd")
+async def cfbd_selftest(gameId: int):
+    client = getattr(app.state, "cfbd", None)
+    if client is None:
+        return {"ok": False, "error": "CFBD client unavailable"}
+    try:
+        plays = await client.get_plays_by_game(gameId)
+    except Exception as exc:  # pragma: no cover - network edge
+        return {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
+    count = len(plays) if isinstance(plays, list) else len(plays.get("plays", []))
+    return {"ok": True, "plays": count}
+
+
 @app.get("/")
 async def submit_page():
     return FileResponse("app/static/submit.html")
@@ -167,6 +177,8 @@ async def create_job(request: Request):
     cfbd_input = getattr(submission, "cfbd", None)
     if cfbd_input is not None:
         cfbd_input.game_id = _normalize_game_id(getattr(cfbd_input, "game_id", None))
+        if cfbd_input.team is not None:
+            cfbd_input.team = cfbd_input.team.strip() or None
 
     if submission.upload_id:
         resolved = resolve_upload(submission.upload_id)
@@ -201,6 +213,7 @@ def get_job(job_id: str):
         "cancel": bool(job.get("cancel", False)),
         "cfbd_state": job.get("cfbd_state"),
         "cfbd_reason": job.get("cfbd_reason"),
+        "cfbd_requested": job.get("cfbd_requested"),
     }
 
 

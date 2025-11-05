@@ -49,12 +49,16 @@
 
         <div class="sub" style="margin-top:16px">CFBD-guided cuts (optional)</div>
         <div class="grid" style="margin-top:8px">
-          <label style="display:flex; align-items:center; gap:8px"><input type="checkbox" id="cfbd_use"> Use CFBD-guided cuts</label>
-          <input id="cfbd_game_id" placeholder="CFBD game_id (optional)">
-          <input id="cfbd_season" placeholder="Season e.g. 2025">
-          <input id="cfbd_week" placeholder="Week e.g. 7">
-          <input id="cfbd_team" placeholder="Team (one) e.g. Georgia">
+          <label style="display:flex; align-items:center; gap:8px"><input type="checkbox" id="cfbd_use" name="use_cfbd"> Use CFBD-guided cuts</label>
+          <input id="cfbd_game_id" name="cfbd_game_id" placeholder="CFBD game_id (optional)">
+          <input id="cfbd_season" name="cfbd_year" placeholder="Season e.g. 2025">
+          <input id="cfbd_week" name="cfbd_week" placeholder="Week e.g. 7">
+          <input id="cfbd_team" name="cfbd_team" placeholder="Team (one) e.g. Georgia">
         </div>
+        <label class="inline" style="margin-top:8px; display:flex; align-items:center; gap:8px">
+          <input type="checkbox" id="cfbd_require" name="require_cfbd" />
+          Require CFBD (fail if unavailable)
+        </label>
 
         <div style="margin-top:16px; display:flex; gap:12px">
           <button type="submit" id="submit_btn">Submit</button>

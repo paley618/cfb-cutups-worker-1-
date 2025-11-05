@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 import httpx
 
@@ -64,20 +64,22 @@ class CFBDClient:
         gid = game.get("id") or game.get("game_id") or game.get("idGame")
         return int(gid) if gid is not None else None
 
-    async def get_plays_by_game(self, game_id: int) -> Dict[str, Any]:
+    async def get_plays_by_game(self, game_id: int) -> List[Dict[str, Any]]:
         """Fetch plays for a specific game id."""
 
         payload = await self._get("/plays", {"gameId": int(game_id)})
-        return {"game_id": int(game_id), "plays": payload}
+        if not isinstance(payload, list):
+            raise CFBDClientError("Unexpected CFBD payload shape for plays")
+        return payload
 
     async def fetch(self, spec: Dict[str, Any]) -> Dict[str, Any]:
         """Fetch plays either by game id or by team/year/week spec."""
 
         request_spec = dict(spec)
         if request_spec.get("game_id"):
-            result = await self.get_plays_by_game(int(request_spec["game_id"]))
-            result["request"] = request_spec
-            return result
+            game_id = int(request_spec["game_id"])
+            plays = await self.get_plays_by_game(game_id)
+            return {"game_id": game_id, "plays": plays, "request": request_spec}
 
         team = request_spec.get("team")
         year = request_spec.get("year") or request_spec.get("season")
@@ -96,7 +98,6 @@ class CFBDClient:
             raise CFBDClientError(
                 f"No game_id found for {team} {season_type} week {week} {year}"
             )
-        result = await self.get_plays_by_game(game_id)
-        result["request"] = request_spec
-        return result
+        plays = await self.get_plays_by_game(game_id)
+        return {"game_id": game_id, "plays": plays, "request": request_spec}
 
