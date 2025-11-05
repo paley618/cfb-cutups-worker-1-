@@ -10,14 +10,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const selftestBtn = document.getElementById('selftest');
   const selftestOut = document.getElementById('selftest_out');
 
-  const cfbdIdInput = document.querySelector('input[name="cfbd_game_id"]');
-  if (cfbdIdInput && !cfbdIdInput.dataset.espnHandler) {
-    cfbdIdInput.dataset.espnHandler = '1';
-    cfbdIdInput.addEventListener('input', () => {
-      const v = (cfbdIdInput.value || '').trim();
+  const gidInput = document.querySelector('input[name="cfbd_game_id"]');
+  if (gidInput && !gidInput.dataset.espnReady) {
+    gidInput.dataset.espnReady = '1';
+    gidInput.addEventListener('input', () => {
+      const v = gidInput.value.trim();
       const m = v.match(/\/gameId\/(\d+)/i);
-      if (m) cfbdIdInput.value = m[1];
+      if (m) gidInput.value = m[1];
     });
+  }
+
+  let btn = document.getElementById('cfbd-selftest');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.id = 'cfbd-selftest';
+    btn.className = 'btn';
+    btn.textContent = 'Run CFBD self-test';
+    const targetForm = form || document.querySelector('form');
+    if (targetForm) {
+      targetForm.insertBefore(btn, targetForm.firstChild);
+    }
+  }
+  if (btn) {
+    btn.onclick = async (e) => {
+      e.preventDefault();
+      let gid = (gidInput?.value || '').trim();
+      if (!gid) return alert('Enter a CFBD game_id or ESPN URL first.');
+      const m = gid.match(/\/gameId\/(\d+)/i);
+      if (m) gid = m[1];
+      const r = await fetch(`/diag/cfbd?gameId=${encodeURIComponent(gid)}`).then((x) => x.json());
+      alert(r.ok ? `CFBD OK\n${r.url}\nstatus ${r.status}` : `CFBD ERROR\n${r.url}\n${r.error || r.body_prefix}`);
+    };
   }
 
   const addLine = (text) => {
@@ -30,41 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderCFBD(j) {
     if (!statusEl) return;
-    const wrap =
+    const meta = (j.manifest && j.manifest.detector_meta) || {};
+    const s = meta.cfbd_state || 'off';
+    const r = meta.cfbd_reason || '';
+    const el =
       document.getElementById('cfbd-state') ||
       (() => {
-        const el = document.createElement('div');
-        el.id = 'cfbd-state';
-        statusEl.appendChild(el);
-        return el;
+        const d = document.createElement('div');
+        d.id = 'cfbd-state';
+        statusEl.appendChild(d);
+        return d;
       })();
-    const meta = j && j.manifest ? j.manifest.detector_meta || {} : {};
-    const manifestState = meta.cfbd_state;
-    const manifestReason = meta.cfbd_reason;
-    const s =
-      (j && j.cfbd_state) ||
-      manifestState ||
-      (j && j.manifest && j.manifest.detector_meta && j.manifest.detector_meta.cfbd_state);
-    const r =
-      (j && j.cfbd_reason) ||
-      manifestReason ||
-      (j && j.manifest && j.manifest.detector_meta && j.manifest.detector_meta.cfbd_reason);
-    let label = 'CFBD: OFF';
-    let cls = 'badge';
-    if (s === 'pending') {
-      label = 'CFBD: syncing…';
-      cls = 'badge badge-info';
-    } else if (s === 'ready') {
-      label = 'CFBD: READY';
-      cls = 'badge badge-success';
-    } else if (s === 'error') {
-      label = 'CFBD: ERROR';
-      cls = 'badge badge-warn';
-    } else if (s === 'unavailable') {
-      label = 'CFBD: UNAVAILABLE';
-      cls = 'badge badge-warn';
-    }
-    wrap.innerHTML = `<span class="${cls}">${label}</span>` + (r ? ` <span class="muted">(${r})</span>` : '');
+    const map = { ready: 'badge-success', error: 'badge-warn', unavailable: 'badge-warn', off: 'badge' };
+    el.innerHTML = `<span class="badge ${map[s] || 'badge'}">CFBD: ${s.toUpperCase()}</span> ${
+      r ? `<span class="muted">(${r})</span>` : ''
+    }`;
   }
 
   if (selftestBtn && selftestOut) {
@@ -80,41 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
   }
-
-  const ensureCfbdSelftest = () => {
-    if (!form) return;
-    if (document.getElementById('cfbd-selftest')) return;
-    const btn = document.createElement('button');
-    btn.id = 'cfbd-selftest';
-    btn.type = 'button';
-    btn.className = 'btn';
-    btn.textContent = 'Run CFBD self-test';
-    form.prepend(btn);
-    btn.onclick = async (e) => {
-      e.preventDefault();
-      const input = document.querySelector('input[name="cfbd_game_id"]');
-      const gidRaw = (input && input.value ? input.value : '').trim();
-      if (!gidRaw) {
-        alert('Enter a CFBD game_id or ESPN URL first.');
-        return;
-      }
-      const match = gidRaw.match(/\/gameId\/(\d+)/i) || [];
-      const gid = match[1] || gidRaw;
-      try {
-        const result = await fetch(`/selftest/cfbd?gameId=${encodeURIComponent(gid)}`).then((r) => r.json());
-        if (result.ok) {
-          alert(`CFBD OK\nURL: ${result.url}\nplays: ${result.plays}`);
-        } else {
-          alert(`CFBD ERROR\nURL: ${result.url}\n${result.error}`);
-        }
-      } catch (err) {
-        const message = err && err.message ? err.message : String(err);
-        alert(`CFBD ERROR\n${message}`);
-      }
-    };
-  };
-
-  ensureCfbdSelftest();
 
   const stageKey = (job) => (job.stage || job.status || 'queued').toLowerCase();
 

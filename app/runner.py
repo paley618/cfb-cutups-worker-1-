@@ -543,15 +543,15 @@ class JobRunner:
                         set_cfbd_state("pending", None)
                         self.jobs[job_id] = job_state
                         try:
+                            url = f"https://api.collegefootballdata.com/plays?gameId={int(gid)}"
+                            logger.info(f"[CFBD] GET {url}")
                             plays_list = await asyncio.to_thread(
                                 self.cfbd.get_plays_by_game, int(gid)
                             )
                             if not plays_list:
-                                raise RuntimeError("CFBD returned empty plays array")
+                                raise RuntimeError("empty plays[] from /plays")
                         except Exception as exc:  # pragma: no cover - network edge
-                            cfbd_reason = (
-                                f"/plays game_id fetch failed: {type(exc).__name__}: {exc}"
-                            )
+                            cfbd_reason = f"/plays failed: {type(exc).__name__}: {exc}"
                             set_cfbd_state("error", cfbd_reason)
                             cfbd_job_meta["status"] = "error"
                             cfbd_job_meta["error"] = cfbd_reason
@@ -588,6 +588,9 @@ class JobRunner:
                         set_cfbd_state("pending", None)
                         self.jobs[job_id] = job_state
                         try:
+                            logger.info(
+                                f"[CFBD] resolving via /games team={team or None} year={year_val} week={week_val}"
+                            )
                             if not (team and year_val and week_val):
                                 raise RuntimeError("No game found via resolver")
                             gid = await asyncio.to_thread(
@@ -598,13 +601,17 @@ class JobRunner:
                             )
                             if not gid:
                                 raise RuntimeError("No game found via resolver")
+                            logger.info(f"[CFBD] resolved game_id={gid} -> GET /plays")
+                            logger.info(
+                                f"[CFBD] GET https://api.collegefootballdata.com/plays?gameId={int(gid)}"
+                            )
                             plays_list = await asyncio.to_thread(
                                 self.cfbd.get_plays_by_game, int(gid)
                             )
                             if not plays_list:
-                                raise RuntimeError("CFBD returned empty plays array")
+                                raise RuntimeError("empty plays[] from /plays")
                         except Exception as exc:  # pragma: no cover - network edge
-                            cfbd_reason = f"resolver failed: {type(exc).__name__}: {exc}"
+                            cfbd_reason = f"resolver: {type(exc).__name__}: {exc}"
                             set_cfbd_state("unavailable", cfbd_reason)
                             cfbd_job_meta["status"] = "unavailable"
                             cfbd_job_meta["error"] = cfbd_reason
@@ -647,7 +654,7 @@ class JobRunner:
                     )
                     self._fail_job(
                         job_id,
-                        reason=f"CFBD required but not available - {reason_text}",
+                        reason=f"CFBD required but not available: {reason_text}",
                     )
                     return
 
