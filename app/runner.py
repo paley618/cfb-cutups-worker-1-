@@ -447,41 +447,6 @@ class JobRunner:
                 }
                 debug_urls: Dict[str, Any] = {}
 
-                options = getattr(submission, "options", None)
-                try:
-                    pre_pad = max(
-                        0.0,
-                        float(getattr(options, "play_padding_pre", settings.PLAY_PRE_PAD_SEC)),
-                    )
-                except Exception:
-                    pre_pad = float(settings.PLAY_PRE_PAD_SEC)
-                try:
-                    post_pad = max(
-                        0.0,
-                        float(getattr(options, "play_padding_post", settings.PLAY_POST_PAD_SEC)),
-                    )
-                except Exception:
-                    post_pad = float(settings.PLAY_POST_PAD_SEC)
-                try:
-                    scene_thresh = float(getattr(options, "scene_thresh", 0.30))
-                except Exception:
-                    scene_thresh = 0.30
-                try:
-                    min_duration = max(
-                        0.1,
-                        float(getattr(options, "min_duration", settings.PLAY_MIN_SEC)),
-                    )
-                except Exception:
-                    min_duration = float(settings.PLAY_MIN_SEC)
-                try:
-                    max_duration = max(
-                        min_duration,
-                        float(getattr(options, "max_duration", settings.PLAY_MAX_SEC)),
-                    )
-                except Exception:
-                    max_duration = max(min_duration, float(settings.PLAY_MAX_SEC))
-                merge_gap = float(settings.MERGE_GAP_SEC)
-
 
                 cfbd_summary: Dict[str, Any] = {
                     "requested": False,
@@ -1526,43 +1491,6 @@ class JobRunner:
                     detail="Packaging ZIP/manifest",
                     fields={"eta_seconds": None},
                 )
-
-                bucket_urls: Dict[str, str] = {}
-                bucket_reel_uploads: List[Tuple[str, str, str]] = []
-                for bucket_name, items in manifest_buckets.items():
-                    if not items:
-                        continue
-                    concat_list = [
-                        os.path.join(tmp_dir, item["file"])
-                        for item in items
-                        if item.get("file")
-                    ]
-                    if not concat_list:
-                        continue
-                    out_path = os.path.join(tmp_dir, f"reel_{bucket_name}.mp4")
-
-                    def _bucket_progress(pct: float, _eta: Optional[float], msg: str | None) -> None:
-                        detail_msg = f"{bucket_name} {(msg or '').strip()}".strip()
-                        monitor.touch(stage="packaging", pct=pct, detail=detail_msg)
-
-                    try:
-                        concat_clips_to_mp4(
-                            concat_list,
-                            out_path,
-                            progress_cb=_bucket_progress,
-                            reencode=settings.CONCAT_REENCODE,
-                        )
-                        bucket_key = f"{job_id}/reel_{bucket_name}.mp4"
-                        bucket_urls[bucket_name] = storage.url_for(bucket_key)
-                        bucket_reel_uploads.append((f"reel_{bucket_name}.mp4", bucket_key, out_path))
-                    except Exception:
-                        logger.exception(
-                            "bucket_reel_failed",
-                            extra={"job_id": job_id, "bucket": bucket_name},
-                        )
-
-                for bucket_name in list(manifest_buckets.keys()):
-                    bucket_urls.setdefault(bucket_name, None)
 
                 low_conf_flag = bool(fallback_used and not cfbd_used)
                 if cfbd_summary.get("requested") and not cfbd_used:
