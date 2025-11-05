@@ -2,11 +2,23 @@
 
 from __future__ import annotations
 
+import os
+
 from functools import lru_cache
 from typing import List, Literal, Optional, Tuple
 
 from pydantic import AliasChoices, Field, ValidationError, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+def env_bool(name: str, default: bool = False) -> bool:
+    """Parse a boolean environment flag."""
+
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    value = raw.strip().lower()
+    return value in {"1", "true", "yes", "on"}
 
 
 class Settings(BaseSettings):
@@ -454,3 +466,9 @@ def get_settings() -> Settings:
 
 
 settings = get_settings()
+
+
+CFBD_ENABLED: bool = env_bool("CFBD_ENABLED", True)
+CFBD_API_KEY: str | None = os.getenv("CFBD_API_KEY") or settings.cfbd_api_key
+CFBD_SEASON_TYPE_DEFAULT: str = os.getenv("CFBD_SEASON_TYPE", "regular")
+CFBD_REQUEST_TIMEOUT: int = int(os.getenv("CFBD_REQUEST_TIMEOUT", "20"))
