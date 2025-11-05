@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const meta = (j.manifest && j.manifest.detector_meta) || {};
     const s = meta.cfbd_state || 'off';
     const r = meta.cfbd_reason || '';
+    const cached = meta.cfbd_cached ? ` • cached=${meta.cfbd_cached_count}` : '';
     const el =
       document.getElementById('cfbd-state') ||
       (() => {
@@ -77,8 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
         statusEl.appendChild(d);
         return d;
       })();
-    const map = { ready: 'badge-success', error: 'badge-warn', unavailable: 'badge-warn', off: 'badge' };
-    el.innerHTML = `<span class="badge ${map[s] || 'badge'}">CFBD: ${s.toUpperCase()}</span> ${
+    const classes = {
+      ready: 'badge-success',
+      pending: 'badge-info',
+      error: 'badge-warn',
+      unavailable: 'badge-warn',
+      off: 'badge',
+    };
+    el.innerHTML = `<span class="badge ${classes[s] || 'badge'}">CFBD: ${s.toUpperCase()}</span>${cached} ${
       r ? `<span class="muted">(${r})</span>` : ''
     }`;
   }

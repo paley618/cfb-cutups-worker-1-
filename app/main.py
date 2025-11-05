@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import logging
 import os
 import re
@@ -10,11 +11,12 @@ from typing import Any, Mapping
 
 import httpx
 from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile, status
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from pydantic import ValidationError
 
+from .cfbd_client import CFBDClient
 from .cookies import write_cookies_if_any, write_drive_cookies_if_any
 from .diag_cfbd import router as diag_cfbd_router
 from .logging_setup import setup_logging
@@ -108,6 +110,7 @@ async def lifespan(app: FastAPI):
     write_cookies_if_any()
     write_drive_cookies_if_any()
     app.state.cfbd = RUNNER.cfbd
+    RUNNER.attach_app(app)
     RUNNER.start()
     logger.info("app_startup")
     try:
@@ -243,7 +246,87 @@ async def create_job(request: Request):
             raise HTTPException(status_code=422, detail="Upload not found")
 
     RUNNER.ensure_started()
-    job_id = RUNNER.enqueue(submission)
+    job_id = RUNNER.prepare_job(submission)
+
+    job_state = RUNNER.get_job(job_id) or {}
+    job_meta = job_state.setdefault("meta", {})
+    cfbd_meta = job_meta.setdefault("cfbd", {})
+
+    cfbd_in = getattr(submission, "cfbd", None)
+    cfbd_requested = bool(cfbd_in and getattr(cfbd_in, "use_cfbd", False))
+    job_state.setdefault("cfbd_state", "off")
+    job_state.setdefault("cfbd_reason", None)
+    job_state["cfbd_requested"] = cfbd_requested
+
+    job_meta.setdefault("cfbd_state", job_state.get("cfbd_state"))
+    job_meta.setdefault("cfbd_reason", job_state.get("cfbd_reason"))
+    job_meta.setdefault("cfbd_requested", cfbd_requested)
+    job_meta.setdefault("cfbd_cached", False)
+    job_meta.setdefault("cfbd_cached_count", 0)
+    cfbd_meta.setdefault("requested", cfbd_requested)
+
+    if not hasattr(app.state, "cfbd") or app.state.cfbd is None:
+        app.state.cfbd = CFBDClient()
+
+    require_cfbd = bool(
+        cfbd_in
+        and (
+            getattr(cfbd_in, "require_cfbd", False)
+            or getattr(cfbd_in, "require", False)
+        )
+    )
+
+    if cfbd_in and getattr(cfbd_in, "use_cfbd", False):
+        gid = getattr(cfbd_in, "game_id", None)
+        year = getattr(cfbd_in, "season", None)
+        week = getattr(cfbd_in, "week", None)
+
+        if gid:
+            try:
+                plays = await asyncio.to_thread(
+                    app.state.cfbd.get_plays_by_game,
+                    int(gid),
+                    year=year,
+                    week=week,
+                    season_type="regular",
+                )
+                app.state.cfbd_cache = getattr(app.state, "cfbd_cache", {})
+                app.state.cfbd_cache[job_id] = {
+                    "game_id": int(gid),
+                    "year": year,
+                    "week": week,
+                    "plays": plays,
+                }
+                job_state["cfbd_state"] = "ready"
+                job_state["cfbd_reason"] = f"preflight game_id={gid}"
+                job_meta["cfbd_state"] = job_state["cfbd_state"]
+                job_meta["cfbd_reason"] = job_state["cfbd_reason"]
+                job_meta["cfbd_cached"] = True
+                job_meta["cfbd_cached_count"] = len(plays)
+            except Exception as exc:  # pragma: no cover - network edge
+                reason = f"preflight /plays failed: {type(exc).__name__}: {exc}"
+                job_state["cfbd_state"] = "error"
+                job_state["cfbd_reason"] = reason
+                job_meta["cfbd_state"] = job_state["cfbd_state"]
+                job_meta["cfbd_reason"] = job_state["cfbd_reason"]
+                if require_cfbd:
+                    RUNNER.discard_job(job_id)
+                    return JSONResponse({"ok": False, "error": reason}, status_code=400)
+        else:
+            job_state["cfbd_state"] = "pending"
+            job_state["cfbd_reason"] = "will resolve via /games"
+            job_meta["cfbd_state"] = job_state["cfbd_state"]
+            job_meta["cfbd_reason"] = job_state["cfbd_reason"]
+    else:
+        job_state["cfbd_state"] = "off"
+        job_state["cfbd_reason"] = "not requested"
+        job_meta["cfbd_state"] = job_state["cfbd_state"]
+        job_meta["cfbd_reason"] = job_state["cfbd_reason"]
+
+    RUNNER.jobs[job_id] = job_state
+
+    RUNNER.enqueue_prepared(job_id, submission)
+
     return {"job_id": job_id, "status": "queued"}
 
 
