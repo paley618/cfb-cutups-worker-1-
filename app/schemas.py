@@ -13,6 +13,7 @@ class Options(BaseModel):
 
 class CFBDInput(BaseModel):
     use_cfbd: bool = False
+    require_cfbd: bool = False
     game_id: Optional[int] = None
     season: Optional[int] = Field(
         default=None, validation_alias=AliasChoices("season", "year", "cfbd_year")

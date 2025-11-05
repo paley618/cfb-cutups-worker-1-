@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const selftestBtn = document.getElementById('selftest');
   const selftestOut = document.getElementById('selftest_out');
 
-  const cfbdIdInput = document.getElementById('cfbd_game_id');
-  if (cfbdIdInput && !cfbdIdInput.dataset.espanhanced) {
-    cfbdIdInput.dataset.espanhanced = '1';
-    cfbdIdInput.addEventListener('change', () => {
+  const cfbdIdInput = document.querySelector('input[name="cfbd_game_id"]');
+  if (cfbdIdInput && !cfbdIdInput.dataset.espnHandler) {
+    cfbdIdInput.dataset.espnHandler = '1';
+    cfbdIdInput.addEventListener('input', () => {
       const v = (cfbdIdInput.value || '').trim();
       const m = v.match(/\/gameId\/(\d+)/i);
       if (m) cfbdIdInput.value = m[1];
@@ -28,6 +28,45 @@ document.addEventListener('DOMContentLoaded', () => {
     statusEl.appendChild(line);
   };
 
+  function renderCFBD(j) {
+    if (!statusEl) return;
+    const wrap =
+      document.getElementById('cfbd-state') ||
+      (() => {
+        const el = document.createElement('div');
+        el.id = 'cfbd-state';
+        statusEl.appendChild(el);
+        return el;
+      })();
+    const meta = j && j.manifest ? j.manifest.detector_meta || {} : {};
+    const manifestState = meta.cfbd_state;
+    const manifestReason = meta.cfbd_reason;
+    const s =
+      (j && j.cfbd_state) ||
+      manifestState ||
+      (j && j.manifest && j.manifest.detector_meta && j.manifest.detector_meta.cfbd_state);
+    const r =
+      (j && j.cfbd_reason) ||
+      manifestReason ||
+      (j && j.manifest && j.manifest.detector_meta && j.manifest.detector_meta.cfbd_reason);
+    let label = 'CFBD: OFF';
+    let cls = 'badge';
+    if (s === 'pending') {
+      label = 'CFBD: syncing…';
+      cls = 'badge badge-info';
+    } else if (s === 'ready') {
+      label = 'CFBD: READY';
+      cls = 'badge badge-success';
+    } else if (s === 'error') {
+      label = 'CFBD: ERROR';
+      cls = 'badge badge-warn';
+    } else if (s === 'unavailable') {
+      label = 'CFBD: UNAVAILABLE';
+      cls = 'badge badge-warn';
+    }
+    wrap.innerHTML = `<span class="${cls}">${label}</span>` + (r ? ` <span class="muted">(${r})</span>` : '');
+  }
+
   if (selftestBtn && selftestOut) {
     selftestBtn.onclick = async () => {
       selftestOut.style.display = 'block';
@@ -41,6 +80,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
   }
+
+  const ensureCfbdSelftest = () => {
+    if (!form) return;
+    if (document.getElementById('cfbd-selftest')) return;
+    const btn = document.createElement('button');
+    btn.id = 'cfbd-selftest';
+    btn.type = 'button';
+    btn.className = 'btn';
+    btn.textContent = 'Run CFBD self-test';
+    form.prepend(btn);
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const input = document.querySelector('input[name="cfbd_game_id"]');
+      const gid = (input && input.value ? input.value : '').trim();
+      if (!gid) {
+        alert('Enter a CFBD game_id or ESPN URL first.');
+        return;
+      }
+      try {
+        const payload = await fetch(`/selftest/cfbd?gameId=${encodeURIComponent(gid)}`).then((r) => r.json());
+        if (payload.ok) {
+          alert(`CFBD OK • plays: ${payload.plays}`);
+        } else {
+          alert(`CFBD ERROR • ${payload.error}`);
+        }
+      } catch (err) {
+        alert(`CFBD ERROR • ${err.message}`);
+      }
+    });
+  };
+
+  ensureCfbdSelftest();
 
   const stageKey = (job) => (job.stage || job.status || 'queued').toLowerCase();
 
@@ -237,82 +308,8 @@ document.addEventListener('DOMContentLoaded', () => {
     line.className = 'status-line';
     line.textContent = `${label} — ${pct.toFixed(1)}%${etaTxt}${detail}`;
     statusEl.appendChild(line);
-    const cfbdBadgeId = 'cfbd-badge';
-    let cfbdBadge = document.getElementById(cfbdBadgeId);
-    if (!cfbdBadge) {
-      cfbdBadge = document.createElement('span');
-      cfbdBadge.id = cfbdBadgeId;
-      cfbdBadge.className = 'badge';
-      statusEl.appendChild(document.createTextNode(' '));
-      statusEl.appendChild(cfbdBadge);
-    }
-    const cfbdMeta = (job.meta && job.meta.cfbd) || {};
-    const cfbdRequested = !!cfbdMeta.requested;
-    const rawStatus = (cfbdMeta.status || job.cfbd_state || '').toString().toLowerCase();
-    const cfbdErrorRaw = (cfbdMeta.error || job.cfbd_reason || '').toString();
-    const cfbdError = cfbdErrorRaw.toLowerCase();
-    const cfbdGameId = cfbdMeta.game_id ?? cfbdMeta.gameId;
-    const statusLookup = rawStatus || (cfbdRequested ? 'pending' : 'off');
-    let cfbdLabel = 'CFBD: OFF';
-    let cfbdClass = 'badge';
-    if (cfbdRequested) {
-      if (statusLookup === 'ready') {
-        cfbdLabel = cfbdGameId ? `CFBD: READY (gameId ${cfbdGameId})` : 'CFBD: READY';
-        cfbdClass = 'badge badge-success';
-      } else if (statusLookup === 'missing_api_key' || cfbdError === 'missing_api_key') {
-        cfbdLabel = 'CFBD: MISSING API KEY';
-        cfbdClass = 'badge badge-warn';
-      } else if (statusLookup === 'invalid_year' || cfbdError === 'invalid_year') {
-        cfbdLabel = 'CFBD: INVALID INPUT (year)';
-        cfbdClass = 'badge badge-warn';
-      } else if (statusLookup === 'invalid_week' || cfbdError === 'invalid_week') {
-        cfbdLabel = 'CFBD: INVALID INPUT (week)';
-        cfbdClass = 'badge badge-warn';
-      } else if (
-        ['no_match', 'no_game_match', 'no_plays'].includes(statusLookup) ||
-        ['no_match', 'no_game_match', 'no_plays'].includes(cfbdError)
-      ) {
-        cfbdLabel = 'CFBD: NO MATCH (vision-only)';
-        cfbdClass = 'badge badge-warn';
-      } else if (statusLookup === 'disabled') {
-        cfbdLabel = 'CFBD: DISABLED';
-        cfbdClass = 'badge badge-warn';
-      } else if (statusLookup === 'resolving' || statusLookup === 'pending') {
-        cfbdLabel = 'CFBD: RESOLVING…';
-        cfbdClass = 'badge badge-info';
-      } else if (statusLookup === 'plays_error' || statusLookup === 'finder_error') {
-        cfbdLabel = 'CFBD: ERROR';
-        cfbdClass = 'badge badge-warn';
-      } else {
-        cfbdLabel = `CFBD: ${statusLookup.toUpperCase()}`;
-        cfbdClass = 'badge badge-info';
-      }
-    }
-    cfbdBadge.textContent = cfbdLabel;
-    cfbdBadge.className = cfbdClass;
     statusEl.appendChild(renderTimeline(job));
-    const cfbdMsgId = 'cfbd-msg';
-    let cfbdMsg = document.getElementById(cfbdMsgId);
-    if (!cfbdMsg) {
-      cfbdMsg = document.createElement('div');
-      cfbdMsg.id = cfbdMsgId;
-      cfbdMsg.className = 'note';
-      statusEl.appendChild(cfbdMsg);
-    }
-    let cfbdNote = '';
-    if (cfbdRequested) {
-      if (cfbdClass.includes('badge-success')) {
-        cfbdNote = '';
-      } else if (statusLookup === 'resolving' || statusLookup === 'pending') {
-        cfbdNote = 'Resolving game via CFBD…';
-      } else if (cfbdError) {
-        cfbdNote = `Using vision-only: ${cfbdErrorRaw}`;
-      } else if (['no_match', 'no_game_match', 'no_plays'].includes(statusLookup)) {
-        cfbdNote = 'Using vision-only: no CFBD match';
-      }
-    }
-    cfbdMsg.textContent = cfbdNote;
-    cfbdMsg.style.display = cfbdNote ? 'block' : 'none';
+    renderCFBD(job);
 
     const metaParts = [];
     if (job.elapsed_seconds != null) metaParts.push(`Elapsed: ${job.elapsed_seconds}s`);
@@ -396,11 +393,17 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     };
 
+    const gameIdRaw = (document.getElementById('cfbd_game_id').value || '').trim();
+    const seasonRaw = (document.getElementById('cfbd_season').value || '').trim();
+    const weekRaw = (document.getElementById('cfbd_week').value || '').trim();
+    const seasonVal = seasonRaw ? parseInt(seasonRaw, 10) : NaN;
+    const weekVal = weekRaw ? parseInt(weekRaw, 10) : NaN;
     const cfbd = {
       use_cfbd: document.getElementById('cfbd_use').checked,
-      game_id: parseInt(document.getElementById('cfbd_game_id').value || '0', 10) || null,
-      season: parseInt(document.getElementById('cfbd_season').value || '0', 10) || null,
-      week: parseInt(document.getElementById('cfbd_week').value || '0', 10) || null,
+      require_cfbd: document.getElementById('cfbd_require')?.checked ?? false,
+      game_id: gameIdRaw || null,
+      season: Number.isNaN(seasonVal) ? null : seasonVal,
+      week: Number.isNaN(weekVal) ? null : weekVal,
       team: (document.getElementById('cfbd_team').value || '').trim() || null,
     };
     payload.cfbd = cfbd;
@@ -456,6 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       renderStatus(job, cancelBtn);
+      renderCFBD(job);
 
       if (job.status === 'completed') {
         errorEl.textContent = '';
@@ -513,6 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
             errorEl.textContent = '';
             attachSummary(manifest);
             attachCfbdSummary(manifest);
+            renderCFBD({ manifest });
             renderOutputs({ manifest });
           };
 
