@@ -6,10 +6,13 @@ import logging
 import re
 from typing import Dict, Optional, Tuple
 
-from .cfbd_client import get_games
+from .cfbd_client import CFBDClient
 from .settings import CFBD_SEASON_TYPE_DEFAULT
 
 logger = logging.getLogger(__name__)
+
+
+_CLIENT = CFBDClient()
 
 
 def _norm_team(value: str) -> str:
@@ -69,7 +72,7 @@ def find_game_id(
     if week is not None:
         for season_type in season_types:
             try:
-                games = get_games(year, week, season_type, team)
+                games = _CLIENT.get_games(year=year, week=week, season_type=season_type, team=team)
                 record_attempt(
                     "team_year_week",
                     {
@@ -116,7 +119,7 @@ def find_game_id(
                 continue
             for season_type in season_types:
                 try:
-                    games = get_games(year, alt_week, season_type, team)
+                    games = _CLIENT.get_games(year=year, week=alt_week, season_type=season_type, team=team)
                     record_attempt(
                         "team_year_week±1",
                         {
@@ -162,7 +165,7 @@ def find_game_id(
     # Stage 3: fallback team/year lookup
     for season_type in season_types:
         try:
-            games = get_games(year, None, season_type, team)
+            games = _CLIENT.get_games(year=year, week=None, season_type=season_type, team=team)
             record_attempt(
                 "team_year",
                 {

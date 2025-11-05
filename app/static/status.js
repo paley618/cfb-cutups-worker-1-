@@ -90,25 +90,28 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.className = 'btn';
     btn.textContent = 'Run CFBD self-test';
     form.prepend(btn);
-    btn.addEventListener('click', async (e) => {
+    btn.onclick = async (e) => {
       e.preventDefault();
       const input = document.querySelector('input[name="cfbd_game_id"]');
-      const gid = (input && input.value ? input.value : '').trim();
-      if (!gid) {
+      const gidRaw = (input && input.value ? input.value : '').trim();
+      if (!gidRaw) {
         alert('Enter a CFBD game_id or ESPN URL first.');
         return;
       }
+      const match = gidRaw.match(/\/gameId\/(\d+)/i) || [];
+      const gid = match[1] || gidRaw;
       try {
-        const payload = await fetch(`/selftest/cfbd?gameId=${encodeURIComponent(gid)}`).then((r) => r.json());
-        if (payload.ok) {
-          alert(`CFBD OK • plays: ${payload.plays}`);
+        const result = await fetch(`/selftest/cfbd?gameId=${encodeURIComponent(gid)}`).then((r) => r.json());
+        if (result.ok) {
+          alert(`CFBD OK\nURL: ${result.url}\nplays: ${result.plays}`);
         } else {
-          alert(`CFBD ERROR • ${payload.error}`);
+          alert(`CFBD ERROR\nURL: ${result.url}\n${result.error}`);
         }
       } catch (err) {
-        alert(`CFBD ERROR • ${err.message}`);
+        const message = err && err.message ? err.message : String(err);
+        alert(`CFBD ERROR\n${message}`);
       }
-    });
+    };
   };
 
   ensureCfbdSelftest();
