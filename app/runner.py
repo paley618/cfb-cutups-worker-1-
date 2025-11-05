@@ -8,7 +8,8 @@ from typing import Any, Awaitable, Dict, List, Optional, Tuple
 from .video import download_game_video, probe_duration_sec, file_size_bytes
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
 from .detector import detect_plays
-from .cfbd import CFBDClient, CFBDClientError
+from .cfbd_client import get_plays
+from .cfbd_game_finder import find_game_id
 from .ocr_tesseract import sample_series as sample_tesseract_series, TESSERACT_READY
 from .ocr_scorebug import sample_scorebug_series
 from .align_dtw import fit_period_dtw, map_clock
@@ -22,7 +23,7 @@ from .debug_dump import save_timeline_thumbs, save_candidate_thumbs
 from .fallback import timegrid_windows
 from .storage import get_storage
 from .uploads import resolve_upload
-from .settings import settings
+from .settings import CFBD_API_KEY, CFBD_ENABLED, settings
 from .packager import concat_clips_to_mp4
 from .monitor import JobMonitor
 
@@ -67,48 +68,6 @@ class JobRunner:
         self._worker_task: Optional[asyncio.Task] = None
         self._stop = asyncio.Event()
         self._cancels: Dict[str, asyncio.Event] = {}
-        self.cfbd = CFBDClient(
-            api_key=settings.cfbd_api_key,
-            timeout=float(settings.CFBD_TIMEOUT_SECONDS),
-            base_url=settings.cfbd_api_base,
-        )
-
-    async def _fetch_cfbd_with_retries(
-        self,
-        job_id: str,
-        team_or_game: Dict[str, Any],
-        monitor: JobMonitor,
-    ) -> Dict[str, Any]:
-        """Attempt to fetch CFBD plays with retries and exponential backoff."""
-
-        attempts = max(1, int(settings.CFBD_MAX_RETRIES))
-        delay = max(0.0, float(settings.CFBD_BACKOFF_BASE_SEC))
-        last_err: Optional[BaseException] = None
-
-        for attempt in range(1, attempts + 1):
-            monitor.touch(stage="detecting", detail=f"CFBD fetch {attempt}/{attempts}")
-            try:
-                spec = dict(team_or_game)
-                payload = await asyncio.wait_for(
-                    self.cfbd.fetch(spec),
-                    timeout=float(settings.CFBD_TIMEOUT_SECONDS),
-                )
-                plays = list(payload.get("plays") or [])
-                if not plays:
-                    raise RuntimeError("CFBD returned no plays")
-                payload.setdefault("request", spec)
-                return payload
-            except Exception as exc:  # pragma: no cover - network/CFBD flake
-                last_err = exc
-                if attempt >= attempts:
-                    break
-                await asyncio.sleep(delay)
-                delay *= 2
-
-        raise RuntimeError(
-            f"CFBD unavailable after {attempts} attempts: {last_err!r}"
-        )
-
     def _init_job(self, job_id: str):
         now = time.time()
         self.jobs[job_id] = {
@@ -127,6 +86,7 @@ class JobRunner:
             "cancel": False,
             "cfbd_state": None,
             "cfbd_reason": None,
+            "meta": {},
         }
         self._cancels[job_id] = asyncio.Event()
 
@@ -440,6 +400,7 @@ class JobRunner:
                 }
                 debug_urls: Dict[str, Any] = {}
 
+
                 cfbd_summary: Dict[str, Any] = {
                     "requested": False,
                     "used": False,
@@ -452,11 +413,9 @@ class JobRunner:
                     "ocr_engine": None,
                     "dtw_periods": [],
                     "align_method": None,
+                    "finder": None,
                 }
                 cfbd_in = getattr(submission, "cfbd", None)
-                cfbd_task: Optional[asyncio.Task] = None
-                cfbd_payload: Optional[Dict[str, Any]] = None
-                cfbd_request: Optional[Dict[str, Any]] = None
                 cfbd_reason: Optional[str] = None
                 cfbd_plays: List[Dict[str, Any]] = []
                 cfbd_play_count = 0
@@ -470,142 +429,175 @@ class JobRunner:
                 job_state = self.jobs.get(job_id, {})
                 job_state["cfbd_state"] = None
                 job_state["cfbd_reason"] = None
+                job_meta = job_state.setdefault("meta", {})
+                requested_cfbd = bool(cfbd_in and getattr(cfbd_in, "use_cfbd", False))
+                cfbd_job_meta: Dict[str, Any] = {"requested": requested_cfbd}
+                if cfbd_in:
+                    team_hint = (cfbd_in.team or "").strip() or None
+                    cfbd_job_meta.setdefault("team", team_hint)
+                    cfbd_job_meta.setdefault(
+                        "year",
+                        cfbd_in.year if cfbd_in.year is not None else settings.CFBD_SEASON,
+                    )
+                    cfbd_job_meta.setdefault("week", cfbd_in.week)
+                job_meta["cfbd"] = cfbd_job_meta
                 self.jobs[job_id] = job_state
 
-                if (
-                    settings.CFBD_ENABLE
-                    and cfbd_in
-                    and getattr(cfbd_in, "use_cfbd", False)
-                ):
+                global_cfbd_enabled = bool(settings.CFBD_ENABLE and CFBD_ENABLED)
+                use_cfbd = bool(global_cfbd_enabled and requested_cfbd)
+                if requested_cfbd:
                     cfbd_summary["requested"] = True
-                    try:
-                        if cfbd_in.game_id:
-                            cfbd_request = {"game_id": int(cfbd_in.game_id)}
-                        else:
-                            year = cfbd_in.season or settings.CFBD_SEASON
-                            week = cfbd_in.week
-                            team = (cfbd_in.team or "").strip() or None
-                            if not (year and week and team):
-                                raise CFBDClientError(
-                                    "provide game_id or season/week/team"
-                                )
-                            season_type = getattr(cfbd_in, "season_type", None) or "regular"
-                            cfbd_request = {
-                                "team": team,
-                                "year": int(year),
-                                "week": int(week),
-                                "season_type": str(season_type),
-                            }
-                    except CFBDClientError as exc:
-                        message = str(exc)
-                        cfbd_summary["error"] = message
-                        job_state = self.jobs.get(job_id, {})
-                        job_state["cfbd_state"] = "unavailable"
-                        job_state["cfbd_reason"] = message
-                        self.jobs[job_id] = job_state
-                        cfbd_reason = message
-                        logger.warning(
-                            "cfbd_fetch_error",
-                            extra={"job_id": job_id, "error": message},
-                        )
-                        monitor.touch(
-                            stage="detecting", detail=f"CFBD: {message[:120]}"
-                        )
-                    else:
-                        cfbd_summary["request"] = dict(cfbd_request)
-                        if "game_id" in cfbd_request:
-                            cfbd_summary["game_id"] = cfbd_request["game_id"]
-
-                        job_state = self.jobs.get(job_id, {})
-                        job_state["cfbd_state"] = "pending"
-                        job_state["cfbd_reason"] = None
-                        self.jobs[job_id] = job_state
-
-                        async def run_cfbd() -> Optional[Dict[str, Any]]:
-                            try:
-                                monitor.touch(stage="detecting", detail="CFBD: start")
-                                data = await self._fetch_cfbd_with_retries(
-                                    job_id, cfbd_request or {}, monitor
-                                )
-                                jj = self.jobs.get(job_id, {})
-                                if jj.get("cfbd_state") == "unavailable" and jj.get(
-                                    "cfbd_reason"
-                                ):
-                                    return None
-                                jj["cfbd_state"] = "ready"
-                                jj["cfbd_reason"] = None
-                                self.jobs[job_id] = jj
-                                return data
-                            except Exception as exc:
-                                logger.warning(
-                                    "cfbd_fetch_unavailable",
-                                    extra={"job_id": job_id, "error": str(exc)},
-                                )
-                                jj = self.jobs.get(job_id, {})
-                                jj["cfbd_state"] = "unavailable"
-                                jj["cfbd_reason"] = f"{type(exc).__name__}: {exc}"
-                                self.jobs[job_id] = jj
-                                monitor.touch(
-                                    stage="detecting", detail="CFBD: unavailable"
-                                )
-                                return None
-
-                        cfbd_task = asyncio.create_task(run_cfbd())
-
-                elif cfbd_in and getattr(cfbd_in, "use_cfbd", False):
-                    cfbd_summary["requested"] = True
-                    message = "CFBD disabled via settings"
-                    cfbd_summary["error"] = message
-                    cfbd_reason = message
-                    job_state = self.jobs.get(job_id, {})
+                if not requested_cfbd:
+                    cfbd_job_meta["status"] = "off"
+                elif not global_cfbd_enabled:
+                    cfbd_job_meta["status"] = "disabled"
+                    cfbd_job_meta["error"] = "disabled"
+                    cfbd_summary["error"] = "disabled"
+                    cfbd_reason = "disabled"
                     job_state["cfbd_state"] = "unavailable"
-                    job_state["cfbd_reason"] = message
+                    job_state["cfbd_reason"] = "disabled"
                     self.jobs[job_id] = job_state
-                    logger.info("cfbd_skipped", extra={"job_id": job_id, "reason": message})
                     monitor.touch(stage="detecting", detail="CFBD: disabled")
-
-                vid_dur = float(src_dur)
-
-                options = getattr(submission, "options", None)
-                pre_pad = max(
-                    0.0, float(getattr(options, "play_padding_pre", settings.PLAY_PRE_PAD_SEC))
-                )
-                post_pad = max(
-                    0.0, float(getattr(options, "play_padding_post", settings.PLAY_POST_PAD_SEC))
-                )
-                min_duration = max(
-                    0.5, float(getattr(options, "min_duration", settings.PLAY_MIN_SEC))
-                )
-                max_duration = max(
-                    min_duration,
-                    float(getattr(options, "max_duration", settings.PLAY_MAX_SEC)),
-                )
-                scene_thresh = max(
-                    0.05, float(getattr(options, "scene_thresh", 0.30))
-                )
-                merge_gap = min(settings.MERGE_GAP_SEC, 0.75)
-
-                def _det_prog(pct: Optional[float], _eta: Optional[float], msg: str | None):
-                    self._ensure_not_cancelled(job_id, cancel_ev)
-                    base_pct = float(pct or 0.0)
-                    scaled = min(85.0, 12.0 + (0.73 * base_pct))
-                    detail_msg = msg or "Detecting plays"
-                    fields: Dict[str, Any] = {}
-                    if _eta is not None:
-                        fields["eta_seconds"] = int(float(_eta))
-                    self._set_stage(
-                        job_id,
-                        "detecting",
-                        pct=scaled,
-                        detail=detail_msg,
-                        eta=self._eta(job_id),
+                    use_cfbd = False
+                elif not CFBD_API_KEY:
+                    cfbd_job_meta["status"] = "missing_api_key"
+                    cfbd_job_meta["error"] = "missing_api_key"
+                    cfbd_summary["error"] = "missing_api_key"
+                    cfbd_reason = "missing_api_key"
+                    job_state["cfbd_state"] = "unavailable"
+                    job_state["cfbd_reason"] = "missing_api_key"
+                    self.jobs[job_id] = job_state
+                    monitor.touch(stage="detecting", detail="CFBD: missing API key")
+                    logger.warning(
+                        "cfbd_unavailable",
+                        extra={
+                            "job_id": job_id,
+                            "error": "missing_api_key",
+                            "team": cfbd_job_meta.get("team"),
+                            "year": cfbd_job_meta.get("year"),
+                            "week": cfbd_job_meta.get("week"),
+                        },
                     )
-                    _heartbeat(
-                        "detecting",
-                        pct=scaled,
-                        detail=detail_msg,
-                        fields=fields or None,
-                    )
+                    use_cfbd = False
+                else:
+                    cfbd_job_meta["status"] = "resolving"
+                    team_raw = (cfbd_in.team or "") if cfbd_in else ""
+                    team = team_raw.strip()
+                    year_raw = None
+                    week_raw = None
+                    if cfbd_in:
+                        year_raw = (
+                            cfbd_in.year if cfbd_in.year is not None else settings.CFBD_SEASON
+                        )
+                        week_raw = cfbd_in.week
+                    else:
+                        year_raw = settings.CFBD_SEASON
+                        week_raw = None
+                    cfbd_job_meta["team"] = team or None
+                    cfbd_job_meta["year"] = year_raw
+                    cfbd_job_meta["week"] = week_raw
+
+                    def _fail_cfbd(error_code: str, detail: Optional[str] = None) -> None:
+                        nonlocal use_cfbd, cfbd_reason
+                        cfbd_reason = error_code
+                        cfbd_summary["error"] = error_code
+                        cfbd_job_meta["status"] = error_code
+                        cfbd_job_meta["error"] = error_code
+                        job_state["cfbd_state"] = "unavailable"
+                        job_state["cfbd_reason"] = error_code
+                        self.jobs[job_id] = job_state
+                        message = detail or f"CFBD: {error_code}"
+                        monitor.touch(stage="detecting", detail=message)
+                        logger.warning(
+                            "cfbd_unavailable",
+                            extra={
+                                "job_id": job_id,
+                                "error": error_code,
+                                "team": cfbd_job_meta.get("team"),
+                                "year": cfbd_job_meta.get("year"),
+                                "week": cfbd_job_meta.get("week"),
+                            },
+                        )
+                        use_cfbd = False
+
+                    try:
+                        if year_raw is None:
+                            raise ValueError
+                        year_val = int(year_raw)
+                    except Exception:
+                        _fail_cfbd("invalid_year", "CFBD: invalid year")
+                    else:
+                        try:
+                            if week_raw in (None, "", " "):
+                                week_val: Optional[int] = None
+                            else:
+                                week_val = int(week_raw)
+                        except Exception:
+                            _fail_cfbd("invalid_week", "CFBD: invalid week")
+                        else:
+                            monitor.touch(stage="detecting", detail="CFBD: resolving game id")
+                            try:
+                                game_id, finder_meta = await asyncio.to_thread(
+                                    find_game_id, team or "", year_val, week_val
+                                )
+                            except Exception as exc:  # pragma: no cover - network edge
+                                _fail_cfbd("finder_error", f"CFBD: finder error {exc}")
+                            else:
+                                finder_meta = finder_meta or {}
+                                cfbd_summary["finder"] = finder_meta
+                                cfbd_job_meta["finder"] = finder_meta
+                                request_payload = {
+                                    "team": team or None,
+                                    "year": year_val,
+                                    "week": week_val,
+                                }
+                                cfbd_summary["request"] = request_payload
+                                cfbd_job_meta["request"] = request_payload
+                                if not game_id:
+                                    error_code = finder_meta.get("error") or "no_match"
+                                    _fail_cfbd(
+                                        error_code,
+                                        f"CFBD: {error_code} — continuing vision-only",
+                                    )
+                                else:
+                                    cfbd_summary["game_id"] = game_id
+                                    cfbd_job_meta["game_id"] = game_id
+                                    cfbd_job_meta["season_type"] = finder_meta.get("seasonType")
+                                    logger.info("[CFBD] resolved game_id=%s", game_id)
+                                    try:
+                                        plays_payload = await asyncio.to_thread(get_plays, game_id)
+                                        plays_list = list(plays_payload or [])
+                                    except Exception as exc:  # pragma: no cover - network edge
+                                        _fail_cfbd(
+                                            "plays_error",
+                                            f"CFBD: plays fetch failed ({exc})",
+                                        )
+                                    else:
+                                        cfbd_plays = plays_list
+                                        cfbd_play_count = len(cfbd_plays)
+                                        cfbd_summary["plays"] = cfbd_play_count
+                                        cfbd_job_meta["plays_count"] = cfbd_play_count
+                                        if cfbd_play_count == 0:
+                                            _fail_cfbd("no_plays", "CFBD: no plays returned")
+                                        else:
+                                            cfbd_summary["error"] = None
+                                            cfbd_job_meta["status"] = "ready"
+                                            job_state["cfbd_state"] = "ready"
+                                            job_state["cfbd_reason"] = None
+                                            self.jobs[job_id] = job_state
+                self._set_stage(
+                    job_id,
+                    "detecting",
+                    pct=scaled,
+                    detail=detail_msg,
+                    eta=self._eta(job_id),
+                )
+                _heartbeat(
+                    "detecting",
+                    pct=scaled,
+                    detail=detail_msg,
+                    fields=fields or None,
+                )
 
                 self._start_stage(
                     job_id,
@@ -689,50 +681,6 @@ class JobRunner:
                 except Exception:
                     scene_cuts = []
                 scene_cuts = sorted(scene_cuts)
-
-                if cfbd_task:
-                    try:
-                        if cfbd_task.done():
-                            cfbd_payload = cfbd_task.result()
-                        else:
-                            cfbd_payload = await asyncio.wait_for(
-                                cfbd_task, timeout=0
-                            )
-                    except asyncio.TimeoutError:
-                        cfbd_payload = None
-                    except Exception:
-                        cfbd_payload = None
-
-                    snapshot = self.jobs.get(job_id, {})
-                    state = snapshot.get("cfbd_state")
-                    if (
-                        state == "ready"
-                        and cfbd_payload
-                        and cfbd_payload.get("plays")
-                    ):
-                        cfbd_plays = list(cfbd_payload.get("plays") or [])
-                        cfbd_play_count = len(cfbd_plays)
-                        cfbd_summary["plays"] = cfbd_play_count
-                        if cfbd_payload.get("request"):
-                            cfbd_summary["request"] = dict(cfbd_payload["request"])
-                        if cfbd_payload.get("game_id") is not None:
-                            cfbd_summary["game_id"] = cfbd_payload["game_id"]
-                        cfbd_summary["error"] = None
-                        logger.info(
-                            "cfbd_fetch_complete",
-                            extra={"job_id": job_id, "plays": cfbd_play_count},
-                        )
-                    else:
-                        cfbd_reason = snapshot.get("cfbd_reason") or "not ready in time"
-                        cfbd_summary["error"] = cfbd_reason
-                        if not snapshot.get("cfbd_reason"):
-                            snapshot["cfbd_state"] = "unavailable"
-                            snapshot["cfbd_reason"] = cfbd_reason
-                            self.jobs[job_id] = snapshot
-                        monitor.touch(
-                            stage="detecting",
-                            detail=f"CFBD: {cfbd_reason} — continuing vision-only",
-                        )
 
                 if cfbd_plays:
                     self._ensure_not_cancelled(job_id, cancel_ev)
@@ -1412,8 +1360,12 @@ class JobRunner:
                     fields={"eta_seconds": None},
                 )
 
+                low_conf_flag = bool(fallback_used and not cfbd_used)
+                if cfbd_summary.get("requested") and not cfbd_used:
+                    low_conf_flag = True
+
                 det_meta = {
-                    "low_confidence": bool(fallback_used and not cfbd_used),
+                    "low_confidence": low_conf_flag,
                     "clips_found": len(ordered),
                     "audio_spikes_used": bool(settings.AUDIO_ENABLE),
                     "scorebug_used": bool(settings.SCOREBUG_ENABLE),

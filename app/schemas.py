@@ -1,6 +1,6 @@
 from typing import Optional
 
-from pydantic import BaseModel, HttpUrl, model_validator
+from pydantic import AliasChoices, BaseModel, Field, HttpUrl, model_validator
 
 
 class Options(BaseModel):
@@ -14,10 +14,16 @@ class Options(BaseModel):
 class CFBDInput(BaseModel):
     use_cfbd: bool = False
     game_id: Optional[int] = None
-    season: Optional[int] = None
-    week: Optional[int] = None
+    season: Optional[int] = Field(
+        default=None, validation_alias=AliasChoices("season", "year", "cfbd_year")
+    )
+    week: Optional[int] = Field(default=None, validation_alias=AliasChoices("week", "cfbd_week"))
     team: Optional[str] = None
     season_type: Optional[str] = "regular"
+
+    @property
+    def year(self) -> Optional[int]:
+        return self.season
 
 
 class JobSubmission(BaseModel):
