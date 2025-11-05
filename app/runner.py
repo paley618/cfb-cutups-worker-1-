@@ -8,7 +8,7 @@ from typing import Any, Awaitable, Dict, List, Optional, Tuple
 from .video import download_game_video, probe_duration_sec, file_size_bytes
 from .segment import cut_clip, make_thumb, ffmpeg_set_cancel
 from .detector import detect_plays
-from .cfbd import fetch_plays, CFBDClientError
+from .cfbd import CFBDClient, CFBDClientError
 from .ocr_tesseract import sample_series as sample_tesseract_series, TESSERACT_READY
 from .ocr_scorebug import sample_scorebug_series
 from .align_dtw import fit_period_dtw, map_clock
@@ -67,6 +67,11 @@ class JobRunner:
         self._worker_task: Optional[asyncio.Task] = None
         self._stop = asyncio.Event()
         self._cancels: Dict[str, asyncio.Event] = {}
+        self.cfbd = CFBDClient(
+            api_key=settings.cfbd_api_key,
+            timeout=float(settings.CFBD_TIMEOUT_SECONDS),
+            base_url=settings.cfbd_api_base,
+        )
 
     async def _fetch_cfbd_with_retries(
         self,
@@ -83,37 +88,15 @@ class JobRunner:
         for attempt in range(1, attempts + 1):
             monitor.touch(stage="detecting", detail=f"CFBD fetch {attempt}/{attempts}")
             try:
-                params: Dict[str, Any] = {}
-                if team_or_game.get("game_id") is not None:
-                    params["game_id"] = int(team_or_game["game_id"])
-                else:
-                    season = team_or_game.get("season")
-                    week = team_or_game.get("week")
-                    team = team_or_game.get("team")
-                    if not (season and week and team):
-                        raise CFBDClientError("provide game_id or season/week/team")
-                    params = {
-                        "season": int(season),
-                        "week": int(week),
-                        "team": team,
-                    }
-                    if team_or_game.get("season_type"):
-                        params["season_type"] = team_or_game["season_type"]
-
-                fetch_coro = asyncio.to_thread(fetch_plays, **params)
-                plays = await asyncio.wait_for(
-                    fetch_coro, timeout=float(settings.CFBD_TIMEOUT_SECONDS)
+                spec = dict(team_or_game)
+                payload = await asyncio.wait_for(
+                    self.cfbd.fetch(spec),
+                    timeout=float(settings.CFBD_TIMEOUT_SECONDS),
                 )
+                plays = list(payload.get("plays") or [])
                 if not plays:
                     raise RuntimeError("CFBD returned no plays")
-                payload = {
-                    "plays": list(plays),
-                    "game_id": params.get("game_id"),
-                    "season": params.get("season"),
-                    "week": params.get("week"),
-                    "season_type": params.get("season_type"),
-                    "request": dict(team_or_game),
-                }
+                payload.setdefault("request", spec)
                 return payload
             except Exception as exc:  # pragma: no cover - network/CFBD flake
                 last_err = exc
@@ -499,21 +482,20 @@ class JobRunner:
                         if cfbd_in.game_id:
                             cfbd_request = {"game_id": int(cfbd_in.game_id)}
                         else:
-                            season = cfbd_in.season or settings.CFBD_SEASON
+                            year = cfbd_in.season or settings.CFBD_SEASON
                             week = cfbd_in.week
                             team = (cfbd_in.team or "").strip() or None
-                            if not (season and week and team):
+                            if not (year and week and team):
                                 raise CFBDClientError(
                                     "provide game_id or season/week/team"
                                 )
+                            season_type = getattr(cfbd_in, "season_type", None) or "regular"
                             cfbd_request = {
-                                "season": int(season),
-                                "week": int(week),
                                 "team": team,
+                                "year": int(year),
+                                "week": int(week),
+                                "season_type": str(season_type),
                             }
-                            season_type = getattr(cfbd_in, "season_type", None)
-                            if season_type:
-                                cfbd_request["season_type"] = str(season_type)
                     except CFBDClientError as exc:
                         message = str(exc)
                         cfbd_summary["error"] = message
