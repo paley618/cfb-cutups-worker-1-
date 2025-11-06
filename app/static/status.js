@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const resp = await fetch(
-          `/api/util/cfbd-autofill-from-espn?espnUrl=${encodeURIComponent(espnUrl)}`,
+          `/api/util/espn-resolve?espnUrl=${encodeURIComponent(espnUrl)}`,
           {
             cache: 'no-store',
           },
@@ -96,26 +96,56 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error(`HTTP ${resp.status}`);
         }
         const data = await resp.json();
-        if (data.status === 'OK') {
-          const home = data.cfbdHome || data.espnHome || 'Home team';
-          const away = data.cfbdAway || data.espnAway || 'Away team';
-          const year = data.year != null ? data.year : '—';
-          const weekText = data.week != null ? `, week ${data.week}` : '';
-          const plays = Number(data.playsCount ?? 0);
-          cfbdAutofillData = {
-            ...data,
-            gameId: data.cfbdGameId ?? data.gameId ?? null,
-            homeTeam: data.cfbdHome || data.homeTeam || data.espnHome || null,
-            awayTeam: data.cfbdAway || data.awayTeam || data.espnAway || null,
+        if (data.status === 'ESPN_OK') {
+          const summary = data.espn_summary || {};
+          const competition = summary?.header?.competitions?.[0] || {};
+          const competitors = Array.isArray(competition?.competitors)
+            ? competition.competitors
+            : [];
+          const pickTeam = (side) => {
+            const entry = competitors.find(
+              (comp) => (comp?.homeAway || comp?.homeaway) === side,
+            );
+            if (!entry) return null;
+            const team = entry.team || {};
+            return (
+              team.displayName ||
+              team.shortDisplayName ||
+              team.name ||
+              team.abbreviation ||
+              null
+            );
           };
-          renderCfbdAutofillStatus(
-            [
-              `${home} vs ${away}`,
-              `Season ${year}${weekText}`,
-              `CFBD OK — ${plays} plays`,
-            ],
-            'ok',
-          );
+          const home = pickTeam('home') || 'Home team';
+          const away = pickTeam('away') || 'Away team';
+          const seasonYear = summary?.header?.season?.year;
+          const weekText = summary?.header?.week?.text;
+          const statusText =
+            competition?.status?.type?.detail ||
+            competition?.status?.type?.shortDetail ||
+            competition?.status?.type?.description ||
+            null;
+
+          const lines = [`${home} vs ${away}`];
+          if (seasonYear) {
+            let seasonLine = `Season ${seasonYear}`;
+            if (weekText) {
+              seasonLine += ` — ${weekText}`;
+            }
+            lines.push(seasonLine);
+          }
+          if (statusText) {
+            lines.push(statusText);
+          }
+          lines.push('ESPN OK — ready to match to CFBD.');
+
+          cfbdAutofillData = {
+            status: 'ESPN_OK',
+            espnEventId: data.espn_event_id,
+            espnSummary: summary,
+            attempts: data.attempts || [],
+          };
+          renderCfbdAutofillStatus(lines, 'ok');
           if (cfbdExtraFields) {
             cfbdExtraFields.style.display = 'none';
           }
@@ -124,23 +154,52 @@ document.addEventListener('DOMContentLoaded', () => {
           if (cfbdUseCheckbox && !cfbdUseCheckbox.checked) {
             cfbdUseCheckbox.checked = true;
           }
-        } else if (data.status === 'CFBD_GAME_NOT_FOUND') {
-          cfbdAutofillData = null;
-          const message = data.message || 'Could not match the ESPN game to CFBD.';
-          renderCfbdAutofillStatus([
-            message,
-            'Check the CFBD list for that week/year manually.',
-          ], 'error');
-          if (cfbdExtraFields) {
-            cfbdExtraFields.style.display = 'none';
-          }
         } else {
-          cfbdAutofillData = null;
-          const message = data.message || data.error || 'CFBD lookup failed.';
-          renderCfbdAutofillStatus([message], 'error');
-          if (cfbdExtraFields) {
+          const resolver = data.resolver || {};
+          const nextAction = resolver.next_action || 'unknown';
+          const suggestions = Array.isArray(resolver.suggestions)
+            ? resolver.suggestions
+            : [];
+          const maybeYears = Array.isArray(resolver.maybe_years)
+            ? resolver.maybe_years
+            : [];
+          const maybeWeeks = Array.isArray(resolver.maybe_weeks)
+            ? resolver.maybe_weeks
+            : [];
+
+          const lines = [`ESPN needs help — next action: ${nextAction}`];
+          if (suggestions.length) {
+            lines.push(`Suggestions: ${suggestions.join('; ')}`);
+          }
+          if (maybeYears.length) {
+            lines.push(`Maybe years: ${maybeYears.join(', ')}`);
+          }
+          if (maybeWeeks.length) {
+            lines.push(`Maybe weeks: ${maybeWeeks.join(', ')}`);
+          }
+          if (Object.keys(resolver).length) {
+            lines.push(`Resolver: ${JSON.stringify(resolver)}`);
+          }
+
+          cfbdAutofillData = {
+            status: data.status || 'ESPN_NEEDS_HELP',
+            resolver,
+            attempts: data.attempts || [],
+          };
+
+          const needsYear = nextAction === 'ask_user_for_year_week';
+          if (needsYear && cfbdExtraFields) {
+            cfbdExtraFields.style.display = 'flex';
+          } else if (cfbdExtraFields) {
             cfbdExtraFields.style.display = 'none';
           }
+          if (needsYear && cfbdYearInput && !cfbdYearInput.value && maybeYears.length) {
+            cfbdYearInput.value = maybeYears[0];
+          }
+          if (needsYear && cfbdWeekInput && !cfbdWeekInput.value && maybeWeeks.length) {
+            cfbdWeekInput.value = maybeWeeks[0];
+          }
+          renderCfbdAutofillStatus(lines, needsYear ? 'needs-year' : 'error');
         }
       } catch (err) {
         cfbdAutofillData = null;
