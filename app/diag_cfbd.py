@@ -1,75 +1,26 @@
-import json
-import os
-
-import httpx
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Query, Request
 
 router = APIRouter()
 
 
 @router.get("/diag/cfbd")
-def diag_cfbd(gameId: int = Query(...), year: int | None = None, week: int | None = None):
-    key = os.getenv("CFBD_API_KEY") or ""
-    if not key:
-        return {"ok": False, "url": None, "error": "missing CFBD_API_KEY env"}
+def diag_cfbd(
+    request: Request,
+    game_id: int = Query(..., alias="gameId"),
+    year: int | None = None,
+    week: int | None = None,
+):
+    cfbd = getattr(request.app.state, "cfbd", None)
+    if cfbd is None:
+        return {"ok": False, "error": "CFBD client unavailable"}
 
-    headers = {"Authorization": f"Bearer {key}"}
-    urls_tried: list[str] = []
-
-    u1 = f"https://api.collegefootballdata.com/plays?gameId={int(gameId)}"
-    urls_tried.append(u1)
-    with httpx.Client(timeout=20.0, headers=headers) as client:
-        r1 = client.get(u1)
-    if r1.status_code < 400 and r1.text.startswith("["):
-        return {
-            "ok": True,
-            "status": r1.status_code,
-            "url": u1,
-            "urls_tried": urls_tried,
-            "plays_sampled": len(r1.json()),
-        }
-
-    body = r1.text
-
-    def _validator(text: str) -> bool:
-        try:
-            parsed = json.loads(text)
-            message = (parsed.get("message", "").lower())
-            details = parsed.get("details") or {}
-            return ("validation failed" in message) and ("year" in details or "week" in details)
-        except Exception:  # pragma: no cover - defensive JSON parsing
-            return False
-
-    if _validator(body) and (year or week is not None):
-        params = [("gameId", int(gameId)), ("seasonType", "regular")]
-        if year:
-            params.append(("year", int(year)))
-        if week is not None:
-            params.append(("week", int(week)))
-        with httpx.Client(timeout=20.0, headers=headers) as client:
-            r2 = client.get("https://api.collegefootballdata.com/plays", params=params)
-        u2 = str(r2.request.url)
-        urls_tried.append(u2)
-        if r2.status_code < 400 and r2.text.startswith("["):
-            return {
-                "ok": True,
-                "status": r2.status_code,
-                "url": u2,
-                "urls_tried": urls_tried,
-                "plays_sampled": len(r2.json()),
-            }
-        return {
-            "ok": False,
-            "status": r2.status_code,
-            "url": u2,
-            "urls_tried": urls_tried,
-            "error": r2.text[:400],
-        }
-
-    return {
-        "ok": False,
-        "status": r1.status_code,
-        "url": u1,
-        "urls_tried": urls_tried,
-        "error": body[:400],
-    }
+    try:
+        plays = cfbd.get_plays_for_game(
+            int(game_id),
+            year=year,
+            week=week,
+            season_type="regular",
+        )
+        return {"ok": True, "filtered_plays": len(plays)}
+    except Exception as exc:  # pragma: no cover - diagnostic path
+        return {"ok": False, "error": f"{type(exc).__name__}: {exc}"}
