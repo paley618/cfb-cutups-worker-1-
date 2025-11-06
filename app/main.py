@@ -168,28 +168,7 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(diag_cfbd_router)
 
 
-@app.get("/manifest-proxy")
-async def manifest_proxy(url: str = Query(..., min_length=10)):
-    """Fetch manifests server-side when the browser hits CORS barriers."""
-
-    timeout = httpx.Timeout(20, connect=10, read=10)
-    try:
-        async with httpx.AsyncClient(timeout=timeout, follow_redirects=True) as client:
-            response = await client.get(url)
-        if response.status_code != 200:
-            raise HTTPException(response.status_code, f"Upstream returned {response.status_code}")
-        try:
-            return response.json()
-        except Exception:
-            return response.text
-    except HTTPException:
-        raise
-    except Exception as exc:  # pragma: no cover - network reliability is runtime specific
-        raise HTTPException(502, f"Proxy error: {exc}") from exc
-
-
-@app.get("/api/cfbd/autofill")
-async def cfbd_autofill(query: CFBDAutofillQuery = Depends()):
+async def _run_cfbd_autofill(query: CFBDAutofillQuery) -> dict[str, Any]:
     game_id_value = query.gameId
     normalized = _normalize_game_id(game_id_value)
     if normalized is None:
@@ -352,6 +331,75 @@ async def cfbd_autofill(query: CFBDAutofillQuery = Depends()):
             "gameId": normalized,
             "tried": tried,
         }
+
+
+@app.middleware("http")
+async def _skip_cfbd_autofill_validation(request: Request, call_next):
+    path = request.url.path
+    if path == "/api/cfbd/autofill" or path.startswith("/api/cfbd/autofill/"):
+        query_pairs = list(request.query_params.multi_items())
+        query_data: dict[str, Any] = {}
+        for key, value in query_pairs:
+            query_data[key] = value
+        try:
+            query_model = CFBDAutofillQuery.model_validate(query_data)
+        except ValidationError as exc:
+            details: dict[str, dict[str, str]] = {}
+            for error in exc.errors():
+                loc = error.get("loc") or ()
+                msg = error.get("msg", "Invalid value")
+                lowered = msg.lower()
+                field: str
+                if loc:
+                    field = str(loc[-1])
+                elif "year" in lowered and "week" not in lowered:
+                    field = "year"
+                elif "week" in lowered:
+                    field = "week"
+                else:
+                    field = "non_field_errors"
+                if lowered.startswith("value error, "):
+                    msg = msg.split(", ", 1)[1]
+                details[field] = {"message": msg}
+            return JSONResponse(
+                {"message": "Validation Failed", "details": details},
+                status_code=status.HTTP_400_BAD_REQUEST,
+            )
+        try:
+            result = await _run_cfbd_autofill(query_model)
+        except HTTPException as exc:
+            return JSONResponse(
+                {"detail": exc.detail},
+                status_code=exc.status_code,
+                headers=exc.headers,
+            )
+        return JSONResponse(result)
+    return await call_next(request)
+
+
+@app.get("/manifest-proxy")
+async def manifest_proxy(url: str = Query(..., min_length=10)):
+    """Fetch manifests server-side when the browser hits CORS barriers."""
+
+    timeout = httpx.Timeout(20, connect=10, read=10)
+    try:
+        async with httpx.AsyncClient(timeout=timeout, follow_redirects=True) as client:
+            response = await client.get(url)
+        if response.status_code != 200:
+            raise HTTPException(response.status_code, f"Upstream returned {response.status_code}")
+        try:
+            return response.json()
+        except Exception:
+            return response.text
+    except HTTPException:
+        raise
+    except Exception as exc:  # pragma: no cover - network reliability is runtime specific
+        raise HTTPException(502, f"Proxy error: {exc}") from exc
+
+
+@app.get("/api/cfbd/autofill")
+async def cfbd_autofill(query: CFBDAutofillQuery = Depends()):
+    return await _run_cfbd_autofill(query)
 
 
 @app.get("/healthz")
