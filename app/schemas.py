@@ -20,7 +20,18 @@ class CFBDInput(BaseModel):
     )
     week: Optional[int] = Field(default=None, validation_alias=AliasChoices("week", "cfbd_week"))
     team: Optional[str] = None
-    season_type: Optional[str] = "regular"
+    season_type: Optional[str] = Field(
+        default="regular",
+        validation_alias=AliasChoices("season_type", "seasonType"),
+    )
+    home_team: Optional[str] = Field(
+        default=None,
+        validation_alias=AliasChoices("home_team", "homeTeam"),
+    )
+    away_team: Optional[str] = Field(
+        default=None,
+        validation_alias=AliasChoices("away_team", "awayTeam"),
+    )
 
     @property
     def year(self) -> Optional[int]:

@@ -586,10 +586,30 @@ class JobRunner:
                         else settings.CFBD_SEASON
                     )
                     week_val = cfbd_in.week if cfbd_in else None
+                    season_type_val = (
+                        getattr(cfbd_in, "season_type", None)
+                        or settings.CFBD_SEASON_TYPE_DEFAULT
+                        or "regular"
+                    )
+                    if not isinstance(season_type_val, str):
+                        season_type_val = str(season_type_val)
+                    season_type_val = season_type_val or "regular"
                     team = (cfbd_in.team or "").strip() if cfbd_in else ""
+                    home_team = getattr(cfbd_in, "home_team", None) if cfbd_in else None
+                    away_team = getattr(cfbd_in, "away_team", None) if cfbd_in else None
                     cfbd_job_meta.setdefault("team", team or None)
                     cfbd_job_meta.setdefault("year", year_val)
                     cfbd_job_meta.setdefault("week", week_val)
+                    cfbd_job_meta.setdefault("season_type", season_type_val)
+                    if home_team:
+                        cfbd_job_meta.setdefault("home_team", home_team)
+                    if away_team:
+                        cfbd_job_meta.setdefault("away_team", away_team)
+                    cfbd_summary.setdefault("season_type", season_type_val)
+                    if home_team:
+                        cfbd_summary.setdefault("home_team", home_team)
+                    if away_team:
+                        cfbd_summary.setdefault("away_team", away_team)
 
                     app_obj = getattr(self, "app", None)
                     state_obj = getattr(app_obj, "state", None) if app_obj is not None else None
@@ -611,6 +631,15 @@ class JobRunner:
                         cfbd_job_meta["game_id"] = cached.get("game_id")
                         cfbd_job_meta["plays_count"] = cfbd_play_count
                         cfbd_job_meta["reason"] = cached_reason
+                        if cached.get("season_type"):
+                            cfbd_job_meta.setdefault("season_type", cached.get("season_type"))
+                            cfbd_summary.setdefault("season_type", cached.get("season_type"))
+                        if cached.get("home_team"):
+                            cfbd_job_meta.setdefault("home_team", cached.get("home_team"))
+                            cfbd_summary.setdefault("home_team", cached.get("home_team"))
+                        if cached.get("away_team"):
+                            cfbd_job_meta.setdefault("away_team", cached.get("away_team"))
+                            cfbd_summary.setdefault("away_team", cached.get("away_team"))
                         cfbd_summary["error"] = None
                         cfbd_summary["game_id"] = cached.get("game_id")
                         cfbd_summary["plays"] = cfbd_play_count
@@ -620,14 +649,18 @@ class JobRunner:
                             self.jobs[job_id] = job_state
                             try:
                                 logger.info(
-                                    f"[CFBD] fetching plays for game_id={gid} (year={year_val}, week={week_val})"
+                                    "[CFBD] fetching plays for game_id=%s (year=%s, week=%s, season_type=%s)",
+                                    gid,
+                                    year_val,
+                                    week_val,
+                                    season_type_val,
                                 )
                                 plays_list = await asyncio.to_thread(
                                     self.cfbd.get_plays_for_game,
                                     int(gid),
                                     year=year_val,
                                     week=week_val,
-                                    season_type="regular",
+                                    season_type=season_type_val,
                                 )
                                 cfbd_plays = list(plays_list)
                                 cfbd_play_count = len(cfbd_plays)
@@ -667,7 +700,11 @@ class JobRunner:
                             self.jobs[job_id] = job_state
                             try:
                                 logger.info(
-                                    f"[CFBD] resolving via /games team={team or None} year={year_val} week={week_val}"
+                                    "[CFBD] resolving via /games team=%s year=%s week=%s season_type=%s",
+                                    team or None,
+                                    year_val,
+                                    week_val,
+                                    season_type_val,
                                 )
                                 if not year_val:
                                     raise RuntimeError("missing year for resolver")
@@ -676,6 +713,7 @@ class JobRunner:
                                     year=int(year_val),
                                     week=None if week_val is None else int(week_val),
                                     team=team or None,
+                                    season_type=season_type_val,
                                 )
                                 if not gid:
                                     raise RuntimeError("no match via /games")
@@ -685,7 +723,7 @@ class JobRunner:
                                     int(gid),
                                     year=year_val,
                                     week=week_val,
-                                    season_type="regular",
+                                    season_type=season_type_val,
                                 )
                                 cfbd_plays = list(plays_list)
                                 cfbd_play_count = len(cfbd_plays)

@@ -10,54 +10,132 @@ document.addEventListener('DOMContentLoaded', () => {
   const selftestBtn = document.getElementById('selftest');
   const selftestOut = document.getElementById('selftest_out');
 
-  const gidInput = document.querySelector('input[name="cfbd_game_id"]');
-  if (gidInput && !gidInput.dataset.espnReady) {
-    gidInput.dataset.espnReady = '1';
-    gidInput.addEventListener('input', () => {
-      const v = gidInput.value.trim();
-      const m = v.match(/\/gameId\/(\d+)/i);
-      if (m) gidInput.value = m[1];
+  const cfbdUseCheckbox = document.getElementById('cfbd_use');
+  const cfbdLinkInput = document.getElementById('cfbd_espn_link');
+  const cfbdAutofillBtn = document.getElementById('cfbd_autofill_btn');
+  const cfbdAutofillStatus = document.getElementById('cfbd_autofill_status');
+  let cfbdAutofillData = null;
+
+  const clearCfbdStatus = () => {
+    if (!cfbdAutofillStatus) return;
+    cfbdAutofillStatus.innerHTML = '';
+    cfbdAutofillStatus.classList.remove('error');
+    delete cfbdAutofillStatus.dataset.status;
+  };
+
+  const renderCfbdAutofillStatus = (lines, mode = '') => {
+    if (!cfbdAutofillStatus) return;
+    cfbdAutofillStatus.innerHTML = '';
+    cfbdAutofillStatus.classList.remove('error');
+    if (mode) {
+      cfbdAutofillStatus.dataset.status = mode;
+    } else {
+      delete cfbdAutofillStatus.dataset.status;
+    }
+    if (mode === 'error') {
+      cfbdAutofillStatus.classList.add('error');
+    }
+    if (!Array.isArray(lines) || !lines.length) {
+      return;
+    }
+    lines.forEach((text, idx) => {
+      const div = document.createElement('div');
+      div.className = 'cfbd-line';
+      if (mode === 'ok' && idx === 0) {
+        div.classList.add('cfbd-line--primary');
+      }
+      if (mode === 'ok' && idx === lines.length - 1) {
+        div.classList.add('cfbd-line--status');
+      }
+      div.textContent = text;
+      cfbdAutofillStatus.appendChild(div);
+    });
+  };
+
+  const extractGameIdFromEspn = (value) => {
+    if (!value) return null;
+    const text = value.trim();
+    if (!text) return null;
+    const m1 = text.match(/gameId\/(\d+)/i);
+    if (m1) return m1[1];
+    const m2 = text.match(/gameId=(\d+)/i);
+    if (m2) return m2[1];
+    if (/^\d+$/.test(text)) return text;
+    return null;
+  };
+
+  if (cfbdLinkInput) {
+    cfbdLinkInput.addEventListener('input', () => {
+      cfbdAutofillData = null;
+      clearCfbdStatus();
     });
   }
 
-  let btn = document.getElementById('cfbd-selftest');
-  if (!btn) {
-    btn = document.createElement('button');
-    btn.id = 'cfbd-selftest';
-    btn.className = 'btn';
-    btn.textContent = 'Run CFBD self-test';
-    const targetForm = form || document.querySelector('form');
-    if (targetForm) {
-      targetForm.insertBefore(btn, targetForm.firstChild);
-    }
-  }
-  if (btn) {
-    btn.onclick = async (e) => {
-      e.preventDefault();
-      const gidInput = document.querySelector('input[name="cfbd_game_id"]');
-      const yInput = document.querySelector('input[name="cfbd_year"]');
-      const wInput = document.querySelector('input[name="cfbd_week"]');
-
-      let gid = (gidInput?.value || '').trim();
-      const m = gid.match(/\/gameId\/(\d+)/i);
-      if (m) gid = m[1];
-      if (!gid) {
-        alert('Enter a CFBD game_id or ESPN URL first.');
+  if (cfbdAutofillBtn) {
+    cfbdAutofillBtn.addEventListener('click', async (event) => {
+      event.preventDefault();
+      if (!cfbdLinkInput) return;
+      const raw = cfbdLinkInput.value.trim();
+      const gameId = extractGameIdFromEspn(raw);
+      if (!gameId) {
+        cfbdAutofillData = null;
+        renderCfbdAutofillStatus(['Paste an ESPN game link that includes a gameId.'], 'error');
         return;
       }
 
-      const qs = new URLSearchParams({ gameId: gid });
-      if (yInput?.value) qs.set('year', yInput.value);
-      if (wInput?.value) qs.set('week', wInput.value);
+      cfbdAutofillBtn.disabled = true;
+      renderCfbdAutofillStatus(['Looking up CFBD…']);
 
-      const r = await fetch(`/diag/cfbd?${qs.toString()}`).then((x) => x.json());
-      const tried = (r.urls_tried || []).join('\n');
-      if (r.ok) {
-        alert(`CFBD OK\n${r.url || ''}\nplays: ${r.plays}\nTried:\n${tried}`);
-      } else {
-        alert(`CFBD ERROR\n${r.url || ''}\n${r.error || `status ${r.status}`}\nTried:\n${tried}`);
+      try {
+        const resp = await fetch(`/api/cfbd/autofill?gameId=${encodeURIComponent(gameId)}`, {
+          cache: 'no-store',
+        });
+        if (!resp.ok) {
+          throw new Error(`HTTP ${resp.status}`);
+        }
+        const data = await resp.json();
+        if (data.status === 'OK') {
+          const home = data.homeTeam || 'Home team';
+          const away = data.awayTeam || 'Away team';
+          const rawSeason = (data.seasonType || 'regular').toString();
+          const prettySeason = rawSeason.replace(/_/g, ' ');
+          const seasonLabel = prettySeason.charAt(0).toUpperCase() + prettySeason.slice(1);
+          const year = data.year != null ? data.year : '—';
+          const weekText = data.week != null ? `, week ${data.week}` : '';
+          const plays = Number(data.playsCount ?? 0);
+          cfbdAutofillData = {
+            ...data,
+            gameId: data.gameId ?? Number(gameId),
+          };
+          renderCfbdAutofillStatus(
+            [
+              `${home} vs ${away}`,
+              `${seasonLabel} ${year}${weekText}`,
+              `CFBD OK — ${plays} plays`,
+            ],
+            'ok',
+          );
+          if (cfbdUseCheckbox && !cfbdUseCheckbox.checked) {
+            cfbdUseCheckbox.checked = true;
+          }
+        } else if (data.status === 'NOT_FOUND') {
+          cfbdAutofillData = null;
+          renderCfbdAutofillStatus([
+            `No CFBD game found for gameId ${data.gameId || gameId}.`,
+          ], 'error');
+        } else {
+          cfbdAutofillData = null;
+          const message = data.error || 'CFBD lookup failed.';
+          renderCfbdAutofillStatus([message], 'error');
+        }
+      } catch (err) {
+        cfbdAutofillData = null;
+        const message = err && err.message ? err.message : 'Unknown error';
+        renderCfbdAutofillStatus([`Autofill failed: ${message}`], 'error');
+      } finally {
+        cfbdAutofillBtn.disabled = false;
       }
-    };
+    });
   }
 
   const addLine = (text) => {
@@ -388,20 +466,43 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     };
 
-    const gameIdRaw = (document.getElementById('cfbd_game_id').value || '').trim();
-    const seasonRaw = (document.getElementById('cfbd_season').value || '').trim();
-    const weekRaw = (document.getElementById('cfbd_week').value || '').trim();
-    const seasonVal = seasonRaw ? parseInt(seasonRaw, 10) : NaN;
-    const weekVal = weekRaw ? parseInt(weekRaw, 10) : NaN;
+    const useCfbd = document.getElementById('cfbd_use').checked;
+    const requireCfbd = document.getElementById('cfbd_require')?.checked ?? false;
     const cfbd = {
-      use_cfbd: document.getElementById('cfbd_use').checked,
-      require_cfbd: document.getElementById('cfbd_require')?.checked ?? false,
-      game_id: gameIdRaw || null,
-      season: Number.isNaN(seasonVal) ? null : seasonVal,
-      week: Number.isNaN(weekVal) ? null : weekVal,
-      team: (document.getElementById('cfbd_team').value || '').trim() || null,
+      use_cfbd: useCfbd,
+      require_cfbd: requireCfbd,
+      game_id: null,
+      season: null,
+      week: null,
+      team: null,
+      season_type: null,
+      home_team: null,
+      away_team: null,
     };
+
+    if (cfbdAutofillData && cfbdAutofillData.status === 'OK') {
+      const parsedGameId = Number(cfbdAutofillData.gameId ?? cfbdAutofillData.game_id);
+      cfbd.game_id = Number.isFinite(parsedGameId) ? parsedGameId : cfbdAutofillData.gameId;
+      cfbd.season = cfbdAutofillData.year ?? null;
+      cfbd.week = cfbdAutofillData.week ?? null;
+      if (cfbdAutofillData.seasonType) {
+        cfbd.season_type = cfbdAutofillData.seasonType;
+      }
+      const teamName = cfbdAutofillData.homeTeam || cfbdAutofillData.awayTeam || null;
+      cfbd.team = teamName;
+      cfbd.home_team = cfbdAutofillData.homeTeam ?? null;
+      cfbd.away_team = cfbdAutofillData.awayTeam ?? null;
+    }
+
     payload.cfbd = cfbd;
+
+    if (cfbd.use_cfbd) {
+      if (!cfbdAutofillData || cfbdAutofillData.status !== 'OK' || !cfbd.game_id) {
+        submitBtn.disabled = false;
+        statusEl.textContent = 'Run the CFBD autofill with a valid ESPN link before submitting.';
+        return;
+      }
+    }
 
     let response;
     try {

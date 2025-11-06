@@ -34,7 +34,12 @@ def _play_belongs_to_game(play: Dict, gid: int) -> bool:
 
 class CFBDClient:
     def __init__(self, api_key: str | None = None, timeout: float = 20.0):
-        self.api_key = api_key or os.getenv("CFBD_API_KEY") or ""
+        self.api_key = (
+            api_key
+            or os.getenv("CFBD_API_KEY")
+            or os.getenv("CFBD_KEY")
+            or ""
+        )
         self.headers = {"Authorization": f"Bearer {self.api_key}"} if self.api_key else {}
         self.timeout = timeout
 

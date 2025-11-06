@@ -48,6 +48,43 @@ def _normalize_game_id(raw: str | int | None) -> int | None:
         return None
 
 
+def _cfbd_api_key() -> str | None:
+    return (
+        settings.cfbd_api_key
+        or os.getenv("CFBD_API_KEY")
+        or os.getenv("CFBD_KEY")
+    )
+
+
+def _cfbd_headers() -> dict[str, str]:
+    key = _cfbd_api_key()
+    return {"Authorization": f"Bearer {key}"} if key else {}
+
+
+def _cfbd_base_url() -> str:
+    base = settings.cfbd_api_base or "https://api.collegefootballdata.com"
+    return base.rstrip("/")
+
+
+def _filter_cfbd_plays(payload: Any, game_id: int) -> list[dict[str, Any]]:
+    filtered: list[dict[str, Any]] = []
+    gid = str(game_id)
+    if not isinstance(payload, list):
+        return filtered
+    for item in payload:
+        if not isinstance(item, dict):
+            continue
+        pid = item.get("game_id") or item.get("gameId") or item.get("gameID")
+        if pid is None:
+            continue
+        try:
+            if str(int(pid)) == gid:
+                filtered.append(item)
+        except (TypeError, ValueError):
+            continue
+    return filtered
+
+
 def _payload_from_form(form: Mapping[str, Any]) -> dict[str, Any]:
     def _clean(name: str) -> str | None:
         value = form.get(name)
@@ -142,6 +179,114 @@ async def manifest_proxy(url: str = Query(..., min_length=10)):
         raise
     except Exception as exc:  # pragma: no cover - network reliability is runtime specific
         raise HTTPException(502, f"Proxy error: {exc}") from exc
+
+
+@app.get("/api/cfbd/autofill")
+async def cfbd_autofill(gameId: str = Query(..., min_length=3)):
+    normalized = _normalize_game_id(gameId)
+    if normalized is None:
+        raise HTTPException(status_code=400, detail="Invalid gameId")
+
+    headers = _cfbd_headers()
+    tried: list[str] = []
+    if not headers:
+        return {
+            "status": "ERROR",
+            "error": "CFBD API key not configured.",
+            "gameId": normalized,
+            "tried": tried,
+        }
+
+    timeout = settings.CFBD_TIMEOUT_SECONDS or 25
+    base_url = _cfbd_base_url()
+    try:
+        async with httpx.AsyncClient(
+            base_url=base_url,
+            timeout=timeout,
+            headers=headers,
+        ) as client:
+            games_resp = await client.get("/games", params={"gameId": normalized})
+            tried.append(str(games_resp.request.url))
+            if games_resp.status_code >= 400:
+                return {
+                    "status": "ERROR",
+                    "error": games_resp.text[:400],
+                    "gameId": normalized,
+                    "tried": tried,
+                }
+            try:
+                games_payload = games_resp.json()
+            except ValueError:
+                return {
+                    "status": "ERROR",
+                    "error": "Invalid CFBD /games response",
+                    "gameId": normalized,
+                    "tried": tried,
+                }
+            if not isinstance(games_payload, list):
+                return {
+                    "status": "ERROR",
+                    "error": "Unexpected CFBD /games payload",
+                    "gameId": normalized,
+                    "tried": tried,
+                }
+            if not games_payload:
+                return {
+                    "status": "NOT_FOUND",
+                    "gameId": normalized,
+                    "tried": tried,
+                }
+
+            game = games_payload[0]
+            year = game.get("season") or game.get("year")
+            week = game.get("week")
+            season_type = (
+                game.get("season_type")
+                or game.get("seasonType")
+                or settings.CFBD_SEASON_TYPE_DEFAULT
+                or "regular"
+            )
+            home_team = game.get("home_team") or game.get("homeTeam")
+            away_team = game.get("away_team") or game.get("awayTeam")
+
+            plays_resp = await client.get("/plays", params={"gameId": normalized})
+            tried.append(str(plays_resp.request.url))
+            if plays_resp.status_code >= 400:
+                return {
+                    "status": "ERROR",
+                    "error": plays_resp.text[:400],
+                    "gameId": normalized,
+                    "tried": tried,
+                }
+            try:
+                plays_payload = plays_resp.json()
+            except ValueError:
+                return {
+                    "status": "ERROR",
+                    "error": "Invalid CFBD /plays response",
+                    "gameId": normalized,
+                    "tried": tried,
+                }
+            plays_filtered = _filter_cfbd_plays(plays_payload, normalized)
+
+            return {
+                "status": "OK",
+                "gameId": normalized,
+                "year": year,
+                "week": week,
+                "seasonType": season_type,
+                "homeTeam": home_team,
+                "awayTeam": away_team,
+                "playsCount": len(plays_filtered),
+                "tried": tried,
+            }
+    except httpx.HTTPError as exc:
+        return {
+            "status": "ERROR",
+            "error": str(exc),
+            "gameId": normalized,
+            "tried": tried,
+        }
 
 
 @app.get("/healthz")
@@ -280,6 +425,22 @@ async def create_job(request: Request):
         gid = getattr(cfbd_in, "game_id", None)
         year = getattr(cfbd_in, "season", None)
         week = getattr(cfbd_in, "week", None)
+        season_type = (
+            getattr(cfbd_in, "season_type", None)
+            or settings.CFBD_SEASON_TYPE_DEFAULT
+            or "regular"
+        )
+        if not isinstance(season_type, str):
+            season_type = str(season_type)
+        season_type = season_type or "regular"
+
+        home_team = getattr(cfbd_in, "home_team", None)
+        away_team = getattr(cfbd_in, "away_team", None)
+        if home_team:
+            cfbd_meta.setdefault("home_team", home_team)
+        if away_team:
+            cfbd_meta.setdefault("away_team", away_team)
+        cfbd_meta.setdefault("season_type", season_type)
 
         if gid:
             try:
@@ -288,13 +449,16 @@ async def create_job(request: Request):
                     int(gid),
                     year=year,
                     week=week,
-                    season_type="regular",
+                    season_type=season_type,
                 )
                 app.state.cfbd_cache = getattr(app.state, "cfbd_cache", {})
                 app.state.cfbd_cache[job_id] = {
                     "game_id": int(gid),
                     "year": year,
                     "week": week,
+                    "season_type": season_type,
+                    "home_team": home_team,
+                    "away_team": away_team,
                     "plays": plays,
                 }
                 job_state["cfbd_state"] = "ready"

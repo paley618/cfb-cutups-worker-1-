@@ -24,3 +24,30 @@ button:disabled { opacity:.6; cursor:not-allowed; }
 .badge-warn { border-color: var(--warn); color: var(--warn); }
 .badge-info { border-color: var(--accent); color: var(--accent); }
 .note { margin-top:6px; font-size:12px; color: var(--warn); }
+
+#cfbd_autofill_status {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+#cfbd_autofill_status .cfbd-line {
+  color: var(--muted);
+}
+
+#cfbd_autofill_status .cfbd-line--primary {
+  color: var(--text);
+  font-weight: 600;
+}
+
+#cfbd_autofill_status .cfbd-line--status {
+  color: var(--ok);
+  font-weight: 600;
+}
+
+#cfbd_autofill_status.error .cfbd-line {
+  color: var(--err);
+  font-weight: 600;
+}
