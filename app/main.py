@@ -175,7 +175,9 @@ async def validation_middleware(request: Request, call_next):
     path = request.url.path
 
     # Allow the util CFBD endpoint to bypass legacy validators that expect year/week.
-    if path.startswith("/api/util/cfbd-autofill-by-gameid"):
+    if path.startswith("/api/util/cfbd-autofill-by-gameid") or path.startswith(
+        "/api/util/cfbd-autofill-from-espn"
+    ):
         return await call_next(request)
 
     return await call_next(request)
