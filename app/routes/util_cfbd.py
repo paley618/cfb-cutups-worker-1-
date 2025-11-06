@@ -1,7 +1,7 @@
 import os
 import re
 import requests
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Body, Query
 
 router = APIRouter()
 
@@ -18,6 +18,10 @@ def cfbd_get(path: str, params: dict):
     )
     resp.raise_for_status()
     return resp.json()
+
+
+def _norm_team(name: str) -> str:
+    return re.sub(r"[^a-z]", "", name.lower())
 
 
 def extract_espn_event_id(espn_url: str) -> str | None:
@@ -323,4 +327,135 @@ def cfbd_autofill_by_gameid(
         "tried": [
             f"{CFBD_BASE}/plays?{'&'.join([f'{k}={v}' for k,v in params.items()])}",
         ],
+    }
+
+
+@router.post("/api/util/cfbd-match-from-espn")
+def cfbd_match_from_espn(
+    payload: dict = Body(..., description="ESPN summary object from /api/util/espn-resolve"),
+):
+    """
+    Take ESPN summary → pull year + teams → find matching CFBD game → pull plays.
+    This is the second hop after /api/util/espn-resolve.
+    """
+
+    espn_summary = payload.get("espn_summary") or payload
+    header = espn_summary.get("header") or {}
+    competitions = header.get("competitions") or []
+    if not competitions:
+        return {
+            "status": "ESPN_PARSE_ERROR",
+            "message": "ESPN summary missing competitions[]",
+        }
+
+    comp = competitions[0]
+    competitors = comp.get("competitors") or []
+    if len(competitors) < 2:
+        return {
+            "status": "ESPN_PARSE_ERROR",
+            "message": "ESPN summary missing competitors",
+        }
+
+    home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
+    away = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1])
+    espn_home = home["team"]["displayName"]
+    espn_away = away["team"]["displayName"]
+
+    season = header.get("season") or {}
+    year = season.get("year")
+    week = None
+    header_week = header.get("week")
+    if isinstance(header_week, dict):
+        week = header_week.get("number")
+
+    if not year:
+        return {
+            "status": "ESPN_MISSING_YEAR",
+            "message": "ESPN summary did not provide a season year.",
+        }
+
+    cfbd_params = {"year": year}
+    if week is not None:
+        cfbd_params["week"] = week
+        cfbd_params["seasonType"] = "regular"
+
+    headers = {"Authorization": f"Bearer {CFBD_KEY}"} if CFBD_KEY else {}
+
+    games_resp = requests.get(
+        f"{CFBD_BASE}/games", params=cfbd_params, headers=headers, timeout=15
+    )
+    if games_resp.status_code != 200:
+        return {
+            "status": "CFBD_GAMES_ERROR",
+            "message": "CFBD /games call failed",
+            "cfbdStatus": games_resp.status_code,
+            "cfbdBody": games_resp.text,
+            "cfbdParams": cfbd_params,
+        }
+
+    cfbd_games = games_resp.json()
+
+    target_home = _norm_team(espn_home)
+    target_away = _norm_team(espn_away)
+
+    matched = None
+    for g in cfbd_games:
+        g_home = _norm_team(g.get("home_team", ""))
+        g_away = _norm_team(g.get("away_team", ""))
+
+        if g_home == target_home and g_away == target_away:
+            matched = g
+            break
+        if g_home == target_away and g_away == target_home:
+            matched = g
+            break
+
+    if not matched:
+        return {
+            "status": "CFBD_GAME_NOT_FOUND",
+            "message": "ESPN was OK, but no matching CFBD game was found for that year/week/teams.",
+            "espnHome": espn_home,
+            "espnAway": espn_away,
+            "year": year,
+            "week": week,
+            "cfbdParams": cfbd_params,
+            "cfbdGamesCount": len(cfbd_games),
+        }
+
+    cfbd_game_id = matched["id"]
+    plays_params = {
+        "gameId": cfbd_game_id,
+        "year": matched.get("season", year),
+    }
+    if matched.get("week"):
+        plays_params["week"] = matched["week"]
+    if matched.get("season_type"):
+        plays_params["seasonType"] = matched["season_type"]
+
+    plays_resp = requests.get(
+        f"{CFBD_BASE}/plays", params=plays_params, headers=headers, timeout=15
+    )
+    if plays_resp.status_code != 200:
+        return {
+            "status": "CFBD_PLAYS_ERROR",
+            "message": "CFBD /plays call failed for matched game.",
+            "cfbdStatus": plays_resp.status_code,
+            "cfbdBody": plays_resp.text,
+            "cfbdParams": plays_params,
+            "matchedGame": matched,
+        }
+
+    plays = plays_resp.json()
+
+    return {
+        "status": "OK",
+        "espnHome": espn_home,
+        "espnAway": espn_away,
+        "year": year,
+        "week": week or matched.get("week"),
+        "cfbdGameId": cfbd_game_id,
+        "cfbdHome": matched.get("home_team"),
+        "cfbdAway": matched.get("away_team"),
+        "playsCount": len(plays),
+        "cfbdParamsUsed": plays_params,
     }
