@@ -24,7 +24,12 @@ class CFBDClient:
         timeout: float = 15.0,
         base_url: Optional[str] = CFBD_BASE,
     ) -> None:
-        self.api_key = api_key or os.getenv("CFBD_API_KEY") or ""
+        self.api_key = (
+            api_key
+            or os.getenv("CFBD_API_KEY")
+            or os.getenv("CFBD_KEY")
+            or ""
+        )
         self.timeout = timeout
         base = base_url or CFBD_BASE
         self.base_url = base.rstrip("/")

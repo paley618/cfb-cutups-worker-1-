@@ -282,7 +282,7 @@ class Settings(BaseSettings):
     )
     cfbd_api_key: Optional[str] = Field(
         default=None,
-        validation_alias=AliasChoices("CFBD_API_KEY"),
+        validation_alias=AliasChoices("CFBD_API_KEY", "CFBD_KEY"),
         description="Bearer token used to authenticate with the CFBD API.",
     )
     cfbd_max_plays: int = Field(
@@ -469,6 +469,10 @@ settings = get_settings()
 
 
 CFBD_ENABLED: bool = env_bool("CFBD_ENABLED", True)
-CFBD_API_KEY: str | None = os.getenv("CFBD_API_KEY") or settings.cfbd_api_key
+CFBD_API_KEY: str | None = (
+    os.getenv("CFBD_API_KEY")
+    or os.getenv("CFBD_KEY")
+    or settings.cfbd_api_key
+)
 CFBD_SEASON_TYPE_DEFAULT: str = os.getenv("CFBD_SEASON_TYPE", "regular")
 CFBD_REQUEST_TIMEOUT: int = int(os.getenv("CFBD_REQUEST_TIMEOUT", "20"))

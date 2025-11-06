@@ -48,12 +48,18 @@
         </div>
 
         <div class="sub" style="margin-top:16px">CFBD-guided cuts (optional)</div>
-        <div class="grid" style="margin-top:8px">
+        <div class="cfbd-box" style="margin-top:8px; display:flex; flex-direction:column; gap:12px;">
           <label style="display:flex; align-items:center; gap:8px"><input type="checkbox" id="cfbd_use" name="use_cfbd"> Use CFBD-guided cuts</label>
-          <input id="cfbd_game_id" name="cfbd_game_id" placeholder="CFBD game_id (optional)">
-          <input id="cfbd_season" name="cfbd_year" placeholder="Season e.g. 2025">
-          <input id="cfbd_week" name="cfbd_week" placeholder="Week e.g. 7">
-          <input id="cfbd_team" name="cfbd_team" placeholder="Team (one) e.g. Georgia">
+          <div class="row cfbd-row">
+            <div>
+              <label>ESPN game link</label>
+              <input id="cfbd_espn_link" name="cfbd_espn_link" type="text" placeholder="https://www.espn.com/...gameId=401752856" />
+            </div>
+            <div style="display:flex; align-items:flex-end;">
+              <button type="button" id="cfbd_autofill_btn" style="width:100%">Autofill from ESPN link</button>
+            </div>
+          </div>
+          <div id="cfbd_autofill_status" class="muted"></div>
         </div>
         <label class="inline" style="margin-top:8px; display:flex; align-items:center; gap:8px">
           <input type="checkbox" id="cfbd_require" name="require_cfbd" />
