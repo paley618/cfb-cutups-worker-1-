@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!statusEl) return;
     const meta = (j.manifest && j.manifest.detector_meta) || {};
     const s = meta.cfbd_state || 'off';
-    const r = meta.cfbd_reason || '';
+    const r = meta.cfbd_reason || ''; // reason now includes filtered play counts when available
     const cached = meta.cfbd_cached ? ` • cached=${meta.cfbd_cached_count}` : '';
     const el =
       document.getElementById('cfbd-state') ||

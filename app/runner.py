@@ -620,17 +620,24 @@ class JobRunner:
                             self.jobs[job_id] = job_state
                             try:
                                 logger.info(
-                                    f"[CFBD] runner /plays?gameId={gid} (year={year_val}, week={week_val})"
+                                    f"[CFBD] fetching plays for game_id={gid} (year={year_val}, week={week_val})"
                                 )
                                 plays_list = await asyncio.to_thread(
-                                    self.cfbd.get_plays_by_game,
+                                    self.cfbd.get_plays_for_game,
                                     int(gid),
                                     year=year_val,
                                     week=week_val,
                                     season_type="regular",
                                 )
-                                if not plays_list:
+                                cfbd_plays = list(plays_list)
+                                cfbd_play_count = len(cfbd_plays)
+                                if not cfbd_play_count:
                                     raise RuntimeError("empty plays[]")
+                                if cfbd_play_count < 50 or cfbd_play_count > 800:
+                                    logger.warning(
+                                        f"[CFBD] suspicious play count for game_id={gid}: {cfbd_play_count}. "
+                                        "Proceeding but detection quality may suffer (likely week aggregate)."
+                                    )
                             except Exception as exc:  # pragma: no cover - network edge
                                 cfbd_reason = f"/plays failed: {type(exc).__name__}: {exc}"
                                 set_cfbd_state("error", cfbd_reason)
@@ -643,10 +650,8 @@ class JobRunner:
                                     extra={"job_id": job_id, "error": cfbd_reason},
                                 )
                             else:
-                                cfbd_plays = list(plays_list)
-                                cfbd_play_count = len(cfbd_plays)
                                 cfbd_used = True
-                                cfbd_reason = f"game_id={gid}"
+                                cfbd_reason = f"game_id={gid} • plays={cfbd_play_count}"
                                 set_cfbd_state("ready", cfbd_reason)
                                 job_meta["cfbd_cached"] = False
                                 job_meta["cfbd_cached_count"] = cfbd_play_count
@@ -676,14 +681,21 @@ class JobRunner:
                                     raise RuntimeError("no match via /games")
                                 logger.info(f"[CFBD] resolved game_id={gid} -> /plays")
                                 plays_list = await asyncio.to_thread(
-                                    self.cfbd.get_plays_by_game,
+                                    self.cfbd.get_plays_for_game,
                                     int(gid),
                                     year=year_val,
                                     week=week_val,
                                     season_type="regular",
                                 )
-                                if not plays_list:
+                                cfbd_plays = list(plays_list)
+                                cfbd_play_count = len(cfbd_plays)
+                                if not cfbd_play_count:
                                     raise RuntimeError("empty plays[]")
+                                if cfbd_play_count < 50 or cfbd_play_count > 800:
+                                    logger.warning(
+                                        f"[CFBD] suspicious play count for game_id={gid}: {cfbd_play_count}. "
+                                        "Proceeding but detection quality may suffer (likely week aggregate)."
+                                    )
                             except Exception as exc:  # pragma: no cover - network edge
                                 cfbd_reason = f"resolver: {type(exc).__name__}: {exc}"
                                 set_cfbd_state("unavailable", cfbd_reason)
@@ -696,10 +708,8 @@ class JobRunner:
                                     extra={"job_id": job_id, "error": cfbd_reason},
                                 )
                             else:
-                                cfbd_plays = list(plays_list)
-                                cfbd_play_count = len(cfbd_plays)
                                 cfbd_used = True
-                                cfbd_reason = f"resolved game_id={int(gid)}"
+                                cfbd_reason = f"resolved game_id={int(gid)} • plays={cfbd_play_count}"
                                 set_cfbd_state("ready", cfbd_reason)
                                 job_meta["cfbd_cached"] = False
                                 job_meta["cfbd_cached_count"] = cfbd_play_count
