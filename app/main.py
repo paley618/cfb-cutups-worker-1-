@@ -182,7 +182,12 @@ async def manifest_proxy(url: str = Query(..., min_length=10)):
 
 
 @app.get("/api/cfbd/autofill")
-async def cfbd_autofill(gameId: str = Query(..., min_length=3)):
+async def cfbd_autofill(
+    gameId: str = Query(..., min_length=3),
+    year: int | None = Query(None),
+    week: int | None = Query(None),
+    seasonType: str | None = Query(None),
+):
     normalized = _normalize_game_id(gameId)
     if normalized is None:
         raise HTTPException(status_code=400, detail="Invalid gameId")
@@ -238,14 +243,11 @@ async def cfbd_autofill(gameId: str = Query(..., min_length=3)):
                 }
 
             game = games_payload[0]
-            year = game.get("season") or game.get("year")
-            week = game.get("week")
-            season_type = (
-                game.get("season_type")
-                or game.get("seasonType")
-                or settings.CFBD_SEASON_TYPE_DEFAULT
-                or "regular"
-            )
+            resolved_year = year or game.get("season") or game.get("year")
+            resolved_week = week or game.get("week")
+            resolved_season_type = seasonType or game.get("season_type") or game.get("seasonType")
+            if not resolved_season_type:
+                resolved_season_type = settings.CFBD_SEASON_TYPE_DEFAULT or "regular"
             home_team = game.get("home_team") or game.get("homeTeam")
             away_team = game.get("away_team") or game.get("awayTeam")
 
@@ -272,9 +274,9 @@ async def cfbd_autofill(gameId: str = Query(..., min_length=3)):
             return {
                 "status": "OK",
                 "gameId": normalized,
-                "year": year,
-                "week": week,
-                "seasonType": season_type,
+                "year": resolved_year,
+                "week": resolved_week,
+                "seasonType": resolved_season_type,
                 "homeTeam": home_team,
                 "awayTeam": away_team,
                 "playsCount": len(plays_filtered),
