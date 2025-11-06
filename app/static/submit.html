@@ -59,6 +59,16 @@
               <button type="button" id="cfbd_autofill_btn" style="width:100%">Autofill from ESPN link</button>
             </div>
           </div>
+          <div id="cfbd-extra-fields" class="row cfbd-row" style="display:none; gap:8px;">
+            <div>
+              <label for="cfbdYear">CFBD year</label>
+              <input id="cfbdYear" type="number" placeholder="2024" min="1869" max="2100" />
+            </div>
+            <div>
+              <label for="cfbdWeek">CFBD week (optional)</label>
+              <input id="cfbdWeek" type="number" placeholder="Week" min="0" max="30" />
+            </div>
+          </div>
           <div id="cfbd_autofill_status" class="muted"></div>
         </div>
         <label class="inline" style="margin-top:8px; display:flex; align-items:center; gap:8px">
