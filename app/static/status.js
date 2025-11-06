@@ -87,9 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCfbdAutofillStatus(['Looking up CFBD…']);
 
       try {
-        const resp = await fetch(`/api/cfbd/autofill?gameId=${encodeURIComponent(gameId)}`, {
-          cache: 'no-store',
-        });
+        const resp = await fetch(
+          `/api/util/cfbd-autofill-by-gameid?gameId=${encodeURIComponent(gameId)}`,
+          {
+            cache: 'no-store',
+          },
+        );
         if (!resp.ok) {
           throw new Error(`HTTP ${resp.status}`);
         }
