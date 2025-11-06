@@ -106,6 +106,18 @@ def _clock_str_to_seconds(clock: object) -> Optional[int]:
     except ValueError:
         return None
 
+
+def _safe_pct(done: int | float | None, total: int | float | None) -> int:
+    """Best-effort percentage helper that tolerates missing totals."""
+
+    try:
+        if total and total > 0 and done is not None:
+            v = int((float(done) / float(total)) * 100)
+            return max(0, min(100, v))
+    except Exception:  # noqa: BLE001 - defensive fallback
+        pass
+    return 0
+
 class JobRunner:
     def __init__(self, max_concurrency: int = 2, *, cfbd_client: Optional[CFBDClient] = None):
         self.queue: "asyncio.Queue[tuple[str, Any]]" = asyncio.Queue()
@@ -377,7 +389,6 @@ class JobRunner:
                 ) -> None:
                     self._ensure_not_cancelled(job_id, cancel_ev)
                     pct_value = float(pct or 0.0)
-                    scaled = min(10.0, max(0.0, pct_value * 0.10))
                     fields: Dict[str, Any] = {}
                     if meta:
                         downloaded = meta.get("downloaded_bytes")
@@ -386,16 +397,24 @@ class JobRunner:
                             fields["downloaded_mb"] = int(float(downloaded) / (1024 * 1024))
                         if total_bytes:
                             fields["total_mb"] = int(float(total_bytes) / (1024 * 1024))
+                        pct_bytes = _safe_pct(downloaded, total_bytes)
+                    else:
+                        downloaded = None
+                        total_bytes = None
+                        pct_bytes = 0
+                    if pct_bytes <= 0 and pct_value:
+                        pct_bytes = _safe_pct(pct_value, 100.0)
+                    pct = min(10.0, max(0.0, float(pct_bytes) * 0.10))
                     self._set_stage(
                         job_id,
                         "downloading",
-                        pct=scaled,
+                        pct=pct,
                         detail=detail or "Downloading",
                         eta=self._eta(job_id),
                     )
                     _heartbeat(
                         "downloading",
-                        pct=scaled,
+                        pct=pct,
                         detail=detail or "Downloading",
                         fields=fields or None,
                     )
@@ -715,16 +734,42 @@ class JobRunner:
                     )
                     return
 
+                fields: Dict[str, Any] = {}
+                detail_msg = "Preparing detection"
+                if requested_cfbd:
+                    fields["cfbd_requested"] = True
+                    cfbd_state = job_state.get("cfbd_state") or "pending"
+                    fields["cfbd_state"] = cfbd_state
+                    if cfbd_reason:
+                        fields["cfbd_reason"] = cfbd_reason
+                    if cfbd_play_count:
+                        fields["cfbd_plays"] = cfbd_play_count
+                    if cfbd_used:
+                        detail_msg = f"CFBD plays: {cfbd_play_count}"
+                    elif cfbd_reason:
+                        detail_msg = f"CFBD: {cfbd_reason}"
+                    else:
+                        detail_msg = f"CFBD: {cfbd_state}"
+                else:
+                    if cfbd_reason:
+                        fields["cfbd_reason"] = cfbd_reason
+
+                try:
+                    pct = float(self.jobs.get(job_id, {}).get("pct", 10.0) or 10.0)
+                except Exception:  # noqa: BLE001 - defensive fallback
+                    pct = 10.0
+                pct = max(10.0, min(100.0, pct))
+
                 self._set_stage(
                     job_id,
                     "detecting",
-                    pct=scaled,
+                    pct=pct,
                     detail=detail_msg,
                     eta=self._eta(job_id),
                 )
                 _heartbeat(
                     "detecting",
-                    pct=scaled,
+                    pct=pct,
                     detail=detail_msg,
                     fields=fields or None,
                 )
