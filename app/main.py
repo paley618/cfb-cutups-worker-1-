@@ -33,6 +33,13 @@ logger = logging.getLogger(__name__)
 _ESPN_RE = re.compile(r"/gameId/(\d+)", re.I)
 
 
+def _coerce_int(value: Any) -> int | None:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
 def _normalize_game_id(raw: str | int | None) -> int | None:
     if raw is None:
         return None
@@ -243,15 +250,31 @@ async def cfbd_autofill(
                 }
 
             game = games_payload[0]
-            resolved_year = year or game.get("season") or game.get("year")
-            resolved_week = week or game.get("week")
-            resolved_season_type = seasonType or game.get("season_type") or game.get("seasonType")
+            resolved_year = (
+                year
+                if year is not None
+                else _coerce_int(game.get("season") or game.get("year"))
+            )
+            resolved_week = (
+                week if week is not None else _coerce_int(game.get("week"))
+            )
+            resolved_season_type = (
+                seasonType or game.get("season_type") or game.get("seasonType")
+            )
             if not resolved_season_type:
                 resolved_season_type = settings.CFBD_SEASON_TYPE_DEFAULT or "regular"
             home_team = game.get("home_team") or game.get("homeTeam")
             away_team = game.get("away_team") or game.get("awayTeam")
 
-            plays_resp = await client.get("/plays", params={"gameId": normalized})
+            plays_params: dict[str, Any] = {"gameId": normalized}
+            if resolved_year is not None:
+                plays_params["year"] = int(resolved_year)
+            if resolved_week is not None:
+                plays_params["week"] = int(resolved_week)
+            if resolved_season_type:
+                plays_params["seasonType"] = resolved_season_type
+
+            plays_resp = await client.get("/plays", params=plays_params)
             tried.append(str(plays_resp.request.url))
             if plays_resp.status_code >= 400:
                 return {
