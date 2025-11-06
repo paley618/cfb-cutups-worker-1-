@@ -21,7 +21,23 @@ def cfbd_get(path: str, params: dict):
 
 
 def _norm_team(name: str) -> str:
-    return re.sub(r"[^a-z]", "", name.lower())
+    """
+    Normalize a team name for fuzzy matching between ESPN and CFBD.
+    Removes mascots, punctuation, and common suffixes like 'State' or 'University'.
+    """
+
+    name = name.lower()
+    # remove mascot words (like 'badgers', 'golden', 'gophers', etc.)
+    name = re.sub(
+        r"\b(badgers|golden|gophers|wildcats|buckeyes|crimson|tide|terrapins|spartans|cardinal|orange|eagles|falcons|owls|warhawks|aggies|longhorns|bulldogs|gamecocks|lions|tigers|bears|rebels|trojans|bruins|seminoles|mountaineers|volunteers|razorbacks|cowboys|hurricanes|wildcats|jayhawks|cougars|broncos|rams|wolfpack|mean\s?green|blue\s?devils|yellow\s?jackets|fighting\s?irish)\b",
+        "",
+        name,
+    )
+    # remove 'university', 'college', 'state'
+    name = re.sub(r"\b(university|college|state|tech|of|the)\b", "", name)
+    # remove spaces, punctuation
+    name = re.sub(r"[^a-z]", "", name)
+    return name.strip()
 
 
 def extract_espn_event_id(espn_url: str) -> str | None:
@@ -399,14 +415,22 @@ def cfbd_match_from_espn(
     target_away = _norm_team(espn_away)
 
     matched = None
+    best_match_score = 0
+
     for g in cfbd_games:
         g_home = _norm_team(g.get("home_team", ""))
         g_away = _norm_team(g.get("away_team", ""))
-
-        if g_home == target_home and g_away == target_away:
-            matched = g
-            break
-        if g_home == target_away and g_away == target_home:
+        # calculate simple overlap score
+        score = 0
+        if g_home in target_home or target_home in g_home:
+            score += 1
+        if g_away in target_away or target_away in g_away:
+            score += 1
+        if g_home in target_away or target_away in g_home:
+            score += 1
+        if g_away in target_home or target_home in g_away:
+            score += 1
+        if score >= 2:
             matched = g
             break
 
