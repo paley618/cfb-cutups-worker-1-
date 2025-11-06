@@ -14,19 +14,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const cfbdLinkInput = document.getElementById('cfbd_espn_link');
   const cfbdAutofillBtn = document.getElementById('cfbd_autofill_btn');
   const cfbdAutofillStatus = document.getElementById('cfbd_autofill_status');
+  const cfbdExtraFields = document.getElementById('cfbd-extra-fields');
+  const cfbdYearInput = document.getElementById('cfbdYear');
+  const cfbdWeekInput = document.getElementById('cfbdWeek');
   let cfbdAutofillData = null;
 
   const clearCfbdStatus = () => {
     if (!cfbdAutofillStatus) return;
     cfbdAutofillStatus.innerHTML = '';
     cfbdAutofillStatus.classList.remove('error');
+    cfbdAutofillStatus.classList.remove('needs-year');
     delete cfbdAutofillStatus.dataset.status;
+    if (cfbdExtraFields) {
+      cfbdExtraFields.style.display = 'none';
+    }
   };
 
   const renderCfbdAutofillStatus = (lines, mode = '') => {
     if (!cfbdAutofillStatus) return;
     cfbdAutofillStatus.innerHTML = '';
     cfbdAutofillStatus.classList.remove('error');
+    cfbdAutofillStatus.classList.remove('needs-year');
     if (mode) {
       cfbdAutofillStatus.dataset.status = mode;
     } else {
@@ -34,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (mode === 'error') {
       cfbdAutofillStatus.classList.add('error');
+    } else if (mode === 'needs-year') {
+      cfbdAutofillStatus.classList.add('needs-year');
     }
     if (!Array.isArray(lines) || !lines.length) {
       return;
@@ -68,6 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cfbdLinkInput.addEventListener('input', () => {
       cfbdAutofillData = null;
       clearCfbdStatus();
+      if (cfbdYearInput) cfbdYearInput.value = '';
+      if (cfbdWeekInput) cfbdWeekInput.value = '';
     });
   }
 
@@ -87,8 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCfbdAutofillStatus(['Looking up CFBD…']);
 
       try {
+        const yearParam = cfbdYearInput && cfbdYearInput.value
+          ? `&year=${encodeURIComponent(cfbdYearInput.value)}`
+          : '';
+        const weekParam = cfbdWeekInput && cfbdWeekInput.value
+          ? `&week=${encodeURIComponent(cfbdWeekInput.value)}`
+          : '';
         const resp = await fetch(
-          `/api/util/cfbd-autofill-by-gameid?gameId=${encodeURIComponent(gameId)}`,
+          `/api/util/cfbd-autofill-by-gameid?gameId=${encodeURIComponent(gameId)}${yearParam}${weekParam}`,
           {
             cache: 'no-store',
           },
@@ -118,23 +136,51 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             'ok',
           );
+          if (cfbdExtraFields) {
+            cfbdExtraFields.style.display = 'none';
+          }
+          if (cfbdYearInput) cfbdYearInput.value = '';
+          if (cfbdWeekInput) cfbdWeekInput.value = '';
           if (cfbdUseCheckbox && !cfbdUseCheckbox.checked) {
             cfbdUseCheckbox.checked = true;
+          }
+        } else if (data.status === 'CFBD_NEEDS_YEAR') {
+          cfbdAutofillData = null;
+          const prompt = data.message
+            || 'CFBD needs a season/year (and often week) for this game.';
+          renderCfbdAutofillStatus(
+            [
+              prompt,
+              'Enter the season year and optional week, then click Autofill again.',
+            ],
+            'needs-year',
+          );
+          if (cfbdExtraFields) {
+            cfbdExtraFields.style.display = 'flex';
           }
         } else if (data.status === 'NOT_FOUND') {
           cfbdAutofillData = null;
           renderCfbdAutofillStatus([
             `No CFBD game found for gameId ${data.gameId || gameId}.`,
           ], 'error');
+          if (cfbdExtraFields) {
+            cfbdExtraFields.style.display = 'none';
+          }
         } else {
           cfbdAutofillData = null;
           const message = data.error || 'CFBD lookup failed.';
           renderCfbdAutofillStatus([message], 'error');
+          if (cfbdExtraFields) {
+            cfbdExtraFields.style.display = 'none';
+          }
         }
       } catch (err) {
         cfbdAutofillData = null;
         const message = err && err.message ? err.message : 'Unknown error';
         renderCfbdAutofillStatus([`Autofill failed: ${message}`], 'error');
+        if (cfbdExtraFields) {
+          cfbdExtraFields.style.display = 'none';
+        }
       } finally {
         cfbdAutofillBtn.disabled = false;
       }
