@@ -50,7 +50,22 @@ class CFBDAutofillQuery(BaseModel):
     @model_validator(mode="after")
     def _require_year_week_if_no_game(self):
         game_id = getattr(self, "gameId", None)
-        if game_id not in (None, ""):
+
+        if isinstance(game_id, str):
+            normalized = game_id.strip()
+            if normalized:
+                if normalized.isdigit():
+                    try:
+                        self.gameId = int(normalized)
+                    except ValueError:
+                        self.gameId = normalized
+                else:
+                    self.gameId = normalized
+                return self
+            self.gameId = None
+            game_id = None
+
+        if game_id is not None:
             return self
 
         if self.year is None:
