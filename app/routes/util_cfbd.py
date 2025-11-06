@@ -5,52 +5,80 @@ from fastapi import APIRouter, Query
 router = APIRouter()
 
 CFBD_BASE = "https://api.collegefootballdata.com"
+# support both env var names
 CFBD_KEY = os.getenv("CFBD_KEY") or os.getenv("CFBD_API_KEY")
 
 
 def cfbd_get(path: str, params: dict):
     """
-    Thin wrapper around CFBD GET that adds the bearer token and raises on non-200.
+    Call CFBD and return either JSON or an error dict.
+    We DO NOT raise here because CFBD will 400 if the game doesn't exist yet.
     """
     headers = {"Authorization": f"Bearer {CFBD_KEY}"} if CFBD_KEY else {}
-    r = requests.get(f"{CFBD_BASE}{path}", headers=headers, params=params, timeout=30)
-    r.raise_for_status()
-    return r.json()
+    resp = requests.get(f"{CFBD_BASE}{path}", headers=headers, params=params, timeout=30)
+
+    # handle common CFBD errors
+    if resp.status_code == 401:
+        return {
+            "__error__": "unauthorized",
+            "status_code": 401,
+            "url": resp.url,
+            "body": resp.text,
+        }
+    if resp.status_code == 400:
+        return {
+            "__error__": "not_available",
+            "status_code": 400,
+            "url": resp.url,
+            "body": resp.text,
+        }
+
+    resp.raise_for_status()
+    return resp.json()
 
 
 @router.get("/api/util/cfbd-autofill-by-gameid")
 def cfbd_autofill_by_gameid(
     gameId: str = Query(..., description="ESPN/CFBD game id, e.g. 401752856"),
 ):
-    """
-    Autofill CFBD info from just a gameId.
-
-    We call /plays?gameId=... (NOT /games) because CFBD does not support
-    gameId on /games. Then we infer year/week/teams from the first play.
-    """
-    # 1) call CFBD plays with the gameId
+    # 1) try to get plays for this game
     plays = cfbd_get("/plays", {"gameId": gameId})
 
+    # 1a) CFBD said "no" (400) -> probably future game / no data
+    if isinstance(plays, dict) and plays.get("__error__") == "not_available":
+        return {
+            "status": "CFBD_NO_DATA",
+            "message": "CFBD does not have plays for this gameId (likely a future or missing game). Try supplying year/week for an existing game.",
+            "gameId": gameId,
+            "cfbdUrlTried": plays.get("url"),
+            "cfbdStatus": plays.get("status_code"),
+            "cfbdBody": plays.get("body"),
+        }
+
+    # 1b) CFBD said unauthorized -> env var/key is wrong
+    if isinstance(plays, dict) and plays.get("__error__") == "unauthorized":
+        return {
+            "status": "CFBD_UNAUTHORIZED",
+            "message": "CFBD returned 401 Unauthorized. Check CFBD_KEY / CFBD_API_KEY in Railway.",
+            "gameId": gameId,
+            "cfbdUrlTried": plays.get("url"),
+        }
+
+    # 2) no error, but no plays
     if not plays:
         return {
             "status": "NOT_FOUND",
-            "message": "CFBD returned no plays for that gameId",
+            "message": "CFBD returned no plays for that gameId.",
             "gameId": gameId,
         }
 
-    # 2) infer fields from the first play
+    # 3) infer fields from first play
     first = plays[0]
     year = first.get("season") or first.get("year")
     week = first.get("week")
-
     offense_team = first.get("offense")
     defense_team = first.get("defense")
 
-    # we don't know actual home/away from /plays only; expose what we have
-    home_team = offense_team
-    away_team = defense_team
-
-    # 3) filter to be extra safe it's only this game
     filtered_plays = [
         p for p in plays
         if str(p.get("game_id") or p.get("gameId")) == str(gameId)
@@ -61,9 +89,9 @@ def cfbd_autofill_by_gameid(
         "gameId": gameId,
         "year": year,
         "week": week,
-        "seasonType": "regular",  # can't get this from /plays → default
-        "homeTeam": home_team,
-        "awayTeam": away_team,
+        "seasonType": "regular",
+        "homeTeam": offense_team,
+        "awayTeam": defense_team,
         "playsCount": len(filtered_plays),
         "tried": [
             f"{CFBD_BASE}/plays?gameId={gameId}",
