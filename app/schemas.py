@@ -38,6 +38,29 @@ class CFBDInput(BaseModel):
         return self.season
 
 
+class CFBDAutofillQuery(BaseModel):
+    gameId: int | str | None = Field(default=None, validation_alias=AliasChoices("gameId", "game_id"))
+    year: Optional[int] = None
+    week: Optional[int] = None
+    seasonType: Optional[str] = Field(
+        default=None,
+        validation_alias=AliasChoices("seasonType", "season_type"),
+    )
+
+    @model_validator(mode="after")
+    def _require_year_week_if_no_game(self):
+        game_id = getattr(self, "gameId", None)
+        if game_id not in (None, ""):
+            return self
+
+        if self.year is None:
+            raise ValueError("year parameter is required")
+        if self.week is None:
+            raise ValueError("week parameter is required")
+
+        return self
+
+
 class JobSubmission(BaseModel):
     video_url: Optional[HttpUrl] = None
     upload_id: Optional[str] = None

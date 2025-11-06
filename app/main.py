@@ -10,7 +10,7 @@ from contextlib import asynccontextmanager
 from typing import Any, Mapping
 
 import httpx
-from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile, status
+from fastapi import Depends, FastAPI, File, HTTPException, Query, Request, UploadFile, status
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -21,7 +21,7 @@ from .cookies import write_cookies_if_any, write_drive_cookies_if_any
 from .diag_cfbd import router as diag_cfbd_router
 from .logging_setup import setup_logging
 from .runner import JobRunner
-from .schemas import CFBDInput, JobSubmission
+from .schemas import CFBDAutofillQuery, CFBDInput, JobSubmission
 from .settings import settings
 from .selftest import run_all
 from .storage import get_storage
@@ -189,13 +189,9 @@ async def manifest_proxy(url: str = Query(..., min_length=10)):
 
 
 @app.get("/api/cfbd/autofill")
-async def cfbd_autofill(
-    gameId: str = Query(..., min_length=3),
-    year: int | None = Query(None),
-    week: int | None = Query(None),
-    seasonType: str | None = Query(None),
-):
-    normalized = _normalize_game_id(gameId)
+async def cfbd_autofill(query: CFBDAutofillQuery = Depends()):
+    game_id_value = query.gameId
+    normalized = _normalize_game_id(game_id_value)
     if normalized is None:
         raise HTTPException(status_code=400, detail="Invalid gameId")
 
@@ -250,6 +246,9 @@ async def cfbd_autofill(
                 }
 
             game = games_payload[0]
+            year = query.year
+            week = query.week
+            seasonType = query.seasonType
             resolved_year = (
                 year
                 if year is not None
