@@ -1,6 +1,6 @@
 import json
 import os
-from typing import Dict, List
+from typing import Any, Dict, List, Tuple
 
 import httpx
 
@@ -32,6 +32,13 @@ def _play_belongs_to_game(play: Dict, gid: int) -> bool:
         return False
 
 
+def _coerce_int(value: Any) -> int | None:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
 class CFBDClient:
     def __init__(self, api_key: str | None = None, timeout: float = 20.0):
         self.api_key = (
@@ -51,6 +58,47 @@ class CFBDClient:
             raise CFBDClientError("missing CFBD_API_KEY")
         with self._client() as client:
             return client.get(path, params=params)
+
+    def _resolve_game_fields(
+        self,
+        gid: int,
+        *,
+        year: int | None,
+        week: int | None,
+        season_type: str,
+    ) -> Tuple[int | None, int | None, str]:
+        """Attempt to fill in year/week when CFBD demands them."""
+
+        try:
+            response = self._req("/games", {"gameId": gid})
+        except CFBDClientError:
+            return year, week, season_type
+
+        if response.status_code >= 400:
+            return year, week, season_type
+
+        try:
+            payload = response.json()
+        except ValueError:
+            return year, week, season_type
+
+        if not isinstance(payload, list) or not payload:
+            return year, week, season_type
+
+        game = payload[0]
+        if not isinstance(game, dict):
+            return year, week, season_type
+
+        resolved_year = year if year is not None else _coerce_int(game.get("season") or game.get("year"))
+        resolved_week = week if week is not None else _coerce_int(game.get("week"))
+        resolved_season_type = (
+            season_type
+            or game.get("season_type")
+            or game.get("seasonType")
+            or "regular"
+        )
+
+        return resolved_year, resolved_week, resolved_season_type
 
     def get_plays_for_game(
         self,
@@ -76,17 +124,26 @@ class CFBDClient:
             ]
 
         if _is_year_week_validator(first.text):
+            resolved_year = year
+            resolved_week = week
+            resolved_season_type = season_type
+
+            if resolved_year is None or resolved_week is None:
+                resolved_year, resolved_week, resolved_season_type = self._resolve_game_fields(
+                    gid,
+                    year=resolved_year,
+                    week=resolved_week,
+                    season_type=resolved_season_type,
+                )
+
             params: Dict[str, object] = {
                 "gameId": gid,
-                "seasonType": season_type,
+                "seasonType": resolved_season_type,
             }
-            if year is None:
-                raise CFBDClientError(
-                    "CFBD requires 'year' for /plays retry but year was not provided"
-                )
-            params["year"] = int(year)
-            if week is not None:
-                params["week"] = int(week)
+            if resolved_year is not None:
+                params["year"] = int(resolved_year)
+            if resolved_week is not None:
+                params["week"] = int(resolved_week)
             retry = self._req("/plays", params)
             if retry.status_code >= 400:
                 raise CFBDClientError(
