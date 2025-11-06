@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cfbdAutofillStatus.innerHTML = '';
     cfbdAutofillStatus.classList.remove('error');
     cfbdAutofillStatus.classList.remove('needs-year');
+    cfbdAutofillStatus.classList.remove('warn');
     if (mode) {
       cfbdAutofillStatus.dataset.status = mode;
     } else {
@@ -45,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
       cfbdAutofillStatus.classList.add('error');
     } else if (mode === 'needs-year') {
       cfbdAutofillStatus.classList.add('needs-year');
+    } else if (mode === 'warn') {
+      cfbdAutofillStatus.classList.add('warn');
     }
     if (!Array.isArray(lines) || !lines.length) {
       return;
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (mode === 'ok' && idx === 0) {
         div.classList.add('cfbd-line--primary');
       }
-      if (mode === 'ok' && idx === lines.length - 1) {
+      if ((mode === 'ok' || mode === 'warn') && idx === lines.length - 1) {
         div.classList.add('cfbd-line--status');
       }
       div.textContent = text;
@@ -180,6 +183,28 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cfbdUseCheckbox && !cfbdUseCheckbox.checked) {
               cfbdUseCheckbox.checked = true;
             }
+          } else if (cfbdData.status === 'CFBD_SUSPECT') {
+            const weekLabel =
+              cfbdData.week != null ? cfbdData.week : 'N/A';
+            const suspectReasons = Array.isArray(cfbdData.llmCheck?.reasons)
+              ? cfbdData.llmCheck.reasons
+              : [];
+            const suspectLines = [
+              ...baseLines,
+              `CFBD suspect — ${cfbdData.cfbdHome || home} vs ${
+                cfbdData.cfbdAway || away
+              }, ${cfbdData.year} week ${weekLabel} — ${cfbdData.playsCount} plays`,
+              `LLM flagged issues. Details: ${JSON.stringify(suspectReasons)}`,
+            ];
+            cfbdAutofillData = {
+              status: 'CFBD_SUSPECT',
+              espnEventId: data.espn_event_id,
+              espnSummary: summary,
+              attempts: data.attempts || [],
+              ...cfbdData,
+            };
+            window.__cfbdAutofillResult = cfbdAutofillData;
+            renderCfbdAutofillStatus(suspectLines, 'warn');
           } else {
             const message = cfbdData.message || cfbdData.status || 'Unknown error';
             const errorLines = [

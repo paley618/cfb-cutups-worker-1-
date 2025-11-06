@@ -1,6 +1,7 @@
 import os
-import re
+import json
 import requests
+import re
 from fastapi import APIRouter, Body, Query
 
 router = APIRouter()
@@ -8,6 +9,74 @@ router = APIRouter()
 CFBD_BASE = "https://api.collegefootballdata.com"
 # support both env var names
 CFBD_KEY = os.getenv("CFBD_KEY") or os.getenv("CFBD_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_TOKEN")
+
+
+def llm_validate_cfbd_vs_espn(espn_summary: dict, cfbd_match: dict) -> dict:
+    """
+    Ask OpenAI to compare ESPN info (teams, season, maybe week) with the CFBD result
+    (week, playsCount). If it looks wrong (31k plays, week mismatch), return a warning.
+    """
+
+    if not OPENAI_API_KEY:
+        return {
+            "llm_used": False,
+            "llm_reason": "OPENAI_API_KEY not set",
+        }
+
+    system_msg = (
+        "You are validating college football game data for a video cutups tool. "
+        "You receive data from ESPN and from CFBD. "
+        "If CFBD's week or playsCount is clearly wrong compared to ESPN (for example 31,000 plays or week=1 vs ESPN final 2024), "
+        "flag it as suspect. Return STRICT JSON with keys: valid (bool), reasons (list of strings), suggested_fixes (list of strings)."
+    )
+
+    user_obj = {
+        "espn": {
+            "season": espn_summary.get("header", {}).get("season"),
+            "status": espn_summary.get("header", {}).get("competitions", [{}])[0].get("status"),
+            "competitors": espn_summary.get("header", {}).get("competitions", [{}])[0].get("competitors"),
+        },
+        "cfbd": {
+            "year": cfbd_match.get("year"),
+            "week": cfbd_match.get("week"),
+            "playsCount": cfbd_match.get("playsCount"),
+            "cfbdParamsUsed": cfbd_match.get("cfbdParamsUsed"),
+            "cfbdHome": cfbd_match.get("cfbdHome"),
+            "cfbdAway": cfbd_match.get("cfbdAway"),
+        },
+    }
+
+    resp = requests.post(
+        "https://api.openai.com/v1/chat/completions",
+        headers={
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "model": "gpt-4o-mini",
+            "messages": [
+                {"role": "system", "content": system_msg},
+                {"role": "user", "content": json.dumps(user_obj)},
+            ],
+            "temperature": 0.1,
+        },
+        timeout=12,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    content = data["choices"][0]["message"]["content"]
+    try:
+        return json.loads(content)
+    except Exception:
+        # if LLM didn't return strict JSON, wrap it
+        return {
+            "llm_used": True,
+            "valid": False,
+            "reasons": ["LLM returned non-JSON"],
+            "suggested_fixes": [],
+            "raw": content,
+        }
 
 
 def cfbd_get(path: str, params: dict):
@@ -471,7 +540,8 @@ def cfbd_match_from_espn(
 
     plays = plays_resp.json()
 
-    return {
+    # build the base result
+    result = {
         "status": "OK",
         "espnHome": espn_home,
         "espnAway": espn_away,
@@ -483,3 +553,13 @@ def cfbd_match_from_espn(
         "playsCount": len(plays),
         "cfbdParamsUsed": plays_params,
     }
+
+    # LLM cross-check: is 31,000 plays plausible? is week 1 plausible?
+    llm_check = llm_validate_cfbd_vs_espn(espn_summary, result)
+    result["llmCheck"] = llm_check
+
+    # if LLM says it's not valid, downgrade status so frontend can show a warning
+    if llm_check.get("valid") is False:
+        result["status"] = "CFBD_SUSPECT"
+
+    return result
