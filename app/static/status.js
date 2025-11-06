@@ -62,18 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const extractGameIdFromEspn = (value) => {
-    if (!value) return null;
-    const text = value.trim();
-    if (!text) return null;
-    const m1 = text.match(/gameId\/(\d+)/i);
-    if (m1) return m1[1];
-    const m2 = text.match(/gameId=(\d+)/i);
-    if (m2) return m2[1];
-    if (/^\d+$/.test(text)) return text;
-    return null;
-  };
-
   if (cfbdLinkInput) {
     cfbdLinkInput.addEventListener('input', () => {
       cfbdAutofillData = null;
@@ -87,11 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
     cfbdAutofillBtn.addEventListener('click', async (event) => {
       event.preventDefault();
       if (!cfbdLinkInput) return;
-      const raw = cfbdLinkInput.value.trim();
-      const gameId = extractGameIdFromEspn(raw);
-      if (!gameId) {
+      const espnUrl = cfbdLinkInput.value.trim();
+      if (!espnUrl) {
         cfbdAutofillData = null;
-        renderCfbdAutofillStatus(['Paste an ESPN game link that includes a gameId.'], 'error');
+        renderCfbdAutofillStatus(['Paste an ESPN game link or event id.'], 'error');
         return;
       }
 
@@ -99,14 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCfbdAutofillStatus(['Looking up CFBD…']);
 
       try {
-        const yearParam = cfbdYearInput && cfbdYearInput.value
-          ? `&year=${encodeURIComponent(cfbdYearInput.value)}`
-          : '';
-        const weekParam = cfbdWeekInput && cfbdWeekInput.value
-          ? `&week=${encodeURIComponent(cfbdWeekInput.value)}`
-          : '';
         const resp = await fetch(
-          `/api/util/cfbd-autofill-by-gameid?gameId=${encodeURIComponent(gameId)}${yearParam}${weekParam}`,
+          `/api/util/cfbd-autofill-from-espn?espnUrl=${encodeURIComponent(espnUrl)}`,
           {
             cache: 'no-store',
           },
@@ -116,22 +97,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const data = await resp.json();
         if (data.status === 'OK') {
-          const home = data.homeTeam || 'Home team';
-          const away = data.awayTeam || 'Away team';
-          const rawSeason = (data.seasonType || 'regular').toString();
-          const prettySeason = rawSeason.replace(/_/g, ' ');
-          const seasonLabel = prettySeason.charAt(0).toUpperCase() + prettySeason.slice(1);
+          const home = data.cfbdHome || data.espnHome || 'Home team';
+          const away = data.cfbdAway || data.espnAway || 'Away team';
           const year = data.year != null ? data.year : '—';
           const weekText = data.week != null ? `, week ${data.week}` : '';
           const plays = Number(data.playsCount ?? 0);
           cfbdAutofillData = {
             ...data,
-            gameId: data.gameId ?? Number(gameId),
+            gameId: data.cfbdGameId ?? data.gameId ?? null,
+            homeTeam: data.cfbdHome || data.homeTeam || data.espnHome || null,
+            awayTeam: data.cfbdAway || data.awayTeam || data.espnAway || null,
           };
           renderCfbdAutofillStatus(
             [
               `${home} vs ${away}`,
-              `${seasonLabel} ${year}${weekText}`,
+              `Season ${year}${weekText}`,
               `CFBD OK — ${plays} plays`,
             ],
             'ok',
@@ -144,31 +124,19 @@ document.addEventListener('DOMContentLoaded', () => {
           if (cfbdUseCheckbox && !cfbdUseCheckbox.checked) {
             cfbdUseCheckbox.checked = true;
           }
-        } else if (data.status === 'CFBD_NEEDS_YEAR') {
+        } else if (data.status === 'CFBD_GAME_NOT_FOUND') {
           cfbdAutofillData = null;
-          const prompt = data.message
-            || 'CFBD needs a season/year (and often week) for this game.';
-          renderCfbdAutofillStatus(
-            [
-              prompt,
-              'Enter the season year and optional week, then click Autofill again.',
-            ],
-            'needs-year',
-          );
-          if (cfbdExtraFields) {
-            cfbdExtraFields.style.display = 'flex';
-          }
-        } else if (data.status === 'NOT_FOUND') {
-          cfbdAutofillData = null;
+          const message = data.message || 'Could not match the ESPN game to CFBD.';
           renderCfbdAutofillStatus([
-            `No CFBD game found for gameId ${data.gameId || gameId}.`,
+            message,
+            'Check the CFBD list for that week/year manually.',
           ], 'error');
           if (cfbdExtraFields) {
             cfbdExtraFields.style.display = 'none';
           }
         } else {
           cfbdAutofillData = null;
-          const message = data.error || 'CFBD lookup failed.';
+          const message = data.message || data.error || 'CFBD lookup failed.';
           renderCfbdAutofillStatus([message], 'error');
           if (cfbdExtraFields) {
             cfbdExtraFields.style.display = 'none';
@@ -530,17 +498,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (cfbdAutofillData && cfbdAutofillData.status === 'OK') {
-      const parsedGameId = Number(cfbdAutofillData.gameId ?? cfbdAutofillData.game_id);
-      cfbd.game_id = Number.isFinite(parsedGameId) ? parsedGameId : cfbdAutofillData.gameId;
+      const rawGameId =
+        cfbdAutofillData.cfbdGameId ?? cfbdAutofillData.gameId ?? cfbdAutofillData.game_id;
+      const parsedGameId = Number(rawGameId);
+      cfbd.game_id = Number.isFinite(parsedGameId) ? parsedGameId : rawGameId;
       cfbd.season = cfbdAutofillData.year ?? null;
       cfbd.week = cfbdAutofillData.week ?? null;
-      if (cfbdAutofillData.seasonType) {
-        cfbd.season_type = cfbdAutofillData.seasonType;
+      const seasonType =
+        cfbdAutofillData.seasonType || cfbdAutofillData.season_type || 'regular';
+      if (seasonType) {
+        cfbd.season_type = seasonType;
       }
-      const teamName = cfbdAutofillData.homeTeam || cfbdAutofillData.awayTeam || null;
+      const homeTeam = cfbdAutofillData.cfbdHome || cfbdAutofillData.homeTeam || null;
+      const awayTeam = cfbdAutofillData.cfbdAway || cfbdAutofillData.awayTeam || null;
+      const teamName = homeTeam || awayTeam || null;
       cfbd.team = teamName;
-      cfbd.home_team = cfbdAutofillData.homeTeam ?? null;
-      cfbd.away_team = cfbdAutofillData.awayTeam ?? null;
+      cfbd.home_team = homeTeam;
+      cfbd.away_team = awayTeam;
     }
 
     payload.cfbd = cfbd;
