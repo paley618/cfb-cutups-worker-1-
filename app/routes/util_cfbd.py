@@ -5,7 +5,7 @@ from fastapi import APIRouter, Query
 router = APIRouter()
 
 CFBD_BASE = "https://api.collegefootballdata.com"
-CFBD_KEY = os.getenv("CFBD_KEY")
+CFBD_KEY = os.getenv("CFBD_KEY") or os.getenv("CFBD_API_KEY")
 
 
 def cfbd_get(path: str, params: dict):
