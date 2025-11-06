@@ -7,10 +7,10 @@ import re
 import time
 import uuid
 from contextlib import asynccontextmanager
-from typing import Any, Mapping
+from typing import Annotated, Any, Mapping
 
 import httpx
-from fastapi import Depends, FastAPI, File, HTTPException, Query, Request, UploadFile, status
+from fastapi import FastAPI, File, HTTPException, Query, Request, UploadFile, status
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -21,7 +21,7 @@ from .cookies import write_cookies_if_any, write_drive_cookies_if_any
 from .diag_cfbd import router as diag_cfbd_router
 from .logging_setup import setup_logging
 from .runner import JobRunner
-from .schemas import CFBDAutofillQuery, CFBDInput, JobSubmission
+from .schemas import CFBDInput, JobSubmission
 from .settings import settings
 from .selftest import run_all
 from .storage import get_storage
@@ -168,8 +168,13 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(diag_cfbd_router)
 
 
-async def _run_cfbd_autofill(query: CFBDAutofillQuery) -> dict[str, Any]:
-    game_id_value = query.gameId
+async def _run_cfbd_autofill(
+    game_id: str | int | None,
+    year: int | None,
+    week: int | None,
+    season_type: str | None,
+) -> dict[str, Any]:
+    game_id_value = game_id
     normalized = _normalize_game_id(game_id_value)
     if normalized is None:
         raise HTTPException(status_code=400, detail="Invalid gameId")
@@ -225,19 +230,21 @@ async def _run_cfbd_autofill(query: CFBDAutofillQuery) -> dict[str, Any]:
                 }
 
             game = games_payload[0]
-            year = query.year
-            week = query.week
-            seasonType = query.seasonType
+            year_param = year
+            week_param = week
+            season_type_param = season_type
             resolved_year = (
-                year
-                if year is not None
+                year_param
+                if year_param is not None
                 else _coerce_int(game.get("season") or game.get("year"))
             )
             resolved_week = (
-                week if week is not None else _coerce_int(game.get("week"))
+                week_param if week_param is not None else _coerce_int(game.get("week"))
             )
             resolved_season_type = (
-                seasonType or game.get("season_type") or game.get("seasonType")
+                season_type_param
+                or game.get("season_type")
+                or game.get("seasonType")
             )
             if not resolved_season_type:
                 resolved_season_type = settings.CFBD_SEASON_TYPE_DEFAULT or "regular"
@@ -333,48 +340,20 @@ async def _run_cfbd_autofill(query: CFBDAutofillQuery) -> dict[str, Any]:
         }
 
 
-@app.middleware("http")
-async def _skip_cfbd_autofill_validation(request: Request, call_next):
-    path = request.url.path
-    if path == "/api/cfbd/autofill" or path.startswith("/api/cfbd/autofill/"):
-        query_pairs = list(request.query_params.multi_items())
-        query_data: dict[str, Any] = {}
-        for key, value in query_pairs:
-            query_data[key] = value
-        try:
-            query_model = CFBDAutofillQuery.model_validate(query_data)
-        except ValidationError as exc:
-            details: dict[str, dict[str, str]] = {}
-            for error in exc.errors():
-                loc = error.get("loc") or ()
-                msg = error.get("msg", "Invalid value")
-                lowered = msg.lower()
-                field: str
-                if loc:
-                    field = str(loc[-1])
-                elif "year" in lowered and "week" not in lowered:
-                    field = "year"
-                elif "week" in lowered:
-                    field = "week"
-                else:
-                    field = "non_field_errors"
-                if lowered.startswith("value error, "):
-                    msg = msg.split(", ", 1)[1]
-                details[field] = {"message": msg}
-            return JSONResponse(
-                {"message": "Validation Failed", "details": details},
-                status_code=status.HTTP_400_BAD_REQUEST,
-            )
-        try:
-            result = await _run_cfbd_autofill(query_model)
-        except HTTPException as exc:
-            return JSONResponse(
-                {"detail": exc.detail},
-                status_code=exc.status_code,
-                headers=exc.headers,
-            )
-        return JSONResponse(result)
-    return await call_next(request)
+@app.get("/api/cfbd/autofill")
+async def cfbd_autofill(
+    gameId: Annotated[str | None, Query(alias="gameId")] = None,
+    game_id: Annotated[str | None, Query(alias="game_id")] = None,
+    year: int | None = None,
+    week: int | None = None,
+    seasonType: Annotated[str | None, Query(alias="seasonType")] = None,
+    season_type: Annotated[str | None, Query(alias="season_type")] = None,
+):
+    identifier = gameId if gameId is not None else game_id
+    if identifier is None:
+        raise HTTPException(status_code=400, detail="Invalid gameId")
+    resolved_season_type = seasonType if seasonType is not None else season_type
+    return await _run_cfbd_autofill(identifier, year, week, resolved_season_type)
 
 
 @app.get("/manifest-proxy")
@@ -395,11 +374,6 @@ async def manifest_proxy(url: str = Query(..., min_length=10)):
         raise
     except Exception as exc:  # pragma: no cover - network reliability is runtime specific
         raise HTTPException(502, f"Proxy error: {exc}") from exc
-
-
-@app.get("/api/cfbd/autofill")
-async def cfbd_autofill(query: CFBDAutofillQuery = Depends()):
-    return await _run_cfbd_autofill(query)
 
 
 @app.get("/healthz")
