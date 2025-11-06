@@ -34,25 +34,29 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btn) {
     btn.onclick = async (e) => {
       e.preventDefault();
-      const input = document.querySelector('input[name="cfbd_game_id"]');
-      let gid = (input?.value || '').trim();
-      if (!gid) return alert('Enter a CFBD game_id or ESPN URL first.');
+      const gidInput = document.querySelector('input[name="cfbd_game_id"]');
+      const yInput = document.querySelector('input[name="cfbd_year"]');
+      const wInput = document.querySelector('input[name="cfbd_week"]');
+
+      let gid = (gidInput?.value || '').trim();
       const m = gid.match(/\/gameId\/(\d+)/i);
       if (m) gid = m[1];
-      const yearInput = document.querySelector('input[name="cfbd_year"]');
-      const weekInput = document.querySelector('input[name="cfbd_week"]');
+      if (!gid) {
+        alert('Enter a CFBD game_id or ESPN URL first.');
+        return;
+      }
+
       const qs = new URLSearchParams({ gameId: gid });
-      const yearVal = (yearInput?.value || '').trim();
-      const weekVal = (weekInput?.value || '').trim();
-      if (yearVal) qs.set('year', yearVal);
-      if (weekVal) qs.set('week', weekVal);
-      const res = await fetch(`/diag/cfbd?${qs.toString()}`).then((x) => x.json());
-      const tried = (res.urls_tried || []).join('\n');
-      alert(
-        res.ok
-          ? `CFBD OK\n${res.url}\nplays: ${res.plays_sampled}\nTried:\n${tried}`
-          : `CFBD ERROR\n${res.url}\n${res.error || `status ${res.status}`}\nTried:\n${tried}`,
-      );
+      if (yInput?.value) qs.set('year', yInput.value);
+      if (wInput?.value) qs.set('week', wInput.value);
+
+      const r = await fetch(`/diag/cfbd?${qs.toString()}`).then((x) => x.json());
+      const tried = (r.urls_tried || []).join('\n');
+      if (r.ok) {
+        alert(`CFBD OK\n${r.url || ''}\nplays: ${r.plays}\nTried:\n${tried}`);
+      } else {
+        alert(`CFBD ERROR\n${r.url || ''}\n${r.error || `status ${r.status}`}\nTried:\n${tried}`);
+      }
     };
   }
 
