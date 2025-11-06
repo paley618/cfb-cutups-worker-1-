@@ -19,6 +19,7 @@ from pydantic import ValidationError
 from .cfbd_client import CFBDClient, CFBDClientError, _is_year_week_validator
 from .cookies import write_cookies_if_any, write_drive_cookies_if_any
 from .diag_cfbd import router as diag_cfbd_router
+from .util_cfbd import router as util_cfbd_router
 from .logging_setup import setup_logging
 from .runner import JobRunner
 from .schemas import CFBDInput, JobSubmission
@@ -166,6 +167,18 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(diag_cfbd_router)
+app.include_router(util_cfbd_router)
+
+
+@app.middleware("http")
+async def validation_middleware(request: Request, call_next):
+    path = request.url.path
+
+    # Allow the util CFBD endpoint to bypass legacy validators that expect year/week.
+    if path.startswith("/api/util/cfbd-autofill-by-gameid"):
+        return await call_next(request)
+
+    return await call_next(request)
 
 
 async def _run_cfbd_autofill(
