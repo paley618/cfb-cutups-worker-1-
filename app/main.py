@@ -16,7 +16,7 @@ from fastapi.staticfiles import StaticFiles
 
 from pydantic import ValidationError
 
-from .cfbd_client import CFBDClient
+from .cfbd_client import CFBDClient, CFBDClientError, _is_year_week_validator
 from .cookies import write_cookies_if_any, write_drive_cookies_if_any
 from .diag_cfbd import router as diag_cfbd_router
 from .logging_setup import setup_logging
@@ -276,22 +276,63 @@ async def cfbd_autofill(
 
             plays_resp = await client.get("/plays", params=plays_params)
             tried.append(str(plays_resp.request.url))
-            if plays_resp.status_code >= 400:
-                return {
-                    "status": "ERROR",
-                    "error": plays_resp.text[:400],
-                    "gameId": normalized,
-                    "tried": tried,
-                }
-            try:
-                plays_payload = plays_resp.json()
-            except ValueError:
-                return {
-                    "status": "ERROR",
-                    "error": "Invalid CFBD /plays response",
-                    "gameId": normalized,
-                    "tried": tried,
-                }
+            plays_payload: list[dict[str, Any]] | None = None
+            if plays_resp.status_code < 400:
+                try:
+                    raw_payload = plays_resp.json()
+                except ValueError:
+                    return {
+                        "status": "ERROR",
+                        "error": "Invalid CFBD /plays response",
+                        "gameId": normalized,
+                        "tried": tried,
+                    }
+                if isinstance(raw_payload, list):
+                    plays_payload = raw_payload
+                else:
+                    return {
+                        "status": "ERROR",
+                        "error": "Unexpected CFBD /plays payload",
+                        "gameId": normalized,
+                        "tried": tried,
+                    }
+            else:
+                error_text = plays_resp.text[:400]
+                if _is_year_week_validator(plays_resp.text):
+                    fallback_client = getattr(app.state, "cfbd", None)
+                    if isinstance(fallback_client, CFBDClient):
+                        try:
+                            fallback_payload = await asyncio.to_thread(
+                                fallback_client.get_plays_for_game,
+                                int(normalized),
+                                year=resolved_year,
+                                week=resolved_week,
+                                season_type=resolved_season_type or "regular",
+                            )
+                        except CFBDClientError as exc:
+                            return {
+                                "status": "ERROR",
+                                "error": str(exc),
+                                "gameId": normalized,
+                                "tried": tried,
+                            }
+                        else:
+                            plays_payload = list(fallback_payload)
+                            query_parts: list[str] = [f"gameId={normalized}"]
+                            if resolved_year is not None:
+                                query_parts.append(f"year={int(resolved_year)}")
+                            if resolved_week is not None:
+                                query_parts.append(f"week={int(resolved_week)}")
+                            if resolved_season_type:
+                                query_parts.append(f"seasonType={resolved_season_type}")
+                            tried.append("cfbd-client:/plays?" + "&".join(query_parts))
+                if plays_payload is None:
+                    return {
+                        "status": "ERROR",
+                        "error": error_text,
+                        "gameId": normalized,
+                        "tried": tried,
+                    }
             plays_filtered = _filter_cfbd_plays(plays_payload, normalized)
 
             return {
