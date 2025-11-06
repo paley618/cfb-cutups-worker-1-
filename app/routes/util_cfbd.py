@@ -37,15 +37,32 @@ def extract_espn_event_id(espn_url: str) -> str | None:
 
 
 def fetch_espn_summary(event_id: str) -> dict:
-    """Fetch the public ESPN summary JSON for an event."""
+    """
+    Try ESPN's actual CFB summary endpoint first:
+    https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/summary?event={event_id}
+    If that 404s, try a secondary variant.
+    """
 
-    url = (
+    primary = (
+        "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/summary"
+        f"?event={event_id}"
+    )
+    resp = requests.get(primary, timeout=15)
+    if resp.status_code == 200:
+        return resp.json()
+
+    # fallback: sometimes they use slightly different pathing
+    alt = (
         "https://site.web.api.espn.com/apis/v2/sports/football/college-football/summary"
         f"?event={event_id}"
     )
-    resp = requests.get(url, timeout=15)
+    resp_alt = requests.get(alt, timeout=15)
+    if resp_alt.status_code == 200:
+        return resp_alt.json()
+
+    # if both failed, raise the original 404-style error
     resp.raise_for_status()
-    return resp.json()
+    return {}
 
 
 def normalize_team_name(name: str) -> str:
@@ -219,7 +236,7 @@ def cfbd_autofill_from_espn(
         "cfbdAway": matched_game.get("away_team"),
         "playsCount": len(cfbd_plays),
         "tried": {
-            "espn": "https://site.web.api.espn.com/apis/v2/sports/football/college-football/summary"
+            "espn": "https://site.web.api.espn.com/apis/site/v2/sports/football/college-football/summary"
             f"?event={event_id}",
             "cfbdGames": cfbd_games_params,
             "cfbdPlays": plays_params,
