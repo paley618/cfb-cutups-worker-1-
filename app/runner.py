@@ -118,6 +118,56 @@ def _safe_pct(done: int | float | None, total: int | float | None) -> int:
         pass
     return 0
 
+
+def espn_pbp_to_windows(espn_pbp: dict, pre_pad: float, post_pad: float, vid_dur: float):
+    """
+    Turn ESPN play-by-play JSON into a list of (start, end) windows.
+    ESPN PBP often has drives -> plays but not exact video timestamps,
+    so we approximate by spacing them through the video.
+    """
+
+    if not espn_pbp:
+        return []
+
+    drives = espn_pbp.get("drives") or espn_pbp.get("items") or []
+    plays: List[Dict[str, Any]] = []
+    for drive in drives:
+        for play in drive.get("plays", []):
+            text = play.get("text") or play.get("shortText") or ""
+            plays.append({"desc": text})
+
+    if not plays:
+        return []
+
+    total_secs = vid_dur if vid_dur > 0 else len(plays) * 22.0
+    base_gap = total_secs / max(len(plays), 1)
+
+    windows: List[Tuple[float, float]] = []
+    for idx, _play in enumerate(plays):
+        center = base_gap * idx
+        start = max(0.0, center - pre_pad)
+        end = min(total_secs, center + post_pad)
+        windows.append((start, end))
+
+    return windows
+
+
+def pick_best_windows(cfbd_windows, espn_windows, detector_windows):
+    """
+    Simple priority:
+    1. CFBD windows if present
+    2. else ESPN windows if present
+    3. else detector/vision windows
+    """
+
+    if cfbd_windows:
+        return cfbd_windows, "cfbd"
+    if espn_windows:
+        return espn_windows, "espn"
+    if detector_windows:
+        return detector_windows, "detector"
+    return [], "none"
+
 class JobRunner:
     def __init__(self, max_concurrency: int = 2, *, cfbd_client: Optional[CFBDClient] = None):
         self.queue: "asyncio.Queue[tuple[str, Any]]" = asyncio.Queue()
@@ -461,6 +511,7 @@ class JobRunner:
                     raise RuntimeError("No source provided")
 
                 src_dur = probe_duration_sec(video_path) or 0.0
+                vid_dur = float(src_dur) if src_dur else 0.0
                 src_size = file_size_bytes(video_path)
                 source_info = {
                     "duration_sec": round(src_dur, 3),
@@ -1088,14 +1139,53 @@ class JobRunner:
                     pre_merge_list = pre_merge_guided
                     windows = list(guided_windows)
                 else:
-                    candidate_windows = list(vision_windows_raw)
+                    orchestrator_payload = job_meta.get("orchestrator") or job_state.get(
+                        "orchestrator"
+                    )
+                    job_payload: Dict[str, Any] = {}
+                    if isinstance(orchestrator_payload, dict):
+                        raw_payload = orchestrator_payload.get("raw")
+                        if isinstance(raw_payload, dict):
+                            job_payload = raw_payload
+                        else:
+                            job_payload = orchestrator_payload
+
+                    cfbd_windows = list(guided_windows)
+                    detector_windows = list(vision_windows_raw)
+                    espn_pbp = job_payload.get("espn_pbp") or job_payload.get(
+                        "espnPlayByPlay"
+                    )
+                    espn_windows = espn_pbp_to_windows(
+                        espn_pbp, pre_pad, post_pad, vid_dur
+                    )
+
+                    candidate_windows, window_source = pick_best_windows(
+                        cfbd_windows,
+                        espn_windows,
+                        detector_windows,
+                    )
+                    job_meta["window_source"] = window_source
+
                     if not candidate_windows or len(candidate_windows) < settings.MIN_TOTAL_CLIPS:
                         fallback_used = True
-                        target = cfbd_play_count or int(vid_dur / 22.0) if vid_dur > 0 else settings.MIN_TOTAL_CLIPS
+                        target = (
+                            (
+                                cfbd_play_count
+                                or len(espn_windows)
+                                or int(vid_dur / 22.0)
+                            )
+                            if vid_dur > 0
+                            else settings.MIN_TOTAL_CLIPS
+                        )
                         target = max(settings.MIN_TOTAL_CLIPS, target)
                         grid = timegrid_windows(vid_dur, target, pre_pad, post_pad)
+                        candidate_windows = list(grid)
+                    else:
+                        fallback_used = False
+
+                    if fallback_used:
                         shifted: List[Tuple[float, float]] = []
-                        for start, end in grid:
+                        for start, end in candidate_windows:
                             center = (start + end) / 2.0
                             refined = _nearest_in_window(
                                 scene_cuts, center - 3.0, center + 3.0, center
@@ -1107,7 +1197,7 @@ class JobRunner:
                             if e2 <= s2:
                                 continue
                             shifted.append((round(s2, 3), round(e2, 3)))
-                        base_candidates = shifted + candidate_windows
+                        base_candidates = shifted + detector_windows
                         pre_merge_list = base_candidates
                         merged = merge_windows(base_candidates, merge_gap)
                         windows = clamp_windows(merged, min_duration, max_duration)
@@ -1128,7 +1218,13 @@ class JobRunner:
                 metrics["post_merge_windows"] = len(windows)
 
                 if not cfbd_used:
-                    source_label = "fallback" if fallback_used else "vision"
+                    source_tag = str(job_meta.get("window_source") or "vision")
+                    if fallback_used:
+                        source_label = "fallback"
+                    elif source_tag == "none":
+                        source_label = "vision"
+                    else:
+                        source_label = source_tag
                     windows_with_meta = [
                         (
                             float(start),
