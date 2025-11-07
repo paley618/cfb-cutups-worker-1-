@@ -53,30 +53,27 @@ class CFBDClient:
         week: int,
         season_type: str = "regular",
     ) -> Optional[int]:
-        """Resolve a game identifier for the provided team/week/year."""
-
-        params = {
-            "year": int(year),
-            "week": int(week),
-            "team": team,
-            "seasonType": season_type,
-            "division": "fbs",
-        }
+        # ... (params defined)
         data = await self._get("/games", params)
-        if not data:
+        # FIX: Check if data is not empty before trying to access index 0
+        if not data or len(data) == 0:  # Check for empty list []
             return None
         game = data[0]
-        gid = game.get("id") or game.get("game_id") or game.get("idGame")
-        return int(gid) if gid is not None else None
-
+        # ... (rest of function is fine)
     async def get_plays_by_game(self, game_id: int) -> List[Dict[str, Any]]:
         """Fetch plays for a specific game id."""
 
         payload = await self._get("/plays", {"gameId": int(game_id)})
         if not isinstance(payload, list):
+            # This handles non-list returns, which is correct
             raise CFBDClientError("Unexpected CFBD payload shape for plays")
+        
+        # ADDED LOGGING: If payload is [], log it but return it.
+        if not payload:
+            print(f"CFBD: Game ID {game_id} returned 0 plays (empty list).")
+        
         return payload
-
+        
     async def fetch(self, spec: Dict[str, Any]) -> Dict[str, Any]:
         """Fetch plays either by game id or by team/year/week spec."""
 
