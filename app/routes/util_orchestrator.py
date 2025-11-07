@@ -27,15 +27,8 @@ def _json_default(value):
 
 def call_openai_validator(payload: dict) -> dict:
     """
-    Fetch the OpenAI key at call-time (not at import-time), so env changes
-    on Railway are picked up without code changes.
-
-    Given ESPN summary, optional ESPN PBP, optional CFBD match, and video metadata,
-    ask OpenAI to:
-      - pick the safest source of plays
-      - sanity-check play counts and weeks
-      - tell us if it's safe to run the job
-      - suggest fallbacks
+    Call OpenAI with a plain Chat Completions payload (no structured content)
+    so all accounts/models will accept it. Also log errors.
     """
     openai_key = _get_openai_key()
     if not openai_key:
@@ -53,28 +46,21 @@ def call_openai_validator(payload: dict) -> dict:
         "You are an orchestrator for a college-football video cutups tool. "
         "You receive ESPN data, CFBD data, and video metadata. "
         "Decide which source is trustworthy, flag bad CFBD (too many plays), "
-        "and return STRICT JSON."
+        "and return STRICT JSON with keys: safe_to_run, chosen_source, "
+        "expected_play_count, anomalies, suggested_fallbacks."
     )
+
+    user_content = json.dumps(payload, default=_json_default)
 
     body = {
         "model": "gpt-4o-mini",
         "messages": [
-            {
-                "role": "system",
-                "content": [{"type": "text", "text": system_msg}],
-            },
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "text",
-                        "text": json.dumps(payload, default=_json_default),
-                    }
-                ],
-            },
+            {"role": "system", "content": system_msg},
+            {"role": "user", "content": user_content},
         ],
         "temperature": 0.1,
         "max_tokens": 600,
+        # we still want JSON back
         "response_format": {"type": "json_object"},
     }
 
@@ -87,7 +73,16 @@ def call_openai_validator(payload: dict) -> dict:
         json=body,
         timeout=15,
     )
-    resp.raise_for_status()
+
+    if not resp.ok:
+        # log the exact problem so we can see it in Railway
+        print("=== OPENAI REQUEST BODY ===")
+        print(json.dumps(body, indent=2))
+        print("=== OPENAI RESPONSE TEXT ===")
+        print(resp.status_code, resp.text)
+        print("=== /OPENAI RESPONSE TEXT ===")
+        resp.raise_for_status()
+
     data = resp.json()
     content = data["choices"][0]["message"]["content"]
     try:
@@ -98,7 +93,10 @@ def call_openai_validator(payload: dict) -> dict:
             "chosen_source": None,
             "anomalies": ["llm_returned_non_json"],
             "reason": "llm_returned_non_json",
-            "suggested_fallbacks": ["Ask user for year/week", "Use ESPN play-by-play only"],
+            "suggested_fallbacks": [
+                "Ask user for year/week",
+                "Use ESPN play-by-play only",
+            ],
             "raw": content,
         }
 
