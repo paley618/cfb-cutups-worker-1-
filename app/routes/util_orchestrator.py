@@ -8,7 +8,12 @@ router = APIRouter()
 
 
 def _get_openai_key() -> str | None:
-    return os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_TOKEN")
+    return (
+        os.getenv("OPENAI_API_KEY")
+        or os.getenv("OPENAI_API_TOKEN")
+        or os.getenv("OPENAI_KEY")
+        or os.getenv("OPENAI_SECRET")
+    )
 
 
 def call_openai_validator(payload: dict) -> dict:
@@ -31,8 +36,7 @@ def call_openai_validator(payload: dict) -> dict:
             "chosen_source": None,
             "anomalies": ["missing_openai_key"],
             "suggested_fallbacks": [
-                "Set OPENAI_API_KEY on the running service and redeploy.",
-                "Proceed with ESPN-only mode."
+                "Set OPENAI_API_KEY on this service and redeploy"
             ],
         }
 
