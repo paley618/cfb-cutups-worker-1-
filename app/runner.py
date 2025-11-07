@@ -519,6 +519,36 @@ class JobRunner:
                 }
                 self.jobs[job_id]["source"] = source_info
 
+                # -----------------------------------------------------
+                # Detection / padding parameters (UI/orchestrator opts)
+                # -----------------------------------------------------
+                options_obj = getattr(submission, "options", None)
+
+                def _opt_value(field: str, default: float) -> float:
+                    if isinstance(options_obj, dict):
+                        try:
+                            return float(options_obj.get(field, default))
+                        except (TypeError, ValueError):
+                            return float(default)
+                    try:
+                        return float(getattr(options_obj, field))
+                    except (AttributeError, TypeError, ValueError):
+                        return float(default)
+
+                default_pre = getattr(settings, "PLAY_PRE_PAD_SEC", 3.0)
+                default_post = getattr(settings, "PLAY_POST_PAD_SEC", 5.0)
+                default_min = getattr(settings, "PLAY_MIN_SEC", 4.0)
+                default_max = getattr(settings, "PLAY_MAX_SEC", 40.0)
+                default_scene = 0.30
+                default_gap = getattr(settings, "MERGE_GAP_SEC", 0.75)
+
+                pre_pad = _opt_value("play_padding_pre", default_pre)
+                post_pad = _opt_value("play_padding_post", default_post)
+                scene_thresh = _opt_value("scene_thresh", default_scene)
+                min_duration = max(0.0, _opt_value("min_duration", default_min))
+                max_duration = max(min_duration, _opt_value("max_duration", default_max))
+                merge_gap = float(default_gap)
+
                 self._ensure_not_cancelled(job_id, cancel_ev)
 
                 roi_box: Tuple[int, int, int, int] = (0, 0, 0, 0)
