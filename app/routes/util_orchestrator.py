@@ -7,45 +7,7 @@ from fastapi import APIRouter, Body
 router = APIRouter()
 
 
-def summarize_espn_pbp(espn_pbp: dict | None, max_plays: int = 40) -> dict | None:
-    """
-    Take the giant ESPN PBP blob and reduce it to something the LLM can handle.
-    We keep counts and the first N plays only.
-    """
-    if not espn_pbp:
-        return None
-
-    # ESPN PBP shape can vary, but usually has "drives" or "groups"
-    drives = espn_pbp.get("drives") or espn_pbp.get("items") or []
-    summary = {
-        "drive_count": len(drives),
-        "first_drives": [],
-        "total_plays_estimate": 0,
-    }
-
-    plays_added = 0
-    for d in drives:
-        drive_obj = {
-            "description": d.get("description"),
-            "team": d.get("team", {}).get("displayName") if isinstance(d.get("team"), dict) else d.get("team"),
-            "plays": [],
-        }
-        for p in d.get("plays", []):
-            if plays_added >= max_plays:
-                break
-            drive_obj["plays"].append({
-                "clock": p.get("clock"),
-                "period": p.get("period"),
-                "text": p.get("text") or p.get("shortText"),
-                "downDistanceText": p.get("start", {}).get("downDistanceText"),
-            })
-            plays_added += 1
-        summary["first_drives"].append(drive_obj)
-        summary["total_plays_estimate"] += len(d.get("plays", []))
-        if plays_added >= max_plays:
-            break
-
-    return summary
+# ---------- helpers ----------
 
 
 def _get_openai_key() -> str | None:
@@ -57,31 +19,81 @@ def _get_openai_key() -> str | None:
     )
 
 
-def _json_default(value):
-    """Fallback serializer that keeps OpenAI payload JSON-friendly."""
-
-    try:
-        return str(value)
-    except Exception:
-        return "<non-serializable>"
-
-
-def call_openai_validator(payload: dict) -> dict:
+def _shrink_payload_for_llm(data: dict, max_chars: int = 20000) -> dict:
     """
-    Call OpenAI with a plain Chat Completions payload (no structured content)
-    so all accounts/models will accept it. Also log errors.
+    Make sure we never send gigantic ESPN/CFBD blobs to OpenAI.
+    1) Drop obviously large keys
+    2) If still too big, shrink to a short summary
     """
+    if not isinstance(data, dict):
+        return {"value": str(data)[:2000], "truncated": True}
+
+    # shallow copy so we don't mutate the caller's payload
+    slim: dict = dict(data)
+
+    for heavy_key in ["espn_pbp", "raw", "full_pbp", "plays", "drives", "items"]:
+        if heavy_key in slim:
+            slim[heavy_key] = f"...omitted {heavy_key} (too large for LLM)..."
+
+    cfbd_match = slim.get("cfbd_match")
+    if isinstance(cfbd_match, dict):
+        cfbd_copy = dict(cfbd_match)
+        plays = cfbd_copy.get("plays")
+        if plays is not None:
+            if isinstance(plays, (list, tuple, set)):
+                count = len(plays)
+            else:
+                try:
+                    count = len(plays)  # type: ignore[arg-type]
+                except Exception:
+                    count = "unknown"
+            cfbd_copy["plays"] = f"...omitted {count} plays..."
+        slim["cfbd_match"] = cfbd_copy
+
+    text = json.dumps(slim, default=str)
+    if len(text) <= max_chars:
+        return slim
+
+    very_slim: dict[str, object] = {
+        "keys": list(data.keys()),
+        "note": "payload was too large and was summarized",
+        "truncated": True,
+    }
+
+    summary_text = json.dumps(very_slim, default=str)
+    if len(summary_text) <= max_chars:
+        return very_slim
+
+    preview_limit = max(0, max_chars - 200)
+    truncated_preview = summary_text[:preview_limit] if preview_limit else ""
+    if preview_limit and len(summary_text) > preview_limit:
+        truncated_preview = f"{truncated_preview}..."
+    return {
+        "note": "payload was too large and preview was truncated",
+        "preview": truncated_preview,
+        "truncated": True,
+    }
+
+
+# ---------- openai caller ----------
+
+
+def call_openai_validator(original_payload: dict) -> dict:
+    """
+    Call OpenAI with a guaranteed-small payload.
+    If OpenAI rejects it, return a structured error instead of raising.
+    """
+
     openai_key = _get_openai_key()
     if not openai_key:
         return {
             "safe_to_run": False,
             "reason": "missing_openai_key",
-            "chosen_source": None,
             "anomalies": ["missing_openai_key"],
-            "suggested_fallbacks": [
-                "Set OPENAI_API_KEY on this service and redeploy"
-            ],
+            "chosen_source": None,
         }
+
+    shrunk_payload = _shrink_payload_for_llm(original_payload)
 
     system_msg = (
         "You are an orchestrator for a college-football video cutups tool. "
@@ -91,7 +103,7 @@ def call_openai_validator(payload: dict) -> dict:
         "expected_play_count, anomalies, suggested_fallbacks."
     )
 
-    user_content = json.dumps(payload, default=_json_default)
+    user_content = json.dumps(shrunk_payload, default=str)
 
     body = {
         "model": "gpt-4o-mini",
@@ -100,80 +112,85 @@ def call_openai_validator(payload: dict) -> dict:
             {"role": "user", "content": user_content},
         ],
         "temperature": 0.1,
-        "max_tokens": 600
+        "max_tokens": 600,
     }
 
-    resp = requests.post(
-        "https://api.openai.com/v1/chat/completions",
-        headers={
-            "Authorization": f"Bearer {openai_key}",
-            "Content-Type": "application/json",
-        },
-        json=body,
-        timeout=15,
-    )
+    try:
+        resp = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {openai_key}",
+                "Content-Type": "application/json",
+            },
+            json=body,
+            timeout=15,
+        )
+    except Exception as exc:  # network or timeout issues
+        return {
+            "safe_to_run": False,
+            "reason": f"openai_request_failed: {exc}",
+            "anomalies": ["openai_request_failed"],
+            "chosen_source": None,
+        }
 
     if not resp.ok:
         print("=== OPENAI RESPONSE TEXT ===")
         print(resp.status_code, resp.text)
         print("=== /OPENAI RESPONSE TEXT ===")
-        resp.raise_for_status()
+        return {
+            "safe_to_run": False,
+            "reason": f"openai_bad_request: {resp.status_code}",
+            "anomalies": ["openai_bad_request"],
+            "chosen_source": None,
+        }
 
-    data = resp.json()
-    content = data["choices"][0]["message"]["content"]
+    try:
+        data = resp.json()
+    except ValueError as exc:
+        return {
+            "safe_to_run": False,
+            "reason": f"openai_invalid_json: {exc}",
+            "anomalies": ["openai_invalid_json"],
+            "chosen_source": None,
+        }
 
-    # attempt to parse JSON even though we didn’t request JSON mode
+    try:
+        content = data["choices"][0]["message"]["content"]
+    except (KeyError, IndexError, TypeError):
+        return {
+            "safe_to_run": False,
+            "reason": "openai_unexpected_response",
+            "anomalies": ["openai_unexpected_response"],
+            "chosen_source": None,
+            "raw": data,
+        }
+
     try:
         return json.loads(content)
     except Exception:
         return {
             "safe_to_run": False,
-            "chosen_source": None,
-            "anomalies": ["llm_returned_non_json"],
             "reason": "llm_returned_non_json",
-            "suggested_fallbacks": [
-                "Ask user for year/week",
-                "Use ESPN play-by-play only",
-            ],
+            "anomalies": ["llm_returned_non_json"],
+            "chosen_source": None,
             "raw": content,
         }
 
 
-@router.post("/api/util/orchestrate-game")
-def orchestrate_game(
-    payload: dict = Body(
-        ...,
-        description=(
-            "Bundle of espn_summary, espn_pbp (optional), cfbd_match (optional), "
-            "and video_meta (optional). This endpoint decides which source to use."
-        ),
-    )
-):
-    """
-    Orchestration entry point for the UI:
-    - takes whatever we have (ESPN, CFBD, ESPN PBP, video)
-    - asks OpenAI which to trust
-    - returns a 'job-ready' object the frontend can send along with the video
-    """
-    # build a trimmed version for the LLM, keep raw on server
-    trimmed_payload = {
-        "espn_summary": payload.get("espn_summary"),
-        "cfbd_match": payload.get("cfbd_match"),
-        "video_meta": payload.get("video_meta"),
-        # IMPORTANT: summarize the massive pbp
-        "espn_pbp_summary": summarize_espn_pbp(payload.get("espn_pbp")),
-    }
+# ---------- endpoint ----------
 
-    decision = call_openai_validator(trimmed_payload)
+
+@router.post("/api/util/orchestrate-game")
+def orchestrate_game(payload: dict = Body(...)):
+    """
+    Frontend sends: espn_summary, cfbd_match, espn_pbp (raw), video_meta.
+    We pass a SHRUNK version to OpenAI and return both the decision and raw back.
+    """
+
+    decision = call_openai_validator(payload)
 
     return {
         "status": "READY" if decision.get("safe_to_run") else "NEEDS_ATTENTION",
         "decision": decision,
-        # pass through the raw payload for the rest of the app
-        "raw": {
-            "espn_summary": payload.get("espn_summary"),
-            "cfbd_match": payload.get("cfbd_match"),
-            "video_meta": payload.get("video_meta"),
-            "espn_pbp": payload.get("espn_pbp"),
-        },
+        "raw": payload,
     }
