@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Optional
 
 import httpx
 
-CFBD_BASE = "https://api.collegefootballdata.com"
+CFBD_BASE = "https://apinext.collegefootballdata.com"
 
 
 class CFBDClientError(RuntimeError):
