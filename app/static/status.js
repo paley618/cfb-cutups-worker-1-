@@ -183,6 +183,57 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cfbdUseCheckbox && !cfbdUseCheckbox.checked) {
               cfbdUseCheckbox.checked = true;
             }
+          } else if (
+            cfbdData.status === 'CFBD_SUSPECT' &&
+            cfbdData.fallback?.action === 'use_espn_pbp'
+          ) {
+            let pbpData = null;
+            try {
+              const pbpResp = await fetch(
+                `/api/util/espn-playbyplay?espnUrl=${encodeURIComponent(espnUrl)}`,
+              );
+              if (!pbpResp.ok) {
+                throw new Error(`HTTP ${pbpResp.status}`);
+              }
+              pbpData = await pbpResp.json();
+            } catch (err) {
+              const message = err && err.message ? err.message : 'Unknown error';
+              pbpData = { status: 'ESPN_PBP_ERROR', message };
+            }
+
+            if (pbpData.status === 'ESPN_PBP_OK') {
+              const fallbackLines = [
+                ...baseLines,
+                'CFBD looked wrong, but ESPN play-by-play is available (using ESPN data).',
+              ];
+              cfbdAutofillData = {
+                status: 'ESPN_PBP_OK',
+                source: 'espn',
+                espnEventId: pbpData.eventId,
+                espnSummary: summary,
+                pbp: pbpData.raw,
+              };
+              window.__cfbdAutofillResult = cfbdAutofillData;
+              renderCfbdAutofillStatus(fallbackLines, 'warn');
+            } else {
+              const fallbackLines = [
+                ...baseLines,
+                'CFBD looked wrong and ESPN play-by-play also failed.',
+              ];
+              if (pbpData?.message) {
+                fallbackLines.push(`ESPN error: ${pbpData.message}`);
+              }
+              cfbdAutofillData = {
+                status: 'CFBD_SUSPECT',
+                source: 'cfbd',
+                espnEventId: data.espn_event_id,
+                espnSummary: summary,
+                attempts: data.attempts || [],
+                ...cfbdData,
+              };
+              window.__cfbdAutofillResult = null;
+              renderCfbdAutofillStatus(fallbackLines, 'error');
+            }
           } else if (cfbdData.status === 'CFBD_SUSPECT') {
             const weekLabel =
               cfbdData.week != null ? cfbdData.week : 'N/A';
@@ -597,8 +648,9 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const useCfbd = document.getElementById('cfbd_use').checked;
-    if (useCfbd && !window.__cfbdAutofillResult) {
-      alert('Run the CFBD autofill with a valid ESPN link before submitting.');
+    const autofillResult = window.__cfbdAutofillResult;
+    if (!autofillResult) {
+      alert('Run the ESPN/CFBD autofill first.');
       return;
     }
 
@@ -619,9 +671,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const requireCfbd = document.getElementById('cfbd_require')?.checked ?? false;
+    const autofillSource = autofillResult.source || (autofillResult.status === 'OK' ? 'cfbd' : null);
+    const usingCfbd = useCfbd && autofillSource === 'cfbd';
+    const requiringCfbd = requireCfbd && autofillSource === 'cfbd';
     const cfbd = {
-      use_cfbd: useCfbd,
-      require_cfbd: requireCfbd,
+      use_cfbd: usingCfbd,
+      require_cfbd: requiringCfbd,
       game_id: null,
       season: null,
       week: null,
@@ -631,26 +686,20 @@ document.addEventListener('DOMContentLoaded', () => {
       away_team: null,
     };
 
-    const resolvedAutofill =
-      (window.__cfbdAutofillResult && window.__cfbdAutofillResult.status === 'OK'
-        ? window.__cfbdAutofillResult
-        : null) ||
-      (cfbdAutofillData && cfbdAutofillData.status === 'OK' ? cfbdAutofillData : null);
-
-    if (resolvedAutofill) {
+    if (autofillSource === 'cfbd') {
       const rawGameId =
-        resolvedAutofill.cfbdGameId ?? resolvedAutofill.gameId ?? resolvedAutofill.game_id;
+        autofillResult.cfbdGameId ?? autofillResult.gameId ?? autofillResult.game_id;
       const parsedGameId = Number(rawGameId);
       cfbd.game_id = Number.isFinite(parsedGameId) ? parsedGameId : rawGameId;
-      cfbd.season = resolvedAutofill.year ?? null;
-      cfbd.week = resolvedAutofill.week ?? null;
+      cfbd.season = autofillResult.year ?? null;
+      cfbd.week = autofillResult.week ?? null;
       const seasonType =
-        resolvedAutofill.seasonType || resolvedAutofill.season_type || 'regular';
+        autofillResult.seasonType || autofillResult.season_type || 'regular';
       if (seasonType) {
         cfbd.season_type = seasonType;
       }
-      const homeTeam = resolvedAutofill.cfbdHome || resolvedAutofill.homeTeam || null;
-      const awayTeam = resolvedAutofill.cfbdAway || resolvedAutofill.awayTeam || null;
+      const homeTeam = autofillResult.cfbdHome || autofillResult.homeTeam || null;
+      const awayTeam = autofillResult.cfbdAway || autofillResult.awayTeam || null;
       const teamName = homeTeam || awayTeam || null;
       cfbd.team = teamName;
       cfbd.home_team = homeTeam;
@@ -659,9 +708,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     payload.cfbd = cfbd;
 
-    if (cfbd.use_cfbd && (!resolvedAutofill || !cfbd.game_id)) {
+    if (cfbd.use_cfbd && !cfbd.game_id) {
       submitBtn.disabled = false;
-      alert('Run the CFBD autofill with a valid ESPN link before submitting.');
+      alert('CFBD autofill did not produce a valid game id.');
       return;
     }
 

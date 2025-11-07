@@ -540,9 +540,11 @@ def cfbd_match_from_espn(
 
     plays = plays_resp.json()
 
-    # build the base result
+    plays_count = len(plays)
+
     result = {
         "status": "OK",
+        "source": "cfbd",
         "espnHome": espn_home,
         "espnAway": espn_away,
         "year": year,
@@ -550,16 +552,31 @@ def cfbd_match_from_espn(
         "cfbdGameId": cfbd_game_id,
         "cfbdHome": matched.get("home_team"),
         "cfbdAway": matched.get("away_team"),
-        "playsCount": len(plays),
+        "playsCount": plays_count,
         "cfbdParamsUsed": plays_params,
     }
 
-    # LLM cross-check: is 31,000 plays plausible? is week 1 plausible?
+    too_many_plays = plays_count > 1500
+    week_mismatch = (
+        week is not None
+        and matched.get("week") is not None
+        and week != matched["week"]
+    )
+
+    if too_many_plays or week_mismatch:
+        result["status"] = "CFBD_SUSPECT"
+        result["fallback"] = {
+            "action": "use_espn_pbp",
+            "reason": {
+                "too_many_plays": too_many_plays,
+                "week_mismatch": week_mismatch,
+            },
+        }
+
     llm_check = llm_validate_cfbd_vs_espn(espn_summary, result)
     result["llmCheck"] = llm_check
 
-    # if LLM says it's not valid, downgrade status so frontend can show a warning
-    if llm_check.get("valid") is False:
+    if result.get("status") == "OK" and llm_check.get("valid") is False:
         result["status"] = "CFBD_SUSPECT"
 
     return result

@@ -21,6 +21,7 @@ from .cookies import write_cookies_if_any, write_drive_cookies_if_any
 from .diag_cfbd import router as diag_cfbd_router
 from .routes import util_ai
 from .routes import util_cfbd as util_cfbd_router
+from .routes import util_espn_pbp
 from .logging_setup import setup_logging
 from .runner import JobRunner
 from .schemas import CFBDInput, JobSubmission
@@ -170,6 +171,7 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(diag_cfbd_router)
 app.include_router(util_ai.router)
 app.include_router(util_cfbd_router.router)
+app.include_router(util_espn_pbp.router)
 
 
 @app.middleware("http")
