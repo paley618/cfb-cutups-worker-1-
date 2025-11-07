@@ -59,9 +59,7 @@ def call_openai_validator(payload: dict) -> dict:
             {"role": "user", "content": user_content},
         ],
         "temperature": 0.1,
-        "max_tokens": 600,
-        # we still want JSON back
-        "response_format": {"type": "json_object"},
+        "max_tokens": 600
     }
 
     resp = requests.post(
@@ -75,9 +73,6 @@ def call_openai_validator(payload: dict) -> dict:
     )
 
     if not resp.ok:
-        # log the exact problem so we can see it in Railway
-        print("=== OPENAI REQUEST BODY ===")
-        print(json.dumps(body, indent=2))
         print("=== OPENAI RESPONSE TEXT ===")
         print(resp.status_code, resp.text)
         print("=== /OPENAI RESPONSE TEXT ===")
@@ -85,6 +80,8 @@ def call_openai_validator(payload: dict) -> dict:
 
     data = resp.json()
     content = data["choices"][0]["message"]["content"]
+
+    # attempt to parse JSON even though we didn’t request JSON mode
     try:
         return json.loads(content)
     except Exception:
