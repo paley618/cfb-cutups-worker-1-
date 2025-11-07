@@ -754,15 +754,60 @@ class JobRunner:
                                     )
                             except Exception as exc:  # pragma: no cover - network edge
                                 cfbd_reason = f"/plays failed: {type(exc).__name__}: {exc}"
-                                set_cfbd_state("error", cfbd_reason)
-                                cfbd_job_meta["status"] = "error"
-                                cfbd_job_meta["error"] = cfbd_reason
-                                cfbd_summary["error"] = cfbd_reason
-                                monitor.touch(stage="detecting", detail=f"CFBD error: {cfbd_reason}")
-                                logger.warning(
-                                    "cfbd_fetch_failed",
-                                    extra={"job_id": job_id, "error": cfbd_reason},
-                                )
+                                logger.warning(f"CFBD fetch failed, attempting ESPN fallback: {cfbd_reason}")
+
+                                # TRY ESPN FALLBACK
+                                espn_fallback_success = False
+                                try:
+                                    from .espn import fetch_offensive_play_times
+                                    logger.info(f"Attempting ESPN fallback for game_id={gid}, team={team}")
+                                    espn_timestamps = await fetch_offensive_play_times(
+                                        espn_game_id=str(gid),
+                                        team_name=team or "unknown"
+                                    )
+                                    if espn_timestamps and len(espn_timestamps) > 10:
+                                        # Convert ESPN timestamps to mock CFBD format
+                                        cfbd_plays = [
+                                            {
+                                                "id": i,
+                                                "game_id": int(gid),
+                                                "timestamp": ts,
+                                                "source": "espn_fallback"
+                                            }
+                                            for i, ts in enumerate(espn_timestamps)
+                                        ]
+                                        cfbd_play_count = len(cfbd_plays)
+                                        cfbd_used = True
+                                        espn_reason = f"ESPN fallback: {cfbd_play_count} timestamps"
+                                        set_cfbd_state("ready_espn", espn_reason)
+                                        cfbd_job_meta["status"] = "ready_espn"
+                                        cfbd_job_meta["game_id"] = int(gid)
+                                        cfbd_job_meta["plays_count"] = cfbd_play_count
+                                        cfbd_job_meta["reason"] = espn_reason
+                                        cfbd_summary["error"] = None
+                                        cfbd_summary["game_id"] = int(gid)
+                                        cfbd_summary["plays"] = cfbd_play_count
+                                        cfbd_summary["source"] = "espn_fallback"
+                                        monitor.touch(stage="detecting", detail=f"CFBD error, using ESPN fallback: {cfbd_play_count} plays")
+                                        logger.info(f"ESPN fallback successful: {cfbd_play_count} timestamps")
+                                        espn_fallback_success = True
+                                    else:
+                                        raise RuntimeError(f"ESPN returned insufficient timestamps: {len(espn_timestamps or [])}")
+                                except Exception as espn_exc:
+                                    logger.warning(f"ESPN fallback also failed: {type(espn_exc).__name__}: {espn_exc}")
+
+                                if not espn_fallback_success:
+                                    # Both CFBD and ESPN failed
+                                    final_reason = f"CFBD error: {cfbd_reason}. ESPN fallback also failed."
+                                    set_cfbd_state("error", final_reason)
+                                    cfbd_job_meta["status"] = "error"
+                                    cfbd_job_meta["error"] = final_reason
+                                    cfbd_summary["error"] = final_reason
+                                    monitor.touch(stage="detecting", detail=f"Both CFBD and ESPN failed")
+                                    logger.warning(
+                                        "cfbd_and_espn_fetch_failed",
+                                        extra={"job_id": job_id, "cfbd_error": cfbd_reason},
+                                    )
                             else:
                                 cfbd_used = True
                                 cfbd_reason = f"game_id={gid} • plays={cfbd_play_count}"
