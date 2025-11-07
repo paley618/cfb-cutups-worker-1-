@@ -17,14 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const cfbdExtraFields = document.getElementById('cfbd-extra-fields');
   const cfbdYearInput = document.getElementById('cfbdYear');
   const cfbdWeekInput = document.getElementById('cfbdWeek');
-  let cfbdAutofillData = null;
-  window.__cfbdAutofillResult = null;
+  window.__cfbOrchestrated = null;
 
   const clearCfbdStatus = () => {
+    window.__cfbOrchestrated = null;
     if (!cfbdAutofillStatus) return;
     cfbdAutofillStatus.innerHTML = '';
+    cfbdAutofillStatus.textContent = '';
+    cfbdAutofillStatus.style.color = '';
     cfbdAutofillStatus.classList.remove('error');
     cfbdAutofillStatus.classList.remove('needs-year');
+    cfbdAutofillStatus.classList.remove('warn');
     delete cfbdAutofillStatus.dataset.status;
     if (cfbdExtraFields) {
       cfbdExtraFields.style.display = 'none';
@@ -49,6 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (mode === 'warn') {
       cfbdAutofillStatus.classList.add('warn');
     }
+    const colorMap = {
+      ok: '#6f6',
+      warn: '#f9b234',
+      error: '#f66',
+      'needs-year': '#f66',
+      info: '#ccc',
+    };
+    if (mode && colorMap[mode]) {
+      cfbdAutofillStatus.style.color = colorMap[mode];
+    } else {
+      cfbdAutofillStatus.style.color = '';
+    }
     if (!Array.isArray(lines) || !lines.length) {
       return;
     }
@@ -68,8 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (cfbdLinkInput) {
     cfbdLinkInput.addEventListener('input', () => {
-      cfbdAutofillData = null;
-      window.__cfbdAutofillResult = null;
       clearCfbdStatus();
       if (cfbdYearInput) cfbdYearInput.value = '';
       if (cfbdWeekInput) cfbdWeekInput.value = '';
@@ -82,249 +95,243 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!cfbdLinkInput) return;
       const espnUrl = cfbdLinkInput.value.trim();
       if (!espnUrl) {
-        cfbdAutofillData = null;
-        window.__cfbdAutofillResult = null;
-        renderCfbdAutofillStatus(['Paste an ESPN game link or event id.'], 'error');
+        window.__cfbOrchestrated = null;
+        renderCfbdAutofillStatus(
+          ['Paste an ESPN game link or event id.'],
+          'error',
+        );
+        if (cfbdExtraFields) {
+          cfbdExtraFields.style.display = 'none';
+        }
         return;
       }
 
-      cfbdAutofillData = null;
       cfbdAutofillBtn.disabled = true;
-      window.__cfbdAutofillResult = null;
-      renderCfbdAutofillStatus(['Resolving ESPN summary…']);
+      window.__cfbOrchestrated = null;
+      renderCfbdAutofillStatus(['Resolving ESPN summary…'], 'info');
 
       try {
-        const resp = await fetch(
+        const espnResp = await fetch(
           `/api/util/espn-resolve?espnUrl=${encodeURIComponent(espnUrl)}`,
-          {
-            cache: 'no-store',
-          },
+          { cache: 'no-store' },
         );
-        if (!resp.ok) {
-          throw new Error(`HTTP ${resp.status}`);
+        if (!espnResp.ok) {
+          throw new Error(`HTTP ${espnResp.status}`);
         }
-        const data = await resp.json();
-        if (data.status === 'ESPN_OK') {
-          const summary = data.espn_summary || {};
-          const competition = summary?.header?.competitions?.[0] || {};
-          const competitors = Array.isArray(competition?.competitors)
-            ? competition.competitors
-            : [];
-          const pickTeam = (side) => {
-            const entry = competitors.find(
-              (comp) => (comp?.homeAway || comp?.homeaway) === side,
-            );
-            if (!entry) return null;
-            const team = entry.team || {};
-            return (
-              team.displayName ||
-              team.shortDisplayName ||
-              team.name ||
-              team.abbreviation ||
-              null
-            );
-          };
-          const home = pickTeam('home') || 'Home team';
-          const away = pickTeam('away') || 'Away team';
-          const seasonYear = summary?.header?.season?.year;
-          const weekText = summary?.header?.week?.text;
-          const statusText =
-            competition?.status?.type?.detail ||
-            competition?.status?.type?.shortDetail ||
-            competition?.status?.type?.description ||
-            null;
-
-          const baseLines = [`${home} vs ${away}`];
-          if (seasonYear) {
-            let seasonLine = `Season ${seasonYear}`;
-            if (weekText) {
-              seasonLine += ` — ${weekText}`;
-            }
-            baseLines.push(seasonLine);
-          }
-          if (statusText) {
-            baseLines.push(statusText);
-          }
-
-          renderCfbdAutofillStatus(
-            [...baseLines, 'ESPN OK — matching to CFBD...'],
-          );
-          if (cfbdExtraFields) {
-            cfbdExtraFields.style.display = 'none';
-          }
-          if (cfbdYearInput) cfbdYearInput.value = '';
-          if (cfbdWeekInput) cfbdWeekInput.value = '';
-
-          const cfbdResp = await fetch('/api/util/cfbd-match-from-espn', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ espn_summary: summary }),
-          });
-          const cfbdData = await cfbdResp.json();
-
-          if (cfbdData.status === 'OK') {
-            const weekLabel =
-              cfbdData.week != null ? cfbdData.week : 'N/A';
-            const successLines = [
-              ...baseLines,
-              `CFBD OK — ${cfbdData.cfbdHome || home} vs ${
-                cfbdData.cfbdAway || away
-              }, ${cfbdData.year} week ${weekLabel} — ${cfbdData.playsCount} plays`,
-            ];
-            cfbdAutofillData = {
-              status: 'OK',
-              espnEventId: data.espn_event_id,
-              espnSummary: summary,
-              attempts: data.attempts || [],
-              ...cfbdData,
-            };
-            window.__cfbdAutofillResult = cfbdAutofillData;
-            renderCfbdAutofillStatus(successLines, 'ok');
-            if (cfbdUseCheckbox && !cfbdUseCheckbox.checked) {
-              cfbdUseCheckbox.checked = true;
-            }
-          } else if (
-            cfbdData.status === 'CFBD_SUSPECT' &&
-            cfbdData.fallback?.action === 'use_espn_pbp'
-          ) {
-            let pbpData = null;
-            try {
-              const pbpResp = await fetch(
-                `/api/util/espn-playbyplay?espnUrl=${encodeURIComponent(espnUrl)}`,
-              );
-              if (!pbpResp.ok) {
-                throw new Error(`HTTP ${pbpResp.status}`);
-              }
-              pbpData = await pbpResp.json();
-            } catch (err) {
-              const message = err && err.message ? err.message : 'Unknown error';
-              pbpData = { status: 'ESPN_PBP_ERROR', message };
-            }
-
-            if (pbpData.status === 'ESPN_PBP_OK') {
-              const fallbackLines = [
-                ...baseLines,
-                'CFBD looked wrong, but ESPN play-by-play is available (using ESPN data).',
-              ];
-              cfbdAutofillData = {
-                status: 'ESPN_PBP_OK',
-                source: 'espn',
-                espnEventId: pbpData.eventId,
-                espnSummary: summary,
-                pbp: pbpData.raw,
-              };
-              window.__cfbdAutofillResult = cfbdAutofillData;
-              renderCfbdAutofillStatus(fallbackLines, 'warn');
-            } else {
-              const fallbackLines = [
-                ...baseLines,
-                'CFBD looked wrong and ESPN play-by-play also failed.',
-              ];
-              if (pbpData?.message) {
-                fallbackLines.push(`ESPN error: ${pbpData.message}`);
-              }
-              cfbdAutofillData = {
-                status: 'CFBD_SUSPECT',
-                source: 'cfbd',
-                espnEventId: data.espn_event_id,
-                espnSummary: summary,
-                attempts: data.attempts || [],
-                ...cfbdData,
-              };
-              window.__cfbdAutofillResult = null;
-              renderCfbdAutofillStatus(fallbackLines, 'error');
-            }
-          } else if (cfbdData.status === 'CFBD_SUSPECT') {
-            const weekLabel =
-              cfbdData.week != null ? cfbdData.week : 'N/A';
-            const suspectReasons = Array.isArray(cfbdData.llmCheck?.reasons)
-              ? cfbdData.llmCheck.reasons
-              : [];
-            const suspectLines = [
-              ...baseLines,
-              `CFBD suspect — ${cfbdData.cfbdHome || home} vs ${
-                cfbdData.cfbdAway || away
-              }, ${cfbdData.year} week ${weekLabel} — ${cfbdData.playsCount} plays`,
-              `LLM flagged issues. Details: ${JSON.stringify(suspectReasons)}`,
-            ];
-            cfbdAutofillData = {
-              status: 'CFBD_SUSPECT',
-              espnEventId: data.espn_event_id,
-              espnSummary: summary,
-              attempts: data.attempts || [],
-              ...cfbdData,
-            };
-            window.__cfbdAutofillResult = cfbdAutofillData;
-            renderCfbdAutofillStatus(suspectLines, 'warn');
-          } else {
-            const message = cfbdData.message || cfbdData.status || 'Unknown error';
-            const errorLines = [
-              ...baseLines,
-              `CFBD match failed: ${message}`,
-            ];
-            cfbdAutofillData = {
-              status: cfbdData.status || 'CFBD_MATCH_FAILED',
-              message,
-              espnEventId: data.espn_event_id,
-              espnSummary: summary,
-              attempts: data.attempts || [],
-              cfbd: cfbdData,
-            };
-            window.__cfbdAutofillResult = null;
-            renderCfbdAutofillStatus(errorLines, 'error');
-          }
-        } else {
-          const resolver = data.resolver || {};
-          const nextAction = resolver.next_action || 'unknown';
-          const suggestions = Array.isArray(resolver.suggestions)
-            ? resolver.suggestions
-            : [];
-          const maybeYears = Array.isArray(resolver.maybe_years)
-            ? resolver.maybe_years
-            : [];
-          const maybeWeeks = Array.isArray(resolver.maybe_weeks)
-            ? resolver.maybe_weeks
-            : [];
-
-          const lines = [`ESPN needs help — next action: ${nextAction}`];
-          if (suggestions.length) {
-            lines.push(`Suggestions: ${suggestions.join('; ')}`);
-          }
-          if (maybeYears.length) {
-            lines.push(`Maybe years: ${maybeYears.join(', ')}`);
-          }
-          if (maybeWeeks.length) {
-            lines.push(`Maybe weeks: ${maybeWeeks.join(', ')}`);
-          }
-          if (Object.keys(resolver).length) {
-            lines.push(`Resolver: ${JSON.stringify(resolver)}`);
-          }
-
-          cfbdAutofillData = {
-            status: data.status || 'ESPN_NEEDS_HELP',
-            resolver,
-            attempts: data.attempts || [],
-          };
-          window.__cfbdAutofillResult = null;
-
-          const needsYear = nextAction === 'ask_user_for_year_week';
-          if (needsYear && cfbdExtraFields) {
+        const espnData = await espnResp.json();
+        if (espnData.status !== 'ESPN_OK') {
+          const lines = ['ESPN failed or needs more info.'];
+          const resolver = espnData.resolver || {};
+          const nextAction = resolver.next_action || '';
+          if (nextAction === 'ask_user_for_year_week' && cfbdExtraFields) {
             cfbdExtraFields.style.display = 'flex';
-          } else if (cfbdExtraFields) {
-            cfbdExtraFields.style.display = 'none';
           }
-          if (needsYear && cfbdYearInput && !cfbdYearInput.value && maybeYears.length) {
-            cfbdYearInput.value = maybeYears[0];
+          if (resolver.message) {
+            lines.push(resolver.message);
           }
-          if (needsYear && cfbdWeekInput && !cfbdWeekInput.value && maybeWeeks.length) {
-            cfbdWeekInput.value = maybeWeeks[0];
+          if (Array.isArray(resolver.suggestions) && resolver.suggestions.length) {
+            lines.push(`Suggestions: ${resolver.suggestions.join('; ')}`);
           }
-          renderCfbdAutofillStatus(lines, needsYear ? 'needs-year' : 'error');
+          renderCfbdAutofillStatus(lines, 'error');
+          return;
+        }
+
+        const summary = espnData.espn_summary || {};
+        const competition = summary?.header?.competitions?.[0] || {};
+        const competitors = Array.isArray(competition?.competitors)
+          ? competition.competitors
+          : [];
+        const pickTeam = (side) => {
+          const entry = competitors.find(
+            (comp) => (comp?.homeAway || comp?.homeaway) === side,
+          );
+          if (!entry) return null;
+          const team = entry.team || {};
+          return (
+            team.displayName ||
+            team.shortDisplayName ||
+            team.name ||
+            team.abbreviation ||
+            null
+          );
+        };
+        const home = pickTeam('home') || 'Home team';
+        const away = pickTeam('away') || 'Away team';
+        const seasonYear = summary?.header?.season?.year;
+        const weekText = summary?.header?.week?.text;
+        const statusText =
+          competition?.status?.type?.detail ||
+          competition?.status?.type?.shortDetail ||
+          competition?.status?.type?.description ||
+          null;
+
+        const baseLines = [`${home} vs ${away}`];
+        if (seasonYear) {
+          let seasonLine = `Season ${seasonYear}`;
+          if (weekText) {
+            seasonLine += ` — ${weekText}`;
+          }
+          baseLines.push(seasonLine);
+        }
+        if (statusText) {
+          baseLines.push(statusText);
+        }
+
+        if (cfbdExtraFields) {
+          cfbdExtraFields.style.display = 'none';
+        }
+        if (cfbdYearInput) cfbdYearInput.value = '';
+        if (cfbdWeekInput) cfbdWeekInput.value = '';
+        renderCfbdAutofillStatus(
+          [...baseLines, 'ESPN OK — matching to CFBD...'],
+          'ok',
+        );
+
+        const cfbdResp = await fetch('/api/util/cfbd-match-from-espn', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ espn_summary: summary }),
+        });
+        const cfbdData = await cfbdResp.json();
+
+        let espnPbpData = null;
+        let statusLines = [...baseLines];
+        let statusMode = 'ok';
+
+        if (
+          cfbdData.status === 'CFBD_SUSPECT' &&
+          cfbdData.fallback?.action === 'use_espn_pbp'
+        ) {
+          try {
+            const pbpResp = await fetch(
+              `/api/util/espn-playbyplay?espnUrl=${encodeURIComponent(espnUrl)}`,
+            );
+            if (!pbpResp.ok) {
+              throw new Error(`HTTP ${pbpResp.status}`);
+            }
+            espnPbpData = await pbpResp.json();
+          } catch (err) {
+            const message = err && err.message ? err.message : 'Unknown error';
+            espnPbpData = { status: 'ESPN_PBP_ERROR', message };
+          }
+
+          if (espnPbpData?.status === 'ESPN_PBP_OK') {
+            statusMode = 'warn';
+            statusLines = [
+              ...baseLines,
+              'CFBD looked wrong, but ESPN play-by-play is available (using ESPN data).',
+            ];
+          } else {
+            statusMode = 'error';
+            statusLines = [...baseLines, 'CFBD looked wrong and ESPN play-by-play also failed.'];
+            if (espnPbpData?.message) {
+              statusLines.push(`ESPN error: ${espnPbpData.message}`);
+            }
+          }
+        } else if (cfbdData.status === 'OK') {
+          const weekLabel = cfbdData.week != null ? cfbdData.week : 'N/A';
+          statusMode = 'ok';
+          statusLines = [
+            ...baseLines,
+            `CFBD OK — ${cfbdData.cfbdHome || home} vs ${
+              cfbdData.cfbdAway || away
+            }, ${cfbdData.year} week ${weekLabel} — ${cfbdData.playsCount} plays`,
+          ];
+        } else {
+          try {
+            const pbpResp = await fetch(
+              `/api/util/espn-playbyplay?espnUrl=${encodeURIComponent(espnUrl)}`,
+            );
+            if (!pbpResp.ok) {
+              throw new Error(`HTTP ${pbpResp.status}`);
+            }
+            espnPbpData = await pbpResp.json();
+          } catch (err) {
+            const message = err && err.message ? err.message : 'Unknown error';
+            espnPbpData = { status: 'ESPN_PBP_ERROR', message };
+          }
+
+          if (espnPbpData?.status === 'ESPN_PBP_OK') {
+            statusMode = 'warn';
+            statusLines = [...baseLines, 'CFBD failed, using ESPN play-by-play.'];
+          } else {
+            statusMode = 'error';
+            const message =
+              cfbdData.message || cfbdData.status || 'CFBD match failed';
+            statusLines = [...baseLines, `CFBD failed: ${message}`];
+            if (espnPbpData?.message) {
+              statusLines.push(`ESPN error: ${espnPbpData.message}`);
+            }
+          }
+        }
+
+        renderCfbdAutofillStatus(statusLines, statusMode);
+
+        const videoInput = document.getElementById('video_url');
+        const videoUrl = videoInput?.value?.trim() || '';
+        let videoMeta = null;
+        if (videoUrl) {
+          try {
+            const videoResp = await fetch(
+              `/api/util/video-meta?videoUrl=${encodeURIComponent(videoUrl)}`,
+            );
+            if (videoResp.ok) {
+              videoMeta = await videoResp.json();
+            }
+          } catch (_) {
+            videoMeta = null;
+          }
+        }
+
+        const orchestrateResp = await fetch('/api/util/orchestrate-game', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            espn_summary: summary,
+            espn_pbp: espnPbpData?.raw || null,
+            cfbd_match: cfbdData,
+            video_meta: videoMeta,
+          }),
+        });
+        if (!orchestrateResp.ok) {
+          throw new Error(`Orchestrator HTTP ${orchestrateResp.status}`);
+        }
+        const orchData = await orchestrateResp.json();
+        window.__cfbOrchestrated = orchData;
+
+        const anomalies = Array.isArray(orchData.decision?.anomalies)
+          ? orchData.decision.anomalies
+          : [];
+        const finalLines = [...statusLines];
+        let finalMode = orchData.status === 'READY' ? 'ok' : 'warn';
+        if (statusMode === 'error' && orchData.status !== 'READY') {
+          finalMode = 'error';
+        }
+        if (orchData.status === 'READY') {
+          finalLines.push('Data looks good — ready to submit.');
+        } else {
+          const anomalyText = anomalies.length
+            ? `Data is usable but has issues: ${JSON.stringify(anomalies)}`
+            : 'Data is usable but has issues.';
+          finalLines.push(anomalyText);
+        }
+        renderCfbdAutofillStatus(finalLines, finalMode);
+
+        if (cfbdUseCheckbox) {
+          const chosen = orchData?.decision?.chosen_source;
+          if (chosen === 'cfbd') {
+            cfbdUseCheckbox.checked = true;
+          } else if (chosen === 'espn') {
+            cfbdUseCheckbox.checked = false;
+          }
+        }
+        const requireCheckbox = document.getElementById('cfbd_require');
+        if (requireCheckbox && window.__cfbOrchestrated?.decision?.chosen_source !== 'cfbd') {
+          requireCheckbox.checked = false;
         }
       } catch (err) {
-        cfbdAutofillData = null;
-        window.__cfbdAutofillResult = null;
         const message = err && err.message ? err.message : 'Unknown error';
+        window.__cfbOrchestrated = null;
         renderCfbdAutofillStatus([`Autofill failed: ${message}`], 'error');
         if (cfbdExtraFields) {
           cfbdExtraFields.style.display = 'none';
@@ -647,9 +654,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const useCfbd = document.getElementById('cfbd_use').checked;
-    const autofillResult = window.__cfbdAutofillResult;
-    if (!autofillResult) {
+    const orchestrated = window.__cfbOrchestrated;
+    if (!orchestrated) {
       alert('Run the ESPN/CFBD autofill first.');
       return;
     }
@@ -670,10 +676,11 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     };
 
-    const requireCfbd = document.getElementById('cfbd_require')?.checked ?? false;
-    const autofillSource = autofillResult.source || (autofillResult.status === 'OK' ? 'cfbd' : null);
-    const usingCfbd = useCfbd && autofillSource === 'cfbd';
-    const requiringCfbd = requireCfbd && autofillSource === 'cfbd';
+    const useCfbdToggle = document.getElementById('cfbd_use')?.checked ?? false;
+    const requireToggle = document.getElementById('cfbd_require')?.checked ?? false;
+    const chosenSource = orchestrated?.decision?.chosen_source;
+    const usingCfbd = useCfbdToggle && chosenSource === 'cfbd';
+    const requiringCfbd = requireToggle && usingCfbd;
     const cfbd = {
       use_cfbd: usingCfbd,
       require_cfbd: requiringCfbd,
@@ -686,20 +693,21 @@ document.addEventListener('DOMContentLoaded', () => {
       away_team: null,
     };
 
-    if (autofillSource === 'cfbd') {
+    const cfbdMatch = orchestrated?.cfbd_match;
+    if (usingCfbd && cfbdMatch) {
       const rawGameId =
-        autofillResult.cfbdGameId ?? autofillResult.gameId ?? autofillResult.game_id;
+        cfbdMatch.cfbdGameId ?? cfbdMatch.gameId ?? cfbdMatch.game_id;
       const parsedGameId = Number(rawGameId);
       cfbd.game_id = Number.isFinite(parsedGameId) ? parsedGameId : rawGameId;
-      cfbd.season = autofillResult.year ?? null;
-      cfbd.week = autofillResult.week ?? null;
+      cfbd.season = cfbdMatch.year ?? null;
+      cfbd.week = cfbdMatch.week ?? null;
       const seasonType =
-        autofillResult.seasonType || autofillResult.season_type || 'regular';
+        cfbdMatch.seasonType || cfbdMatch.season_type || 'regular';
       if (seasonType) {
         cfbd.season_type = seasonType;
       }
-      const homeTeam = autofillResult.cfbdHome || autofillResult.homeTeam || null;
-      const awayTeam = autofillResult.cfbdAway || autofillResult.awayTeam || null;
+      const homeTeam = cfbdMatch.cfbdHome || cfbdMatch.homeTeam || null;
+      const awayTeam = cfbdMatch.cfbdAway || cfbdMatch.awayTeam || null;
       const teamName = homeTeam || awayTeam || null;
       cfbd.team = teamName;
       cfbd.home_team = homeTeam;
@@ -707,6 +715,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     payload.cfbd = cfbd;
+    payload.orchestrator = orchestrated;
 
     if (cfbd.use_cfbd && !cfbd.game_id) {
       submitBtn.disabled = false;

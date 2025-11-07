@@ -1,4 +1,4 @@
-from typing import Dict, List, Literal, Optional, TypedDict
+from typing import Any, Dict, List, Literal, Optional, TypedDict
 
 from pydantic import AliasChoices, BaseModel, Field, HttpUrl, model_validator
 
@@ -83,6 +83,7 @@ class JobSubmission(BaseModel):
     webhook_url: Optional[HttpUrl] = None
     options: Options = Options()
     cfbd: Optional[CFBDInput] = None
+    orchestrator: Optional[Dict[str, Any]] = None
 
     @model_validator(mode="after")
     def _require_source(self):

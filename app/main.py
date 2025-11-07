@@ -22,6 +22,8 @@ from .diag_cfbd import router as diag_cfbd_router
 from .routes import util_ai
 from .routes import util_cfbd as util_cfbd_router
 from .routes import util_espn_pbp
+from .routes import util_orchestrator
+from .routes import util_video
 from .logging_setup import setup_logging
 from .runner import JobRunner
 from .schemas import CFBDInput, JobSubmission
@@ -172,6 +174,8 @@ app.include_router(diag_cfbd_router)
 app.include_router(util_ai.router)
 app.include_router(util_cfbd_router.router)
 app.include_router(util_espn_pbp.router)
+app.include_router(util_orchestrator.router)
+app.include_router(util_video.router)
 
 
 @app.middleware("http")
@@ -502,6 +506,11 @@ async def create_job(request: Request):
     job_state = RUNNER.get_job(job_id) or {}
     job_meta = job_state.setdefault("meta", {})
     cfbd_meta = job_meta.setdefault("cfbd", {})
+
+    orchestrator_payload = getattr(submission, "orchestrator", None)
+    if orchestrator_payload is not None:
+        job_state["orchestrator"] = orchestrator_payload
+        job_meta["orchestrator"] = orchestrator_payload
 
     cfbd_in = getattr(submission, "cfbd", None)
     cfbd_requested = bool(cfbd_in and getattr(cfbd_in, "use_cfbd", False))
