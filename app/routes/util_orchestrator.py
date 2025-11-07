@@ -7,6 +7,47 @@ from fastapi import APIRouter, Body
 router = APIRouter()
 
 
+def summarize_espn_pbp(espn_pbp: dict | None, max_plays: int = 40) -> dict | None:
+    """
+    Take the giant ESPN PBP blob and reduce it to something the LLM can handle.
+    We keep counts and the first N plays only.
+    """
+    if not espn_pbp:
+        return None
+
+    # ESPN PBP shape can vary, but usually has "drives" or "groups"
+    drives = espn_pbp.get("drives") or espn_pbp.get("items") or []
+    summary = {
+        "drive_count": len(drives),
+        "first_drives": [],
+        "total_plays_estimate": 0,
+    }
+
+    plays_added = 0
+    for d in drives:
+        drive_obj = {
+            "description": d.get("description"),
+            "team": d.get("team", {}).get("displayName") if isinstance(d.get("team"), dict) else d.get("team"),
+            "plays": [],
+        }
+        for p in d.get("plays", []):
+            if plays_added >= max_plays:
+                break
+            drive_obj["plays"].append({
+                "clock": p.get("clock"),
+                "period": p.get("period"),
+                "text": p.get("text") or p.get("shortText"),
+                "downDistanceText": p.get("start", {}).get("downDistanceText"),
+            })
+            plays_added += 1
+        summary["first_drives"].append(drive_obj)
+        summary["total_plays_estimate"] += len(d.get("plays", []))
+        if plays_added >= max_plays:
+            break
+
+    return summary
+
+
 def _get_openai_key() -> str | None:
     return (
         os.getenv("OPENAI_API_KEY")
@@ -114,28 +155,25 @@ def orchestrate_game(
     - asks OpenAI which to trust
     - returns a 'job-ready' object the frontend can send along with the video
     """
-    # call the validator/orchestrator LLM
-    decision = call_openai_validator(payload)
-
-    # build job-ready payload
-    job_payload = {
-        "status": "READY" if decision.get("safe_to_run") else "NEEDS_ATTENTION",
-        "decision": decision,
+    # build a trimmed version for the LLM, keep raw on server
+    trimmed_payload = {
         "espn_summary": payload.get("espn_summary"),
-        "espn_pbp": payload.get("espn_pbp"),
         "cfbd_match": payload.get("cfbd_match"),
         "video_meta": payload.get("video_meta"),
+        # IMPORTANT: summarize the massive pbp
+        "espn_pbp_summary": summarize_espn_pbp(payload.get("espn_pbp")),
     }
 
-    # we can also normalize a few obvious things here:
-    # if the LLM picked ESPN, but espn_pbp is missing, tell the frontend
-    if decision.get("chosen_source") == "espn" and not payload.get("espn_pbp"):
-        job_payload["status"] = "NEEDS_ATTENTION"
-        job_payload.setdefault("decision", {}).setdefault("anomalies", []).append(
-            "LLM chose ESPN but espn_pbp was not provided."
-        )
-        job_payload.setdefault("decision", {}).setdefault("suggested_fallbacks", []).append(
-            "Fetch /api/util/espn-playbyplay and re-submit to /api/util/orchestrate-game."
-        )
+    decision = call_openai_validator(trimmed_payload)
 
-    return job_payload
+    return {
+        "status": "READY" if decision.get("safe_to_run") else "NEEDS_ATTENTION",
+        "decision": decision,
+        # pass through the raw payload for the rest of the app
+        "raw": {
+            "espn_summary": payload.get("espn_summary"),
+            "cfbd_match": payload.get("cfbd_match"),
+            "video_meta": payload.get("video_meta"),
+            "espn_pbp": payload.get("espn_pbp"),
+        },
+    }
