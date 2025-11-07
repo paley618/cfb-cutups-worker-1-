@@ -22,7 +22,7 @@ from .debug_dump import save_timeline_thumbs, save_candidate_thumbs
 from .fallback import timegrid_windows
 from .storage import get_storage
 from .uploads import resolve_upload
-from .settings import CFBD_API_KEY, settings
+from .settings import CFBD_API_KEY, CFBD_ENABLED, settings
 from .packager import concat_clips_to_mp4
 from .bucketize import build_guided_windows
 from .monitor import JobMonitor
@@ -628,7 +628,7 @@ class JobRunner:
                     job_meta["cfbd_state"] = state
                     job_meta["cfbd_reason"] = reason
 
-                global_cfbd_enabled = bool(settings.CFBD_ENABLE)
+                global_cfbd_enabled = bool(settings.CFBD_ENABLE and CFBD_ENABLED)
                 requested_cfbd = bool(cfbd_in and getattr(cfbd_in, "use_cfbd", False))
                 job_state["cfbd_requested"] = requested_cfbd
                 job_meta["cfbd_requested"] = requested_cfbd
@@ -747,7 +747,7 @@ class JobRunner:
                                 cfbd_play_count = len(cfbd_plays)
                                 if not cfbd_play_count:
                                     raise RuntimeError("empty plays[]")
-                                if cfbd_play_count < 30 or cfbd_play_count > 200:
+                                if cfbd_play_count < 50 or cfbd_play_count > 800:
                                     logger.warning(
                                         f"[CFBD] suspicious play count for game_id={gid}: {cfbd_play_count}. "
                                         "Proceeding but detection quality may suffer (likely week aggregate)."
@@ -810,7 +810,7 @@ class JobRunner:
                                 cfbd_play_count = len(cfbd_plays)
                                 if not cfbd_play_count:
                                     raise RuntimeError("empty plays[]")
-                                if cfbd_play_count < 30 or cfbd_play_count > 200:
+                                if cfbd_play_count < 50 or cfbd_play_count > 800:
                                     logger.warning(
                                         f"[CFBD] suspicious play count for game_id={gid}: {cfbd_play_count}. "
                                         "Proceeding but detection quality may suffer (likely week aggregate)."
