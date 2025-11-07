@@ -6,11 +6,16 @@ from fastapi import APIRouter, Body
 
 router = APIRouter()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_TOKEN")
+
+def _get_openai_key() -> str | None:
+    return os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_TOKEN")
 
 
 def call_openai_validator(payload: dict) -> dict:
     """
+    Fetch the OpenAI key at call-time (not at import-time), so env changes
+    on Railway are picked up without code changes.
+
     Given ESPN summary, optional ESPN PBP, optional CFBD match, and video metadata,
     ask OpenAI to:
       - pick the safest source of plays
@@ -18,44 +23,37 @@ def call_openai_validator(payload: dict) -> dict:
       - tell us if it's safe to run the job
       - suggest fallbacks
     """
-    if not OPENAI_API_KEY:
+    openai_key = _get_openai_key()
+    if not openai_key:
         return {
             "safe_to_run": False,
-            "reason": "OPENAI_API_KEY not set on server.",
+            "reason": "missing_openai_key",
             "chosen_source": None,
             "anomalies": ["missing_openai_key"],
             "suggested_fallbacks": [
-                "Use ESPN play-by-play only",
-                "Disable 'require CFBD'"
+                "Set OPENAI_API_KEY on the running service and redeploy.",
+                "Proceed with ESPN-only mode."
             ],
         }
 
     system_msg = (
         "You are an orchestrator for a college-football video cutups tool. "
-        "You will receive data from ESPN (summary, play-by-play), CFBD (game match, playsCount), "
-        "and video metadata (duration). "
-        "Your job is to decide which data source to trust, detect obviously bad CFBD results "
-        "(like 30,000+ plays or wrong week), and say whether it is safe to proceed. "
-        "You must ALWAYS return strict JSON with keys: "
-        "safe_to_run (bool), chosen_source ('cfbd'|'espn'|'mixed'|null), "
-        "expected_play_count (int|null), anomalies (list of strings), "
-        "suggested_fallbacks (list of strings). "
-        "If CFBD has >1500 plays or week clearly mismatches ESPN, you should NOT pick CFBD."
+        "You receive ESPN data, CFBD data, and video metadata. "
+        "Decide which source is trustworthy, flag bad CFBD (too many plays), "
+        "and return STRICT JSON."
     )
-
-    user_obj = payload
 
     resp = requests.post(
         "https://api.openai.com/v1/chat/completions",
         headers={
-            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "Authorization": f"Bearer {openai_key}",
             "Content-Type": "application/json",
         },
         json={
             "model": "gpt-4o-mini",
             "messages": [
                 {"role": "system", "content": system_msg},
-                {"role": "user", "content": json.dumps(user_obj)},
+                {"role": "user", "content": json.dumps(payload)},
             ],
             "temperature": 0.1,
         },
@@ -70,8 +68,8 @@ def call_openai_validator(payload: dict) -> dict:
         return {
             "safe_to_run": False,
             "chosen_source": None,
-            "expected_play_count": None,
             "anomalies": ["llm_returned_non_json"],
+            "reason": "llm_returned_non_json",
             "suggested_fallbacks": ["Ask user for year/week", "Use ESPN play-by-play only"],
             "raw": content,
         }
