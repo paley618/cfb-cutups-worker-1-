@@ -16,6 +16,15 @@ def _get_openai_key() -> str | None:
     )
 
 
+def _json_default(value):
+    """Fallback serializer that keeps OpenAI payload JSON-friendly."""
+
+    try:
+        return str(value)
+    except Exception:
+        return "<non-serializable>"
+
+
 def call_openai_validator(payload: dict) -> dict:
     """
     Fetch the OpenAI key at call-time (not at import-time), so env changes
@@ -47,20 +56,35 @@ def call_openai_validator(payload: dict) -> dict:
         "and return STRICT JSON."
     )
 
+    body = {
+        "model": "gpt-4o-mini",
+        "messages": [
+            {
+                "role": "system",
+                "content": [{"type": "text", "text": system_msg}],
+            },
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": json.dumps(payload, default=_json_default),
+                    }
+                ],
+            },
+        ],
+        "temperature": 0.1,
+        "max_tokens": 600,
+        "response_format": {"type": "json_object"},
+    }
+
     resp = requests.post(
         "https://api.openai.com/v1/chat/completions",
         headers={
             "Authorization": f"Bearer {openai_key}",
             "Content-Type": "application/json",
         },
-        json={
-            "model": "gpt-4o-mini",
-            "messages": [
-                {"role": "system", "content": system_msg},
-                {"role": "user", "content": json.dumps(payload)},
-            ],
-            "temperature": 0.1,
-        },
+        json=body,
         timeout=15,
     )
     resp.raise_for_status()
