@@ -20,6 +20,7 @@ from .cfbd_client import CFBDClient, CFBDClientError, _is_year_week_validator
 from .cookies import write_cookies_if_any, write_drive_cookies_if_any
 from .diag_cfbd import router as diag_cfbd_router
 from .routes import util_ai
+from .routes import util_debug
 from .routes import util_cfbd as util_cfbd_router
 from .routes import util_espn_pbp
 from .routes import util_orchestrator
@@ -172,6 +173,7 @@ app = FastAPI(lifespan=lifespan)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(diag_cfbd_router)
 app.include_router(util_ai.router)
+app.include_router(util_debug.router)
 app.include_router(util_cfbd_router.router)
 app.include_router(util_espn_pbp.router)
 app.include_router(util_orchestrator.router)
