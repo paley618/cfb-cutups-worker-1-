@@ -170,6 +170,16 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+print("== ENV CHECK ==")
+print("OPENAI_API_KEY present:", bool(os.getenv("OPENAI_API_KEY")))
+print("OPENAI_API_TOKEN present:", bool(os.getenv("OPENAI_API_TOKEN")))
+print(
+    "CFBD_API_KEY present:",
+    bool(os.getenv("CFBD_API_KEY") or os.getenv("CFBD_KEY")),
+)
+print("================")
+
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 app.include_router(diag_cfbd_router)
 app.include_router(util_ai.router)
