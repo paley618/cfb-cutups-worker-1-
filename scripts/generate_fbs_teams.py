@@ -1,0 +1,146 @@
+import json
+from pathlib import Path
+
+# Authoritative FBS teams list for 2024
+FBS_TEAMS = [
+    # ACC
+    {"id": 1, "school": "Clemson", "conference": "ACC", "conference_id": 1},
+    {"id": 2, "school": "Duke", "conference": "ACC", "conference_id": 1},
+    {"id": 3, "school": "Florida State", "conference": "ACC", "conference_id": 1},
+    {"id": 4, "school": "Georgia Tech", "conference": "ACC", "conference_id": 1},
+    {"id": 5, "school": "Louisville", "conference": "ACC", "conference_id": 1},
+    {"id": 6, "school": "Miami", "conference": "ACC", "conference_id": 1},
+    {"id": 7, "school": "NC State", "conference": "ACC", "conference_id": 1},
+    {"id": 8, "school": "North Carolina", "conference": "ACC", "conference_id": 1},
+    {"id": 9, "school": "Pittsburgh", "conference": "ACC", "conference_id": 1},
+    {"id": 10, "school": "SMU", "conference": "ACC", "conference_id": 1},
+    {"id": 11, "school": "Syracuse", "conference": "ACC", "conference_id": 1},
+    {"id": 12, "school": "Virginia", "conference": "ACC", "conference_id": 1},
+    {"id": 13, "school": "Virginia Tech", "conference": "ACC", "conference_id": 1},
+    {"id": 14, "school": "Wake Forest", "conference": "ACC", "conference_id": 1},
+
+    # Big Ten
+    {"id": 15, "school": "Illinois", "conference": "Big Ten", "conference_id": 2},
+    {"id": 16, "school": "Indiana", "conference": "Big Ten", "conference_id": 2},
+    {"id": 17, "school": "Iowa", "conference": "Big Ten", "conference_id": 2},
+    {"id": 18, "school": "Maryland", "conference": "Big Ten", "conference_id": 2},
+    {"id": 19, "school": "Michigan", "conference": "Big Ten", "conference_id": 2},
+    {"id": 20, "school": "Michigan State", "conference": "Big Ten", "conference_id": 2},
+    {"id": 21, "school": "Minnesota", "conference": "Big Ten", "conference_id": 2},
+    {"id": 22, "school": "Nebraska", "conference": "Big Ten", "conference_id": 2},
+    {"id": 23, "school": "Northwestern", "conference": "Big Ten", "conference_id": 2},
+    {"id": 24, "school": "Ohio State", "conference": "Big Ten", "conference_id": 2},
+    {"id": 25, "school": "Penn State", "conference": "Big Ten", "conference_id": 2},
+    {"id": 26, "school": "Purdue", "conference": "Big Ten", "conference_id": 2},
+    {"id": 27, "school": "Rutgers", "conference": "Big Ten", "conference_id": 2},
+    {"id": 28, "school": "Wisconsin", "conference": "Big Ten", "conference_id": 2},
+    {"id": 29, "school": "UCLA", "conference": "Big Ten", "conference_id": 2},
+    {"id": 30, "school": "USC", "conference": "Big Ten", "conference_id": 2},
+    {"id": 31, "school": "Oregon", "conference": "Big Ten", "conference_id": 2},
+    {"id": 32, "school": "Washington", "conference": "Big Ten", "conference_id": 2},
+
+    # Big 12
+    {"id": 33, "school": "Arizona", "conference": "Big 12", "conference_id": 3},
+    {"id": 34, "school": "Arizona State", "conference": "Big 12", "conference_id": 3},
+    {"id": 35, "school": "Baylor", "conference": "Big 12", "conference_id": 3},
+    {"id": 36, "school": "BYU", "conference": "Big 12", "conference_id": 3},
+    {"id": 37, "school": "Colorado", "conference": "Big 12", "conference_id": 3},
+    {"id": 38, "school": "Houston", "conference": "Big 12", "conference_id": 3},
+    {"id": 39, "school": "Iowa State", "conference": "Big 12", "conference_id": 3},
+    {"id": 40, "school": "Kansas", "conference": "Big 12", "conference_id": 3},
+    {"id": 41, "school": "Kansas State", "conference": "Big 12", "conference_id": 3},
+    {"id": 42, "school": "Oklahoma State", "conference": "Big 12", "conference_id": 3},
+    {"id": 43, "school": "TCU", "conference": "Big 12", "conference_id": 3},
+    {"id": 44, "school": "Texas", "conference": "Big 12", "conference_id": 3},
+    {"id": 45, "school": "Texas Tech", "conference": "Big 12", "conference_id": 3},
+    {"id": 46, "school": "UCF", "conference": "Big 12", "conference_id": 3},
+    {"id": 47, "school": "Utah", "conference": "Big 12", "conference_id": 3},
+    {"id": 48, "school": "West Virginia", "conference": "Big 12", "conference_id": 3},
+
+    # SEC
+    {"id": 49, "school": "Alabama", "conference": "SEC", "conference_id": 4},
+    {"id": 50, "school": "Arkansas", "conference": "SEC", "conference_id": 4},
+    {"id": 51, "school": "Auburn", "conference": "SEC", "conference_id": 4},
+    {"id": 52, "school": "Florida", "conference": "SEC", "conference_id": 4},
+    {"id": 53, "school": "Georgia", "conference": "SEC", "conference_id": 4},
+    {"id": 54, "school": "Kentucky", "conference": "SEC", "conference_id": 4},
+    {"id": 55, "school": "LSU", "conference": "SEC", "conference_id": 4},
+    {"id": 56, "school": "Mississippi", "conference": "SEC", "conference_id": 4},
+    {"id": 57, "school": "Mississippi State", "conference": "SEC", "conference_id": 4},
+    {"id": 58, "school": "Missouri", "conference": "SEC", "conference_id": 4},
+    {"id": 59, "school": "Oklahoma", "conference": "SEC", "conference_id": 4},
+    {"id": 60, "school": "South Carolina", "conference": "SEC", "conference_id": 4},
+    {"id": 61, "school": "Tennessee", "conference": "SEC", "conference_id": 4},
+    {"id": 62, "school": "Texas A&M", "conference": "SEC", "conference_id": 4},
+    {"id": 63, "school": "Vanderbilt", "conference": "SEC", "conference_id": 4},
+
+    # American Athletic Conference
+    {"id": 64, "school": "East Carolina", "conference": "American", "conference_id": 5},
+    {"id": 65, "school": "Memphis", "conference": "American", "conference_id": 5},
+    {"id": 66, "school": "Navy", "conference": "American", "conference_id": 5},
+    {"id": 67, "school": "SMU", "conference": "American", "conference_id": 5},
+    {"id": 68, "school": "South Florida", "conference": "American", "conference_id": 5},
+    {"id": 69, "school": "Temple", "conference": "American", "conference_id": 5},
+    {"id": 70, "school": "Tulane", "conference": "American", "conference_id": 5},
+    {"id": 71, "school": "Tulsa", "conference": "American", "conference_id": 5},
+
+    # MAC
+    {"id": 72, "school": "Akron", "conference": "MAC", "conference_id": 6},
+    {"id": 73, "school": "Ball State", "conference": "MAC", "conference_id": 6},
+    {"id": 74, "school": "Bowling Green", "conference": "MAC", "conference_id": 6},
+    {"id": 75, "school": "Buffalo", "conference": "MAC", "conference_id": 6},
+    {"id": 76, "school": "Central Michigan", "conference": "MAC", "conference_id": 6},
+    {"id": 77, "school": "Eastern Michigan", "conference": "MAC", "conference_id": 6},
+    {"id": 78, "school": "Kent State", "conference": "MAC", "conference_id": 6},
+    {"id": 79, "school": "Miami (OH)", "conference": "MAC", "conference_id": 6},
+    {"id": 80, "school": "Northern Illinois", "conference": "MAC", "conference_id": 6},
+    {"id": 81, "school": "Ohio", "conference": "MAC", "conference_id": 6},
+    {"id": 82, "school": "Toledo", "conference": "MAC", "conference_id": 6},
+    {"id": 83, "school": "Western Michigan", "conference": "MAC", "conference_id": 6},
+
+    # Mountain West
+    {"id": 84, "school": "Air Force", "conference": "Mountain West", "conference_id": 7},
+    {"id": 85, "school": "Boise State", "conference": "Mountain West", "conference_id": 7},
+    {"id": 86, "school": "Colorado State", "conference": "Mountain West", "conference_id": 7},
+    {"id": 87, "school": "Fresno State", "conference": "Mountain West", "conference_id": 7},
+    {"id": 88, "school": "New Mexico", "conference": "Mountain West", "conference_id": 7},
+    {"id": 89, "school": "New Mexico State", "conference": "Mountain West", "conference_id": 7},
+    {"id": 90, "school": "Nevada", "conference": "Mountain West", "conference_id": 7},
+    {"id": 91, "school": "San Diego State", "conference": "Mountain West", "conference_id": 7},
+    {"id": 92, "school": "San Jose State", "conference": "Mountain West", "conference_id": 7},
+    {"id": 93, "school": "UNLV", "conference": "Mountain West", "conference_id": 7},
+    {"id": 94, "school": "Utah State", "conference": "Mountain West", "conference_id": 7},
+    {"id": 95, "school": "Wyoming", "conference": "Mountain West", "conference_id": 7},
+
+    # Pac-12 (what remains)
+    {"id": 96, "school": "Cal", "conference": "Pac-12", "conference_id": 8},
+    {"id": 97, "school": "Stanford", "conference": "Pac-12", "conference_id": 8},
+    {"id": 98, "school": "Washington State", "conference": "Pac-12", "conference_id": 8},
+
+    # Independents
+    {"id": 99, "school": "Notre Dame", "conference": "Independent", "conference_id": 9},
+    {"id": 100, "school": "Army", "conference": "Independent", "conference_id": 9},
+    {"id": 101, "school": "Liberty", "conference": "Independent", "conference_id": 9},
+    {"id": 102, "school": "UMass", "conference": "Independent", "conference_id": 9},
+]
+
+# Save to JSON
+output_path = Path("app/data/teams.json")
+output_path.parent.mkdir(parents=True, exist_ok=True)
+
+with open(output_path, "w") as f:
+    json.dump(FBS_TEAMS, f, indent=2)
+
+print(f"✅ Saved {len(FBS_TEAMS)} FBS teams to {output_path}")
+
+# Summary
+by_conf = {}
+for team in FBS_TEAMS:
+    conf = team.get("conference")
+    if conf not in by_conf:
+        by_conf[conf] = 0
+    by_conf[conf] += 1
+
+print("\nTeams by conference:")
+for conf in sorted(by_conf.keys()):
+    print(f"  {conf}: {by_conf[conf]} teams")

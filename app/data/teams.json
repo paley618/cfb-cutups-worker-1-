@@ -1,282 +1,614 @@
 [
   {
-    "id": 333,
-    "school": "Alabama",
-    "mascot": "Crimson Tide",
-    "abbreviation": "ALA",
-    "alt_name1": "Bama",
-    "conference": "SEC",
-    "classification": "fbs",
-    "color": "#9E1B32",
-    "alt_color": "#828A8F",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png"
-    ]
+    "id": 1,
+    "school": "Clemson",
+    "conference": "ACC",
+    "conference_id": 1
   },
   {
-    "id": 245,
-    "school": "Texas",
-    "mascot": "Longhorns",
-    "abbreviation": "TEX",
-    "alt_name1": "Texas",
-    "conference": "SEC",
-    "classification": "fbs",
-    "color": "#BF5700",
-    "alt_color": "#FFFFFF",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png"
-    ]
+    "id": 2,
+    "school": "Duke",
+    "conference": "ACC",
+    "conference_id": 1
   },
   {
-    "id": 228,
-    "school": "Texas Tech",
-    "mascot": "Red Raiders",
-    "abbreviation": "TTU",
-    "alt_name1": "Texas Tech",
-    "conference": "Big 12",
-    "classification": "fbs",
-    "color": "#CC0000",
-    "alt_color": "#000000",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png"
-    ]
+    "id": 3,
+    "school": "Florida State",
+    "conference": "ACC",
+    "conference_id": 1
   },
   {
-    "id": 197,
-    "school": "Oklahoma",
-    "mascot": "Sooners",
-    "abbreviation": "OU",
-    "alt_name1": "OU",
-    "conference": "SEC",
-    "classification": "fbs",
-    "color": "#841617",
-    "alt_color": "#FDF9D8",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png"
-    ]
+    "id": 4,
+    "school": "Georgia Tech",
+    "conference": "ACC",
+    "conference_id": 1
   },
   {
-    "id": 194,
-    "school": "Ohio State",
-    "mascot": "Buckeyes",
-    "abbreviation": "OSU",
-    "alt_name1": "Ohio St",
+    "id": 5,
+    "school": "Louisville",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 6,
+    "school": "Miami",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 7,
+    "school": "NC State",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 8,
+    "school": "North Carolina",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 9,
+    "school": "Pittsburgh",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 10,
+    "school": "SMU",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 11,
+    "school": "Syracuse",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 12,
+    "school": "Virginia",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 13,
+    "school": "Virginia Tech",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 14,
+    "school": "Wake Forest",
+    "conference": "ACC",
+    "conference_id": 1
+  },
+  {
+    "id": 15,
+    "school": "Illinois",
     "conference": "Big Ten",
-    "classification": "fbs",
-    "color": "#BB0000",
-    "alt_color": "#666666",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png"
-    ]
+    "conference_id": 2
   },
   {
-    "id": 130,
+    "id": 16,
+    "school": "Indiana",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 17,
+    "school": "Iowa",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 18,
+    "school": "Maryland",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 19,
     "school": "Michigan",
-    "mascot": "Wolverines",
-    "abbreviation": "MICH",
-    "alt_name1": "Michigan",
     "conference": "Big Ten",
-    "classification": "fbs",
-    "color": "#00274C",
-    "alt_color": "#FFCB05",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png"
-    ]
+    "conference_id": 2
   },
   {
-    "id": 57,
-    "school": "Georgia",
-    "mascot": "Bulldogs",
-    "abbreviation": "UGA",
-    "alt_name1": "Georgia",
+    "id": 20,
+    "school": "Michigan State",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 21,
+    "school": "Minnesota",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 22,
+    "school": "Nebraska",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 23,
+    "school": "Northwestern",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 24,
+    "school": "Ohio State",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 25,
+    "school": "Penn State",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 26,
+    "school": "Purdue",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 27,
+    "school": "Rutgers",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 28,
+    "school": "Wisconsin",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 29,
+    "school": "UCLA",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 30,
+    "school": "USC",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 31,
+    "school": "Oregon",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 32,
+    "school": "Washington",
+    "conference": "Big Ten",
+    "conference_id": 2
+  },
+  {
+    "id": 33,
+    "school": "Arizona",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 34,
+    "school": "Arizona State",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 35,
+    "school": "Baylor",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 36,
+    "school": "BYU",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 37,
+    "school": "Colorado",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 38,
+    "school": "Houston",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 39,
+    "school": "Iowa State",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 40,
+    "school": "Kansas",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 41,
+    "school": "Kansas State",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 42,
+    "school": "Oklahoma State",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 43,
+    "school": "TCU",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 44,
+    "school": "Texas",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 45,
+    "school": "Texas Tech",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 46,
+    "school": "UCF",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 47,
+    "school": "Utah",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 48,
+    "school": "West Virginia",
+    "conference": "Big 12",
+    "conference_id": 3
+  },
+  {
+    "id": 49,
+    "school": "Alabama",
     "conference": "SEC",
-    "classification": "fbs",
-    "color": "#BA0C2F",
-    "alt_color": "#000000",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png"
-    ]
+    "conference_id": 4
+  },
+  {
+    "id": 50,
+    "school": "Arkansas",
+    "conference": "SEC",
+    "conference_id": 4
+  },
+  {
+    "id": 51,
+    "school": "Auburn",
+    "conference": "SEC",
+    "conference_id": 4
   },
   {
     "id": 52,
     "school": "Florida",
-    "mascot": "Gators",
-    "abbreviation": "FLA",
-    "alt_name1": "Florida",
     "conference": "SEC",
-    "classification": "fbs",
-    "color": "#0021A5",
-    "alt_color": "#FA4616",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png"
-    ]
+    "conference_id": 4
   },
   {
-    "id": 150,
-    "school": "Notre Dame",
-    "mascot": "Fighting Irish",
-    "abbreviation": "ND",
-    "alt_name1": "Notre Dame",
-    "conference": "Independent",
-    "classification": "fbs",
-    "color": "#0C2340",
-    "alt_color": "#C99700",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png"
-    ]
+    "id": 53,
+    "school": "Georgia",
+    "conference": "SEC",
+    "conference_id": 4
   },
   {
-    "id": 30,
-    "school": "Clemson",
-    "mascot": "Tigers",
-    "abbreviation": "CLEM",
-    "alt_name1": "Clemson",
-    "conference": "ACC",
-    "classification": "fbs",
-    "color": "#F56600",
-    "alt_color": "#522D80",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png"
-    ]
+    "id": 54,
+    "school": "Kentucky",
+    "conference": "SEC",
+    "conference_id": 4
   },
   {
-    "id": 2729,
-    "school": "SMU",
-    "mascot": "Mustangs",
-    "abbreviation": "SMU",
-    "alt_name1": "Southern Methodist",
-    "conference": "ACC",
-    "classification": "fbs",
-    "color": "#0033A0",
-    "alt_color": "#CC0000",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/2567.png"
-    ]
-  },
-  {
-    "id": 26,
-    "school": "UCF",
-    "mascot": "Knights",
-    "abbreviation": "UCF",
-    "alt_name1": "Central Florida",
-    "conference": "Big 12",
-    "classification": "fbs",
-    "color": "#FFC904",
-    "alt_color": "#000000",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/2116.png"
-    ]
-  },
-  {
-    "id": 213,
-    "school": "USC",
-    "mascot": "Trojans",
-    "abbreviation": "USC",
-    "alt_name1": "Southern California",
-    "conference": "Big Ten",
-    "classification": "fbs",
-    "color": "#990000",
-    "alt_color": "#FFCC00",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png"
-    ]
-  },
-  {
-    "id": 2633,
-    "school": "UCLA",
-    "mascot": "Bruins",
-    "abbreviation": "UCLA",
-    "alt_name1": "UCLA",
-    "conference": "Big Ten",
-    "classification": "fbs",
-    "color": "#2D68C4",
-    "alt_color": "#FFE800",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png"
-    ]
-  },
-  {
-    "id": 235,
-    "school": "Oregon",
-    "mascot": "Ducks",
-    "abbreviation": "ORE",
-    "alt_name1": "Oregon",
-    "conference": "Big Ten",
-    "classification": "fbs",
-    "color": "#154733",
-    "alt_color": "#FEE123",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png"
-    ]
-  },
-  {
-    "id": 264,
-    "school": "Washington",
-    "mascot": "Huskies",
-    "abbreviation": "WASH",
-    "alt_name1": "Washington",
-    "conference": "Big Ten",
-    "classification": "fbs",
-    "color": "#4B2E83",
-    "alt_color": "#B7A57A",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/264.png"
-    ]
-  },
-  {
-    "id": 2509,
-    "school": "Penn State",
-    "mascot": "Nittany Lions",
-    "abbreviation": "PSU",
-    "alt_name1": "Penn St",
-    "conference": "Big Ten",
-    "classification": "fbs",
-    "color": "#041E42",
-    "alt_color": "#FFFFFF",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/213.png"
-    ]
-  },
-  {
-    "id": 2390,
+    "id": 55,
     "school": "LSU",
-    "mascot": "Tigers",
-    "abbreviation": "LSU",
-    "alt_name1": "Louisiana State",
     "conference": "SEC",
-    "classification": "fbs",
-    "color": "#461D7C",
-    "alt_color": "#FDD023",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png"
-    ]
+    "conference_id": 4
   },
   {
-    "id": 2628,
+    "id": 56,
+    "school": "Mississippi",
+    "conference": "SEC",
+    "conference_id": 4
+  },
+  {
+    "id": 57,
+    "school": "Mississippi State",
+    "conference": "SEC",
+    "conference_id": 4
+  },
+  {
+    "id": 58,
+    "school": "Missouri",
+    "conference": "SEC",
+    "conference_id": 4
+  },
+  {
+    "id": 59,
+    "school": "Oklahoma",
+    "conference": "SEC",
+    "conference_id": 4
+  },
+  {
+    "id": 60,
+    "school": "South Carolina",
+    "conference": "SEC",
+    "conference_id": 4
+  },
+  {
+    "id": 61,
     "school": "Tennessee",
-    "mascot": "Volunteers",
-    "abbreviation": "TENN",
-    "alt_name1": "Tennessee",
     "conference": "SEC",
-    "classification": "fbs",
-    "color": "#FF8200",
-    "alt_color": "#FFFFFF",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png"
-    ]
+    "conference_id": 4
   },
   {
-    "id": 2116,
-    "school": "Baylor",
-    "mascot": "Bears",
-    "abbreviation": "BAY",
-    "alt_name1": "Baylor",
-    "conference": "Big 12",
-    "classification": "fbs",
-    "color": "#154734",
-    "alt_color": "#FFCB05",
-    "logos": [
-      "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png"
-    ]
+    "id": 62,
+    "school": "Texas A&M",
+    "conference": "SEC",
+    "conference_id": 4
+  },
+  {
+    "id": 63,
+    "school": "Vanderbilt",
+    "conference": "SEC",
+    "conference_id": 4
+  },
+  {
+    "id": 64,
+    "school": "East Carolina",
+    "conference": "American",
+    "conference_id": 5
+  },
+  {
+    "id": 65,
+    "school": "Memphis",
+    "conference": "American",
+    "conference_id": 5
+  },
+  {
+    "id": 66,
+    "school": "Navy",
+    "conference": "American",
+    "conference_id": 5
+  },
+  {
+    "id": 67,
+    "school": "SMU",
+    "conference": "American",
+    "conference_id": 5
+  },
+  {
+    "id": 68,
+    "school": "South Florida",
+    "conference": "American",
+    "conference_id": 5
+  },
+  {
+    "id": 69,
+    "school": "Temple",
+    "conference": "American",
+    "conference_id": 5
+  },
+  {
+    "id": 70,
+    "school": "Tulane",
+    "conference": "American",
+    "conference_id": 5
+  },
+  {
+    "id": 71,
+    "school": "Tulsa",
+    "conference": "American",
+    "conference_id": 5
+  },
+  {
+    "id": 72,
+    "school": "Akron",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 73,
+    "school": "Ball State",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 74,
+    "school": "Bowling Green",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 75,
+    "school": "Buffalo",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 76,
+    "school": "Central Michigan",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 77,
+    "school": "Eastern Michigan",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 78,
+    "school": "Kent State",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 79,
+    "school": "Miami (OH)",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 80,
+    "school": "Northern Illinois",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 81,
+    "school": "Ohio",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 82,
+    "school": "Toledo",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 83,
+    "school": "Western Michigan",
+    "conference": "MAC",
+    "conference_id": 6
+  },
+  {
+    "id": 84,
+    "school": "Air Force",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 85,
+    "school": "Boise State",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 86,
+    "school": "Colorado State",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 87,
+    "school": "Fresno State",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 88,
+    "school": "New Mexico",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 89,
+    "school": "New Mexico State",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 90,
+    "school": "Nevada",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 91,
+    "school": "San Diego State",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 92,
+    "school": "San Jose State",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 93,
+    "school": "UNLV",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 94,
+    "school": "Utah State",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 95,
+    "school": "Wyoming",
+    "conference": "Mountain West",
+    "conference_id": 7
+  },
+  {
+    "id": 96,
+    "school": "Cal",
+    "conference": "Pac-12",
+    "conference_id": 8
+  },
+  {
+    "id": 97,
+    "school": "Stanford",
+    "conference": "Pac-12",
+    "conference_id": 8
+  },
+  {
+    "id": 98,
+    "school": "Washington State",
+    "conference": "Pac-12",
+    "conference_id": 8
+  },
+  {
+    "id": 99,
+    "school": "Notre Dame",
+    "conference": "Independent",
+    "conference_id": 9
+  },
+  {
+    "id": 100,
+    "school": "Army",
+    "conference": "Independent",
+    "conference_id": 9
+  },
+  {
+    "id": 101,
+    "school": "Liberty",
+    "conference": "Independent",
+    "conference_id": 9
+  },
+  {
+    "id": 102,
+    "school": "UMass",
+    "conference": "Independent",
+    "conference_id": 9
   }
 ]
