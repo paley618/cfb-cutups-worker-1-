@@ -26,6 +26,7 @@ from .settings import CFBD_API_KEY, CFBD_ENABLED, settings
 from .packager import concat_clips_to_mp4
 from .bucketize import build_guided_windows
 from .monitor import JobMonitor
+from .play_types import get_play_type_name
 
 logger = logging.getLogger(__name__)
 
@@ -1470,6 +1471,19 @@ class JobRunner:
                         has_scene = False
                         center_val = float((start_val + end_val) / 2.0)
 
+                    # Extract play type information from CFBD play data
+                    play_type_id = None
+                    play_type_name = None
+                    if play:
+                        play_type_id = play.get("playType") or play.get("play_type")
+                        if play_type_id is not None:
+                            try:
+                                play_type_id = int(play_type_id)
+                                play_type_name = get_play_type_name(play_type_id)
+                            except (TypeError, ValueError):
+                                play_type_id = None
+                                play_type_name = None
+
                     clip_entries.append(
                         {
                             "start": round(start_val, 3),
@@ -1482,6 +1496,8 @@ class JobRunner:
                             "source": source_tag,
                             "bucket": bucket_name,
                             "score": score_val,
+                            "play_type_id": play_type_id,
+                            "play_type_name": play_type_name,
                         }
                     )
 
