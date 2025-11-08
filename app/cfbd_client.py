@@ -1,8 +1,10 @@
 import json
 import os
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
+
+from app.teams import find_team_by_name
 
 CFBD_BASE = "https://api.collegefootballdata.com"
 
@@ -165,6 +167,26 @@ class CFBDClient:
     # Backwards compatibility
     get_plays_by_game = get_plays_for_game
 
+    def validate_team_name(self, team_name: str) -> Optional[Dict]:
+        """Validate and resolve team name using local teams cache.
+
+        Teams data is cached locally in app/data/cfbd_teams.json.
+        This helps with validation and reduces API calls.
+
+        Args:
+            team_name: Team name to validate (supports school name, mascot, abbreviation)
+
+        Returns:
+            Team dict if found, None otherwise
+
+        Example:
+            >>> client = CFBDClient()
+            >>> team = client.validate_team_name("Texas Tech")
+            >>> if team:
+            ...     print(f"Team ID: {team['id']}, Conference: {team['conference']}")
+        """
+        return find_team_by_name(team_name)
+
     def resolve_game_id(
         self,
         *,
@@ -177,7 +199,13 @@ class CFBDClient:
         if week is not None:
             params["week"] = int(week)
         if team:
-            params["team"] = team
+            # Try to validate team name using local cache first
+            team_data = self.validate_team_name(team)
+            if team_data:
+                # Use the canonical school name from the cache
+                params["team"] = team_data.get("school", team)
+            else:
+                params["team"] = team
         r = self._req("/games", params)
         if r.status_code >= 400:
             raise CFBDClientError(f"/games failed {r.status_code}: {r.text}")
