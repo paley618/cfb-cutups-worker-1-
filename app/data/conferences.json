@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "ACC",
+    "short_name": "ACC",
+    "abbreviation": "ACC"
+  },
+  {
+    "id": 2,
+    "name": "Big 12",
+    "short_name": "Big 12",
+    "abbreviation": "Big 12"
+  },
+  {
+    "id": 3,
+    "name": "Big Ten",
+    "short_name": "Big Ten",
+    "abbreviation": "Big Ten"
+  },
+  {
+    "id": 4,
+    "name": "Independent",
+    "short_name": "Independent",
+    "abbreviation": "Independent"
+  },
+  {
+    "id": 5,
+    "name": "SEC",
+    "short_name": "SEC",
+    "abbreviation": "SEC"
+  }
+]

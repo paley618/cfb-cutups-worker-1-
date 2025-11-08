@@ -50,6 +50,37 @@
         <div class="sub" style="margin-top:16px">CFBD-guided cuts (optional)</div>
         <div class="cfbd-box" style="margin-top:8px; display:flex; flex-direction:column; gap:12px;">
           <label style="display:flex; align-items:center; gap:8px"><input type="checkbox" id="cfbd_use" name="use_cfbd"> Use CFBD-guided cuts</label>
+
+          <!-- NEW: Team/Conference/Year/Game Selection -->
+          <div class="row cfbd-row">
+            <div>
+              <label for="team_select">Team</label>
+              <select id="team_select" name="team_select">
+                <option value="">-- Select Team --</option>
+              </select>
+            </div>
+            <div>
+              <label for="conference_select">Conference (Optional)</label>
+              <select id="conference_select" name="conference_select">
+                <option value="">-- All Conferences --</option>
+              </select>
+            </div>
+          </div>
+          <div class="row cfbd-row">
+            <div>
+              <label for="year_select">Year</label>
+              <input id="year_select" name="year_select" type="number" value="2024" min="2000" max="2025" />
+            </div>
+            <div>
+              <label for="game_select">Game</label>
+              <select id="game_select" name="game_select" disabled>
+                <option value="">-- Pick a team first --</option>
+              </select>
+            </div>
+          </div>
+          <div style="text-align:center; color:#888; font-size:0.9em; margin:8px 0">OR</div>
+
+          <!-- Original ESPN Link Autofill -->
           <div class="row cfbd-row">
             <div>
               <label>ESPN game link</label>

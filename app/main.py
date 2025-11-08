@@ -375,6 +375,87 @@ async def _run_cfbd_autofill(
         }
 
 
+@app.get("/api/options")
+def get_options():
+    """Return teams and conferences for dropdown selection"""
+    from .teams_conferences import get_team_names, get_conference_names
+
+    return {
+        "teams": get_team_names(),
+        "conferences": get_conference_names()
+    }
+
+
+@app.get("/api/games")
+async def get_games_for_team(team: str, year: int = 2024):
+    """Get available games for a team/year"""
+    from .teams_conferences import find_team_by_name
+
+    team_info = find_team_by_name(team)
+    if not team_info:
+        return {"error": "Team not found", "games": []}
+
+    # Get CFBD API credentials
+    headers = _cfbd_headers()
+    base_url = _cfbd_base_url()
+    timeout = settings.CFBD_TIMEOUT_SECONDS or 25
+
+    # Fetch games for this team
+    try:
+        async with httpx.AsyncClient(
+            base_url=base_url,
+            timeout=timeout,
+            headers=headers,
+        ) as client:
+            response = await client.get(
+                "/games",
+                params={
+                    "year": year,
+                    "team": team_info.get("school")
+                }
+            )
+            response.raise_for_status()
+            games = response.json()
+
+            # Format games for dropdown
+            formatted_games = []
+            for game in games:
+                game_id = game.get("id")
+                home_team = game.get("home_team") or game.get("homeTeam")
+                away_team = game.get("away_team") or game.get("awayTeam")
+                start_date = game.get("start_date") or game.get("startDate", "")
+                week = game.get("week", "")
+
+                # Format date nicely
+                if start_date:
+                    try:
+                        from datetime import datetime
+                        dt = datetime.fromisoformat(start_date.replace("Z", "+00:00"))
+                        date_str = dt.strftime("%b %d, %Y")
+                    except:
+                        date_str = start_date.split("T")[0]
+                else:
+                    date_str = "Unknown"
+
+                formatted_games.append({
+                    "id": game_id,
+                    "home_team": home_team,
+                    "away_team": away_team,
+                    "start_date": date_str,
+                    "week": week,
+                    "display": f"{away_team} @ {home_team} - Week {week} ({date_str})"
+                })
+
+            return {"games": formatted_games}
+
+    except httpx.HTTPError as exc:
+        logger.error(f"Failed to fetch games for {team}/{year}: {exc}")
+        return {"error": str(exc), "games": []}
+    except Exception as exc:
+        logger.error(f"Unexpected error fetching games: {exc}")
+        return {"error": str(exc), "games": []}
+
+
 @app.get("/api/cfbd/autofill")
 async def cfbd_autofill(
     gameId: Annotated[str | None, Query(alias="gameId")] = None,

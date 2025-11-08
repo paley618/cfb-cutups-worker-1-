@@ -1,0 +1,282 @@
+[
+  {
+    "id": 333,
+    "school": "Alabama",
+    "mascot": "Crimson Tide",
+    "abbreviation": "ALA",
+    "alt_name1": "Bama",
+    "conference": "SEC",
+    "classification": "fbs",
+    "color": "#9E1B32",
+    "alt_color": "#828A8F",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png"
+    ]
+  },
+  {
+    "id": 245,
+    "school": "Texas",
+    "mascot": "Longhorns",
+    "abbreviation": "TEX",
+    "alt_name1": "Texas",
+    "conference": "SEC",
+    "classification": "fbs",
+    "color": "#BF5700",
+    "alt_color": "#FFFFFF",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png"
+    ]
+  },
+  {
+    "id": 228,
+    "school": "Texas Tech",
+    "mascot": "Red Raiders",
+    "abbreviation": "TTU",
+    "alt_name1": "Texas Tech",
+    "conference": "Big 12",
+    "classification": "fbs",
+    "color": "#CC0000",
+    "alt_color": "#000000",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png"
+    ]
+  },
+  {
+    "id": 197,
+    "school": "Oklahoma",
+    "mascot": "Sooners",
+    "abbreviation": "OU",
+    "alt_name1": "OU",
+    "conference": "SEC",
+    "classification": "fbs",
+    "color": "#841617",
+    "alt_color": "#FDF9D8",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png"
+    ]
+  },
+  {
+    "id": 194,
+    "school": "Ohio State",
+    "mascot": "Buckeyes",
+    "abbreviation": "OSU",
+    "alt_name1": "Ohio St",
+    "conference": "Big Ten",
+    "classification": "fbs",
+    "color": "#BB0000",
+    "alt_color": "#666666",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png"
+    ]
+  },
+  {
+    "id": 130,
+    "school": "Michigan",
+    "mascot": "Wolverines",
+    "abbreviation": "MICH",
+    "alt_name1": "Michigan",
+    "conference": "Big Ten",
+    "classification": "fbs",
+    "color": "#00274C",
+    "alt_color": "#FFCB05",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png"
+    ]
+  },
+  {
+    "id": 57,
+    "school": "Georgia",
+    "mascot": "Bulldogs",
+    "abbreviation": "UGA",
+    "alt_name1": "Georgia",
+    "conference": "SEC",
+    "classification": "fbs",
+    "color": "#BA0C2F",
+    "alt_color": "#000000",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png"
+    ]
+  },
+  {
+    "id": 52,
+    "school": "Florida",
+    "mascot": "Gators",
+    "abbreviation": "FLA",
+    "alt_name1": "Florida",
+    "conference": "SEC",
+    "classification": "fbs",
+    "color": "#0021A5",
+    "alt_color": "#FA4616",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png"
+    ]
+  },
+  {
+    "id": 150,
+    "school": "Notre Dame",
+    "mascot": "Fighting Irish",
+    "abbreviation": "ND",
+    "alt_name1": "Notre Dame",
+    "conference": "Independent",
+    "classification": "fbs",
+    "color": "#0C2340",
+    "alt_color": "#C99700",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png"
+    ]
+  },
+  {
+    "id": 30,
+    "school": "Clemson",
+    "mascot": "Tigers",
+    "abbreviation": "CLEM",
+    "alt_name1": "Clemson",
+    "conference": "ACC",
+    "classification": "fbs",
+    "color": "#F56600",
+    "alt_color": "#522D80",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png"
+    ]
+  },
+  {
+    "id": 2729,
+    "school": "SMU",
+    "mascot": "Mustangs",
+    "abbreviation": "SMU",
+    "alt_name1": "Southern Methodist",
+    "conference": "ACC",
+    "classification": "fbs",
+    "color": "#0033A0",
+    "alt_color": "#CC0000",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/2567.png"
+    ]
+  },
+  {
+    "id": 26,
+    "school": "UCF",
+    "mascot": "Knights",
+    "abbreviation": "UCF",
+    "alt_name1": "Central Florida",
+    "conference": "Big 12",
+    "classification": "fbs",
+    "color": "#FFC904",
+    "alt_color": "#000000",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/2116.png"
+    ]
+  },
+  {
+    "id": 213,
+    "school": "USC",
+    "mascot": "Trojans",
+    "abbreviation": "USC",
+    "alt_name1": "Southern California",
+    "conference": "Big Ten",
+    "classification": "fbs",
+    "color": "#990000",
+    "alt_color": "#FFCC00",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png"
+    ]
+  },
+  {
+    "id": 2633,
+    "school": "UCLA",
+    "mascot": "Bruins",
+    "abbreviation": "UCLA",
+    "alt_name1": "UCLA",
+    "conference": "Big Ten",
+    "classification": "fbs",
+    "color": "#2D68C4",
+    "alt_color": "#FFE800",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png"
+    ]
+  },
+  {
+    "id": 235,
+    "school": "Oregon",
+    "mascot": "Ducks",
+    "abbreviation": "ORE",
+    "alt_name1": "Oregon",
+    "conference": "Big Ten",
+    "classification": "fbs",
+    "color": "#154733",
+    "alt_color": "#FEE123",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png"
+    ]
+  },
+  {
+    "id": 264,
+    "school": "Washington",
+    "mascot": "Huskies",
+    "abbreviation": "WASH",
+    "alt_name1": "Washington",
+    "conference": "Big Ten",
+    "classification": "fbs",
+    "color": "#4B2E83",
+    "alt_color": "#B7A57A",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/264.png"
+    ]
+  },
+  {
+    "id": 2509,
+    "school": "Penn State",
+    "mascot": "Nittany Lions",
+    "abbreviation": "PSU",
+    "alt_name1": "Penn St",
+    "conference": "Big Ten",
+    "classification": "fbs",
+    "color": "#041E42",
+    "alt_color": "#FFFFFF",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/213.png"
+    ]
+  },
+  {
+    "id": 2390,
+    "school": "LSU",
+    "mascot": "Tigers",
+    "abbreviation": "LSU",
+    "alt_name1": "Louisiana State",
+    "conference": "SEC",
+    "classification": "fbs",
+    "color": "#461D7C",
+    "alt_color": "#FDD023",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png"
+    ]
+  },
+  {
+    "id": 2628,
+    "school": "Tennessee",
+    "mascot": "Volunteers",
+    "abbreviation": "TENN",
+    "alt_name1": "Tennessee",
+    "conference": "SEC",
+    "classification": "fbs",
+    "color": "#FF8200",
+    "alt_color": "#FFFFFF",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png"
+    ]
+  },
+  {
+    "id": 2116,
+    "school": "Baylor",
+    "mascot": "Bears",
+    "abbreviation": "BAY",
+    "alt_name1": "Baylor",
+    "conference": "Big 12",
+    "classification": "fbs",
+    "color": "#154734",
+    "alt_color": "#FFCB05",
+    "logos": [
+      "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png"
+    ]
+  }
+]
