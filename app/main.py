@@ -377,13 +377,26 @@ async def _run_cfbd_autofill(
 
 @app.get("/api/options")
 def get_options():
-    """Return teams and conferences for dropdown selection"""
+    """Return all teams, conferences, and years"""
     from .teams_conferences import get_team_names, get_conference_names
 
     return {
-        "teams": get_team_names(),
-        "conferences": get_conference_names()
+        "conferences": get_conference_names(),
+        "teams": get_team_names(),  # All teams as fallback
+        "years": list(range(2015, 2026))  # Years available
     }
+
+
+@app.get("/api/teams-by-conference")
+def get_teams_by_conference(conference: str = ""):
+    """Get teams in a specific conference"""
+    from .teams_conferences import get_team_names_by_conference, get_team_names
+
+    if not conference:
+        return {"teams": get_team_names()}
+
+    teams = get_team_names_by_conference(conference)
+    return {"teams": teams}
 
 
 @app.get("/api/games")
