@@ -859,9 +859,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const orchestrated = window.__cfbOrchestrated;
-    if (!orchestrated) {
-      alert('Please select a game using the team dropdown OR run the ESPN/CFBD autofill.');
+
+    const conference = document.getElementById('conference_select').value;
+    const team = document.getElementById('team_select').value;
+    const year = document.getElementById('year_select').value;
+    const gameId = document.getElementById('game_select').value;
+    const videoUrl = document.getElementById('video_url').value.trim();
+
+    if (!conference) {
+      alert('Please select a conference');
+      return;
+    }
+
+    if (!team) {
+      alert('Please select a team');
+      return;
+    }
+
+    if (!year) {
+      alert('Please select a year');
+      return;
+    }
+
+    if (!gameId) {
+      alert('Please select a game from the dropdown');
+      return;
+    }
+
+    if (!videoUrl) {
+      alert('Please enter a video URL');
       return;
     }
 
@@ -870,69 +896,32 @@ document.addEventListener('DOMContentLoaded', () => {
     resetOutputs();
 
     const payload = {
-      video_url: document.getElementById('video_url').value.trim() || null,
+      video_url: videoUrl,
       webhook_url: document.getElementById('webhook_url').value.trim() || null,
+      cfbd: {
+        use_cfbd: true,
+        game_id: parseInt(gameId),
+        team: team,
+        season: parseInt(year)
+      },
       options: {
-        play_padding_pre: parseFloat(document.getElementById('play_padding_pre').value || '3'),
-        play_padding_post: parseFloat(document.getElementById('play_padding_post').value || '5'),
+        play_padding_pre: parseFloat(document.getElementById('play_padding_pre').value || '2'),
+        play_padding_post: parseFloat(document.getElementById('play_padding_post').value || '3'),
         scene_thresh: parseFloat(document.getElementById('scene_thresh').value || '0.30'),
         min_duration: parseFloat(document.getElementById('min_duration').value || '4'),
         max_duration: parseFloat(document.getElementById('max_duration').value || '20'),
       },
     };
 
-    const useCfbdToggle = document.getElementById('cfbd_use')?.checked ?? false;
-    const requireToggle = document.getElementById('cfbd_require')?.checked ?? false;
-    const chosenSource = orchestrated?.decision?.chosen_source;
-    const usingCfbd = useCfbdToggle && chosenSource === 'cfbd';
-    const requiringCfbd = requireToggle && usingCfbd;
-    const cfbd = {
-      use_cfbd: usingCfbd,
-      require_cfbd: requiringCfbd,
-      game_id: null,
-      season: null,
-      week: null,
-      team: null,
-      season_type: null,
-      home_team: null,
-      away_team: null,
-    };
-
-    const cfbdMatch = orchestrated?.cfbd_match;
-    if (usingCfbd && cfbdMatch) {
-      const rawGameId =
-        cfbdMatch.cfbdGameId ?? cfbdMatch.gameId ?? cfbdMatch.game_id;
-      const parsedGameId = Number(rawGameId);
-      cfbd.game_id = Number.isFinite(parsedGameId) ? parsedGameId : rawGameId;
-      cfbd.season = cfbdMatch.year ?? null;
-      cfbd.week = cfbdMatch.week ?? null;
-      const seasonType =
-        cfbdMatch.seasonType || cfbdMatch.season_type || 'regular';
-      if (seasonType) {
-        cfbd.season_type = seasonType;
-      }
-      const homeTeam = cfbdMatch.cfbdHome || cfbdMatch.homeTeam || null;
-      const awayTeam = cfbdMatch.cfbdAway || cfbdMatch.awayTeam || null;
-      const teamName = homeTeam || awayTeam || null;
-      cfbd.team = teamName;
-      cfbd.home_team = homeTeam;
-      cfbd.away_team = awayTeam;
-    }
-
-    payload.cfbd = cfbd;
-    payload.orchestrator = orchestrated;
-
-    if (cfbd.use_cfbd && !cfbd.game_id) {
-      submitBtn.disabled = false;
-      alert('CFBD autofill did not produce a valid game id.');
-      return;
-    }
+    console.log('Submitting payload:', payload);
 
     let response;
     try {
       response = await fetch('/jobs', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify(payload),
       });
     } catch (err) {
