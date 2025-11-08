@@ -915,6 +915,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('Submitting payload:', payload);
 
+    console.log('About to submit with gameId:', document.getElementById('game_select').value);
+    console.log('Full payload:', payload);
+
     let response;
     try {
       response = await fetch('/jobs', {
