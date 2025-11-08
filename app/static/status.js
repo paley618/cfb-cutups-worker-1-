@@ -19,6 +19,163 @@ document.addEventListener('DOMContentLoaded', () => {
   const cfbdWeekInput = document.getElementById('cfbdWeek');
   window.__cfbOrchestrated = null;
 
+  // NEW: Team/Conference/Game selection dropdowns
+  const teamSelect = document.getElementById('team_select');
+  const conferenceSelect = document.getElementById('conference_select');
+  const yearSelect = document.getElementById('year_select');
+  const gameSelect = document.getElementById('game_select');
+  window.__selectedGameData = null;
+
+  // Load teams and conferences on page load
+  const loadDropdownOptions = async () => {
+    try {
+      const response = await fetch('/api/options');
+      const data = await response.json();
+
+      // Populate team dropdown
+      if (teamSelect && data.teams) {
+        data.teams.forEach(team => {
+          const option = document.createElement('option');
+          option.value = team;
+          option.textContent = team;
+          teamSelect.appendChild(option);
+        });
+      }
+
+      // Populate conference dropdown
+      if (conferenceSelect && data.conferences) {
+        data.conferences.forEach(conf => {
+          const option = document.createElement('option');
+          option.value = conf;
+          option.textContent = conf;
+          conferenceSelect.appendChild(option);
+        });
+      }
+    } catch (error) {
+      console.error('Failed to load dropdown options:', error);
+    }
+  };
+
+  // When team is selected, fetch available games
+  const loadGamesForTeam = async () => {
+    if (!teamSelect || !yearSelect || !gameSelect) return;
+
+    const team = teamSelect.value;
+    const year = yearSelect.value;
+
+    if (!team) {
+      gameSelect.disabled = true;
+      gameSelect.innerHTML = '<option value="">-- Pick a team first --</option>';
+      window.__selectedGameData = null;
+      return;
+    }
+
+    try {
+      gameSelect.disabled = true;
+      gameSelect.innerHTML = '<option value="">Loading games...</option>';
+
+      const response = await fetch(`/api/games?team=${encodeURIComponent(team)}&year=${year}`);
+      const data = await response.json();
+
+      gameSelect.innerHTML = '<option value="">-- Select Game --</option>';
+
+      if (data.error || !data.games || data.games.length === 0) {
+        gameSelect.innerHTML += '<option disabled>No games available</option>';
+        gameSelect.disabled = true;
+        window.__selectedGameData = null;
+      } else {
+        data.games.forEach(game => {
+          const option = document.createElement('option');
+          option.value = game.id;
+          option.textContent = game.display;
+          option.dataset.gameData = JSON.stringify(game);
+          gameSelect.appendChild(option);
+        });
+        gameSelect.disabled = false;
+      }
+    } catch (error) {
+      console.error('Failed to load games:', error);
+      gameSelect.innerHTML = '<option value="">Error loading games</option>';
+      gameSelect.disabled = true;
+      window.__selectedGameData = null;
+    }
+  };
+
+  // When a game is selected, store the game data and create orchestrated payload
+  const handleGameSelection = async () => {
+    if (!gameSelect) return;
+
+    const selectedOption = gameSelect.options[gameSelect.selectedIndex];
+    if (!selectedOption || !selectedOption.value) {
+      window.__selectedGameData = null;
+      window.__cfbOrchestrated = null;
+      return;
+    }
+
+    try {
+      const gameData = JSON.parse(selectedOption.dataset.gameData || '{}');
+      window.__selectedGameData = gameData;
+
+      // Create a simple orchestrated payload for the dropdown selection
+      // This mimics what the ESPN autofill does
+      const team = teamSelect.value;
+      const year = yearSelect.value;
+
+      window.__cfbOrchestrated = {
+        status: 'READY',
+        decision: {
+          chosen_source: 'cfbd',
+          anomalies: []
+        },
+        cfbd_match: {
+          status: 'OK',
+          cfbdGameId: gameData.id,
+          gameId: gameData.id,
+          year: parseInt(year),
+          week: gameData.week,
+          seasonType: 'regular',
+          cfbdHome: gameData.home_team,
+          cfbdAway: gameData.away_team,
+          homeTeam: gameData.home_team,
+          awayTeam: gameData.away_team,
+          playsCount: 0  // Will be fetched when job is submitted
+        }
+      };
+
+      // Update the status display
+      if (cfbdAutofillStatus) {
+        renderCfbdAutofillStatus([
+          `${gameData.away_team} @ ${gameData.home_team}`,
+          `Week ${gameData.week} - ${gameData.start_date}`,
+          'Game selected — ready to submit.'
+        ], 'ok');
+      }
+
+      // Enable CFBD checkbox
+      if (cfbdUseCheckbox) {
+        cfbdUseCheckbox.checked = true;
+      }
+    } catch (error) {
+      console.error('Failed to handle game selection:', error);
+      window.__selectedGameData = null;
+      window.__cfbOrchestrated = null;
+    }
+  };
+
+  // Attach event listeners
+  if (teamSelect) {
+    teamSelect.addEventListener('change', loadGamesForTeam);
+  }
+  if (yearSelect) {
+    yearSelect.addEventListener('change', loadGamesForTeam);
+  }
+  if (gameSelect) {
+    gameSelect.addEventListener('change', handleGameSelection);
+  }
+
+  // Load dropdown options on page load
+  loadDropdownOptions();
+
   const clearCfbdStatus = () => {
     window.__cfbOrchestrated = null;
     if (!cfbdAutofillStatus) return;
@@ -656,7 +813,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const orchestrated = window.__cfbOrchestrated;
     if (!orchestrated) {
-      alert('Run the ESPN/CFBD autofill first.');
+      alert('Please select a game using the team dropdown OR run the ESPN/CFBD autofill.');
       return;
     }
 
