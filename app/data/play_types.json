@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "text": "Rush",
+    "abbreviation": "RUSH"
+  },
+  {
+    "id": 3,
+    "text": "Pass Reception",
+    "abbreviation": "PASS"
+  },
+  {
+    "id": 4,
+    "text": "Pass Incompletion",
+    "abbreviation": "INC"
+  },
+  {
+    "id": 5,
+    "text": "Sack",
+    "abbreviation": "SACK"
+  },
+  {
+    "id": 6,
+    "text": "Interception Return",
+    "abbreviation": "INT"
+  },
+  {
+    "id": 7,
+    "text": "Fumble Recovery (Opponent)",
+    "abbreviation": "FUM"
+  },
+  {
+    "id": 8,
+    "text": "Fumble Recovery (Own)",
+    "abbreviation": "FUM"
+  },
+  {
+    "id": 9,
+    "text": "Punt",
+    "abbreviation": "PUNT"
+  },
+  {
+    "id": 10,
+    "text": "Kickoff",
+    "abbreviation": "KICK"
+  },
+  {
+    "id": 11,
+    "text": "Field Goal Good",
+    "abbreviation": "FG"
+  },
+  {
+    "id": 12,
+    "text": "Field Goal Missed",
+    "abbreviation": "FG"
+  },
+  {
+    "id": 15,
+    "text": "Timeout",
+    "abbreviation": "TO"
+  },
+  {
+    "id": 16,
+    "text": "Extra Point Good",
+    "abbreviation": "XP"
+  },
+  {
+    "id": 18,
+    "text": "End Period",
+    "abbreviation": "END"
+  },
+  {
+    "id": 19,
+    "text": "End of Game",
+    "abbreviation": "END"
+  },
+  {
+    "id": 20,
+    "text": "Penalty",
+    "abbreviation": "PEN"
+  },
+  {
+    "id": 24,
+    "text": "Passing Touchdown",
+    "abbreviation": "TD"
+  },
+  {
+    "id": 26,
+    "text": "Rushing Touchdown",
+    "abbreviation": "TD"
+  },
+  {
+    "id": 28,
+    "text": "Punt Return Touchdown",
+    "abbreviation": "TD"
+  },
+  {
+    "id": 29,
+    "text": "Kickoff Return Touchdown",
+    "abbreviation": "TD"
+  },
+  {
+    "id": 32,
+    "text": "Interception Return Touchdown",
+    "abbreviation": "TD"
+  },
+  {
+    "id": 34,
+    "text": "Fumble Return Touchdown",
+    "abbreviation": "TD"
+  },
+  {
+    "id": 36,
+    "text": "Safety",
+    "abbreviation": "SAF"
+  },
+  {
+    "id": 51,
+    "text": "Two Point Pass",
+    "abbreviation": "2PT"
+  },
+  {
+    "id": 52,
+    "text": "Two Point Rush",
+    "abbreviation": "2PT"
+  },
+  {
+    "id": 67,
+    "text": "Blocked Punt",
+    "abbreviation": "BLK"
+  },
+  {
+    "id": 68,
+    "text": "Blocked Field Goal",
+    "abbreviation": "BLK"
+  }
+]
