@@ -99,6 +99,35 @@ def get_conference_names() -> List[str]:
     return sorted([n for n in names if n])
 
 
+def get_teams_by_conference(conference_name: str) -> List[Dict]:
+    """Get all teams in a specific conference"""
+    if not conference_name:
+        return get_all_teams()
+
+    # Find conference
+    conf = find_conference_by_name(conference_name)
+    if not conf:
+        return []
+
+    conf_id = conf.get("id")
+    conf_name = conf.get("name")
+
+    # Find teams in this conference
+    matching_teams = []
+    for team in _TEAMS:
+        team_conf = team.get("conference")
+        if team_conf and team_conf.lower() == conf_name.lower():
+            matching_teams.append(team)
+
+    return sorted(matching_teams, key=lambda t: t.get("school", ""))
+
+
+def get_team_names_by_conference(conference_name: str) -> List[str]:
+    """Get sorted list of team names in a conference"""
+    teams = get_teams_by_conference(conference_name)
+    return sorted([t.get("school", "") for t in teams if t.get("school")])
+
+
 # Debug
 if __name__ == "__main__":
     print(f"Loaded {len(_TEAMS)} teams")

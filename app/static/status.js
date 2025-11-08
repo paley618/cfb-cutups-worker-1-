@@ -32,16 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('/api/options');
       const data = await response.json();
 
-      // Populate team dropdown
-      if (teamSelect && data.teams) {
-        data.teams.forEach(team => {
-          const option = document.createElement('option');
-          option.value = team;
-          option.textContent = team;
-          teamSelect.appendChild(option);
-        });
-      }
-
       // Populate conference dropdown
       if (conferenceSelect && data.conferences) {
         data.conferences.forEach(conf => {
@@ -51,8 +41,63 @@ document.addEventListener('DOMContentLoaded', () => {
           conferenceSelect.appendChild(option);
         });
       }
+
+      // Populate year dropdown
+      if (yearSelect && data.years) {
+        data.years.forEach(year => {
+          const option = document.createElement('option');
+          option.value = year;
+          option.textContent = year;
+          yearSelect.appendChild(option);
+        });
+        // Set default year to 2024
+        yearSelect.value = '2024';
+      }
     } catch (error) {
       console.error('Failed to load dropdown options:', error);
+    }
+  };
+
+  // When conference is selected, load teams for that conference
+  const loadTeamsForConference = async () => {
+    if (!conferenceSelect || !teamSelect) return;
+
+    const conference = conferenceSelect.value;
+
+    // Clear team and game dropdowns
+    teamSelect.innerHTML = '<option value="">-- Loading teams... --</option>';
+    gameSelect.innerHTML = '<option value="">-- Select Team and Year First --</option>';
+    gameSelect.disabled = true;
+    window.__selectedGameData = null;
+
+    if (!conference) {
+      teamSelect.innerHTML = '<option value="">-- Pick a Conference First --</option>';
+      teamSelect.disabled = true;
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/teams-by-conference?conference=${encodeURIComponent(conference)}`);
+      const data = await response.json();
+
+      teamSelect.innerHTML = '<option value="">-- Select a Team --</option>';
+
+      if (data.error || !data.teams || data.teams.length === 0) {
+        teamSelect.innerHTML += '<option disabled>No teams found</option>';
+        teamSelect.disabled = true;
+      } else {
+        data.teams.forEach(team => {
+          const option = document.createElement('option');
+          option.value = team;
+          option.textContent = team;
+          teamSelect.appendChild(option);
+        });
+        teamSelect.disabled = false;
+      }
+    } catch (error) {
+      console.error('Failed to load teams:', error);
+      teamSelect.innerHTML = '<option disabled>Error loading teams</option>';
+      teamSelect.disabled = true;
     }
   };
 
@@ -162,7 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Attach event listeners
+  // Attach event listeners for cascading dropdowns
+  if (conferenceSelect) {
+    conferenceSelect.addEventListener('change', loadTeamsForConference);
+  }
   if (teamSelect) {
     teamSelect.addEventListener('change', loadGamesForTeam);
   }

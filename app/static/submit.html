@@ -51,31 +51,37 @@
         <div class="cfbd-box" style="margin-top:8px; display:flex; flex-direction:column; gap:12px;">
           <label style="display:flex; align-items:center; gap:8px"><input type="checkbox" id="cfbd_use" name="use_cfbd"> Use CFBD-guided cuts</label>
 
-          <!-- NEW: Team/Conference/Year/Game Selection -->
+          <!-- Cascading Dropdowns: Conference → Team → Year → Game -->
           <div class="row cfbd-row">
             <div>
-              <label for="team_select">Team</label>
-              <select id="team_select" name="team_select">
-                <option value="">-- Select Team --</option>
+              <label for="conference_select">Step 1: Conference</label>
+              <select id="conference_select" name="conference_select">
+                <option value="">-- Select a Conference --</option>
               </select>
+              <small style="color:#888">Pick a conference to narrow down teams</small>
             </div>
             <div>
-              <label for="conference_select">Conference (Optional)</label>
-              <select id="conference_select" name="conference_select">
-                <option value="">-- All Conferences --</option>
+              <label for="team_select">Step 2: Team</label>
+              <select id="team_select" name="team_select" disabled>
+                <option value="">-- Pick a Conference First --</option>
               </select>
+              <small style="color:#888">Teams in selected conference</small>
             </div>
           </div>
           <div class="row cfbd-row">
             <div>
-              <label for="year_select">Year</label>
-              <input id="year_select" name="year_select" type="number" value="2024" min="2000" max="2025" />
+              <label for="year_select">Step 3: Year</label>
+              <select id="year_select" name="year_select">
+                <option value="">-- Select Year --</option>
+              </select>
+              <small style="color:#888">Choose the season</small>
             </div>
             <div>
-              <label for="game_select">Game</label>
+              <label for="game_select">Step 4: Game</label>
               <select id="game_select" name="game_select" disabled>
-                <option value="">-- Pick a team first --</option>
+                <option value="">-- Pick Team and Year First --</option>
               </select>
+              <small style="color:#888">Available games will appear here</small>
             </div>
           </div>
           <div style="text-align:center; color:#888; font-size:0.9em; margin:8px 0">OR</div>
