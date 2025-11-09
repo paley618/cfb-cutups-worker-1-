@@ -6,7 +6,7 @@ import httpx
 
 from app.teams import find_team_by_name
 
-CFBD_BASE = "https://api.collegefootballdata.com"
+CFBD_BASE = "https://apinext.collegefootballdata.com"
 
 
 class CFBDClientError(RuntimeError):
@@ -72,7 +72,7 @@ class CFBDClient:
         """Attempt to fill in year/week when CFBD demands them."""
 
         try:
-            response = self._req("/games", {"gameId": gid})
+            response = self._req("/games", {"game_id": gid})
         except CFBDClientError:
             return year, week, season_type
 
@@ -114,7 +114,7 @@ class CFBDClient:
 
         gid = int(game_id)
 
-        first = self._req("/plays", {"gameId": gid})
+        first = self._req("/plays", {"game_id": gid})
         if first.status_code < 400:
             payload = first.json()
             if not isinstance(payload, list):
@@ -139,8 +139,8 @@ class CFBDClient:
                 )
 
             params: Dict[str, object] = {
-                "gameId": gid,
-                "seasonType": resolved_season_type,
+                "game_id": gid,
+                "season_type": resolved_season_type,
             }
             if resolved_year is not None:
                 params["year"] = int(resolved_year)
@@ -195,7 +195,7 @@ class CFBDClient:
         team: str | None,
         season_type: str = "regular",
     ) -> int | None:
-        params = {"year": int(year), "seasonType": season_type}
+        params = {"year": int(year), "season_type": season_type}
         if week is not None:
             params["week"] = int(week)
         if team:

@@ -75,7 +75,7 @@ def _cfbd_headers() -> dict[str, str]:
 
 
 def _cfbd_base_url() -> str:
-    base = settings.cfbd_api_base or "https://api.collegefootballdata.com"
+    base = settings.cfbd_api_base or "https://apinext.collegefootballdata.com"
     return base.rstrip("/")
 
 
@@ -232,7 +232,7 @@ async def _run_cfbd_autofill(
             timeout=timeout,
             headers=headers,
         ) as client:
-            games_resp = await client.get("/games", params={"gameId": normalized})
+            games_resp = await client.get("/games", params={"game_id": normalized})
             tried.append(str(games_resp.request.url))
             if games_resp.status_code >= 400:
                 return {
@@ -286,13 +286,13 @@ async def _run_cfbd_autofill(
             home_team = game.get("home_team") or game.get("homeTeam")
             away_team = game.get("away_team") or game.get("awayTeam")
 
-            plays_params: dict[str, Any] = {"gameId": normalized}
+            plays_params: dict[str, Any] = {"game_id": normalized}
             if resolved_year is not None:
                 plays_params["year"] = int(resolved_year)
             if resolved_week is not None:
                 plays_params["week"] = int(resolved_week)
             if resolved_season_type:
-                plays_params["seasonType"] = resolved_season_type
+                plays_params["season_type"] = resolved_season_type
 
             plays_resp = await client.get("/plays", params=plays_params)
             tried.append(str(plays_resp.request.url))
@@ -338,13 +338,13 @@ async def _run_cfbd_autofill(
                             }
                         else:
                             plays_payload = list(fallback_payload)
-                            query_parts: list[str] = [f"gameId={normalized}"]
+                            query_parts: list[str] = [f"game_id={normalized}"]
                             if resolved_year is not None:
                                 query_parts.append(f"year={int(resolved_year)}")
                             if resolved_week is not None:
                                 query_parts.append(f"week={int(resolved_week)}")
                             if resolved_season_type:
-                                query_parts.append(f"seasonType={resolved_season_type}")
+                                query_parts.append(f"season_type={resolved_season_type}")
                             tried.append("cfbd-client:/plays?" + "&".join(query_parts))
                 if plays_payload is None:
                     return {
