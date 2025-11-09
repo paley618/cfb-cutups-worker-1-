@@ -10,7 +10,7 @@ from .settings import settings
 
 router = APIRouter()
 
-CFBD_BASE_DEFAULT = "https://api.collegefootballdata.com"
+CFBD_BASE_DEFAULT = "https://apinext.collegefootballdata.com"
 
 
 def _cfbd_base() -> str:
@@ -36,7 +36,7 @@ def cfbd_get(path: str, params: Dict[str, Any]):
 def cfbd_autofill_by_gameid(
     gameId: str = Query(..., description="ESPN/CFBD game id"),
 ):
-    games = cfbd_get("/games", {"gameId": gameId})
+    games = cfbd_get("/games", {"game_id": gameId})
     if not games:
         return {
             "status": "NOT_FOUND",
@@ -51,7 +51,7 @@ def cfbd_autofill_by_gameid(
     home_team = game.get("home_team") or game.get("homeTeam")
     away_team = game.get("away_team") or game.get("awayTeam")
 
-    plays_payload = cfbd_get("/plays", {"gameId": gameId})
+    plays_payload = cfbd_get("/plays", {"game_id": gameId})
     if not isinstance(plays_payload, list):
         plays_payload = []
     plays_filtered = [
@@ -72,7 +72,7 @@ def cfbd_autofill_by_gameid(
         "awayTeam": away_team,
         "playsCount": len(plays_filtered),
         "tried": [
-            f"{base}/games?gameId={gameId}",
-            f"{base}/plays?gameId={gameId}",
+            f"{base}/games?game_id={gameId}",
+            f"{base}/plays?game_id={gameId}",
         ],
     }

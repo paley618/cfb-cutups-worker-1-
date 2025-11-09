@@ -6,7 +6,7 @@ from fastapi import APIRouter, Body, Query
 
 router = APIRouter()
 
-CFBD_BASE = "https://api.collegefootballdata.com"
+CFBD_BASE = "https://apinext.collegefootballdata.com"
 # support both env var names
 CFBD_KEY = os.getenv("CFBD_KEY") or os.getenv("CFBD_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_TOKEN")
@@ -287,13 +287,13 @@ def cfbd_autofill_from_espn(
     # 4) we found the CFBD game → now get plays for THAT game id
     cfbd_game_id = matched_game["id"]
     plays_params: dict[str, int | str] = {
-        "gameId": cfbd_game_id,
+        "game_id": cfbd_game_id,
         "year": matched_game.get("season", year),
     }
     if matched_game.get("week"):
         plays_params["week"] = matched_game["week"]
     if matched_game.get("season_type"):
-        plays_params["seasonType"] = matched_game["season_type"]
+        plays_params["season_type"] = matched_game["season_type"]
 
     try:
         cfbd_plays = cfbd_get("/plays", plays_params)
@@ -346,7 +346,7 @@ def cfbd_autofill_by_gameid(
     """
 
     # build params for CFBD call
-    params = {"gameId": gameId}
+    params = {"game_id": gameId}
     if year is not None:
         params["year"] = year
     if week is not None:
@@ -517,13 +517,13 @@ def cfbd_match_from_espn(
 
     cfbd_game_id = matched["id"]
     plays_params = {
-        "gameId": cfbd_game_id,
+        "game_id": cfbd_game_id,
         "year": matched.get("season", year),
     }
     if matched.get("week"):
         plays_params["week"] = matched["week"]
     if matched.get("season_type"):
-        plays_params["seasonType"] = matched["season_type"]
+        plays_params["season_type"] = matched["season_type"]
 
     plays_resp = requests.get(
         f"{CFBD_BASE}/plays", params=plays_params, headers=headers, timeout=15

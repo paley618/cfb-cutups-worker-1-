@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Optional
 
 import httpx
 
-CFBD_BASE = "https://api.collegefootballdata.com"
+CFBD_BASE = "https://apinext.collegefootballdata.com"
 
 
 class CFBDClientError(RuntimeError):
@@ -63,7 +63,7 @@ class CFBDClient:
     async def get_plays_by_game(self, game_id: int) -> List[Dict[str, Any]]:
         """Fetch plays for a specific game id."""
 
-        payload = await self._get("/plays", {"gameId": int(game_id)})
+        payload = await self._get("/plays", {"game_id": int(game_id)})
         if not isinstance(payload, list):
             # This handles non-list returns, which is correct
             raise CFBDClientError("Unexpected CFBD payload shape for plays")
