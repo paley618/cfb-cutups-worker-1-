@@ -39,11 +39,16 @@ class CFBDClient:
         url = f"{self.base_url}{path}"
         async with httpx.AsyncClient(timeout=self.timeout, headers=self.headers) as client:
             response = await client.get(url, params=params)
-            if response.status_code >= 400:
-                raise CFBDClientError(
-                    f"{response.status_code} {response.reason_phrase}: {response.text}"
-                )
-            return response.json()
+            return response
+
+    async def _get_json(self, path: str, params: Dict[str, Any]) -> Any:
+        """Helper that raises on 400+ status codes."""
+        response = await self._get(path, params)
+        if response.status_code >= 400:
+            raise CFBDClientError(
+                f"{response.status_code} {response.reason_phrase}: {response.text}"
+            )
+        return response.json()
 
     async def resolve_game_id(
         self,
@@ -53,50 +58,115 @@ class CFBDClient:
         week: int,
         season_type: str = "regular",
     ) -> Optional[int]:
-        # ... (params defined)
-        data = await self._get("/games", params)
+        params = {
+            "team": team,
+            "year": year,
+            "week": week,
+            "season_type": season_type,
+        }
+        data = await self._get_json("/games", params)
         # FIX: Check if data is not empty before trying to access index 0
         if not data or len(data) == 0:  # Check for empty list []
             return None
         game = data[0]
-        # ... (rest of function is fine)
-    async def get_plays_by_game(self, game_id: int) -> List[Dict[str, Any]]:
-        """Fetch plays for a specific game id.
+        return int(game["id"]) if game and "id" in game else None
+    async def get_plays_by_game(
+        self,
+        game_id: int,
+        *,
+        year: Optional[int] = None,
+        week: Optional[int] = None,
+        season_type: str = "regular",
+    ) -> List[Dict[str, Any]]:
+        """Fetch plays for a specific game, with fallback to season/week if needed."""
+        import logging
+        logger = logging.getLogger(__name__)
 
-        Note: CFBD should return only plays for this game, but sometimes returns
-        week/season aggregates causing 31k+ plays. Caller should validate count.
-        """
+        gid = int(game_id)
 
-        payload = await self._get("/plays", {"game_id": int(game_id)})
-        if not isinstance(payload, list):
-            # This handles non-list returns, which is correct
-            raise CFBDClientError("Unexpected CFBD payload shape for plays")
+        logger.info(f"[CFBD] Fetching plays for game_id={gid}")
 
-        # Log if play count is suspiciously high
-        if len(payload) > 300:
-            print(
-                f"[CFBD] WARNING: Game ID {game_id} returned {len(payload)} plays "
-                f"(expected <300). CFBD may have returned week/season data."
+        # Try with game_id only
+        first = await self._get("/plays", {"game_id": gid})
+        logger.info(f"[CFBD] /plays?game_id={gid} returned status {first.status_code}")
+
+        if first.status_code < 400:
+            payload = first.json()
+            if not isinstance(payload, list):
+                raise CFBDClientError(f"unexpected /plays payload: {first.text[:200]}")
+
+            # Filter to only this game's plays
+            game_plays = [play for play in payload if play.get("game_id") == gid]
+
+            if game_plays:
+                logger.info(
+                    f"[CFBD] /plays?game_id={gid} succeeded. "
+                    f"Got {len(payload)} total, {len(game_plays)} for this game."
+                )
+                return game_plays
+
+        # If initial request failed (400), retry with season/week parameters
+        logger.info(
+            f"[CFBD] /plays?game_id={gid} returned {first.status_code}. "
+            f"Retrying with season/week parameters..."
+        )
+
+        retry_params = {
+            "game_id": gid,
+            "season_type": season_type,
+            "year": year,
+            "week": week
+        }
+
+        retry = await self._get("/plays", retry_params)
+        logger.info(
+            f"[CFBD] /plays retry with season/week returned status {retry.status_code}"
+        )
+
+        if retry.status_code < 400:
+            payload = retry.json()
+            if not isinstance(payload, list):
+                raise CFBDClientError(f"unexpected /plays retry payload: {retry.text[:200]}")
+
+            # Filter to only this game's plays (critical!)
+            game_plays = [play for play in payload if play.get("game_id") == gid]
+
+            logger.info(
+                f"[CFBD] Retry succeeded! Got {len(payload)} total plays, "
+                f"{len(game_plays)} for game_id={gid}. "
+                f"(Filtered out {len(payload) - len(game_plays)} other games)"
             )
 
-        if not payload:
-            print(f"CFBD: Game ID {game_id} returned 0 plays.")
+            if game_plays:
+                return game_plays
+            else:
+                raise CFBDClientError(f"No plays found for game {gid} after filtering week data")
 
-        return payload
+        # Both attempts failed
+        raise CFBDClientError(
+            f"CFBD /plays endpoint failed for game {gid}: "
+            f"initial={first.status_code}, retry={retry.status_code}"
+        )
         
     async def fetch(self, spec: Dict[str, Any]) -> Dict[str, Any]:
         """Fetch plays either by game id or by team/year/week spec."""
 
         request_spec = dict(spec)
-        if request_spec.get("game_id"):
-            game_id = int(request_spec["game_id"])
-            plays = await self.get_plays_by_game(game_id)
-            return {"game_id": game_id, "plays": plays, "request": request_spec}
-
-        team = request_spec.get("team")
         year = request_spec.get("year") or request_spec.get("season")
         week = request_spec.get("week")
         season_type = request_spec.get("season_type") or "regular"
+
+        if request_spec.get("game_id"):
+            game_id = int(request_spec["game_id"])
+            plays = await self.get_plays_by_game(
+                game_id,
+                year=int(year) if year else None,
+                week=int(week) if week else None,
+                season_type=season_type,
+            )
+            return {"game_id": game_id, "plays": plays, "request": request_spec}
+
+        team = request_spec.get("team")
         if not (team and year and week):
             raise CFBDClientError("Missing required fields for CFBD fetch (team, year, week)")
 
@@ -110,6 +180,11 @@ class CFBDClient:
             raise CFBDClientError(
                 f"No game_id found for {team} {season_type} week {week} {year}"
             )
-        plays = await self.get_plays_by_game(game_id)
+        plays = await self.get_plays_by_game(
+            game_id,
+            year=int(year),
+            week=int(week),
+            season_type=season_type,
+        )
         return {"game_id": game_id, "plays": plays, "request": request_spec}
 
