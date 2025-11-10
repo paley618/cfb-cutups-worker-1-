@@ -28,6 +28,11 @@ def _is_year_week_validator(text: str) -> bool:
 
 
 def _play_belongs_to_game(play: Dict, gid: int) -> bool:
+    """Verify a play belongs to the requested game_id.
+
+    This is critical because CFBD sometimes returns plays from multiple games
+    or entire weeks/seasons, causing the 31,168 plays bug.
+    """
     try:
         return int(play.get("game_id", gid)) == gid
     except (TypeError, ValueError):
@@ -114,7 +119,11 @@ class CFBDClient:
         week: int | None,
         season_type: str = "regular",
     ) -> List[Dict]:
-        """Fetch plays for a specific game, retrying with year/week when required."""
+        """Fetch plays for a specific game, retrying with year/week when required.
+
+        Filters to only plays belonging to the requested game_id to prevent
+        CFBD from returning week/season aggregates (which causes 31k+ plays bug).
+        """
 
         gid = int(game_id)
 
@@ -123,11 +132,31 @@ class CFBDClient:
             payload = first.json()
             if not isinstance(payload, list):
                 raise CFBDClientError(f"unexpected /plays payload: {first.text[:200]}")
-            return [
+
+            # Filter to plays belonging to this game ONLY
+            game_plays = [
                 play
                 for play in payload
                 if _play_belongs_to_game(play, gid)
             ]
+
+            # Log if CFBD returned plays from other games
+            if len(payload) != len(game_plays):
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.warning(
+                    f"[CFBD] Filtered out {len(payload) - len(game_plays)} plays from other games! "
+                    f"game_id={gid}, raw_count={len(payload)}, filtered_count={len(game_plays)}"
+                )
+            elif len(payload) > 300:
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.warning(
+                    f"[CFBD] Received {len(payload)} plays for game_id={gid} (expected <300). "
+                    f"This may indicate CFBD returned week/season data instead of single game."
+                )
+
+            return game_plays
 
         if _is_year_week_validator(first.text):
             resolved_year = year
@@ -160,11 +189,31 @@ class CFBDClient:
                 raise CFBDClientError(
                     f"unexpected /plays retry payload: {retry.text[:200]}"
                 )
-            return [
+
+            # Filter to plays belonging to this game ONLY
+            game_plays = [
                 play
                 for play in payload
                 if _play_belongs_to_game(play, gid)
             ]
+
+            # Log if CFBD returned plays from other games
+            if len(payload) != len(game_plays):
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.warning(
+                    f"[CFBD] (retry) Filtered out {len(payload) - len(game_plays)} plays from other games! "
+                    f"game_id={gid}, raw_count={len(payload)}, filtered_count={len(game_plays)}"
+                )
+            elif len(payload) > 300:
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.warning(
+                    f"[CFBD] (retry) Received {len(payload)} plays for game_id={gid} (expected <300). "
+                    f"This may indicate CFBD returned week/season data instead of single game."
+                )
+
+            return game_plays
 
         raise CFBDClientError(f"/plays failed {first.status_code}: {first.text[:200]}")
 

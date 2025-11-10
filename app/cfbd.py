@@ -61,17 +61,27 @@ class CFBDClient:
         game = data[0]
         # ... (rest of function is fine)
     async def get_plays_by_game(self, game_id: int) -> List[Dict[str, Any]]:
-        """Fetch plays for a specific game id."""
+        """Fetch plays for a specific game id.
+
+        Note: CFBD should return only plays for this game, but sometimes returns
+        week/season aggregates causing 31k+ plays. Caller should validate count.
+        """
 
         payload = await self._get("/plays", {"game_id": int(game_id)})
         if not isinstance(payload, list):
             # This handles non-list returns, which is correct
             raise CFBDClientError("Unexpected CFBD payload shape for plays")
-        
-        # ADDED LOGGING: If payload is [], log it but return it.
+
+        # Log if play count is suspiciously high
+        if len(payload) > 300:
+            print(
+                f"[CFBD] WARNING: Game ID {game_id} returned {len(payload)} plays "
+                f"(expected <300). CFBD may have returned week/season data."
+            )
+
         if not payload:
-            print(f"CFBD: Game ID {game_id} returned 0 plays (empty list).")
-        
+            print(f"CFBD: Game ID {game_id} returned 0 plays.")
+
         return payload
         
     async def fetch(self, spec: Dict[str, Any]) -> Dict[str, Any]:
