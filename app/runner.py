@@ -602,6 +602,11 @@ class JobRunner:
                 cfbd_play_count = 0
                 cfbd_used = False
                 fallback_used = False
+
+                # Track actual data source for diagnostics
+                actual_data_source: Optional[str] = None
+                cfbd_games_count = 0
+                espn_games_count = 0
                 pre_merge_guided: List[Tuple[float, float]] = []
                 guided_windows: List[Tuple[float, float]] = []
                 clip_entries: List[Dict[str, Any]] = []
@@ -637,6 +642,12 @@ class JobRunner:
                 job_meta["cfbd_requested"] = requested_cfbd
                 cfbd_summary["requested"] = requested_cfbd
                 cfbd_job_meta["requested"] = requested_cfbd
+
+                # DIAGNOSTIC LOGGING
+                logger.info(f"[CFBD DIAGNOSTICS] CFBD requested: {requested_cfbd}")
+                logger.info(f"[CFBD DIAGNOSTICS] CFBD_API_KEY present: {bool(CFBD_API_KEY)}")
+                logger.info(f"[CFBD DIAGNOSTICS] CFBD_ENABLE setting: {settings.CFBD_ENABLE}")
+                logger.info(f"[CFBD DIAGNOSTICS] Global CFBD enabled: {global_cfbd_enabled}")
 
                 if not requested_cfbd:
                     cfbd_job_meta.setdefault("status", "off")
@@ -707,6 +718,8 @@ class JobRunner:
                         cfbd_plays = list(cached["plays"])
                         cfbd_play_count = len(cfbd_plays)
                         cfbd_used = True
+                        cfbd_games_count = cfbd_play_count
+                        logger.info(f"[CFBD DIAGNOSTICS] Using cached CFBD data: {cfbd_play_count} plays")
                         cached_reason = f"cached game_id={cached['game_id']} ({cfbd_play_count} plays)"
                         set_cfbd_state("ready", cached_reason)
                         job_meta["cfbd_cached"] = True
@@ -739,6 +752,7 @@ class JobRunner:
                                     week_val,
                                     season_type_val,
                                 )
+                                logger.info(f"[CFBD DIAGNOSTICS] Calling CFBD API for game_id={gid}")
                                 plays_list = await asyncio.to_thread(
                                     self.cfbd.get_plays_for_game,
                                     int(gid),
@@ -748,6 +762,7 @@ class JobRunner:
                                 )
                                 cfbd_plays = list(plays_list)
                                 cfbd_play_count = len(cfbd_plays)
+                                logger.info(f"[CFBD DIAGNOSTICS] CFBD API returned {cfbd_play_count} plays")
                                 if not cfbd_play_count:
                                     raise RuntimeError("empty plays[]")
                                 if cfbd_play_count < 50 or cfbd_play_count > 800:
@@ -758,6 +773,8 @@ class JobRunner:
                             except Exception as exc:  # pragma: no cover - network edge
                                 cfbd_reason = f"/plays failed: {type(exc).__name__}: {exc}"
                                 logger.warning(f"CFBD fetch failed, attempting ESPN fallback: {cfbd_reason}")
+                                logger.info(f"[CFBD DIAGNOSTICS] CFBD API call failed: {cfbd_reason}")
+                                logger.info(f"[CFBD DIAGNOSTICS] Attempting ESPN fallback...")
 
                                 # TRY ESPN FALLBACK
                                 espn_fallback_success = False
@@ -781,6 +798,8 @@ class JobRunner:
                                         ]
                                         cfbd_play_count = len(cfbd_plays)
                                         cfbd_used = True
+                                        espn_games_count = cfbd_play_count
+                                        logger.info(f"[CFBD DIAGNOSTICS] ESPN fallback returned {cfbd_play_count} timestamps")
                                         espn_reason = f"ESPN fallback: {cfbd_play_count} timestamps"
                                         set_cfbd_state("ready_espn", espn_reason)
                                         cfbd_job_meta["status"] = "ready_espn"
@@ -813,6 +832,8 @@ class JobRunner:
                                     )
                             else:
                                 cfbd_used = True
+                                cfbd_games_count = cfbd_play_count
+                                logger.info(f"[CFBD DIAGNOSTICS] Using fresh CFBD data: {cfbd_play_count} plays")
                                 cfbd_reason = f"game_id={gid} • plays={cfbd_play_count}"
                                 set_cfbd_state("ready", cfbd_reason)
                                 job_meta["cfbd_cached"] = False
@@ -876,6 +897,8 @@ class JobRunner:
                                 )
                             else:
                                 cfbd_used = True
+                                cfbd_games_count = cfbd_play_count
+                                logger.info(f"[CFBD DIAGNOSTICS] Using resolved CFBD data: {cfbd_play_count} plays")
                                 cfbd_reason = f"resolved game_id={int(gid)} • plays={cfbd_play_count}"
                                 set_cfbd_state("ready", cfbd_reason)
                                 job_meta["cfbd_cached"] = False
@@ -1157,6 +1180,14 @@ class JobRunner:
                         cfbd_summary["clips"] = len(windows_with_meta)
                         cfbd_used = bool(windows_with_meta)
                         if cfbd_used:
+                            # Determine if using CFBD or ESPN fallback
+                            if espn_games_count > 0:
+                                actual_data_source = "ESPN"
+                                logger.info(f"[CFBD DIAGNOSTICS] Using ESPN as data source: {len(windows_with_meta)} clips")
+                            else:
+                                actual_data_source = "CFBD"
+                                logger.info(f"[CFBD DIAGNOSTICS] Using CFBD as data source: {len(windows_with_meta)} clips")
+                        if cfbd_used:
                             self._set_stage(
                                 job_id,
                                 "detecting",
@@ -1217,6 +1248,7 @@ class JobRunner:
                     pre_merge_list = pre_merge_guided
                     windows = list(guided_windows)
                 else:
+                    logger.info("[CFBD DIAGNOSTICS] CFBD not used, falling back to vision/ESPN PBP")
                     orchestrator_payload = job_meta.get("orchestrator") or job_state.get(
                         "orchestrator"
                     )
@@ -1246,6 +1278,8 @@ class JobRunner:
 
                     if not candidate_windows or len(candidate_windows) < settings.MIN_TOTAL_CLIPS:
                         fallback_used = True
+                        actual_data_source = "FALLBACK"
+                        logger.info(f"[CFBD DIAGNOSTICS] Using FALLBACK data source (timegrid)")
                         target = (
                             (
                                 cfbd_play_count
@@ -1260,6 +1294,13 @@ class JobRunner:
                         candidate_windows = list(grid)
                     else:
                         fallback_used = False
+                        if not actual_data_source:
+                            if len(espn_windows) > len(detector_windows):
+                                actual_data_source = "ESPN_PBP"
+                                logger.info(f"[CFBD DIAGNOSTICS] Using ESPN PBP data source: {len(espn_windows)} windows")
+                            else:
+                                actual_data_source = "VISION"
+                                logger.info(f"[CFBD DIAGNOSTICS] Using VISION data source: {len(detector_windows)} windows")
 
                     if fallback_used:
                         shifted: List[Tuple[float, float]] = []
@@ -1921,6 +1962,14 @@ class JobRunner:
                         "total_runtime_sec": round(sum(c["duration"] for c in clips_meta), 3),
                         "processing_sec": None,
                     },
+                    # Diagnostic fields
+                    "cfbd_requested": job_state.get("cfbd_requested"),
+                    "cfbd_state": job_state.get("cfbd_state"),
+                    "actual_data_source": actual_data_source,
+                    "cfbd_games_count": cfbd_games_count,
+                    "espn_games_count": espn_games_count,
+                    "source_used_for_clips": actual_data_source,
+                    "clips_generated": len(clips_meta),
                 }
                 manifest.setdefault("detector_meta", {}).update(
                     {
@@ -2069,6 +2118,12 @@ class JobRunner:
                     "manifest": manifest,
                 }
                 self.jobs[job_id]["result"] = result
+
+                # Store diagnostic fields in job state for easy access
+                self.jobs[job_id]["actual_data_source"] = actual_data_source
+                self.jobs[job_id]["cfbd_games_count"] = cfbd_games_count
+                self.jobs[job_id]["espn_games_count"] = espn_games_count
+                self.jobs[job_id]["clips_generated"] = len(clips_meta)
 
                 self._set_stage(job_id, "completed", pct=100.0, detail="Ready", eta=0.0)
                 _heartbeat(
