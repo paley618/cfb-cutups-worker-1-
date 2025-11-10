@@ -34,6 +34,47 @@ def _play_belongs_to_game(play: Dict, gid: int) -> bool:
         return False
 
 
+# Meaningful play types for video clipping
+# Excludes: Timeout (15), Extra Point (16), End Period (18), End of Game (19), Penalty (20)
+MEANINGFUL_PLAY_TYPES = {
+    1,   # Rush
+    3,   # Pass Reception
+    4,   # Pass Incompletion
+    5,   # Sack
+    6,   # Interception Return
+    7,   # Fumble Recovery (Opponent)
+    8,   # Fumble Recovery (Own)
+    9,   # Punt
+    10,  # Kickoff
+    11,  # Field Goal Good
+    12,  # Field Goal Missed
+    24,  # Passing Touchdown
+    26,  # Rushing Touchdown
+    28,  # Punt Return Touchdown
+    29,  # Kickoff Return Touchdown
+    32,  # Interception Return Touchdown
+    34,  # Fumble Return Touchdown
+    36,  # Safety
+    51,  # Two Point Pass
+    52,  # Two Point Rush
+    67,  # Blocked Punt
+    68,  # Blocked Field Goal
+}
+
+
+def _is_meaningful_play(play: Dict) -> bool:
+    """Filter out non-meaningful plays (timeouts, end periods, etc.)"""
+    play_type = play.get("playType") or play.get("play_type")
+    if play_type is None:
+        # If no play type, include it (defensive)
+        return True
+    try:
+        return int(play_type) in MEANINGFUL_PLAY_TYPES
+    except (TypeError, ValueError):
+        # If we can't parse the play type, include it (defensive)
+        return True
+
+
 def _coerce_int(value: Any) -> int | None:
     try:
         return int(value)
@@ -114,7 +155,10 @@ class CFBDClient:
         week: int | None,
         season_type: str = "regular",
     ) -> List[Dict]:
-        """Fetch plays for a specific game, retrying with year/week when required."""
+        """Fetch plays for a specific game, retrying with year/week when required.
+
+        Filters to only meaningful play types (excludes timeouts, end periods, etc.)
+        """
 
         gid = int(game_id)
 
@@ -123,11 +167,32 @@ class CFBDClient:
             payload = first.json()
             if not isinstance(payload, list):
                 raise CFBDClientError(f"unexpected /plays payload: {first.text[:200]}")
-            return [
+
+            # Filter to plays belonging to this game
+            game_plays = [
                 play
                 for play in payload
                 if _play_belongs_to_game(play, gid)
             ]
+
+            # Filter to meaningful play types only
+            meaningful_plays = [
+                play
+                for play in game_plays
+                if _is_meaningful_play(play)
+            ]
+
+            # Log filtering results
+            if len(payload) != len(meaningful_plays):
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.info(
+                    f"[CFBD] Filtered plays for game_id={gid}: "
+                    f"raw={len(payload)}, game_filtered={len(game_plays)}, "
+                    f"meaningful={len(meaningful_plays)}"
+                )
+
+            return meaningful_plays
 
         if _is_year_week_validator(first.text):
             resolved_year = year
@@ -160,11 +225,32 @@ class CFBDClient:
                 raise CFBDClientError(
                     f"unexpected /plays retry payload: {retry.text[:200]}"
                 )
-            return [
+
+            # Filter to plays belonging to this game
+            game_plays = [
                 play
                 for play in payload
                 if _play_belongs_to_game(play, gid)
             ]
+
+            # Filter to meaningful play types only
+            meaningful_plays = [
+                play
+                for play in game_plays
+                if _is_meaningful_play(play)
+            ]
+
+            # Log filtering results
+            if len(payload) != len(meaningful_plays):
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.info(
+                    f"[CFBD] Filtered plays (retry) for game_id={gid}: "
+                    f"raw={len(payload)}, game_filtered={len(game_plays)}, "
+                    f"meaningful={len(meaningful_plays)}"
+                )
+
+            return meaningful_plays
 
         raise CFBDClientError(f"/plays failed {first.status_code}: {first.text[:200]}")
 
