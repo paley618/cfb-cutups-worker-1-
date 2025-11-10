@@ -51,18 +51,25 @@ async def debug_games(team: str, year: int = 2024):
 
             if raw_games and len(raw_games) > 0:
                 print(f"First game raw: {json.dumps(raw_games[0], indent=2)}")
+                print(f"Available keys: {list(raw_games[0].keys())}")
 
-            # Process games
+            # Process games - handle both snake_case and camelCase field names
             games = []
             for game in raw_games:
+                # Try both snake_case and camelCase field names
+                away_team = game.get('away_team') or game.get('awayTeam') or game.get('away')
+                home_team = game.get('home_team') or game.get('homeTeam') or game.get('home')
+                start_date = game.get('start_date') or game.get('startDate') or game.get('date')
+                season_type = game.get('season_type') or game.get('seasonType')
+
                 processed_game = {
                     'id': game.get('id'),
                     'week': game.get('week'),
-                    'away_team': game.get('away_team'),
-                    'home_team': game.get('home_team'),
-                    'start_date': game.get('start_date'),
-                    'season': game.get('season'),
-                    'season_type': game.get('season_type'),
+                    'away_team': away_team,
+                    'home_team': home_team,
+                    'start_date': start_date,
+                    'season': game.get('season') or game.get('year'),
+                    'season_type': season_type,
                     'status': game.get('status'),
                     'notes': game.get('notes')
                 }
