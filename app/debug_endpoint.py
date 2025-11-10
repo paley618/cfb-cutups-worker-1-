@@ -58,11 +58,11 @@ async def debug_games(team: str, year: int = 2024):
                 processed_game = {
                     'id': game.get('id'),
                     'week': game.get('week'),
-                    'away_team': game.get('away_team'),
-                    'home_team': game.get('home_team'),
-                    'start_date': game.get('start_date'),
+                    'away_team': game.get('awayTeam') or 'Unknown',
+                    'home_team': game.get('homeTeam') or 'Unknown',
+                    'start_date': game.get('startDate') or 'TBD',
                     'season': game.get('season'),
-                    'season_type': game.get('season_type'),
+                    'season_type': game.get('seasonType'),
                     'status': game.get('status'),
                     'notes': game.get('notes')
                 }
