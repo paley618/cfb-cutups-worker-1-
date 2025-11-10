@@ -1002,6 +1002,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resetOutputs();
 
     const payload = {
+      use_cfbd: true,
       video_url: videoUrl,
       webhook_url: document.getElementById('webhook_url').value.trim() || null,
       cfbd: {
