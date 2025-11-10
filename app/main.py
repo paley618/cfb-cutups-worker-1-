@@ -18,6 +18,7 @@ from pydantic import ValidationError
 
 from .cfbd_client import CFBDClient, CFBDClientError, _is_year_week_validator
 from .cookies import write_cookies_if_any, write_drive_cookies_if_any
+from .debug_endpoint import router as debug_router
 from .diag_cfbd import router as diag_cfbd_router
 from .routes import util_ai
 from .routes import util_debug
@@ -181,6 +182,7 @@ print(
 print("================")
 
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.include_router(debug_router)
 app.include_router(diag_cfbd_router)
 app.include_router(util_ai.router)
 app.include_router(util_debug.router)

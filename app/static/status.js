@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const conferenceSelect = document.getElementById('conference_select');
   const yearSelect = document.getElementById('year_select');
   const gameSelect = document.getElementById('game_select');
+  const gameIdVerify = document.getElementById('game_id_verify');
   window.__selectedGameData = null;
 
   // Load teams and conferences on page load
@@ -68,6 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
     teamSelect.innerHTML = '<option value="">-- Loading teams... --</option>';
     gameSelect.innerHTML = '<option value="">-- Select Team and Year First --</option>';
     gameSelect.disabled = true;
+    gameIdVerify.innerHTML = '<option value="">-- Select a Game First to See ID --</option>';
+    gameIdVerify.disabled = true;
     window.__selectedGameData = null;
 
     if (!conference) {
@@ -103,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // When team is selected, fetch available games
   const loadGamesForTeam = async () => {
-    if (!teamSelect || !yearSelect || !gameSelect) return;
+    if (!teamSelect || !yearSelect || !gameSelect || !gameIdVerify) return;
 
     const team = teamSelect.value;
     const year = yearSelect.value;
@@ -111,6 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!team) {
       gameSelect.disabled = true;
       gameSelect.innerHTML = '<option value="">-- Pick a team first --</option>';
+      gameIdVerify.disabled = true;
+      gameIdVerify.innerHTML = '<option value="">-- Select a Game First to See ID --</option>';
       window.__selectedGameData = null;
       return;
     }
@@ -118,44 +123,70 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       gameSelect.disabled = true;
       gameSelect.innerHTML = '<option value="">Loading games...</option>';
+      gameIdVerify.disabled = true;
+      gameIdVerify.innerHTML = '<option value="">-- Loading... --</option>';
 
-      const response = await fetch(`/api/games?team=${encodeURIComponent(team)}&year=${year}`);
+      const response = await fetch(`/api/debug/games?team=${encodeURIComponent(team)}&year=${year}`);
       const data = await response.json();
 
       gameSelect.innerHTML = '<option value="">-- Select Game --</option>';
+      gameIdVerify.innerHTML = '<option value="">-- Select a Game --</option>';
 
-      if (data.error || !data.games || data.games.length === 0) {
+      if (data.status !== 'success' || !data.games || data.games.length === 0) {
         gameSelect.innerHTML += '<option disabled>No games available</option>';
         gameSelect.disabled = true;
+        gameIdVerify.innerHTML += '<option disabled>No games available</option>';
+        gameIdVerify.disabled = true;
         window.__selectedGameData = null;
+
+        if (data.message) {
+          console.error('Error loading games:', data.message);
+        }
       } else {
         data.games.forEach(game => {
-          const option = document.createElement('option');
-          option.value = game.id;
-          option.textContent = game.display;
-          option.dataset.gameData = JSON.stringify(game);
-          gameSelect.appendChild(option);
+          // Populate main game dropdown
+          const gameOption = document.createElement('option');
+          gameOption.value = game.id;
+          gameOption.textContent = `Week ${game.week}: ${game.away_team} @ ${game.home_team} - ${game.start_date}`;
+          gameOption.dataset.gameData = JSON.stringify(game);
+          gameSelect.appendChild(gameOption);
+
+          // Populate ID verification dropdown with full details including ID
+          const idOption = document.createElement('option');
+          idOption.value = game.id;
+          idOption.textContent = game.display;  // Shows ID + full details
+          gameIdVerify.appendChild(idOption);
         });
         gameSelect.disabled = false;
+        gameIdVerify.disabled = true;  // Keep disabled until a game is selected
       }
     } catch (error) {
       console.error('Failed to load games:', error);
       gameSelect.innerHTML = '<option value="">Error loading games</option>';
       gameSelect.disabled = true;
+      gameIdVerify.innerHTML = '<option value="">Error loading games</option>';
+      gameIdVerify.disabled = true;
       window.__selectedGameData = null;
     }
   };
 
   // When a game is selected, store the game data and create orchestrated payload
   const handleGameSelection = async () => {
-    if (!gameSelect) return;
+    if (!gameSelect || !gameIdVerify) return;
 
     const selectedOption = gameSelect.options[gameSelect.selectedIndex];
     if (!selectedOption || !selectedOption.value) {
       window.__selectedGameData = null;
       window.__cfbOrchestrated = null;
+      gameIdVerify.value = '';
+      gameIdVerify.disabled = true;
       return;
     }
+
+    // Sync the verification dropdown with the selected game
+    const gameId = selectedOption.value;
+    gameIdVerify.value = gameId;
+    gameIdVerify.disabled = false;
 
     try {
       const gameData = JSON.parse(selectedOption.dataset.gameData || '{}');
@@ -864,6 +895,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const team = document.getElementById('team_select').value;
     const year = document.getElementById('year_select').value;
     const gameId = document.getElementById('game_select').value;
+    const gameIdVerified = document.getElementById('game_id_verify').value;
     const videoUrl = document.getElementById('video_url').value.trim();
 
     if (!conference) {
@@ -883,6 +915,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!gameId) {
       alert('Please select a game from the dropdown');
+      return;
+    }
+
+    // Verify game IDs match
+    if (gameId !== gameIdVerified) {
+      console.error('Game ID mismatch!', { gameId, gameIdVerified });
+      alert('Game ID mismatch! Please reselect your game.');
+      return;
+    }
+
+    if (!gameId || gameId === '0' || gameId === 'null') {
+      console.error('Invalid game ID:', gameId);
+      alert('Invalid game ID. Please select a valid game.');
       return;
     }
 
@@ -913,10 +958,12 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     };
 
-    console.log('Submitting payload:', payload);
-
-    console.log('About to submit with gameId:', document.getElementById('game_select').value);
+    console.log('=== GAME ID VERIFICATION ===');
+    console.log('Game ID from main dropdown:', gameId);
+    console.log('Game ID from verification dropdown:', gameIdVerified);
+    console.log('Game ID in payload:', payload.cfbd.game_id);
     console.log('Full payload:', payload);
+    console.log('===========================');
 
     let response;
     try {
