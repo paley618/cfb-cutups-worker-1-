@@ -111,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const team = teamSelect.value;
     const year = yearSelect.value;
 
+    console.log(`Team changed: ${team}, Year: ${year}`);
+
     if (!team) {
       gameSelect.disabled = true;
       gameSelect.innerHTML = '<option value="">-- Pick a team first --</option>';
@@ -126,8 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
       gameIdVerify.disabled = true;
       gameIdVerify.innerHTML = '<option value="">-- Loading... --</option>';
 
-      const response = await fetch(`/api/debug/games?team=${encodeURIComponent(team)}&year=${year}`);
+      console.log(`Fetching games for ${team} in ${year}...`);
+
+      const url = `/api/debug/games?team=${encodeURIComponent(team)}&year=${year}`;
+      console.log('URL:', url);
+
+      const response = await fetch(url);
       const data = await response.json();
+
+      console.log('Games response:', data);
 
       gameSelect.innerHTML = '<option value="">-- Select Game --</option>';
       gameIdVerify.innerHTML = '<option value="">-- Select a Game --</option>';
@@ -143,18 +152,22 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error('Error loading games:', data.message);
         }
       } else {
-        data.games.forEach(game => {
+        console.log(`Got ${data.games.length} games`);
+
+        data.games.forEach((game, index) => {
+          console.log(`Game ${index}:`, game);
+
           // Populate main game dropdown
           const gameOption = document.createElement('option');
           gameOption.value = game.id;
-          gameOption.textContent = `Week ${game.week}: ${game.away_team} @ ${game.home_team} - ${game.start_date}`;
+          gameOption.textContent = game.display;  // Use display field from API
           gameOption.dataset.gameData = JSON.stringify(game);
           gameSelect.appendChild(gameOption);
 
           // Populate ID verification dropdown with full details including ID
           const idOption = document.createElement('option');
           idOption.value = game.id;
-          idOption.textContent = game.display;  // Shows ID + full details
+          idOption.textContent = game.id_display;  // Use id_display field from API
           gameIdVerify.appendChild(idOption);
         });
         gameSelect.disabled = false;
@@ -185,6 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sync the verification dropdown with the selected game
     const gameId = selectedOption.value;
+    console.log('Game selected:', gameId);
+
     gameIdVerify.value = gameId;
     gameIdVerify.disabled = false;
 
