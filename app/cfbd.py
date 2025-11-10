@@ -14,47 +14,6 @@ class CFBDClientError(RuntimeError):
     """Raised when the CFBD API cannot satisfy a request."""
 
 
-# Meaningful play types for video clipping
-# Excludes: Timeout (15), Extra Point (16), End Period (18), End of Game (19), Penalty (20)
-MEANINGFUL_PLAY_TYPES = {
-    1,   # Rush
-    3,   # Pass Reception
-    4,   # Pass Incompletion
-    5,   # Sack
-    6,   # Interception Return
-    7,   # Fumble Recovery (Opponent)
-    8,   # Fumble Recovery (Own)
-    9,   # Punt
-    10,  # Kickoff
-    11,  # Field Goal Good
-    12,  # Field Goal Missed
-    24,  # Passing Touchdown
-    26,  # Rushing Touchdown
-    28,  # Punt Return Touchdown
-    29,  # Kickoff Return Touchdown
-    32,  # Interception Return Touchdown
-    34,  # Fumble Return Touchdown
-    36,  # Safety
-    51,  # Two Point Pass
-    52,  # Two Point Rush
-    67,  # Blocked Punt
-    68,  # Blocked Field Goal
-}
-
-
-def _is_meaningful_play(play: Dict[str, Any]) -> bool:
-    """Filter out non-meaningful plays (timeouts, end periods, etc.)"""
-    play_type = play.get("playType") or play.get("play_type")
-    if play_type is None:
-        # If no play type, include it (defensive)
-        return True
-    try:
-        return int(play_type) in MEANINGFUL_PLAY_TYPES
-    except (TypeError, ValueError):
-        # If we can't parse the play type, include it (defensive)
-        return True
-
-
 class CFBDClient:
     """Small async helper for interacting with the CollegeFootballData API."""
 
@@ -104,7 +63,8 @@ class CFBDClient:
     async def get_plays_by_game(self, game_id: int) -> List[Dict[str, Any]]:
         """Fetch plays for a specific game id.
 
-        Filters to only meaningful play types (excludes timeouts, end periods, etc.)
+        Note: CFBD should return only plays for this game, but sometimes returns
+        week/season aggregates causing 31k+ plays. Caller should validate count.
         """
 
         payload = await self._get("/plays", {"game_id": int(game_id)})
@@ -112,20 +72,17 @@ class CFBDClient:
             # This handles non-list returns, which is correct
             raise CFBDClientError("Unexpected CFBD payload shape for plays")
 
-        # Filter to meaningful play types only
-        meaningful_plays = [play for play in payload if _is_meaningful_play(play)]
-
-        # Log filtering results
-        if len(payload) != len(meaningful_plays):
+        # Log if play count is suspiciously high
+        if len(payload) > 300:
             print(
-                f"[CFBD] Filtered plays for game_id={game_id}: "
-                f"raw={len(payload)}, meaningful={len(meaningful_plays)}"
+                f"[CFBD] WARNING: Game ID {game_id} returned {len(payload)} plays "
+                f"(expected <300). CFBD may have returned week/season data."
             )
 
-        if not meaningful_plays:
-            print(f"CFBD: Game ID {game_id} returned 0 meaningful plays (was {len(payload)} raw).")
+        if not payload:
+            print(f"CFBD: Game ID {game_id} returned 0 plays.")
 
-        return meaningful_plays
+        return payload
         
     async def fetch(self, spec: Dict[str, Any]) -> Dict[str, Any]:
         """Fetch plays either by game id or by team/year/week spec."""

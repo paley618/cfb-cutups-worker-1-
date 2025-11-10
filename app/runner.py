@@ -762,14 +762,20 @@ class JobRunner:
                                 )
                                 cfbd_plays = list(plays_list)
                                 cfbd_play_count = len(cfbd_plays)
-                                logger.info(f"[CFBD DIAGNOSTICS] CFBD API returned {cfbd_play_count} meaningful plays (after filtering)")
+                                logger.info(f"[CFBD DIAGNOSTICS] CFBD API returned {cfbd_play_count} plays for game_id={gid}")
                                 if not cfbd_play_count:
                                     raise RuntimeError("empty plays[]")
-                                # Updated threshold: after filtering, expect 50-300 plays per game
-                                if cfbd_play_count < 50 or cfbd_play_count > 300:
+                                # Single game should have 50-300 plays. More likely indicates week/season aggregate.
+                                if cfbd_play_count > 300:
+                                    logger.error(
+                                        f"[CFBD] CRITICAL: game_id={gid} returned {cfbd_play_count} plays (expected <300). "
+                                        f"CFBD likely returned week/season data instead of single game. "
+                                        f"This will cause massive storage/processing issues!"
+                                    )
+                                elif cfbd_play_count < 50:
                                     logger.warning(
-                                        f"[CFBD] suspicious play count for game_id={gid}: {cfbd_play_count}. "
-                                        "Expected range: 50-300 plays after filtering. Check CFBD data quality."
+                                        f"[CFBD] Low play count for game_id={gid}: {cfbd_play_count} plays (expected 50-300). "
+                                        f"Game may be incomplete or CFBD data quality issue."
                                     )
                             except Exception as exc:  # pragma: no cover - network edge
                                 cfbd_reason = f"/plays failed: {type(exc).__name__}: {exc}"
@@ -878,14 +884,20 @@ class JobRunner:
                                 )
                                 cfbd_plays = list(plays_list)
                                 cfbd_play_count = len(cfbd_plays)
-                                logger.info(f"[CFBD DIAGNOSTICS] CFBD resolver returned {cfbd_play_count} meaningful plays (after filtering)")
+                                logger.info(f"[CFBD DIAGNOSTICS] CFBD resolver returned {cfbd_play_count} plays for game_id={gid}")
                                 if not cfbd_play_count:
                                     raise RuntimeError("empty plays[]")
-                                # Updated threshold: after filtering, expect 50-300 plays per game
-                                if cfbd_play_count < 50 or cfbd_play_count > 300:
+                                # Single game should have 50-300 plays. More likely indicates week/season aggregate.
+                                if cfbd_play_count > 300:
+                                    logger.error(
+                                        f"[CFBD] CRITICAL: resolved game_id={gid} returned {cfbd_play_count} plays (expected <300). "
+                                        f"CFBD likely returned week/season data instead of single game. "
+                                        f"This will cause massive storage/processing issues!"
+                                    )
+                                elif cfbd_play_count < 50:
                                     logger.warning(
-                                        f"[CFBD] suspicious play count for game_id={gid}: {cfbd_play_count}. "
-                                        "Expected range: 50-300 plays after filtering. Check CFBD data quality."
+                                        f"[CFBD] Low play count for resolved game_id={gid}: {cfbd_play_count} plays (expected 50-300). "
+                                        f"Game may be incomplete or CFBD data quality issue."
                                     )
                             except Exception as exc:  # pragma: no cover - network edge
                                 cfbd_reason = f"resolver: {type(exc).__name__}: {exc}"
