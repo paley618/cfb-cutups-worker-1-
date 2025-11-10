@@ -119,15 +119,25 @@ class CFBDClient:
         week: int | None,
         season_type: str = "regular",
     ) -> List[Dict]:
-        """Fetch plays for a specific game, retrying with year/week when required.
+        """Fetch plays for a specific game using ONLY game_id parameter.
 
-        Filters to only plays belonging to the requested game_id to prevent
-        CFBD from returning week/season aggregates (which causes 31k+ plays bug).
+        IMPORTANT: We only use game_id in the plays request. Adding season_type/year/week
+        causes CFBD to return ALL plays for that week (31k+ plays bug) instead of
+        just the specific game.
+
+        If the initial request fails, we verify the game exists and fail cleanly
+        rather than retrying with week/season parameters.
         """
+        import logging
+        logger = logging.getLogger(__name__)
 
         gid = int(game_id)
 
+        logger.info(f"[CFBD] Fetching plays for game_id={gid}")
+
         first = self._req("/plays", {"game_id": gid})
+        logger.info(f"[CFBD] /plays?game_id={gid} returned status {first.status_code}")
+
         if first.status_code < 400:
             payload = first.json()
             if not isinstance(payload, list):
@@ -142,80 +152,42 @@ class CFBDClient:
 
             # Log if CFBD returned plays from other games
             if len(payload) != len(game_plays):
-                import logging
-                logger = logging.getLogger(__name__)
                 logger.warning(
                     f"[CFBD] Filtered out {len(payload) - len(game_plays)} plays from other games! "
                     f"game_id={gid}, raw_count={len(payload)}, filtered_count={len(game_plays)}"
                 )
             elif len(payload) > 300:
-                import logging
-                logger = logging.getLogger(__name__)
                 logger.warning(
                     f"[CFBD] Received {len(payload)} plays for game_id={gid} (expected <300). "
                     f"This may indicate CFBD returned week/season data instead of single game."
                 )
 
-            return game_plays
+            if game_plays:
+                logger.info(f"[CFBD] Successfully fetched {len(game_plays)} plays for game_id={gid}")
+                return game_plays
+            else:
+                logger.warning(f"[CFBD] game_id={gid} returned 0 plays after filtering. Game may not exist.")
+                raise CFBDClientError("No plays found for game")
 
-        if _is_year_week_validator(first.text):
-            resolved_year = year
-            resolved_week = week
-            resolved_season_type = season_type
+        # If it fails, verify the game exists first
+        logger.info(f"[CFBD] /plays?game_id={gid} returned {first.status_code}. Verifying game exists...")
 
-            if resolved_year is None or resolved_week is None:
-                resolved_year, resolved_week, resolved_season_type = self._resolve_game_fields(
-                    gid,
-                    year=resolved_year,
-                    week=resolved_week,
-                    season_type=resolved_season_type,
-                )
+        # Check if the game exists using /games endpoint
+        verify_params = {"id": gid}
+        if year is not None:
+            verify_params["year"] = year
 
-            params: Dict[str, object] = {
-                "game_id": gid,
-                "season_type": resolved_season_type,
-            }
-            if resolved_year is not None:
-                params["year"] = int(resolved_year)
-            if resolved_week is not None:
-                params["week"] = int(resolved_week)
-            retry = self._req("/plays", params)
-            if retry.status_code >= 400:
-                raise CFBDClientError(
-                    f"/plays retry failed {retry.status_code}: {retry.text[:200]}"
-                )
-            payload = retry.json()
-            if not isinstance(payload, list):
-                raise CFBDClientError(
-                    f"unexpected /plays retry payload: {retry.text[:200]}"
-                )
+        verify = self._req("/games", verify_params)
+        if verify.status_code >= 400:
+            logger.error(f"[CFBD] Game {gid} does not exist in CFBD (status {verify.status_code})")
+            raise CFBDClientError(f"Game {gid} does not exist in CFBD")
 
-            # Filter to plays belonging to this game ONLY
-            game_plays = [
-                play
-                for play in payload
-                if _play_belongs_to_game(play, gid)
-            ]
-
-            # Log if CFBD returned plays from other games
-            if len(payload) != len(game_plays):
-                import logging
-                logger = logging.getLogger(__name__)
-                logger.warning(
-                    f"[CFBD] (retry) Filtered out {len(payload) - len(game_plays)} plays from other games! "
-                    f"game_id={gid}, raw_count={len(payload)}, filtered_count={len(game_plays)}"
-                )
-            elif len(payload) > 300:
-                import logging
-                logger = logging.getLogger(__name__)
-                logger.warning(
-                    f"[CFBD] (retry) Received {len(payload)} plays for game_id={gid} (expected <300). "
-                    f"This may indicate CFBD returned week/season data instead of single game."
-                )
-
-            return game_plays
-
-        raise CFBDClientError(f"/plays failed {first.status_code}: {first.text[:200]}")
+        # Game exists but plays endpoint failed. This is unusual.
+        logger.error(
+            f"[CFBD] Game {gid} exists but /plays endpoint returned {first.status_code}. "
+            f"This is an unusual CFBD API error."
+        )
+        raise CFBDClientError(f"CFBD /plays endpoint returned {first.status_code} for existing game {gid}")
 
     # Backwards compatibility
     get_plays_by_game = get_plays_for_game
