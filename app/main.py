@@ -232,7 +232,11 @@ async def _run_cfbd_autofill(
             timeout=timeout,
             headers=headers,
         ) as client:
-            games_resp = await client.get("/games", params={"game_id": normalized})
+            # Build /games request params - v2 API requires year parameter
+            games_params = {"game_id": normalized}
+            if year is not None:
+                games_params["year"] = year
+            games_resp = await client.get("/games", params=games_params)
             tried.append(str(games_resp.request.url))
             if games_resp.status_code >= 400:
                 return {

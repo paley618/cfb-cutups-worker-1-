@@ -72,7 +72,11 @@ class CFBDClient:
         """Attempt to fill in year/week when CFBD demands them."""
 
         try:
-            response = self._req("/games", {"game_id": gid})
+            # v2 API requires year parameter, so include it if we have it
+            params = {"game_id": gid}
+            if year is not None:
+                params["year"] = year
+            response = self._req("/games", params)
         except CFBDClientError:
             return year, week, season_type
 
