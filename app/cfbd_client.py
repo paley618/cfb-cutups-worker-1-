@@ -111,6 +111,127 @@ class CFBDClient:
 
         return resolved_year, resolved_week, resolved_season_type
 
+    def diagnose_plays_endpoint(self, game_id: int, year: int, week: int):
+        """
+        Diagnose which parameter combinations work for /plays endpoint.
+        Makes actual API calls and logs detailed results.
+        """
+        import json
+        import logging
+
+        gid = int(game_id)
+        logger = logging.getLogger(__name__)
+
+        logger.info("=" * 80)
+        logger.info(f"[DIAGNOSTIC] Testing /plays endpoint for game_id={gid}, week={week}, year={year}")
+        logger.info("=" * 80)
+
+        results = {}
+
+        # Attempt 1: game_id only
+        logger.info(f"\n[ATTEMPT 1] /plays?game_id={gid}")
+        try:
+            resp = self._req("/plays", {"game_id": gid})
+            logger.info(f"  Status: {resp.status_code}")
+            if resp.status_code < 400:
+                payload = resp.json()
+                logger.info(f"  Response type: {type(payload)}")
+                logger.info(f"  Response length: {len(payload) if isinstance(payload, list) else 'N/A'}")
+                if isinstance(payload, list) and payload:
+                    first_play = payload[0]
+                    logger.info(f"  First play keys: {first_play.keys()}")
+                    logger.info(f"  First play game_id field: {first_play.get('game_id', 'NOT FOUND')}")
+                    logger.info(f"  First play gameId field: {first_play.get('gameId', 'NOT FOUND')}")
+                    logger.info(f"  First play id field: {first_play.get('id', 'NOT FOUND')}")
+                    logger.info(f"  First play sample: {json.dumps(first_play, indent=2)[:500]}")
+
+                    # Count how many plays have this game_id
+                    matching_gid = [p for p in payload if p.get('game_id') == gid]
+                    matching_gameId = [p for p in payload if p.get('gameId') == gid]
+                    logger.info(f"  Plays with game_id={gid}: {len(matching_gid)}")
+                    logger.info(f"  Plays with gameId={gid}: {len(matching_gameId)}")
+                results['attempt_1_gameId_only'] = {
+                    'status': resp.status_code,
+                    'count': len(payload) if isinstance(payload, list) else 0
+                }
+        except Exception as e:
+            logger.error(f"  ERROR: {e}")
+            results['attempt_1_gameId_only'] = {'status': 'error', 'error': str(e)}
+
+        # Attempt 2: season + week + team (no game_id)
+        logger.info(f"\n[ATTEMPT 2] /plays?season={year}&week={week}&team=Texas Tech")
+        try:
+            resp = self._req("/plays", {"season": year, "week": week, "team": "Texas Tech"})
+            logger.info(f"  Status: {resp.status_code}")
+            if resp.status_code < 400:
+                payload = resp.json()
+                logger.info(f"  Response length: {len(payload) if isinstance(payload, list) else 'N/A'}")
+                if isinstance(payload, list) and payload:
+                    logger.info(f"  First play game_id: {payload[0].get('game_id', 'NOT FOUND')}")
+                    logger.info(f"  First play gameId: {payload[0].get('gameId', 'NOT FOUND')}")
+                    matching_gid = [p for p in payload if p.get('game_id') == gid]
+                    logger.info(f"  Plays matching game_id={gid}: {len(matching_gid)}")
+                results['attempt_2_season_week_team'] = {
+                    'status': resp.status_code,
+                    'count': len(payload) if isinstance(payload, list) else 0
+                }
+        except Exception as e:
+            logger.error(f"  ERROR: {e}")
+            results['attempt_2_season_week_team'] = {'status': 'error', 'error': str(e)}
+
+        # Attempt 3: season + seasonType + week (no game_id, no team)
+        logger.info(f"\n[ATTEMPT 3] /plays?season={year}&seasonType=regular&week={week}")
+        try:
+            resp = self._req("/plays", {"season": year, "seasonType": "regular", "week": week})
+            logger.info(f"  Status: {resp.status_code}")
+            if resp.status_code < 400:
+                payload = resp.json()
+                logger.info(f"  Response length: {len(payload) if isinstance(payload, list) else 'N/A'}")
+                if isinstance(payload, list) and payload:
+                    logger.info(f"  First play game_id: {payload[0].get('game_id', 'NOT FOUND')}")
+                    matching_gid = [p for p in payload if p.get('game_id') == gid]
+                    logger.info(f"  Plays matching game_id={gid}: {len(matching_gid)}")
+                results['attempt_3_season_type_week'] = {
+                    'status': resp.status_code,
+                    'count': len(payload) if isinstance(payload, list) else 0
+                }
+        except Exception as e:
+            logger.error(f"  ERROR: {e}")
+            results['attempt_3_season_type_week'] = {'status': 'error', 'error': str(e)}
+
+        # Attempt 4: game_id + season + seasonType + week (all parameters)
+        logger.info(f"\n[ATTEMPT 4] /plays?game_id={gid}&season={year}&seasonType=regular&week={week}")
+        try:
+            resp = self._req("/plays", {
+                "game_id": gid,
+                "season": year,
+                "seasonType": "regular",
+                "week": week
+            })
+            logger.info(f"  Status: {resp.status_code}")
+            if resp.status_code < 400:
+                payload = resp.json()
+                logger.info(f"  Response length: {len(payload) if isinstance(payload, list) else 'N/A'}")
+                if isinstance(payload, list) and payload:
+                    logger.info(f"  First play game_id: {payload[0].get('game_id', 'NOT FOUND')}")
+                    matching_gid = [p for p in payload if p.get('game_id') == gid]
+                    logger.info(f"  Plays matching game_id={gid}: {len(matching_gid)}")
+                results['attempt_4_all_params'] = {
+                    'status': resp.status_code,
+                    'count': len(payload) if isinstance(payload, list) else 0
+                }
+        except Exception as e:
+            logger.error(f"  ERROR: {e}")
+            results['attempt_4_all_params'] = {'status': 'error', 'error': str(e)}
+
+        logger.info("\n" + "=" * 80)
+        logger.info("[DIAGNOSTIC SUMMARY]")
+        for attempt, result in results.items():
+            logger.info(f"  {attempt}: {result}")
+        logger.info("=" * 80)
+
+        return results
+
     def get_plays_for_game(
         self,
         game_id: int,
@@ -126,6 +247,22 @@ class CFBDClient:
         gid = int(game_id)
 
         logger.info(f"[CFBD] Fetching plays for game_id={gid}")
+
+        # DIAGNOSTIC: Resolve year/week if needed, then run comprehensive diagnostic
+        if year is None or week is None:
+            logger.info(f"[CFBD] Resolving year/week for diagnostic (year={year}, week={week})")
+            resolved_year, resolved_week, resolved_season_type = self._resolve_game_fields(
+                gid, year=year, week=week, season_type=season_type
+            )
+        else:
+            resolved_year, resolved_week, resolved_season_type = year, week, season_type
+
+        # Run diagnostic to test all parameter combinations
+        if resolved_year is not None and resolved_week is not None:
+            logger.info(f"[CFBD] Running diagnostic with year={resolved_year}, week={resolved_week}")
+            diagnostic_results = self.diagnose_plays_endpoint(gid, resolved_year, resolved_week)
+        else:
+            logger.warning(f"[CFBD] Skipping diagnostic - could not resolve year/week")
 
         # Try with game_id only
         first = self._req("/plays", {"game_id": gid})
@@ -152,11 +289,12 @@ class CFBDClient:
             f"Retrying with season/week parameters..."
         )
 
+        # Use resolved values for retry
         retry_params = {
             "game_id": gid,
-            "season_type": season_type,
-            "year": year,
-            "week": week
+            "season_type": resolved_season_type,
+            "year": resolved_year,
+            "week": resolved_week
         }
 
         retry = self._req("/plays", retry_params)
