@@ -604,9 +604,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderCFBD(j) {
     if (!statusEl) return;
     const meta = (j.manifest && j.manifest.detector_meta) || {};
-    const s = meta.cfbd_state || 'off';
-    const r = meta.cfbd_reason || ''; // reason now includes filtered play counts when available
+    const cfbdState = meta.cfbd_state || 'off';
     const cached = meta.cfbd_cached ? ` • cached=${meta.cfbd_cached_count}` : '';
+
+    // Get actual data source info from job
+    const actualSource = j.actual_data_source || null;
+    const cfbdCount = j.cfbd_games_count || 0;
+    const espnCount = j.espn_games_count || 0;
+
     const el =
       document.getElementById('cfbd-state') ||
       (() => {
@@ -615,16 +620,57 @@ document.addEventListener('DOMContentLoaded', () => {
         statusEl.appendChild(d);
         return d;
       })();
-    const classes = {
-      ready: 'badge-success',
-      pending: 'badge-info',
-      error: 'badge-warn',
-      unavailable: 'badge-warn',
-      off: 'badge',
-    };
-    el.innerHTML = `<span class="badge ${classes[s] || 'badge'}">CFBD: ${s.toUpperCase()}</span>${cached} ${
-      r ? `<span class="muted">(${r})</span>` : ''
-    }`;
+
+    // Determine display based on actual data source
+    let indicator = '';
+    let sourceText = '';
+    let badgeClass = 'badge';
+
+    if (actualSource === 'CFBD') {
+      indicator = '✅';
+      sourceText = 'CFBD Active';
+      badgeClass = 'badge-success';
+    } else if (actualSource === 'ESPN' || actualSource === 'ESPN_PBP') {
+      indicator = '⚠️';
+      sourceText = 'ESPN Fallback';
+      badgeClass = 'badge-warn';
+    } else if (actualSource === 'FALLBACK') {
+      indicator = '⚠️';
+      sourceText = 'Fallback Mode';
+      badgeClass = 'badge-warn';
+    } else if (actualSource === 'VISION') {
+      indicator = '🔍';
+      sourceText = 'Vision-Only';
+      badgeClass = 'badge-info';
+    } else if (cfbdState === 'ready') {
+      indicator = '✅';
+      sourceText = 'CFBD Ready';
+      badgeClass = 'badge-success';
+    } else if (cfbdState === 'pending') {
+      indicator = '⏳';
+      sourceText = 'CFBD Pending';
+      badgeClass = 'badge-info';
+    } else if (cfbdState === 'error') {
+      indicator = '❌';
+      sourceText = 'CFBD Error';
+      badgeClass = 'badge-warn';
+    } else if (cfbdState === 'unavailable') {
+      indicator = '❌';
+      sourceText = 'CFBD Unavailable';
+      badgeClass = 'badge-warn';
+    } else if (cfbdState === 'off') {
+      indicator = '⏸️';
+      sourceText = 'CFBD Not Requested';
+      badgeClass = 'badge';
+    }
+
+    // Build the display with source counts
+    let countsText = '';
+    if (actualSource) {
+      countsText = ` <span class="muted">| CFBD plays: ${cfbdCount} | ESPN plays: ${espnCount}</span>`;
+    }
+
+    el.innerHTML = `<span class="badge ${badgeClass}">${indicator} ${sourceText}</span>${cached}${countsText}`;
   }
 
   if (selftestBtn && selftestOut) {
