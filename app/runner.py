@@ -489,6 +489,7 @@ class JobRunner:
                         detail="Download complete",
                         fields={"eta_seconds": None},
                     )
+                    logger.info("video_download_complete", extra={"job_id": job_id, "source": "url"})
                 elif upload_id:
                     upload_path = resolve_upload(upload_id)
                     if not upload_path:
@@ -502,6 +503,7 @@ class JobRunner:
                     )
                     await asyncio.to_thread(shutil.copyfile, upload_path, video_path)
                     self._set_stage(job_id, "downloading", pct=10.0, detail="Upload copied", eta=0.0)
+                    logger.info("video_upload_ready", extra={"job_id": job_id, "source": "upload"})
                     _heartbeat(
                         "downloading",
                         pct=10.0,
@@ -1712,6 +1714,10 @@ class JobRunner:
                     detail=f"Cutting {len(ordered)} clips",
                 )
                 _heartbeat("segmenting", detail=f"Cutting {len(ordered)} clips")
+                logger.info(
+                    "starting_clip_generation",
+                    extra={"job_id": job_id, "num_clips_to_generate": len(ordered)}
+                )
 
                 ffmpeg_set_cancel(cancel_ev)
                 clips_meta: List[Dict[str, Any]] = []
@@ -1791,6 +1797,16 @@ class JobRunner:
                     )
 
                 self._ensure_not_cancelled(job_id, cancel_ev)
+
+                # Log clip generation summary
+                logger.info(
+                    "clip_generation_complete",
+                    extra={
+                        "job_id": job_id,
+                        "total_clips": len(clips_meta),
+                        "first_clip": clips_meta[0] if clips_meta else None,
+                    }
+                )
 
                 conf_vals = [float(clip.get("confidence", 0.0)) for clip in clips_meta]
                 if conf_vals:
@@ -1937,6 +1953,7 @@ class JobRunner:
                 reel_url: Optional[str] = None
                 reel_dur = 0.0
                 reel_upload: Optional[Tuple[str, str]] = None
+                bucket_reel_uploads: List[Tuple[str, str, str]] = []  # Initialize to prevent NameError
                 if clip_abs:
                     reel_local = os.path.join(tmp_dir, "reel.mp4")
                     try:
@@ -1982,7 +1999,7 @@ class JobRunner:
                 manifest_outputs = manifest.setdefault("outputs", {})
                 manifest_outputs["reel_url"] = reel_url
                 manifest_outputs["reel_duration_sec"] = round(reel_dur, 3)
-                manifest_outputs["reels_by_bucket"] = bucket_urls
+                # bucket_urls removed - not needed for MVP, buckets available in manifest["buckets"]
 
                 manifest_path = os.path.join(tmp_dir, "manifest.json")
                 with open(manifest_path, "w", encoding="utf-8") as f:
