@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Test - Step 5 Dropdown Visibility</title>
+  <style>
+    body { font-family: system-ui; padding: 20px; background: #0b0e14; color: #e6edf3; }
+    .test { background: #131722; padding: 20px; margin: 10px 0; border-radius: 8px; }
+    .pass { border-left: 4px solid #46d37a; }
+    .info { border-left: 4px solid #5b9cff; }
+    h1 { color: #5b9cff; }
+    code { background: #0e1220; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Step 5 Dropdown Diagnostic</h1>
+
+  <div class="test pass">
+    <h3>✓ File Check</h3>
+    <p>This page loaded successfully, which means static files are being served.</p>
+  </div>
+
+  <div class="test info">
+    <h3>How to See Step 5</h3>
+    <ol>
+      <li>Go to the main page (<a href="/" style="color: #5b9cff">/</a>)</li>
+      <li><strong>Hard refresh</strong> your browser:
+        <ul>
+          <li>Windows/Linux: <code>Ctrl + Shift + R</code></li>
+          <li>Mac: <code>Cmd + Shift + R</code></li>
+        </ul>
+      </li>
+      <li>Scroll down to the CFBD section</li>
+      <li>Check the "Use CFBD-guided cuts" checkbox (if visible)</li>
+      <li>You should see ALL 5 steps listed, including "Step 5: Verify Game ID"</li>
+      <li>Step 5 will be <em>disabled</em> until you select a game in Step 4</li>
+    </ol>
+  </div>
+
+  <div class="test info">
+    <h3>What Step 5 Looks Like</h3>
+    <p>The Step 5 dropdown shows the actual game ID that will be sent to CFBD. It should appear between Step 4 (Game selection) and the ESPN link input field.</p>
+    <p><strong>Label:</strong> "Step 5: Verify Game ID"</p>
+    <p><strong>Initial state:</strong> Disabled with text "-- Select a Game First to See ID --"</p>
+  </div>
+
+  <div class="test info">
+    <h3>API Endpoint Check</h3>
+    <p>Check if the debug endpoint is working: <a href="/api/debug/games?team=Michigan&year=2024" style="color: #5b9cff">/api/debug/games?team=Michigan&year=2024</a></p>
+  </div>
+
+  <div class="test info">
+    <h3>Timestamp</h3>
+    <p>This test page was generated at: <script>document.write(new Date().toISOString())</script></p>
+    <p>If you see this page, your server has the latest code from commit <code>845b4b4</code>.</p>
+  </div>
+</body>
+</html>
