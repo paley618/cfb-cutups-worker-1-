@@ -805,3 +805,24 @@ def job_error(job_id: str):
     if job.get("status") != "failed":
         raise HTTPException(status_code=409, detail="Job not failed")
     return {"job_id": job_id, "error": job.get("error", "Unknown")}
+
+
+@app.get("/jobs/{job_id}/debug")
+def get_job_debug(job_id: str):
+    """Get diagnostic information about CFBD usage for this job"""
+    job = RUNNER.get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="Not found")
+
+    return {
+        "job_id": job_id,
+        "cfbd_requested": job.get("cfbd_requested"),
+        "cfbd_state": job.get("cfbd_state"),
+        "cfbd_reason": job.get("cfbd_reason"),
+        "actual_data_source": job.get("actual_data_source"),
+        "cfbd_games_count": job.get("cfbd_games_count", 0),
+        "espn_games_count": job.get("espn_games_count", 0),
+        "clips_generated": job.get("clips_generated", 0),
+        "status": job.get("status"),
+        "stage": job.get("stage"),
+    }
