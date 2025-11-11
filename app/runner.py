@@ -878,6 +878,14 @@ class JobRunner:
                                                 cfbd_used = True
                                                 logger.info(f"[CLAUDE] Claude Vision returned {cfbd_play_count} plays")
                                                 logger.info(f"[CFBD PLAYS CONVERSION] Converted {len(claude_windows)} windows to {cfbd_play_count} cfbd_plays")
+
+                                                # DEBUG: Log sample cfbd_plays to see their structure
+                                                logger.info(f"[WINDOW COLLAPSE DEBUG] Step 1: Created {len(cfbd_plays)} cfbd_plays from Claude windows")
+                                                for i, play in enumerate(cfbd_plays[:3]):
+                                                    logger.info(f"  Sample play {i}: timestamp={play.get('timestamp')}, end_timestamp={play.get('end_timestamp')}, period={play.get('period')}, clock={play.get('clock')}")
+                                                if len(cfbd_plays) > 3:
+                                                    logger.info(f"  ... and {len(cfbd_plays) - 3} more plays")
+
                                                 claude_reason = f"Claude Vision: {cfbd_play_count} plays"
                                                 set_cfbd_state("ready_claude", claude_reason)
                                                 cfbd_job_meta["status"] = "ready_claude"
@@ -1227,6 +1235,7 @@ class JobRunner:
 
                         monitor.touch(stage="detecting", detail="CFBD: bucketizing")
                         try:
+                            logger.info(f"[WINDOW COLLAPSE DEBUG] Step 2: Calling build_guided_windows with {len(cfbd_plays)} cfbd_plays")
                             bucketed = build_guided_windows(
                                 cfbd_plays,
                                 team_name=team or "",
@@ -1234,6 +1243,10 @@ class JobRunner:
                                 pre_pad=pre_pad,
                                 post_pad=post_pad,
                             )
+                            total_bucketed = sum(len(items) for items in bucketed.values())
+                            logger.info(f"[WINDOW COLLAPSE DEBUG] Step 2 Result: build_guided_windows returned {total_bucketed} total windows")
+                            for bucket_name, items in bucketed.items():
+                                logger.info(f"  {bucket_name}: {len(items)} windows")
                         except Exception:
                             logger.exception(
                                 "cfbd_bucketize_failed", extra={"job_id": job_id}
@@ -1268,6 +1281,10 @@ class JobRunner:
                         ]
                         guided_windows = list(pre_merge_guided)
                         cfbd_summary["clips"] = len(windows_with_meta)
+
+                        logger.info(f"[WINDOW COLLAPSE DEBUG] Step 3: Created {len(windows_with_meta)} windows_with_meta from bucketed")
+                        logger.info(f"[WINDOW COLLAPSE DEBUG] Step 3: cfbd_used was True, now setting to bool(windows_with_meta) = {bool(windows_with_meta)}")
+
                         cfbd_used = bool(windows_with_meta)
                         if cfbd_used:
                             # Determine if using CFBD or ESPN fallback
@@ -1334,11 +1351,15 @@ class JobRunner:
                 windows: List[Tuple[float, float]] = []
                 pre_merge_list: List[Tuple[float, float]] = []
 
+                logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4: cfbd_used = {cfbd_used}")
+
                 if cfbd_used:
                     pre_merge_list = pre_merge_guided
                     windows = list(guided_windows)
+                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4: Using CFBD path with {len(windows)} windows")
                 else:
                     logger.info("[CFBD DIAGNOSTICS] CFBD not used, falling back to vision/ESPN PBP")
+                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4: CFBD path failed, entering fallback path")
                     orchestrator_payload = job_meta.get("orchestrator") or job_state.get(
                         "orchestrator"
                     )
@@ -1359,11 +1380,18 @@ class JobRunner:
                         espn_pbp, pre_pad, post_pad, vid_dur
                     )
 
+                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4a: Fallback candidate sources:")
+                    logger.info(f"  cfbd_windows: {len(cfbd_windows)}")
+                    logger.info(f"  espn_windows: {len(espn_windows)}")
+                    logger.info(f"  detector_windows (vision): {len(detector_windows)}")
+
                     candidate_windows, window_source = pick_best_windows(
                         cfbd_windows,
                         espn_windows,
                         detector_windows,
                     )
+
+                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4b: pick_best_windows selected {len(candidate_windows)} windows from '{window_source}'")
                     job_meta["window_source"] = window_source
 
                     if not candidate_windows or len(candidate_windows) < settings.MIN_TOTAL_CLIPS:
@@ -1422,6 +1450,9 @@ class JobRunner:
                         max(min_duration, vid_dur if vid_dur > 0 else min_duration),
                     )
                     windows = [(0.0, round(default_end, 3))]
+                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 5: No windows found, using absolute fallback (1 default window)")
+
+                logger.info(f"[WINDOW COLLAPSE DEBUG] Step 6: Final windows count = {len(windows)}")
 
                 metrics["pre_merge_windows"] = len(pre_merge_list)
                 metrics["post_merge_windows"] = len(windows)
