@@ -479,7 +479,7 @@ Remember: Report ALL plays you find. A college football game has many plays, and
             logger.info(f"  Frames without plays: {len(keyframes) - len(frames_with_plays)}")
             logger.info(f"  Low confidence plays (< 0.5): {low_confidence_count}")
 
-            # Convert to (start, end) tuples with timestamps + GAME START OFFSET
+            # Convert to (start, end) tuples with absolute timestamps from frame extraction
             play_windows: List[tuple[float, float]] = []
             skipped_low_conf = 0
             skipped_invalid_frame = 0
@@ -511,7 +511,7 @@ Remember: Report ALL plays you find. A college football game has many plays, and
             timestamps_within_video = []
 
             logger.info(f"[TIMESTAMP CONVERSION] Converting {len(detected_plays)} plays to time windows...")
-            logger.info(f"  Applying game start offset: {game_start_offset:.1f}s")
+            logger.info(f"  Using absolute timestamps from frame extraction (NOT adding game_start_offset={game_start_offset:.1f}s)")
 
             for i, play in enumerate(detected_plays):
                 try:
@@ -537,11 +537,13 @@ Remember: Report ALL plays you find. A college football game has many plays, and
                         logger.info(f"  Frame range: 0-{len(frame_times)-1}")
                         logger.info(f"  Frame time (from extraction): {frame_time:.1f}s ({frame_time/60:.1f}m)")
 
-                        # Apply game start offset to center the play window
-                        center_time = game_start_offset + frame_time
+                        # FIX: Use absolute timestamp directly (frame_time is already absolute)
+                        # Previously: center_time = game_start_offset + frame_time (WRONG: double-offset)
+                        center_time = frame_time
 
-                        logger.info(f"  Calculation: game_start_offset + frame_time")
-                        logger.info(f"              {game_start_offset:.1f}s + {frame_time:.1f}s = {center_time:.1f}s")
+                        logger.info(f"  Calculation: center_time = frame_time (absolute)")
+                        logger.info(f"              center_time = {center_time:.1f}s")
+                        logger.info(f"  [FIX APPLIED] Removed game_start_offset (+{game_start_offset:.1f}s) to prevent double-offset")
 
                         # Check if beyond video duration
                         if center_time > video_duration:
