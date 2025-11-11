@@ -137,6 +137,56 @@ class CFBDClient:
                 payload = resp.json()
                 logger.info(f"  Response type: {type(payload)}")
                 logger.info(f"  Response length: {len(payload) if isinstance(payload, list) else 'N/A'}")
+
+                # DEEP DATA INSPECTION - Find the correct field to filter by game
+                if isinstance(payload, list) and len(payload) > 0:
+                    first_play = payload[0]
+                    last_play = payload[-1]
+
+                    logger.info("\n" + "=" * 80)
+                    logger.info("[PLAY DATA INSPECTION]")
+                    logger.info(f"Total plays in response: {len(payload)}")
+                    logger.info(f"\nFirst play keys: {list(first_play.keys())}")
+                    logger.info(f"First play (full): {json.dumps(first_play, indent=2)}")
+                    logger.info(f"\nLast play keys: {list(last_play.keys())}")
+                    logger.info(f"Last play (full): {json.dumps(last_play, indent=2)}")
+
+                    # Look for fields that might contain game identifier
+                    logger.info("\n[FIELD INVESTIGATION]")
+                    for key in first_play.keys():
+                        value = first_play[key]
+                        logger.info(f"  {key}: {value} (type: {type(value).__name__})")
+
+                    # Check for variations of game_id
+                    logger.info("\n[GAME_ID FIELD CHECK]")
+                    logger.info(f"  game_id: {first_play.get('game_id', 'NOT FOUND')}")
+                    logger.info(f"  gameId: {first_play.get('gameId', 'NOT FOUND')}")
+                    logger.info(f"  game: {first_play.get('game', 'NOT FOUND')}")
+                    logger.info(f"  id: {first_play.get('id', 'NOT FOUND')}")
+                    logger.info(f"  play_id: {first_play.get('play_id', 'NOT FOUND')}")
+
+                    # Look at different games in the response
+                    logger.info("\n[GAMES IN RESPONSE]")
+                    unique_games = {}
+                    for i, play in enumerate(payload[:100]):  # Check first 100 plays
+                        gid_field = play.get('game_id') or play.get('gameId') or play.get('game')
+                        if gid_field:
+                            if gid_field not in unique_games:
+                                unique_games[gid_field] = []
+                            unique_games[gid_field].append(i)
+
+                    logger.info(f"Unique game identifiers in first 100 plays:")
+                    for game_identifier, indices in unique_games.items():
+                        logger.info(f"  Game {game_identifier}: {len(indices)} plays")
+
+                    # Check if the requested game_id is in the response
+                    logger.info(f"\n[LOOKING FOR game_id={gid}]")
+                    found_in_game_id = any(p.get('game_id') == gid for p in payload[:100])
+                    found_in_gameId = any(p.get('gameId') == gid for p in payload[:100])
+                    logger.info(f"  Found in 'game_id' field: {found_in_game_id}")
+                    logger.info(f"  Found in 'gameId' field: {found_in_gameId}")
+                    logger.info("=" * 80 + "\n")
+
                 if isinstance(payload, list) and payload:
                     first_play = payload[0]
                     logger.info(f"  First play keys: {first_play.keys()}")
