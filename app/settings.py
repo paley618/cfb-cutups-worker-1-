@@ -290,6 +290,21 @@ class Settings(BaseSettings):
         description="Maximum number of play rows to request from CFBD.",
     )
 
+    # --- Claude Vision API ---
+    CLAUDE_VISION_ENABLE: bool = Field(
+        default=True,
+        description="Enable Claude Vision API for AI-powered play detection fallback.",
+    )
+    anthropic_api_key: Optional[str] = Field(
+        default=None,
+        validation_alias=AliasChoices("ANTHROPIC_API_KEY", "CLAUDE_API_KEY"),
+        description="API key for Anthropic Claude Vision API.",
+    )
+    CLAUDE_VISION_FRAMES: int = Field(
+        default=12,
+        description="Number of keyframes to extract for Claude Vision analysis.",
+    )
+
     OCR_SAMPLE_FPS: float = Field(
         default=2.0,
         description="Sampling rate (frames per second) for scorebug OCR extraction.",
@@ -476,3 +491,10 @@ CFBD_API_KEY: str | None = (
 )
 CFBD_SEASON_TYPE_DEFAULT: str = os.getenv("CFBD_SEASON_TYPE", "regular")
 CFBD_REQUEST_TIMEOUT: int = int(os.getenv("CFBD_REQUEST_TIMEOUT", "20"))
+
+ANTHROPIC_API_KEY: str | None = (
+    os.getenv("ANTHROPIC_API_KEY")
+    or os.getenv("CLAUDE_API_KEY")
+    or settings.anthropic_api_key
+)
+CLAUDE_VISION_ENABLED: bool = env_bool("CLAUDE_VISION_ENABLE", True) and bool(ANTHROPIC_API_KEY)
