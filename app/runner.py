@@ -857,6 +857,12 @@ class JobRunner:
 
                                             # Accept any plays found (changed from >= 10 to > 0)
                                             if claude_windows and len(claude_windows) > 0:
+                                                logger.info(f"[CLAUDE WINDOWS] Received {len(claude_windows)} play windows from Claude")
+                                                for i, (start, end) in enumerate(claude_windows[:10]):  # Log first 10
+                                                    logger.info(f"  Window {i}: {start:.1f}s - {end:.1f}s (duration: {end-start:.1f}s)")
+                                                if len(claude_windows) > 10:
+                                                    logger.info(f"  ... and {len(claude_windows) - 10} more windows")
+
                                                 # Convert Claude windows to mock CFBD format
                                                 cfbd_plays = [
                                                     {
@@ -871,6 +877,7 @@ class JobRunner:
                                                 cfbd_play_count = len(cfbd_plays)
                                                 cfbd_used = True
                                                 logger.info(f"[CLAUDE] Claude Vision returned {cfbd_play_count} plays")
+                                                logger.info(f"[CFBD PLAYS CONVERSION] Converted {len(claude_windows)} windows to {cfbd_play_count} cfbd_plays")
                                                 claude_reason = f"Claude Vision: {cfbd_play_count} plays"
                                                 set_cfbd_state("ready_claude", claude_reason)
                                                 cfbd_job_meta["status"] = "ready_claude"
@@ -1496,6 +1503,9 @@ class JobRunner:
                 self._ensure_not_cancelled(job_id, cancel_ev)
 
                 clip_entries = []
+                logger.info(f"[CLIP GENERATION START] Processing windows into clip entries")
+                logger.info(f"  windows_with_meta count: {len(windows_with_meta)}")
+
                 if not windows_with_meta:
                     windows_with_meta = [
                         (
@@ -1509,11 +1519,17 @@ class JobRunner:
                         )
                         for start, end in windows
                     ]
+                    logger.info(f"  Created {len(windows_with_meta)} windows_with_meta from windows")
 
-                for start, end, meta in windows_with_meta:
+                logger.info(f"[CLIP ENTRIES CREATION] Converting {len(windows_with_meta)} windows to clip entries...")
+                rejected_count = 0
+
+                for idx, (start, end, meta) in enumerate(windows_with_meta):
                     start_val = max(0.0, float(start))
                     end_val = min(vid_dur, float(end))
                     if end_val <= start_val:
+                        rejected_count += 1
+                        logger.warning(f"  [WINDOW {idx}] REJECTED: Invalid time range (start={start_val:.1f}s >= end={end_val:.1f}s)")
                         continue
                     meta_dict = meta if isinstance(meta, dict) else {}
                     bucket_name = str(meta_dict.get("bucket", "team_offense"))
@@ -1626,6 +1642,11 @@ class JobRunner:
                             "play_type_name": play_type_name,
                         }
                     )
+
+                logger.info(f"[CLIP ENTRIES CREATION COMPLETE]")
+                logger.info(f"  Windows processed: {len(windows_with_meta)}")
+                logger.info(f"  Rejected (invalid range): {rejected_count}")
+                logger.info(f"  Clip entries created: {len(clip_entries)}")
 
                 samples_by_period: Dict[int, List[Tuple[float, int]]] = {}
                 if cfbd_used:
@@ -1802,15 +1823,29 @@ class JobRunner:
                         )
                         retried.append(clip)
                     clip_entries = retried
+                    logger.info(f"[LOW CONFIDENCE RETRY] Processed {len(clip_entries)} clips")
 
+                logger.info(f"[CLIP FILTERING] Filtering clip entries...")
+                logger.info(f"  Clip entries before filtering: {len(clip_entries)}")
+
+                pre_filter_count = len(clip_entries)
                 clip_entries = [
                     clip
                     for clip in clip_entries
                     if clip.get("end", 0.0) > clip.get("start", 0.0)
                 ]
+                filtered_out = pre_filter_count - len(clip_entries)
+
+                logger.info(f"  Filtered out (end <= start): {filtered_out}")
+                logger.info(f"  Clip entries after filtering: {len(clip_entries)}")
+
                 clip_entries.sort(key=lambda clip: clip["start"])
                 windows = [(clip["start"], clip["end"]) for clip in clip_entries]
                 metrics["post_merge_windows"] = len(windows)
+
+                logger.info(f"[CLIP FILTERING COMPLETE]")
+                logger.info(f"  Final clip count: {len(clip_entries)}")
+                logger.info(f"  Ready for segmentation")
 
                 self._start_stage(
                     job_id,
@@ -1853,6 +1888,12 @@ class JobRunner:
                 total_clips = len(ordered)
                 clip_timer_start = monitor.now()
 
+                logger.info(f"[SEGMENTATION START] Cutting {total_clips} clips from video")
+                logger.info(f"  Output directory: {clips_dir}")
+
+                clips_successful = 0
+                clips_failed = 0
+
                 for idx, clip in enumerate(ordered, start=1):
                     self._ensure_not_cancelled(job_id, cancel_ev)
 
@@ -1876,8 +1917,19 @@ class JobRunner:
                     clip_path = os.path.join(clips_dir, f"{fname_base}.mp4")
                     thumb_path = os.path.join(thumbs_dir, f"{fname_base}.jpg")
 
-                    await cut_clip(video_path, clip_path, start, end)
-                    await make_thumb(video_path, max(0.0, start + 1.0), thumb_path)
+                    bucket = clip.get("bucket", "unknown")
+                    source = clip.get("source", "unknown")
+                    logger.info(f"[CLIP {idx}/{total_clips}] Processing: {bucket} @ {start:.1f}s-{end:.1f}s (duration={seg_dur:.1f}s, confidence={conf_val}, source={source})")
+
+                    try:
+                        await cut_clip(video_path, clip_path, start, end)
+                        await make_thumb(video_path, max(0.0, start + 1.0), thumb_path)
+                        clips_successful += 1
+                        logger.info(f"[CLIP {idx}/{total_clips}] ✓ SUCCESS: Generated {fname_base}.mp4")
+                    except Exception as e:
+                        clips_failed += 1
+                        logger.error(f"[CLIP {idx}/{total_clips}] ✗ FAILED: {type(e).__name__}: {e}")
+                        raise  # Re-raise to maintain existing error handling
 
                     clip.update(
                         {
@@ -1923,11 +1975,19 @@ class JobRunner:
                 self._ensure_not_cancelled(job_id, cancel_ev)
 
                 # Log clip generation summary
+                logger.info(f"[SEGMENTATION COMPLETE]")
+                logger.info(f"  Total clips attempted: {total_clips}")
+                logger.info(f"  Clips successful: {clips_successful}")
+                logger.info(f"  Clips failed: {clips_failed}")
+                logger.info(f"  Clips in metadata: {len(clips_meta)}")
+
                 logger.info(
                     "clip_generation_complete",
                     extra={
                         "job_id": job_id,
                         "total_clips": len(clips_meta),
+                        "successful": clips_successful,
+                        "failed": clips_failed,
                         "first_clip": clips_meta[0] if clips_meta else None,
                     }
                 )
