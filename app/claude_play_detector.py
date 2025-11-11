@@ -479,13 +479,39 @@ Remember: Report ALL plays you find. A college football game has many plays, and
             logger.info(f"  Frames without plays: {len(keyframes) - len(frames_with_plays)}")
             logger.info(f"  Low confidence plays (< 0.5): {low_confidence_count}")
 
-            # Convert to (start, end) tuples with timestamps + GAME START OFFSET
+            # Convert to (start, end) tuples with absolute timestamps from frame extraction
             play_windows: List[tuple[float, float]] = []
             skipped_low_conf = 0
             skipped_invalid_frame = 0
 
+            # ==================== DIAGNOSTIC LOGGING ====================
+            logger.info(f"\n{'='*80}")
+            logger.info(f"[TIMESTAMP CALC DIAGNOSTIC] Starting timestamp conversion...")
+            logger.info(f"{'='*80}")
+            logger.info(f"[INPUTS]")
+            logger.info(f"  video_duration: {video_duration}s ({video_duration/60:.1f} minutes)")
+            logger.info(f"  game_start_offset: {game_start_offset}s ({game_start_offset/60:.1f} minutes)")
+            logger.info(f"  num_frames: {num_frames}")
+            logger.info(f"  frame_interval: {video_duration / num_frames:.1f}s")
+            logger.info(f"  Total plays to process: {len(detected_plays)}")
+
+            # Show frame_times distribution
+            if frame_times:
+                logger.info(f"\n[FRAME TIMES DISTRIBUTION]")
+                logger.info(f"  First frame time: {frame_times[0]:.1f}s")
+                logger.info(f"  Last frame time: {frame_times[-1]:.1f}s")
+                logger.info(f"  Frame time range: {frame_times[0]:.1f}s - {frame_times[-1]:.1f}s")
+                logger.info(f"  Expected last frame (video_end - interval): ~{video_duration - (video_duration / num_frames):.1f}s")
+                if frame_times[-1] > video_duration:
+                    logger.warning(f"  ⚠️  Last frame time ({frame_times[-1]:.1f}s) EXCEEDS video duration ({video_duration}s)!")
+            logger.info(f"{'='*80}\n")
+
+            # Track statistics for analysis
+            timestamps_beyond_video = []
+            timestamps_within_video = []
+
             logger.info(f"[TIMESTAMP CONVERSION] Converting {len(detected_plays)} plays to time windows...")
-            logger.info(f"  Applying game start offset: {game_start_offset:.1f}s")
+            logger.info(f"  Using absolute timestamps from frame extraction (NOT adding game_start_offset={game_start_offset:.1f}s)")
 
             for i, play in enumerate(detected_plays):
                 try:
@@ -505,19 +531,41 @@ Remember: Report ALL plays you find. A college football game has many plays, and
                         # Get the base timestamp from the frame
                         frame_time = frame_times[frame_idx]
 
-                        # Apply game start offset to center the play window
-                        center_time = game_start_offset + frame_time
+                        # DIAGNOSTIC: Log step-by-step calculation
+                        logger.info(f"\n[PLAY {i}] {play_type} (confidence={confidence:.2f})")
+                        logger.info(f"  Input frame number: {frame_idx}")
+                        logger.info(f"  Frame range: 0-{len(frame_times)-1}")
+                        logger.info(f"  Frame time (from extraction): {frame_time:.1f}s ({frame_time/60:.1f}m)")
+
+                        # FIX: Use absolute timestamp directly (frame_time is already absolute)
+                        # Previously: center_time = game_start_offset + frame_time (WRONG: double-offset)
+                        center_time = frame_time
+
+                        logger.info(f"  Calculation: center_time = frame_time (absolute)")
+                        logger.info(f"              center_time = {center_time:.1f}s")
+                        logger.info(f"  [FIX APPLIED] Removed game_start_offset (+{game_start_offset:.1f}s) to prevent double-offset")
+
+                        # Check if beyond video duration
+                        if center_time > video_duration:
+                            logger.warning(f"  ⚠️  BEYOND VIDEO! {center_time:.1f}s > {video_duration}s (overage: {center_time - video_duration:.1f}s)")
+                            timestamps_beyond_video.append({
+                                "frame_idx": frame_idx,
+                                "frame_time": frame_time,
+                                "center_time": center_time,
+                                "overage": center_time - video_duration,
+                                "play_type": play_type
+                            })
+                        else:
+                            logger.info(f"  ✓ Within bounds ({center_time:.1f}s < {video_duration}s)")
+                            timestamps_within_video.append(center_time)
 
                         # Create window around detected play (3s before, 5s after)
                         start_time = max(0.0, center_time - 3.0)
                         end_time = min(video_duration, center_time + 5.0)
 
+                        logger.info(f"  Window: {start_time:.1f}s - {end_time:.1f}s (duration: {end_time-start_time:.1f}s)")
+
                         play_windows.append((start_time, end_time))
-                        logger.info(
-                            f"[PLAY {i}] {play_type} @ frame {frame_idx} -> {center_time:.1f}s "
-                            f"(window: {start_time:.1f}-{end_time:.1f}s, confidence: {confidence:.2f})"
-                        )
-                        logger.debug(f"  Description: {description}")
                     else:
                         skipped_invalid_frame += 1
                         logger.warning(f"[PLAY {i}] SKIPPED: Invalid frame_index {frame_idx} (max: {len(frame_times)-1})")
@@ -526,11 +574,89 @@ Remember: Report ALL plays you find. A college football game has many plays, and
                     logger.warning(f"[PLAY {i}] SKIPPED: Error processing play entry: {e}")
                     continue
 
-            logger.info(f"[CONVERSION SUMMARY]")
+            # ==================== AGGREGATE ANALYSIS ====================
+            logger.info(f"\n{'='*80}")
+            logger.info(f"[TIMESTAMP ANALYSIS]")
+            logger.info(f"{'='*80}")
             logger.info(f"  Total plays from Claude: {len(detected_plays)}")
             logger.info(f"  Skipped (low confidence < 0.5): {skipped_low_conf}")
             logger.info(f"  Skipped (invalid frame index): {skipped_invalid_frame}")
             logger.info(f"  Play windows created: {len(play_windows)}")
+            logger.info(f"  Timestamps within video: {len(timestamps_within_video)}")
+            logger.info(f"  Timestamps BEYOND video: {len(timestamps_beyond_video)}")
+
+            if timestamps_beyond_video:
+                logger.warning(f"\n[BEYOND VIDEO TIMESTAMPS]")
+                for item in sorted(timestamps_beyond_video, key=lambda x: x["center_time"]):
+                    logger.warning(f"  Frame {item['frame_idx']}: {item['center_time']:.1f}s (overage: +{item['overage']:.1f}s) - {item['play_type']}")
+
+                # Calculate statistics
+                overages = [item["overage"] for item in timestamps_beyond_video]
+                logger.warning(f"\n  Average overage: {sum(overages)/len(overages):.1f}s")
+                logger.warning(f"  Max overage: {max(overages):.1f}s")
+                logger.warning(f"  Min overage: {min(overages):.1f}s")
+
+            # ==================== HYPOTHESIS TESTING ====================
+            logger.info(f"\n{'='*80}")
+            logger.info(f"[HYPOTHESIS TESTING]")
+            logger.info(f"{'='*80}")
+
+            # Hypothesis 1: num_frames is wrong
+            logger.info(f"\nHypothesis 1: Is num_frames={num_frames} correct?")
+            if num_frames != 60:
+                logger.warning(f"  ⚠️  num_frames is {num_frames}, expected 60!")
+            else:
+                logger.info(f"  ✓ num_frames is 60 as expected")
+
+            # Hypothesis 2: frame numbers from Claude are outside expected range
+            logger.info(f"\nHypothesis 2: Are Claude frame numbers in 0-{num_frames-1} range?")
+            frame_numbers = [play.get("frame_index") for play in detected_plays if play.get("frame_index") is not None]
+            if frame_numbers:
+                min_frame = min(frame_numbers)
+                max_frame = max(frame_numbers)
+                logger.info(f"  Frame range from Claude: {min_frame}-{max_frame}")
+                if min_frame < 0 or max_frame >= num_frames:
+                    logger.warning(f"  ⚠️  Frames outside expected 0-{num_frames-1} range!")
+                else:
+                    logger.info(f"  ✓ Frames within expected range")
+
+            # Hypothesis 3: Is video_duration being calculated incorrectly?
+            logger.info(f"\nHypothesis 3: Is video_duration={video_duration}s correct?")
+            if frame_times:
+                expected_last_frame_time = video_duration - (video_duration / num_frames)
+                logger.info(f"  Expected last frame time: ~{expected_last_frame_time:.1f}s")
+                logger.info(f"  Actual last frame time: {frame_times[-1]:.1f}s")
+
+                if timestamps_beyond_video:
+                    last_beyond = max(timestamps_beyond_video, key=lambda x: x["center_time"])
+                    logger.info(f"  Last timestamp calculated: {last_beyond['center_time']:.1f}s")
+                    logger.warning(f"  ⚠️  Last timestamp ({last_beyond['center_time']:.1f}s) exceeds video duration ({video_duration}s) by {last_beyond['overage']:.1f}s")
+
+            # Hypothesis 4: Is game_start_offset being applied incorrectly?
+            logger.info(f"\nHypothesis 4: Is game_start_offset being applied correctly?")
+            logger.info(f"  Current calculation: center_time = game_start_offset + frame_time")
+            logger.info(f"  game_start_offset: {game_start_offset:.1f}s")
+            if frame_times:
+                logger.info(f"  frame_times are ABSOLUTE timestamps in video: {frame_times[0]:.1f}s to {frame_times[-1]:.1f}s")
+                if timestamps_beyond_video:
+                    logger.warning(f"  ⚠️  Adding offset to absolute timestamps causes overage!")
+                    logger.warning(f"  Example: Frame {timestamps_beyond_video[0]['frame_idx']}: {game_start_offset:.1f}s + {timestamps_beyond_video[0]['frame_time']:.1f}s = {timestamps_beyond_video[0]['center_time']:.1f}s")
+                    logger.warning(f"  This suggests game_start_offset should NOT be added to frame_times!")
+
+            # Hypothesis 5: Frame extraction timing issue
+            logger.info(f"\nHypothesis 5: Are frame extraction times calculated correctly?")
+            if frame_times and num_frames > 0:
+                expected_interval = video_duration / (num_frames + 1)
+                actual_interval = (frame_times[-1] - frame_times[0]) / (len(frame_times) - 1) if len(frame_times) > 1 else 0
+                logger.info(f"  Expected interval: {expected_interval:.1f}s")
+                logger.info(f"  Actual interval: {actual_interval:.1f}s")
+                logger.info(f"  Frame extraction formula: interval * (i + 1) for i in range({num_frames})")
+                logger.info(f"  This means frame 0 = {expected_interval:.1f}s, frame {num_frames-1} = {expected_interval * num_frames:.1f}s")
+
+                if expected_interval * num_frames > video_duration:
+                    logger.warning(f"  ⚠️  Last frame time ({expected_interval * num_frames:.1f}s) exceeds video duration!")
+
+            logger.info(f"{'='*80}\n")
 
             logger.info(f"[DETECTION COMPLETE]")
             logger.info(f"  Detected plays: {len(detected_plays)}")
