@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import logging
 from typing import Dict, List, Literal, Optional, Tuple
+
+logger = logging.getLogger(__name__)
 
 Bucket = Literal["team_offense", "opp_offense", "special_teams"]
 
@@ -65,6 +68,7 @@ def build_guided_windows(
     }
 
     prev_home, prev_away = None, None
+    skipped_count = 0
     for play in plays:
         home_score = play.get("homeScore")
         away_score = play.get("awayScore")
@@ -88,15 +92,25 @@ def build_guided_windows(
             aligned = None
         play["_aligned_sec"] = aligned
 
+    logger.info(f"[WINDOW COLLAPSE DEBUG - bucketize.py] Processing {len(plays)} plays to extract windows")
+
     for play in plays:
         aligned = _play_time_hint(play)
         if aligned is None:
+            skipped_count += 1
+            if skipped_count <= 3:
+                logger.info(f"  [SKIP] Play {skipped_count}: aligned=None, period={play.get('period')}, clock={play.get('clock')}, timestamp={play.get('timestamp')}")
             continue
         bucket = _bucket_for_play(play, team_norm)
         start = max(0.0, float(aligned) - float(pre_pad))
         end = float(aligned) + float(post_pad)
         weight = score_play(play)
         out[bucket].append((start, end, weight, play))
+
+    accepted_count = sum(len(items) for items in out.values())
+    logger.info(f"[WINDOW COLLAPSE DEBUG - bucketize.py] Result: {accepted_count} plays accepted, {skipped_count} plays skipped (missing period/clock alignment)")
+    if skipped_count > 3:
+        logger.info(f"  ... and {skipped_count - 3} more plays were also skipped")
 
     merged: Dict[Bucket, List[Tuple[float, float, float, dict]]] = {k: [] for k in out}
     for bucket, items in out.items():
