@@ -826,17 +826,84 @@ class JobRunner:
                                     logger.warning(f"ESPN fallback also failed: {type(espn_exc).__name__}: {espn_exc}")
 
                                 if not espn_fallback_success:
-                                    # Both CFBD and ESPN failed
-                                    final_reason = f"CFBD error: {cfbd_reason}. ESPN fallback also failed."
-                                    set_cfbd_state("error", final_reason)
-                                    cfbd_job_meta["status"] = "error"
-                                    cfbd_job_meta["error"] = final_reason
-                                    cfbd_summary["error"] = final_reason
-                                    monitor.touch(stage="detecting", detail=f"Both CFBD and ESPN failed")
-                                    logger.warning(
-                                        "cfbd_and_espn_fetch_failed",
-                                        extra={"job_id": job_id, "cfbd_error": cfbd_reason},
-                                    )
+                                    # Both CFBD and ESPN failed - try Claude Vision
+                                    logger.info(f"[CFBD DIAGNOSTICS] Attempting Claude Vision fallback...")
+                                    claude_fallback_success = False
+
+                                    # Check if Claude Vision is available
+                                    from .settings import ANTHROPIC_API_KEY, CLAUDE_VISION_ENABLED
+
+                                    if CLAUDE_VISION_ENABLED and ANTHROPIC_API_KEY and video_path:
+                                        try:
+                                            from .claude_play_detector import ClaudePlayDetector
+
+                                            logger.info(f"[CLAUDE] Initializing Claude Vision for game_id={gid}")
+                                            detector = ClaudePlayDetector(api_key=ANTHROPIC_API_KEY)
+
+                                            # Prepare game info for context
+                                            game_context = {
+                                                "away_team": away_team or "Unknown",
+                                                "home_team": home_team or "Unknown",
+                                                "team": team or "Unknown",
+                                            }
+
+                                            # Detect plays using Claude Vision
+                                            claude_windows = await asyncio.to_thread(
+                                                detector.detect_plays,
+                                                video_path,
+                                                game_info=game_context,
+                                                num_frames=settings.CLAUDE_VISION_FRAMES
+                                            )
+
+                                            if claude_windows and len(claude_windows) >= 10:
+                                                # Convert Claude windows to mock CFBD format
+                                                cfbd_plays = [
+                                                    {
+                                                        "id": i,
+                                                        "game_id": int(gid) if gid else 0,
+                                                        "timestamp": start,
+                                                        "end_timestamp": end,
+                                                        "source": "claude_vision"
+                                                    }
+                                                    for i, (start, end) in enumerate(claude_windows)
+                                                ]
+                                                cfbd_play_count = len(cfbd_plays)
+                                                cfbd_used = True
+                                                logger.info(f"[CLAUDE] Claude Vision returned {cfbd_play_count} plays")
+                                                claude_reason = f"Claude Vision: {cfbd_play_count} plays"
+                                                set_cfbd_state("ready_claude", claude_reason)
+                                                cfbd_job_meta["status"] = "ready_claude"
+                                                cfbd_job_meta["game_id"] = int(gid) if gid else 0
+                                                cfbd_job_meta["plays_count"] = cfbd_play_count
+                                                cfbd_job_meta["reason"] = claude_reason
+                                                cfbd_summary["error"] = None
+                                                cfbd_summary["game_id"] = int(gid) if gid else 0
+                                                cfbd_summary["plays"] = cfbd_play_count
+                                                cfbd_summary["source"] = "claude_vision"
+                                                monitor.touch(stage="detecting", detail=f"Using Claude Vision: {cfbd_play_count} plays")
+                                                logger.info(f"[CLAUDE] Claude Vision fallback successful: {cfbd_play_count} plays")
+                                                claude_fallback_success = True
+                                            else:
+                                                logger.warning(f"[CLAUDE] Claude Vision returned insufficient plays: {len(claude_windows or [])}")
+                                        except ImportError as import_exc:
+                                            logger.warning(f"[CLAUDE] Cannot import anthropic library: {import_exc}")
+                                        except Exception as claude_exc:
+                                            logger.warning(f"[CLAUDE] Claude Vision fallback failed: {type(claude_exc).__name__}: {claude_exc}")
+                                    else:
+                                        logger.info("[CLAUDE] Claude Vision not available (missing API key or disabled)")
+
+                                    if not claude_fallback_success:
+                                        # All three methods failed: CFBD, ESPN, and Claude Vision
+                                        final_reason = f"CFBD error: {cfbd_reason}. ESPN and Claude Vision fallbacks also failed."
+                                        set_cfbd_state("error", final_reason)
+                                        cfbd_job_meta["status"] = "error"
+                                        cfbd_job_meta["error"] = final_reason
+                                        cfbd_summary["error"] = final_reason
+                                        monitor.touch(stage="detecting", detail=f"CFBD, ESPN, and Claude Vision all failed")
+                                        logger.warning(
+                                            "all_fallbacks_failed",
+                                            extra={"job_id": job_id, "cfbd_error": cfbd_reason},
+                                        )
                             else:
                                 cfbd_used = True
                                 cfbd_games_count = cfbd_play_count
