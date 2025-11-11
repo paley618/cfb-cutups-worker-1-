@@ -60,12 +60,12 @@ class ClaudePlayDetector:
             logger.warning(f"[CLAUDE] Could not get video duration: {e}, using default 600s")
             return 600.0
 
-    def extract_keyframes(self, video_path: str, num_frames: int = 12) -> List[tuple[bytes, float]]:
+    def extract_keyframes(self, video_path: str, num_frames: int = 60) -> List[tuple[bytes, float]]:
         """Extract keyframes from video at regular intervals.
 
         Args:
             video_path: Path to video file
-            num_frames: Number of frames to extract (default: 12)
+            num_frames: Number of frames to extract (default: 60, ~1 every 3 minutes in a 3-hour game)
 
         Returns:
             List of (frame_bytes, timestamp) tuples
@@ -78,6 +78,7 @@ class ClaudePlayDetector:
         # Extract frames at regular intervals throughout video
         interval = duration / (num_frames + 1)  # +1 to avoid very end
         times = [interval * (i + 1) for i in range(num_frames)]
+        logger.info(f"[CLAUDE] Extracting frames at {interval:.1f}s intervals (duration: {duration:.1f}s)")
 
         with tempfile.TemporaryDirectory() as tmpdir:
             for i, time_sec in enumerate(times):
@@ -171,48 +172,59 @@ Game Context:
             f"Frame {i}: {t:.1f}s" for i, t in enumerate(frame_times)
         ])
 
-        prompt = f"""Analyze these {len(keyframes)} frames from a college football game video and identify actual plays.
+        prompt = f"""You are analyzing {len(keyframes)} frames from a college football game video to identify EVERY play that occurred.
 
 {game_context}
-Video duration: {video_duration:.1f} seconds
-Frame timestamps:
+Video duration: {video_duration:.1f} seconds (~{video_duration/60:.0f} minutes)
+
+IMPORTANT: Each frame is from a DIFFERENT timestamp in the game:
 {frame_time_info}
 
-For each ACTUAL PLAY you can identify (not replays, commercials, timeouts, or celebrations), provide:
+TASK: Identify ALL football plays across these frames. In a typical college football game, you should find 50-200+ plays across {len(keyframes)} frames.
+
+For EACH play you identify, provide:
 1. frame_index: Which frame number (0-{len(keyframes)-1}) shows the play
 2. play_type: One of these EXACT types:
-   - "Rush" (running play)
-   - "Pass Reception" (completed pass)
-   - "Pass Incompletion" (incomplete pass)
-   - "Sack"
-   - "Interception Return"
-   - "Fumble Recovery (Opponent)"
-   - "Punt"
-   - "Kickoff"
-   - "Field Goal Good"
-   - "Field Goal Missed"
-   - "Passing Touchdown"
-   - "Rushing Touchdown"
-   - "Penalty"
-   - "Safety"
-3. description: Brief description of what you see
-4. confidence: 0.0-1.0 (only include plays with confidence > 0.6)
+   - "Rush" - Running play (RB, QB run, option)
+   - "Pass Reception" - Completed pass
+   - "Pass Incompletion" - Incomplete pass
+   - "Sack" - QB sacked
+   - "Interception Return" - INT by defense
+   - "Fumble Recovery (Opponent)" - Fumble recovered
+   - "Punt" - Punting play
+   - "Kickoff" - Kickoff play
+   - "Field Goal Good" - Successful FG
+   - "Field Goal Missed" - Missed FG
+   - "Passing Touchdown" - TD via pass
+   - "Rushing Touchdown" - TD via rush
+   - "Penalty" - Penalty flag/enforcement
+   - "Safety" - Safety scored
+3. description: Brief description of what you see (e.g., "QB drops back, throws to WR on right side")
+4. confidence: 0.0-1.0 (include plays with confidence > 0.5)
 
-CRITICAL RULES:
-- Only report plays where you can SEE the ball in motion or immediate action
-- DO NOT report replays, commercials, halftime shows, or celebration footage
-- DO NOT report timeouts, huddles, or between-play footage
-- Only use the EXACT play_type names listed above
-- Each play should have a clear visual indicator of football action
+IMPORTANT GUIDELINES:
+✓ Report ALL plays you can identify - don't filter or limit yourself
+✓ Each frame may show MULTIPLE plays (during action, in scorebug recap, etc.)
+✓ Look for: players in formation, ball carriers, passes in flight, tackles, scoring plays
+✓ Include plays even if partially visible or in progress
+✓ Use game context (score, down & distance indicators) to infer play types
+✗ Skip obvious replays (slow-motion, different camera angles of same play)
+✗ Skip commercials, halftime, crowd shots with no game action
+✗ Skip pre-game/post-game ceremonies
 
-Respond with ONLY a JSON array, no other text:
+CONFIDENCE LEVELS:
+- 0.9-1.0: Clear, unambiguous play action visible
+- 0.7-0.8: Strong indicators (formation, players in motion, scorebug update)
+- 0.5-0.6: Reasonable inference from context (score change, field position)
 
+RESPOND WITH ONLY A JSON ARRAY:
 [
-  {{"frame_index": 2, "play_type": "Pass Reception", "description": "QB completes pass to WR", "confidence": 0.9}},
-  {{"frame_index": 5, "play_type": "Rush", "description": "RB runs up middle", "confidence": 0.85}}
+  {{"frame_index": 0, "play_type": "Kickoff", "description": "Opening kickoff, ball in air", "confidence": 0.95}},
+  {{"frame_index": 0, "play_type": "Pass Reception", "description": "Scorebug shows 1st down completion", "confidence": 0.75}},
+  {{"frame_index": 5, "play_type": "Rush", "description": "RB carrying ball, defenders converging", "confidence": 0.90}}
 ]
 
-If you see no clear plays, return: []
+Remember: Report ALL plays you find. A college football game has many plays, and your job is to find as many as possible across these {len(keyframes)} sample frames.
 """
 
         try:
@@ -220,7 +232,7 @@ If you see no clear plays, return: []
 
             response = self.client.messages.create(
                 model=self.model,
-                max_tokens=2000,
+                max_tokens=6000,  # Increased to handle 150+ plays
                 temperature=0.0,  # Deterministic for consistent results
                 messages=[
                     {
@@ -253,7 +265,7 @@ If you see no clear plays, return: []
                     description = play.get("description", "")
 
                     # Skip low confidence plays
-                    if confidence < 0.6:
+                    if confidence < 0.5:
                         logger.debug(f"[CLAUDE] Skipping low confidence play: {confidence}")
                         continue
 
@@ -277,7 +289,24 @@ If you see no clear plays, return: []
                     logger.warning(f"[CLAUDE] Error processing play entry: {e}")
                     continue
 
+            # Log detailed play distribution analytics
+            play_counts_by_frame = {}
+            play_types_count = {}
+            for play in detected_plays:
+                frame_idx = play.get("frame_index", -1)
+                play_type = play.get("play_type", "Unknown")
+                play_counts_by_frame[frame_idx] = play_counts_by_frame.get(frame_idx, 0) + 1
+                play_types_count[play_type] = play_types_count.get(play_type, 0) + 1
+
+            frames_with_plays = len([c for c in play_counts_by_frame.values() if c > 0])
+            avg_plays_per_frame = len(detected_plays) / len(keyframes) if keyframes else 0
+
             logger.info(f"[CLAUDE] Returning {len(play_windows)} play windows")
+            logger.info(f"[CLAUDE] Play distribution: {dict(sorted(play_counts_by_frame.items()))}")
+            logger.info(f"[CLAUDE] Play types: {play_types_count}")
+            logger.info(f"[CLAUDE] Frame coverage: {frames_with_plays}/{len(keyframes)} frames with plays")
+            logger.info(f"[CLAUDE] Average: {avg_plays_per_frame:.1f} plays per frame")
+
             return play_windows
 
         except json.JSONDecodeError as e:
