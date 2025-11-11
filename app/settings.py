@@ -301,8 +301,8 @@ class Settings(BaseSettings):
         description="API key for Anthropic Claude Vision API.",
     )
     CLAUDE_VISION_FRAMES: int = Field(
-        default=12,
-        description="Number of keyframes to extract for Claude Vision analysis.",
+        default=60,
+        description="Number of keyframes to extract for Claude Vision analysis. 60 frames ~= 1 every 3 minutes in a 3-hour game.",
     )
 
     OCR_SAMPLE_FPS: float = Field(

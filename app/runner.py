@@ -855,7 +855,8 @@ class JobRunner:
                                                 num_frames=settings.CLAUDE_VISION_FRAMES
                                             )
 
-                                            if claude_windows and len(claude_windows) >= 10:
+                                            # Accept any plays found (changed from >= 10 to > 0)
+                                            if claude_windows and len(claude_windows) > 0:
                                                 # Convert Claude windows to mock CFBD format
                                                 cfbd_plays = [
                                                     {
