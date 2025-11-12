@@ -219,28 +219,48 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
             logger.error(f"[GAME START DETECTION] Error: {type(e).__name__}: {e}")
             return 600.0
 
-    def extract_keyframes(self, video_path: str, num_frames: int = 60) -> List[tuple[bytes, float]]:
+    def extract_keyframes(self, video_path: str, num_frames: int = 60, game_start_offset: float = 0.0) -> List[tuple[bytes, float]]:
         """Extract keyframes from video at regular intervals.
 
         Args:
             video_path: Path to video file
             num_frames: Number of frames to extract (default: 60, ~1 every 3 minutes in a 3-hour game)
+            game_start_offset: Offset from game start detection (for diagnostic logging)
 
         Returns:
             List of (frame_bytes, timestamp) tuples
         """
-        logger.info(f"[CLAUDE] Extracting {num_frames} keyframes from video...")
+        logger.info("[FRAME EXTRACTION DIAGNOSTIC] Starting frame extraction")
 
         duration = self.get_video_duration(video_path)
+        logger.info(f"  Video duration: {duration:.1f}s ({duration/60:.1f} min)")
+        logger.info(f"  Game start offset (from detection): {game_start_offset:.1f}s")
+        logger.info(f"  Number of frames to extract: {num_frames}")
+
         keyframes: List[tuple[bytes, float]] = []
 
         # Extract frames at regular intervals throughout video
         interval = duration / (num_frames + 1)  # +1 to avoid very end
         times = [interval * (i + 1) for i in range(num_frames)]
-        logger.info(f"[CLAUDE] Extracting frames at {interval:.1f}s intervals (duration: {duration:.1f}s)")
+
+        # Show the calculation
+        logger.info(f"  Frame interval calculation: {duration:.1f}s / {num_frames + 1} = {interval:.1f}s per frame")
+        logger.info(f"  This will extract frames from {times[0]:.1f}s to {times[-1]:.1f}s")
 
         with tempfile.TemporaryDirectory() as tmpdir:
             for i, time_sec in enumerate(times):
+                # Log EACH frame being extracted with context
+                logger.info(f"\n[FRAME {i}] Will extract at timestamp: {time_sec:.1f}s ({time_sec/60:.1f} min)")
+
+                # Context: Is this before/after game start?
+                logger.info(f"  Context: Is this before/after game start ({game_start_offset:.1f}s)?")
+                if time_sec < game_start_offset:
+                    logger.warning(f"  ⚠️  BEFORE game start! (offset={game_start_offset:.1f}s, frame={time_sec:.1f}s)")
+                elif time_sec > (duration - 600):
+                    logger.warning(f"  ⚠️  NEAR END OF VIDEO (within 10 min of end)")
+                else:
+                    logger.info(f"  ✓ In game timeframe")
+
                 frame_path = f"{tmpdir}/frame_{i:04d}.jpg"
 
                 cmd = [
@@ -264,13 +284,13 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
                     with open(frame_path, "rb") as f:
                         frame_bytes = f.read()
                         keyframes.append((frame_bytes, time_sec))
-                    logger.info(f"[CLAUDE] Extracted frame {i+1}/{num_frames} at {time_sec:.1f}s")
+                    logger.info(f"  ✓ Successfully extracted frame {i+1}/{num_frames}")
                 except subprocess.TimeoutExpired:
-                    logger.warning(f"[CLAUDE] Timeout extracting frame {i} at {time_sec:.1f}s")
+                    logger.warning(f"  ❌ Timeout extracting frame {i} at {time_sec:.1f}s")
                 except Exception as e:
-                    logger.warning(f"[CLAUDE] Failed to extract frame {i} at {time_sec:.1f}s: {e}")
+                    logger.warning(f"  ❌ Failed to extract frame {i} at {time_sec:.1f}s: {e}")
 
-        logger.info(f"[CLAUDE] Successfully extracted {len(keyframes)} keyframes")
+        logger.info(f"\n[FRAME EXTRACTION DIAGNOSTIC] Complete - Successfully extracted {len(keyframes)} keyframes")
         return keyframes
 
     def detect_plays(
@@ -304,7 +324,7 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
         logger.info(f"  Frames to extract: {num_frames}")
         logger.info(f"  Frame interval: ~{video_duration/num_frames:.1f}s between frames")
 
-        keyframes = self.extract_keyframes(video_path, num_frames=num_frames)
+        keyframes = self.extract_keyframes(video_path, num_frames=num_frames, game_start_offset=game_start_offset)
 
         if not keyframes:
             logger.error("[CLAUDE] No keyframes extracted!")
@@ -447,6 +467,51 @@ Remember: Report ALL plays you find. A college football game has many plays, and
             detected_plays = json.loads(response_text)
             logger.info(f"  JSON parsed successfully")
             logger.info(f"  Total plays detected: {len(detected_plays)}")
+
+            # ==================== PHASE 2: CLAUDE DETECTION DIAGNOSTICS ====================
+            logger.info(f"\n{'='*80}")
+            logger.info("[CLAUDE DETECTION DIAGNOSTIC] Analyzing each detected play")
+            logger.info(f"{'='*80}")
+
+            # Log EVERY detected play with FULL details
+            for play_idx, play in enumerate(detected_plays):
+                frame_idx = play.get('frame_index', -1)
+                frame_time = frame_times[frame_idx] if frame_idx >= 0 and frame_idx < len(frame_times) else None
+                play_type = play.get('play_type', 'UNKNOWN')
+                confidence = play.get('confidence', 0.0)
+                description = play.get('description', 'NONE')
+
+                logger.info(f"\n[PLAY {play_idx}] Raw Claude Detection:")
+                logger.info(f"  Frame index: {frame_idx}")
+                if frame_time is not None:
+                    logger.info(f"  Frame timestamp: {frame_time:.1f}s ({frame_time/60:.1f} min)")
+                else:
+                    logger.info(f"  Frame timestamp: UNKNOWN")
+                logger.info(f"  Play type: {play_type}")
+                logger.info(f"  Confidence: {confidence:.2f}")
+                logger.info(f"  Description: {description}")
+
+                # CRITICAL: Show what Claude literally saw
+                logger.info(f"  ⚠️  Claude saw: {description}")
+
+                # Flag suspicious descriptions
+                description_lower = description.lower()
+                if 'studio' in description_lower:
+                    logger.warning(f"  🚩 STUDIO CONTENT DETECTED")
+                if 'commercial' in description_lower:
+                    logger.warning(f"  🚩 COMMERCIAL DETECTED")
+                if 'replay' in description_lower:
+                    logger.warning(f"  🚩 REPLAY DETECTED")
+                if 'halftime' in description_lower:
+                    logger.warning(f"  🚩 HALFTIME DETECTED")
+                if 'pregame' in description_lower or 'pre-game' in description_lower:
+                    logger.warning(f"  🚩 PREGAME DETECTED")
+                if 'crowd' in description_lower and 'field' not in description_lower:
+                    logger.warning(f"  🚩 CROWD SHOT (no field) DETECTED")
+                if 'analyst' in description_lower or 'desk' in description_lower:
+                    logger.warning(f"  🚩 ANALYST/DESK DETECTED")
+
+            logger.info(f"\n{'='*80}")
 
             # Analyze detected plays BEFORE converting
             play_types_count = {}
@@ -657,6 +722,149 @@ Remember: Report ALL plays you find. A college football game has many plays, and
                     logger.warning(f"  ⚠️  Last frame time ({expected_interval * num_frames:.1f}s) exceeds video duration!")
 
             logger.info(f"{'='*80}\n")
+
+            # ==================== PHASE 5: OFFSET DETECTION AND ANALYSIS SUMMARY ====================
+            logger.info("\n" + "="*80)
+            logger.info("[DIAGNOSTIC SUMMARY] Analyzing all plays for patterns")
+            logger.info("="*80)
+
+            # Collect all mismatches by category
+            commercial_plays = []
+            studio_plays = []
+            replay_plays = []
+            pregame_plays = []
+            halftime_plays = []
+            analyst_plays = []
+            valid_plays = []
+
+            for play_idx, play in enumerate(detected_plays):
+                frame_idx = play.get('frame_index', -1)
+                frame_time = frame_times[frame_idx] if 0 <= frame_idx < len(frame_times) else None
+                description = play.get('description', '').lower()
+                confidence = play.get('confidence', 0.0)
+
+                # Skip low confidence
+                if confidence < 0.5:
+                    continue
+
+                # Categorize the play
+                if 'commercial' in description:
+                    commercial_plays.append((play_idx, frame_time, play))
+                elif 'studio' in description:
+                    studio_plays.append((play_idx, frame_time, play))
+                elif 'analyst' in description or 'desk' in description:
+                    analyst_plays.append((play_idx, frame_time, play))
+                elif 'replay' in description:
+                    replay_plays.append((play_idx, frame_time, play))
+                elif 'halftime' in description:
+                    halftime_plays.append((play_idx, frame_time, play))
+                elif frame_time and frame_time < game_start_offset:
+                    pregame_plays.append((play_idx, frame_time, play))
+                else:
+                    valid_plays.append((play_idx, frame_time, play))
+
+            # Report findings
+            logger.info(f"\n[PATTERN ANALYSIS]")
+            logger.info(f"  Total plays detected: {len(detected_plays)}")
+            logger.info(f"  Plays after confidence filter (>= 0.5): {len(commercial_plays) + len(studio_plays) + len(analyst_plays) + len(replay_plays) + len(halftime_plays) + len(pregame_plays) + len(valid_plays)}")
+            logger.info(f"  Commercials: {len(commercial_plays)}")
+            logger.info(f"  Studio content: {len(studio_plays)}")
+            logger.info(f"  Analyst/desk: {len(analyst_plays)}")
+            logger.info(f"  Replays: {len(replay_plays)}")
+            logger.info(f"  Halftime: {len(halftime_plays)}")
+            logger.info(f"  Pre-game (before {game_start_offset:.1f}s): {len(pregame_plays)}")
+            logger.info(f"  Potentially valid: {len(valid_plays)}")
+
+            # Show specific examples of problems
+            if commercial_plays:
+                logger.warning(f"\n[COMMERCIALS DETECTED]")
+                for idx, (play_idx, frame_time, play) in enumerate(commercial_plays[:3]):
+                    if frame_time:
+                        logger.warning(f"  Example {idx+1}: Frame {frame_time:.1f}s - {play.get('description', 'N/A')}")
+                    else:
+                        logger.warning(f"  Example {idx+1}: Frame time unknown - {play.get('description', 'N/A')}")
+
+            if studio_plays:
+                logger.warning(f"\n[STUDIO CONTENT DETECTED]")
+                for idx, (play_idx, frame_time, play) in enumerate(studio_plays[:3]):
+                    if frame_time:
+                        logger.warning(f"  Example {idx+1}: Frame {frame_time:.1f}s - {play.get('description', 'N/A')}")
+                    else:
+                        logger.warning(f"  Example {idx+1}: Frame time unknown - {play.get('description', 'N/A')}")
+
+            if analyst_plays:
+                logger.warning(f"\n[ANALYST/DESK CONTENT DETECTED]")
+                for idx, (play_idx, frame_time, play) in enumerate(analyst_plays[:3]):
+                    if frame_time:
+                        logger.warning(f"  Example {idx+1}: Frame {frame_time:.1f}s - {play.get('description', 'N/A')}")
+                    else:
+                        logger.warning(f"  Example {idx+1}: Frame time unknown - {play.get('description', 'N/A')}")
+
+            if replay_plays:
+                logger.warning(f"\n[REPLAYS DETECTED]")
+                for idx, (play_idx, frame_time, play) in enumerate(replay_plays[:3]):
+                    if frame_time:
+                        logger.warning(f"  Example {idx+1}: Frame {frame_time:.1f}s - {play.get('description', 'N/A')}")
+                    else:
+                        logger.warning(f"  Example {idx+1}: Frame time unknown - {play.get('description', 'N/A')}")
+
+            if halftime_plays:
+                logger.warning(f"\n[HALFTIME CONTENT DETECTED]")
+                for idx, (play_idx, frame_time, play) in enumerate(halftime_plays[:3]):
+                    if frame_time:
+                        logger.warning(f"  Example {idx+1}: Frame {frame_time:.1f}s - {play.get('description', 'N/A')}")
+                    else:
+                        logger.warning(f"  Example {idx+1}: Frame time unknown - {play.get('description', 'N/A')}")
+
+            if pregame_plays:
+                logger.warning(f"\n[PRE-GAME CONTENT DETECTED]")
+                for idx, (play_idx, frame_time, play) in enumerate(pregame_plays[:3]):
+                    if frame_time:
+                        logger.warning(f"  Example {idx+1}: Frame {frame_time:.1f}s (before game start at {game_start_offset:.1f}s) - {play.get('description', 'N/A')}")
+                    else:
+                        logger.warning(f"  Example {idx+1}: Frame time unknown - {play.get('description', 'N/A')}")
+
+            # Check for systematic offset issues
+            problem_plays = commercial_plays + studio_plays + analyst_plays + halftime_plays
+            if problem_plays:
+                # Calculate average timestamp for problem content
+                problem_times = [frame_time for _, frame_time, _ in problem_plays if frame_time is not None]
+                if problem_times:
+                    avg_problem_time = sum(problem_times) / len(problem_times)
+                    logger.warning(f"\n[OFFSET HYPOTHESIS]")
+                    logger.warning(f"  Problem content (commercials/studio/analyst/halftime) average at: {avg_problem_time:.1f}s ({avg_problem_time/60:.1f} min)")
+                    logger.warning(f"  Game start offset: {game_start_offset:.1f}s ({game_start_offset/60:.1f} min)")
+                    potential_offset = avg_problem_time - game_start_offset
+                    logger.warning(f"  Potential systematic offset: {potential_offset:.1f}s")
+
+                    # Check if problem content is clustered at beginning or end
+                    if problem_times:
+                        min_problem_time = min(problem_times)
+                        max_problem_time = max(problem_times)
+                        logger.warning(f"  Problem content time range: {min_problem_time:.1f}s - {max_problem_time:.1f}s")
+                        if max_problem_time < game_start_offset:
+                            logger.warning(f"  ⚠️  All problem content is BEFORE game start - may indicate incorrect game start detection")
+                        elif min_problem_time > (video_duration - 600):
+                            logger.warning(f"  ⚠️  All problem content is NEAR END - may indicate post-game content")
+
+            # Show examples of valid plays
+            if valid_plays:
+                logger.info(f"\n[EXAMPLES OF POTENTIALLY VALID PLAYS]")
+                for idx, (play_idx, frame_time, play) in enumerate(valid_plays[:5]):
+                    if frame_time:
+                        logger.info(f"  Example {idx+1}: {frame_time:.1f}s ({frame_time/60:.1f} min) - {play.get('play_type')} (conf: {play.get('confidence', 0.0):.2f})")
+                        logger.info(f"    Description: {play.get('description', 'N/A')}")
+                    else:
+                        logger.info(f"  Example {idx+1}: Frame time unknown - {play.get('play_type')} (conf: {play.get('confidence', 0.0):.2f})")
+            else:
+                logger.warning(f"\n[WARNING] NO VALID PLAYS DETECTED!")
+                logger.warning(f"  This is highly unusual for a football game")
+                logger.warning(f"  Possible causes:")
+                logger.warning(f"    - Incorrect game start detection")
+                logger.warning(f"    - Video is not actual game footage")
+                logger.warning(f"    - Frame extraction timing issues")
+
+            logger.info("="*80 + "\n")
 
             logger.info(f"[DETECTION COMPLETE]")
             logger.info(f"  Detected plays: {len(detected_plays)}")
