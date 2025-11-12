@@ -1351,15 +1351,33 @@ class JobRunner:
                 windows: List[Tuple[float, float]] = []
                 pre_merge_list: List[Tuple[float, float]] = []
 
-                logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4: cfbd_used = {cfbd_used}")
+                # NEW LOGIC: Prioritize Claude-detected windows over all other sources
+                claude_windows = list(vision_windows_raw)
 
-                if cfbd_used:
+                logger.info(f"[WINDOW PRIORITY] Available sources: Claude={len(claude_windows)}, CFBD={len(guided_windows)}, cfbd_used={cfbd_used}")
+
+                # Priority 1: Use Claude-detected windows (always best if available)
+                if claude_windows and len(claude_windows) > 0:
+                    pre_merge_list = claude_windows
+                    merged = merge_windows(claude_windows, merge_gap)
+                    windows = clamp_windows(merged, min_duration, max_duration)
+                    job_meta["window_source"] = "vision"
+                    actual_data_source = "VISION"
+                    fallback_used = False
+                    logger.info(f"[WINDOW PRIORITY] Using {len(windows)} Claude-detected windows (primary source)")
+
+                # Priority 2: Fall back to CFBD if Claude found nothing but CFBD was used
+                elif cfbd_used and guided_windows and len(guided_windows) > 0:
                     pre_merge_list = pre_merge_guided
                     windows = list(guided_windows)
-                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4: Using CFBD path with {len(windows)} windows")
+                    job_meta["window_source"] = "cfbd"
+                    actual_data_source = "CFBD"
+                    fallback_used = False
+                    logger.info(f"[WINDOW PRIORITY] Claude found no windows, using {len(windows)} CFBD windows (secondary source)")
+
+                # Priority 3: Try other sources (ESPN PBP) or fallback
                 else:
-                    logger.info("[CFBD DIAGNOSTICS] CFBD not used, falling back to vision/ESPN PBP")
-                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4: CFBD path failed, entering fallback path")
+                    logger.warning("[WINDOW PRIORITY] Neither Claude nor CFBD available, trying ESPN PBP or fallback...")
                     orchestrator_payload = job_meta.get("orchestrator") or job_state.get(
                         "orchestrator"
                     )
@@ -1380,7 +1398,7 @@ class JobRunner:
                         espn_pbp, pre_pad, post_pad, vid_dur
                     )
 
-                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4a: Fallback candidate sources:")
+                    logger.info(f"[WINDOW PRIORITY] Fallback candidate sources:")
                     logger.info(f"  cfbd_windows: {len(cfbd_windows)}")
                     logger.info(f"  espn_windows: {len(espn_windows)}")
                     logger.info(f"  detector_windows (vision): {len(detector_windows)}")
@@ -1391,13 +1409,13 @@ class JobRunner:
                         detector_windows,
                     )
 
-                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 4b: pick_best_windows selected {len(candidate_windows)} windows from '{window_source}'")
+                    logger.info(f"[WINDOW PRIORITY] pick_best_windows selected {len(candidate_windows)} windows from '{window_source}'")
                     job_meta["window_source"] = window_source
 
                     if not candidate_windows or len(candidate_windows) < settings.MIN_TOTAL_CLIPS:
                         fallback_used = True
                         actual_data_source = "FALLBACK"
-                        logger.info(f"[CFBD DIAGNOSTICS] Using FALLBACK data source (timegrid)")
+                        logger.info(f"[WINDOW PRIORITY] Using FALLBACK data source (timegrid)")
                         target = (
                             (
                                 cfbd_play_count
@@ -1415,10 +1433,10 @@ class JobRunner:
                         if not actual_data_source:
                             if len(espn_windows) > len(detector_windows):
                                 actual_data_source = "ESPN_PBP"
-                                logger.info(f"[CFBD DIAGNOSTICS] Using ESPN PBP data source: {len(espn_windows)} windows")
+                                logger.info(f"[WINDOW PRIORITY] Using ESPN PBP data source: {len(espn_windows)} windows")
                             else:
                                 actual_data_source = "VISION"
-                                logger.info(f"[CFBD DIAGNOSTICS] Using VISION data source: {len(detector_windows)} windows")
+                                logger.info(f"[WINDOW PRIORITY] Using VISION data source: {len(detector_windows)} windows")
 
                     if fallback_used:
                         shifted: List[Tuple[float, float]] = []
@@ -1450,9 +1468,9 @@ class JobRunner:
                         max(min_duration, vid_dur if vid_dur > 0 else min_duration),
                     )
                     windows = [(0.0, round(default_end, 3))]
-                    logger.info(f"[WINDOW COLLAPSE DEBUG] Step 5: No windows found, using absolute fallback (1 default window)")
+                    logger.warning(f"[WINDOW PRIORITY] No windows found from any source, using absolute fallback (1 default window)")
 
-                logger.info(f"[WINDOW COLLAPSE DEBUG] Step 6: Final windows count = {len(windows)}")
+                logger.info(f"[WINDOW PRIORITY] Final window count: {len(windows)}")
 
                 metrics["pre_merge_windows"] = len(pre_merge_list)
                 metrics["post_merge_windows"] = len(windows)
