@@ -43,8 +43,23 @@ def _ensure_parent(path: str):
 
 
 async def cut_clip(src: str, dst: str, start: float, end: float):
+    """Cut a clip from video with diagnostic logging.
+
+    Args:
+        src: Source video path
+        dst: Destination clip path
+        start: Start timestamp in seconds
+        end: End timestamp in seconds
+    """
     _ensure_parent(dst)
     duration = max(0.01, end - start)
+
+    logger.info(f"[CLIP GENERATION] Creating clip")
+    logger.info(f"  Source: {src}")
+    logger.info(f"  Output: {dst}")
+    logger.info(f"  Window: {start:.1f}s - {end:.1f}s")
+    logger.info(f"  Duration: {duration:.1f}s")
+
     fast = [
         "ffmpeg",
         "-y",
@@ -64,10 +79,14 @@ async def cut_clip(src: str, dst: str, start: float, end: float):
         dst,
     ]
     try:
+        logger.info(f"  Attempting fast copy mode (no re-encoding)...")
         await _run(fast)
+        logger.info(f"  ✓ Clip created successfully using fast copy mode")
         return
-    except Exception:  # noqa: BLE001
-        pass
+    except Exception as e:  # noqa: BLE001
+        logger.warning(f"  ⚠️  Fast copy failed: {str(e)[:100]}")
+        logger.info(f"  Falling back to re-encoding mode...")
+
     accurate = [
         "ffmpeg",
         "-y",
@@ -96,7 +115,12 @@ async def cut_clip(src: str, dst: str, start: float, end: float):
         "+faststart",
         dst,
     ]
-    await _run(accurate)
+    try:
+        await _run(accurate)
+        logger.info(f"  ✓ Clip created successfully using re-encoding mode")
+    except Exception as e:
+        logger.error(f"  ❌ Clip creation failed: {str(e)[:200]}")
+        raise
 
 
 async def make_thumb(src: str, t: float, dst: str):
