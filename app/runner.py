@@ -847,12 +847,13 @@ class JobRunner:
                                                 "team": team or "Unknown",
                                             }
 
-                                            # Detect plays using Claude Vision
-                                            claude_windows = await asyncio.to_thread(
-                                                detector.detect_plays,
+                                            # Detect plays using Claude Vision with ESPN validation
+                                            claude_windows = await detector.detect_plays(
                                                 video_path,
                                                 game_info=game_context,
-                                                num_frames=settings.CLAUDE_VISION_FRAMES
+                                                num_frames=settings.CLAUDE_VISION_FRAMES,
+                                                espn_game_id=str(gid) if gid else None,
+                                                enable_espn_validation=True
                                             )
 
                                             # Accept any plays found (changed from >= 10 to > 0)

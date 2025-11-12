@@ -8,7 +8,8 @@ import logging
 import subprocess
 import tempfile
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
+import re
 
 logger = logging.getLogger(__name__)
 
@@ -34,6 +35,312 @@ class ClaudePlayDetector:
         except Exception as e:
             logger.error(f"[CLAUDE] Failed to initialize Claude client: {e}")
             raise
+
+    async def validate_plays_with_espn(
+        self,
+        detected_plays: List[Dict],
+        frame_times: List[float],
+        espn_game_id: Optional[str] = None,
+        team_name: Optional[str] = None
+    ) -> Tuple[List[Dict], Dict[str, any]]:
+        """Validate detected plays against ESPN game clock data.
+
+        Args:
+            detected_plays: List of plays detected by Claude
+            frame_times: List of video timestamps for each frame
+            espn_game_id: ESPN game ID for fetching play-by-play data
+            team_name: Team name for filtering ESPN plays
+
+        Returns:
+            Tuple of (validated_plays, validation_stats)
+        """
+        logger.info("\n" + "="*80)
+        logger.info("[ESPN GAME CLOCK SYNC] Starting validation")
+        logger.info("="*80)
+
+        # Step 2: Collect game clock sightings
+        game_clock_sightings = []
+        for play in detected_plays:
+            game_clock = play.get('game_clock')
+            quarter = play.get('quarter')
+            frame_idx = play.get('frame_index', -1)
+
+            if game_clock and quarter and 0 <= frame_idx < len(frame_times):
+                video_timestamp = frame_times[frame_idx]
+                game_seconds = self.clock_to_absolute_seconds(quarter, game_clock)
+
+                if game_seconds is not None:
+                    game_clock_sightings.append({
+                        'frame_index': frame_idx,
+                        'video_timestamp': video_timestamp,
+                        'game_clock': game_clock,
+                        'quarter': quarter,
+                        'game_seconds': game_seconds
+                    })
+                    logger.info(f"[GAME CLOCK DETECTED] Frame {frame_idx} @ video {video_timestamp:.1f}s shows Q{quarter} {game_clock} (game time: {game_seconds:.1f}s)")
+
+        logger.info(f"\n[GAME CLOCK COLLECTION] Found {len(game_clock_sightings)} clock sightings")
+
+        if len(game_clock_sightings) < 3:
+            logger.warning(f"[ESPN SYNC] Insufficient game clock sightings ({len(game_clock_sightings)}), skipping ESPN validation")
+            return detected_plays, {
+                'validated': 0,
+                'rejected': 0,
+                'no_clock': len(detected_plays),
+                'reason': 'insufficient_clock_sightings'
+            }
+
+        # Step 3: Build video→game_clock mapping using linear regression
+        import numpy as np
+
+        video_times = np.array([s['video_timestamp'] for s in game_clock_sightings])
+        game_times = np.array([s['game_seconds'] for s in game_clock_sightings])
+
+        # Calculate linear regression: video_time = drift * game_time + offset
+        # Rearrange: game_time = (video_time - offset) / drift
+        A = np.vstack([game_times, np.ones(len(game_times))]).T
+        drift, offset = np.linalg.lstsq(A, video_times, rcond=None)[0]
+
+        logger.info(f"\n[MAPPING CALCULATED]")
+        logger.info(f"  Drift: {drift:.6f} (video playback rate)")
+        logger.info(f"  Offset: {offset:.1f}s (pre-game content)")
+        logger.info(f"  Formula: video_time = {drift:.6f} * game_time + {offset:.1f}")
+
+        # Calculate mapping quality (R² score)
+        predicted_video = drift * game_times + offset
+        ss_res = np.sum((video_times - predicted_video) ** 2)
+        ss_tot = np.sum((video_times - np.mean(video_times)) ** 2)
+        r_squared = 1 - (ss_res / ss_tot) if ss_tot > 0 else 0
+        logger.info(f"  R² (mapping quality): {r_squared:.4f}")
+
+        # Step 4 & 5: Fetch ESPN data and match plays
+        espn_plays = []
+        if espn_game_id and team_name:
+            try:
+                from .espn import fetch_offensive_play_times
+                import httpx
+
+                # Fetch full ESPN play-by-play data (not just timestamps)
+                url = f"https://site.api.espn.com/apis/site/v2/sports/football/college-football/playbyplay?event={espn_game_id}"
+                async with httpx.AsyncClient(timeout=30.0) as client:
+                    response = await client.get(url)
+                response.raise_for_status()
+                payload = response.json()
+
+                # Extract plays with game clock information
+                drives_payload = payload.get("drives") or {}
+                drives = []
+                previous_drives = drives_payload.get("previous") or []
+                if isinstance(previous_drives, list):
+                    drives.extend(previous_drives)
+                current_drive = drives_payload.get("current")
+                if isinstance(current_drive, dict):
+                    drives.append(current_drive)
+
+                for drive in drives:
+                    if not isinstance(drive, dict):
+                        continue
+                    plays_list = drive.get("plays", [])
+                    for play in plays_list:
+                        if not isinstance(play, dict):
+                            continue
+
+                        # Get play details
+                        clock = (play.get("clock") or {}).get("displayValue")
+                        period = (play.get("period") or {}).get("number")
+                        play_type = (play.get("type") or {}).get("text", "")
+
+                        if clock and isinstance(period, int):
+                            game_seconds = self.clock_to_absolute_seconds(period, clock)
+                            if game_seconds is not None:
+                                espn_plays.append({
+                                    'quarter': period,
+                                    'clock': clock,
+                                    'game_seconds': game_seconds,
+                                    'play_type': play_type,
+                                    'text': play.get('text', '')
+                                })
+
+                logger.info(f"\n[ESPN DATA] Fetched {len(espn_plays)} plays from ESPN")
+            except Exception as e:
+                logger.warning(f"[ESPN SYNC] Failed to fetch ESPN data: {e}")
+                return detected_plays, {
+                    'validated': 0,
+                    'rejected': 0,
+                    'no_clock': len(detected_plays),
+                    'reason': f'espn_fetch_failed: {e}'
+                }
+
+        if not espn_plays:
+            logger.warning("[ESPN SYNC] No ESPN plays available, skipping validation")
+            return detected_plays, {
+                'validated': 0,
+                'rejected': 0,
+                'no_clock': len(detected_plays),
+                'reason': 'no_espn_data'
+            }
+
+        # Step 5: Match Claude detections against ESPN data
+        validated_plays = []
+        rejected_plays = []
+        no_clock_plays = []
+
+        logger.info(f"\n[VALIDATION] Matching {len(detected_plays)} Claude plays against {len(espn_plays)} ESPN plays")
+
+        for play_idx, play in enumerate(detected_plays):
+            frame_idx = play.get('frame_index', -1)
+            game_clock = play.get('game_clock')
+            quarter = play.get('quarter')
+            confidence = play.get('confidence', 0.0)
+            play_type = play.get('play_type', '')
+
+            # Skip low confidence plays
+            if confidence < 0.5:
+                continue
+
+            # If no game clock detected, mark as no_clock
+            if not game_clock or not quarter or frame_idx < 0 or frame_idx >= len(frame_times):
+                no_clock_plays.append(play)
+                logger.info(f"[PLAY {play_idx}] NO CLOCK - Cannot validate")
+                continue
+
+            # Convert video timestamp to game clock using mapping
+            video_timestamp = frame_times[frame_idx]
+            predicted_game_seconds = (video_timestamp - offset) / drift if drift != 0 else None
+
+            if predicted_game_seconds is None:
+                no_clock_plays.append(play)
+                continue
+
+            predicted_quarter, predicted_clock = self.quarter_clock_from_seconds(predicted_game_seconds)
+
+            logger.info(f"\n[PLAY {play_idx}] Validation:")
+            logger.info(f"  Video timestamp: {video_timestamp:.1f}s")
+            logger.info(f"  Detected clock: Q{quarter} {game_clock}")
+            logger.info(f"  Predicted clock: Q{predicted_quarter} {predicted_clock}")
+            logger.info(f"  Play type: {play_type}")
+
+            # Find matching ESPN play (same quarter, close clock time ±30s, similar play type)
+            match_found = False
+            for espn_play in espn_plays:
+                espn_quarter = espn_play['quarter']
+                espn_game_seconds = espn_play['game_seconds']
+                espn_play_type = espn_play['play_type']
+
+                # Check quarter match
+                if espn_quarter != quarter:
+                    continue
+
+                # Check time proximity (±30 seconds)
+                detected_game_seconds = self.clock_to_absolute_seconds(quarter, game_clock)
+                if detected_game_seconds is None:
+                    continue
+
+                time_diff = abs(detected_game_seconds - espn_game_seconds)
+                if time_diff > 30:  # 30 second tolerance
+                    continue
+
+                # Match found!
+                match_found = True
+                validated_plays.append(play)
+                logger.info(f"  ✅ VALIDATED - Matched ESPN play at Q{espn_quarter} {espn_play['clock']} (Δ{time_diff:.1f}s)")
+                logger.info(f"     ESPN: {espn_play_type}")
+                break
+
+            if not match_found:
+                rejected_plays.append(play)
+                logger.info(f"  ❌ REJECTED - No matching ESPN play found")
+
+        # Summary
+        logger.info(f"\n[VALIDATION SUMMARY]")
+        logger.info(f"  Total Claude plays: {len(detected_plays)}")
+        logger.info(f"  Validated (matched ESPN): {len(validated_plays)}")
+        logger.info(f"  Rejected (no ESPN match): {len(rejected_plays)}")
+        logger.info(f"  No clock detected: {len(no_clock_plays)}")
+        logger.info("="*80 + "\n")
+
+        validation_stats = {
+            'validated': len(validated_plays),
+            'rejected': len(rejected_plays),
+            'no_clock': len(no_clock_plays),
+            'mapping_drift': float(drift),
+            'mapping_offset': float(offset),
+            'mapping_r_squared': float(r_squared),
+            'clock_sightings': len(game_clock_sightings),
+            'espn_plays': len(espn_plays)
+        }
+
+        return validated_plays, validation_stats
+
+    @staticmethod
+    def clock_to_absolute_seconds(quarter: int, clock_str: str) -> Optional[float]:
+        """Convert game clock (Q1 10:32) to absolute seconds from game start.
+
+        Args:
+            quarter: Quarter number (1-4, 5+ for OT)
+            clock_str: Clock string like "10:32" or "0:45"
+
+        Returns:
+            Absolute seconds from game start, or None if invalid
+
+        Example:
+            Q1 10:32 = 15*60 - (10*60 + 32) = 900 - 632 = 268 seconds elapsed
+        """
+        try:
+            # Parse MM:SS format
+            match = re.match(r'(\d+):(\d+)', clock_str.strip())
+            if not match:
+                return None
+
+            minutes = int(match.group(1))
+            seconds = int(match.group(2))
+
+            # Clock shows time REMAINING in quarter
+            time_remaining = minutes * 60 + seconds
+
+            # Each quarter is 15 minutes
+            quarter_length = 15 * 60
+
+            # Calculate elapsed time in current quarter
+            elapsed_in_quarter = quarter_length - time_remaining
+
+            # Calculate total elapsed time from game start
+            total_elapsed = (quarter - 1) * quarter_length + elapsed_in_quarter
+
+            return float(total_elapsed)
+        except (ValueError, AttributeError):
+            return None
+
+    @staticmethod
+    def quarter_clock_from_seconds(seconds: float) -> Tuple[int, str]:
+        """Convert absolute game seconds to (quarter, clock_str).
+
+        Args:
+            seconds: Absolute seconds from game start
+
+        Returns:
+            (quarter, clock_str) tuple like (1, "10:32")
+
+        Example:
+            268 seconds = Q1 with 632 seconds remaining = Q1 10:32
+        """
+        quarter_length = 15 * 60  # 900 seconds per quarter
+
+        # Calculate quarter (1-indexed)
+        quarter = int(seconds // quarter_length) + 1
+
+        # Calculate elapsed time in current quarter
+        elapsed_in_quarter = seconds % quarter_length
+
+        # Calculate time remaining (clock shows remaining time)
+        time_remaining = quarter_length - elapsed_in_quarter
+
+        # Convert to MM:SS format
+        minutes = int(time_remaining // 60)
+        secs = int(time_remaining % 60)
+        clock_str = f"{minutes}:{secs:02d}"
+
+        return quarter, clock_str
 
     def get_video_duration(self, video_path: str) -> float:
         """Get video duration in seconds using ffprobe.
@@ -293,11 +600,13 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
         logger.info(f"\n[FRAME EXTRACTION DIAGNOSTIC] Complete - Successfully extracted {len(keyframes)} keyframes")
         return keyframes
 
-    def detect_plays(
+    async def detect_plays(
         self,
         video_path: str,
         game_info: Optional[Dict] = None,
-        num_frames: int = 12
+        num_frames: int = 12,
+        espn_game_id: Optional[str] = None,
+        enable_espn_validation: bool = True
     ) -> List[tuple[float, float]]:
         """Analyze video frames with Claude to detect plays.
 
@@ -373,11 +682,20 @@ Video duration: {video_duration:.1f} seconds (~{video_duration/60:.0f} minutes)
 IMPORTANT: Each frame is from a DIFFERENT timestamp in the game:
 {frame_time_info}
 
-TASK: Identify ALL football plays across these frames. In a typical college football game, you should find 50-200+ plays across {len(keyframes)} frames.
+TASK 1: DETECT GAME CLOCK ON SCREEN
+For EACH frame, look for the game clock display (usually in bottom-right or top corner):
+- Look for formats like "10:32", "Q1 10:32", "1st 10:32", or quarter indicator + time
+- The clock shows TIME REMAINING in the current quarter (counts down)
+- Report the quarter (1-4) and time (MM:SS format)
+
+TASK 2: IDENTIFY FOOTBALL PLAYS
+Identify ALL football plays across these frames. In a typical college football game, you should find 50-200+ plays across {len(keyframes)} frames.
 
 For EACH play you identify, provide:
 1. frame_index: Which frame number (0-{len(keyframes)-1}) shows the play
-2. play_type: One of these EXACT types:
+2. game_clock: The game clock shown on screen (e.g., "10:32") or null if not visible
+3. quarter: The quarter number (1-4) or null if not visible
+4. play_type: One of these EXACT types:
    - "Rush" - Running play (RB, QB run, option)
    - "Pass Reception" - Completed pass
    - "Pass Incompletion" - Incomplete pass
@@ -392,10 +710,11 @@ For EACH play you identify, provide:
    - "Rushing Touchdown" - TD via rush
    - "Penalty" - Penalty flag/enforcement
    - "Safety" - Safety scored
-3. description: Brief description of what you see (e.g., "QB drops back, throws to WR on right side")
-4. confidence: 0.0-1.0 (include plays with confidence > 0.5)
+5. description: Brief description of what you see (e.g., "QB drops back, throws to WR on right side")
+6. confidence: 0.0-1.0 (include plays with confidence > 0.5)
 
 IMPORTANT GUIDELINES:
+✓ ALWAYS try to detect and report the game clock if visible on screen
 ✓ Report ALL plays you can identify - don't filter or limit yourself
 ✓ Each frame may show MULTIPLE plays (during action, in scorebug recap, etc.)
 ✓ Look for: players in formation, ball carriers, passes in flight, tackles, scoring plays
@@ -412,12 +731,15 @@ CONFIDENCE LEVELS:
 
 RESPOND WITH ONLY A JSON ARRAY:
 [
-  {{"frame_index": 0, "play_type": "Kickoff", "description": "Opening kickoff, ball in air", "confidence": 0.95}},
-  {{"frame_index": 0, "play_type": "Pass Reception", "description": "Scorebug shows 1st down completion", "confidence": 0.75}},
-  {{"frame_index": 5, "play_type": "Rush", "description": "RB carrying ball, defenders converging", "confidence": 0.90}}
+  {{"frame_index": 0, "game_clock": "14:32", "quarter": 1, "play_type": "Kickoff", "description": "Opening kickoff, ball in air", "confidence": 0.95}},
+  {{"frame_index": 0, "game_clock": "14:32", "quarter": 1, "play_type": "Pass Reception", "description": "Scorebug shows 1st down completion", "confidence": 0.75}},
+  {{"frame_index": 5, "game_clock": "10:15", "quarter": 1, "play_type": "Rush", "description": "RB carrying ball, defenders converging", "confidence": 0.90}},
+  {{"frame_index": 12, "game_clock": null, "quarter": null, "play_type": "Pass Reception", "description": "Play in progress, clock not visible", "confidence": 0.80}}
 ]
 
-Remember: Report ALL plays you find. A college football game has many plays, and your job is to find as many as possible across these {len(keyframes)} sample frames.
+Remember:
+1. DETECT GAME CLOCK whenever possible - this is critical for validation
+2. Report ALL plays you find. A college football game has many plays, and your job is to find as many as possible across these {len(keyframes)} sample frames.
 """
 
         try:
@@ -544,6 +866,25 @@ Remember: Report ALL plays you find. A college football game has many plays, and
             logger.info(f"  Frames without plays: {len(keyframes) - len(frames_with_plays)}")
             logger.info(f"  Low confidence plays (< 0.5): {low_confidence_count}")
 
+            # ==================== ESPN GAME CLOCK VALIDATION ====================
+            # Validate plays against ESPN data if enabled
+            plays_to_process = detected_plays
+            if enable_espn_validation and espn_game_id:
+                team_name = game_info.get("team", "") if game_info else ""
+                validated_plays, validation_stats = await self.validate_plays_with_espn(
+                    detected_plays=detected_plays,
+                    frame_times=frame_times,
+                    espn_game_id=espn_game_id,
+                    team_name=team_name
+                )
+                if validated_plays:
+                    logger.info(f"[ESPN VALIDATION] Using {len(validated_plays)} validated plays (rejected {len(detected_plays) - len(validated_plays)})")
+                    plays_to_process = validated_plays
+                else:
+                    logger.warning(f"[ESPN VALIDATION] No plays validated, using all {len(detected_plays)} detected plays")
+            else:
+                logger.info(f"[ESPN VALIDATION] Skipped (enable_espn_validation={enable_espn_validation}, espn_game_id={espn_game_id})")
+
             # Convert to (start, end) tuples with absolute timestamps from frame extraction
             play_windows: List[tuple[float, float]] = []
             skipped_low_conf = 0
@@ -575,10 +916,10 @@ Remember: Report ALL plays you find. A college football game has many plays, and
             timestamps_beyond_video = []
             timestamps_within_video = []
 
-            logger.info(f"[TIMESTAMP CONVERSION] Converting {len(detected_plays)} plays to time windows...")
+            logger.info(f"[TIMESTAMP CONVERSION] Converting {len(plays_to_process)} plays to time windows...")
             logger.info(f"  Using absolute timestamps from frame extraction (NOT adding game_start_offset={game_start_offset:.1f}s)")
 
-            for i, play in enumerate(detected_plays):
+            for i, play in enumerate(plays_to_process):
                 try:
                     frame_idx = int(play.get("frame_index", 0))
                     confidence = float(play.get("confidence", 0.0))
