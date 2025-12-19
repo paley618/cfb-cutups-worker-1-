@@ -114,3 +114,5 @@ class Manifest(TypedDict, total=False):
     buckets: Dict[BucketName, List[ClipItem]]
     bucket_counts: Dict[BucketName, int]
     detector_meta: Dict[str, object]
+    detection_method: str  # Which detection method was used (claude_vision, cfbd, espn, etc.)
+    detection_metadata: Dict[str, object]  # Additional metadata from detection process

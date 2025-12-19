@@ -744,198 +744,100 @@ class JobRunner:
                         if gid:
                             set_cfbd_state("pending", job_meta.get("cfbd_reason"))
                             self.jobs[job_id] = job_state
-                            try:
-                                logger.info(
-                                    "[CFBD] fetching plays for game_id=%s (year=%s, week=%s, season_type=%s)",
-                                    gid,
-                                    year_val,
-                                    week_val,
-                                    season_type_val,
-                                )
-                                logger.info(f"[CFBD DIAGNOSTICS] Calling CFBD API for game_id={gid}")
-                                plays_list = await asyncio.to_thread(
-                                    self.cfbd.get_plays_for_game,
-                                    int(gid),
-                                    year=year_val,
-                                    week=week_val,
-                                    season_type=season_type_val,
-                                )
-                                cfbd_plays = list(plays_list)
+
+                            # === DETECTION DISPATCH: Claude Vision (PRIMARY) → CFBD → ESPN ===
+                            from .detection_dispatch import dispatch_detection
+
+                            # Prepare game context
+                            game_context = {
+                                "game_id": int(gid) if gid else 0,
+                                "away_team": away_team or "Unknown",
+                                "home_team": home_team or "Unknown",
+                                "team": team or "Unknown",
+                            }
+
+                            # Dispatch detection with configurable priority
+                            detection_result = await dispatch_detection(
+                                video_path=video_path,
+                                game_id=int(gid) if gid else None,
+                                game_info=game_context,
+                                cfbd_client=self.cfbd,
+                                settings=settings,
+                                year=year_val,
+                                week=week_val,
+                                season_type=season_type_val,
+                                team_name=team or "unknown",
+                            )
+
+                            if detection_result and len(detection_result) > 0:
+                                # Success: plays detected
+                                cfbd_plays = detection_result.plays
                                 cfbd_play_count = len(cfbd_plays)
-                                logger.info(f"[CFBD DIAGNOSTICS] CFBD API returned {cfbd_play_count} plays for game_id={gid}")
-                                if not cfbd_play_count:
-                                    raise RuntimeError("empty plays[]")
-                                # Single game should have 50-300 plays. More likely indicates week/season aggregate.
+                                cfbd_used = True
+                                detection_method = detection_result.detection_method
+
+                                logger.info(f"[DETECTION DISPATCH] SUCCESS: {detection_method} detected {cfbd_play_count} plays")
+
+                                # Validate play count
                                 if cfbd_play_count > 300:
                                     logger.error(
-                                        f"[CFBD] CRITICAL: game_id={gid} returned {cfbd_play_count} plays (expected <300). "
-                                        f"CFBD likely returned week/season data instead of single game. "
-                                        f"This will cause massive storage/processing issues!"
+                                        f"[DETECTION] CRITICAL: {detection_method} returned {cfbd_play_count} plays (expected <300). "
+                                        f"This may indicate week/season aggregate instead of single game."
                                     )
-                                elif cfbd_play_count < 50:
+                                elif cfbd_play_count < 10:
                                     logger.warning(
-                                        f"[CFBD] Low play count for game_id={gid}: {cfbd_play_count} plays (expected 50-300). "
-                                        f"Game may be incomplete or CFBD data quality issue."
+                                        f"[DETECTION] Low play count: {detection_method} returned {cfbd_play_count} plays (expected 50-300)."
                                     )
-                            except Exception as exc:  # pragma: no cover - network edge
-                                cfbd_reason = f"/plays failed: {type(exc).__name__}: {exc}"
-                                logger.warning(f"CFBD fetch failed, attempting ESPN fallback: {cfbd_reason}")
-                                logger.info(f"[CFBD DIAGNOSTICS] CFBD API call failed: {cfbd_reason}")
-                                logger.info(f"[CFBD DIAGNOSTICS] Attempting ESPN fallback...")
 
-                                # TRY ESPN FALLBACK
-                                espn_fallback_success = False
-                                try:
-                                    from .espn import fetch_offensive_play_times
-                                    logger.info(f"Attempting ESPN fallback for game_id={gid}, team={team}")
-                                    espn_timestamps = await fetch_offensive_play_times(
-                                        espn_game_id=str(gid),
-                                        team_name=team or "unknown"
-                                    )
-                                    if espn_timestamps and len(espn_timestamps) > 10:
-                                        # Convert ESPN timestamps to mock CFBD format
-                                        cfbd_plays = [
-                                            {
-                                                "id": i,
-                                                "game_id": int(gid),
-                                                "timestamp": ts,
-                                                "source": "espn_fallback"
-                                            }
-                                            for i, ts in enumerate(espn_timestamps)
-                                        ]
-                                        cfbd_play_count = len(cfbd_plays)
-                                        cfbd_used = True
-                                        espn_games_count = cfbd_play_count
-                                        logger.info(f"[CFBD DIAGNOSTICS] ESPN fallback returned {cfbd_play_count} timestamps")
-                                        espn_reason = f"ESPN fallback: {cfbd_play_count} timestamps"
-                                        set_cfbd_state("ready_espn", espn_reason)
-                                        cfbd_job_meta["status"] = "ready_espn"
-                                        cfbd_job_meta["game_id"] = int(gid)
-                                        cfbd_job_meta["plays_count"] = cfbd_play_count
-                                        cfbd_job_meta["reason"] = espn_reason
-                                        cfbd_summary["error"] = None
-                                        cfbd_summary["game_id"] = int(gid)
-                                        cfbd_summary["plays"] = cfbd_play_count
-                                        cfbd_summary["source"] = "espn_fallback"
-                                        monitor.touch(stage="detecting", detail=f"CFBD error, using ESPN fallback: {cfbd_play_count} plays")
-                                        logger.info(f"ESPN fallback successful: {cfbd_play_count} timestamps")
-                                        espn_fallback_success = True
-                                    else:
-                                        raise RuntimeError(f"ESPN returned insufficient timestamps: {len(espn_timestamps or [])}")
-                                except Exception as espn_exc:
-                                    logger.warning(f"ESPN fallback also failed: {type(espn_exc).__name__}: {espn_exc}")
+                                # Update state based on detection method
+                                if detection_method == "claude_vision":
+                                    cfbd_reason = f"Claude Vision: {cfbd_play_count} plays"
+                                    set_cfbd_state("ready_claude", cfbd_reason)
+                                    cfbd_job_meta["status"] = "ready_claude"
+                                    cfbd_summary["source"] = "claude_vision"
+                                    monitor.touch(stage="detecting", detail=f"Claude Vision (PRIMARY): {cfbd_play_count} plays")
+                                elif detection_method == "cfbd":
+                                    cfbd_reason = f"game_id={gid} • plays={cfbd_play_count}"
+                                    set_cfbd_state("ready", cfbd_reason)
+                                    cfbd_job_meta["status"] = "ready"
+                                    cfbd_summary["source"] = "cfbd"
+                                    monitor.touch(stage="detecting", detail=f"CFBD: {cfbd_play_count} plays")
+                                    cfbd_games_count = cfbd_play_count
+                                    job_meta["cfbd_cached"] = False
+                                    job_meta["cfbd_cached_count"] = cfbd_play_count
+                                elif detection_method == "espn":
+                                    cfbd_reason = f"ESPN: {cfbd_play_count} plays"
+                                    set_cfbd_state("ready_espn", cfbd_reason)
+                                    cfbd_job_meta["status"] = "ready_espn"
+                                    cfbd_summary["source"] = "espn"
+                                    monitor.touch(stage="detecting", detail=f"ESPN: {cfbd_play_count} plays")
+                                    espn_games_count = cfbd_play_count
 
-                                if not espn_fallback_success:
-                                    # Both CFBD and ESPN failed - try Claude Vision
-                                    logger.info(f"[CFBD DIAGNOSTICS] Attempting Claude Vision fallback...")
-                                    claude_fallback_success = False
-
-                                    # Check if Claude Vision is available
-                                    from .settings import ANTHROPIC_API_KEY, CLAUDE_VISION_ENABLED
-
-                                    if CLAUDE_VISION_ENABLED and ANTHROPIC_API_KEY and video_path:
-                                        try:
-                                            from .claude_play_detector import ClaudePlayDetector
-
-                                            logger.info(f"[CLAUDE] Initializing Claude Vision for game_id={gid}")
-                                            detector = ClaudePlayDetector(api_key=ANTHROPIC_API_KEY)
-
-                                            # Prepare game info for context
-                                            game_context = {
-                                                "away_team": away_team or "Unknown",
-                                                "home_team": home_team or "Unknown",
-                                                "team": team or "Unknown",
-                                            }
-
-                                            # Detect plays using Claude Vision with ESPN validation
-                                            claude_windows = await detector.detect_plays(
-                                                video_path,
-                                                game_info=game_context,
-                                                num_frames=settings.CLAUDE_VISION_FRAMES,
-                                                espn_game_id=str(gid) if gid else None,
-                                                enable_espn_validation=True
-                                            )
-
-                                            # Accept any plays found (changed from >= 10 to > 0)
-                                            if claude_windows and len(claude_windows) > 0:
-                                                logger.info(f"[CLAUDE WINDOWS] Received {len(claude_windows)} play windows from Claude")
-                                                for i, (start, end) in enumerate(claude_windows[:10]):  # Log first 10
-                                                    logger.info(f"  Window {i}: {start:.1f}s - {end:.1f}s (duration: {end-start:.1f}s)")
-                                                if len(claude_windows) > 10:
-                                                    logger.info(f"  ... and {len(claude_windows) - 10} more windows")
-
-                                                # Convert Claude windows to mock CFBD format
-                                                cfbd_plays = [
-                                                    {
-                                                        "id": i,
-                                                        "game_id": int(gid) if gid else 0,
-                                                        "timestamp": start,
-                                                        "end_timestamp": end,
-                                                        "source": "claude_vision"
-                                                    }
-                                                    for i, (start, end) in enumerate(claude_windows)
-                                                ]
-                                                cfbd_play_count = len(cfbd_plays)
-                                                cfbd_used = True
-                                                logger.info(f"[CLAUDE] Claude Vision returned {cfbd_play_count} plays")
-                                                logger.info(f"[CFBD PLAYS CONVERSION] Converted {len(claude_windows)} windows to {cfbd_play_count} cfbd_plays")
-
-                                                # DEBUG: Log sample cfbd_plays to see their structure
-                                                logger.info(f"[WINDOW COLLAPSE DEBUG] Step 1: Created {len(cfbd_plays)} cfbd_plays from Claude windows")
-                                                for i, play in enumerate(cfbd_plays[:3]):
-                                                    logger.info(f"  Sample play {i}: timestamp={play.get('timestamp')}, end_timestamp={play.get('end_timestamp')}, period={play.get('period')}, clock={play.get('clock')}")
-                                                if len(cfbd_plays) > 3:
-                                                    logger.info(f"  ... and {len(cfbd_plays) - 3} more plays")
-
-                                                claude_reason = f"Claude Vision: {cfbd_play_count} plays"
-                                                set_cfbd_state("ready_claude", claude_reason)
-                                                cfbd_job_meta["status"] = "ready_claude"
-                                                cfbd_job_meta["game_id"] = int(gid) if gid else 0
-                                                cfbd_job_meta["plays_count"] = cfbd_play_count
-                                                cfbd_job_meta["reason"] = claude_reason
-                                                cfbd_summary["error"] = None
-                                                cfbd_summary["game_id"] = int(gid) if gid else 0
-                                                cfbd_summary["plays"] = cfbd_play_count
-                                                cfbd_summary["source"] = "claude_vision"
-                                                monitor.touch(stage="detecting", detail=f"Using Claude Vision: {cfbd_play_count} plays")
-                                                logger.info(f"[CLAUDE] Claude Vision fallback successful: {cfbd_play_count} plays")
-                                                claude_fallback_success = True
-                                            else:
-                                                logger.warning(f"[CLAUDE] Claude Vision returned insufficient plays: {len(claude_windows or [])}")
-                                        except ImportError as import_exc:
-                                            logger.warning(f"[CLAUDE] Cannot import anthropic library: {import_exc}")
-                                        except Exception as claude_exc:
-                                            logger.warning(f"[CLAUDE] Claude Vision fallback failed: {type(claude_exc).__name__}: {claude_exc}")
-                                    else:
-                                        logger.info("[CLAUDE] Claude Vision not available (missing API key or disabled)")
-
-                                    if not claude_fallback_success:
-                                        # All three methods failed: CFBD, ESPN, and Claude Vision
-                                        final_reason = f"CFBD error: {cfbd_reason}. ESPN and Claude Vision fallbacks also failed."
-                                        set_cfbd_state("error", final_reason)
-                                        cfbd_job_meta["status"] = "error"
-                                        cfbd_job_meta["error"] = final_reason
-                                        cfbd_summary["error"] = final_reason
-                                        monitor.touch(stage="detecting", detail=f"CFBD, ESPN, and Claude Vision all failed")
-                                        logger.warning(
-                                            "all_fallbacks_failed",
-                                            extra={"job_id": job_id, "cfbd_error": cfbd_reason},
-                                        )
-                            else:
-                                cfbd_used = True
-                                cfbd_games_count = cfbd_play_count
-                                logger.info(f"[CFBD DIAGNOSTICS] Using fresh CFBD data: {cfbd_play_count} plays")
-                                cfbd_reason = f"game_id={gid} • plays={cfbd_play_count}"
-                                set_cfbd_state("ready", cfbd_reason)
-                                job_meta["cfbd_cached"] = False
-                                job_meta["cfbd_cached_count"] = cfbd_play_count
-                                cfbd_job_meta["status"] = "ready"
+                                # Common metadata updates
                                 cfbd_job_meta["game_id"] = int(gid)
                                 cfbd_job_meta["plays_count"] = cfbd_play_count
                                 cfbd_job_meta["reason"] = cfbd_reason
+                                cfbd_job_meta["detection_method"] = detection_method
+                                cfbd_job_meta["detection_metadata"] = detection_result.metadata
                                 cfbd_summary["error"] = None
                                 cfbd_summary["game_id"] = int(gid)
                                 cfbd_summary["plays"] = cfbd_play_count
+                                cfbd_summary["detection_method"] = detection_method
+
+                                logger.info(f"[DETECTION] Using {detection_method}: {cfbd_play_count} plays for game_id={gid}")
+                            else:
+                                # Failure: all detection methods failed
+                                cfbd_reason = "All detection methods failed (Claude Vision, CFBD, ESPN)"
+                                set_cfbd_state("error", cfbd_reason)
+                                cfbd_job_meta["status"] = "error"
+                                cfbd_job_meta["error"] = cfbd_reason
+                                cfbd_job_meta["detection_metadata"] = detection_result.metadata if detection_result else {}
+                                cfbd_summary["error"] = cfbd_reason
+                                monitor.touch(stage="detecting", detail="All detection methods failed")
+                                logger.error(
+                                    "[DETECTION DISPATCH] All methods failed",
+                                    extra={"job_id": job_id, "metadata": detection_result.metadata if detection_result else {}},
+                                )
                         else:
                             set_cfbd_state("pending", "will resolve via /games")
                             self.jobs[job_id] = job_state
@@ -2155,6 +2057,9 @@ class JobRunner:
                         "total_runtime_sec": round(sum(c["duration"] for c in clips_meta), 3),
                         "processing_sec": None,
                     },
+                    # Detection metadata (Claude Vision integration)
+                    "detection_method": cfbd_summary.get("detection_method", "unknown"),
+                    "detection_metadata": cfbd_job_meta.get("detection_metadata", {}),
                     # Diagnostic fields
                     "cfbd_requested": job_state.get("cfbd_requested"),
                     "cfbd_state": job_state.get("cfbd_state"),
