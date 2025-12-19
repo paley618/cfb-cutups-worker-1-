@@ -295,6 +295,10 @@ class Settings(BaseSettings):
         default=True,
         description="Enable Claude Vision API for AI-powered play detection fallback.",
     )
+    CLAUDE_VISION_PRIMARY: bool = Field(
+        default=True,
+        description="Use Claude Vision as primary detection method (True) or fallback after CFBD/ESPN (False).",
+    )
     anthropic_api_key: Optional[str] = Field(
         default=None,
         validation_alias=AliasChoices("ANTHROPIC_API_KEY", "CLAUDE_API_KEY"),
@@ -303,6 +307,10 @@ class Settings(BaseSettings):
     CLAUDE_VISION_FRAMES: int = Field(
         default=60,
         description="Number of keyframes to extract for Claude Vision analysis. 60 frames ~= 1 every 3 minutes in a 3-hour game.",
+    )
+    CLAUDE_VISION_CONFIDENCE_THRESHOLD: float = Field(
+        default=0.5,
+        description="Minimum confidence threshold for Claude Vision play detection (0.0-1.0).",
     )
 
     OCR_SAMPLE_FPS: float = Field(
