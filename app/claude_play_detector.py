@@ -1044,9 +1044,11 @@ Remember:
                             logger.info(f"  ✓ Within bounds ({center_time:.1f}s < {video_duration}s)")
                             timestamps_within_video.append(center_time)
 
-                        # Create window around detected play (3s before, 5s after)
-                        start_time = max(0.0, center_time - 3.0)
-                        end_time = min(video_duration, center_time + 5.0)
+                        # Create window around detected play (10s before for setup, 8s after for play result)
+                        PRE_PLAY_PADDING = 10.0  # seconds before play to show formation/setup
+                        POST_PLAY_DURATION = 8.0  # seconds after play to show result
+                        start_time = max(0.0, center_time - PRE_PLAY_PADDING)
+                        end_time = min(video_duration, center_time + POST_PLAY_DURATION)
 
                         logger.info(f"  Window: {start_time:.1f}s - {end_time:.1f}s (duration: {end_time-start_time:.1f}s)")
 
