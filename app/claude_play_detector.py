@@ -36,6 +36,66 @@ class ClaudePlayDetector:
             logger.error(f"[CLAUDE] Failed to initialize Claude client: {e}")
             raise
 
+    @staticmethod
+    def clean_json_response(response_text: str) -> str:
+        """Clean Claude's response to extract valid JSON.
+
+        Handles various response formats:
+        - Markdown code blocks (```json ... ```)
+        - Plain backticks (``` ... ```)
+        - Preamble text before JSON
+        - Trailing text after JSON
+
+        Args:
+            response_text: Raw response text from Claude
+
+        Returns:
+            Cleaned JSON string ready for parsing
+        """
+        if not response_text:
+            return response_text
+
+        # Strip leading/trailing whitespace
+        cleaned = response_text.strip()
+
+        # Handle markdown code blocks with json language tag
+        if "```json" in cleaned:
+            # Extract content between ```json and ```
+            parts = cleaned.split("```json")
+            if len(parts) > 1:
+                json_part = parts[1].split("```")[0]
+                cleaned = json_part.strip()
+        # Handle plain markdown code blocks
+        elif "```" in cleaned:
+            # Extract content between first ``` and second ```
+            parts = cleaned.split("```")
+            if len(parts) >= 3:
+                # Take the content between first and second ```
+                cleaned = parts[1].strip()
+
+        # Remove any remaining leading/trailing whitespace
+        cleaned = cleaned.strip()
+
+        # Find JSON start - look for opening bracket or brace
+        json_start = -1
+        for char in ['{', '[']:
+            pos = cleaned.find(char)
+            if pos != -1 and (json_start == -1 or pos < json_start):
+                json_start = pos
+
+        # Find JSON end - look for closing bracket or brace (from the end)
+        json_end = -1
+        for char in ['}', ']']:
+            pos = cleaned.rfind(char)
+            if pos != -1 and pos > json_end:
+                json_end = pos
+
+        # Extract JSON if valid boundaries found
+        if json_start != -1 and json_end != -1 and json_end > json_start:
+            cleaned = cleaned[json_start:json_end + 1]
+
+        return cleaned
+
     async def validate_plays_with_espn(
         self,
         detected_plays: List[Dict],
@@ -500,10 +560,14 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
             )
 
             response_text = response.content[0].text.strip()
-            logger.info(f"[GAME START DETECTION] Claude response: {response_text}")
+            logger.info(f"[GAME START DETECTION] Claude response (raw): {response_text[:200]}...")
+
+            # Clean response before parsing
+            cleaned_response = self.clean_json_response(response_text)
+            logger.info(f"[GAME START DETECTION] Claude response (cleaned): {cleaned_response[:200]}...")
 
             # Parse response
-            result = json.loads(response_text)
+            result = json.loads(cleaned_response)
             game_start_frame = int(result.get("game_start_frame_index", -1))
             confidence = float(result.get("confidence", 0.0))
             reasoning = result.get("reasoning", "")
@@ -520,7 +584,13 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
 
         except json.JSONDecodeError as e:
             logger.error(f"[GAME START DETECTION] Failed to parse Claude response: {e}")
-            logger.error(f"[GAME START DETECTION] Response was: {response_text[:200]}")
+            logger.error(f"[GAME START DETECTION] Raw response: {response_text[:200]}")
+            # Try to show cleaned response if available
+            try:
+                cleaned = self.clean_json_response(response_text)
+                logger.error(f"[GAME START DETECTION] Cleaned response: {cleaned[:200]}")
+            except Exception:
+                pass
             return 600.0
         except Exception as e:
             logger.error(f"[GAME START DETECTION] Error: {type(e).__name__}: {e}")
@@ -787,11 +857,15 @@ Remember:
             if hasattr(response, 'usage'):
                 logger.info(f"  Input tokens: {response.usage.input_tokens}")
                 logger.info(f"  Output tokens: {response.usage.output_tokens}")
-            logger.info(f"  Response preview: {response_text[:200]}...")
+            logger.info(f"  Response preview (raw): {response_text[:200]}...")
+
+            # Clean response before parsing
+            logger.info(f"[CLAUDE RESPONSE PARSING]")
+            cleaned_response = self.clean_json_response(response_text)
+            logger.info(f"  Response after cleaning: {cleaned_response[:200]}...")
 
             # Parse JSON response
-            logger.info(f"[CLAUDE RESPONSE PARSING]")
-            detected_plays = json.loads(response_text)
+            detected_plays = json.loads(cleaned_response)
             logger.info(f"  JSON parsed successfully")
             logger.info(f"  Total plays detected: {len(detected_plays)}")
 
@@ -1220,7 +1294,13 @@ Remember:
 
         except json.JSONDecodeError as e:
             logger.error(f"[CLAUDE] Failed to parse Claude response as JSON: {e}")
-            logger.error(f"[CLAUDE] Response was: {response_text[:500]}")
+            logger.error(f"[CLAUDE] Raw response (first 500 chars): {response_text[:500]}")
+            # Try to show cleaned response if available
+            try:
+                cleaned = self.clean_json_response(response_text)
+                logger.error(f"[CLAUDE] Cleaned response (first 500 chars): {cleaned[:500]}")
+            except Exception:
+                pass
             return []
         except Exception as e:
             logger.error(f"[CLAUDE] Error calling Claude API: {type(e).__name__}: {e}")
