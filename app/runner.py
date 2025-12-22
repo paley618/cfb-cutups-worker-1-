@@ -605,6 +605,7 @@ class JobRunner:
 
                 # Track actual data source for diagnostics
                 actual_data_source: Optional[str] = None
+                used_detection_method: Optional[str] = None  # Track which detection method succeeded
                 cfbd_games_count = 0
                 espn_games_count = 0
                 pre_merge_guided: List[Tuple[float, float]] = []
@@ -796,6 +797,21 @@ class JobRunner:
                                     cfbd_job_meta["status"] = "ready_claude"
                                     cfbd_summary["source"] = "claude_vision"
                                     monitor.touch(stage="detecting", detail=f"Claude Vision (PRIMARY): {cfbd_play_count} plays")
+
+                                    # Convert Claude Vision plays to time windows
+                                    # Claude plays have 'timestamp' and 'end_timestamp' fields (already in video seconds)
+                                    claude_vision_windows = [
+                                        (float(play.get("timestamp", 0)), float(play.get("end_timestamp", 0)))
+                                        for play in cfbd_plays
+                                        if play.get("timestamp") is not None and play.get("end_timestamp") is not None
+                                    ]
+                                    logger.info(f"[CLAUDE VISION] Converted {len(claude_vision_windows)} plays to time windows")
+
+                                    # Store in guided_windows so window priority code can access them
+                                    guided_windows = list(claude_vision_windows)
+                                    cfbd_used = True  # Mark that we have detection results
+                                    used_detection_method = "claude_vision"  # Track method for later
+                                    logger.info(f"[CLAUDE VISION] Stored {len(guided_windows)} windows for downstream processing")
                                 elif detection_method == "cfbd":
                                     cfbd_reason = f"game_id={gid} • plays={cfbd_play_count}"
                                     set_cfbd_state("ready", cfbd_reason)
@@ -1058,7 +1074,8 @@ class JobRunner:
                     scene_cuts = []
                 scene_cuts = sorted(scene_cuts)
 
-                if cfbd_plays:
+                # Skip CFBD OCR/alignment processing if Claude Vision was used (already has time windows)
+                if cfbd_plays and used_detection_method != "claude_vision":
                     self._ensure_not_cancelled(job_id, cancel_ev)
                     self._set_stage(
                         job_id,
@@ -1255,19 +1272,30 @@ class JobRunner:
                 pre_merge_list: List[Tuple[float, float]] = []
 
                 # NEW LOGIC: Prioritize Claude-detected windows over all other sources
-                claude_windows = list(vision_windows_raw)
+                # When Claude Vision dispatch was used, windows are in guided_windows
+                if used_detection_method == "claude_vision":
+                    claude_windows = list(guided_windows)
+                    cfbd_windows_count = 0  # No CFBD windows when Claude Vision was used
+                else:
+                    claude_windows = list(vision_windows_raw)  # Old OpenCV detection
+                    cfbd_windows_count = len(guided_windows)
 
-                logger.info(f"[WINDOW PRIORITY] Available sources: Claude={len(claude_windows)}, CFBD={len(guided_windows)}, cfbd_used={cfbd_used}")
+                logger.info(f"[WINDOW PRIORITY] Available sources: Claude={len(claude_windows)}, CFBD={cfbd_windows_count}, cfbd_used={cfbd_used}, detection_method={used_detection_method}")
 
                 # Priority 1: Use Claude-detected windows (always best if available)
                 if claude_windows and len(claude_windows) > 0:
                     pre_merge_list = claude_windows
                     merged = merge_windows(claude_windows, merge_gap)
                     windows = clamp_windows(merged, min_duration, max_duration)
-                    job_meta["window_source"] = "vision"
-                    actual_data_source = "VISION"
+                    if used_detection_method == "claude_vision":
+                        job_meta["window_source"] = "claude_vision"
+                        actual_data_source = "CLAUDE_VISION"
+                        logger.info(f"[WINDOW PRIORITY] Using {len(windows)} Claude Vision windows (primary source)")
+                    else:
+                        job_meta["window_source"] = "vision"
+                        actual_data_source = "VISION"
+                        logger.info(f"[WINDOW PRIORITY] Using {len(windows)} OpenCV vision windows (primary source)")
                     fallback_used = False
-                    logger.info(f"[WINDOW PRIORITY] Using {len(windows)} Claude-detected windows (primary source)")
 
                 # Priority 2: Fall back to CFBD if Claude found nothing but CFBD was used
                 elif cfbd_used and guided_windows and len(guided_windows) > 0:
