@@ -1,0 +1,106 @@
+name: Fetch CFBD Data
+
+# Game on Paper Architecture: Separate data pipeline
+# This workflow fetches CFBD play-by-play data daily and caches it in the repo
+# Clip jobs then use this cached data instead of making real-time API calls
+
+on:
+  # Run daily at 2 AM UTC (9 PM EST during football season)
+  schedule:
+    - cron: '0 2 * * *'
+
+  # Allow manual triggering from Actions tab
+  workflow_dispatch:
+    inputs:
+      year:
+        description: 'Season year to fetch'
+        required: false
+        default: '2024'
+      season_type:
+        description: 'Season type (regular/postseason/both)'
+        required: false
+        default: 'regular'
+      max_games:
+        description: 'Max games to process (for testing)'
+        required: false
+        default: ''
+
+jobs:
+  fetch-and-cache:
+    name: Fetch and Cache CFBD Data
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Use a token that can push to protected branches
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install httpx
+
+      - name: Fetch CFBD data
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          # Use workflow inputs if manually triggered, otherwise use defaults
+          YEAR="${{ github.event.inputs.year || '2024' }}"
+          SEASON_TYPE="${{ github.event.inputs.season_type || 'regular' }}"
+          MAX_GAMES="${{ github.event.inputs.max_games }}"
+
+          echo "Fetching CFBD data for ${YEAR} ${SEASON_TYPE} season"
+
+          if [ -n "$MAX_GAMES" ]; then
+            python scripts/fetch_cfbd_cache.py \
+              --year "$YEAR" \
+              --season-type "$SEASON_TYPE" \
+              --max-games "$MAX_GAMES"
+          else
+            python scripts/fetch_cfbd_cache.py \
+              --year "$YEAR" \
+              --season-type "$SEASON_TYPE"
+          fi
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code data/cfb_plays/ || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push cached data
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+          git add data/cfb_plays/
+
+          # Create descriptive commit message
+          NEW_FILES=$(git diff --cached --numstat | wc -l)
+          git commit -m "Update CFBD play cache: ${NEW_FILES} games updated
+
+          Automated CFBD data fetch
+          - Date: $(date -u +"%Y-%m-%d %H:%M UTC")
+          - Year: ${{ github.event.inputs.year || '2024' }}
+          - Season: ${{ github.event.inputs.season_type || 'regular' }}
+          - Workflow: ${{ github.workflow }}"
+
+          # Push to current branch
+          git push
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## CFBD Data Fetch Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Year**: ${{ github.event.inputs.year || '2024' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Season Type**: ${{ github.event.inputs.season_type || 'regular' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Cached Files**: $(ls -1 data/cfb_plays/*.csv 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Total Size**: $(du -sh data/cfb_plays/ 2>/dev/null | cut -f1)" >> $GITHUB_STEP_SUMMARY
