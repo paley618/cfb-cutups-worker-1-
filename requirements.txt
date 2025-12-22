@@ -17,3 +17,5 @@ pytesseract>=0.3.10
 soundfile>=0.12
 # Claude Vision API for AI-powered play detection
 anthropic>=0.18.0
+# cfbfastR integration for official play-by-play data
+sportsdataverse
