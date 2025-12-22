@@ -680,23 +680,33 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
         video_path: str,
         game_info: Optional[Dict] = None,
         num_frames: int = 12,
-        espn_game_id: Optional[str] = None,
-        enable_espn_validation: bool = True,
-        official_plays: Optional[List[Dict]] = None
+        official_plays: List[Dict] = None
     ) -> List[tuple[float, float]]:
-        """Analyze video frames with Claude to detect plays.
+        """Analyze video frames with Claude to detect plays in SUPERVISED mode ONLY.
+
+        CRITICAL: This function REQUIRES official plays from cfbfastR.
+        Claude Vision will ONLY match these official plays to video frames.
+        Blind/unsupervised detection has been REMOVED to ensure 90%+ accuracy.
 
         Args:
             video_path: Path to video file
             game_info: Optional dict with game context (away_team, home_team, etc.)
             num_frames: Number of keyframes to extract and analyze
-            espn_game_id: Optional ESPN game ID for validation
-            enable_espn_validation: Whether to enable ESPN validation
-            official_plays: Optional list of official plays from cfbfastR for supervised detection
+            official_plays: REQUIRED list of official plays from cfbfastR for supervised detection
 
         Returns:
             List of (start_time, end_time) tuples representing detected plays
+
+        Raises:
+            ValueError: If official_plays is None or empty
         """
+        # MANDATORY: Validate that official plays are provided
+        if not official_plays or len(official_plays) == 0:
+            raise ValueError(
+                "Claude Vision requires official_plays from cfbfastR. "
+                "Blind detection mode has been removed. "
+                "official_plays must be a non-empty list of plays."
+            )
         logger.info(f"[CLAUDE DETECTION START]")
         logger.info(f"  Video path: {video_path}")
 
@@ -753,15 +763,13 @@ Game Context:
             f"Frame {i}: {t:.1f}s" for i, t in enumerate(frame_times)
         ])
 
-        # Check if we have official plays for supervised mode
-        if official_plays:
-            # SUPERVISED MODE: Use official plays from cfbfastR
-            logger.info(f"[CLAUDE PROMPT] Using SUPERVISED mode with {len(official_plays)} official plays")
-            plays_list = "\n".join([
-                f"{p['play_number']}. Q{p['quarter']} {p['clock_minutes']}:{p['clock_seconds']:02d} - {p['play_text']}"
-                for p in official_plays
-            ])
-            prompt = f"""You are analyzing {len(keyframes)} frames from a college football game video.
+        # SUPERVISED MODE ONLY: Use official plays from cfbfastR
+        logger.info(f"[CLAUDE PROMPT] Using SUPERVISED mode with {len(official_plays)} official plays")
+        plays_list = "\n".join([
+            f"{p['play_number']}. Q{p['quarter']} {p['clock_minutes']}:{p['clock_seconds']:02d} - {p['play_text']}"
+            for p in official_plays
+        ])
+        prompt = f"""You are analyzing {len(keyframes)} frames from a college football game video.
 
 {game_context}
 Video duration: {video_duration:.1f} seconds (~{video_duration/60:.0f} minutes)
@@ -775,7 +783,7 @@ TASK: Find EACH of these {len(official_plays)} plays in the keyframes:
 
 For each official play listed above:
 1. Find the frame that shows this play (look for matching quarter, game clock, and play description)
-2. Report: frame_index, confidence (0.0-1.0)
+2. Report: play_number, frame_index, confidence (0.0-1.0)
 
 RESPOND WITH ONLY A JSON ARRAY:
 [
@@ -785,76 +793,6 @@ RESPOND WITH ONLY A JSON ARRAY:
 ]
 
 Only report plays you can confidently match to a frame (confidence > 0.5).
-"""
-        else:
-            # BLIND MODE: Original unsupervised detection
-            logger.info(f"[CLAUDE PROMPT] Using BLIND mode (no official plays available)")
-            prompt = f"""You are analyzing {len(keyframes)} frames from a college football game video to identify EVERY play that occurred.
-
-{game_context}
-Video duration: {video_duration:.1f} seconds (~{video_duration/60:.0f} minutes)
-
-IMPORTANT: Each frame is from a DIFFERENT timestamp in the game:
-{frame_time_info}
-
-TASK 1: DETECT GAME CLOCK ON SCREEN
-For EACH frame, look for the game clock display (usually in bottom-right or top corner):
-- Look for formats like "10:32", "Q1 10:32", "1st 10:32", or quarter indicator + time
-- The clock shows TIME REMAINING in the current quarter (counts down)
-- Report the quarter (1-4) and time (MM:SS format)
-
-TASK 2: IDENTIFY FOOTBALL PLAYS
-Identify ALL football plays across these frames. In a typical college football game, you should find 50-200+ plays across {len(keyframes)} frames.
-
-For EACH play you identify, provide:
-1. frame_index: Which frame number (0-{len(keyframes)-1}) shows the play
-2. game_clock: The game clock shown on screen (e.g., "10:32") or null if not visible
-3. quarter: The quarter number (1-4) or null if not visible
-4. play_type: One of these EXACT types:
-   - "Rush" - Running play (RB, QB run, option)
-   - "Pass Reception" - Completed pass
-   - "Pass Incompletion" - Incomplete pass
-   - "Sack" - QB sacked
-   - "Interception Return" - INT by defense
-   - "Fumble Recovery (Opponent)" - Fumble recovered
-   - "Punt" - Punting play
-   - "Kickoff" - Kickoff play
-   - "Field Goal Good" - Successful FG
-   - "Field Goal Missed" - Missed FG
-   - "Passing Touchdown" - TD via pass
-   - "Rushing Touchdown" - TD via rush
-   - "Penalty" - Penalty flag/enforcement
-   - "Safety" - Safety scored
-5. description: Brief description of what you see (e.g., "QB drops back, throws to WR on right side")
-6. confidence: 0.0-1.0 (include plays with confidence > 0.5)
-
-IMPORTANT GUIDELINES:
-✓ ALWAYS try to detect and report the game clock if visible on screen
-✓ Report ALL plays you can identify - don't filter or limit yourself
-✓ Each frame may show MULTIPLE plays (during action, in scorebug recap, etc.)
-✓ Look for: players in formation, ball carriers, passes in flight, tackles, scoring plays
-✓ Include plays even if partially visible or in progress
-✓ Use game context (score, down & distance indicators) to infer play types
-✗ Skip obvious replays (slow-motion, different camera angles of same play)
-✗ Skip commercials, halftime, crowd shots with no game action
-✗ Skip pre-game/post-game ceremonies
-
-CONFIDENCE LEVELS:
-- 0.9-1.0: Clear, unambiguous play action visible
-- 0.7-0.8: Strong indicators (formation, players in motion, scorebug update)
-- 0.5-0.6: Reasonable inference from context (score change, field position)
-
-RESPOND WITH ONLY A JSON ARRAY:
-[
-  {{"frame_index": 0, "game_clock": "14:32", "quarter": 1, "play_type": "Kickoff", "description": "Opening kickoff, ball in air", "confidence": 0.95}},
-  {{"frame_index": 0, "game_clock": "14:32", "quarter": 1, "play_type": "Pass Reception", "description": "Scorebug shows 1st down completion", "confidence": 0.75}},
-  {{"frame_index": 5, "game_clock": "10:15", "quarter": 1, "play_type": "Rush", "description": "RB carrying ball, defenders converging", "confidence": 0.90}},
-  {{"frame_index": 12, "game_clock": null, "quarter": null, "play_type": "Pass Reception", "description": "Play in progress, clock not visible", "confidence": 0.80}}
-]
-
-Remember:
-1. DETECT GAME CLOCK whenever possible - this is critical for validation
-2. Report ALL plays you find. A college football game has many plays, and your job is to find as many as possible across these {len(keyframes)} sample frames.
 """
 
         try:
@@ -910,32 +848,31 @@ Remember:
             logger.info(f"  Total plays detected: {len(detected_plays)}")
 
             # ==================== SUPERVISED MODE: Convert play matches to standard format ====================
-            if official_plays:
-                logger.info(f"\n[SUPERVISED MODE] Converting {len(detected_plays)} matched plays to standard format")
-                converted_plays = []
-                for match in detected_plays:
-                    play_number = match.get('play_number')
-                    frame_index = match.get('frame_index')
-                    confidence = match.get('confidence', 0.0)
+            logger.info(f"\n[SUPERVISED MODE] Converting {len(detected_plays)} matched plays to standard format")
+            converted_plays = []
+            for match in detected_plays:
+                play_number = match.get('play_number')
+                frame_index = match.get('frame_index')
+                confidence = match.get('confidence', 0.0)
 
-                    # Find the official play by play_number
-                    official_play = next((p for p in official_plays if p['play_number'] == play_number), None)
-                    if official_play and official_play.get('video_timestamp') is not None:
-                        # Convert to standard format with video_timestamp from official play
-                        converted_plays.append({
-                            'frame_index': frame_index,
-                            'play_type': official_play['play_type'],
-                            'confidence': confidence,
-                            'description': official_play['play_text'],
-                            'quarter': official_play['quarter'],
-                            'game_clock': f"{official_play['clock_minutes']}:{official_play['clock_seconds']:02d}",
-                            'video_timestamp': official_play['video_timestamp'],  # Use official timestamp
-                            'official_play': True  # Mark as supervised
-                        })
-                        logger.info(f"  Matched play #{play_number}: {official_play['play_text'][:50]}... @ {official_play['video_timestamp']:.1f}s")
+                # Find the official play by play_number
+                official_play = next((p for p in official_plays if p['play_number'] == play_number), None)
+                if official_play and official_play.get('video_timestamp') is not None:
+                    # Convert to standard format with video_timestamp from official play
+                    converted_plays.append({
+                        'frame_index': frame_index,
+                        'play_type': official_play['play_type'],
+                        'confidence': confidence,
+                        'description': official_play['play_text'],
+                        'quarter': official_play['quarter'],
+                        'game_clock': f"{official_play['clock_minutes']}:{official_play['clock_seconds']:02d}",
+                        'video_timestamp': official_play['video_timestamp'],  # Use official timestamp
+                        'official_play': True  # Mark as supervised
+                    })
+                    logger.info(f"  Matched play #{play_number}: {official_play['play_text'][:50]}... @ {official_play['video_timestamp']:.1f}s")
 
-                detected_plays = converted_plays
-                logger.info(f"[SUPERVISED MODE] Converted {len(detected_plays)} plays with official timestamps")
+            detected_plays = converted_plays
+            logger.info(f"[SUPERVISED MODE] Converted {len(detected_plays)} plays with official timestamps")
 
             # ==================== PHASE 2: CLAUDE DETECTION DIAGNOSTICS ====================
             logger.info(f"\n{'='*80}")
@@ -1013,24 +950,11 @@ Remember:
             logger.info(f"  Frames without plays: {len(keyframes) - len(frames_with_plays)}")
             logger.info(f"  Low confidence plays (< 0.5): {low_confidence_count}")
 
-            # ==================== ESPN GAME CLOCK VALIDATION ====================
-            # Validate plays against ESPN data if enabled
+            # ==================== NO ESPN VALIDATION NEEDED ====================
+            # Using cfbfastR official plays as ground truth - no need for ESPN validation
+            logger.info(f"[SUPERVISED MODE] Using cfbfastR official plays as ground truth")
+            logger.info(f"[SUPERVISED MODE] ESPN validation not needed - official plays are already verified")
             plays_to_process = detected_plays
-            if enable_espn_validation and espn_game_id:
-                team_name = game_info.get("team", "") if game_info else ""
-                validated_plays, validation_stats = await self.validate_plays_with_espn(
-                    detected_plays=detected_plays,
-                    frame_times=frame_times,
-                    espn_game_id=espn_game_id,
-                    team_name=team_name
-                )
-                if validated_plays:
-                    logger.info(f"[ESPN VALIDATION] Using {len(validated_plays)} validated plays (rejected {len(detected_plays) - len(validated_plays)})")
-                    plays_to_process = validated_plays
-                else:
-                    logger.warning(f"[ESPN VALIDATION] No plays validated, using all {len(detected_plays)} detected plays")
-            else:
-                logger.info(f"[ESPN VALIDATION] Skipped (enable_espn_validation={enable_espn_validation}, espn_game_id={espn_game_id})")
 
             # Convert to (start, end) tuples with absolute timestamps from frame extraction
             play_windows: List[tuple[float, float]] = []
