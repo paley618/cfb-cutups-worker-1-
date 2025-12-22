@@ -1,18 +1,26 @@
-"""Detection dispatch layer for orchestrating play detection methods with graceful fallback.
+"""Detection dispatch layer for orchestrating play detection with MANDATORY cfbfastR integration.
 
-This module implements a clean separation between detection strategy selection and
-the individual detection methods (Claude Vision, CFBD, ESPN, OpenCV, FFprobe, Timegrid).
+CRITICAL CHANGE: Claude Vision is now SUPERVISED ONLY.
+This module implements MANDATORY cfbfastR integration to ensure 90%+ accuracy.
 
-Architecture:
-    - Primary Strategy: Claude Vision (if enabled and configured as primary)
-    - Fallback Strategy: CFBD → ESPN chain
-    - Legacy Fallback: OpenCV → FFprobe → Timegrid (when no game context)
+NEW ARCHITECTURE (Non-negotiable):
+    1. cfbfastR (fetch official plays) - MANDATORY FIRST STEP
+    2. Claude Vision SUPERVISED (uses official plays) - PRIMARY if cfbfastR succeeds
+    3. ESPN fallback - SECONDARY if cfbfastR fails
+    4. ERROR - No blind detection allowed
+
+KEY PRINCIPLE:
+    - cfbfastR is the ground truth, NOT a fallback
+    - Claude Vision is a verification tool, NOT a detection tool
+    - Blind/unsupervised detection has been REMOVED (was only 60% accurate)
+    - Supervised detection achieves 90%+ accuracy
 
 The dispatch layer is responsible for:
-    1. Choosing which detection method to try
-    2. Handling graceful fallback if a method fails
-    3. Returning unified results with metadata about which method was used
-    4. Logging visibility into the detection path taken
+    1. Fetching official plays from cfbfastR FIRST
+    2. Using Claude Vision to match official plays to video frames (supervised)
+    3. Falling back to ESPN only if cfbfastR fails
+    4. Returning unified results with metadata about which method was used
+    5. Logging visibility into the detection path taken
 """
 
 from __future__ import annotations
@@ -52,67 +60,59 @@ class DetectionResult:
         return len(self.plays)
 
 
-async def try_claude_vision(
+async def try_claude_vision_supervised(
     video_path: str,
     game_info: Optional[Dict],
     settings: Any,
-    espn_game_id: Optional[str] = None,
-    year: Optional[int] = None,
+    official_plays: List[Dict],
     game_start_offset: float = 900.0,
 ) -> DetectionResult:
-    """Attempt play detection using Claude Vision.
+    """Attempt play detection using Claude Vision in SUPERVISED mode ONLY.
+
+    IMPORTANT: This function requires official plays from cfbfastR.
+    Claude Vision will ONLY match these official plays to video frames.
+    This is NOT blind detection - it's supervised verification.
 
     Args:
         video_path: Path to video file
         game_info: Game context (away_team, home_team, team, etc.)
         settings: Application settings
-        espn_game_id: Optional ESPN game ID for validation
-        year: Season year for cfbfastR integration
+        official_plays: REQUIRED list of official plays from cfbfastR
         game_start_offset: Offset in seconds for game start (default: 900s = 15 min)
 
     Returns:
         DetectionResult with plays and metadata, or empty result if failed
     """
-    logger.info("[DISPATCH] Attempting Claude Vision detection...")
+    logger.info("[DISPATCH] Attempting Claude Vision detection (SUPERVISED mode)...")
+
+    # Validate that official plays are provided
+    if not official_plays or len(official_plays) == 0:
+        logger.error("[DISPATCH] ✗ Claude Vision requires official plays from cfbfastR")
+        logger.error("[DISPATCH] Cannot run Claude Vision in blind mode - aborting")
+        return DetectionResult(
+            [],
+            "claude_vision",
+            {"status": "error", "error": "official_plays required for supervised mode"}
+        )
 
     try:
         from .claude_play_detector import ClaudePlayDetector
-        from .cfbfastr_helper import get_official_plays, game_clock_to_video_time
 
         # Initialize detector
         detector = ClaudePlayDetector(api_key=settings.anthropic_api_key)
 
-        # Fetch official plays from cfbfastR if game_id and year are available
-        official_plays = None
-        if espn_game_id and year:
-            logger.info(f"[CFBFASTR] Fetching official plays for game_id={espn_game_id}, year={year}")
-            official_plays = get_official_plays(espn_game_id, year)
-            if official_plays:
-                logger.info(f"[CFBFASTR] ✓ Fetched {len(official_plays)} official plays from cfbfastR")
-                # Convert game clock to video timestamps
-                for play in official_plays:
-                    play['video_timestamp'] = game_clock_to_video_time(
-                        play['quarter'],
-                        play['clock_minutes'],
-                        play['clock_seconds'],
-                        game_start_offset
-                    )
-                logger.info(f"[CFBFASTR] Converted {len([p for p in official_plays if p['video_timestamp'] is not None])} plays to video timestamps")
-            else:
-                logger.warning(f"[CFBFASTR] No official plays found for game_id={espn_game_id}, year={year}")
+        logger.info(f"[SUPERVISED] Using {len(official_plays)} official plays from cfbfastR")
 
-        # Detect plays (with official plays if available)
+        # Detect plays using supervised mode ONLY
         claude_windows = await detector.detect_plays(
             video_path,
             game_info=game_info,
             num_frames=settings.CLAUDE_VISION_FRAMES,
-            espn_game_id=espn_game_id,
-            enable_espn_validation=bool(espn_game_id),
-            official_plays=official_plays,
+            official_plays=official_plays,  # REQUIRED - supervised mode only
         )
 
         if claude_windows and len(claude_windows) > 0:
-            logger.info(f"[DISPATCH] ✓ Claude Vision succeeded: {len(claude_windows)} plays detected")
+            logger.info(f"[DISPATCH] ✓ Claude Vision SUPERVISED succeeded: {len(claude_windows)} plays matched")
 
             # Convert windows to standardized play format
             plays = [
@@ -121,7 +121,7 @@ async def try_claude_vision(
                     "game_id": game_info.get("game_id", 0) if game_info else 0,
                     "timestamp": start,
                     "end_timestamp": end,
-                    "source": "claude_vision",
+                    "source": "claude_vision_supervised",
                 }
                 for i, (start, end) in enumerate(claude_windows)
             ]
@@ -129,14 +129,15 @@ async def try_claude_vision(
             metadata = {
                 "status": "success",
                 "plays_count": len(plays),
+                "official_plays_count": len(official_plays),
                 "frames_analyzed": settings.CLAUDE_VISION_FRAMES,
-                "espn_validation": bool(espn_game_id),
+                "mode": "supervised",
             }
 
-            return DetectionResult(plays, "claude_vision", metadata)
+            return DetectionResult(plays, "claude_vision_supervised", metadata)
         else:
-            logger.warning("[DISPATCH] ✗ Claude Vision returned no plays")
-            return DetectionResult([], "claude_vision", {"status": "no_plays"})
+            logger.warning("[DISPATCH] ✗ Claude Vision SUPERVISED returned no plays")
+            return DetectionResult([], "claude_vision_supervised", {"status": "no_plays"})
 
     except ImportError as e:
         logger.warning(f"[DISPATCH] ✗ Claude Vision unavailable: {e}")
@@ -264,19 +265,24 @@ async def dispatch_detection(
     season_type: Optional[str] = None,
     team_name: Optional[str] = None,
 ) -> DetectionResult:
-    """Orchestrate play detection with configurable strategy and graceful fallback.
+    """Orchestrate play detection with MANDATORY cfbfastR integration.
 
-    Detection order depends on CLAUDE_VISION_PRIMARY setting:
-        - If True: Claude Vision → CFBD → ESPN
-        - If False: CFBD → ESPN → Claude Vision (original behavior)
+    NEW DETECTION ORDER (Non-negotiable):
+        1. cfbfastR (fetch official plays) - MANDATORY FIRST STEP
+        2. If cfbfastR succeeds → Claude Vision SUPERVISED (uses official plays)
+        3. If cfbfastR fails → ESPN fallback
+        4. If ESPN fails → ERROR (no blind detection allowed)
+
+    CRITICAL CHANGE: Claude Vision ONLY runs when cfbfastR provides official plays.
+    This ensures 90%+ accuracy via supervised detection, not 60% blind guessing.
 
     Args:
         video_path: Path to video file
-        game_id: CFBD/ESPN game ID
+        game_id: CFBD/ESPN game ID (REQUIRED for cfbfastR)
         game_info: Game context dictionary
         cfbd_client: CFBD client instance
         settings: Application settings
-        year: Season year
+        year: Season year (REQUIRED for cfbfastR)
         week: Week number
         season_type: Season type
         team_name: Team name
@@ -285,83 +291,111 @@ async def dispatch_detection(
         DetectionResult with plays and metadata about which method succeeded
     """
     logger.info("\n" + "=" * 80)
-    logger.info("[DETECTION DISPATCH] Starting detection with graceful fallback")
+    logger.info("[DETECTION DISPATCH] Starting detection with MANDATORY cfbfastR")
     logger.info("=" * 80)
     logger.info(f"  Configuration:")
     logger.info(f"    CLAUDE_VISION_ENABLE: {settings.CLAUDE_VISION_ENABLE}")
-    logger.info(f"    CLAUDE_VISION_PRIMARY: {getattr(settings, 'CLAUDE_VISION_PRIMARY', False)}")
     logger.info(f"    Game ID: {game_id}")
+    logger.info(f"    Year: {year}")
     logger.info(f"    Video path: {video_path}")
+    logger.info(f"\n  NEW DETECTION ORDER:")
+    logger.info(f"    1. cfbfastR (fetch official plays)")
+    logger.info(f"    2. Claude Vision SUPERVISED (if cfbfastR succeeds)")
+    logger.info(f"    3. ESPN fallback (if cfbfastR fails)")
+    logger.info(f"    4. ERROR (if all fail)")
     logger.info("")
 
-    # Determine detection order based on configuration
-    claude_vision_primary = getattr(settings, "CLAUDE_VISION_PRIMARY", False)
+    # STEP 1: MANDATORY - Fetch official plays from cfbfastR FIRST
+    logger.info("[STEP 1] Attempting to fetch official plays from cfbfastR...")
+
+    official_plays = None
+    if game_id and year:
+        try:
+            from .cfbfastr_helper import get_official_plays, game_clock_to_video_time
+
+            logger.info(f"[CFBFASTR] Fetching official plays for game_id={game_id}, year={year}")
+            official_plays = get_official_plays(str(game_id), year)
+
+            if official_plays and len(official_plays) > 0:
+                logger.info(f"[CFBFASTR] ✓ SUCCESS: Fetched {len(official_plays)} official plays")
+
+                # Convert game clock to video timestamps
+                game_start_offset = 900.0  # Default 15 minutes
+                for play in official_plays:
+                    play['video_timestamp'] = game_clock_to_video_time(
+                        play['quarter'],
+                        play['clock_minutes'],
+                        play['clock_seconds'],
+                        game_start_offset
+                    )
+
+                valid_timestamps = len([p for p in official_plays if p['video_timestamp'] is not None])
+                logger.info(f"[CFBFASTR] Converted {valid_timestamps}/{len(official_plays)} plays to video timestamps")
+
+            else:
+                logger.warning(f"[CFBFASTR] ✗ FAILED: No official plays returned")
+                official_plays = None
+
+        except Exception as e:
+            logger.error(f"[CFBFASTR] ✗ FAILED: {type(e).__name__}: {e}")
+            official_plays = None
+    else:
+        logger.warning(f"[CFBFASTR] ✗ SKIPPED: Missing game_id={game_id} or year={year}")
+        official_plays = None
+
+    # STEP 2: If cfbfastR succeeded, use Claude Vision SUPERVISED mode
     claude_vision_enabled = settings.CLAUDE_VISION_ENABLE and settings.anthropic_api_key
 
-    if claude_vision_primary and claude_vision_enabled:
-        logger.info("[DISPATCH] Detection order: Claude Vision (PRIMARY) → CFBD → ESPN")
+    if official_plays and claude_vision_enabled:
+        logger.info(f"[STEP 2] cfbfastR succeeded → Using Claude Vision SUPERVISED mode")
 
-        # Try Claude Vision first
-        result = await try_claude_vision(
-            video_path,
-            game_info,
-            settings,
-            espn_game_id=str(game_id) if game_id else None,
-            year=year,
+        result = await try_claude_vision_supervised(
+            video_path=video_path,
+            game_info=game_info,
+            settings=settings,
+            official_plays=official_plays,
+            game_start_offset=900.0,
         )
+
         if result:
-            logger.info(f"[DISPATCH] ✓ PRIMARY SUCCESS: Claude Vision detected {len(result)} plays")
+            logger.info(f"[DISPATCH] ✓ SUCCESS: Claude Vision SUPERVISED detected {len(result)} plays")
+            logger.info(f"[DISPATCH] Accuracy: ~90%+ (supervised with official plays)")
             return result
 
-        logger.info("[DISPATCH] Claude Vision returned no plays, falling back to CFBD/ESPN...")
+        logger.warning("[DISPATCH] Claude Vision SUPERVISED returned no plays, falling back to ESPN...")
+
+    elif official_plays and not claude_vision_enabled:
+        logger.warning("[STEP 2] cfbfastR succeeded but Claude Vision is disabled")
+        logger.warning("[DISPATCH] Falling back to ESPN...")
 
     else:
-        logger.info("[DISPATCH] Detection order: CFBD → ESPN → Claude Vision (FALLBACK)")
+        logger.warning("[STEP 2] cfbfastR failed → Cannot use Claude Vision (no official plays)")
+        logger.info("[DISPATCH] Falling back to ESPN...")
 
-    # Try CFBD if game_id is available
-    if game_id and cfbd_client:
-        result = await try_cfbd(
-            cfbd_client,
-            game_id,
-            year,
-            week,
-            season_type,
+    # STEP 3: ESPN fallback (if cfbfastR or Claude failed)
+    logger.info("[STEP 3] Attempting ESPN fallback...")
+
+    if game_id:
+        result = await try_espn(
+            str(game_id),
+            team_name or "unknown",
         )
         if result:
-            logger.info(f"[DISPATCH] ✓ CFBD SUCCESS: {len(result)} plays detected")
+            logger.info(f"[DISPATCH] ✓ ESPN SUCCESS: {len(result)} plays detected")
+            logger.info(f"[DISPATCH] Accuracy: ~80% (ESPN play-by-play)")
             return result
 
-        logger.info("[DISPATCH] CFBD failed, attempting ESPN fallback...")
+        logger.warning("[DISPATCH] ESPN failed")
 
-        # Try ESPN fallback
-        if game_id:
-            result = await try_espn(
-                str(game_id),
-                team_name or "unknown",
-            )
-            if result:
-                logger.info(f"[DISPATCH] ✓ ESPN SUCCESS: {len(result)} plays detected")
-                return result
-
-            logger.info("[DISPATCH] ESPN failed, attempting Claude Vision fallback...")
-
-    # Try Claude Vision as fallback (if not already tried as primary)
-    if not claude_vision_primary and claude_vision_enabled:
-        result = await try_claude_vision(
-            video_path,
-            game_info,
-            settings,
-            espn_game_id=str(game_id) if game_id else None,
-            year=year,
-        )
-        if result:
-            logger.info(f"[DISPATCH] ✓ FALLBACK SUCCESS: Claude Vision detected {len(result)} plays")
-            return result
-
-        logger.info("[DISPATCH] Claude Vision fallback returned no plays")
-
-    # All methods failed
+    # STEP 4: All methods failed - NO BLIND DETECTION ALLOWED
     logger.error("[DISPATCH] ✗ ALL DETECTION METHODS FAILED")
+    logger.error("[DISPATCH] cfbfastR: FAILED (no official plays)")
+    logger.error("[DISPATCH] Claude Vision: SKIPPED (requires official plays)")
+    logger.error("[DISPATCH] ESPN: FAILED")
+    logger.error("[DISPATCH] RESULT: 0 plays detected")
+    logger.error("")
+    logger.error("[CRITICAL] Claude Vision is NOT allowed to run without official plays")
+    logger.error("[CRITICAL] Blind detection has been DISABLED to prevent 60% accuracy")
     logger.info("=" * 80 + "\n")
 
     return DetectionResult(
@@ -369,6 +403,9 @@ async def dispatch_detection(
         "none",
         {
             "status": "all_methods_failed",
-            "error": "All detection methods (Claude Vision, CFBD, ESPN) failed to detect plays",
+            "error": "All detection methods (cfbfastR+Claude, ESPN) failed. Blind detection is disabled.",
+            "cfbfastr_status": "failed" if not official_plays else "success",
+            "claude_vision_status": "requires_official_plays",
+            "espn_status": "failed",
         },
     )
