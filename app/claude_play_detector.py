@@ -546,12 +546,17 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
 
         keyframes: List[tuple[bytes, float]] = []
 
-        # Extract frames at regular intervals throughout video
-        interval = duration / (num_frames + 1)  # +1 to avoid very end
-        times = [interval * (i + 1) for i in range(num_frames)]
+        # Calculate playable duration (game footage only, excluding pregame)
+        playable_duration = duration - game_start_offset
+        logger.info(f"  Playable duration (game only): {playable_duration:.1f}s ({playable_duration/60:.1f} min)")
+
+        # Extract frames at regular intervals throughout GAME FOOTAGE ONLY
+        interval = playable_duration / (num_frames + 1)  # +1 to avoid very end
+        times = [game_start_offset + interval * (i + 1) for i in range(num_frames)]
 
         # Show the calculation
-        logger.info(f"  Frame interval calculation: {duration:.1f}s / {num_frames + 1} = {interval:.1f}s per frame")
+        logger.info(f"  Frame interval calculation: {playable_duration:.1f}s / {num_frames + 1} = {interval:.1f}s per frame")
+        logger.info(f"  [FIX APPLIED] Frames will be extracted from GAME FOOTAGE ONLY")
         logger.info(f"  This will extract frames from {times[0]:.1f}s to {times[-1]:.1f}s")
 
         with tempfile.TemporaryDirectory() as tmpdir:
