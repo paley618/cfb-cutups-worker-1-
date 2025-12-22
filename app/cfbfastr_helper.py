@@ -145,14 +145,14 @@ def get_official_plays(game_id, year):
     Priority order:
     1. Local CSV cache (instant, reliable)
     2. CFBD API (fallback for new games not yet cached)
-    3. sportsdataverse (legacy fallback, unreliable)
+    3. Return None (stop here - let dispatch layer handle ESPN fallback)
 
     Args:
         game_id: CFBD game ID
         year: Season year
 
     Returns:
-        List of play dictionaries, or None if all sources fail
+        List of play dictionaries, or None if both cache and API fail
     """
     print(f"[get_official_plays] Fetching plays for game_id={game_id}, year={year}")
 
@@ -170,15 +170,9 @@ def get_official_plays(game_id, year):
         print(f"[get_official_plays] ✓ Using CFBD API ({len(plays)} plays)")
         return plays
 
-    print(f"[get_official_plays] CFBD API failed for game {game_id}")
-
-    # PRIORITY 3: Legacy fallback to sportsdataverse (unreliable)
-    plays = _fetch_plays_from_sportsdataverse(game_id, year)
-    if plays:
-        print(f"[get_official_plays] ⚠ Using sportsdataverse fallback ({len(plays)} plays)")
-        return plays
-
-    print(f"[get_official_plays] ✗ All sources failed for game {game_id}")
+    # PRIORITY 3: Stop here - no more fallbacks
+    # The dispatch layer will handle ESPN fallback if needed
+    print(f"[get_official_plays] ✗ Both cache and CFBD API failed for game {game_id}")
     return None
 
 
