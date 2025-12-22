@@ -57,6 +57,8 @@ async def try_claude_vision(
     game_info: Optional[Dict],
     settings: Any,
     espn_game_id: Optional[str] = None,
+    year: Optional[int] = None,
+    game_start_offset: float = 900.0,
 ) -> DetectionResult:
     """Attempt play detection using Claude Vision.
 
@@ -65,6 +67,8 @@ async def try_claude_vision(
         game_info: Game context (away_team, home_team, team, etc.)
         settings: Application settings
         espn_game_id: Optional ESPN game ID for validation
+        year: Season year for cfbfastR integration
+        game_start_offset: Offset in seconds for game start (default: 900s = 15 min)
 
     Returns:
         DetectionResult with plays and metadata, or empty result if failed
@@ -73,17 +77,38 @@ async def try_claude_vision(
 
     try:
         from .claude_play_detector import ClaudePlayDetector
+        from .cfbfastr_helper import get_official_plays, game_clock_to_video_time
 
         # Initialize detector
         detector = ClaudePlayDetector(api_key=settings.anthropic_api_key)
 
-        # Detect plays
+        # Fetch official plays from cfbfastR if game_id and year are available
+        official_plays = None
+        if espn_game_id and year:
+            logger.info(f"[CFBFASTR] Fetching official plays for game_id={espn_game_id}, year={year}")
+            official_plays = get_official_plays(espn_game_id, year)
+            if official_plays:
+                logger.info(f"[CFBFASTR] ✓ Fetched {len(official_plays)} official plays from cfbfastR")
+                # Convert game clock to video timestamps
+                for play in official_plays:
+                    play['video_timestamp'] = game_clock_to_video_time(
+                        play['quarter'],
+                        play['clock_minutes'],
+                        play['clock_seconds'],
+                        game_start_offset
+                    )
+                logger.info(f"[CFBFASTR] Converted {len([p for p in official_plays if p['video_timestamp'] is not None])} plays to video timestamps")
+            else:
+                logger.warning(f"[CFBFASTR] No official plays found for game_id={espn_game_id}, year={year}")
+
+        # Detect plays (with official plays if available)
         claude_windows = await detector.detect_plays(
             video_path,
             game_info=game_info,
             num_frames=settings.CLAUDE_VISION_FRAMES,
             espn_game_id=espn_game_id,
             enable_espn_validation=bool(espn_game_id),
+            official_plays=official_plays,
         )
 
         if claude_windows and len(claude_windows) > 0:
@@ -282,6 +307,7 @@ async def dispatch_detection(
             game_info,
             settings,
             espn_game_id=str(game_id) if game_id else None,
+            year=year,
         )
         if result:
             logger.info(f"[DISPATCH] ✓ PRIMARY SUCCESS: Claude Vision detected {len(result)} plays")
@@ -326,6 +352,7 @@ async def dispatch_detection(
             game_info,
             settings,
             espn_game_id=str(game_id) if game_id else None,
+            year=year,
         )
         if result:
             logger.info(f"[DISPATCH] ✓ FALLBACK SUCCESS: Claude Vision detected {len(result)} plays")

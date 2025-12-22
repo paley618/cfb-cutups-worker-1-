@@ -681,7 +681,8 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
         game_info: Optional[Dict] = None,
         num_frames: int = 12,
         espn_game_id: Optional[str] = None,
-        enable_espn_validation: bool = True
+        enable_espn_validation: bool = True,
+        official_plays: Optional[List[Dict]] = None
     ) -> List[tuple[float, float]]:
         """Analyze video frames with Claude to detect plays.
 
@@ -689,6 +690,9 @@ Example: {{"game_start_frame_index": 3, "confidence": 0.95, "reasoning": "Frame 
             video_path: Path to video file
             game_info: Optional dict with game context (away_team, home_team, etc.)
             num_frames: Number of keyframes to extract and analyze
+            espn_game_id: Optional ESPN game ID for validation
+            enable_espn_validation: Whether to enable ESPN validation
+            official_plays: Optional list of official plays from cfbfastR for supervised detection
 
         Returns:
             List of (start_time, end_time) tuples representing detected plays
@@ -749,7 +753,43 @@ Game Context:
             f"Frame {i}: {t:.1f}s" for i, t in enumerate(frame_times)
         ])
 
-        prompt = f"""You are analyzing {len(keyframes)} frames from a college football game video to identify EVERY play that occurred.
+        # Check if we have official plays for supervised mode
+        if official_plays:
+            # SUPERVISED MODE: Use official plays from cfbfastR
+            logger.info(f"[CLAUDE PROMPT] Using SUPERVISED mode with {len(official_plays)} official plays")
+            plays_list = "\n".join([
+                f"{p['play_number']}. Q{p['quarter']} {p['clock_minutes']}:{p['clock_seconds']:02d} - {p['play_text']}"
+                for p in official_plays
+            ])
+            prompt = f"""You are analyzing {len(keyframes)} frames from a college football game video.
+
+{game_context}
+Video duration: {video_duration:.1f} seconds (~{video_duration/60:.0f} minutes)
+
+Frame timestamps:
+{frame_time_info}
+
+TASK: Find EACH of these {len(official_plays)} plays in the keyframes:
+
+{plays_list}
+
+For each official play listed above:
+1. Find the frame that shows this play (look for matching quarter, game clock, and play description)
+2. Report: frame_index, confidence (0.0-1.0)
+
+RESPOND WITH ONLY A JSON ARRAY:
+[
+  {{"play_number": 1, "frame_index": 0, "confidence": 0.95}},
+  {{"play_number": 2, "frame_index": 3, "confidence": 0.85}},
+  ...
+]
+
+Only report plays you can confidently match to a frame (confidence > 0.5).
+"""
+        else:
+            # BLIND MODE: Original unsupervised detection
+            logger.info(f"[CLAUDE PROMPT] Using BLIND mode (no official plays available)")
+            prompt = f"""You are analyzing {len(keyframes)} frames from a college football game video to identify EVERY play that occurred.
 
 {game_context}
 Video duration: {video_duration:.1f} seconds (~{video_duration/60:.0f} minutes)
@@ -868,6 +908,34 @@ Remember:
             detected_plays = json.loads(cleaned_response)
             logger.info(f"  JSON parsed successfully")
             logger.info(f"  Total plays detected: {len(detected_plays)}")
+
+            # ==================== SUPERVISED MODE: Convert play matches to standard format ====================
+            if official_plays:
+                logger.info(f"\n[SUPERVISED MODE] Converting {len(detected_plays)} matched plays to standard format")
+                converted_plays = []
+                for match in detected_plays:
+                    play_number = match.get('play_number')
+                    frame_index = match.get('frame_index')
+                    confidence = match.get('confidence', 0.0)
+
+                    # Find the official play by play_number
+                    official_play = next((p for p in official_plays if p['play_number'] == play_number), None)
+                    if official_play and official_play.get('video_timestamp') is not None:
+                        # Convert to standard format with video_timestamp from official play
+                        converted_plays.append({
+                            'frame_index': frame_index,
+                            'play_type': official_play['play_type'],
+                            'confidence': confidence,
+                            'description': official_play['play_text'],
+                            'quarter': official_play['quarter'],
+                            'game_clock': f"{official_play['clock_minutes']}:{official_play['clock_seconds']:02d}",
+                            'video_timestamp': official_play['video_timestamp'],  # Use official timestamp
+                            'official_play': True  # Mark as supervised
+                        })
+                        logger.info(f"  Matched play #{play_number}: {official_play['play_text'][:50]}... @ {official_play['video_timestamp']:.1f}s")
+
+                detected_plays = converted_plays
+                logger.info(f"[SUPERVISED MODE] Converted {len(detected_plays)} plays with official timestamps")
 
             # ==================== PHASE 2: CLAUDE DETECTION DIAGNOSTICS ====================
             logger.info(f"\n{'='*80}")
@@ -1012,50 +1080,54 @@ Remember:
                         continue
 
                     # Get timestamp for this frame
-                    if 0 <= frame_idx < len(frame_times):
-                        # Get the base timestamp from the frame
+                    # CHANGE 5: Use official timestamp if available (supervised mode), otherwise frame time
+                    official_timestamp = play.get('video_timestamp')
+                    if official_timestamp is not None:
+                        # SUPERVISED MODE: Use official timestamp from cfbfastR
+                        center_time = official_timestamp
+                        logger.info(f"\n[PLAY {i}] {play_type} (confidence={confidence:.2f}) [SUPERVISED]")
+                        logger.info(f"  Using OFFICIAL timestamp: {center_time:.1f}s ({center_time/60:.1f}m)")
+                        logger.info(f"  Source: cfbfastR official play data")
+                    elif 0 <= frame_idx < len(frame_times):
+                        # BLIND MODE: Use frame time from detection
                         frame_time = frame_times[frame_idx]
+                        center_time = frame_time
 
-                        # DIAGNOSTIC: Log step-by-step calculation
-                        logger.info(f"\n[PLAY {i}] {play_type} (confidence={confidence:.2f})")
+                        logger.info(f"\n[PLAY {i}] {play_type} (confidence={confidence:.2f}) [BLIND]")
                         logger.info(f"  Input frame number: {frame_idx}")
                         logger.info(f"  Frame range: 0-{len(frame_times)-1}")
                         logger.info(f"  Frame time (from extraction): {frame_time:.1f}s ({frame_time/60:.1f}m)")
+                        logger.info(f"  Using frame-based timestamp")
 
-                        # FIX: Use absolute timestamp directly (frame_time is already absolute)
-                        # Previously: center_time = game_start_offset + frame_time (WRONG: double-offset)
-                        center_time = frame_time
-
-                        logger.info(f"  Calculation: center_time = frame_time (absolute)")
-                        logger.info(f"              center_time = {center_time:.1f}s")
-                        logger.info(f"  [FIX APPLIED] Removed game_start_offset (+{game_start_offset:.1f}s) to prevent double-offset")
-
-                        # Check if beyond video duration
-                        if center_time > video_duration:
-                            logger.warning(f"  ⚠️  BEYOND VIDEO! {center_time:.1f}s > {video_duration}s (overage: {center_time - video_duration:.1f}s)")
-                            timestamps_beyond_video.append({
-                                "frame_idx": frame_idx,
-                                "frame_time": frame_time,
-                                "center_time": center_time,
-                                "overage": center_time - video_duration,
-                                "play_type": play_type
-                            })
-                        else:
-                            logger.info(f"  ✓ Within bounds ({center_time:.1f}s < {video_duration}s)")
-                            timestamps_within_video.append(center_time)
-
-                        # Create window around detected play (10s before for setup, 8s after for play result)
-                        PRE_PLAY_PADDING = 10.0  # seconds before play to show formation/setup
-                        POST_PLAY_DURATION = 8.0  # seconds after play to show result
-                        start_time = max(0.0, center_time - PRE_PLAY_PADDING)
-                        end_time = min(video_duration, center_time + POST_PLAY_DURATION)
-
-                        logger.info(f"  Window: {start_time:.1f}s - {end_time:.1f}s (duration: {end_time-start_time:.1f}s)")
-
-                        play_windows.append((start_time, end_time))
                     else:
+                        # Invalid frame index and no official timestamp
                         skipped_invalid_frame += 1
-                        logger.warning(f"[PLAY {i}] SKIPPED: Invalid frame_index {frame_idx} (max: {len(frame_times)-1})")
+                        logger.warning(f"[PLAY {i}] SKIPPED: Invalid frame_index {frame_idx} and no official timestamp")
+                        continue
+
+                    # Check if beyond video duration
+                    if center_time > video_duration:
+                        logger.warning(f"  ⚠️  BEYOND VIDEO! {center_time:.1f}s > {video_duration}s (overage: {center_time - video_duration:.1f}s)")
+                        timestamps_beyond_video.append({
+                            "frame_idx": frame_idx,
+                            "frame_time": center_time,
+                            "center_time": center_time,
+                            "overage": center_time - video_duration,
+                            "play_type": play_type
+                        })
+                    else:
+                        logger.info(f"  ✓ Within bounds ({center_time:.1f}s < {video_duration}s)")
+                        timestamps_within_video.append(center_time)
+
+                    # Create window around detected play (10s before for setup, 8s after for play result)
+                    PRE_PLAY_PADDING = 10.0  # seconds before play to show formation/setup
+                    POST_PLAY_DURATION = 8.0  # seconds after play to show result
+                    start_time = max(0.0, center_time - PRE_PLAY_PADDING)
+                    end_time = min(video_duration, center_time + POST_PLAY_DURATION)
+
+                    logger.info(f"  Window: {start_time:.1f}s - {end_time:.1f}s (duration: {end_time-start_time:.1f}s)")
+
+                    play_windows.append((start_time, end_time))
 
                 except (KeyError, ValueError, TypeError) as e:
                     logger.warning(f"[PLAY {i}] SKIPPED: Error processing play entry: {e}")
