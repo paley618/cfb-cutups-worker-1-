@@ -2193,6 +2193,12 @@ class JobRunner:
                         archive.write(os.path.join(tmp_dir, clip["file"]), clip["file"])
                         archive.write(os.path.join(tmp_dir, clip["thumb"]), clip["thumb"])
 
+                    # Add reel.mp4 to ZIP if it was successfully created
+                    if reel_upload:
+                        reel_file_path, _ = reel_upload
+                        if os.path.exists(reel_file_path):
+                            archive.write(reel_file_path, "reel.mp4")
+
                     self._ensure_not_cancelled(job_id, cancel_ev)
 
                 archive_key = f"{job_id}/output.zip"
