@@ -72,7 +72,11 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code data/cfb_plays/ || echo "changed=true" >> $GITHUB_OUTPUT
+          # git status --porcelain detects both tracked AND untracked files
+          # git diff only detects changes to tracked files (misses new CSV files)
+          if [ -n "$(git status --porcelain data/cfb_plays/)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Commit and push cached data
         if: steps.git-check.outputs.changed == 'true'
