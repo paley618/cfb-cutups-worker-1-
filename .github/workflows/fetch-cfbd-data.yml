@@ -25,6 +25,9 @@ on:
         required: false
         default: ''
 
+permissions:
+  contents: write
+
 jobs:
   fetch-and-cache:
     name: Fetch and Cache CFBD Data
