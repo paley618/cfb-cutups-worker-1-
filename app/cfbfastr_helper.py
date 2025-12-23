@@ -13,13 +13,22 @@ from pathlib import Path
 
 def _load_plays_from_cache(game_id):
     """Load plays from local CSV cache (Game on Paper style)"""
+    import logging
+    logger = logging.getLogger(__name__)
+
     cache_dir = Path(__file__).parent.parent / "data" / "cfb_plays"
     cache_file = cache_dir / f"{game_id}.csv"
 
+    logger.info(f"[CACHE] Attempting to load CSV cache for game_id={game_id}")
+    logger.info(f"[CACHE] CSV cache path: {cache_file}")
+    logger.info(f"[CACHE] CSV cache exists: {cache_file.exists()}")
+
     if not cache_file.exists():
+        logger.warning(f"[CACHE] ✗ CSV cache file NOT FOUND at {cache_file}")
         return None
 
     try:
+        logger.info(f"[CACHE] CSV file exists, reading...")
         plays = []
         with open(cache_file, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
@@ -44,10 +53,12 @@ def _load_plays_from_cache(game_id):
                     'video_timestamp': None  # Will be set by game clock converter
                 })
 
+        logger.info(f"[CACHE] ✓ CSV CACHE SUCCESS: Loaded {len(plays)} plays from {cache_file}")
         print(f"✓ Loaded {len(plays)} plays from cache: {cache_file}")
         return plays if plays else None
 
     except Exception as e:
+        logger.error(f"[CACHE] ✗ CSV CACHE FAILED: Error loading from {cache_file}: {e}")
         print(f"Error loading from cache {cache_file}: {e}")
         return None
 
@@ -154,24 +165,45 @@ def get_official_plays(game_id, year):
     Returns:
         List of play dictionaries, or None if both cache and API fail
     """
+    import logging
+    logger = logging.getLogger(__name__)
+
+    logger.info("\n" + "=" * 80)
+    logger.info("[OFFICIAL_PLAYS] Starting official play fetch (Game on Paper architecture)")
+    logger.info("=" * 80)
+    logger.info(f"[OFFICIAL_PLAYS] game_id: {game_id}")
+    logger.info(f"[OFFICIAL_PLAYS] year: {year}")
+    logger.info(f"[OFFICIAL_PLAYS] Priority 1: CSV cache")
+    logger.info(f"[OFFICIAL_PLAYS] Priority 2: CFBD API")
+    logger.info(f"[OFFICIAL_PLAYS] Priority 3: None (let dispatch handle ESPN)")
     print(f"[get_official_plays] Fetching plays for game_id={game_id}, year={year}")
 
     # PRIORITY 1: Check local cache (Game on Paper style)
+    logger.info("\n[OFFICIAL_PLAYS] STEP 1: Checking CSV cache...")
     plays = _load_plays_from_cache(game_id)
     if plays:
+        logger.info(f"[OFFICIAL_PLAYS] ✓ SUCCESS: Using CSV cache ({len(plays)} plays)")
+        logger.info("=" * 80 + "\n")
         print(f"[get_official_plays] ✓ Using cached data ({len(plays)} plays)")
         return plays
 
+    logger.warning(f"[OFFICIAL_PLAYS] ✗ CSV cache miss for game {game_id}")
     print(f"[get_official_plays] Cache miss for game {game_id}")
 
     # PRIORITY 2: Fetch from CFBD API (reliable fallback)
+    logger.info("\n[OFFICIAL_PLAYS] STEP 2: Trying CFBD API...")
     plays = _fetch_plays_from_cfbd_api(game_id, year)
     if plays:
+        logger.info(f"[OFFICIAL_PLAYS] ✓ SUCCESS: Using CFBD API ({len(plays)} plays)")
+        logger.info("=" * 80 + "\n")
         print(f"[get_official_plays] ✓ Using CFBD API ({len(plays)} plays)")
         return plays
 
     # PRIORITY 3: Stop here - no more fallbacks
     # The dispatch layer will handle ESPN fallback if needed
+    logger.error(f"[OFFICIAL_PLAYS] ✗ FAILED: Both cache and CFBD API failed for game {game_id}")
+    logger.error("[OFFICIAL_PLAYS] Returning None - dispatch layer will try ESPN")
+    logger.info("=" * 80 + "\n")
     print(f"[get_official_plays] ✗ Both cache and CFBD API failed for game {game_id}")
     return None
 

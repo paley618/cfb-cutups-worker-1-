@@ -12,7 +12,7 @@ class Options(BaseModel):
 
 
 class CFBDInput(BaseModel):
-    use_cfbd: bool = False
+    use_cfbd: bool = True  # Changed to True by default - use CFBD/CSV cache for better accuracy
     require_cfbd: bool = False
     game_id: Optional[int] = None
     season: Optional[int] = Field(

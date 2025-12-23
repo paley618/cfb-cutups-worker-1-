@@ -644,11 +644,32 @@ class JobRunner:
                 cfbd_summary["requested"] = requested_cfbd
                 cfbd_job_meta["requested"] = requested_cfbd
 
-                # DIAGNOSTIC LOGGING
-                logger.info(f"[CFBD DIAGNOSTICS] CFBD requested: {requested_cfbd}")
-                logger.info(f"[CFBD DIAGNOSTICS] CFBD_API_KEY present: {bool(CFBD_API_KEY)}")
-                logger.info(f"[CFBD DIAGNOSTICS] CFBD_ENABLE setting: {settings.CFBD_ENABLE}")
-                logger.info(f"[CFBD DIAGNOSTICS] Global CFBD enabled: {global_cfbd_enabled}")
+                # DIAGNOSTIC LOGGING - DETECTION PATH
+                logger.info("\n" + "=" * 80)
+                logger.info("[DETECTION] Starting detection configuration")
+                logger.info("=" * 80)
+                logger.info(f"[DETECTION] cfbd_in object present: {cfbd_in is not None}")
+                if cfbd_in:
+                    logger.info(f"[DETECTION] cfbd_in.use_cfbd: {getattr(cfbd_in, 'use_cfbd', 'NOT SET')}")
+                    logger.info(f"[DETECTION] cfbd_in.game_id: {getattr(cfbd_in, 'game_id', 'NOT SET')}")
+                    logger.info(f"[DETECTION] cfbd_in.year: {getattr(cfbd_in, 'year', 'NOT SET')}")
+                else:
+                    logger.info(f"[DETECTION] cfbd_in is None - no CFBD config provided")
+                logger.info(f"[DETECTION] requested_cfbd (computed): {requested_cfbd}")
+                logger.info(f"[DETECTION] CFBD_API_KEY present: {bool(CFBD_API_KEY)}")
+                logger.info(f"[DETECTION] CFBD_ENABLE setting: {settings.CFBD_ENABLE}")
+                logger.info(f"[DETECTION] Global CFBD enabled: {global_cfbd_enabled}")
+
+                if not requested_cfbd:
+                    logger.warning("\n" + "!" * 80)
+                    logger.warning("[DETECTION] ✗ CRITICAL: use_cfbd=False or missing!")
+                    logger.warning("[DETECTION] This will skip CFBD API and CSV cache")
+                    logger.warning("[DETECTION] Result: Will use fallback detection (OpenCV/FFprobe)")
+                    logger.warning("[DETECTION] Expected clips: GARBAGE with source=fallback confidence=25")
+                    logger.warning("!" * 80 + "\n")
+                else:
+                    logger.info("[DETECTION] ✓ use_cfbd=True - will attempt CFBD/CSV cache")
+                logger.info("=" * 80 + "\n")
 
                 if not requested_cfbd:
                     cfbd_job_meta.setdefault("status", "off")
@@ -1516,6 +1537,18 @@ class JobRunner:
                     score_val = float(meta_dict.get("score", 1.0))
                     play = meta_dict.get("play") if isinstance(meta_dict.get("play"), dict) else None
                     source_tag = meta_dict.get("source") or ("cfbd" if play else ("fallback" if fallback_used else "vision"))
+
+                    # DIAGNOSTIC: Log source determination for first few clips
+                    if idx < 5:
+                        logger.info(f"  [CLIP {idx}] Source determination:")
+                        logger.info(f"    meta_dict.get('source'): {meta_dict.get('source')}")
+                        logger.info(f"    play present: {play is not None}")
+                        logger.info(f"    fallback_used: {fallback_used}")
+                        logger.info(f"    Computed source_tag: {source_tag}")
+                        if source_tag == "fallback":
+                            logger.warning(f"    ⚠️  FALLBACK DETECTED: This clip will have garbage timestamps!")
+                        elif source_tag in ["cfbd", "[CACHE]", "claude_vision_supervised"]:
+                            logger.info(f"    ✓ GOOD: Using official data source")
 
                     period_val: Optional[int] = None
                     clock_sec_val: Optional[int] = None
