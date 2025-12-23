@@ -373,10 +373,8 @@ class CFBDClient:
                 f"(Filtered out {len(payload) - len(game_plays)} other games)"
             )
 
-            if game_plays:
-                return game_plays
-            else:
-                raise CFBDClientError(f"No plays found for game {gid} after filtering week data")
+            # Return whatever we got, even if empty - caller will handle missing data
+            return game_plays
 
         # Both attempts failed
         raise CFBDClientError(

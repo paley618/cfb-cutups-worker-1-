@@ -145,7 +145,8 @@ def fetch_and_cache_cfbd_data(
     # Process each game
     success_count = 0
     error_count = 0
-    skip_count = 0
+    skip_count = 0  # Already cached
+    no_data_count = 0  # Games with no play data available
 
     for idx, game in enumerate(all_games, 1):
         game_id = game.get('id')
@@ -182,15 +183,16 @@ def fetch_and_cache_cfbd_data(
                 else:
                     error_count += 1
             else:
-                logger.warning(f"  No plays returned for game {game_id}")
-                error_count += 1
+                # No plays found - this is legitimate (cancelled/postponed/no data)
+                logger.warning(f"  ⊘ Skipping {away_team} @ {home_team} - no play data available")
+                no_data_count += 1
 
         except CFBDClientError as e:
-            logger.error(f"  CFBD API error for game {game_id}: {e}")
+            logger.error(f"  ✗ CFBD API error for {away_team} @ {home_team}: {e}")
             error_count += 1
 
         except Exception as e:
-            logger.error(f"  Unexpected error for game {game_id}: {e}")
+            logger.error(f"  ✗ Unexpected error for {away_team} @ {home_team}: {e}")
             error_count += 1
 
     # Summary
@@ -198,12 +200,23 @@ def fetch_and_cache_cfbd_data(
     logger.info("SUMMARY")
     logger.info("=" * 80)
     logger.info(f"Total games processed: {len(all_games)}")
-    logger.info(f"✓ Successfully cached: {success_count}")
+    logger.info(f"✓ Successfully cached (with play data): {success_count}")
     logger.info(f"⊘ Skipped (already cached): {skip_count}")
-    logger.info(f"✗ Errors: {error_count}")
+    logger.info(f"⊘ Skipped (no play data available): {no_data_count}")
+    logger.info(f"✗ Actual errors (API/network failures): {error_count}")
     logger.info("=" * 80)
 
-    return error_count == 0
+    # Succeed if we cached at least some games, even if others had no data
+    # Only fail if we hit actual API/network errors
+    if error_count > 0:
+        logger.error(f"Workflow failed due to {error_count} actual errors")
+        return False
+    elif success_count > 0:
+        logger.info(f"✓ Workflow succeeded - cached {success_count} games")
+        return True
+    else:
+        logger.warning("No games were cached (all were either already cached or had no data)")
+        return True  # Not an error condition
 
 
 if __name__ == "__main__":
