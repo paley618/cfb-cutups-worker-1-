@@ -32,9 +32,16 @@ def _play_belongs_to_game(play: Dict, gid: int) -> bool:
 
     This is critical because CFBD sometimes returns plays from multiple games
     or entire weeks/seasons, causing the 31,168 plays bug.
+
+    The CFBD API may use different field names (game_id, gameId, or game).
+    We check all possible field names to ensure compatibility.
     """
     try:
-        return int(play.get("game_id", gid)) == gid
+        # Check all possible field name variations
+        game_identifier = play.get("gameId") or play.get("game_id") or play.get("game")
+        if game_identifier is None:
+            return False
+        return int(game_identifier) == gid
     except (TypeError, ValueError):
         return False
 
@@ -323,8 +330,8 @@ class CFBDClient:
             if not isinstance(payload, list):
                 raise CFBDClientError(f"unexpected /plays payload: {first.text[:200]}")
 
-            # Filter to only this game's plays
-            game_plays = [play for play in payload if play.get("game_id") == gid]
+            # Filter to only this game's plays using helper that checks all field name variations
+            game_plays = [play for play in payload if _play_belongs_to_game(play, gid)]
 
             if game_plays:
                 logger.info(
@@ -357,8 +364,8 @@ class CFBDClient:
             if not isinstance(payload, list):
                 raise CFBDClientError(f"unexpected /plays retry payload: {retry.text[:200]}")
 
-            # Filter to only this game's plays (critical!)
-            game_plays = [play for play in payload if play.get("game_id") == gid]
+            # Filter to only this game's plays (critical!) using helper that checks all field name variations
+            game_plays = [play for play in payload if _play_belongs_to_game(play, gid)]
 
             logger.info(
                 f"[CFBD] Retry succeeded! Got {len(payload)} total plays, "
