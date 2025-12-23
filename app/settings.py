@@ -313,6 +313,24 @@ class Settings(BaseSettings):
         description="Minimum confidence threshold for Claude Vision play detection (0.0-1.0).",
     )
 
+    # --- Vision Play Mapper (NEW Dense Sampling Approach) ---
+    USE_VISION_PLAY_MAPPER: bool = Field(
+        default=True,
+        description="Use new Vision Play Mapper with dense frame sampling instead of old sparse Claude Vision approach.",
+    )
+    VISION_MAPPER_FRAME_INTERVAL: float = Field(
+        default=10.0,
+        description="Interval in seconds between extracted frames for Vision Play Mapper. Default 10s = ~1080 frames for 3-hour game.",
+    )
+    VISION_MAPPER_BATCH_SIZE: int = Field(
+        default=20,
+        description="Number of plays to process per Claude Vision API call in Vision Play Mapper. Lower = more API calls but better reliability.",
+    )
+    VISION_MAPPER_MAX_FRAMES: Optional[int] = Field(
+        default=None,
+        description="Maximum number of frames to extract for testing/cost control. None = no limit (extract all frames).",
+    )
+
     OCR_SAMPLE_FPS: float = Field(
         default=2.0,
         description="Sampling rate (frames per second) for scorebug OCR extraction.",
