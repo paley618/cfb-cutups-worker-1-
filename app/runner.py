@@ -1523,7 +1523,12 @@ class JobRunner:
                     logger.info(f"  Created {len(windows_with_meta)} windows_with_meta from windows")
 
                 logger.info(f"[CLIP ENTRIES CREATION] Converting {len(windows_with_meta)} windows to clip entries...")
+                logger.info(f"[DEBUG] ===== CLIP GENERATION: SOURCE TRACKING =====")
+                logger.info(f"[DEBUG] fallback_used flag: {fallback_used}")
                 rejected_count = 0
+
+                # Track source distribution
+                source_distribution = {}
 
                 for idx, (start, end, meta) in enumerate(windows_with_meta):
                     start_val = max(0.0, float(start))
@@ -1538,17 +1543,23 @@ class JobRunner:
                     play = meta_dict.get("play") if isinstance(meta_dict.get("play"), dict) else None
                     source_tag = meta_dict.get("source") or ("cfbd" if play else ("fallback" if fallback_used else "vision"))
 
-                    # DIAGNOSTIC: Log source determination for first few clips
-                    if idx < 5:
-                        logger.info(f"  [CLIP {idx}] Source determination:")
-                        logger.info(f"    meta_dict.get('source'): {meta_dict.get('source')}")
-                        logger.info(f"    play present: {play is not None}")
-                        logger.info(f"    fallback_used: {fallback_used}")
-                        logger.info(f"    Computed source_tag: {source_tag}")
+                    # Track source distribution
+                    source_distribution[source_tag] = source_distribution.get(source_tag, 0) + 1
+
+                    # DIAGNOSTIC: Log source determination for first 10 clips AND all vision clips
+                    if idx < 10 or source_tag in ["vision", "vision_play_mapper", "claude_vision_supervised"]:
+                        logger.info(f"[DEBUG] [CLIP {idx}] Source determination:")
+                        logger.info(f"[DEBUG]   meta_dict.get('source'): {meta_dict.get('source')}")
+                        logger.info(f"[DEBUG]   play present: {play is not None}")
+                        logger.info(f"[DEBUG]   fallback_used: {fallback_used}")
+                        logger.info(f"[DEBUG]   Computed source_tag: {source_tag}")
+                        logger.info(f"[DEBUG]   Timestamp: {start_val:.1f}s - {end_val:.1f}s")
                         if source_tag == "fallback":
-                            logger.warning(f"    ⚠️  FALLBACK DETECTED: This clip will have garbage timestamps!")
+                            logger.warning(f"[DEBUG]   ⚠️  FALLBACK DETECTED: This clip will have garbage timestamps!")
+                        elif source_tag in ["vision", "vision_play_mapper"]:
+                            logger.info(f"[DEBUG]   ✓ VISION CLIP: Using vision-based detection!")
                         elif source_tag in ["cfbd", "[CACHE]", "claude_vision_supervised"]:
-                            logger.info(f"    ✓ GOOD: Using official data source")
+                            logger.info(f"[DEBUG]   ✓ GOOD: Using official data source")
 
                     period_val: Optional[int] = None
                     clock_sec_val: Optional[int] = None
@@ -1660,6 +1671,19 @@ class JobRunner:
                 logger.info(f"  Windows processed: {len(windows_with_meta)}")
                 logger.info(f"  Rejected (invalid range): {rejected_count}")
                 logger.info(f"  Clip entries created: {len(clip_entries)}")
+
+                # Log source distribution summary
+                logger.info(f"[DEBUG] ===== CLIP SOURCE DISTRIBUTION =====")
+                total_clips = len(clip_entries)
+                for source, count in sorted(source_distribution.items()):
+                    percentage = (count / total_clips * 100) if total_clips > 0 else 0
+                    logger.info(f"[DEBUG]   {source}: {count} clips ({percentage:.1f}%)")
+                    if source == "fallback" and count > 0:
+                        logger.warning(f"[DEBUG]   ⚠️  WARNING: {count} clips using FALLBACK method (garbage timestamps)")
+                    elif source in ["vision", "vision_play_mapper"] and count > 0:
+                        logger.info(f"[DEBUG]   ✓ SUCCESS: {count} clips using VISION detection!")
+                logger.info(f"[DEBUG] ===== END CLIP SOURCE DISTRIBUTION =====")
+                logger.info("")
 
                 samples_by_period: Dict[int, List[Tuple[float, int]]] = {}
                 if cfbd_used:
