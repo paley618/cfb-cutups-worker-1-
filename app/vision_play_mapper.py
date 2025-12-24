@@ -125,6 +125,7 @@ class VisionPlayMapper:
         logger.info(f"  Interval: {interval_seconds}s between frames")
         logger.info(f"  Max frames: {max_frames if max_frames else 'unlimited'}")
 
+        extraction_start_time = time.time()
         duration = self.get_video_duration(video_path)
 
         # Calculate frame timestamps
@@ -134,9 +135,15 @@ class VisionPlayMapper:
             interval_seconds = duration / num_frames
             logger.info(f"  Limiting to {max_frames} frames, adjusted interval to {interval_seconds:.1f}s")
 
-        logger.info(f"  Will extract {num_frames} frames from {duration:.1f}s video")
+        logger.info(f"[VISION MAPPER] Frame extraction configuration:")
+        logger.info(f"  Video duration: {duration:.1f}s ({duration/60:.1f} minutes)")
+        logger.info(f"  Expected frames: {num_frames}")
+        logger.info(f"  Frame interval: every {interval_seconds:.1f} seconds")
+        logger.info(f"  Frame range: 0.0s to {(num_frames-1)*interval_seconds:.1f}s")
+        logger.info(f"[VISION MAPPER] ⏱️  Starting frame extraction at {time.strftime('%H:%M:%S')}")
 
         frames: List[Tuple[bytes, float]] = []
+        total_frame_bytes = 0
 
         with tempfile.TemporaryDirectory() as tmpdir:
             for i in range(num_frames):
@@ -170,19 +177,47 @@ class VisionPlayMapper:
                     with open(frame_path, "rb") as f:
                         frame_bytes = f.read()
                         frames.append((frame_bytes, timestamp))
+                        total_frame_bytes += len(frame_bytes)
 
-                    if (i + 1) % 50 == 0:  # Log more frequently (every 50 instead of 100)
+                    # Progress checkpoint every 50 frames
+                    if (i + 1) % 50 == 0:
+                        elapsed = time.time() - extraction_start_time
                         pct = (i + 1) / num_frames * 100
-                        logger.info(f"[FRAME EXTRACTION] {i + 1}/{num_frames} ({pct:.1f}%) frames extracted")
-                    if (i + 1) % 200 == 0:  # More detailed log every 200 frames
-                        logger.info(f"[FRAME EXTRACTION] Progress checkpoint: {i + 1}/{num_frames} - continuing...")
+                        rate = (i + 1) / elapsed if elapsed > 0 else 0
+                        eta = (num_frames - (i + 1)) / rate if rate > 0 else 0
+                        logger.info(
+                            f"[VISION MAPPER] [FRAME EXTRACTION] Progress: {i + 1}/{num_frames} ({pct:.1f}%) | "
+                            f"Elapsed: {elapsed:.1f}s | Rate: {rate:.1f} frames/sec | ETA: {eta:.1f}s"
+                        )
+
+                    # Heavier checkpoint every 200 frames with memory estimate
+                    if (i + 1) % 200 == 0:
+                        mem_mb = total_frame_bytes / (1024 * 1024)
+                        logger.info(f"[VISION MAPPER] [FRAME EXTRACTION] Checkpoint at {i + 1} frames - Memory used: ~{mem_mb:.1f}MB")
 
                 except subprocess.TimeoutExpired:
-                    logger.warning(f"  Timeout extracting frame at {timestamp:.1f}s")
+                    logger.warning(f"[VISION MAPPER] ⚠️  Timeout extracting frame at {timestamp:.1f}s")
                 except Exception as e:
-                    logger.warning(f"  Failed to extract frame at {timestamp:.1f}s: {e}")
+                    logger.warning(f"[VISION MAPPER] ⚠️  Failed to extract frame at {timestamp:.1f}s: {e}")
 
-        logger.info(f"[VISION MAPPER] Extracted {len(frames)} frames successfully")
+        extraction_elapsed = time.time() - extraction_start_time
+        avg_rate = len(frames) / extraction_elapsed if extraction_elapsed > 0 else 0
+        mem_mb = total_frame_bytes / (1024 * 1024)
+
+        logger.info(f"[VISION MAPPER] ✓ Frame extraction COMPLETE!")
+        logger.info(f"  Frames extracted: {len(frames)} (expected {num_frames})")
+        logger.info(f"  Total time: {extraction_elapsed:.1f}s ({extraction_elapsed/60:.1f} minutes)")
+        logger.info(f"  Average rate: {avg_rate:.2f} frames/second")
+        logger.info(f"  Estimated memory: ~{mem_mb:.1f}MB")
+
+        # CRITICAL CHECK: If 0 frames extracted, log error immediately
+        if len(frames) == 0:
+            logger.error(f"[VISION MAPPER] ❌ CRITICAL: No frames were extracted!")
+            logger.error(f"  Video path: {video_path}")
+            logger.error(f"  Video duration: {duration:.1f}s")
+            logger.error(f"  Expected frames: {num_frames}")
+            logger.error(f"  This will cause the Vision mapper to fail!")
+
         return frames
 
     @staticmethod
@@ -266,13 +301,28 @@ class VisionPlayMapper:
         Returns:
             Dictionary mapping play_number -> (start_time, end_time)
         """
+        function_start_time = time.time()
+
         logger.info("="*80)
-        logger.info("[VISION PLAY MAPPER] Starting play detection")
+        logger.info("[VISION MAPPER] ===== STARTING MAP_PLAYS_TO_TIMESTAMPS =====")
         logger.info("="*80)
-        logger.info(f"  Video: {video_path}")
-        logger.info(f"  CFBD plays to map: {len(cfbd_plays)}")
+        logger.info(f"[VISION MAPPER] Function: map_plays_to_timestamps")
+        logger.info(f"[VISION MAPPER] Input parameters:")
+        logger.info(f"  Video path: {video_path}")
+        logger.info(f"  CFBD plays received: {len(cfbd_plays)}")
         logger.info(f"  Frame interval: {frame_interval}s")
         logger.info(f"  Batch size: {batch_size} plays per API call")
+        logger.info(f"  Max frames: {max_frames if max_frames else 'unlimited'}")
+        logger.info(f"  Model: {self.model}")
+        logger.info(f"  API client exists: {self.client is not None}")
+
+        if game_info:
+            logger.info(f"[VISION MAPPER] Game context:")
+            logger.info(f"  Away team: {game_info.get('away_team', 'Unknown')}")
+            logger.info(f"  Home team: {game_info.get('home_team', 'Unknown')}")
+
+        logger.info(f"[VISION MAPPER] Starting execution at {time.strftime('%H:%M:%S')}")
+        logger.info("="*80)
 
         # Extract frames densely
         frames = self.extract_frames_dense(
@@ -310,6 +360,10 @@ class VisionPlayMapper:
             game_context = f"Game: {away} @ {home}\n"
 
         # Process plays in batches
+        logger.info(f"[VISION MAPPER] ===== BATCH PREPARATION =====")
+        logger.info(f"[VISION MAPPER] Total plays to process: {len(cfbd_plays)}")
+        logger.info(f"[VISION MAPPER] Batch size setting: {batch_size} plays per batch")
+
         all_detections = {}
         total_cost = 0.0
         total_input_tokens = 0
@@ -320,7 +374,10 @@ class VisionPlayMapper:
         for i in range(0, len(cfbd_plays), batch_size):
             play_batches.append(cfbd_plays[i:i + batch_size])
 
-        logger.info(f"[VISION MAPPER] Processing {len(play_batches)} batches of plays")
+        logger.info(f"[VISION MAPPER] Number of batches created: {len(play_batches)}")
+        logger.info(f"[VISION MAPPER] Batch distribution: {[len(batch) for batch in play_batches]}")
+        logger.info(f"[VISION MAPPER] ===== STARTING BATCH PROCESSING =====")
+        logger.info("")
 
         for batch_idx, play_batch in enumerate(play_batches):
             logger.info(f"\n[BATCH {batch_idx + 1}/{len(play_batches)}] Processing {len(play_batch)} plays...")
@@ -352,15 +409,36 @@ class VisionPlayMapper:
                 continue
 
         # Log final statistics
+        function_elapsed = time.time() - function_start_time
+        detection_rate = (len(all_detections) / len(cfbd_plays) * 100) if len(cfbd_plays) > 0 else 0
+
         logger.info("\n" + "="*80)
-        logger.info("[VISION MAPPER] Detection complete")
+        logger.info("[VISION MAPPER] ===== DETECTION COMPLETE =====")
         logger.info("="*80)
-        logger.info(f"  Total plays requested: {len(cfbd_plays)}")
+        logger.info(f"[VISION MAPPER] FINAL RESULTS SUMMARY:")
+        logger.info(f"  Total execution time: {function_elapsed:.1f}s ({function_elapsed/60:.1f} minutes)")
+        logger.info(f"  Total plays input (from CFBD): {len(cfbd_plays)}")
         logger.info(f"  Total plays detected: {len(all_detections)}")
-        logger.info(f"  Detection rate: {len(all_detections)/len(cfbd_plays)*100:.1f}%")
+        logger.info(f"  Detection rate: {detection_rate:.1f}%")
         logger.info(f"  Total input tokens: {total_input_tokens:,}")
         logger.info(f"  Total output tokens: {total_output_tokens:,}")
         logger.info(f"  Total estimated cost: ${total_cost:.2f}")
+
+        # WARNING if 0 plays detected
+        if len(all_detections) == 0:
+            logger.warning("="*80)
+            logger.warning("[VISION MAPPER] ⚠️  WARNING: DETECTED 0 PLAYS - WILL USE FALLBACK")
+            logger.warning("="*80)
+            logger.warning(f"  Input plays: {len(cfbd_plays)}")
+            logger.warning(f"  Batches processed: {len(play_batches)}")
+            logger.warning(f"  Frames extracted: {len(frames)}")
+            logger.warning(f"  This indicates Vision Play Mapper failed completely")
+            logger.warning("="*80)
+        else:
+            # List detected play IDs
+            detected_ids = sorted(all_detections.keys())
+            logger.info(f"[VISION MAPPER] Detected play IDs: {detected_ids}")
+
         logger.info("="*80 + "\n")
 
         return all_detections
@@ -448,20 +526,35 @@ Only include plays you can identify with at least medium confidence."""
         frame_messages = [frame["source"] for frame in frame_data]
 
         try:
-            logger.info(f"[BATCH {batch_idx + 1}] Calling Claude Vision API...")
-            logger.info(f"  Frames: {len(frame_messages)}")
-            logger.info(f"  Plays: {len(plays)}")
+            # Log plays we're looking for (preview first few)
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Batch details:")
+            logger.info(f"  Frames in batch: {len(frame_messages)}")
+            logger.info(f"  Plays to detect: {len(plays)}")
             logger.info(f"  Prompt length: {len(prompt)} chars")
+
+            # Preview play descriptions
+            play_previews = []
+            for i, play in enumerate(plays[:5]):  # First 5 plays
+                play_desc = f"Play #{play['play_number']}: {play.get('play_text', 'Unknown')[:60]}"
+                play_previews.append(play_desc)
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Play descriptions (first 5):")
+            for preview in play_previews:
+                logger.info(f"    {preview}")
+            if len(plays) > 5:
+                logger.info(f"    ... and {len(plays) - 5} more plays")
 
             # Estimate payload size
             frame_bytes_estimate = sum(len(f["data"]) for f in frame_data) if frame_data else 0
             frame_mb = frame_bytes_estimate / (1024 * 1024)
-            logger.info(f"[BATCH {batch_idx + 1}] Uploading {len(frame_messages)} frames (~{frame_mb:.1f}MB total)")
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Estimated payload size: ~{frame_mb:.1f}MB")
+
+            # CRITICAL MARKER: About to call API
+            logger.info("="*80)
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ⏱️  ABOUT TO CALL CLAUDE VISION API...")
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Timestamp: {time.strftime('%H:%M:%S')}")
+            logger.info("="*80)
 
             start_time = time.time()
-
-            # Mark API call start - if this logs but next line doesn't, API call is hanging
-            logger.info(f"[BATCH {batch_idx + 1}] MAKING API REQUEST NOW (watch for response)...")
             api_call_start = time.time()
 
             response = self.client.messages.create(
@@ -485,21 +578,59 @@ Only include plays you can identify with at least medium confidence."""
             api_call_elapsed = time.time() - api_call_start
             elapsed = time.time() - start_time
 
+            # CRITICAL MARKER: Response received
+            logger.info("="*80)
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ✓ API RESPONSE RECEIVED in {api_call_elapsed:.1f}s")
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Timestamp: {time.strftime('%H:%M:%S')}")
+            logger.info("="*80)
+
             # Extract response
             response_text = response.content[0].text.strip()
 
-            logger.info(f"[BATCH {batch_idx + 1}] ✓ API request completed in {api_call_elapsed:.1f}s (total: {elapsed:.1f}s)")
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Response details:")
             logger.info(f"  Response length: {len(response_text)} chars")
-            logger.info(f"  Response preview: {response_text[:200]}...")
+            logger.info(f"  Response preview (first 300 chars):")
+            logger.info(f"    {response_text[:300]}...")
+            if len(response_text) > 300:
+                logger.info(f"  Response preview (last 200 chars):")
+                logger.info(f"    ...{response_text[-200:]}")
 
-            # Parse response
+            # Check for common error messages
+            error_indicators = ["cannot", "unable to", "error", "failed", "unclear", "not visible", "can't see"]
+            response_lower = response_text.lower()
+            for indicator in error_indicators:
+                if indicator in response_lower:
+                    logger.warning(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ⚠️  Response contains '{indicator}' - may indicate error")
+
+            # Parse response - log the process
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Attempting to extract JSON from response...")
             cleaned_response = self.clean_json_response(response_text)
+
+            if cleaned_response != response_text:
+                logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ✓ JSON extracted ({len(cleaned_response)} chars)")
+                logger.info(f"  Cleaned JSON preview: {cleaned_response[:200]}...")
+            else:
+                logger.warning(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ⚠️  No JSON extraction needed (response is already clean)")
+
+            # Check if it looks like JSON
+            if not (cleaned_response.startswith('{') or cleaned_response.startswith('[')):
+                logger.error(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ❌ Response doesn't look like JSON!")
+                logger.error(f"  Expected to start with '{{' or '[', got: {cleaned_response[:50]}")
+                logger.error(f"  Full response:")
+                logger.error(f"    {response_text}")
+                raise ValueError("Response is not valid JSON")
+
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Parsing JSON...")
             result = json.loads(cleaned_response)
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ✓ JSON parsed successfully!")
 
             detected_plays_list = result.get("detected_plays", [])
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Found 'detected_plays' array with {len(detected_plays_list)} items")
 
             # Convert to dictionary mapping
             detections = {}
+            skipped_low_confidence = 0
+
             for play in detected_plays_list:
                 play_number = play.get("play_number")
                 start_time = play.get("start_time")
@@ -508,11 +639,16 @@ Only include plays you can identify with at least medium confidence."""
 
                 # Only accept medium or high confidence
                 if confidence not in ["medium", "high"]:
+                    skipped_low_confidence += 1
                     continue
 
                 if play_number and start_time is not None and end_time is not None:
                     detections[play_number] = (float(start_time), float(end_time))
-                    logger.info(f"  Play #{play_number}: {start_time:.1f}s - {end_time:.1f}s ({confidence} confidence)")
+                    logger.info(f"  ✓ Play #{play_number}: {start_time:.1f}s - {end_time:.1f}s ({confidence} confidence)")
+
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ✓ Detected {len(detections)} plays!")
+            if skipped_low_confidence > 0:
+                logger.info(f"  Skipped {skipped_low_confidence} plays due to low confidence")
 
             # Calculate cost (rough estimate)
             # Claude Opus 4: $15/MTok input, $75/MTok output
@@ -527,22 +663,38 @@ Only include plays you can identify with at least medium confidence."""
                 "elapsed": elapsed
             }
 
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Batch complete - returning {len(detections)} detections")
+
             return detections, metrics
 
         except json.JSONDecodeError as e:
-            logger.error(f"[DEBUG] [BATCH {batch_idx + 1}] ❌ JSON PARSE FAILED")
-            logger.error(f"[BATCH {batch_idx + 1}] Failed to parse JSON response: {e}")
-            logger.error(f"  Raw response: {response_text[:500]}")
-            logger.error(f"[DEBUG] JSONDecodeError type: {type(e).__name__}")
-            logger.error(f"[DEBUG] JSONDecodeError: {e}")
+            logger.error("="*80)
+            logger.error(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ❌ JSON PARSING FAILED")
+            logger.error("="*80)
+            logger.error(f"[VISION MAPPER] [BATCH {batch_idx + 1}] JSONDecodeError: {e}")
+            logger.error(f"  Error type: {type(e).__name__}")
+            logger.error(f"  Error message: {str(e)}")
+            if hasattr(e, 'lineno') and hasattr(e, 'colno'):
+                logger.error(f"  Error at line {e.lineno}, column {e.colno}")
+            logger.error(f"  Attempted to parse cleaned response:")
+            logger.error(f"    {cleaned_response[:500]}")
+            if 'response_text' in locals():
+                logger.error(f"  Original response text:")
+                logger.error(f"    {response_text}")
+            logger.error("="*80)
             return {}, {"input_tokens": 0, "output_tokens": 0, "cost": 0.0, "elapsed": 0.0}
+
         except Exception as e:
-            logger.error(f"[DEBUG] [BATCH {batch_idx + 1}] ❌ API CALL FAILED")
-            logger.error(f"[BATCH {batch_idx + 1}] API call failed: {e}")
-            logger.error(f"[DEBUG] Exception type: {type(e).__name__}")
-            logger.error(f"[DEBUG] Exception details: {e}")
+            logger.error("="*80)
+            logger.error(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ❌ API CALL OR PROCESSING FAILED")
+            logger.error("="*80)
+            logger.error(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Exception: {e}")
+            logger.error(f"  Exception type: {type(e).__name__}")
+            logger.error(f"  Exception message: {str(e)}")
             import traceback
-            logger.error(f"[DEBUG] Traceback:\n{traceback.format_exc()}")
+            logger.error(f"  Full traceback:")
+            logger.error(traceback.format_exc())
+            logger.error("="*80)
             return {}, {"input_tokens": 0, "output_tokens": 0, "cost": 0.0, "elapsed": 0.0}
 
     def validate_timestamps(
