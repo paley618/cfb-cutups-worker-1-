@@ -43,17 +43,39 @@ class VisionPlayMapper:
         Args:
             api_key: Anthropic API key. If None, will try to import from environment.
         """
+        import os
+
+        logger.info("[DEBUG] [VISION MAPPER] ===== INITIALIZING VISION PLAY MAPPER =====")
+        logger.info(f"[DEBUG] [VISION MAPPER] api_key parameter provided: {api_key is not None}")
+        if api_key:
+            logger.info(f"[DEBUG] [VISION MAPPER] api_key length: {len(api_key)} chars")
+            logger.info(f"[DEBUG] [VISION MAPPER] api_key preview: {api_key[:20]}...")
+        else:
+            logger.warning(f"[DEBUG] [VISION MAPPER] No API key provided to __init__, will check environment")
+            logger.info(f"[DEBUG] [VISION MAPPER] ANTHROPIC_API_KEY in env: {'ANTHROPIC_API_KEY' in os.environ}")
+
         try:
             import anthropic
             self.anthropic = anthropic
+            logger.info(f"[DEBUG] [VISION MAPPER] anthropic library imported successfully")
+
             self.client = anthropic.Anthropic(api_key=api_key)
+            logger.info(f"[DEBUG] [VISION MAPPER] Anthropic client created successfully")
+
             self.model = "claude-opus-4-20250514"  # Latest Opus model with vision
-            logger.info("[VISION MAPPER] Initialized Vision Play Mapper")
+            logger.info(f"[DEBUG] [VISION MAPPER] Model set to: {self.model}")
+            logger.info("[VISION MAPPER] ✓ Initialized Vision Play Mapper successfully")
+
         except ImportError as e:
-            logger.error(f"[VISION MAPPER] Failed to import anthropic library: {e}")
+            logger.error(f"[VISION MAPPER] ❌ Failed to import anthropic library: {e}")
+            logger.error(f"[DEBUG] [VISION MAPPER] ImportError details: {type(e).__name__}: {e}")
             raise
         except Exception as e:
-            logger.error(f"[VISION MAPPER] Failed to initialize Claude client: {e}")
+            logger.error(f"[VISION MAPPER] ❌ Failed to initialize Claude client: {e}")
+            logger.error(f"[DEBUG] [VISION MAPPER] Exception type: {type(e).__name__}")
+            logger.error(f"[DEBUG] [VISION MAPPER] Exception details: {e}")
+            import traceback
+            logger.error(f"[DEBUG] [VISION MAPPER] Traceback:\n{traceback.format_exc()}")
             raise
 
     def get_video_duration(self, video_path: str) -> float:
@@ -97,8 +119,11 @@ class VisionPlayMapper:
         Returns:
             List of (frame_bytes, timestamp) tuples
         """
+        logger.info(f"[DEBUG] [VISION MAPPER] ===== STARTING FRAME EXTRACTION =====")
         logger.info(f"[VISION MAPPER] Starting dense frame extraction")
+        logger.info(f"  Video path: {video_path}")
         logger.info(f"  Interval: {interval_seconds}s between frames")
+        logger.info(f"  Max frames: {max_frames if max_frames else 'unlimited'}")
 
         duration = self.get_video_duration(video_path)
 
@@ -417,13 +442,19 @@ Only include plays you can identify with at least medium confidence."""
         frame_messages = [frame["source"] for frame in frame_data]
 
         try:
+            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] ===== CALLING CLAUDE VISION API =====")
             logger.info(f"[BATCH {batch_idx + 1}] Calling Claude Vision API...")
             logger.info(f"  Frames: {len(frame_messages)}")
             logger.info(f"  Plays: {len(plays)}")
             logger.info(f"  Prompt length: {len(prompt)} chars")
+            logger.info(f"  Model: {self.model}")
+            logger.info(f"  Max tokens: 8000")
+            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] Client type: {type(self.client)}")
+            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] Client initialized: {self.client is not None}")
 
             start_time = time.time()
 
+            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] Making API request now...")
             response = self.client.messages.create(
                 model=self.model,
                 max_tokens=8000,
@@ -447,8 +478,10 @@ Only include plays you can identify with at least medium confidence."""
             # Extract response
             response_text = response.content[0].text.strip()
 
+            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] ✓ API call succeeded!")
             logger.info(f"[BATCH {batch_idx + 1}] API call completed in {elapsed:.1f}s")
             logger.info(f"  Response length: {len(response_text)} chars")
+            logger.info(f"  Response preview: {response_text[:200]}...")
 
             # Parse response
             cleaned_response = self.clean_json_response(response_text)
@@ -488,11 +521,19 @@ Only include plays you can identify with at least medium confidence."""
             return detections, metrics
 
         except json.JSONDecodeError as e:
+            logger.error(f"[DEBUG] [BATCH {batch_idx + 1}] ❌ JSON PARSE FAILED")
             logger.error(f"[BATCH {batch_idx + 1}] Failed to parse JSON response: {e}")
             logger.error(f"  Raw response: {response_text[:500]}")
+            logger.error(f"[DEBUG] JSONDecodeError type: {type(e).__name__}")
+            logger.error(f"[DEBUG] JSONDecodeError: {e}")
             return {}, {"input_tokens": 0, "output_tokens": 0, "cost": 0.0, "elapsed": 0.0}
         except Exception as e:
+            logger.error(f"[DEBUG] [BATCH {batch_idx + 1}] ❌ API CALL FAILED")
             logger.error(f"[BATCH {batch_idx + 1}] API call failed: {e}")
+            logger.error(f"[DEBUG] Exception type: {type(e).__name__}")
+            logger.error(f"[DEBUG] Exception details: {e}")
+            import traceback
+            logger.error(f"[DEBUG] Traceback:\n{traceback.format_exc()}")
             return {}, {"input_tokens": 0, "output_tokens": 0, "cost": 0.0, "elapsed": 0.0}
 
     def validate_timestamps(

@@ -405,19 +405,43 @@ async def dispatch_detection(
     Returns:
         DetectionResult with plays and metadata about which method succeeded
     """
+    import os
+
     logger.info("\n" + "=" * 80)
-    logger.info("[DETECTION DISPATCH] Starting detection with MANDATORY cfbfastR")
+    logger.info("[DEBUG] ===== DETECTION START =====")
     logger.info("=" * 80)
-    logger.info(f"  Configuration:")
-    logger.info(f"    CLAUDE_VISION_ENABLE: {settings.CLAUDE_VISION_ENABLE}")
-    logger.info(f"    Game ID: {game_id}")
-    logger.info(f"    Year: {year}")
-    logger.info(f"    Video path: {video_path}")
-    logger.info(f"\n  NEW DETECTION ORDER:")
-    logger.info(f"    1. cfbfastR (fetch official plays)")
-    logger.info(f"    2. Claude Vision SUPERVISED (if cfbfastR succeeds)")
-    logger.info(f"    3. ESPN fallback (if cfbfastR fails)")
-    logger.info(f"    4. ERROR (if all fail)")
+
+    # STEP 0: Environment & Configuration Verification
+    logger.info("[DEBUG] ENVIRONMENT VERIFICATION:")
+    logger.info(f"  ANTHROPIC_API_KEY present: {'ANTHROPIC_API_KEY' in os.environ}")
+    if 'ANTHROPIC_API_KEY' in os.environ:
+        api_key = os.environ['ANTHROPIC_API_KEY']
+        logger.info(f"  ANTHROPIC_API_KEY length: {len(api_key)} chars")
+        logger.info(f"  ANTHROPIC_API_KEY preview: {api_key[:20]}...")
+    else:
+        logger.error("  ❌ ANTHROPIC_API_KEY NOT SET - Vision will fail!")
+
+    logger.info(f"  settings.anthropic_api_key present: {hasattr(settings, 'anthropic_api_key') and settings.anthropic_api_key is not None}")
+    if hasattr(settings, 'anthropic_api_key') and settings.anthropic_api_key:
+        logger.info(f"  settings.anthropic_api_key length: {len(settings.anthropic_api_key)} chars")
+
+    logger.info("")
+    logger.info("[DEBUG] CONFIGURATION:")
+    logger.info(f"  CLAUDE_VISION_ENABLE: {settings.CLAUDE_VISION_ENABLE}")
+    logger.info(f"  USE_VISION_PLAY_MAPPER: {getattr(settings, 'USE_VISION_PLAY_MAPPER', True)}")
+    logger.info(f"  Game ID: {game_id}")
+    logger.info(f"  Year: {year}")
+    logger.info(f"  Week: {week}")
+    logger.info(f"  Season type: {season_type}")
+    logger.info(f"  Team name: {team_name}")
+    logger.info(f"  Video path: {video_path}")
+    logger.info(f"  Game info: {game_info}")
+    logger.info("")
+    logger.info("[DEBUG] DETECTION ORDER:")
+    logger.info(f"  1. cfbfastR (fetch official plays)")
+    logger.info(f"  2. Claude Vision SUPERVISED (if cfbfastR succeeds)")
+    logger.info(f"  3. ESPN fallback (if cfbfastR fails)")
+    logger.info(f"  4. ERROR (if all fail)")
     logger.info("")
 
     # STEP 1: MANDATORY - Fetch official plays from cfbfastR FIRST
@@ -431,8 +455,14 @@ async def dispatch_detection(
             logger.info(f"[CFBFASTR] Fetching official plays for game_id={game_id}, year={year}")
             official_plays = get_official_plays(str(game_id), year)
 
+            logger.info(f"[DEBUG] After CFBD fetch: {len(official_plays) if official_plays else 0} plays loaded")
             if official_plays and len(official_plays) > 0:
                 logger.info(f"[CFBFASTR] ✓ SUCCESS: Fetched {len(official_plays)} official plays")
+
+                # Log sample play structure
+                sample_play = official_plays[0]
+                logger.info(f"[DEBUG] CFBD play fields: {list(sample_play.keys())}")
+                logger.info(f"[DEBUG] Sample play: {sample_play}")
 
                 # Convert game clock to video timestamps
                 game_start_offset = 900.0  # Default 15 minutes
@@ -446,81 +476,136 @@ async def dispatch_detection(
 
                 valid_timestamps = len([p for p in official_plays if p['video_timestamp'] is not None])
                 logger.info(f"[CFBFASTR] Converted {valid_timestamps}/{len(official_plays)} plays to video timestamps")
+                logger.info(f"[DEBUG] CFBD plays successfully loaded and timestamped")
 
             else:
                 logger.warning(f"[CFBFASTR] ✗ FAILED: No official plays returned")
+                logger.warning(f"[DEBUG] official_plays is None or empty")
                 official_plays = None
 
         except Exception as e:
             logger.error(f"[CFBFASTR] ✗ FAILED: {type(e).__name__}: {e}")
+            logger.error(f"[DEBUG] Exception details:")
+            import traceback
+            logger.error(f"[DEBUG] {traceback.format_exc()}")
             official_plays = None
     else:
         logger.warning(f"[CFBFASTR] ✗ SKIPPED: Missing game_id={game_id} or year={year}")
+        logger.warning(f"[DEBUG] Cannot fetch CFBD plays without both game_id and year")
         official_plays = None
+
+    logger.info(f"[DEBUG] Post-CFBD status: official_plays={'LOADED' if official_plays else 'NONE'} ({len(official_plays) if official_plays else 0} plays)")
+    logger.info("")
 
     # STEP 2: If cfbfastR succeeded, use Vision Play Mapper (NEW) or Claude Vision (OLD)
     vision_enabled = settings.CLAUDE_VISION_ENABLE and settings.anthropic_api_key
     use_new_vision_mapper = getattr(settings, 'USE_VISION_PLAY_MAPPER', True)  # Default to new approach
 
+    logger.info("[DEBUG] ===== VISION DECISION POINT =====")
+    logger.info(f"[DEBUG] official_plays available: {official_plays is not None} ({len(official_plays) if official_plays else 0} plays)")
+    logger.info(f"[DEBUG] vision_enabled: {vision_enabled}")
+    logger.info(f"[DEBUG]   - CLAUDE_VISION_ENABLE: {settings.CLAUDE_VISION_ENABLE}")
+    logger.info(f"[DEBUG]   - settings.anthropic_api_key exists: {settings.anthropic_api_key is not None}")
+    logger.info(f"[DEBUG] use_new_vision_mapper: {use_new_vision_mapper}")
+    logger.info("")
+
     if official_plays and vision_enabled:
         if use_new_vision_mapper:
             logger.info(f"[STEP 2] cfbfastR succeeded → Using Vision Play Mapper (DENSE SAMPLING)")
+            logger.info(f"[DEBUG] ===== ATTEMPTING VISION PLAY MAPPER =====")
+            logger.info(f"[DEBUG] Calling vision_play_mapper with {len(official_plays)} CFBD plays")
+            logger.info(f"[DEBUG] Video path: {video_path}")
+            logger.info(f"[DEBUG] Game info: {game_info}")
 
-            result = await try_vision_play_mapper(
-                video_path=video_path,
-                game_info=game_info,
-                settings=settings,
-                cfbd_plays=official_plays,
-            )
+            try:
+                result = await try_vision_play_mapper(
+                    video_path=video_path,
+                    game_info=game_info,
+                    settings=settings,
+                    cfbd_plays=official_plays,
+                )
 
-            if result:
-                logger.info(f"[DISPATCH] ✓ SUCCESS: Vision Play Mapper detected {len(result)} plays")
-                logger.info(f"[DISPATCH] Detection rate: {result.metadata.get('detection_rate', 0):.1f}%")
-                logger.info(f"[DISPATCH] Expected accuracy: 70-90%+ (vision-based semantic understanding)")
-                return result
+                logger.info(f"[DEBUG] Vision Play Mapper returned: {len(result.plays) if result and result.plays else 0} plays")
+                logger.info(f"[DEBUG] Vision result detection_method: {result.detection_method if result else 'NONE'}")
+                logger.info(f"[DEBUG] Vision result metadata: {result.metadata if result else 'NONE'}")
 
-            logger.warning("[DISPATCH] Vision Play Mapper returned no plays, falling back to old Claude Vision...")
+                if result:
+                    logger.info(f"[DISPATCH] ✓ SUCCESS: Vision Play Mapper detected {len(result)} plays")
+                    logger.info(f"[DISPATCH] Detection rate: {result.metadata.get('detection_rate', 0):.1f}%")
+                    logger.info(f"[DISPATCH] Expected accuracy: 70-90%+ (vision-based semantic understanding)")
+                    logger.info(f"[DEBUG] ===== RETURNING VISION PLAY MAPPER RESULT =====")
+                    return result
+
+                logger.warning("[DISPATCH] Vision Play Mapper returned no plays, falling back to old Claude Vision...")
+
+            except Exception as e:
+                logger.error(f"[DEBUG] Vision Play Mapper FAILED with exception: {e}")
+                logger.error(f"[DEBUG] Exception type: {type(e).__name__}")
+                import traceback
+                logger.error(f"[DEBUG] Traceback:\n{traceback.format_exc()}")
+                logger.warning("[DISPATCH] Vision Play Mapper failed, falling back to old Claude Vision...")
 
             # Fallback to old Claude Vision if new mapper fails
-            result = await try_claude_vision_supervised(
-                video_path=video_path,
-                game_info=game_info,
-                settings=settings,
-                official_plays=official_plays,
-                game_start_offset=900.0,
-            )
+            logger.info(f"[DEBUG] Attempting old Claude Vision SUPERVISED as fallback...")
 
-            if result:
-                logger.info(f"[DISPATCH] ✓ SUCCESS: Claude Vision SUPERVISED detected {len(result)} plays")
-                logger.info(f"[DISPATCH] Accuracy: ~90%+ (supervised with official plays)")
-                return result
+            try:
+                result = await try_claude_vision_supervised(
+                    video_path=video_path,
+                    game_info=game_info,
+                    settings=settings,
+                    official_plays=official_plays,
+                    game_start_offset=900.0,
+                )
+
+                logger.info(f"[DEBUG] Claude Vision SUPERVISED returned: {len(result.plays) if result and result.plays else 0} plays")
+
+                if result:
+                    logger.info(f"[DISPATCH] ✓ SUCCESS: Claude Vision SUPERVISED detected {len(result)} plays")
+                    logger.info(f"[DISPATCH] Accuracy: ~90%+ (supervised with official plays)")
+                    return result
+
+            except Exception as e:
+                logger.error(f"[DEBUG] Claude Vision SUPERVISED FAILED: {e}")
+                import traceback
+                logger.error(f"[DEBUG] Traceback:\n{traceback.format_exc()}")
 
             logger.warning("[DISPATCH] Both vision methods failed, falling back to ESPN...")
 
         else:
             logger.info(f"[STEP 2] cfbfastR succeeded → Using Claude Vision SUPERVISED mode (OLD)")
+            logger.info(f"[DEBUG] use_new_vision_mapper=False, using old approach")
 
-            result = await try_claude_vision_supervised(
-                video_path=video_path,
-                game_info=game_info,
-                settings=settings,
-                official_plays=official_plays,
-                game_start_offset=900.0,
-            )
+            try:
+                result = await try_claude_vision_supervised(
+                    video_path=video_path,
+                    game_info=game_info,
+                    settings=settings,
+                    official_plays=official_plays,
+                    game_start_offset=900.0,
+                )
 
-            if result:
-                logger.info(f"[DISPATCH] ✓ SUCCESS: Claude Vision SUPERVISED detected {len(result)} plays")
-                logger.info(f"[DISPATCH] Accuracy: ~90%+ (supervised with official plays)")
-                return result
+                if result:
+                    logger.info(f"[DISPATCH] ✓ SUCCESS: Claude Vision SUPERVISED detected {len(result)} plays")
+                    logger.info(f"[DISPATCH] Accuracy: ~90%+ (supervised with official plays)")
+                    return result
+
+            except Exception as e:
+                logger.error(f"[DEBUG] Claude Vision SUPERVISED FAILED: {e}")
+                import traceback
+                logger.error(f"[DEBUG] Traceback:\n{traceback.format_exc()}")
 
             logger.warning("[DISPATCH] Claude Vision SUPERVISED returned no plays, falling back to ESPN...")
 
     elif official_plays and not vision_enabled:
         logger.warning("[STEP 2] cfbfastR succeeded but Claude Vision is disabled")
+        logger.warning(f"[DEBUG] VISION DISABLED - Reason:")
+        logger.warning(f"[DEBUG]   - CLAUDE_VISION_ENABLE={settings.CLAUDE_VISION_ENABLE}")
+        logger.warning(f"[DEBUG]   - anthropic_api_key exists={settings.anthropic_api_key is not None}")
         logger.warning("[DISPATCH] Falling back to ESPN...")
 
     else:
         logger.warning("[STEP 2] cfbfastR failed → Cannot use Vision methods (no official plays)")
+        logger.warning(f"[DEBUG] Cannot run Vision - official_plays={official_plays is not None}, vision_enabled={vision_enabled}")
         logger.info("[DISPATCH] Falling back to ESPN...")
 
     # STEP 3: ESPN fallback (if cfbfastR or Claude failed)
