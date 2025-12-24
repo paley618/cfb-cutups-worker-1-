@@ -512,17 +512,18 @@ async def dispatch_detection(
     if official_plays and vision_enabled:
         if use_new_vision_mapper:
             logger.info(f"[STEP 2] cfbfastR succeeded → Using Vision Play Mapper (DENSE SAMPLING)")
-            logger.info(f"[DEBUG] ===== ATTEMPTING VISION PLAY MAPPER =====")
-            logger.info(f"[DEBUG] Calling vision_play_mapper with {len(official_plays)} CFBD plays")
-            logger.info(f"[DEBUG] Video path: {video_path}")
-            logger.info(f"[DEBUG] Game info: {game_info}")
 
             try:
-                result = await try_vision_play_mapper(
-                    video_path=video_path,
-                    game_info=game_info,
-                    settings=settings,
-                    cfbd_plays=official_plays,
+                import asyncio
+                # Vision Play Mapper has 10-minute timeout total (covers all batches and frame extraction)
+                result = await asyncio.wait_for(
+                    try_vision_play_mapper(
+                        video_path=video_path,
+                        game_info=game_info,
+                        settings=settings,
+                        cfbd_plays=official_plays,
+                    ),
+                    timeout=600.0  # 10 minutes max
                 )
 
                 logger.info(f"[DEBUG] Vision Play Mapper returned: {len(result.plays) if result and result.plays else 0} plays")
@@ -538,6 +539,9 @@ async def dispatch_detection(
 
                 logger.warning("[DISPATCH] Vision Play Mapper returned no plays, falling back to old Claude Vision...")
 
+            except asyncio.TimeoutError:
+                logger.error("[DISPATCH] Vision Play Mapper exceeded 10-minute timeout, falling back to ESPN")
+                logger.warning("[DISPATCH] Consider reducing frame interval or batch size if timeouts persist")
             except Exception as e:
                 logger.error(f"[DEBUG] Vision Play Mapper FAILED with exception: {e}")
                 logger.error(f"[DEBUG] Exception type: {type(e).__name__}")
