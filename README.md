@@ -247,3 +247,4 @@ Check `/jobs/<job_id>` for real-time progress, including percent downloaded and 
 6. **GitHub Actions token (optional)** – If you rely on CI to trigger deploys, store a `RAILWAY_TOKEN` secret in your GitHub repo or org with access to this Railway project.
 
 With these steps in place you can move from clone to production cutups without chasing hidden configuration.
+# Redeploy trigger - Vision Play Mapper timeout fixes
