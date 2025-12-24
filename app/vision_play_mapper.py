@@ -59,7 +59,7 @@ class VisionPlayMapper:
             self.anthropic = anthropic
             logger.info(f"[DEBUG] [VISION MAPPER] anthropic library imported successfully")
 
-            self.client = anthropic.Anthropic(api_key=api_key)
+            self.client = anthropic.Anthropic(api_key=api_key, timeout=300.0)
             logger.info(f"[DEBUG] [VISION MAPPER] Anthropic client created successfully")
 
             self.model = "claude-opus-4-20250514"  # Latest Opus model with vision
@@ -171,8 +171,11 @@ class VisionPlayMapper:
                         frame_bytes = f.read()
                         frames.append((frame_bytes, timestamp))
 
-                    if (i + 1) % 100 == 0:
-                        logger.info(f"  Extracted {i + 1}/{num_frames} frames...")
+                    if (i + 1) % 50 == 0:  # Log more frequently (every 50 instead of 100)
+                        pct = (i + 1) / num_frames * 100
+                        logger.info(f"[FRAME EXTRACTION] {i + 1}/{num_frames} ({pct:.1f}%) frames extracted")
+                    if (i + 1) % 200 == 0:  # More detailed log every 200 frames
+                        logger.info(f"[FRAME EXTRACTION] Progress checkpoint: {i + 1}/{num_frames} - continuing...")
 
                 except subprocess.TimeoutExpired:
                     logger.warning(f"  Timeout extracting frame at {timestamp:.1f}s")
@@ -396,12 +399,15 @@ class VisionPlayMapper:
 
         # Build prompt
         video_duration = frame_data[-1]["timestamp"] if frame_data else 0
+        # Calculate frame interval for prompt
+        frame_interval_str = f"{frame_data[1]['timestamp'] - frame_data[0]['timestamp']:.1f}s" if len(frame_data) > 1 else "N/A"
+
         prompt = f"""You are analyzing a college football game video to identify when specific plays occur.
 
 {game_context}
 Video duration: {video_duration:.1f} seconds (~{video_duration/60:.0f} minutes)
 
-I'm providing you with {len(frame_data)} frames sampled every ~{frame_data[1]['timestamp'] - frame_data[0]['timestamp']:.1f}s if len(frame_data) > 1 else 'N/A'} from the video:
+I'm providing you with {len(frame_data)} frames sampled every ~{frame_interval_str} from the video:
 
 {frame_timeline}
 
@@ -442,19 +448,22 @@ Only include plays you can identify with at least medium confidence."""
         frame_messages = [frame["source"] for frame in frame_data]
 
         try:
-            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] ===== CALLING CLAUDE VISION API =====")
             logger.info(f"[BATCH {batch_idx + 1}] Calling Claude Vision API...")
             logger.info(f"  Frames: {len(frame_messages)}")
             logger.info(f"  Plays: {len(plays)}")
             logger.info(f"  Prompt length: {len(prompt)} chars")
-            logger.info(f"  Model: {self.model}")
-            logger.info(f"  Max tokens: 8000")
-            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] Client type: {type(self.client)}")
-            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] Client initialized: {self.client is not None}")
+
+            # Estimate payload size
+            frame_bytes_estimate = sum(len(f["data"]) for f in frame_data) if frame_data else 0
+            frame_mb = frame_bytes_estimate / (1024 * 1024)
+            logger.info(f"[BATCH {batch_idx + 1}] Uploading {len(frame_messages)} frames (~{frame_mb:.1f}MB total)")
 
             start_time = time.time()
 
-            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] Making API request now...")
+            # Mark API call start - if this logs but next line doesn't, API call is hanging
+            logger.info(f"[BATCH {batch_idx + 1}] MAKING API REQUEST NOW (watch for response)...")
+            api_call_start = time.time()
+
             response = self.client.messages.create(
                 model=self.model,
                 max_tokens=8000,
@@ -473,13 +482,13 @@ Only include plays you can identify with at least medium confidence."""
                 ]
             )
 
+            api_call_elapsed = time.time() - api_call_start
             elapsed = time.time() - start_time
 
             # Extract response
             response_text = response.content[0].text.strip()
 
-            logger.info(f"[DEBUG] [BATCH {batch_idx + 1}] ✓ API call succeeded!")
-            logger.info(f"[BATCH {batch_idx + 1}] API call completed in {elapsed:.1f}s")
+            logger.info(f"[BATCH {batch_idx + 1}] ✓ API request completed in {api_call_elapsed:.1f}s (total: {elapsed:.1f}s)")
             logger.info(f"  Response length: {len(response_text)} chars")
             logger.info(f"  Response preview: {response_text[:200]}...")
 
