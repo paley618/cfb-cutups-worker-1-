@@ -27,6 +27,7 @@ from .packager import concat_clips_to_mp4
 from .bucketize import build_guided_windows
 from .monitor import JobMonitor
 from .play_types import get_play_type_name
+from .detection_dispatch import try_vision_play_mapper
 
 logger = logging.getLogger(__name__)
 
@@ -1124,230 +1125,150 @@ class JobRunner:
                 logger.info("[CFBD CONVERSION CHECK] Checking if CFBD conversion should run:")
                 logger.info(f"  cfbd_plays: {len(cfbd_plays) if cfbd_plays else 0} plays")
                 logger.info(f"  used_detection_method: {used_detection_method}")
-                logger.info(f"  Vision-based methods (skip DTW): {vision_based_methods}")
+                logger.info(f"  Vision-based methods (skip conversion): {vision_based_methods}")
                 logger.info(f"  Condition: cfbd_plays={bool(cfbd_plays)} AND used_detection_method not in {vision_based_methods} = {used_detection_method not in vision_based_methods}")
                 logger.info(f"  Will run CFBD conversion: {bool(cfbd_plays and used_detection_method not in vision_based_methods)}")
                 logger.info("=" * 80)
                 if cfbd_plays and used_detection_method not in vision_based_methods:
                     self._ensure_not_cancelled(job_id, cancel_ev)
+
+                    # NEW APPROACH: Use Claude Vision to map CFBD plays directly
+                    logger.info("=" * 80)
+                    logger.info("[CFBD VISION MAPPING] Starting Vision-based play mapping for CFBD plays")
+                    logger.info(f"[CFBD VISION MAPPING] Input: {len(cfbd_plays)} CFBD plays")
+                    logger.info(f"[CFBD VISION MAPPING] Why: DTW/OCR is unreliable - Vision can directly locate plays")
+                    logger.info("=" * 80)
+
                     self._set_stage(
                         job_id,
                         "detecting",
                         pct=58.0,
-                        detail="OCR: scorebug (Tesseract)",
+                        detail="Vision: Mapping CFBD plays",
                         eta=self._eta(job_id),
                     )
-                    _heartbeat("detecting", pct=58.0, detail="OCR: scorebug (Tesseract)")
-                    ocr_engine = "tesseract" if TESSERACT_READY else "template"
-                    raw_ocr: List[Tuple[float, int, int]] = []
-                    if TESSERACT_READY:
-                        try:
-                            raw_ocr = await asyncio.to_thread(
-                                sample_tesseract_series, video_path, roi_for_ocr
-                            )
-                        except Exception:
-                            logger.exception(
-                                "tesseract_ocr_failed", extra={"job_id": job_id}
-                            )
-                    if not raw_ocr:
-                        self._set_stage(
-                            job_id,
-                            "detecting",
-                            pct=60.0,
-                            detail="OCR fallback: template",
-                            eta=self._eta(job_id),
-                        )
-                        _heartbeat("detecting", pct=60.0, detail="OCR fallback: template")
-                        try:
-                            raw_ocr = await asyncio.to_thread(
-                                sample_scorebug_series, video_path
-                            )
-                        except Exception:
-                            raw_ocr = []
-                        if raw_ocr:
-                            ocr_engine = "template"
-                    metrics["ocr_samples"] = len(raw_ocr)
-                    cfbd_summary["ocr_samples"] = metrics["ocr_samples"]
-                    cfbd_summary["ocr_engine"] = ocr_engine
-                    ocr_series = list(raw_ocr)
+                    _heartbeat("detecting", pct=58.0, detail="Vision: Mapping CFBD plays")
 
-                    per_period: Dict[int, List[Tuple[float, int]]] = {
-                        1: [],
-                        2: [],
-                        3: [],
-                        4: [],
-                    }
-                    for ts, period, clock in raw_ocr:
-                        per_period.setdefault(int(period), []).append(
-                            (float(ts), int(clock))
+                    # Initialize variables
+                    ocr_series: List[Tuple[float, int, int]] = []
+                    vision_mapping_success = False
+
+                    try:
+                        # Call Vision Play Mapper to get timestamped plays
+                        game_info_for_vision = {
+                            "game_id": gid if gid else 0,
+                            "away_team": away_team if away_team else None,
+                            "home_team": home_team if home_team else None,
+                        }
+
+                        vision_result = await try_vision_play_mapper(
+                            video_path=video_path,
+                            game_info=game_info_for_vision,
+                            settings=settings,
+                            cfbd_plays=cfbd_plays,
                         )
 
-                    mapping_dtw: Dict[int, Dict[str, float]] = {}
-                    for period, samples in per_period.items():
-                        if len(samples) < settings.ALIGN_MIN_SAMPLES_PER_PERIOD:
-                            continue
-                        fitted = fit_period_dtw(
-                            samples, radius=settings.ALIGN_DTW_RADIUS
-                        )
-                        if fitted:
-                            mapping_dtw[period] = fitted
+                        if vision_result and vision_result.plays and len(vision_result.plays) > 0:
+                            vision_mapping_success = True
+                            mapped_plays = vision_result.plays
 
-                    cfbd_summary["mapping"] = "dtw" if mapping_dtw else "fallback"
-                    cfbd_summary["align_method"] = cfbd_summary["mapping"]
-                    cfbd_summary["dtw_periods"] = sorted(mapping_dtw.keys())
-
-                    logger.info("=" * 80)
-                    logger.info("[DTW ALIGNMENT CHECK] Checking if DTW alignment succeeded:")
-                    logger.info(f"  mapping_dtw periods: {sorted(mapping_dtw.keys()) if mapping_dtw else []}")
-                    logger.info(f"  DTW succeeded: {bool(mapping_dtw)}")
-                    logger.info(f"  Will proceed with CFBD → window conversion: {bool(mapping_dtw)}")
-                    if not mapping_dtw:
-                        logger.warning(f"  ⚠️  DTW alignment FAILED - CFBD conversion will be SKIPPED")
-                        logger.warning(f"  ⚠️  This means 0 CFBD windows despite having {len(cfbd_plays)} CFBD plays!")
-                    logger.info("=" * 80)
-
-                    if mapping_dtw:
-                        def _period_clock_to_video(period_value: int, clock_repr: str) -> float:
-                            seconds_val = _clock_str_to_seconds(clock_repr)
-                            if seconds_val is None:
-                                raise ValueError("clock_parse")
-                            mapped_val = map_clock(mapping_dtw, int(period_value), int(seconds_val))
-                            if mapped_val is None:
-                                raise ValueError("clock_map")
-                            return float(mapped_val)
-
-                        monitor.touch(stage="detecting", detail="CFBD: bucketizing")
-                        try:
-                            # CRITICAL MARKER: CFBD window conversion starting
                             logger.info("=" * 80)
-                            logger.info(f"[CFBD CONVERT] ⏱️  STARTING CONVERSION OF CFBD PLAYS TO WINDOWS")
-                            logger.info(f"[CFBD CONVERT] Input: {len(cfbd_plays)} CFBD plays")
-                            logger.info(f"[CFBD CONVERT] Team: {team or 'Unknown'}")
-                            logger.info(f"[CFBD CONVERT] Timestamp: {time.strftime('%H:%M:%S')}")
+                            logger.info(f"[CFBD VISION MAPPING] ✓ SUCCESS: Mapped {len(mapped_plays)}/{len(cfbd_plays)} plays")
+                            logger.info(f"[CFBD VISION MAPPING] Detection rate: {len(mapped_plays)/len(cfbd_plays)*100:.1f}%")
                             logger.info("=" * 80)
 
-                            logger.info(f"[WINDOW COLLAPSE DEBUG] Step 2: Calling build_guided_windows with {len(cfbd_plays)} cfbd_plays")
+                            # Update metadata
+                            cfbd_summary["mapping"] = "vision"
+                            cfbd_summary["align_method"] = "vision"
+                            cfbd_summary["vision_mapped_plays"] = len(mapped_plays)
+                            cfbd_summary["vision_detection_rate"] = f"{len(mapped_plays)/len(cfbd_plays)*100:.1f}%"
+
+                        else:
+                            logger.warning("=" * 80)
+                            logger.warning("[CFBD VISION MAPPING] ⚠️ Vision mapping returned no plays")
+                            logger.warning("[CFBD VISION MAPPING] Will skip CFBD conversion")
+                            logger.warning("=" * 80)
+
+                    except Exception as e:
+                        logger.error("=" * 80)
+                        logger.error(f"[CFBD VISION MAPPING] ❌ Vision mapping failed: {e}")
+                        logger.error("[CFBD VISION MAPPING] Will skip CFBD conversion")
+                        logger.error("=" * 80)
+                        logger.exception("vision_mapping_failed", extra={"job_id": job_id})
+
+                    if vision_mapping_success:
+                        monitor.touch(stage="detecting", detail="CFBD Vision: Creating windows")
+                        try:
+                            # CRITICAL MARKER: CFBD Vision window conversion starting
+                            logger.info("=" * 80)
+                            logger.info(f"[CFBD VISION CONVERT] ⏱️  CONVERTING VISION-MAPPED PLAYS TO WINDOWS")
+                            logger.info(f"[CFBD VISION CONVERT] Input: {len(mapped_plays)} Vision-mapped plays")
+                            logger.info(f"[CFBD VISION CONVERT] Method: Direct timestamp extraction (no DTW needed)")
+                            logger.info(f"[CFBD VISION CONVERT] Timestamp: {time.strftime('%H:%M:%S')}")
+                            logger.info("=" * 80)
 
                             convert_start_time = time.time()
 
-                            bucketed = build_guided_windows(
-                                cfbd_plays,
-                                team_name=team or "",
-                                period_clock_to_video=_period_clock_to_video,
-                                pre_pad=pre_pad,
-                                post_pad=post_pad,
-                            )
+                            # Extract windows directly from Vision-mapped plays (they already have timestamps)
+                            vision_windows = []
+                            for play in mapped_plays:
+                                start_time = float(play.get("timestamp", 0))
+                                end_time = float(play.get("end_timestamp", 0))
+
+                                if start_time > 0 and end_time > start_time:
+                                    vision_windows.append((start_time, end_time))
 
                             convert_elapsed = time.time() - convert_start_time
 
-                            total_bucketed = sum(len(items) for items in bucketed.values())
-
                             logger.info("=" * 80)
-                            logger.info(f"[CFBD CONVERT] ✓ CONVERSION COMPLETE in {convert_elapsed:.1f}s")
-                            logger.info(f"[CFBD CONVERT] Input plays: {len(cfbd_plays)}")
-                            logger.info(f"[CFBD CONVERT] Output windows: {total_bucketed}")
-                            logger.info(f"[CFBD CONVERT] Conversion rate: {total_bucketed}/{len(cfbd_plays)} ({total_bucketed/len(cfbd_plays)*100 if len(cfbd_plays) > 0 else 0:.1f}%)")
-                            logger.info(f"[CFBD CONVERT] Timestamp: {time.strftime('%H:%M:%S')}")
+                            logger.info(f"[CFBD VISION CONVERT] ✓ CONVERSION COMPLETE in {convert_elapsed:.1f}s")
+                            logger.info(f"[CFBD VISION CONVERT] Input plays: {len(mapped_plays)}")
+                            logger.info(f"[CFBD VISION CONVERT] Output windows: {len(vision_windows)}")
+                            logger.info(f"[CFBD VISION CONVERT] Conversion rate: {len(vision_windows)}/{len(mapped_plays)} ({len(vision_windows)/len(mapped_plays)*100 if len(mapped_plays) > 0 else 0:.1f}%)")
+                            logger.info(f"[CFBD VISION CONVERT] Timestamp: {time.strftime('%H:%M:%S')}")
                             logger.info("=" * 80)
-                            logger.info(f"[WINDOW COLLAPSE DEBUG] Step 2 Result: build_guided_windows returned {total_bucketed} total windows")
-                            for bucket_name, items in bucketed.items():
-                                logger.info(f"  {bucket_name}: {len(items)} windows")
 
                             # WARNING if 0 windows from non-zero plays
-                            if total_bucketed == 0 and len(cfbd_plays) > 0:
+                            if len(vision_windows) == 0 and len(mapped_plays) > 0:
                                 logger.warning("=" * 80)
-                                logger.warning(f"[CFBD CONVERT] ⚠️  WARNING: 0 WINDOWS FROM {len(cfbd_plays)} PLAYS!")
-                                logger.warning(f"[CFBD CONVERT] This indicates CFBD conversion failed completely")
-                                logger.warning(f"[CFBD CONVERT] Likely causes:")
-                                logger.warning(f"  - Team name mismatch")
-                                logger.warning(f"  - Clock conversion issues")
-                                logger.warning(f"  - All plays filtered out")
+                                logger.warning(f"[CFBD VISION CONVERT] ⚠️  WARNING: 0 WINDOWS FROM {len(mapped_plays)} PLAYS!")
+                                logger.warning(f"[CFBD VISION CONVERT] This indicates Vision timestamp extraction failed")
                                 logger.warning("=" * 80)
+
+                            # Store windows in guided_windows for downstream processing
+                            # Vision plays already have accurate timestamps, so we use them directly
+                            guided_windows = list(vision_windows)
+                            cfbd_summary["clips"] = len(vision_windows)
+                            cfbd_summary["vision_windows"] = len(vision_windows)
+
+                            # Update detection method to reflect Vision usage
+                            used_detection_method = "vision_play_mapper"
+
+                            logger.info(f"[CFBD VISION CONVERT] Stored {len(guided_windows)} windows for downstream processing")
+                            logger.info(f"[CFBD VISION CONVERT] Updated used_detection_method to: {used_detection_method}")
+
                         except Exception:
                             logger.exception(
-                                "cfbd_bucketize_failed", extra={"job_id": job_id}
+                                "cfbd_vision_convert_failed", extra={"job_id": job_id}
                             )
-                            bucketed = {
-                                "team_offense": [],
-                                "opp_offense": [],
-                                "special_teams": [],
-                            }
-
-                        windows_with_meta = []
-                        for bucket_name, items in bucketed.items():
-                            for start, end, score_weight, play in items:
-                                meta: Dict[str, Any] = {
-                                    "bucket": bucket_name,
-                                    "score": float(score_weight),
-                                    "source": "cfbd",
-                                }
-                                if isinstance(play, dict):
-                                    meta["play"] = play
-                                windows_with_meta.append(
-                                    (
-                                        max(0.0, float(start)),
-                                        max(0.0, float(end)),
-                                        meta,
-                                    )
-                                )
-
-                        pre_merge_guided = [
-                            (round(entry[0], 3), round(entry[1], 3))
-                            for entry in windows_with_meta
-                        ]
-                        guided_windows = list(pre_merge_guided)
-                        cfbd_summary["clips"] = len(windows_with_meta)
-
-                        logger.info(f"[WINDOW COLLAPSE DEBUG] Step 3: Created {len(windows_with_meta)} windows_with_meta from bucketed")
-                        logger.info(f"[WINDOW COLLAPSE DEBUG] Step 3: cfbd_used was True, now setting to bool(windows_with_meta) = {bool(windows_with_meta)}")
-
-                        cfbd_used = bool(windows_with_meta)
-                        if cfbd_used:
-                            # Determine if using CFBD or ESPN fallback
-                            if espn_games_count > 0:
-                                actual_data_source = "ESPN"
-                                logger.info(f"[CFBD DIAGNOSTICS] Using ESPN as data source: {len(windows_with_meta)} clips")
-                            else:
-                                actual_data_source = "CFBD"
-                                logger.info(f"[CFBD DIAGNOSTICS] Using CFBD as data source: {len(windows_with_meta)} clips")
-                        if cfbd_used:
-                            self._set_stage(
-                                job_id,
-                                "detecting",
-                                pct=80.0,
-                                detail=f"CFBD aligned {len(windows_with_meta)} plays",
-                                eta=self._eta(job_id),
-                            )
-                            _heartbeat(
-                                "detecting",
-                                pct=80.0,
-                                detail=f"CFBD aligned {len(windows_with_meta)} plays",
-                            )
-                        else:
-                            self._set_stage(
-                                job_id,
-                                "detecting",
-                                pct=70.0,
-                                detail="CFBD mapping produced 0 clips; using fallback",
-                                eta=self._eta(job_id),
-                            )
-                            _heartbeat(
-                                "detecting",
-                                pct=70.0,
-                                detail="CFBD mapping produced 0 clips; using fallback",
-                            )
+                            guided_windows = []
                     else:
+                        logger.warning("=" * 80)
+                        logger.warning(f"[CFBD VISION CONVERT] ⚠️  SKIPPED: Vision mapping did not succeed")
+                        logger.warning(f"[CFBD VISION CONVERT] Result: 0 CFBD windows despite having {len(cfbd_plays)} CFBD plays")
+                        logger.warning("=" * 80)
+                        guided_windows = []
+
                         self._set_stage(
                             job_id,
                             "detecting",
-                            pct=65.0,
-                            detail="CFBD mapping unavailable; using fallback",
+                            pct=70.0,
+                            detail="CFBD Vision mapping failed; using fallback",
                             eta=self._eta(job_id),
                         )
                         _heartbeat(
                             "detecting",
-                            pct=65.0,
-                            detail="CFBD mapping unavailable; using fallback",
+                            pct=70.0,
+                            detail="CFBD Vision mapping failed; using fallback",
                         )
                 elif cfbd_summary.get("requested"):
                     self._ensure_not_cancelled(job_id, cancel_ev)
