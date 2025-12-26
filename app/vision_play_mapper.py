@@ -467,20 +467,52 @@ class VisionPlayMapper:
             for i, frame in enumerate(frame_data)
         ])
 
-        # Build play list for prompt
-        play_list = "\n".join([
-            f"Play #{play['play_number']}: Q{play.get('quarter', '?')} "
-            f"{play.get('clock_minutes', '?')}:{play.get('clock_seconds', 0):02d} - "
-            f"{play.get('play_text', 'Unknown play')}"
-            for play in plays
-        ])
-
-        # Build prompt
+        # Build enhanced play list with CFBD data
         video_duration = frame_data[-1]["timestamp"] if frame_data else 0
+        play_descriptions = []
+
+        for play in plays:
+            quarter = play.get('quarter', 1)
+            clock_minutes = play.get('clock_minutes', 0)
+            clock_seconds = play.get('clock_seconds', 0)
+
+            # Calculate expected location in video
+            # Each quarter is ~25% of the video
+            # Convert game clock to seconds into quarter (counting down from 15:00)
+            quarter_duration = video_duration / 4
+            game_clock_seconds = clock_minutes * 60 + clock_seconds
+            seconds_into_quarter = (15 * 60) - game_clock_seconds  # Clock counts down
+
+            expected_video_time = ((quarter - 1) * quarter_duration) + (seconds_into_quarter / (15 * 60) * quarter_duration)
+            expected_pct = (expected_video_time / video_duration) * 100 if video_duration > 0 else 0
+
+            # Build rich play description
+            play_type = play.get('play_type', 'Unknown')
+            description = play.get('play_text', play_type)
+            offense_team = play.get('offense', play.get('posteam', 'Unknown'))
+            defense_team = play.get('defense', play.get('defteam', 'Unknown'))
+
+            play_desc = f"""
+Play #{play['play_number']}:
+  Type: {play_type}
+  Description: {description}
+  Offense: {offense_team}
+  Defense: {defense_team}
+  Quarter: Q{quarter}
+  Game Clock: {clock_minutes}:{clock_seconds:02d}
+  Expected Location: ~{expected_pct:.0f}% through video (~{expected_video_time:.0f}s)
+"""
+            play_descriptions.append(play_desc)
+
+        play_list = "\n".join(play_descriptions)
+
+        # Build prompt - CFBD-guided location (not blind detection)
         # Calculate frame interval for prompt
         frame_interval_str = f"{frame_data[1]['timestamp'] - frame_data[0]['timestamp']:.1f}s" if len(frame_data) > 1 else "N/A"
 
-        prompt = f"""You are analyzing a college football game video to identify when specific plays occur.
+        prompt = f"""You are analyzing a college football game video.
+I have official play-by-play data from this game from the College Football Database (CFBD).
+Your task is to find the exact timestamp when each play occurs in the video.
 
 {game_context}
 Video duration: {video_duration:.1f} seconds (~{video_duration/60:.0f} minutes)
@@ -489,21 +521,27 @@ I'm providing you with {len(frame_data)} frames sampled every ~{frame_interval_s
 
 {frame_timeline}
 
-TASK: Find the following {len(plays)} plays in the video and report their START and END timestamps:
+IMPORTANT: These are KNOWN plays from official game data. I need you to LOCATE them in the video, not detect unknown plays.
+
+Here are the {len(plays)} plays that occurred in this game:
 
 {play_list}
 
+TASK: For each play above, look at the video frames and find when it occurs.
+
 For each play:
-1. Look through the frames to understand the game progression
-2. Identify where the play occurs (you may need to infer between frames)
-3. Report the START timestamp (when the play begins - typically the snap)
-4. Report the END timestamp (when the play ends - whistle, tackle, completion, TD, etc.)
+1. Use the "Expected Location" as a starting point - the play should be near that timestamp
+2. Look at frames around that location to identify the play visually
+3. Find the START timestamp (when the play begins - typically the snap, kickoff, or start of action)
+4. Find the END timestamp (when the play ends - whistle, tackle, completion, TD, out of bounds, etc.)
 5. Provide a confidence level (high/medium/low)
 
-IMPORTANT:
+GUIDELINES:
 - Start times should be when the play BEGINS (snap, kickoff, etc.)
 - End times should be when the play ENDS (whistle, tackle, etc.)
-- If a play occurs between two frames, estimate the timestamp based on the frame context
+- If a play occurs between two frames, estimate the timestamp based on frame context
+- Use the play description to identify the correct play (e.g., "Pass Touchdown" should show a QB throwing and receiver catching in end zone)
+- The expected location is approximate - plays may be slightly before or after this time
 - Only report plays you can confidently identify (confidence must be at least "medium")
 
 RESPOND WITH ONLY A JSON OBJECT:
@@ -514,7 +552,7 @@ RESPOND WITH ONLY A JSON OBJECT:
       "start_time": 45.2,
       "end_time": 58.5,
       "confidence": "high",
-      "notes": "23-yard pass completion visible in frames 4-5"
+      "notes": "Pass TD visible in frames 4-5, QB throws to WR in end zone"
     }},
     ...
   ]
