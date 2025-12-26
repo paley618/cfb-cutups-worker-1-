@@ -493,7 +493,7 @@ class VisionPlayMapper:
             defense_team = play.get('defense', play.get('defteam', 'Unknown'))
 
             play_desc = f"""
-Play #{play['play_number']}:
+Play #{play.get('play_number', '?')}:
   Type: {play_type}
   Description: {description}
   Offense: {offense_team}
@@ -573,7 +573,7 @@ Only include plays you can identify with at least medium confidence."""
             # Preview play descriptions
             play_previews = []
             for i, play in enumerate(plays[:5]):  # First 5 plays
-                play_desc = f"Play #{play['play_number']}: {play.get('play_text', 'Unknown')[:60]}"
+                play_desc = f"Play #{play.get('play_number', '?')}: {play.get('play_text', 'Unknown')[:60]}"
                 play_previews.append(play_desc)
             logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Play descriptions (first 5):")
             for preview in play_previews:
