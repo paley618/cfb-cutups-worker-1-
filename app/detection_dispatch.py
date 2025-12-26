@@ -26,6 +26,7 @@ The dispatch layer is responsible for:
 from __future__ import annotations
 
 import logging
+import time
 from typing import Any, Dict, List, Optional, Tuple
 
 logger = logging.getLogger(__name__)
@@ -515,6 +516,17 @@ async def dispatch_detection(
 
             try:
                 import asyncio
+
+                # CRITICAL MARKER: About to call Vision Play Mapper
+                logger.info("=" * 80)
+                logger.info(f"[DISPATCH] ⏱️  ABOUT TO CALL VISION PLAY MAPPER...")
+                logger.info(f"[DISPATCH] Input: {len(official_plays)} CFBD plays")
+                logger.info(f"[DISPATCH] Video path: {video_path}")
+                logger.info(f"[DISPATCH] Timestamp: {time.strftime('%H:%M:%S')}")
+                logger.info("=" * 80)
+
+                vision_start_time = time.time()
+
                 # Vision Play Mapper has 10-minute timeout total (covers all batches and frame extraction)
                 result = await asyncio.wait_for(
                     try_vision_play_mapper(
@@ -526,6 +538,14 @@ async def dispatch_detection(
                     timeout=600.0  # 10 minutes max
                 )
 
+                vision_elapsed = time.time() - vision_start_time
+
+                # CRITICAL MARKER: Vision Play Mapper returned
+                logger.info("=" * 80)
+                logger.info(f"[DISPATCH] ✓ VISION PLAY MAPPER RETURNED in {vision_elapsed:.1f}s ({vision_elapsed/60:.1f} min)")
+                logger.info(f"[DISPATCH] Timestamp: {time.strftime('%H:%M:%S')}")
+                logger.info("=" * 80)
+
                 logger.info(f"[DEBUG] Vision Play Mapper returned: {len(result.plays) if result and result.plays else 0} plays")
                 logger.info(f"[DEBUG] Vision result detection_method: {result.detection_method if result else 'NONE'}")
                 logger.info(f"[DEBUG] Vision result metadata: {result.metadata if result else 'NONE'}")
@@ -535,9 +555,30 @@ async def dispatch_detection(
                     logger.info(f"[DISPATCH] Detection rate: {result.metadata.get('detection_rate', 0):.1f}%")
                     logger.info(f"[DISPATCH] Expected accuracy: 70-90%+ (vision-based semantic understanding)")
                     logger.info(f"[DEBUG] ===== RETURNING VISION PLAY MAPPER RESULT =====")
+
+                    # Log Vision windows for diagnosis
+                    logger.info("=" * 80)
+                    logger.info(f"[DISPATCH] VISION WINDOWS SUMMARY:")
+                    logger.info(f"  Total plays detected: {len(result.plays)}")
+                    logger.info(f"  Input CFBD plays: {len(official_plays)}")
+                    logger.info(f"  Detection rate: {result.metadata.get('detection_rate', 0):.1f}%")
+                    if len(result.plays) > 0:
+                        logger.info(f"  Sample plays (first 3):")
+                        for i, play in enumerate(result.plays[:3]):
+                            start = play.get('timestamp', 'N/A')
+                            end = play.get('end_timestamp', 'N/A')
+                            logger.info(f"    Play {i+1}: {start}s - {end}s")
+                    logger.info("=" * 80)
+
                     return result
 
-                logger.warning("[DISPATCH] Vision Play Mapper returned no plays, falling back to old Claude Vision...")
+                # If Vision returned 0 plays
+                logger.warning("=" * 80)
+                logger.warning("[DISPATCH] ⚠️  Vision Play Mapper returned NO PLAYS (0 detections)")
+                logger.warning(f"[DISPATCH] Input CFBD plays: {len(official_plays)}")
+                logger.warning(f"[DISPATCH] This indicates Vision completely failed to detect any plays")
+                logger.warning("[DISPATCH] Falling back to old Claude Vision...")
+                logger.warning("=" * 80)
 
             except asyncio.TimeoutError:
                 logger.error("[DISPATCH] Vision Play Mapper exceeded 10-minute timeout, falling back to ESPN")
