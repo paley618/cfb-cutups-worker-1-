@@ -1118,15 +1118,17 @@ class JobRunner:
                     scene_cuts = []
                 scene_cuts = sorted(scene_cuts)
 
-                # Skip CFBD OCR/alignment processing if Claude Vision was used (already has time windows)
+                # Skip CFBD OCR/alignment processing if Vision-based detection was used (already has time windows)
+                vision_based_methods = ["claude_vision", "vision_play_mapper", "claude_vision_supervised"]
                 logger.info("=" * 80)
                 logger.info("[CFBD CONVERSION CHECK] Checking if CFBD conversion should run:")
                 logger.info(f"  cfbd_plays: {len(cfbd_plays) if cfbd_plays else 0} plays")
                 logger.info(f"  used_detection_method: {used_detection_method}")
-                logger.info(f"  Condition: cfbd_plays={bool(cfbd_plays)} AND used_detection_method != 'claude_vision' = {used_detection_method != 'claude_vision'}")
-                logger.info(f"  Will run CFBD conversion: {bool(cfbd_plays and used_detection_method != 'claude_vision')}")
+                logger.info(f"  Vision-based methods (skip DTW): {vision_based_methods}")
+                logger.info(f"  Condition: cfbd_plays={bool(cfbd_plays)} AND used_detection_method not in {vision_based_methods} = {used_detection_method not in vision_based_methods}")
+                logger.info(f"  Will run CFBD conversion: {bool(cfbd_plays and used_detection_method not in vision_based_methods)}")
                 logger.info("=" * 80)
-                if cfbd_plays and used_detection_method != "claude_vision":
+                if cfbd_plays and used_detection_method not in vision_based_methods:
                     self._ensure_not_cancelled(job_id, cancel_ev)
                     self._set_stage(
                         job_id,
@@ -1365,20 +1367,21 @@ class JobRunner:
                 windows: List[Tuple[float, float]] = []
                 pre_merge_list: List[Tuple[float, float]] = []
 
-                # NEW LOGIC: Prioritize Claude-detected windows over all other sources
-                # When Claude Vision dispatch was used, windows are in guided_windows
+                # NEW LOGIC: Prioritize Vision-detected windows over all other sources
+                # When Vision-based detection was used, windows are in guided_windows
+                vision_based_methods = ["claude_vision", "vision_play_mapper", "claude_vision_supervised"]
                 logger.info("=" * 80)
                 logger.info("[WINDOW SOURCE ROUTING] Determining window source based on detection method:")
                 logger.info(f"  used_detection_method: {used_detection_method}")
                 logger.info(f"  guided_windows: {len(guided_windows)} windows")
                 logger.info(f"  vision_windows_raw: {len(vision_windows_raw)} windows")
-                if used_detection_method == "claude_vision":
-                    logger.info(f"  → Branch: Claude Vision (new dispatch)")
+                if used_detection_method in vision_based_methods:
+                    logger.info(f"  → Branch: Vision-based detection ({used_detection_method})")
                     logger.info(f"  → Action: Use guided_windows as claude_windows, set cfbd_windows_count=0")
                     claude_windows = list(guided_windows)
-                    cfbd_windows_count = 0  # No CFBD windows when Claude Vision was used
+                    cfbd_windows_count = 0  # No CFBD windows when Vision-based detection was used
                 else:
-                    logger.info(f"  → Branch: Other (cfbd/espn/vision_play_mapper/etc)")
+                    logger.info(f"  → Branch: Other (cfbd/espn with DTW conversion)")
                     logger.info(f"  → Action: Use vision_windows_raw as claude_windows, set cfbd_windows_count=len(guided_windows)")
                     claude_windows = list(vision_windows_raw)  # Old OpenCV detection
                     cfbd_windows_count = len(guided_windows)
@@ -1397,20 +1400,21 @@ class JobRunner:
 
                 logger.info(f"[WINDOW PRIORITY] Available sources: Claude={len(claude_windows)}, CFBD={cfbd_windows_count}, cfbd_used={cfbd_used}, detection_method={used_detection_method}")
 
-                # Priority 1: Use Claude-detected windows (always best if available)
+                # Priority 1: Use Vision-detected windows (always best if available)
                 if claude_windows and len(claude_windows) > 0:
                     pre_merge_list = claude_windows
                     merged = merge_windows(claude_windows, merge_gap)
                     windows = clamp_windows(merged, min_duration, max_duration)
-                    if used_detection_method == "claude_vision":
-                        job_meta["window_source"] = "claude_vision"
-                        actual_data_source = "CLAUDE_VISION"
-                        logger.info(f"[WINDOW PRIORITY] Using {len(windows)} Claude Vision windows (primary source)")
+                    vision_based_methods = ["claude_vision", "vision_play_mapper", "claude_vision_supervised"]
+                    if used_detection_method in vision_based_methods:
+                        job_meta["window_source"] = used_detection_method
+                        actual_data_source = used_detection_method.upper()
+                        logger.info(f"[WINDOW PRIORITY] Using {len(windows)} {used_detection_method} windows (primary source)")
 
                         # Log final result summary
                         logger.info("=" * 80)
                         logger.info(f"[DETECTION RESULTS] ✓ FINAL RESULT:")
-                        logger.info(f"  Source: CLAUDE_VISION")
+                        logger.info(f"  Source: {used_detection_method.upper()}")
                         logger.info(f"  Windows: {len(windows)}")
                         logger.info(f"  Pre-merge count: {len(pre_merge_list)}")
                         logger.info("=" * 80)
