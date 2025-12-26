@@ -129,6 +129,55 @@
       </form>
 
       <div id="status" class="status">Waiting for submission…</div>
+
+      <!-- CFBD Conversion Progress Checklist -->
+      <div id="cfbd-checklist">
+        <h3>
+          <span>🔍</span>
+          <span>CFBD Conversion Progress</span>
+        </h3>
+        <div class="checklist-item pending" data-step="cfbd-loaded">
+          <div class="check-icon">⏳</div>
+          <div class="item-label">CFBD plays loaded</div>
+          <div class="item-value" data-plays="">-</div>
+        </div>
+        <div class="checklist-item pending" data-step="detection-method">
+          <div class="check-icon">⏳</div>
+          <div class="item-label">detection_method set</div>
+          <div class="item-value" data-method="">-</div>
+        </div>
+        <div class="checklist-item pending" data-step="used-detection-method">
+          <div class="check-icon">⏳</div>
+          <div class="item-label">used_detection_method set</div>
+          <div class="item-value" data-used-method="">-</div>
+        </div>
+        <div class="checklist-item pending" data-step="conversion-runs">
+          <div class="check-icon">⏳</div>
+          <div class="item-label">CFBD conversion runs</div>
+          <div class="item-value" data-status="">-</div>
+        </div>
+        <div class="checklist-item pending" data-step="dtw-succeeds">
+          <div class="check-icon">⏳</div>
+          <div class="item-label">DTW alignment succeeds</div>
+          <div class="item-value" data-periods="">-</div>
+        </div>
+        <div class="checklist-item pending" data-step="windows-created">
+          <div class="check-icon">⏳</div>
+          <div class="item-label">CFBD windows created</div>
+          <div class="item-value" data-windows="">-</div>
+        </div>
+        <div class="checklist-item pending" data-step="windows-recognized">
+          <div class="check-icon">⏳</div>
+          <div class="item-label">Windows recognized (cfbd_windows_count)</div>
+          <div class="item-value" data-count="">-</div>
+        </div>
+        <div class="checklist-item pending" data-step="clips-created">
+          <div class="check-icon">⏳</div>
+          <div class="item-label">Clips created from CFBD windows</div>
+          <div class="item-value" data-clips="">-</div>
+        </div>
+      </div>
+
       <div id="error_box" class="muted"></div>
       <div id="result" class="kv" style="display:none"></div>
 
