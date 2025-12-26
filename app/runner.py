@@ -742,8 +742,9 @@ class JobRunner:
                         cfbd_used = True
                         cfbd_games_count = cfbd_play_count
                         detection_method = cached.get("detection_method", "cfbd")
+                        used_detection_method = detection_method  # CRITICAL: Set used_detection_method for cached CFBD
                         logger.info(f"[CFBD DIAGNOSTICS] Using cached CFBD data: {cfbd_play_count} plays")
-                        logger.info(f"[DETECTION] Cached path: detection_method={detection_method}")
+                        logger.info(f"[DETECTION] Cached path: detection_method={detection_method}, used_detection_method={used_detection_method}")
                         cached_reason = f"cached game_id={cached['game_id']} ({cfbd_play_count} plays)"
                         set_cfbd_state("ready", cached_reason)
                         job_meta["cfbd_cached"] = True
@@ -839,6 +840,7 @@ class JobRunner:
                                     used_detection_method = detection_method  # Track actual method used
                                     logger.info(f"[{detection_method.upper()}] Stored {len(guided_windows)} windows for downstream processing")
                                 elif detection_method == "cfbd":
+                                    logger.info(f"[DETECTION] Processing {detection_method} with CFBD format plays (period/clock)")
                                     cfbd_reason = f"game_id={gid} • plays={cfbd_play_count}"
                                     set_cfbd_state("ready", cfbd_reason)
                                     cfbd_job_meta["status"] = "ready"
@@ -847,13 +849,29 @@ class JobRunner:
                                     cfbd_games_count = cfbd_play_count
                                     job_meta["cfbd_cached"] = False
                                     job_meta["cfbd_cached_count"] = cfbd_play_count
+                                    used_detection_method = detection_method  # Track actual method used
+                                    logger.info(f"[CFBD] Will convert {len(cfbd_plays)} plays to windows using period/clock → video timestamp mapping")
                                 elif detection_method == "espn":
+                                    logger.info(f"[DETECTION] Processing {detection_method} with ESPN format plays (timestamps)")
                                     cfbd_reason = f"ESPN: {cfbd_play_count} plays"
                                     set_cfbd_state("ready_espn", cfbd_reason)
                                     cfbd_job_meta["status"] = "ready_espn"
                                     cfbd_summary["source"] = "espn"
                                     monitor.touch(stage="detecting", detail=f"ESPN: {cfbd_play_count} plays")
                                     espn_games_count = cfbd_play_count
+                                    used_detection_method = detection_method  # Track actual method used
+                                    logger.info(f"[ESPN] Will convert {len(cfbd_plays)} plays to windows using timestamps")
+                                else:
+                                    # Handle unexpected or "none" detection methods
+                                    logger.warning(f"[DETECTION] Unexpected detection_method: {detection_method}")
+                                    logger.warning(f"[DETECTION] This detection method is not explicitly handled in the if/elif block")
+                                    logger.warning(f"[DETECTION] Expected: 'claude_vision', 'vision_play_mapper', 'claude_vision_supervised', 'cfbd', 'espn'")
+                                    logger.warning(f"[DETECTION] Got: '{detection_method}'")
+                                    if detection_method == "none":
+                                        logger.error(f"[DETECTION] detection_method='none' indicates all detection methods failed")
+                                        logger.error(f"[DETECTION] This should have been caught by the outer if/else, but wasn't")
+                                    # Set used_detection_method anyway for tracking
+                                    used_detection_method = detection_method
 
                                 # Common metadata updates
                                 cfbd_job_meta["game_id"] = int(gid)
@@ -1101,6 +1119,13 @@ class JobRunner:
                 scene_cuts = sorted(scene_cuts)
 
                 # Skip CFBD OCR/alignment processing if Claude Vision was used (already has time windows)
+                logger.info("=" * 80)
+                logger.info("[CFBD CONVERSION CHECK] Checking if CFBD conversion should run:")
+                logger.info(f"  cfbd_plays: {len(cfbd_plays) if cfbd_plays else 0} plays")
+                logger.info(f"  used_detection_method: {used_detection_method}")
+                logger.info(f"  Condition: cfbd_plays={bool(cfbd_plays)} AND used_detection_method != 'claude_vision' = {used_detection_method != 'claude_vision'}")
+                logger.info(f"  Will run CFBD conversion: {bool(cfbd_plays and used_detection_method != 'claude_vision')}")
+                logger.info("=" * 80)
                 if cfbd_plays and used_detection_method != "claude_vision":
                     self._ensure_not_cancelled(job_id, cancel_ev)
                     self._set_stage(
@@ -1168,6 +1193,16 @@ class JobRunner:
                     cfbd_summary["mapping"] = "dtw" if mapping_dtw else "fallback"
                     cfbd_summary["align_method"] = cfbd_summary["mapping"]
                     cfbd_summary["dtw_periods"] = sorted(mapping_dtw.keys())
+
+                    logger.info("=" * 80)
+                    logger.info("[DTW ALIGNMENT CHECK] Checking if DTW alignment succeeded:")
+                    logger.info(f"  mapping_dtw periods: {sorted(mapping_dtw.keys()) if mapping_dtw else []}")
+                    logger.info(f"  DTW succeeded: {bool(mapping_dtw)}")
+                    logger.info(f"  Will proceed with CFBD → window conversion: {bool(mapping_dtw)}")
+                    if not mapping_dtw:
+                        logger.warning(f"  ⚠️  DTW alignment FAILED - CFBD conversion will be SKIPPED")
+                        logger.warning(f"  ⚠️  This means 0 CFBD windows despite having {len(cfbd_plays)} CFBD plays!")
+                    logger.info("=" * 80)
 
                     if mapping_dtw:
                         def _period_clock_to_video(period_value: int, clock_repr: str) -> float:
@@ -1332,12 +1367,23 @@ class JobRunner:
 
                 # NEW LOGIC: Prioritize Claude-detected windows over all other sources
                 # When Claude Vision dispatch was used, windows are in guided_windows
+                logger.info("=" * 80)
+                logger.info("[WINDOW SOURCE ROUTING] Determining window source based on detection method:")
+                logger.info(f"  used_detection_method: {used_detection_method}")
+                logger.info(f"  guided_windows: {len(guided_windows)} windows")
+                logger.info(f"  vision_windows_raw: {len(vision_windows_raw)} windows")
                 if used_detection_method == "claude_vision":
+                    logger.info(f"  → Branch: Claude Vision (new dispatch)")
+                    logger.info(f"  → Action: Use guided_windows as claude_windows, set cfbd_windows_count=0")
                     claude_windows = list(guided_windows)
                     cfbd_windows_count = 0  # No CFBD windows when Claude Vision was used
                 else:
+                    logger.info(f"  → Branch: Other (cfbd/espn/vision_play_mapper/etc)")
+                    logger.info(f"  → Action: Use vision_windows_raw as claude_windows, set cfbd_windows_count=len(guided_windows)")
                     claude_windows = list(vision_windows_raw)  # Old OpenCV detection
                     cfbd_windows_count = len(guided_windows)
+                logger.info(f"  Result: claude_windows={len(claude_windows)}, cfbd_windows_count={cfbd_windows_count}")
+                logger.info("=" * 80)
 
                 # CRITICAL MARKER: Result assembly
                 logger.info("\n" + "=" * 80)

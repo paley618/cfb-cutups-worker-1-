@@ -729,6 +729,10 @@ def get_job(job_id: str):
     now = time.time()
     last = job.get("last_heartbeat_at")
     submitted = job.get("submitted_at")
+    # Include CFBD metadata for checklist tracking
+    job_meta = job.get("meta") or {}
+    cfbd_meta = job_meta.get("cfbd") or {}
+
     return {
         "job_id": job_id,
         "status": job.get("status"),
@@ -745,6 +749,7 @@ def get_job(job_id: str):
         "cfbd_state": job.get("cfbd_state"),
         "cfbd_reason": job.get("cfbd_reason"),
         "cfbd_requested": job.get("cfbd_requested"),
+        "cfbd_meta": cfbd_meta,  # Include CFBD metadata for checklist
     }
 
 

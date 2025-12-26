@@ -933,6 +933,131 @@ document.addEventListener('DOMContentLoaded', () => {
     errorEl.textContent = '';
     const outBox = document.getElementById('outputs');
     if (outBox) outBox.innerHTML = '';
+    const checklist = document.getElementById('cfbd-checklist');
+    if (checklist) {
+      checklist.classList.remove('visible');
+      // Reset all checklist items to pending
+      checklist.querySelectorAll('.checklist-item').forEach(item => {
+        item.className = 'checklist-item pending';
+        item.querySelector('.check-icon').textContent = '⏳';
+        const valueEl = item.querySelector('.item-value');
+        if (valueEl) valueEl.textContent = '-';
+      });
+    }
+  };
+
+  // CFBD Conversion Checklist Management
+  const updateChecklistItem = (step, status, value = null) => {
+    const checklist = document.getElementById('cfbd-checklist');
+    if (!checklist) return;
+
+    const item = checklist.querySelector(`[data-step="${step}"]`);
+    if (!item) return;
+
+    // Update status class
+    item.className = `checklist-item ${status}`;
+
+    // Update icon
+    const icon = item.querySelector('.check-icon');
+    if (icon) {
+      if (status === 'completed') {
+        icon.textContent = '✓';
+      } else if (status === 'failed') {
+        icon.textContent = '✗';
+      } else {
+        icon.textContent = '⏳';
+      }
+    }
+
+    // Update value if provided
+    if (value !== null) {
+      const valueEl = item.querySelector('.item-value');
+      if (valueEl) {
+        valueEl.textContent = value;
+      }
+    }
+  };
+
+  const showChecklist = () => {
+    const checklist = document.getElementById('cfbd-checklist');
+    if (checklist) {
+      checklist.classList.add('visible');
+    }
+  };
+
+  const hideChecklist = () => {
+    const checklist = document.getElementById('cfbd-checklist');
+    if (checklist) {
+      checklist.classList.remove('visible');
+    }
+  };
+
+  const updateCFBDChecklist = (job) => {
+    // Only show checklist if CFBD was requested
+    if (!job.cfbd_requested) {
+      hideChecklist();
+      return;
+    }
+
+    showChecklist();
+
+    // Parse detail string for CFBD-specific markers
+    const detail = job.detail || '';
+    const manifest = job.manifest || {};
+    const cfbd = manifest.cfbd || {};
+    const meta = manifest.detector_meta || {};
+    const cfbdMeta = job.cfbd_meta || {};  // Real-time CFBD metadata from job endpoint
+
+    // Step 1: CFBD plays loaded
+    const playCount = cfbd.plays || meta.cfbd_cached_count || cfbdMeta.plays_count || 0;
+    if (playCount > 0) {
+      updateChecklistItem('cfbd-loaded', 'completed', `${playCount} plays`);
+
+      // Step 2 & 3: detection_method and used_detection_method set
+      const detectionMethod = cfbd.detection_method || meta.detection_method || cfbdMeta.detection_method || null;
+      if (detectionMethod && detectionMethod !== 'None' && detectionMethod !== 'none') {
+        updateChecklistItem('detection-method', 'completed', detectionMethod);
+        updateChecklistItem('used-detection-method', 'completed', detectionMethod);
+      }
+    } else if (detail.includes('CFBD') || detail.includes('Detecting')) {
+      updateChecklistItem('cfbd-loaded', 'pending', 'Loading...');
+    }
+
+    // Step 4: CFBD conversion runs (check detail string)
+    if (detail.includes('bucketizing') || detail.includes('CFBD: bucketizing') || detail.includes('OCR')) {
+      updateChecklistItem('conversion-runs', 'completed', 'Running');
+    }
+
+    // Step 5: DTW alignment succeeds
+    if (cfbd.mapping === 'dtw' && cfbd.dtw_periods && cfbd.dtw_periods.length > 0) {
+      updateChecklistItem('dtw-succeeds', 'completed', `Periods: ${cfbd.dtw_periods.join(',')}`);
+    } else if (cfbd.mapping === 'fallback') {
+      updateChecklistItem('dtw-succeeds', 'failed', 'Fallback');
+    }
+
+    // Step 6: CFBD windows created
+    const cfbdClips = cfbd.clips || 0;
+    if (cfbdClips > 0) {
+      updateChecklistItem('windows-created', 'completed', `${cfbdClips} windows`);
+
+      // Step 7: Windows recognized
+      updateChecklistItem('windows-recognized', 'completed', `${cfbdClips} windows`);
+
+      // Step 8: Clips created
+      const totalClips = manifest.metrics?.num_clips || meta.clips_found || 0;
+      if (totalClips > 0) {
+        updateChecklistItem('clips-created', 'completed', `${totalClips} clips`);
+      }
+    } else if (detail.includes('Segmenting') || detail.includes('Packaging')) {
+      // Conversion happened but no clips (possible failure)
+      updateChecklistItem('windows-created', 'failed', '0 windows');
+      updateChecklistItem('windows-recognized', 'failed', '0 windows');
+    }
+
+    // Check for failures
+    if (cfbd.error || cfbdMeta.error) {
+      updateChecklistItem('cfbd-loaded', 'failed', 'Error');
+    }
   };
 
   const fetchCookieStatus = async () => {
@@ -1081,6 +1206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       renderStatus(job, cancelBtn);
       renderCFBD(job);
+      updateCFBDChecklist(job);
 
       if (job.status === 'completed') {
         errorEl.textContent = '';
@@ -1140,6 +1266,7 @@ document.addEventListener('DOMContentLoaded', () => {
             attachCfbdSummary(manifest);
             renderCFBD({ manifest });
             renderOutputs({ manifest });
+            updateCFBDChecklist({ manifest, cfbd_requested: true });
           };
 
           const parseManifestResponse = async (resp) => {
