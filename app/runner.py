@@ -741,7 +741,9 @@ class JobRunner:
                         cfbd_play_count = len(cfbd_plays)
                         cfbd_used = True
                         cfbd_games_count = cfbd_play_count
+                        detection_method = cached.get("detection_method", "cfbd")
                         logger.info(f"[CFBD DIAGNOSTICS] Using cached CFBD data: {cfbd_play_count} plays")
+                        logger.info(f"[DETECTION] Cached path: detection_method={detection_method}")
                         cached_reason = f"cached game_id={cached['game_id']} ({cfbd_play_count} plays)"
                         set_cfbd_state("ready", cached_reason)
                         job_meta["cfbd_cached"] = True
@@ -812,27 +814,30 @@ class JobRunner:
                                     )
 
                                 # Update state based on detection method
-                                if detection_method == "claude_vision":
-                                    cfbd_reason = f"Claude Vision: {cfbd_play_count} plays"
+                                # Handle all Vision-based methods (they return plays with timestamp/end_timestamp)
+                                if detection_method in ["claude_vision", "vision_play_mapper", "claude_vision_supervised"]:
+                                    logger.info(f"[DETECTION] Processing {detection_method} with Vision format plays")
+
+                                    cfbd_reason = f"{detection_method}: {cfbd_play_count} plays"
                                     set_cfbd_state("ready_claude", cfbd_reason)
                                     cfbd_job_meta["status"] = "ready_claude"
-                                    cfbd_summary["source"] = "claude_vision"
-                                    monitor.touch(stage="detecting", detail=f"Claude Vision (PRIMARY): {cfbd_play_count} plays")
+                                    cfbd_summary["source"] = detection_method
+                                    monitor.touch(stage="detecting", detail=f"{detection_method}: {cfbd_play_count} plays")
 
-                                    # Convert Claude Vision plays to time windows
-                                    # Claude plays have 'timestamp' and 'end_timestamp' fields (already in video seconds)
+                                    # Convert Vision plays to time windows
+                                    # Vision plays have 'timestamp' and 'end_timestamp' fields (already in video seconds)
                                     claude_vision_windows = [
                                         (float(play.get("timestamp", 0)), float(play.get("end_timestamp", 0)))
                                         for play in cfbd_plays
                                         if play.get("timestamp") is not None and play.get("end_timestamp") is not None
                                     ]
-                                    logger.info(f"[CLAUDE VISION] Converted {len(claude_vision_windows)} plays to time windows")
+                                    logger.info(f"[{detection_method.upper()}] Extracted {len(claude_vision_windows)} windows from {len(cfbd_plays)} plays")
 
                                     # Store in guided_windows so window priority code can access them
                                     guided_windows = list(claude_vision_windows)
                                     cfbd_used = True  # Mark that we have detection results
-                                    used_detection_method = "claude_vision"  # Track method for later
-                                    logger.info(f"[CLAUDE VISION] Stored {len(guided_windows)} windows for downstream processing")
+                                    used_detection_method = detection_method  # Track actual method used
+                                    logger.info(f"[{detection_method.upper()}] Stored {len(guided_windows)} windows for downstream processing")
                                 elif detection_method == "cfbd":
                                     cfbd_reason = f"game_id={gid} • plays={cfbd_play_count}"
                                     set_cfbd_state("ready", cfbd_reason)
