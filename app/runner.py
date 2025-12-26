@@ -1176,7 +1176,18 @@ class JobRunner:
 
                         monitor.touch(stage="detecting", detail="CFBD: bucketizing")
                         try:
+                            # CRITICAL MARKER: CFBD window conversion starting
+                            logger.info("=" * 80)
+                            logger.info(f"[CFBD CONVERT] ⏱️  STARTING CONVERSION OF CFBD PLAYS TO WINDOWS")
+                            logger.info(f"[CFBD CONVERT] Input: {len(cfbd_plays)} CFBD plays")
+                            logger.info(f"[CFBD CONVERT] Team: {team or 'Unknown'}")
+                            logger.info(f"[CFBD CONVERT] Timestamp: {time.strftime('%H:%M:%S')}")
+                            logger.info("=" * 80)
+
                             logger.info(f"[WINDOW COLLAPSE DEBUG] Step 2: Calling build_guided_windows with {len(cfbd_plays)} cfbd_plays")
+
+                            convert_start_time = time.time()
+
                             bucketed = build_guided_windows(
                                 cfbd_plays,
                                 team_name=team or "",
@@ -1184,10 +1195,32 @@ class JobRunner:
                                 pre_pad=pre_pad,
                                 post_pad=post_pad,
                             )
+
+                            convert_elapsed = time.time() - convert_start_time
+
                             total_bucketed = sum(len(items) for items in bucketed.values())
+
+                            logger.info("=" * 80)
+                            logger.info(f"[CFBD CONVERT] ✓ CONVERSION COMPLETE in {convert_elapsed:.1f}s")
+                            logger.info(f"[CFBD CONVERT] Input plays: {len(cfbd_plays)}")
+                            logger.info(f"[CFBD CONVERT] Output windows: {total_bucketed}")
+                            logger.info(f"[CFBD CONVERT] Conversion rate: {total_bucketed}/{len(cfbd_plays)} ({total_bucketed/len(cfbd_plays)*100 if len(cfbd_plays) > 0 else 0:.1f}%)")
+                            logger.info(f"[CFBD CONVERT] Timestamp: {time.strftime('%H:%M:%S')}")
+                            logger.info("=" * 80)
                             logger.info(f"[WINDOW COLLAPSE DEBUG] Step 2 Result: build_guided_windows returned {total_bucketed} total windows")
                             for bucket_name, items in bucketed.items():
                                 logger.info(f"  {bucket_name}: {len(items)} windows")
+
+                            # WARNING if 0 windows from non-zero plays
+                            if total_bucketed == 0 and len(cfbd_plays) > 0:
+                                logger.warning("=" * 80)
+                                logger.warning(f"[CFBD CONVERT] ⚠️  WARNING: 0 WINDOWS FROM {len(cfbd_plays)} PLAYS!")
+                                logger.warning(f"[CFBD CONVERT] This indicates CFBD conversion failed completely")
+                                logger.warning(f"[CFBD CONVERT] Likely causes:")
+                                logger.warning(f"  - Team name mismatch")
+                                logger.warning(f"  - Clock conversion issues")
+                                logger.warning(f"  - All plays filtered out")
+                                logger.warning("=" * 80)
                         except Exception:
                             logger.exception(
                                 "cfbd_bucketize_failed", extra={"job_id": job_id}
@@ -1301,6 +1334,16 @@ class JobRunner:
                     claude_windows = list(vision_windows_raw)  # Old OpenCV detection
                     cfbd_windows_count = len(guided_windows)
 
+                # CRITICAL MARKER: Result assembly
+                logger.info("\n" + "=" * 80)
+                logger.info(f"[DETECTION RESULTS] ===== ASSEMBLING FINAL DETECTION RESULTS =====")
+                logger.info(f"[DETECTION RESULTS] Available window sources:")
+                logger.info(f"  Claude Vision windows: {len(claude_windows)}")
+                logger.info(f"  CFBD windows: {cfbd_windows_count}")
+                logger.info(f"  CFBD used flag: {cfbd_used}")
+                logger.info(f"  Detection method: {used_detection_method}")
+                logger.info("=" * 80)
+
                 logger.info(f"[WINDOW PRIORITY] Available sources: Claude={len(claude_windows)}, CFBD={cfbd_windows_count}, cfbd_used={cfbd_used}, detection_method={used_detection_method}")
 
                 # Priority 1: Use Claude-detected windows (always best if available)
@@ -1312,10 +1355,26 @@ class JobRunner:
                         job_meta["window_source"] = "claude_vision"
                         actual_data_source = "CLAUDE_VISION"
                         logger.info(f"[WINDOW PRIORITY] Using {len(windows)} Claude Vision windows (primary source)")
+
+                        # Log final result summary
+                        logger.info("=" * 80)
+                        logger.info(f"[DETECTION RESULTS] ✓ FINAL RESULT:")
+                        logger.info(f"  Source: CLAUDE_VISION")
+                        logger.info(f"  Windows: {len(windows)}")
+                        logger.info(f"  Pre-merge count: {len(pre_merge_list)}")
+                        logger.info("=" * 80)
                     else:
                         job_meta["window_source"] = "vision"
                         actual_data_source = "VISION"
                         logger.info(f"[WINDOW PRIORITY] Using {len(windows)} OpenCV vision windows (primary source)")
+
+                        # Log final result summary
+                        logger.info("=" * 80)
+                        logger.info(f"[DETECTION RESULTS] ✓ FINAL RESULT:")
+                        logger.info(f"  Source: VISION (OpenCV)")
+                        logger.info(f"  Windows: {len(windows)}")
+                        logger.info(f"  Pre-merge count: {len(pre_merge_list)}")
+                        logger.info("=" * 80)
                     fallback_used = False
 
                 # Priority 2: Fall back to CFBD if Claude found nothing but CFBD was used
@@ -1326,6 +1385,14 @@ class JobRunner:
                     actual_data_source = "CFBD"
                     fallback_used = False
                     logger.info(f"[WINDOW PRIORITY] Claude found no windows, using {len(windows)} CFBD windows (secondary source)")
+
+                    # Log final result summary
+                    logger.info("=" * 80)
+                    logger.info(f"[DETECTION RESULTS] ✓ FINAL RESULT:")
+                    logger.info(f"  Source: CFBD")
+                    logger.info(f"  Windows: {len(windows)}")
+                    logger.info(f"  Pre-merge count: {len(pre_merge_list)}")
+                    logger.info("=" * 80)
 
                 # Priority 3: Try other sources (ESPN PBP) or fallback
                 else:
@@ -1363,6 +1430,14 @@ class JobRunner:
 
                     logger.info(f"[WINDOW PRIORITY] pick_best_windows selected {len(candidate_windows)} windows from '{window_source}'")
                     job_meta["window_source"] = window_source
+
+                    # Log final assembly decision
+                    logger.info("=" * 80)
+                    logger.info(f"[DETECTION RESULTS] FINAL ASSEMBLY DECISION:")
+                    logger.info(f"  Selected source: {window_source}")
+                    logger.info(f"  Selected windows: {len(candidate_windows)}")
+                    logger.info(f"  MIN_TOTAL_CLIPS threshold: {settings.MIN_TOTAL_CLIPS}")
+                    logger.info("=" * 80)
 
                     if not candidate_windows or len(candidate_windows) < settings.MIN_TOTAL_CLIPS:
                         fallback_used = True
