@@ -101,12 +101,31 @@ class CFBDClient:
                 # Rate limit - retry with exponential backoff
                 if response.status_code == 429:
                     if attempt < max_retries:
-                        # Exponential backoff: 2s, 4s, 8s, 16s
-                        wait_time = 2 ** (attempt + 1)
-                        logger.warning(
-                            f"Rate limit hit (429) on {path}. "
-                            f"Retry {attempt + 1}/{max_retries} after {wait_time}s..."
-                        )
+                        # Check if server tells us how long to wait
+                        retry_after = response.headers.get('Retry-After')
+                        if retry_after:
+                            try:
+                                wait_time = int(retry_after)
+                                logger.warning(
+                                    f"Rate limit hit (429) on {path}. "
+                                    f"Server says wait {wait_time}s. "
+                                    f"Retry {attempt + 1}/{max_retries}..."
+                                )
+                            except ValueError:
+                                # Fallback to calculated delay if header is not a number
+                                wait_time = 5 * (2 ** attempt)
+                                logger.warning(
+                                    f"Rate limit hit (429) on {path}. "
+                                    f"Retry {attempt + 1}/{max_retries} after {wait_time}s..."
+                                )
+                        else:
+                            # No header, use calculated delay: 5s, 10s, 20s, 40s
+                            wait_time = 5 * (2 ** attempt)
+                            logger.warning(
+                                f"Rate limit hit (429) on {path}. "
+                                f"Retry {attempt + 1}/{max_retries} after {wait_time}s..."
+                            )
+
                         time.sleep(wait_time)
                         continue
                     else:
