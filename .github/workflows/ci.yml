@@ -9,7 +9,7 @@ on:
 jobs:
   lint:
     name: Lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,7 +29,7 @@ jobs:
 
   docker-build:
     name: Build Docker image
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: lint
     steps:
       - name: Checkout
@@ -43,7 +43,7 @@ jobs:
 
   deploy:
     name: Deploy to Railway
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: docker-build
     if: github.ref == 'refs/heads/main'
     steps:

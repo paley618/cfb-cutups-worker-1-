@@ -31,7 +31,7 @@ permissions:
 jobs:
   fetch-and-cache:
     name: Fetch and Cache CFBD Data
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
