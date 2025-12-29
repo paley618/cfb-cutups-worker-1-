@@ -1,5 +1,7 @@
 import json
+import logging
 import os
+import time
 from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
@@ -7,6 +9,8 @@ import httpx
 from app.teams import find_team_by_name
 
 CFBD_BASE = "https://apinext.collegefootballdata.com"
+
+logger = logging.getLogger(__name__)
 
 
 class CFBDClientError(RuntimeError):
@@ -67,11 +71,53 @@ class CFBDClient:
     def _client(self) -> httpx.Client:
         return httpx.Client(base_url=CFBD_BASE, timeout=self.timeout, headers=self.headers)
 
-    def _req(self, path: str, params: Dict[str, object]) -> httpx.Response:
+    def _req(self, path: str, params: Dict[str, object], max_retries: int = 4) -> httpx.Response:
+        """Make HTTP request with exponential backoff retry for rate limits.
+
+        Args:
+            path: API endpoint path
+            params: Query parameters
+            max_retries: Maximum number of retries for rate limit errors (default: 4)
+
+        Returns:
+            httpx.Response object
+
+        Raises:
+            CFBDClientError: If API key is missing or all retries exhausted
+        """
         if not self.api_key:
             raise CFBDClientError("missing CFBD_API_KEY")
-        with self._client() as client:
-            return client.get(path, params=params)
+
+        last_response = None
+        for attempt in range(max_retries + 1):
+            with self._client() as client:
+                response = client.get(path, params=params)
+                last_response = response
+
+                # Success - return immediately
+                if response.status_code < 400:
+                    return response
+
+                # Rate limit - retry with exponential backoff
+                if response.status_code == 429:
+                    if attempt < max_retries:
+                        # Exponential backoff: 2s, 4s, 8s, 16s
+                        wait_time = 2 ** (attempt + 1)
+                        logger.warning(
+                            f"Rate limit hit (429) on {path}. "
+                            f"Retry {attempt + 1}/{max_retries} after {wait_time}s..."
+                        )
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        logger.error(f"Rate limit exhausted after {max_retries} retries on {path}")
+                        return response
+
+                # Other errors - return immediately (don't retry)
+                return response
+
+        # Should never reach here, but return last response if we do
+        return last_response
 
     def _resolve_game_fields(
         self,

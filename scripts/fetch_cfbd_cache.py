@@ -16,6 +16,7 @@ import csv
 import logging
 import os
 import sys
+import time
 from pathlib import Path
 from typing import List, Dict
 
@@ -187,13 +188,21 @@ def fetch_and_cache_cfbd_data(
                 logger.warning(f"  ⊘ Skipping {away_team} @ {home_team} - no play data available")
                 no_data_count += 1
 
+            # Add small delay between requests to respect rate limits (200ms)
+            # This prevents hammering the API too quickly
+            time.sleep(0.2)
+
         except CFBDClientError as e:
             logger.error(f"  ✗ CFBD API error for {away_team} @ {home_team}: {e}")
             error_count += 1
+            # Add delay even on error to avoid rapid retries
+            time.sleep(0.5)
 
         except Exception as e:
             logger.error(f"  ✗ Unexpected error for {away_team} @ {home_team}: {e}")
             error_count += 1
+            # Add delay even on error to avoid rapid retries
+            time.sleep(0.5)
 
     # Summary
     logger.info("\n" + "=" * 80)
