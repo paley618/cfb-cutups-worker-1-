@@ -582,7 +582,7 @@ Only include plays you can identify with at least medium confidence."""
                 logger.info(f"    ... and {len(plays) - 5} more plays")
 
             # Estimate payload size
-            frame_bytes_estimate = sum(len(f["data"]) for f in frame_data) if frame_data else 0
+            frame_bytes_estimate = sum(len(f["base64"]) for f in frame_data) if frame_data else 0
             frame_mb = frame_bytes_estimate / (1024 * 1024)
             logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Estimated payload size: ~{frame_mb:.1f}MB")
 
