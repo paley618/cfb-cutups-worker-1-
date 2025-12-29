@@ -32,7 +32,7 @@ def _load_plays_from_cache(game_id):
         plays = []
         with open(cache_file, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
-            for row in reader:
+            for play_idx, row in enumerate(reader, start=1):
                 # Parse clock string (e.g., "14:32" -> minutes=14, seconds=32)
                 clock = row.get('clock', '0:00')
                 if ':' in clock:
@@ -43,13 +43,38 @@ def _load_plays_from_cache(game_id):
                     clock_minutes = 0
                     clock_seconds = 0
 
+                # CFBD /plays endpoint doesn't return play_number, play_type, play_text
+                # Generate play_number sequentially and derive play info from available fields
+                play_number = int(row.get('play_number') or 0) or play_idx
+
+                # Get offense/defense (these ARE populated in CFBD data)
+                offense = str(row.get('offense', '') or '')
+                defense = str(row.get('defense', '') or '')
+
+                # Get play details from available fields
+                play_type = str(row.get('play_type', '') or '')
+                play_text_raw = str(row.get('play_text', '') or '')
+
+                # If play_text is empty, generate from available data
+                if not play_text_raw and offense:
+                    down = row.get('down', '')
+                    distance = row.get('distance', '')
+                    if down and distance:
+                        play_text = f"{offense} - {down} & {distance}"
+                    else:
+                        play_text = f"{offense} vs {defense}"
+                else:
+                    play_text = play_text_raw
+
                 plays.append({
-                    'play_number': int(row.get('play_number', 0) or 0),
+                    'play_number': play_number,
                     'quarter': int(row.get('period', 1) or 1),
                     'clock_minutes': clock_minutes,
                     'clock_seconds': clock_seconds,
-                    'play_type': str(row.get('play_type', '') or ''),
-                    'play_text': str(row.get('play_text', '') or ''),
+                    'play_type': play_type,
+                    'play_text': play_text,
+                    'offense': offense,  # ADD: Load offense field
+                    'defense': defense,  # ADD: Load defense field
                     'video_timestamp': None  # Will be set by game clock converter
                 })
 
@@ -85,7 +110,7 @@ def _fetch_plays_from_cfbd_api(game_id, year):
             return None
 
         plays = []
-        for play in cfbd_plays:
+        for play_idx, play in enumerate(cfbd_plays, start=1):
             # Parse clock
             clock = play.get('clock', {})
             if isinstance(clock, dict):
@@ -99,13 +124,36 @@ def _fetch_plays_from_cfbd_api(game_id, year):
                 clock_minutes = 0
                 clock_seconds = 0
 
+            # Generate play_number if not provided
+            play_number = int(play.get('play_number') or 0) or play_idx
+
+            # Get offense/defense
+            offense = str(play.get('offense', '') or '')
+            defense = str(play.get('defense', '') or '')
+
+            # Get or generate play_text
+            play_type = str(play.get('play_type', '') or '')
+            play_text_raw = str(play.get('play_text', '') or '')
+
+            if not play_text_raw and offense:
+                down = play.get('down', '')
+                distance = play.get('distance', '')
+                if down and distance:
+                    play_text = f"{offense} - {down} & {distance}"
+                else:
+                    play_text = f"{offense} vs {defense}"
+            else:
+                play_text = play_text_raw
+
             plays.append({
-                'play_number': int(play.get('play_number', 0) or 0),
+                'play_number': play_number,
                 'quarter': int(play.get('period', 1) or 1),
                 'clock_minutes': clock_minutes,
                 'clock_seconds': clock_seconds,
-                'play_type': str(play.get('play_type', '') or ''),
-                'play_text': str(play.get('play_text', '') or ''),
+                'play_type': play_type,
+                'play_text': play_text,
+                'offense': offense,
+                'defense': defense,
                 'video_timestamp': None
             })
 
