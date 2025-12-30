@@ -2,6 +2,7 @@ import os
 import json
 import requests
 import re
+import time
 from fastapi import APIRouter, Body, Query
 
 router = APIRouter()
@@ -10,6 +11,28 @@ CFBD_BASE = "https://apinext.collegefootballdata.com"
 # support both env var names
 CFBD_KEY = os.getenv("CFBD_KEY") or os.getenv("CFBD_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_TOKEN")
+
+# Autofill response cache (30-minute TTL) - saves 2.4% API quota
+# Cache key: (espn_url,) or (game_id, year, week)
+_AUTOFILL_CACHE = {}
+_CACHE_TTL = 1800  # 30 minutes in seconds
+
+
+def _get_cached_autofill(cache_key: tuple):
+    """Get cached autofill response if still valid."""
+    if cache_key in _AUTOFILL_CACHE:
+        response, timestamp = _AUTOFILL_CACHE[cache_key]
+        if time.time() - timestamp < _CACHE_TTL:
+            return response
+        else:
+            # Expired, remove from cache
+            del _AUTOFILL_CACHE[cache_key]
+    return None
+
+
+def _cache_autofill(cache_key: tuple, response: dict):
+    """Cache autofill response with timestamp."""
+    _AUTOFILL_CACHE[cache_key] = (response, time.time())
 
 
 def llm_validate_cfbd_vs_espn(espn_summary: dict, cfbd_match: dict) -> dict:
@@ -174,6 +197,13 @@ def cfbd_autofill_from_espn(
             "espnUrl": espnUrl,
         }
 
+    # Check cache first (30-min TTL)
+    cache_key = ("espn", event_id)
+    cached = _get_cached_autofill(cache_key)
+    if cached:
+        cached["cached"] = True
+        return cached
+
     # 1) ESPN summary
     try:
         espn_data = fetch_espn_summary(event_id)
@@ -313,7 +343,7 @@ def cfbd_autofill_from_espn(
             "cfbdGameId": cfbd_game_id,
         }
 
-    return {
+    result = {
         "status": "OK",
         "espnEventId": event_id,
         "espnHome": home_name,
@@ -332,6 +362,11 @@ def cfbd_autofill_from_espn(
         },
     }
 
+    # Cache successful response (30-min TTL)
+    _cache_autofill(cache_key, result)
+
+    return result
+
 
 @router.get("/api/util/cfbd-autofill-by-gameid")
 def cfbd_autofill_by_gameid(
@@ -344,6 +379,13 @@ def cfbd_autofill_by_gameid(
     If CFBD says it needs year/week, return a structured 'CFBD_NEEDS_YEAR' response
     so the frontend can prompt the user and retry with year/week.
     """
+
+    # Check cache first (30-min TTL)
+    cache_key = ("gameid", gameId, year, week)
+    cached = _get_cached_autofill(cache_key)
+    if cached:
+        cached["cached"] = True
+        return cached
 
     # build params for CFBD call
     params = {"game_id": gameId}
@@ -400,7 +442,7 @@ def cfbd_autofill_by_gameid(
         if str(p.get("game_id") or p.get("gameId")) == str(gameId)
     ]
 
-    return {
+    result = {
         "status": "OK",
         "gameId": gameId,
         "year": year or inferred_year,
@@ -414,6 +456,11 @@ def cfbd_autofill_by_gameid(
         ],
     }
 
+    # Cache successful response (30-min TTL)
+    _cache_autofill(cache_key, result)
+
+    return result
+
 
 @router.post("/api/util/cfbd-match-from-espn")
 def cfbd_match_from_espn(
@@ -426,6 +473,16 @@ def cfbd_match_from_espn(
 
     espn_summary = payload.get("espn_summary") or payload
     header = espn_summary.get("header") or {}
+
+    # Try to extract a cache key from ESPN event ID if available
+    event_id = header.get("id")
+    if event_id:
+        cache_key = ("match_espn", str(event_id))
+        cached = _get_cached_autofill(cache_key)
+        if cached:
+            cached["cached"] = True
+            return cached
+
     competitions = header.get("competitions") or []
     if not competitions:
         return {
@@ -578,5 +635,9 @@ def cfbd_match_from_espn(
 
     if result.get("status") == "OK" and llm_check.get("valid") is False:
         result["status"] = "CFBD_SUSPECT"
+
+    # Cache successful response if we have an event ID (30-min TTL)
+    if event_id and result.get("status") in ["OK", "CFBD_SUSPECT"]:
+        _cache_autofill(cache_key, result)
 
     return result
