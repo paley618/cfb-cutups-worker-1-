@@ -5,9 +5,11 @@ name: Fetch CFBD Data
 # Clip jobs then use this cached data instead of making real-time API calls
 
 on:
-  # Run daily at 2 AM UTC (9 PM EST during football season)
+  # Run weekly on Sundays at 2 AM UTC (after weekend games)
+  # Changed from daily to weekly to reduce API usage after backfill
+  # Since historical games don't change, we only need to fetch new games weekly
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 2 * * 0'
 
   # Allow manual triggering from Actions tab
   workflow_dispatch:
