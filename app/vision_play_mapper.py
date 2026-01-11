@@ -160,8 +160,8 @@ class VisionPlayMapper:
                     "-ss", str(timestamp),
                     "-i", video_path,
                     "-vframes", "1",
-                    "-q:v", "2",  # High quality JPEG
-                    "-vf", "scale='min(1920,iw)':-2",  # Limit to 1920px width
+                    "-q:v", "12",  # Balanced quality/size (was 2, now 12 for ~60-70% size reduction)
+                    "-vf", "scale='min(1280,iw)':-2",  # Limit to 1280px width (was 1920px, ~40% additional reduction)
                     frame_path,
                     "-y"
                 ]
@@ -219,6 +219,68 @@ class VisionPlayMapper:
             logger.error(f"  This will cause the Vision mapper to fail!")
 
         return frames
+
+    def filter_frames_for_plays(
+        self,
+        all_frames: List[Dict],
+        plays: List[Dict],
+        video_duration: float,
+        window_seconds: float = 90.0
+    ) -> List[Dict]:
+        """Filter frames to only those relevant to the plays in this batch.
+
+        For each play, we calculate its expected location in the video based on
+        game clock and quarter. Then we only include frames within ±window_seconds
+        of any play's expected location.
+
+        Args:
+            all_frames: All frames from the video
+            plays: Plays to process in this batch
+            video_duration: Total video duration in seconds
+            window_seconds: Window around each play to include frames (±90s = 180s total)
+
+        Returns:
+            Filtered list of frame dictionaries
+        """
+        if not plays or not all_frames:
+            return all_frames
+
+        # Calculate expected time ranges for all plays in this batch
+        time_ranges = []
+        for play in plays:
+            quarter = play.get('quarter', 1)
+            clock_minutes = play.get('clock_minutes', 0)
+            clock_seconds = play.get('clock_seconds', 0)
+
+            # Calculate expected location in video
+            quarter_duration = video_duration / 4
+            game_clock_seconds = clock_minutes * 60 + clock_seconds
+            seconds_into_quarter = (15 * 60) - game_clock_seconds  # Clock counts down
+
+            expected_video_time = ((quarter - 1) * quarter_duration) + (seconds_into_quarter / (15 * 60) * quarter_duration)
+
+            # Add window around expected time
+            start_window = max(0, expected_video_time - window_seconds)
+            end_window = min(video_duration, expected_video_time + window_seconds)
+            time_ranges.append((start_window, end_window))
+
+        # Filter frames that fall within any play's window
+        filtered_frames = []
+        for frame in all_frames:
+            frame_time = frame['timestamp']
+            # Check if frame is within any play's window
+            for start_window, end_window in time_ranges:
+                if start_window <= frame_time <= end_window:
+                    filtered_frames.append(frame)
+                    break  # Only add once
+
+        logger.info(f"[VISION MAPPER] Frame filtering:")
+        logger.info(f"  Total frames available: {len(all_frames)}")
+        logger.info(f"  Plays in batch: {len(plays)}")
+        logger.info(f"  Window per play: ±{window_seconds}s")
+        logger.info(f"  Filtered frames: {len(filtered_frames)} ({len(filtered_frames)/len(all_frames)*100:.1f}%)")
+
+        return filtered_frames
 
     @staticmethod
     def clean_json_response(response_text: str) -> str:
@@ -383,9 +445,18 @@ class VisionPlayMapper:
             logger.info(f"\n[BATCH {batch_idx + 1}/{len(play_batches)}] Processing {len(play_batch)} plays...")
 
             try:
-                # Call Claude Vision for this batch
-                detections, metrics = await self._detect_plays_batch(
+                # Filter frames to only those relevant to this batch of plays
+                video_duration = frames[-1][1] if frames else 0
+                filtered_frame_data = self.filter_frames_for_plays(
                     frame_data,
+                    play_batch,
+                    video_duration,
+                    window_seconds=90.0  # ±90 seconds around each play
+                )
+
+                # Call Claude Vision for this batch with filtered frames
+                detections, metrics = await self._detect_plays_batch(
+                    filtered_frame_data,  # Use filtered frames, not all frames
                     play_batch,
                     game_context,
                     batch_idx
@@ -581,10 +652,29 @@ Only include plays you can identify with at least medium confidence."""
             if len(plays) > 5:
                 logger.info(f"    ... and {len(plays) - 5} more plays")
 
-            # Estimate payload size
+            # Calculate actual payload size
             frame_bytes_estimate = sum(len(f["base64"]) for f in frame_data) if frame_data else 0
             frame_mb = frame_bytes_estimate / (1024 * 1024)
-            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Estimated payload size: ~{frame_mb:.1f}MB")
+            prompt_kb = len(prompt) / 1024
+            total_mb = frame_mb + (prompt_kb / 1024)
+
+            logger.info(f"[VISION MAPPER] [BATCH {batch_idx + 1}] Payload size details:")
+            logger.info(f"  Frame data: ~{frame_mb:.2f} MB ({len(frame_data)} frames)")
+            logger.info(f"  Prompt text: ~{prompt_kb:.2f} KB")
+            logger.info(f"  Total payload: ~{total_mb:.2f} MB")
+
+            # WARNING if payload is too large
+            if total_mb > 20:
+                logger.error("="*80)
+                logger.error(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ❌ PAYLOAD TOO LARGE!")
+                logger.error("="*80)
+                logger.error(f"  Payload size: {total_mb:.2f} MB")
+                logger.error(f"  API limit: ~20-25 MB")
+                logger.error(f"  Frames in batch: {len(frame_data)}")
+                logger.error(f"  This will likely result in 413 'Request Too Large' error")
+                logger.error("="*80)
+            elif total_mb > 15:
+                logger.warning(f"[VISION MAPPER] [BATCH {batch_idx + 1}] ⚠️  WARNING: Payload size ({total_mb:.2f} MB) is approaching API limit (20-25 MB)")
 
             # CRITICAL MARKER: About to call API
             logger.info("="*80)
