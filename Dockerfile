@@ -29,5 +29,6 @@ RUN pip install --no-cache-dir --upgrade pip \
     && yt-dlp --version
 
 COPY ./app /app/app
+COPY ./data /app/data
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
