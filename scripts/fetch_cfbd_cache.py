@@ -15,6 +15,7 @@ Game on Paper Architecture:
 import csv
 import logging
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -31,6 +32,38 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 logger = logging.getLogger(__name__)
+
+
+def camel_to_snake(name: str) -> str:
+    """Convert camelCase to snake_case.
+
+    Examples:
+        playType -> play_type
+        playText -> play_text
+        gameId -> game_id
+        driveId -> drive_id
+    """
+    # Insert underscore before capital letters and convert to lowercase
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+
+
+def normalize_play_dict(play: Dict) -> Dict:
+    """Convert CFBD API response (camelCase) to snake_case for CSV.
+
+    The CFBD API v2 returns camelCase field names (playType, playText, gameId, etc.)
+    but our CSV schema uses snake_case (play_type, play_text, game_id, etc.).
+
+    This function transforms the API response to match our CSV schema.
+    """
+    normalized = {}
+
+    for key, value in play.items():
+        # Convert camelCase to snake_case
+        snake_key = camel_to_snake(key)
+        normalized[snake_key] = value
+
+    return normalized
 
 
 def fetch_games_for_season(client: CFBDClient, year: int, season_type: str = "regular") -> List[Dict]:
@@ -75,13 +108,16 @@ def save_plays_to_csv(game_id: int, plays: List[Dict], output_dir: Path) -> bool
             writer.writeheader()
 
             for play in plays:
-                # Convert clock object to string if needed
-                if isinstance(play.get('clock'), dict):
-                    minutes = play['clock'].get('minutes', 0)
-                    seconds = play['clock'].get('seconds', 0)
-                    play['clock'] = f"{minutes}:{seconds:02d}"
+                # Normalize camelCase field names to snake_case
+                normalized_play = normalize_play_dict(play)
 
-                writer.writerow(play)
+                # Convert clock object to string if needed
+                if isinstance(normalized_play.get('clock'), dict):
+                    minutes = normalized_play['clock'].get('minutes', 0)
+                    seconds = normalized_play['clock'].get('seconds', 0)
+                    normalized_play['clock'] = f"{minutes}:{seconds:02d}"
+
+                writer.writerow(normalized_play)
 
         logger.info(f"✓ Saved {len(plays)} plays for game {game_id} to {output_file}")
         return True
