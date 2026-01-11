@@ -1,0 +1,170 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401643858101854701,401643858,4016438581,2,1,14:52,Hawai'i,Delaware State,0,0,69,1,10,9,Pass Reception,Brayden Schager pass complete to Dekel Crowdus for 9 yds to the HAW 40,1.3649000856171405,2024-08-25T03:56:35.000Z
+401643858101857501,401643858,4016438581,3,1,14:24,Hawai'i,Delaware State,0,0,60,2,1,0,Pass Incompletion,Brayden Schager pass incomplete,-1.4077884997833667,2024-08-25T03:56:35.000Z
+401643858101857601,401643858,4016438581,4,1,14:23,Hawai'i,Delaware State,0,0,60,3,1,0,Pass Incompletion,Brayden Schager pass incomplete,-0.8915143649677582,2024-08-25T03:56:35.000Z
+401643858101858301,401643858,4016438581,5,1,14:16,Hawai'i,Delaware State,0,0,60,4,1,0,Punt,"Lucas Borrow punt for 55 yds, downed at the DSU 5",,2024-08-25T03:56:35.000Z
+401643858101849906,401643858,4016438581,1,1,15:00,Delaware State,Hawai'i,0,0,65,0,0,16,Kickoff Return (Offense),"Nathan Wilson kickoff for 50 yds , Tylan Hines return for 16 yds to the HAW 31",,2024-08-25T03:56:35.000Z
+401643858101866901,401643858,4016438582,2,1,13:30,Delaware State,Hawai'i,0,0,91,2,6,3,Pass Reception,Marqui Adams pass complete to Edward Core for 3 yds to the DSU 12,-0.10683929933843483,2024-08-25T03:56:35.000Z
+401643858101875601,401643858,4016438582,3,1,12:43,Delaware State,Hawai'i,0,0,88,3,3,10,Rush,Marqui Adams run for 10 yds to the DSU 22 for a 1ST down,0.7876328358561508,2024-08-25T03:56:35.000Z
+401643858101859401,401643858,4016438582,1,1,14:05,Delaware State,Hawai'i,0,0,95,1,10,4,Pass Reception,Marqui Adams pass complete to Edward Core for 4 yds to the DSU 9,-0.03441629082403441,2024-08-25T03:56:35.000Z
+401643858101879001,401643858,4016438582,4,1,12:09,Delaware State,Hawai'i,0,0,78,1,10,0,Pass Reception,Marqui Adams pass complete to NyGhee Lolley for no gain to the DSU 22,-0.6135902757979226,2024-08-25T03:56:35.000Z
+401643858101885001,401643858,4016438582,5,1,11:49,Delaware State,Hawai'i,0,0,78,2,10,-1,Pass Reception,Marqui Adams pass complete to NyGhee Lolley for a loss of 1 yard to the DSU 21,-0.33041092406146255,2024-08-25T03:56:35.000Z
+401643858101888601,401643858,4016438582,6,1,11:13,Delaware State,Hawai'i,0,0,79,3,11,0,Pass Incompletion,Marqui Adams pass incomplete,-0.10984453001360352,2024-08-25T03:56:35.000Z
+401643858101889401,401643858,4016438582,7,1,11:05,Delaware State,Hawai'i,0,0,79,4,11,0,Punt,Nathan Wilson punt for 40 yds,,2024-08-25T03:56:35.000Z
+401643858101894001,401643858,4016438583,1,1,10:59,Hawai'i,Delaware State,0,0,61,1,10,16,Pass Reception,Brayden Schager pass complete to Pofele Ashlock for 16 yds to the DSU 45 for a 1ST down,1.378501951397798,2024-08-25T03:56:35.000Z
+401643858101896401,401643858,4016438583,2,1,10:35,Hawai'i,Delaware State,0,0,45,1,10,29,Rush,Landon Sims run for 29 yds to the DSU 16 for a 1ST down,0.9077913637746936,2024-08-25T03:56:35.000Z
+401643858101898101,401643858,4016438583,3,1,10:18,Hawai'i,Delaware State,0,0,16,1,10,5,Pass Reception,Brayden Schager pass complete to Alex Perry for 5 yds to the DSU 11,0.0743553747013194,2024-08-25T03:56:35.000Z
+401643858101906401,401643858,4016438583,4,1,9:35,Hawai'i,Delaware State,7,0,11,2,5,11,Passing Touchdown,Brayden Schager pass complete to Tamatoa Mokiao-Atimalala for 11 yds for a TD (Kansei Matsuzawa KICK),2.494367346591055,2024-08-24T04:19:01.000Z
+401643858101906601,401643858,4016438584,2,1,9:33,Delaware State,Hawai'i,0,7,75,1,10,-12,Penalty,"Delaware State Penalty, Unsportsmanlike Conduct (NyGhee Lolley) to the DSU 13",,2024-08-25T03:56:35.000Z
+401643858101909001,401643858,4016438584,3,1,9:09,Delaware State,Hawai'i,0,7,87,2,22,-1,Rush,Jaden Sutton run for a loss of 1 yard to the DSU 12,-0.04897392312343387,2024-08-25T03:56:35.000Z
+401643858101917301,401643858,4016438584,4,1,8:26,Delaware State,Hawai'i,0,7,88,3,23,6,Rush,Marqui Adams run for 6 yds to the DSU 18,0.00733260898272457,2024-08-25T03:56:35.000Z
+401643858101906403,401643858,4016438584,1,1,9:35,Hawai'i,Delaware State,7,0,65,0,0,0,Kickoff,Ben Falck kickoff for 65 yds for a touchback,,2024-08-24T04:19:01.000Z
+401643858101926201,401643858,4016438584,5,1,7:37,Delaware State,Hawai'i,0,7,82,4,17,0,Timeout,"Timeout Hawai'i, clock 07:37",,2024-08-24T04:26:25.000Z
+401643858101926501,401643858,4016438584,6,1,7:34,Delaware State,Hawai'i,0,7,82,4,17,0,Punt,"Nathan Wilson punt for 53 yds, downed at the HAW 29",,2024-08-25T03:56:35.000Z
+401643858101935101,401643858,4016438585,4,1,6:48,Hawai'i,Delaware State,7,0,62,4,1,9,Punt,"Lucas Borrow punt for 50 yds , Kristian Tate returns for 9 yds to the DSU 21",,2024-08-25T03:56:35.000Z
+401643858101934501,401643858,4016438585,3,1,6:54,Hawai'i,Delaware State,7,0,62,3,1,0,Pass Incompletion,Brayden Schager pass incomplete,-0.8266637544090916,2024-08-25T03:56:35.000Z
+401643858101934101,401643858,4016438585,2,1,6:58,Hawai'i,Delaware State,7,0,62,2,1,0,Pass Incompletion,Brayden Schager pass incomplete,-1.3737127893864507,2024-08-25T03:56:35.000Z
+401643858101927501,401643858,4016438585,1,1,7:24,Hawai'i,Delaware State,7,0,71,1,10,9,Rush,Landon Sims run for 9 yds to the HAW 38,1.3370266566355031,2024-08-25T03:56:35.000Z
+401643858101939601,401643858,4016438586,2,1,6:03,Delaware State,Hawai'i,0,7,73,2,4,-5,Rush,Marqui Adams run for a loss of 5 yards to the DSU 22,-1.1164271481981016,2024-08-25T03:56:35.000Z
+401643858101936401,401643858,4016438586,1,1,6:35,Delaware State,Hawai'i,0,7,79,1,10,6,Pass Reception,Marqui Adams pass complete to Ryan Lee for 6 yds to the DSU 27,0.2977036772411737,2024-08-25T03:56:35.000Z
+401643858101948001,401643858,4016438586,3,1,5:19,Delaware State,Hawai'i,0,7,78,3,9,7,Pass Reception,Marqui Adams pass complete to Jayden Jenkins for 7 yds to the DSU 29,0.14282251250000844,2024-08-25T03:56:35.000Z
+401643858101956301,401643858,4016438586,4,1,4:36,Delaware State,Hawai'i,0,7,71,4,2,0,Punt,"Nathan Wilson punt for 48 yds, downed at the HAW 23",,2024-08-25T03:56:35.000Z
+401643858101984301,401643858,4016438587,8,1,1:56,Hawai'i,Delaware State,7,0,48,3,7,0,Pass Incompletion,Brayden Schager pass incomplete,-0.8995343697285872,2024-08-25T03:56:35.000Z
+401643858101957701,401643858,4016438587,1,1,4:22,Hawai'i,Delaware State,7,0,77,1,10,0,Pass Incompletion,Brayden Schager pass incomplete,-0.6425305871127751,2024-08-24T04:50:03.000Z
+401643858101958601,401643858,4016438587,2,1,4:13,Hawai'i,Delaware State,7,0,77,2,10,0,Pass Incompletion,Brayden Schager pass incomplete,-0.30950338122914456,2024-08-25T03:56:35.000Z
+401643858101958801,401643858,4016438587,3,1,4:11,Hawai'i,Delaware State,7,0,77,3,10,11,Pass Reception,Brayden Schager pass complete to Dekel Crowdus for 11 yds to the HAW 34 for a 1ST down,1.8256216728017023,2024-08-25T03:56:35.000Z
+401643858101965001,401643858,4016438587,4,1,3:49,Hawai'i,Delaware State,7,0,66,1,10,9,Rush,Cam Barfield run for 9 yds to the HAW 43,1.3844644054795978,2024-08-25T03:56:35.000Z
+401643858101968201,401643858,4016438587,5,1,3:17,Hawai'i,Delaware State,7,0,57,2,1,6,Rush,Brayden Schager run for 6 yds to the HAW 49 for a 1ST down,0.0289377803570774,2024-08-25T03:56:35.000Z
+401643858101976001,401643858,4016438587,6,1,2:39,Hawai'i,Delaware State,7,0,51,1,10,0,Pass Incompletion,Brayden Schager pass incomplete,-1.1301991718133413,2024-08-25T03:56:35.000Z
+401643858101976801,401643858,4016438587,7,1,2:31,Hawai'i,Delaware State,7,0,51,2,10,3,Rush,Landon Sims run for 3 yds to the DSU 48,-0.3956528240979669,2024-08-25T03:56:35.000Z
+401643858101984901,401643858,4016438587,9,1,1:50,Hawai'i,Delaware State,7,0,48,4,7,0,Punt,Lucas Borrow punt for 47 yds,,2024-08-25T03:56:35.000Z
+401643858101996301,401643858,4016438588,3,1,0:36,Delaware State,Hawai'i,0,7,96,2,7,0,Timeout,"Timeout Hawai'i, clock 00:36",,2024-08-24T04:43:20.000Z
+401643858101985701,401643858,4016438588,1,1,1:42,Delaware State,Hawai'i,0,7,99,1,10,7,Rush,Jaden Sutton run for 7 yds to the DSU 8,0.29382171005634117,2024-08-25T03:56:35.000Z
+401643858101989501,401643858,4016438588,2,1,1:04,Delaware State,Hawai'i,0,7,92,2,3,-4,Penalty,"(01:04) SUTTON, Jaden rush up the middle for a gain of 4 yards to the DSU12 (JONES, Tariq), clock 01:02. PENALTY DSU Holding on COOK, Isaiah enforced half the distance from the goal, 4 yards from the DSU8 to the DSU4 [NHSG]. NO PLAY (replay the down).",,2024-08-24T04:50:03.000Z
+401643858101996401,401643858,4016438588,4,1,0:35,Delaware State,Hawai'i,0,7,96,2,7,0,Pass Incompletion,Marqui Adams pass incomplete,-0.18567144317009013,2024-08-25T03:56:35.000Z
+401643858101997001,401643858,4016438588,5,1,0:29,Delaware State,Hawai'i,0,7,96,3,7,0,Pass Incompletion,Marqui Adams pass incomplete,-0.07845313192846334,2024-08-25T03:56:35.000Z
+401643858101998901,401643858,4016438588,6,1,0:10,Delaware State,Hawai'i,0,14,96,4,7,44,Punt,"Nathan Wilson punt for 40 yds , Tylan Hines returns for 44 yds for a TD (Kansei Matsuzawa KICK)",,2024-08-24T04:46:24.000Z
+401643858101999002,401643858,4016438589,3,1,0:00,Delaware State,Hawai'i,0,14,75,0,10,0,End Period,End of 1st Quarter,,2024-08-24T04:50:03.000Z
+401643858101998903,401643858,4016438589,1,1,0:10,Hawai'i,Delaware State,14,0,65,0,0,0,Kickoff,Ben Falck kickoff for 65 yds for a touchback,,2024-08-24T04:46:24.000Z
+401643858101999001,401643858,4016438589,2,1,0:09,Delaware State,Hawai'i,0,14,75,1,10,0,Rush,Jaden Sutton run for no gain to the DSU 25,-0.7029700220436519,2024-08-24T04:50:03.000Z
+401643858102854201,401643858,4016438589,4,2,14:57,Delaware State,Hawai'i,0,14,75,2,10,0,Pass Incompletion,Marqui Adams pass incomplete,-0.34710487712173865,2024-08-24T04:53:10.000Z
+401643858102854501,401643858,4016438589,5,2,14:54,Delaware State,Hawai'i,0,14,75,3,10,-4,Fumble Recovery (Own),"Marqui Adams sacked for a loss of 4 yards to the DSU 21 Marqui Adams fumbled, recovered by DSU Marqui Adams , return for 0 yards",-0.2219414250072962,2024-08-24T04:53:10.000Z
+401643858102864201,401643858,4016438589,6,2,13:57,Delaware State,Hawai'i,0,14,79,4,14,0,Punt,"Nathan Wilson punt for 62 yds, downed at the HAW 17",,2024-08-24T04:55:19.000Z
+401643858102864601,401643858,40164385810,1,2,13:53,Hawai'i,Delaware State,14,0,83,1,10,0,Pass Incompletion,Brayden Schager pass incomplete,-0.48436415563340685,2024-08-24T04:53:10.000Z
+401643858102865001,401643858,40164385810,2,2,13:49,Hawai'i,Delaware State,14,0,83,2,10,0,Pass Incompletion,Brayden Schager pass incomplete,-0.22048200027874199,2024-08-24T04:53:10.000Z
+401643858102865702,401643858,40164385810,3,2,13:42,Hawai'i,Delaware State,14,0,83,3,10,-16,Penalty,"(13:42) SCHAGER, Brayden pass deep up the middle complete for 16 yards to CURTIS, Spencer caught at the HAW33 and advanced to the HAW33, End of Play, clock 13:35. PENALTY HAW Holding on DECAMBRA, Ka'ena enforced half the distance from the goal, 8 yards from the HAW17 to the HAW9 [SG]. NO PLAY (replay the down).",,2024-08-24T04:53:10.000Z
+401643858102868001,401643858,40164385810,4,2,13:19,Hawai'i,Delaware State,14,0,91,3,18,5,Rush,Landon Sims run for 5 yds to the HAW 14,0.0029407867205267,2024-08-24T04:53:10.000Z
+401643858102875601,401643858,40164385810,5,2,12:43,Hawai'i,Delaware State,14,0,86,4,13,0,Punt,Lucas Borrow punt for 43 yds,,2024-08-24T04:53:10.000Z
+401643858102876301,401643858,40164385811,1,2,12:36,Delaware State,Hawai'i,0,14,57,1,10,1,Rush,Jaden Sutton run for 1 yd to the DSU 44,-0.9288647615840891,2024-08-24T04:53:10.000Z
+401643858102884301,401643858,40164385811,2,2,11:56,Delaware State,Hawai'i,0,14,56,2,9,5,Rush,Jaden Sutton run for 5 yds to the DSU 49,0.079051030005413,2024-08-24T04:53:10.000Z
+401643858102888901,401643858,40164385811,3,2,11:10,Delaware State,Hawai'i,0,14,51,3,4,-5,Penalty,"Delaware State Penalty, Delay Of Game (Charles Brown Jr.) to the DSU 44",,2024-08-24T05:01:19.000Z
+401643858102894701,401643858,40164385811,4,2,10:52,Delaware State,Hawai'i,0,14,56,3,9,7,Rush,Marqui Adams run for 7 yds to the HAW 49,0.4107734158799614,2024-08-24T04:53:10.000Z
+401643858102906801,401643858,40164385811,5,2,9:31,Delaware State,Hawai'i,0,14,49,4,2,0,Punt,"Nathan Wilson punt for 31 yds, downed at the HAW 18",,2024-08-24T04:53:10.000Z
+401643858102908001,401643858,40164385812,1,2,9:19,Hawai'i,Delaware State,14,0,82,1,10,0,Pass Incompletion,Brayden Schager pass incomplete,-0.5080208698531008,2024-08-24T04:53:10.000Z
+401643858102908601,401643858,40164385812,2,2,9:13,Hawai'i,Delaware State,14,0,82,2,10,6,Rush,David Cordero run for 6 yds to the HAW 24,0.12492517769457745,2024-08-24T04:53:10.000Z
+401643858102916001,401643858,40164385812,3,2,8:39,Hawai'i,Delaware State,14,0,76,3,4,9,Pass Reception,Brayden Schager pass complete to for 9 yds to the HAW 33 for a 1ST down,1.4423372723102252,2024-08-24T04:53:10.000Z
+401643858102918701,401643858,40164385812,4,2,8:12,Hawai'i,Delaware State,14,0,67,1,10,3,Rush,David Cordero run for 3 yds to the HAW 36,-0.3884871214664028,2024-08-24T04:53:10.000Z
+401643858102926101,401643858,40164385812,5,2,7:38,Hawai'i,Delaware State,14,0,64,2,7,2,Rush,Brayden Schager run for 2 yds to the HAW 38,-0.5126286851078418,2024-08-24T04:53:10.000Z
+401643858102934401,401643858,40164385812,6,2,6:55,Hawai'i,Delaware State,14,0,62,3,5,0,Pass Incompletion,Brayden Schager pass incomplete,-0.5709613673025657,2024-08-24T04:53:10.000Z
+401643858102936001,401643858,40164385812,7,2,6:39,Hawai'i,Delaware State,14,0,62,4,5,2,Punt,"Lucas Borrow punt for 38 yds , Kristian Tate returns for 2 yds to the DSU 26",,2024-08-24T05:12:38.000Z
+401643858102936301,401643858,40164385813,1,2,6:36,Delaware State,Hawai'i,0,14,74,1,10,1,Rush,Jayden Jenkins run for 1 yd to the DSU 27,-0.6129109161878361,2024-08-24T04:53:10.000Z
+401643858102939901,401643858,40164385813,2,2,6:00,Delaware State,Hawai'i,0,14,73,2,9,0,Pass Incompletion,Marqui Adams pass incomplete,-0.43127540127432606,2024-08-24T04:53:10.000Z
+401643858102944501,401643858,40164385813,3,2,5:54,Delaware State,Hawai'i,0,14,73,3,9,-1,Sack,Marqui Adams sacked by Jamar Sekona for a loss of 1 yard to the DSU 26,-0.22682370321313083,2024-08-24T04:53:10.000Z
+401643858102949801,401643858,40164385813,4,2,5:01,Delaware State,Hawai'i,0,14,74,4,10,0,Punt,Nathan Wilson punt for 39 yds,,2024-08-24T04:53:10.000Z
+401643858102954501,401643858,40164385814,1,2,4:54,Hawai'i,Delaware State,14,0,65,1,10,2,Pass Reception,Brayden Schager pass complete to Landon Sims for 2 yds to the HAW 37,-0.63079683335922,2024-08-24T04:53:10.000Z
+401643858102957501,401643858,40164385814,2,2,4:24,Hawai'i,Delaware State,14,0,63,2,8,9,Pass Reception,Brayden Schager pass complete to Spencer Curtis for 9 yds to the HAW 46 for a 1ST down,1.6886163063653468,2024-08-24T04:53:10.000Z
+401643858102964101,401643858,40164385814,3,2,3:58,Hawai'i,Delaware State,14,0,54,1,10,5,Rush,Brayden Schager run for 5 yds to the DSU 49,0.1068990350586356,2024-08-24T04:53:10.000Z
+401643858102967801,401643858,40164385814,4,2,3:21,Hawai'i,Delaware State,14,0,49,2,5,-1,Rush,Landon Sims run for a loss of 1 yard to the 50 yard line,-1.4258938284037388,2024-08-24T04:53:10.000Z
+401643858102975801,401643858,40164385814,5,2,2:41,Hawai'i,Delaware State,14,0,50,3,6,-8,Sack,Brayden Schager sacked by Brian Bates for a loss of 8 yards to the HAW 42,-1.6214418890528508,2024-08-24T04:53:10.000Z
+401643858102979901,401643858,40164385814,6,2,2:00,Hawai'i,Delaware State,14,0,58,4,14,0,Punt,Lucas Borrow punt for 35 yds,,2024-08-24T04:53:10.000Z
+401643858102985701,401643858,40164385815,2,2,1:42,Delaware State,Hawai'i,0,14,60,1,10,0,Pass Incompletion,Marqui Adams pass incomplete,-1.1247712359915258,2024-08-24T04:53:10.000Z
+401643858102984601,401643858,40164385815,1,2,1:53,Delaware State,Hawai'i,0,14,77,1,10,17,Pass Reception,Marqui Adams pass complete to Jaden Sutton for 17 yds to the DSU 40 for a 1ST down,1.4534564900457214,2024-08-24T04:53:10.000Z
+401643858102986601,401643858,40164385815,3,2,1:33,Delaware State,Hawai'i,0,14,60,2,10,5,Pass Reception,Marqui Adams pass complete to Kyree Benton for 5 yds to the DSU 45,0.0666921976583623,2024-08-24T04:53:10.000Z
+401643858102996001,401643858,40164385815,8,2,0:39,Delaware State,Hawai'i,0,14,19,2,10,0,Timeout,"Timeout Hawai'i, clock 00:39",,2024-08-24T05:27:12.000Z
+401643858102998703,401643858,40164385815,11,2,0:12,Delaware State,Hawai'i,0,14,65,0,0,-15,Kickoff,"Nathan Wilson kickoff Delaware State Penalty, Unsportsmanlike Conduct (Jestus Johnson) to the DSU 20",,2024-08-24T05:29:38.000Z
+401643858102996201,401643858,40164385815,9,2,0:37,Delaware State,Hawai'i,0,14,19,2,10,9,Pass Reception,Marqui Adams pass complete to Jaden Sutton for 9 yds to the HAW 10,0.412055142504236,2024-08-24T04:53:10.000Z
+401643858102987401,401643858,40164385815,4,2,1:25,Delaware State,Hawai'i,0,14,55,3,5,12,Pass Reception,Marqui Adams pass complete to Kristian Tate for 12 yds to the HAW 43 for a 1ST down,2.4626095545459847,2024-08-24T04:53:10.000Z
+401643858102988501,401643858,40164385815,5,2,1:14,Delaware State,Hawai'i,0,14,43,1,10,7,Rush,Marqui Adams run for 7 yds to the HAW 36,0.4865052754922522,2024-08-24T04:53:10.000Z
+401643858102995101,401643858,40164385815,6,2,0:48,Delaware State,Hawai'i,0,14,36,2,3,17,Pass Reception,Marqui Adams pass complete to Jaden Sutton for 17 yds to the HAW 19 for a 1ST down,0.261417183801079,2024-08-24T04:53:10.000Z
+401643858102995901,401643858,40164385815,7,2,0:40,Delaware State,Hawai'i,0,14,19,1,10,0,Pass Incompletion,Marqui Adams pass incomplete,-0.362321296557512,2024-08-24T04:53:10.000Z
+401643858102998701,401643858,40164385815,10,2,0:12,Delaware State,Hawai'i,7,14,10,3,1,10,Rushing Touchdown,Marqui Adams run for 10 yds for a TD (Nathan Wilson KICK),2.554713782690799,2024-08-24T05:29:38.000Z
+401643858102998704,401643858,40164385816,1,2,0:12,Delaware State,Hawai'i,7,14,65,0,0,42,Kickoff Return (Offense),"Nathan Wilson kickoff for 47 yds , Tylan Hines return for 42 yds to the HAW 30",,2024-08-24T05:29:38.000Z
+401643858102999903,401643858,40164385816,3,2,0:00,Hawai'i,Delaware State,14,7,71,0,10,0,End of Half,End of 2nd Quarter,,2024-08-24T05:33:39.000Z
+401643858102999901,401643858,40164385816,2,2,0:00,Hawai'i,Delaware State,14,7,70,1,10,-1,Rush,"[NHSG] Kneel down by SCHAGER, Brayden at HAW29 (team loss of 1), clock 00:00.",-0.990133578060151,2024-08-24T05:33:39.000Z
+401643858103854001,401643858,40164385817,2,3,14:59,Delaware State,Hawai'i,7,14,75,1,10,6,Rush,Jaden Sutton run for 6 yds to the DSU 31,0.3333748010525683,2024-08-24T05:55:36.000Z
+401643858103855901,401643858,40164385817,3,3,14:40,Delaware State,Hawai'i,7,14,69,2,4,-1,Rush,Jaden Sutton run for a loss of 1 yard to the DSU 30,-0.9925621565849942,2024-08-24T05:55:36.000Z
+401643858103859501,401643858,40164385817,4,3,14:04,Delaware State,Hawai'i,7,14,70,3,5,10,Rush,Marqui Adams run for 10 yds to the DSU 40 for a 1ST down,1.980041871110072,2024-08-24T05:55:36.000Z
+401643858103867301,401643858,40164385817,5,3,13:26,Delaware State,Hawai'i,7,14,60,1,10,5,Rush,Jaden Sutton run for 5 yds to the DSU 45,0.1106144250151839,2024-08-24T05:55:36.000Z
+401643858103875301,401643858,40164385817,6,3,12:46,Delaware State,Hawai'i,7,14,55,2,5,6,Pass Reception,Marqui Adams pass complete to Jordan Hull for 6 yds to the HAW 49 for a 1ST down,0.8839556274912432,2024-08-24T05:55:36.000Z
+401643858103885801,401643858,40164385817,8,3,11:41,Delaware State,Hawai'i,7,14,48,1,9,42,Pass Reception,Marqui Adams pass complete to Ryan Lee for 42 yds to the HAW 6 for a 1ST down,1.4834288640221356,2024-08-24T05:55:36.000Z
+401643858103888901,401643858,40164385817,9,3,11:10,Delaware State,Hawai'i,14,14,6,1,6,6,Rushing Touchdown,Jaden Sutton run for 6 yds for a TD (Nathan Wilson KICK),2.052489771065277,2024-08-24T06:01:52.000Z
+401643858103888902,401643858,40164385817,10,3,11:10,Delaware State,Hawai'i,7,14,3,0,0,-5,Penalty,"Delaware State Penalty, False Start (-5 Yards) to the HAW 8",,2024-08-24T06:01:52.000Z
+401643858103878801,401643858,40164385817,7,3,12:11,Delaware State,Hawai'i,7,14,49,1,10,-10,Penalty,"Delaware State Penalty, Offensive Holding (Kyree Benton) to the HAW 48",,2024-08-24T05:55:36.000Z
+401643858103849903,401643858,40164385817,1,3,15:00,Hawai'i,Delaware State,14,7,65,0,0,0,Kickoff,Ben Falck kickoff for 65 yds for a touchback,,2024-08-24T05:55:36.000Z
+401643858103888904,401643858,40164385818,1,3,11:10,Delaware State,Hawai'i,14,14,65,0,0,0,Kickoff Return (Offense),"Nathan Wilson kickoff for 32 yds , Cam Barfield return for no gain to the HAW 33",,2024-08-24T06:01:52.000Z
+401643858103889201,401643858,40164385818,2,3,11:07,Hawai'i,Delaware State,14,14,67,1,10,13,Pass Reception,Brayden Schager pass complete to Pofele Ashlock for 13 yds to the HAW 46 for a 1ST down,1.2441591314559408,2024-08-24T05:55:36.000Z
+401643858103896401,401643858,40164385818,3,3,10:35,Hawai'i,Delaware State,14,14,54,1,10,19,Pass Reception,Brayden Schager pass complete to Tamatoa Mokiao-Atimalala for 19 yds to the DSU 35 for a 1ST down,1.212308753908252,2024-08-24T05:55:36.000Z
+401643858103899401,401643858,40164385818,4,3,10:05,Hawai'i,Delaware State,14,14,35,1,10,6,Rush,Brayden Schager run for 6 yds to the DSU 29,0.233934295436585,2024-08-24T05:55:36.000Z
+401643858103907101,401643858,40164385818,5,3,9:28,Hawai'i,Delaware State,14,14,29,2,4,0,Pass Incompletion,Brayden Schager pass incomplete,-0.697118400245742,2024-08-24T05:55:36.000Z
+401643858103908101,401643858,40164385818,6,3,9:18,Hawai'i,Delaware State,14,14,29,3,4,4,Rush,Landon Sims run for 4 yds to the DSU 25 for a 1ST down,0.7356885263200555,2024-08-24T05:55:36.000Z
+401643858103916401,401643858,40164385818,7,3,8:35,Hawai'i,Delaware State,14,14,25,1,10,0,Pass Incompletion,Brayden Schager pass incomplete,-0.4522778946200265,2024-08-24T05:55:36.000Z
+401643858103917301,401643858,40164385818,8,3,8:26,Hawai'i,Delaware State,14,14,25,2,10,10,Pass Reception,Brayden Schager pass complete to Pofele Ashlock for 10 yds to the DSU 15 for a 1ST down,0.594163167321001,2024-08-24T05:55:36.000Z
+401643858103925701,401643858,40164385818,9,3,7:42,Hawai'i,Delaware State,21,14,15,1,10,15,Rushing Touchdown,Brayden Schager run for 15 yds for a TD (Kansei Matsuzawa KICK),2.558199089565083,2024-08-24T06:12:05.000Z
+401643858103925703,401643858,40164385819,1,3,7:42,Hawai'i,Delaware State,21,14,65,0,0,0,Kickoff,Ben Falck kickoff for 65 yds for a touchback,,2024-08-24T06:12:05.000Z
+401643858103925705,401643858,40164385819,2,3,7:42,Delaware State,Hawai'i,14,21,75,1,10,-2,Sack,Marqui Adams sacked by Jamih Otis for a loss of 2 yards to the DSU 23,-0.8852575132705454,2024-08-24T06:12:05.000Z
+401643858103929901,401643858,40164385819,3,3,7:00,Delaware State,Hawai'i,14,21,77,2,12,0,Rush,Marqui Adams run for no gain to the DSU 23,-0.2489092113983693,2024-08-24T05:55:36.000Z
+401643858103937801,401643858,40164385819,4,3,6:21,Delaware State,Hawai'i,14,21,77,3,12,2,Rush,Marqui Adams run for 2 yds to the DSU 25,-0.0746212629453398,2024-08-24T05:55:36.000Z
+401643858103939201,401643858,40164385819,5,3,6:07,Delaware State,Hawai'i,14,21,75,4,10,0,Punt,Nathan Wilson punt for 30 yds,,2024-08-24T05:55:36.000Z
+401643858103944301,401643858,40164385820,1,3,5:56,Hawai'i,Delaware State,21,14,55,1,10,13,Pass Reception,Brayden Schager pass complete to Pofele Ashlock for 13 yds to the DSU 42 for a 1ST down,0.981677765744241,2024-08-24T05:55:36.000Z
+401643858103948601,401643858,40164385820,2,3,5:13,Hawai'i,Delaware State,21,14,42,1,10,0,Pass Incompletion,Brayden Schager pass incomplete,-0.908489395271188,2024-08-24T05:55:36.000Z
+401643858103949401,401643858,40164385820,3,3,5:05,Hawai'i,Delaware State,21,14,42,2,10,0,Rush,Landon Sims run for no gain to the DSU 42,-1.0526570825811008,2024-08-24T05:55:36.000Z
+401643858103957501,401643858,40164385820,4,3,4:24,Hawai'i,Delaware State,21,14,42,3,10,0,Pass Incompletion,Brayden Schager pass incomplete,-0.9347686073010077,2024-08-24T05:55:36.000Z
+401643858103957901,401643858,40164385820,5,3,4:20,Hawai'i,Delaware State,21,14,42,4,10,0,Punt,"Lucas Borrow punt for 35 yds, downed at the DSU 7",,2024-08-24T05:55:36.000Z
+401643858103958801,401643858,40164385821,1,3,4:11,Delaware State,Hawai'i,14,21,93,1,10,4,Rush,Jayden Jenkins run for 4 yds to the DSU 11,-0.03931026581467823,2024-08-24T05:55:36.000Z
+401643858103965701,401643858,40164385821,2,3,3:42,Delaware State,Hawai'i,14,21,89,2,6,4,Rush,Jayden Jenkins run for 4 yds to the DSU 15,-0.03510438151369755,2024-08-24T05:55:36.000Z
+401643858103969501,401643858,40164385821,3,3,3:04,Delaware State,Hawai'i,14,21,85,3,2,9,Pass Reception,Marqui Adams pass complete to Jayden Jenkins for 9 yds to the DSU 24 for a 1ST down,0.8023035158146357,2024-08-24T06:32:18.000Z
+401643858103969502,401643858,40164385821,4,3,3:04,Delaware State,Hawai'i,14,21,76,1,10,7,Pass Reception,Marqui Adams pass complete to Jordan Hull for 7 yds to the DSU 31,0.5892240913275142,2024-08-24T06:32:18.000Z
+401643858103969503,401643858,40164385821,5,3,3:04,Delaware State,Hawai'i,14,21,69,2,3,-5,Rush,Jayden Jenkins run for a loss of 5 yards to the DSU 26,-1.4773838172185343,2024-08-24T06:32:18.000Z
+401643858103969504,401643858,40164385821,6,3,3:04,Delaware State,Hawai'i,14,21,74,3,8,0,Pass Incompletion,Marqui Adams pass incomplete,-0.21095545592457476,2024-08-24T06:32:18.000Z
+401643858103995401,401643858,40164385821,7,3,0:45,Delaware State,Hawai'i,14,21,74,4,8,0,Punt,"Nathan Wilson punt for 19 yds , Tylan Hines returns for no gain to the DSU 45",,2024-08-24T06:32:18.000Z
+401643858103995405,401643858,40164385822,3,3,0:00,Hawai'i,Delaware State,21,14,40,0,5,4,End Period,End of 3rd Quarter,,2024-08-24T06:32:18.000Z
+401643858103995403,401643858,40164385822,1,3,0:45,Hawai'i,Delaware State,21,14,45,1,10,5,Rush,Brayden Schager run for 5 yds to the DSU 40,0.0943461181043617,2024-08-24T06:32:18.000Z
+401643858103995404,401643858,40164385822,2,3,0:45,Hawai'i,Delaware State,21,14,40,2,5,4,Pass Reception,Brayden Schager pass complete to Nick Cenacle for 4 yds to the DSU 36,-0.1138524523599057,2024-08-24T06:32:18.000Z
+401643858104849902,401643858,40164385822,4,4,15:00,Hawai'i,Delaware State,21,14,36,3,1,1,Rush,Brayden Schager run for 1 yd to the DSU 35 for a 1ST down,0.523431635545656,2024-08-24T06:34:39.000Z
+401643858104849904,401643858,40164385822,5,4,15:00,Hawai'i,Delaware State,21,14,35,1,10,6,Pass Reception,Brayden Schager pass complete to Spencer Curtis for 6 yds to the DSU 29,0.233934295436585,2024-08-24T06:34:39.000Z
+401643858104865901,401643858,40164385822,6,4,13:40,Hawai'i,Delaware State,28,14,29,2,4,29,Passing Touchdown,Brayden Schager pass complete to Dekel Crowdus for 29 yds for a TD (Kansei Matsuzawa KICK),2.738654488340371,2024-08-24T06:37:14.000Z
+401643858104866310,401643858,40164385823,8,4,13:36,Hawai'i,Delaware State,28,14,65,0,0,14,Kickoff Return (Offense),"Ben Falck kickoff for 62 yds , Kristian Tate return for 14 yds to the DSU 17 Kristian Tate fumbled, recovered by DSU Jeffery Broughton J. Broughton return for 14 yds , return for no gain to the DSU 17",,2024-08-24T07:13:09.000Z
+401643858104866302,401643858,40164385823,1,4,13:36,Delaware State,Hawai'i,14,28,83,1,10,0,Pass Incompletion,Marqui Adams pass incomplete,-0.48436415563340685,2024-08-24T07:13:09.000Z
+401643858104866303,401643858,40164385823,2,4,13:36,Delaware State,Hawai'i,14,28,83,2,10,0,Pass Incompletion,Marqui Adams pass incomplete,-0.22048200027874199,2024-08-24T06:34:39.000Z
+401643858104866304,401643858,40164385823,3,4,13:36,Delaware State,Hawai'i,14,28,83,3,10,15,Penalty,"Hawai'i Penalty, Face mask (15 yards) (Jamar Sekona) to the DSU 37 for a 1ST down",,2024-08-24T06:34:39.000Z
+401643858104866305,401643858,40164385823,4,4,13:36,Delaware State,Hawai'i,14,28,63,1,10,-3,Pass Reception,Marqui Adams pass complete to Kyree Benton for a loss of 3 yards to the DSU 34,-1.5323228919953928,2024-08-24T07:13:09.000Z
+401643858104866307,401643858,40164385823,5,4,13:36,Delaware State,Hawai'i,14,28,66,2,13,-10,Penalty,"ADAMS, Marqui pass up the middle complete for 8 yards to HULL, Jordan caught at the DSU42 and advanced to the DSU42 (SINCLAIR, Justin). PENALTY DSU Holding on JOHNSON, Jestus enforced 10 yards from the DSU34 to the DSU24 [NHSG]. NO PLAY (replay the down).",,2024-08-24T07:13:09.000Z
+401643858104866308,401643858,40164385823,6,4,13:36,Delaware State,Hawai'i,14,28,76,2,23,0,Pass Incompletion,Marqui Adams pass incomplete,-0.0884339052592553,2024-08-24T06:34:39.000Z
+401643858104866309,401643858,40164385823,7,4,13:36,Delaware State,Hawai'i,14,28,76,3,23,16,Pass Reception,Marqui Adams pass complete to NyGhee Lolley for 16 yds to the DSU 40,0.4089122385309052,2024-08-24T07:13:09.000Z
+401643858104894401,401643858,40164385823,9,4,10:55,Delaware State,Hawai'i,14,28,60,4,7,0,Punt,Nathan Wilson punt for 46 yds,,2024-08-24T06:47:08.000Z
+401643858104894403,401643858,40164385824,1,4,10:55,Hawai'i,Delaware State,28,14,86,1,10,5,Rush,Landon Sims run for 5 yds to the HAW 19,0.07552653853059345,2024-08-24T06:47:08.000Z
+401643858104894404,401643858,40164385824,2,4,10:55,Hawai'i,Delaware State,28,14,81,2,5,1,Rush,Landon Sims run for 1 yd to the HAW 20,-0.38919332864715805,2024-08-24T06:47:08.000Z
+401643858104906501,401643858,40164385824,3,4,9:34,Hawai'i,Delaware State,28,14,80,3,4,0,Pass Incompletion,Brayden Schager pass incomplete,-0.24790663583423012,2024-08-24T06:34:39.000Z
+401643858104906502,401643858,40164385824,4,4,9:34,Hawai'i,Delaware State,28,14,80,4,4,0,Punt,Lucas Borrow punt for 49 yds,,2024-08-24T06:34:39.000Z
+401643858104907501,401643858,40164385825,1,4,9:24,Delaware State,Hawai'i,14,28,69,1,10,3,Rush,Marqui Adams run for 3 yds to the DSU 34,-0.367641675563645,2024-08-24T06:50:09.000Z
+401643858104915501,401643858,40164385825,2,4,8:44,Delaware State,Hawai'i,14,28,66,2,7,1,Rush,Jayden Jenkins run for 1 yd to the DSU 35,-0.6166029178742356,2024-08-24T06:34:39.000Z
+401643858104924301,401643858,40164385825,3,4,7:56,Delaware State,Hawai'i,14,28,65,3,6,-4,Sack,Marqui Adams sacked by Wynden Ho'ohuli for a loss of 4 yards to the DSU 31,-0.6308398989275759,2024-08-24T06:34:39.000Z
+401643858104929101,401643858,40164385825,4,4,7:08,Delaware State,Hawai'i,14,28,69,4,10,17,Punt,"Nathan Wilson punt for 37 yds , Tylan Hines returns for 17 yds to the HAW 49",,2024-08-24T06:34:39.000Z
+401643858104929803,401643858,40164385826,2,4,7:01,Hawai'i,Delaware State,28,14,36,1,10,5,Rush,Brayden Schager run for 5 yds to the DSU 31,0.082600123518274,2024-08-24T06:54:57.000Z
+401643858104929802,401643858,40164385826,1,4,7:01,Hawai'i,Delaware State,28,14,51,1,10,15,Penalty,"SCHAGER, Brayden pass deep to the left incomplete intended for CROWDUS, Dekel thrown to the DSU10. PENALTY DSU Roughing the Passer on BRUNSON, Marquise enforced 15 yards from the HAW49 to the DSU36 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-08-24T06:54:57.000Z
+401643858104929804,401643858,40164385826,3,4,7:01,Hawai'i,Delaware State,28,14,31,2,5,8,Pass Reception,Brayden Schager pass complete to Karsyn Pupunu for 8 yds to the DSU 23 for a 1ST down,0.2642002934242935,2024-08-24T06:56:08.000Z
+401643858104929805,401643858,40164385826,4,4,7:01,Hawai'i,Delaware State,28,14,23,1,10,3,Rush,Landon Sims run for 3 yds to the DSU 20,-0.1308110107399085,2024-08-24T06:56:08.000Z
+401643858104955202,401643858,40164385826,5,4,4:47,Hawai'i,Delaware State,28,14,20,2,7,-10,Penalty,"HINES, Tylan rush to the left for a gain of 12 yards to the DSU8 (GOINGS, Maurio), clock 04:47. PENALTY HAW Illegal Block in the Back on PEIHOPA, Kuao enforced 10 yards from the DSU20 to the DSU30 [SG]. NO PLAY (replay the down).",,2024-08-24T06:57:26.000Z
+401643858104956901,401643858,40164385826,6,4,4:30,Hawai'i,Delaware State,28,14,30,2,17,29,Pass Reception,Brayden Schager pass complete to Pofele Ashlock for 29 yds to the DSU 1 for a 1ST down,3.047995608863131,2024-08-24T06:34:39.000Z
+401643858104965501,401643858,40164385826,7,4,3:44,Hawai'i,Delaware State,35,14,1,1,1,1,Rushing Touchdown,Brayden Schager run for 1 yd for a TD (Kansei Matsuzawa KICK),0.938021275120443,2024-08-24T06:58:36.000Z
+401643858104965503,401643858,40164385827,1,4,3:44,Hawai'i,Delaware State,35,14,65,0,0,2,Kickoff Return (Offense),"Ben Falck kickoff for 62 yds , Kristian Tate return for 2 yds to the DSU 5",,2024-08-24T06:58:36.000Z
+401643858104966801,401643858,40164385827,2,4,3:31,Delaware State,Hawai'i,14,35,95,1,10,17,Rush,Jaden Sutton run for 17 yds to the DSU 22 for a 1ST down,0.6463772456936816,2024-08-24T06:34:39.000Z
+401643858104968901,401643858,40164385827,3,4,3:10,Delaware State,Hawai'i,14,35,78,1,10,0,Pass Incompletion,C.J. Henry pass incomplete,-0.6135902757979226,2024-08-24T06:34:39.000Z
+401643858104969501,401643858,40164385827,4,4,3:04,Delaware State,Hawai'i,14,35,78,2,10,9,Rush,C.J. Henry run for 9 yds to the DSU 31,0.6008998132349381,2024-08-24T06:34:39.000Z
+401643858104976501,401643858,40164385827,5,4,2:34,Delaware State,Hawai'i,14,35,69,3,1,-10,Sack,C.J. Henry sacked by Lesterlaisene Lagafuaina for a loss of 10 yards to the DSU 21,-1.0411552673100042,2024-08-24T06:34:39.000Z
+401643858104984001,401643858,40164385827,6,4,1:59,Delaware State,Hawai'i,14,35,79,4,11,0,Punt,"punt for 38 yds, downed at the DSU 44",,2024-08-24T06:34:39.000Z
+401643858104999902,401643858,40164385828,5,4,0:00,Hawai'i,Delaware State,35,14,34,0,1,0,End of Game,End of 4th Quarter,,2024-08-24T07:13:09.000Z
+401643858104987101,401643858,40164385828,1,4,1:28,Hawai'i,Delaware State,35,14,44,1,10,6,Rush,Kamalu DeBlake run for 6 yds to the DSU 38,0.295635896925372,2024-08-24T06:34:39.000Z
+401643858104989401,401643858,40164385828,2,4,1:05,Hawai'i,Delaware State,35,14,38,2,4,-5,Penalty,"Hawai'i Penalty, False Start (Nick Cenacle) to the DSU 43",,2024-08-24T07:10:26.000Z
+401643858104989601,401643858,40164385828,3,4,1:03,Hawai'i,Delaware State,35,14,43,2,9,8,Rush,Kamalu DeBlake run for 8 yds to the DSU 35,0.7311656212742559,2024-08-24T06:34:39.000Z
+401643858104996601,401643858,40164385828,4,4,0:33,Hawai'i,Delaware State,35,14,35,3,1,1,Rush,John-Keawe Sagapolutele run for 1 yd to the DSU 34 for a 1ST down,0.4918457843073157,2024-08-24T06:34:39.000Z
