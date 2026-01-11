@@ -632,7 +632,14 @@ RESPOND WITH ONLY A JSON OBJECT:
 Only include plays you can identify with at least medium confidence."""
 
         # Prepare messages for Claude
-        frame_messages = [frame["source"] for frame in frame_data]
+        # IMPORTANT: Must use proper image format with "type": "image" at top level
+        frame_messages = [
+            {
+                "type": "image",
+                "source": frame["source"]
+            }
+            for frame in frame_data
+        ]
 
         try:
             # Log plays we're looking for (preview first few)
