@@ -1,0 +1,140 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401655628101855305,401655628,4016556281,4,1,14:46,Northern Arizona,Lincoln (CA),0,0,47,2,10,8,Pass Reception,Ty Pennington pass complete to BJ Fleming,0.7884856978660986,2024-08-31T20:09:40.000Z
+401655628101855303,401655628,4016556281,2,1,14:46,Northern Arizona,Lincoln (CA),0,0,75,1,10,28,Pass Reception,Ty Pennington pass complete to BJ Fleming for a 1ST down,2.4645528784548913,2024-08-31T20:09:40.000Z
+401655628101855304,401655628,4016556281,3,1,14:46,Northern Arizona,Lincoln (CA),0,0,47,1,10,0,Pass Reception,Ty Pennington pass complete to Kolbe Katsis,-1.0507069190375147,2024-08-31T20:09:40.000Z
+401655628101855308,401655628,4016556281,6,1,14:46,Northern Arizona,Lincoln (CA),0,0,44,3,7,0,Pass Incompletion,Ty Pennington pass incomplete,-0.994152972638215,2024-08-31T20:09:40.000Z
+401655628101869401,401655628,4016556281,7,1,13:05,Northern Arizona,Lincoln (CA),0,0,44,4,7,0,Pass Incompletion,Ty Pennington pass incomplete,-0.9418336880828502,2024-08-31T20:13:18.000Z
+401655628101855306,401655628,4016556281,5,1,14:46,Northern Arizona,Lincoln (CA),0,0,39,3,2,-5,Penalty,"PENALTY NARIZ False Start (Kramer,Ethan) 5 yards from LCA39 to LCA44. NO PLAY.",,2024-08-31T20:09:40.000Z
+401655628101855301,401655628,4016556281,1,1,14:46,Lincoln (CA),Northern Arizona,0,0,50,1,10,24,Kickoff,"Nemo Jones kickoff for 49 yds , J'Wan Evans return for 24 yds to the NAU 25",,2024-08-31T20:09:40.000Z
+401655628101869405,401655628,4016556282,2,1,13:05,Lincoln (CA),Northern Arizona,0,0,56,1,10,7,Rush,Anastacio Prado run for 7 yds to the NAU 49,0.6703928066087635,2024-08-31T20:17:35.000Z
+401655628101869406,401655628,4016556282,3,1,13:05,Lincoln (CA),Northern Arizona,0,0,49,2,3,-3,Pass Reception,Jack Clavel pass complete to Darius Maxwell,-1.985290877140569,2024-08-31T20:17:35.000Z
+401655628101869407,401655628,4016556282,4,1,13:05,Lincoln (CA),Northern Arizona,0,0,52,3,6,3,Pass Reception,Jack Clavel pass complete to Anastacio Prado,-0.3452381465589527,2024-08-31T20:17:35.000Z
+401655628101896401,401655628,4016556282,5,1,10:35,Lincoln (CA),Northern Arizona,0,0,49,4,3,30,Punt,"Owen Meister punt for 34 yds , Isaiah Eastman returns for 30 yds to the NAU 45",,2024-08-31T20:20:06.000Z
+401655628101869404,401655628,4016556282,1,1,13:05,Lincoln (CA),Northern Arizona,0,0,49,2,3,0,Timeout,"Timeout Lincoln (CA), clock 13:05",,2024-08-31T20:17:35.000Z
+401655628101896403,401655628,4016556283,1,1,10:35,Northern Arizona,Lincoln (CA),0,0,55,1,10,6,Rush,Darvon Hubbard run for 6 yds to the Lin 49,0.38118862332173,2024-08-31T20:20:06.000Z
+401655628101896404,401655628,4016556283,2,1,10:35,Northern Arizona,Lincoln (CA),0,0,49,2,4,14,Rush,Ty Pennington run for 14 yds to the Lin 35 for a 1ST down,0.922835830217679,2024-08-31T20:20:06.000Z
+401655628101896405,401655628,4016556283,3,1,10:35,Northern Arizona,Lincoln (CA),0,0,35,1,10,-3,Pass Reception,Ty Pennington pass complete to Kolbe Katsis,-1.246168530373263,2024-08-31T20:20:06.000Z
+401655628101896406,401655628,4016556283,4,1,10:35,Northern Arizona,Lincoln (CA),0,0,38,2,13,3,Rush,Darvon Hubbard run for 3 yds to the Lin 35,-0.3601917758005333,2024-08-31T20:20:06.000Z
+401655628101896407,401655628,4016556283,5,1,10:35,Northern Arizona,Lincoln (CA),0,0,35,3,10,2,Pass Reception,Ty Pennington pass complete to Darvon Hubbard,-0.6002365672981274,2024-08-31T20:20:06.000Z
+401655628101927902,401655628,4016556283,7,1,7:20,Northern Arizona,Lincoln (CA),0,0,33,4,8,13,Pass Reception,Ty Pennington pass complete to Kolbe Katsis for a 1ST down,2.561257928217181,2024-08-31T20:29:27.000Z
+401655628101935701,401655628,4016556283,8,1,6:42,Northern Arizona,Lincoln (CA),7,0,20,1,10,20,Rushing Touchdown,Ty Pennington run for 20 yds for a TD (Marcus Lye KICK),2.617927729031699,2024-08-31T20:30:07.000Z
+401655628101927901,401655628,4016556283,6,1,7:20,Northern Arizona,Lincoln (CA),0,0,33,4,8,0,Timeout,"Timeout Lincoln (CA), clock 07:20",,2024-08-31T20:05:59.000Z
+401655628101957601,401655628,4016556284,7,1,4:23,Lincoln (CA),Northern Arizona,0,7,66,4,1,0,Pass Incompletion,Jack Clavel pass incomplete,-0.1985645621653287,2024-08-31T20:41:47.000Z
+401655628101935707,401655628,4016556284,3,1,6:42,Lincoln (CA),Northern Arizona,0,7,80,1,15,3,Pass Reception,Jack Clavel pass complete to Trey Dimmings,-0.14383953502089764,2024-08-31T20:30:24.000Z
+401655628101935708,401655628,4016556284,4,1,6:42,Lincoln (CA),Northern Arizona,0,7,77,2,12,1,Rush,Anastacio Prado run for 1 yd to the Lin 24,-0.21050634440394234,2024-08-31T20:30:24.000Z
+401655628101948902,401655628,4016556284,6,1,5:10,Lincoln (CA),Northern Arizona,0,7,76,3,11,10,Rush,Anastacio Prado run for 10 yds to the Lin 34,0.37208353956113793,2024-08-31T20:36:00.000Z
+401655628101948901,401655628,4016556284,5,1,5:10,Lincoln (CA),Northern Arizona,0,7,76,3,11,0,Timeout,"Timeout Lincoln (CA), clock 05:10",,2024-08-31T20:05:59.000Z
+401655628101935705,401655628,4016556284,2,1,6:42,Lincoln (CA),Northern Arizona,0,7,75,1,10,-5,Penalty,"PENALTY LCA False Start (Dyer-Farrell,Romeo) 5 yards from LCA25 to LCA20. NO PLAY.",,2024-08-31T20:30:24.000Z
+401655628101935703,401655628,4016556284,1,1,6:42,Northern Arizona,Lincoln (CA),7,0,65,1,10,0,Kickoff,Marcus Lye kickoff for 65 yds for a touchback,,2024-08-31T20:30:24.000Z
+401655628101957608,401655628,4016556285,3,1,4:23,Northern Arizona,Lincoln (CA),7,0,34,1,10,14,Pass Reception,"Ty Pennington pass complete to Elijah Taylor for a 1ST down Lincoln (CA) Penalty, UNS: Unsportsmanlike Conduct (14 Yards) to the Lin 14 for a 1ST down",0.318798431881971,2024-08-31T20:38:02.000Z
+401655628101957610,401655628,4016556285,4,1,4:23,Northern Arizona,Lincoln (CA),7,0,14,1,10,12,Rush,Seth Cromwell run for 12 yds to the Lin 2 for a 1ST down,1.3350478775069834,2024-08-31T20:41:47.000Z
+401655628101967501,401655628,4016556285,5,1,3:24,Northern Arizona,Lincoln (CA),14,0,2,1,2,2,Rushing Touchdown,Seth Cromwell run for 2 yds for a TD (Marcus Lye KICK),1.213235297672098,2024-08-31T20:42:17.000Z
+401655628101957605,401655628,4016556285,2,1,4:23,Northern Arizona,Lincoln (CA),7,0,29,1,5,-5,Penalty,PENALTY NARIZ False Start 5 yards from LCA29 to LCA34. NO PLAY.,,2024-08-31T20:38:02.000Z
+401655628101957603,401655628,4016556285,1,1,4:23,Northern Arizona,Lincoln (CA),7,0,34,1,10,5,Penalty,"PENALTY LCA Offside (Williams,Omega) 5 yards from LCA34 to LCA29. NO PLAY.",,2024-08-31T20:38:02.000Z
+401655628101987201,401655628,4016556286,6,1,1:27,Lincoln (CA),Northern Arizona,0,21,74,4,9,15,Blocked Punt Touchdown,Elijah Taylor 15 Yd Return of Blocked Punt (Marcus Lye Kick),-6.737683701615967,2024-08-31T20:52:58.000Z
+401655628101967505,401655628,4016556286,2,1,3:24,Lincoln (CA),Northern Arizona,0,14,75,1,10,2,Rush,Anastacio Prado run for 2 yds to the Lin 27,-0.45260367932203766,2024-08-31T20:42:17.000Z
+401655628101967506,401655628,4016556286,3,1,3:24,Lincoln (CA),Northern Arizona,0,14,73,2,8,4,Rush,Anastacio Prado run for 4 yds to the Lin 31,-0.08212860423373947,2024-08-31T20:42:17.000Z
+401655628101967508,401655628,4016556286,5,1,3:24,Lincoln (CA),Northern Arizona,0,14,74,3,9,0,Pass Incompletion,Jack Clavel pass incomplete,-0.18876768235831598,2024-08-31T20:42:17.000Z
+401655628101967507,401655628,4016556286,4,1,3:24,Lincoln (CA),Northern Arizona,0,14,69,3,4,-5,Penalty,PENALTY LCA False Start 5 yards from LCA31 to LCA26. NO PLAY.,,2024-08-31T20:42:17.000Z
+401655628101967503,401655628,4016556286,1,1,3:24,Northern Arizona,Lincoln (CA),14,0,65,1,10,0,Kickoff,Marcus Lye kickoff for 65 yds for a touchback,,2024-08-31T20:42:17.000Z
+401655628101987207,401655628,4016556287,4,1,1:27,Lincoln (CA),Northern Arizona,0,21,71,3,6,16,Pass Reception,Jack Clavel pass complete to Izayah Ebuen for a 1ST down,2.56633539425495,2024-08-31T20:52:58.000Z
+401655628101987205,401655628,4016556287,2,1,1:27,Lincoln (CA),Northern Arizona,0,21,75,1,10,0,Pass Incompletion,Jack Clavel pass incomplete,-0.7029700220436519,2024-08-31T20:52:58.000Z
+401655628101987206,401655628,4016556287,3,1,1:27,Lincoln (CA),Northern Arizona,0,21,75,2,10,4,Rush,Anastacio Prado run for 4 yds to the Lin 29,-0.06222348980634162,2024-08-31T20:52:58.000Z
+401655628102849902,401655628,4016556287,6,2,15:00,Lincoln (CA),Northern Arizona,0,21,55,1,10,6,Rush,Anastacio Prado run for 6 yds to the NAU 49,0.38118862332173,2024-08-31T20:58:31.000Z
+401655628102849903,401655628,4016556287,7,2,15:00,Lincoln (CA),Northern Arizona,0,21,49,2,4,2,Rush,Anastacio Prado run for 2 yds to the NAU 47,-0.7065842566701795,2024-08-31T20:58:31.000Z
+401655628102849904,401655628,4016556287,8,2,15:00,Lincoln (CA),Northern Arizona,0,21,47,3,2,7,Rush,Jamin Miller run for 7 yds to the NAU 40 for a 1ST down,1.4129597267274736,2024-08-31T20:58:31.000Z
+401655628102849905,401655628,4016556287,9,2,15:00,Lincoln (CA),Northern Arizona,0,21,40,1,10,2,Rush,Eric Brice run for 2 yds to the NAU 38,-0.4549295700351248,2024-08-31T20:58:31.000Z
+401655628102849906,401655628,4016556287,10,2,15:00,Lincoln (CA),Northern Arizona,0,21,38,2,8,0,Pass Incompletion,Jack Clavel pass incomplete,-0.9702680942571682,2024-08-31T20:58:31.000Z
+401655628102886701,401655628,4016556287,11,2,11:32,Lincoln (CA),Northern Arizona,6,21,38,3,8,38,Passing Touchdown,Jack Clavel pass complete to Darius Maxwell for a TD (Ammon Allen pass to for Two-Point Conversion),4.614246808229634,2024-08-31T21:02:33.000Z
+401655628102886702,401655628,4016556287,12,2,11:32,Lincoln (CA),Northern Arizona,0,21,3,1,10,-5,Penalty,"Lincoln (CA) Penalty, Delay Of Game (Jacobi Johnson) to the NAU 8",,2024-08-31T21:02:33.000Z
+401655628101987208,401655628,4016556287,5,1,0:00,Lincoln (CA),Northern Arizona,0,21,71,0,6,16,End Period,End of 1st Quarter,,2024-08-31T20:54:57.000Z
+401655628101987203,401655628,4016556287,1,1,1:27,Northern Arizona,Lincoln (CA),21,0,65,1,10,0,Kickoff,Marcus Lye kickoff for 65 yds for a touchback,,2024-08-31T20:52:58.000Z
+401655628102888101,401655628,4016556288,2,2,11:18,Northern Arizona,Lincoln (CA),32,6,62,1,10,62,Passing Touchdown,BJ Fleming 62 Yd pass from Ty Pennington (J'Wan Evans Run for Two-Point Conversion),4.953003640679491,2024-08-31T21:09:07.000Z
+401655628102887201,401655628,4016556288,1,2,11:27,Lincoln (CA),Northern Arizona,6,23,65,1,10,18,Kickoff,"Nemo Jones kickoff for 45 yds , Darvon Hubbard return for 18 yds to the NAU 38",,2024-08-31T21:08:24.000Z
+401655628102888105,401655628,4016556289,2,2,11:18,Lincoln (CA),Northern Arizona,6,31,75,1,10,5,Pass Reception,Jack Clavel pass complete to Trey Dimmings,0.0945451165334843,2024-08-31T21:11:14.000Z
+401655628102888108,401655628,4016556289,5,2,11:18,Lincoln (CA),Northern Arizona,6,31,65,1,10,11,Pass Reception,Jack Clavel pass complete to Eric Brice for a 1ST down,1.0578194730061268,2024-08-31T21:11:14.000Z
+401655628102888106,401655628,4016556289,3,2,11:18,Lincoln (CA),Northern Arizona,6,31,70,2,5,2,Rush,Anastacio Prado run for 2 yds to the Lin 32,-0.4836992576486355,2024-08-31T21:11:14.000Z
+401655628102888107,401655628,4016556289,4,2,11:18,Lincoln (CA),Northern Arizona,6,31,68,3,3,3,Rush,Jamin Miller run for 3 yds to the Lin 35 for a 1ST down,1.2241922501451379,2024-08-31T21:11:14.000Z
+401655628102888109,401655628,4016556289,6,2,11:18,Lincoln (CA),Northern Arizona,6,31,54,1,10,1,Rush,Jamin Miller run for 1 yd to the Lin 45,-0.921128701529616,2024-08-31T21:11:14.000Z
+401655628102888110,401655628,4016556289,7,2,11:18,Lincoln (CA),Northern Arizona,6,31,55,2,11,0,Pass Reception,Jack Clavel pass complete to Trey Dimmings,-0.862619369652486,2024-08-31T21:11:14.000Z
+401655628102888111,401655628,4016556289,8,2,11:18,Lincoln (CA),Northern Arizona,6,31,55,3,11,0,Pass Incompletion,Jack Clavel pass incomplete,-0.5099612870160346,2024-08-31T21:11:14.000Z
+401655628102944701,401655628,4016556289,9,2,5:52,Lincoln (CA),Northern Arizona,6,31,55,4,11,35,Punt,"Owen Meister punt for 40 yds , Zach Lewis returns for 35 yds to the 50 yard line",,2024-08-31T21:22:21.000Z
+401655628102888103,401655628,4016556289,1,2,11:18,Northern Arizona,Lincoln (CA),31,6,65,1,10,0,Kickoff,Marcus Lye kickoff for 65 yds for a touchback,,2024-08-31T21:11:14.000Z
+401655628102944704,401655628,40165562810,1,2,5:52,Northern Arizona,Lincoln (CA),31,6,50,1,10,0,Rush,Angel Flores run for no gain to the 50 yard line,-1.1143038065675126,2024-08-31T21:24:40.000Z
+401655628102944705,401655628,40165562810,2,2,5:52,Northern Arizona,Lincoln (CA),31,6,50,2,10,32,Pass Reception,Angel Flores pass complete to Ta'ir Brooks for a 1ST down,2.3639230296182947,2024-08-31T21:24:40.000Z
+401655628102944706,401655628,40165562810,3,2,5:52,Northern Arizona,Lincoln (CA),31,6,18,1,10,10,Rush,J'Wan Evans run for 10 yds to the Lin 8 for a 1ST down,0.272193140370899,2024-08-31T21:24:40.000Z
+401655628102959001,401655628,40165562810,4,2,4:09,Northern Arizona,Lincoln (CA),38,6,8,1,8,8,Passing Touchdown,Bryzai White 8 Yd pass from Angel Flores (Marcus Lye Kick),2.319599568699692,2024-08-31T21:26:48.000Z
+401655628102959005,401655628,40165562811,2,2,4:09,Lincoln (CA),Northern Arizona,6,38,75,1,10,0,Rush,Anastacio Prado run for no gain to the Lin 25,-0.7029700220436519,2024-08-31T21:26:48.000Z
+401655628102959006,401655628,40165562811,3,2,4:09,Lincoln (CA),Northern Arizona,6,38,75,2,10,4,Pass Reception,Jack Clavel pass complete to Eric Brice,-0.06222348980634162,2024-08-31T21:26:48.000Z
+401655628102959007,401655628,40165562811,4,2,4:09,Lincoln (CA),Northern Arizona,6,38,71,3,6,0,Pass Incompletion,Jack Clavel pass incomplete,-0.3146897268978579,2024-08-31T21:26:48.000Z
+401655628102978701,401655628,40165562811,5,2,2:12,Lincoln (CA),Northern Arizona,6,38,71,4,6,0,Punt,"Owen Meister punt for no gain , Quinlan Popham returns for no gain to the Lin 22 Quinlan Popham fumbled, recovered by Lin Quinlan Popham",,2024-08-31T21:33:51.000Z
+401655628102959003,401655628,40165562811,1,2,4:09,Northern Arizona,Lincoln (CA),38,6,65,1,10,0,Kickoff,Marcus Lye kickoff for 65 yds for a touchback,,2024-08-31T21:26:48.000Z
+401655628102984201,401655628,40165562812,2,2,1:57,Northern Arizona,Lincoln (CA),45,6,13,1,10,13,Passing Touchdown,Ta'ir Brooks 13 Yd pass from Angel Flores (Marcus Lye Kick),2.538929215045847,2024-08-31T21:38:17.000Z
+401655628102978705,401655628,40165562812,1,2,2:12,Northern Arizona,Lincoln (CA),38,6,22,1,10,19,Penalty,"No Huddle-Shotgun Flores,Angel pass complete short right to Katsis,Kolbe for 11 yards to the LCA11 (Jenkins,Kobe; Jones,Nehemiah) PENALTY NARIZ Ineligible Downfield on Pass (Frias III,Ralph) LCA Personal Foul (Williams,Omega) 19 yards from LCA22 to LCA13, 1ST DOWN. NO PLAY.",,2024-08-31T21:33:51.000Z
+401655628102984903,401655628,40165562813,2,2,1:50,Lincoln (CA),Northern Arizona,6,45,87,1,10,7,Rush,Anastacio Prado run for 7 yds to the Lin 20,0.42005087243432726,2024-08-31T21:40:39.000Z
+401655628102984904,401655628,40165562813,3,2,1:50,Lincoln (CA),Northern Arizona,6,45,80,2,3,4,Rush,Anastacio Prado run for 4 yds to the Lin 16,0.1311264030175137,2024-08-31T21:40:39.000Z
+401655628102984905,401655628,40165562813,4,2,0:00,Lincoln (CA),Northern Arizona,6,45,80,0,3,-4,End of Half,End of 2nd Quarter,,2024-08-31T20:58:31.000Z
+401655628102984901,401655628,40165562813,1,2,1:50,Northern Arizona,Lincoln (CA),45,6,65,1,10,13,Kickoff,"Marcus Lye kickoff for 65 yds , Zydarrian Grable return for 13 yds to the Lin 13",,2024-08-31T21:40:39.000Z
+401655628103849905,401655628,40165562814,2,3,15:00,Lincoln (CA),Northern Arizona,6,45,75,1,10,0,Rush,Anastacio Prado run for no gain to the Lin 25,-0.7029700220436519,2024-08-31T22:04:38.000Z
+401655628103849906,401655628,40165562814,3,3,15:00,Lincoln (CA),Northern Arizona,6,45,75,2,10,0,Pass Incompletion,Jack Clavel pass incomplete,-0.34710487712173865,2024-08-31T22:04:38.000Z
+401655628103849909,401655628,40165562814,5,3,15:00,Lincoln (CA),Northern Arizona,6,45,80,3,15,0,Pass Incompletion,Jack Clavel pass incomplete,-0.06579665004736057,2024-08-31T22:08:02.000Z
+401655628103864501,401655628,40165562814,6,3,13:54,Lincoln (CA),Northern Arizona,6,45,80,4,15,0,Punt,"Owen Meister punt for 37 yds, punt out-of-bounds at the NAU 43",,2024-08-31T22:09:06.000Z
+401655628103849907,401655628,40165562814,4,3,15:00,Lincoln (CA),Northern Arizona,6,45,75,3,10,-5,Penalty,"PENALTY LCA False Start (Jenkins,Kobe) 5 yards from LCA25 to LCA20. NO PLAY.",,2024-08-31T22:04:38.000Z
+401655628103849903,401655628,40165562814,1,3,15:00,Northern Arizona,Lincoln (CA),45,6,65,1,10,0,Kickoff,Marcus Lye kickoff for 65 yds for a touchback,,2024-08-31T22:08:02.000Z
+401655628103864503,401655628,40165562815,1,3,13:54,Northern Arizona,Lincoln (CA),45,6,57,1,10,10,Rush,Seth Cromwell run for 10 yds to the Lin 47 for a 1ST down,0.8521144562448965,2024-08-31T22:09:06.000Z
+401655628103864504,401655628,40165562815,2,3,13:54,Northern Arizona,Lincoln (CA),45,6,47,1,10,0,Rush,Seth Cromwell run for no gain to the Lin 47,-1.0507069190375147,2024-08-31T22:23:37.000Z
+401655628103864505,401655628,40165562815,3,3,13:54,Northern Arizona,Lincoln (CA),45,6,47,2,10,0,Rush,Seth Cromwell run for no gain to the Lin 47,-1.0598235743711744,2024-08-31T22:23:37.000Z
+401655628103864506,401655628,40165562815,4,3,13:54,Northern Arizona,Lincoln (CA),45,6,47,3,10,17,Pass Reception,Angel Flores pass complete to Tay Lanier for a 1ST down,2.909489601752348,2024-08-31T22:23:37.000Z
+401655628103864507,401655628,40165562815,5,3,13:54,Northern Arizona,Lincoln (CA),45,6,30,1,10,1,Rush,Seth Cromwell run for 1 yd to the Lin 29,-0.424602465889258,2024-08-31T22:23:37.000Z
+401655628103864508,401655628,40165562815,6,3,13:54,Northern Arizona,Lincoln (CA),45,6,29,2,9,5,Rush,Angel Flores run for 5 yds to the Lin 24,0.056420743130831,2024-08-31T22:23:37.000Z
+401655628103864509,401655628,40165562815,7,3,13:54,Northern Arizona,Lincoln (CA),45,6,24,3,4,10,Rush,Seth Cromwell run for 10 yds to the Lin 14 for a 1ST down,0.6341416805021165,2024-08-31T22:23:37.000Z
+401655628103864510,401655628,40165562815,8,3,13:54,Northern Arizona,Lincoln (CA),45,6,14,1,10,6,Rush,Xander Werner run for 6 yds to the Lin 8,0.1809070651975925,2024-08-31T22:23:37.000Z
+401655628103864511,401655628,40165562815,9,3,13:54,Northern Arizona,Lincoln (CA),45,6,8,2,4,7,Rush,Seth Cromwell run for 7 yds to the Lin 1 for a 1ST down,1.429354834861046,2024-08-31T22:23:37.000Z
+401655628103914401,401655628,40165562815,10,3,8:55,Northern Arizona,Lincoln (CA),52,6,1,1,1,1,Rushing Touchdown,Seth Cromwell run for 1 yd for a TD (Jordan Westrich KICK),0.938021275120443,2024-08-31T22:08:02.000Z
+401655628103914405,401655628,40165562816,2,3,8:55,Lincoln (CA),Northern Arizona,6,52,75,1,10,5,Rush,Anastacio Prado run for 5 yds to the Lin 30,0.0945451165334843,2024-08-31T22:08:02.000Z
+401655628103914406,401655628,40165562816,3,3,8:55,Lincoln (CA),Northern Arizona,6,52,70,2,5,3,Rush,Jamin Miller run for 3 yds to the Lin 33,-0.3141325711590933,2024-08-31T22:08:02.000Z
+401655628103914407,401655628,40165562816,4,3,8:55,Lincoln (CA),Northern Arizona,6,52,67,3,2,1,Rush,Jack Clavel run for 1 yd to the Lin 32,-0.5040928634877408,2024-08-31T22:08:02.000Z
+401655628103939201,401655628,40165562816,5,3,6:07,Lincoln (CA),Northern Arizona,6,52,68,4,3,30,Punt,"Owen Meister punt for 36 yds, punt out-of-bounds at the Lin 38 , Isaiah Eastman returns for 30 yds to the Lin 38",,2024-08-31T22:38:40.000Z
+401655628103914403,401655628,40165562816,1,3,8:55,Northern Arizona,Lincoln (CA),52,6,65,1,10,0,Kickoff,Marcus Lye kickoff for 65 yds for a touchback,,2024-08-31T22:08:02.000Z
+401655628103939203,401655628,40165562817,1,3,6:07,Northern Arizona,Lincoln (CA),52,6,38,1,10,1,Rush,J'Wan Evans run for 1 yd to the Lin 39,-0.596824390353605,2024-08-31T22:38:40.000Z
+401655628103939204,401655628,40165562817,2,3,6:07,Northern Arizona,Lincoln (CA),52,6,39,2,11,10,Pass Reception,Angel Flores pass complete to Elijah Taylor for 10 yds to the Lin 29,0.9838402245332707,2024-08-31T22:38:40.000Z
+401655628103939205,401655628,40165562817,3,3,6:07,Northern Arizona,Lincoln (CA),52,6,29,3,1,20,Rush,J'Wan Evans run for 20 yds to the Lin 9 for a 1ST down,0.6641568441042233,2024-08-31T22:38:40.000Z
+401655628103939208,401655628,40165562817,5,3,6:07,Northern Arizona,Lincoln (CA),52,6,19,1,19,9,Rush,J'Wan Evans run for 9 yds to the Lin 10,0.2580157527616824,2024-08-31T22:38:40.000Z
+401655628103939209,401655628,40165562817,6,3,6:07,Northern Arizona,Lincoln (CA),52,6,10,2,10,9,Rush,J'Wan Evans run for 9 yds to the Lin 1,0.3452216723218346,2024-08-31T22:38:40.000Z
+401655628103974801,401655628,40165562817,7,3,2:51,Northern Arizona,Lincoln (CA),59,6,1,3,1,1,Rushing Touchdown,J'Wan Evans run for 1 yd for a TD (Jordan Westrich KICK),2.45399822917955,2024-08-31T22:40:49.000Z
+401655628103939206,401655628,40165562817,4,3,6:07,Northern Arizona,Lincoln (CA),52,6,9,1,9,-10,Penalty,"PENALTY NARIZ Holding (Berry,Carson) 10 yards from LCA09 to LCA19. NO PLAY.",,2024-08-31T22:38:40.000Z
+401655628103979901,401655628,40165562818,3,3,2:00,Lincoln (CA),Northern Arizona,6,59,74,2,9,0,Interception,Jack Clavel pass intercepted,-0.33476533717699297,2024-08-31T22:47:44.000Z
+401655628103974805,401655628,40165562818,2,3,2:51,Lincoln (CA),Northern Arizona,6,59,75,1,10,1,Pass Reception,Jack Clavel pass complete to Anastacio Prado,-0.5874795431016855,2024-08-31T22:40:49.000Z
+401655628103974803,401655628,40165562818,1,3,2:51,Northern Arizona,Lincoln (CA),59,6,65,1,10,0,Kickoff,Samuel Hunsaker kickoff for 65 yds for a touchback,,2024-08-31T22:40:49.000Z
+401655628103979903,401655628,40165562819,1,3,2:00,Northern Arizona,Lincoln (CA),59,6,57,1,10,16,Rush,Kenveon Stone run for 16 yds to the Lin 41 for a 1ST down,1.224797071614807,2024-08-31T22:47:44.000Z
+401655628103979904,401655628,40165562819,2,3,2:00,Northern Arizona,Lincoln (CA),59,6,41,1,10,7,Rush,Kenveon Stone run for 7 yds to the Lin 34,0.4598399849082394,2024-08-31T22:47:44.000Z
+401655628103999901,401655628,40165562819,3,3,0:00,Northern Arizona,Lincoln (CA),59,6,34,2,3,6,Rush,Kenveon Stone run for 6 yds to the Lin 28 for a 1ST down,0.016665166849849,2024-08-31T22:47:44.000Z
+401655628104849902,401655628,40165562819,5,4,15:00,Northern Arizona,Lincoln (CA),59,6,28,1,10,23,Pass Reception,PJ London pass complete to Isaiah Eastman for a 1ST down,0.880233633579557,2024-08-31T22:51:18.000Z
+401655628104858801,401655628,40165562819,6,4,14:11,Northern Arizona,Lincoln (CA),66,6,5,1,5,5,Rushing Touchdown,Kenveon Stone run for 5 yds for a TD (Jordan Westrich KICK),1.883780840558874,2024-08-31T22:52:08.000Z
+401655628103999902,401655628,40165562819,4,3,0:00,Northern Arizona,Lincoln (CA),59,6,34,0,3,6,End Period,End of 3rd Quarter,,2024-08-31T22:47:44.000Z
+401655628104858805,401655628,40165562820,2,4,14:11,Lincoln (CA),Northern Arizona,6,66,75,1,10,3,Pass Reception,Gunner Cortez pass complete to Izayah Ebuen,-0.2957674139440157,2024-08-31T22:57:11.000Z
+401655628104858808,401655628,40165562820,4,4,14:11,Lincoln (CA),Northern Arizona,6,66,73,3,8,7,Rush,Anastacio Prado run for 7 yds to the Lin 34,0.20773087734531703,2024-08-31T22:57:11.000Z
+401655628104897902,401655628,40165562820,6,4,10:20,Lincoln (CA),Northern Arizona,6,66,66,4,1,20,Punt,"Owen Meister punt for 36 yds, punt out-of-bounds at the 50 yard line , Cade Berger returns for 20 yds to the NAU 46 Lincoln (CA) Penalty, unsportsmanlike conduct (Darius Maxwell) to the 50 yard line",,2024-08-31T23:02:11.000Z
+401655628104897901,401655628,40165562820,5,4,10:20,Lincoln (CA),Northern Arizona,6,66,66,4,1,20,Punt,"Owen Meister punt for 36 yds, punt out-of-bounds at the 50 yard line , Cade Berger returns for 20 yds to the NAU 46 Lincoln (CA) Penalty, unsportsmanlike conduct (Darius Maxwell) to the 50 yard line",,2024-08-31T23:02:11.000Z
+401655628104858806,401655628,40165562820,3,4,14:11,Lincoln (CA),Northern Arizona,6,66,72,2,7,-5,Penalty,"Shotgun Woodland,Rashaan rush right for 4 yards gain to the LCA32 (Burns,Davis; Kaczmarek,Braeden) PENALTY LCA Illegal Motion 5 yards from LCA28 to LCA23. NO PLAY.",,2024-08-31T22:57:11.000Z
+401655628104858803,401655628,40165562820,1,4,14:11,Northern Arizona,Lincoln (CA),66,6,65,1,10,0,Kickoff,Samuel Hunsaker kickoff for 65 yds for a touchback,,2024-08-31T22:52:08.000Z
+401655628104897903,401655628,40165562821,1,4,10:20,Northern Arizona,Lincoln (CA),66,6,50,1,10,8,Rush,Ryan Fontaine run for 8 yds to the Lin 42,0.838762649996877,2024-08-31T23:02:11.000Z
+401655628104897904,401655628,40165562821,2,4,10:20,Northern Arizona,Lincoln (CA),66,6,42,2,2,8,Rush,Ryan Fontaine run for 8 yds to the Lin 34 for a 1ST down,0.065923121210826,2024-08-31T23:02:11.000Z
+401655628104897905,401655628,40165562821,3,4,10:20,Northern Arizona,Lincoln (CA),66,6,34,1,10,4,Rush,Ryan Fontaine run for 4 yds to the Lin 30,-0.063267952570744,2024-08-31T23:02:11.000Z
+401655628104917301,401655628,40165562821,4,4,8:26,Northern Arizona,Lincoln (CA),66,6,30,2,6,0,Pass Interception Return,PJ London pass intercepted Kobe Jenkins return for no gain to the Lin 7,-4.000005886515586,2024-08-31T23:08:44.000Z
+401655628104917306,401655628,40165562822,1,4,8:26,Lincoln (CA),Northern Arizona,6,66,93,1,10,3,Rush,Anastacio Prado run for 3 yds to the Lin 10,-0.12636053500831324,2024-08-31T23:08:44.000Z
+401655628104917307,401655628,40165562822,2,4,8:26,Lincoln (CA),Northern Arizona,6,66,90,2,7,4,Rush,Anastacio Prado run for 4 yds to the Lin 14,-0.02969164897704779,2024-08-31T23:08:44.000Z
+401655628104917308,401655628,40165562822,3,4,8:26,Lincoln (CA),Northern Arizona,6,66,86,3,3,1,Rush,Anastacio Prado run for 1 yd to the Lin 13,-0.1837497762688436,2024-08-31T23:08:44.000Z
+401655628104946501,401655628,40165562822,4,4,5:34,Lincoln (CA),Northern Arizona,6,66,87,4,4,0,Punt,"Solomon Polk punt for 34 yds , Cade Berger returns for no gain to the Lin 47",,2024-08-31T23:14:02.000Z
+401655628104946504,401655628,40165562823,1,4,5:34,Northern Arizona,Lincoln (CA),66,6,47,1,10,12,Rush,Isaiah Lopez run for 12 yds to the Lin 35 for a 1ST down,0.640613457489474,2024-08-31T23:14:02.000Z
+401655628104946505,401655628,40165562823,2,4,5:34,Northern Arizona,Lincoln (CA),66,6,35,1,10,7,Rush,Michael Beresford run for 7 yds to the Lin 28,0.393521863681004,2024-08-31T23:14:02.000Z
+401655628104946506,401655628,40165562823,3,4,5:34,Northern Arizona,Lincoln (CA),66,6,28,2,3,20,Rush,Isaiah Lopez run for 20 yds to the Lin 8 for a 1ST down,0.25946735139626,2024-08-31T23:14:02.000Z
+401655628104946507,401655628,40165562823,4,4,5:34,Northern Arizona,Lincoln (CA),66,6,8,1,8,2,Rush,Isaiah Lopez run for 2 yds to the Lin 10,-0.209067424082246,2024-08-31T23:14:02.000Z
+401655628104946508,401655628,40165562823,5,4,5:34,Northern Arizona,Lincoln (CA),66,6,10,2,10,3,Rush,Isaiah Lopez run for 3 yds to the Lin 13,-0.0853747272189674,2024-08-31T23:14:02.000Z
+401655628104946509,401655628,40165562823,6,4,5:34,Northern Arizona,Lincoln (CA),66,6,13,3,13,0,Pass Incompletion,Lathan Boone pass incomplete,-0.6039382602387847,2024-08-31T23:14:02.000Z
+401655628104978801,401655628,40165562823,7,4,2:11,Northern Arizona,Lincoln (CA),66,6,13,4,13,31,Field Goal Missed,Jordan Westrich 31 yd FG MISSED,,2024-08-31T23:20:50.000Z
+401655628104999902,401655628,40165562824,5,4,0:00,Lincoln (CA),Northern Arizona,6,66,68,0,10,6,End of Game,End of 4th Quarter,,2024-08-31T23:14:02.000Z
+401655628104978804,401655628,40165562824,1,4,2:11,Lincoln (CA),Northern Arizona,6,66,80,1,10,2,Rush,Jamin Miller run for 2 yds to the Lin 22,-0.3623882030735057,2024-08-31T23:20:50.000Z
+401655628104978805,401655628,40165562824,2,4,2:11,Lincoln (CA),Northern Arizona,6,66,78,2,8,6,Rush,Jamin Miller run for 6 yds to the Lin 28,0.19367068890373407,2024-08-31T23:20:50.000Z
+401655628104978806,401655628,40165562824,3,4,2:11,Lincoln (CA),Northern Arizona,6,66,72,3,2,4,Rush,Jamin Miller run for 4 yds to the Lin 32 for a 1ST down,1.035464594133015,2024-08-31T23:20:50.000Z
+401655628104999901,401655628,40165562824,4,4,0:00,Lincoln (CA),Northern Arizona,6,66,68,1,10,6,Rush,Jamin Miller run for 6 yds to the Lin 38,0.3855228600463665,2024-08-31T23:14:02.000Z

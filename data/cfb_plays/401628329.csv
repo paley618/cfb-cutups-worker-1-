@@ -1,0 +1,209 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628329101854303,401628329,4016283291,2,1,14:56,Old Dominion,South Carolina,0,0,83,1,10,-2,Pass Reception,Grant Wilson pass complete to Diante Vines,-0.6032159591482795,2024-08-31T20:21:56.000Z
+401628329101858701,401628329,4016283291,4,1,14:12,Old Dominion,South Carolina,0,0,90,2,17,-7,Fumble Recovery (Own),"Grant Wilson sacked by Kyle Kennard for a loss of 7 yards to the ODU 3 Grant Wilson fumbled, recovered by SC Debo Williams , return for 0 yards",-0.09598271920901524,2024-08-31T20:23:17.000Z
+401628329101854304,401628329,4016283291,3,1,14:56,Old Dominion,South Carolina,0,0,85,2,12,-5,Penalty,"PENALTY ODU False Start (Flores,Michael) 5 yards from ODU15 to ODU10. NO PLAY.",,2024-08-31T20:21:56.000Z
+401628329101854301,401628329,4016283291,1,1,14:56,South Carolina,Old Dominion,0,0,65,1,10,17,Kickoff Return (Offense),"Alex Herrera kickoff for 65 yds , Devin Roche return for 17 yds to the ODU 17",,2024-08-31T20:21:56.000Z
+401628329101858704,401628329,4016283292,1,1,14:12,South Carolina,Old Dominion,0,0,3,1,3,2,Rush,Raheim Sanders run for 2 yds to the ODU 1,-0.435900504741669,2024-08-31T20:23:17.000Z
+401628329101858705,401628329,4016283292,2,1,14:12,South Carolina,Old Dominion,0,0,1,2,1,0,Rush,LaNorris Sellers run for no gain to the ODU 1,-0.553645991706544,2024-08-31T20:23:17.000Z
+401628329101867701,401628329,4016283292,3,1,13:22,South Carolina,Old Dominion,7,0,1,3,1,1,Rushing Touchdown,Raheim Sanders run for 1 yd for a TD (Alex Herrera KICK),2.45399822917955,2024-08-31T20:26:18.000Z
+401628329101867704,401628329,4016283292,4,1,13:22,Old Dominion,South Carolina,0,0,75,1,10,0,Timeout,"Timeout South Carolina, clock 13:22",,2024-08-31T20:30:23.000Z
+401628329101867705,401628329,4016283293,1,1,13:22,South Carolina,Old Dominion,7,0,65,1,10,0,Kickoff,Alex Herrera kickoff for 65 yds for a touchback,,2024-08-31T20:30:23.000Z
+401628329101874801,401628329,4016283293,3,1,12:51,Old Dominion,South Carolina,7,7,72,2,7,72,Passing Touchdown,Isiah Paige 72 Yd pass from Grant Wilson (Ethan Sanchez Kick),6.373522533665337,2024-08-31T20:31:46.000Z
+401628329101867707,401628329,4016283293,2,1,13:22,Old Dominion,South Carolina,0,7,75,1,10,3,Rush,Aaron Young run for 3 yds to the ODU 28,-0.2957674139440157,2024-08-31T20:30:23.000Z
+401628329101874803,401628329,4016283294,1,1,12:51,Old Dominion,South Carolina,7,7,65,1,10,0,Kickoff,Ethan Chang kickoff for 65 yds for a touchback,,2024-08-31T20:31:46.000Z
+401628329101939001,401628329,4016283294,14,1,6:09,South Carolina,Old Dominion,10,7,22,4,16,40,Field Goal Good,Alex Herrera 40 yd FG GOOD,,2024-08-31T20:41:15.000Z
+401628329101874816,401628329,4016283294,13,1,12:51,South Carolina,Old Dominion,7,7,14,3,8,-8,Sack,LaNorris Sellers sacked by Mario Thompson for a loss of 8 yards to the ODU 22,-1.940610026050173,2024-08-31T20:35:53.000Z
+401628329101874815,401628329,4016283294,12,1,12:51,South Carolina,Old Dominion,7,7,14,2,8,0,Rush,Raheim Sanders run for no gain to the ODU 14,-0.3440507031992759,2024-08-31T20:35:53.000Z
+401628329101874814,401628329,4016283294,11,1,12:51,South Carolina,Old Dominion,7,7,16,1,10,2,Rush,LaNorris Sellers run for 2 yds to the ODU 14,-0.1838209433726501,2024-08-31T20:35:53.000Z
+401628329101874813,401628329,4016283294,10,1,12:51,South Carolina,Old Dominion,7,7,21,2,4,5,Rush,Oscar Adaway III run for 5 yds to the ODU 16 for a 1ST down,-0.0283969897420099,2024-08-31T20:35:53.000Z
+401628329101874812,401628329,4016283294,9,1,12:51,South Carolina,Old Dominion,7,7,27,1,10,6,Rush,LaNorris Sellers run for 6 yds to the ODU 21,0.2009551098411215,2024-08-31T20:35:53.000Z
+401628329101874811,401628329,4016283294,8,1,12:51,South Carolina,Old Dominion,7,7,29,4,1,2,Rush,Raheim Sanders run for 2 yds to the ODU 27 for a 1ST down,1.2031791845868174,2024-08-31T20:35:53.000Z
+401628329101874810,401628329,4016283294,7,1,12:51,South Carolina,Old Dominion,7,7,32,3,4,3,Rush,LaNorris Sellers run for 3 yds to the ODU 29,-0.3203887765644834,2024-08-31T20:35:53.000Z
+401628329101874809,401628329,4016283294,6,1,12:51,South Carolina,Old Dominion,7,7,41,2,13,9,Rush,Raheim Sanders run for 9 yds to the ODU 32,0.861993161589826,2024-08-31T20:35:53.000Z
+401628329101874808,401628329,4016283294,5,1,12:51,South Carolina,Old Dominion,7,7,38,1,10,-3,Pass Reception,LaNorris Sellers pass complete to Michael Smith,-1.391471762418458,2024-08-31T20:35:53.000Z
+401628329101874807,401628329,4016283294,4,1,12:51,South Carolina,Old Dominion,7,7,61,1,10,23,Rush,LaNorris Sellers run for 23 yds to the ODU 38 for a 1ST down,1.760423387879678,2024-08-31T20:31:46.000Z
+401628329101874806,401628329,4016283294,3,1,12:51,South Carolina,Old Dominion,7,7,71,2,6,10,Rush,Raheim Sanders run for 10 yds to the SC 39 for a 1ST down,1.3370277081953519,2024-08-31T20:31:46.000Z
+401628329101874805,401628329,4016283294,2,1,12:51,South Carolina,Old Dominion,7,7,75,1,10,4,Rush,LaNorris Sellers run for 4 yds to the SC 29,-0.1142886249388964,2024-08-31T20:31:46.000Z
+401628329101939003,401628329,4016283294,15,1,6:09,Old Dominion,South Carolina,7,7,75,1,10,0,Timeout,"Timeout South Carolina, clock 06:09",,2024-08-31T20:42:54.000Z
+401628329101939006,401628329,4016283295,2,1,6:09,Old Dominion,South Carolina,7,10,75,1,10,13,Rush,Bryce Duke run for 13 yds to the ODU 38 for a 1ST down,1.124751479041831,2024-08-31T20:42:54.000Z
+401628329101939007,401628329,4016283295,3,1,6:09,Old Dominion,South Carolina,7,10,62,1,10,0,Pass Incompletion,Grant Wilson pass incomplete,-1.087995077167328,2024-08-31T20:42:54.000Z
+401628329101939008,401628329,4016283295,4,1,6:09,Old Dominion,South Carolina,7,10,62,2,10,11,Pass Reception,Grant Wilson pass complete to Isiah Paige for a 1ST down,2.1176315139538797,2024-08-31T20:42:54.000Z
+401628329101939009,401628329,4016283295,5,1,6:09,Old Dominion,South Carolina,7,10,51,1,10,3,Rush,Bryce Duke run for 3 yds to the SC 48,-0.395458128988178,2024-08-31T20:42:54.000Z
+401628329101939010,401628329,4016283295,6,1,6:09,Old Dominion,South Carolina,7,10,48,2,7,0,Pass Incompletion,Grant Wilson pass incomplete,-1.1303938669231302,2024-08-31T20:42:54.000Z
+401628329101939011,401628329,4016283295,7,1,6:09,Old Dominion,South Carolina,7,10,48,3,7,0,Pass Incompletion,Grant Wilson pass incomplete,-0.8995343697285872,2024-08-31T20:42:54.000Z
+401628329101956201,401628329,4016283295,8,1,4:37,Old Dominion,South Carolina,7,10,48,4,7,0,Punt,"Seamus Hall punt for 32 yds, fair catch by Jalon Kilgore at the SC 16",,2024-08-31T20:48:26.000Z
+401628329101939004,401628329,4016283295,1,1,6:09,South Carolina,Old Dominion,10,7,65,1,10,0,Kickoff,Alex Herrera kickoff for 65 yds for a touchback,,2024-08-31T20:42:54.000Z
+401628329101956204,401628329,4016283296,1,1,4:37,South Carolina,Old Dominion,10,7,84,2,10,0,Timeout,"Timeout South Carolina, clock 04:37",,2024-08-31T20:49:58.000Z
+401628329101956205,401628329,4016283296,2,1,4:37,South Carolina,Old Dominion,10,7,84,1,10,0,Penalty,"South Carolina Penalty, Ineligible Downfield on Pass (Yards) declined",,2024-08-31T20:49:58.000Z
+401628329101959101,401628329,4016283296,5,1,4:08,South Carolina,Old Dominion,10,7,84,4,10,0,Punt,"Kai Kroeger punt for 43 yds, fair catch by Isiah Paige at the ODU 41",,2024-08-31T20:54:23.000Z
+401628329101956207,401628329,4016283296,4,1,4:37,South Carolina,Old Dominion,10,7,84,3,10,0,Pass Incompletion,LaNorris Sellers pass incomplete,-0.09125284434587756,2024-08-31T20:49:58.000Z
+401628329101956206,401628329,4016283296,3,1,4:37,South Carolina,Old Dominion,10,7,84,2,10,0,Pass Incompletion,LaNorris Sellers pass incomplete,-0.20870260143022978,2024-08-31T20:49:58.000Z
+401628329101975601,401628329,4016283297,4,1,2:43,Old Dominion,South Carolina,7,10,65,4,16,38,Punt,"Seamus Hall punt for 38 yds, punt out-of-bounds at the SC 27 South Carolina Penalty, Running Into The Kicker (Yards) declined",,2024-08-31T20:56:28.000Z
+401628329101959105,401628329,4016283297,3,1,4:08,Old Dominion,South Carolina,7,10,60,3,11,-5,Sack,Grant Wilson sacked by Kyle Kennard for a loss of 5 yards to the ODU 35,-0.565835363940697,2024-08-31T20:54:23.000Z
+401628329101959104,401628329,4016283297,2,1,4:08,Old Dominion,South Carolina,7,10,61,2,12,1,Rush,Aaron Young run for 1 yd to the ODU 40,-0.5243625583522116,2024-08-31T20:54:23.000Z
+401628329101959103,401628329,4016283297,1,1,4:08,Old Dominion,South Carolina,7,10,59,1,10,2,Rush,Aaron Young run for 2 yds to the ODU 39,-0.6841550241957303,2024-08-31T20:54:23.000Z
+401628329101975602,401628329,4016283297,5,1,2:43,Old Dominion,South Carolina,7,10,65,4,16,38,Punt,"Seamus Hall punt for 38 yds, punt out-of-bounds at the SC 27 South Carolina Penalty, Running Into The Kicker (Yards) declined",,2024-08-31T20:56:28.000Z
+401628329101999902,401628329,4016283298,7,1,0:00,South Carolina,Old Dominion,10,7,52,0,9,-8,End Period,End of 1st Quarter,,2024-08-31T20:21:56.000Z
+401628329101975603,401628329,4016283298,1,1,2:43,South Carolina,Old Dominion,10,7,73,1,10,2,Rush,Raheim Sanders run for 2 yds to the SC 29,-0.4908856028320683,2024-08-31T20:56:28.000Z
+401628329101975604,401628329,4016283298,2,1,2:43,South Carolina,Old Dominion,10,7,71,2,8,8,Rush,LaNorris Sellers run for 8 yds to the SC 37 for a 1ST down,1.3730902434762546,2024-08-31T20:56:28.000Z
+401628329101975605,401628329,4016283298,3,1,2:43,South Carolina,Old Dominion,10,7,63,1,10,10,Rush,LaNorris Sellers run for 10 yds to the SC 47 for a 1ST down,0.9552113600044425,2024-08-31T20:58:25.000Z
+401628329101975606,401628329,4016283298,4,1,2:43,South Carolina,Old Dominion,10,7,53,1,10,1,Rush,Raheim Sanders run for 1 yd to the SC 48,-0.9130431154710728,2024-08-31T20:58:25.000Z
+401628329101975607,401628329,4016283298,5,1,2:43,South Carolina,Old Dominion,10,7,52,2,9,0,Pass Incompletion,LaNorris Sellers pass incomplete,-1.0260560859071228,2024-08-31T20:58:25.000Z
+401628329101999901,401628329,4016283298,6,1,0:00,South Carolina,Old Dominion,10,7,52,3,9,-8,Sack,LaNorris Sellers sacked for a loss of 8 yards to the SC 40,-1.1908347406900948,2024-08-31T20:21:56.000Z
+401628329102855001,401628329,4016283298,8,2,14:49,South Carolina,Old Dominion,10,7,60,4,17,0,Punt,Kai Kroeger punt for 37 yds,,2024-08-31T21:06:38.000Z
+401628329102855003,401628329,4016283299,1,2,14:49,Old Dominion,South Carolina,7,10,77,1,10,1,Rush,Aaron Young run for 1 yd to the ODU 24,-0.5380287086286026,2024-08-31T21:06:38.000Z
+401628329102855004,401628329,4016283299,2,2,14:49,Old Dominion,South Carolina,7,10,76,2,9,3,Rush,Aaron Young run for 3 yds to the ODU 27,-0.15911147721367147,2024-08-31T21:06:38.000Z
+401628329102855005,401628329,4016283299,3,2,14:49,Old Dominion,South Carolina,7,10,73,3,6,-7,Sack,Grant Wilson sacked for a loss of 7 yards to the ODU 20,-0.4397725037381486,2024-08-31T21:06:38.000Z
+401628329102875301,401628329,4016283299,4,2,12:46,Old Dominion,South Carolina,7,10,80,4,13,0,Punt,"Seamus Hall punt for 39 yds, fair catch by Juju McDowell at the SC 41",,2024-08-31T21:09:08.000Z
+401628329102875304,401628329,40162832910,1,2,12:46,Old Dominion,South Carolina,7,10,9,1,9,0,Timeout,"Timeout South Carolina, clock 12:46",,2024-08-31T21:11:17.000Z
+401628329102876401,401628329,40162832910,2,2,12:35,South Carolina,Old Dominion,10,7,59,1,10,5,Fumble Recovery (Opponent),"LaNorris Sellers run for 5 yds to the SC 9 LaNorris Sellers fumbled, recovered by ODU Patrick Smith-Young",-2.3409876502015727,2024-08-31T21:12:31.000Z
+401628329102877101,401628329,40162832911,1,2,12:28,Old Dominion,South Carolina,7,10,9,1,9,0,Interception,"Grant Wilson pass intercepted, touchback.",-4.575762176353532,2024-08-31T21:13:01.000Z
+401628329102877104,401628329,40162832912,1,2,12:28,South Carolina,Old Dominion,10,7,80,1,10,4,Rush,Juju McDowell run for 4 yds to the SC 24,-0.0884321258012219,2024-08-31T21:13:01.000Z
+401628329102877105,401628329,40162832912,2,2,12:28,South Carolina,Old Dominion,10,7,76,2,6,12,Rush,Juju McDowell run for 12 yds to the SC 36 for a 1ST down,1.3272973136309938,2024-08-31T21:13:01.000Z
+401628329102877106,401628329,40162832912,3,2,12:28,South Carolina,Old Dominion,10,7,64,1,10,2,Rush,Raheim Sanders run for 2 yds to the SC 38,-0.6439997383019928,2024-08-31T21:13:01.000Z
+401628329102877107,401628329,40162832912,4,2,12:28,South Carolina,Old Dominion,10,7,62,2,8,7,Pass Reception,LaNorris Sellers pass complete to Payton Mangrum,0.5897118200313614,2024-08-31T21:13:01.000Z
+401628329102877108,401628329,40162832912,5,2,12:28,South Carolina,Old Dominion,10,7,55,3,1,1,Rush,Raheim Sanders run for 1 yd to the SC 46 for a 1ST down,1.0165829883607544,2024-08-31T21:13:01.000Z
+401628329102877109,401628329,40162832912,6,2,12:28,South Carolina,Old Dominion,10,7,54,1,10,4,Rush,LaNorris Sellers run for 4 yds to the 50 yard line,-0.1577860825649198,2024-08-31T21:13:01.000Z
+401628329102877110,401628329,40162832912,7,2,12:28,South Carolina,Old Dominion,10,7,50,2,6,10,Pass Reception,LaNorris Sellers pass complete to Joshua Simon for a 1ST down,1.1536344763127868,2024-08-31T21:13:01.000Z
+401628329102877111,401628329,40162832912,8,2,12:28,South Carolina,Old Dominion,10,7,40,1,10,-11,Penalty,"South Carolina Penalty, Intentional Grounding (-11 Yards) to the SC 49",,2024-08-31T21:13:01.000Z
+401628329102877113,401628329,40162832912,9,2,12:28,South Carolina,Old Dominion,10,7,51,2,21,10,Pass Reception,LaNorris Sellers pass complete to Raheim Sanders,0.9975147725476603,2024-08-31T21:13:01.000Z
+401628329102877114,401628329,40162832912,10,2,12:28,South Carolina,Old Dominion,10,7,41,3,11,0,Pass Incompletion,LaNorris Sellers pass incomplete,-0.9249174587559335,2024-08-31T21:13:01.000Z
+401628329102925001,401628329,40162832912,11,2,7:49,South Carolina,Old Dominion,10,7,41,4,11,0,Punt,Kai Kroeger punt for 41 yds for a touchback,,2024-08-31T22:04:42.000Z
+401628329102925005,401628329,40162832913,1,2,7:49,Old Dominion,South Carolina,7,10,80,1,10,-10,Fumble Recovery (Own),"Grant Wilson sacked by Dylan Stewart for a loss of 10 yards to the ODU 10 Grant Wilson fumbled, recovered by ODU Grant Wilson , return for 0 yards",-0.9466605508415569,2024-08-31T22:07:53.000Z
+401628329102925007,401628329,40162832913,2,2,7:49,Old Dominion,South Carolina,7,10,90,2,20,0,Pass Incompletion,Grant Wilson pass incomplete,-0.04392078251401621,2024-08-31T22:07:53.000Z
+401628329102925008,401628329,40162832913,3,2,7:49,Old Dominion,South Carolina,7,10,90,3,20,3,Pass Reception,Grant Wilson pass complete to Diante Vines,-0.00860787527068219,2024-08-31T22:07:53.000Z
+401628329102925010,401628329,40162832913,4,2,7:49,Old Dominion,South Carolina,7,10,90,2,20,0,Timeout,"Timeout South Carolina, clock 07:49",,2024-08-31T22:07:53.000Z
+401628329102939301,401628329,40162832913,5,2,6:06,Old Dominion,South Carolina,7,10,87,4,17,13,Punt,"Seamus Hall punt for 41 yds , Juju McDowell returns for 13 yds to the ODU 41",,2024-08-31T22:10:19.000Z
+401628329102939305,401628329,40162832914,2,2,6:06,South Carolina,Old Dominion,10,7,41,1,10,16,Rush,Jared Brown run for 16 yds to the ODU 25 for a 1ST down,0.5404352636304619,2024-08-31T22:10:19.000Z
+401628329102939306,401628329,40162832914,3,2,6:06,South Carolina,Old Dominion,10,7,25,1,10,3,Rush,Oscar Adaway III run for 3 yds to the ODU 22,-0.1408898471373875,2024-08-31T22:10:19.000Z
+401628329102939307,401628329,40162832914,4,2,6:06,South Carolina,Old Dominion,10,7,22,2,7,1,Rush,Oscar Adaway III run for 1 yd to the ODU 23,-0.3789902815676473,2024-08-31T22:10:19.000Z
+401628329102939308,401628329,40162832914,5,2,6:06,South Carolina,Old Dominion,10,7,23,3,8,0,Pass Incompletion,LaNorris Sellers pass incomplete,-0.7701289820414613,2024-08-31T22:10:19.000Z
+401628329102959701,401628329,40162832914,7,2,4:02,South Carolina,Old Dominion,13,7,28,4,13,46,Field Goal Good,Alex Herrera 46 yd FG GOOD,,2024-08-31T22:17:11.000Z
+401628329102939310,401628329,40162832914,6,2,6:06,South Carolina,Old Dominion,10,7,23,4,8,-5,Penalty,"No Huddle Kroeger,Kai pass complete deep right to Hunt,Brady caught at ODU00, for 23 yards to the ODU00 TOUCHDOWN nullified by penalty, clock 00:00 PENALTY USC Ineligible Downfield on Pass (Simpkins,Torricelli) 5 yards from ODU23 to ODU28. NO PLAY.",,2024-08-31T22:16:07.000Z
+401628329102939304,401628329,40162832914,1,2,6:06,South Carolina,Old Dominion,10,7,25,1,10,0,Timeout,"Timeout South Carolina, clock 06:06",,2024-08-31T22:10:19.000Z
+401628329102959708,401628329,40162832915,6,2,4:02,Old Dominion,South Carolina,7,13,58,2,4,1,Rush,Bryce Duke run for 1 yd to the ODU 43,-0.9633794169947762,2024-08-31T22:17:11.000Z
+401628329102959707,401628329,40162832915,5,2,4:02,Old Dominion,South Carolina,7,13,64,1,10,6,Rush,Grant Wilson run for 6 yds to the ODU 42,0.4008542507084805,2024-08-31T22:17:11.000Z
+401628329102959706,401628329,40162832915,4,2,4:02,Old Dominion,South Carolina,7,13,71,3,6,7,Pass Reception,Grant Wilson pass complete to Pat Conroy for a 1ST down,1.6957560237959841,2024-08-31T22:17:11.000Z
+401628329102959705,401628329,40162832915,3,2,4:02,Old Dominion,South Carolina,7,13,74,2,9,3,Rush,Bryce Duke run for 3 yds to the ODU 29,-0.17771396874830803,2024-08-31T22:17:11.000Z
+401628329102959704,401628329,40162832915,2,2,4:02,Old Dominion,South Carolina,7,13,75,1,10,1,Rush,Bryce Duke run for 1 yd to the ODU 26,-0.5874795431016855,2024-08-31T22:17:11.000Z
+401628329102979904,401628329,40162832915,10,2,2:00,Old Dominion,South Carolina,7,13,59,2,18,0,Pass Incompletion,Grant Wilson pass incomplete,-0.44882208648127353,2024-08-31T22:23:45.000Z
+401628329102979901,401628329,40162832915,7,2,2:00,Old Dominion,South Carolina,7,13,57,3,3,0,Timeout,"Timeout South Carolina, clock 02:00",,2024-08-31T21:20:19.000Z
+401628329102959702,401628329,40162832915,1,2,4:02,South Carolina,Old Dominion,13,7,65,1,10,0,Kickoff,Alex Herrera kickoff for 65 yds for a touchback,,2024-08-31T22:17:11.000Z
+401628329102979903,401628329,40162832915,9,2,2:00,Old Dominion,South Carolina,7,13,51,1,10,-8,Sack,Grant Wilson sacked by Tonka Hemingway for a loss of 8 yards to the ODU 41,-2.6342301925886646,2024-08-31T22:23:45.000Z
+401628329102979902,401628329,40162832915,8,2,2:00,Old Dominion,South Carolina,7,13,57,3,3,6,Pass Reception,Grant Wilson pass complete to Isiah Paige for a 1ST down,1.7863505701686877,2024-08-31T22:23:45.000Z
+401628329102988301,401628329,40162832915,12,2,1:16,Old Dominion,South Carolina,7,13,55,4,14,0,Timeout,"Timeout South Carolina, clock 01:16",,2024-08-31T22:25:25.000Z
+401628329102989301,401628329,40162832915,13,2,1:06,Old Dominion,South Carolina,7,13,55,4,14,0,Punt,"Seamus Hall punt for 47 yds , Juju McDowell returns for no gain to the SC 5",,2024-08-31T22:26:32.000Z
+401628329102979905,401628329,40162832915,11,2,2:00,Old Dominion,South Carolina,7,13,59,3,18,4,Pass Reception,Grant Wilson pass complete to Bryce Duke,-0.0475944354618143,2024-08-31T22:23:45.000Z
+401628329102999902,401628329,40162832916,4,2,0:00,South Carolina,Old Dominion,13,7,87,0,2,4,End of Half,End of 2nd Quarter,,2024-08-31T22:26:32.000Z
+401628329102989303,401628329,40162832916,1,2,1:06,South Carolina,Old Dominion,13,7,95,1,10,4,Rush,Raheim Sanders run for 4 yds to the SC 9,-0.03441629082403441,2024-08-31T22:26:52.000Z
+401628329102989304,401628329,40162832916,2,2,1:06,South Carolina,Old Dominion,13,7,91,2,6,4,Rush,LaNorris Sellers run for 4 yds to the SC 13,-0.030724116751559727,2024-08-31T22:26:52.000Z
+401628329102999901,401628329,40162832916,3,2,0:00,South Carolina,Old Dominion,13,7,87,3,2,4,Rush,LaNorris Sellers run for 4 yds to the SC 17 for a 1ST down,0.44831987305874055,2024-08-31T22:26:32.000Z
+401628329103849911,401628329,40162832917,8,3,15:00,South Carolina,Old Dominion,13,7,50,3,6,6,Pass Reception,LaNorris Sellers pass complete to Dalevon Campbell for a 1ST down,2.09100997352029,2024-08-31T22:50:31.000Z
+401628329103849914,401628329,40162832917,11,3,15:00,South Carolina,Old Dominion,13,7,40,3,6,18,Pass Reception,LaNorris Sellers pass complete to Vandrevius Jacobs for a 1ST down,1.8925304633406648,2024-08-31T22:50:31.000Z
+401628329103849905,401628329,40162832917,2,3,15:00,South Carolina,Old Dominion,13,7,75,1,10,0,Pass Incompletion,LaNorris Sellers pass incomplete,-0.7029700220436519,2024-08-31T22:50:31.000Z
+401628329103849906,401628329,40162832917,3,3,15:00,South Carolina,Old Dominion,13,7,75,2,10,7,Rush,LaNorris Sellers run for 7 yds to the SC 32,0.3138158809285007,2024-08-31T22:50:31.000Z
+401628329103849907,401628329,40162832917,4,3,15:00,South Carolina,Old Dominion,13,7,68,3,3,2,Rush,Raheim Sanders run for 2 yds to the SC 34,-0.3345261769981986,2024-08-31T22:50:31.000Z
+401628329103849903,401628329,40162832917,1,3,15:00,Old Dominion,South Carolina,7,13,65,1,10,0,Kickoff,Ethan Chang kickoff for 65 yds for a touchback,,2024-08-31T22:50:31.000Z
+401628329103849908,401628329,40162832917,5,3,15:00,South Carolina,Old Dominion,13,7,66,4,1,12,Rush,Raheim Sanders run for 12 yds to the SC 46 for a 1ST down,2.616537900149463,2024-08-31T22:50:31.000Z
+401628329103849909,401628329,40162832917,6,3,15:00,South Carolina,Old Dominion,13,7,54,1,10,0,Pass Incompletion,LaNorris Sellers pass incomplete,-1.1590089706435955,2024-08-31T22:50:31.000Z
+401628329103849910,401628329,40162832917,7,3,15:00,South Carolina,Old Dominion,13,7,54,2,10,4,Rush,Raheim Sanders run for 4 yds to the 50 yard line,-0.1599858227015077,2024-08-31T22:50:31.000Z
+401628329103849912,401628329,40162832917,9,3,15:00,South Carolina,Old Dominion,13,7,44,1,10,0,Pass Incompletion,LaNorris Sellers pass incomplete,-0.9690270974076257,2024-08-31T22:50:31.000Z
+401628329103849913,401628329,40162832917,10,3,15:00,South Carolina,Old Dominion,13,7,44,2,10,4,Rush,LaNorris Sellers run for 4 yds to the ODU 40,-0.1582437750714777,2024-08-31T22:50:31.000Z
+401628329103849915,401628329,40162832917,12,3,15:00,South Carolina,Old Dominion,13,7,22,1,10,3,Rush,Raheim Sanders run for 3 yds to the ODU 19,-0.126302256434185,2024-08-31T22:50:31.000Z
+401628329103849916,401628329,40162832917,13,3,15:00,South Carolina,Old Dominion,13,7,19,2,7,9,Rush,LaNorris Sellers run for 9 yds to the ODU 10 for a 1ST down,0.260098180833203,2024-08-31T22:50:31.000Z
+401628329103849917,401628329,40162832917,14,3,15:00,South Carolina,Old Dominion,13,7,10,1,10,2,Rush,Raheim Sanders run for 2 yds to the ODU 8,-0.162944112483623,2024-08-31T22:50:31.000Z
+401628329103849918,401628329,40162832917,15,3,15:00,South Carolina,Old Dominion,13,7,8,2,8,2,Rush,Oscar Adaway III run for 2 yds to the ODU 10,-0.146990895441583,2024-08-31T22:50:31.000Z
+401628329103849919,401628329,40162832917,16,3,15:00,South Carolina,Old Dominion,13,7,10,3,10,-5,Sack,LaNorris Sellers sacked by Mario Thompson for a loss of 5 yards to the ODU 15,-1.197906977947529,2024-08-31T22:50:31.000Z
+401628329103928601,401628329,40162832917,17,3,7:13,South Carolina,Old Dominion,16,7,15,4,15,33,Field Goal Good,Alex Herrera 33 yd FG GOOD,,2024-08-31T22:50:31.000Z
+401628329103928604,401628329,40162832918,2,3,7:13,Old Dominion,South Carolina,7,16,75,1,10,3,Rush,Aaron Young run for 3 yds to the ODU 28,-0.2957674139440157,2024-08-31T23:01:55.000Z
+401628329103928606,401628329,40162832918,4,3,7:13,Old Dominion,South Carolina,7,16,72,3,7,18,Pass Reception,Grant Wilson pass complete to Myles Alston for a 1ST down,2.748056724192152,2024-08-31T23:01:55.000Z
+401628329103928607,401628329,40162832918,5,3,7:13,Old Dominion,South Carolina,7,16,54,1,10,5,Rush,Aaron Young run for 5 yds to the SC 49,0.1068990350586356,2024-08-31T23:01:55.000Z
+401628329103928608,401628329,40162832918,6,3,7:13,Old Dominion,South Carolina,7,16,49,2,5,10,Pass Reception,Grant Wilson pass complete to Myles Alston for a 1ST down,0.9375599476950214,2024-08-31T23:01:55.000Z
+401628329103928609,401628329,40162832918,7,3,7:13,Old Dominion,South Carolina,7,16,39,1,10,0,Pass Incompletion,Grant Wilson pass incomplete,-0.814236079442537,2024-08-31T23:01:55.000Z
+401628329103928610,401628329,40162832918,8,3,7:13,Old Dominion,South Carolina,7,16,39,2,10,3,Rush,Aaron Young run for 3 yds to the SC 36,-0.348782686778755,2024-08-31T23:08:52.000Z
+401628329103928611,401628329,40162832918,9,3,7:13,Old Dominion,South Carolina,7,16,36,3,7,0,Pass Incompletion,Grant Wilson pass incomplete,-1.0456665971037056,2024-08-31T23:08:52.000Z
+401628329103955001,401628329,40162832918,11,3,4:49,Old Dominion,South Carolina,7,16,65,1,10,24,Kickoff Return (Offense),"Ethan Chang kickoff for 61 yds , Juju McDowell return for 24 yds to the SC 41 South Carolina Penalty, Offensive Holding (8 Yards) to the SC 7",,2024-08-31T23:15:25.000Z
+401628329103928602,401628329,40162832918,1,3,7:13,South Carolina,Old Dominion,16,7,65,1,10,0,Kickoff,Alex Herrera kickoff for 54 yds,,2024-08-31T23:01:55.000Z
+401628329103928605,401628329,40162832918,3,3,7:13,Old Dominion,South Carolina,7,16,72,2,7,0,Penalty,"Old Dominion Penalty, Offensive Holding (Angelo Rankin Jr.) declined",,2024-08-31T23:01:55.000Z
+401628329103954201,401628329,40162832918,10,3,4:57,Old Dominion,South Carolina,13,16,36,4,7,36,Rushing Touchdown,Grant Wilson run for 36 yds for a TD (Ethan Sanchez PAT BLOCKED),5.349123918256549,2024-08-31T23:10:21.000Z
+401628329103955006,401628329,40162832919,3,3,4:49,South Carolina,Old Dominion,16,13,74,1,10,41,Pass Reception,LaNorris Sellers pass complete to Vandrevius Jacobs for a 1ST down,3.103701538958978,2024-08-31T23:15:25.000Z
+401628329103955004,401628329,40162832919,1,3,4:49,South Carolina,Old Dominion,16,13,93,1,10,2,Rush,Raheim Sanders run for 2 yds to the SC 5,-0.19818242222171722,2024-08-31T23:15:25.000Z
+401628329103955005,401628329,40162832919,2,3,4:49,South Carolina,Old Dominion,16,13,95,2,12,21,Rush,Raheim Sanders run for 21 yds to the SC 26 for a 1ST down,1.2464123991970357,2024-08-31T23:15:25.000Z
+401628329103955007,401628329,40162832919,4,3,4:49,South Carolina,Old Dominion,16,13,33,1,10,0,Pass Incompletion,LaNorris Sellers pass incomplete,-0.6351269961541294,2024-08-31T23:15:25.000Z
+401628329103955008,401628329,40162832919,5,3,4:49,South Carolina,Old Dominion,16,13,33,2,10,3,Rush,Raheim Sanders run for 3 yds to the ODU 30,-0.2795197475233876,2024-08-31T23:15:25.000Z
+401628329103955009,401628329,40162832919,6,3,4:49,South Carolina,Old Dominion,16,13,30,3,7,0,Pass Incompletion,LaNorris Sellers pass incomplete,-0.9483272737564585,2024-08-31T23:15:25.000Z
+401628329103979601,401628329,40162832919,7,3,2:03,South Carolina,Old Dominion,16,13,30,4,7,48,Field Goal Missed,Alex Herrera 48 yd FG MISSED,,2024-08-31T23:20:56.000Z
+401628329103979604,401628329,40162832920,1,3,2:03,Old Dominion,South Carolina,13,16,66,2,6,0,Timeout,"Timeout South Carolina, clock 02:03",,2024-08-31T23:20:56.000Z
+401628329103998501,401628329,40162832920,9,3,0:14,Old Dominion,South Carolina,16,16,23,4,8,40,Field Goal Good,Ethan Sanchez 40 yd FG GOOD,,2024-08-31T23:28:30.000Z
+401628329103979613,401628329,40162832920,8,3,2:03,Old Dominion,South Carolina,13,16,23,3,8,0,Pass Incompletion,Grant Wilson pass incomplete,-0.7701289820414613,2024-08-31T23:26:43.000Z
+401628329103979612,401628329,40162832920,7,3,2:03,Old Dominion,South Carolina,13,16,23,2,8,0,Pass Incompletion,Grant Wilson pass incomplete,-0.5265664548341907,2024-08-31T23:26:43.000Z
+401628329103979611,401628329,40162832920,6,3,2:03,Old Dominion,South Carolina,13,16,25,1,10,2,Rush,Bryce Duke run for 2 yds to the SC 23,-0.2434763543774955,2024-08-31T23:26:43.000Z
+401628329103979610,401628329,40162832920,5,3,2:03,Old Dominion,South Carolina,13,16,40,1,10,15,Pass Reception,Grant Wilson pass complete to Pat Conroy for a 1ST down,0.4889647816712835,2024-08-31T23:20:56.000Z
+401628329103979608,401628329,40162832920,4,3,2:03,Old Dominion,South Carolina,13,16,66,3,6,15,Pass Reception,"Grant Wilson pass complete to Isiah Paige for a 1ST down South Carolina Penalty, Face Mask (15 yards) (Nick Emmanwori) to the SC 40 for a 1ST down",2.7167210439960066,2024-08-31T23:20:56.000Z
+401628329103979606,401628329,40162832920,3,3,2:03,Old Dominion,South Carolina,13,16,66,2,6,0,Pass Incompletion,Grant Wilson pass incomplete,-0.8073982355249001,2024-08-31T23:20:56.000Z
+401628329103979605,401628329,40162832920,2,3,2:03,Old Dominion,South Carolina,13,16,70,1,10,4,Rush,Grant Wilson run for 4 yds to the ODU 34,-0.1399034934597019,2024-08-31T23:20:56.000Z
+401628329103998701,401628329,40162832921,1,3,0:12,Old Dominion,South Carolina,16,16,65,1,10,21,Kickoff Return (Offense),"Ethan Chang kickoff for 65 yds , Juju McDowell return for 21 yds to the SC 21",,2024-08-31T23:30:34.000Z
+401628329103999902,401628329,40162832921,4,3,0:00,South Carolina,Old Dominion,16,16,79,0,10,-2,End Period,End of 3rd Quarter,,2024-08-31T22:50:31.000Z
+401628329104849902,401628329,40162832921,5,4,15:00,South Carolina,Old Dominion,16,16,81,3,12,10,Pass Reception,LaNorris Sellers pass complete to Mazeo Bennett Jr.,0.2517564078994017,2024-08-31T23:35:33.000Z
+401628329103999901,401628329,40162832921,3,3,0:00,South Carolina,Old Dominion,16,16,79,2,10,2,Rush,Raheim Sanders run for 2 yds to the SC 19,-0.18181358271219317,2024-08-31T22:50:31.000Z
+401628329103998703,401628329,40162832921,2,3,0:12,South Carolina,Old Dominion,16,16,79,1,10,0,Pass Incompletion,LaNorris Sellers pass incomplete,-0.585616097616759,2024-08-31T23:30:34.000Z
+401628329104858601,401628329,40162832921,6,4,14:13,South Carolina,Old Dominion,16,16,71,4,2,0,Blocked Punt,"Kai Kroeger punt blocked by Markus Knight blocked by Markus Knight Kroeger,Kai punt 0 yards to the USC29 blocked by Knight,Markus recovered by ODU Carter,Jerome at ODU42, End Of Play.",,2024-08-31T23:39:13.000Z
+401628329104858604,401628329,40162832922,2,4,14:13,Old Dominion,South Carolina,16,16,53,2,5,4,Pass Reception,Grant Wilson pass complete to Myles Alston,-0.1662176201054615,2024-08-31T23:37:02.000Z
+401628329104858605,401628329,40162832922,3,4,14:13,Old Dominion,South Carolina,16,16,49,3,1,5,Pass Reception,Grant Wilson pass complete to Myles Alston for a 1ST down,1.2049989228916986,2024-08-31T23:37:02.000Z
+401628329104858603,401628329,40162832922,1,4,14:13,Old Dominion,South Carolina,16,16,58,1,10,5,Rush,Aaron Young run for 5 yds to the ODU 47,0.110039551743057,2024-08-31T23:37:02.000Z
+401628329104874602,401628329,40162832922,7,4,12:53,Old Dominion,South Carolina,16,16,37,3,3,8,Rush,Grant Wilson run for 8 yds to the SC 29 for a 1ST down,1.073560650378583,2024-08-31T23:42:03.000Z
+401628329104874603,401628329,40162832922,8,4,12:53,Old Dominion,South Carolina,16,16,29,1,10,0,Pass Incompletion,Grant Wilson pass incomplete,-0.534372502378378,2024-08-31T23:42:03.000Z
+401628329104874604,401628329,40162832922,9,4,12:53,Old Dominion,South Carolina,16,16,29,2,10,8,Rush,Aaron Young run for 8 yds to the SC 21,0.4368708610206,2024-08-31T23:42:03.000Z
+401628329104874605,401628329,40162832922,10,4,12:53,Old Dominion,South Carolina,16,16,21,3,2,2,Pass Reception,Grant Wilson pass complete to Diante Vines for a 1ST down,0.281355197318367,2024-08-31T23:42:03.000Z
+401628329104874606,401628329,40162832922,11,4,12:53,Old Dominion,South Carolina,16,16,19,1,10,0,Rush,Aaron Young run for no gain to the SC 19,-0.362321296557512,2024-08-31T23:42:03.000Z
+401628329104874609,401628329,40162832922,13,4,12:53,Old Dominion,South Carolina,16,16,29,2,20,13,Rush,Bryce Duke run for 13 yds to the SC 16,1.09383449153653,2024-08-31T23:45:47.000Z
+401628329104874610,401628329,40162832922,14,4,12:53,Old Dominion,South Carolina,16,16,16,3,7,0,Pass Incompletion,Grant Wilson pass incomplete,-0.531984560343167,2024-08-31T23:45:47.000Z
+401628329104904501,401628329,40162832922,15,4,9:54,Old Dominion,South Carolina,19,16,16,4,7,33,Field Goal Good,Ethan Sanchez 33 yd FG GOOD,,2024-08-31T23:47:11.000Z
+401628329104874607,401628329,40162832922,12,4,12:53,Old Dominion,South Carolina,16,16,19,2,10,-10,Penalty,"No Huddle-Shotgun Wilson,Grant pass incomplete short right to Paige,Isiah thrown to USC00 QB hurried by Stewart,Dylan PENALTY ODU Holding 10 yards from USC19 to USC29. NO PLAY.",,2024-08-31T23:42:03.000Z
+401628329104874601,401628329,40162832922,6,4,12:53,Old Dominion,South Carolina,16,16,37,3,3,0,Timeout,"Timeout South Carolina, clock 12:53",,2024-08-31T23:35:33.000Z
+401628329104904504,401628329,40162832922,16,4,9:54,South Carolina,Old Dominion,16,16,66,1,10,0,Timeout,"Timeout South Carolina, clock 09:54",,2024-08-31T23:47:11.000Z
+401628329104905301,401628329,40162832922,17,4,9:46,Old Dominion,South Carolina,16,16,65,1,10,21,Kickoff Return (Offense),"Ethan Chang kickoff for 57 yds , Juju McDowell return for 21 yds to the SC 44 Old Dominion Penalty, Defensive Offside (-5 Yards) to the SC 34",,2024-08-31T23:51:06.000Z
+401628329104858606,401628329,40162832922,4,4,14:13,Old Dominion,South Carolina,16,16,44,1,10,7,Rush,Aaron Young run for 7 yds to the SC 37,0.5005481645051048,2024-08-31T23:37:02.000Z
+401628329104858607,401628329,40162832922,5,4,14:13,Old Dominion,South Carolina,16,16,37,2,3,0,Pass Reception,Grant Wilson pass complete to Isiah Paige,-0.9495276419717785,2024-08-31T23:37:02.000Z
+401628329104905307,401628329,40162832923,4,4,9:46,South Carolina,Old Dominion,16,19,51,2,10,7,Pass Reception,LaNorris Sellers pass complete to Michael Smith,0.5745507866568983,2024-08-31T23:51:06.000Z
+401628329104905304,401628329,40162832923,1,4,9:46,South Carolina,Old Dominion,16,19,66,1,10,8,Pass Reception,LaNorris Sellers pass complete to Mazeo Bennett Jr.,1.0340504913723672,2024-08-31T23:51:06.000Z
+401628329104905309,401628329,40162832923,6,4,9:46,South Carolina,Old Dominion,16,19,44,4,3,-5,Penalty,"PENALTY USC False Start (Thompson,Josiah) 5 yards from ODU44 to ODU49. NO PLAY.",,2024-08-31T23:51:06.000Z
+401628329104924701,401628329,40162832923,7,4,7:52,South Carolina,Old Dominion,16,19,49,4,8,0,Punt,"Kai Kroeger punt for 39 yds, fair catch by Isiah Paige at the ODU 10",,2024-08-31T23:55:17.000Z
+401628329104905308,401628329,40162832923,5,4,9:46,South Carolina,Old Dominion,16,19,44,3,3,0,Pass Incompletion,LaNorris Sellers pass incomplete,-1.127472566196655,2024-08-31T23:51:06.000Z
+401628329104905306,401628329,40162832923,3,4,9:46,South Carolina,Old Dominion,16,19,51,1,10,0,Rush,Raheim Sanders run for no gain to the SC 49,-1.1301991718133413,2024-08-31T23:51:06.000Z
+401628329104905305,401628329,40162832923,2,4,9:46,South Carolina,Old Dominion,16,19,58,2,2,7,Rush,Raheim Sanders run for 7 yds to the SC 49 for a 1ST down,0.379351694464308,2024-08-31T23:51:06.000Z
+401628329104924705,401628329,40162832924,2,4,7:52,Old Dominion,South Carolina,19,16,90,1,10,3,Fumble Recovery (Own),"Grant Wilson run for 3 yds to the ODU 7 Grant Wilson fumbled, recovered by ODU Grant Wilson",-0.14561440438218298,2024-08-31T23:58:43.000Z
+401628329104924706,401628329,40162832924,3,4,7:52,Old Dominion,South Carolina,19,16,93,2,13,-3,Penalty,"PENALTY ODU False Start (Flores,Michael) 3 yards from ODU07 to ODU04. NO PLAY.",,2024-08-31T23:58:43.000Z
+401628329104924704,401628329,40162832924,1,4,7:52,Old Dominion,South Carolina,19,16,93,2,13,0,Timeout,"Timeout South Carolina, clock 07:52",,2024-08-31T23:58:43.000Z
+401628329104935101,401628329,40162832924,4,4,6:48,Old Dominion,South Carolina,19,16,96,2,16,2,Fumble Recovery (Opponent),"Grant Wilson run for 2 yds to the ODU 6 Grant Wilson fumbled, recovered by SC DeAndre Jules",0.32399923814010023,2024-09-01T00:00:20.000Z
+401628329104935103,401628329,40162832925,1,4,6:48,South Carolina,Old Dominion,16,19,6,1,6,3,Rush,Raheim Sanders run for 3 yds to the ODU 3,-0.158934842894816,2024-09-01T00:00:20.000Z
+401628329104938801,401628329,40162832925,2,4,6:11,South Carolina,Old Dominion,23,19,3,2,3,3,Rushing Touchdown,LaNorris Sellers run for 3 yds for a TD (Alex Herrera KICK),2.211424613960093,2024-09-01T00:01:31.000Z
+401628329104939406,401628329,40162832926,5,4,6:05,Old Dominion,South Carolina,19,23,81,1,10,7,Pass Reception,Grant Wilson pass complete to Isiah Paige,0.5093405251529833,2024-09-01T00:04:44.000Z
+401628329104939403,401628329,40162832926,2,4,6:05,Old Dominion,South Carolina,19,23,92,1,10,4,Pass Reception,Grant Wilson pass complete to Diante Vines,-0.04199996337451673,2024-09-01T00:04:44.000Z
+401628329104939404,401628329,40162832926,3,4,6:05,Old Dominion,South Carolina,19,23,88,2,6,4,Rush,Aaron Young run for 4 yds to the ODU 16,-0.03751959872058297,2024-09-01T00:04:44.000Z
+401628329104939405,401628329,40162832926,4,4,6:05,Old Dominion,South Carolina,19,23,84,3,2,3,Pass Reception,Grant Wilson pass complete to Myles Alston for a 1ST down,0.4896053152833097,2024-09-01T00:04:44.000Z
+401628329104939407,401628329,40162832926,6,4,6:05,Old Dominion,South Carolina,19,23,74,2,3,1,Rush,Aaron Young run for 1 yd to the ODU 27,-0.6686363287576444,2024-09-01T00:04:44.000Z
+401628329104939408,401628329,40162832926,7,4,6:05,Old Dominion,South Carolina,19,23,73,3,2,0,Pass Incompletion,Grant Wilson pass incomplete,-0.45216225702269686,2024-09-01T00:04:44.000Z
+401628329104964801,401628329,40162832926,8,4,3:51,Old Dominion,South Carolina,19,23,73,4,2,0,Punt,"Seamus Hall punt for 44 yds, fair catch by Jalon Kilgore at the SC 29",,2024-09-01T00:09:53.000Z
+401628329104939401,401628329,40162832926,1,4,6:05,South Carolina,Old Dominion,23,19,65,1,10,7,Kickoff Return (Offense),"Alex Herrera kickoff for 64 yds , Justin McKithen return for 7 yds to the ODU 8",,2024-09-01T00:04:44.000Z
+401628329104964803,401628329,40162832927,1,4,3:51,South Carolina,Old Dominion,23,19,71,1,10,6,Rush,LaNorris Sellers run for 6 yds to the SC 35,0.366045681425021,2024-09-01T00:09:53.000Z
+401628329104969501,401628329,40162832927,3,4,3:04,South Carolina,Old Dominion,23,19,64,3,3,0,Timeout,"Timeout Old Dominion, clock 03:04",,2024-08-31T23:35:33.000Z
+401628329104969502,401628329,40162832927,4,4,3:04,South Carolina,Old Dominion,23,19,64,3,3,2,Rush,LaNorris Sellers run for 2 yds to the SC 34,-0.40437749643379656,2024-09-01T00:12:49.000Z
+401628329104974903,401628329,40162832927,6,4,2:50,South Carolina,Old Dominion,23,19,66,4,5,0,Punt,"Kai Kroeger punt for 46 yds, fair catch by Isiah Paige at the ODU 10",,2024-09-01T00:14:19.000Z
+401628329104974301,401628329,40162832927,5,4,2:56,South Carolina,Old Dominion,23,19,66,4,5,0,Timeout,"Timeout Old Dominion, clock 02:56",,2024-09-01T00:13:21.000Z
+401628329104964804,401628329,40162832927,2,4,3:51,South Carolina,Old Dominion,23,19,65,2,4,1,Rush,Raheim Sanders run for 1 yd to the SC 36,-0.8250180721512635,2024-09-01T00:09:53.000Z
+401628329104974906,401628329,40162832928,1,4,2:50,Old Dominion,South Carolina,19,23,90,1,10,4,Rush,Aaron Young run for 4 yds to the ODU 14,-0.04789648957461967,2024-09-01T00:14:19.000Z
+401628329104974907,401628329,40162832928,2,4,2:50,Old Dominion,South Carolina,19,23,86,2,6,3,Pass Reception,Grant Wilson pass complete to Isiah Paige,-0.13411909693986868,2024-09-01T00:14:19.000Z
+401628329104974908,401628329,40162832928,3,4,2:50,Old Dominion,South Carolina,19,23,83,3,3,5,Pass Reception,Grant Wilson pass complete to Isiah Paige for a 1ST down,0.7038750373105707,2024-09-01T00:14:19.000Z
+401628329104974909,401628329,40162832928,4,4,2:50,Old Dominion,South Carolina,19,23,78,1,10,6,Pass Reception,Grant Wilson pass complete to Aaron Young,0.3066560644610403,2024-09-01T00:14:19.000Z
+401628329104984601,401628329,40162832928,5,4,1:53,Old Dominion,South Carolina,19,23,72,2,4,0,Timeout,"Timeout South Carolina, clock 01:53",,2024-09-01T00:14:19.000Z
+401628329104987001,401628329,40162832928,8,4,1:29,Old Dominion,South Carolina,19,23,59,2,7,0,Pass Interception Return,Grant Wilson pass intercepted Jalon Kilgore return for no gain to the SC 48,-1.6218845929168495,2024-09-01T00:22:51.000Z
+401628329104984603,401628329,40162832928,7,4,1:53,Old Dominion,South Carolina,19,23,62,1,10,3,Pass Reception,Grant Wilson pass complete to Aaron Young,-0.4251117664036599,2024-09-01T00:19:43.000Z
+401628329104984602,401628329,40162832928,6,4,1:53,Old Dominion,South Carolina,19,23,72,2,4,10,Rush,Aaron Young run for 10 yds to the ODU 38 for a 1ST down,1.0123250972005913,2024-09-01T00:19:43.000Z
+401628329104987005,401628329,40162832929,2,4,1:29,South Carolina,Old Dominion,23,19,52,1,10,-5,Rush,Kneel down by South Carolina at USC43 for loss of 5 yards.,-2.172444977487558,2024-09-01T00:22:51.000Z
+401628329104987004,401628329,40162832929,1,4,1:29,South Carolina,Old Dominion,23,19,57,2,15,0,Timeout,"Timeout South Carolina, clock 01:29",,2024-09-01T00:22:51.000Z
+401628329104987201,401628329,40162832929,3,4,1:27,South Carolina,Old Dominion,23,19,57,2,15,0,Timeout,"Timeout Old Dominion, clock 01:27",,2024-09-01T00:22:51.000Z
+401628329104995701,401628329,40162832929,5,4,0:42,South Carolina,Old Dominion,23,19,65,3,23,0,Timeout,"Timeout South Carolina, clock 00:42",,2024-09-01T00:22:51.000Z
+401628329104999903,401628329,40162832929,7,4,0:00,South Carolina,Old Dominion,23,19,71,0,29,0,End of Game,End of 4th Quarter,,2024-09-01T00:22:51.000Z
+401628329104999901,401628329,40162832929,6,4,0:00,South Carolina,Old Dominion,23,19,65,3,23,-6,Rush,Kneel down by South Carolina at USC29 for loss of 6 yards.,-0.13670652321282262,2024-09-01T00:22:51.000Z
+401628329104987202,401628329,40162832929,4,4,1:27,South Carolina,Old Dominion,23,19,57,2,15,-8,Rush,Kneel down by South Carolina at USC35 for loss of 8 yards.,-1.0678259564718564,2024-09-01T00:22:51.000Z

@@ -1,0 +1,175 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628333101856901,401628333,4016283331,2,1,14:30,Vanderbilt,Virginia Tech,0,0,75,1,10,0,Rush,"Diego Pavia run for 10 yds to the VAN 35 Vanderbilt Penalty, Offensive Holding (Quincy Skinner Jr.) to the VAN 25",-0.7029700220436519,2024-08-31T16:09:24.000Z
+401628333101859401,401628333,4016283331,3,1,14:05,Vanderbilt,Virginia Tech,0,0,75,1,10,7,Rush,Diego Pavia run for 7 yds to the VAN 32,0.604642460086338,2024-08-31T16:09:47.000Z
+401628333101868601,401628333,4016283331,4,1,13:13,Vanderbilt,Virginia Tech,0,0,68,2,3,6,Rush,Sedrick Alexander run for 6 yds to the VAN 38 for a 1ST down,0.5201090189554929,2024-08-31T16:10:40.000Z
+401628333101874901,401628333,4016283331,5,1,12:50,Vanderbilt,Virginia Tech,0,0,62,1,10,2,Rush,Sedrick Alexander run for 2 yds to the VAN 40,-0.6656376494811928,2024-08-31T16:11:01.000Z
+401628333101884901,401628333,4016283331,6,1,11:50,Vanderbilt,Virginia Tech,0,0,60,2,8,-4,Rush,Diego Pavia run for a loss of 4 yards to the VAN 36,-1.3028893665374897,2024-08-31T16:11:59.000Z
+401628333101894401,401628333,4016283331,7,1,10:55,Vanderbilt,Virginia Tech,0,0,64,3,12,31,Pass Reception,Diego Pavia pass complete to Quincy Skinner Jr. for 31 yds to the VT 33 for a 1ST down,4.018455883196185,2024-08-31T16:12:57.000Z
+401628333101895901,401628333,4016283331,8,1,10:40,Vanderbilt,Virginia Tech,0,0,33,1,10,10,Rush,Diego Pavia run for 10 yds to the VT 23 for a 1ST down,0.2390970954307595,2024-08-31T16:13:14.000Z
+401628333101906902,401628333,4016283331,9,1,9:30,Vanderbilt,Virginia Tech,0,0,23,1,10,4,Rush,Sedrick Alexander run for 4 yds to the VT 19,-0.0314047953383095,2024-08-31T16:14:21.000Z
+401628333101907902,401628333,4016283331,10,1,9:20,Vanderbilt,Virginia Tech,0,0,19,2,6,-6,Fumble Recovery (Own),"Junior Sherrill run for a loss of 6 yards to the VT 25 Junior Sherrill fumbled, recovered by VAN Junior Sherrill",-1.2490425610588998,2024-08-31T16:14:53.000Z
+401628333101916801,401628333,4016283331,11,1,8:31,Vanderbilt,Virginia Tech,0,0,25,3,12,0,Pass Incompletion,Diego Pavia pass incomplete to Quincy Skinner Jr.,-0.9264686821246287,2024-08-31T16:15:28.000Z
+401628333101917201,401628333,4016283331,12,1,8:27,Vanderbilt,Virginia Tech,3,0,25,4,12,43,Field Goal Good,Brock Taylor 43 yd FG GOOD,,2024-08-31T16:16:12.000Z
+401628333101849902,401628333,4016283331,1,1,15:00,Virginia Tech,Vanderbilt,0,0,65,1,10,0,Kickoff,Kyle Lowe kickoff for 65 yds for a touchback,,2024-08-31T16:06:03.000Z
+401628333101919901,401628333,4016283332,2,1,8:00,Virginia Tech,Vanderbilt,0,3,75,1,10,4,Rush,Kyron Drones run for 4 yds to the VT 29,-0.1142886249388964,2024-08-31T16:20:54.000Z
+401628333101927401,401628333,4016283332,3,1,7:25,Virginia Tech,Vanderbilt,0,3,71,2,6,5,Pass Reception,Kyron Drones pass complete to Da'Quan Felton for 5 yds to the VT 34,0.0912547629899487,2024-08-31T16:21:33.000Z
+401628333101934401,401628333,4016283332,4,1,6:55,Virginia Tech,Vanderbilt,0,3,66,3,1,4,Rush,Kyron Drones run for 4 yds to the VT 38 for a 1ST down,1.1477853409907786,2024-08-31T16:22:01.000Z
+401628333101938001,401628333,4016283332,5,1,6:19,Virginia Tech,Vanderbilt,0,3,62,1,10,1,Rush,Bhayshul Tuten run for 1 yd to the VT 39,-0.8867433222723466,2024-08-31T16:22:40.000Z
+401628333101946401,401628333,4016283332,6,1,5:35,Virginia Tech,Vanderbilt,0,3,61,2,9,7,Pass Reception,Kyron Drones pass complete to Stephen Gosnell for 7 yds to the VT 46,0.5577456723073304,2024-08-31T16:23:19.000Z
+401628333101949401,401628333,4016283332,7,1,5:05,Virginia Tech,Vanderbilt,0,3,54,3,2,1,Rush,Kyron Drones run for 1 yd to the VT 47,-0.824234498597125,2024-08-31T16:23:51.000Z
+401628333101956601,401628333,4016283332,8,1,4:33,Virginia Tech,Vanderbilt,0,3,53,4,1,3,Rush,Kyron Drones run for 3 yds to the 50 yard line for a 1ST down,2.264823857120259,2024-08-31T16:24:24.000Z
+401628333101959601,401628333,4016283332,9,1,4:03,Virginia Tech,Vanderbilt,0,3,50,1,10,15,Pass Interception Return,Kyron Drones pass intercepted Glenn Seabrooks III return for 15 yds to the VT 27,-3.158588067878627,2024-08-31T16:26:10.000Z
+401628333101917202,401628333,4016283332,1,1,8:27,Vanderbilt,Virginia Tech,3,0,65,4,12,0,Kickoff,Will Faris kickoff for 65 yds for a touchback,,2024-08-31T16:16:12.000Z
+401628333101965401,401628333,4016283333,1,1,3:45,Vanderbilt,Virginia Tech,3,0,27,1,10,2,Rush,Diego Pavia run for 2 yds to the VT 25,-0.262946006262057,2024-08-31T16:29:02.000Z
+401628333101969901,401628333,4016283333,2,1,3:00,Vanderbilt,Virginia Tech,3,0,25,2,8,3,Rush,Sedrick Alexander run for 3 yds to the VT 22,-0.1790723825593776,2024-08-31T16:29:51.000Z
+401628333101978101,401628333,4016283333,3,1,2:18,Vanderbilt,Virginia Tech,3,0,22,3,5,4,Rush,Chase Gillespie run for 4 yds to the VT 18,-0.0745481100298804,2024-08-31T16:30:30.000Z
+401628333101984301,401628333,4016283333,4,1,1:56,Vanderbilt,Virginia Tech,3,0,18,4,1,0,Timeout,"Timeout Vanderbilt, clock 01:56",,2024-08-31T16:31:05.000Z
+401628333101999802,401628333,4016283333,8,1,0:00,Vanderbilt,Virginia Tech,3,0,14,0,9,0,End Period,End of 1st Quarter,,2024-08-31T16:37:02.000Z
+401628333102854501,401628333,4016283333,9,2,14:54,Vanderbilt,Virginia Tech,10,0,14,3,9,14,Passing Touchdown,Diego Pavia pass complete to Quincy Skinner Jr. for 14 yds for a TD (Brock Taylor KICK),3.150169153480798,2024-08-31T16:40:58.000Z
+401628333101999801,401628333,4016283333,7,1,0:01,Vanderbilt,Virginia Tech,3,0,14,2,9,0,Rush,Diego Pavia run for no gain to the VT 14,-0.340643437197285,2024-08-31T16:36:40.000Z
+401628333101995201,401628333,4016283333,6,1,0:47,Vanderbilt,Virginia Tech,3,0,15,1,10,1,Rush,Jamoni Jones run for 1 yd to the VT 14,-0.25132662671843,2024-08-31T16:35:57.000Z
+401628333101985401,401628333,4016283333,5,1,1:45,Vanderbilt,Virginia Tech,3,0,18,4,1,3,Rush,Diego Pavia run for 3 yds to the VT 15 for a 1ST down,0.699648250677718,2024-08-31T16:35:10.000Z
+401628333102854503,401628333,4016283334,1,2,14:54,Vanderbilt,Virginia Tech,10,0,65,3,9,29,Kickoff Return (Offense),"Will Faris kickoff for 63 yds , Bhayshul Tuten return for 29 yds to the VT 31",,2024-08-31T16:43:29.000Z
+401628333102866201,401628333,4016283334,4,2,13:37,Virginia Tech,Vanderbilt,0,10,63,3,4,16,Pass Reception,"Kyron Drones pass complete to Bhayshul Tuten for 1 yd to the VAN 38 for a 1ST down Vanderbilt Penalty, Personal Foul (CJ Taylor) to the VAN 47 for a 1ST down",2.6730666591476435,2024-08-31T16:45:28.000Z
+401628333102864901,401628333,4016283334,3,2,13:50,Virginia Tech,Vanderbilt,0,10,71,2,12,8,Pass Reception,Kyron Drones pass complete to Da'Quan Felton for 8 yds to the VT 37,0.46539286017423986,2024-08-31T16:44:32.000Z
+401628333102858001,401628333,4016283334,2,2,14:19,Virginia Tech,Vanderbilt,0,10,69,1,10,-2,Rush,Bhayshul Tuten run for a loss of 2 yards to the VT 29,-1.1443707554732638,2024-08-31T16:44:05.000Z
+401628333102874901,401628333,4016283334,5,2,12:50,Virginia Tech,Vanderbilt,0,10,47,1,10,4,Rush,Malachi Thomas run for 4 yds to the VAN 43,-0.126781416396501,2024-08-31T16:46:38.000Z
+401628333102875601,401628333,4016283334,6,2,12:43,Virginia Tech,Vanderbilt,0,10,43,2,6,0,Pass Incompletion,Kyron Drones pass incomplete to Jaylin Lane,-1.0888114271753986,2024-08-31T16:46:53.000Z
+401628333102875901,401628333,4016283334,7,2,12:40,Virginia Tech,Vanderbilt,0,10,43,3,6,0,Pass Incompletion,Kyron Drones pass incomplete to Jaylin Lane,-1.0426462604369071,2024-08-31T16:47:15.000Z
+401628333102876701,401628333,4016283334,8,2,12:32,Virginia Tech,Vanderbilt,0,10,43,4,6,0,Punt,Peter Moore punt for 43 yds for a touchback,,2024-08-31T16:48:14.000Z
+401628333102879501,401628333,4016283335,1,2,12:04,Vanderbilt,Virginia Tech,10,0,80,1,10,23,Pass Reception,Diego Pavia pass complete to Quincy Skinner Jr. for 23 yds to the VAN 43 for a 1ST down,1.9207410980937762,2024-08-31T16:51:47.000Z
+401628333102885901,401628333,4016283335,2,2,11:40,Vanderbilt,Virginia Tech,10,0,57,1,10,-1,Rush,Diego Pavia run for a loss of 1 yard to the VAN 42,-1.3694998851390174,2024-08-31T16:52:11.000Z
+401628333102895901,401628333,4016283335,3,2,10:40,Vanderbilt,Virginia Tech,10,0,58,2,11,8,Pass Reception,Diego Pavia pass complete to Junior Sherrill for 8 yds to the 50 yard line,0.7717223111402465,2024-08-31T16:53:10.000Z
+401628333102899001,401628333,4016283335,4,2,10:09,Vanderbilt,Virginia Tech,10,0,50,3,3,4,Pass Reception,Diego Pavia pass complete to Quincy Skinner Jr. for 4 yds to the VT 46 for a 1ST down,1.5198068633756332,2024-08-31T16:53:41.000Z
+401628333102909401,401628333,4016283335,5,2,9:05,Vanderbilt,Virginia Tech,10,0,46,1,10,4,Rush,Diego Pavia run for 4 yds to the VT 42,-0.1215209117621187,2024-08-31T16:54:45.000Z
+401628333102915401,401628333,4016283335,6,2,8:45,Vanderbilt,Virginia Tech,10,0,42,2,6,7,Rush,Sedrick Alexander run for 7 yds to the VT 35 for a 1ST down,0.692219536119627,2024-08-31T16:55:13.000Z
+401628333102919901,401628333,4016283335,7,2,8:00,Vanderbilt,Virginia Tech,10,0,35,1,10,6,Rush,Sedrick Alexander run for 6 yds to the VT 29,0.233934295436585,2024-08-31T16:56:59.000Z
+401628333102929901,401628333,4016283335,8,2,7:00,Vanderbilt,Virginia Tech,10,0,29,2,4,2,Rush,Diego Pavia run for 2 yds to the VT 27,-0.375744139113133,2024-08-31T16:57:14.000Z
+401628333102936101,401628333,4016283335,9,2,6:38,Vanderbilt,Virginia Tech,10,0,27,3,2,7,Rush,Diego Pavia run for 7 yds to the VT 20 for a 1ST down,0.496470898421805,2024-08-31T16:57:29.000Z
+401628333102939901,401628333,4016283335,10,2,6:00,Vanderbilt,Virginia Tech,10,0,20,1,10,13,Rush,Sedrick Alexander run for 13 yds to the VT 7 for a 1ST down,0.421173098704488,2024-08-31T16:58:13.000Z
+401628333102948101,401628333,4016283335,11,2,5:18,Vanderbilt,Virginia Tech,17,0,7,1,7,7,Rushing Touchdown,Sedrick Alexander run for 7 yds for a TD (Brock Taylor KICK),2.196754630327211,2024-08-31T16:59:37.000Z
+401628333102948103,401628333,4016283336,1,2,5:18,Vanderbilt,Virginia Tech,17,0,65,1,10,28,Kickoff Return (Offense),"Will Faris kickoff for 60 yds , Bhayshul Tuten return for 28 yds to the VT 33",,2024-08-31T16:59:37.000Z
+401628333102957401,401628333,4016283336,5,2,4:25,Virginia Tech,Vanderbilt,0,17,56,1,10,-10,Penalty,"Tuten, Bhayshul rush for 8 yards to the VAN48, PENALTY VATECH holding (Chaplin, Xavier) 10 yards to the VATECH34, NO PLAY.",,2024-08-31T17:06:23.000Z
+401628333102988901,401628333,4016283336,12,2,1:10,Virginia Tech,Vanderbilt,0,17,19,1,10,-10,Penalty,"Tuten, Bhayshul rush for 17 yards to the VAN2, PENALTY VATECH holding (Felton, Da'Quan) 10 yards to the VAN29, NO PLAY.",,2024-08-31T17:18:44.000Z
+401628333102994401,401628333,4016283336,15,2,0:55,Virginia Tech,Vanderbilt,0,17,24,3,15,1,Pass Reception,Kyron Drones pass complete to Jaylin Lane for 1 yd to the VAN 23,-0.7512747547386757,2024-08-31T17:19:46.000Z
+401628333102989801,401628333,4016283336,14,2,1:01,Virginia Tech,Vanderbilt,0,17,24,2,15,0,Pass Incompletion,Kyron Drones pass incomplete to Da'Quan Felton,-0.7080099057171533,2024-08-31T17:19:19.000Z
+401628333102989401,401628333,4016283336,13,2,1:05,Virginia Tech,Vanderbilt,0,17,29,1,20,5,Pass Reception,Kyron Drones pass complete to Malachi Thomas for 5 yds to the VAN 24,0.0321484828657538,2024-08-31T17:19:07.000Z
+401628333102988001,401628333,4016283336,11,2,1:19,Virginia Tech,Vanderbilt,0,17,25,2,5,6,Rush,Takye Heath run for 6 yds to the VAN 19 for a 1ST down,0.132120483106533,2024-08-31T17:13:33.000Z
+401628333102985401,401628333,4016283336,10,2,1:45,Virginia Tech,Vanderbilt,0,17,30,1,10,5,Pass Reception,Kyron Drones pass complete to Bhayshul Tuten for 5 yds to the VAN 25,0.077675021178715,2024-08-31T17:12:54.000Z
+401628333102994701,401628333,4016283336,17,2,0:52,Virginia Tech,Vanderbilt,3,17,23,4,14,40,Field Goal Good,John Love 40 yd FG GOOD,,2024-08-31T17:21:15.000Z
+401628333102994402,401628333,4016283336,16,2,0:55,Virginia Tech,Vanderbilt,0,17,23,4,14,0,Timeout,"Timeout Vanderbilt, clock 00:55",,2024-08-31T17:19:46.000Z
+401628333102949001,401628333,4016283336,2,2,5:09,Virginia Tech,Vanderbilt,0,17,67,1,10,0,Pass Incompletion,Kyron Drones pass incomplete to Da'Quan Felton,-0.956890163923906,2024-08-31T17:04:04.000Z
+401628333102949601,401628333,4016283336,3,2,5:03,Virginia Tech,Vanderbilt,0,17,67,2,10,0,Pass Incompletion,Kyron Drones pass incomplete to Benji Gosnell,-0.5416125590698764,2024-08-31T17:04:45.000Z
+401628333102955901,401628333,4016283336,4,2,4:40,Virginia Tech,Vanderbilt,0,17,67,3,10,11,Pass Reception,Kyron Drones pass complete to Jaylin Lane for 11 yds to the VT 44 for a 1ST down,2.5573766107556253,2024-08-31T17:05:40.000Z
+401628333102967401,401628333,4016283336,6,2,3:25,Virginia Tech,Vanderbilt,0,17,66,1,20,24,Pass Reception,Kyron Drones pass complete to Jaylin Lane for 24 yds to the VAN 42 for a 1ST down,3.19192777671289,2024-08-31T17:07:25.000Z
+401628333102974901,401628333,4016283336,7,2,2:50,Virginia Tech,Vanderbilt,0,17,42,1,10,6,Rush,Kyron Drones run for 6 yds to the VAN 36,0.2799158523170034,2024-08-31T17:08:01.000Z
+401628333102976401,401628333,4016283336,8,2,2:35,Virginia Tech,Vanderbilt,0,17,36,2,4,3,Rush,Jaylin Lane run for 3 yds to the VAN 33,-0.2880392349853374,2024-08-31T17:08:14.000Z
+401628333102984001,401628333,4016283336,9,2,1:59,Virginia Tech,Vanderbilt,0,17,33,3,1,3,Rush,Kyron Drones run for 3 yds to the VAN 30 for a 1ST down,0.488815721317687,2024-08-31T17:08:52.000Z
+401628333102996403,401628333,4016283337,5,2,0:35,Vanderbilt,Virginia Tech,17,3,69,3,7,0,Timeout,"Timeout Virginia Tech, clock 00:35",,2024-08-31T17:24:47.000Z
+401628333102996202,401628333,4016283337,3,2,0:37,Vanderbilt,Virginia Tech,17,3,72,2,10,0,Timeout,"Timeout Virginia Tech, clock 00:37",,2024-08-31T17:23:19.000Z
+401628333102994702,401628333,4016283337,1,2,0:52,Virginia Tech,Vanderbilt,3,17,65,4,14,23,Kickoff Return (Offense),"Kyle Lowe kickoff for 60 yds , Junior Sherrill return for 23 yds to the VAN 28",,2024-08-31T17:21:15.000Z
+401628333102997001,401628333,4016283337,6,2,0:29,Vanderbilt,Virginia Tech,17,3,69,3,7,-5,Sack,Diego Pavia sacked by Antwaun Powell-Ryland and Wilfried Pene for a loss of 5 yards to the VAN 26,-0.46922147688733595,2024-08-31T17:26:31.000Z
+401628333102996401,401628333,4016283337,4,2,0:35,Vanderbilt,Virginia Tech,17,3,72,2,10,3,Rush,Sedrick Alexander run for 3 yds to the VAN 31,-0.1804583111449043,2024-08-31T17:24:47.000Z
+401628333102997501,401628333,4016283337,8,2,0:24,Vanderbilt,Virginia Tech,17,3,74,4,12,0,Punt,"Jesse Mirco punt for 42 yds, fair catch by Ali Jennings at the VT 32",,2024-08-31T17:28:19.000Z
+401628333102997002,401628333,4016283337,7,2,0:29,Vanderbilt,Virginia Tech,17,3,74,4,12,0,Timeout,"Timeout Virginia Tech, clock 00:29",,2024-08-31T17:26:31.000Z
+401628333102996201,401628333,4016283337,2,2,0:37,Vanderbilt,Virginia Tech,17,3,72,1,10,0,Rush,Sedrick Alexander run for no gain to the VAN 28,-0.7982008475508557,2024-08-31T17:23:19.000Z
+401628333102998201,401628333,4016283338,1,2,0:17,Virginia Tech,Vanderbilt,3,17,68,1,10,8,Sack,"Kyron Drones sacked by Linus Zunk for a loss of 7 yards to the VT 25 for a 1ST down Vanderbilt Penalty, Personal Foul (Miles Capers) to the VT 40 for a 1ST down",1.0205002560261356,2024-08-31T17:29:43.000Z
+401628333102999801,401628333,4016283338,3,2,0:01,Virginia Tech,Vanderbilt,3,17,70,1,20,-7,Sack,Kyron Drones sacked by Linus Zunk for a loss of 7 yards to the VT 23,-0.6089681156483531,2024-08-31T17:31:05.000Z
+401628333102999802,401628333,4016283338,4,2,0:00,Virginia Tech,Vanderbilt,3,17,70,0,20,-7,End of Half,End of 2nd Quarter,,2024-08-31T17:31:05.000Z
+401628333102998901,401628333,4016283338,2,2,0:10,Virginia Tech,Vanderbilt,3,17,60,1,10,-10,Penalty,"Drones, Kyron pass incomplete to Lane, Jaylin, PENALTY VATECH holding (Chaplin, Xavier) 10 yards to the VATECH30, NO PLAY.",,2024-08-31T17:30:29.000Z
+401628333103855401,401628333,4016283339,2,3,14:45,Virginia Tech,Vanderbilt,3,17,83,1,10,3,Rush,Bhayshul Tuten run for 3 yds to the VT 20,-0.204908473427289,2024-08-31T17:54:57.000Z
+401628333103857901,401628333,4016283339,3,3,14:20,Virginia Tech,Vanderbilt,3,17,80,2,7,1,Pass Reception,Kyron Drones pass complete to Bhayshul Tuten for 1 yd to the VT 21,-0.3156973175001552,2024-08-31T17:55:08.000Z
+401628333103867101,401628333,4016283339,4,3,13:28,Virginia Tech,Vanderbilt,3,17,79,3,6,26,Pass Reception,Kyron Drones pass complete to Jaylin Lane for 26 yds to the VT 47 for a 1ST down,2.960488939905794,2024-08-31T17:55:22.000Z
+401628333103868901,401628333,4016283339,5,3,13:10,Virginia Tech,Vanderbilt,3,17,53,1,10,29,Pass Reception,Kyron Drones pass complete to Ali Jennings for 29 yds to the VAN 24 for a 1ST down,1.4138614849663327,2024-08-31T17:59:22.000Z
+401628333103875101,401628333,4016283339,6,3,12:48,Virginia Tech,Vanderbilt,3,17,24,1,10,0,Pass Incompletion,Kyron Drones pass incomplete to Benji Gosnell,-0.4346450377339437,2024-08-31T17:59:40.000Z
+401628333103875701,401628333,4016283339,7,3,12:42,Virginia Tech,Vanderbilt,10,17,24,2,10,24,Rushing Touchdown,Bhayshul Tuten run for 24 yds for a TD (John Love KICK),3.1160829863409187,2024-08-31T18:00:22.000Z
+401628333103849901,401628333,4016283339,1,3,15:00,Vanderbilt,Virginia Tech,17,3,65,1,10,14,Kickoff Return (Offense),"Will Faris kickoff for 62 yds , Bhayshul Tuten return for 14 yds to the VT 17",,2024-08-31T17:53:22.000Z
+401628333103875703,401628333,40162833310,1,3,12:42,Virginia Tech,Vanderbilt,10,17,65,2,10,0,Kickoff,Kyle Lowe kickoff for 65 yds for a touchback,,2024-08-31T18:00:22.000Z
+401628333103876201,401628333,40162833310,2,3,12:37,Vanderbilt,Virginia Tech,17,10,75,1,10,0,Pass Incompletion,Diego Pavia pass incomplete to Junior Sherrill,-0.7029700220436519,2024-08-31T18:05:29.000Z
+401628333103884301,401628333,40162833310,3,3,11:56,Vanderbilt,Virginia Tech,17,10,75,2,10,27,Rush,Diego Pavia run for 27 yds to the VT 48 for a 1ST down,3.0944913054850165,2024-08-31T18:06:38.000Z
+401628333103887101,401628333,40162833310,4,3,11:28,Vanderbilt,Virginia Tech,17,10,48,1,10,2,Rush,AJ Newberry run for 2 yds to the VT 46,-0.6002320779981093,2024-08-31T18:07:08.000Z
+401628333103889901,401628333,40162833310,5,3,11:00,Vanderbilt,Virginia Tech,17,10,46,2,8,4,Fumble Recovery (Own),"Diego Pavia run for a loss of 4 yards to the VT 46 Diego Pavia fumbled, recovered by VAN Diego Pavia  Diego Pavia run for 4 yds to the VT 46",-0.1575294945402137,2024-08-31T18:08:39.000Z
+401628333103904901,401628333,40162833310,6,3,9:50,Vanderbilt,Virginia Tech,17,10,46,3,8,11,Rush,Diego Pavia run for 11 yds to the VT 35 for a 1ST down,2.4164957385400645,2024-08-31T18:08:47.000Z
+401628333103909001,401628333,40162833310,7,3,9:09,Vanderbilt,Virginia Tech,17,10,35,1,10,4,Rush,Sedrick Alexander run for 4 yds to the VT 31,-0.0672821190442117,2024-08-31T18:09:29.000Z
+401628333103919901,401628333,40162833310,8,3,8:00,Vanderbilt,Virginia Tech,17,10,31,2,6,-11,Sack,Diego Pavia sacked by Caleb Woodson for a loss of 11 yards to the VT 42,-2.9887332863351386,2024-08-31T18:10:57.000Z
+401628333103926901,401628333,40162833310,9,3,7:30,Vanderbilt,Virginia Tech,17,10,42,3,17,7,Rush,Sedrick Alexander run for 7 yds to the VT 35,0.4256856548211427,2024-08-31T18:11:05.000Z
+401628333103928001,401628333,40162833310,10,3,7:19,Vanderbilt,Virginia Tech,17,10,35,4,10,-5,Penalty,"Vanderbilt Penalty, Delay of Game (-5 Yards) to the VT 40",,2024-08-31T18:11:39.000Z
+401628333103928701,401628333,40162833310,11,3,7:12,Vanderbilt,Virginia Tech,17,10,40,4,15,5,Penalty,"Virginia Tech Penalty, Illegal Procedure (5 Yards) to the VT 35",,2024-08-31T18:13:17.000Z
+401628333103929201,401628333,40162833310,12,3,7:07,Vanderbilt,Virginia Tech,20,10,35,4,10,53,Field Goal Good,Brock Taylor 53 yd FG GOOD,,2024-08-31T18:13:49.000Z
+401628333103929202,401628333,40162833311,1,3,7:07,Vanderbilt,Virginia Tech,20,10,65,4,10,25,Kickoff Return (Offense),"Will Faris kickoff for 65 yds , P.J. Prioleau return for 25 yds to the VT 25",,2024-08-31T18:18:12.000Z
+401628333103934601,401628333,40162833311,2,3,6:53,Virginia Tech,Vanderbilt,10,20,75,1,10,4,Rush,Bhayshul Tuten run for 4 yds to the VT 29,-0.1142886249388964,2024-08-31T18:18:31.000Z
+401628333103938101,401628333,40162833311,3,3,6:18,Virginia Tech,Vanderbilt,10,20,71,2,6,1,Rush,Bhayshul Tuten run for 1 yd to the VT 30,-0.5448987305935296,2024-08-31T18:19:05.000Z
+401628333103946901,401628333,40162833311,4,3,5:30,Virginia Tech,Vanderbilt,10,20,70,3,5,2,Rush,Kyron Drones run for 2 yds to the VT 32,-0.24391031898405302,2024-08-31T18:20:58.000Z
+401628333103948701,401628333,40162833311,5,3,5:12,Virginia Tech,Vanderbilt,10,20,68,4,3,0,Punt,"Peter Moore punt for 47 yds, fair catch by Richie Hoskins at the VAN 21",,2024-08-31T18:21:56.000Z
+401628333103949901,401628333,40162833312,1,3,5:00,Vanderbilt,Virginia Tech,20,10,79,1,10,-3,Fumble Recovery (Own),"Diego Pavia run for a loss of 3 yards to the VAN 18 Diego Pavia fumbled, recovered by VAN Diego Pavia",-0.789060058576041,2024-08-31T18:23:19.000Z
+401628333103965401,401628333,40162833312,2,3,3:45,Vanderbilt,Virginia Tech,20,10,82,2,13,0,Rush,Eli Stowers run for no gain to the VAN 18,-0.1636966364929799,2024-08-31T18:23:29.000Z
+401628333103966101,401628333,40162833312,3,3,3:38,Vanderbilt,Virginia Tech,20,10,82,3,13,0,Pass Incompletion,Diego Pavia pass incomplete to Eli Stowers,-0.0719585240326675,2024-08-31T18:23:44.000Z
+401628333103966801,401628333,40162833312,4,3,3:31,Vanderbilt,Virginia Tech,20,10,82,4,13,0,Punt,"Jesse Mirco punt for 52 yds, fair catch by Ali Jennings at the VT 30",,2024-08-31T18:25:30.000Z
+401628333103968201,401628333,40162833313,1,3,3:17,Virginia Tech,Vanderbilt,10,20,70,1,10,-1,Rush,Bhayshul Tuten run for a loss of 1 yard to the VT 29,-0.990133578060151,2024-08-31T18:25:56.000Z
+401628333103975401,401628333,40162833313,2,3,2:45,Virginia Tech,Vanderbilt,10,20,71,2,11,32,Pass Reception,"Kyron Drones pass complete to Benji Gosnell for 17 yds to the VAN 46 for a 1ST down Vanderbilt Penalty, Roughing Passer (15 Yards) to the VAN 39 for a 1ST down",3.5424815420329434,2024-08-31T18:28:34.000Z
+401628333103976601,401628333,40162833313,3,3,2:33,Virginia Tech,Vanderbilt,10,20,39,1,10,26,Pass Reception,Kyron Drones pass complete to Benji Gosnell for 26 yds to the VAN 13 for a 1ST down,0.601509339885704,2024-08-31T18:28:58.000Z
+401628333103986901,401628333,40162833313,4,3,1:30,Virginia Tech,Vanderbilt,10,20,13,1,10,0,Pass Reception,Kyron Drones pass complete to Bhayshul Tuten for no gain to the VAN 13,-0.3048472994988835,2024-08-31T18:29:52.000Z
+401628333103987401,401628333,40162833313,5,3,1:25,Virginia Tech,Vanderbilt,10,20,13,2,10,0,Pass Incompletion,Kyron Drones pass incomplete to Stephen Gosnell,-0.3252599830349858,2024-08-31T18:30:08.000Z
+401628333103987402,401628333,40162833313,6,3,1:25,Virginia Tech,Vanderbilt,10,20,13,3,10,0,Timeout,"Timeout Virginia Tech, clock 01:25",,2024-08-31T18:30:08.000Z
+401628333103996501,401628333,40162833313,8,3,0:34,Virginia Tech,Vanderbilt,13,20,20,4,17,38,Field Goal Good,John Love 38 yd FG GOOD,,2024-08-31T18:33:10.000Z
+401628333103995001,401628333,40162833313,7,3,0:49,Virginia Tech,Vanderbilt,10,20,13,3,10,-7,Sack,Kyron Drones sacked by Khordae Sydnor for a loss of 7 yards to the VAN 20,-1.7869568691496234,2024-08-31T18:32:37.000Z
+401628333103996502,401628333,40162833314,1,3,0:34,Virginia Tech,Vanderbilt,13,20,65,4,17,0,Kickoff,Kyle Lowe kickoff for 65 yds for a touchback,,2024-08-31T18:33:10.000Z
+401628333103999802,401628333,40162833314,3,3,0:00,Vanderbilt,Virginia Tech,20,13,75,0,10,-1,End Period,End of 3rd Quarter,,2024-08-31T17:53:22.000Z
+401628333104865901,401628333,40162833314,5,4,13:40,Vanderbilt,Virginia Tech,20,13,66,3,1,-1,Rush,Sedrick Alexander run for a loss of 1 yard to the VAN 33,-0.7978679889326434,2024-08-31T18:40:56.000Z
+401628333104857101,401628333,40162833314,4,4,14:28,Vanderbilt,Virginia Tech,20,13,76,2,11,10,Pass Reception,Diego Pavia pass complete to Junior Sherrill for 10 yds to the VAN 34,0.7784554888667623,2024-08-31T18:40:08.000Z
+401628333103999801,401628333,40162833314,2,3,0:01,Vanderbilt,Virginia Tech,20,13,75,1,10,-1,Rush,Sedrick Alexander run for a loss of 1 yard to the VAN 24,-0.8014893508157099,2024-08-31T17:53:22.000Z
+401628333104868901,401628333,40162833314,6,4,13:10,Vanderbilt,Virginia Tech,20,13,67,4,2,17,Punt,"Jesse Mirco punt for 60 yds , Ali Jennings returns for 17 yds to the VT 24",,2024-08-31T18:42:10.000Z
+401628333104898701,401628333,40162833315,7,4,10:12,Virginia Tech,Vanderbilt,20,20,11,3,11,11,Passing Touchdown,Kyron Drones pass complete to Bhayshul Tuten for 11 yds for a TD (John Love KICK),3.152869549181423,2024-08-31T18:47:16.000Z
+401628333104897701,401628333,40162833315,6,4,10:22,Virginia Tech,Vanderbilt,13,20,15,2,15,4,Rush,Kyron Drones run for 4 yds to the VAN 11,-0.0506130512870247,2024-08-31T18:46:35.000Z
+401628333104875401,401628333,40162833315,1,4,12:45,Virginia Tech,Vanderbilt,13,20,76,1,10,9,Pass Reception,Kyron Drones pass complete to Benji Gosnell for 9 yds to the VT 33,1.226511233321002,2024-08-31T18:42:49.000Z
+401628333104876901,401628333,40162833315,2,4,12:30,Virginia Tech,Vanderbilt,13,20,67,2,1,0,Pass Incompletion,Kyron Drones pass incomplete to Ayden Greene,-1.2460620053172589,2024-08-31T18:43:06.000Z
+401628333104884901,401628333,40162833315,3,4,11:50,Virginia Tech,Vanderbilt,13,20,67,3,1,13,Rush,Kyron Drones run for 13 yds to the VT 46 for a 1ST down,1.9802715777268396,2024-08-31T18:44:04.000Z
+401628333104885901,401628333,40162833315,4,4,11:40,Virginia Tech,Vanderbilt,13,20,54,1,10,44,Pass Reception,Kyron Drones pass complete to Stephen Gosnell for 44 yds to the VAN 10 for a 1ST down,1.671070695435766,2024-08-31T18:44:45.000Z
+401628333104894901,401628333,40162833315,5,4,10:50,Virginia Tech,Vanderbilt,13,20,10,1,10,-5,Rush,Kyron Drones run for a loss of 5 yards to the VAN 15,-0.5884296556449563,2024-08-31T18:45:40.000Z
+401628333104898703,401628333,40162833316,1,4,10:12,Virginia Tech,Vanderbilt,20,20,65,3,11,0,Kickoff,Kyle Lowe kickoff for 65 yds for a touchback,,2024-08-31T18:51:18.000Z
+401628333104904901,401628333,40162833316,2,4,9:50,Vanderbilt,Virginia Tech,20,20,75,1,10,1,Rush,Sedrick Alexander run for 1 yd to the VAN 26,-0.5874795431016855,2024-08-31T18:52:06.000Z
+401628333104908901,401628333,40162833316,3,4,9:10,Vanderbilt,Virginia Tech,20,20,74,2,9,41,Pass Reception,Diego Pavia pass complete to Eli Stowers for 41 yds to the VT 33 for a 1ST down,3.762159889321019,2024-08-31T18:52:58.000Z
+401628333104915101,401628333,40162833316,4,4,8:48,Vanderbilt,Virginia Tech,20,20,33,1,10,4,Rush,Diego Pavia run for 4 yds to the VT 29,-0.059449490714332,2024-08-31T18:53:26.000Z
+401628333104919901,401628333,40162833316,5,4,8:00,Vanderbilt,Virginia Tech,20,20,29,2,6,-2,Rush,Diego Pavia run for a loss of 2 yards to the VT 31,-1.0379440542564904,2024-08-31T18:54:03.000Z
+401628333104925501,401628333,40162833316,6,4,7:44,Vanderbilt,Virginia Tech,20,20,31,3,8,0,Pass Incompletion,Diego Pavia pass incomplete to Quincy Skinner Jr.,-0.9834681957384088,2024-08-31T18:54:30.000Z
+401628333104925502,401628333,40162833316,7,4,7:44,Vanderbilt,Virginia Tech,20,20,31,4,8,-5,Penalty,"Vanderbilt Penalty, False Start (-5 Yards) to the VT 36",,2024-08-31T18:54:30.000Z
+401628333104926101,401628333,40162833316,8,4,7:38,Vanderbilt,Virginia Tech,20,20,36,4,13,0,Punt,"Jesse Mirco punt for 33 yds, downed at the VT 3",,2024-08-31T18:56:28.000Z
+401628333104935401,401628333,40162833317,1,4,6:45,Virginia Tech,Vanderbilt,20,20,97,1,10,9,Pass Reception,Kyron Drones pass complete to Benji Gosnell for 9 yds to the VT 12,0.6757836111412336,2024-08-31T19:00:47.000Z
+401628333104936301,401628333,40162833317,2,4,6:36,Virginia Tech,Vanderbilt,20,20,88,2,1,5,Rush,Kyron Drones run for 5 yds to the VT 17 for a 1ST down,-0.2534476319529899,2024-08-31T19:00:57.000Z
+401628333104944101,401628333,40162833317,3,4,5:58,Virginia Tech,Vanderbilt,20,20,83,1,10,21,Pass Reception,Kyron Drones pass complete to Stephen Gosnell for 21 yds to the VT 38 for a 1ST down,1.5821789418721668,2024-08-31T19:01:33.000Z
+401628333104945901,401628333,40162833317,4,4,5:40,Virginia Tech,Vanderbilt,20,20,62,1,10,2,Rush,Bhayshul Tuten run for 2 yds to the VT 40,-0.6656376494811928,2024-08-31T19:01:51.000Z
+401628333104949901,401628333,40162833317,5,4,5:00,Virginia Tech,Vanderbilt,20,20,60,2,8,-2,Rush,Kyron Drones run for a loss of 2 yards to the VT 38,-1.1161899798221224,2024-08-31T19:02:39.000Z
+401628333104957801,401628333,40162833317,6,4,4:21,Virginia Tech,Vanderbilt,27,20,62,3,10,62,Passing Touchdown,Kyron Drones pass complete to Ali Jennings for 62 yds for a TD (John Love KICK),6.734831269982806,2024-08-31T19:03:28.000Z
+401628333104957803,401628333,40162833318,1,4,4:21,Virginia Tech,Vanderbilt,27,20,65,3,10,27,Kickoff Return (Offense),"Kyle Lowe kickoff for 62 yds , Junior Sherrill return for 27 yds to the VAN 30",,2024-08-31T19:09:08.000Z
+401628333104979801,401628333,40162833318,6,4,2:01,Vanderbilt,Virginia Tech,20,27,25,2,1,5,Penalty,"Virginia Tech Penalty, Defensive Offside (Christian James) to the VT 20 for a 1ST down",,2024-08-31T19:12:20.000Z
+401628333104959201,401628333,40162833318,2,4,4:07,Vanderbilt,Virginia Tech,20,27,70,1,10,1,Rush,Diego Pavia run for 1 yd to the VAN 31,-0.716015480823808,2024-08-31T19:09:24.000Z
+401628333104968901,401628333,40162833318,3,4,3:10,Vanderbilt,Virginia Tech,20,27,69,2,9,16,Pass Reception,Diego Pavia pass complete to Junior Sherrill for 16 yds to the VAN 47 for a 1ST down,2.3135025661548436,2024-08-31T19:10:24.000Z
+401628333104976401,401628333,40162833318,4,4,2:35,Vanderbilt,Virginia Tech,20,27,53,1,10,19,Pass Reception,Diego Pavia pass complete to Loic Fouonji for 19 yds to the VT 34 for a 1ST down,1.1585732726596376,2024-08-31T19:11:02.000Z
+401628333104978501,401628333,40162833318,5,4,2:14,Vanderbilt,Virginia Tech,20,27,34,1,10,9,Rush,Diego Pavia run for 9 yds to the VT 25,0.73596654934212,2024-08-31T19:11:21.000Z
+401628333104984301,401628333,40162833318,7,4,1:56,Vanderbilt,Virginia Tech,20,27,20,1,10,7,Rush,Diego Pavia run for 5 yds to the VT 8 for a 1ST down AJ Newberry for a 1ST down,0.312961885301428,2024-08-31T19:14:48.000Z
+401628333104984801,401628333,40162833318,8,4,1:51,Vanderbilt,Virginia Tech,27,27,8,1,8,8,Passing Touchdown,Diego Pavia pass complete to Sedrick Alexander for 8 yds for a TD (Brock Taylor KICK),2.319599568699692,2024-08-31T19:17:30.000Z
+401628333104984803,401628333,40162833319,1,4,1:51,Vanderbilt,Virginia Tech,27,27,65,1,10,0,Kickoff,Will Faris kickoff for 65 yds for a touchback,,2024-08-31T19:17:30.000Z
+401628333104985101,401628333,40162833319,2,4,1:48,Virginia Tech,Vanderbilt,27,27,75,1,10,0,Pass Incompletion,Kyron Drones pass incomplete to Ali Jennings,-0.7029700220436519,2024-08-31T19:22:19.000Z
+401628333104985601,401628333,40162833319,3,4,1:43,Virginia Tech,Vanderbilt,27,27,75,2,10,0,Pass Reception,Kyron Drones pass complete to Bhayshul Tuten for no gain to the VT 25,-0.34710487712173865,2024-08-31T19:23:15.000Z
+401628333104986301,401628333,40162833319,4,4,1:36,Virginia Tech,Vanderbilt,27,27,75,3,10,0,Pass Incompletion,Kyron Drones pass incomplete to Benji Gosnell,-0.15871308844886392,2024-08-31T19:23:36.000Z
+401628333104987501,401628333,40162833319,5,4,1:24,Virginia Tech,Vanderbilt,27,27,75,4,10,22,Punt,"Peter Moore punt for 49 yds , Martel Hight returns for 22 yds to the VAN 48",,2024-08-31T19:26:14.000Z
+401628333104999602,401628333,40162833320,7,4,0:03,Vanderbilt,Virginia Tech,27,27,25,3,2,0,Timeout,"Timeout Virginia Tech, clock 00:03",,2024-08-31T19:31:53.000Z
+401628333104999601,401628333,40162833320,6,4,0:03,Vanderbilt,Virginia Tech,27,27,25,3,2,0,Timeout,"Timeout Vanderbilt, clock 00:03",,2024-08-31T19:31:53.000Z
+401628333104998402,401628333,40162833320,4,4,0:15,Vanderbilt,Virginia Tech,27,27,30,2,7,0,Timeout,"Timeout Vanderbilt, clock 00:15",,2024-08-31T19:30:41.000Z
+401628333104999901,401628333,40162833320,8,4,0:00,Vanderbilt,Virginia Tech,27,27,25,3,2,43,Field Goal Missed,Brock Taylor 43 yd FG MISSED,,2024-08-31T19:34:45.000Z
+401628333104999902,401628333,40162833320,9,4,0:00,Vanderbilt,Virginia Tech,27,27,25,0,2,0,End of Regulation,End of 4th Quarter,,2024-08-31T19:34:45.000Z
+401628333104994201,401628333,40162833320,1,4,0:57,Vanderbilt,Virginia Tech,27,27,52,1,10,6,Rush,Diego Pavia run for 6 yds to the VT 46,0.3608772046980507,2024-08-31T19:29:19.000Z
+401628333104996101,401628333,40162833320,2,4,0:38,Vanderbilt,Virginia Tech,27,27,46,2,4,13,Rush,Diego Pavia run for 13 yds to the VT 33 for a 1ST down,0.7441023105103923,2024-08-31T19:29:52.000Z
+401628333104998401,401628333,40162833320,3,4,0:15,Vanderbilt,Virginia Tech,27,27,33,1,10,3,Rush,Sedrick Alexander run for 3 yds to the VT 30,-0.1975844330204505,2024-08-31T19:30:41.000Z
+401628333104999501,401628333,40162833320,5,4,0:04,Vanderbilt,Virginia Tech,27,27,30,2,7,5,Rush,Sedrick Alexander run for 5 yds to the VT 25,0.0720969791074725,2024-08-31T19:31:46.000Z
+401628333105220197,401628333,40162833322,4,5,0:00,Vanderbilt,Virginia Tech,34,27,4,1,4,4,Rushing Touchdown,Diego Pavia run for 4 yds for a TD (Brock Taylor KICK),1.688190518713975,2024-08-31T19:38:37.000Z
+401628333105220196,401628333,40162833322,3,5,0:00,Vanderbilt,Virginia Tech,27,27,15,1,10,11,Pass Reception,Diego Pavia pass complete to Sedrick Alexander for 11 yds to the VT 4 for a 1ST down,0.870008570851108,2024-08-31T19:38:37.000Z
+401628333105220195,401628333,40162833322,2,5,0:00,Vanderbilt,Virginia Tech,27,27,20,2,5,5,Rush,Diego Pavia run for 5 yds to the VT 15 for a 1ST down,0.066522168278403,2024-08-31T19:38:37.000Z
+401628333105220194,401628333,40162833322,1,5,0:00,Vanderbilt,Virginia Tech,27,27,25,1,10,5,Pass Reception,Diego Pavia pass complete to Eli Stowers for 5 yds to the VT 20,0.0753631044225715,2024-08-31T19:38:37.000Z
+401628333105230207,401628333,40162833323,7,5,0:00,Virginia Tech,Vanderbilt,27,34,12,0,11,0,End of Game,End of OT,,2024-08-31T19:41:30.000Z
+401628333105230204,401628333,40162833323,5,5,0:00,Virginia Tech,Vanderbilt,27,34,12,4,11,0,Timeout,"Timeout Virginia Tech, clock 00:00",,2024-08-31T19:41:30.000Z
+401628333105230206,401628333,40162833323,6,5,0:00,Virginia Tech,Vanderbilt,27,34,12,4,11,0,Pass Incompletion,Collin Schlee pass incomplete to Da'Quan Felton,-3.3003909575599426,2024-08-31T19:41:30.000Z
+401628333105230203,401628333,40162833323,4,5,0:00,Virginia Tech,Vanderbilt,27,34,7,3,6,-5,Sack,Collin Schlee sacked by Zaylin Wood for a loss of 5 yards to the VAN 12,-0.8602745844325184,2024-08-31T19:41:30.000Z
+401628333105230202,401628333,40162833323,3,5,0:00,Virginia Tech,Vanderbilt,27,34,9,2,8,2,Rush,Kyron Drones run for 2 yds to the VAN 7,-0.151946815238241,2024-08-31T19:41:30.000Z
+401628333105230201,401628333,40162833323,2,5,0:00,Virginia Tech,Vanderbilt,27,34,11,1,10,2,Rush,Bhayshul Tuten run for 2 yds to the VAN 9,-0.165648229401373,2024-08-31T19:41:30.000Z
+401628333105230200,401628333,40162833323,1,5,0:00,Virginia Tech,Vanderbilt,27,34,25,1,10,14,Rush,Collin Schlee run for 14 yds to the VAN 11 for a 1ST down,0.1783449488981325,2024-08-31T19:41:30.000Z

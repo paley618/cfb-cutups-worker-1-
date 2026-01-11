@@ -1,0 +1,154 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628466101849907,401628466,4016284661,1,1,15:00,Minnesota,Rhode Island,0,0,65,0,0,0,Kickoff,Dragan Kesich kickoff for 65 yds for a touchback,,2024-09-07T15:48:03.000Z
+401628466101854001,401628466,4016284661,2,1,14:59,Rhode Island,Minnesota,0,0,75,1,10,6,Pass Reception,Devin Farrell pass complete to Shawn Harris Jr. for 6 yds to the URI 31,0.3333748010525683,2024-09-07T15:49:41.000Z
+401628466101857601,401628466,4016284661,3,1,14:23,Rhode Island,Minnesota,0,0,69,2,4,-5,Penalty,"Rhode Island Penalty, False Start (-5 Yards) to the URI 26",,2024-09-07T16:08:04.000Z
+401628466101864201,401628466,4016284661,4,1,13:57,Rhode Island,Minnesota,0,0,74,2,9,6,Rush,Devin Farrell run for 6 yds to the URI 32,0.19832540198653434,2024-09-07T15:49:41.000Z
+401628466101868801,401628466,4016284661,5,1,13:11,Rhode Island,Minnesota,0,0,68,3,3,0,Pass Incompletion,Devin Farrell pass incomplete,-0.5139435334013278,2024-09-07T15:49:41.000Z
+401628466101869601,401628466,4016284661,6,1,13:03,Rhode Island,Minnesota,0,0,68,4,3,0,Punt,"Devin Walter punt for 47 yds , Quentin Redding returns for no gain to the MINN 21",,2024-09-07T15:49:41.000Z
+401628466101874801,401628466,4016284662,1,1,12:51,Minnesota,Rhode Island,0,0,79,1,10,15,Penalty,"Rhode Island Penalty, Face mask (15 yards) (Carson Primrose) to the MINN 44 for a 1ST down",,2024-09-07T16:49:03.000Z
+401628466101877201,401628466,4016284662,2,1,12:27,Minnesota,Rhode Island,0,0,56,1,10,0,Pass Reception,Max Brosmer pass complete to Marcus Major for no gain to the MINN 44,-1.1612466882658818,2024-09-07T15:49:41.000Z
+401628466101885201,401628466,4016284662,3,1,11:47,Minnesota,Rhode Island,0,0,56,2,10,20,Pass Reception,Max Brosmer pass complete to Cristian Driver for 20 yds to the URI 36 for a 1ST down,2.5206513746313917,2024-09-07T15:49:41.000Z
+401628466101887801,401628466,4016284662,4,1,11:21,Minnesota,Rhode Island,0,0,36,1,10,0,Rush,Darius Taylor run for no gain to the URI 36,-0.7215426143188567,2024-09-07T15:49:41.000Z
+401628466101889901,401628466,4016284662,5,1,11:00,Minnesota,Rhode Island,0,0,36,2,10,1,Rush,Marcus Major run for 1 yd to the URI 35,-0.7260935147228553,2024-09-07T16:49:03.000Z
+401628466101898301,401628466,4016284662,6,1,10:16,Minnesota,Rhode Island,0,0,35,3,9,0,Rush,Max Brosmer run for no gain to the URI 35,-1.0310667585339084,2024-09-07T15:49:41.000Z
+401628466101907201,401628466,4016284662,7,1,9:27,Minnesota,Rhode Island,3,0,35,4,9,53,Field Goal Good,Dragan Kesich 53 yd FG GOOD,,2024-09-07T16:15:17.000Z
+401628466101907202,401628466,4016284663,1,1,9:27,Minnesota,Rhode Island,3,0,65,0,0,0,Kickoff,Dragan Kesich kickoff for 65 yds for a touchback,,2024-09-07T16:15:17.000Z
+401628466101907301,401628466,4016284663,2,1,9:26,Rhode Island,Minnesota,0,3,75,1,10,0,Pass Incompletion,Devin Farrell pass incomplete,-0.7029700220436519,2024-09-07T15:49:41.000Z
+401628466101907701,401628466,4016284663,3,1,9:22,Rhode Island,Minnesota,0,3,75,2,10,0,Pass Incompletion,Devin Farrell pass incomplete,-0.34710487712173865,2024-09-07T15:49:41.000Z
+401628466101908301,401628466,4016284663,4,1,9:16,Rhode Island,Minnesota,0,3,75,3,10,11,Pass Reception,Devin Farrell pass complete to Greg Gaines III for 11 yds to the URI 36 for a 1ST down,1.9806374111113811,2024-09-07T15:49:41.000Z
+401628466101916901,401628466,4016284663,5,1,8:30,Rhode Island,Minnesota,0,3,64,1,10,0,Pass Incompletion,Devin Farrell pass incomplete,-1.041155320344064,2024-09-07T15:49:41.000Z
+401628466101917101,401628466,4016284663,6,1,8:28,Rhode Island,Minnesota,0,3,64,2,10,-5,Penalty,"Rhode Island Penalty, False Start (-5 Yards) to the URI 31",,2024-09-07T16:21:22.000Z
+401628466101917201,401628466,4016284663,7,1,8:27,Rhode Island,Minnesota,0,3,69,2,15,5,Rush,Malik Grant run for 5 yds to the URI 36,0.02726330620578032,2024-09-07T15:49:41.000Z
+401628466101925901,401628466,4016284663,8,1,7:40,Rhode Island,Minnesota,0,3,64,3,10,6,Rush,Devin Farrell run for 6 yds to the URI 42,0.1388619893186558,2024-09-07T15:49:41.000Z
+401628466101934201,401628466,4016284663,9,1,6:57,Rhode Island,Minnesota,0,3,58,4,4,0,Punt,Devin Walter punt for 33 yds,,2024-09-07T15:49:41.000Z
+401628466101934801,401628466,4016284664,1,1,6:51,Minnesota,Rhode Island,3,0,75,1,10,2,Rush,Marcus Major run for 2 yds to the MINN 27,-0.45260367932203766,2024-09-07T15:49:41.000Z
+401628466101939102,401628466,4016284664,2,1,6:08,Minnesota,Rhode Island,3,0,73,2,8,-10,Penalty,"(06:08) BROSMER, Max pass short up the middle incomplete intended for GEERS, Jameson broken up by PRICE, Braden at the UMN30, clock 06:06. PENALTY UMN Holding on ERSERY, Aireontae enforced 10 yards from the UMN27 to the UMN17 [SG]. NO PLAY (replay the down).",,2024-09-07T15:49:41.000Z
+401628466101939501,401628466,4016284664,3,1,6:04,Minnesota,Rhode Island,3,0,83,2,18,5,Pass Reception,Max Brosmer pass complete to Daniel Jackson for 5 yds to the MINN 22,0.00957870926853134,2024-09-07T15:49:41.000Z
+401628466101947701,401628466,4016284664,4,1,5:22,Minnesota,Rhode Island,3,0,78,3,13,0,Pass Incompletion,Max Brosmer pass incomplete,-0.09376798712265356,2024-09-07T15:49:41.000Z
+401628466101948201,401628466,4016284664,5,1,5:17,Minnesota,Rhode Island,3,0,78,4,13,46,Punt,"Mark Crawford punt for 46 yds , Gabe Sloat returns for a loss of 1 yard to the URI 31",,2024-09-07T15:49:41.000Z
+401628466101949101,401628466,4016284665,1,1,5:08,Rhode Island,Minnesota,0,3,69,1,10,0,Pass Incompletion,Hunter Helms pass incomplete,-0.8947814664467213,2024-09-07T15:49:41.000Z
+401628466101949501,401628466,4016284665,2,1,5:04,Rhode Island,Minnesota,0,3,69,2,10,-2,Pass Reception,Hunter Helms pass complete to Malik Grant for a loss of 2 yards to the URI 29,-0.6085192009716831,2024-09-07T15:49:41.000Z
+401628466101957901,401628466,4016284665,3,1,4:20,Rhode Island,Minnesota,0,3,71,3,12,-5,Penalty,"Rhode Island Penalty, False Start (-5 Yards) to the URI 24",,2024-09-07T16:35:42.000Z
+401628466101964101,401628466,4016284665,4,1,3:58,Rhode Island,Minnesota,0,3,76,3,17,-1,Pass Reception,"Hunter Helms pass complete to Omari Walker for 14 yds to the URI 38 Rhode Island Penalty, Illegal Block (Marquis Buchanan) to the URI 16",-0.0796446881710855,2024-09-07T15:49:41.000Z
+401628466101967401,401628466,4016284665,5,1,3:25,Rhode Island,Minnesota,0,3,79,3,20,13,Pass Reception,Hunter Helms pass complete to Malik Grant for 13 yds to the URI 34,0.24232909186458063,2024-09-07T15:49:41.000Z
+401628466101975601,401628466,4016284665,6,1,2:43,Rhode Island,Minnesota,0,3,66,4,7,0,Punt,"Devin Walter punt for 49 yds, fair catch by Daniel Jackson at the MINN 17",,2024-09-07T15:49:41.000Z
+401628466101997502,401628466,4016284666,6,1,0:00,Minnesota,Rhode Island,3,0,65,0,10,1,End Period,End of 1st Quarter,,2024-09-07T16:44:51.000Z
+401628466101976201,401628466,4016284666,1,1,2:37,Minnesota,Rhode Island,3,0,83,1,10,5,Pass Reception,Max Brosmer pass complete to Darius Taylor for 5 yds to the MINN 22,0.0803248403226124,2024-09-07T15:49:41.000Z
+401628466101984501,401628466,4016284666,2,1,1:54,Minnesota,Rhode Island,3,0,78,2,5,1,Rush,Marcus Major run for 1 yd to the MINN 23,-0.44479098596768013,2024-09-07T15:49:41.000Z
+401628466101989201,401628466,4016284666,3,1,1:07,Minnesota,Rhode Island,3,0,77,3,4,12,Pass Reception,Max Brosmer pass complete to Jordan Nubin for 12 yds to the MINN 35 for a 1ST down,1.6569317175053904,2024-09-07T15:49:41.000Z
+401628466101996701,401628466,4016284666,4,1,0:32,Minnesota,Rhode Island,3,0,65,1,10,0,Pass Incompletion,Max Brosmer pass incomplete,-1.0146424556055624,2024-09-07T15:49:41.000Z
+401628466101997501,401628466,4016284666,5,1,0:24,Minnesota,Rhode Island,3,0,65,2,10,1,Rush,Marcus Major run for 1 yd to the MINN 36,-0.5027038392730798,2024-09-07T15:49:41.000Z
+401628466102854001,401628466,4016284666,7,2,14:59,Minnesota,Rhode Island,3,0,64,3,9,11,Pass Reception,Max Brosmer pass complete to Jameson Geers for 11 yds to the MINN 47 for a 1ST down,2.6647638719966693,2024-09-07T16:49:03.000Z
+401628466102858001,401628466,4016284666,8,2,14:19,Minnesota,Rhode Island,3,0,53,1,10,13,Pass Reception,Max Brosmer pass complete to Daniel Jackson for 13 yds to the URI 40 for a 1ST down,0.9062502896359667,2024-09-07T16:49:03.000Z
+401628466102864901,401628466,4016284666,9,2,13:50,Minnesota,Rhode Island,3,0,40,1,10,0,Pass Incompletion,Max Brosmer pass incomplete,-0.8457687366186873,2024-09-07T16:49:03.000Z
+401628466102865301,401628466,4016284666,10,2,13:46,Minnesota,Rhode Island,3,0,40,2,10,14,Pass Reception,Max Brosmer pass complete to Darius Taylor for 14 yds to the URI 26 for a 1ST down,1.314815758147848,2024-09-07T16:49:03.000Z
+401628466102868801,401628466,4016284666,11,2,13:11,Minnesota,Rhode Island,3,0,26,1,10,5,Pass Reception,Max Brosmer pass complete to Nick Kallerup for 5 yds to the URI 21,0.0757087852917575,2024-09-07T16:49:03.000Z
+401628466102876901,401628466,4016284666,12,2,12:30,Minnesota,Rhode Island,3,0,21,2,5,18,Pass Reception,Max Brosmer pass complete to Elijah Spencer for 18 yds to the URI 3 for a 1ST down,1.179841604385086,2024-09-07T16:49:03.000Z
+401628466102885601,401628466,4016284666,13,2,11:43,Minnesota,Rhode Island,3,0,3,1,3,2,Rush,Darius Taylor run for 2 yds to the URI 1,-0.435900504741669,2024-09-07T16:49:03.000Z
+401628466102889401,401628466,4016284666,14,2,11:05,Minnesota,Rhode Island,10,0,1,2,1,1,Rushing Touchdown,Darius Taylor run for 1 yd for a TD (Dragan Kesich KICK),1.900352237473006,2024-09-07T16:53:27.000Z
+401628466102889403,401628466,4016284667,1,2,11:05,Minnesota,Rhode Island,10,0,65,0,0,0,Kickoff,Dragan Kesich kickoff for 65 yds for a touchback,,2024-09-07T16:54:15.000Z
+401628466102889601,401628466,4016284667,2,2,11:03,Rhode Island,Minnesota,0,10,75,1,10,1,Rush,Malik Grant run for 1 yd to the URI 26,-0.5874795431016855,2024-09-07T16:49:03.000Z
+401628466102898301,401628466,4016284667,3,2,10:16,Rhode Island,Minnesota,0,10,74,2,9,20,Pass Reception,Devin Farrell pass complete to Marquis Buchanan for 20 yds to the URI 46 for a 1ST down,2.4803371251377992,2024-09-07T16:49:03.000Z
+401628466102906801,401628466,4016284667,4,2,9:31,Rhode Island,Minnesota,0,10,54,1,10,0,Pass Incompletion,Devin Farrell pass incomplete,-1.1590089706435955,2024-09-07T16:49:03.000Z
+401628466102907201,401628466,4016284667,5,2,9:27,Rhode Island,Minnesota,0,10,54,2,10,0,Pass Incompletion,Devin Farrell pass incomplete,-0.9368191801087571,2024-09-07T16:49:03.000Z
+401628466102907801,401628466,4016284667,6,2,9:21,Rhode Island,Minnesota,0,10,54,3,10,0,Pass Interception Return,Devin Farrell pass intercepted Aidan Gousby return for no gain to the MINN 15,-0.7192743115624394,2024-09-07T16:49:03.000Z
+401628466102956103,401628466,4016284668,10,2,4:38,Minnesota,Rhode Island,10,0,36,1,15,0,Timeout,"Timeout Rhode Island, clock 04:38",,2024-09-07T17:10:56.000Z
+401628466102979901,401628466,4016284668,15,2,2:00,Minnesota,Rhode Island,10,0,7,2,7,0,Timeout,"Timeout Minnesota, clock 02:00",,2024-09-07T17:17:22.000Z
+401628466102908901,401628466,4016284668,1,2,9:10,Minnesota,Rhode Island,10,0,85,1,10,15,Pass Reception,Max Brosmer pass complete to Jameson Geers for 15 yds to the MINN 30 for a 1ST down,0.9281750309708663,2024-09-07T16:49:03.000Z
+401628466102916501,401628466,4016284668,2,2,8:34,Minnesota,Rhode Island,10,0,70,1,10,0,Pass Incompletion,Max Brosmer pass incomplete,-0.8627910327708888,2024-09-07T16:49:03.000Z
+401628466102917101,401628466,4016284668,3,2,8:28,Minnesota,Rhode Island,10,0,70,2,10,17,Rush,Darius Taylor run for 17 yds to the MINN 47 for a 1ST down,2.4602781181019244,2024-09-07T16:49:03.000Z
+401628466102919501,401628466,4016284668,4,2,8:04,Minnesota,Rhode Island,10,0,53,1,10,9,Pass Reception,Max Brosmer pass complete to Le'Meke Brockington for 9 yds to the URI 44,1.1787223367393838,2024-09-07T16:49:03.000Z
+401628466102927301,401628466,4016284668,5,2,7:26,Minnesota,Rhode Island,10,0,44,2,1,2,Rush,Darius Taylor run for 2 yds to the URI 42 for a 1ST down,-0.3783583747382,2024-09-07T16:49:03.000Z
+401628466102935501,401628466,4016284668,6,2,6:44,Minnesota,Rhode Island,10,0,42,1,10,5,Rush,Max Brosmer run for 5 yds to the URI 37,0.0899665338824123,2024-09-07T16:49:03.000Z
+401628466102944401,401628466,4016284668,7,2,5:55,Minnesota,Rhode Island,10,0,37,2,5,3,Pass Reception,Max Brosmer pass complete to Marcus Major for 3 yds to the URI 34,-0.2995337799194873,2024-09-07T16:49:03.000Z
+401628466102948901,401628466,4016284668,8,2,5:10,Minnesota,Rhode Island,10,0,34,3,2,3,Rush,Darius Taylor run for 3 yds to the URI 31 for a 1ST down,0.662556547536251,2024-09-07T16:49:03.000Z
+401628466102956102,401628466,4016284668,9,2,4:38,Minnesota,Rhode Island,10,0,31,1,10,-5,Penalty,"Minnesota Penalty, False Start (-5 Yards) to the URI 36",,2024-09-07T17:10:56.000Z
+401628466102956201,401628466,4016284668,11,2,4:37,Minnesota,Rhode Island,10,0,36,1,15,16,Pass Reception,Max Brosmer pass complete to Darius Taylor for 16 yds to the URI 20 for a 1ST down,0.8558447115031472,2024-09-07T16:49:03.000Z
+401628466102964901,401628466,4016284668,12,2,3:50,Minnesota,Rhode Island,10,0,20,1,10,9,Pass Reception,Max Brosmer pass complete to Marcus Major for 9 yds to the URI 11,0.624840338247342,2024-09-07T16:49:03.000Z
+401628466102969401,401628466,4016284668,13,2,3:05,Minnesota,Rhode Island,10,0,11,2,1,2,Rush,Darius Taylor run for 2 yds to the URI 9 for a 1ST down,-0.431150432862111,2024-09-07T16:49:03.000Z
+401628466102977801,401628466,4016284668,14,2,2:21,Minnesota,Rhode Island,10,0,9,1,9,2,Rush,Darius Taylor run for 2 yds to the URI 7,-0.182910644371269,2024-09-07T16:49:03.000Z
+401628466102984001,401628466,4016284668,16,2,1:59,Minnesota,Rhode Island,10,0,7,2,7,5,Rush,Darius Taylor run for 5 yds to the URI 2,0.062318183954876,2024-09-07T16:49:03.000Z
+401628466102988301,401628466,4016284668,17,2,1:16,Minnesota,Rhode Island,17,0,2,3,2,2,Rushing Touchdown,Marcus Major run for 2 yds for a TD (Dragan Kesich KICK),2.544830284062861,2024-09-07T17:21:08.000Z
+401628466102988303,401628466,4016284669,1,2,1:16,Minnesota,Rhode Island,17,0,65,0,0,0,Kickoff,Dragan Kesich kickoff for 65 yds for a touchback,,2024-09-07T17:21:08.000Z
+401628466102988305,401628466,4016284669,2,2,1:16,Rhode Island,Minnesota,0,17,75,1,10,-6,Sack,"Devin Farrell sacked for a loss of 6 yards to the URI 19 Devin Farrell fumbled, recovered by MINN Jack Henderson , return for 0 yards",-1.1098077151473014,2024-09-07T17:21:08.000Z
+401628466102999902,401628466,40162846610,7,2,0:00,Rhode Island,Minnesota,0,17,63,0,10,0,End of Half,End of 2nd Quarter,,2024-09-07T17:30:34.000Z
+401628466102999602,401628466,40162846610,5,2,0:03,Minnesota,Rhode Island,17,0,37,4,28,0,Timeout,"Timeout Rhode Island, clock 00:03",,2024-09-07T17:28:31.000Z
+401628466102995501,401628466,40162846610,2,2,0:44,Minnesota,Rhode Island,17,0,23,2,14,0,Timeout,"Timeout Minnesota, clock 00:44",,2024-09-07T17:26:04.000Z
+401628466102988901,401628466,40162846610,1,2,1:10,Minnesota,Rhode Island,17,0,19,1,10,-4,Rush,Max Brosmer run for a loss of 4 yards to the URI 23,-0.730146222810827,2024-09-07T16:49:03.000Z
+401628466102995601,401628466,40162846610,3,2,0:43,Minnesota,Rhode Island,17,0,23,2,14,0,Pass Incompletion,Max Brosmer pass incomplete,-0.6461720144825005,2024-09-07T17:30:34.000Z
+401628466102996301,401628466,40162846610,4,2,0:36,Minnesota,Rhode Island,17,0,23,3,14,-14,Sack,Max Brosmer sacked by A.J. Pena for a loss of 14 yards to the URI 37,-3.0297489129908524,2024-09-07T16:49:03.000Z
+401628466102999801,401628466,40162846610,6,2,0:01,Minnesota,Rhode Island,17,0,37,4,28,55,Field Goal Missed,Dragan Kesich 55 Yard Field Goal Missed,,2024-09-07T17:30:34.000Z
+401628466103849903,401628466,40162846611,1,3,15:00,Rhode Island,Minnesota,0,17,65,0,0,27,Kickoff Return (Offense),"Will Johnson kickoff for 65 yds , Le'Meke Brockington return for 27 yds to the MINN 27",,2024-09-07T17:52:20.000Z
+401628466103854601,401628466,40162846611,2,3,14:53,Minnesota,Rhode Island,17,0,73,1,10,5,Rush,Darius Taylor run for 5 yds to the MINN 32,0.0980689416811309,2024-09-07T17:52:20.000Z
+401628466103858301,401628466,40162846611,3,3,14:16,Minnesota,Rhode Island,17,0,68,2,5,5,Rush,Darius Taylor run for 5 yds to the MINN 37 for a 1ST down,0.7841356989630555,2024-09-07T17:52:20.000Z
+401628466103866601,401628466,40162846611,4,3,13:33,Minnesota,Rhode Island,17,0,63,1,10,7,Pass Reception,Max Brosmer pass complete to Elijah Spencer for 7 yds to the MINN 44,0.7113806413121412,2024-09-07T17:52:20.000Z
+401628466103869101,401628466,40162846611,5,3,13:08,Minnesota,Rhode Island,17,0,56,2,3,16,Pass Reception,Max Brosmer pass complete to Elijah Spencer for 16 yds to the URI 40 for a 1ST down,1.150081008328268,2024-09-07T17:52:20.000Z
+401628466103875401,401628466,40162846611,6,3,12:45,Minnesota,Rhode Island,17,0,40,1,10,6,Pass Reception,Max Brosmer pass complete to Daniel Jackson for 6 yds to the URI 34,0.265204892676964,2024-09-07T17:52:20.000Z
+401628466103879601,401628466,40162846611,7,3,12:03,Minnesota,Rhode Island,17,0,34,2,4,2,Rush,Marcus Major run for 2 yds to the URI 32,-0.4540541337756475,2024-09-07T17:52:20.000Z
+401628466103887201,401628466,40162846611,8,3,11:27,Minnesota,Rhode Island,17,0,32,3,2,1,Rush,Darius Taylor run for 1 yd to the URI 31,-0.7309886316188762,2024-09-07T17:52:20.000Z
+401628466103895001,401628466,40162846611,9,3,10:49,Minnesota,Rhode Island,17,0,31,4,1,1,Rush,Max Brosmer run for 1 yd to the URI 30 for a 1ST down,1.2946438837321297,2024-09-07T17:52:20.000Z
+401628466103899801,401628466,40162846611,10,3,10:01,Minnesota,Rhode Island,17,0,30,1,10,14,Pass Reception,Max Brosmer pass complete to Elijah Spencer for 14 yds to the URI 16 for a 1ST down,0.2455204116303966,2024-09-07T17:52:20.000Z
+401628466103907701,401628466,40162846611,11,3,9:22,Minnesota,Rhode Island,17,0,16,1,10,7,Rush,Max Brosmer run for 7 yds to the URI 9,0.3060293004171264,2024-09-07T17:52:20.000Z
+401628466103915701,401628466,40162846611,12,3,8:42,Minnesota,Rhode Island,17,0,9,2,3,3,Rush,Max Brosmer run for 3 yds to the URI 6 for a 1ST down,0.210203649809971,2024-09-07T17:52:20.000Z
+401628466103924201,401628466,40162846611,13,3,7:57,Minnesota,Rhode Island,24,0,6,1,6,6,Passing Touchdown,Max Brosmer pass complete to Cristian Driver for 6 yds for a TD (Dragan Kesich KICK),2.052489771065277,2024-09-07T17:59:52.000Z
+401628466103924203,401628466,40162846612,1,3,7:57,Minnesota,Rhode Island,24,0,65,0,0,0,Kickoff,Dragan Kesich kickoff for 65 yds for a touchback,,2024-09-07T18:04:08.000Z
+401628466103935501,401628466,40162846612,4,3,6:44,Rhode Island,Minnesota,0,24,58,2,11,0,Timeout,"Timeout Minnesota, clock 06:44",,2024-09-07T18:08:59.000Z
+401628466103924401,401628466,40162846612,2,3,7:55,Rhode Island,Minnesota,0,24,75,1,10,18,Pass Reception,Devin Farrell pass complete to Shawn Harris Jr. for 18 yds to the URI 43 for a 1ST down,1.612438422209995,2024-09-07T17:52:20.000Z
+401628466103927201,401628466,40162846612,3,3,7:27,Rhode Island,Minnesota,0,24,57,1,10,-1,Rush,Deon Silas run for a loss of 1 yard to the URI 42,-1.3694998851390174,2024-09-07T17:52:20.000Z
+401628466103935601,401628466,40162846612,5,3,6:43,Rhode Island,Minnesota,0,24,58,2,11,3,Rush,Devin Farrell run for 3 yds to the URI 45,-0.3245699026104418,2024-09-07T17:52:20.000Z
+401628466103939601,401628466,40162846612,6,3,6:03,Rhode Island,Minnesota,0,24,55,3,8,0,Pass Incompletion,Devin Farrell pass incomplete,-0.6368374256088556,2024-09-07T17:52:20.000Z
+401628466103944201,401628466,40162846612,7,3,5:57,Rhode Island,Minnesota,0,24,55,4,8,3,Punt,"Devin Walter punt for 37 yds , Daniel Jackson returns for 3 yds to the MINN 21",,2024-09-07T17:52:20.000Z
+401628466103944901,401628466,40162846613,1,3,5:50,Minnesota,Rhode Island,24,0,79,1,10,0,Pass Incompletion,Max Brosmer pass incomplete,-0.585616097616759,2024-09-07T17:52:20.000Z
+401628466103945601,401628466,40162846613,2,3,5:43,Minnesota,Rhode Island,24,0,79,2,10,16,Pass Reception,Max Brosmer pass complete to Daniel Jackson for 16 yds to the MINN 37 for a 1ST down,1.8656400938561646,2024-09-07T17:52:20.000Z
+401628466103954401,401628466,40162846613,3,3,4:55,Minnesota,Rhode Island,24,0,63,1,10,11,Rush,Darius Taylor run for 11 yds to the MINN 48 for a 1ST down,1.0424565048673191,2024-09-07T17:52:20.000Z
+401628466103958401,401628466,40162846613,4,3,4:15,Minnesota,Rhode Island,24,0,52,1,10,9,Pass Reception,Max Brosmer pass complete to Marcus Major for 9 yds to the URI 43,1.150899831387264,2024-09-07T17:52:20.000Z
+401628466103966801,401628466,40162846613,5,3,3:31,Minnesota,Rhode Island,24,0,43,2,1,3,Rush,Marcus Major run for 3 yds to the URI 40 for a 1ST down,-0.331894686614174,2024-09-07T17:52:20.000Z
+401628466103975101,401628466,40162846613,6,3,2:48,Minnesota,Rhode Island,24,0,40,1,10,13,Pass Reception,Max Brosmer pass complete to Darius Taylor for 13 yds to the URI 27 for a 1ST down,0.447768302545855,2024-09-07T17:52:20.000Z
+401628466103979801,401628466,40162846613,7,3,2:01,Minnesota,Rhode Island,24,0,27,1,10,-2,Rush,Jordan Nubin run for a loss of 2 yards to the URI 29,-0.7449900613577007,2024-09-07T17:52:20.000Z
+401628466103988801,401628466,40162846613,8,3,1:11,Minnesota,Rhode Island,31,0,29,2,12,29,Passing Touchdown,Max Brosmer pass complete to Le'Meke Brockington for 29 yds for a TD (Dragan Kesich KICK),3.4862709027491867,2024-09-07T18:22:06.000Z
+401628466103988803,401628466,40162846614,1,3,1:11,Minnesota,Rhode Island,31,0,65,0,0,0,Kickoff,Dragan Kesich kickoff for 65 yds for a touchback,,2024-09-07T18:23:49.000Z
+401628466103998102,401628466,40162846614,7,3,0:00,Rhode Island,Minnesota,0,31,54,0,10,0,End Period,End of 3rd Quarter,,2024-09-07T18:27:25.000Z
+401628466103989001,401628466,40162846614,2,3,1:09,Rhode Island,Minnesota,0,31,75,1,10,0,Pass Incompletion,Devin Farrell pass incomplete,-0.7029700220436519,2024-09-07T17:52:20.000Z
+401628466103989501,401628466,40162846614,3,3,1:04,Rhode Island,Minnesota,0,31,75,2,10,0,Pass Incompletion,Devin Farrell pass incomplete,-0.34710487712173865,2024-09-07T17:52:20.000Z
+401628466103994001,401628466,40162846614,4,3,0:59,Rhode Island,Minnesota,0,31,75,3,10,21,Pass Reception,Devin Farrell pass complete to Marquis Buchanan for 21 yds to the URI 46 for a 1ST down,2.942932481201504,2024-09-07T17:52:20.000Z
+401628466103997701,401628466,40162846614,5,3,0:22,Rhode Island,Minnesota,0,31,54,1,10,0,Pass Incompletion,Devin Farrell pass incomplete,-1.1590089706435955,2024-09-07T17:52:20.000Z
+401628466103998101,401628466,40162846614,6,3,0:18,Rhode Island,Minnesota,0,31,54,2,10,0,Pass Reception,Devin Farrell pass complete to Shawn Harris Jr. for no gain to the URI 46,-0.9368191801087571,2024-09-07T17:52:20.000Z
+401628466104854001,401628466,40162846614,8,4,14:59,Rhode Island,Minnesota,0,31,54,3,10,16,Pass Interception Return,Devin Farrell pass intercepted Koi Perich return for 16 yds to the URI 48,-0.7192743115624394,2024-09-07T18:32:14.000Z
+401628466104856001,401628466,40162846615,1,4,14:39,Minnesota,Rhode Island,31,0,48,1,10,2,Rush,Jordan Nubin run for 2 yds to the URI 46,-0.6002320779981093,2024-09-07T18:32:14.000Z
+401628466104859101,401628466,40162846615,2,4,14:08,Minnesota,Rhode Island,31,0,46,2,8,1,Rush,Jordan Nubin run for 1 yd to the URI 45,-0.8751056799352545,2024-09-07T18:32:14.000Z
+401628466104867401,401628466,40162846615,3,4,13:25,Minnesota,Rhode Island,31,0,45,3,7,10,Pass Reception,Drake Lindsey pass complete to Nathan Jones for 10 yds to the URI 35 for a 1ST down,2.188982810436365,2024-09-07T18:32:14.000Z
+401628466104875401,401628466,40162846615,4,4,12:45,Minnesota,Rhode Island,31,0,35,1,10,0,Rush,Jordan Nubin run for no gain to the URI 35,-0.6918622905019662,2024-09-07T18:32:14.000Z
+401628466104879701,401628466,40162846615,5,4,12:02,Minnesota,Rhode Island,31,0,35,2,10,0,Pass Incompletion,Drake Lindsey pass incomplete,-0.9144980156718301,2024-09-07T18:32:14.000Z
+401628466104884501,401628466,40162846615,6,4,11:54,Minnesota,Rhode Island,31,0,35,3,10,6,Rush,Sieh Bangura run for 6 yds to the URI 29,0.2681967183412545,2024-09-07T18:32:14.000Z
+401628466104889501,401628466,40162846615,7,4,11:04,Minnesota,Rhode Island,34,0,29,4,4,47,Field Goal Good,Dragan Kesich 47 yd FG GOOD,,2024-09-07T18:36:39.000Z
+401628466104889502,401628466,40162846616,1,4,11:04,Minnesota,Rhode Island,34,0,65,0,0,0,Kickoff,Dragan Kesich kickoff for 65 yds for a touchback,,2024-09-07T18:40:01.000Z
+401628466104889601,401628466,40162846616,2,4,11:03,Rhode Island,Minnesota,0,34,75,1,10,0,Pass Incompletion,Hunter Helms pass incomplete,-0.7029700220436519,2024-09-07T18:32:14.000Z
+401628466104894303,401628466,40162846616,3,4,10:56,Rhode Island,Minnesota,0,34,75,2,10,-10,Penalty,"Rhode Island Penalty, Offensive Holding (Tre Alexander) to the URI 17",,2024-09-07T18:32:14.000Z
+401628466104896701,401628466,40162846616,4,4,10:32,Rhode Island,Minnesota,0,41,83,2,18,25,Interception Return Touchdown,Hunter Helms pass intercepted Jack Henderson return for 25 yds for a TD (Dragan Kesich KICK),-6.746258393222329,2024-09-07T18:42:40.000Z
+401628466104896703,401628466,40162846617,1,4,10:32,Minnesota,Rhode Island,41,0,65,0,0,0,Kickoff,Dragan Kesich kickoff for 65 yds for a touchback,,2024-09-07T18:42:40.000Z
+401628466104937703,401628466,40162846617,12,4,6:22,Rhode Island,Minnesota,0,41,53,4,6,0,Timeout,"Timeout Rhode Island, clock 06:22",,2024-09-07T18:56:23.000Z
+401628466104896801,401628466,40162846617,2,4,10:31,Rhode Island,Minnesota,0,41,75,1,10,-1,Rush,Jaden Griffin run for a loss of 1 yard to the URI 24,-0.8014893508157099,2024-09-07T18:32:14.000Z
+401628466104904901,401628466,40162846617,3,4,9:50,Rhode Island,Minnesota,0,41,76,2,11,10,Pass Reception,Hunter Helms pass complete to Marquis Buchanan for 10 yds to the URI 34,0.7784554888667623,2024-09-07T18:32:14.000Z
+401628466104908201,401628466,40162846617,4,4,9:17,Rhode Island,Minnesota,0,41,66,3,1,2,Rush,Jaden Griffin run for 2 yds to the URI 36 for a 1ST down,0.9535963738949382,2024-09-07T18:32:14.000Z
+401628466104916301,401628466,40162846617,5,4,8:36,Rhode Island,Minnesota,0,41,64,1,10,0,Pass Reception,Hunter Helms pass complete to Brady Roark for no gain to the URI 36,-1.041155320344064,2024-09-07T18:32:14.000Z
+401628466104919901,401628466,40162846617,6,4,8:00,Rhode Island,Minnesota,0,41,64,2,10,4,Pass Reception,Hunter Helms pass complete to Marquis Buchanan for 4 yds to the URI 40,-0.1156741285975409,2024-09-07T18:32:14.000Z
+401628466104928202,401628466,40162846617,7,4,7:17,Rhode Island,Minnesota,0,41,60,3,6,3,Penalty,"(07:17) HELMS, Hunter pass short up the middle incomplete intended for BUCHANAN, Marquis broken up by KELLY, Rhyland at the URI45, clock 07:15. PENALTY UMN Pass Interference on KELLY, Rhyland enforced at the spot of the foul for 3 yards to the URI43 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T18:32:14.000Z
+401628466104928701,401628466,40162846617,8,4,7:12,Rhode Island,Minnesota,0,41,57,1,10,0,Pass Incompletion,Hunter Helms pass incomplete,-1.15714755134967,2024-09-07T18:32:14.000Z
+401628466104929101,401628466,40162846617,9,4,7:08,Rhode Island,Minnesota,0,41,57,2,10,0,Pass Incompletion,Hunter Helms pass incomplete,-0.851527740432628,2024-09-07T18:32:14.000Z
+401628466104929401,401628466,40162846617,10,4,7:05,Rhode Island,Minnesota,0,41,57,3,10,9,Pass Reception,Hunter Helms pass complete to Marquis Buchanan for 9 yds to the MINN 48,0.7700293892318176,2024-09-07T18:32:14.000Z
+401628466104937702,401628466,40162846617,11,4,6:22,Rhode Island,Minnesota,0,41,48,4,1,-5,Penalty,"Rhode Island Penalty, False Start (Brady Roark) to the URI 47",,2024-09-07T18:56:23.000Z
+401628466104937801,401628466,40162846617,13,4,6:21,Rhode Island,Minnesota,0,41,53,4,6,28,Punt,"Devin Walter punt for 36 yds , Koi Perich returns for 28 yds to the MINN 45",,2024-09-07T18:32:14.000Z
+401628466104979902,401628466,40162846618,8,4,2:00,Minnesota,Rhode Island,41,0,8,1,10,0,Timeout,"Timeout Minnesota, clock 02:00",,2024-09-07T19:06:09.000Z
+401628466104939201,401628466,40162846618,1,4,6:07,Minnesota,Rhode Island,41,0,55,1,10,17,Pass Reception,Drake Lindsey pass complete to Kenric Lanier II for 17 yds to the URI 38 for a 1ST down,1.182020588731177,2024-09-07T18:32:14.000Z
+401628466104947101,401628466,40162846618,2,4,5:28,Minnesota,Rhode Island,41,0,38,1,10,-5,Penalty,"Minnesota Penalty, False Start (-5 Yards) to the URI 43",,2024-09-07T18:59:38.000Z
+401628466104949401,401628466,40162846618,3,4,5:05,Minnesota,Rhode Island,41,0,43,1,15,14,Rush,Jaren Mangham run for 14 yds to the URI 29,1.6430232244698126,2024-09-07T18:32:14.000Z
+401628466104957901,401628466,40162846618,4,4,4:20,Minnesota,Rhode Island,41,0,29,2,1,3,Rush,Jaren Mangham run for 3 yds to the URI 26 for a 1ST down,-0.4261985469452775,2024-09-07T18:32:14.000Z
+401628466104966301,401628466,40162846618,5,4,3:36,Minnesota,Rhode Island,41,0,26,1,10,6,Rush,Drake Lindsey run for 6 yds to the URI 20,0.1981539364012105,2024-09-07T18:32:14.000Z
+401628466104974301,401628466,40162846618,6,4,2:56,Minnesota,Rhode Island,41,0,20,2,4,2,Rush,Jaren Mangham run for 2 yds to the URI 18,-0.278584282591558,2024-09-07T18:32:14.000Z
+401628466104978701,401628466,40162846618,7,4,2:12,Minnesota,Rhode Island,41,0,18,3,2,10,Rush,Jaren Mangham run for 10 yds to the URI 8 for a 1ST down,0.480832899898836,2024-09-07T18:32:14.000Z
+401628466104984301,401628466,40162846618,9,4,1:56,Minnesota,Rhode Island,48,0,8,1,8,8,Passing Touchdown,Drake Lindsey pass complete to Tyler Williams for 8 yds for a TD (Dragan Kesich KICK),2.319599568699692,2024-09-07T19:06:28.000Z
+401628466104996603,401628466,40162846619,5,4,0:00,Rhode Island,Minnesota,0,48,74,0,6,0,End of Game,End of 4th Quarter,,2024-09-07T19:11:02.000Z
+401628466104984303,401628466,40162846619,1,4,1:56,Minnesota,Rhode Island,48,0,65,0,0,0,Kickoff,Dragan Kesich kickoff for 65 yds for a touchback,,2024-09-07T19:08:17.000Z
+401628466104984501,401628466,40162846619,2,4,1:54,Rhode Island,Minnesota,0,48,75,1,10,1,Rush,Jaden Griffin run for 1 yd to the URI 26,-0.5874795431016855,2024-09-07T18:32:14.000Z
+401628466104988401,401628466,40162846619,3,4,1:15,Rhode Island,Minnesota,0,48,74,2,9,3,Rush,Jaden Griffin run for 3 yds to the URI 29,-0.17771396874830803,2024-09-07T18:32:14.000Z
+401628466104996601,401628466,40162846619,4,4,0:33,Rhode Island,Minnesota,0,48,71,3,6,-3,Rush,Jaden Griffin run for a loss of 3 yards to the URI 26,-0.4193676668127182,2024-09-07T18:32:14.000Z

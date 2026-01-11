@@ -1,0 +1,217 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401643775101854403,401643775,4016437751,2,1,14:55,North Texas,South Alabama,0,0,79,1,10,2,Rush,Ikaika Ragsdale run for 2 yds to the UNT 23,-0.3794776766448038,2024-08-31T21:03:40.000Z
+401643775101854404,401643775,4016437751,3,1,14:55,North Texas,South Alabama,0,0,77,2,8,17,Pass Reception,Chandler Morris pass complete to DT Sheffield for a 1ST down,1.9531118623182842,2024-08-31T21:03:40.000Z
+401643775101854405,401643775,4016437751,4,1,14:55,North Texas,South Alabama,0,0,60,1,10,2,Rush,Ikaika Ragsdale run for 2 yds to the UNT 42,-0.6799841752385892,2024-08-31T21:03:40.000Z
+401643775101854406,401643775,4016437751,5,1,14:55,North Texas,South Alabama,0,0,58,2,8,0,Pass Incompletion,Chandler Morris pass incomplete,-0.9286544985354048,2024-08-31T21:03:40.000Z
+401643775101854407,401643775,4016437751,6,1,14:55,North Texas,South Alabama,0,0,58,3,8,10,Pass Reception,Chandler Morris pass complete to Wyatt Young for a 1ST down,2.6793054416377124,2024-08-31T21:03:40.000Z
+401643775101854408,401643775,4016437751,7,1,14:55,North Texas,South Alabama,0,0,48,1,10,4,Rush,Juwaun Price run for 4 yds to the USA 44,-0.1319374071745773,2024-08-31T21:03:40.000Z
+401643775101854409,401643775,4016437751,8,1,14:55,North Texas,South Alabama,0,0,44,2,6,9,Pass Reception,Chandler Morris pass complete to DT Sheffield for a 1ST down,0.8455824596775783,2024-08-31T21:03:40.000Z
+401643775101854410,401643775,4016437751,9,1,14:55,North Texas,South Alabama,0,0,35,1,10,0,Pass Incompletion,Chandler Morris pass incomplete,-0.6918622905019662,2024-08-31T21:03:40.000Z
+401643775101854411,401643775,4016437751,10,1,14:55,North Texas,South Alabama,0,0,35,2,10,17,Pass Reception,Chandler Morris pass complete to Ikaika Ragsdale for a 1ST down,1.0726583652083312,2024-08-31T21:03:40.000Z
+401643775101854401,401643775,4016437751,1,1,14:55,South Alabama,North Texas,0,0,65,1,10,20,Kickoff Return (Offense),"Laith Marjan kickoff for 64 yds , Juwaun Price return for 20 yds to the UNT 21",,2024-08-31T21:03:40.000Z
+401643775101904901,401643775,4016437751,17,1,9:50,North Texas,South Alabama,0,0,2,3,2,0,Timeout,"Timeout South Alabama, clock 09:50",,2024-08-31T21:03:40.000Z
+401643775101906201,401643775,4016437751,18,1,9:37,North Texas,South Alabama,7,0,2,3,2,2,Rushing Touchdown,Chandler Morris run for 2 yds for a TD (Kali Nguma KICK),2.544830284062861,2024-08-31T21:13:25.000Z
+401643775101854412,401643775,4016437751,11,1,14:55,North Texas,South Alabama,0,0,18,1,10,5,Rush,Ikaika Ragsdale run for 5 yds to the USA 13,0.07429696775613,2024-08-31T21:03:40.000Z
+401643775101854413,401643775,4016437751,12,1,14:55,North Texas,South Alabama,0,0,13,2,5,4,Rush,Juwaun Price run for 4 yds to the USA 9,-0.023223075671387,2024-08-31T21:03:40.000Z
+401643775101854414,401643775,4016437751,13,1,14:55,North Texas,South Alabama,0,0,9,3,1,-5,Penalty,"PENALTY UNT False Start (Conwright,Blair) 5 yards from USA09 to USA14. NO PLAY.",,2024-08-31T21:03:40.000Z
+401643775101854416,401643775,4016437751,14,1,14:55,North Texas,South Alabama,0,0,14,3,6,10,Pass Reception,Chandler Morris pass complete to DT Sheffield for a 1ST down,1.296967498973939,2024-08-31T21:03:40.000Z
+401643775101854417,401643775,4016437751,15,1,14:55,North Texas,South Alabama,0,0,4,1,4,1,Rush,Juwaun Price run for 1 yd to the USA 3,-0.523234095246118,2024-08-31T21:03:40.000Z
+401643775101854418,401643775,4016437751,16,1,14:55,North Texas,South Alabama,0,0,3,2,3,1,Rush,Ikaika Ragsdale run for 1 yd to the USA 2,-0.333405670102768,2024-08-31T21:03:40.000Z
+401643775101906701,401643775,4016437752,1,1,9:32,North Texas,South Alabama,7,0,65,1,10,19,Kickoff Return (Offense),"Blake Ford kickoff for 62 yds , Shamar Sandgren return for 19 yds to the USA 22",,2024-08-31T21:15:45.000Z
+401643775101906710,401643775,4016437752,8,1,9:32,South Alabama,North Texas,0,7,13,3,1,-15,Penalty,"No Huddle-Shotgun Lopez,Gio rush left for 12 yards gain to the UNT01 (Scott,Zhaiylen) PENALTY USA Personal Foul (Sandgren,Shamar) 15 yards from UNT13 to UNT28. NO PLAY.",,2024-08-31T21:15:45.000Z
+401643775101906713,401643775,4016437752,9,1,9:32,South Alabama,North Texas,0,7,28,3,16,7,Pass Reception,Gio Lopez pass complete to Jamaal Pritchett,0.4371041654300108,2024-08-31T21:15:45.000Z
+401643775101906708,401643775,4016437752,7,1,9:32,South Alabama,North Texas,0,7,13,2,1,0,Pass Incompletion,Gio Lopez pass incomplete,-0.5869560172000124,2024-08-31T21:15:45.000Z
+401643775101906707,401643775,4016437752,6,1,9:32,South Alabama,North Texas,0,7,22,1,10,9,Rush,Gio Lopez run for 9 yds to the UNT 13,0.6322416389314145,2024-08-31T21:15:45.000Z
+401643775101906706,401643775,4016437752,5,1,9:32,South Alabama,North Texas,0,7,63,2,5,41,Pass Reception,Gio Lopez pass complete to Jeremiah Webb for a 1ST down,2.7660074016280167,2024-08-31T21:15:45.000Z
+401643775101906705,401643775,4016437752,4,1,9:32,South Alabama,North Texas,0,7,68,1,10,5,Rush,Kentrel Bullock run for 5 yds to the USA 37,0.1056805473653828,2024-08-31T21:15:45.000Z
+401643775101906704,401643775,4016437752,3,1,9:32,South Alabama,North Texas,0,7,71,2,3,3,Rush,Braylon McReynolds run for 3 yds to the USA 32 for a 1ST down,0.1952092235684812,2024-08-31T21:15:45.000Z
+401643775101906703,401643775,4016437752,2,1,9:32,South Alabama,North Texas,0,7,78,1,10,7,Pass Reception,Gio Lopez pass complete to Jamaal Pritchett,0.5574648631307815,2024-08-31T21:15:45.000Z
+401643775101944101,401643775,4016437752,10,1,5:58,South Alabama,North Texas,3,7,21,4,9,39,Field Goal Good,Laith Marjan 39 yd FG GOOD,,2024-08-31T21:24:53.000Z
+401643775101944604,401643775,4016437753,3,1,5:53,North Texas,South Alabama,7,3,74,2,9,9,Pass Reception,Chandler Morris pass complete to Wyatt Young for a 1ST down,1.4225176521316722,2024-08-31T21:24:57.000Z
+401643775101944607,401643775,4016437753,6,1,5:53,North Texas,South Alabama,7,3,58,3,3,14,Pass Reception,Chandler Morris pass complete to Damon Ward Jr. for a 1ST down,2.3806243935507307,2024-08-31T21:24:57.000Z
+401643775101944608,401643775,4016437753,7,1,5:53,North Texas,South Alabama,7,3,44,1,10,13,Pass Reception,Chandler Morris pass complete to Damon Ward Jr. for a 1ST down,0.5709361874370733,2024-08-31T21:24:57.000Z
+401643775101944601,401643775,4016437753,1,1,5:53,South Alabama,North Texas,3,7,65,1,10,24,Kickoff Return (Offense),"Laith Marjan kickoff for 64 yds , Juwaun Price return for 24 yds to the UNT 25",,2024-08-31T21:24:57.000Z
+401643775101944603,401643775,4016437753,2,1,5:53,North Texas,South Alabama,7,3,75,1,10,1,Rush,Ikaika Ragsdale run for 1 yd to the UNT 26,-0.5874795431016855,2024-08-31T21:24:57.000Z
+401643775101944605,401643775,4016437753,4,1,5:53,North Texas,South Alabama,7,3,65,1,10,0,Pass Incompletion,Chandler Morris pass incomplete,-1.0146424556055624,2024-08-31T21:24:57.000Z
+401643775101944606,401643775,4016437753,5,1,5:53,North Texas,South Alabama,7,3,65,2,10,7,Rush,Ikaika Ragsdale run for 7 yds to the UNT 42,0.4638527152361452,2024-08-31T21:24:57.000Z
+401643775101944609,401643775,4016437753,8,1,5:53,North Texas,South Alabama,7,3,31,1,10,4,Pass Reception,Chandler Morris pass complete to Oscar Hammond,-0.05239887278951,2024-08-31T21:24:57.000Z
+401643775101944610,401643775,4016437753,9,1,5:53,North Texas,South Alabama,7,3,27,2,6,1,Rush,Juwaun Price run for 1 yd to the USA 28,-0.4761088603884253,2024-08-31T21:24:57.000Z
+401643775101944611,401643775,4016437753,10,1,5:53,North Texas,South Alabama,7,3,28,3,7,0,Pass Incompletion,Chandler Morris pass incomplete,-0.8963490238602781,2024-08-31T21:24:57.000Z
+401643775101979101,401643775,4016437753,11,1,2:08,North Texas,South Alabama,7,3,28,4,7,46,Field Goal Missed,Kali Nguma 46 yd FG MISSED,,2024-08-31T21:31:18.000Z
+401643775101979103,401643775,4016437754,1,1,2:08,South Alabama,North Texas,3,7,72,1,10,6,Pass Reception,Gio Lopez pass complete to Shamar Sandgren,0.3584299311182697,2024-08-31T21:34:18.000Z
+401643775101979105,401643775,4016437754,3,1,2:08,South Alabama,North Texas,3,7,58,1,10,20,Pass Reception,Gio Lopez pass complete to Jamaal Pritchett for a 1ST down,1.4671105634541275,2024-08-31T21:34:18.000Z
+401643775101979106,401643775,4016437754,4,1,2:08,South Alabama,North Texas,3,7,38,1,10,22,Pass Reception,Gio Lopez pass complete to Jamaal Pritchett for a 1ST down,0.5258699272928136,2024-08-31T21:34:18.000Z
+401643775101999902,401643775,4016437754,7,1,0:00,South Alabama,North Texas,3,7,10,0,4,2,End Period,End of 1st Quarter,,2024-08-31T21:39:31.000Z
+401643775102854401,401643775,4016437754,8,2,14:55,South Alabama,North Texas,10,7,8,3,2,8,Rushing Touchdown,Gio Lopez run for 8 yds for a TD (Laith Marjan KICK),2.611864289610855,2024-08-31T21:42:33.000Z
+401643775101999901,401643775,4016437754,6,1,0:00,South Alabama,North Texas,3,7,10,2,4,2,Rush,Fluff Bothwell run for 2 yds to the UNT 8,-0.225240572167852,2024-08-31T21:39:31.000Z
+401643775101979107,401643775,4016437754,5,1,2:08,South Alabama,North Texas,3,7,16,1,10,6,Rush,Kentrel Bullock run for 6 yds to the UNT 10,0.1820990038493714,2024-08-31T21:34:18.000Z
+401643775101979104,401643775,4016437754,2,1,2:08,South Alabama,North Texas,3,7,66,2,4,8,Rush,Gio Lopez run for 8 yds to the USA 42 for a 1ST down,0.9354995691084671,2024-08-31T21:34:18.000Z
+401643775102855001,401643775,4016437755,1,2,14:49,South Alabama,North Texas,10,7,65,1,10,19,Kickoff Return (Offense),"Laith Marjan kickoff for 63 yds , Juwaun Price return for 19 yds to the UNT 21",,2024-08-31T21:44:48.000Z
+401643775102855006,401643775,4016437755,5,2,14:49,North Texas,South Alabama,7,10,57,2,4,15,Penalty,"No Huddle-Shotgun Morris,Chandler pass incomplete short middle to Young,Wyatt thrown to UNT50 PENALTY USA UNR: Unnecessary Roughness (Scruggs,Jordan) 15 yards from UNT43 to USA42, 1ST DOWN. NO PLAY.",,2024-08-31T21:44:48.000Z
+401643775102875601,401643775,4016437755,9,2,12:43,North Texas,South Alabama,14,10,3,1,3,3,Passing Touchdown,Damon Ward Jr. 3 Yd pass from Chandler Morris (Kali Nguma Kick),1.464451732731337,2024-08-31T21:49:45.000Z
+401643775102855010,401643775,4016437755,8,2,14:49,North Texas,South Alabama,7,10,29,2,10,26,Pass Reception,Chandler Morris pass complete to Jeremiah Aaron for a 1ST down,1.858221954245153,2024-08-31T21:44:48.000Z
+401643775102855009,401643775,4016437755,7,2,14:49,North Texas,South Alabama,7,10,29,1,10,0,Pass Incompletion,Chandler Morris pass incomplete,-0.534372502378378,2024-08-31T21:44:48.000Z
+401643775102855008,401643775,4016437755,6,2,14:49,North Texas,South Alabama,7,10,42,1,10,13,Rush,Damashja Harris run for 13 yds to the USA 29 for a 1ST down,0.506634286974012,2024-08-31T21:44:48.000Z
+401643775102855005,401643775,4016437755,4,2,14:49,North Texas,South Alabama,7,10,63,1,10,6,Rush,Chandler Morris run for 6 yds to the UNT 43,0.4024109850387187,2024-08-31T21:44:48.000Z
+401643775102855004,401643775,4016437755,3,2,14:49,North Texas,South Alabama,7,10,79,2,10,16,Pass Reception,Chandler Morris pass complete to Damon Ward Jr. for a 1ST down,1.8656400938561646,2024-08-31T21:44:48.000Z
+401643775102855003,401643775,4016437755,2,2,14:49,North Texas,South Alabama,7,10,79,1,10,0,Pass Incompletion,Chandler Morris pass incomplete,-0.585616097616759,2024-08-31T21:44:48.000Z
+401643775102875604,401643775,4016437755,10,2,12:43,South Alabama,North Texas,10,7,75,1,10,0,Timeout,"Timeout South Alabama, clock 12:43",,2024-08-31T21:53:52.000Z
+401643775102875607,401643775,4016437756,2,2,12:43,South Alabama,North Texas,10,14,75,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.7029700220436519,2024-08-31T21:53:52.000Z
+401643775102875608,401643775,4016437756,3,2,12:43,South Alabama,North Texas,10,14,75,2,10,11,Rush,Gio Lopez run for 11 yds to the USA 36 for a 1ST down,1.6335325339896425,2024-08-31T21:53:52.000Z
+401643775102875609,401643775,4016437756,4,2,12:43,South Alabama,North Texas,10,14,64,1,10,2,Rush,Braylon McReynolds run for 2 yds to the USA 38,-0.6439997383019928,2024-08-31T21:53:52.000Z
+401643775102875610,401643775,4016437756,5,2,12:43,South Alabama,North Texas,10,14,62,2,8,52,Pass Reception,Gio Lopez pass complete to Jamaal Pritchett for a 1ST down,3.2773655038278817,2024-08-31T21:53:52.000Z
+401643775102875611,401643775,4016437756,6,2,12:43,South Alabama,North Texas,10,14,10,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.2853930592519426,2024-08-31T21:53:52.000Z
+401643775102875612,401643775,4016437756,7,2,12:43,South Alabama,North Texas,10,14,10,2,10,1,Rush,Kentrel Bullock run for 1 yd to the UNT 11,-0.2108927532308514,2024-08-31T21:53:52.000Z
+401643775102875613,401643775,4016437756,8,2,12:43,South Alabama,North Texas,10,14,11,3,11,-3,Sack,Gio Lopez sacked by Roderick Brown for a loss of 3 yards to the UNT 14,-0.9439774746832316,2024-08-31T21:53:52.000Z
+401643775102906001,401643775,4016437756,9,2,9:39,South Alabama,North Texas,13,14,14,4,14,32,Field Goal Good,Laith Marjan 32 yd FG GOOD,,2024-08-31T22:00:50.000Z
+401643775102875605,401643775,4016437756,1,2,12:43,North Texas,South Alabama,14,10,65,1,10,0,Kickoff,Blake Ford kickoff for 65 yds for a touchback,,2024-08-31T21:53:52.000Z
+401643775102906003,401643775,4016437756,10,2,9:39,North Texas,South Alabama,14,10,71,1,10,0,Timeout,"Timeout South Alabama, clock 09:39",,2024-08-31T22:00:50.000Z
+401643775102906601,401643775,4016437757,1,2,9:33,South Alabama,North Texas,13,14,65,1,10,22,Kickoff Return (Offense),"Laith Marjan kickoff for 58 yds , Juwaun Price return for 22 yds to the UNT 29",,2024-08-31T22:04:16.000Z
+401643775102918001,401643775,4016437757,5,2,8:19,North Texas,South Alabama,14,13,68,4,7,0,Punt,"Sawyer Evans punt for 51 yds, punt out-of-bounds at the USA 17",,2024-08-31T22:06:45.000Z
+401643775102906605,401643775,4016437757,4,2,9:33,North Texas,South Alabama,14,13,68,3,7,0,Pass Incompletion,Chandler Morris pass incomplete,-0.337154854011259,2024-08-31T22:04:16.000Z
+401643775102906604,401643775,4016437757,3,2,9:33,North Texas,South Alabama,14,13,70,2,9,2,Rush,Chandler Morris run for 2 yds to the UNT 32,-0.33085602097361555,2024-08-31T22:04:16.000Z
+401643775102906603,401643775,4016437757,2,2,9:33,North Texas,South Alabama,14,13,71,1,10,1,Pass Reception,Chandler Morris pass complete to Dalton Carnes,-0.6903738736488947,2024-08-31T22:04:16.000Z
+401643775102918006,401643775,4016437758,2,2,8:19,South Alabama,North Texas,13,14,83,1,10,1,Rush,Gio Lopez run for 1 yd to the USA 18,-0.40702717159742274,2024-08-31T22:09:55.000Z
+401643775102918007,401643775,4016437758,3,2,8:19,South Alabama,North Texas,13,14,82,2,9,15,Pass Reception,Gio Lopez pass complete to Jeremiah Webb for a 1ST down,1.5131530850079313,2024-08-31T22:09:55.000Z
+401643775102918008,401643775,4016437758,4,2,8:19,South Alabama,North Texas,13,14,67,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.956890163923906,2024-08-31T22:09:55.000Z
+401643775102918009,401643775,4016437758,5,2,8:19,South Alabama,North Texas,13,14,67,2,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.5416125590698764,2024-08-31T22:09:55.000Z
+401643775102918010,401643775,4016437758,6,2,8:19,South Alabama,North Texas,13,14,67,3,10,10,Pass Reception,Gio Lopez pass complete to Jamaal Pritchett for a 1ST down,2.4622426946236047,2024-08-31T22:09:55.000Z
+401643775102918011,401643775,4016437758,7,2,8:19,South Alabama,North Texas,13,14,57,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-1.15714755134967,2024-08-31T22:09:55.000Z
+401643775102918012,401643775,4016437758,8,2,8:19,South Alabama,North Texas,13,14,57,2,10,8,Rush,Gio Lopez run for 8 yds to the UNT 49,0.8248598924043531,2024-08-31T22:09:55.000Z
+401643775102918013,401643775,4016437758,9,2,8:19,South Alabama,North Texas,13,14,49,3,2,3,Rush,Bishop Davenport run for 3 yds to the UNT 46 for a 1ST down,1.2543169483221792,2024-08-31T22:09:55.000Z
+401643775102918014,401643775,4016437758,10,2,8:19,South Alabama,North Texas,13,14,46,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-1.0250974847844603,2024-08-31T22:09:55.000Z
+401643775102918015,401643775,4016437758,11,2,8:19,South Alabama,North Texas,13,14,46,2,10,5,Rush,Gio Lopez run for 5 yds to the UNT 41,0.0729886527331746,2024-08-31T22:09:55.000Z
+401643775102918016,401643775,4016437758,12,2,8:19,South Alabama,North Texas,13,14,41,3,5,28,Pass Reception,Gio Lopez pass complete to Fluff Bothwell for a 1ST down,1.956467025139903,2024-08-31T22:16:27.000Z
+401643775102957501,401643775,4016437758,13,2,4:24,South Alabama,North Texas,19,14,13,1,10,13,Rushing Touchdown,Fluff Bothwell run for 13 yds for a TD (Two-Point Conversion failed),2.538929215045847,2024-08-31T22:16:54.000Z
+401643775102958801,401643775,4016437758,14,2,4:11,South Alabama,North Texas,13,14,65,1,10,93,Kickoff Return (Offense),"Laith Marjan kickoff for 58 yds , Juwaun Price return for 93 yds North Texas Penalty, Offensive Holding (Quinton Hammonds) to the UNT 35",,2024-08-31T22:20:15.000Z
+401643775102918005,401643775,4016437758,1,2,8:19,South Alabama,North Texas,13,14,82,2,9,0,Timeout,"Timeout South Alabama, clock 08:19",,2024-08-31T22:09:55.000Z
+401643775102958804,401643775,4016437759,1,2,4:11,North Texas,South Alabama,14,19,65,1,10,2,Rush,Ikaika Ragsdale run for 2 yds to the UNT 37,-0.63079683335922,2024-08-31T22:20:15.000Z
+401643775102958805,401643775,4016437759,2,2,4:11,North Texas,South Alabama,14,19,63,2,8,11,Pass Reception,Chandler Morris pass complete to Damon Ward Jr. for a 1ST down,1.8654595553401239,2024-08-31T22:20:15.000Z
+401643775102958806,401643775,4016437759,3,2,4:11,North Texas,South Alabama,14,19,52,1,10,8,Rush,Ikaika Ragsdale run for 8 yds to the USA 44,0.881884677547804,2024-08-31T22:20:15.000Z
+401643775102958807,401643775,4016437759,4,2,4:11,North Texas,South Alabama,14,19,44,2,2,9,Pass Reception,Chandler Morris pass complete to Damon Ward Jr. for a 1ST down,0.153580827385671,2024-08-31T22:23:23.000Z
+401643775102958810,401643775,4016437759,5,2,4:11,North Texas,South Alabama,14,19,35,1,10,7,Pass Reception,Chandler Morris pass complete to DT Sheffield,0.393521863681004,2024-08-31T22:23:23.000Z
+401643775102979901,401643775,4016437759,6,2,2:00,North Texas,South Alabama,14,19,28,2,3,0,Timeout,"Timeout South Alabama, clock 02:00",,2024-08-31T21:42:27.000Z
+401643775102979904,401643775,4016437759,9,2,2:00,North Texas,South Alabama,14,19,8,2,1,2,Rush,Juwaun Price run for 2 yds to the USA 6 for a 1ST down,-0.090029662888112,2024-08-31T22:27:24.000Z
+401643775102979903,401643775,4016437759,8,2,2:00,North Texas,South Alabama,14,19,17,1,10,9,Pass Reception,Chandler Morris pass complete to Jeremiah Aaron,0.617442994607249,2024-08-31T22:27:24.000Z
+401643775102979902,401643775,4016437759,7,2,2:00,North Texas,South Alabama,14,19,28,2,3,11,Pass Reception,Chandler Morris pass complete to Oscar Hammond for a 1ST down,-0.000836182688462,2024-08-31T22:27:24.000Z
+401643775102994104,401643775,4016437759,12,2,0:58,North Texas,South Alabama,14,19,16,1,16,10,Pass Reception,Chandler Morris pass complete to DT Sheffield,0.355988679345129,2024-08-31T22:29:50.000Z
+401643775102994105,401643775,4016437759,13,2,0:58,North Texas,South Alabama,14,19,6,2,6,3,Rush,Ikaika Ragsdale run for 3 yds to the USA 3,-0.095895406997053,2024-08-31T22:30:42.000Z
+401643775102996602,401643775,4016437759,15,2,0:33,North Texas,South Alabama,14,19,3,3,3,2,Rush,Ikaika Ragsdale run for 2 yds to the USA 1,-0.16119157507711,2024-08-31T22:32:04.000Z
+401643775102997401,401643775,4016437759,17,2,0:25,North Texas,South Alabama,14,19,1,4,1,0,Pass Incompletion,Chandler Morris pass incomplete,-4.214246025143899,2024-08-31T22:33:26.000Z
+401643775102997101,401643775,4016437759,16,2,0:28,North Texas,South Alabama,14,19,1,4,1,0,Timeout,"Timeout South Alabama, clock 00:28",,2024-08-31T22:33:26.000Z
+401643775102989401,401643775,4016437759,10,2,1:05,North Texas,South Alabama,14,19,6,1,6,0,Timeout,"Timeout South Alabama, clock 01:05",,2024-08-31T22:28:34.000Z
+401643775102994102,401643775,4016437759,11,2,0:58,North Texas,South Alabama,14,19,6,1,6,-10,Penalty,"No Huddle-Shotgun Morris,Chandler pass complete short left to Aaron,Jeremiah caught at USA00, for 6 yards to the USA00 TOUCHDOWN nullified by penalty, clock 00:58 PENALTY UNT Holding (Mercer,Tyler) 10 yards from USA06 to USA16. NO PLAY.",,2024-08-31T22:29:50.000Z
+401643775102996601,401643775,4016437759,14,2,0:33,North Texas,South Alabama,14,19,3,3,3,0,Timeout,"Timeout North Texas, clock 00:33",,2024-08-31T21:42:27.000Z
+401643775102999902,401643775,40164377510,2,2,0:00,South Alabama,North Texas,19,14,99,0,10,9,End of Half,End of 2nd Quarter,,2024-08-31T22:33:26.000Z
+401643775102999901,401643775,40164377510,1,2,0:00,South Alabama,North Texas,19,14,99,1,10,9,Rush,Braylon McReynolds run for 9 yds to the USA 10,0.6406437433588064,2024-08-31T22:33:26.000Z
+401643775103849905,401643775,40164377511,2,3,15:00,South Alabama,North Texas,19,14,75,1,10,0,Rush,Braylon McReynolds run for no gain to the USA 25,-0.7029700220436519,2024-08-31T22:57:15.000Z
+401643775103849906,401643775,40164377511,3,3,15:00,South Alabama,North Texas,19,14,75,2,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.34710487712173865,2024-08-31T22:57:15.000Z
+401643775103849907,401643775,40164377511,4,3,15:00,South Alabama,North Texas,19,14,75,3,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.15871308844886392,2024-08-31T22:57:15.000Z
+401643775103858901,401643775,40164377511,5,3,14:10,South Alabama,North Texas,19,14,75,4,10,6,Punt,"Jack Martin punt for 47 yds , DT Sheffield returns for 6 yds to the UNT 34",,2024-08-31T22:59:18.000Z
+401643775103849903,401643775,40164377511,1,3,15:00,North Texas,South Alabama,14,19,65,1,10,0,Kickoff,Blake Ford kickoff for 65 yds for a touchback,,2024-08-31T22:56:22.000Z
+401643775103858903,401643775,40164377512,1,3,14:10,North Texas,South Alabama,14,19,66,1,10,1,Pass Reception,Chandler Morris pass complete to Ikaika Ragsdale,-0.8121551588526277,2024-08-31T22:59:18.000Z
+401643775103858905,401643775,40164377512,2,3,14:10,North Texas,South Alabama,14,19,65,2,9,15,Pass Reception,"Chandler Morris pass complete to Damon Ward Jr. for a 1ST down South Alabama Penalty, Roughing The Passer (Blayne Myrick) to the USA 25 for a 1ST down",2.307512616460869,2024-08-31T23:00:24.000Z
+401643775103867601,401643775,40164377512,3,3,13:23,North Texas,South Alabama,21,19,25,1,10,25,Passing Touchdown,Blair Conwright 25 Yd pass from Chandler Morris (Kali Nguma Kick),2.7000843622660575,2024-08-31T23:01:24.000Z
+401643775103867604,401643775,40164377512,4,3,13:23,South Alabama,North Texas,19,14,75,1,10,0,Timeout,"Timeout South Alabama, clock 13:23",,2024-08-31T23:01:24.000Z
+401643775103867605,401643775,40164377513,1,3,13:23,North Texas,South Alabama,21,19,65,1,10,0,Kickoff,Blake Ford kickoff for 65 yds for a touchback,,2024-08-31T23:01:24.000Z
+401643775103867607,401643775,40164377513,2,3,13:23,South Alabama,North Texas,19,21,75,1,10,2,Rush,Fluff Bothwell run for 2 yds to the USA 27,-0.45260367932203766,2024-08-31T23:01:24.000Z
+401643775103867608,401643775,40164377513,3,3,13:23,South Alabama,North Texas,19,21,73,2,8,0,Pass Incompletion,Gio Lopez pass incomplete,-0.4788075161366292,2024-08-31T23:01:24.000Z
+401643775103867609,401643775,40164377513,4,3,13:23,South Alabama,North Texas,19,21,73,3,8,0,Pass Incompletion,Gio Lopez pass incomplete,-0.22421028645399854,2024-08-31T23:01:24.000Z
+401643775103876901,401643775,40164377513,5,3,12:30,South Alabama,North Texas,19,21,73,4,8,18,Punt,"Jack Martin punt for 41 yds, punt out-of-bounds at the 50 yard line , DT Sheffield returns for 18 yds to the 50 yard line",,2024-08-31T23:09:35.000Z
+401643775103876903,401643775,40164377514,1,3,12:30,North Texas,South Alabama,21,19,50,1,10,12,Pass Reception,Chandler Morris pass complete to DT Sheffield for a 1ST down,0.746819283536185,2024-08-31T23:09:35.000Z
+401643775103876904,401643775,40164377514,2,3,12:30,North Texas,South Alabama,21,19,38,1,10,6,Rush,Damashja Harris run for 6 yds to the USA 32,0.2517020867787,2024-08-31T23:09:35.000Z
+401643775103876906,401643775,40164377514,3,3,12:30,North Texas,South Alabama,21,19,32,2,4,-5,Pass Reception,"Wyatt Young pass complete to Damon Ward Jr. for a 1ST down North Texas Penalty, False Start (Oscar Hammond) to the USA 6 for a 1ST down",-1.8024782180742795,2024-08-31T23:09:35.000Z
+401643775103876907,401643775,40164377514,4,3,12:30,North Texas,South Alabama,21,19,6,1,6,5,Rush,Juwaun Price run for 5 yds to the USA 1,0.152137533592271,2024-08-31T23:14:39.000Z
+401643775103898501,401643775,40164377514,5,3,10:14,North Texas,South Alabama,28,19,1,2,1,1,Rushing Touchdown,Chandler Morris run for 1 yd for a TD (Kali Nguma KICK),1.900352237473006,2024-08-31T23:14:58.000Z
+401643775103898508,401643775,40164377515,4,3,10:14,South Alabama,North Texas,19,28,77,2,12,18,Pass Reception,Gio Lopez pass complete to Jamaal Pritchett for a 1ST down,2.3040002831934396,2024-08-31T23:14:58.000Z
+401643775103898513,401643775,40164377515,8,3,10:14,South Alabama,North Texas,19,28,51,2,14,11,Pass Reception,Gio Lopez pass complete to Kentrel Bullock,1.4572090103260678,2024-08-31T23:14:58.000Z
+401643775103898503,401643775,40164377515,1,3,10:14,North Texas,South Alabama,28,19,65,1,10,0,Kickoff,Blake Ford kickoff for 65 yds for a touchback,,2024-08-31T23:14:58.000Z
+401643775103898506,401643775,40164377515,3,3,10:14,South Alabama,North Texas,19,28,72,2,7,-5,Penalty,"No Huddle-Shotgun Bullock,Kentrel rush right for 3 yards gain to the USA31 (Hill,Jayden) PENALTY USA Illegal Formation 5 yards from USA28 to USA23. NO PLAY.",,2024-08-31T23:14:58.000Z
+401643775103898512,401643775,40164377515,7,3,10:14,South Alabama,North Texas,19,28,41,2,4,-10,Penalty,"No Huddle-Shotgun Lopez,Gio pass complete short left to Thomas,Trent caught at UNT37, for 6 yards to the UNT35 (Anderson,Jayven) PENALTY USA Holding (Preciado,Malachi) 10 yards from UNT41 to USA49. NO PLAY.",,2024-08-31T23:14:58.000Z
+401643775103948401,401643775,40164377515,12,3,5:15,South Alabama,North Texas,26,28,26,2,5,26,Passing Touchdown,Jamaal Pritchett 26 Yd pass from Gio Lopez (Laith Marjan Kick),2.7636220704172345,2024-08-31T23:23:50.000Z
+401643775103898516,401643775,40164377515,11,3,10:14,South Alabama,North Texas,19,28,31,1,10,5,Rush,Fluff Bothwell run for 5 yds to the UNT 26,0.0783240996557135,2024-08-31T23:14:58.000Z
+401643775103898515,401643775,40164377515,10,3,10:14,South Alabama,North Texas,19,28,38,4,1,7,Rush,Fluff Bothwell run for 7 yds to the UNT 31 for a 1ST down,1.912715762293322,2024-08-31T23:14:58.000Z
+401643775103898514,401643775,40164377515,9,3,10:14,South Alabama,North Texas,19,28,40,3,3,2,Rush,Gio Lopez run for 2 yds to the UNT 38,-0.6423608453238288,2024-08-31T23:14:58.000Z
+401643775103948404,401643775,40164377515,13,3,5:15,North Texas,South Alabama,28,19,69,1,10,0,Timeout,"Timeout South Alabama, clock 05:15",,2024-08-31T23:28:26.000Z
+401643775103898505,401643775,40164377515,2,3,10:14,South Alabama,North Texas,19,28,75,1,10,3,Pass Reception,Gio Lopez pass complete to Devin Voisin,-0.2957674139440157,2024-08-31T23:14:58.000Z
+401643775103898509,401643775,40164377515,5,3,10:14,South Alabama,North Texas,19,28,59,1,10,12,Rush,Kentrel Bullock run for 12 yds to the UNT 47 for a 1ST down,1.0458101085319973,2024-08-31T23:14:58.000Z
+401643775103898510,401643775,40164377515,6,3,10:14,South Alabama,North Texas,19,28,47,1,10,6,Rush,Kentrel Bullock run for 6 yds to the UNT 41,0.3204144720350344,2024-08-31T23:14:58.000Z
+401643775103948803,401643775,40164377516,2,3,5:11,North Texas,South Alabama,28,26,69,1,10,2,Pass Reception,Chandler Morris pass complete to Juwaun Price,-0.5660789348414365,2024-08-31T23:28:32.000Z
+401643775103948804,401643775,40164377516,3,3,5:11,North Texas,South Alabama,28,26,67,2,8,4,Rush,Juwaun Price run for 4 yds to the UNT 37,-0.1128989604575876,2024-08-31T23:28:32.000Z
+401643775103948805,401643775,40164377516,4,3,5:11,North Texas,South Alabama,28,26,63,3,4,9,Pass Reception,Chandler Morris pass complete to DT Sheffield for a 1ST down,2.1013713627288655,2024-08-31T23:28:32.000Z
+401643775103966301,401643775,40164377516,5,3,3:36,North Texas,South Alabama,35,26,54,1,10,54,Passing Touchdown,Damon Ward Jr. 54 Yd pass from Chandler Morris (Kali Nguma Kick),4.184897537685208,2024-08-31T23:30:47.000Z
+401643775103948801,401643775,40164377516,1,3,5:11,South Alabama,North Texas,26,28,65,1,10,10,Kickoff Return (Offense),"Laith Marjan kickoff for 44 yds , Oscar Hammond return for 10 yds to the UNT 31",,2024-08-31T23:28:32.000Z
+401643775103966305,401643775,40164377517,2,3,3:36,South Alabama,North Texas,26,35,75,1,10,3,Rush,Braylon McReynolds run for 3 yds to the USA 28,-0.2957674139440157,2024-08-31T23:33:45.000Z
+401643775103966306,401643775,40164377517,3,3,3:36,South Alabama,North Texas,26,35,72,2,7,0,Pass Incompletion,Gio Lopez pass incomplete,-0.5594317282120231,2024-08-31T23:33:45.000Z
+401643775103966307,401643775,40164377517,4,3,3:36,South Alabama,North Texas,26,35,72,3,7,0,Pass Incompletion,Gio Lopez pass incomplete,-0.26587881160037785,2024-08-31T23:33:45.000Z
+401643775103975901,401643775,40164377517,5,3,2:40,South Alabama,North Texas,26,42,72,4,7,0,Blocked Punt,Jack Martin punt blocked by Juwaun Price blocked by Juwaun Price for a TD (Kali Nguma KICK),,2024-08-31T23:39:09.000Z
+401643775103966303,401643775,40164377517,1,3,3:36,North Texas,South Alabama,35,26,65,1,10,0,Kickoff,Blake Ford kickoff for 65 yds for a touchback,,2024-08-31T23:30:47.000Z
+401643775103975905,401643775,40164377518,2,3,2:40,South Alabama,North Texas,26,42,75,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.7029700220436519,2024-08-31T23:39:09.000Z
+401643775103975908,401643775,40164377518,4,3,2:40,South Alabama,North Texas,26,42,80,2,15,7,Pass Reception,Gio Lopez pass complete to Jeremiah Webb,0.13566239698099647,2024-08-31T23:39:09.000Z
+401643775103975911,401643775,40164377518,6,3,2:40,South Alabama,North Texas,26,42,58,1,10,5,Rush,Braylon McReynolds run for 5 yds to the USA 47,0.110039551743057,2024-08-31T23:39:09.000Z
+401643775103975912,401643775,40164377518,7,3,2:40,South Alabama,North Texas,26,42,53,2,5,2,Rush,Braylon McReynolds run for 2 yds to the USA 49,-0.7084033143449417,2024-08-31T23:39:09.000Z
+401643775103999901,401643775,40164377518,8,3,0:00,South Alabama,North Texas,26,42,51,3,3,1,Rush,Fluff Bothwell run for 1 yd to the 50 yard line,-0.8347419412659338,2024-08-31T23:43:49.000Z
+401643775104849902,401643775,40164377518,10,4,15:00,South Alabama,North Texas,26,42,50,4,2,19,Pass Reception,"Gio Lopez pass complete to Devin Voisin to the 50 yard line for a 1ST down North Texas Penalty, Defensive Offside (Blair Conwright) declined for a 1ST down",3.152862745834186,2024-08-31T23:48:15.000Z
+401643775104849903,401643775,40164377518,11,4,15:00,South Alabama,North Texas,26,42,31,1,10,7,Pass Reception,Gio Lopez pass complete to Braylon McReynolds,0.361255653346657,2024-08-31T23:48:15.000Z
+401643775103999902,401643775,40164377518,9,3,0:00,South Alabama,North Texas,26,42,51,0,3,1,End Period,End of 3rd Quarter,,2024-08-31T23:43:49.000Z
+401643775103975909,401643775,40164377518,5,3,2:40,South Alabama,North Texas,26,42,73,3,8,15,Penalty,"No Huddle-Shotgun Lopez,Gio pass incomplete short right to Bullock,Kentrel thrown to USA46 PENALTY UNT Pass Interference (Shipley,Jake) 15 yards from USA27 to USA42, 1ST DOWN. NO PLAY.",,2024-08-31T23:39:09.000Z
+401643775103975906,401643775,40164377518,3,3,2:40,South Alabama,North Texas,26,42,75,2,10,-5,Penalty,"PENALTY USA False Start (Preciado,Malachi) 5 yards from USA25 to USA20. NO PLAY.",,2024-08-31T23:39:09.000Z
+401643775103975903,401643775,40164377518,1,3,2:40,North Texas,South Alabama,42,26,65,1,10,0,Kickoff,Blake Ford kickoff for 65 yds for a touchback,,2024-08-31T23:36:38.000Z
+401643775104866804,401643775,40164377518,14,4,13:31,North Texas,South Alabama,42,26,76,1,10,0,Timeout,"Timeout South Alabama, clock 13:31",,2024-08-31T23:51:47.000Z
+401643775104849904,401643775,40164377518,12,4,15:00,South Alabama,North Texas,26,42,24,2,3,3,Rush,Braylon McReynolds run for 3 yds to the UNT 21 for a 1ST down,-0.151606297069202,2024-08-31T23:50:58.000Z
+401643775104866801,401643775,40164377518,13,4,13:31,South Alabama,North Texas,32,42,21,1,10,21,Passing Touchdown,Shamar Sandgren 21 Yd pass from Gio Lopez (Two-Point Pass Conversion Failed),2.632296813795493,2024-08-31T23:51:47.000Z
+401643775104867401,401643775,40164377519,1,4,13:25,South Alabama,North Texas,32,42,65,1,10,12,Kickoff Return (Offense),"Laith Marjan kickoff for 53 yds , Juwaun Price return for 12 yds to the UNT 24",,2024-08-31T23:56:25.000Z
+401643775104867408,401643775,40164377519,7,4,13:25,North Texas,South Alabama,42,32,40,2,7,-5,Penalty,"PENALTY UNT False Start (Peterson,Landon) 5 yards from USA40 to USA45. NO PLAY.",,2024-08-31T23:56:58.000Z
+401643775104917101,401643775,40164377519,12,4,8:28,North Texas,South Alabama,49,32,3,1,3,3,Rushing Touchdown,Ikaika Ragsdale run for 3 yds for a TD (Kali Nguma KICK),1.464451732731337,2024-09-01T00:02:08.000Z
+401643775104867413,401643775,40164377519,11,4,13:25,North Texas,South Alabama,42,32,18,3,3,15,Pass Reception,Chandler Morris pass complete to Damon Ward Jr. for a 1ST down,1.421734018521415,2024-08-31T23:56:58.000Z
+401643775104867412,401643775,40164377519,10,4,13:25,North Texas,South Alabama,42,32,19,2,4,1,Rush,Damashja Harris run for 1 yd to the USA 18,-0.381708376726151,2024-08-31T23:56:58.000Z
+401643775104867411,401643775,40164377519,9,4,13:25,North Texas,South Alabama,42,32,25,1,10,6,Rush,Chandler Morris run for 6 yds to the USA 19,0.1956069877394565,2024-08-31T23:56:58.000Z
+401643775104867410,401643775,40164377519,8,4,13:25,North Texas,South Alabama,42,32,45,2,12,20,Pass Reception,Chandler Morris pass complete to Jeremiah Aaron for a 1ST down,2.038538027504675,2024-08-31T23:56:58.000Z
+401643775104867407,401643775,40164377519,6,4,13:25,North Texas,South Alabama,42,32,43,1,10,3,Rush,Damashja Harris run for 3 yds to the USA 40,-0.3057652594509188,2024-08-31T23:56:58.000Z
+401643775104867406,401643775,40164377519,5,4,13:25,North Texas,South Alabama,42,32,48,3,3,5,Pass Reception,Chandler Morris pass complete to Kyle Koch for a 1ST down,1.5150489955798623,2024-08-31T23:56:58.000Z
+401643775104867405,401643775,40164377519,4,4,13:25,North Texas,South Alabama,42,32,53,2,8,5,Rush,Ikaika Ragsdale run for 5 yds to the USA 48,0.0889794921123173,2024-08-31T23:56:58.000Z
+401643775104867404,401643775,40164377519,3,4,13:25,North Texas,South Alabama,42,32,55,1,10,2,Pass Reception,Chandler Morris pass complete to Ikaika Ragsdale,-0.6797853383066688,2024-08-31T23:56:58.000Z
+401643775104867403,401643775,40164377519,2,4,13:25,North Texas,South Alabama,42,32,76,1,10,21,Pass Reception,Chandler Morris pass complete to Damon Ward Jr. for a 1ST down,1.8690051060994257,2024-08-31T23:56:25.000Z
+401643775104917104,401643775,40164377519,13,4,8:28,South Alabama,North Texas,32,42,75,1,10,0,Timeout,"Timeout South Alabama, clock 08:28",,2024-09-01T00:06:14.000Z
+401643775104917107,401643775,40164377520,2,4,8:28,South Alabama,North Texas,32,49,75,1,10,10,Pass Reception,Gio Lopez pass complete to Devin Voisin for a 1ST down,0.8350381090299867,2024-09-01T00:06:14.000Z
+401643775104917108,401643775,40164377520,3,4,8:28,South Alabama,North Texas,32,49,65,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-1.0146424556055624,2024-09-01T00:06:14.000Z
+401643775104917109,401643775,40164377520,4,4,8:28,South Alabama,North Texas,32,49,65,2,10,4,Rush,Gio Lopez run for 4 yds to the USA 39,-0.1103335900264737,2024-09-01T00:09:17.000Z
+401643775104917110,401643775,40164377520,5,4,8:28,South Alabama,North Texas,32,49,61,3,6,9,Rush,Gio Lopez run for 9 yds to the USA 48 for a 1ST down,2.35963876761294,2024-09-01T00:12:43.000Z
+401643775104917111,401643775,40164377520,6,4,8:28,South Alabama,North Texas,32,49,52,1,10,7,Rush,Gio Lopez run for 7 yds to the UNT 45,0.6193952681357987,2024-09-01T00:09:17.000Z
+401643775104917112,401643775,40164377520,7,4,8:28,South Alabama,North Texas,32,49,45,2,3,10,Pass Reception,Gio Lopez pass complete to Shamar Sandgren for a 1ST down,0.4160702367976763,2024-09-01T00:09:17.000Z
+401643775104917114,401643775,40164377520,9,4,8:28,South Alabama,North Texas,32,49,42,2,17,24,Pass Reception,Gio Lopez pass complete to Jamaal Pritchett for a 1ST down,2.473389518180498,2024-09-01T00:09:17.000Z
+401643775104917115,401643775,40164377520,10,4,8:28,South Alabama,North Texas,32,49,18,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.350740748439042,2024-09-01T00:12:43.000Z
+401643775104956001,401643775,40164377520,12,4,4:39,South Alabama,North Texas,38,49,23,2,15,23,Passing Touchdown,Anthony Eager 23 Yd pass from Gio Lopez (Two-Point Pass Conversion Failed),3.3983789750756053,2024-09-01T00:14:50.000Z
+401643775104917116,401643775,40164377520,11,4,8:28,South Alabama,North Texas,32,49,18,2,10,-5,Penalty,"PENALTY USA False Start (Thomas-Jones,DJ) 5 yards from UNT18 to UNT23. NO PLAY.",,2024-09-01T00:12:43.000Z
+401643775104917113,401643775,40164377520,8,4,8:28,South Alabama,North Texas,32,49,35,1,10,0,Penalty,"South Alabama Penalty, Offensive Holding (Yards) declined",,2024-09-01T00:09:17.000Z
+401643775104917105,401643775,40164377520,1,4,8:28,North Texas,South Alabama,49,32,65,1,10,0,Kickoff,Blake Ford kickoff for 65 yds for a touchback,,2024-09-01T00:06:14.000Z
+401643775104956012,401643775,40164377520,13,4,4:39,North Texas,South Alabama,49,32,40,1,10,0,Timeout,"Timeout North Texas, clock 04:39",,2024-09-01T00:22:25.000Z
+401643775104956010,401643775,40164377521,1,4,4:39,South Alabama,North Texas,38,49,65,1,10,0,Kickoff,Laith Marjan kickoff for 10 yds,,2024-09-01T00:22:25.000Z
+401643775104956014,401643775,40164377521,2,4,4:39,North Texas,South Alabama,49,38,40,1,10,3,Rush,Ikaika Ragsdale run for 3 yds to the USA 37,-0.270025967249902,2024-09-01T00:22:25.000Z
+401643775104956402,401643775,40164377521,4,4,4:35,North Texas,South Alabama,49,38,37,2,7,0,Pass Incompletion,Chandler Morris pass incomplete,-0.934430506952081,2024-09-01T00:27:29.000Z
+401643775104956403,401643775,40164377521,5,4,4:35,North Texas,South Alabama,49,38,37,3,7,18,Pass Reception,Chandler Morris pass complete to Damon Ward Jr. for a 1ST down,1.789057989501801,2024-09-01T00:27:29.000Z
+401643775104956404,401643775,40164377521,6,4,4:35,North Texas,South Alabama,49,38,19,1,10,2,Rush,Damashja Harris run for 2 yds to the USA 17,-0.199249940829709,2024-09-01T00:27:29.000Z
+401643775104956401,401643775,40164377521,3,4,4:35,North Texas,South Alabama,49,38,37,2,7,0,Timeout,"Timeout South Alabama, clock 04:35",,2024-08-31T23:50:58.000Z
+401643775104965901,401643775,40164377521,7,4,3:40,North Texas,South Alabama,49,38,17,2,8,0,Timeout,"Timeout South Alabama, clock 03:40",,2024-09-01T00:29:07.000Z
+401643775104966401,401643775,40164377521,9,4,3:35,North Texas,South Alabama,49,38,16,3,7,0,Timeout,"Timeout South Alabama, clock 03:35",,2024-09-01T00:29:31.000Z
+401643775104974601,401643775,40164377521,11,4,2:53,North Texas,South Alabama,52,38,12,4,3,30,Field Goal Good,Kali Nguma 30 yd FG GOOD,,2024-08-31T23:50:58.000Z
+401643775104966402,401643775,40164377521,10,4,3:35,North Texas,South Alabama,49,38,16,3,7,4,Rush,Damashja Harris run for 4 yds to the USA 12,-0.0587298683556287,2024-09-01T00:29:31.000Z
+401643775104965902,401643775,40164377521,8,4,3:40,North Texas,South Alabama,49,38,17,2,8,1,Rush,Ikaika Ragsdale run for 1 yd to the USA 16,-0.2990368818879416,2024-09-01T00:29:07.000Z
+401643775104975101,401643775,40164377521,12,4,2:48,North Texas,South Alabama,49,38,12,4,3,0,Timeout,"Timeout North Texas, clock 02:48",,2024-09-01T00:31:09.000Z
+401643775104979902,401643775,40164377522,7,4,2:00,South Alabama,North Texas,38,52,52,1,10,6,Pass Reception,Gio Lopez pass complete to DJ Thomas-Jones,0.3608772046980507,2024-09-01T00:37:52.000Z
+401643775104979903,401643775,40164377522,8,4,2:00,South Alabama,North Texas,38,52,46,2,4,0,Pass Incompletion,Gio Lopez pass incomplete,-1.1822471447830232,2024-09-01T00:37:52.000Z
+401643775104979904,401643775,40164377522,9,4,2:00,South Alabama,North Texas,38,52,46,3,4,16,Pass Reception,Gio Lopez pass complete to Devin Voisin for a 1ST down,2.0151810958726326,2024-09-01T00:37:52.000Z
+401643775104979905,401643775,40164377522,10,4,2:00,South Alabama,North Texas,38,52,30,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.557844891990525,2024-09-01T00:41:48.000Z
+401643775104979908,401643775,40164377522,12,4,2:00,South Alabama,North Texas,38,52,35,2,15,0,Pass Incompletion,Gio Lopez pass incomplete,-0.9891455721237997,2024-09-01T00:41:48.000Z
+401643775104979909,401643775,40164377522,13,4,2:00,South Alabama,North Texas,38,52,35,3,15,0,Pass Incompletion,Gio Lopez pass incomplete,-0.9387603856713795,2024-09-01T00:41:48.000Z
+401643775104988201,401643775,40164377522,14,4,1:17,South Alabama,North Texas,38,52,35,4,15,0,Pass Incompletion,Gio Lopez pass incomplete,-0.8873279121489368,2024-09-01T00:46:29.000Z
+401643775104979906,401643775,40164377522,11,4,2:00,South Alabama,North Texas,38,52,30,2,10,-5,Penalty,"PENALTY USA False Start (Carney,Malachi) 5 yards from UNT30 to UNT35. NO PLAY.",,2024-09-01T00:41:48.000Z
+401643775104979901,401643775,40164377522,6,4,2:00,South Alabama,North Texas,38,52,52,1,10,0,Timeout,"Timeout South Alabama, clock 02:00",,2024-08-31T23:50:58.000Z
+401643775104975601,401643775,40164377522,1,4,2:43,North Texas,South Alabama,52,38,65,1,10,0,Kickoff,Blake Ford kickoff for 65 yds for a touchback,,2024-09-01T00:34:08.000Z
+401643775104975603,401643775,40164377522,2,4,2:43,South Alabama,North Texas,38,52,75,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-0.7029700220436519,2024-09-01T00:34:08.000Z
+401643775104975604,401643775,40164377522,3,4,2:43,South Alabama,North Texas,38,52,75,2,10,11,Pass Reception,Gio Lopez pass complete to Jamaal Pritchett for a 1ST down,1.6335325339896425,2024-09-01T00:34:08.000Z
+401643775104975605,401643775,40164377522,4,4,2:43,South Alabama,North Texas,38,52,64,1,10,0,Pass Incompletion,Gio Lopez pass incomplete,-1.041155320344064,2024-09-01T00:36:17.000Z
+401643775104975606,401643775,40164377522,5,4,2:43,South Alabama,North Texas,38,52,64,2,10,12,Pass Reception,Gio Lopez pass complete to Devin Voisin for a 1ST down,2.180293639408964,2024-09-01T00:36:17.000Z
+401643775104999902,401643775,40164377523,3,4,0:00,North Texas,South Alabama,52,38,68,0,13,-3,End of Game,End of 4th Quarter,,2024-09-01T00:46:29.000Z
+401643775104988204,401643775,40164377523,1,4,1:17,North Texas,South Alabama,52,38,65,1,10,-3,Rush,Kneel down by North Texas at UNT32 for loss of 3 yards.,-1.4406782007585912,2024-09-01T00:46:29.000Z
+401643775104999901,401643775,40164377523,2,4,0:00,North Texas,South Alabama,52,38,68,2,13,-3,Rush,Kneel down by North Texas at UNT29 for loss of 3 yards.,-0.5263354287928363,2024-09-01T00:46:29.000Z

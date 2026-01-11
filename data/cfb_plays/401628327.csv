@@ -1,0 +1,170 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628327101854401,401628327,4016283271,2,1,14:55,Missouri,Murray State,0,0,42,1,10,10,Rush,Luther Burden III run for 10 yds to the MUR 32 for a 1ST down,0.4234160459831616,2024-08-29T23:25:47.000Z
+401628327101857101,401628327,4016283271,3,1,14:28,Missouri,Murray State,0,0,32,1,10,5,Rush,Nate Noel run for 5 yds to the MUR 27,0.0790402371080084,2024-08-29T23:25:47.000Z
+401628327101859801,401628327,4016283271,4,1,14:01,Missouri,Murray State,0,0,27,2,5,6,Rush,Brady Cook run for 6 yds to the MUR 21 for a 1ST down,0.160182374685461,2024-08-29T23:25:47.000Z
+401628327101866901,401628327,4016283271,5,1,13:30,Missouri,Murray State,0,0,21,1,10,0,Pass Incompletion,Brady Cook pass incomplete,-0.3882383440694163,2024-08-29T23:25:47.000Z
+401628327101867401,401628327,4016283271,6,1,13:25,Missouri,Murray State,0,0,21,2,10,5,Pass Reception,Brady Cook pass complete to Nate Noel for 5 yds to the MUR 16,0.0431526443716223,2024-08-29T23:25:47.000Z
+401628327101875701,401628327,4016283271,7,1,12:42,Missouri,Murray State,7,0,16,3,5,16,Passing Touchdown,Brady Cook pass complete to Luther Burden III for 16 yds for a TD (Blake Craig KICK),2.977382513493287,2024-08-29T23:25:47.000Z
+401628327101849906,401628327,4016283271,1,1,15:00,Murray State,Missouri,0,0,65,0,0,2,Kickoff Return (Offense),"James London kickoff for 9 yds , Daniel Blood return for 2 yds to the MUR 42",,2024-08-29T23:25:47.000Z
+401628327101875703,401628327,4016283272,1,1,12:42,Missouri,Murray State,7,0,65,0,0,0,Kickoff,Blake Craig kickoff for 65 yds for a touchback,,2024-08-30T00:07:22.000Z
+401628327101875801,401628327,4016283272,2,1,12:41,Murray State,Missouri,0,7,75,1,10,7,Rush,Jordan Washington run for 7 yds to the MUR 32,0.604642460086338,2024-08-29T23:25:47.000Z
+401628327101879901,401628327,4016283272,3,1,12:00,Murray State,Missouri,0,7,68,2,3,-1,Rush,Jordan Washington run for a loss of 1 yard to the MUR 31,-1.139374743642115,2024-08-29T23:25:47.000Z
+401628327101886901,401628327,4016283272,4,1,11:30,Murray State,Missouri,0,7,69,3,4,3,Rush,Jordan Washington run for 3 yds to the MUR 34,-0.1889480345575727,2024-08-29T23:25:47.000Z
+401628327101889601,401628327,4016283272,5,1,11:03,Murray State,Missouri,0,7,66,4,1,0,Rush,Jayden Johannsen run for no gain to the MUR 34,-0.1985645621653287,2024-08-29T23:25:47.000Z
+401628327101894102,401628327,4016283272,6,1,10:58,Missouri,Murray State,7,0,34,1,10,15,Penalty,"(10:58) COOK, Brady pass deep up the middle incomplete intended for BURDEN, Luther thrown to the MSU3, clock 10:53. PENALTY MSU Pass Interference on REED, KaVan enforced 15 yards to the MSU19 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-29T23:25:47.000Z
+401628327101894801,401628327,4016283273,1,1,10:51,Missouri,Murray State,7,0,19,1,10,4,Rush,Nate Noel run for 4 yds to the MUR 15,-0.024495891923003,2024-08-29T23:25:47.000Z
+401628327101897801,401628327,4016283273,2,1,10:21,Missouri,Murray State,7,0,15,2,6,6,Rush,Nate Noel run for 6 yds to the MUR 9 for a 1ST down,0.204705696914058,2024-08-29T23:25:47.000Z
+401628327101905101,401628327,4016283273,3,1,9:48,Missouri,Murray State,14,0,9,1,9,9,Rushing Touchdown,Nate Noel run for 9 yds for a TD (Blake Craig KICK),2.424237823646468,2024-08-30T00:14:06.000Z
+401628327101905001,401628327,4016283274,1,1,9:49,Missouri,Murray State,14,0,65,0,0,0,Kickoff,Blake Craig kickoff for 65 yds for a touchback,,2024-08-29T23:25:47.000Z
+401628327101905801,401628327,4016283274,2,1,9:41,Murray State,Missouri,0,21,75,1,10,25,Interception Return Touchdown,Jayden Johannsen pass intercepted Toriano Pride Jr. return for 25 yds for a TD (Blake Craig KICK),-7.9222448802786785,2024-08-30T00:19:26.000Z
+401628327101905804,401628327,4016283275,1,1,9:41,Missouri,Murray State,21,0,65,0,0,0,Kickoff,Blake Craig kickoff for 65 yds for a touchback,,2024-08-30T00:19:26.000Z
+401628327101905901,401628327,4016283275,2,1,9:40,Murray State,Missouri,0,21,75,1,10,1,Rush,Kywon Morgan run for 1 yd to the MUR 26,-0.5874795431016855,2024-08-29T23:25:47.000Z
+401628327101914401,401628327,4016283275,3,1,8:55,Murray State,Missouri,0,21,74,2,9,0,Rush,Kywon Morgan run for no gain to the MUR 26,-0.40831395320271024,2024-08-29T23:25:47.000Z
+401628327101918501,401628327,4016283275,4,1,8:14,Murray State,Missouri,0,21,74,3,9,9,Rush,Kywon Morgan run for 9 yds to the MUR 35 for a 1ST down,1.8308316053343825,2024-08-29T23:25:47.000Z
+401628327101927301,401628327,4016283275,5,1,7:26,Murray State,Missouri,0,21,65,1,10,0,Pass Incompletion,Jayden Johannsen pass incomplete,-1.0146424556055624,2024-08-29T23:25:47.000Z
+401628327101928001,401628327,4016283275,6,1,7:19,Murray State,Missouri,0,21,65,2,10,1,Pass Reception,Jayden Johannsen pass complete to Kylan Galbreath for 1 yd to the MUR 36,-0.5027038392730798,2024-08-29T23:25:47.000Z
+401628327101937101,401628327,4016283275,7,1,6:28,Murray State,Missouri,0,21,64,3,9,1,Pass Reception,Jayden Johannsen pass complete to Kywon Morgan for 1 yd to the MUR 37,-0.29834374374357164,2024-08-29T23:25:47.000Z
+401628327101945801,401628327,4016283275,8,1,5:41,Murray State,Missouri,0,21,63,4,8,0,Punt,Tom O'Hara punt for 33 yds,,2024-08-30T00:26:52.000Z
+401628327101945901,401628327,4016283276,1,1,5:40,Missouri,Murray State,21,0,70,1,10,19,Pass Reception,Brady Cook pass complete to Luther Burden III for 19 yds to the MIZ 49 for a 1ST down,1.7694193150114044,2024-08-29T23:25:47.000Z
+401628327101949601,401628327,4016283276,2,1,5:03,Missouri,Murray State,21,0,51,1,10,0,Pass Incompletion,Brady Cook pass incomplete,-1.1301991718133413,2024-08-29T23:25:47.000Z
+401628327101954301,401628327,4016283276,3,1,4:56,Missouri,Murray State,21,0,51,2,10,18,Pass Reception,Brady Cook pass complete to Mekhi Miller for 18 yds to the MUR 33 for a 1ST down,2.1504916022042924,2024-08-29T23:25:47.000Z
+401628327101957801,401628327,4016283276,4,1,4:21,Missouri,Murray State,21,0,33,1,10,20,Rush,Marcus Carroll run for 20 yds to the MUR 13 for a 1ST down,0.364145558456141,2024-08-29T23:25:47.000Z
+401628327101964401,401628327,4016283276,5,1,3:55,Missouri,Murray State,21,0,13,1,10,12,Pass Reception,Brady Cook pass complete to Theo Wease Jr. for 12 yds to the MUR 1 for a 1ST down,1.600907939925404,2024-08-29T23:25:47.000Z
+401628327101966101,401628327,4016283276,6,1,3:38,Missouri,Murray State,28,0,1,1,1,1,Rushing Touchdown,Marcus Carroll run for 1 yd for a TD (Blake Craig KICK),0.938021275120443,2024-08-30T00:33:59.000Z
+401628327101966301,401628327,4016283277,2,1,3:36,Murray State,Missouri,0,28,75,1,10,1,Rush,Q'Daryius Jennings run for 1 yd to the MUR 26,-0.5874795431016855,2024-08-29T23:25:47.000Z
+401628327101974701,401628327,4016283277,3,1,2:52,Murray State,Missouri,0,28,74,2,9,-2,Rush,JK Carter run for a loss of 2 yards to the MUR 24,-0.5082843145728022,2024-08-29T23:25:47.000Z
+401628327101966103,401628327,4016283277,1,1,3:38,Missouri,Murray State,28,0,65,0,0,0,Kickoff,Blake Craig kickoff for 65 yds for a touchback,,2024-08-30T00:38:08.000Z
+401628327101979401,401628327,4016283277,4,1,2:05,Murray State,Missouri,0,28,76,3,11,-1,Sack,Jayden Johannsen sacked by Khalil Jacobs for a loss of 1 yard to the MUR 23,-0.1502431443084511,2024-08-29T23:25:47.000Z
+401628327101987901,401628327,4016283277,5,1,1:20,Murray State,Missouri,0,28,77,4,12,0,Punt,Tom O'Hara punt for 36 yds,,2024-08-30T00:41:04.000Z
+401628327101996602,401628327,4016283278,4,1,0:00,Missouri,Murray State,28,0,58,0,9,16,End Period,End of 1st Quarter,,2024-08-29T23:25:47.000Z
+401628327101988201,401628327,4016283278,1,1,1:17,Missouri,Murray State,28,0,59,1,10,0,Pass Incompletion,Brady Cook pass incomplete,-1.1387859939569847,2024-08-29T23:25:47.000Z
+401628327101988801,401628327,4016283278,2,1,1:11,Missouri,Murray State,28,0,59,2,10,1,Rush,Marcus Carroll run for 1 yd to the MIZ 42,-0.654626056455303,2024-08-29T23:25:47.000Z
+401628327101996601,401628327,4016283278,3,1,0:33,Missouri,Murray State,28,0,58,3,9,16,Pass Reception,Brady Cook pass complete to Joshua Manning for 16 yds to the MUR 42 for a 1ST down,3.157488928638591,2024-08-29T23:25:47.000Z
+401628327102849902,401628327,4016283278,5,2,15:00,Missouri,Murray State,28,0,42,1,10,12,Pass Reception,Brady Cook pass complete to Marcus Carroll for 12 yds to the MUR 30 for a 1ST down,0.480692338649353,2024-08-30T00:46:57.000Z
+401628327102859001,401628327,4016283278,6,2,14:09,Missouri,Murray State,28,0,30,1,10,-5,Fumble Recovery (Opponent),"Brady Cook run for a loss of 5 yards to the MUR 35 Brady Cook fumbled, recovered by MUR Kevon Haigler K. Haigler return for 0 yds",-4.185756867077229,2024-08-30T00:46:57.000Z
+401628327102867503,401628327,4016283279,1,2,13:24,Murray State,Missouri,0,28,60,2,5,4,Rush,Jawaun Northington run for 4 yds to the MUR 44,-0.1614281338413991,2024-08-30T00:46:57.000Z
+401628327102874303,401628327,4016283279,2,2,12:56,Murray State,Missouri,0,28,56,3,1,-3,Rush,Jayden Johannsen run for a loss of 3 yards to the MUR 41,-1.4306396772537724,2024-08-30T00:46:57.000Z
+401628327102878901,401628327,4016283279,3,2,12:10,Murray State,Missouri,0,28,59,4,4,0,Punt,Tom O'Hara punt for 59 yds for a touchback,,2024-08-30T00:51:18.000Z
+401628327102878902,401628327,4016283279,4,2,12:10,Murray State,Missouri,0,28,65,1,10,5,Rush,Jawaun Northington run for 5 yds to the MUR 40,0.1088137823196469,2024-08-30T00:51:18.000Z
+401628327102878904,401628327,40162832710,1,2,12:10,Missouri,Murray State,28,0,80,1,10,0,Pass Incompletion,Brady Cook pass incomplete,-0.5586693796725282,2024-08-30T00:54:14.000Z
+401628327102879701,401628327,40162832710,2,2,12:02,Missouri,Murray State,28,0,80,2,10,-10,Penalty,"Missouri Penalty, Offensive Holding (-10 Yards) to the MIZ 7",,2024-08-30T00:46:57.000Z
+401628327102888001,401628327,40162832710,3,2,11:19,Missouri,Murray State,28,0,86,2,16,9,Pass Reception,Brady Cook pass complete to Theo Wease Jr. for 9 yds to the MIZ 23,0.19249319060334624,2024-08-30T00:46:57.000Z
+401628327102894801,401628327,40162832710,4,2,10:51,Missouri,Murray State,28,0,77,3,7,0,Pass Incompletion,Brady Cook pass incomplete,-0.19834493688263335,2024-08-30T00:46:57.000Z
+401628327102895701,401628327,40162832710,5,2,10:42,Missouri,Murray State,28,0,77,4,7,-5,Penalty,"Missouri Penalty, Delay Of Game (-5 Yards) to the MIZ 13",,2024-08-30T01:00:12.000Z
+401628327102895702,401628327,40162832710,6,2,10:42,Missouri,Murray State,28,0,82,4,12,0,Punt,"Luke Bauer punt for 52 yds, fair catch by KaVan Reed at the MUR 30",,2024-08-30T01:00:12.000Z
+401628327102895901,401628327,40162832711,1,2,10:40,Murray State,Missouri,0,28,70,1,10,3,Rush,Jayden Johannsen run for 3 yds to the MUR 33,-0.3563521541303736,2024-08-30T00:46:57.000Z
+401628327102897301,401628327,40162832711,2,2,10:26,Murray State,Missouri,0,28,67,2,7,0,Pass Incompletion,Jayden Johannsen pass incomplete,-0.7077961708131388,2024-08-30T00:46:57.000Z
+401628327102897601,401628327,40162832711,3,2,10:23,Murray State,Missouri,0,28,67,3,7,1,Rush,Jayden Johannsen run for 1 yd to the MUR 34,-0.3017581478235831,2024-08-30T00:46:57.000Z
+401628327102905501,401628327,40162832711,4,2,9:44,Murray State,Missouri,0,28,66,4,6,0,Punt,"Tom O'Hara punt for 36 yds, fair catch by Luther Burden III at the MIZ 30",,2024-08-30T00:46:57.000Z
+401628327102905702,401628327,40162832712,1,2,9:42,Missouri,Murray State,28,0,70,1,10,3,Rush,Nate Noel run for 3 yds to the MIZ 33,-0.3563521541303736,2024-08-30T01:03:48.000Z
+401628327102907901,401628327,40162832712,2,2,9:20,Missouri,Murray State,28,0,67,2,7,6,Pass Reception,Brady Cook pass complete to Nate Noel for 6 yds to the MIZ 39,0.316483516944322,2024-08-30T00:46:57.000Z
+401628327102915301,401628327,40162832712,3,2,8:46,Missouri,Murray State,28,0,61,3,1,8,Rush,Nate Noel run for 8 yds to the MIZ 47 for a 1ST down,1.6373557225170874,2024-08-30T00:46:57.000Z
+401628327102916501,401628327,40162832712,4,2,8:34,Missouri,Murray State,28,0,53,1,10,0,Pass Incompletion,Brady Cook pass incomplete,-1.1527089917962545,2024-08-30T00:46:57.000Z
+401628327102916801,401628327,40162832712,5,2,8:31,Missouri,Murray State,28,0,53,2,10,-2,Pass Reception,Brady Cook pass complete to Joshua Manning for a loss of 2 yards to the MIZ 45,-1.2624111881040792,2024-08-30T01:05:35.000Z
+401628327102925501,401628327,40162832712,6,2,7:44,Missouri,Murray State,28,0,55,3,12,0,Pass Incompletion,Brady Cook pass incomplete,-0.4725840390703073,2024-08-30T00:46:57.000Z
+401628327102926701,401628327,40162832712,7,2,7:32,Missouri,Murray State,28,0,55,4,12,0,Punt,Luke Bauer punt for 45 yds,,2024-08-30T01:07:38.000Z
+401628327102927001,401628327,40162832713,1,2,7:29,Murray State,Missouri,0,28,90,1,10,2,Rush,Kywon Morgan run for 2 yds to the MUR 12,-0.22662764690566295,2024-08-30T00:46:57.000Z
+401628327102935601,401628327,40162832713,2,2,6:43,Murray State,Missouri,0,28,88,2,8,5,Pass Reception,Jayden Johannsen pass complete to JK Carter for 5 yds to the MUR 17,0.0446120603911746,2024-08-30T00:46:57.000Z
+401628327102939901,401628327,40162832713,3,2,6:00,Murray State,Missouri,0,28,83,3,3,3,Pass Reception,Jayden Johannsen pass complete to Kywon Morgan for 3 yds to the MUR 20 for a 1ST down,0.5898020440465901,2024-08-30T00:46:57.000Z
+401628327102948001,401628327,40162832713,4,2,5:19,Murray State,Missouri,0,28,80,1,10,4,Rush,Kywon Morgan run for 4 yds to the MUR 24,-0.0884321258012219,2024-08-30T00:46:57.000Z
+401628327102956301,401628327,40162832713,5,2,4:36,Murray State,Missouri,0,28,76,2,6,5,Pass Reception,Jayden Johannsen pass complete to Josh Crabtree for 5 yds to the MUR 29,0.0823229332872417,2024-08-30T00:46:57.000Z
+401628327102964601,401628327,40162832713,6,2,3:53,Murray State,Missouri,0,28,71,3,1,-2,Rush,Kywon Morgan run for a loss of 2 yards to the MUR 27,-0.7001471064670417,2024-08-30T00:46:57.000Z
+401628327102968801,401628327,40162832713,7,2,3:11,Murray State,Missouri,0,28,73,4,3,0,Punt,"Tom O'Hara punt for 41 yds, downed at the MIZ 32",,2024-08-30T00:46:57.000Z
+401628327102969701,401628327,40162832714,1,2,3:02,Missouri,Murray State,28,0,68,1,10,4,Pass Reception,Brady Cook pass complete to Brett Norfleet for 4 yds to the MIZ 36,-0.1488498506411844,2024-08-30T00:46:57.000Z
+401628327102977101,401628327,40162832714,2,2,2:28,Missouri,Murray State,28,0,64,2,6,4,Rush,Marcus Carroll run for 4 yds to the MIZ 40,-0.1413192759305008,2024-08-30T00:46:57.000Z
+401628327102984201,401628327,40162832714,3,2,1:57,Missouri,Murray State,28,0,60,3,2,5,Rush,Marcus Carroll run for 5 yds to the MIZ 45 for a 1ST down,1.5328666048971797,2024-08-30T01:20:26.000Z
+401628327102984801,401628327,40162832714,4,2,1:51,Missouri,Murray State,28,0,55,1,10,7,Pass Reception,Brady Cook pass complete to Marcus Carroll for 7 yds to the MUR 48,0.6589805148257657,2024-08-30T00:46:57.000Z
+401628327102985701,401628327,40162832714,5,2,1:42,Missouri,Murray State,28,0,48,2,3,4,Pass Reception,Brady Cook pass complete to Nate Noel for 4 yds to the MUR 44 for a 1ST down,0.204750364980578,2024-08-30T00:46:57.000Z
+401628327102986101,401628327,40162832714,6,2,1:38,Missouri,Murray State,28,0,44,1,10,4,Pass Reception,Brady Cook pass complete to Luther Burden III for 4 yds to the MUR 40,-0.1108700500197327,2024-08-30T00:46:57.000Z
+401628327102988901,401628327,40162832714,7,2,1:10,Missouri,Murray State,28,0,40,2,6,5,Pass Reception,Brady Cook pass complete to Nate Noel for 5 yds to the MUR 35,0.0951804623087683,2024-08-30T01:22:41.000Z
+401628327102996502,401628327,40162832714,12,2,0:34,Missouri,Murray State,28,0,20,1,15,0,Timeout,"Timeout Missouri, clock 00:34",,2024-08-30T01:26:08.000Z
+401628327102997001,401628327,40162832714,14,2,0:29,Missouri,Murray State,28,0,15,2,10,0,Timeout,"Timeout Missouri, clock 00:29",,2024-08-30T01:27:15.000Z
+401628327102997002,401628327,40162832714,15,2,0:29,Missouri,Murray State,28,0,15,2,10,9,Penalty,"Murray State Penalty, Unnecessary Roughness (Kevon Haigler) to the MUR 3 for a 1ST down",,2024-08-30T01:27:15.000Z
+401628327102999403,401628327,40162832714,17,2,0:05,Missouri,Murray State,28,0,3,2,3,0,Timeout,"Timeout Missouri, clock 00:05",,2024-08-30T01:29:38.000Z
+401628327102999801,401628327,40162832714,18,2,0:01,Missouri,Murray State,35,0,3,2,3,3,Rushing Touchdown,Brady Cook run for 3 yds for a TD (Blake Craig KICK),2.211424613960093,2024-08-30T01:32:27.000Z
+401628327102999401,401628327,40162832714,16,2,0:05,Missouri,Murray State,28,0,3,1,3,0,Pass Incompletion,Brady Cook pass incomplete,-0.746972881228756,2024-08-30T01:29:38.000Z
+401628327102996503,401628327,40162832714,13,2,0:34,Missouri,Murray State,28,0,20,1,15,5,Rush,Nate Noel run for 5 yds to the MUR 15,0.034185059049282,2024-08-30T01:26:08.000Z
+401628327102989001,401628327,40162832714,8,2,1:09,Missouri,Murray State,28,0,35,3,1,2,Rush,Nate Noel run for 2 yds to the MUR 33 for a 1ST down,0.5254971717189977,2024-08-30T00:46:57.000Z
+401628327102994001,401628327,40162832714,9,2,0:59,Missouri,Murray State,28,0,33,1,10,0,Pass Incompletion,Brady Cook pass incomplete,-0.6351269961541294,2024-08-30T00:46:57.000Z
+401628327102994601,401628327,40162832714,10,2,0:53,Missouri,Murray State,28,0,33,2,10,18,Rush,Brady Cook run for 18 yds to the MUR 15 for a 1ST down,0.9800026800910344,2024-08-30T00:46:57.000Z
+401628327102996501,401628327,40162832714,11,2,0:34,Missouri,Murray State,28,0,15,1,10,-5,Penalty,"Missouri Penalty, False Start (Tre'Vez Johnson) to the MUR 20",,2024-08-30T01:26:08.000Z
+401628327102999803,401628327,40162832715,1,2,0:01,Missouri,Murray State,35,0,65,0,0,0,Kickoff,Blake Craig kickoff for 65 yds for a touchback,,2024-08-30T01:32:27.000Z
+401628327102999902,401628327,40162832715,3,2,0:00,Murray State,Missouri,0,35,76,0,11,0,End of Half,End of 2nd Quarter,,2024-08-30T01:35:04.000Z
+401628327102999805,401628327,40162832715,2,2,0:01,Murray State,Missouri,0,35,75,1,10,-1,Rush,"(00:01) [SG] Kneel down by JOHANNSEN, Jayden at MSU24 (team loss of 1), clock 00:00.",-0.8014893508157099,2024-08-30T01:32:27.000Z
+401628327103854001,401628327,40162832716,2,3,14:59,Murray State,Missouri,0,35,65,1,10,3,Rush,Jordan Washington run for 3 yds to the MUR 38,-0.4062307312880424,2024-08-30T01:55:16.000Z
+401628327103857501,401628327,40162832716,3,3,14:24,Murray State,Missouri,0,35,62,2,7,0,Rush,Jordan Washington run for no gain to the MUR 38,-0.8677535954355031,2024-08-30T01:55:16.000Z
+401628327103859901,401628327,40162832716,4,3,14:00,Murray State,Missouri,0,35,62,3,7,2,Rush,Jordan Washington run for 2 yds to the MUR 40,-0.3123961035848959,2024-08-30T01:55:16.000Z
+401628327103849904,401628327,40162832716,1,3,15:00,Missouri,Murray State,35,0,65,0,0,0,Kickoff,Blake Craig kickoff for 58 yds,,2024-08-30T01:55:16.000Z
+401628327103868201,401628327,40162832716,5,3,13:17,Murray State,Missouri,0,35,60,4,5,0,Punt,Tom O'Hara punt for 58 yds,,2024-08-30T01:55:16.000Z
+401628327103869101,401628327,40162832717,1,3,13:08,Missouri,Murray State,35,0,98,1,10,7,Pass Reception,Brady Cook pass complete to Joshua Manning for 7 yds to the MIZ 9,0.3016761810495163,2024-08-30T01:55:16.000Z
+401628327103878701,401628327,40162832717,3,3,12:12,Missouri,Murray State,35,0,95,2,7,3,Rush,Nate Noel run for 3 yds to the MIZ 8,-0.07762704918034391,2024-08-30T01:55:16.000Z
+401628327103886401,401628327,40162832717,4,3,11:35,Missouri,Murray State,35,0,92,3,4,49,Pass Reception,Brady Cook pass complete to Mookie Cooper for 49 yds to the MUR 43 for a 1ST down,3.801654206999874,2024-08-30T01:55:16.000Z
+401628327103889901,401628327,40162832717,5,3,11:00,Missouri,Murray State,35,0,43,1,10,0,Pass Incompletion,Brady Cook pass incomplete,-0.9391692565688832,2024-08-30T01:55:16.000Z
+401628327103894401,401628327,40162832717,6,3,10:55,Missouri,Murray State,35,0,43,2,10,18,Pass Reception,Brady Cook pass complete to Marquis Johnson for 18 yds to the MUR 25 for a 1ST down,1.5914549822336799,2024-08-30T01:55:16.000Z
+401628327103876102,401628327,40162832717,2,3,12:38,Missouri,Murray State,35,0,91,2,3,-9,Penalty,"(12:38) NOEL, Nate rush up the middle for a gain of 9 yards to the MIZ18 (PRESTON, Larry), clock 12:32. PENALTY MIZ Holding on GREEN, Cayden enforced half the distance from the goal, 4 yards from the MIZ9 to the MIZ5 [NHSG]. NO PLAY (replay the down).",,2024-08-30T01:55:16.000Z
+401628327103897701,401628327,40162832717,7,3,10:22,Missouri,Murray State,35,0,25,1,10,1,Rush,Nate Noel run for 1 yd to the MUR 24,-0.3463709171906278,2024-08-30T01:55:16.000Z
+401628327103905301,401628327,40162832717,8,3,9:46,Missouri,Murray State,35,0,24,2,9,2,Rush,Nate Noel run for 2 yds to the MUR 22,-0.2943284127021161,2024-08-30T01:55:16.000Z
+401628327103914001,401628327,40162832717,9,3,8:59,Missouri,Murray State,35,0,22,3,7,0,Pass Incompletion,Brady Cook pass incomplete,-0.7134165372465588,2024-08-30T01:55:16.000Z
+401628327103914901,401628327,40162832717,10,3,8:50,Missouri,Murray State,38,0,22,4,7,39,Field Goal Good,Blake Craig 39 yd FG GOOD,,2024-08-30T02:05:38.000Z
+401628327103914902,401628327,40162832718,1,3,8:50,Missouri,Murray State,38,0,65,0,0,0,Kickoff,Blake Craig kickoff for 65 yds for a touchback,,2024-08-30T02:09:49.000Z
+401628327103915401,401628327,40162832718,2,3,8:45,Murray State,Missouri,0,38,75,1,10,-2,Rush,Jayden Johannsen run for a loss of 2 yards to the MUR 23,-0.8852575132705454,2024-08-30T01:55:16.000Z
+401628327103919001,401628327,40162832718,3,3,8:09,Murray State,Missouri,0,38,77,2,12,0,Pass Incompletion,Jayden Johannsen pass incomplete,-0.2489092113983693,2024-08-30T01:55:16.000Z
+401628327103919501,401628327,40162832718,4,3,8:04,Murray State,Missouri,0,38,77,3,12,-13,Sack,"Jayden Johannsen sacked for a loss of 13 yards to the MUR 10 Jayden Johannsen fumbled, recovered by MIZ Joe Moore , return for 0 yards",-0.18961903415666903,2024-08-30T01:55:16.000Z
+401628327103924901,401628327,40162832719,1,3,7:50,Missouri,Murray State,38,0,10,1,10,8,Rush,Drew Pyne run for 8 yds to the MUR 2,0.445890316927219,2024-08-30T01:55:16.000Z
+401628327103929001,401628327,40162832719,2,3,7:09,Missouri,Murray State,45,0,2,2,2,2,Rushing Touchdown,Jamal Roberts run for 2 yds for a TD (Blake Craig KICK),2.067936525322223,2024-08-30T02:14:51.000Z
+401628327103929003,401628327,40162832720,1,3,7:09,Missouri,Murray State,45,0,65,0,0,0,Kickoff,Blake Craig kickoff for 65 yds for a touchback,,2024-08-30T02:18:27.000Z
+401628327103929101,401628327,40162832720,2,3,7:08,Murray State,Missouri,0,45,75,1,10,8,Rush,Q'Daryius Jennings run for 8 yds to the MUR 33,0.9104368550610653,2024-08-30T01:55:16.000Z
+401628327103936701,401628327,40162832720,3,3,6:32,Murray State,Missouri,0,45,67,2,2,0,Rush,Q'Daryius Jennings run for no gain to the MUR 33,-1.1300243096866742,2024-08-30T01:55:16.000Z
+401628327103945101,401628327,40162832720,4,3,5:48,Murray State,Missouri,0,45,67,3,2,0,Pass Incompletion,Jayden Johannsen pass incomplete,-0.6013143962559822,2024-08-30T01:55:16.000Z
+401628327103945701,401628327,40162832720,5,3,5:42,Murray State,Missouri,0,45,67,4,2,0,Punt,"Tom O'Hara punt for 48 yds, fair catch by Daniel Blood at the MIZ 19",,2024-08-30T01:55:16.000Z
+401628327103997702,401628327,40162832721,12,3,0:00,Missouri,Murray State,45,0,9,0,9,6,End Period,End of 3rd Quarter,,2024-08-30T01:55:16.000Z
+401628327104866501,401628327,40162832721,15,4,13:34,Missouri,Murray State,48,0,5,4,5,22,Field Goal Good,Blake Craig 22 yd FG GOOD,,2024-08-30T02:36:09.000Z
+401628327103946001,401628327,40162832721,1,3,5:39,Missouri,Murray State,45,0,81,1,10,7,Pass Reception,Drew Pyne pass complete to Daniel Blood for 7 yds to the MIZ 26,0.5093405251529833,2024-08-30T01:55:16.000Z
+401628327103949501,401628327,40162832721,2,3,5:04,Missouri,Murray State,45,0,74,2,3,2,Rush,Jamal Roberts run for 2 yds to the MIZ 28,-0.5123045290982793,2024-08-30T02:30:51.000Z
+401628327103956301,401628327,40162832721,3,3,4:36,Missouri,Murray State,45,0,72,3,1,4,Rush,Jamal Roberts run for 4 yds to the MIZ 32 for a 1ST down,0.9222728093062331,2024-08-30T01:55:16.000Z
+401628327103959801,401628327,40162832721,4,3,4:01,Missouri,Murray State,45,0,68,1,10,5,Rush,Tavorus Jones run for 5 yds to the MIZ 37,0.1056805473653828,2024-08-30T01:55:16.000Z
+401628327103967301,401628327,40162832721,5,3,3:26,Missouri,Murray State,45,0,63,2,5,11,Pass Reception,Drew Pyne pass complete to Tyler Stephens for 11 yds to the MIZ 48 for a 1ST down,1.4055758795660458,2024-08-30T01:55:16.000Z
+401628327103975001,401628327,40162832721,6,3,2:49,Missouri,Murray State,45,0,52,1,10,2,Rush,Tavorus Jones run for 2 yds to the 50 yard line,-0.6553095017301357,2024-08-30T01:55:16.000Z
+401628327103979101,401628327,40162832721,7,3,2:08,Missouri,Murray State,45,0,50,2,8,6,Pass Reception,Drew Pyne pass complete to Tyler Stephens for 6 yds to the MUR 44,0.3480308742943627,2024-08-30T01:55:16.000Z
+401628327103985401,401628327,40162832721,8,3,1:45,Missouri,Murray State,45,0,44,3,2,5,Rush,Tavorus Jones run for 5 yds to the MUR 39 for a 1ST down,1.174894361214653,2024-08-30T01:55:16.000Z
+401628327103988701,401628327,40162832721,9,3,1:12,Missouri,Murray State,45,0,39,1,10,6,Pass Reception,Drew Pyne pass complete to Marquis Johnson for 6 yds to the MUR 33,0.258293699621337,2024-08-30T01:55:16.000Z
+401628327103996101,401628327,40162832721,10,3,0:38,Missouri,Murray State,45,0,33,2,4,15,Penalty,"Murray State Penalty, Personal Foul (Justice Cross) to the MUR 9 for a 1ST down",,2024-08-30T01:55:16.000Z
+401628327103997701,401628327,40162832721,11,3,0:22,Missouri,Murray State,45,0,9,1,9,6,Rush,Tavorus Jones run for 6 yds to the MUR 3,0.212813209686375,2024-08-30T01:55:16.000Z
+401628327104849902,401628327,40162832721,13,4,15:00,Missouri,Murray State,45,0,3,2,3,1,Rush,Tavorus Jones run for 1 yd to the MUR 2,-0.333405670102768,2024-08-30T02:34:14.000Z
+401628327104857701,401628327,40162832721,14,4,14:22,Missouri,Murray State,45,0,2,3,2,-3,Rush,Tavorus Jones run for a loss of 3 yards to the MUR 5,-0.507761873747731,2024-08-30T02:34:14.000Z
+401628327104866504,401628327,40162832722,2,4,13:34,Murray State,Missouri,0,48,75,1,10,9,Pass Reception,Jayden Johannsen pass complete to Josh Crabtree for 9 yds to the MUR 34,1.252308359788624,2024-08-30T02:38:38.000Z
+401628327104874501,401628327,40162832722,3,4,12:54,Murray State,Missouri,0,48,66,2,1,0,Rush,Jawaun Northington run for no gain to the MUR 34,-1.2753422217375716,2024-08-30T02:34:14.000Z
+401628327104866502,401628327,40162832722,1,4,13:34,Missouri,Murray State,48,0,65,0,0,0,Kickoff,Nick Quadrini kickoff for 65 yds for a touchback,,2024-08-30T02:38:38.000Z
+401628327104878801,401628327,40162832722,4,4,12:11,Murray State,Missouri,0,48,66,3,1,2,Rush,Jawaun Northington run for 2 yds to the MUR 36 for a 1ST down,0.9535963738949382,2024-08-30T02:34:14.000Z
+401628327104886901,401628327,40162832722,5,4,11:30,Murray State,Missouri,0,48,64,1,10,4,Rush,Jawaun Northington run for 4 yds to the MUR 40,-0.1622709044233037,2024-08-30T02:34:14.000Z
+401628327104894801,401628327,40162832722,6,4,10:51,Murray State,Missouri,0,48,60,2,6,9,Rush,Jawaun Northington run for 9 yds to the MUR 49 for a 1ST down,1.3860963083056956,2024-08-30T02:34:14.000Z
+401628327104899801,401628327,40162832722,7,4,10:01,Murray State,Missouri,0,48,51,1,10,1,Rush,Jawaun Northington run for 1 yd to the 50 yard line,-0.889254676573113,2024-08-30T02:34:14.000Z
+401628327104907001,401628327,40162832722,8,4,9:29,Murray State,Missouri,0,48,50,2,9,3,Pass Reception,Jayden Johannsen pass complete to Jawaun Northington for 3 yds to the MIZ 47,-0.4065569929273939,2024-08-30T02:34:14.000Z
+401628327104915201,401628327,40162832722,9,4,8:47,Murray State,Missouri,0,48,47,3,6,0,Pass Incompletion,Jayden Johannsen pass incomplete,-0.9689555597926596,2024-08-30T02:34:14.000Z
+401628327104916801,401628327,40162832722,10,4,8:31,Murray State,Missouri,0,48,47,4,6,0,Punt,"Tom O'Hara punt for 40 yds, downed at the MIZ 7",,2024-08-30T02:34:14.000Z
+401628327104919701,401628327,40162832723,2,4,8:02,Missouri,Murray State,48,0,69,1,10,11,Rush,Kewan Lacy run for 11 yds to the MIZ 42 for a 1ST down,1.0455877930757342,2024-08-30T02:34:14.000Z
+401628327104927201,401628327,40162832723,3,4,7:27,Missouri,Murray State,48,0,58,1,10,8,Pass Reception,Drew Pyne pass complete to Marquis Johnson for 8 yds to the 50 yard line,0.9916447666850381,2024-08-30T02:34:14.000Z
+401628327104938501,401628327,40162832723,6,4,6:14,Missouri,Murray State,48,0,50,2,2,11,Pass Reception,Drew Pyne pass complete to Daniel Blood for 11 yds to the MUR 39 for a 1ST down,0.4296198904227264,2024-08-30T02:34:14.000Z
+401628327104945001,401628327,40162832723,7,4,5:49,Missouri,Murray State,48,0,39,1,10,7,Rush,Kewan Lacy run for 7 yds to the MUR 32,0.435345095661706,2024-08-30T02:34:14.000Z
+401628327104947302,401628327,40162832723,8,4,5:26,Missouri,Murray State,48,0,32,2,3,13,Rush,Kewan Lacy run for 13 yds to the MUR 19 for a 1ST down,0.100645830632322,2024-08-30T02:34:14.000Z
+401628327104954802,401628327,40162832723,9,4,4:51,Missouri,Murray State,48,0,19,1,10,6,Rush,Kewan Lacy run for 6 yds to the MUR 13,0.184964409309442,2024-08-30T02:34:14.000Z
+401628327104957602,401628327,40162832723,10,4,4:23,Missouri,Murray State,48,0,13,2,4,5,Rush,Kewan Lacy run for 5 yds to the MUR 8 for a 1ST down,0.099883650628389,2024-08-30T02:34:14.000Z
+401628327104964601,401628327,40162832723,11,4,3:53,Missouri,Murray State,48,0,8,1,8,0,Pass Incompletion,Drew Pyne pass incomplete,-0.357171386033373,2024-08-30T02:54:41.000Z
+401628327104967901,401628327,40162832723,13,4,3:20,Missouri,Murray State,48,0,18,2,18,4,Pass Reception,Drew Pyne pass complete to Daniel Blood for 4 yds to the MUR 14,-0.076855157257986,2024-08-30T03:11:01.000Z
+401628327104975901,401628327,40162832723,15,4,2:40,Missouri,Murray State,48,0,9,3,9,0,Timeout,"Timeout Missouri, clock 02:40",,2024-08-30T02:57:19.000Z
+401628327104976401,401628327,40162832723,16,4,2:35,Missouri,Murray State,48,0,9,3,9,5,Pass Reception,Drew Pyne pass complete to Daniel Blood for 5 yds to the MUR 4,0.027330942053974,2024-08-30T02:34:14.000Z
+401628327104984201,401628327,40162832723,18,4,1:57,Missouri,Murray State,51,0,9,4,9,27,Field Goal Good,Blake Craig 27 yd FG GOOD,,2024-08-30T03:06:14.000Z
+401628327104917002,401628327,40162832723,1,4,8:29,Missouri,Murray State,48,0,93,1,10,15,Penalty,"Murray State Penalty, Unnecessary Roughness (Jordan Sonnabend) to the MIZ 31 for a 1ST down",,2024-08-30T02:45:40.000Z
+401628327104934901,401628327,40162832723,4,4,6:50,Missouri,Murray State,48,0,50,2,2,-5,Penalty,"Missouri Penalty, False Start (-5 Yards) to the MIZ 45",,2024-08-30T02:34:14.000Z
+401628327104937802,401628327,40162832723,5,4,6:21,Missouri,Murray State,48,0,55,2,7,5,Penalty,"(06:21) PYNE, Drew pass deep up the middle incomplete intended for CRUTCHFIELD, Courtney broken up by SLADE, Trelon at the MSU24, clock 06:17. PENALTY MSU Offsides on SONNABEND, Jordan enforced 5 yards from the MIZ45 to the MIZ50 [NHSG]. NO PLAY (replay the down).",,2024-08-30T02:34:14.000Z
+401628327104964902,401628327,40162832723,12,4,3:50,Missouri,Murray State,48,0,8,2,8,-10,Penalty,"(03:50) LACY, Kewan rush to the left for no gain to the MSU8 (GUILLORY, Esteban), clock 03:46. PENALTY MIZ Holding on RICHARDSON, Jayven enforced 10 yards from the MSU8 to the MSU18 [NHSG]. NO PLAY (replay the down).",,2024-08-30T02:34:14.000Z
+401628327104975802,401628327,40162832723,14,4,2:41,Missouri,Murray State,48,0,14,3,14,5,Penalty,"(02:41) PYNE, Drew pass to the right incomplete intended for MADISON III, James thrown to the MSU0, clock 02:40. PENALTY MSU Offsides on ADEWOLE, Detoye enforced 5 yards from the MSU14 to the MSU9 [NHSG]. NO PLAY (replay the down).",,2024-08-30T02:34:14.000Z
+401628327104979901,401628327,40162832723,17,4,2:00,Missouri,Murray State,48,0,4,4,4,-5,Penalty,"Missouri Penalty, False Start (-5 Yards) to the MUR 9",,2024-08-30T03:05:37.000Z
+401628327104984202,401628327,40162832724,1,4,1:57,Missouri,Murray State,51,0,65,0,0,0,Kickoff,Nick Quadrini kickoff for 65 yds for a touchback,,2024-08-30T03:06:55.000Z
+401628327104999902,401628327,40162832724,8,4,0:00,Murray State,Missouri,0,51,61,0,6,0,End of Game,End of 4th Quarter,,2024-08-30T03:11:01.000Z
+401628327104984901,401628327,40162832724,2,4,1:50,Murray State,Missouri,0,51,75,1,10,0,Pass Incompletion,Jameson Holcomb pass incomplete,-0.7029700220436519,2024-08-30T03:08:11.000Z
+401628327104985101,401628327,40162832724,3,4,1:48,Murray State,Missouri,0,51,75,2,10,3,Rush,Kevin Emmanuel run for 3 yds to the MUR 28,-0.15222912011238687,2024-08-30T02:34:14.000Z
+401628327104994401,401628327,40162832724,4,4,0:55,Murray State,Missouri,0,51,72,3,7,7,Rush,Kevin Emmanuel run for 7 yds to the MUR 35 for a 1ST down,1.6902372511860255,2024-08-30T02:34:14.000Z
+401628327104995501,401628327,40162832724,5,4,0:44,Murray State,Missouri,0,51,65,1,10,4,Rush,Kevin Emmanuel run for 4 yds to the MUR 39,-0.1595952673507188,2024-08-30T02:34:14.000Z
+401628327104998201,401628327,40162832724,6,4,0:17,Murray State,Missouri,0,51,61,2,6,0,Pass Incompletion,Jameson Holcomb pass incomplete,-0.9653807782813173,2024-08-30T03:10:08.000Z
+401628327104998701,401628327,40162832724,7,4,0:12,Murray State,Missouri,0,51,61,3,6,0,Rush,Kevin Emmanuel run for no gain to the MUR 39,-0.5500549337832448,2024-08-30T03:11:01.000Z

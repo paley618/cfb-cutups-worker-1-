@@ -1,0 +1,168 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628593101854201,401628593,4016285931,1,1,14:57,UAlbany,West Virginia,0,0,65,0,0,10,Kickoff Return (Offense),"James Bozek kickoff for 65 yds , Traylon Ray return for 10 yds to the WVU 10",,2024-09-07T22:03:04.000Z
+401628593101854206,401628593,4016285931,4,1,14:57,West Virginia,UAlbany,0,0,68,1,10,15,Penalty,"UAlbany Penalty, Block below the waist on ANGRY, Kevon enforced (Kevon Angry) to the ALB 37 for a 1ST down",,2024-09-07T22:03:04.000Z
+401628593101854204,401628593,4016285931,2,1,14:57,West Virginia,UAlbany,0,0,95,1,15,14,Rush,Jahiem White run for 14 yds to the WVU 19,1.2025546391188415,2024-09-07T22:03:04.000Z
+401628593101854205,401628593,4016285931,3,1,14:57,West Virginia,UAlbany,0,0,81,2,1,13,Pass Reception,Garrett Greene pass complete to Traylon Ray for 13 yds to the WVU 32 for a 1ST down,0.4462262308604536,2024-09-07T22:03:04.000Z
+401628593101854207,401628593,4016285931,5,1,14:57,West Virginia,UAlbany,0,0,37,1,10,5,Pass Reception,Garrett Greene pass complete to Kole Taylor for 5 yds to the ALB 32,0.0836657996975912,2024-09-07T22:05:55.000Z
+401628593101854208,401628593,4016285931,6,1,14:57,West Virginia,UAlbany,0,0,32,2,5,2,Rush,Jahiem White run for 2 yds to the ALB 30,-0.414501693157019,2024-09-07T22:05:55.000Z
+401628593101854209,401628593,4016285931,7,1,14:57,West Virginia,UAlbany,0,0,30,3,3,4,Rush,Garrett Greene run for 4 yds to the ALB 26 for a 1ST down,0.6622424025279905,2024-09-07T22:05:55.000Z
+401628593101854210,401628593,4016285931,8,1,14:57,West Virginia,UAlbany,0,0,26,1,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.4710467974920665,2024-09-07T22:05:55.000Z
+401628593101854211,401628593,4016285931,9,1,14:57,West Virginia,UAlbany,0,0,26,2,10,1,Rush,Jahiem White run for 1 yd to the ALB 25,-0.480684963074875,2024-09-07T22:05:55.000Z
+401628593101854212,401628593,4016285931,10,1,14:57,West Virginia,UAlbany,0,0,25,3,9,8,Pass Reception,Garrett Greene pass complete to Traylon Ray for 8 yds to the ALB 17,0.4584074865331597,2024-09-07T22:09:06.000Z
+401628593101854213,401628593,4016285931,11,1,14:57,West Virginia,UAlbany,0,0,17,4,1,3,Rush,CJ Donaldson Jr. run for 3 yds to the ALB 14 for a 1ST down,0.6650432212628808,2024-09-07T22:09:06.000Z
+401628593101854214,401628593,4016285931,12,1,14:57,West Virginia,UAlbany,0,0,14,1,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.3125697195395781,2024-09-07T22:09:06.000Z
+401628593101906501,401628593,4016285931,13,1,9:34,West Virginia,UAlbany,7,0,14,2,10,14,Rushing Touchdown,Jahiem White run for 14 yds for a TD (Michael Hayes II KICK),2.8608528947186596,2024-09-07T22:00:07.000Z
+401628593101906503,401628593,4016285932,1,1,9:34,West Virginia,UAlbany,7,0,65,0,0,0,Kickoff,Michael Hayes II kickoff for 59 yds,,2024-09-07T22:11:21.000Z
+401628593101916101,401628593,4016285932,5,1,8:38,UAlbany,West Virginia,0,7,67,4,12,14,Punt,"Owen Lawson punt for 57 yds , Preston Fox returns for 14 yds to the WVU 24",,2024-09-07T22:18:39.000Z
+401628593101906505,401628593,4016285932,2,1,9:34,UAlbany,West Virginia,0,7,65,1,10,-2,Rush,Griffin Woodell run for a loss of 2 yards to the ALB 33,-1.3169300165905415,2024-09-07T22:11:21.000Z
+401628593101906506,401628593,4016285932,3,1,9:34,UAlbany,West Virginia,0,7,67,2,12,0,Pass Incompletion,Myles Burkett pass incomplete,-0.4542686160428877,2024-09-07T22:11:21.000Z
+401628593101906507,401628593,4016285932,4,1,9:34,UAlbany,West Virginia,0,7,67,3,12,0,Pass Incompletion,Myles Burkett pass incomplete,-0.21933845556457765,2024-09-07T22:11:21.000Z
+401628593101916103,401628593,4016285933,1,1,8:38,West Virginia,UAlbany,7,0,76,1,10,21,Pass Reception,Garrett Greene pass complete to Rodney Gallagher III for 21 yds to the WVU 45 for a 1ST down,1.8690051060994257,2024-09-07T22:18:39.000Z
+401628593101916104,401628593,4016285933,2,1,8:38,West Virginia,UAlbany,7,0,55,1,10,12,Rush,CJ Donaldson Jr. run for 12 yds to the ALB 43 for a 1ST down,0.9242431493855108,2024-09-07T22:18:39.000Z
+401628593101916105,401628593,4016285933,3,1,8:38,West Virginia,UAlbany,7,0,43,1,10,18,Pass Reception,Garrett Greene pass complete to Justin Robinson for 18 yds to the ALB 25 for a 1ST down,0.6522857256647967,2024-09-07T22:18:39.000Z
+401628593101916106,401628593,4016285933,4,1,8:38,West Virginia,UAlbany,7,0,25,1,10,10,Rush,CJ Donaldson Jr. run for 10 yds to the ALB 15 for a 1ST down,0.1418852727009745,2024-09-07T22:18:39.000Z
+401628593101916107,401628593,4016285933,5,1,8:38,West Virginia,UAlbany,7,0,15,1,10,3,Pass Reception,Garrett Greene pass complete to Kole Taylor for 3 yds to the ALB 12,-0.103053233199689,2024-09-07T22:18:39.000Z
+401628593101945801,401628593,4016285933,6,1,5:41,West Virginia,UAlbany,14,0,12,2,7,12,Passing Touchdown,Garrett Greene pass complete to Justin Robinson for 12 yds for a TD (Michael Hayes II KICK),2.661252322764772,2024-09-07T22:00:07.000Z
+401628593101945803,401628593,4016285934,1,1,5:41,West Virginia,UAlbany,14,0,65,0,0,57,Kickoff Return (Offense),"Michael Hayes II kickoff for 57 yds , Jamal Cooney return for no gain to the ALB 8 , return for no gain to the ALB 8",,2024-09-07T22:25:07.000Z
+401628593101945807,401628593,4016285934,4,1,5:41,UAlbany,West Virginia,0,14,96,3,14,-2,Penalty,"UAlbany Penalty, Delay Of Game (Myles Burkett) to the ALB 2",,2024-09-07T22:25:07.000Z
+401628593101978701,401628593,4016285934,9,1,2:12,UAlbany,West Virginia,0,14,81,4,13,0,Punt,"Owen Lawson punt for 50 yds, downed at the WVU 31",,2024-09-07T22:35:00.000Z
+401628593101945805,401628593,4016285934,2,1,5:41,UAlbany,West Virginia,0,14,92,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.31971922650399254,2024-09-07T22:25:07.000Z
+401628593101945806,401628593,4016285934,3,1,5:41,UAlbany,West Virginia,0,14,92,2,10,-4,Sack,Myles Burkett sacked by T.J. Jackson for a loss of 4 yards to the ALB 4,-0.19358653235559675,2024-09-07T22:25:07.000Z
+401628593101945808,401628593,4016285934,5,1,5:41,UAlbany,West Virginia,0,14,98,3,16,20,Pass Reception,Myles Burkett pass complete to Caden Burti for 20 yds to the ALB 22 for a 1ST down,1.1051828701134205,2024-09-07T22:25:07.000Z
+401628593101945809,401628593,4016285934,6,1,5:41,UAlbany,West Virginia,0,14,78,1,10,-3,Rush,Myles Burkett run for a loss of 3 yards to the ALB 19,-0.8284665858611353,2024-09-07T22:25:07.000Z
+401628593101945810,401628593,4016285934,7,1,5:41,UAlbany,West Virginia,0,14,81,2,13,0,Rush,Myles Burkett run for no gain to the ALB 19,-0.1741504353440826,2024-09-07T22:25:07.000Z
+401628593101945811,401628593,4016285934,8,1,5:41,UAlbany,West Virginia,0,14,81,3,13,0,Pass Incompletion,Myles Burkett pass incomplete,-0.07681489623106864,2024-09-07T22:25:07.000Z
+401628593101999902,401628593,4016285935,5,1,0:00,West Virginia,UAlbany,14,0,48,0,5,9,End Period,End of 1st Quarter,,2024-09-07T22:37:36.000Z
+401628593101978703,401628593,4016285935,1,1,2:12,West Virginia,UAlbany,14,0,69,1,10,6,Pass Reception,Garrett Greene pass complete to Hudson Clement for 6 yds to the WVU 37,0.3796734133063547,2024-09-07T22:35:00.000Z
+401628593101978704,401628593,4016285935,2,1,2:12,West Virginia,UAlbany,14,0,63,2,4,10,Pass Reception,Garrett Greene pass complete to Ric'Darious Farmer for 10 yds to the WVU 47 for a 1ST down,1.1323181582353874,2024-09-07T22:35:00.000Z
+401628593101978705,401628593,4016285935,3,1,2:12,West Virginia,UAlbany,14,0,53,1,10,5,Pass Reception,Garrett Greene pass complete to Rodney Gallagher III for 5 yds to the ALB 48,0.1057711896973057,2024-09-07T22:36:21.000Z
+401628593101999901,401628593,4016285935,4,1,0:00,West Virginia,UAlbany,14,0,48,2,5,9,Rush,Garrett Greene run for 9 yds to the ALB 39 for a 1ST down,0.849089688944451,2024-09-07T22:37:36.000Z
+401628593102849902,401628593,4016285935,6,2,15:00,West Virginia,UAlbany,14,0,39,1,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.814236079442537,2024-09-07T22:41:38.000Z
+401628593102855001,401628593,4016285935,7,2,14:49,West Virginia,UAlbany,21,0,39,2,10,39,Passing Touchdown,Garrett Greene pass complete to Kole Taylor for 39 yds for a TD (Michael Hayes II KICK),3.954674634374088,2024-09-07T22:42:38.000Z
+401628593102855003,401628593,4016285936,1,2,14:49,West Virginia,UAlbany,21,0,65,0,0,0,Kickoff,Michael Hayes II kickoff for 64 yds,,2024-09-07T22:43:12.000Z
+401628593102887501,401628593,4016285936,7,2,11:24,UAlbany,West Virginia,0,21,55,4,3,0,Punt,Owen Lawson punt for 20 yds,,2024-09-07T22:49:25.000Z
+401628593102855005,401628593,4016285936,2,2,14:49,UAlbany,West Virginia,0,21,75,1,10,4,Rush,Griffin Woodell run for 4 yds to the ALB 29,-0.1142886249388964,2024-09-07T22:43:12.000Z
+401628593102855006,401628593,4016285936,3,2,14:49,UAlbany,West Virginia,0,21,71,2,6,9,Pass Reception,Myles Burkett pass complete to Levi Wentz for 9 yds to the ALB 38 for a 1ST down,1.2390401039807273,2024-09-07T22:43:12.000Z
+401628593102855007,401628593,4016285936,4,2,14:49,UAlbany,West Virginia,0,21,62,1,10,2,Rush,Myles Burkett run for 2 yds to the ALB 40,-0.6656376494811928,2024-09-07T22:43:12.000Z
+401628593102855008,401628593,4016285936,5,2,14:49,UAlbany,West Virginia,0,21,60,2,8,7,Pass Reception,Myles Burkett pass complete to MarQeese Dietz for 7 yds to the ALB 47,0.6091081777601933,2024-09-07T22:43:12.000Z
+401628593102855009,401628593,4016285936,6,2,14:49,UAlbany,West Virginia,0,21,53,3,1,-2,Rush,Griffin Woodell run for a loss of 2 yards to the ALB 45,-1.4328622288815627,2024-09-07T22:43:12.000Z
+401628593102898601,401628593,4016285937,4,2,10:13,West Virginia,UAlbany,21,0,59,4,4,0,Punt,Oliver Straw punt for 46 yds,,2024-09-07T22:54:11.000Z
+401628593102887505,401628593,4016285937,3,2,11:24,West Virginia,UAlbany,21,0,59,3,4,0,Pass Incompletion,Garrett Greene pass incomplete,-0.7186703560809607,2024-09-07T22:52:11.000Z
+401628593102887503,401628593,4016285937,1,2,11:24,West Virginia,UAlbany,21,0,65,1,10,-2,Fumble Recovery (Own),"Garrett Greene run for a loss of 2 yards to the WVU 36 Garrett Greene fumbled, recovered by WVU Garrett Greene G. Greene return for 3 yds",-1.3169300165905415,2024-09-07T22:52:11.000Z
+401628593102887504,401628593,4016285937,2,2,11:24,West Virginia,UAlbany,21,0,64,2,9,5,Pass Reception,Garrett Greene pass complete to Preston Fox for 5 yds to the WVU 41,0.0688339910802887,2024-09-07T22:52:11.000Z
+401628593102947101,401628593,4016285938,9,2,5:28,UAlbany,West Virginia,0,21,21,1,10,0,Timeout,"Timeout UAlbany, clock 05:28",,2024-09-07T23:07:15.000Z
+401628593102898603,401628593,4016285938,1,2,10:13,UAlbany,West Virginia,0,21,87,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.40084650139258127,2024-09-07T22:57:01.000Z
+401628593102898604,401628593,4016285938,2,2,10:13,UAlbany,West Virginia,0,21,87,2,10,1,Rush,Myles Burkett run for 1 yd to the ALB 14,-0.15001896734602482,2024-09-07T22:57:01.000Z
+401628593102898605,401628593,4016285938,3,2,10:13,UAlbany,West Virginia,0,21,86,3,9,5,Penalty,"West Virginia Penalty, Delay Of Game (5 Yards) to the ALB 19",,2024-09-07T22:58:25.000Z
+401628593102898606,401628593,4016285938,4,2,10:13,UAlbany,West Virginia,0,21,81,3,4,6,Pass Reception,Myles Burkett pass complete to Faysal Aden for 6 yds to the ALB 25 for a 1ST down,0.9174564504346323,2024-09-07T22:58:25.000Z
+401628593102898607,401628593,4016285938,5,2,10:13,UAlbany,West Virginia,0,21,75,1,10,15,Penalty,"West Virginia Penalty, Unsportsmanlike Conduct (Anthony Wilson Jr.) to the ALB 43 for a 1ST down",,2024-09-07T22:58:25.000Z
+401628593102898608,401628593,4016285938,6,2,10:13,UAlbany,West Virginia,0,21,57,1,10,23,Pass Reception,Myles Burkett pass complete to MarQeese Dietz for 23 yds to the WVU 34 for a 1ST down,1.5285905365976564,2024-09-07T22:58:25.000Z
+401628593102898609,401628593,4016285938,7,2,10:13,UAlbany,West Virginia,0,21,34,1,10,-1,Rush,Faysal Aden run for a loss of 1 yard to the WVU 35,-0.83111511535939,2024-09-07T22:58:25.000Z
+401628593102898610,401628593,4016285938,8,2,10:13,UAlbany,West Virginia,0,21,35,2,11,-5,Rush,Myles Burkett run for a loss of 5 yards to the WVU 40,-1.9895255683108337,2024-09-07T22:58:25.000Z
+401628593102947102,401628593,4016285938,10,2,5:28,UAlbany,West Virginia,0,21,40,3,16,19,Pass Reception,Myles Burkett pass complete to Seven McGee for 19 yds to the WVU 21 for a 1ST down,3.1250700307884007,2024-09-07T23:07:15.000Z
+401628593102947103,401628593,4016285938,11,2,5:28,UAlbany,West Virginia,0,21,21,1,10,14,Rush,Myles Burkett run for 14 yds to the WVU 7 for a 1ST down,0.435542183468282,2024-09-07T23:07:15.000Z
+401628593102955901,401628593,4016285938,12,2,4:40,UAlbany,West Virginia,7,21,7,1,7,7,Rushing Touchdown,Griffin Woodell run for 7 yds for a TD (John Opalko KICK),2.196754630327211,2024-09-07T23:09:09.000Z
+401628593102956401,401628593,4016285939,1,2,4:35,UAlbany,West Virginia,7,21,65,0,0,28,Kickoff Return (Offense),"James Bozek kickoff for 64 yds , Traylon Ray return for 28 yds to the WVU 29",,2024-09-07T23:11:29.000Z
+401628593102957501,401628593,4016285939,2,2,4:24,West Virginia,UAlbany,21,7,71,1,10,36,Fumble Recovery (Opponent),"Jahiem White run for 36 yds to the ALB 36 Jahiem White fumbled, recovered by ALB Erv Wiggins Jr. E. Wiggins Jr. return for 1 yds",-1.2243831272450354,2024-09-07T23:12:31.000Z
+401628593102979901,401628593,40162859310,6,2,2:00,UAlbany,West Virginia,7,21,33,2,16,0,Timeout,"Timeout West Virginia, clock 02:00",,2024-09-07T23:18:15.000Z
+401628593102957503,401628593,40162859310,1,2,4:24,UAlbany,West Virginia,7,21,64,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-1.041155320344064,2024-09-07T23:12:31.000Z
+401628593102957504,401628593,40162859310,2,2,4:24,UAlbany,West Virginia,7,21,64,2,10,22,Pass Reception,Myles Burkett pass complete to Seven McGee for 22 yds to the WVU 42 for a 1ST down,2.8934124565472708,2024-09-07T23:12:31.000Z
+401628593102957505,401628593,40162859310,3,2,4:24,UAlbany,West Virginia,7,21,42,1,10,1,Rush,Griffin Woodell run for 1 yd to the WVU 41,-0.6970479149495327,2024-09-07T23:13:57.000Z
+401628593102957506,401628593,40162859310,4,2,4:24,UAlbany,West Virginia,7,21,41,2,9,14,Pass Reception,Myles Burkett pass complete to MarQeese Dietz for 14 yds to the WVU 27 for a 1ST down,1.2507025451301708,2024-09-07T23:13:57.000Z
+401628593102957507,401628593,40162859310,5,2,4:24,UAlbany,West Virginia,7,21,27,1,10,-1,Rush,Faysal Aden run for a loss of 1 yard to the WVU 28,-0.613658577973414,2024-09-07T23:13:57.000Z
+401628593102979902,401628593,40162859310,7,2,2:00,UAlbany,West Virginia,7,21,28,2,11,-5,Penalty,"UAlbany Penalty, False Start (-5 Yards) to the WVU 33",,2024-09-07T23:18:15.000Z
+401628593102984501,401628593,40162859310,8,2,1:54,UAlbany,West Virginia,14,21,33,2,16,33,Passing Touchdown,Myles Burkett pass complete to Jacari Carter for 33 yds for a TD (John Opalko KICK),4.123922599437444,2024-09-07T23:21:34.000Z
+401628593102984503,401628593,40162859311,1,2,1:54,UAlbany,West Virginia,14,21,65,0,0,0,Kickoff,James Bozek kickoff for 65 yds for a touchback,,2024-09-07T23:21:34.000Z
+401628593102995201,401628593,40162859311,6,2,0:47,West Virginia,UAlbany,21,14,40,2,4,0,Timeout,"Timeout West Virginia, clock 00:47",,2024-09-07T23:26:08.000Z
+401628593102984505,401628593,40162859311,2,2,1:54,West Virginia,UAlbany,21,14,75,1,10,5,Rush,CJ Donaldson Jr. run for 5 yds to the WVU 30,0.0945451165334843,2024-09-07T23:21:34.000Z
+401628593102984506,401628593,40162859311,3,2,1:54,West Virginia,UAlbany,21,14,70,2,5,13,Rush,CJ Donaldson Jr. run for 13 yds to the WVU 43 for a 1ST down,1.5178933056765107,2024-09-07T23:21:34.000Z
+401628593102984507,401628593,40162859311,4,2,1:54,West Virginia,UAlbany,21,14,57,1,10,2,Rush,CJ Donaldson Jr. run for 2 yds to the WVU 45,-0.6861929923492786,2024-09-07T23:21:34.000Z
+401628593102984508,401628593,40162859311,5,2,1:54,West Virginia,UAlbany,21,14,55,2,8,9,Rush,Garrett Greene run for 9 yds to the ALB 46 for a 1ST down,1.6082222817261407,2024-09-07T23:21:34.000Z
+401628593102995202,401628593,40162859311,7,2,0:47,West Virginia,UAlbany,21,14,46,1,10,6,Pass Reception,Garrett Greene pass complete to Hudson Clement for 6 yds to the ALB 40,0.3120620714803497,2024-09-07T23:26:08.000Z
+401628593102996001,401628593,40162859311,8,2,0:39,West Virginia,UAlbany,28,14,40,2,4,40,Rushing Touchdown,Garrett Greene run for 40 yds for a TD (Michael Hayes II KICK),3.2312253366541146,2024-09-07T23:26:56.000Z
+401628593102999903,401628593,40162859312,11,2,0:00,UAlbany,West Virginia,14,28,51,0,10,2,End of Half,End of 2nd Quarter,,2024-09-07T23:35:52.000Z
+401628593102996003,401628593,40162859312,1,2,0:39,West Virginia,UAlbany,28,14,65,0,0,0,Kickoff,Michael Hayes II kickoff for 63 yds,,2024-09-07T23:27:16.000Z
+401628593102996501,401628593,40162859312,2,2,0:34,UAlbany,West Virginia,14,28,74,2,9,0,Timeout,"Timeout West Virginia, clock 00:34",,2024-09-07T23:30:33.000Z
+401628593102999601,401628593,40162859312,8,2,0:03,UAlbany,West Virginia,14,28,51,4,10,0,Timeout,"Timeout UAlbany, clock 00:03",,2024-09-07T23:34:39.000Z
+401628593102996502,401628593,40162859312,3,2,0:34,UAlbany,West Virginia,14,28,75,1,10,1,Rush,Myles Burkett run for 1 yd to the ALB 26,-0.5874795431016855,2024-09-07T23:30:33.000Z
+401628593102996503,401628593,40162859312,4,2,0:34,UAlbany,West Virginia,14,28,74,2,9,0,Pass Incompletion,Myles Burkett pass incomplete,-0.40831395320271024,2024-09-07T23:32:03.000Z
+401628593102996504,401628593,40162859312,5,2,0:34,UAlbany,West Virginia,14,28,74,3,9,23,Pass Reception,Myles Burkett pass complete to Jackson Parker for 23 yds to the ALB 49 for a 1ST down,3.1501814121327785,2024-09-07T23:32:03.000Z
+401628593102996505,401628593,40162859312,6,2,0:34,UAlbany,West Virginia,14,28,51,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-1.1301991718133413,2024-09-07T23:32:03.000Z
+401628593102996506,401628593,40162859312,7,2,0:34,UAlbany,West Virginia,14,28,51,2,10,0,Pass Incompletion,Myles Burkett pass incomplete,-1.005741646158441,2024-09-07T23:32:03.000Z
+401628593102999602,401628593,40162859312,9,2,0:03,UAlbany,West Virginia,14,28,51,3,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.673481036981288,2024-09-07T23:34:39.000Z
+401628593102999901,401628593,40162859312,10,2,0:00,UAlbany,West Virginia,14,28,51,4,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.2672109411539907,2024-09-07T23:35:52.000Z
+401628593103854301,401628593,40162859313,1,3,14:56,West Virginia,UAlbany,28,14,65,0,0,15,Kickoff Return (Offense),"Michael Hayes II kickoff for 65 yds , Jamal Cooney return for 15 yds to the ALB 15",,2024-09-07T23:57:16.000Z
+401628593103854303,401628593,40162859313,2,3,14:56,UAlbany,West Virginia,14,28,85,1,10,41,Pass Reception,Myles Burkett pass complete to Seven McGee for 41 yds to the WVU 44 for a 1ST down,3.2080791923651883,2024-09-07T23:58:19.000Z
+401628593103854304,401628593,40162859313,3,3,14:56,UAlbany,West Virginia,14,28,44,1,10,-7,Sack,Myles Burkett sacked by Sean Martin for a loss of 7 yards to the ALB 49,-2.4901736903641662,2024-09-07T23:58:19.000Z
+401628593103854305,401628593,40162859313,4,3,14:56,UAlbany,West Virginia,14,28,51,2,17,0,Pass Incompletion,Myles Burkett pass incomplete,-0.7289430252895155,2024-09-07T23:58:19.000Z
+401628593103854306,401628593,40162859313,5,3,14:56,UAlbany,West Virginia,14,28,51,3,17,49,Pass Reception,Myles Burkett pass complete to Levi Wentz for 49 yds to the WVU 2 for a 1ST down,5.418763775491605,2024-09-07T23:58:19.000Z
+401628593103854307,401628593,40162859313,6,3,14:56,UAlbany,West Virginia,14,28,2,1,2,0,Pass Incompletion,Myles Burkett pass incomplete,-0.854701227650125,2024-09-07T23:58:19.000Z
+401628593103854308,401628593,40162859313,7,3,14:56,UAlbany,West Virginia,14,28,2,2,2,1,Rush,Myles Burkett run for 1 yd to the WVU 1,-0.386061703857327,2024-09-07T23:58:19.000Z
+401628593103854309,401628593,40162859313,8,3,14:56,UAlbany,West Virginia,14,28,1,3,1,0,Pass Incompletion,Myles Burkett pass incomplete,-0.331755745676551,2024-09-07T23:58:19.000Z
+401628593103879701,401628593,40162859313,9,3,12:02,UAlbany,West Virginia,14,28,1,4,1,0,Pass Incompletion,Myles Burkett pass incomplete,-4.214246025143899,2024-09-08T00:04:09.000Z
+401628593103879711,401628593,40162859314,8,3,12:02,West Virginia,UAlbany,28,14,46,2,18,5,Penalty,"QB Keeper GREENE, Garrett rush to the left for a gain of 4 yards to the UAL42 (IULIANO, Jack). PENALTY UAL Offsides on ADUAKA, Chiebuka enforced 5 yards from the UAL46 to the UAL41 [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:08:19.000Z
+401628593103879703,401628593,40162859314,1,3,12:02,West Virginia,UAlbany,28,14,99,1,10,7,Rush,CJ Donaldson Jr. run for 7 yds to the WVU 8,0.29382171005634117,2024-09-08T00:04:09.000Z
+401628593103879704,401628593,40162859314,2,3,12:02,West Virginia,UAlbany,28,14,92,2,3,12,Rush,CJ Donaldson Jr. run for 12 yds to the WVU 20 for a 1ST down,0.31180034620796526,2024-09-08T00:08:19.000Z
+401628593103879705,401628593,40162859314,3,3,12:02,West Virginia,UAlbany,28,14,80,1,10,11,Rush,Jahiem White run for 11 yds to the WVU 31 for a 1ST down,0.7787667904900532,2024-09-08T00:08:19.000Z
+401628593103879706,401628593,40162859314,4,3,12:02,West Virginia,UAlbany,28,14,69,1,10,0,Rush,Jahiem White run for no gain to the WVU 31,-0.8947814664467213,2024-09-08T00:08:19.000Z
+401628593103879707,401628593,40162859314,5,3,12:02,West Virginia,UAlbany,28,14,69,2,10,14,Pass Reception,Garrett Greene pass complete to Traylon Ray for 14 yds to the WVU 45 for a 1ST down,2.225459234245406,2024-09-08T00:08:19.000Z
+401628593103879708,401628593,40162859314,6,3,12:02,West Virginia,UAlbany,28,14,55,1,10,17,Pass Reception,Garrett Greene pass complete to Hudson Clement for 17 yds to the ALB 38 for a 1ST down,1.182020588731177,2024-09-08T00:08:19.000Z
+401628593103879709,401628593,40162859314,7,3,12:02,West Virginia,UAlbany,28,14,38,1,10,-8,Sack,Garrett Greene sacked by Dillon Dunathan for a loss of 8 yards to the ALB 46,-2.471700704231967,2024-09-08T00:08:19.000Z
+401628593103879712,401628593,40162859314,9,3,12:02,West Virginia,UAlbany,28,14,41,2,13,-1,Rush,CJ Donaldson Jr. run for a loss of 1 yard to the ALB 42,-1.235421312055923,2024-09-08T00:08:19.000Z
+401628593103879713,401628593,40162859314,10,3,12:02,West Virginia,UAlbany,28,14,42,3,14,13,Rush,Garrett Greene run for 13 yds to the ALB 29,1.7770256970812657,2024-09-08T00:08:19.000Z
+401628593103879714,401628593,40162859314,11,3,12:02,West Virginia,UAlbany,28,14,29,4,1,3,Rush,CJ Donaldson Jr. run for 3 yds to the ALB 26 for a 1ST down,1.2244579035701229,2024-09-08T00:08:19.000Z
+401628593103879715,401628593,40162859314,12,3,12:02,West Virginia,UAlbany,28,14,26,1,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.4710467974920665,2024-09-08T00:08:19.000Z
+401628593103879716,401628593,40162859314,13,3,12:02,West Virginia,UAlbany,28,14,26,2,10,4,Rush,Jahiem White run for 4 yds to the ALB 22,-0.0719446242097756,2024-09-08T00:08:19.000Z
+401628593103947701,401628593,40162859314,14,3,5:22,West Virginia,UAlbany,35,14,10,1,10,10,Passing Touchdown,Garrett Greene pass complete to Hudson Clement for 10 yds for a TD (Michael Hayes II KICK),2.513826842249442,2024-09-08T00:16:49.000Z
+401628593103948301,401628593,40162859315,1,3,5:16,West Virginia,UAlbany,35,14,65,0,0,17,Kickoff Return (Offense),"Michael Hayes II kickoff for 64 yds , Jamal Cooney return for 17 yds to the ALB 18",,2024-09-08T00:21:22.000Z
+401628593103974501,401628593,40162859315,5,3,2:54,UAlbany,West Virginia,14,35,74,4,2,2,Punt,"Owen Lawson punt for 41 yds , Preston Fox returns for 2 yds to the WVU 35",,2024-09-08T00:24:05.000Z
+401628593103948303,401628593,40162859315,2,3,5:16,UAlbany,West Virginia,14,35,82,1,10,8,Pass Reception,Myles Burkett pass complete to Seven McGee for 8 yds to the ALB 26,0.7526495917572377,2024-09-08T00:21:22.000Z
+401628593103948304,401628593,40162859315,3,3,5:16,UAlbany,West Virginia,14,35,74,2,2,0,Rush,Griffin Woodell run for no gain to the ALB 26,-0.9028540075666233,2024-09-08T00:21:22.000Z
+401628593103948305,401628593,40162859315,4,3,5:16,UAlbany,West Virginia,14,35,74,3,2,0,Rush,Griffin Woodell run for no gain to the ALB 26,-0.4311845610562042,2024-09-08T00:21:22.000Z
+401628593103974505,401628593,40162859316,3,3,2:54,West Virginia,UAlbany,35,14,7,3,6,5,Rush,CJ Donaldson Jr. run for 5 yds to the ALB 2,0.038353659563017,2024-09-08T00:24:05.000Z
+401628593103974503,401628593,40162859316,1,3,2:54,West Virginia,UAlbany,35,14,11,1,10,4,Rush,CJ Donaldson Jr. run for 4 yds to the ALB 7,-0.015606283624097,2024-09-08T00:24:05.000Z
+401628593103974504,401628593,40162859316,2,3,2:54,West Virginia,UAlbany,35,14,7,2,6,0,Pass Incompletion,Garrett Greene pass incomplete,-0.301988761015517,2024-09-08T00:24:05.000Z
+401628593103995001,401628593,40162859316,4,3,0:49,West Virginia,UAlbany,42,14,2,4,1,2,Rushing Touchdown,CJ Donaldson Jr. run for 2 yds for a TD (Michael Hayes II KICK),2.800980798444522,2024-09-08T00:30:43.000Z
+401628593103999902,401628593,40162859317,4,3,0:00,UAlbany,West Virginia,14,42,69,0,10,3,End Period,End of 3rd Quarter,,2024-09-08T00:35:03.000Z
+401628593103995701,401628593,40162859317,1,3,0:42,West Virginia,UAlbany,42,14,65,0,0,30,Kickoff Return (Offense),"Michael Hayes II kickoff for 64 yds , Jamal Cooney return for 30 yds to the ALB 31",,2024-09-08T00:33:26.000Z
+401628593104849916,401628593,40162859317,10,4,15:00,UAlbany,West Virginia,14,42,41,2,10,4,Penalty,"BURKETT, Myles pass short to the left incomplete intended for CARTER, Jacari thrown to the WVU37. PENALTY WVU Pass Interference on FAGAN, Dontez enforced at the spot of the foul for 4 yards to the WVU37 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:39:31.000Z
+401628593103995703,401628593,40162859317,2,3,0:42,UAlbany,West Virginia,14,42,69,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.8947814664467213,2024-09-08T00:33:26.000Z
+401628593103999901,401628593,40162859317,3,3,0:00,UAlbany,West Virginia,14,42,69,2,10,3,Rush,Faysal Aden run for 3 yds to the ALB 34,-0.21237370417582113,2024-09-08T00:35:03.000Z
+401628593104849922,401628593,40162859317,12,4,15:00,UAlbany,West Virginia,14,42,37,2,10,15,Penalty,"BURKETT, Myles pass deep to the left incomplete intended for WENTZ, Levi thrown to the WVU0. PENALTY WVU Pass Interference on FAGAN, Dontez enforced 15 yards to the WVU22 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:39:31.000Z
+401628593104849919,401628593,40162859317,11,4,15:00,UAlbany,West Virginia,14,42,37,1,10,0,Rush,Myles Burkett run for no gain to the WVU 37,-0.7519361608312708,2024-09-08T00:39:31.000Z
+401628593104849902,401628593,40162859317,5,4,15:00,UAlbany,West Virginia,14,42,66,3,7,8,Pass Reception,Myles Burkett pass complete to Caden Burti for 8 yds to the ALB 42 for a 1ST down,2.1527429636982767,2024-09-08T00:39:09.000Z
+401628593104849904,401628593,40162859317,6,4,15:00,UAlbany,West Virginia,14,42,58,1,10,4,Rush,Myles Burkett run for 4 yds to the ALB 46,-0.1665264279012551,2024-09-08T00:39:31.000Z
+401628593104849906,401628593,40162859317,7,4,15:00,UAlbany,West Virginia,14,42,54,2,6,5,Rush,Myles Burkett run for 5 yds to the WVU 49,0.1103483595388506,2024-09-08T00:39:31.000Z
+401628593104849910,401628593,40162859317,8,4,15:00,UAlbany,West Virginia,14,42,49,3,1,8,Pass Reception,Myles Burkett pass complete to Caden Burti for 8 yds to the WVU 41 for a 1ST down,1.3773616545052005,2024-09-08T00:39:31.000Z
+401628593104849912,401628593,40162859317,9,4,15:00,UAlbany,West Virginia,14,42,41,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.8772679222659558,2024-09-08T00:39:31.000Z
+401628593104849925,401628593,40162859317,13,4,15:00,UAlbany,West Virginia,14,42,22,1,10,-2,Pass Reception,Myles Burkett pass complete to Griffin Woodell for a loss of 2 yards to the WVU 24,-0.6012286044357436,2024-09-08T00:39:31.000Z
+401628593104849926,401628593,40162859317,14,4,15:00,UAlbany,West Virginia,14,42,24,2,12,0,Pass Incompletion,Myles Burkett pass incomplete,-0.6226112747362205,2024-09-08T00:39:31.000Z
+401628593104849929,401628593,40162859317,15,4,15:00,UAlbany,West Virginia,14,42,24,3,12,11,Pass Reception,Myles Burkett pass complete to Jacari Carter for 11 yds to the WVU 13,0.810831265345584,2024-09-08T00:39:31.000Z
+401628593104904801,401628593,40162859317,16,4,9:51,UAlbany,West Virginia,14,42,13,4,1,0,Pass Incompletion,Myles Burkett pass incomplete,-3.93936861952516,2024-09-08T00:47:28.000Z
+401628593104904807,401628593,40162859318,4,4,9:51,West Virginia,UAlbany,42,14,27,1,10,15,Penalty,"MARCHIOL, Nicco pass deep to the left incomplete intended for FOX, Preston broken up by EZIOMUME, KC at the UAL0. PENALTY UAL Pass Interference on EZIOMUME, KC enforced half the distance from the goal, 15 yards to the UAL12 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:51:52.000Z
+401628593104927301,401628593,40162859318,5,4,7:26,West Virginia,UAlbany,42,14,12,2,10,0,Timeout,"Timeout West Virginia, clock 07:26",,2024-09-08T00:53:40.000Z
+401628593104904803,401628593,40162859318,1,4,9:51,West Virginia,UAlbany,42,14,87,1,10,8,Pass Reception,Nicco Marchiol pass complete to Rodney Gallagher III for 8 yds to the WVU 21,0.6434724471565767,2024-09-08T00:49:59.000Z
+401628593104904804,401628593,40162859318,2,4,9:51,West Virginia,UAlbany,42,14,79,2,2,4,Pass Reception,Nicco Marchiol pass complete to Jack Sammarco for 4 yds to the WVU 25 for a 1ST down,-0.0244319480102666,2024-09-08T00:49:59.000Z
+401628593104904805,401628593,40162859318,3,4,9:51,West Virginia,UAlbany,42,14,75,1,10,48,Rush,CJ Donaldson Jr. run for 48 yds to the ALB 27 for a 1ST down,3.3364742783298356,2024-09-08T00:49:59.000Z
+401628593104927302,401628593,40162859318,6,4,7:26,West Virginia,UAlbany,42,14,12,1,10,0,Pass Reception,Nicco Marchiol pass complete to Treylan Davis for no gain to the ALB 12,-0.2977696357406735,2024-09-08T00:53:40.000Z
+401628593104927701,401628593,40162859318,7,4,7:22,West Virginia,UAlbany,49,14,12,2,10,12,Rushing Touchdown,Nicco Marchiol run for 12 yds for a TD (RJ Kocan KICK),2.827864177776599,2024-09-08T00:57:01.000Z
+401628593104928301,401628593,40162859319,1,4,7:16,West Virginia,UAlbany,49,14,65,0,0,16,Kickoff Return (Offense),"Nate Flower kickoff for 63 yds , Jamal Cooney return for 16 yds to the ALB 18",,2024-09-08T00:59:31.000Z
+401628593104977501,401628593,40162859319,8,4,2:24,UAlbany,West Virginia,14,49,33,4,2,0,Timeout,"Timeout UAlbany, clock 02:24",,2024-09-08T01:05:22.000Z
+401628593104979901,401628593,40162859319,10,4,2:00,UAlbany,West Virginia,14,49,26,1,10,0,Timeout,"Timeout West Virginia, clock 02:00",,2024-09-08T01:09:08.000Z
+401628593104988701,401628593,40162859319,12,4,1:12,UAlbany,West Virginia,14,49,23,2,7,0,Timeout,"Timeout UAlbany, clock 01:12",,2024-09-08T01:13:17.000Z
+401628593104997601,401628593,40162859319,15,4,0:23,UAlbany,West Virginia,14,49,17,4,1,0,Timeout,"Timeout UAlbany, clock 00:23",,2024-09-08T01:15:15.000Z
+401628593104928306,401628593,40162859319,5,4,7:16,UAlbany,West Virginia,14,49,44,2,1,3,Rush,Jojo Uga run for 3 yds to the WVU 41 for a 1ST down,-0.3239425290625954,2024-09-08T01:01:59.000Z
+401628593104928307,401628593,40162859319,6,4,7:16,UAlbany,West Virginia,14,49,41,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.8772679222659558,2024-09-08T01:01:59.000Z
+401628593104997604,401628593,40162859319,18,4,0:23,UAlbany,West Virginia,14,49,12,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.2977696357406735,2024-09-08T01:15:15.000Z
+401628593104999903,401628593,40162859319,20,4,0:00,UAlbany,West Virginia,14,49,28,0,10,0,End of Game,End of 4th Quarter,,2024-09-08T01:17:50.000Z
+401628593104928303,401628593,40162859319,2,4,7:16,UAlbany,West Virginia,14,49,82,1,10,6,Rush,Jojo Uga run for 6 yds to the ALB 24,0.2714669258479434,2024-09-08T00:59:31.000Z
+401628593104928304,401628593,40162859319,3,4,7:16,UAlbany,West Virginia,14,49,76,2,4,23,Rush,Jojo Uga run for 23 yds to the ALB 47 for a 1ST down,2.1215318898715996,2024-09-08T01:00:26.000Z
+401628593104928305,401628593,40162859319,4,4,7:16,UAlbany,West Virginia,14,49,53,1,10,9,Rush,Jojo Uga run for 9 yds to the WVU 44,1.1787223367393838,2024-09-08T01:00:26.000Z
+401628593104928308,401628593,40162859319,7,4,7:16,UAlbany,West Virginia,14,49,41,2,10,6,Rush,Griffin Woodell run for 6 yds to the WVU 35,0.2771505939590267,2024-09-08T01:01:59.000Z
+401628593104977502,401628593,40162859319,9,4,2:24,UAlbany,West Virginia,14,49,35,3,4,2,Rush,Jojo Uga run for 2 yds to the WVU 33,-0.578335006991189,2024-09-08T01:05:22.000Z
+401628593104979902,401628593,40162859319,11,4,2:00,UAlbany,West Virginia,14,49,33,4,2,7,Pass Reception,Myles Burkett pass complete to Jamal Cooney for 7 yds to the WVU 26 for a 1ST down,1.6989698387864571,2024-09-08T01:09:08.000Z
+401628593104988702,401628593,40162859319,13,4,1:12,UAlbany,West Virginia,14,49,26,1,10,3,Rush,Jojo Uga run for 3 yds to the WVU 23,-0.1464938748677045,2024-09-08T01:14:10.000Z
+401628593104988703,401628593,40162859319,14,4,1:12,UAlbany,West Virginia,14,49,23,2,7,4,Rush,Jojo Uga run for 4 yds to the WVU 19,-0.0482578838811585,2024-09-08T01:14:10.000Z
+401628593104997602,401628593,40162859319,16,4,0:23,UAlbany,West Virginia,14,49,19,3,3,2,Rush,Jojo Uga run for 2 yds to the WVU 17,-0.2985725152849188,2024-09-08T01:15:15.000Z
+401628593104997603,401628593,40162859319,17,4,0:23,UAlbany,West Virginia,14,49,17,4,1,5,Rush,Jojo Uga run for 5 yds to the WVU 12 for a 1ST down,0.6832318544060368,2024-09-08T01:15:15.000Z
+401628593104999901,401628593,40162859319,19,4,0:00,UAlbany,West Virginia,14,49,12,2,10,-15,Fumble Recovery (Own),"run for a loss of 15 yards to the WVU 28 fumbled, recovered by ALB Myles Burkett",-2.7028705823188957,2024-09-08T01:17:50.000Z

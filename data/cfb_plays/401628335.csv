@@ -1,0 +1,208 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628335101864401,401628335,4016283351,5,1,13:55,South Florida,Alabama,0,0,63,3,10,19,Rush,"Byrum Brown run for 9 yds to the ALA 46 for a 1ST down Alabama Penalty, Defensive Holding (Domani Jackson) to the ALA 44 for a 1ST down",3.365543284178968,2024-09-07T23:14:04.000Z
+401628335101868501,401628335,4016283351,7,1,13:14,South Florida,Alabama,0,0,41,2,7,12,Rush,Nay'Quan Wright run for 12 yds to the ALA 29 for a 1ST down,0.9424643071916985,2024-09-07T23:15:18.000Z
+401628335101874201,401628335,4016283351,8,1,12:57,South Florida,Alabama,0,0,29,1,10,0,Pass Incompletion,Byrum Brown pass incomplete to Sean Atkins,-0.534372502378378,2024-09-07T23:15:42.000Z
+401628335101875101,401628335,4016283351,9,1,12:48,South Florida,Alabama,0,0,29,2,10,3,Rush,Nay'Quan Wright run for 3 yds to the ALA 26,-0.231783379754889,2024-09-07T23:16:01.000Z
+401628335101876601,401628335,4016283351,10,1,12:33,South Florida,Alabama,0,0,26,3,7,14,Rush,Byrum Brown run for 14 yds to the ALA 12 for a 1ST down,1.0243625246954535,2024-09-07T23:16:21.000Z
+401628335101879001,401628335,4016283351,11,1,12:09,South Florida,Alabama,0,0,12,1,10,2,Rush,Nay'Quan Wright run for 2 yds to the ALA 10,-0.1686350677656265,2024-09-07T23:16:42.000Z
+401628335101886001,401628335,4016283351,12,1,11:39,South Florida,Alabama,0,0,10,2,8,0,Pass Incompletion,Byrum Brown pass incomplete to Michael Brown-Stephens,-0.290695577850234,2024-09-07T23:17:08.000Z
+401628335101886602,401628335,4016283351,14,1,11:33,South Florida,Alabama,0,0,15,3,13,0,Pass Incompletion,Byrum Brown pass incomplete to Sean Atkins,-0.666901488251957,2024-09-07T23:17:36.000Z
+401628335101849902,401628335,4016283351,1,1,15:00,Alabama,South Florida,0,0,65,1,10,17,Kickoff Return (Offense),"Conor Talty kickoff for 57 yds , Kelley Joiner return for 17 yds to the USF 25",,2024-09-07T23:10:46.000Z
+401628335101886601,401628335,4016283351,13,1,11:33,South Florida,Alabama,0,0,10,3,8,-5,Penalty,"South Florida Penalty, False Start (Mike Lofton) to the ALA 15",,2024-09-07T23:17:36.000Z
+401628335101887301,401628335,4016283351,15,1,11:26,South Florida,Alabama,3,0,15,4,13,34,Field Goal Good,John Cannon 34 Yd Field Goal ,,2024-09-07T23:18:19.000Z
+401628335101854501,401628335,4016283351,2,1,14:54,South Florida,Alabama,0,0,75,1,10,12,Pass Reception,Byrum Brown pass complete to Sean Atkins for 12 yds to the USF 37 for a 1ST down,1.0272443261435713,2024-09-07T23:11:51.000Z
+401628335101856201,401628335,4016283351,3,1,14:37,South Florida,Alabama,0,0,63,1,10,2,Rush,Nay'Quan Wright run for 2 yds to the USF 39,-0.6556647600661254,2024-09-07T23:12:18.000Z
+401628335101857601,401628335,4016283351,4,1,14:23,South Florida,Alabama,0,0,61,2,8,-2,Rush,Byrum Brown run for a loss of 2 yards to the USF 37,-1.0722500880451138,2024-09-07T23:13:38.000Z
+401628335101866601,401628335,4016283351,6,1,13:33,South Florida,Alabama,0,0,44,1,10,3,Rush,Byrum Brown run for 3 yds to the ALA 41,-0.3178831342797892,2024-09-07T23:14:57.000Z
+401628335101887303,401628335,4016283352,2,1,11:26,Alabama,South Florida,0,3,75,1,10,0,Rush,Justice Haynes run for no gain to the ALA 25,-0.7029700220436519,2024-09-07T23:21:59.000Z
+401628335101889501,401628335,4016283352,3,1,11:04,Alabama,South Florida,0,3,75,2,10,3,Pass Reception,Jalen Milroe pass complete to Germie Bernard for 3 yds to the ALA 28,-0.15222912011238687,2024-09-07T23:23:22.000Z
+401628335101896601,401628335,4016283352,4,1,10:33,Alabama,South Florida,0,3,72,3,7,0,Pass Incompletion,Jalen Milroe pass incomplete to Kendrick Law,-0.26587881160037785,2024-09-07T23:23:50.000Z
+401628335101887302,401628335,4016283352,1,1,11:26,South Florida,Alabama,3,0,65,4,13,0,Kickoff,Nico Gramatica kickoff for 65 yds for a touchback,,2024-09-07T23:21:59.000Z
+401628335101897901,401628335,4016283352,5,1,10:20,Alabama,South Florida,0,3,72,4,7,0,Punt,"James Burnip punt for 50 yds, fair catch by Sean Atkins at the USF 22",,2024-09-07T23:24:33.000Z
+401628335101897902,401628335,4016283353,1,1,10:20,South Florida,Alabama,3,0,78,1,10,4,Rush,Byrum Brown run for 4 yds to the USF 26,-0.098522001264528,2024-09-07T23:25:30.000Z
+401628335101899301,401628335,4016283353,2,1,10:06,South Florida,Alabama,3,0,74,2,6,0,Rush,Kelley Joiner run for no gain to the USF 26,-0.5661585529417099,2024-09-07T23:25:53.000Z
+401628335101907801,401628335,4016283353,3,1,9:21,South Florida,Alabama,3,0,74,3,6,0,Pass Incompletion,Byrum Brown pass incomplete to Michael Brown-Stephens,-0.2651018088073833,2024-09-07T23:26:29.000Z
+401628335101909201,401628335,4016283353,4,1,9:07,South Florida,Alabama,3,0,74,4,6,0,Punt,"Andrew Stokes punt for 49 yds , Cole Adams returns for no gain to the ALA 26 South Florida Penalty, Defensive Holding (Rico Watson III) to the ALA 35",,2024-09-07T23:28:05.000Z
+401628335101949101,401628335,4016283354,11,1,5:08,Alabama,South Florida,7,3,10,2,10,10,Rushing Touchdown,Jalen Milroe 10 Yd Run (Graham Nicholson Kick),2.7992199015013846,2024-09-07T23:39:06.000Z
+401628335101915801,401628335,4016283354,4,1,8:41,Alabama,South Florida,0,3,47,1,10,5,Rush,Jam Miller run for 5 yds to the USF 42,0.097373878655615,2024-09-07T23:34:49.000Z
+401628335101924301,401628335,4016283354,5,1,7:56,Alabama,South Florida,0,3,42,2,5,6,Pass Reception,Jalen Milroe pass complete to Caleb Odom for 6 yds to the USF 36 for a 1ST down,0.505050267597019,2024-09-07T23:35:23.000Z
+401628335101928401,401628335,4016283354,6,1,7:15,Alabama,South Florida,0,3,36,1,10,2,Rush,Jam Miller run for 2 yds to the USF 34,-0.3845678420514834,2024-09-07T23:36:05.000Z
+401628335101934801,401628335,4016283354,7,1,6:51,Alabama,South Florida,0,3,34,2,8,13,Rush,Germie Bernard run for 13 yds to the USF 21 for a 1ST down,0.7630491232697864,2024-09-07T23:36:29.000Z
+401628335101938101,401628335,4016283354,8,1,6:18,Alabama,South Florida,0,3,21,1,10,-7,Rush,"Justice Haynes run for 3 yds to the USF 18 Alabama Penalty, Offensive Holding (Geno VanDeMark) to the USF 28",-1.208086895536774,2024-09-07T23:38:00.000Z
+401628335101938801,401628335,4016283354,9,1,6:11,Alabama,South Florida,0,3,28,1,17,19,Pass Reception,Jalen Milroe pass complete to Germie Bernard for 19 yds to the USF 9 for a 1ST down,0.819435067173158,2024-09-07T23:38:29.000Z
+401628335101944501,401628335,4016283354,10,1,5:54,Alabama,South Florida,0,3,9,1,9,-1,Rush,Jalen Milroe run for a loss of 1 yard to the USF 10,-0.3749820778549166,2024-09-07T23:38:43.000Z
+401628335101915201,401628335,4016283354,3,1,8:47,Alabama,South Florida,0,3,61,3,6,14,Penalty,"Milroe, Jalen pass incomplete to Williams, Ryan, PENALTY SOUFLA pass interference (Austin, Brent) 14 yards to the SOUFLA47, NO PLAY, 1ST DOWN ALA.",,2024-09-07T23:34:36.000Z
+401628335101909202,401628335,4016283354,1,1,9:07,Alabama,South Florida,0,3,65,1,10,0,Pass Incompletion,Jalen Milroe pass incomplete to Ryan Williams,-1.0146424556055624,2024-09-07T23:28:05.000Z
+401628335101909701,401628335,4016283354,2,1,9:02,Alabama,South Florida,0,3,65,2,10,4,Pass Reception,Jalen Milroe pass complete to Ryan Williams for 4 yds to the ALA 39,-0.1103335900264737,2024-09-07T23:32:08.000Z
+401628335101949104,401628335,4016283355,2,1,5:08,South Florida,Alabama,3,7,75,1,10,0,Pass Incompletion,Byrum Brown pass incomplete to JeyQuan Smith,-0.7029700220436519,2024-09-07T23:43:50.000Z
+401628335101949701,401628335,4016283355,3,1,5:02,South Florida,Alabama,3,7,75,2,10,0,Pass Incompletion,Byrum Brown pass incomplete to Michael Brown-Stephens,-0.34710487712173865,2024-09-07T23:44:53.000Z
+401628335101954301,401628335,4016283355,4,1,4:56,South Florida,Alabama,3,7,75,3,10,9,Pass Reception,Byrum Brown pass complete to Nay'Quan Wright for 9 yds to the USF 34,0.3263945810520408,2024-09-07T23:45:15.000Z
+401628335101949103,401628335,4016283355,1,1,5:08,Alabama,South Florida,7,3,65,2,11,0,Kickoff,Conor Talty kickoff for 65 yds for a touchback,,2024-09-07T23:43:50.000Z
+401628335101958601,401628335,4016283355,5,1,4:13,South Florida,Alabama,3,7,66,4,1,0,Timeout,"Timeout South Florida, clock 04:13",,2024-09-07T23:46:01.000Z
+401628335101959501,401628335,4016283355,6,1,4:04,South Florida,Alabama,3,7,66,4,1,0,Punt,"Andrew Stokes punt for 52 yds, fair catch by Jaylen Mbakwe at the ALA 14",,2024-09-07T23:48:26.000Z
+401628335101969601,401628335,4016283356,3,1,3:03,Alabama,South Florida,7,3,87,2,11,0,Pass Incompletion,Jalen Milroe pass incomplete to Germie Bernard,-0.15597251655940436,2024-09-07T23:50:34.000Z
+401628335101974301,401628335,4016283356,4,1,2:56,Alabama,South Florida,7,3,87,3,11,0,Pass Incompletion,Jalen Milroe pass incomplete to CJ Dippre,-0.06755540708436046,2024-09-07T23:51:17.000Z
+401628335101967301,401628335,4016283356,2,1,3:26,Alabama,South Florida,7,3,82,2,6,-5,Penalty,"Alabama Penalty, False Start (Tyler Booker) to the ALA 13",,2024-09-07T23:50:17.000Z
+401628335101975801,401628335,4016283356,5,1,2:41,Alabama,South Florida,7,3,87,4,11,0,Punt,"James Burnip punt for 50 yds, fair catch by Sean Atkins at the USF 37",,2024-09-07T23:51:59.000Z
+401628335101959502,401628335,4016283356,1,1,4:04,Alabama,South Florida,7,3,86,1,10,4,Rush,Jalen Milroe run for 4 yds to the ALA 18,-0.0618919815702137,2024-09-07T23:49:14.000Z
+401628335101975802,401628335,4016283357,1,1,2:41,South Florida,Alabama,3,7,63,1,10,0,Rush,Ta'Ron Keith run for no gain to the USF 37,-1.065701080215459,2024-09-07T23:51:59.000Z
+401628335101998801,401628335,4016283357,7,1,0:11,South Florida,Alabama,3,7,38,4,15,0,Punt,Andrew Stokes punt for 38 yds for a touchback,,2024-09-07T23:56:39.000Z
+401628335101977301,401628335,4016283357,2,1,2:26,South Florida,Alabama,3,7,63,2,10,20,Rush,Byrum Brown run for 20 yds to the ALA 43 for a 1ST down,2.763841785862355,2024-09-07T23:53:19.000Z
+401628335101979301,401628335,4016283357,3,1,2:06,South Florida,Alabama,3,7,43,1,10,10,Pass Reception,Byrum Brown pass complete to Sean Atkins for 10 yds to the ALA 33 for a 1ST down,0.4492953144288662,2024-09-07T23:54:06.000Z
+401628335101985101,401628335,4016283357,4,1,1:48,South Florida,Alabama,3,7,33,1,10,-7,Sack,Byrum Brown sacked by Que Robinson for a loss of 7 yards to the ALA 40,-1.9672119470978817,2024-09-07T23:55:09.000Z
+401628335101988301,401628335,4016283357,5,1,1:16,South Florida,Alabama,3,7,40,2,17,1,Rush,Ta'Ron Keith run for 1 yd to the ALA 39,-0.7970217290813508,2024-09-07T23:55:35.000Z
+401628335101995801,401628335,4016283357,6,1,0:41,South Florida,Alabama,3,7,39,3,16,1,Pass Reception,Byrum Brown pass complete to Sean Atkins for 1 yd to the ALA 38,-0.6652692730624388,2024-09-07T23:55:52.000Z
+401628335101998803,401628335,4016283358,2,1,0:00,Alabama,South Florida,7,3,80,0,10,3,End Period,End of 1st Quarter,,2024-09-07T23:56:39.000Z
+401628335102849901,401628335,4016283358,3,2,15:00,Alabama,South Florida,7,3,77,2,7,-10,Penalty,"Milroe, Jalen rush for 4 yards to the ALA27, PENALTY ALA holding 10 yards to the ALA13, NO PLAY.",,2024-09-08T00:00:02.000Z
+401628335102859001,401628335,4016283358,6,2,14:09,Alabama,South Florida,7,3,65,2,10,-10,Penalty,"Milroe, Jalen pass complete to Bernard, Germie for 20 yards to the SOUFLA45, PENALTY ALA holding (Montgomery, Roq) 10 yards to the ALA25, NO PLAY.",,2024-09-08T00:02:50.000Z
+401628335102869901,401628335,4016283358,9,2,13:00,Alabama,South Florida,7,3,93,4,38,0,Punt,"James Burnip punt for 50 yds, fair catch by Sean Atkins at the USF 43",,2024-09-08T00:06:05.000Z
+401628335102866301,401628335,4016283358,8,2,13:36,Alabama,South Florida,7,3,83,3,28,-10,Sack,Jalen Milroe sacked by Jason Vaughn for a loss of 10 yards to the ALA 7,-0.0226374972874348,2024-09-08T00:05:16.000Z
+401628335102865801,401628335,4016283358,7,2,13:41,Alabama,South Florida,7,3,75,2,20,-8,Sack,"Jalen Milroe sacked by Kajuan Banks for a loss of 8 yards to the ALA 17 Alabama Penalty, Intentional Grounding (Jalen Milroe) to the ALA 17",-0.2024341546763102,2024-09-08T00:03:31.000Z
+401628335102858401,401628335,4016283358,5,2,14:15,Alabama,South Florida,7,3,65,1,10,0,Pass Incompletion,Jalen Milroe pass incomplete to Germie Bernard,-1.0146424556055624,2024-09-08T00:02:04.000Z
+401628335102856301,401628335,4016283358,4,2,14:36,Alabama,South Florida,7,3,87,2,17,22,Pass Reception,Jalen Milroe pass complete to Germie Bernard for 22 yds to the ALA 35 for a 1ST down,2.0345051056959322,2024-09-08T00:01:48.000Z
+401628335101998802,401628335,4016283358,1,1,0:11,Alabama,South Florida,7,3,80,1,10,3,Rush,Justice Haynes run for 3 yds to the ALA 23,-0.2366097161141063,2024-09-07T23:56:39.000Z
+401628335102904601,401628335,4016283359,8,2,9:53,South Florida,Alabama,3,7,7,3,7,0,Pass Incompletion,Byrum Brown pass incomplete to Payten Singletary,-0.325035760733144,2024-09-08T00:09:16.000Z
+401628335102884501,401628335,4016283359,4,2,11:54,South Florida,Alabama,3,7,36,2,8,16,Rush,Byrum Brown run for 16 yds to the ALA 20 for a 1ST down,0.8954704426611694,2024-09-08T00:07:30.000Z
+401628335102877801,401628335,4016283359,3,2,12:21,South Florida,Alabama,3,7,38,1,10,2,Rush,Byrum Brown run for 2 yds to the ALA 36,-0.4188055231076804,2024-09-08T00:07:03.000Z
+401628335102875801,401628335,4016283359,2,2,12:41,South Florida,Alabama,3,7,50,2,3,12,Rush,Byrum Brown run for 12 yds to the ALA 38 for a 1ST down,0.690064857426691,2024-09-08T00:06:36.000Z
+401628335102869902,401628335,4016283359,1,2,13:00,South Florida,Alabama,3,7,57,1,10,7,Pass Reception,Byrum Brown pass complete to Michael Brown-Stephens for 7 yds to the 50 yard line,0.6806591914994475,2024-09-08T00:06:05.000Z
+401628335102896601,401628335,4016283359,7,2,10:33,South Florida,Alabama,3,7,13,2,13,6,Rush,Byrum Brown run for 6 yds to the ALA 7,0.087800871112,2024-09-08T00:09:02.000Z
+401628335102905401,401628335,4016283359,10,2,9:45,South Florida,Alabama,6,7,7,4,7,25,Field Goal Good,John Cannon 25 Yd Field Goal ,,2024-09-08T00:13:48.000Z
+401628335102905101,401628335,4016283359,9,2,9:48,South Florida,Alabama,3,7,7,4,0,0,Timeout,"Timeout South Florida, clock 09:48",,2024-09-08T00:10:08.000Z
+401628335102886701,401628335,4016283359,5,2,11:32,South Florida,Alabama,3,7,20,1,10,11,Rush,Byrum Brown run for 11 yds to the ALA 9 for a 1ST down,0.193689905385231,2024-09-08T00:07:59.000Z
+401628335102888901,401628335,4016283359,6,2,11:10,South Florida,Alabama,3,7,9,1,9,-4,Fumble Recovery (Own),"TEAM run for a loss of 4 yards to the ALA 13 TEAM fumbled, recovered by USF Byrum Brown",-0.548157676185884,2024-09-08T00:08:33.000Z
+401628335102908601,401628335,40162833510,3,2,9:13,Alabama,South Florida,7,6,75,2,10,0,Penalty,"Milroe, Jalen pass complete to Prentice, Kobe for 53 yards to the SOUFLA22, PENALTY SOUFLA pass interference off-setting, PENALTY ALA Holding off-setting, NO PLAY.",,2024-09-08T00:17:19.000Z
+401628335102905402,401628335,40162833510,1,2,9:45,South Florida,Alabama,6,7,65,4,8,0,Kickoff,Nico Gramatica kickoff for 65 yds for a touchback,,2024-09-08T00:15:17.000Z
+401628335102905403,401628335,40162833510,2,2,9:45,Alabama,South Florida,7,6,75,1,10,0,Rush,Justice Haynes run for no gain to the ALA 25,-0.7029700220436519,2024-09-08T00:15:17.000Z
+401628335102909601,401628335,40162833510,4,2,9:03,Alabama,South Florida,7,6,75,2,10,5,Rush,Justice Haynes run for 5 yds to the ALA 30,0.04378266651122598,2024-09-08T00:18:15.000Z
+401628335102917601,401628335,40162833510,5,2,8:23,Alabama,South Florida,7,6,70,3,5,12,Pass Reception,Jalen Milroe pass complete to CJ Dippre for 12 yds to the ALA 42 for a 1ST down,2.175239263214432,2024-09-08T00:19:03.000Z
+401628335102925401,401628335,40162833510,6,2,7:45,Alabama,South Florida,7,6,58,1,10,0,Rush,Justice Haynes run for no gain to the ALA 42,-1.1496266880203319,2024-09-08T00:19:30.000Z
+401628335102929501,401628335,40162833510,7,2,7:04,Alabama,South Florida,7,6,58,2,10,18,Pass Reception,Jalen Milroe pass complete to Kobe Prentice for 18 yds to the USF 40 for a 1ST down,2.5222807561223064,2024-09-08T00:20:09.000Z
+401628335102937701,401628335,40162833510,8,2,6:22,Alabama,South Florida,7,6,40,1,10,9,Pass Reception,Jalen Milroe pass complete to Germie Bernard for 9 yds to the USF 31,0.839961749584607,2024-09-08T00:20:44.000Z
+401628335102945102,401628335,40162833510,9,2,5:48,Alabama,South Florida,7,6,31,2,1,-5,Penalty,"Alabama Penalty, False Start (Geno VanDeMark) to the USF 36",,2024-09-08T00:21:15.000Z
+401628335102946502,401628335,40162833510,10,2,5:34,Alabama,South Florida,7,6,36,2,6,15,Penalty,"Milroe, Jalen pass incomplete to Williams, Ryan, PENALTY SOUFLA pass interference (Rucker, De'Shawn) 15 yards to the SOUFLA21, NO PLAY, 1ST DOWN ALA.",,2024-09-08T00:22:03.000Z
+401628335102947102,401628335,40162833510,11,2,5:28,Alabama,South Florida,7,6,21,1,10,5,Rush,Jam Miller run for 5 yds to the USF 16,0.07448863119052,2024-09-08T00:22:43.000Z
+401628335102949401,401628335,40162833510,12,2,5:05,Alabama,South Florida,7,6,16,2,5,5,Rush,Jam Miller run for 5 yds to the USF 11 for a 1ST down,0.036068769237048,2024-09-08T00:23:10.000Z
+401628335102954901,401628335,40162833510,13,2,4:50,Alabama,South Florida,7,6,11,1,10,6,Rush,Jam Miller run for 6 yds to the USF 5,0.1800217077735856,2024-09-08T00:27:11.000Z
+401628335102957901,401628335,40162833510,14,2,4:20,Alabama,South Florida,7,6,5,2,4,0,Rush,Jam Miller run for no gain to the USF 5,-0.3661317965175496,2024-09-08T00:27:58.000Z
+401628335102967101,401628335,40162833510,15,2,3:28,Alabama,South Florida,14,6,5,3,4,5,Rushing Touchdown,Jalen Milroe 5 Yd Run (Graham Nicholson Kick),2.707849502111889,2024-09-08T00:28:35.000Z
+401628335102967103,401628335,40162833511,1,2,3:28,Alabama,South Florida,14,6,65,3,4,0,Kickoff,Conor Talty kickoff for 65 yds for a touchback,,2024-09-08T00:28:35.000Z
+401628335102976601,401628335,40162833511,5,2,2:33,South Florida,Alabama,6,14,72,4,7,0,Punt,"Andrew Stokes punt for 46 yds , Cole Adams returns for no gain to the ALA 26",,2024-09-08T00:34:26.000Z
+401628335102967104,401628335,40162833511,2,2,3:28,South Florida,Alabama,6,14,75,1,10,-1,Pass Reception,Byrum Brown pass complete to Nay'Quan Wright for a loss of 1 yard to the USF 24,-0.8014893508157099,2024-09-08T00:28:35.000Z
+401628335102968701,401628335,40162833511,3,2,3:12,South Florida,Alabama,6,14,76,2,11,4,Rush,Nay'Quan Wright run for 4 yds to the USF 28,-0.05370979134032882,2024-09-08T00:33:03.000Z
+401628335102975401,401628335,40162833511,4,2,2:45,South Florida,Alabama,6,14,72,3,7,0,Pass Incompletion,Byrum Brown pass incomplete to Payten Singletary,-0.26587881160037785,2024-09-08T00:33:32.000Z
+401628335102994001,401628335,40162833512,5,2,0:59,Alabama,South Florida,14,6,85,4,21,4,Punt,"James Burnip punt for 41 yds , Sean Atkins returns for 4 yds to the USF 48",,2024-09-08T00:44:03.000Z
+401628335102977201,401628335,40162833512,2,2,2:27,Alabama,South Florida,14,6,74,2,10,-10,Penalty,"Milroe, Jalen rush for 74 yards to the SOUFLA0, PENALTY ALA holding (Formby, Wilkin) 10 yards to the ALA16, NO PLAY.",,2024-09-08T00:36:34.000Z
+401628335102976602,401628335,40162833512,1,2,2:33,Alabama,South Florida,14,6,74,1,10,0,Pass Incompletion,Jalen Milroe pass incomplete to Ryan Williams,-0.7342478781140684,2024-09-08T00:34:26.000Z
+401628335102978401,401628335,40162833512,3,2,2:15,Alabama,South Florida,14,6,84,2,20,-6,Rush,Justice Haynes run for a loss of 6 yards to the ALA 10,-0.1001345260586941,2024-09-08T00:37:13.000Z
+401628335102979901,401628335,40162833512,4,2,2:00,Alabama,South Florida,14,6,90,3,26,5,Pass Reception,Jalen Milroe pass complete to Josh Cuevas for 5 yds to the ALA 15,0.00093222165169224,2024-09-08T00:41:11.000Z
+401628335102994002,401628335,40162833513,1,2,0:59,South Florida,Alabama,6,14,52,1,10,0,Pass Incompletion,Byrum Brown pass incomplete to Sean Atkins,-1.1430602484821704,2024-09-08T00:44:03.000Z
+401628335102994401,401628335,40162833513,2,2,0:55,South Florida,Alabama,6,14,52,2,10,3,Pass Reception,Byrum Brown pass complete to Ta'Ron Keith for 3 yds to the ALA 49,-0.3912199668849112,2024-09-08T00:45:08.000Z
+401628335102996401,401628335,40162833513,3,2,0:35,South Florida,Alabama,6,14,49,3,7,-5,Penalty,"South Florida Penalty, False Start (Derek Bowman) to the USF 46",,2024-09-08T00:46:05.000Z
+401628335102996402,401628335,40162833513,4,2,0:35,South Florida,Alabama,6,14,54,3,12,0,Timeout,"Timeout South Florida, clock 00:35",,2024-09-08T00:46:15.000Z
+401628335102996403,401628335,40162833513,5,2,0:35,South Florida,Alabama,6,14,54,3,12,9,Pass Reception,Byrum Brown pass complete to Joshua Porter for 9 yds to the ALA 45,0.7539748825561299,2024-09-08T00:46:15.000Z
+401628335102998001,401628335,40162833513,8,2,0:19,South Florida,Alabama,6,14,50,4,8,0,Punt,"Andrew Stokes punt for 40 yds, punt out-of-bounds at the ALA 10",,2024-09-08T00:51:07.000Z
+401628335102997002,401628335,40162833513,7,2,0:29,South Florida,Alabama,6,14,45,4,3,-5,Penalty,"South Florida Penalty, Delay of Game (-5 Yards) to the 50 yard line",,2024-09-08T00:49:59.000Z
+401628335102997001,401628335,40162833513,6,2,0:29,South Florida,Alabama,6,14,45,4,3,0,Timeout,"Timeout Alabama, clock 00:29",,2024-09-08T00:48:09.000Z
+401628335102998002,401628335,40162833514,1,2,0:19,Alabama,South Florida,14,6,90,1,10,-2,Rush,TEAM run for a loss of 2 yards to the ALA 8,-0.4333196845754248,2024-09-08T00:51:07.000Z
+401628335102998003,401628335,40162833514,2,2,0:00,Alabama,South Florida,14,6,90,0,10,-2,End of Half,End of 2nd Quarter,,2024-09-08T00:51:37.000Z
+401628335103849901,401628335,40162833515,1,3,15:00,South Florida,Alabama,6,14,65,1,10,52,Kickoff Return (Offense),"Nico Gramatica kickoff for 65 yds , Kendrick Law return for 52 yds to the USF 48 Kendrick Law fumbled, forced by Ben Knox, recovered by USF Nico Gramatica",,2024-09-08T01:14:05.000Z
+401628335103866401,401628335,40162833515,6,3,13:35,South Florida,Alabama,6,14,35,4,11,53,Field Goal Missed,John Cannon 53 yd FG MISSED,,2024-09-08T01:16:48.000Z
+401628335103857301,401628335,40162833515,3,3,14:26,South Florida,Alabama,6,14,34,1,10,0,Pass Incompletion,Byrum Brown pass incomplete to Nay'Quan Wright,-0.6630222646782312,2024-09-08T01:15:28.000Z
+401628335103857901,401628335,40162833515,4,3,14:20,South Florida,Alabama,6,14,34,2,10,3,Rush,Nay'Quan Wright run for 3 yds to the ALA 31,-0.2916591504294015,2024-09-08T01:15:45.000Z
+401628335103864001,401628335,40162833515,5,3,13:59,South Florida,Alabama,6,14,31,3,7,-4,Sack,Byrum Brown sacked by Tim Keenan III and Jihaad Campbell for a loss of 4 yards to the ALA 35,-1.821362777181685,2024-09-08T01:16:26.000Z
+401628335103854801,401628335,40162833515,2,3,14:51,South Florida,Alabama,6,14,52,1,10,18,Pass Reception,"Byrum Brown pass complete to Nay'Quan Wright for 3 yds to the ALA 49 for a 1ST down Alabama Penalty, Face Mask (15 yards) (Jihaad Campbell) to the ALA 34 for a 1ST down",1.071328127796761,2024-09-08T01:15:03.000Z
+401628335103879801,401628335,40162833516,4,3,12:01,Alabama,South Florida,14,6,79,4,24,0,Punt,"James Burnip punt for 24 yds, downed at the ALA 45",,2024-09-08T01:20:36.000Z
+401628335103866402,401628335,40162833516,1,3,13:35,Alabama,South Florida,14,6,65,1,10,0,Pass Incompletion,Jalen Milroe pass incomplete to Ryan Williams,-1.0146424556055624,2024-09-08T01:17:02.000Z
+401628335103867401,401628335,40162833516,2,3,13:25,Alabama,South Florida,14,6,65,2,10,4,Rush,Jalen Milroe run for 4 yds to the ALA 39,-0.1103335900264737,2024-09-08T01:19:05.000Z
+401628335103874501,401628335,40162833516,3,3,12:54,Alabama,South Florida,14,6,61,3,6,-18,Sack,Jalen Milroe sacked by Mac Harris for a loss of 18 yards to the ALA 21,-1.0207818916203157,2024-09-08T01:19:44.000Z
+401628335103887001,401628335,40162833517,4,3,11:29,South Florida,Alabama,6,14,43,4,8,38,Punt,"Andrew Stokes punt for 43 yds for a touchback South Florida Penalty, Illegal Formation (-5 Yards)",,2024-09-08T01:26:17.000Z
+401628335103879802,401628335,40162833517,1,3,12:01,South Florida,Alabama,6,14,45,1,10,2,Rush,Byrum Brown run for 2 yds to the ALA 43,-0.548127712470997,2024-09-08T01:20:36.000Z
+401628335103885501,401628335,40162833517,2,3,11:44,South Florida,Alabama,6,14,43,2,8,0,Pass Incompletion,Byrum Brown pass incomplete to Kelley Joiner,-1.0744871250513215,2024-09-08T01:24:32.000Z
+401628335103885901,401628335,40162833517,3,3,11:40,South Florida,Alabama,6,14,43,3,8,0,Pass Incompletion,Byrum Brown pass incomplete to Kelley Joiner,-0.9795810277823227,2024-09-08T01:24:50.000Z
+401628335103894401,401628335,40162833518,2,3,10:55,Alabama,South Florida,14,6,74,2,9,13,Fumble Recovery (Opponent),"Jam Miller run for 13 yds to the ALA 39 Jam Miller fumbled, forced by Mac Harris, recovered by USF Tavin Ward",-0.33476533717699297,2024-09-08T01:28:14.000Z
+401628335103887002,401628335,40162833518,1,3,11:29,Alabama,South Florida,14,6,75,1,10,1,Rush,Jam Miller run for 1 yd to the ALA 26,-0.5874795431016855,2024-09-08T01:26:47.000Z
+401628335103906402,401628335,40162833519,6,3,9:35,South Florida,Alabama,6,14,3,1,0,-5,Penalty,"South Florida Penalty, False Start (Jack Wilty) to the ALA 8",,2024-09-08T01:30:29.000Z
+401628335103894402,401628335,40162833519,1,3,10:55,South Florida,Alabama,6,14,39,1,10,13,Pass Reception,Byrum Brown pass complete to Abdur-Rahmaan Yaseen for 13 yds to the ALA 26 for a 1ST down,0.4204364325233705,2024-09-08T01:28:14.000Z
+401628335103896101,401628335,40162833519,2,3,10:38,South Florida,Alabama,6,14,26,1,10,3,Rush,Byrum Brown run for 3 yds to the ALA 23,-0.1464938748677045,2024-09-08T01:29:20.000Z
+401628335103898101,401628335,40162833519,3,3,10:18,South Florida,Alabama,6,14,23,2,7,8,Rush,Ta'Ron Keith run for 8 yds to the ALA 15 for a 1ST down,0.308296907710802,2024-09-08T01:29:44.000Z
+401628335103904001,401628335,40162833519,4,3,9:59,South Florida,Alabama,6,14,15,1,10,13,Rush,Byrum Brown run for 13 yds to the ALA 2 for a 1ST down,1.344963791892985,2024-09-08T01:30:00.000Z
+401628335103906401,401628335,40162833519,5,3,9:35,South Florida,Alabama,13,14,2,1,2,2,Rushing Touchdown,Ta'Ron Keith 2 Yd Run (John Cannon Kick),1.213235297672098,2024-09-08T01:30:29.000Z
+401628335103906404,401628335,40162833520,1,3,9:35,South Florida,Alabama,13,14,65,1,15,0,Kickoff,Nico Gramatica kickoff for 65 yds for a touchback,,2024-09-08T01:30:29.000Z
+401628335103914401,401628335,40162833520,4,3,8:55,Alabama,South Florida,14,13,72,3,7,0,Timeout,"Timeout South Florida, clock 08:55",,2024-09-08T01:38:07.000Z
+401628335103906405,401628335,40162833520,2,3,9:35,Alabama,South Florida,14,13,75,1,10,3,Rush,Justice Haynes run for 3 yds to the ALA 28,-0.2957674139440157,2024-09-08T01:36:41.000Z
+401628335103909701,401628335,40162833520,3,3,9:02,Alabama,South Florida,14,13,72,2,7,0,Pass Incompletion,Jalen Milroe pass incomplete to Germie Bernard,-0.5594317282120231,2024-09-08T01:37:17.000Z
+401628335103914402,401628335,40162833520,5,3,8:55,Alabama,South Florida,14,13,72,3,7,0,Pass Incompletion,Jalen Milroe pass incomplete,-0.26587881160037785,2024-09-08T01:38:07.000Z
+401628335103915801,401628335,40162833520,6,3,8:41,Alabama,South Florida,14,13,72,4,7,0,Punt,"James Burnip punt for 37 yds, fair catch by Sean Atkins at the USF 35",,2024-09-08T01:40:29.000Z
+401628335103915802,401628335,40162833521,1,3,8:41,South Florida,Alabama,13,14,65,1,10,-2,Rush,Nay'Quan Wright run for a loss of 2 yards to the USF 33,-1.3169300165905415,2024-09-08T01:40:29.000Z
+401628335103917801,401628335,40162833521,2,3,8:21,South Florida,Alabama,13,14,67,2,12,0,Pass Incompletion,Byrum Brown pass incomplete to Josh Hardeman,-0.4542686160428877,2024-09-08T01:41:30.000Z
+401628335103918301,401628335,40162833521,3,3,8:16,South Florida,Alabama,13,14,67,3,12,-8,Sack,Byrum Brown sacked by Tim Keenan III for a loss of 8 yards to the USF 25,-0.3525746617308281,2024-09-08T01:42:01.000Z
+401628335103927501,401628335,40162833521,4,3,7:24,South Florida,Alabama,13,14,75,4,20,0,Punt,"Andrew Stokes punt for 40 yds, punt out-of-bounds at the ALA 35",,2024-09-08T01:42:45.000Z
+401628335103939201,401628335,40162833522,4,3,6:07,Alabama,South Florida,14,13,60,4,5,0,Punt,"James Burnip punt for 48 yds, fair catch by Sean Atkins at the USF 12",,2024-09-08T01:45:29.000Z
+401628335103927502,401628335,40162833522,1,3,7:24,Alabama,South Florida,14,13,65,1,10,4,Rush,Justice Haynes run for 4 yds to the ALA 39,-0.1595952673507188,2024-09-08T01:43:22.000Z
+401628335103929701,401628335,40162833522,2,3,7:02,Alabama,South Florida,14,13,61,2,6,1,Rush,Justice Haynes run for 1 yd to the ALA 40,-0.7960316844725899,2024-09-08T01:43:48.000Z
+401628335103937801,401628335,40162833522,3,3,6:21,Alabama,South Florida,14,13,60,3,5,0,Pass Incompletion,Jalen Milroe pass incomplete,-0.6307534784851327,2024-09-08T01:44:30.000Z
+401628335103958001,401628335,40162833523,5,3,4:19,South Florida,Alabama,13,14,85,4,7,0,Punt,"Andrew Stokes punt for 40 yds, punt out-of-bounds at the ALA 45",,2024-09-08T01:50:48.000Z
+401628335103939202,401628335,40162833523,1,3,6:07,South Florida,Alabama,13,14,88,1,10,1,Rush,Byrum Brown run for 1 yd to the USF 13,-0.32181812145469557,2024-09-08T01:45:29.000Z
+401628335103944903,401628335,40162833523,2,3,5:50,South Florida,Alabama,13,14,87,2,9,-5,Rush,"Kelley Joiner run for 2 yds to the USF 15 South Florida Penalty, Offensive Holding (RJ Perry) to the USF 8",-0.2968582290779729,2024-09-08T01:46:26.000Z
+401628335103948801,401628335,40162833523,3,3,5:11,South Florida,Alabama,13,14,92,2,14,7,Rush,Kelley Joiner run for 7 yds to the USF 15,0.08393206137174314,2024-09-08T01:49:02.000Z
+401628335103956501,401628335,40162833523,4,3,4:34,South Florida,Alabama,13,14,85,3,7,0,Pass Incompletion,Byrum Brown pass incomplete to Sean Atkins,-0.128168753760054,2024-09-08T01:49:24.000Z
+401628335103966401,401628335,40162833524,2,3,3:35,Alabama,South Florida,14,13,49,2,4,6,Penalty,"Miller, Jam rush for 5 yards to the SOUFLA44, PENALTY SOUFLA offside (Cheney, Rashad) 6 yards to the SOUFLA43, NO PLAY, 1ST DOWN ALA.",,2024-09-08T01:56:21.000Z
+401628335103975001,401628335,40162833524,4,3,2:49,Alabama,South Florida,14,13,45,1,12,15,Penalty,"Milroe, Jalen pass incomplete to Prentice, Kobe, PENALTY SOUFLA roughing passer (Blue-Eli, Doug) 15 yards to the SOUFLA30, NO PLAY, 1ST DOWN ALA.",,2024-09-08T01:58:06.000Z
+401628335103975701,401628335,40162833524,5,3,2:42,Alabama,South Florida,14,13,30,1,10,-10,Penalty,"Milroe, Jalen pass incomplete, PENALTY ALA holding (Formby, Wilkin) 10 yards to the SOUFLA40, NO PLAY.",,2024-09-08T01:58:44.000Z
+401628335103998302,401628335,40162833524,11,3,0:00,Alabama,South Florida,14,13,8,0,2,-2,End Period,End of 3rd Quarter,,2024-09-08T02:01:31.000Z
+401628335104854901,401628335,40162833524,13,4,14:50,Alabama,South Florida,14,13,5,1,5,0,Rush,Justice Haynes run for no gain to the USF 5,-0.554796850971046,2024-09-08T02:09:41.000Z
+401628335104865501,401628335,40162833524,15,4,13:44,Alabama,South Florida,14,13,2,3,0,-2,Fumble Recovery (Opponent),"Jalen Milroe run for a loss of 2 yards to the USF 4 Jalen Milroe fumbled, recovered by USF Bernard Gooden",,2024-09-08T02:14:01.000Z
+401628335103958002,401628335,40162833524,1,3,4:19,Alabama,South Florida,14,13,55,1,10,6,Rush,Jam Miller run for 6 yds to the USF 49,0.38118862332173,2024-09-08T01:50:48.000Z
+401628335103968201,401628335,40162833524,3,3,3:17,Alabama,South Florida,14,13,43,1,10,-2,Pass Reception,"Jalen Milroe pass complete to Jam Miller for 8 yds to the USF 35 Alabama Penalty, Illegal Block (Tyler Booker) to the USF 45",-1.3862523018398782,2024-09-08T01:57:07.000Z
+401628335103976701,401628335,40162833524,6,3,2:32,Alabama,South Florida,14,13,40,1,20,13,Pass Reception,Jalen Milroe pass complete to Ryan Williams for 13 yds to the USF 27,1.244909547658521,2024-09-08T01:59:04.000Z
+401628335103985101,401628335,40162833524,7,3,1:48,Alabama,South Florida,14,13,27,2,7,6,Rush,Jam Miller run for 6 yds to the USF 21,0.20247149215483,2024-09-08T01:59:50.000Z
+401628335103988401,401628335,40162833524,8,3,1:15,Alabama,South Florida,14,13,21,3,1,5,Rush,Jam Miller run for 5 yds to the USF 16 for a 1ST down,0.2160825384084466,2024-09-08T02:00:08.000Z
+401628335103994601,401628335,40162833524,9,3,0:53,Alabama,South Florida,14,13,16,1,10,8,Pass Reception,Jalen Milroe pass complete to Ryan Williams for 8 yds to the USF 8,0.4495267930851924,2024-09-08T02:00:57.000Z
+401628335103998301,401628335,40162833524,10,3,0:16,Alabama,South Florida,14,13,8,2,2,-2,Rush,Jam Miller run for a loss of 2 yards to the USF 10,-0.661723960701673,2024-09-08T02:01:10.000Z
+401628335104849901,401628335,40162833524,12,4,15:00,Alabama,South Florida,14,13,10,3,4,5,Pass Reception,Jalen Milroe pass complete to Cole Adams for 5 yds to the USF 5 for a 1ST down,0.897139048349981,2024-09-08T02:05:30.000Z
+401628335104857201,401628335,40162833524,14,4,14:27,Alabama,South Florida,14,13,5,2,5,3,Pass Reception,Jalen Milroe pass complete to Robbie Ouzts for 3 yds to the USF 2,-0.106252592532941,2024-09-08T02:12:26.000Z
+401628335104884901,401628335,40162833525,4,4,11:50,South Florida,Alabama,13,14,87,4,1,28,Punt,"Andrew Stokes punt for 49 yds , Jaylen Mbakwe returns for 28 yds to the USF 34",,2024-09-08T02:16:40.000Z
+401628335104865503,401628335,40162833525,1,4,13:44,South Florida,Alabama,13,14,96,1,10,2,Rush,Ta'Ron Keith run for 2 yds to the USF 6,-0.17452492933897634,2024-09-08T02:14:01.000Z
+401628335104868201,401628335,40162833525,2,4,13:17,South Florida,Alabama,13,14,94,2,8,5,Rush,Byrum Brown run for 5 yds to the USF 11,0.0399826086966062,2024-09-08T02:15:33.000Z
+401628335104874801,401628335,40162833525,3,4,12:51,South Florida,Alabama,13,14,89,3,3,2,Pass Reception,Byrum Brown pass complete to Ta'Ron Keith for 2 yds to the USF 13,-0.1250532035650087,2024-09-08T02:15:54.000Z
+401628335104884902,401628335,40162833526,1,4,11:50,Alabama,South Florida,14,13,34,1,10,14,Rush,Jalen Milroe run for 14 yds to the USF 20 for a 1ST down,0.318798431881971,2024-09-08T02:19:48.000Z
+401628335104887801,401628335,40162833526,2,4,11:21,Alabama,South Florida,14,13,20,1,10,4,Rush,Justice Haynes run for 4 yds to the USF 16,-0.026039089926776,2024-09-08T02:21:37.000Z
+401628335104894801,401628335,40162833526,3,4,10:51,Alabama,South Florida,14,13,16,2,6,0,Rush,Jalen Milroe run for no gain to the USF 16,-0.397567715481811,2024-09-08T02:22:09.000Z
+401628335104899501,401628335,40162833526,4,4,10:04,Alabama,South Florida,21,13,16,3,6,16,Passing Touchdown,Kobe Prentice 16 Yd pass from Jalen Milroe (Graham Nicholson Kick),3.041534534440286,2024-09-08T02:22:58.000Z
+401628335104918101,401628335,40162833527,7,4,8:18,South Florida,Alabama,13,21,9,2,9,2,Rush,Nay'Quan Wright run for 2 yds to the ALA 7,-0.14455842550757,2024-09-08T02:30:19.000Z
+401628335104926401,401628335,40162833527,8,4,7:35,South Florida,Alabama,13,21,7,3,7,3,Rush,Byrum Brown run for 3 yds to the ALA 4,-0.09818708395791,2024-09-08T02:30:47.000Z
+401628335104899503,401628335,40162833527,1,4,10:04,Alabama,South Florida,21,13,65,3,6,0,Kickoff,Conor Talty kickoff for 65 yds for a touchback,,2024-09-08T02:24:46.000Z
+401628335104935401,401628335,40162833527,9,4,6:45,South Florida,Alabama,16,21,4,4,4,22,Field Goal Good,John Cannon 22 Yd Field Goal ,,2024-09-08T02:31:33.000Z
+401628335104899504,401628335,40162833527,2,4,10:04,South Florida,Alabama,13,21,75,1,10,14,Pass Reception,Byrum Brown pass complete to Michael Brown-Stephens for 14 yds to the USF 39 for a 1ST down,1.2227390832564555,2024-09-08T02:24:46.000Z
+401628335104905001,401628335,40162833527,3,4,9:49,South Florida,Alabama,13,21,61,1,10,19,Rush,Nay'Quan Wright run for 19 yds to the ALA 42 for a 1ST down,1.560080564892742,2024-09-08T02:25:54.000Z
+401628335104906703,401628335,40162833527,4,4,9:32,South Florida,Alabama,13,21,42,1,10,14,Sack,"Byrum Brown sacked by Justin Jefferson for a loss of 1 yard to the ALA 43 for a 1ST down Alabama Penalty, Personal Foul (Justin Jefferson) to the ALA 28 for a 1ST down",0.530920997433693,2024-09-08T02:26:08.000Z
+401628335104914101,401628335,40162833527,5,4,8:58,South Florida,Alabama,13,21,28,1,10,19,Rush,Nay'Quan Wright run for 19 yds to the ALA 9 for a 1ST down,0.339776650491963,2024-09-08T02:29:38.000Z
+401628335104915901,401628335,40162833527,6,4,8:40,South Florida,Alabama,13,21,9,1,9,0,Rush,Nay'Quan Wright run for no gain to the ALA 9,-0.315798379566314,2024-09-08T02:30:02.000Z
+401628335104935402,401628335,40162833528,1,4,6:45,South Florida,Alabama,16,21,65,4,5,0,Kickoff,Nico Gramatica kickoff for 65 yds for a touchback,,2024-09-08T02:31:33.000Z
+401628335104935403,401628335,40162833528,2,4,6:45,Alabama,South Florida,21,16,75,1,10,7,Rush,Jam Miller run for 7 yds to the ALA 32,0.604642460086338,2024-09-08T02:31:33.000Z
+401628335104937101,401628335,40162833528,3,4,6:28,Alabama,South Florida,21,16,68,2,3,25,Rush,Jam Miller run for 25 yds to the USF 43 for a 1ST down,2.1207425717041293,2024-09-08T02:34:01.000Z
+401628335104944901,401628335,40162833528,4,4,5:50,Alabama,South Florida,28,16,43,1,10,43,Passing Touchdown,Ryan Williams 43 Yd pass from Jalen Milroe (Graham Nicholson Kick),3.3523700879308542,2024-09-08T02:34:45.000Z
+401628335104944903,401628335,40162833529,1,4,5:50,Alabama,South Florida,28,16,65,1,10,0,Kickoff,Conor Talty kickoff for 65 yds for a touchback,,2024-09-08T02:34:45.000Z
+401628335104967401,401628335,40162833529,9,4,3:25,South Florida,Alabama,16,28,40,4,7,0,Timeout,"Timeout South Florida, clock 03:25",,2024-09-08T02:41:37.000Z
+401628335104966801,401628335,40162833529,8,4,3:31,South Florida,Alabama,16,28,40,3,7,0,Pass Incompletion,Byrum Brown pass incomplete to Sean Atkins,-1.046470034780377,2024-09-08T02:41:06.000Z
+401628335104958501,401628335,40162833529,7,4,4:14,South Florida,Alabama,16,28,42,2,9,2,Rush,Byrum Brown run for 2 yds to the ALA 40,-0.6002469840454587,2024-09-08T02:40:21.000Z
+401628335104956101,401628335,40162833529,6,4,4:38,South Florida,Alabama,16,28,43,1,10,1,Pass Reception,Byrum Brown pass complete to Ta'Ron Keith for 1 yd to the ALA 42,-0.7221421996351935,2024-09-08T02:39:59.000Z
+401628335104967901,401628335,40162833529,10,4,3:20,South Florida,Alabama,16,28,40,4,7,0,Pass Incompletion,Byrum Brown pass incomplete to Joshua Porter,-1.2787706936081165,2024-09-08T02:45:25.000Z
+401628335104944904,401628335,40162833529,2,4,5:50,South Florida,Alabama,16,28,75,1,10,0,Pass Incompletion,Byrum Brown pass incomplete to Abdur-Rahmaan Yaseen,-0.7029700220436519,2024-09-08T02:34:45.000Z
+401628335104945701,401628335,40162833529,3,4,5:42,South Florida,Alabama,16,28,75,2,10,12,Pass Reception,Byrum Brown pass complete to Sean Atkins for 12 yds to the USF 37 for a 1ST down,1.7302143481872232,2024-09-08T02:38:32.000Z
+401628335104947201,401628335,40162833529,4,4,5:27,South Florida,Alabama,16,28,63,1,10,2,Rush,Kelley Joiner run for 2 yds to the USF 39,-0.6556647600661254,2024-09-08T02:39:00.000Z
+401628335104949601,401628335,40162833529,5,4,5:03,South Florida,Alabama,16,28,61,2,8,18,Pass Reception,"Byrum Brown pass complete to Kelley Joiner for 8 yds to the ALA 47 for a 1ST down Alabama Penalty, Defensive Holding (Domani Jackson) to the ALA 43 for a 1ST down",2.3538054657130214,2024-09-08T02:39:43.000Z
+401628335104967902,401628335,40162833530,1,4,3:20,Alabama,South Florida,28,16,60,1,10,4,Rush,Jalen Milroe run for 4 yds to the ALA 44,-0.1674744380827829,2024-09-08T02:45:25.000Z
+401628335104976901,401628335,40162833530,2,4,2:30,Alabama,South Florida,35,16,56,2,6,56,Rushing Touchdown,Jam Miller 56 Yd Run (Graham Nicholson Kick),4.924375042226458,2024-09-08T02:47:09.000Z
+401628335104976903,401628335,40162833531,1,4,2:30,Alabama,South Florida,35,16,65,2,6,0,Kickoff,Conor Talty kickoff for 65 yds for a touchback,,2024-09-08T02:47:09.000Z
+401628335104976904,401628335,40162833531,2,4,2:30,South Florida,Alabama,16,35,75,1,10,0,Pass Incompletion,Byrum Brown pass incomplete to Nay'Quan Wright,-0.7029700220436519,2024-09-08T02:47:09.000Z
+401628335104977501,401628335,40162833531,3,4,2:24,South Florida,Alabama,16,35,75,2,10,4,Rush,Byrum Brown run for 4 yds to the USF 29,-0.06222348980634162,2024-09-08T02:50:15.000Z
+401628335104979901,401628335,40162833531,4,4,2:00,South Florida,Alabama,16,35,71,3,6,0,Pass Incompletion,Byrum Brown pass incomplete to Abdur-Rahmaan Yaseen,-0.3146897268978579,2024-09-08T02:54:39.000Z
+401628335104985201,401628335,40162833531,5,4,1:47,South Florida,Alabama,16,35,71,4,6,0,Pass Incompletion,Byrum Brown pass incomplete to Sean Atkins,0.15763835846917296,2024-09-08T02:55:37.000Z
+401628335104986201,401628335,40162833532,1,4,1:37,Alabama,South Florida,42,16,29,1,10,29,Rushing Touchdown,Justice Haynes 29 Yd Run (Graham Nicholson Kick),2.788301184598112,2024-09-08T02:56:33.000Z
+401628335104989201,401628335,40162833533,3,4,1:07,South Florida,Alabama,16,42,70,2,1,0,Pass Reception,Bryce Archie pass complete to Joshua Porter for no gain to the USF 30,-1.1516159656587925,2024-09-08T02:59:57.000Z
+401628335104997402,401628335,40162833533,5,4,0:00,South Florida,Alabama,16,42,70,0,1,5,End of Game,End of 4th Quarter,,2024-09-08T03:02:18.000Z
+401628335104986203,401628335,40162833533,1,4,1:37,Alabama,South Florida,42,16,65,1,10,19,Kickoff Return (Offense),"Conor Talty kickoff for 63 yds , Ta'Ron Keith return for 19 yds to the USF 21",,2024-09-08T02:58:34.000Z
+401628335104986901,401628335,40162833533,2,4,1:30,South Florida,Alabama,16,42,79,1,10,9,Rush,Kelley Joiner run for 9 yds to the USF 30,1.142259890108818,2024-09-08T02:59:32.000Z
+401628335104997401,401628335,40162833533,4,4,0:25,South Florida,Alabama,16,42,70,3,1,5,Rush,Kelley Joiner run for 5 yds to the USF 35 for a 1ST down,1.0971738546757956,2024-09-08T03:01:50.000Z

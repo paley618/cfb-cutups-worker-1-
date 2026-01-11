@@ -1,0 +1,167 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401643777101849906,401643777,4016437771,2,1,15:00,James Madison,Gardner-Webb,0,0,75,1,10,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.7029700220436519,2024-09-07T22:02:35.000Z
+401643777101849909,401643777,4016437771,3,1,15:00,James Madison,Gardner-Webb,0,0,75,2,10,1,Pass Reception,Alonza Barnett III pass complete to George Pettaway for 1 yd to the JMU 26,-0.29282347426074384,2024-09-07T22:02:35.000Z
+401643777101849911,401643777,4016437771,4,1,15:00,James Madison,Gardner-Webb,0,0,74,3,9,-1,Sack,Alonza Barnett III sacked by Pius Njenge for a loss of 1 yard to the JMU 25,-0.21299449130985873,2024-09-07T22:02:35.000Z
+401643777101867401,401643777,4016437771,5,1,13:25,James Madison,Gardner-Webb,0,0,75,4,10,6,Punt,"Ryan Hanson punt for 53 yds , Anthony Lowe returns for 6 yds to the GWEB 28",,2024-09-07T22:05:38.000Z
+401643777101849904,401643777,4016437771,1,1,15:00,Gardner-Webb,James Madison,0,0,65,0,0,0,Kickoff,Jay Billingsley kickoff for 65 yds for a touchback,,2024-09-07T22:02:35.000Z
+401643777101867403,401643777,4016437772,1,1,13:25,Gardner-Webb,James Madison,0,0,72,1,10,5,Pass Reception,Tyler Ridell pass complete to Caleb Borders for 5 yds to the GWEB 33,0.0997589035143243,2024-09-07T22:05:48.000Z
+401643777101867404,401643777,4016437772,2,1,13:25,Gardner-Webb,James Madison,0,0,67,2,5,8,Pass Reception,Tyler Ridell pass complete to Caleb Borders for 8 yds to the GWEB 41 for a 1ST down,1.0968614589533008,2024-09-07T22:05:48.000Z
+401643777101867405,401643777,4016437772,3,1,13:25,Gardner-Webb,James Madison,0,0,59,1,10,0,Pass Incompletion,Tyler Ridell pass incomplete,-1.1387859939569847,2024-09-07T22:05:48.000Z
+401643777101867406,401643777,4016437772,4,1,13:25,Gardner-Webb,James Madison,0,0,59,2,10,8,Rush,Edward Saydee run for 8 yds to the GWEB 49,0.8042521100473597,2024-09-07T22:05:48.000Z
+401643777101867407,401643777,4016437772,5,1,13:25,Gardner-Webb,James Madison,0,0,51,3,2,6,Rush,Edward Saydee run for 6 yds to the JMU 45 for a 1ST down,1.5170321486409843,2024-09-07T22:05:48.000Z
+401643777101867408,401643777,4016437772,6,1,13:25,Gardner-Webb,James Madison,0,0,45,1,10,4,Pass Reception,Tyler Ridell pass complete to Quasean Holmes for 4 yds to the JMU 41,-0.1162027181056828,2024-09-07T22:05:48.000Z
+401643777101867409,401643777,4016437772,7,1,13:25,Gardner-Webb,James Madison,0,0,41,2,6,1,Rush,Quasean Holmes run for 1 yd to the JMU 40,-0.8093264902746622,2024-09-07T22:05:48.000Z
+401643777101867410,401643777,4016437772,8,1,13:25,Gardner-Webb,James Madison,0,0,40,3,5,0,Pass Incompletion,Tyler Ridell pass incomplete,-1.0838891412979983,2024-09-07T22:05:48.000Z
+401643777101905201,401643777,4016437772,9,1,9:47,Gardner-Webb,James Madison,0,0,40,4,5,0,Pass Incompletion,Tyler Ridell pass incomplete,-1.5140675652545887,2024-09-07T22:10:57.000Z
+401643777101905203,401643777,4016437773,1,1,9:47,James Madison,Gardner-Webb,0,0,60,1,10,1,Rush,Ayo Adeyi run for 1 yd to the JMU 41,-0.9114215282702052,2024-09-07T22:13:46.000Z
+401643777101905204,401643777,4016437773,2,1,9:47,James Madison,Gardner-Webb,0,0,59,2,9,6,Pass Reception,Alonza Barnett III pass complete to Cam Ross for 6 yds to the JMU 47,0.3177271289226198,2024-09-07T22:13:46.000Z
+401643777101905205,401643777,4016437773,3,1,9:47,James Madison,Gardner-Webb,0,0,53,3,3,1,Rush,Ayo Adeyi run for 1 yd to the JMU 48,-0.7952589127324945,2024-09-07T22:13:46.000Z
+401643777101919301,401643777,4016437773,4,1,8:06,James Madison,Gardner-Webb,0,0,52,4,2,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.8541460837762447,2024-09-07T22:16:24.000Z
+401643777101919302,401643777,4016437773,5,1,8:06,Gardner-Webb,James Madison,0,0,48,1,10,0,Timeout,"Timeout Gardner-Webb, clock 08:06",,2024-09-07T22:16:24.000Z
+401643777101919304,401643777,4016437774,1,1,8:06,Gardner-Webb,James Madison,0,0,48,1,10,4,Rush,Edward Saydee run for 4 yds to the JMU 44,-0.1319374071745773,2024-09-07T22:16:24.000Z
+401643777101928801,401643777,4016437774,2,1,7:11,Gardner-Webb,James Madison,0,0,44,2,6,-5,Penalty,"Gardner-Webb Penalty, Illegal Forward Pass (Tyler Ridell) to the JMU 46",,2024-09-07T22:21:46.000Z
+401643777101928802,401643777,4016437774,3,1,7:11,Gardner-Webb,James Madison,0,0,46,3,8,6,Rush,Edward Saydee run for 6 yds to the JMU 40,0.2961484947340783,2024-09-07T22:21:46.000Z
+401643777101928803,401643777,4016437774,4,1,7:11,Gardner-Webb,James Madison,0,0,40,4,2,5,Pass Reception,Tyler Ridell pass complete to Edward Saydee for 5 yds to the JMU 35 for a 1ST down,2.120347243805986,2024-09-07T22:21:46.000Z
+401643777101928804,401643777,4016437774,5,1,7:11,Gardner-Webb,James Madison,0,0,35,1,10,5,Rush,Edward Saydee run for 5 yds to the JMU 30,0.081604517220205,2024-09-07T22:21:46.000Z
+401643777101949801,401643777,4016437774,6,1,5:01,Gardner-Webb,James Madison,0,0,30,2,5,0,Pass Interception Return,Tyler Ridell pass intercepted Jacob Thomas return for no gain to the JMU 11,-4.109015733443249,2024-09-07T22:25:44.000Z
+401643777101999902,401643777,4016437775,14,1,0:00,James Madison,Gardner-Webb,0,0,44,0,20,0,End Period,End of 1st Quarter,,2024-09-07T22:34:33.000Z
+401643777101949803,401643777,4016437775,1,1,5:01,James Madison,Gardner-Webb,0,0,89,1,10,13,Rush,George Pettaway run for 13 yds to the JMU 24 for a 1ST down,0.617953964711881,2024-09-07T22:25:44.000Z
+401643777101949804,401643777,4016437775,2,1,5:01,James Madison,Gardner-Webb,0,0,76,1,10,9,Rush,George Pettaway run for 9 yds to the JMU 33,1.226511233321002,2024-09-07T22:25:44.000Z
+401643777101949805,401643777,4016437775,3,1,5:01,James Madison,Gardner-Webb,0,0,67,2,1,13,Pass Reception,Alonza Barnett III pass complete to Taylor Thompson for 13 yds to the JMU 46 for a 1ST down,0.7342095724095807,2024-09-07T22:25:44.000Z
+401643777101949806,401643777,4016437775,4,1,5:01,James Madison,Gardner-Webb,0,0,54,1,10,0,Pass Incompletion,Alonza Barnett III pass incomplete,-1.1590089706435955,2024-09-07T22:31:47.000Z
+401643777101949807,401643777,4016437775,5,1,5:01,James Madison,Gardner-Webb,0,0,54,2,10,3,Rush,Alonza Barnett III run for 3 yds to the JMU 49,-0.3787579996690785,2024-09-07T22:31:47.000Z
+401643777101949809,401643777,4016437775,6,1,5:01,James Madison,Gardner-Webb,0,0,51,3,7,-10,Penalty,"BARNETT III, Alonza scrambles to the right for a gain of 5 yards to the GWU46 (ROSE, Steven). PENALTY JMU Holding on SWEAZIE, Carter enforced 10 yards from the JMU49 to the JMU39 [SG]. NO PLAY (replay the down).",,2024-09-07T22:31:47.000Z
+401643777101949810,401643777,4016437775,7,1,5:01,James Madison,Gardner-Webb,0,0,61,3,17,17,Pass Reception,Alonza Barnett III pass complete to Yamir Knight for 17 yds to the GWEB 44 for a 1ST down,3.615771949937951,2024-09-07T22:31:47.000Z
+401643777101949811,401643777,4016437775,8,1,5:01,James Madison,Gardner-Webb,0,0,44,1,10,4,Rush,Ayo Adeyi run for 4 yds to the GWEB 40,-0.1108700500197327,2024-09-07T22:31:47.000Z
+401643777101949812,401643777,4016437775,9,1,5:01,James Madison,Gardner-Webb,0,0,40,2,6,6,Pass Reception,Alonza Barnett III pass complete to Yamir Knight for 6 yds to the GWEB 34 for a 1ST down,0.587026246616084,2024-09-07T22:31:47.000Z
+401643777101949813,401643777,4016437775,10,1,5:01,James Madison,Gardner-Webb,0,0,34,1,10,-5,Penalty,"James Madison Penalty, Illegal Snap on DAVIS, Brett enforced (-5 Yards) to the GWEB 39",,2024-09-07T22:31:47.000Z
+401643777101949814,401643777,4016437775,11,1,5:01,James Madison,Gardner-Webb,0,0,39,1,15,-4,Fumble Recovery (Own),"Ayo Adeyi run for a loss of 4 yards to the GWEB 46 Ayo Adeyi fumbled, recovered by JMU Ayo Adeyi",-1.7433056897206196,2024-09-07T22:31:47.000Z
+401643777101949815,401643777,4016437775,12,1,5:01,James Madison,Gardner-Webb,0,0,46,2,22,2,Rush,Alonza Barnett III run for 2 yds to the GWEB 44,-0.4440267236243508,2024-09-07T22:31:47.000Z
+401643777101999903,401643777,4016437775,13,1,0:10,James Madison,Gardner-Webb,0,0,44,3,20,18,Rush,George Pettaway run for 18 yds to the GWEB 26,2.5976345077944565,2024-09-07T22:34:33.000Z
+401643777102854401,401643777,4016437775,15,2,14:55,James Madison,Gardner-Webb,0,0,26,4,2,54,Field Goal Missed,Noe Ruelas 54 yd FG MISSED,,2024-09-07T22:43:11.000Z
+401643777102876301,401643777,4016437776,5,2,12:36,Gardner-Webb,James Madison,0,0,55,4,4,0,Timeout,"Timeout Gardner-Webb, clock 12:36",,2024-09-07T22:43:11.000Z
+401643777102854403,401643777,4016437776,1,2,14:55,Gardner-Webb,James Madison,0,0,74,1,10,3,Rush,Carson Gresock run for 3 yds to the GWEB 29,-0.30809127134716,2024-09-07T22:43:11.000Z
+401643777102854404,401643777,4016437776,2,2,14:55,Gardner-Webb,James Madison,0,0,71,2,7,10,Pass Reception,Tyler Ridell pass complete to Camden Overton for 10 yds to the GWEB 39 for a 1ST down,1.4598515473432598,2024-09-07T22:43:11.000Z
+401643777102854405,401643777,4016437776,3,2,14:55,Gardner-Webb,James Madison,0,0,61,1,10,3,Rush,Carson Gresock run for 3 yds to the GWEB 42,-0.428981456130188,2024-09-07T22:43:11.000Z
+401643777102854406,401643777,4016437776,4,2,14:55,Gardner-Webb,James Madison,0,0,58,2,7,0,Pass Incompletion,Tyler Ridell pass incomplete,-0.9867640368726639,2024-09-07T22:43:11.000Z
+401643777102876302,401643777,4016437776,6,2,12:36,Gardner-Webb,James Madison,0,0,58,3,7,3,Pass Reception,Tyler Ridell pass complete to Quasean Holmes for 3 yds to the GWEB 45,-0.256277547725988,2024-09-07T22:43:11.000Z
+401643777102876304,401643777,4016437776,7,2,12:36,Gardner-Webb,James Madison,0,0,55,4,4,10,Penalty,"RIDELL, Tyler pass to the right incomplete thrown to the GWU45. PENALTY JMU Holding on EAGLIN, Justin enforced 10 yards from the GWU45 to the JMU45 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:43:11.000Z
+401643777102876305,401643777,4016437776,8,2,12:36,Gardner-Webb,James Madison,0,0,45,1,10,7,Rush,Tyler Ridell run for 7 yds to the JMU 38,0.5149869636577264,2024-09-07T23:27:39.000Z
+401643777102876306,401643777,4016437776,9,2,12:36,Gardner-Webb,James Madison,0,0,38,2,3,2,Rush,Edward Saydee run for 2 yds to the JMU 36,-0.5344932979132705,2024-09-07T22:43:11.000Z
+401643777102876307,401643777,4016437776,10,2,12:36,Gardner-Webb,James Madison,0,0,36,3,1,4,Pass Reception,Tyler Ridell pass complete to Camden Overton for 4 yds to the JMU 32 for a 1ST down,0.6245009937336496,2024-09-07T22:43:11.000Z
+401643777102876308,401643777,4016437776,11,2,12:36,Gardner-Webb,James Madison,0,0,32,1,10,1,Rush,Edward Saydee run for 1 yd to the JMU 31,-0.4625042143062129,2024-09-07T22:43:11.000Z
+401643777102876309,401643777,4016437776,12,2,12:36,Gardner-Webb,James Madison,0,0,31,2,9,3,Rush,Edward Saydee run for 3 yds to the JMU 28,-0.2472004161337367,2024-09-07T22:43:11.000Z
+401643777102876310,401643777,4016437776,13,2,12:36,Gardner-Webb,James Madison,0,0,28,3,6,2,Rush,Edward Saydee run for 2 yds to the JMU 26,-0.475107795504501,2024-09-07T22:43:11.000Z
+401643777102914801,401643777,4016437776,14,2,8:51,Gardner-Webb,James Madison,3,0,26,4,4,44,Field Goal Good,Jay Billingsley 44 yd FG GOOD,,2024-09-07T23:27:39.000Z
+401643777102914802,401643777,4016437777,1,2,8:51,Gardner-Webb,James Madison,3,0,65,0,0,0,Kickoff,Jay Billingsley kickoff for 60 yds,,2024-09-07T22:43:11.000Z
+401643777102914804,401643777,4016437777,2,2,8:51,James Madison,Gardner-Webb,0,3,65,1,10,12,Rush,George Pettaway run for 12 yds to the JMU 47 for a 1ST down,1.147417577118027,2024-09-07T22:43:11.000Z
+401643777102914805,401643777,4016437777,3,2,8:51,James Madison,Gardner-Webb,0,3,53,1,10,3,Rush,George Pettaway run for 3 yds to the 50 yard line,-0.4117922810157673,2024-09-07T22:43:11.000Z
+401643777102914806,401643777,4016437777,4,2,8:51,James Madison,Gardner-Webb,0,3,50,2,7,0,Pass Incompletion,Alonza Barnett III pass incomplete,-1.1264780873146414,2024-09-07T22:43:11.000Z
+401643777102914807,401643777,4016437777,5,2,8:51,James Madison,Gardner-Webb,0,3,50,3,7,-6,Sack,Alonza Barnett III sacked by Jackson Marshall and Raquon Hartley for a loss of 6 yards to the JMU 44,-1.4141902020699675,2024-09-07T22:43:11.000Z
+401643777102929601,401643777,4016437777,6,2,7:03,James Madison,Gardner-Webb,0,3,56,4,13,0,Punt,"Ryan Hanson punt for 51 yds, downed at the GWEB 5",,2024-09-07T22:43:11.000Z
+401643777102929603,401643777,4016437778,1,2,7:03,Gardner-Webb,James Madison,3,0,95,1,10,0,Rush,Edward Saydee run for no gain to the GWEB 5,-0.2817215454175761,2024-09-07T22:43:11.000Z
+401643777102929604,401643777,4016437778,2,2,7:03,Gardner-Webb,James Madison,3,0,95,2,10,6,Rush,Tyler Ridell run for 6 yds to the GWEB 11,0.0779736804969744,2024-09-07T22:43:11.000Z
+401643777102929605,401643777,4016437778,3,2,7:03,Gardner-Webb,James Madison,3,0,89,3,4,3,Pass Reception,Tyler Ridell pass complete to Ze'Vian Capers for 3 yds to the GWEB 14,-0.06760193613241317,2024-09-07T22:43:11.000Z
+401643777102954901,401643777,4016437778,4,2,4:50,Gardner-Webb,James Madison,3,0,86,4,1,0,Punt,Nick Bigelow punt for 31 yds,,2024-09-07T22:43:11.000Z
+401643777102954903,401643777,4016437779,1,2,4:50,James Madison,Gardner-Webb,0,3,45,1,10,-1,Rush,Wayne Knight run for a loss of 1 yard to the GWEB 46,-1.2270097040600767,2024-09-07T22:43:11.000Z
+401643777102954904,401643777,4016437779,2,2,4:50,James Madison,Gardner-Webb,0,3,46,2,11,2,Rush,Wayne Knight run for 2 yds to the GWEB 44,-0.6209076558258017,2024-09-07T22:43:11.000Z
+401643777102954905,401643777,4016437779,3,2,4:50,James Madison,Gardner-Webb,0,3,44,3,9,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.9225941685485717,2024-09-07T22:43:11.000Z
+401643777102965001,401643777,4016437779,4,2,3:49,James Madison,Gardner-Webb,0,3,44,4,9,0,Punt,Ryan Hanson punt for 44 yds for a touchback,,2024-09-07T23:10:29.000Z
+401643777102979901,401643777,40164377710,5,2,2:00,Gardner-Webb,James Madison,3,0,47,2,17,0,Timeout,"Timeout James Madison, clock 02:00",,2024-09-07T23:15:46.000Z
+401643777102985902,401643777,40164377710,10,2,1:40,Gardner-Webb,James Madison,3,0,40,4,10,0,Timeout,"Timeout James Madison, clock 01:40",,2024-09-07T22:43:11.000Z
+401643777102984802,401643777,40164377710,8,2,1:51,Gardner-Webb,James Madison,3,0,44,3,14,0,Timeout,"Timeout James Madison, clock 01:51",,2024-09-07T22:43:11.000Z
+401643777102965003,401643777,40164377710,1,2,3:49,Gardner-Webb,James Madison,3,0,80,1,10,12,Pass Reception,Tyler Ridell pass complete to Anthony Lowe for 12 yds to the GWEB 32 for a 1ST down,0.8667470799632433,2024-09-07T23:10:29.000Z
+401643777102965005,401643777,40164377710,2,2,3:49,Gardner-Webb,James Madison,3,0,68,1,10,15,Penalty,"RIDELL, Tyler pass deep to the right incomplete intended for BORDERS, Caleb thrown to the JMU50. PENALTY JMU Pass Interference on TAYLOR, Jordan enforced 15 yards to the GWU47 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T23:10:29.000Z
+401643777102965006,401643777,40164377710,3,2,3:49,Gardner-Webb,James Madison,3,0,53,1,10,13,Rush,Edward Saydee run for 13 yds to the JMU 40 for a 1ST down,0.9062502896359667,2024-09-07T23:10:29.000Z
+401643777102965008,401643777,40164377710,4,2,3:49,Gardner-Webb,James Madison,3,0,40,1,10,-15,Penalty,"RIDELL, Tyler pass to the left complete for 18 yards to CAPERS, Ze'Vian caught at the JMU27 and advanced to the JMU22 (FLOWE, KJ). PENALTY GWU Personal Foul on FERGUSON, Evan enforced 15 yards from the JMU40 to the GWU45 [NHSG]. NO PLAY (replay the down).",,2024-09-07T23:10:29.000Z
+401643777102979902,401643777,40164377710,6,2,2:00,Gardner-Webb,James Madison,3,0,55,1,25,8,Rush,Edward Saydee run for 8 yds to the JMU 47,0.6084367815008811,2024-09-07T23:22:07.000Z
+401643777102984801,401643777,40164377710,7,2,1:51,Gardner-Webb,James Madison,3,0,47,2,17,3,Rush,Edward Saydee run for 3 yds to the JMU 44,-0.350011292765247,2024-09-07T22:43:11.000Z
+401643777102985901,401643777,40164377710,9,2,1:40,Gardner-Webb,James Madison,3,0,44,3,14,4,Rush,Edward Saydee run for 4 yds to the JMU 40,-0.1401788200956737,2024-09-07T22:43:11.000Z
+401643777102986501,401643777,40164377710,11,2,1:34,Gardner-Webb,James Madison,3,0,40,4,10,0,Punt,"Nick Bigelow punt for 37 yds, downed at the JMU 3",,2024-09-07T23:22:13.000Z
+401643777102999601,401643777,40164377711,6,2,0:03,James Madison,Gardner-Webb,0,3,70,4,1,0,Timeout,"Timeout James Madison, clock 00:03",,2024-09-07T23:26:25.000Z
+401643777102987701,401643777,40164377711,2,2,1:22,James Madison,Gardner-Webb,0,3,79,1,10,0,Timeout,"Timeout Gardner-Webb, clock 01:22",,2024-09-07T23:24:25.000Z
+401643777102999903,401643777,40164377711,9,2,0:00,James Madison,Gardner-Webb,0,3,70,0,1,40,End of Half,End of 2nd Quarter,,2024-09-07T23:27:39.000Z
+401643777102986503,401643777,40164377711,1,2,1:34,James Madison,Gardner-Webb,0,3,97,1,10,-1,Penalty,"James Madison Penalty, False Start (Pat McMurtrie) to the JMU 2",,2024-09-07T23:22:13.000Z
+401643777102987702,401643777,40164377711,3,2,1:22,James Madison,Gardner-Webb,0,3,98,1,11,19,Pass Reception,Alonza Barnett III pass complete to George Pettaway for 19 yds to the JMU 21 for a 1ST down,0.7072094417025765,2024-09-07T23:24:25.000Z
+401643777102987703,401643777,40164377711,4,2,1:22,James Madison,Gardner-Webb,0,3,79,1,10,7,Pass Reception,Alonza Barnett III pass complete to George Pettaway for 7 yds to the JMU 28,0.5413772358558367,2024-09-07T23:25:20.000Z
+401643777102987704,401643777,40164377711,5,2,1:22,James Madison,Gardner-Webb,0,3,72,2,3,2,Rush,Alonza Barnett III run for 2 yds to the JMU 30,-0.5507333114058114,2024-09-07T23:25:20.000Z
+401643777102999602,401643777,40164377711,7,2,0:03,James Madison,Gardner-Webb,0,3,70,3,1,0,Rush,Alonza Barnett III run for no gain to the JMU 30,-0.5870392989585209,2024-09-07T23:27:14.000Z
+401643777102999901,401643777,40164377711,8,2,0:00,James Madison,Gardner-Webb,0,3,70,4,1,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.07306983567434866,2024-09-07T23:27:39.000Z
+401643777103849903,401643777,40164377712,1,3,15:00,James Madison,Gardner-Webb,0,3,65,0,0,0,Kickoff,Cristiano Rosa kickoff for 65 yds for a touchback,,2024-09-07T23:49:22.000Z
+401643777103849905,401643777,40164377712,2,3,15:00,Gardner-Webb,James Madison,3,0,75,1,10,0,Pass Incompletion,Tyler Ridell pass incomplete,-0.7029700220436519,2024-09-07T23:49:22.000Z
+401643777103849908,401643777,40164377712,3,3,15:00,Gardner-Webb,James Madison,3,0,75,2,10,2,Rush,Edward Saydee run for 2 yds to the GWEB 27,-0.2284411734150149,2024-09-07T23:49:22.000Z
+401643777103849910,401643777,40164377712,4,3,15:00,Gardner-Webb,James Madison,3,0,73,3,8,0,Pass Incompletion,Tyler Ridell pass incomplete,-0.22421028645399854,2024-09-07T23:49:22.000Z
+401643777103859301,401643777,40164377712,5,3,14:06,Gardner-Webb,James Madison,3,0,73,4,8,0,Punt,"Nick Bigelow punt for 31 yds, fair catch by Cam Ross at the JMU 42",,2024-09-07T23:51:43.000Z
+401643777103859303,401643777,40164377713,1,3,14:06,James Madison,Gardner-Webb,0,3,58,1,10,7,Pass Reception,Alonza Barnett III pass complete to Cam Ross for 7 yds to the JMU 49,0.6896384238174758,2024-09-07T23:51:43.000Z
+401643777103859304,401643777,40164377713,2,3,14:06,James Madison,Gardner-Webb,0,3,51,2,3,6,Rush,Tyler Purdy run for 6 yds to the GWEB 45 for a 1ST down,0.3955507031547717,2024-09-07T23:51:43.000Z
+401643777103859305,401643777,40164377713,3,3,14:06,James Madison,Gardner-Webb,0,3,45,1,10,9,Rush,Tyler Purdy run for 9 yds to the GWEB 36,0.957003546754157,2024-09-07T23:51:43.000Z
+401643777103859306,401643777,40164377713,4,3,14:06,James Madison,Gardner-Webb,0,3,36,2,1,5,Rush,Tyler Purdy run for 5 yds to the GWEB 31 for a 1ST down,-0.322435631760037,2024-09-07T23:51:43.000Z
+401643777103876901,401643777,40164377713,5,3,12:30,James Madison,Gardner-Webb,0,3,31,1,10,10,Rush,Tyler Purdy run for 10 yds to the GWEB 21 for a 1ST down,0.209649356277455,2024-09-07T23:54:20.000Z
+401643777103876902,401643777,40164377713,6,3,12:30,James Madison,Gardner-Webb,0,3,21,1,10,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.3882383440694163,2024-09-07T23:54:20.000Z
+401643777103876903,401643777,40164377713,7,3,12:30,James Madison,Gardner-Webb,0,3,21,2,10,20,Rush,George Pettaway run for 20 yds to the GWEB 1 for a 1ST down,2.0825138827444665,2024-09-07T23:55:10.000Z
+401643777103876904,401643777,40164377713,8,3,12:30,James Madison,Gardner-Webb,0,3,1,1,1,0,Rush,Alonza Barnett III run for no gain to the GWEB 1,-0.962330962352563,2024-09-07T23:55:10.000Z
+401643777103876905,401643777,40164377713,9,3,12:30,James Madison,Gardner-Webb,0,3,1,2,1,0,Rush,Tyler Purdy run for no gain to the GWEB 1,-0.553645991706544,2024-09-07T23:55:10.000Z
+401643777103896901,401643777,40164377713,10,3,10:30,James Madison,Gardner-Webb,7,3,1,3,1,1,Rushing Touchdown,Tyler Purdy run for 1 yd for a TD (Noe Ruelas KICK),2.45399822917955,2024-09-07T23:57:00.000Z
+401643777103896903,401643777,40164377714,1,3,10:30,James Madison,Gardner-Webb,7,3,65,0,0,0,Kickoff,Cristiano Rosa kickoff for 65 yds for a touchback,,2024-09-08T00:00:39.000Z
+401643777103896905,401643777,40164377714,2,3,10:30,Gardner-Webb,James Madison,3,7,75,1,10,-2,Sack,Tyler Ridell sacked by Chris Fitzgerald and Khairi Manns for a loss of 2 yards to the GWEB 23,-0.8852575132705454,2024-09-08T00:00:39.000Z
+401643777103896906,401643777,40164377714,3,3,10:30,Gardner-Webb,James Madison,3,7,77,2,12,-1,Rush,Edward Saydee run for a loss of 1 yard to the GWEB 22,-0.2811502645172732,2024-09-08T00:00:39.000Z
+401643777103909701,401643777,40164377714,4,3,9:02,Gardner-Webb,James Madison,3,7,78,3,13,0,Pass Interception Return,Tyler Ridell pass intercepted Chauncey Logan return for no gain to the GWEB 32,0.2441628975091401,2024-09-08T00:03:55.000Z
+401643777103928001,401643777,40164377715,3,3,7:19,James Madison,Gardner-Webb,7,3,30,4,8,0,Timeout,"Timeout James Madison, clock 07:19",,2024-09-08T00:05:55.000Z
+401643777103909703,401643777,40164377715,1,3,9:02,James Madison,Gardner-Webb,7,3,32,1,10,0,Rush,George Pettaway run for no gain to the GWEB 32,-0.6082596672078662,2024-09-08T00:03:55.000Z
+401643777103909704,401643777,40164377715,2,3,9:02,James Madison,Gardner-Webb,7,3,32,2,10,-8,Sack,Alonza Barnett III sacked by Trevor Moffitt for a loss of 8 yards to the GWEB 40,-2.4818516872635517,2024-09-08T00:03:55.000Z
+401643777103928002,401643777,40164377715,4,3,7:19,James Madison,Gardner-Webb,7,3,40,3,18,10,Pass Reception,Alonza Barnett III pass complete to Cam Ross for 10 yds to the GWEB 30,1.075096303674954,2024-09-08T00:05:55.000Z
+401643777103928501,401643777,40164377715,5,3,7:14,James Madison,Gardner-Webb,10,3,30,4,8,48,Field Goal Good,Noe Ruelas 48 yd FG GOOD,,2024-09-08T00:08:58.000Z
+401643777103928502,401643777,40164377716,1,3,7:14,James Madison,Gardner-Webb,10,3,65,0,0,0,Kickoff,Cristiano Rosa kickoff for 65 yds for a touchback,,2024-09-08T00:10:53.000Z
+401643777103946601,401643777,40164377716,4,3,5:33,Gardner-Webb,James Madison,3,10,66,4,1,0,Timeout,"Timeout Gardner-Webb, clock 05:33",,2024-09-08T00:13:33.000Z
+401643777103928504,401643777,40164377716,2,3,7:14,Gardner-Webb,James Madison,3,10,75,1,10,3,Rush,Carson Gresock run for 3 yds to the GWEB 28,-0.2957674139440157,2024-09-08T00:10:53.000Z
+401643777103928505,401643777,40164377716,3,3,7:14,Gardner-Webb,James Madison,3,10,72,2,7,6,Rush,Tyler Ridell run for 6 yds to the GWEB 34,0.272733551995068,2024-09-08T00:10:53.000Z
+401643777103946602,401643777,40164377716,5,3,5:33,Gardner-Webb,James Madison,3,10,66,3,1,0,Rush,Carson Gresock run for no gain to the GWEB 34,-0.7006464561644021,2024-09-08T00:13:33.000Z
+401643777103946603,401643777,40164377716,6,3,5:33,Gardner-Webb,James Madison,3,10,66,4,1,1,Rush,Carson Gresock run for 1 yd to the GWEB 35 for a 1ST down,1.5587184271433365,2024-09-08T00:13:33.000Z
+401643777103946604,401643777,40164377716,7,3,5:33,Gardner-Webb,James Madison,3,10,65,1,10,39,Pass Reception,Tyler Ridell pass complete to Camden Overton for 39 yds to the JMU 26 for a 1ST down,2.5227148882831543,2024-09-08T00:15:15.000Z
+401643777103946605,401643777,40164377716,8,3,5:33,Gardner-Webb,James Madison,3,10,26,1,10,0,Rush,Edward Saydee run for no gain to the JMU 26,-0.4710467974920665,2024-09-08T00:15:15.000Z
+401643777103946606,401643777,40164377716,9,3,5:33,Gardner-Webb,James Madison,3,10,26,2,10,16,Pass Reception,Tyler Ridell pass complete to Caleb Borders for 16 yds to the JMU 10 for a 1ST down,0.677222077650805,2024-09-08T00:15:15.000Z
+401643777103946607,401643777,40164377716,10,3,5:33,Gardner-Webb,James Madison,3,10,10,1,10,0,Pass Incompletion,Tyler Ridell pass incomplete,-0.2853930592519426,2024-09-08T00:15:15.000Z
+401643777103946608,401643777,40164377716,11,3,5:33,Gardner-Webb,James Madison,3,10,10,2,10,2,Rush,Edward Saydee run for 2 yds to the JMU 8,-0.1468662826898704,2024-09-08T00:15:15.000Z
+401643777103946609,401643777,40164377716,12,3,5:33,Gardner-Webb,James Madison,3,10,8,3,8,-5,Penalty,"Gardner-Webb Penalty, False Start (Aaron McIver) to the JMU 13",,2024-09-08T00:15:15.000Z
+401643777103946610,401643777,40164377716,13,3,5:33,Gardner-Webb,James Madison,3,10,13,3,13,0,Pass Incompletion,Tyler Ridell pass incomplete,-0.6039382602387847,2024-09-08T00:15:15.000Z
+401643777103986401,401643777,40164377716,14,3,1:35,Gardner-Webb,James Madison,6,10,13,4,13,30,Field Goal Good,Jay Billingsley 30 yd FG GOOD,,2024-09-08T00:21:44.000Z
+401643777103999902,401643777,40164377717,6,3,0:00,James Madison,Gardner-Webb,10,6,63,0,10,22,End Period,End of 3rd Quarter,,2024-09-08T00:28:30.000Z
+401643777103986402,401643777,40164377717,1,3,1:35,Gardner-Webb,James Madison,6,10,65,0,0,0,Kickoff,Jay Billingsley kickoff for 39 yds,,2024-09-08T00:21:44.000Z
+401643777103986404,401643777,40164377717,2,3,1:35,James Madison,Gardner-Webb,10,6,74,1,10,4,Rush,George Pettaway run for 4 yds to the JMU 30,-0.119587621105615,2024-09-08T00:21:44.000Z
+401643777103986405,401643777,40164377717,3,3,1:35,James Madison,Gardner-Webb,10,6,70,2,6,-2,Rush,George Pettaway run for a loss of 2 yards to the JMU 28,-0.8564113248622638,2024-09-08T00:21:44.000Z
+401643777103986406,401643777,40164377717,4,3,1:35,James Madison,Gardner-Webb,10,6,72,3,8,9,Pass Reception,Alonza Barnett III pass complete to Dylan Williams for 9 yds to the JMU 37 for a 1ST down,1.9322644648510945,2024-09-08T00:21:44.000Z
+401643777103999901,401643777,40164377717,5,3,0:00,James Madison,Gardner-Webb,10,6,63,1,10,22,Pass Reception,Alonza Barnett III pass complete to Logan Kyle for 22 yds to the GWEB 41 for a 1ST down,1.8099911676812308,2024-09-08T00:28:30.000Z
+401643777104849902,401643777,40164377717,7,4,15:00,James Madison,Gardner-Webb,10,6,41,1,10,7,Pass Reception,Alonza Barnett III pass complete to Taylor Thompson for 7 yds to the GWEB 34,0.4598399849082394,2024-09-08T00:31:56.000Z
+401643777104849904,401643777,40164377717,8,4,15:00,James Madison,Gardner-Webb,10,6,34,2,3,4,Rush,Tyler Purdy run for 4 yds to the GWEB 30 for a 1ST down,-0.033563491934491,2024-09-08T00:31:56.000Z
+401643777104849906,401643777,40164377717,9,4,15:00,James Madison,Gardner-Webb,10,6,30,1,10,6,Pass Reception,Alonza Barnett III pass complete to Taylor Thompson for 6 yds to the GWEB 24,0.211009257059727,2024-09-08T00:31:56.000Z
+401643777104849909,401643777,40164377717,10,4,15:00,James Madison,Gardner-Webb,10,6,24,2,4,10,Rush,Tyler Purdy run for 10 yds to the GWEB 14 for a 1ST down,0.0549507006839625,2024-09-08T00:33:16.000Z
+401643777104849912,401643777,40164377717,11,4,15:00,James Madison,Gardner-Webb,10,6,14,1,10,6,Rush,Tyler Purdy run for 6 yds to the GWEB 8,0.1809070651975925,2024-09-08T00:33:16.000Z
+401643777104849915,401643777,40164377717,12,4,15:00,James Madison,Gardner-Webb,10,6,8,2,4,-5,Penalty,"James Madison Penalty, False Start (Carter Sweazie) to the GWEB 13",,2024-09-08T00:33:16.000Z
+401643777104849917,401643777,40164377717,13,4,15:00,James Madison,Gardner-Webb,10,6,13,2,9,5,Pass Reception,Alonza Barnett III pass complete to George Pettaway for 5 yds to the GWEB 8,0.044956028050054,2024-09-08T00:33:16.000Z
+401643777104885601,401643777,40164377717,14,4,11:43,James Madison,Gardner-Webb,10,6,8,3,4,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.339040583334988,2024-09-08T00:35:58.000Z
+401643777104888501,401643777,40164377717,15,4,11:14,James Madison,Gardner-Webb,13,6,8,4,4,26,Field Goal Good,Noe Ruelas 26 yd FG GOOD,,2024-09-08T00:36:41.000Z
+401643777104888502,401643777,40164377718,1,4,11:14,James Madison,Gardner-Webb,13,6,65,0,0,0,Kickoff,Cristiano Rosa kickoff for 65 yds for a touchback,,2024-09-08T00:39:38.000Z
+401643777104976201,401643777,40164377718,16,4,2:37,Gardner-Webb,James Madison,6,13,14,4,14,0,Timeout,"Timeout Gardner-Webb, clock 02:37",,2024-09-08T00:54:39.000Z
+401643777104888504,401643777,40164377718,2,4,11:14,Gardner-Webb,James Madison,6,13,75,1,10,0,Rush,Edward Saydee run for no gain to the GWEB 25,-0.7029700220436519,2024-09-08T00:39:38.000Z
+401643777104894401,401643777,40164377718,3,4,10:55,Gardner-Webb,James Madison,6,13,75,2,10,10,Pass Reception,Tyler Ridell pass complete to Giovanni Adopte for 10 yds to the GWEB 35 for a 1ST down,1.5380081310736387,2024-09-08T00:33:16.000Z
+401643777104899901,401643777,40164377718,4,4,10:00,Gardner-Webb,James Madison,6,13,65,1,10,-1,Pass Reception,Tyler Ridell pass complete to Anthony Lowe for a loss of 1 yard to the GWEB 34,-1.1754014811374063,2024-09-08T00:42:17.000Z
+401643777104899902,401643777,40164377718,5,4,10:00,Gardner-Webb,James Madison,6,13,66,2,11,5,Pass Reception,Tyler Ridell pass complete to Camden Overton for 5 yds to the GWEB 39,0.0504254355053702,2024-09-08T00:42:50.000Z
+401643777104915401,401643777,40164377718,6,4,8:45,Gardner-Webb,James Madison,6,13,61,3,6,0,Rush,Edward Saydee run for no gain to the GWEB 39,-0.5500549337832448,2024-09-08T00:43:44.000Z
+401643777104925401,401643777,40164377718,7,4,7:45,Gardner-Webb,James Madison,6,13,61,4,6,22,Pass Reception,Tyler Ridell pass complete to Anthony Lowe for 22 yds to the JMU 39 for a 1ST down,3.7773094351750647,2024-09-08T00:44:26.000Z
+401643777104928901,401643777,40164377718,8,4,7:10,Gardner-Webb,James Madison,6,13,39,1,10,19,Rush,Edward Saydee run for 19 yds to the JMU 20 for a 1ST down,0.522510825899852,2024-09-08T00:45:05.000Z
+401643777104936401,401643777,40164377718,9,4,6:35,Gardner-Webb,James Madison,6,13,20,1,10,8,Pass Reception,Tyler Ridell pass complete to Edward Saydee for 8 yds to the JMU 12,0.458030162847379,2024-09-08T00:45:36.000Z
+401643777104939901,401643777,40164377718,10,4,6:00,Gardner-Webb,James Madison,6,13,12,2,2,0,Rush,Edward Saydee run for no gain to the JMU 12,-0.512988481893192,2024-09-08T00:46:21.000Z
+401643777104947501,401643777,40164377718,11,4,5:24,Gardner-Webb,James Madison,6,13,12,3,2,0,Pass Incompletion,Tyler Ridell pass incomplete,-0.4232783648780403,2024-09-08T00:46:58.000Z
+401643777104947502,401643777,40164377718,12,4,5:24,Gardner-Webb,James Madison,6,13,12,4,2,7,Pass Reception,Tyler Ridell pass complete to Camden Overton for 7 yds to the JMU 5 for a 1ST down,1.2123835723966783,2024-09-08T00:49:22.000Z
+401643777104957601,401643777,40164377718,13,4,4:23,Gardner-Webb,James Madison,6,13,5,1,5,-2,Rush,Tyler Ridell run for a loss of 2 yards to the JMU 7,-0.723367627458863,2024-09-08T00:52:29.000Z
+401643777104957602,401643777,40164377718,14,4,4:23,Gardner-Webb,James Madison,6,13,7,2,7,-7,Sack,Tyler Ridell sacked by Chris Fitzgerald and Amar Thomas for a loss of 7 yards to the JMU 14,-0.821403786387746,2024-09-08T00:52:29.000Z
+401643777104969801,401643777,40164377718,15,4,3:01,Gardner-Webb,James Madison,6,13,14,3,14,0,Pass Incompletion,Tyler Ridell pass incomplete,-0.6682947694591715,2024-09-08T00:53:41.000Z
+401643777104976202,401643777,40164377718,17,4,2:37,Gardner-Webb,James Madison,6,13,14,4,14,0,Pass Incompletion,Tyler Ridell pass incomplete,-2.9031529761353454,2024-09-08T00:54:39.000Z
+401643777104979901,401643777,40164377719,3,4,2:00,James Madison,Gardner-Webb,13,6,56,1,10,0,Timeout,"Timeout James Madison, clock 02:00",,2024-09-08T01:00:35.000Z
+401643777104978501,401643777,40164377719,1,4,2:14,James Madison,Gardner-Webb,13,6,79,2,3,0,Timeout,"Timeout Gardner-Webb, clock 02:14",,2024-09-08T00:59:01.000Z
+401643777104999903,401643777,40164377719,8,4,0:00,James Madison,Gardner-Webb,13,6,56,0,8,0,End of Game,End of 4th Quarter,,2024-09-08T01:05:33.000Z
+401643777104978502,401643777,40164377719,2,4,2:14,James Madison,Gardner-Webb,13,6,86,1,10,7,Rush,George Pettaway run for 7 yds to the JMU 21,0.4338898358306427,2024-09-08T00:59:01.000Z
+401643777104979902,401643777,40164377719,4,4,2:00,James Madison,Gardner-Webb,13,6,79,2,3,23,Rush,Alonza Barnett III run for 23 yds to the JMU 44 for a 1ST down,1.8559941991189506,2024-09-08T01:03:23.000Z
+401643777104979903,401643777,40164377719,5,4,2:00,James Madison,Gardner-Webb,13,6,56,1,10,7,Rush,Tyler Purdy run for 7 yds to the GWEB 49,0.6703928066087635,2024-09-08T01:03:23.000Z
+401643777104979904,401643777,40164377719,6,4,2:00,James Madison,Gardner-Webb,13,6,49,2,3,-5,Rush,"[SG] Kneel down by BARNETT III, Alonza at JMU46 (team loss of 5).",-2.3846551039408244,2024-09-08T01:04:32.000Z
+401643777104999901,401643777,40164377719,7,4,0:00,James Madison,Gardner-Webb,13,6,54,3,8,-2,Rush,"[SG] Kneel down by BARNETT III, Alonza at JMU44 (team loss of 2), clock 00:00.",-0.8486561088352227,2024-09-08T01:05:33.000Z

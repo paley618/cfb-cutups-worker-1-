@@ -1,0 +1,172 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628450101854001,401628450,4016284501,2,1,14:59,Illinois State,Iowa,0,0,75,1,10,0,Pass Incompletion,Tommy Rittenhouse pass incomplete,-0.7029700220436519,2024-08-31T16:00:18.000Z
+401628450101854301,401628450,4016284501,3,1,14:56,Illinois State,Iowa,0,0,75,2,10,1,Rush,Tommy Rittenhouse run for 1 yd to the ILST 26,-0.29282347426074384,2024-08-31T16:00:18.000Z
+401628450101857401,401628450,4016284501,4,1,14:25,Illinois State,Iowa,0,0,74,3,9,0,Pass Incompletion,Tommy Rittenhouse pass incomplete,-0.18876768235831598,2024-08-31T16:00:18.000Z
+401628450101857901,401628450,4016284501,5,1,14:20,Illinois State,Iowa,0,0,74,4,9,0,Punt,"Hayden Futch punt for 39 yds, downed at the IOWA 35",,2024-08-31T16:00:18.000Z
+401628450101849908,401628450,4016284501,1,1,15:00,Iowa,Illinois State,0,0,65,0,0,0,Kickoff,Drew Stevens kickoff for 65 yds for a touchback,,2024-08-31T16:00:18.000Z
+401628450101858901,401628450,4016284502,1,1,14:10,Iowa,Illinois State,0,0,65,1,10,3,Rush,Kamari Moulton run for 3 yds to the IOWA 38,-0.4062307312880424,2024-08-31T16:00:18.000Z
+401628450101866201,401628450,4016284502,2,1,13:37,Iowa,Illinois State,0,0,62,2,7,1,Rush,Kamari Moulton run for 1 yd to the IOWA 39,-0.7187453143439937,2024-08-31T16:00:18.000Z
+401628450101874301,401628450,4016284502,3,1,12:56,Iowa,Illinois State,0,0,61,3,6,0,Pass Incompletion,Cade McNamara pass incomplete,-0.5500549337832448,2024-08-31T16:00:18.000Z
+401628450101875101,401628450,4016284502,4,1,12:48,Iowa,Illinois State,0,0,61,4,6,0,Punt,Rhys Dakin punt for 35 yds,,2024-08-31T16:00:18.000Z
+401628450101875501,401628450,4016284503,1,1,12:44,Illinois State,Iowa,0,0,74,1,10,-3,Sack,Tommy Rittenhouse sacked by Aaron Graves for a loss of 3 yards to the ILST 23,-1.0017998591432935,2024-08-31T16:00:18.000Z
+401628450101878301,401628450,4016284503,2,1,12:16,Illinois State,Iowa,0,0,77,2,13,2,Rush,Mason King run for 2 yds to the ILST 25,-0.14854839026597144,2024-08-31T16:00:18.000Z
+401628450101884301,401628450,4016284503,3,1,11:56,Illinois State,Iowa,0,0,75,3,11,15,Pass Reception,Tommy Rittenhouse pass complete to Daniel Sobkowicz for 15 yds to the ILST 40 for a 1ST down,2.4002239577265554,2024-08-31T16:00:18.000Z
+401628450101886902,401628450,4016284503,4,1,11:30,Illinois State,Iowa,0,0,60,1,10,-5,Penalty,"(11:30) RITTENHOUSE, Tommy pass short to the right complete for 14 yards to BARTOL, Mitch caught at the ISU42 and advanced to the UI46 (NWANKPA, Xavier), clock 11:23. PENALTY ISU Ineligible Receiver Downfield on Pass on WOODARD, Landon enforced 5 yards from the ISU40 to the ISU35 [NHSG]. NO PLAY (replay the down).",,2024-08-31T16:00:18.000Z
+401628450101894001,401628450,4016284503,5,1,10:59,Illinois State,Iowa,0,0,65,1,15,9,Rush,Tommy Rittenhouse run for 9 yds to the ILST 44,1.0181336038462057,2024-08-31T16:00:18.000Z
+401628450101896101,401628450,4016284503,6,1,10:38,Illinois State,Iowa,0,0,56,2,6,7,Pass Reception,Tommy Rittenhouse pass complete to Xavier Loyd for 7 yds to the IOWA 49 for a 1ST down,1.16204449058921,2024-08-31T16:00:18.000Z
+401628450101898001,401628450,4016284503,7,1,10:19,Illinois State,Iowa,0,0,49,1,10,3,Rush,Wenkers Wright run for 3 yds to the IOWA 46,-0.375732386813203,2024-08-31T16:00:18.000Z
+401628450101905101,401628450,4016284503,8,1,9:48,Illinois State,Iowa,0,0,46,2,7,0,Pass Interception Return,Tommy Rittenhouse pass intercepted Jermari Harris return for no gain to the IOWA 45,-2.8619370615495487,2024-08-31T16:00:18.000Z
+401628450101905202,401628450,4016284504,1,1,9:47,Iowa,Illinois State,0,0,55,1,10,0,Pass Incompletion,Cade McNamara pass incomplete,-1.1618692012952412,2024-08-31T16:18:04.000Z
+401628450101905901,401628450,4016284504,2,1,9:40,Iowa,Illinois State,0,0,55,2,10,1,Rush,Kamari Moulton run for 1 yd to the IOWA 46,-0.747697308082321,2024-08-31T16:00:18.000Z
+401628450101909901,401628450,4016284504,3,1,9:00,Iowa,Illinois State,0,0,54,3,9,4,Pass Reception,Cade McNamara pass complete to Addison Ostrenga for 4 yds to the 50 yard line,-0.1193244051136073,2024-08-31T16:00:18.000Z
+401628450101918301,401628450,4016284504,4,1,8:16,Iowa,Illinois State,0,0,50,4,5,0,Punt,Rhys Dakin punt for 38 yds,,2024-08-31T16:00:18.000Z
+401628450101924101,401628450,4016284505,1,1,7:58,Illinois State,Iowa,0,0,83,1,10,3,Rush,Wenkers Wright run for 3 yds to the ILST 20,-0.204908473427289,2024-08-31T16:00:18.000Z
+401628450101927301,401628450,4016284505,2,1,7:26,Illinois State,Iowa,0,0,80,2,7,6,Rush,Wenkers Wright run for 6 yds to the ILST 26,0.2078861889200425,2024-08-31T16:00:18.000Z
+401628450101929301,401628450,4016284505,3,1,7:06,Illinois State,Iowa,0,0,74,3,1,3,Fumble Recovery (Opponent),"Wenkers Wright run for 3 yds to the ILST 29 Wenkers Wright fumbled, recovered by IOWA TJ Hall T. Hall return for 0 yds",-0.4677951329410961,2024-08-31T16:25:49.000Z
+401628450101929401,401628450,4016284506,1,1,7:05,Iowa,Illinois State,0,0,29,1,10,0,Pass Incompletion,Cade McNamara pass incomplete,-0.534372502378378,2024-08-31T16:00:18.000Z
+401628450101934301,401628450,4016284506,2,1,6:56,Iowa,Illinois State,0,0,29,2,10,0,Rush,Leshon Williams run for no gain to the ILST 29,-0.732204526648056,2024-08-31T16:00:18.000Z
+401628450101938201,401628450,4016284506,3,1,6:17,Iowa,Illinois State,0,0,29,3,10,6,Pass Reception,Cade McNamara pass complete to Leshon Williams for 6 yds to the ILST 23,0.2273575119755193,2024-08-31T16:00:18.000Z
+401628450101946401,401628450,4016284506,4,1,5:35,Iowa,Illinois State,3,0,23,4,4,41,Field Goal Good,Drew Stevens 41 yd FG GOOD,,2024-08-31T16:28:20.000Z
+401628450101946402,401628450,4016284507,1,1,5:35,Iowa,Illinois State,3,0,65,0,0,0,Kickoff,Drew Stevens kickoff for 65 yds for a touchback,,2024-08-31T16:28:20.000Z
+401628450101946501,401628450,4016284507,2,1,5:34,Illinois State,Iowa,0,3,75,1,10,0,Pass Incompletion,Jake Rubley pass incomplete,-0.7029700220436519,2024-08-31T16:00:18.000Z
+401628450101946901,401628450,4016284507,3,1,5:30,Illinois State,Iowa,0,3,75,2,10,0,Pass Incompletion,Jake Rubley pass incomplete,-0.34710487712173865,2024-08-31T16:00:18.000Z
+401628450101947301,401628450,4016284507,4,1,5:26,Illinois State,Iowa,0,3,75,3,10,0,Pass Incompletion,Jake Rubley pass incomplete,-0.15871308844886392,2024-08-31T16:00:18.000Z
+401628450101947901,401628450,4016284507,5,1,5:20,Illinois State,Iowa,0,3,75,4,10,0,Punt,"Hayden Futch punt for 40 yds , Kaden Wetjen returns for no gain Iowa Penalty, Offensive Holding (10 Yards) to the IOWA 31",,2024-08-31T16:34:04.000Z
+401628450101949601,401628450,4016284508,1,1,5:03,Iowa,Illinois State,3,0,69,1,10,7,Rush,Kamari Moulton run for 7 yds to the IOWA 38,0.6816920045798367,2024-08-31T16:00:18.000Z
+401628450101957101,401628450,4016284508,2,1,4:28,Iowa,Illinois State,3,0,62,2,3,0,Rush,Kamari Moulton run for no gain to the IOWA 38,-1.1742369915168689,2024-08-31T16:00:18.000Z
+401628450101965501,401628450,4016284508,3,1,3:44,Iowa,Illinois State,3,0,62,3,3,7,Pass Reception,Cade McNamara pass complete to Luke Lachey for 7 yds to the IOWA 45 for a 1ST down,1.823222754735717,2024-08-31T16:00:18.000Z
+401628450101969201,401628450,4016284508,4,1,3:07,Iowa,Illinois State,3,0,55,1,10,2,Rush,Leshon Williams run for 2 yds to the IOWA 47,-0.6797853383066688,2024-08-31T16:00:18.000Z
+401628450101977201,401628450,4016284508,5,1,2:27,Iowa,Illinois State,3,0,53,2,8,0,Pass Incompletion,Cade McNamara pass incomplete,-1.0500937719222838,2024-08-31T16:00:18.000Z
+401628450101977501,401628450,4016284508,6,1,2:24,Iowa,Illinois State,3,0,53,3,8,0,Pass Incompletion,Cade McNamara pass incomplete,-0.7000822973306775,2024-08-31T16:00:18.000Z
+401628450101978301,401628450,4016284508,7,1,2:16,Iowa,Illinois State,3,0,53,4,8,0,Punt,Rhys Dakin punt for 33 yds,,2024-08-31T16:00:18.000Z
+401628450101988601,401628450,4016284509,3,1,1:13,Illinois State,Iowa,0,3,70,1,10,0,Pass Incompletion,Tommy Rittenhouse pass incomplete,-0.8627910327708888,2024-08-31T16:00:18.000Z
+401628450101979001,401628450,4016284509,1,1,2:09,Illinois State,Iowa,0,3,80,1,10,9,Rush,Tommy Rittenhouse run for 9 yds to the ILST 29,1.1127415828278746,2024-08-31T16:00:18.000Z
+401628450101985701,401628450,4016284509,2,1,1:42,Illinois State,Iowa,0,3,71,2,1,1,Rush,Seth Glatz run for 1 yd to the ILST 30 for a 1ST down,-0.4194703061271152,2024-08-31T16:00:18.000Z
+401628450101989001,401628450,4016284509,4,1,1:09,Illinois State,Iowa,0,3,70,2,10,0,Pass Incompletion,Tommy Rittenhouse pass incomplete,-0.4604691796083076,2024-08-31T16:41:42.000Z
+401628450101989501,401628450,4016284509,5,1,1:04,Illinois State,Iowa,0,3,70,3,10,-1,Rush,Seth Glatz run for a loss of 1 yard to the ILST 29,-0.24737937101217522,2024-08-31T16:00:18.000Z
+401628450101997001,401628450,4016284509,6,1,0:29,Illinois State,Iowa,0,3,71,4,11,0,Punt,"Hayden Futch punt for 42 yds , Kaden Wetjen returns for no gain to the IOWA 29",,2024-08-31T16:00:18.000Z
+401628450101997902,401628450,40162845010,2,1,0:00,Iowa,Illinois State,3,0,71,0,10,3,End Period,End of 1st Quarter,,2024-08-31T16:45:09.000Z
+401628450101997901,401628450,40162845010,1,1,0:20,Iowa,Illinois State,3,0,71,1,10,3,Rush,Kamari Moulton run for 3 yds to the IOWA 32,-0.3446420231971743,2024-08-31T16:00:18.000Z
+401628450102854201,401628450,40162845010,3,2,14:57,Iowa,Illinois State,3,0,68,2,7,18,Pass Reception,Cade McNamara pass complete to Reece Vander Zee for 18 yds to the 50 yard line for a 1ST down,2.278846963830766,2024-08-31T16:49:02.000Z
+401628450102857801,401628450,40162845010,4,2,14:21,Iowa,Illinois State,3,0,50,1,10,12,Rush,"Kamari Moulton run for 22 yds to the ILST 28 Iowa Penalty, Offensive Holding (Jacob Gill) to the IOWA 46",0.746819283536185,2024-08-31T16:49:02.000Z
+401628450102864001,401628450,40162845010,5,2,13:59,Iowa,Illinois State,3,0,54,1,14,-5,Penalty,"Iowa Penalty, False Start (Jacob Gill) to the IOWA 41",,2024-08-31T16:50:34.000Z
+401628450102865901,401628450,40162845010,6,2,13:40,Iowa,Illinois State,3,0,59,1,19,6,Rush,Kamari Moulton run for 6 yds to the IOWA 47,0.2529896513434444,2024-08-31T16:49:02.000Z
+401628450102869701,401628450,40162845010,7,2,13:02,Iowa,Illinois State,3,0,53,2,13,10,Rush,Kamari Moulton run for 10 yds to the ILST 43,1.2493556905144647,2024-08-31T16:49:02.000Z
+401628450102877701,401628450,40162845010,8,2,12:22,Iowa,Illinois State,3,0,43,3,3,1,Rush,Kamari Moulton run for 1 yd to the ILST 42,-0.902268796845366,2024-08-31T16:49:02.000Z
+401628450102879801,401628450,40162845010,9,2,12:01,Iowa,Illinois State,3,0,42,4,2,1,Rush,Kamari Moulton run for 1 yd to the ILST 41,-1.7131943134900904,2024-08-31T16:49:02.000Z
+401628450102884201,401628450,40162845011,1,2,11:57,Illinois State,Iowa,0,3,59,1,10,10,Pass Reception,Tommy Rittenhouse pass complete to Dylan Lord for 10 yds to the IOWA 49 for a 1ST down,0.896681798161179,2024-08-31T16:49:02.000Z
+401628450102887001,401628450,40162845011,2,2,11:29,Illinois State,Iowa,0,3,49,1,10,-5,Sack,Tommy Rittenhouse sacked by Aaron Graves for a loss of 5 yards to the ILST 46,-2.1829984166845247,2024-08-31T16:49:02.000Z
+401628450102889601,401628450,40162845011,3,2,11:03,Illinois State,Iowa,0,3,54,2,15,3,Pass Reception,Tommy Rittenhouse pass complete to Xavier Loyd for 3 yds to the ILST 49,-0.3054466619416791,2024-08-31T16:49:02.000Z
+401628450102897601,401628450,40162845011,4,2,10:23,Illinois State,Iowa,0,3,51,3,12,0,Pass Incompletion,Tommy Rittenhouse pass incomplete,-0.5900177248086829,2024-08-31T16:49:02.000Z
+401628450102898001,401628450,40162845011,5,2,10:19,Illinois State,Iowa,0,3,51,4,12,17,Punt,"Hayden Futch punt for 44 yds , Kaden Wetjen returns for 17 yds to the IOWA 24",,2024-08-31T16:49:02.000Z
+401628450102899401,401628450,40162845012,1,2,10:05,Iowa,Illinois State,3,0,76,1,10,6,Rush,Kamari Moulton run for 6 yds to the IOWA 30,0.3245554637561217,2024-08-31T16:49:02.000Z
+401628450102906701,401628450,40162845012,2,2,9:32,Iowa,Illinois State,3,0,70,2,4,0,Rush,Kamari Moulton run for no gain to the IOWA 30,-0.8357412910566246,2024-08-31T16:49:02.000Z
+401628450102914801,401628450,40162845012,3,2,8:51,Iowa,Illinois State,3,0,70,3,4,4,Pass Reception,Cade McNamara pass complete to Jacob Gill for 4 yds to the IOWA 34 for a 1ST down,1.3200347809866795,2024-08-31T16:49:02.000Z
+401628450102919301,401628450,40162845012,4,2,8:06,Iowa,Illinois State,3,0,66,1,10,7,Pass Reception,Cade McNamara pass complete to Luke Lachey for 7 yds to the IOWA 41,0.7039091622223153,2024-08-31T16:49:02.000Z
+401628450102927301,401628450,40162845012,5,2,7:26,Iowa,Illinois State,3,0,59,2,3,0,Rush,Leshon Williams run for no gain to the IOWA 41,-1.241668753270137,2024-08-31T16:49:02.000Z
+401628450102935201,401628450,40162845012,6,2,6:47,Iowa,Illinois State,3,0,59,3,3,0,Pass Incompletion,Cade McNamara pass incomplete,-0.7808446326487023,2024-08-31T16:49:02.000Z
+401628450102935801,401628450,40162845012,7,2,6:41,Iowa,Illinois State,3,0,59,4,3,44,Punt,"Rhys Dakin punt for 44 yds , Braden Contreras returns for no gain to the ILST 14 , returns for no gain to the ILST 14",,2024-08-31T17:08:11.000Z
+401628450102936801,401628450,40162845013,1,2,6:31,Illinois State,Iowa,0,3,86,1,10,2,Rush,Tommy Rittenhouse run for 2 yds to the ILST 16,-0.27305302769881834,2024-08-31T16:49:02.000Z
+401628450102939801,401628450,40162845013,2,2,6:01,Illinois State,Iowa,0,3,84,2,8,19,Pass Reception,Tommy Rittenhouse pass complete to Daniel Sobkowicz for 19 yds to the ILST 35 for a 1ST down,1.6904028333363827,2024-08-31T16:49:02.000Z
+401628450102949201,401628450,40162845013,4,2,5:07,Illinois State,Iowa,0,3,55,1,10,3,Pass Reception,Tommy Rittenhouse pass complete to Javon Charles for 3 yds to the ILST 48,-0.4238622892911614,2024-08-31T16:49:02.000Z
+401628450102956601,401628450,40162845013,5,2,4:33,Illinois State,Iowa,0,3,52,2,7,0,Pass Incompletion,Tommy Rittenhouse pass incomplete,-1.1089110823389845,2024-08-31T16:49:02.000Z
+401628450102946202,401628450,40162845013,3,2,5:37,Illinois State,Iowa,0,3,65,1,10,10,Penalty,"(05:37) RITTENHOUSE, Tommy sacked for a loss of 8 yards at the ISU27, fumble on the sack (forced by HURKETT, Ethan), clock 05:20. PENALTY UI Holding on HIGGINS, Jay enforced 10 yards from the ISU35 to the ISU45 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-31T17:11:48.000Z
+401628450102957301,401628450,40162845013,6,2,4:26,Illinois State,Iowa,0,3,52,3,7,-1,Sack,Tommy Rittenhouse sacked by Aaron Graves for a loss of 1 yard to the ILST 47,-0.8971880359294842,2024-08-31T16:49:02.000Z
+401628450102964301,401628450,40162845013,7,2,3:56,Illinois State,Iowa,0,3,53,4,8,23,Punt,"Hayden Futch punt for 35 yds , Kaden Wetjen returns for 23 yds to the IOWA 41",,2024-08-31T16:49:02.000Z
+401628450102965202,401628450,40162845013,8,2,3:47,Iowa,Illinois State,3,0,59,1,10,-5,Penalty,"(03:47) QB Keeper MCNAMARA, Cade rush up the middle for a gain of 20 yards to the ISU39 (JACKSON, Keondre), clock 03:37. PENALTY Before the snap, UI Illegal Motion on LACHEY, Luke enforced 5 yards from the UI41 to the UI36. NO PLAY (replay the down).",,2024-08-31T16:49:02.000Z
+401628450102967801,401628450,40162845014,1,2,3:21,Iowa,Illinois State,3,0,64,1,15,3,Rush,Kamari Moulton run for 3 yds to the IOWA 39,-0.3212083809667493,2024-08-31T16:49:02.000Z
+401628450102975001,401628450,40162845014,2,2,2:49,Iowa,Illinois State,3,0,61,2,12,17,Pass Reception,Cade McNamara pass complete to Luke Lachey for 17 yds to the ILST 44 for a 1ST down,2.768330178984523,2024-08-31T16:49:02.000Z
+401628450102978601,401628450,40162845014,3,2,2:13,Iowa,Illinois State,3,0,44,1,10,7,Rush,Kamari Moulton run for 7 yds to the ILST 37,0.5005481645051048,2024-08-31T16:49:02.000Z
+401628450102979901,401628450,40162845014,4,2,2:00,Iowa,Illinois State,3,0,37,2,3,0,Timeout,"Timeout Iowa, clock 02:00",,2024-08-31T17:19:40.000Z
+401628450102984501,401628450,40162845014,6,2,1:54,Iowa,Illinois State,3,0,37,3,3,11,Pass Reception,Cade McNamara pass complete to Jacob Gill for 11 yds to the ILST 26 for a 1ST down,1.1418597125685146,2024-08-31T16:49:02.000Z
+401628450102984101,401628450,40162845014,5,2,1:58,Iowa,Illinois State,3,0,37,2,3,0,Pass Incompletion,Cade McNamara pass incomplete,-0.9495276419717785,2024-08-31T16:49:02.000Z
+401628450102989101,401628450,40162845014,10,2,1:08,Iowa,Illinois State,3,0,10,3,6,0,Timeout,"Timeout Iowa, clock 01:08",,2024-08-31T17:25:53.000Z
+401628450102985901,401628450,40162845014,7,2,1:40,Iowa,Illinois State,3,0,26,1,10,12,Rush,Cade McNamara run for 12 yds to the ILST 14 for a 1ST down,0.171718947229099,2024-08-31T16:49:02.000Z
+401628450102988001,401628450,40162845014,8,2,1:19,Iowa,Illinois State,3,0,14,1,10,0,Pass Incompletion,Cade McNamara pass incomplete,-0.3125697195395781,2024-08-31T16:49:02.000Z
+401628450102988401,401628450,40162845014,9,2,1:15,Iowa,Illinois State,3,0,14,2,10,4,Rush,Kamari Moulton run for 4 yds to the ILST 10,-0.0323703886282729,2024-08-31T16:49:02.000Z
+401628450102989201,401628450,40162845014,11,2,1:07,Iowa,Illinois State,3,0,10,3,6,0,Pass Incompletion,Cade McNamara pass incomplete,-0.3744936313134008,2024-08-31T16:49:02.000Z
+401628450102989901,401628450,40162845014,12,2,1:00,Iowa,Illinois State,6,0,10,4,6,28,Field Goal Good,Drew Stevens 28 yd FG GOOD,,2024-08-31T17:27:24.000Z
+401628450103849904,401628450,40162845015,5,3,15:00,Iowa,Illinois State,6,0,75,1,10,15,Penalty,"Illinois State Penalty, Unsportsmanlike Conduct (15 Yards) to the IOWA 40 for a 1ST down",,2024-08-31T17:53:20.000Z
+401628450102999902,401628450,40162845015,4,2,0:00,Illinois State,Iowa,0,6,60,0,10,0,End of Half,End of 2nd Quarter,,2024-08-31T17:30:44.000Z
+401628450102989902,401628450,40162845015,1,2,1:00,Iowa,Illinois State,6,0,65,0,0,15,Kickoff Return (Offense),"Drew Stevens kickoff for 50 yds , Wenkers Wright return for 15 yds to the ILST 30",,2024-08-31T17:27:24.000Z
+401628450102994401,401628450,40162845015,2,2,0:55,Illinois State,Iowa,0,6,70,1,10,6,Rush,Wenkers Wright run for 6 yds to the ILST 36,0.3731544450397237,2024-08-31T16:49:02.000Z
+401628450102996801,401628450,40162845015,3,2,0:31,Illinois State,Iowa,0,6,64,2,4,4,Rush,Wenkers Wright run for 4 yds to the ILST 40 for a 1ST down,0.5627314697209443,2024-08-31T16:49:02.000Z
+401628450103849906,401628450,40162845016,1,3,15:00,Illinois State,Iowa,0,6,65,0,0,0,Kickoff,Ian Wagner kickoff for 65 yds for a touchback,,2024-08-31T17:53:20.000Z
+401628450103854101,401628450,40162845016,2,3,14:58,Iowa,Illinois State,6,0,60,1,10,10,Pass Reception,Cade McNamara pass complete to Addison Ostrenga for 10 yds to the 50 yard line for a 1ST down,0.9154886720223024,2024-08-31T17:53:20.000Z
+401628450103857201,401628450,40162845016,3,3,14:27,Iowa,Illinois State,6,0,50,1,10,0,Rush,Kamari Moulton run for no gain to the 50 yard line,-1.1143038065675126,2024-08-31T17:53:20.000Z
+401628450103864801,401628450,40162845016,4,3,13:51,Iowa,Illinois State,6,0,50,2,10,17,Pass Reception,Cade McNamara pass complete to Reece Vander Zee for 17 yds to the ILST 33 for a 1ST down,2.0526409651868978,2024-08-31T17:53:20.000Z
+401628450103867901,401628450,40162845016,5,3,13:20,Iowa,Illinois State,6,0,33,1,10,4,Rush,Kamari Moulton run for 4 yds to the ILST 29,-0.059449490714332,2024-08-31T17:53:20.000Z
+401628450103875901,401628450,40162845016,6,3,12:40,Iowa,Illinois State,6,0,29,2,6,3,Rush,Kaleb Johnson run for 3 yds to the ILST 26,-0.213092174459538,2024-08-31T17:53:20.000Z
+401628450103879901,401628450,40162845016,7,3,12:00,Iowa,Illinois State,6,0,26,3,3,19,Pass Reception,Cade McNamara pass complete to Luke Lachey for 19 yds to the ILST 7 for a 1ST down,0.978861808348647,2024-08-31T17:53:20.000Z
+401628450103886701,401628450,40162845016,8,3,11:32,Iowa,Illinois State,12,0,7,1,7,7,Passing Touchdown,Cade McNamara pass complete to Reece Vander Zee for 7 yds for a TD (Two-Point Conversion failed),2.196754630327211,2024-08-31T17:57:42.000Z
+401628450103886703,401628450,40162845017,1,3,11:32,Iowa,Illinois State,12,0,65,0,0,0,Kickoff,Drew Stevens kickoff for 65 yds for a touchback,,2024-08-31T18:00:19.000Z
+401628450103889801,401628450,40162845017,3,3,11:01,Illinois State,Iowa,0,12,70,2,5,0,Pass Incompletion,Jake Rubley pass incomplete,-0.7537324720659102,2024-08-31T17:53:20.000Z
+401628450103887201,401628450,40162845017,2,3,11:27,Illinois State,Iowa,0,12,75,1,10,5,Rush,Wenkers Wright run for 5 yds to the ILST 30,0.0945451165334843,2024-08-31T17:53:20.000Z
+401628450103894201,401628450,40162845017,4,3,10:57,Illinois State,Iowa,0,12,70,3,5,4,Pass Reception,Jake Rubley pass complete to Mitch Bartol for 4 yds to the ILST 34,-0.06449296258092385,2024-08-31T17:53:20.000Z
+401628450103897901,401628450,40162845017,5,3,10:20,Illinois State,Iowa,0,12,66,4,1,31,Punt,"Hayden Futch punt for 31 yds , Zach Lutmer returns for a loss of 1 yard to the IOWA 34",,2024-08-31T17:53:20.000Z
+401628450103898702,401628450,40162845018,1,3,10:12,Iowa,Illinois State,12,0,66,1,10,8,Penalty,"(10:12) MCNAMARA, Cade pass to the left incomplete intended for VANDER ZEE, Reece thrown to the UI43, clock 10:08. PENALTY ISU Pass Interference on PARKS, Teon enforced at the spot of the foul for 8 yards to the UI42 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-31T17:53:20.000Z
+401628450103899601,401628450,40162845018,2,3,10:03,Iowa,Illinois State,12,0,58,1,10,12,Rush,Kaleb Johnson run for 12 yds to the ILST 46 for a 1ST down,1.0184158039048512,2024-08-31T17:53:20.000Z
+401628450103905501,401628450,40162845018,3,3,9:44,Iowa,Illinois State,12,0,46,1,10,-1,Rush,Kaleb Johnson run for a loss of 1 yard to the ILST 47,-1.2569748578032964,2024-08-31T17:53:20.000Z
+401628450103909201,401628450,40162845018,4,3,9:07,Iowa,Illinois State,12,0,47,2,11,8,Pass Reception,Cade McNamara pass complete to Kaleb Johnson for 8 yds to the ILST 39,0.7741305207355751,2024-08-31T17:53:20.000Z
+401628450103917601,401628450,40162845018,5,3,8:23,Iowa,Illinois State,12,0,39,3,3,8,Pass Reception,Cade McNamara pass complete to Luke Lachey for 8 yds to the ILST 31 for a 1ST down,1.1841855751292376,2024-08-31T17:53:20.000Z
+401628450103925301,401628450,40162845018,6,3,7:46,Iowa,Illinois State,19,0,31,1,10,31,Passing Touchdown,Cade McNamara pass complete to Jacob Gill for 31 yds for a TD (Drew Stevens KICK),2.841946170072948,2024-08-31T18:16:33.000Z
+401628450103925303,401628450,40162845019,1,3,7:46,Iowa,Illinois State,19,0,65,0,0,0,Kickoff,Drew Stevens kickoff for 65 yds for a touchback,,2024-08-31T18:16:33.000Z
+401628450103925305,401628450,40162845019,2,3,7:46,Illinois State,Iowa,0,19,75,1,10,5,Rush,Josh Robinson run for 5 yds to the ILST 30,0.0945451165334843,2024-08-31T18:16:33.000Z
+401628450103927801,401628450,40162845019,3,3,7:21,Illinois State,Iowa,0,19,70,2,5,4,Rush,Josh Robinson run for 4 yds to the ILST 34,-0.117578978482432,2024-08-31T17:53:20.000Z
+401628450103934701,401628450,40162845019,4,3,6:52,Illinois State,Iowa,0,19,66,3,1,3,Rush,Josh Robinson run for 3 yds to the ILST 37 for a 1ST down,1.050278188092519,2024-08-31T17:53:20.000Z
+401628450103937101,401628450,40162845019,5,3,6:28,Illinois State,Iowa,0,19,63,1,10,-4,Rush,Josh Robinson run for a loss of 4 yards to the ILST 33,-1.6521497004281738,2024-08-31T17:53:20.000Z
+401628450103944201,401628450,40162845019,6,3,5:57,Illinois State,Iowa,0,19,67,2,14,0,Pass Incompletion,Jake Rubley pass incomplete,-0.38127364752062487,2024-08-31T17:53:20.000Z
+401628450103944401,401628450,40162845019,7,3,5:55,Illinois State,Iowa,0,19,67,3,14,4,Rush,Jake Rubley run for 4 yds to the ILST 37,-0.03760951311128124,2024-08-31T18:18:29.000Z
+401628450103946801,401628450,40162845019,8,3,5:31,Illinois State,Iowa,0,19,63,4,10,0,Punt,Hayden Futch punt for 47 yds,,2024-08-31T17:53:20.000Z
+401628450103947501,401628450,40162845020,1,3,5:24,Iowa,Illinois State,19,0,84,1,10,5,Rush,Kaleb Johnson run for 5 yds to the IOWA 21,0.07867780591471615,2024-08-31T17:53:20.000Z
+401628450103954101,401628450,40162845020,2,3,4:58,Iowa,Illinois State,19,0,79,2,5,4,Rush,Kaleb Johnson run for 4 yds to the IOWA 25,-0.07291932926207423,2024-08-31T17:53:20.000Z
+401628450103957801,401628450,40162845020,3,3,4:21,Iowa,Illinois State,19,0,75,3,1,2,Rush,Kamari Moulton run for 2 yds to the IOWA 27 for a 1ST down,0.6408954163290961,2024-08-31T17:53:20.000Z
+401628450103964901,401628450,40162845020,4,3,3:50,Iowa,Illinois State,19,0,73,1,10,3,Rush,Kaleb Johnson run for 3 yds to the IOWA 30,-0.3204076759721195,2024-08-31T17:53:20.000Z
+401628450103967101,401628450,40162845020,5,3,3:28,Iowa,Illinois State,19,0,70,2,7,5,Pass Reception,Cade McNamara pass complete to Luke Lachey for 5 yds to the IOWA 35,0.0796793642470792,2024-08-31T17:53:20.000Z
+401628450103974901,401628450,40162845020,6,3,2:50,Iowa,Illinois State,19,0,65,3,2,0,Pass Incompletion,Cade McNamara pass incomplete,-0.6593583300883079,2024-08-31T17:53:20.000Z
+401628450103975401,401628450,40162845020,7,3,2:45,Iowa,Illinois State,19,0,65,4,2,0,Punt,"Rhys Dakin punt for 46 yds, fair catch by Braden Contreras at the ILST 19",,2024-08-31T17:53:20.000Z
+401628450103975802,401628450,40162845021,1,3,2:41,Illinois State,Iowa,0,19,81,1,10,37,Pass Reception,Tommy Rittenhouse pass complete to Xavier Loyd for 37 yds to the IOWA 44 for a 1ST down,3.025737163492775,2024-08-31T18:28:27.000Z
+401628450103978501,401628450,40162845021,2,3,2:14,Illinois State,Iowa,0,19,44,1,10,0,Pass Incompletion,Tommy Rittenhouse pass incomplete,-0.9690270974076257,2024-08-31T18:29:07.000Z
+401628450103978502,401628450,40162845021,3,3,2:14,Illinois State,Iowa,0,19,44,2,10,0,Pass Incompletion,Tommy Rittenhouse pass incomplete,-1.0658475431296655,2024-08-31T18:29:07.000Z
+401628450103978901,401628450,40162845021,4,3,2:10,Illinois State,Iowa,0,19,44,3,10,6,Pass Reception,Tommy Rittenhouse pass complete to Xavier Loyd for 6 yds to the IOWA 38,0.2803784166976922,2024-08-31T18:29:27.000Z
+401628450103986401,401628450,40162845021,5,3,1:35,Illinois State,Iowa,0,19,38,4,4,0,Pass Incompletion,Tommy Rittenhouse pass incomplete,-1.8326214186503798,2024-08-31T17:53:20.000Z
+401628450104854501,401628450,40162845022,5,4,14:54,Iowa,Illinois State,26,0,19,1,10,19,Passing Touchdown,Cade McNamara pass complete to Reece Vander Zee for 19 yds for a TD (Drew Stevens KICK),2.604447628637523,2024-08-31T18:36:15.000Z
+401628450103996302,401628450,40162845022,4,3,0:00,Iowa,Illinois State,19,0,50,0,9,31,End Period,End of 3rd Quarter,,2024-08-31T18:33:18.000Z
+401628450103986701,401628450,40162845022,1,3,1:32,Iowa,Illinois State,19,0,62,1,10,11,Pass Reception,Cade McNamara pass complete to Addison Ostrenga for 11 yds to the IOWA 49 for a 1ST down,1.0296364367865516,2024-08-31T17:53:20.000Z
+401628450103989001,401628450,40162845022,2,3,1:09,Iowa,Illinois State,19,0,51,1,10,1,Rush,Kaleb Johnson run for 1 yd to the 50 yard line,-0.889254676573113,2024-08-31T17:53:20.000Z
+401628450103996301,401628450,40162845022,3,3,0:36,Iowa,Illinois State,19,0,50,2,9,31,Pass Reception,Cade McNamara pass complete to Zach Ortwerth for 31 yds to the ILST 19 for a 1ST down,2.208174251828529,2024-08-31T17:53:20.000Z
+401628450104854503,401628450,40162845023,1,4,14:54,Iowa,Illinois State,26,0,65,0,0,19,Kickoff Return (Offense),"Drew Stevens kickoff for 60 yds , Jalen Carr return for 19 yds to the ILST 24",,2024-08-31T18:38:25.000Z
+401628450104867601,401628450,40162845023,5,4,13:23,Illinois State,Iowa,0,26,69,4,3,5,Punt,"Hayden Futch punt for 51 yds , Kaden Wetjen returns for 5 yds to the IOWA 23",,2024-08-31T18:38:25.000Z
+401628450104855301,401628450,40162845023,2,4,14:46,Illinois State,Iowa,0,26,76,1,10,3,Pass Reception,Tommy Rittenhouse pass complete to Josh Robinson for 3 yds to the ILST 27,-0.2835190304977822,2024-08-31T18:38:25.000Z
+401628450104856601,401628450,40162845023,3,4,14:33,Illinois State,Iowa,0,26,73,2,7,1,Rush,Josh Robinson run for 1 yd to the ILST 28,-0.4471584991764405,2024-08-31T18:38:25.000Z
+401628450104859901,401628450,40162845023,4,4,14:00,Illinois State,Iowa,0,26,72,3,6,3,Pass Reception,Jake Rubley pass complete to Dylan Lord for 3 yds to the ILST 31,-0.13009396584317479,2024-08-31T18:38:25.000Z
+401628450104868901,401628450,40162845024,1,4,13:10,Iowa,Illinois State,26,0,77,1,10,4,Rush,Leshon Williams run for 4 yds to the IOWA 27,-0.1037214304952529,2024-08-31T18:38:25.000Z
+401628450104875601,401628450,40162845024,2,4,12:43,Iowa,Illinois State,26,0,73,2,6,6,Fumble Recovery (Own),"Cade McNamara pass complete to Leshon Williams for 6 yds Leshon Williams fumbled, recovered by IOWA Addison Ostrenga A. Ostrenga return for 0 yds for a 1ST down",0.885021855543501,2024-08-31T18:38:25.000Z
+401628450104885001,401628450,40162845024,3,4,11:49,Iowa,Illinois State,26,0,67,1,10,3,Rush,Leshon Williams run for 3 yds to the IOWA 36,-0.3884871214664028,2024-08-31T18:38:25.000Z
+401628450104889001,401628450,40162845024,4,4,11:09,Iowa,Illinois State,33,0,64,2,7,64,Rushing Touchdown,Kaleb Johnson run for 64 yds for a TD (Drew Stevens KICK),5.817543790607552,2024-08-31T18:46:19.000Z
+401628450104889003,401628450,40162845025,1,4,11:09,Iowa,Illinois State,33,0,65,0,0,15,Kickoff Return (Offense),"Drew Stevens kickoff for 58 yds , Jalen Carr return for 15 yds to the ILST 22",,2024-08-31T18:50:19.000Z
+401628450104894101,401628450,40162845025,2,4,10:58,Illinois State,Iowa,0,33,78,1,10,16,Pass Reception,Tommy Rittenhouse pass complete to Dylan Lord for 16 yds to the ILST 38 for a 1ST down,1.3189811616616316,2024-08-31T18:38:25.000Z
+401628450104896001,401628450,40162845025,3,4,10:39,Illinois State,Iowa,0,33,62,1,10,5,Rush,Wenkers Wright run for 5 yds to the ILST 43,0.1104483361431646,2024-08-31T18:38:25.000Z
+401628450104898401,401628450,40162845025,4,4,10:15,Illinois State,Iowa,0,33,57,2,5,1,Rush,Wenkers Wright run for 1 yd to the ILST 44,-0.923815564943755,2024-08-31T18:38:25.000Z
+401628450104905501,401628450,40162845025,5,4,9:44,Illinois State,Iowa,0,33,56,3,4,-7,Sack,Tommy Rittenhouse sacked by Brian Allen for a loss of 7 yards to the ILST 37,-1.3820860542224667,2024-08-31T18:38:25.000Z
+401628450104909201,401628450,40162845025,6,4,9:07,Illinois State,Iowa,0,33,63,4,11,-3,Rush,Hayden Futch run for a loss of 3 yards to the ILST 34,0.1484569237025477,2024-08-31T18:38:25.000Z
+401628450104914101,401628450,40162845026,1,4,8:58,Iowa,Illinois State,33,0,34,1,10,6,Rush,Kaleb Johnson run for 6 yds to the ILST 28,0.228690499805612,2024-08-31T18:38:25.000Z
+401628450104918202,401628450,40162845026,2,4,8:17,Iowa,Illinois State,33,0,28,2,4,-5,Penalty,"(08:17) MCNAMARA, Cade pass short to the right complete for 5 yards to ORTWERTH, Zach caught at the ISU26 and advanced to the ISU23 (WILSON, Cam), clock 08:11. PENALTY UI Ineligible Receiver Downfield on Pass on COLBY, Connor enforced 5 yards from the ISU28 to the ISU33 [NHSG]. NO PLAY (replay the down).",,2024-08-31T18:38:25.000Z
+401628450104925201,401628450,40162845026,3,4,7:47,Iowa,Illinois State,33,0,33,2,9,6,Rush,Jacob Gill run for 6 yds to the ILST 27,0.217881476092153,2024-08-31T18:38:25.000Z
+401628450104929201,401628450,40162845026,4,4,7:07,Iowa,Illinois State,33,0,27,3,3,5,Pass Reception,Cade McNamara pass complete to Reece Vander Zee for 5 yds to the ILST 22 for a 1ST down,0.575315913594576,2024-08-31T18:38:25.000Z
+401628450104937101,401628450,40162845026,5,4,6:28,Iowa,Illinois State,33,0,22,1,10,4,Rush,Kaleb Johnson run for 4 yds to the ILST 18,-0.029486254339333,2024-08-31T18:38:25.000Z
+401628450104945101,401628450,40162845026,6,4,5:48,Iowa,Illinois State,40,0,18,2,6,18,Rushing Touchdown,Kaleb Johnson run for 18 yds for a TD (Drew Stevens KICK),2.677109020987793,2024-08-31T18:58:35.000Z
+401628450104979901,401628450,40162845027,9,4,2:00,Illinois State,Iowa,0,40,49,2,10,0,Timeout,"Timeout Iowa, clock 02:00",,2024-08-31T19:06:57.000Z
+401628450104969101,401628450,40162845027,7,4,3:08,Illinois State,Iowa,0,40,53,3,4,4,Pass Reception,Beckham Pellant pass complete to Tommy Donovan for 4 yds to the IOWA 49 for a 1ST down,1.7394930590447295,2024-08-31T18:38:25.000Z
+401628450104976501,401628450,40162845027,8,4,2:34,Illinois State,Iowa,0,40,49,1,10,0,Rush,Seth Glatz run for no gain to the IOWA 49,-1.0955888671820908,2024-08-31T18:38:25.000Z
+401628450104945103,401628450,40162845027,1,4,5:48,Iowa,Illinois State,40,0,65,0,0,25,Kickoff Return (Offense),"Drew Stevens kickoff for 60 yds , Jalen Carr return for 25 yds to the ILST 30",,2024-08-31T18:58:35.000Z
+401628450104946201,401628450,40162845027,2,4,5:37,Illinois State,Iowa,0,40,70,1,10,3,Rush,Seth Glatz run for 3 yds to the ILST 33,-0.3563521541303736,2024-08-31T18:38:25.000Z
+401628450104949001,401628450,40162845027,3,4,5:09,Illinois State,Iowa,0,40,67,2,7,5,Rush,Seth Glatz run for 5 yds to the ILST 38,0.0849030393595438,2024-08-31T18:38:25.000Z
+401628450104956201,401628450,40162845027,4,4,4:37,Illinois State,Iowa,0,40,62,3,2,3,Pass Reception,Beckham Pellant pass complete to Tommy Donovan for 3 yds to the ILST 41 for a 1ST down,1.305223283876746,2024-08-31T18:38:25.000Z
+401628450104959001,401628450,40162845027,5,4,4:09,Illinois State,Iowa,0,40,59,1,10,1,Rush,Seth Glatz run for 1 yd to the ILST 42,-0.9199637917398017,2024-08-31T18:38:25.000Z
+401628450104966001,401628450,40162845027,6,4,3:39,Illinois State,Iowa,0,40,58,2,9,5,Rush,Seth Glatz run for 5 yds to the ILST 47,0.0771525308562512,2024-08-31T18:38:25.000Z
+401628450104984001,401628450,40162845027,10,4,1:59,Illinois State,Iowa,0,40,49,2,10,-11,Fumble Recovery (Opponent),"Beckham Pellant run for a loss of 11 yards to the ILST 40 Beckham Pellant fumbled, recovered by IOWA Caden Crawford C. Crawford return for 0 yds",-2.142080581180661,2024-08-31T19:12:47.000Z
+401628450104999902,401628450,40162845028,4,4,0:00,Iowa,Illinois State,40,0,10,0,6,0,End of Game,End of 4th Quarter,,2024-08-31T19:12:28.000Z
+401628450104985601,401628450,40162845028,1,4,1:43,Iowa,Illinois State,40,0,40,1,10,9,Rush,Terrell Washington Jr. run for 9 yds to the ILST 31,0.839961749584607,2024-08-31T18:38:25.000Z
+401628450104989001,401628450,40162845028,2,4,1:09,Iowa,Illinois State,40,0,31,2,1,17,Rush,Max White run for 17 yds to the ILST 14 for a 1ST down,-0.1991957808263475,2024-08-31T18:38:25.000Z
+401628450104996401,401628450,40162845028,3,4,0:35,Iowa,Illinois State,40,0,14,1,10,4,Rush,Max White run for 4 yds to the ILST 10,-0.0183111493425885,2024-08-31T18:38:25.000Z

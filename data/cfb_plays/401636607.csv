@@ -1,0 +1,166 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401636607101849909,401636607,4016366071,2,1,15:00,Southern Utah,Utah,0,0,75,1,10,6,Rush,Jackson Berry run for 6 yds to the SUU 31,0.3333748010525683,2024-08-30T01:00:18.000Z
+401636607101858301,401636607,4016366071,3,1,14:16,Southern Utah,Utah,0,0,69,2,4,0,Rush,Braedon Wissler run for no gain to the SUU 31,-0.8681070846083454,2024-08-30T01:00:18.000Z
+401636607101866801,401636607,4016366071,4,1,13:31,Southern Utah,Utah,0,0,69,3,4,9,Rush,Jackson Berry run for 9 yds to the SUU 40 for a 1ST down,1.8555867991334232,2024-08-30T01:00:18.000Z
+401636607101875501,401636607,4016366071,5,1,12:44,Southern Utah,Utah,0,0,60,1,10,0,Pass Incompletion,Jackson Berry pass incomplete,-1.1247712359915258,2024-08-30T01:00:18.000Z
+401636607101849906,401636607,4016366071,1,1,15:00,Utah,Southern Utah,0,0,65,0,0,0,Kickoff,Cole Becker kickoff for 65 yds for a touchback,,2024-08-30T01:00:18.000Z
+401636607101876001,401636607,4016366071,6,1,12:39,Southern Utah,Utah,0,0,60,2,10,0,Timeout,"Timeout Southern Utah, clock 12:39",,2024-08-30T01:00:18.000Z
+401636607101885101,401636607,4016366071,9,1,11:48,Southern Utah,Utah,0,0,52,4,2,0,Punt,Alyas Vigil punt for 42 yds,,2024-08-30T01:00:18.000Z
+401636607101876601,401636607,4016366071,8,1,12:33,Southern Utah,Utah,0,0,60,3,10,8,Pass Reception,Jackson Berry pass complete to Targhee Lambson for 8 yds to the SUU 48,0.49347787415626243,2024-08-30T01:00:18.000Z
+401636607101876002,401636607,4016366071,7,1,12:39,Southern Utah,Utah,0,0,60,2,10,0,Pass Incompletion,Jackson Berry pass incomplete,-0.7576599502448165,2024-08-30T01:00:18.000Z
+401636607101915303,401636607,4016366072,8,1,8:46,Utah,Southern Utah,0,0,65,0,0,-15,Kickoff,"Cole Becker kickoff Utah Penalty, Unsportsmanlike Conduct (Dijon Stanley) to the UTAH 20",,2024-08-30T01:16:45.000Z
+401636607101885702,401636607,4016366072,1,1,11:42,Utah,Southern Utah,0,0,90,1,10,0,Pass Incompletion,Cameron Rising pass incomplete,-0.34929852451643395,2024-08-30T01:00:18.000Z
+401636607101886101,401636607,4016366072,2,1,11:38,Utah,Southern Utah,0,0,90,2,10,7,Pass Reception,Cameron Rising pass complete to Dijon Stanley for 7 yds to the UTAH 17,0.1672829380019456,2024-08-30T01:00:18.000Z
+401636607101894301,401636607,4016366072,3,1,10:56,Utah,Southern Utah,0,0,83,3,3,4,Pass Reception,Cameron Rising pass complete to Money Parks for 4 yds to the UTAH 21 for a 1ST down,0.6453250498345371,2024-08-30T01:00:18.000Z
+401636607101897901,401636607,4016366072,4,1,10:20,Utah,Southern Utah,0,0,79,1,10,11,Rush,Cameron Rising run for 11 yds to the UTAH 32 for a 1ST down,0.8112240741752963,2024-08-30T01:00:18.000Z
+401636607101906001,401636607,4016366072,5,1,9:39,Utah,Southern Utah,0,0,68,1,10,0,Pass Incompletion,Cameron Rising pass incomplete,-0.9262377870973815,2024-08-30T01:00:18.000Z
+401636607101906401,401636607,4016366072,6,1,9:35,Utah,Southern Utah,0,0,68,2,10,4,Rush,Micah Bernard run for 4 yds to the UTAH 36,-0.094545922939206,2024-08-30T01:15:17.000Z
+401636607101915301,401636607,4016366072,7,1,8:46,Utah,Southern Utah,7,0,64,3,6,64,Passing Touchdown,Cameron Rising pass complete to Dijon Stanley for 64 yds for a TD (Cole Becker KICK),6.540094425678447,2024-08-30T01:16:45.000Z
+401636607101915304,401636607,4016366073,1,1,8:46,Utah,Southern Utah,7,0,65,0,0,14,Kickoff Return (Offense),"Cole Becker kickoff for 44 yds , Braedon Wissler return for 14 yds to the SUU 35",,2024-08-30T01:16:45.000Z
+401636607101915902,401636607,4016366073,2,1,8:40,Southern Utah,Utah,0,7,65,1,10,12,Rush,Targhee Lambson run for 12 yds to the SUU 47 for a 1ST down,1.147417577118027,2024-08-30T01:21:16.000Z
+401636607101924201,401636607,4016366073,3,1,7:57,Southern Utah,Utah,0,7,53,1,10,4,Rush,Targhee Lambson run for 4 yds to the UTAH 49,-0.1543469215353017,2024-08-30T01:00:18.000Z
+401636607101928501,401636607,4016366073,4,1,7:14,Southern Utah,Utah,0,7,49,2,6,4,Rush,Jackson Berry run for 4 yds to the UTAH 45,-0.1599080992362156,2024-08-30T01:00:18.000Z
+401636607101937001,401636607,4016366073,5,1,6:29,Southern Utah,Utah,0,7,45,3,2,-5,Penalty,"Southern Utah Penalty, False Start (-5 Yards) to the 50 yard line",,2024-08-30T01:24:30.000Z
+401636607101939401,401636607,4016366073,6,1,6:05,Southern Utah,Utah,0,7,50,3,7,11,Pass Reception,Jackson Berry pass complete to Mark Bails Jr. for 11 yds to the UTAH 39 for a 1ST down,2.4931312469721654,2024-08-30T01:00:18.000Z
+401636607101947901,401636607,4016366073,7,1,5:20,Southern Utah,Utah,0,7,39,1,10,0,Rush,Jordan Jefferson run for no gain to the UTAH 39,-0.814236079442537,2024-08-30T01:00:18.000Z
+401636607101956401,401636607,4016366073,8,1,4:35,Southern Utah,Utah,0,7,39,2,10,-1,Pass Reception,Jackson Berry pass complete to Joshua Acord for a loss of 1 yard to the UTAH 40,-1.2300828701816775,2024-08-30T01:00:18.000Z
+401636607101965201,401636607,4016366073,9,1,3:47,Southern Utah,Utah,0,7,40,3,11,3,Pass Reception,Jackson Berry pass complete to Jordan Jefferson for 3 yds to the UTAH 37,-0.3768468074338785,2024-08-30T01:00:18.000Z
+401636607101974401,401636607,4016366073,10,1,2:55,Southern Utah,Utah,0,7,37,4,8,4,Rush,Jackson Berry run for 4 yds to the UTAH 33,-1.438395688010356,2024-08-30T01:00:18.000Z
+401636607101999902,401636607,4016366074,7,1,0:00,Utah,Southern Utah,7,0,38,0,10,9,End Period,End of 1st Quarter,,2024-08-30T01:36:09.000Z
+401636607102849908,401636607,4016366074,8,2,15:00,Utah,Southern Utah,7,0,29,2,1,0,Pass Incompletion,Cameron Rising pass incomplete,-0.7945910922877883,2024-08-30T01:39:49.000Z
+401636607101999901,401636607,4016366074,6,1,0:00,Utah,Southern Utah,7,0,38,1,10,9,Fumble Recovery (Own),"Mike Mitchell run for 9 yds to the SUU 29 Mike Mitchell fumbled, recovered by UTAH Mike Mitchell M. Mitchell return for 0 yds",0.800789073122285,2024-08-30T01:36:09.000Z
+401636607101995801,401636607,4016366074,5,1,0:41,Utah,Southern Utah,7,0,41,4,1,3,Rush,Mike Mitchell run for 3 yds to the SUU 38 for a 1ST down,1.9533777110635648,2024-08-30T01:00:18.000Z
+401636607101987601,401636607,4016366074,4,1,1:23,Utah,Southern Utah,7,0,43,3,3,2,Rush,Micah Bernard run for 2 yds to the SUU 41,-0.6634334699842092,2024-08-30T01:33:59.000Z
+401636607101987201,401636607,4016366074,3,1,1:27,Utah,Southern Utah,7,0,43,2,3,0,Pass Incompletion,Cameron Rising pass incomplete,-1.1332316603164525,2024-08-30T01:00:18.000Z
+401636607101979301,401636607,4016366074,2,1,2:06,Utah,Southern Utah,7,0,50,1,10,7,Rush,Micah Bernard run for 7 yds to the SUU 43,0.590106702773282,2024-08-30T01:00:18.000Z
+401636607101975002,401636607,4016366074,1,1,2:49,Utah,Southern Utah,7,0,67,1,10,17,Pass Reception,Cameron Rising pass complete to Dorian Singer for 17 yds to the 50 yard line for a 1ST down,1.5876447370197757,2024-08-30T01:31:52.000Z
+401636607102855102,401636607,4016366074,9,2,14:48,Utah,Southern Utah,14,0,29,3,1,29,Passing Touchdown,Cameron Rising pass complete to Brant Kuithe for 29 yds for a TD (Cole Becker KICK),3.0883946677506913,2024-08-30T01:41:50.000Z
+401636607102855104,401636607,4016366075,1,2,14:48,Utah,Southern Utah,14,0,65,0,0,21,Kickoff Return (Offense),"Trey Coleman kickoff for 64 yds , Jordan Jefferson return for 21 yds to the SUU 22",,2024-08-30T01:41:50.000Z
+401636607102855703,401636607,4016366075,3,2,14:42,Southern Utah,Utah,0,14,78,1,10,1,Rush,Braedon Wissler run for 1 yd to the SUU 23,-0.5142195293967999,2024-08-30T01:42:56.000Z
+401636607102859901,401636607,4016366075,4,2,14:00,Southern Utah,Utah,0,14,77,2,9,0,Pass Incompletion,Jackson Berry pass incomplete,-0.3461369454848935,2024-08-30T01:39:49.000Z
+401636607102864301,401636607,4016366075,5,2,13:56,Southern Utah,Utah,0,14,77,3,9,-3,Sack,Jackson Berry sacked by Logan Fano and Connor O'Toole for a loss of 3 yards to the SUU 20,-0.20744125771756927,2024-08-30T01:39:49.000Z
+401636607102868902,401636607,4016366075,7,2,13:10,Utah,Southern Utah,14,0,48,1,10,5,Penalty,"(13:10) GLOVER, Jaylon rush up the middle for a gain of 7 yards to the SUU41 (BROWN, Lando), clock 13:05. PENALTY SUU Offsides on HARRIS, Walker enforced 5 yards from the SUU48 to the SUU43 [SG]. NO PLAY (replay the down).",,2024-08-30T01:39:49.000Z
+401636607102868201,401636607,4016366075,6,2,13:17,Southern Utah,Utah,0,14,80,4,12,0,Punt,Alyas Vigil punt for 28 yds,,2024-08-30T01:39:49.000Z
+401636607102855701,401636607,4016366075,2,2,14:42,Southern Utah,Utah,0,14,78,1,10,0,Timeout,"Timeout Southern Utah, clock 14:42",,2024-08-30T01:42:56.000Z
+401636607102875301,401636607,4016366076,1,2,12:46,Utah,Southern Utah,14,0,43,1,5,14,Rush,Jaylon Glover run for 14 yds to the SUU 29 for a 1ST down,-0.218119524162001,2024-08-30T01:39:49.000Z
+401636607102879401,401636607,4016366076,2,2,12:05,Utah,Southern Utah,14,0,29,1,10,11,Pass Reception,Cameron Rising pass complete to Brant Kuithe for 11 yds to the SUU 18 for a 1ST down,0.196508475527521,2024-08-30T01:39:49.000Z
+401636607102887201,401636607,4016366076,3,2,11:27,Utah,Southern Utah,21,0,18,1,10,18,Passing Touchdown,Cameron Rising pass complete to Brant Kuithe for 18 yds for a TD (Cole Becker KICK),2.591792709070591,2024-08-30T01:54:34.000Z
+401636607102887802,401636607,4016366077,2,2,11:21,Southern Utah,Utah,0,21,81,1,10,18,Rush,Targhee Lambson run for 18 yds to the SUU 37 for a 1ST down,1.3881087274250463,2024-08-30T01:56:21.000Z
+401636607102895801,401636607,4016366077,3,2,10:41,Southern Utah,Utah,0,21,63,1,10,0,Pass Incompletion,Bronson Barron pass incomplete,-1.065701080215459,2024-08-30T01:39:49.000Z
+401636607102887203,401636607,4016366077,1,2,11:27,Utah,Southern Utah,21,0,65,0,0,14,Kickoff Return (Offense),"Trey Coleman kickoff for 60 yds , Jordan Jefferson return for 14 yds to the SUU 19",,2024-08-30T01:54:34.000Z
+401636607102896201,401636607,4016366077,4,2,10:37,Southern Utah,Utah,0,21,63,2,10,7,Rush,Targhee Lambson run for 7 yds to the SUU 44,0.4928878258942424,2024-08-30T01:57:57.000Z
+401636607102904601,401636607,4016366077,5,2,9:53,Southern Utah,Utah,0,21,56,3,3,-5,Penalty,"Southern Utah Penalty, False Start (-5 Yards) to the SUU 39",,2024-08-30T01:59:42.000Z
+401636607102907201,401636607,4016366077,6,2,9:27,Southern Utah,Utah,0,21,61,3,8,0,Pass Incompletion,Bronson Barron pass incomplete,-0.46204865532895845,2024-08-30T01:39:49.000Z
+401636607102907501,401636607,4016366077,7,2,9:24,Southern Utah,Utah,0,21,61,4,8,0,Punt,"Alyas Vigil punt for 40 yds, fair catch by Jaylon Glover at the UTAH 21",,2024-08-30T02:00:55.000Z
+401636607102909501,401636607,4016366078,1,2,9:04,Utah,Southern Utah,28,0,79,1,10,79,Passing Touchdown,Cameron Rising pass complete to Dijon Stanley for 79 yds for a TD (Cole Becker KICK),6.330534789817156,2024-08-30T02:01:46.000Z
+401636607102914202,401636607,4016366079,2,2,8:57,Southern Utah,Utah,0,28,79,1,10,1,Rush,Braedon Wissler run for 1 yd to the SUU 22,-0.4911317991443793,2024-08-30T02:03:42.000Z
+401636607102918701,401636607,4016366079,3,2,8:12,Southern Utah,Utah,0,28,78,2,9,1,Rush,Braedon Wissler run for 1 yd to the SUU 23,-0.2762978811845729,2024-08-30T01:39:49.000Z
+401636607102927201,401636607,4016366079,4,2,7:27,Southern Utah,Utah,0,28,77,3,8,6,Rush,Bronson Barron run for 6 yds to the SUU 29,0.09152872187203265,2024-08-30T01:39:49.000Z
+401636607102935001,401636607,4016366079,5,2,6:49,Southern Utah,Utah,0,28,71,4,2,0,Punt,"Alyas Vigil punt for 45 yds, fair catch by Jaylon Glover at the UTAH 26",,2024-08-30T01:39:49.000Z
+401636607102909503,401636607,4016366079,1,2,9:04,Utah,Southern Utah,28,0,65,0,0,20,Kickoff Return (Offense),"Trey Coleman kickoff for 64 yds , Jordan Jefferson return for 20 yds to the SUU 21",,2024-08-30T02:01:46.000Z
+401636607102935801,401636607,40163660710,1,2,6:41,Utah,Southern Utah,28,0,74,1,10,16,Rush,Micah Bernard run for 16 yds to the UTAH 42 for a 1ST down,1.4450731004216504,2024-08-30T01:39:49.000Z
+401636607102939601,401636607,40163660710,2,2,6:03,Utah,Southern Utah,28,0,58,1,10,3,Rush,Dijon Stanley run for 3 yds to the UTAH 45,-0.4325374473860535,2024-08-30T01:39:49.000Z
+401636607102947401,401636607,40163660710,3,2,5:25,Utah,Southern Utah,28,0,55,2,7,5,Rush,Cameron Rising run for 5 yds to the 50 yard line,0.0985314050736452,2024-08-30T01:39:49.000Z
+401636607102956201,401636607,40163660710,4,2,4:37,Utah,Southern Utah,28,0,50,3,2,2,Rush,Mike Mitchell run for 2 yds to the SUU 48 for a 1ST down,1.2094754180717668,2024-08-30T01:39:49.000Z
+401636607102965101,401636607,40163660710,5,2,3:48,Utah,Southern Utah,28,0,48,1,10,14,Pass Reception,Cameron Rising pass complete to Dorian Singer for 14 yds to the SUU 34 for a 1ST down,0.749507675366287,2024-08-30T01:39:49.000Z
+401636607102969101,401636607,40163660710,6,2,3:08,Utah,Southern Utah,28,0,34,1,10,0,Rush,Jaylon Glover run for no gain to the SUU 34,-0.6630222646782312,2024-08-30T01:39:49.000Z
+401636607102979903,401636607,40163660710,9,2,2:00,Utah,Southern Utah,28,0,36,3,12,0,Timeout,"Timeout Utah, clock 02:00",,2024-08-30T02:18:46.000Z
+401636607102984501,401636607,40163660710,11,2,1:54,Utah,Southern Utah,28,0,36,4,12,-5,Penalty,"Utah Penalty, False Start (-5 Yards) to the SUU 41",,2024-08-30T02:21:04.000Z
+401636607102984702,401636607,40163660710,12,2,1:52,Utah,Southern Utah,28,0,41,4,17,5,Penalty,"(01:52) BOUWMEESTER, Jack punt 41 yards to the SUU0, Touchback, clock 01:46. PENALTY SUU Running Into the kicker on STABLER, Jack enforced 5 yards from the SUU41 to the SUU36 [FAKE PUNT]. NO PLAY (replay the down).",,2024-08-30T01:39:49.000Z
+401636607102985302,401636607,40163660710,13,2,1:46,Utah,Southern Utah,28,0,36,4,12,15,Penalty,"(01:46) RISING, Cameron pass deep to the left incomplete intended for SINGER, Dorian thrown to the SUU18, clock 01:39. PENALTY SUU Pass Interference on ROBERTSON, Jayden enforced 15 yards to the SUU21 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-08-30T02:22:27.000Z
+401636607102986901,401636607,40163660710,15,2,1:30,Utah,Southern Utah,28,0,15,2,4,4,Rush,Micah Bernard run for 4 yds to the SUU 11 for a 1ST down,-0.077151970522518,2024-08-30T01:39:49.000Z
+401636607102986001,401636607,40163660710,14,2,1:39,Utah,Southern Utah,28,0,21,1,10,6,Rush,Cameron Rising run for 6 yds to the SUU 15,0.187709370950086,2024-08-30T02:23:43.000Z
+401636607102979904,401636607,40163660710,10,2,2:00,Utah,Southern Utah,28,0,36,3,12,0,Pass Incompletion,Cameron Rising pass incomplete,-0.9890419369832664,2024-08-30T02:18:46.000Z
+401636607102989101,401636607,40163660710,17,2,1:08,Utah,Southern Utah,35,0,11,1,10,11,Passing Touchdown,Cameron Rising pass complete to Brant Kuithe for 11 yds for a TD (Cole Becker KICK),2.521739413367925,2024-08-30T02:26:57.000Z
+401636607102987001,401636607,40163660710,16,2,1:29,Utah,Southern Utah,28,0,15,2,4,0,Timeout,"Timeout Utah, clock 01:29",,2024-08-30T02:25:10.000Z
+401636607102977301,401636607,40163660710,7,2,2:26,Utah,Southern Utah,28,0,34,2,10,3,Rush,Cameron Rising run for 3 yds to the SUU 31,-0.2916591504294015,2024-08-30T01:39:49.000Z
+401636607102979902,401636607,40163660710,8,2,2:00,Utah,Southern Utah,28,0,31,3,7,-5,Penalty,"Utah Penalty, False Start (Money Parks) to the SUU 36",,2024-08-30T02:18:46.000Z
+401636607102994301,401636607,40163660711,3,2,0:56,Southern Utah,Utah,0,35,80,2,10,9,Pass Reception,Bronson Barron pass complete to Mark Bails Jr. for 9 yds to the SUU 29,0.5525601871585479,2024-08-30T02:29:39.000Z
+401636607102989801,401636607,40163660711,2,2,1:01,Southern Utah,Utah,0,35,80,1,10,0,Pass Incompletion,Bronson Barron pass incomplete,-0.5586693796725282,2024-08-30T01:39:49.000Z
+401636607102994804,401636607,40163660711,6,2,0:51,Southern Utah,Utah,0,35,66,1,10,0,Pass Incompletion,Bronson Barron pass incomplete,-0.9864556271674072,2024-08-30T01:39:49.000Z
+401636607102996501,401636607,40163660711,9,2,0:34,Southern Utah,Utah,0,35,91,3,35,0,Pass Incompletion,Bronson Barron pass incomplete,-0.00373429375392043,2024-08-30T01:39:49.000Z
+401636607102996901,401636607,40163660711,11,2,0:30,Southern Utah,Utah,0,35,95,4,39,-4,Punt,"Alyas Vigil punt for 37 yds , Rayshawn Glover returns for a loss of 4 yards to the SUU 46",,2024-08-30T01:39:49.000Z
+401636607102996701,401636607,40163660711,10,2,0:32,Southern Utah,Utah,0,35,91,4,35,-4,Penalty,"Southern Utah Penalty, False Start (Yards) to the SUU 5",,2024-08-30T02:38:40.000Z
+401636607102996002,401636607,40163660711,8,2,0:39,Southern Utah,Utah,0,35,76,2,20,-15,Penalty,"Southern Utah Penalty, Intentional Grounding (Bronson Barron) to the SUU 9",,2024-08-30T02:33:27.000Z
+401636607102995602,401636607,40163660711,7,2,0:43,Southern Utah,Utah,0,35,66,2,10,-10,Penalty,"(00:43) BARRON, Bronson scrambles to the right for a gain of 2 yards to the SUU36 (REID, Karene), out of bounds, clock 00:39. PENALTY SUU Holding on SFARCIOC, Kyle enforced 10 yards from the SUU34 to the SUU24 [SG]. NO PLAY (replay the down).",,2024-08-30T01:39:49.000Z
+401636607102994803,401636607,40163660711,5,2,0:51,Southern Utah,Utah,0,35,66,1,10,0,Timeout,"Timeout Utah, clock 00:51",,2024-08-30T01:39:49.000Z
+401636607102994802,401636607,40163660711,4,2,0:51,Southern Utah,Utah,0,35,71,3,1,5,Penalty,"Utah Penalty, Delay Of Game (Junior Tafuna) to the SUU 34 for a 1ST down",,2024-08-30T01:39:49.000Z
+401636607102989103,401636607,40163660711,1,2,1:08,Utah,Southern Utah,35,0,65,0,0,17,Kickoff Return (Offense),"Trey Coleman kickoff for 62 yds , Jordan Jefferson return for 17 yds to the SUU 20",,2024-08-30T02:28:48.000Z
+401636607102997802,401636607,40163660712,1,2,0:21,Utah,Southern Utah,35,0,46,1,10,-5,Sack,Isaac Wilson sacked by Walker Harris for a loss of 5 yards to the UTAH 49,-2.1423333613438125,2024-08-30T02:40:33.000Z
+401636607102998402,401636607,40163660712,3,2,0:15,Utah,Southern Utah,35,0,51,2,15,1,Rush,Isaac Wilson run for 1 yd to the 50 yard line,-0.6678549792409427,2024-08-30T02:41:14.000Z
+401636607102999101,401636607,40163660712,4,2,0:08,Utah,Southern Utah,35,0,50,3,14,0,Pass Interception Return,Isaac Wilson pass intercepted Kameron Rocha return for no gain to the SUU 31,-0.6465242512807805,2024-08-30T02:42:29.000Z
+401636607102998401,401636607,40163660712,2,2,0:15,Utah,Southern Utah,35,0,51,2,15,0,Timeout,"Timeout Utah, clock 00:15",,2024-08-30T02:41:14.000Z
+401636607102999801,401636607,40163660713,1,2,0:01,Southern Utah,Utah,0,35,69,1,10,-1,Rush,"(00:01) Kneel down by BARRON, Bronson at SUU30 (team loss of 1).",-1.0285266263514474,2024-08-30T02:43:29.000Z
+401636607102999902,401636607,40163660713,2,2,0:00,Southern Utah,Utah,0,35,70,0,10,0,End of Half,End of 2nd Quarter,,2024-08-30T02:44:14.000Z
+401636607103866801,401636607,40163660714,5,3,13:31,Utah,Southern Utah,35,0,71,4,6,1,Punt,"Jack Bouwmeester punt for 45 yds , Gabe Nunez returns for 1 yd to the SUU 27",,2024-08-30T03:07:12.000Z
+401636607103849903,401636607,40163660714,1,3,15:00,Southern Utah,Utah,0,35,65,0,0,0,Kickoff,Daniel King kickoff for 65 yds for a touchback,,2024-08-30T03:04:52.000Z
+401636607103854001,401636607,40163660714,2,3,14:59,Utah,Southern Utah,35,0,75,1,10,4,Pass Reception,Isaac Wilson pass complete to Taeshaun Lyons for 4 yds to the UTAH 29,-0.1142886249388964,2024-08-30T03:04:52.000Z
+401636607103857901,401636607,40163660714,3,3,14:20,Utah,Southern Utah,35,0,71,2,6,0,Rush,Jaylon Glover run for no gain to the UTAH 29,-0.6509048869110972,2024-08-30T03:04:52.000Z
+401636607103866501,401636607,40163660714,4,3,13:34,Utah,Southern Utah,35,0,71,3,6,0,Pass Incompletion,Isaac Wilson pass incomplete,-0.3146897268978579,2024-08-30T03:04:52.000Z
+401636607103868101,401636607,40163660715,1,3,13:18,Southern Utah,Utah,0,35,73,1,10,11,Pass Reception,Jackson Berry pass complete to Joshua Acord for 11 yds to the SUU 38 for a 1ST down,0.979711793542446,2024-08-30T03:04:52.000Z
+401636607103875401,401636607,40163660715,2,3,12:45,Southern Utah,Utah,0,35,62,1,10,1,Rush,Targhee Lambson run for 1 yd to the SUU 39,-0.8867433222723466,2024-08-30T03:04:52.000Z
+401636607103878901,401636607,40163660715,3,3,12:10,Southern Utah,Utah,0,35,61,2,9,0,Pass Incompletion,Jackson Berry pass incomplete,-0.7796739034661835,2024-08-30T03:04:52.000Z
+401636607103879501,401636607,40163660715,4,3,12:04,Southern Utah,Utah,0,35,61,3,9,22,Pass Reception,Jackson Berry pass complete to Mark Bails Jr. for 22 yds to the UTAH 39 for a 1ST down,3.4789823114864697,2024-08-30T03:09:42.000Z
+401636607103887901,401636607,40163660715,5,3,11:20,Southern Utah,Utah,0,35,39,1,10,2,Rush,Targhee Lambson run for 2 yds to the UTAH 37,-0.436671624801777,2024-08-30T03:04:52.000Z
+401636607103896101,401636607,40163660715,6,3,10:38,Southern Utah,Utah,0,35,37,2,8,13,Pass Interception Return,Jackson Berry pass intercepted Elijah Davis return for 13 yds to the UTAH 43,-3.422889820266672,2024-08-30T03:04:52.000Z
+401636607103944401,401636607,40163660716,10,3,5:55,Utah,Southern Utah,35,0,20,2,9,9,Pass Reception,Isaac Wilson pass complete to Luca Caldarella for 9 yds to the SUU 11 for a 1ST down,0.410220907148599,2024-08-30T03:04:52.000Z
+401636607103936501,401636607,40163660716,9,3,6:34,Utah,Southern Utah,35,0,21,1,10,1,Rush,Mike Mitchell run for 1 yd to the SUU 20,-0.299663506721031,2024-08-30T03:04:52.000Z
+401636607103926102,401636607,40163660716,7,3,7:38,Utah,Southern Utah,35,0,39,4,3,19,Pass Reception,Isaac Wilson pass complete to Daidren Zipperer for 19 yds to the SUU 20 for a 1ST down,2.5144841921382906,2024-08-30T03:19:25.000Z
+401636607103896901,401636607,40163660716,1,3,10:30,Utah,Southern Utah,35,0,57,1,10,1,Rush,Jaylon Glover run for 1 yd to the UTAH 44,-0.9288647615840891,2024-08-30T03:04:52.000Z
+401636607103904401,401636607,40163660716,2,3,9:55,Utah,Southern Utah,35,0,56,2,9,10,Rush,Dijon Stanley run for 10 yds to the SUU 46 for a 1ST down,1.8508940509609513,2024-08-30T03:04:52.000Z
+401636607103907601,401636607,40163660716,3,3,9:23,Utah,Southern Utah,35,0,46,1,10,3,Pass Reception,Isaac Wilson pass complete to Miki Suguturaga for 3 yds to the SUU 43,-0.3418939310329067,2024-08-30T03:04:52.000Z
+401636607103915001,401636607,40163660716,4,3,8:49,Utah,Southern Utah,35,0,43,2,7,2,Rush,Mike Mitchell run for 2 yds to the SUU 41,-0.610214901018379,2024-08-30T03:04:52.000Z
+401636607103918601,401636607,40163660716,5,3,8:13,Utah,Southern Utah,35,0,41,3,5,2,Rush,Isaac Wilson run for 2 yds to the SUU 39,-0.6370156809842396,2024-08-30T03:04:52.000Z
+401636607103926101,401636607,40163660716,6,3,7:38,Utah,Southern Utah,35,0,39,4,3,0,Timeout,"Timeout Utah, clock 07:38",,2024-08-30T03:16:22.000Z
+401636607103929501,401636607,40163660716,8,3,7:04,Utah,Southern Utah,35,0,20,1,10,-15,Penalty,"Utah Penalty, Unsportsmanlike Conduct (Logan Fano) to the SUU 21 for a 1ST down",,2024-08-30T03:04:52.000Z
+401636607103948101,401636607,40163660716,11,3,5:18,Utah,Southern Utah,35,0,5,1,5,1,Rush,Isaac Wilson run for 1 yd to the SUU 4,-0.4501093998890865,2024-08-30T03:04:52.000Z
+401636607103956501,401636607,40163660716,12,3,4:34,Utah,Southern Utah,35,0,4,2,4,0,Timeout,"Timeout Southern Utah, clock 04:34",,2024-08-30T03:24:36.000Z
+401636607103956502,401636607,40163660716,13,3,4:34,Utah,Southern Utah,35,0,4,2,4,0,Pass Incompletion,Isaac Wilson pass incomplete,-0.362082681028621,2024-08-30T03:24:36.000Z
+401636607103957601,401636607,40163660716,14,3,4:23,Utah,Southern Utah,42,0,4,3,4,4,Rushing Touchdown,Mike Mitchell run for 4 yds for a TD (Cole Becker KICK),2.6959729214765815,2024-08-30T03:28:22.000Z
+401636607103964701,401636607,40163660717,3,3,3:52,Southern Utah,Utah,0,42,85,1,20,-1,Rush,Braedon Wissler run for a loss of 1 yard to the SUU 14,-0.1583067718848712,2024-08-30T03:04:52.000Z
+401636607103957606,401636607,40163660717,2,3,4:23,Southern Utah,Utah,0,42,75,1,10,0,Penalty,"(04:23) BERRY, Jackson pass deep to the right complete for 37 yards to BAILS JR., Mark caught at the UTA45 and advanced to the UTA38 (DAVIS, Elijah), clock 04:07. PENALTY SUU Ineligible Receiver Downfield on Pass on RILEY, Edward declined SUU Holding on ACORD, Joshua enforced 10 yards from the SUU25 to the SUU15 [SG]. NO PLAY (replay the down).",,
+401636607103957603,401636607,40163660717,1,3,4:23,Utah,Southern Utah,42,0,65,0,0,0,Kickoff,Trey Coleman kickoff for 65 yds for a touchback,,2024-08-30T03:32:25.000Z
+401636607103968601,401636607,40163660717,4,3,3:13,Southern Utah,Utah,0,42,86,2,21,-7,Sack,Jackson Berry sacked by Van Fillinger for a loss of 7 yards to the SUU 7,-0.0803082410150102,2024-08-30T03:04:52.000Z
+401636607103976401,401636607,40163660717,5,3,2:35,Southern Utah,Utah,0,42,93,3,28,11,Rush,Braedon Wissler run for 11 yds to the SUU 18,0.0237175940020737,2024-08-30T03:04:52.000Z
+401636607103984001,401636607,40163660717,6,3,1:59,Southern Utah,Utah,0,42,82,4,17,-2,Punt,"Alyas Vigil punt for 41 yds , Rayshawn Glover returns for a loss of 2 yards to the UTAH 39",,2024-08-30T03:04:52.000Z
+401636607103985602,401636607,40163660718,1,3,1:43,Utah,Southern Utah,42,0,61,1,10,22,Rush,Isaac Wilson run for 22 yds to the SUU 39 for a 1ST down,1.714577481533315,2024-08-30T03:37:03.000Z
+401636607103994601,401636607,40163660718,2,3,0:53,Utah,Southern Utah,42,0,39,1,10,8,Rush,Dijon Stanley run for 8 yds to the SUU 31,0.6211478423237775,2024-08-30T03:04:52.000Z
+401636607103998301,401636607,40163660718,3,3,0:16,Utah,Southern Utah,42,0,31,2,2,-1,Rush,Dijon Stanley run for a loss of 1 yard to the SUU 32,-0.9843479734176768,2024-08-30T03:04:52.000Z
+401636607104849902,401636607,40163660718,5,4,15:00,Utah,Southern Utah,42,0,32,3,3,14,Rush,Dijon Stanley run for 14 yds to the SUU 18 for a 1ST down,0.9118459769548592,2024-08-30T03:43:15.000Z
+401636607104857601,401636607,40163660718,6,4,14:23,Utah,Southern Utah,42,0,18,1,10,0,Rush,Dijon Stanley run for no gain to the SUU 18,-0.350740748439042,2024-08-30T03:43:15.000Z
+401636607103998302,401636607,40163660718,4,3,0:00,Utah,Southern Utah,42,0,31,0,2,-1,End Period,End of 3rd Quarter,,2024-08-30T03:39:39.000Z
+401636607104864601,401636607,40163660718,7,4,13:53,Utah,Southern Utah,42,0,18,2,10,5,Pass Reception,Isaac Wilson pass complete to Daidren Zipperer for 5 yds to the SUU 13,0.041046352184617,2024-08-30T03:43:15.000Z
+401636607104868501,401636607,40163660718,8,4,13:14,Utah,Southern Utah,42,0,13,3,5,4,Pass Interception Return,Isaac Wilson pass intercepted Jayden Robertson return for 4 yds to the SUU 4,-4.098512894674984,2024-08-30T03:43:15.000Z
+401636607104888701,401636607,40163660719,5,4,11:12,Southern Utah,Utah,0,42,97,4,11,0,Punt,Alyas Vigil punt for 17 yds,,2024-08-30T03:49:58.000Z
+401636607104874001,401636607,40163660719,1,4,12:59,Southern Utah,Utah,0,42,96,1,10,3,Rush,Cade Bowring run for 3 yds to the SUU 7,-0.11032701016122193,2024-08-30T03:43:15.000Z
+401636607104877701,401636607,40163660719,2,4,12:22,Southern Utah,Utah,0,42,93,2,7,-1,Rush,Cade Bowring run for a loss of 1 yard to the SUU 6,-0.23520733134787086,2024-08-30T03:43:15.000Z
+401636607104886501,401636607,40163660719,3,4,11:34,Southern Utah,Utah,0,42,94,3,8,-3,Penalty,"Southern Utah Penalty, False Start (Yards) to the SUU 3",,2024-08-30T03:48:08.000Z
+401636607104888001,401636607,40163660719,4,4,11:19,Southern Utah,Utah,0,42,97,3,11,0,Pass Incompletion,Bronson Barron pass incomplete,-0.0403564347721197,2024-08-30T03:48:30.000Z
+401636607104889401,401636607,40163660720,1,4,11:05,Utah,Southern Utah,49,0,20,1,10,20,Passing Touchdown,Isaac Wilson pass complete to Caleb Lohner for 20 yds for a TD (Trey Coleman KICK),2.617927729031699,2024-08-30T03:53:14.000Z
+401636607104898201,401636607,40163660721,5,4,10:17,Southern Utah,Utah,0,49,79,3,14,0,Timeout,"Timeout Southern Utah, clock 10:17",,2024-08-30T03:59:08.000Z
+401636607104897301,401636607,40163660721,4,4,10:26,Southern Utah,Utah,0,49,79,2,14,0,Pass Incompletion,Jordan Pachot pass incomplete,-0.17708879313121795,2024-08-30T03:43:15.000Z
+401636607104889404,401636607,40163660721,2,4,11:05,Utah,Southern Utah,49,0,65,0,0,0,Kickoff,Trey Coleman kickoff for 65 yds for a touchback,,2024-08-30T03:53:14.000Z
+401636607104905701,401636607,40163660721,7,4,9:42,Southern Utah,Utah,0,49,86,4,21,42,Punt,"Alyas Vigil punt for 42 yds , Rayshawn Glover returns for a loss of 1 yard to the UTAH 43",,2024-08-30T03:43:15.000Z
+401636607104898202,401636607,40163660721,6,4,10:17,Southern Utah,Utah,0,49,79,3,14,-7,Sack,Jordan Pachot sacked by Dallas Vakalahi for a loss of 7 yards to the SUU 14,-0.12159015802049743,2024-08-30T03:59:08.000Z
+401636607104889403,401636607,40163660721,1,4,11:05,Southern Utah,Utah,0,49,75,1,10,-5,Penalty,"Southern Utah Penalty, Delay Of Game (-5 Yards) to the SUU 20",,2024-08-30T03:53:14.000Z
+401636607104889406,401636607,40163660721,3,4,11:05,Southern Utah,Utah,0,49,80,1,15,1,Rush,Jordan Jefferson run for 1 yd to the SUU 21,-0.2749427738489141,2024-08-30T03:53:14.000Z
+401636607104919601,401636607,40163660722,3,4,8:03,Utah,Southern Utah,49,0,47,1,10,2,Rush,Charlie Vincent run for 2 yds to the SUU 45,-0.583582209593514,2024-08-30T03:43:15.000Z
+401636607104914601,401636607,40163660722,2,4,8:53,Utah,Southern Utah,49,0,52,2,5,5,Rush,Charlie Vincent run for 5 yds to the SUU 47 for a 1ST down,0.742626753024162,2024-08-30T03:43:15.000Z
+401636607104907102,401636607,40163660722,1,4,9:28,Utah,Southern Utah,49,0,57,1,10,5,Rush,Charlie Vincent run for 5 yds to the UTAH 48,0.1094877032207345,2024-08-29T04:01:45.000Z
+401636607104927502,401636607,40163660722,4,4,7:24,Utah,Southern Utah,49,0,45,2,8,-10,Penalty,"(07:24) STANLEY, Dijon rush to the right for a gain of 9 yards to the SUU36 (FEAZELL, Darrian), clock 07:19. PENALTY UTA Holding on WILLIAMS, Zacharyus enforced 10 yards from the SUU45 to the UTA45 [SG]. NO PLAY (replay the down).",,2024-08-30T03:43:15.000Z
+401636607104934601,401636607,40163660722,5,4,6:53,Utah,Southern Utah,49,0,55,2,18,15,Fumble Recovery (Own),"Hunter Andrews run for 15 yds to the SUU 40 Hunter Andrews fumbled, recovered by UTAH return for 0 yds",2.1936328352177323,2024-08-30T03:43:15.000Z
+401636607104939201,401636607,40163660722,6,4,6:07,Utah,Southern Utah,49,0,40,3,3,2,Rush,Hunter Andrews run for 2 yds to the SUU 38,-0.6423608453238288,2024-08-30T03:43:15.000Z
+401636607104946701,401636607,40163660722,7,4,5:32,Utah,Southern Utah,49,0,38,4,1,0,Rush,Charlie Vincent run for no gain to the SUU 38,-2.24533806763373,2024-08-30T03:43:15.000Z
+401636607104979901,401636607,40163660723,7,4,2:00,Southern Utah,Utah,0,49,31,4,10,0,Timeout,"Timeout Utah, clock 02:00",,2024-08-29T04:12:23.000Z
+401636607104979902,401636607,40163660723,8,4,2:00,Southern Utah,Utah,0,49,31,4,10,48,Field Goal Missed,Daniel King 48 yd FG MISSED,,2024-08-29T04:12:23.000Z
+401636607104947202,401636607,40163660723,1,4,5:27,Southern Utah,Utah,0,49,62,1,10,13,Rush,Niko Alailefaleula run for 13 yds to the UTAH 49 for a 1ST down,1.1906730890422423,2024-08-29T04:07:06.000Z
+401636607104955001,401636607,40163660723,2,4,4:49,Southern Utah,Utah,0,49,49,1,10,6,Rush,Khameron Athy run for 6 yds to the UTAH 43,0.3370848727167229,2024-08-30T03:43:15.000Z
+401636607104959001,401636607,40163660723,3,4,4:09,Southern Utah,Utah,0,49,43,2,4,12,Rush,Khameron Athy run for 12 yds to the UTAH 31 for a 1ST down,0.5832995088475774,2024-08-30T03:43:15.000Z
+401636607104967301,401636607,40163660723,4,4,3:26,Southern Utah,Utah,0,49,31,1,10,-8,Sack,Jordan Pachot sacked by John Henry Daley for a loss of 8 yards to the UTAH 39,-2.049170558189074,2024-08-30T03:43:15.000Z
+401636607104976401,401636607,40163660723,5,4,2:35,Southern Utah,Utah,0,49,39,2,18,0,Pass Incompletion,Jordan Pachot pass incomplete,-0.9860145810060014,2024-08-30T03:43:15.000Z
+401636607104976601,401636607,40163660723,6,4,2:33,Southern Utah,Utah,0,49,39,3,18,8,Pass Reception,Jordan Pachot pass complete to Niko Alailefaleula for 8 yds to the UTAH 31,0.655017451623454,2024-08-29T04:10:48.000Z
+401636607104999902,401636607,40163660724,5,4,0:00,Utah,Southern Utah,49,0,57,0,10,0,End of Game,End of 4th Quarter,,2024-08-29T04:21:03.000Z
+401636607104984602,401636607,40163660724,1,4,1:53,Utah,Southern Utah,49,0,69,1,10,8,Rush,Brandon Rose run for 8 yds to the UTAH 39,1.0102722158723196,2024-08-29T04:15:23.000Z
+401636607104988601,401636607,40163660724,2,4,1:13,Utah,Southern Utah,49,0,61,2,2,5,Penalty,"Southern Utah Penalty, Offsides (5 Yards) to the UTAH 44 for a 1ST down",,2024-08-30T03:43:15.000Z
+401636607104989801,401636607,40163660724,3,4,1:01,Utah,Southern Utah,49,0,56,1,10,0,Rush,Omar Shah run for no gain to the UTAH 44,-1.1612466882658818,2024-08-30T03:43:15.000Z
+401636607104997801,401636607,40163660724,4,4,0:21,Utah,Southern Utah,49,0,56,2,10,-1,Rush,"(00:21) Kneel down by ROSE, Brandon at UTA43 (team loss of 1), clock 00:17.",-1.0193673708452637,2024-08-30T03:43:15.000Z

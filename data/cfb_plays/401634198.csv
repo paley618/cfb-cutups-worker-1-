@@ -1,0 +1,174 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401634198101849918,401634198,4016341981,1,1,15:00,North Dakota,Montana,0,0,65,0,0,0,Kickoff,Luke Silvernale kickoff for 55 yds,,2024-09-07T23:06:44.000Z
+401634198101849921,401634198,4016341981,2,1,15:00,Montana,North Dakota,0,0,65,1,10,0,Rush,Eli Gillman run for no gain to the MONT 35,-1.0146424556055624,2024-09-07T23:06:44.000Z
+401634198101849926,401634198,4016341981,3,1,15:00,Montana,North Dakota,0,0,65,2,10,-2,Fumble Recovery (Own),"Keali'i Ah Yat sacked for a loss of 2 yards to the MONT 33 Keali'i Ah Yat fumbled, recovered by MONT , return for 0 yards",-0.7565561770278668,2024-09-07T23:06:44.000Z
+401634198101849928,401634198,4016341981,4,1,15:00,Montana,North Dakota,0,0,67,3,12,6,Pass Reception,Keali'i Ah Yat pass complete to Stevie Rocker Jr. for 6 yds to the MONT 39,0.09616765321814835,2024-09-07T23:06:44.000Z
+401634198101868601,401634198,4016341981,5,1,13:13,Montana,North Dakota,0,0,61,4,6,51,Punt,"Ty Morrison punt for 51 yds , Bo Belquist returns for no gain to the UND 10 , returns for no gain to the UND 10",,2024-09-07T23:06:44.000Z
+401634198101868603,401634198,4016341982,1,1,13:13,North Dakota,Montana,0,0,90,1,10,0,Pass Incompletion,Simon Romfo pass incomplete,-0.34929852451643395,2024-09-07T23:06:44.000Z
+401634198101868604,401634198,4016341982,2,1,13:13,North Dakota,Montana,0,0,90,2,10,0,Pass Incompletion,Simon Romfo pass incomplete,-0.15260394363025487,2024-09-07T23:06:44.000Z
+401634198101868605,401634198,4016341982,3,1,13:13,North Dakota,Montana,0,0,90,3,10,0,Pass Incompletion,Simon Romfo pass incomplete,-0.06553619706167702,2024-09-07T23:06:44.000Z
+401634198101877101,401634198,4016341982,4,1,12:28,North Dakota,Montana,0,0,90,4,10,0,Punt,Luke Silvernale punt for 46 yds,,2024-09-07T23:06:44.000Z
+401634198101877103,401634198,4016341983,1,1,12:28,Montana,North Dakota,0,0,56,1,10,6,Rush,Nick Ostmo run for 6 yds to the 50 yard line,0.3867807823815586,2024-09-07T23:15:10.000Z
+401634198101877104,401634198,4016341983,2,1,12:28,Montana,North Dakota,0,0,50,2,4,5,Rush,Nick Ostmo run for 5 yds to the UND 45 for a 1ST down,0.5068879139306794,2024-09-07T23:15:10.000Z
+401634198101877105,401634198,4016341983,3,1,12:28,Montana,North Dakota,0,0,45,1,10,8,Pass Reception,Keali'i Ah Yat pass complete to Xavier Harris for 8 yds to the UND 37,0.73144036017254,2024-09-07T23:15:10.000Z
+401634198101889101,401634198,4016341983,4,1,11:08,Montana,North Dakota,7,0,37,2,2,37,Passing Touchdown,Keali'i Ah Yat pass complete to Xavier Harris for 37 yds for a TD (Ty Morrison KICK),2.745073724894528,2024-09-07T23:16:29.000Z
+401634198101889601,401634198,4016341984,1,1,11:03,Montana,North Dakota,7,0,65,0,0,30,Kickoff,"Grant Glasgow kickoff for 60 yds , Nate DeMontagnac return for 30 yds to the UND 35",,2024-09-07T23:20:10.000Z
+401634198101889603,401634198,4016341984,2,1,11:03,North Dakota,Montana,0,7,65,1,10,18,Rush,Sawyer Seidl run for 18 yds to the MONT 47 for a 1ST down,1.6295147694249048,2024-09-07T23:20:10.000Z
+401634198101889604,401634198,4016341984,3,1,11:03,North Dakota,Montana,0,7,47,1,10,-1,Rush,Sawyer Seidl run for a loss of 1 yard to the MONT 48,-1.284498394545322,2024-09-07T23:21:23.000Z
+401634198101889605,401634198,4016341984,4,1,11:03,North Dakota,Montana,0,7,48,2,11,13,Rush,Gaven Ziebarth run for 13 yds to the MONT 35 for a 1ST down,1.925111852034796,2024-09-07T23:21:23.000Z
+401634198101889606,401634198,4016341984,5,1,11:03,North Dakota,Montana,0,7,35,1,10,3,Rush,Gaven Ziebarth run for 3 yds to the MONT 32,-0.2162251621009335,2024-09-07T23:21:23.000Z
+401634198101889607,401634198,4016341984,6,1,11:03,North Dakota,Montana,0,7,32,2,7,3,Rush,Gaven Ziebarth run for 3 yds to the MONT 29,-0.2469589427082235,2024-09-07T23:21:23.000Z
+401634198101889608,401634198,4016341984,7,1,11:03,North Dakota,Montana,0,7,29,3,4,-1,Rush,Isaiah Smith run for a loss of 1 yard to the MONT 30,-1.087251501990565,2024-09-07T23:21:23.000Z
+401634198101928701,401634198,4016341984,8,1,7:12,North Dakota,Montana,0,7,30,4,5,0,Pass Incompletion,Simon Romfo pass incomplete,-2.476975609423322,2024-09-07T23:25:20.000Z
+401634198101928703,401634198,4016341985,1,1,7:12,Montana,North Dakota,7,0,70,1,10,7,Pass Reception,Keali'i Ah Yat pass complete to Xavier Harris for 7 yds to the MONT 37,0.6714265021529684,2024-09-07T23:25:20.000Z
+401634198101937101,401634198,4016341985,2,1,6:28,Montana,North Dakota,14,0,63,2,3,63,Rushing Touchdown,Eli Gillman run for 63 yds for a TD (Ty Morrison KICK),5.021360016751375,2024-09-07T23:25:59.000Z
+401634198101937701,401634198,4016341986,1,1,6:22,Montana,North Dakota,14,0,65,0,0,30,Kickoff,"Grant Glasgow kickoff for 65 yds , Sawyer Seidl return for 30 yds to the UND 30",,2024-09-07T23:29:52.000Z
+401634198101937703,401634198,4016341986,2,1,6:22,North Dakota,Montana,0,14,70,1,10,13,Pass Reception,Simon Romfo pass complete to Korey Tai for 13 yds to the UND 43 for a 1ST down,1.2274698213930169,2024-09-07T23:29:52.000Z
+401634198101937704,401634198,4016341986,3,1,6:22,North Dakota,Montana,0,14,57,1,10,10,Rush,Isaiah Smith run for 10 yds to the MONT 47 for a 1ST down,0.8521144562448965,2024-09-07T23:29:52.000Z
+401634198101937705,401634198,4016341986,4,1,6:22,North Dakota,Montana,0,14,47,1,10,17,Pass Reception,Simon Romfo pass complete to Bo Belquist for 17 yds to the MONT 30 for a 1ST down,0.798959108343659,2024-09-07T23:29:52.000Z
+401634198101937706,401634198,4016341986,5,1,6:22,North Dakota,Montana,0,14,30,1,10,0,Pass Incompletion,Simon Romfo pass incomplete,-0.557844891990525,2024-09-07T23:29:52.000Z
+401634198101958401,401634198,4016341986,6,1,4:15,North Dakota,Montana,7,14,30,2,10,30,Rushing Touchdown,Isaiah Smith run for 30 yds for a TD (C.J. Elrichs KICK),3.372088024913296,2024-09-07T23:32:42.000Z
+401634198101958405,401634198,4016341987,2,1,4:15,Montana,North Dakota,14,7,65,1,10,5,Rush,Nick Ostmo run for 5 yds to the MONT 40,0.1088137823196469,2024-09-07T23:34:25.000Z
+401634198101958403,401634198,4016341987,1,1,4:15,North Dakota,Montana,7,14,65,0,0,0,Kickoff,Luke Silvernale kickoff for 62 yds,,2024-09-07T23:34:25.000Z
+401634198101958406,401634198,4016341987,3,1,4:15,Montana,North Dakota,14,7,60,2,5,24,Rush,Nick Ostmo run for 24 yds to the UND 36 for a 1ST down,2.1231251333578918,2024-09-07T23:34:25.000Z
+401634198101958407,401634198,4016341987,4,1,4:15,Montana,North Dakota,14,7,36,1,10,4,Rush,Nick Ostmo run for 4 yds to the UND 32,-0.0714896390997507,2024-09-07T23:34:25.000Z
+401634198101958408,401634198,4016341987,5,1,4:15,Montana,North Dakota,14,7,32,2,6,3,Rush,Nick Ostmo run for 3 yds to the UND 29,-0.2439010577108896,2024-09-07T23:34:25.000Z
+401634198101958409,401634198,4016341987,6,1,4:15,Montana,North Dakota,14,7,29,3,3,5,Rush,Keali'i Ah Yat run for 5 yds to the UND 24 for a 1ST down,0.6447308432174613,2024-09-07T23:34:25.000Z
+401634198101958410,401634198,4016341987,7,1,4:15,Montana,North Dakota,14,7,24,1,10,6,Pass Reception,Keali'i Ah Yat pass complete to Eli Gillman for 6 yds to the UND 18,0.193301563662509,2024-09-07T23:34:25.000Z
+401634198101989101,401634198,4016341987,8,1,1:08,Montana,North Dakota,21,7,18,2,4,18,Rushing Touchdown,Aaron Fontes run for 18 yds for a TD (Ty Morrison KICK),2.488136384944466,2024-09-07T23:06:44.000Z
+401634198101999902,401634198,4016341988,6,1,0:00,North Dakota,Montana,7,21,58,0,10,-2,End Period,End of 1st Quarter,,2024-09-07T23:43:31.000Z
+401634198101989701,401634198,4016341988,1,1,1:02,Montana,North Dakota,21,7,65,0,0,25,Kickoff,"Grant Glasgow kickoff for 65 yds , Nate DeMontagnac return for 25 yds to the UND 25",,2024-09-07T23:40:43.000Z
+401634198101989703,401634198,4016341988,2,1,1:02,North Dakota,Montana,7,21,75,1,10,3,Rush,Gaven Ziebarth run for 3 yds to the UND 28,-0.2957674139440157,2024-09-07T23:40:43.000Z
+401634198101989705,401634198,4016341988,3,1,1:02,North Dakota,Montana,7,21,72,2,7,14,Penalty,"ROMFO, Simon pass to the left incomplete intended for BELQUIST, Bo thrown to the UND38. PENALTY UMT Pass Interference on JACKSON, JR., Ronald enforced at the spot of the foul for 14 yards to the UND42 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T23:41:29.000Z
+401634198101989706,401634198,4016341988,4,1,1:02,North Dakota,Montana,7,21,58,1,10,0,Pass Incompletion,Simon Romfo pass incomplete,-1.1496266880203319,2024-09-07T23:41:29.000Z
+401634198101999901,401634198,4016341988,5,1,0:00,North Dakota,Montana,7,21,58,2,10,-2,Rush,Isaiah Smith run for a loss of 2 yards to the UND 40,-1.0547815748478744,2024-09-07T23:43:31.000Z
+401634198102849902,401634198,4016341988,7,2,15:00,North Dakota,Montana,7,21,60,3,12,0,Pass Incompletion,Simon Romfo pass incomplete,-0.34784267291892235,2024-09-07T00:00:00.000Z
+401634198102855301,401634198,4016341988,8,2,14:46,North Dakota,Montana,7,21,60,4,12,0,Punt,Luke Silvernale punt for 48 yds,,2024-09-07T23:47:15.000Z
+401634198102855304,401634198,4016341988,9,2,14:46,Montana,North Dakota,21,7,88,1,10,10,Penalty,"AH YAT, Keali'i pass short to the right incomplete intended for GILLMAN, Eli thrown to the UMT14. PENALTY UND Holding on SAMUELS-PARKER, Montre enforced 10 yards from the UMT12 to the UMT22 and results in automatic 1ST DOWN [NH]. NO PLAY (replay the down).",,2024-09-07T23:50:04.000Z
+401634198102855306,401634198,4016341989,1,2,14:46,Montana,North Dakota,21,7,78,1,10,3,Pass Reception,Keali'i Ah Yat pass complete to Aaron Fontes for 3 yds to the MONT 25,-0.2595333371439592,2024-09-07T23:50:04.000Z
+401634198102855307,401634198,4016341989,2,2,14:46,Montana,North Dakota,21,7,75,2,7,7,Pass Reception,Keali'i Ah Yat pass complete to Erik Barker for 7 yds to the MONT 32 for a 1ST down,1.012207423843222,2024-09-07T23:50:04.000Z
+401634198102855308,401634198,4016341989,3,2,14:46,Montana,North Dakota,21,7,68,1,10,5,Pass Reception,Keali'i Ah Yat pass complete to Ryan Simpson for 5 yds to the MONT 37,0.1056805473653828,2024-09-07T23:50:04.000Z
+401634198102855309,401634198,4016341989,4,2,14:46,Montana,North Dakota,21,7,63,2,5,2,Rush,Stevie Rocker Jr. run for 2 yds to the MONT 39,-0.6141494630541224,2024-09-07T23:50:04.000Z
+401634198102855310,401634198,4016341989,5,2,14:46,Montana,North Dakota,21,7,61,3,3,5,Pass Reception,Keali'i Ah Yat pass complete to Erik Barker for 5 yds to the MONT 44 for a 1ST down,1.6575968499512932,2024-09-07T23:50:04.000Z
+401634198102855312,401634198,4016341989,6,2,14:46,Montana,North Dakota,21,7,56,1,10,5,Penalty,"GILLMAN, Eli rush up the middle for a gain of 6 yards to the UMT50 (SUTTON, Jett). PENALTY Before the snap, UND Illegal Substitution enforced 5 yards from the UMT44 to the UMT49. NO PLAY (replay the down).",,2024-09-07T23:50:04.000Z
+401634198102855313,401634198,4016341989,7,2,14:46,Montana,North Dakota,21,7,51,1,5,0,Pass Incompletion,Keali'i Ah Yat pass incomplete,-1.2654835269800364,2024-09-07T23:50:04.000Z
+401634198102855314,401634198,4016341989,8,2,14:46,Montana,North Dakota,21,7,51,2,5,2,Pass Reception,Keali'i Ah Yat pass complete to Keelan White for 2 yds to the UND 49,-0.7040177006859594,2024-09-07T23:50:04.000Z
+401634198102855315,401634198,4016341989,9,2,14:46,Montana,North Dakota,21,7,49,3,3,2,Rush,Keali'i Ah Yat run for 2 yds to the UND 47,-0.6500930258729855,2024-09-07T23:50:04.000Z
+401634198102896501,401634198,4016341989,10,2,10:34,Montana,North Dakota,21,7,47,4,1,-2,Rush,Nick Ostmo run for a loss of 2 yards to the UND 49,-1.3844784524533207,2024-09-07T23:57:29.000Z
+401634198102896503,401634198,40163419810,1,2,10:34,North Dakota,Montana,7,21,51,1,10,8,Pass Reception,Simon Romfo pass complete to Jaden Norby for 8 yds to the MONT 43,0.8604842386778613,2024-09-07T23:57:29.000Z
+401634198102905101,401634198,40163419810,2,2,9:48,North Dakota,Montana,7,21,43,2,2,12,Pass Interception Return,Simon Romfo pass intercepted Jace Klucewich return for 12 yds to the MONT 29,-3.9371170347849223,2024-09-07T23:58:59.000Z
+401634198102905103,401634198,40163419811,1,2,9:48,Montana,North Dakota,21,7,71,1,10,9,Rush,Eli Gillman run for 9 yds to the MONT 38,1.3370266566355031,2024-09-07T23:58:59.000Z
+401634198102905104,401634198,40163419811,2,2,9:48,Montana,North Dakota,21,7,62,2,1,2,Rush,Eli Gillman run for 2 yds to the MONT 40 for a 1ST down,-0.3183103880242139,2024-09-08T00:00:03.000Z
+401634198102905105,401634198,40163419811,3,2,9:48,Montana,North Dakota,21,7,60,1,10,5,Pass Reception,Keali'i Ah Yat pass complete to Eli Gillman for 5 yds to the MONT 45,0.1106144250151839,2024-09-08T00:00:03.000Z
+401634198102905106,401634198,40163419811,4,2,9:48,Montana,North Dakota,21,7,55,2,5,2,Rush,Eli Gillman run for 2 yds to the MONT 47,-0.7043088243627693,2024-09-08T00:00:03.000Z
+401634198102905107,401634198,40163419811,5,2,9:48,Montana,North Dakota,21,7,53,3,3,13,Rush,Logan Fife run for 13 yds to the UND 40 for a 1ST down,2.16154585955392,2024-09-08T00:00:03.000Z
+401634198102905108,401634198,40163419811,6,2,9:48,Montana,North Dakota,21,7,40,1,10,0,Pass Incompletion,Logan Fife pass incomplete,-0.8457687366186873,2024-09-08T00:00:03.000Z
+401634198102905109,401634198,40163419811,7,2,9:48,Montana,North Dakota,21,7,40,2,10,0,Rush,Nick Ostmo run for no gain to the UND 40,-1.0264463089218037,2024-09-08T00:00:03.000Z
+401634198102905110,401634198,40163419811,8,2,9:48,Montana,North Dakota,21,7,40,3,10,-8,Sack,Logan Fife sacked by Craig Orlando for a loss of 8 yards to the UND 48,-1.9295886615256759,2024-09-08T00:00:03.000Z
+401634198102939602,401634198,40163419811,9,2,6:03,Montana,North Dakota,21,7,48,4,18,-5,Penalty,"MORRISON, Ty punt 36 yards to the UND12, fair catch by BELQUIST, Bo, clock 06:03. PENALTY Before the snap, UMT Illegal Formation enforced 5 yards from the UND48 to the UMT47. NO PLAY (replay the down).",,2024-09-08T00:04:25.000Z
+401634198102944301,401634198,40163419811,10,2,5:56,Montana,North Dakota,21,7,53,4,23,0,Punt,"Ty Morrison punt for 41 yds, fair catch by Bo Belquist at the UND 12",,2024-09-08T00:05:42.000Z
+401634198102984801,401634198,40163419812,8,2,1:51,North Dakota,Montana,7,21,66,4,10,0,Punt,Luke Silvernale punt for 44 yds,,2024-09-07T23:47:15.000Z
+401634198102944303,401634198,40163419812,1,2,5:56,North Dakota,Montana,7,21,88,1,10,0,Rush,Gaven Ziebarth run for no gain to the UND 12,-0.3826565410356668,2024-09-08T00:07:48.000Z
+401634198102944304,401634198,40163419812,2,2,5:56,North Dakota,Montana,7,21,88,2,10,6,Rush,Gaven Ziebarth run for 6 yds to the UND 18,0.09867323098065306,2024-09-08T00:08:30.000Z
+401634198102944305,401634198,40163419812,3,2,5:56,North Dakota,Montana,7,21,82,3,4,6,Pass Reception,Simon Romfo pass complete to Bo Belquist for 6 yds to the UND 24 for a 1ST down,0.8696249582235396,2024-09-08T00:08:30.000Z
+401634198102944306,401634198,40163419812,4,2,5:56,North Dakota,Montana,7,21,76,1,10,10,Pass Reception,Simon Romfo pass complete to Bo Belquist for 10 yds to the UND 34 for a 1ST down,0.8088489536861765,2024-09-08T00:08:30.000Z
+401634198102944307,401634198,40163419812,5,2,5:56,North Dakota,Montana,7,21,66,1,10,4,Rush,Isaiah Smith run for 4 yds to the UND 38,-0.1564365612469736,2024-09-08T00:08:30.000Z
+401634198102944308,401634198,40163419812,6,2,5:56,North Dakota,Montana,7,21,62,2,6,-4,Sack,Simon Romfo sacked by Andres Lehrmann for a loss of 4 yards to the UND 34,-1.4006342078849263,2024-09-08T00:08:30.000Z
+401634198102944309,401634198,40163419812,7,2,5:56,North Dakota,Montana,7,21,66,3,10,0,Pass Incompletion,Simon Romfo pass incomplete,-0.28370867933155,2024-09-08T00:08:30.000Z
+401634198102998005,401634198,40163419813,12,2,0:19,Montana,North Dakota,21,7,21,2,21,0,Timeout,"Timeout Montana, clock 00:19",,2024-09-08T00:25:03.000Z
+401634198102999903,401634198,40163419813,16,2,0:00,Montana,North Dakota,21,7,65,0,0,0,End of Half,End of 2nd Quarter,,2024-09-08T00:26:44.000Z
+401634198102999601,401634198,40163419813,13,2,0:03,Montana,North Dakota,21,7,13,4,13,0,Timeout,"Timeout Montana, clock 00:03",,2024-09-08T00:25:59.000Z
+401634198102984803,401634198,40163419813,1,2,1:51,Montana,North Dakota,21,7,78,1,10,7,Pass Reception,Keali'i Ah Yat pass complete to Sawyer Racanelli for 7 yds to the MONT 29,0.5574648631307815,2024-09-08T00:16:32.000Z
+401634198102984804,401634198,40163419813,2,2,1:51,Montana,North Dakota,21,7,71,2,3,13,Pass Reception,Keali'i Ah Yat pass complete to Sawyer Racanelli for 13 yds to the MONT 42 for a 1ST down,1.1528167271710252,2024-09-08T00:16:32.000Z
+401634198102984805,401634198,40163419813,3,2,1:51,Montana,North Dakota,21,7,58,1,10,6,Pass Reception,Keali'i Ah Yat pass complete to Sawyer Racanelli for 6 yds to the MONT 48,0.3957205453341055,2024-09-08T00:17:23.000Z
+401634198102984806,401634198,40163419813,4,2,1:51,Montana,North Dakota,21,7,52,2,4,0,Pass Incompletion,Keali'i Ah Yat pass incomplete,-1.243353481543522,2024-09-08T00:17:23.000Z
+401634198102984807,401634198,40163419813,5,2,1:51,Montana,North Dakota,21,7,52,3,4,11,Pass Reception,Keali'i Ah Yat pass complete to Keelan White for 11 yds to the UND 41 for a 1ST down,2.1688165223522127,2024-09-08T00:17:23.000Z
+401634198102984808,401634198,40163419813,6,2,1:51,Montana,North Dakota,21,7,41,1,10,0,Pass Incompletion,Keali'i Ah Yat pass incomplete,-0.8772679222659558,2024-09-08T00:17:23.000Z
+401634198102984809,401634198,40163419813,7,2,1:51,Montana,North Dakota,21,7,41,2,10,0,Pass Incompletion,Keali'i Ah Yat pass incomplete,-1.0411051963664768,2024-09-08T00:17:23.000Z
+401634198102984811,401634198,40163419813,8,2,1:51,Montana,North Dakota,21,7,41,3,10,15,Penalty,"AH YAT, Keali'i pass deep to the left incomplete intended for FONTES, Aaron thrown to the UND5. PENALTY UND Pass Interference on DIXON, Jamal enforced 15 yards to the UND26 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:17:23.000Z
+401634198102984816,401634198,40163419813,9,2,1:51,Montana,North Dakota,21,7,26,1,10,15,Penalty,"AH YAT, Keali'i pass short to the right complete for 3 yards to HARRIS, Xavier caught at the UND23 and advanced to the UND23, out of bounds. PENALTY UND Roughing the Passer on GERHARDT, Riley enforced 15 yards from the UMT00 to the UMT15 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:17:23.000Z
+401634198102984818,401634198,40163419813,10,2,1:51,Montana,North Dakota,21,7,13,1,13,0,Pass Incompletion,Keali'i Ah Yat pass incomplete,-0.251639580797439,2024-09-08T00:17:23.000Z
+401634198102998004,401634198,40163419813,11,2,0:19,Montana,North Dakota,21,7,5,2,5,-16,Penalty,"Montana Penalty, Intentional Grounding (Keali'i Ah Yat) to the UND 21",,2024-09-08T00:25:03.000Z
+401634198102999602,401634198,40163419813,14,2,0:03,Montana,North Dakota,21,7,21,3,21,8,Pass Reception,Keali'i Ah Yat pass complete to Aaron Fontes for 8 yds to the UND 13,0.5799069207480408,2024-09-08T00:25:59.000Z
+401634198102999901,401634198,40163419813,15,2,0:00,Montana,North Dakota,24,7,13,4,13,30,Field Goal Good,Ty Morrison 30 yd FG GOOD,,2024-09-08T00:26:44.000Z
+401634198103849903,401634198,40163419814,1,3,15:00,Montana,North Dakota,24,7,65,0,0,0,Kickoff,Grant Glasgow kickoff for 65 yds for a touchback,,2024-09-08T00:48:32.000Z
+401634198103897901,401634198,40163419814,10,3,10:20,North Dakota,Montana,7,24,20,2,9,0,Timeout,"Timeout North Dakota, clock 10:20",,2024-09-08T00:48:32.000Z
+401634198103849907,401634198,40163419814,2,3,15:00,North Dakota,Montana,7,24,75,1,10,10,Penalty,"ROMFO, Simon pass to the left incomplete intended for BELQUIST, Bo thrown to the UND34. PENALTY UMT Pass Interference on JACKSON, JR., Ronald enforced at the spot of the foul for 10 yards to the UND35 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:48:32.000Z
+401634198103849911,401634198,40163419814,3,3,15:00,North Dakota,Montana,7,24,65,1,10,4,Rush,Sawyer Seidl run for 4 yds to the UND 39,-0.1595952673507188,2024-09-08T00:48:32.000Z
+401634198103849914,401634198,40163419814,4,3,15:00,North Dakota,Montana,7,24,61,2,6,17,Rush,Simon Romfo run for 17 yds to the MONT 44 for a 1ST down,1.9894299205320323,2024-09-08T00:48:32.000Z
+401634198103849917,401634198,40163419814,5,3,15:00,North Dakota,Montana,7,24,44,1,10,4,Rush,Sawyer Seidl run for 4 yds to the MONT 40,-0.1108700500197327,2024-09-08T00:48:32.000Z
+401634198103849920,401634198,40163419814,6,3,15:00,North Dakota,Montana,7,24,40,2,6,8,Rush,Sawyer Seidl run for 8 yds to the MONT 32 for a 1ST down,0.6522329819407916,2024-09-08T00:48:32.000Z
+401634198103849923,401634198,40163419814,7,3,15:00,North Dakota,Montana,7,24,32,1,10,9,Rush,Gaven Ziebarth run for 9 yds to the MONT 23,0.7099805309828754,2024-09-08T00:48:32.000Z
+401634198103849926,401634198,40163419814,8,3,15:00,North Dakota,Montana,7,24,23,2,1,0,Pass Incompletion,Simon Romfo pass incomplete,-0.6856098366455365,2024-09-08T00:48:32.000Z
+401634198103849928,401634198,40163419814,9,3,15:00,North Dakota,Montana,7,24,23,3,1,2,Rush,Gaven Ziebarth run for 2 yds to the MONT 21 for a 1ST down,0.2148519174561305,2024-09-08T00:48:32.000Z
+401634198103897902,401634198,40163419814,11,3,10:20,North Dakota,Montana,7,24,21,1,10,1,Rush,Sawyer Seidl run for 1 yd to the MONT 20,-0.299663506721031,2024-09-08T00:58:55.000Z
+401634198103897903,401634198,40163419814,12,3,10:20,North Dakota,Montana,7,24,20,2,9,6,Pass Reception,Simon Romfo pass complete to Caden Dennis for 6 yds to the MONT 14,0.142761357449843,2024-09-08T00:58:55.000Z
+401634198103897905,401634198,40163419814,13,3,10:20,North Dakota,Montana,7,24,14,3,3,12,Penalty,"ROMFO, Simon pass to the right incomplete intended for KUPFER, Nick thrown to the UMT0. PENALTY UMT Pass Interference on GORDON, Chrishawn enforced at the spot of the foul for 12 yards to the UMT2 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T01:01:52.000Z
+401634198103907101,401634198,40163419814,14,3,9:28,North Dakota,Montana,14,24,2,1,2,2,Rushing Touchdown,Gaven Ziebarth run for 2 yds for a TD (C.J. Elrichs KICK),1.213235297672098,2024-09-08T01:02:57.000Z
+401634198103907801,401634198,40163419815,1,3,9:21,North Dakota,Montana,14,24,65,0,0,14,Kickoff,"Luke Silvernale kickoff for 61 yds , Xavier Harris return for 14 yds to the MONT 18",,2024-09-08T01:06:37.000Z
+401634198103907803,401634198,40163419815,2,3,9:21,Montana,North Dakota,24,14,82,1,10,2,Rush,Eli Gillman run for 2 yds to the MONT 20,-0.3300044670451081,2024-09-08T01:06:37.000Z
+401634198103907804,401634198,40163419815,3,3,9:21,Montana,North Dakota,24,14,80,2,8,0,Pass Incompletion,Keali'i Ah Yat pass incomplete,-0.3313693913204929,2024-09-08T01:06:37.000Z
+401634198103907805,401634198,40163419815,4,3,9:21,Montana,North Dakota,24,14,80,3,8,0,Pass Incompletion,Keali'i Ah Yat pass incomplete,-0.14770021702486427,2024-09-08T01:06:37.000Z
+401634198103916601,401634198,40163419815,5,3,8:33,Montana,North Dakota,24,14,80,4,8,7,Punt,"Ty Morrison punt for 45 yds , Bo Belquist returns for 7 yds to the UND 42",,2024-09-08T01:08:56.000Z
+401634198103936702,401634198,40163419816,6,3,6:32,North Dakota,Montana,14,24,3,0,3,-5,Penalty,"North Dakota Penalty, False Start (Liam Becher) to the MONT 8",,2024-09-08T01:13:08.000Z
+401634198103916603,401634198,40163419816,1,3,8:33,North Dakota,Montana,14,24,58,1,10,15,Penalty,"Montana Penalty, Face mask (15 yards) (Pat Hayden) to the MONT 38 for a 1ST down",,2024-09-08T01:08:56.000Z
+401634198103916604,401634198,40163419816,2,3,8:33,North Dakota,Montana,14,24,38,1,10,0,Fumble Recovery (Own),"Gaven Ziebarth run for no gain to the MONT 38 Gaven Ziebarth fumbled, recovered by UND Gaven Ziebarth G. Ziebarth return for 0 yds",-0.7828922522763084,2024-09-08T01:08:56.000Z
+401634198103916605,401634198,40163419816,3,3,8:33,North Dakota,Montana,14,24,38,2,10,14,Pass Reception,Simon Romfo pass complete to Nate DeMontagnac for 14 yds to the MONT 24 for a 1ST down,1.1960469522545214,2024-09-08T01:08:56.000Z
+401634198103916606,401634198,40163419816,4,3,8:33,North Dakota,Montana,14,24,24,1,10,5,Rush,Gaven Ziebarth run for 5 yds to the MONT 19,0.075070788233958,2024-09-08T01:08:56.000Z
+401634198103936701,401634198,40163419816,5,3,6:32,North Dakota,Montana,21,24,19,2,5,19,Rushing Touchdown,"Simon Romfo run for 19 yds for a TD North Dakota Penalty, False Start (Liam Becher) to the MONT 8 (C.J. Elrichs KICK)",2.606367160373017,2024-09-08T01:13:59.000Z
+401634198103937401,401634198,40163419817,1,3,6:25,North Dakota,Montana,21,24,65,0,0,29,Kickoff,"Luke Silvernale kickoff for 65 yds , Xavier Harris return for 29 yds to the MONT 29",,2024-09-08T01:16:57.000Z
+401634198103937403,401634198,40163419817,2,3,6:25,Montana,North Dakota,24,21,71,1,10,-8,Sack,Keali'i Ah Yat sacked by Craig Orlando for a loss of 8 yards to the MONT 21,-1.4270406999483018,2024-09-08T01:16:57.000Z
+401634198103937404,401634198,40163419817,3,3,6:25,Montana,North Dakota,24,21,79,2,18,4,Pass Reception,Keali'i Ah Yat pass complete to Nick Ostmo for 4 yds to the MONT 25,-0.02364020575506132,2024-09-08T01:16:57.000Z
+401634198103937405,401634198,40163419817,4,3,6:25,Montana,North Dakota,24,21,75,3,14,-6,Sack,Keali'i Ah Yat sacked by Josh Navratil for a loss of 6 yards to the MONT 19,-0.15607851522980276,2024-09-08T01:16:57.000Z
+401634198103957601,401634198,40163419817,5,3,4:23,Montana,North Dakota,24,21,81,4,20,0,Punt,"Ty Morrison punt for 50 yds, downed at the UND 31",,2024-09-08T01:19:18.000Z
+401634198103999902,401634198,40163419818,10,3,0:00,North Dakota,Montana,21,24,28,0,6,5,End Period,End of 3rd Quarter,,2024-09-08T01:26:44.000Z
+401634198103957603,401634198,40163419818,1,3,4:23,North Dakota,Montana,21,24,69,1,10,7,Rush,Sawyer Seidl run for 7 yds to the UND 38,0.6816920045798367,2024-09-08T01:19:39.000Z
+401634198103957604,401634198,40163419818,2,3,4:23,North Dakota,Montana,21,24,62,2,3,0,Pass Incompletion,Simon Romfo pass incomplete,-1.1742369915168689,2024-09-08T01:19:39.000Z
+401634198103957605,401634198,40163419818,3,3,4:23,North Dakota,Montana,21,24,62,3,3,7,Rush,Isaiah Smith run for 7 yds to the UND 45 for a 1ST down,1.823222754735717,2024-09-08T01:19:39.000Z
+401634198103957606,401634198,40163419818,4,3,4:23,North Dakota,Montana,21,24,55,1,10,0,Pass Incompletion,Simon Romfo pass incomplete,-1.1618692012952412,2024-09-08T01:19:39.000Z
+401634198103957607,401634198,40163419818,5,3,4:23,North Dakota,Montana,21,24,55,2,10,12,Rush,Simon Romfo run for 12 yds to the MONT 43 for a 1ST down,2.086112350680752,2024-09-08T01:22:52.000Z
+401634198103957608,401634198,40163419818,6,3,4:23,North Dakota,Montana,21,24,43,1,10,0,Pass Reception,Simon Romfo pass complete to Bo Belquist for no gain to the MONT 43,-0.9391692565688832,2024-09-08T01:22:52.000Z
+401634198103957609,401634198,40163419818,7,3,4:23,North Dakota,Montana,21,24,43,2,10,11,Rush,Gaven Ziebarth run for 11 yds to the MONT 32 for a 1ST down,1.420019918910775,2024-09-08T01:22:52.000Z
+401634198103957610,401634198,40163419818,8,3,4:23,North Dakota,Montana,21,24,32,1,10,4,Pass Reception,Simon Romfo pass complete to Sam Strandell for 4 yds to the MONT 28,-0.0558269791892986,2024-09-08T01:22:52.000Z
+401634198103999901,401634198,40163419818,9,3,0:00,North Dakota,Montana,21,24,28,2,6,5,Rush,Sawyer Seidl run for 5 yds to the MONT 23,0.0801976735266375,2024-09-08T01:26:44.000Z
+401634198104849902,401634198,40163419818,11,4,15:00,North Dakota,Montana,21,24,23,3,1,4,Rush,Gaven Ziebarth run for 4 yds to the MONT 19 for a 1ST down,0.2427011026141005,2024-09-08T01:30:20.000Z
+401634198104849905,401634198,40163419818,12,4,15:00,North Dakota,Montana,21,24,19,1,10,3,Rush,Gaven Ziebarth run for 3 yds to the MONT 16,-0.114691276393927,2024-09-08T01:30:20.000Z
+401634198104849907,401634198,40163419818,13,4,15:00,North Dakota,Montana,21,24,16,2,7,7,Pass Reception,Simon Romfo pass complete to Caden Dennis for 7 yds to the MONT 9 for a 1ST down,0.294901081384982,2024-09-08T01:30:20.000Z
+401634198104849910,401634198,40163419818,14,4,15:00,North Dakota,Montana,21,24,9,1,9,5,Rush,Gaven Ziebarth run for 5 yds to the MONT 4,0.0903475831985075,2024-09-08T01:30:20.000Z
+401634198104849913,401634198,40163419818,15,4,15:00,North Dakota,Montana,21,24,4,2,4,1,Rush,Gaven Ziebarth run for 1 yd to the MONT 3,-0.2906721593310305,2024-09-08T01:30:20.000Z
+401634198104849916,401634198,40163419818,16,4,15:00,North Dakota,Montana,21,24,3,3,3,1,Rush,Gaven Ziebarth run for 1 yd to the MONT 2,-0.226790301475411,2024-09-08T01:30:20.000Z
+401634198104888701,401634198,40163419818,17,4,11:12,North Dakota,Montana,24,24,2,4,2,19,Field Goal Good,C.J. Elrichs 19 yd FG GOOD,,2024-09-08T01:36:57.000Z
+401634198104889201,401634198,40163419819,1,4,11:07,North Dakota,Montana,24,24,65,0,0,20,Kickoff,"Luke Silvernale kickoff for 60 yds , Xavier Harris return for 20 yds to the MONT 25",,2024-09-08T01:39:44.000Z
+401634198104889203,401634198,40163419819,2,4,11:07,Montana,North Dakota,24,24,75,1,10,6,Rush,Eli Gillman run for 6 yds to the MONT 31,0.3333748010525683,2024-09-08T01:39:44.000Z
+401634198104889204,401634198,40163419819,3,4,11:07,Montana,North Dakota,24,24,69,2,4,2,Rush,Eli Gillman run for 2 yds to the MONT 33,-0.5529622556781773,2024-09-08T01:39:44.000Z
+401634198104889205,401634198,40163419819,4,4,11:07,Montana,North Dakota,24,24,67,3,2,0,Pass Incompletion,Logan Fife pass incomplete,-0.6013143962559822,2024-09-08T01:39:44.000Z
+401634198104899901,401634198,40163419819,5,4,10:00,Montana,North Dakota,24,24,67,4,2,0,Punt,Ty Morrison punt for 33 yds,,2024-09-08T01:41:49.000Z
+401634198104899915,401634198,40163419820,13,4,10:00,North Dakota,Montana,24,24,23,3,2,0,Pass Incompletion,Simon Romfo pass incomplete,-0.6731048347927824,2024-09-08T01:43:01.000Z
+401634198104899903,401634198,40163419820,1,4,10:00,North Dakota,Montana,24,24,66,1,10,3,Rush,Simon Romfo run for 3 yds to the UND 37,-0.3978048422172354,2024-09-08T01:41:49.000Z
+401634198104899904,401634198,40163419820,2,4,10:00,North Dakota,Montana,24,24,63,2,7,5,Rush,Sawyer Seidl run for 5 yds to the UND 42,0.091281113013805,2024-09-08T01:43:01.000Z
+401634198104899905,401634198,40163419820,3,4,10:00,North Dakota,Montana,24,24,58,3,2,5,Rush,Simon Romfo run for 5 yds to the UND 47 for a 1ST down,1.547993685359737,2024-09-08T01:43:01.000Z
+401634198104899906,401634198,40163419820,4,4,10:00,North Dakota,Montana,24,24,53,1,10,3,Rush,Gaven Ziebarth run for 3 yds to the 50 yard line,-0.4117922810157673,2024-09-08T01:43:01.000Z
+401634198104899907,401634198,40163419820,5,4,10:00,North Dakota,Montana,24,24,50,2,7,4,Rush,Gaven Ziebarth run for 4 yds to the MONT 46,-0.164697701144938,2024-09-08T01:43:01.000Z
+401634198104899908,401634198,40163419820,6,4,10:00,North Dakota,Montana,24,24,46,3,3,2,Rush,Gaven Ziebarth run for 2 yds to the MONT 44,-0.6661365039776399,2024-09-08T01:43:01.000Z
+401634198104899909,401634198,40163419820,7,4,10:00,North Dakota,Montana,24,24,44,4,1,1,Rush,Quincy Vaughn run for 1 yd to the MONT 43 for a 1ST down,1.9855558317807986,2024-09-08T01:43:01.000Z
+401634198104899910,401634198,40163419820,8,4,10:00,North Dakota,Montana,24,24,43,1,10,0,Rush,Sawyer Seidl run for no gain to the MONT 43,-0.9391692565688832,2024-09-08T01:43:01.000Z
+401634198104899911,401634198,40163419820,9,4,10:00,North Dakota,Montana,24,24,43,2,10,0,Rush,Sawyer Seidl run for no gain to the MONT 43,-1.060943078602227,2024-09-08T01:43:01.000Z
+401634198104899912,401634198,40163419820,10,4,10:00,North Dakota,Montana,24,24,43,3,10,12,Pass Reception,Simon Romfo pass complete to Nate DeMontagnac for 12 yds to the MONT 31 for a 1ST down,2.5105362530290165,2024-09-08T01:43:01.000Z
+401634198104899913,401634198,40163419820,11,4,10:00,North Dakota,Montana,24,24,31,1,10,2,Rush,Gaven Ziebarth run for 2 yds to the MONT 29,-0.3100175172690756,2024-09-08T01:43:01.000Z
+401634198104899914,401634198,40163419820,12,4,10:00,North Dakota,Montana,24,24,29,2,8,6,Rush,Gaven Ziebarth run for 6 yds to the MONT 23,0.1992955499856826,2024-09-08T01:43:01.000Z
+401634198104978301,401634198,40163419820,14,4,2:16,North Dakota,Montana,27,24,23,4,2,40,Field Goal Good,C.J. Elrichs 40 yd FG GOOD,,2024-09-08T01:30:20.000Z
+401634198104979001,401634198,40163419821,1,4,2:09,North Dakota,Montana,27,24,65,0,0,27,Kickoff,"Luke Silvernale kickoff for 63 yds , Xavier Harris return for 27 yds to the MONT 29",,2024-09-08T01:53:39.000Z
+401634198104995504,401634198,40163419821,10,4,0:44,Montana,North Dakota,24,27,37,4,17,0,Timeout,"Timeout Montana, clock 00:44",,2024-09-08T02:01:34.000Z
+401634198104994301,401634198,40163419821,7,4,0:56,Montana,North Dakota,24,27,34,3,14,0,Timeout,"Timeout Montana, clock 00:56",,2024-09-08T01:30:20.000Z
+401634198104979003,401634198,40163419821,2,4,2:09,Montana,North Dakota,24,27,71,1,10,7,Pass Reception,Keali'i Ah Yat pass complete to Xavier Harris for 7 yds to the MONT 36,0.6599378983160946,2024-09-08T01:53:39.000Z
+401634198104979004,401634198,40163419821,3,4,2:09,Montana,North Dakota,24,27,64,2,3,1,Pass Reception,Keali'i Ah Yat pass complete to Nick Ostmo for 1 yd to the MONT 37,-0.9213992580449686,2024-09-08T01:56:22.000Z
+401634198104979005,401634198,40163419821,4,4,2:09,Montana,North Dakota,24,27,63,3,2,1,Rush,Keali'i Ah Yat run for 1 yd to the MONT 38,-0.6018885274311652,2024-09-08T01:56:22.000Z
+401634198104979006,401634198,40163419821,5,4,2:09,Montana,North Dakota,24,27,62,4,1,32,Rush,Keali'i Ah Yat run for 32 yds to the UND 30 for a 1ST down,3.824723626992233,2024-09-08T01:56:22.000Z
+401634198104979007,401634198,40163419821,6,4,2:09,Montana,North Dakota,24,27,30,1,10,0,Pass Incompletion,Keali'i Ah Yat pass incomplete,-0.557844891990525,2024-09-08T01:56:22.000Z
+401634198104994302,401634198,40163419821,8,4,0:56,Montana,North Dakota,24,27,30,2,10,-4,Sack,Keali'i Ah Yat sacked by Wyatt Pedigo for a loss of 4 yards to the UND 34,-1.586881507278287,2024-09-08T01:30:20.000Z
+401634198104995503,401634198,40163419821,9,4,0:44,Montana,North Dakota,24,27,34,3,14,-3,Pass Reception,Keali'i Ah Yat pass complete to Xavier Harris for a loss of 3 yards to the UND 37,-1.4633829661456819,2024-09-08T02:01:34.000Z
+401634198104996001,401634198,40163419821,11,4,0:39,Montana,North Dakota,24,27,37,4,17,54,Field Goal Missed,Ty Morrison 54 yd FG MISSED,,2024-09-08T02:02:37.000Z
+401634198104996201,401634198,40163419822,1,4,0:37,North Dakota,Montana,27,24,64,2,11,0,Timeout,"Timeout Montana, clock 00:37",,2024-09-08T02:03:18.000Z
+401634198104999903,401634198,40163419822,4,4,0:00,North Dakota,Montana,27,24,65,0,11,0,End of Game,End of 4th Quarter,,2024-09-08T02:03:59.000Z
+401634198104996202,401634198,40163419822,2,4,0:37,North Dakota,Montana,27,24,63,1,10,-1,Rush,"[NHSG] Kneel down by ROMFO, Simon at UND36 (team loss of 1).",-1.2402959821642536,2024-09-08T02:03:18.000Z
+401634198104999901,401634198,40163419822,3,4,0:00,North Dakota,Montana,27,24,64,2,11,-1,Rush,"[NHSG] Kneel down by ROMFO, Simon at UND35 (team loss of 1), clock 00:00.",-0.6636327477233905,2024-09-08T02:03:59.000Z

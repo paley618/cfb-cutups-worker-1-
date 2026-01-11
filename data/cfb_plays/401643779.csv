@@ -1,0 +1,189 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401643779101854001,401643779,4016437791,2,1,14:59,Arkansas State,Tulsa,0,0,75,1,10,4,Rush,Jaylen Raynor run for 4 yds to the ARST 29,-0.1142886249388964,2024-09-07T23:02:46.000Z
+401643779101857201,401643779,4016437791,3,1,14:27,Arkansas State,Tulsa,0,0,71,2,6,5,Rush,Zak Wallace run for 5 yds to the ARST 34,0.0912547629899487,2024-09-07T23:02:46.000Z
+401643779101866801,401643779,4016437791,5,1,13:31,Arkansas State,Tulsa,0,0,60,1,10,18,Pass Reception,Jaylen Raynor pass complete to Reagan Ealy for 18 yds to the TLSA 42 for a 1ST down,1.4619651325715515,2024-09-07T23:02:46.000Z
+401643779101868301,401643779,4016437791,6,1,13:16,Arkansas State,Tulsa,0,0,42,1,10,2,Rush,Ja'Quez Cross run for 2 yds to the TLSA 40,-0.4922124363662006,2024-09-07T23:02:46.000Z
+401643779101875501,401643779,4016437791,7,1,12:44,Arkansas State,Tulsa,0,0,40,2,8,-2,Rush,Jaylen Raynor run for a loss of 2 yards to the TLSA 42,-1.4689340414860883,2024-09-07T23:02:46.000Z
+401643779101879201,401643779,4016437791,8,1,12:07,Arkansas State,Tulsa,0,0,42,3,10,7,Pass Reception,Jaylen Raynor pass complete to Reagan Ealy for 7 yds to the TLSA 35,0.5138375426652839,2024-09-07T23:02:46.000Z
+401643779101887001,401643779,4016437791,9,1,11:29,Arkansas State,Tulsa,0,0,35,4,3,-1,Rush,Dayne Hodge run for a loss of 1 yard to the TLSA 36,-2.257755593240871,2024-09-07T23:02:46.000Z
+401643779101859501,401643779,4016437791,4,1,14:04,Arkansas State,Tulsa,0,0,66,3,1,6,Rush,Zak Wallace run for 6 yds to the ARST 40 for a 1ST down,1.3438883775265937,2024-09-07T23:02:46.000Z
+401643779101849907,401643779,4016437791,1,1,15:00,Tulsa,Arkansas State,0,0,65,0,0,0,Kickoff,Reed Malphurs kickoff for 65 yds for a touchback,,2024-09-07T23:02:46.000Z
+401643779101887101,401643779,4016437791,10,1,11:28,Tulsa,Arkansas State,0,0,64,1,10,0,Timeout,"Timeout Arkansas State, clock 11:28",,2024-09-07T23:06:51.000Z
+401643779101908001,401643779,4016437792,5,1,9:19,Tulsa,Arkansas State,0,0,25,1,10,4,Rush,Anthony Watkins run for 4 yds to the ARST 21,-0.0356690725209355,2024-09-07T23:02:46.000Z
+401643779101915301,401643779,4016437792,6,1,8:46,Tulsa,Arkansas State,0,0,21,2,6,2,Pass Reception,Kirk Francis pass complete to Zion Steptoe for 2 yds to the ARST 19,-0.259467056923951,2024-09-07T23:02:46.000Z
+401643779101917601,401643779,4016437792,7,1,8:23,Tulsa,Arkansas State,0,0,19,3,4,4,Pass Reception,Kirk Francis pass complete to Grayson Tempest for 4 yds to the ARST 15 for a 1ST down,0.437021402145861,2024-09-07T23:02:46.000Z
+401643779101924601,401643779,4016437792,8,1,7:53,Tulsa,Arkansas State,0,0,15,1,10,-1,Rush,Bill Jackson run for a loss of 1 yard to the ARST 16,-0.390702120761128,2024-09-07T23:02:46.000Z
+401643779101935101,401643779,4016437792,11,1,6:48,Tulsa,Arkansas State,3,0,11,4,6,29,Field Goal Good,Seth Morgan 29 yd FG GOOD,,2024-09-07T23:15:21.000Z
+401643779101934401,401643779,4016437792,10,1,6:55,Tulsa,Arkansas State,0,0,11,3,6,0,Pass Incompletion,Kirk Francis pass incomplete,-0.394943214989068,2024-09-07T23:02:46.000Z
+401643779101927401,401643779,4016437792,9,1,7:25,Tulsa,Arkansas State,0,0,16,2,11,5,Rush,Bill Jackson run for 5 yds to the ARST 11,0.0350362923472966,2024-09-07T23:02:46.000Z
+401643779101904901,401643779,4016437792,4,1,9:50,Tulsa,Arkansas State,0,0,43,2,8,18,Pass Reception,Kirk Francis pass complete to Luke McGary for 18 yds to the ARST 25 for a 1ST down,1.3245574352720075,2024-09-07T23:02:46.000Z
+401643779101896801,401643779,4016437792,3,1,10:31,Tulsa,Arkansas State,0,0,45,1,10,2,Rush,Anthony Watkins run for 2 yds to the ARST 43,-0.548127712470997,2024-09-07T23:02:46.000Z
+401643779101889801,401643779,4016437792,2,1,11:01,Tulsa,Arkansas State,0,0,59,2,5,14,Pass Reception,Kirk Francis pass complete to Kamdyn Benjamin for 14 yds to the ARST 45 for a 1ST down,1.5611410247154183,2024-09-07T23:02:46.000Z
+401643779101887301,401643779,4016437792,1,1,11:26,Tulsa,Arkansas State,0,0,64,1,10,5,Rush,Anthony Watkins run for 5 yds to the TLSA 41,0.1095374979928448,2024-09-07T23:02:46.000Z
+401643779101935103,401643779,4016437792,12,1,6:48,Tulsa,Arkansas State,0,0,65,0,0,0,Timeout,"Timeout Arkansas State, clock 06:48",,2024-09-07T23:18:23.000Z
+401643779101945101,401643779,4016437793,4,1,5:48,Arkansas State,Tulsa,0,3,69,1,10,7,Pass Reception,Jaylen Raynor pass complete to Reagan Ealy for 7 yds to the ARST 38,0.6816920045798367,2024-09-07T23:02:46.000Z
+401643779101947301,401643779,4016437793,5,1,5:26,Arkansas State,Tulsa,0,3,62,2,3,22,Rush,Zak Wallace run for 22 yds to the TLSA 40 for a 1ST down,1.736549856597872,2024-09-07T23:02:46.000Z
+401643779101949701,401643779,4016437793,6,1,5:02,Arkansas State,Tulsa,0,3,40,1,10,5,Penalty,"Tulsa Penalty, Offsides (Myles Jackson) to the TLSA 35",,2024-09-07T23:21:11.000Z
+401643779101955401,401643779,4016437793,7,1,4:45,Arkansas State,Tulsa,7,3,35,1,5,35,Passing Touchdown,Jaylen Raynor pass complete to Adam Jones for 35 yds for a TD (Clune Van Andel KICK),2.299187761564772,2024-09-07T23:21:48.000Z
+401643779101935901,401643779,4016437793,2,1,6:40,Arkansas State,Tulsa,0,3,84,1,10,-6,Rush,Cedric Hawkins run for a loss of 6 yards to the ARST 10,-0.7076288673491389,2024-09-07T23:02:46.000Z
+401643779101939001,401643779,4016437793,3,1,6:09,Arkansas State,Tulsa,0,3,90,2,16,21,Pass Reception,Jaylen Raynor pass complete to Reagan Ealy for 21 yds to the ARST 31 for a 1ST down,1.6797071894377638,2024-09-07T23:02:46.000Z
+401643779101935104,401643779,4016437793,1,1,6:48,Tulsa,Arkansas State,3,0,65,0,0,14,Kickoff Return (Offense),"Reed Malphurs kickoff for 63 yds , Ja'Quez Cross return for 14 yds to the ARST 16",,2024-09-07T23:18:23.000Z
+401643779101955404,401643779,4016437793,8,1,4:45,Arkansas State,Tulsa,0,3,65,0,0,0,Timeout,"Timeout Arkansas State, clock 04:45",,2024-09-07T23:21:48.000Z
+401643779101955405,401643779,4016437794,1,1,4:45,Arkansas State,Tulsa,7,3,65,0,0,0,Kickoff Return (Offense),"Clayton Amaya kickoff for 59 yds , Lloyd Avant return for no gain to the TLSA 25",,2024-09-07T23:21:48.000Z
+401643779101965101,401643779,4016437794,4,1,3:48,Tulsa,Arkansas State,3,7,52,1,10,15,Pass Reception,Kirk Francis pass complete to Bill Jackson for 15 yds to the ARST 37 for a 1ST down,0.9566456572336878,2024-09-07T23:02:46.000Z
+401643779101957801,401643779,4016437794,3,1,4:21,Tulsa,Arkansas State,3,7,63,1,10,11,Pass Reception,Kirk Francis pass complete to Zion Steptoe for 11 yds to the TLSA 48 for a 1ST down,1.0424565048673191,2024-09-07T23:02:46.000Z
+401643779101956201,401643779,4016437794,2,1,4:37,Tulsa,Arkansas State,3,7,75,1,10,12,Pass Reception,Kirk Francis pass complete to Kamdyn Benjamin for 12 yds to the TLSA 37 for a 1ST down,1.0272443261435713,2024-09-07T23:02:46.000Z
+401643779101969101,401643779,4016437794,5,1,3:08,Tulsa,Arkansas State,3,7,37,1,10,37,Fumble Recovery (Opponent),"Bill Jackson run for 37 yds Bill Jackson fumbled, recovered by ARST",-3.9485913685232568,2024-09-07T23:02:46.000Z
+401643779101979401,401643779,4016437795,3,1,2:05,Arkansas State,Tulsa,7,3,58,2,3,4,Rush,Jaylen Raynor run for 4 yds to the ARST 46 for a 1ST down,0.3496971930828676,2024-09-07T23:02:46.000Z
+401643779101985601,401643779,4016437795,4,1,1:43,Arkansas State,Tulsa,7,3,54,1,10,-4,Fumble Recovery (Own),"Jaylen Raynor run for a loss of 4 yards to the ARST 42 Jaylen Raynor fumbled, recovered by ARST Jaylen Raynor J. Raynor return for 0 yds",-1.9738015633044534,2024-09-07T23:02:46.000Z
+401643779101989001,401643779,4016437795,5,1,1:09,Arkansas State,Tulsa,7,3,58,2,14,3,Pass Reception,Jaylen Raynor pass complete to Reagan Ealy for 3 yds to the ARST 45,-0.2737603501087014,2024-09-07T23:02:46.000Z
+401643779101996601,401643779,4016437795,6,1,0:33,Arkansas State,Tulsa,7,3,55,3,11,32,Pass Reception,Jaylen Raynor pass complete to Hunter Summers for 32 yds to the TLSA 23 for a 1ST down,3.7684817730271343,2024-09-07T23:02:46.000Z
+401643779102854001,401643779,4016437795,8,2,14:59,Arkansas State,Tulsa,7,3,23,1,10,-1,Rush,Zak Wallace run for a loss of 1 yard to the TLSA 24,-0.5191767230513005,2024-09-07T23:37:58.000Z
+401643779102859401,401643779,4016437795,10,2,14:05,Arkansas State,Tulsa,7,3,34,2,21,0,Pass Incompletion,Jaylen Raynor pass incomplete,-0.9924336675556287,2024-09-07T23:38:21.000Z
+401643779102859901,401643779,4016437795,11,2,14:00,Arkansas State,Tulsa,7,3,34,3,21,0,Pass Interception Return,Jaylen Raynor pass intercepted Dayne Hodge return for no gain to the TLSA 10,-1.2530054045741927,2024-09-08T00:22:41.000Z
+401643779101996602,401643779,4016437795,7,1,0:00,Arkansas State,Tulsa,7,3,55,0,11,32,End Period,End of 1st Quarter,,2024-09-07T23:33:55.000Z
+401643779102857202,401643779,4016437795,9,2,14:27,Arkansas State,Tulsa,7,3,24,2,11,-10,Penalty,"(14:27) RAYNOR, Jaylen pass up the middle complete for 17 yards to HORNSBY, Malik caught at the TLS24 and advanced to the TLS7, out of bounds, clock 14:23. PENALTY ASU Holding on STEVENSON JR., Manny enforced 10 yards from the TLS24 to the TLS34 [NHSG]. NO PLAY (replay the down).",,2024-09-07T23:38:21.000Z
+401643779101976701,401643779,4016437795,2,1,2:32,Arkansas State,Tulsa,7,3,65,1,10,7,Pass Reception,Jaylen Raynor pass complete to Courtney Jackson for 7 yds to the ARST 42,0.7081222799232592,2024-09-07T23:02:46.000Z
+401643779101974301,401643779,4016437795,1,1,2:56,Arkansas State,Tulsa,7,3,80,1,10,15,Rush,Jaylen Raynor run for 15 yds to the ARST 35 for a 1ST down,1.143340784913768,2024-09-07T23:02:46.000Z
+401643779102864501,401643779,4016437795,12,2,13:54,Tulsa,Arkansas State,3,7,90,1,10,0,Timeout,"Timeout Arkansas State, clock 13:54",,2024-09-07T23:40:26.000Z
+401643779102884101,401643779,4016437796,7,2,11:58,Tulsa,Arkansas State,3,7,66,1,10,2,Rush,Lloyd Avant run for 2 yds to the TLSA 36,-0.6162239991596916,2024-09-07T23:38:21.000Z
+401643779102887301,401643779,4016437796,8,2,11:26,Tulsa,Arkansas State,3,7,64,2,8,7,Pass Reception,Kirk Francis pass complete to Kamdyn Benjamin for 7 yds to the TLSA 43,0.5656180594048034,2024-09-07T23:38:21.000Z
+401643779102894501,401643779,4016437796,9,2,10:54,Tulsa,Arkansas State,3,7,57,3,1,2,Rush,Lloyd Avant run for 2 yds to the TLSA 45 for a 1ST down,1.1107620921681374,2024-09-07T23:38:21.000Z
+401643779102898501,401643779,4016437796,10,2,10:14,Tulsa,Arkansas State,3,7,55,1,10,6,Rush,Anthony Watkins run for 6 yds to the ARST 49,0.38118862332173,2024-09-07T23:38:21.000Z
+401643779102906101,401643779,4016437796,11,2,9:38,Tulsa,Arkansas State,3,7,49,2,4,10,Rush,Kirk Francis run for 10 yds to the ARST 39 for a 1ST down,0.754986059063084,2024-09-07T23:38:21.000Z
+401643779102914201,401643779,4016437796,12,2,8:57,Tulsa,Arkansas State,10,7,39,1,10,39,Passing Touchdown,Kirk Francis pass complete to Kamdyn Benjamin for 39 yds for a TD (Seth Morgan KICK),3.140438554931551,2024-09-07T23:51:46.000Z
+401643779102864601,401643779,4016437796,1,2,13:53,Tulsa,Arkansas State,3,7,90,1,10,6,Rush,Lloyd Avant run for 6 yds to the TLSA 16,0.21149361044027692,2024-09-07T23:38:21.000Z
+401643779102866801,401643779,4016437796,2,2,13:31,Tulsa,Arkansas State,3,7,84,2,4,5,Pass Reception,Kirk Francis pass complete to Zion Steptoe for 5 yds to the TLSA 21 for a 1ST down,0.2518158528797718,2024-09-07T23:38:21.000Z
+401643779102869801,401643779,4016437796,3,2,13:01,Tulsa,Arkansas State,3,7,79,1,10,4,Rush,Lloyd Avant run for 4 yds to the TLSA 25,-0.09341756947157,2024-09-07T23:38:21.000Z
+401643779102876701,401643779,4016437796,4,2,12:32,Tulsa,Arkansas State,3,7,75,2,6,0,Pass Incompletion,Kirk Francis pass incomplete,-0.5399585387119359,2024-09-07T23:38:21.000Z
+401643779102877801,401643779,4016437796,6,2,12:21,Tulsa,Arkansas State,3,7,80,3,11,14,Pass Reception,Kirk Francis pass complete to Kamdyn Benjamin for 14 yds to the TLSA 34 for a 1ST down,1.8913802706527543,2024-09-07T23:38:21.000Z
+401643779102877501,401643779,4016437796,5,2,12:24,Tulsa,Arkansas State,3,7,75,3,6,-5,Penalty,"Tulsa Penalty, False Start (-5 Yards) to the TLSA 20",,2024-09-07T23:47:46.000Z
+401643779102914204,401643779,4016437796,13,2,8:57,Tulsa,Arkansas State,3,7,65,0,0,0,Timeout,"Timeout Arkansas State, clock 08:57",,2024-09-07T23:52:01.000Z
+401643779102924201,401643779,4016437797,5,2,7:57,Arkansas State,Tulsa,7,10,76,2,10,16,Pass Reception,Jaylen Raynor pass complete to Corey Rucker for 16 yds to the ARST 40 for a 1ST down,2.061074891403101,2024-09-07T23:38:21.000Z
+401643779102927702,401643779,4016437797,6,2,7:22,Arkansas State,Tulsa,7,10,60,1,10,-10,Penalty,"(07:22) RAYNOR, Jaylen pass short to the right complete for 10 yards to STEVENSON JR., Manny caught at the ASU45 and advanced to the ASU50 (CARLISLE, Tyree), clock 07:16. PENALTY ASU Holding on ZOLLICOFFER, Elijah enforced 10 yards from the ASU40 to the ASU30 [NHSG]. NO PLAY (replay the down).",,2024-09-07T23:38:21.000Z
+401643779102929401,401643779,4016437797,7,2,7:05,Arkansas State,Tulsa,7,10,70,1,20,6,Pass Reception,Jaylen Raynor pass complete to Hunter Summers for 6 yds to the ARST 36,0.15291616900685415,2024-09-07T23:38:21.000Z
+401643779102936401,401643779,4016437797,8,2,6:35,Arkansas State,Tulsa,7,10,64,2,14,6,Pass Reception,Jaylen Raynor pass complete to Courtney Jackson for 6 yds to the ARST 42,0.1834510411414882,2024-09-07T23:38:21.000Z
+401643779102944102,401643779,4016437797,9,2,5:58,Arkansas State,Tulsa,7,10,58,3,8,0,Pass Incompletion,Jaylen Raynor pass incomplete,-0.5456864727395683,2024-09-07T23:38:21.000Z
+401643779102944601,401643779,4016437797,10,2,5:53,Arkansas State,Tulsa,7,10,58,4,8,0,Punt,Ryan Heicher punt for 41 yds,,2024-09-07T23:38:21.000Z
+401643779102914205,401643779,4016437797,1,2,8:57,Tulsa,Arkansas State,10,7,65,0,0,2,Kickoff Return (Offense),"Reed Malphurs kickoff for 54 yds , Ja'Quez Cross return for 2 yds to the ARST 13",,2024-09-07T23:52:01.000Z
+401643779102916901,401643779,4016437797,4,2,8:30,Arkansas State,Tulsa,7,10,76,1,10,0,Rush,Ja'Quez Cross run for no gain to the ARST 24,-0.6723571521309859,2024-09-07T23:38:21.000Z
+401643779102914701,401643779,4016437797,3,2,8:52,Arkansas State,Tulsa,7,10,87,2,10,11,Pass Reception,Jaylen Raynor pass complete to Miller McCrumby for 11 yds to the ARST 24 for a 1ST down,0.9520237768444222,2024-09-07T23:38:21.000Z
+401643779102914401,401643779,4016437797,2,2,8:55,Arkansas State,Tulsa,7,10,87,1,10,0,Pass Incompletion,Jaylen Raynor pass incomplete,-0.40084650139258127,2024-09-07T23:38:21.000Z
+401643779102945401,401643779,4016437798,1,2,5:45,Tulsa,Arkansas State,10,7,83,1,10,0,Rush,Anthony Watkins run for no gain to the TLSA 17,-0.48436415563340685,2024-09-07T23:38:21.000Z
+401643779102947501,401643779,4016437798,2,2,5:24,Tulsa,Arkansas State,10,7,83,2,10,7,Rush,Anthony Watkins run for 7 yds to the TLSA 24,0.22157880617958625,2024-09-07T23:38:21.000Z
+401643779102955001,401643779,4016437798,3,2,4:49,Tulsa,Arkansas State,10,7,76,3,3,0,Pass Incompletion,Kirk Francis pass incomplete,-0.3444069162099135,2024-09-07T23:38:21.000Z
+401643779102955601,401643779,4016437798,4,2,4:43,Tulsa,Arkansas State,10,7,76,4,3,45,Punt,"Angus Davies punt for 45 yds , Courtney Jackson returns for no gain to the ARST 31 , returns for no gain to the ARST 31",,2024-09-08T00:04:03.000Z
+401643779102956401,401643779,4016437799,1,2,4:35,Tulsa,Arkansas State,10,7,31,1,10,11,Rush,Lloyd Avant run for 11 yds to the ARST 20 for a 1ST down,0.224018441041249,2024-09-07T23:38:21.000Z
+401643779102959101,401643779,4016437799,2,2,4:08,Tulsa,Arkansas State,10,7,20,1,10,7,Rush,Lloyd Avant run for 7 yds to the ARST 13,0.312961885301428,2024-09-07T23:38:21.000Z
+401643779102966701,401643779,4016437799,3,2,3:32,Tulsa,Arkansas State,10,7,13,2,3,8,Rush,Lloyd Avant run for 8 yds to the ARST 5 for a 1ST down,0.421185003171397,2024-09-07T23:38:21.000Z
+401643779102968801,401643779,4016437799,4,2,3:11,Tulsa,Arkansas State,10,7,5,1,5,0,Rush,Lloyd Avant run for no gain to the ARST 5,-0.554796850971046,2024-09-07T23:38:21.000Z
+401643779102976401,401643779,4016437799,5,2,2:35,Tulsa,Arkansas State,17,7,5,2,5,5,Rushing Touchdown,Cardell Williams run for 5 yds for a TD (Seth Morgan KICK),2.43857769152992,2024-09-08T00:06:41.000Z
+401643779102977001,401643779,40164377910,2,2,2:29,Arkansas State,Tulsa,7,17,77,1,10,-1,Sack,Jaylen Raynor sacked by Tyree Carlisle for a loss of 1 yard to the ARST 22,-0.7311835987198103,2024-09-07T23:38:21.000Z
+401643779102976403,401643779,40164377910,1,2,2:35,Tulsa,Arkansas State,17,7,65,0,0,13,Kickoff Return (Offense),"Reed Malphurs kickoff for 55 yds , Ja'Quez Cross return for 13 yds to the ARST 23",,2024-09-08T00:08:29.000Z
+401643779102984501,401643779,40164377910,6,2,1:54,Arkansas State,Tulsa,7,17,83,3,16,0,Pass Incompletion,Jaylen Raynor pass incomplete,-0.04797105443869754,2024-09-07T23:38:21.000Z
+401643779102985001,401643779,40164377910,7,2,1:49,Arkansas State,Tulsa,7,17,83,4,16,0,Punt,"Ryan Heicher punt for 49 yds , Kamdyn Benjamin returns for no gain to the TLSA 43",,2024-09-07T23:38:21.000Z
+401643779102984301,401643779,40164377910,5,2,1:56,Arkansas State,Tulsa,7,17,78,3,11,-5,Penalty,"Arkansas State Penalty, False Start (EJ Ndoma-Ogar) to the ARST 17",,2024-09-08T00:13:04.000Z
+401643779102984003,401643779,40164377910,4,2,1:59,Arkansas State,Tulsa,7,17,78,2,11,0,Penalty,"Arkansas State Penalty, Illegal Formation (Yards) declined",,
+401643779102979901,401643779,40164377910,3,2,2:00,Arkansas State,Tulsa,7,17,78,2,11,0,Timeout,"Timeout Arkansas State, clock 02:00",,2024-09-08T00:10:54.000Z
+401643779102986001,401643779,40164377911,1,2,1:39,Tulsa,Arkansas State,17,7,54,1,10,1,Rush,Anthony Watkins run for 1 yd to the TLSA 47,-0.921128701529616,2024-09-07T23:38:21.000Z
+401643779102989401,401643779,40164377911,2,2,1:05,Tulsa,Arkansas State,17,7,53,2,9,8,Pass Reception,Kirk Francis pass complete to Connor Vaughn for 8 yds to the ARST 45,0.8716432433576086,2024-09-07T23:38:21.000Z
+401643779102994801,401643779,40164377911,5,2,0:51,Tulsa,Arkansas State,17,7,45,4,1,0,Punt,"Angus Davies punt for 41 yds, downed at the ARST 4",,2024-09-07T23:38:21.000Z
+401643779102989801,401643779,40164377911,3,2,1:01,Tulsa,Arkansas State,17,7,45,3,1,0,Timeout,"Timeout Tulsa, clock 01:01",,2024-09-08T00:17:27.000Z
+401643779102989901,401643779,40164377911,4,2,1:00,Tulsa,Arkansas State,17,7,45,3,1,0,Pass Incompletion,Cardell Williams pass incomplete,-1.1978560213268263,2024-09-07T23:38:21.000Z
+401643779102995401,401643779,40164377912,1,2,0:45,Arkansas State,Tulsa,7,17,96,1,10,3,Rush,Zak Wallace run for 3 yds to the ARST 7,-0.11032701016122193,2024-09-07T23:38:21.000Z
+401643779102999902,401643779,40164377912,2,2,0:00,Arkansas State,Tulsa,7,17,93,0,10,0,End of Half,End of 2nd Quarter,,2024-09-08T00:22:41.000Z
+401643779103854501,401643779,40164377913,2,3,14:54,Tulsa,Arkansas State,17,7,71,1,10,4,Rush,Anthony Watkins run for 4 yds to the TLSA 33,-0.1350508541150131,2024-09-07T00:00:00.000Z
+401643779103858001,401643779,40164377913,3,3,14:19,Tulsa,Arkansas State,17,7,67,2,6,0,Pass Incompletion,Kirk Francis pass incomplete,-0.7751757096233421,2024-09-07T00:00:00.000Z
+401643779103858501,401643779,40164377913,4,3,14:14,Tulsa,Arkansas State,17,7,67,3,6,7,Pass Reception,Kirk Francis pass complete to Braylin Presley for 7 yds to the TLSA 40 for a 1ST down,1.9289428323496445,2024-09-08T00:46:55.000Z
+401643779103866102,401643779,40164377913,6,3,13:38,Arkansas State,Tulsa,7,17,74,1,10,0,Timeout,"Timeout Arkansas State, clock 13:38",,2024-09-08T00:49:17.000Z
+401643779103865301,401643779,40164377913,5,3,13:46,Tulsa,Arkansas State,17,7,60,1,10,15,Penalty,"Arkansas State Penalty, Personal Foul (Bryan Whitehead) to the ARST 26 for a 1ST down",,2024-09-08T00:46:55.000Z
+401643779103849903,401643779,40164377913,1,3,15:00,Arkansas State,Tulsa,7,17,65,0,0,19,Kickoff Return (Offense),"Clayton Amaya kickoff for 55 yds , Lloyd Avant return for 19 yds to the TLSA 29",,2024-09-07T00:00:00.000Z
+401643779103866302,401643779,40164377913,7,3,13:36,Arkansas State,Tulsa,7,17,63,1,10,15,Penalty,"(13:36) RAYNOR, Jaylen pass deep to the right incomplete intended for RUCKER, Corey thrown to the TLS33, clock 13:32. PENALTY TLS Pass Interference on PARKER, Keuan enforced 15 yards to the TLS48 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:46:55.000Z
+401643779103866801,401643779,40164377914,1,3,13:31,Arkansas State,Tulsa,7,17,48,1,10,5,Rush,Jaylen Raynor run for 5 yds to the TLSA 43,0.0988833853941654,2024-09-08T00:46:55.000Z
+401643779103875901,401643779,40164377914,3,3,12:40,Arkansas State,Tulsa,14,17,15,1,10,15,Rushing Touchdown,Jaylen Raynor run for 15 yds for a TD (Clune Van Andel KICK),2.558199089565083,2024-09-08T00:52:33.000Z
+401643779103868901,401643779,40164377914,2,3,13:10,Arkansas State,Tulsa,7,17,43,2,5,28,Pass Reception,Jaylen Raynor pass complete to Corey Rucker for 28 yds to the TLSA 15 for a 1ST down,1.0291513613207086,2024-09-08T00:46:55.000Z
+401643779103875904,401643779,40164377914,4,3,12:40,Arkansas State,Tulsa,7,17,65,0,0,0,Timeout,"Timeout Arkansas State, clock 12:40",,2024-09-08T00:52:33.000Z
+401643779103888201,401643779,40164377915,5,3,11:17,Tulsa,Arkansas State,17,14,81,3,16,0,Pass Incompletion,Kirk Francis pass incomplete,-0.05507996837621664,2024-09-08T00:46:55.000Z
+401643779103876601,401643779,40164377915,2,3,12:33,Tulsa,Arkansas State,17,14,75,1,10,-1,Rush,Lloyd Avant run for a loss of 1 yard to the TLSA 24,-0.8014893508157099,2024-09-08T00:46:55.000Z
+401643779103879901,401643779,40164377915,3,3,12:00,Tulsa,Arkansas State,17,14,76,2,11,0,Rush,Lloyd Avant run for no gain to the TLSA 24,-0.29427450685877776,2024-09-08T00:46:55.000Z
+401643779103894601,401643779,40164377915,6,3,10:53,Tulsa,Arkansas State,17,21,81,4,16,77,Punt,"Angus Davies punt for 58 yds , Courtney Jackson returns for 77 yds for a TD (Clune Van Andel KICK)",,2024-09-08T01:00:11.000Z
+401643779103886601,401643779,40164377915,4,3,11:33,Tulsa,Arkansas State,17,14,76,3,11,-5,Penalty,"Tulsa Penalty, False Start (Grayson Tempest) to the TLSA 19",,2024-09-08T00:58:37.000Z
+401643779103875905,401643779,40164377915,1,3,12:40,Arkansas State,Tulsa,14,17,65,0,0,24,Kickoff Return (Offense),"Clayton Amaya kickoff for 64 yds , Lloyd Avant return for 24 yds to the TLSA 25",,2024-09-08T00:52:33.000Z
+401643779103894604,401643779,40164377916,1,3,10:53,Arkansas State,Tulsa,21,17,65,0,0,0,Timeout,"Timeout Arkansas State, clock 10:53",,2024-09-08T01:00:11.000Z
+401643779103894605,401643779,40164377916,2,3,10:53,Arkansas State,Tulsa,21,17,65,0,0,0,Kickoff,Clayton Amaya kickoff for 60 yds,,2024-09-08T01:00:11.000Z
+401643779103905102,401643779,40164377916,5,3,9:48,Tulsa,Arkansas State,17,21,6,1,6,4,Penalty,"(09:48) FRANCIS, Kirk pass up the middle incomplete intended for BENJAMIN, Kamdyn thrown to the ASU0, clock 09:46. PENALTY ASU Pass Interference on REED III, James enforced 4 yards to the ASU2 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:46:55.000Z
+401643779103905701,401643779,40164377916,6,3,9:42,Tulsa,Arkansas State,24,21,2,1,2,2,Rushing Touchdown,Anthony Watkins run for 2 yds for a TD (Seth Morgan KICK),1.213235297672098,2024-09-08T01:08:39.000Z
+401643779103897401,401643779,40164377916,4,3,10:25,Tulsa,Arkansas State,17,21,20,1,10,14,Rush,Anthony Watkins run for 14 yds to the ARST 6 for a 1ST down,0.565437957966422,2024-09-08T00:46:55.000Z
+401643779103894801,401643779,40164377916,3,3,10:51,Tulsa,Arkansas State,17,21,65,1,10,45,Pass Reception,Kirk Francis pass complete to Kamdyn Benjamin for 45 yds to the ARST 20 for a 1ST down,2.624789281659636,2024-09-08T00:46:55.000Z
+401643779103907001,401643779,40164377917,3,3,9:29,Arkansas State,Tulsa,21,24,79,2,10,4,Rush,Jaylen Raynor run for 4 yds to the ARST 25,-0.04776001056674683,2024-09-08T00:46:55.000Z
+401643779103914201,401643779,40164377917,4,3,8:57,Arkansas State,Tulsa,21,24,75,3,6,7,Pass Reception,Jaylen Raynor pass complete to Courtney Jackson for 7 yds to the ARST 32 for a 1ST down,1.4446001823588022,2024-09-08T00:46:55.000Z
+401643779103916601,401643779,40164377917,5,3,8:33,Arkansas State,Tulsa,21,24,68,1,10,3,Pass Reception,Jaylen Raynor pass complete to Adam Jones for 3 yds to the ARST 35,-0.3783931239488095,2024-09-08T00:46:55.000Z
+401643779103918901,401643779,40164377917,6,3,8:10,Arkansas State,Tulsa,21,24,65,2,7,3,Rush,Jaylen Raynor run for 3 yds to the ARST 38,-0.323511782853818,2024-09-08T00:46:55.000Z
+401643779103927201,401643779,40164377917,7,3,7:27,Arkansas State,Tulsa,21,24,62,3,4,12,Pass Reception,Jaylen Raynor pass complete to Reagan Ealy for 12 yds to the 50 yard line for a 1ST down,2.379803690323114,2024-09-08T00:46:55.000Z
+401643779103934101,401643779,40164377917,8,3,6:58,Arkansas State,Tulsa,21,24,50,1,10,1,Rush,Jaylen Raynor run for 1 yd to the TLSA 49,-0.873884986133115,2024-09-08T00:46:55.000Z
+401643779103938101,401643779,40164377917,9,3,6:18,Arkansas State,Tulsa,21,24,49,2,9,4,Rush,Zak Wallace run for 4 yds to the TLSA 45,-0.1660116908652895,2024-09-08T00:46:55.000Z
+401643779103945701,401643779,40164377917,10,3,5:42,Arkansas State,Tulsa,21,24,45,3,5,7,Pass Reception,Jaylen Raynor pass complete to Hunter Summers for 7 yds to the TLSA 38 for a 1ST down,1.7867159605345895,2024-09-08T00:46:55.000Z
+401643779103947801,401643779,40164377917,11,3,5:21,Arkansas State,Tulsa,21,24,38,1,10,11,Pass Reception,Jaylen Raynor pass complete to Corey Rucker for 11 yds to the TLSA 27 for a 1ST down,0.353311807193702,2024-09-08T00:46:55.000Z
+401643779103955801,401643779,40164377917,12,3,4:41,Arkansas State,Tulsa,21,24,27,1,10,8,Penalty,"Tulsa Penalty, Personal Foul (Tyree Carlisle) to the TLSA 9 for a 1ST down",,2024-09-08T00:46:55.000Z
+401643779103958901,401643779,40164377917,13,3,4:10,Arkansas State,Tulsa,21,24,9,1,9,4,Rush,Ja'Quez Cross run for 4 yds to the TLSA 5,-0.014339867883452,2024-09-08T00:46:55.000Z
+401643779103966101,401643779,40164377917,14,3,3:38,Arkansas State,Tulsa,21,24,5,2,5,0,Pass Incompletion,Jaylen Raynor pass incomplete,-0.32302193763867,2024-09-08T00:46:55.000Z
+401643779103966901,401643779,40164377917,15,3,3:30,Arkansas State,Tulsa,28,24,5,3,5,5,Passing Touchdown,Jaylen Raynor pass complete to Corey Rucker for 5 yds for a TD (Clune Van Andel KICK),2.76159962916859,2024-09-08T01:19:33.000Z
+401643779103905703,401643779,40164377917,1,3,9:42,Tulsa,Arkansas State,24,21,65,0,0,12,Kickoff Return (Offense),"Reed Malphurs kickoff for 56 yds , Ja'Quez Cross return for 12 yds to the ARST 21",,2024-09-08T01:09:33.000Z
+401643779103906401,401643779,40164377917,2,3,9:35,Arkansas State,Tulsa,21,24,79,1,10,0,Pass Incompletion,Jaylen Raynor pass incomplete,-0.585616097616759,2024-09-08T00:46:55.000Z
+401643779103966905,401643779,40164377918,2,3,3:30,Tulsa,Arkansas State,24,28,75,1,10,8,Rush,Lloyd Avant run for 8 yds to the TLSA 33,0.9104368550610653,2024-09-08T01:19:33.000Z
+401643779103969501,401643779,40164377918,3,3,3:04,Tulsa,Arkansas State,24,28,67,2,2,0,Rush,Lloyd Avant run for no gain to the TLSA 33,-1.1300243096866742,2024-09-08T00:46:55.000Z
+401643779103976701,401643779,40164377918,4,3,2:32,Tulsa,Arkansas State,24,28,67,3,2,0,Pass Incompletion,Kirk Francis pass incomplete,-0.6013143962559822,2024-09-08T00:46:55.000Z
+401643779103977401,401643779,40164377918,5,3,2:25,Tulsa,Arkansas State,24,28,67,4,2,0,Punt,"Angus Davies punt for 56 yds, downed at the ARST 11",,2024-09-08T00:46:55.000Z
+401643779103966903,401643779,40164377918,1,3,3:30,Arkansas State,Tulsa,28,24,65,0,0,0,Kickoff,Clayton Amaya kickoff for 61 yds,,2024-09-08T01:19:33.000Z
+401643779103978401,401643779,40164377919,1,3,2:15,Arkansas State,Tulsa,28,24,89,1,10,1,Rush,Zak Wallace run for 1 yd to the ARST 12,-0.3073715013582188,2024-09-08T00:46:55.000Z
+401643779103985501,401643779,40164377919,2,3,1:44,Arkansas State,Tulsa,28,24,88,2,9,0,Pass Incompletion,Jaylen Raynor pass incomplete,-0.19341544040388303,2024-09-08T00:46:55.000Z
+401643779103986001,401643779,40164377919,3,3,1:39,Arkansas State,Tulsa,28,24,88,3,9,0,Pass Incompletion,Jaylen Raynor pass incomplete,-0.08345250621301048,2024-09-08T00:46:55.000Z
+401643779103986301,401643779,40164377919,4,3,1:36,Arkansas State,Tulsa,28,24,88,4,9,0,Punt,"Ryan Heicher punt for 37 yds, fair catch by Kamdyn Benjamin at the ARST 49",,2024-09-08T01:26:43.000Z
+401643779103987101,401643779,40164377920,1,3,1:28,Tulsa,Arkansas State,24,28,49,1,10,-1,Rush,Anthony Watkins run for a loss of 1 yard to the 50 yard line,-1.3309328866412127,2024-09-08T00:46:55.000Z
+401643779103997601,401643779,40164377920,3,3,0:23,Tulsa,Arkansas State,24,28,50,3,11,0,Pass Incompletion,Kirk Francis pass incomplete,-0.6624434770970345,2024-09-08T00:46:55.000Z
+401643779103998101,401643779,40164377920,4,3,0:18,Tulsa,Arkansas State,24,28,50,4,11,0,Punt,"Angus Davies punt for 38 yds, fair catch by Courtney Jackson at the ARST 12",,2024-09-08T00:46:55.000Z
+401643779103994401,401643779,40164377920,2,3,0:55,Tulsa,Arkansas State,24,28,50,2,11,0,Rush,Anthony Watkins run for no gain to the 50 yard line,-0.9884914982981642,2024-09-08T00:46:55.000Z
+401643779103999001,401643779,40164377921,1,3,0:09,Arkansas State,Tulsa,28,24,88,1,10,9,Rush,Zak Wallace run for 9 yds to the ARST 21,0.8803339185180583,2024-09-08T01:30:32.000Z
+401643779104854001,401643779,40164377921,3,4,14:59,Arkansas State,Tulsa,28,24,79,2,1,2,Rush,Zak Wallace run for 2 yds to the ARST 23 for a 1ST down,-0.3594310211231387,2024-09-08T01:34:15.000Z
+401643779104857301,401643779,40164377921,4,4,14:26,Arkansas State,Tulsa,28,24,77,1,10,1,Rush,Zak Wallace run for 1 yd to the ARST 24,-0.5380287086286026,2024-09-08T01:34:15.000Z
+401643779104865201,401643779,40164377921,5,4,13:47,Arkansas State,Tulsa,28,24,76,2,9,5,Pass Reception,Jaylen Raynor pass complete to Adam Jones for 5 yds to the ARST 29,0.04989132298374345,2024-09-08T01:34:15.000Z
+401643779104868601,401643779,40164377921,6,4,13:13,Arkansas State,Tulsa,28,24,71,3,4,3,Rush,Jaylen Raynor run for 3 yds to the ARST 32,-0.16986038471748444,2024-09-08T01:34:15.000Z
+401643779104877401,401643779,40164377921,7,4,12:25,Arkansas State,Tulsa,28,24,68,4,1,0,Punt,"Ryan Heicher punt for 48 yds, fair catch by Kamdyn Benjamin at the TLSA 20",,2024-09-08T01:34:15.000Z
+401643779103999002,401643779,40164377921,2,3,0:00,Arkansas State,Tulsa,28,24,88,0,10,9,End Period,End of 3rd Quarter,,2024-09-08T01:30:32.000Z
+401643779104878001,401643779,40164377921,8,4,12:19,Tulsa,Arkansas State,24,28,80,1,10,0,Timeout,"Timeout Arkansas State, clock 12:19",,2024-09-08T01:36:44.000Z
+401643779104884901,401643779,40164377922,2,4,11:50,Tulsa,Arkansas State,24,28,78,2,8,0,Pass Incompletion,Kirk Francis pass incomplete,-0.3680210874717833,2024-09-08T01:34:15.000Z
+401643779104885201,401643779,40164377922,3,4,11:47,Tulsa,Arkansas State,24,28,78,3,8,12,Rush,Lloyd Avant run for 12 yds to the TLSA 34 for a 1ST down,1.7796976964207776,2024-09-08T01:34:15.000Z
+401643779104888301,401643779,40164377922,4,4,11:16,Tulsa,Arkansas State,24,28,66,1,10,-7,Pass Reception,Kirk Francis pass complete to Lloyd Avant for a loss of 7 yards to the TLSA 27,-1.7215320153529658,2024-09-08T01:34:15.000Z
+401643779104896301,401643779,40164377922,5,4,10:36,Tulsa,Arkansas State,24,28,73,2,17,5,Pass Reception,Kirk Francis pass complete to Lloyd Avant for 5 yds to the TLSA 32,0.017594210242107163,2024-09-08T01:34:15.000Z
+401643779104898701,401643779,40164377922,6,4,10:12,Tulsa,Arkansas State,24,28,68,3,12,0,Pass Incompletion,Kirk Francis pass incomplete,-0.20503297841532842,2024-09-08T01:34:15.000Z
+401643779104899401,401643779,40164377922,7,4,10:05,Tulsa,Arkansas State,24,28,68,4,12,0,Punt,"Angus Davies punt for 37 yds , Courtney Jackson returns for no gain to the ARST 22",,2024-09-08T01:34:15.000Z
+401643779104878101,401643779,40164377922,1,4,12:18,Tulsa,Arkansas State,24,28,80,1,10,2,Rush,Lloyd Avant run for 2 yds to the TLSA 22,-0.3623882030735057,2024-09-08T01:34:15.000Z
+401643779104908101,401643779,40164377923,4,4,9:18,Arkansas State,Tulsa,28,24,67,1,10,18,Rush,Jaylen Raynor run for 18 yds to the TLSA 49 for a 1ST down,1.6667261175039005,2024-09-08T01:34:15.000Z
+401643779104914601,401643779,40164377923,5,4,8:53,Arkansas State,Tulsa,28,24,49,1,10,0,Pass Incompletion,Jaylen Raynor pass incomplete,-1.0955888671820908,2024-09-08T01:34:15.000Z
+401643779104915601,401643779,40164377923,6,4,8:43,Arkansas State,Tulsa,28,24,49,2,10,4,Rush,Zak Wallace run for 4 yds to the TLSA 45,-0.1664552528152577,2024-09-08T01:34:15.000Z
+401643779104918701,401643779,40164377923,7,4,8:12,Arkansas State,Tulsa,28,24,45,3,6,9,Rush,Jaylen Raynor run for 9 yds to the TLSA 36 for a 1ST down,2.0135965766208006,2024-09-08T01:34:15.000Z
+401643779104925101,401643779,40164377923,8,4,7:48,Arkansas State,Tulsa,28,24,36,1,10,3,Rush,Jaylen Raynor run for 3 yds to the TLSA 33,-0.226207639518348,2024-09-08T01:34:15.000Z
+401643779104928501,401643779,40164377923,9,4,7:14,Arkansas State,Tulsa,28,24,33,2,7,-1,Rush,Ja'Quez Cross run for a loss of 1 yard to the TLSA 34,-1.0123024655308444,2024-09-08T01:34:15.000Z
+401643779104936301,401643779,40164377923,10,4,6:36,Arkansas State,Tulsa,28,24,34,3,8,0,Rush,Jaylen Raynor run for no gain to the TLSA 34,-1.0270296822165914,2024-09-08T01:34:15.000Z
+401643779104944901,401643779,40164377923,11,4,5:50,Arkansas State,Tulsa,28,24,34,4,8,51,Blocked Field Goal,Clune Van Andel 51 yd FG BLOCKED blocked by,,2024-09-08T01:34:15.000Z
+401643779104904202,401643779,40164377923,3,4,9:57,Arkansas State,Tulsa,28,24,78,1,10,11,Rush,Zak Wallace run for 11 yds to the ARST 33 for a 1ST down,0.8429281331999734,2024-09-08T01:34:15.000Z
+401643779104904003,401643779,40164377923,1,4,9:59,Arkansas State,Tulsa,28,24,78,1,10,0,Timeout,"Timeout Arkansas State, clock 09:59",,2024-09-08T01:43:52.000Z
+401643779104904004,401643779,40164377923,2,4,9:59,Arkansas State,Tulsa,28,24,67,1,10,0,Timeout,"Timeout Arkansas State, clock 09:59",,2024-09-08T01:43:52.000Z
+401643779104946301,401643779,40164377924,1,4,5:36,Tulsa,Arkansas State,24,28,66,1,10,2,Rush,Anthony Watkins run for 2 yds to the TLSA 36,-0.6162239991596916,2024-09-08T01:34:15.000Z
+401643779104949801,401643779,40164377924,2,4,5:01,Tulsa,Arkansas State,24,28,64,2,8,0,Pass Incompletion,Kirk Francis pass incomplete,-0.7413256585321806,2024-09-08T01:34:15.000Z
+401643779104954701,401643779,40164377924,3,4,4:52,Tulsa,Arkansas State,24,28,64,3,8,0,Pass Incompletion,Kirk Francis pass incomplete,-0.3878563653828513,2024-09-08T01:34:15.000Z
+401643779104955401,401643779,40164377924,4,4,4:45,Tulsa,Arkansas State,24,28,64,4,8,0,Punt,"Angus Davies punt for 44 yds, downed at the ARST 20",,2024-09-08T01:34:15.000Z
+401643779104956101,401643779,40164377925,1,4,4:38,Arkansas State,Tulsa,28,24,80,1,10,4,Rush,Zak Wallace run for 4 yds to the ARST 24,-0.0884321258012219,2024-09-08T01:34:15.000Z
+401643779104964201,401643779,40164377925,2,4,3:57,Arkansas State,Tulsa,28,24,76,2,6,3,Rush,Zak Wallace run for 3 yds to the ARST 27,-0.2180474027139594,2024-09-08T01:34:15.000Z
+401643779104968201,401643779,40164377925,3,4,3:17,Arkansas State,Tulsa,28,24,73,3,3,0,Timeout,"Timeout Tulsa, clock 03:17",,2024-09-08T01:58:21.000Z
+401643779104977001,401643779,40164377925,5,4,2:29,Arkansas State,Tulsa,28,24,69,1,10,0,Rush,Zak Wallace run for no gain to the ARST 31,-0.8947814664467213,2024-09-08T01:34:15.000Z
+401643779104968401,401643779,40164377925,4,4,3:15,Arkansas State,Tulsa,28,24,73,3,3,4,Rush,Zak Wallace run for 4 yds to the ARST 31 for a 1ST down,1.0852463190052344,2024-09-08T01:34:15.000Z
+401643779104999903,401643779,40164377925,13,4,0:00,Arkansas State,Tulsa,28,24,66,0,18,6,End of Game,End of 4th Quarter,,2024-09-08T02:10:07.000Z
+401643779104984001,401643779,40164377925,7,4,1:59,Arkansas State,Tulsa,28,24,69,2,10,4,Rush,Jaylen Raynor run for 4 yds to the ARST 35,-0.08946312699115921,2024-09-08T01:34:15.000Z
+401643779104987706,401643779,40164377925,10,4,1:22,Arkansas State,Tulsa,28,24,57,1,10,-3,Rush,[NH] Kneel down by ASU at ASU40 (team loss of 3).,-1.7425712070843904,2024-09-08T02:08:42.000Z
+401643779104987708,401643779,40164377925,11,4,1:22,Arkansas State,Tulsa,28,24,60,2,13,-3,Rush,[NH] Kneel down by ASU at ASU37 (team loss of 3).,-0.8411243838136206,2024-09-08T02:08:42.000Z
+401643779104999905,401643779,40164377925,14,4,0:00,Arkansas State,Tulsa,28,24,63,3,16,-3,Rush,"[NH] Kneel down by ASU at ASU34 (team loss of 3), clock 00:00.",-0.2648625647241847,2024-09-08T02:11:53.000Z
+401643779104987709,401643779,40164377925,12,4,1:22,Arkansas State,Tulsa,28,24,60,2,13,0,Timeout,"Timeout Tulsa, clock 01:22",,2024-09-08T02:08:42.000Z
+401643779104979901,401643779,40164377925,6,4,2:00,Arkansas State,Tulsa,28,24,69,2,10,0,Timeout,"Timeout Arkansas State, clock 02:00",,2024-09-08T02:01:00.000Z
+401643779104984503,401643779,40164377925,8,4,1:54,Arkansas State,Tulsa,28,24,65,3,6,15,Penalty,"Tulsa Penalty, Unnecessary Roughness (Gavin Potter) to the ARST 43 for a 1ST down",,2024-09-08T02:03:59.000Z
+401643779104987705,401643779,40164377925,9,4,1:22,Arkansas State,Tulsa,28,24,57,1,10,0,Timeout,"Timeout Tulsa, clock 01:22",,2024-09-08T02:08:42.000Z

@@ -1,0 +1,180 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628337101867701,401628337,4016283371,6,1,13:22,Auburn,California,0,0,56,2,8,41,Pass Reception,Payton Thorne pass complete to Cam Coleman for 41 yds to the CAL 15 for a 1ST down,2.6897386664351415,2024-09-07T19:33:45.000Z
+401628337101877101,401628337,4016283371,8,1,12:28,Auburn,California,0,0,15,2,10,0,Rush,Jeremiah Cobb run for no gain to the CAL 15,-0.361206789772767,2024-09-07T19:33:45.000Z
+401628337101885701,401628337,4016283371,9,1,11:42,Auburn,California,7,0,15,3,10,15,Passing Touchdown,Payton Thorne pass complete to KeAndre Lambert-Smith for 15 yds for a TD (Towns McGough KICK),3.240383538827169,2024-09-07T19:43:27.000Z
+401628337101854001,401628337,4016283371,2,1,14:59,Auburn,California,0,0,75,1,10,1,Rush,Jarquez Hunter run for 1 yd to the AUB 26,-0.5874795431016855,2024-09-07T19:33:45.000Z
+401628337101857201,401628337,4016283371,3,1,14:27,Auburn,California,0,0,74,2,9,0,Pass Incompletion,Payton Thorne pass incomplete,-0.40831395320271024,2024-09-07T19:33:45.000Z
+401628337101858401,401628337,4016283371,4,1,14:15,Auburn,California,0,0,74,3,9,16,Pass Reception,Payton Thorne pass complete to Rivaldo Fairweather for 16 yds to the AUB 42 for a 1ST down,2.5118454039864018,2024-09-07T19:33:45.000Z
+401628337101864901,401628337,4016283371,5,1,13:50,Auburn,California,0,0,58,1,10,2,Rush,Jarquez Hunter run for 2 yds to the AUB 44,-0.686234543960909,2024-09-07T19:33:45.000Z
+401628337101849907,401628337,4016283371,1,1,15:00,California,Auburn,0,0,65,0,0,0,Kickoff,Ryan Coe kickoff for 65 yds for a touchback,,2024-09-07T19:33:45.000Z
+401628337101876101,401628337,4016283371,7,1,12:38,Auburn,California,0,0,15,1,10,0,Pass Incompletion,Payton Thorne pass incomplete,-0.320977659489319,2024-09-07T19:33:45.000Z
+401628337101896001,401628337,4016283372,4,1,10:39,California,Auburn,0,7,57,2,4,2,Rush,Jaydn Ott run for 2 yds to the CAL 45,-0.7272865643721645,2024-09-07T19:33:45.000Z
+401628337101899401,401628337,4016283372,5,1,10:05,California,Auburn,0,7,55,3,2,3,Pass Reception,Fernando Mendoza pass complete to Mavin Anderson for 3 yds to the CAL 48 for a 1ST down,1.367332084200765,2024-09-07T19:33:45.000Z
+401628337101907601,401628337,4016283372,6,1,9:23,California,Auburn,0,7,52,1,10,25,Pass Reception,Fernando Mendoza pass complete to Jonathan Brady for 25 yds to the AUB 27 for a 1ST down,1.266773447318945,2024-09-07T19:33:45.000Z
+401628337101914101,401628337,4016283372,7,1,8:58,California,Auburn,0,7,27,1,10,2,Rush,Fernando Mendoza run for 2 yds to the AUB 25,-0.262946006262057,2024-09-07T19:33:45.000Z
+401628337101917601,401628337,4016283372,8,1,8:23,California,Auburn,0,7,25,2,8,-5,Penalty,"California Penalty, False Start (-5 Yards) to the AUB 30",,2024-09-07T19:52:19.000Z
+401628337101919901,401628337,4016283372,9,1,8:00,California,Auburn,0,7,30,2,13,11,Pass Reception,Fernando Mendoza pass complete to Jonathan Brady for 11 yds to the AUB 19,0.8008769186284219,2024-09-07T19:33:45.000Z
+401628337101928201,401628337,4016283372,10,1,7:17,California,Auburn,7,7,19,3,2,19,Passing Touchdown,Fernando Mendoza pass complete to Nyziah Hunter for 19 yds for a TD (Ryan Coe KICK),2.8270483118158065,2024-09-07T19:53:42.000Z
+401628337101885901,401628337,4016283372,2,1,11:40,California,Auburn,0,7,75,1,10,12,Pass Reception,Fernando Mendoza pass complete to Mavin Anderson for 12 yds to the CAL 37 for a 1ST down,1.0272443261435713,2024-09-07T19:33:45.000Z
+401628337101888401,401628337,4016283372,3,1,11:15,California,Auburn,0,7,63,1,10,6,Pass Reception,Fernando Mendoza pass complete to Trond Grizzell for 6 yds to the CAL 43,0.4024109850387187,2024-09-07T19:33:45.000Z
+401628337101885703,401628337,4016283372,1,1,11:42,Auburn,California,7,0,65,0,0,0,Kickoff,Towns McGough kickoff for 65 yds for a touchback,,2024-09-07T19:43:27.000Z
+401628337101934701,401628337,4016283373,3,1,6:52,Auburn,California,7,7,87,1,22,16,Pass Reception,Payton Thorne pass complete to Brandon Frazier for 16 yds to the AUB 29,1.041828832660432,2024-09-07T19:33:45.000Z
+401628337101938001,401628337,4016283373,4,1,6:19,Auburn,California,7,7,71,2,6,15,Pass Reception,Payton Thorne pass complete to KeAndre Lambert-Smith for 15 yds to the AUB 44 for a 1ST down,1.821860963280912,2024-09-07T19:33:45.000Z
+401628337101945701,401628337,4016283373,5,1,5:42,Auburn,California,7,7,56,1,10,0,Pass Incompletion,Payton Thorne pass incomplete,-1.1612466882658818,2024-09-07T19:33:45.000Z
+401628337101946101,401628337,4016283373,6,1,5:38,Auburn,California,7,7,56,2,10,3,Pass Reception,Payton Thorne pass complete to Jarquez Hunter for 3 yds to the AUB 47,-0.3621048363625316,2024-09-07T19:33:45.000Z
+401628337101949401,401628337,4016283373,8,1,5:05,Auburn,California,7,7,48,3,2,0,Pass Incompletion,Payton Thorne pass incomplete,-1.1324398100745032,2024-09-07T19:33:45.000Z
+401628337101948902,401628337,4016283373,7,1,5:10,Auburn,California,7,7,53,3,7,5,Penalty,"(05:10) THORNE, Payton pass deep to the left incomplete intended for COLEMAN, Cam thrown to the CAL28, clock 05:07. PENALTY CAL Offsides on BOLLERS, T.J. enforced 5 yards from the AUB47 to the CAL48 [NHSG]. NO PLAY (replay the down).",,2024-09-07T19:33:45.000Z
+401628337101928402,401628337,4016283373,2,1,7:15,Auburn,California,7,7,75,1,10,-7,Penalty,"(07:15) HUNTER, Jarquez rush up the middle for a gain of 7 yards to the AUB32 (MCCULLOCH, Ryan;BUCHANAN, Teddye), clock 07:11. PENALTY AUB Personal Foul on WADE, Dillon enforced half the distance from the goal, 12 yards from the AUB25 to the AUB13 [SG]. NO PLAY (replay the down).",,2024-09-07T19:33:45.000Z
+401628337101928203,401628337,4016283373,1,1,7:17,California,Auburn,7,7,65,0,0,0,Kickoff,Ryan Coe kickoff for 65 yds for a touchback,,2024-09-07T19:53:42.000Z
+401628337101949701,401628337,4016283373,9,1,5:02,Auburn,California,7,7,48,4,2,0,Timeout,"Timeout Auburn, clock 05:02",,2024-09-07T20:03:00.000Z
+401628337101949801,401628337,4016283373,10,1,5:01,Auburn,California,7,7,48,4,2,0,Pass Incompletion,Payton Thorne pass incomplete,-1.1679739053824427,2024-09-07T19:33:45.000Z
+401628337101974101,401628337,4016283374,4,1,2:58,California,Auburn,7,7,41,1,10,-5,Penalty,"California Penalty, False Start (-5 Yards) to the AUB 46",,2024-09-07T20:10:49.000Z
+401628337101999602,401628337,4016283374,10,1,0:00,California,Auburn,7,7,23,0,3,0,End Period,End of 1st Quarter,,2024-09-07T20:14:43.000Z
+401628337102865501,401628337,4016283374,13,2,13:44,California,Auburn,7,7,14,2,14,3,Pass Reception,Fernando Mendoza pass complete to Corey Dyches for 3 yds to the AUB 11,-0.1181216359176887,2024-09-07T20:19:17.000Z
+401628337102857701,401628337,4016283374,12,2,14:22,California,Auburn,7,7,10,1,10,-4,Rush,Jaivian Thomas run for a loss of 4 yards to the AUB 14,-0.5209210710142923,2024-09-07T20:19:17.000Z
+401628337102854101,401628337,4016283374,11,2,14:58,California,Auburn,7,7,23,3,3,13,Pass Reception,Fernando Mendoza pass complete to Jonathan Brady for 13 yds to the AUB 10 for a 1ST down,0.535798777326464,2024-09-07T20:19:17.000Z
+401628337101999601,401628337,4016283374,9,1,0:03,California,Auburn,7,7,23,2,3,0,Pass Incompletion,Fernando Mendoza pass incomplete,-0.589972203651742,2024-09-07T20:14:43.000Z
+401628337101996401,401628337,4016283374,8,1,0:35,California,Auburn,7,7,30,1,10,7,Rush,Jaivian Thomas run for 7 yds to the AUB 23,0.354589716998607,2024-09-07T19:33:45.000Z
+401628337101988801,401628337,4016283374,7,1,1:11,California,Auburn,7,7,32,3,1,2,Rush,Jaivian Thomas run for 2 yds to the AUB 30 for a 1ST down,0.4306935202571525,2024-09-07T19:33:45.000Z
+401628337101975702,401628337,4016283374,6,1,2:42,California,Auburn,7,7,46,2,15,14,Pass Reception,Fernando Mendoza pass complete to Jonathan Brady for 14 yds to the AUB 32,1.9691631892070998,2024-09-07T19:33:45.000Z
+401628337101975701,401628337,4016283374,5,1,2:42,California,Auburn,7,7,46,1,15,0,Rush,Jaydn Ott run for no gain to the AUB 46,-1.033029277728014,2024-09-07T19:33:45.000Z
+401628337101966101,401628337,4016283374,3,1,3:38,California,Auburn,7,7,51,3,9,10,Rush,Fernando Mendoza run for 10 yds to the AUB 41 for a 1ST down,2.713545402715461,2024-09-07T19:33:45.000Z
+401628337101957901,401628337,4016283374,2,1,4:20,California,Auburn,7,7,47,2,5,-4,Rush,Jaydn Ott run for a loss of 4 yards to the CAL 49,-2.0505480559831266,2024-09-07T19:33:45.000Z
+401628337101954601,401628337,4016283374,1,1,4:53,California,Auburn,7,7,52,1,10,5,Pass Reception,Fernando Mendoza pass complete to Mikey Matthews for 5 yds to the AUB 47,0.1045373160815773,2024-09-07T19:33:45.000Z
+401628337102874201,401628337,4016283374,15,2,12:57,California,Auburn,7,7,16,3,16,9,Pass Reception,Fernando Mendoza pass complete to Mavin Anderson for 9 yds to the AUB 7,0.4604715646966165,2024-09-07T20:19:17.000Z
+401628337102878401,401628337,4016283374,17,2,12:15,California,Auburn,7,7,7,4,7,25,Field Goal Missed,Ryan Coe 25 yd FG MISSED,,2024-09-07T20:23:09.000Z
+401628337102874301,401628337,4016283374,16,2,12:56,California,Auburn,7,7,11,3,11,-5,Penalty,"California Penalty, False Start (Mavin Anderson) to the AUB 16",,2024-09-07T20:19:17.000Z
+401628337102874101,401628337,4016283374,14,2,12:58,California,Auburn,7,7,11,3,11,0,Timeout,"Timeout California, clock 12:58",,2024-09-07T20:20:33.000Z
+401628337102878501,401628337,4016283375,1,2,12:14,Auburn,California,7,7,80,1,10,14,Pass Interception Return,Payton Thorne pass intercepted Nohl Williams return for 14 yds to the AUB 21,-0.6139422043948972,2024-09-07T20:19:17.000Z
+401628337102886901,401628337,4016283376,2,2,11:30,California,Auburn,7,7,19,2,8,6,Rush,Jaydn Ott run for 6 yds to the AUB 13,0.153337193617787,2024-09-07T20:19:17.000Z
+401628337102896001,401628337,4016283376,3,2,10:39,California,Auburn,14,7,13,3,2,13,Passing Touchdown,Fernando Mendoza pass complete to Nyziah Hunter for 13 yds for a TD (Ryan Coe KICK),2.690794134920395,2024-09-07T20:29:35.000Z
+401628337102879501,401628337,4016283376,1,2,12:04,California,Auburn,7,7,21,1,10,2,Rush,Jaydn Ott run for 2 yds to the AUB 19,-0.211834514742689,2024-09-07T20:19:17.000Z
+401628337102896101,401628337,4016283377,2,2,10:38,Auburn,California,7,14,75,1,10,-1,Rush,Jarquez Hunter run for a loss of 1 yard to the AUB 24,-0.8014893508157099,2024-09-07T20:19:17.000Z
+401628337102899001,401628337,4016283377,3,2,10:09,Auburn,California,7,14,76,2,11,0,Pass Incompletion,Payton Thorne pass incomplete,-0.29427450685877776,2024-09-07T20:19:17.000Z
+401628337102899501,401628337,4016283377,4,2,10:04,Auburn,California,7,14,76,3,11,7,Rush,Payton Thorne run for 7 yds to the AUB 31,0.12332995396800328,2024-09-07T20:19:17.000Z
+401628337102907801,401628337,4016283377,5,2,9:21,Auburn,California,7,14,69,4,4,0,Punt,"Oscar Chapman punt for 54 yds, fair catch by Mikey Matthews at the CAL 15",,2024-09-07T20:19:17.000Z
+401628337102896003,401628337,4016283377,1,2,10:39,California,Auburn,14,7,65,0,0,0,Kickoff,Ryan Coe kickoff for 65 yds for a touchback,,2024-09-07T20:33:45.000Z
+401628337102908501,401628337,4016283378,1,2,9:14,California,Auburn,14,7,85,1,10,8,Pass Reception,Fernando Mendoza pass complete to Jack Endries for 8 yds to the CAL 23,0.6856189176956029,2024-09-07T20:19:17.000Z
+401628337102954701,401628337,4016283378,10,2,4:52,California,Auburn,14,7,41,4,3,0,Timeout,"Timeout California, clock 04:52",,2024-09-07T20:48:17.000Z
+401628337102955501,401628337,4016283378,11,2,4:44,California,Auburn,14,7,41,4,3,0,Punt,Lachlan Wilson punt for 41 yds for a touchback,,2024-09-07T20:48:28.000Z
+401628337102916301,401628337,4016283378,2,2,8:36,California,Auburn,14,7,77,2,2,5,Rush,Jaydn Ott run for 5 yds to the CAL 28 for a 1ST down,0.0797099199135545,2024-09-07T20:19:17.000Z
+401628337102924002,401628337,4016283378,3,2,7:59,California,Auburn,14,7,72,1,10,-5,Penalty,"(07:59) MENDOZA, Fernando pass to the left complete for 7 yards to MATTHEWS, Mikey caught at the CAL35 and advanced to the CAL35 (SMITH, Sylvester), clock 07:55. PENALTY Before the snap, CAL Illegal Motion on CALLOWAY, Kadarius enforced 5 yards from the CAL28 to the CAL23. NO PLAY (replay the down).",,2024-09-07T20:19:17.000Z
+401628337102926601,401628337,4016283378,4,2,7:33,California,Auburn,14,7,77,1,15,18,Pass Reception,Fernando Mendoza pass complete to Mason Starling for 18 yds to the CAL 41 for a 1ST down,2.0372999090224537,2024-09-07T20:19:17.000Z
+401628337102928801,401628337,4016283378,5,2,7:11,California,Auburn,14,7,59,1,10,-5,Penalty,"California Penalty, False Start (-5 Yards) to the CAL 36",,2024-09-07T20:42:48.000Z
+401628337102929901,401628337,4016283378,6,2,7:00,California,Auburn,14,7,64,1,15,16,Pass Reception,Fernando Mendoza pass complete to Mason Starling for 16 yds to the AUB 48 for a 1ST down,2.173770319247838,2024-09-07T20:19:17.000Z
+401628337102938201,401628337,4016283378,7,2,6:17,California,Auburn,14,7,48,1,10,-1,Rush,Kadarius Calloway run for a loss of 1 yard to the AUB 49,-1.3092528969479904,2024-09-07T20:19:17.000Z
+401628337102946401,401628337,4016283378,8,2,5:35,California,Auburn,14,7,49,2,11,8,Pass Reception,Fernando Mendoza pass complete to Mason Starling for 8 yds to the AUB 41,0.7945740022159419,2024-09-07T20:19:17.000Z
+401628337102954501,401628337,4016283378,9,2,4:54,California,Auburn,14,7,41,3,3,0,Pass Incompletion,Fernando Mendoza pass incomplete,-1.1249835158320156,2024-09-07T20:19:17.000Z
+401628337102967001,401628337,4016283379,4,2,3:29,Auburn,California,7,14,71,4,1,-5,Penalty,"Auburn Penalty, Delay Of Game (TEAM) to the AUB 24",,2024-09-07T20:50:29.000Z
+401628337102967301,401628337,4016283379,5,2,3:26,Auburn,California,7,14,76,4,6,0,Punt,"Oscar Chapman punt for 40 yds, fair catch by Mikey Matthews at the CAL 36",,2024-09-07T20:19:17.000Z
+401628337102958601,401628337,4016283379,3,2,4:13,Auburn,California,7,14,74,3,4,3,Rush,Payton Thorne run for 3 yds to the AUB 29,-0.14447029454152727,2024-09-07T20:19:17.000Z
+401628337102958301,401628337,4016283379,2,2,4:16,Auburn,California,7,14,74,2,4,0,Pass Incompletion,Payton Thorne pass incomplete,-0.711661989572181,2024-09-07T20:19:17.000Z
+401628337102955601,401628337,4016283379,1,2,4:43,Auburn,California,7,14,80,1,10,6,Rush,Payton Thorne run for 6 yds to the AUB 26,0.2888240217992033,2024-09-07T20:19:17.000Z
+401628337102987401,401628337,40162833710,6,2,1:25,California,Auburn,14,7,42,2,3,-4,Sack,Fernando Mendoza sacked by Keldric Faulk for a loss of 4 yards to the AUB 46,-2.0712307166689836,2024-09-07T20:19:17.000Z
+401628337102984601,401628337,40162833710,5,2,1:53,California,Auburn,14,7,49,1,10,7,Pass Reception,Fernando Mendoza pass complete to Jaivian Thomas for 7 yds to the AUB 42,0.575042778164864,2024-09-07T20:19:17.000Z
+401628337102984201,401628337,40162833710,4,2,1:57,California,Auburn,14,7,56,3,2,7,Pass Reception,Fernando Mendoza pass complete to Jack Endries for 7 yds to the AUB 49 for a 1ST down,1.70456642136992,2024-09-07T20:19:17.000Z
+401628337102975701,401628337,40162833710,2,2,2:42,California,Auburn,14,7,56,2,2,0,Rush,Jaydn Ott run for no gain to the CAL 44,-1.357540388593467,2024-09-07T20:19:17.000Z
+401628337102967901,401628337,40162833710,1,2,3:20,California,Auburn,14,7,64,1,10,8,Pass Reception,Fernando Mendoza pass complete to Jack Endries for 8 yds to the CAL 44,1.0378360233616295,2024-09-07T20:19:17.000Z
+401628337102989001,401628337,40162833710,7,2,1:09,California,Auburn,14,7,46,3,7,0,Timeout,"Timeout Auburn, clock 01:09",,2024-09-07T21:00:17.000Z
+401628337102979901,401628337,40162833710,3,2,2:00,California,Auburn,14,7,56,3,2,0,Timeout,"Timeout Auburn, clock 02:00",,2024-09-07T20:53:49.000Z
+401628337102989101,401628337,40162833710,8,2,1:08,California,Auburn,14,7,46,3,7,-6,Sack,Fernando Mendoza sacked by Keldric Faulk for a loss of 6 yards to the CAL 48,-1.6662366842184841,2024-09-07T20:19:17.000Z
+401628337102989601,401628337,40162833710,10,2,1:03,California,Auburn,14,7,52,4,13,40,Punt,"Lachlan Wilson punt for 40 yds , Keionte Scott returns for no gain to the AUB 12",,2024-09-07T21:02:49.000Z
+401628337102989301,401628337,40162833710,9,2,1:06,California,Auburn,14,7,52,4,13,0,Timeout,"Timeout Auburn, clock 01:06",,2024-09-07T21:01:10.000Z
+401628337102994802,401628337,40162833711,2,2,0:51,Auburn,California,7,14,81,2,3,-9,Penalty,"(00:51) THORNE, Payton pass short to the right incomplete thrown to the AUB20; QB hurried by ULUAVE, Cade, clock 00:44. PENALTY AUB Holding on FAIRWEATHER, Rivaldo enforced half the distance from the goal, 9 yards from the AUB19 to the AUB10 [NHSG]. NO PLAY (replay the down).",,2024-09-07T20:19:17.000Z
+401628337102994301,401628337,40162833711,1,2,0:56,Auburn,California,7,14,88,1,10,7,Pass Reception,Payton Thorne pass complete to Rivaldo Fairweather for 7 yds to the AUB 19,0.4067090181335251,2024-09-07T20:19:17.000Z
+401628337102995801,401628337,40162833711,3,2,0:41,Auburn,California,7,14,90,2,12,27,Rush,Jarquez Hunter run for 27 yds to the AUB 37 for a 1ST down,2.1557872451380184,2024-09-07T20:19:17.000Z
+401628337102996801,401628337,40162833711,4,2,0:31,Auburn,California,7,14,63,1,10,2,Rush,Payton Thorne run for 2 yds to the AUB 39,-0.6556647600661254,2024-09-07T20:19:17.000Z
+401628337102997501,401628337,40162833711,5,2,0:24,Auburn,California,7,14,61,2,8,19,Rush,Payton Thorne run for 19 yds to the CAL 42 for a 1ST down,2.4112400820717514,2024-09-07T20:19:17.000Z
+401628337102998402,401628337,40162833711,6,2,0:15,Auburn,California,7,14,42,1,10,-1,Pass Incompletion,"pass incomplete Auburn Penalty, Intentional Grounding (Payton Thorne) to the CAL 43",-1.12591037688377,2024-09-07T21:07:11.000Z
+401628337102999402,401628337,40162833711,7,2,0:05,Auburn,California,7,14,43,1,11,0,Timeout,"Timeout California, clock 00:05",,2024-09-07T21:08:13.000Z
+401628337102999701,401628337,40162833711,8,2,0:02,Auburn,California,7,14,43,2,11,17,Field Goal Missed,Towns McGough 17 yd FG MISSED,,2024-09-07T21:09:21.000Z
+401628337102999902,401628337,40162833711,9,2,0:00,Auburn,California,7,14,34,0,10,-32,End of Half,End of 2nd Quarter,,2024-09-07T21:09:54.000Z
+401628337103849904,401628337,40162833712,2,3,15:00,California,Auburn,14,7,75,1,10,0,Rush,Jaydn Ott run for no gain to the CAL 25,-0.7029700220436519,2024-09-07T21:29:47.000Z
+401628337103849907,401628337,40162833712,3,3,15:00,California,Auburn,14,7,75,2,10,9,Pass Reception,Fernando Mendoza pass complete to Nyziah Hunter for 9 yds to the CAL 34,0.6799361600947043,2024-09-07T21:29:47.000Z
+401628337103849910,401628337,40162833712,4,3,15:00,California,Auburn,14,7,66,3,1,3,Rush,Jaydn Ott run for 3 yds to the CAL 37 for a 1ST down,1.050278188092519,2024-09-07T21:29:47.000Z
+401628337103849912,401628337,40162833712,5,3,15:00,California,Auburn,14,7,63,1,10,0,Pass Incompletion,Fernando Mendoza pass incomplete,-1.065701080215459,2024-09-07T21:29:47.000Z
+401628337103849914,401628337,40162833712,6,3,15:00,California,Auburn,14,7,63,2,10,0,Pass Incompletion,Fernando Mendoza pass incomplete,-0.6622137678957802,2024-09-07T21:29:47.000Z
+401628337103849917,401628337,40162833712,7,3,15:00,California,Auburn,14,7,63,3,10,3,Pass Reception,Fernando Mendoza pass complete to Mikey Matthews for 3 yds to the CAL 40,-0.1537497656263751,2024-09-07T21:33:48.000Z
+401628337103884501,401628337,40162833712,8,3,11:54,California,Auburn,14,7,60,4,7,0,Punt,"Lachlan Wilson punt for 58 yds, downed at the AUB 2",,2024-09-07T21:35:01.000Z
+401628337103849902,401628337,40162833712,1,3,15:00,Auburn,California,7,14,65,0,0,0,Kickoff,Towns McGough kickoff for 65 yds for a touchback,,2024-09-07T21:29:47.000Z
+401628337103884503,401628337,40162833713,1,3,11:54,Auburn,California,7,14,98,1,10,6,Rush,Jarquez Hunter run for 6 yds to the AUB 8,0.16944832850701808,2024-09-07T21:35:01.000Z
+401628337103887701,401628337,40162833713,2,3,11:22,Auburn,California,7,14,92,2,4,4,Rush,Jarquez Hunter run for 4 yds to the AUB 12 for a 1ST down,0.07447398080939216,2024-09-07T21:33:48.000Z
+401628337103895801,401628337,40162833713,3,3,10:41,Auburn,California,7,14,88,1,10,3,Rush,Payton Thorne run for 3 yds to the AUB 15,-0.16043022196263834,2024-09-07T21:33:48.000Z
+401628337103904001,401628337,40162833713,4,3,9:59,Auburn,California,7,14,85,2,7,5,Rush,Jarquez Hunter run for 5 yds to the AUB 20,0.05707400243379546,2024-09-07T21:33:48.000Z
+401628337103908101,401628337,40162833713,5,3,9:18,Auburn,California,7,14,80,3,2,18,Rush,Jarquez Hunter run for 18 yds to the AUB 38 for a 1ST down,1.8816125704336688,2024-09-07T21:33:48.000Z
+401628337103915801,401628337,40162833713,6,3,8:41,Auburn,California,7,14,62,1,10,-8,Sack,Payton Thorne sacked by Teddye Buchanan for a loss of 8 yards to the AUB 30,-2.061032017121377,2024-09-07T21:33:48.000Z
+401628337103919901,401628337,40162833713,7,3,8:00,Auburn,California,7,14,70,2,18,8,Pass Reception,Payton Thorne pass complete to Jarquez Hunter for 8 yds to the AUB 38,0.2792043878180621,2024-09-07T21:33:48.000Z
+401628337103928801,401628337,40162833713,8,3,7:11,Auburn,California,7,14,62,3,10,-5,Sack,Payton Thorne sacked by Teddye Buchanan for a loss of 5 yards to the AUB 33,-0.5439182392762394,2024-09-07T21:33:48.000Z
+401628337103936001,401628337,40162833713,9,3,6:39,Auburn,California,7,14,67,4,15,0,Punt,"Oscar Chapman punt for 45 yds, fair catch by Mikey Matthews at the CAL 22",,2024-09-07T21:33:48.000Z
+401628337103936601,401628337,40162833714,1,3,6:33,California,Auburn,14,7,78,1,10,0,Pass Incompletion,Fernando Mendoza pass incomplete,-0.6135902757979226,2024-09-07T21:33:48.000Z
+401628337103937101,401628337,40162833714,2,3,6:28,California,Auburn,14,7,78,2,10,7,Pass Reception,Fernando Mendoza pass complete to Mavin Anderson for 7 yds to the CAL 29,0.2752665610494649,2024-09-07T21:33:48.000Z
+401628337103945302,401628337,40162833714,3,3,5:46,California,Auburn,14,7,71,3,3,15,Penalty,"(05:46) MENDOZA, Fernando pass short up the middle incomplete intended for STARLING, Mason thrown to the CAL30, clock 05:44. PENALTY AUB Roughing the Passer on BLOCTON, Malik enforced 15 yards from the CAL29 to the CAL44 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-07T21:33:48.000Z
+401628337103945704,401628337,40162833714,4,3,5:42,California,Auburn,14,7,56,1,10,0,Pass Incompletion,Fernando Mendoza pass incomplete,-1.1612466882658818,2024-09-07T21:33:48.000Z
+401628337103946203,401628337,40162833714,5,3,5:37,California,Auburn,14,7,56,2,10,4,Rush,Jaivian Thomas run for 4 yds to the CAL 48,-0.1536513822659238,2024-09-07T21:33:48.000Z
+401628337103949603,401628337,40162833714,6,3,5:03,California,Auburn,14,7,52,3,6,0,Pass Incompletion,Fernando Mendoza pass incomplete,-0.8299455885918112,2024-09-07T21:33:48.000Z
+401628337103954101,401628337,40162833714,7,3,4:58,California,Auburn,14,7,52,4,6,0,Punt,Lachlan Wilson punt for 50 yds,,2024-09-07T21:33:48.000Z
+401628337103954801,401628337,40162833715,1,3,4:51,Auburn,California,7,14,98,1,10,8,Rush,Payton Thorne run for 8 yds to the AUB 10,0.46251371548973186,2024-09-07T21:33:48.000Z
+401628337103958501,401628337,40162833715,2,3,4:14,Auburn,California,7,14,90,2,2,7,Rush,Damari Alston run for 7 yds to the AUB 17 for a 1ST down,-0.0225139971406625,2024-09-07T21:33:48.000Z
+401628337103966601,401628337,40162833715,3,3,3:33,Auburn,California,7,14,83,1,10,3,Rush,Damari Alston run for 3 yds to the AUB 20,-0.204908473427289,2024-09-07T21:33:48.000Z
+401628337103974201,401628337,40162833715,4,3,2:57,Auburn,California,7,14,80,2,7,-12,Sack,Payton Thorne sacked by Ja'ir Smith for a loss of 12 yards to the AUB 8,-0.6372806886856832,2024-09-07T21:33:48.000Z
+401628337103978701,401628337,40162833715,5,3,2:12,Auburn,California,7,14,92,3,19,7,Rush,Jarquez Hunter run for 7 yds to the AUB 15,0.01798861616425194,2024-09-07T21:33:48.000Z
+401628337103986001,401628337,40162833715,6,3,1:39,Auburn,California,7,14,85,4,12,0,Punt,"Oscar Chapman punt for 41 yds , Mikey Matthews returns for no gain to the CAL 44",,2024-09-07T21:33:48.000Z
+401628337103986901,401628337,40162833716,1,3,1:30,California,Auburn,14,7,56,1,10,2,Rush,Kadarius Calloway run for 2 yds to the CAL 46,-0.6840321413406637,2024-09-07T21:33:48.000Z
+401628337103994201,401628337,40162833716,2,3,0:57,California,Auburn,14,7,54,2,8,-1,Pass Reception,Fernando Mendoza pass complete to Mikey Matthews for a loss of 1 yard to the CAL 45,-1.2032444796897188,2024-09-07T21:33:48.000Z
+401628337103998201,401628337,40162833716,3,3,0:17,California,Auburn,14,7,55,3,9,0,Pass Incompletion,Fernando Mendoza pass incomplete,-0.5919648164575921,2024-09-07T21:33:48.000Z
+401628337103998801,401628337,40162833716,4,3,0:11,California,Auburn,14,7,55,4,9,0,Punt,"Lachlan Wilson punt for 40 yds , Keionte Scott returns for no gain to the AUB 34",,2024-09-07T21:33:48.000Z
+401628337103999302,401628337,40162833717,2,3,0:00,Auburn,California,7,14,66,0,10,0,End Period,End of 3rd Quarter,,2024-09-07T22:05:53.000Z
+401628337103999301,401628337,40162833717,1,3,0:06,Auburn,California,7,14,66,1,10,0,Pass Interception Return,Payton Thorne pass intercepted Ja'ir Smith return for no gain to the AUB 47,-1.6632306102703858,2024-09-07T22:05:53.000Z
+401628337104854201,401628337,40162833718,1,4,14:57,California,Auburn,14,7,47,1,10,6,Rush,Kadarius Calloway run for 6 yds to the AUB 41,0.3204144720350344,2024-09-07T22:09:27.000Z
+401628337104858501,401628337,40162833718,2,4,14:14,California,Auburn,14,7,41,2,4,1,Rush,Kadarius Calloway run for 1 yd to the AUB 40,-0.8195133178110456,2024-09-07T22:09:27.000Z
+401628337104865701,401628337,40162833718,3,4,13:42,California,Auburn,14,7,40,3,3,3,Pass Reception,Fernando Mendoza pass complete to Nyziah Hunter for 3 yds to the AUB 37 for a 1ST down,1.060892455565698,2024-09-07T22:09:27.000Z
+401628337104868901,401628337,40162833718,4,4,13:10,California,Auburn,14,7,37,1,10,0,Pass Incompletion,Fernando Mendoza pass incomplete,-0.7519361608312708,2024-09-07T22:09:27.000Z
+401628337104869401,401628337,40162833718,5,4,13:05,California,Auburn,14,7,37,2,10,0,Pass Incompletion,Fernando Mendoza pass incomplete,-0.965964585356966,2024-09-07T22:09:27.000Z
+401628337104869701,401628337,40162833718,6,4,13:02,California,Auburn,14,7,37,3,10,0,Pass Incompletion,Fernando Mendoza pass incomplete,-1.0141995897501808,2024-09-07T22:09:27.000Z
+401628337104874401,401628337,40162833718,7,4,12:55,California,Auburn,14,7,37,4,10,55,Field Goal Missed,Ryan Coe 55 yd FG MISSED,,2024-09-07T22:13:27.000Z
+401628337104874601,401628337,40162833719,1,4,12:53,Auburn,California,7,14,63,1,10,7,Rush,Jarquez Hunter run for 7 yds to the AUB 44,0.7113806413121412,2024-09-07T22:09:27.000Z
+401628337104877801,401628337,40162833719,2,4,12:21,Auburn,California,7,14,56,2,3,-8,Fumble Recovery (Opponent),"Jarquez Hunter run for a loss of 8 yards to the AUB 36 Jarquez Hunter fumbled, recovered by CAL Craig Woodson C. Woodson return for 0 yds",-2.660869847734391,2024-09-07T22:09:27.000Z
+401628337104878801,401628337,40162833720,1,4,12:11,California,Auburn,14,7,36,1,10,4,Rush,Jaivian Thomas run for 4 yds to the AUB 32,-0.0714896390997507,2024-09-07T22:09:27.000Z
+401628337104887201,401628337,40162833720,2,4,11:27,California,Auburn,21,7,32,2,6,32,Rushing Touchdown,Jaivian Thomas run for 32 yds for a TD (Ryan Coe KICK),3.0822677341135467,2024-09-07T22:19:37.000Z
+401628337104887601,401628337,40162833721,2,4,11:23,Auburn,California,7,21,75,1,10,3,Rush,Payton Thorne run for 3 yds to the AUB 28,-0.2957674139440157,2024-09-07T22:09:27.000Z
+401628337104895101,401628337,40162833721,3,4,10:48,Auburn,California,7,21,72,2,7,0,Pass Incompletion,Payton Thorne pass incomplete,-0.5594317282120231,2024-09-07T22:09:27.000Z
+401628337104895601,401628337,40162833721,4,4,10:43,Auburn,California,7,21,72,3,7,12,Pass Reception,Payton Thorne pass complete to Robert Lewis for 12 yds to the AUB 40 for a 1ST down,2.176053657733685,2024-09-07T22:09:27.000Z
+401628337104897801,401628337,40162833721,5,4,10:21,Auburn,California,7,21,60,1,10,0,Pass Incompletion,Payton Thorne pass incomplete,-1.1247712359915258,2024-09-07T22:09:27.000Z
+401628337104887203,401628337,40162833721,1,4,11:27,California,Auburn,21,7,65,0,0,0,Kickoff,Ryan Coe kickoff for 65 yds for a touchback,,2024-09-07T22:24:37.000Z
+401628337104898201,401628337,40162833721,6,4,10:17,Auburn,California,7,21,60,2,10,7,Rush,Payton Thorne run for 7 yds to the AUB 47,0.5310768366439405,2024-09-07T22:09:27.000Z
+401628337104904701,401628337,40162833721,7,4,9:52,Auburn,California,7,21,53,3,3,13,Pass Reception,Payton Thorne pass complete to Malcolm Simmons for 13 yds to the CAL 40 for a 1ST down,2.16154585955392,2024-09-07T22:09:27.000Z
+401628337104906901,401628337,40162833721,8,4,9:30,Auburn,California,7,21,40,1,10,2,Pass Reception,Payton Thorne pass complete to Damari Alston for 2 yds to the CAL 38,-0.4549295700351248,2024-09-07T22:09:27.000Z
+401628337104914701,401628337,40162833721,9,4,8:52,Auburn,California,7,21,38,2,8,15,Penalty,"California Penalty, Targeting on HARRIS, Marcus enforced (Marcus Harris) to the CAL 18 for a 1ST down",,2024-09-07T22:09:27.000Z
+401628337104918501,401628337,40162833721,10,4,8:14,Auburn,California,7,21,18,1,10,9,Rush,Payton Thorne run for 9 yds to the CAL 9,0.619457208414883,2024-09-07T22:09:27.000Z
+401628337104926302,401628337,40162833721,11,4,7:36,Auburn,California,7,21,9,2,1,7,Penalty,"(07:36) THORNE, Payton pass to the left incomplete intended for COLEMAN, Cam thrown to the CAL0, clock 07:35. PENALTY CAL Pass Interference on WILLIAMS, Nohl enforced at the spot of the foul for 7 yards to the CAL2 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:09:27.000Z
+401628337104926401,401628337,40162833721,12,4,7:35,Auburn,California,7,21,2,1,2,-5,Penalty,"Auburn Penalty, False Start (Connor Lew) to the CAL 7",,2024-09-07T22:32:10.000Z
+401628337104926601,401628337,40162833721,13,4,7:33,Auburn,California,7,21,7,1,7,0,Rush,Jarquez Hunter run for no gain to the CAL 7,-0.410393837690526,2024-09-07T22:09:27.000Z
+401628337104934101,401628337,40162833721,14,4,6:58,Auburn,California,7,21,7,2,7,0,Pass Reception,Payton Thorne pass complete to Jarquez Hunter for no gain to the CAL 7,-0.277446160702615,2024-09-07T22:09:27.000Z
+401628337104938601,401628337,40162833721,15,4,6:13,Auburn,California,7,21,7,3,7,5,Penalty,"(06:13) THORNE, Payton pass to the right incomplete intended for LAMBERT-SMITH, KeAndre broken up by WILLIAMS, Nohl at the CAL0, clock 06:10. PENALTY CAL Pass Interference on WILLIAMS, Nohl enforced at the spot of the foul for 5 yards to the CAL2 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T23:02:21.000Z
+401628337104938602,401628337,40162833721,16,4,6:13,Auburn,California,7,21,7,3,7,5,Penalty,"(06:13) THORNE, Payton pass to the left incomplete intended for LAMBERT-SMITH, KeAndre thrown to the CAL0, clock 06:10. PENALTY CAL Pass Interference on WILLIAMS, Nohl enforced at the spot of the foul for 5 yards to the CAL2 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:09:27.000Z
+401628337104939301,401628337,40162833722,1,4,6:06,Auburn,California,14,21,2,1,2,2,Rushing Touchdown,Payton Thorne run for 2 yds for a TD (Towns McGough KICK),1.213235297672098,2024-09-07T22:36:34.000Z
+401628337104939601,401628337,40162833723,2,4,6:03,California,Auburn,21,20,75,1,10,-3,Rush,Jaydn Ott run for a loss of 3 yards to the CAL 22,-0.9562833890771465,2024-09-07T23:02:21.000Z
+401628337104947901,401628337,40162833723,3,4,5:20,California,Auburn,21,20,78,2,13,7,Pass Reception,Fernando Mendoza pass complete to Jaivian Thomas for 7 yds to the CAL 29,0.19108987722715298,2024-09-07T23:02:21.000Z
+401628337104955801,401628337,40162833723,4,4,4:41,California,Auburn,21,20,71,3,6,10,Rush,Fernando Mendoza run for 10 yds to the CAL 39 for a 1ST down,1.987932595106449,2024-09-07T23:02:21.000Z
+401628337104957901,401628337,40162833723,5,4,4:20,California,Auburn,21,20,61,1,10,1,Rush,Kadarius Calloway run for 1 yd to the CAL 40,-0.9002974178644043,2024-09-07T23:02:21.000Z
+401628337104965501,401628337,40162833723,6,4,3:44,California,Auburn,21,20,60,2,9,14,Rush,Chandler Rogers run for 14 yds to the AUB 46 for a 1ST down,2.212026046194806,2024-09-07T23:02:21.000Z
+401628337104969701,401628337,40162833723,7,4,3:02,California,Auburn,21,20,46,1,10,2,Rush,Kadarius Calloway run for 2 yds to the AUB 44,-0.5661525320140282,2024-09-07T23:02:21.000Z
+401628337104974001,401628337,40162833723,8,4,2:59,California,Auburn,21,20,44,2,8,0,Timeout,"Timeout Auburn, clock 02:59",,2024-09-07T22:47:13.000Z
+401628337104939303,401628337,40162833723,1,4,6:06,Auburn,California,20,21,65,0,0,0,Kickoff,Towns McGough kickoff for 65 yds for a touchback,,2024-09-07T22:36:34.000Z
+401628337104974201,401628337,40162833723,9,4,2:57,California,Auburn,21,20,44,2,8,3,Rush,Kadarius Calloway run for 3 yds to the AUB 41,-0.3859563000372575,2024-09-07T23:02:21.000Z
+401628337104974701,401628337,40162833723,11,4,2:52,California,Auburn,21,20,41,3,5,0,Rush,Chandler Rogers run for no gain to the AUB 41,-1.0835035838804392,2024-09-07T23:02:21.000Z
+401628337104975301,401628337,40162833723,14,4,2:46,California,Auburn,21,20,46,4,10,0,Punt,Lachlan Wilson punt for 46 yds for a touchback,,2024-09-07T23:02:21.000Z
+401628337104975003,401628337,40162833723,13,4,2:49,California,Auburn,21,20,46,4,10,0,Timeout,"Timeout Auburn, clock 02:49",,2024-09-07T22:49:05.000Z
+401628337104975002,401628337,40162833723,12,4,2:49,California,Auburn,21,20,41,4,5,-5,Penalty,"California Penalty, False Start (Ryan Yaites) to the AUB 46",,2024-09-07T22:49:05.000Z
+401628337104974501,401628337,40162833723,10,4,2:54,California,Auburn,21,20,41,3,5,0,Timeout,"Timeout Auburn, clock 02:54",,2024-09-07T22:47:21.000Z
+401628337104976201,401628337,40162833724,1,4,2:37,Auburn,California,20,21,80,1,10,12,Pass Reception,Payton Thorne pass complete to Cam Coleman for 12 yds to the AUB 32 for a 1ST down,0.8667470799632433,2024-09-07T23:02:21.000Z
+401628337104978401,401628337,40162833724,2,4,2:15,Auburn,California,20,21,68,1,10,0,Pass Interception Return,Payton Thorne pass intercepted Nohl Williams return for no gain to the CAL 44,-1.4806892843581405,2024-09-07T23:02:21.000Z
+401628337104978801,401628337,40162833725,1,4,2:11,California,Auburn,21,20,56,1,10,-3,Rush,Kadarius Calloway run for a loss of 3 yards to the CAL 41,-1.764260484993918,2024-09-07T23:02:21.000Z
+401628337104988301,401628337,40162833725,4,4,1:16,California,Auburn,21,20,52,3,6,1,Rush,Jaivian Thomas run for 1 yd to the CAL 49,-0.6863650892001818,2024-09-07T23:02:21.000Z
+401628337104984501,401628337,40162833725,3,4,1:54,California,Auburn,21,20,59,2,13,7,Rush,Jaivian Thomas run for 7 yds to the CAL 48,0.4493624144621124,2024-09-07T23:02:21.000Z
+401628337104979901,401628337,40162833725,2,4,2:00,California,Auburn,21,20,59,2,13,0,Timeout,"Timeout Auburn, clock 02:00",,2024-09-07T22:55:26.000Z
+401628337104996501,401628337,40162833725,5,4,0:34,California,Auburn,21,20,51,4,5,0,Timeout,"Timeout California, clock 00:34",,2024-09-07T22:59:20.000Z
+401628337104996701,401628337,40162833725,6,4,0:32,California,Auburn,21,20,51,4,5,0,Punt,Lachlan Wilson punt for 51 yds for a touchback,,2024-09-07T23:02:21.000Z
+401628337104997301,401628337,40162833726,1,4,0:26,Auburn,California,20,21,80,1,10,0,Pass Interception Return,Payton Thorne pass intercepted Lu-Magia Hearns III return for no gain to the AUB 45,-0.6139422043948972,2024-09-07T23:02:21.000Z
+401628337104997901,401628337,40162833727,1,4,0:20,California,Auburn,21,20,45,1,10,-2,Rush,"(00:20) Kneel down by MENDOZA, Fernando at AUB47 (team loss of 2), clock 00:00.",-1.456436989817803,2024-09-07T23:02:21.000Z
+401628337104999902,401628337,40162833727,2,4,0:00,California,Auburn,21,14,47,0,10,0,End of Game,End of 4th Quarter,,2024-09-07T23:02:07.000Z

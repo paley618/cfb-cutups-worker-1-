@@ -1,0 +1,169 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628605101849910,401628605,4016286051,3,1,15:00,Hampton,Virginia Union,0,0,70,1,10,4,Rush,Elijah Burris run for 4 yds to the HAMP 34,-0.1399034934597019,2024-09-07T22:05:56.000Z
+401628605101849908,401628605,4016286051,2,1,15:00,Hampton,Virginia Union,0,0,80,1,10,10,Rush,Chris Zellous run for 10 yds to the HAMP 30 for a 1ST down,0.6932712767007594,2024-09-07T22:05:56.000Z
+401628605101849905,401628605,4016286051,1,1,15:00,Virginia Union,Hampton,0,0,65,0,0,18,Kickoff Return (Offense),"Brady Myers kickoff for 63 yds , Brennan Ridley return for 18 yds to the HAMP 20",,2024-09-07T22:05:56.000Z
+401628605101849913,401628605,4016286051,4,1,15:00,Hampton,Virginia Union,0,0,66,2,6,5,Pass Reception,Chris Zellous pass complete to Brennan Ridley for 5 yds to the HAMP 39,0.1000348562736503,2024-09-07T22:05:56.000Z
+401628605101849915,401628605,4016286051,5,1,15:00,Hampton,Virginia Union,0,0,61,3,1,3,Rush,Elijah Burris run for 3 yds to the HAMP 42 for a 1ST down,1.1709519440510796,2024-09-07T22:05:56.000Z
+401628605101849917,401628605,4016286051,6,1,15:00,Hampton,Virginia Union,0,0,58,1,10,4,Rush,Elijah Burris run for 4 yds to the HAMP 46,-0.1665264279012551,2024-09-07T22:05:56.000Z
+401628605101849919,401628605,4016286051,7,1,15:00,Hampton,Virginia Union,0,0,54,2,6,0,Rush,Chris Zellous run for no gain to the HAMP 46,-1.1287444411219418,2024-09-07T22:09:12.000Z
+401628605101849922,401628605,4016286051,8,1,15:00,Hampton,Virginia Union,0,0,54,3,6,5,Rush,Elijah Burris run for 5 yds to the VU 49,0.067008996457151,2024-09-07T22:09:12.000Z
+401628605101849925,401628605,4016286051,9,1,15:00,Hampton,Virginia Union,0,0,49,4,1,2,Rush,Elijah Burris run for 2 yds to the VU 47 for a 1ST down,2.176762843338931,2024-09-07T22:09:12.000Z
+401628605101849927,401628605,4016286051,10,1,15:00,Hampton,Virginia Union,0,0,47,1,10,4,Pass Reception,Chris Zellous pass complete to Brennan Ridley for 4 yds to the VU 43,-0.126781416396501,2024-09-07T22:12:54.000Z
+401628605101849930,401628605,4016286051,11,1,15:00,Hampton,Virginia Union,0,0,43,2,6,3,Rush,Elijah Burris run for 3 yds to the VU 40,-0.3723174293795102,2024-09-07T22:09:12.000Z
+401628605101849933,401628605,4016286051,12,1,15:00,Hampton,Virginia Union,0,0,40,3,3,3,Rush,Chris Zellous run for 3 yds to the VU 37 for a 1ST down,1.060892455565698,2024-09-07T22:09:12.000Z
+401628605101849935,401628605,4016286051,13,1,15:00,Hampton,Virginia Union,0,0,37,1,10,-1,Rush,Elijah Burris run for a loss of 1 yard to the VU 38,-0.9402299217519198,2024-09-07T22:12:54.000Z
+401628605101849937,401628605,4016286051,14,1,15:00,Hampton,Virginia Union,0,0,38,2,11,8,Pass Reception,Chris Zellous pass complete to Dorrian Moultrie for 8 yds to the VU 30,0.609394028292492,2024-09-07T22:12:54.000Z
+401628605101849938,401628605,4016286051,15,1,15:00,Hampton,Virginia Union,0,0,30,3,3,0,Pass Incompletion,Chris Zellous pass incomplete,-0.8947280511358553,2024-09-07T22:12:54.000Z
+401628605101925701,401628605,4016286051,16,1,7:42,Hampton,Virginia Union,0,0,30,4,3,0,Pass Incompletion,Chris Zellous pass incomplete,-2.7230274239279737,2024-09-07T22:15:01.000Z
+401628605101925703,401628605,4016286052,1,1,7:42,Virginia Union,Hampton,0,0,70,1,10,2,Rush,Jada Byers run for 2 yds to the VU 32,-0.547828113258845,2024-09-07T22:16:16.000Z
+401628605101925704,401628605,4016286052,2,1,7:42,Virginia Union,Hampton,0,0,68,2,8,4,Rush,Larry Hackey run for 4 yds to the VU 36,-0.1075778401787364,2024-09-07T22:16:16.000Z
+401628605101925706,401628605,4016286052,4,1,7:42,Virginia Union,Hampton,0,0,69,3,9,6,Rush,RJ Rosales run for 6 yds to the VU 37,0.11945609833330284,2024-09-07T22:16:16.000Z
+401628605101925705,401628605,4016286052,3,1,7:42,Virginia Union,Hampton,0,0,64,3,4,-5,Penalty,"Virginia Union Penalty, False Start (Mathias Nielsen) to the VU 31",,2024-09-07T22:16:16.000Z
+401628605101948701,401628605,4016286052,5,1,5:12,Virginia Union,Hampton,0,0,63,4,3,7,Punt,"Marvin Holmes punt for 48 yds , Dorrian Moultrie returns for 7 yds to the HAMP 22",,2024-09-07T22:18:38.000Z
+401628605101948703,401628605,4016286053,1,1,5:12,Hampton,Virginia Union,0,0,78,1,10,39,Pass Reception,Chris Zellous pass complete to Brennan Ridley for 39 yds to the VU 39 for a 1ST down,3.131546247409571,2024-09-07T22:18:41.000Z
+401628605101985701,401628605,4016286053,7,1,1:42,Hampton,Virginia Union,0,0,24,4,5,0,Timeout,"Timeout Hampton, clock 01:42",,2024-09-07T22:26:47.000Z
+401628605101987101,401628605,4016286053,10,1,1:28,Hampton,Virginia Union,6,0,12,1,10,12,Rushing Touchdown,Chris Zellous run for 12 yds for a TD (Two-Point Conversion failed),2.5300945420359255,2024-09-07T22:30:13.000Z
+401628605101985702,401628605,4016286053,8,1,1:42,Hampton,Virginia Union,0,0,24,3,5,0,Pass Incompletion,Chris Zellous pass incomplete,-0.7342260893461016,2024-09-07T22:28:42.000Z
+401628605101948704,401628605,4016286053,2,1,5:12,Hampton,Virginia Union,0,0,39,1,10,-2,Rush,Elijah Burris run for a loss of 2 yards to the VU 41,-1.2238472477956,2024-09-07T22:18:41.000Z
+401628605101948705,401628605,4016286053,3,1,5:12,Hampton,Virginia Union,0,0,41,2,12,6,Rush,Elijah Burris run for 6 yds to the VU 35,0.271478186100234,2024-09-07T22:18:41.000Z
+401628605101948706,401628605,4016286053,4,1,5:12,Hampton,Virginia Union,0,0,35,3,6,6,Rush,Chris Zellous run for 6 yds to the VU 29 for a 1ST down,1.304506432028805,2024-09-07T22:18:41.000Z
+401628605101948707,401628605,4016286053,5,1,5:12,Hampton,Virginia Union,0,0,29,1,10,4,Rush,Elijah Burris run for 4 yds to the VU 25,-0.046112472291792,2024-09-07T22:18:41.000Z
+401628605101948708,401628605,4016286053,6,1,5:12,Hampton,Virginia Union,0,0,25,2,6,1,Rush,Elijah Burris run for 1 yd to the VU 24,-0.4368962505898234,2024-09-07T22:18:41.000Z
+401628605101985704,401628605,4016286053,9,1,1:42,Hampton,Virginia Union,0,0,24,4,5,12,Penalty,"ZELLOUS, Chris pass deep to the right incomplete intended for GRAY, Kymari thrown to the VU0. PENALTY VU Pass Interference on MANLEY, Raylyn enforced half the distance from the goal, 12 yards to the VU12 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:28:42.000Z
+401628605101987103,401628605,4016286054,1,1,1:28,Hampton,Virginia Union,6,0,65,0,0,0,Kickoff,Brian Csehoski kickoff for 39 yds fair catch by Jada Byers at the VU 25,,2024-09-07T22:30:47.000Z
+401628605101999902,401628605,4016286054,5,1,0:00,Virginia Union,Hampton,0,6,26,0,5,14,End Period,End of 1st Quarter,,2024-09-07T22:35:27.000Z
+401628605101987105,401628605,4016286054,2,1,1:28,Virginia Union,Hampton,0,6,74,1,10,43,Pass Reception,RJ Rosales pass complete to Jr. Reginald Vick for 43 yds to the HAMP 31 for a 1ST down,3.164830142388018,2024-09-07T22:30:47.000Z
+401628605101987106,401628605,4016286054,3,1,1:28,Virginia Union,Hampton,0,6,31,1,10,5,Rush,Jada Byers run for 5 yds to the HAMP 26,0.0783240996557135,2024-09-07T22:30:47.000Z
+401628605101999901,401628605,4016286054,4,1,0:00,Virginia Union,Hampton,0,6,26,2,5,14,Pass Reception,RJ Rosales pass complete to Kalen Carver for 14 yds to the HAMP 12 for a 1ST down,0.233527528381309,2024-09-07T22:35:27.000Z
+401628605102849902,401628605,4016286054,6,2,15:00,Virginia Union,Hampton,0,6,12,1,10,2,Rush,Jada Byers run for 2 yds to the HAMP 10,-0.1686350677656265,2024-09-07T22:38:05.000Z
+401628605102849905,401628605,4016286054,7,2,15:00,Virginia Union,Hampton,0,6,10,2,8,7,Rush,Jada Byers run for 7 yds to the HAMP 3,0.226550545412613,2024-09-07T22:38:05.000Z
+401628605102849908,401628605,4016286054,8,2,15:00,Virginia Union,Hampton,0,6,3,3,1,2,Penalty,"Hampton Penalty, Illegal Substitution (Darius Gooden) to the HAMP 1 for a 1ST down",,2024-09-07T22:39:18.000Z
+401628605102849910,401628605,4016286054,9,2,15:00,Virginia Union,Hampton,0,6,1,1,1,0,Rush,RJ Rosales run for no gain to the HAMP 1,-0.962330962352563,2024-09-07T22:39:18.000Z
+401628605102869201,401628605,4016286054,10,2,13:07,Virginia Union,Hampton,7,6,1,2,1,1,Rushing Touchdown,Jada Byers run for 1 yd for a TD (Brady Myers KICK),1.900352237473006,2024-09-07T22:40:27.000Z
+401628605102869203,401628605,4016286055,1,2,13:07,Virginia Union,Hampton,7,6,65,0,0,35,Kickoff,"Brady Myers kickoff for 40 yds fair catch by Jada Byers at the HAMP 25 Virginia Union Penalty, Offsides (Jr. Reginald Vick) to the HAMP 30",,2024-09-07T22:43:01.000Z
+401628605102928401,401628605,4016286055,15,2,7:15,Hampton,Virginia Union,9,7,20,4,6,37,Field Goal Good,Brian Csehoski 37 yd FG GOOD,,2024-09-07T22:52:12.000Z
+401628605102869210,401628605,4016286055,7,2,13:07,Hampton,Virginia Union,6,7,45,2,5,2,Rush,Elijah Burris run for 2 yds to the VU 43,-0.6449448318989308,2024-09-07T22:43:01.000Z
+401628605102869209,401628605,4016286055,6,2,13:07,Hampton,Virginia Union,6,7,50,1,10,5,Pass Reception,Chris Zellous pass complete to Jaden Wimberly for 5 yds to the VU 45,0.1018198743557602,2024-09-07T22:43:01.000Z
+401628605102907902,401628605,4016286055,9,2,9:20,Hampton,Virginia Union,6,7,43,3,3,2,Rush,Chris Zellous run for 2 yds to the VU 41,-0.6634334699842092,2024-09-07T22:47:40.000Z
+401628605102907903,401628605,4016286055,10,2,9:20,Hampton,Virginia Union,6,7,41,4,1,4,Rush,Elijah Burris run for 4 yds to the VU 37 for a 1ST down,1.9965617281720096,2024-09-07T22:47:40.000Z
+401628605102907904,401628605,4016286055,11,2,9:20,Hampton,Virginia Union,6,7,37,1,10,13,Rush,Elijah Burris run for 13 yds to the VU 24 for a 1ST down,0.3699706828697682,2024-09-07T22:49:17.000Z
+401628605102907905,401628605,4016286055,12,2,9:20,Hampton,Virginia Union,6,7,24,1,10,0,Pass Incompletion,Chris Zellous pass incomplete,-0.4346450377339437,2024-09-07T22:49:17.000Z
+401628605102907906,401628605,4016286055,13,2,9:20,Hampton,Virginia Union,6,7,24,2,10,4,Rush,Elijah Burris run for 4 yds to the VU 20,-0.0634512340737333,2024-09-07T22:49:17.000Z
+401628605102907907,401628605,4016286055,14,2,9:20,Hampton,Virginia Union,6,7,20,3,6,0,Pass Incompletion,Chris Zellous pass incomplete,-0.629075287812727,2024-09-07T22:49:17.000Z
+401628605102907901,401628605,4016286055,8,2,9:20,Hampton,Virginia Union,6,7,41,4,1,0,Timeout,"Timeout Virginia Union, clock 09:20",,2024-09-07T22:47:40.000Z
+401628605102869205,401628605,4016286055,2,2,13:07,Hampton,Virginia Union,6,7,70,1,10,8,Pass Reception,Chris Zellous pass complete to Brennan Ridley for 8 yds to the HAMP 38,0.9979151532889787,2024-09-07T22:43:01.000Z
+401628605102869206,401628605,4016286055,3,2,13:07,Hampton,Virginia Union,6,7,62,2,2,2,Rush,Elijah Burris run for 2 yds to the HAMP 40 for a 1ST down,-0.0620292385283107,2024-09-07T22:43:01.000Z
+401628605102869207,401628605,4016286055,4,2,13:07,Hampton,Virginia Union,6,7,60,1,10,2,Rush,Elijah Burris run for 2 yds to the HAMP 42,-0.6799841752385892,2024-09-07T22:43:01.000Z
+401628605102869208,401628605,4016286055,5,2,13:07,Hampton,Virginia Union,6,7,58,2,8,8,Pass Reception,Chris Zellous pass complete to Brennan Ridley for 8 yds to the 50 yard line for a 1ST down,1.5954728472608917,2024-09-07T22:43:01.000Z
+401628605102929106,401628605,4016286056,3,2,7:08,Virginia Union,Hampton,7,9,81,1,20,3,Rush,Jada Byers run for 3 yds to the VU 22,-0.08355171798660876,2024-09-07T22:55:39.000Z
+401628605102929107,401628605,4016286056,4,2,7:08,Virginia Union,Hampton,7,9,78,2,17,0,Pass Incompletion,RJ Rosales pass incomplete,-0.1383588163273055,2024-09-07T22:55:39.000Z
+401628605102929108,401628605,4016286056,5,2,7:08,Virginia Union,Hampton,7,9,78,3,17,-4,Sack,RJ Rosales sacked by Tre Everett III for a loss of 4 yards to the VU 18,-0.08519787453902074,2024-09-07T22:55:39.000Z
+401628605102948801,401628605,4016286056,6,2,5:11,Virginia Union,Hampton,7,9,82,4,21,0,Punt,"Marvin Holmes punt for 43 yds, downed at the HAMP 39",,2024-09-07T23:00:51.000Z
+401628605102929104,401628605,4016286056,2,2,7:08,Virginia Union,Hampton,7,9,71,1,10,-10,Penalty,"BYERS, Jada rush to the right for a gain of 51 yards to the HU20 (TEAM), out of bounds. PENALTY VU Holding on CARVER, Kalen enforced 10 yards from the VU29 to the VU19 [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:55:39.000Z
+401628605102929101,401628605,4016286056,1,2,7:08,Hampton,Virginia Union,9,7,65,0,0,24,Kickoff Return (Offense),"Brian Csehoski kickoff for 60 yds , Larry Hackey return for 24 yds to the VU 29",,2024-09-07T22:55:39.000Z
+401628605102948804,401628605,4016286057,1,2,5:11,Hampton,Virginia Union,9,7,66,2,15,0,Pass Incompletion,Chris Zellous pass incomplete,-0.37190148232902054,2024-09-07T23:02:34.000Z
+401628605102948805,401628605,4016286057,2,2,5:11,Hampton,Virginia Union,9,7,66,3,15,-1,Rush,Chris Zellous run for a loss of 1 yard to the HAMP 33,-0.1994763171182914,2024-09-07T23:02:34.000Z
+401628605102948808,401628605,4016286057,3,2,5:11,Hampton,Virginia Union,9,7,61,1,10,-5,Sack,Chris Zellous sacked by Mike Jones for a loss of 5 yards to the HAMP 34,-1.8646033077383704,2024-09-07T23:02:34.000Z
+401628605102965901,401628605,4016286057,4,2,3:40,Hampton,Virginia Union,9,7,67,4,16,0,Punt,Brett Starling punt for 30 yds,,2024-09-07T23:04:06.000Z
+401628605102965903,401628605,4016286058,1,2,3:40,Virginia Union,Hampton,7,9,63,1,10,0,Pass Incompletion,RJ Rosales pass incomplete,-1.065701080215459,2024-09-07T23:04:45.000Z
+401628605102965904,401628605,4016286058,2,2,3:40,Virginia Union,Hampton,7,9,63,2,10,3,Rush,Jada Byers run for 3 yds to the VU 40,-0.2837645034387206,2024-09-07T23:04:45.000Z
+401628605102965907,401628605,4016286058,4,2,3:40,Virginia Union,Hampton,7,9,45,1,10,31,Rush,Jada Byers run for 31 yds to the HAMP 14 for a 1ST down,0.9282309098879865,2024-09-07T23:04:45.000Z
+401628605102979901,401628605,4016286058,5,2,2:00,Virginia Union,Hampton,7,9,9,2,5,0,Timeout,"Timeout Hampton, clock 02:00",,2024-09-07T23:08:23.000Z
+401628605102965906,401628605,4016286058,3,2,3:40,Virginia Union,Hampton,7,9,60,3,7,15,Penalty,"ROSALES, RJ pass short to the right incomplete broken up by WHALEY, Jayden at the VU45. PENALTY HU Face mask on ROSS, Ahmad enforced 15 yards from the VU40 to the HU45 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T23:04:45.000Z
+401628605102984202,401628605,4016286058,8,2,1:57,Virginia Union,Hampton,7,9,9,2,5,0,Pass Incompletion,RJ Rosales pass incomplete,-0.348137992491187,2024-09-07T23:12:47.000Z
+401628605102979902,401628605,4016286058,6,2,2:00,Virginia Union,Hampton,7,9,14,1,10,5,Rush,Jada Byers run for 5 yds to the HAMP 9,0.0745432474784075,2024-09-07T23:10:50.000Z
+401628605102984201,401628605,4016286058,7,2,1:57,Virginia Union,Hampton,7,9,9,3,5,0,Timeout,"Timeout Virginia Union, clock 01:57",,2024-09-07T23:11:46.000Z
+401628605102985202,401628605,4016286058,9,2,1:47,Virginia Union,Hampton,7,9,6,4,2,0,Timeout,"Timeout Hampton, clock 01:47",,2024-09-07T23:13:55.000Z
+401628605102985701,401628605,4016286058,11,2,1:42,Virginia Union,Hampton,14,9,6,4,2,6,Rushing Touchdown,Jada Byers run for 6 yds for a TD (Brady Myers KICK),2.929614624299452,2024-09-07T23:15:15.000Z
+401628605102985203,401628605,4016286058,10,2,1:47,Virginia Union,Hampton,7,9,9,3,5,3,Rush,RJ Rosales run for 3 yds to the HAMP 6,-0.107736704107591,2024-09-07T23:13:55.000Z
+401628605102986401,401628605,4016286059,1,2,1:35,Virginia Union,Hampton,14,9,65,0,0,18,Kickoff Return (Offense),"Brady Myers kickoff for 59 yds , Dorrian Moultrie return for 18 yds to the HAMP 24",,2024-09-07T23:17:52.000Z
+401628605102998404,401628605,4016286059,8,2,0:15,Hampton,Virginia Union,9,14,7,1,7,0,Pass Incompletion,Malcolm Mays pass incomplete,-0.410393837690526,2024-09-07T23:23:25.000Z
+401628605102998402,401628605,4016286059,6,2,0:15,Hampton,Virginia Union,9,14,37,1,10,30,Pass Reception,Malcolm Mays pass complete to Dorrian Moultrie for 30 yds to the VU 7 for a 1ST down,0.8546540011495322,2024-09-07T23:22:39.000Z
+401628605102986406,401628605,4016286059,5,2,1:35,Hampton,Virginia Union,9,14,48,2,10,11,Pass Reception,Malcolm Mays pass complete to Dorrian Moultrie for 11 yds to the VU 37 for a 1ST down,1.7091251195507784,2024-09-07T23:21:23.000Z
+401628605102986405,401628605,4016286059,4,2,1:35,Hampton,Virginia Union,9,14,48,1,10,0,Pass Incompletion,Malcolm Mays pass incomplete,-1.0742999147475647,2024-09-07T23:17:52.000Z
+401628605102986404,401628605,4016286059,3,2,1:35,Hampton,Virginia Union,9,14,62,1,10,14,Pass Reception,Malcolm Mays pass complete to Kymari Gray for 14 yds to the VU 48 for a 1ST down,1.2667698043995337,2024-09-07T23:17:52.000Z
+401628605102986403,401628605,4016286059,2,2,1:35,Hampton,Virginia Union,9,14,76,1,10,14,Pass Reception,Malcolm Mays pass complete to Brennan Ridley for 14 yds to the HAMP 38 for a 1ST down,1.1926147027363,2024-09-07T23:17:52.000Z
+401628605102998405,401628605,4016286059,9,2,0:15,Hampton,Virginia Union,9,14,7,2,7,0,Pass Incompletion,Malcolm Mays pass incomplete,-0.277446160702615,2024-09-07T23:23:25.000Z
+401628605102999903,401628605,4016286059,11,2,0:00,Virginia Union,Hampton,14,9,70,0,10,0,End of Half,End of 2nd Quarter,,2024-09-07T23:26:37.000Z
+401628605102999801,401628605,4016286059,10,2,0:01,Hampton,Virginia Union,12,14,7,3,7,24,Field Goal Good,Brian Csehoski 24 yd FG GOOD,,2024-09-07T23:24:53.000Z
+401628605102998403,401628605,4016286059,7,2,0:15,Hampton,Virginia Union,9,14,7,1,10,0,Timeout,"Timeout Hampton, clock 00:15",,2024-09-07T23:22:39.000Z
+401628605103854304,401628605,40162860510,4,3,14:56,Virginia Union,Hampton,14,12,76,2,8,7,Rush,Jada Byers run for 7 yds to the VU 31,0.3844179406765926,2024-09-07T23:50:13.000Z
+401628605103854305,401628605,40162860510,5,3,14:56,Virginia Union,Hampton,14,12,69,3,1,12,Rush,Jada Byers run for 12 yds to the VU 43 for a 1ST down,1.8193585673927801,2024-09-07T23:50:13.000Z
+401628605103869901,401628605,40162860510,6,3,13:00,Virginia Union,Hampton,21,12,57,1,10,57,Passing Touchdown,Reginald Vick Jr 57 Yd pass from RJ Rosales (Brady Myers Kick),4.4653166975113265,2024-09-07T23:55:07.000Z
+401628605103854301,401628605,40162860510,2,3,14:56,Hampton,Virginia Union,12,14,65,0,0,17,Kickoff Return (Offense),"Brian Csehoski kickoff for 60 yds , Larry Hackey return for 17 yds to the VU 22",,2024-09-07T00:00:00.000Z
+401628605102999802,401628605,40162860510,1,2,0:01,Hampton,Virginia Union,12,14,65,0,0,0,Kickoff Return (Offense),"Brian Csehoski kickoff for 35 yds , Steven McKinney return for no gain to the VU 30",,2024-09-07T23:26:12.000Z
+401628605103854303,401628605,40162860510,3,3,14:56,Virginia Union,Hampton,14,12,78,1,10,2,Rush,Jada Byers run for 2 yds to the VU 24,-0.3971084032395771,2024-09-07T00:00:00.000Z
+401628605103869903,401628605,40162860511,1,3,13:00,Virginia Union,Hampton,21,12,65,0,0,0,Kickoff,Brady Myers kickoff for 65 yds for a touchback,,2024-09-07T23:51:48.000Z
+401628605103869905,401628605,40162860511,2,3,13:00,Hampton,Virginia Union,12,21,75,1,10,3,Rush,Elijah Burris run for 3 yds to the HAMP 28,-0.2957674139440157,2024-09-07T23:55:07.000Z
+401628605103869906,401628605,40162860511,3,3,13:00,Hampton,Virginia Union,12,21,72,2,7,0,Pass Incompletion,Chris Zellous pass incomplete,-0.5594317282120231,2024-09-07T23:55:07.000Z
+401628605103869907,401628605,40162860511,4,3,13:00,Hampton,Virginia Union,12,21,72,3,7,0,Pass Incompletion,Chris Zellous pass incomplete,-0.26587881160037785,2024-09-07T23:55:07.000Z
+401628605103869909,401628605,40162860511,5,3,13:00,Hampton,Virginia Union,12,21,72,4,7,5,Penalty,"STARLING, Brett punt 32 yards to the VU40, MAYO, Jalen returned 9 yards to the VU49 (WHALEY, Jayden). PENALTY VU Running Into the kicker enforced 5 yards from the HU28 to the HU33 [FAKE PUNT]. NO PLAY (replay the down).",,2024-09-07T23:55:07.000Z
+401628605103884101,401628605,40162860511,6,3,11:58,Hampton,Virginia Union,12,21,67,4,2,7,Punt,"Brett Starling punt for 42 yds , Jada Byers returns for 7 yds to the VU 32",,2024-09-07T23:58:36.000Z
+401628605103884103,401628605,40162860512,1,3,11:58,Virginia Union,Hampton,21,12,68,1,10,5,Rush,Jada Byers run for 5 yds to the VU 37,0.1056805473653828,2024-09-07T23:58:36.000Z
+401628605103884104,401628605,40162860512,2,3,11:58,Virginia Union,Hampton,21,12,63,2,5,2,Rush,Jada Byers run for 2 yds to the VU 39,-0.6141494630541224,2024-09-07T23:58:36.000Z
+401628605103884105,401628605,40162860512,3,3,11:58,Virginia Union,Hampton,21,12,61,3,3,4,Rush,RJ Rosales run for 4 yds to the VU 43 for a 1ST down,1.5624629338192726,2024-09-08T00:00:43.000Z
+401628605103884106,401628605,40162860512,4,3,11:58,Virginia Union,Hampton,21,12,57,1,10,5,Rush,Jada Byers run for 5 yds to the VU 48,0.1094877032207345,2024-09-08T00:00:43.000Z
+401628605103905601,401628605,40162860512,5,3,9:43,Virginia Union,Hampton,21,12,52,2,5,8,Pass Interception Return,Mark Wright pass intercepted Jordan White return for 8 yds to the VU 47,-2.644171005709408,2024-09-08T00:04:42.000Z
+401628605103905603,401628605,40162860513,1,3,9:43,Hampton,Virginia Union,12,21,47,1,10,11,Rush,Elijah Burris run for 11 yds to the VU 36 for a 1ST down,0.602424146252634,2024-09-08T00:04:42.000Z
+401628605103905604,401628605,40162860513,2,3,9:43,Hampton,Virginia Union,12,21,36,1,10,4,Rush,Chris Zellous run for 4 yds to the VU 32,-0.0714896390997507,2024-09-08T00:05:47.000Z
+401628605103905605,401628605,40162860513,3,3,9:43,Hampton,Virginia Union,12,21,32,2,6,-8,Pass Reception,Chris Zellous pass complete to Kevin Johnson Jr. for a loss of 8 yards to the VU 40,-2.4558177683995623,2024-09-08T00:05:47.000Z
+401628605103905606,401628605,40162860513,4,3,9:43,Hampton,Virginia Union,12,21,40,3,14,31,Pass Reception,Chris Zellous pass complete to Kevin Johnson Jr. for 31 yds to the VU 9 for a 1ST down,3.113847678866641,2024-09-08T00:05:47.000Z
+401628605103905607,401628605,40162860513,5,3,9:43,Hampton,Virginia Union,12,21,9,1,9,2,Rush,Elijah Burris run for 2 yds to the VU 7,-0.182910644371269,2024-09-08T00:05:47.000Z
+401628605103934801,401628605,40162860513,6,3,6:51,Hampton,Virginia Union,12,21,4,3,4,0,Timeout,"Timeout Hampton, clock 06:51",,2024-09-08T00:08:14.000Z
+401628605103934802,401628605,40162860513,7,3,6:51,Hampton,Virginia Union,12,21,7,2,7,3,Rush,Elijah Burris run for 3 yds to the VU 4,-0.0888244534588445,2024-09-08T00:09:27.000Z
+401628605103934803,401628605,40162860513,8,3,6:51,Hampton,Virginia Union,12,21,4,3,4,3,Rush,Elijah Burris run for 3 yds to the VU 1,-0.0897810533795195,2024-09-08T00:09:27.000Z
+401628605103944201,401628605,40162860513,9,3,5:57,Hampton,Virginia Union,19,21,1,4,1,1,Rushing Touchdown,Chris Zellous run for 1 yd for a TD (Brian Csehoski KICK),2.785753974856101,2024-09-08T00:10:43.000Z
+401628605103944401,401628605,40162860514,1,3,5:55,Hampton,Virginia Union,19,21,65,0,0,1,Kickoff Return (Offense),"Brian Csehoski kickoff for 41 yds , Kyron Thomas return for 1 yd to the VU 25",,2024-09-08T00:13:05.000Z
+401628605103949202,401628605,40162860514,4,3,5:07,Virginia Union,Hampton,21,19,75,2,10,0,Rush,Jada Byers run for no gain to the VU 25,-0.34710487712173865,2024-09-08T00:15:27.000Z
+401628605103949205,401628605,40162860514,7,3,5:07,Virginia Union,Hampton,21,19,42,2,9,-5,Penalty,"Virginia Union Penalty, False Start (TEAM) to the HAMP 47",,2024-09-08T00:15:27.000Z
+401628605103949201,401628605,40162860514,3,3,5:07,Virginia Union,Hampton,21,19,75,3,10,0,Timeout,"Timeout Virginia Union, clock 05:07",,2024-09-08T00:14:37.000Z
+401628605103944403,401628605,40162860514,2,3,5:55,Virginia Union,Hampton,21,19,75,1,10,0,Pass Incompletion,Mark Wright pass incomplete,-0.7029700220436519,2024-09-08T00:13:05.000Z
+401628605103949203,401628605,40162860514,5,3,5:07,Virginia Union,Hampton,21,19,75,3,10,32,Pass Reception,Mark Wright pass complete to Jr. Reginald Vick for 32 yds to the HAMP 43 for a 1ST down,3.775459930955858,2024-09-08T00:15:27.000Z
+401628605103949204,401628605,40162860514,6,3,5:07,Virginia Union,Hampton,21,19,43,1,10,1,Rush,Jada Byers run for 1 yd to the HAMP 42,-0.7221421996351935,2024-09-08T00:15:27.000Z
+401628605103949206,401628605,40162860514,8,3,5:07,Virginia Union,Hampton,21,19,47,2,14,0,Pass Incompletion,Mark Wright pass incomplete,-0.9500834188814746,2024-09-08T00:15:27.000Z
+401628605103949207,401628605,40162860514,9,3,5:07,Virginia Union,Hampton,21,19,47,3,14,3,Rush,Mark Wright run for 3 yds to the HAMP 44,-0.2755323926093434,2024-09-08T00:15:27.000Z
+401628605103976001,401628605,40162860514,10,3,2:39,Virginia Union,Hampton,21,19,44,4,11,0,Punt,Marvin Holmes punt for 37 yds,,2024-09-08T00:19:21.000Z
+401628605103976003,401628605,40162860515,1,3,2:39,Hampton,Virginia Union,19,21,93,1,10,-2,Rush,Elijah Burris run for a loss of 2 yards to the HAMP 5,-0.379681499755951,2024-09-08T00:19:21.000Z
+401628605104849908,401628605,40162860515,9,4,15:00,Hampton,Virginia Union,19,21,59,2,10,27,Rush,Elijah Burris run for 27 yds to the VU 32 for a 1ST down,2.9262789181664495,2024-09-08T00:26:42.000Z
+401628605103999902,401628605,40162860515,5,3,0:00,Hampton,Virginia Union,19,21,83,0,10,2,End Period,End of 3rd Quarter,,2024-09-08T00:24:19.000Z
+401628605104889403,401628605,40162860515,15,4,11:05,Hampton,Virginia Union,19,21,3,1,10,0,Timeout,"Timeout Virginia Union, clock 11:05",,2024-09-08T00:33:23.000Z
+401628605103976004,401628605,40162860515,2,3,2:39,Hampton,Virginia Union,19,21,95,2,12,3,Rush,Elijah Burris run for 3 yds to the HAMP 8,-0.03791764264034115,2024-09-08T00:19:21.000Z
+401628605103976005,401628605,40162860515,3,3,2:39,Hampton,Virginia Union,19,21,92,3,9,9,Pass Reception,Chris Zellous pass complete to Kymari Gray for 9 yds to the HAMP 17 for a 1ST down,0.7559237717466853,2024-09-08T00:19:21.000Z
+401628605103999901,401628605,40162860515,4,3,0:00,Hampton,Virginia Union,19,21,83,1,10,2,Rush,Elijah Burris run for 2 yds to the HAMP 19,-0.3147690788048898,2024-09-08T00:24:19.000Z
+401628605104849902,401628605,40162860515,6,4,15:00,Hampton,Virginia Union,19,21,81,2,8,0,Pass Incompletion,Chris Zellous pass incomplete,-0.31458761397077595,2024-09-08T00:26:42.000Z
+401628605104849904,401628605,40162860515,7,4,15:00,Hampton,Virginia Union,19,21,81,3,8,22,Pass Reception,Chris Zellous pass complete to MarShawn Ferguson Jr. for 22 yds to the HAMP 41 for a 1ST down,2.505526925528896,2024-09-08T00:26:42.000Z
+401628605104849905,401628605,40162860515,8,4,15:00,Hampton,Virginia Union,19,21,59,1,10,0,Pass Incompletion,Chris Zellous pass incomplete,-1.1387859939569847,2024-09-08T00:26:42.000Z
+401628605104849909,401628605,40162860515,10,4,15:00,Hampton,Virginia Union,19,21,32,1,10,0,Pass Incompletion,Chris Zellous pass incomplete,-0.6082596672078662,2024-09-08T00:26:42.000Z
+401628605104849912,401628605,40162860515,11,4,15:00,Hampton,Virginia Union,19,21,32,2,10,1,Rush,Chris Zellous run for 1 yd to the VU 31,-0.6299906690381789,2024-09-08T00:26:42.000Z
+401628605104849914,401628605,40162860515,12,4,15:00,Hampton,Virginia Union,19,21,31,3,9,16,Pass Reception,Chris Zellous pass complete to Kymari Gray for 16 yds to the VU 15 for a 1ST down,1.5515706722699245,2024-09-08T00:26:42.000Z
+401628605104849916,401628605,40162860515,13,4,15:00,Hampton,Virginia Union,19,21,15,1,10,4,Rush,Elijah Burris run for 4 yds to the VU 11,-0.019365161227934,2024-09-08T00:26:42.000Z
+401628605104889402,401628605,40162860515,14,4,11:05,Hampton,Virginia Union,19,21,11,2,6,8,Pass Reception,Chris Zellous pass complete to Kymari Gray for 8 yds to the VU 3 for a 1ST down,1.11311251806168,2024-09-08T00:33:23.000Z
+401628605104889404,401628605,40162860515,16,4,11:05,Hampton,Virginia Union,19,21,3,1,3,2,Rush,Elijah Burris run for 2 yds to the VU 1,-0.435900504741669,2024-09-08T00:33:23.000Z
+401628605104897001,401628605,40162860515,17,4,10:29,Hampton,Virginia Union,26,21,1,2,1,1,Rushing Touchdown,Elijah Burris run for 1 yd for a TD (Brian Csehoski KICK),1.900352237473006,2024-09-08T00:34:09.000Z
+401628605104897601,401628605,40162860516,1,4,10:23,Hampton,Virginia Union,26,21,65,0,0,17,Kickoff Return (Offense),"Brian Csehoski kickoff for 55 yds , Larry Hackey return for 17 yds to the VU 27",,2024-09-08T00:37:02.000Z
+401628605104897603,401628605,40162860516,2,4,10:23,Virginia Union,Hampton,21,26,73,1,10,5,Rush,Jada Byers run for 5 yds to the VU 32,0.0980689416811309,2024-09-08T00:37:02.000Z
+401628605104897604,401628605,40162860516,3,4,10:23,Virginia Union,Hampton,21,26,68,2,5,1,Rush,Jada Byers run for 1 yd to the VU 33,-0.6809243417946851,2024-09-08T00:37:02.000Z
+401628605104897605,401628605,40162860516,4,4,10:23,Virginia Union,Hampton,21,26,67,3,4,0,Rush,Jada Byers run for no gain to the VU 33,-0.4860476194764969,2024-09-08T00:37:02.000Z
+401628605104917201,401628605,40162860516,5,4,8:27,Virginia Union,Hampton,21,26,67,4,4,0,Punt,Marvin Holmes punt for 22 yds,,2024-09-08T00:39:39.000Z
+401628605104965902,401628605,40162860517,8,4,3:40,Hampton,Virginia Union,26,21,21,2,11,0,Rush,Elijah Burris run for no gain to the VU 21,-0.512974042010674,2024-09-08T00:49:26.000Z
+401628605104965901,401628605,40162860517,7,4,3:40,Hampton,Virginia Union,26,21,21,3,11,0,Timeout,"Timeout Hampton, clock 03:40",,2024-09-08T00:46:54.000Z
+401628605104917203,401628605,40162860517,1,4,8:27,Hampton,Virginia Union,26,21,55,1,10,4,Rush,Chris Zellous run for 4 yds to the HAMP 49,-0.1607620955039497,2024-09-08T00:39:39.000Z
+401628605104917204,401628605,40162860517,2,4,8:27,Hampton,Virginia Union,26,21,51,2,6,7,Rush,Tymere Robinson run for 7 yds to the VU 44 for a 1ST down,1.0244929753102934,2024-09-08T00:39:39.000Z
+401628605104917205,401628605,40162860517,3,4,8:27,Hampton,Virginia Union,26,21,44,1,10,5,Rush,Tymere Robinson run for 5 yds to the VU 39,0.0928537506515159,2024-09-08T00:39:39.000Z
+401628605104917206,401628605,40162860517,4,4,8:27,Hampton,Virginia Union,26,21,39,2,5,-3,Rush,Tymere Robinson run for a loss of 3 yards to the VU 42,-1.681342372031013,2024-09-08T00:39:39.000Z
+401628605104917207,401628605,40162860517,5,4,8:27,Hampton,Virginia Union,26,21,42,3,8,22,Pass Reception,Chris Zellous pass complete to TK Paisant for 22 yds to the VU 20 for a 1ST down,2.3834432498578195,2024-09-08T00:39:39.000Z
+401628605104917208,401628605,40162860517,6,4,8:27,Hampton,Virginia Union,26,21,20,1,10,-1,Rush,Elijah Burris run for a loss of 1 yard to the VU 21,-0.462292755623382,2024-09-08T00:39:39.000Z
+401628605104966701,401628605,40162860517,9,4,3:32,Hampton,Virginia Union,33,21,21,3,11,21,Rushing Touchdown,Elijah Burris run for 21 yds for a TD (Brian Csehoski KICK),3.593194526665755,2024-09-08T00:49:53.000Z
+401628605104966703,401628605,40162860518,1,4,3:32,Hampton,Virginia Union,33,21,65,0,0,0,Kickoff,Brian Csehoski kickoff for 65 yds fair catch by Jada Byers at the VU 25,,2024-09-08T00:51:57.000Z
+401628605104966705,401628605,40162860518,2,4,3:32,Virginia Union,Hampton,21,33,75,1,10,0,Pass Incompletion,Mark Wright pass incomplete,-0.7029700220436519,2024-09-08T00:51:57.000Z
+401628605104966706,401628605,40162860518,3,4,3:32,Virginia Union,Hampton,21,33,75,2,10,0,Pass Incompletion,Mark Wright pass incomplete,-0.34710487712173865,2024-09-08T00:51:57.000Z
+401628605104966707,401628605,40162860518,4,4,3:32,Virginia Union,Hampton,21,33,75,3,10,10,Rush,Mark Wright run for 10 yds to the VU 35 for a 1ST down,1.8851130081953773,2024-09-08T00:51:57.000Z
+401628605104966708,401628605,40162860518,5,4,3:32,Virginia Union,Hampton,21,33,65,1,10,0,Pass Incompletion,Mark Wright pass incomplete,-1.0146424556055624,2024-09-08T00:51:57.000Z
+401628605104966709,401628605,40162860518,6,4,3:32,Virginia Union,Hampton,21,33,65,2,10,0,Pass Incompletion,Mark Wright pass incomplete,-0.6004605992346148,2024-09-08T00:51:57.000Z
+401628605104966710,401628605,40162860518,7,4,3:32,Virginia Union,Hampton,21,33,65,3,10,5,Pass Reception,Mark Wright pass complete to Jeremiah Frances for 5 yds to the VU 40,0.02872262453173579,2024-09-08T00:51:57.000Z
+401628605104979402,401628605,40162860518,8,4,2:05,Virginia Union,Hampton,21,33,60,4,5,0,Pass Incompletion,Mark Wright pass incomplete,-0.17090255900022377,2024-09-08T00:57:46.000Z
+401628605104999903,401628605,40162860519,5,4,0:00,Hampton,Virginia Union,33,21,32,0,10,0,End of Game,End of 4th Quarter,,2024-09-08T01:01:27.000Z
+401628605104979404,401628605,40162860519,1,4,2:05,Hampton,Virginia Union,33,21,40,1,10,4,Rush,Elijah Burris run for 4 yds to the VU 36,-0.090113775884788,2024-09-08T00:57:46.000Z
+401628605104979405,401628605,40162860519,2,4,2:05,Hampton,Virginia Union,33,21,36,2,6,4,Rush,Elijah Burris run for 4 yds to the VU 32,-0.0987354652138955,2024-09-08T00:57:46.000Z
+401628605104979406,401628605,40162860519,3,4,2:05,Hampton,Virginia Union,33,21,32,3,2,2,Rush,Elijah Burris run for 2 yds to the VU 30 for a 1ST down,0.5636552521132535,2024-09-08T00:57:46.000Z
+401628605104999901,401628605,40162860519,4,4,0:00,Hampton,Virginia Union,33,21,30,1,10,-2,Rush,"[NHSG] Kneel down by HU at VU32 (team loss of 2), clock 00:00.",-0.8501693771274875,2024-09-08T01:01:27.000Z

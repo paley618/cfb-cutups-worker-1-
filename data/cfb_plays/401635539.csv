@@ -1,0 +1,152 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401635539101854001,401635539,4016355391,2,1,14:59,Stanford,Cal Poly,0,0,75,1,10,9,Pass Reception,Ashton Daniels pass complete to Micah Ford for 9 yds to the STAN 34,1.252308359788624,2024-09-07T23:02:36.000Z
+401635539101856701,401635539,4016355391,3,1,14:32,Stanford,Cal Poly,0,0,66,2,1,4,Rush,Justin Lamson run for 4 yds to the STAN 38 for a 1ST down,-0.127556880746793,2024-09-07T23:02:36.000Z
+401635539101865001,401635539,4016355391,4,1,13:49,Stanford,Cal Poly,0,0,62,1,10,10,Pass Reception,Ashton Daniels pass complete to Elic Ayomanor for 10 yds to the STAN 48 for a 1ST down,0.9449493519690596,2024-09-07T23:02:36.000Z
+401635539101868701,401635539,4016355391,5,1,13:12,Stanford,Cal Poly,0,0,52,1,10,0,Pass Incompletion,Ashton Daniels pass incomplete,-1.1430602484821704,2024-09-07T23:02:36.000Z
+401635539101849907,401635539,4016355391,1,1,15:00,Cal Poly,Stanford,0,0,65,0,0,0,Kickoff,Noah Serna kickoff for 57 yds,,2024-09-07T23:02:36.000Z
+401635539101869201,401635539,4016355391,6,1,13:07,Stanford,Cal Poly,0,0,52,2,10,-10,Fumble Recovery (Opponent),"Micah Ford run for a loss of 10 yards to the STAN 38 Micah Ford fumbled, recovered by CP Ethan Calvert E. Calvert return for 0 yds",-1.8488854628073987,2024-09-07T23:02:36.000Z
+401635539101874101,401635539,4016355392,1,1,12:58,Cal Poly,Stanford,0,0,38,1,10,3,Rush,Aiden Ramos run for 3 yds to the STAN 35,-0.247403115532039,2024-09-07T23:02:36.000Z
+401635539101877301,401635539,4016355392,2,1,12:26,Cal Poly,Stanford,0,0,35,2,7,10,Pass Reception,Bo Kelly pass complete to Aiden Ramos for 10 yds to the STAN 25 for a 1ST down,0.6419114018511695,2024-09-07T23:02:36.000Z
+401635539101884901,401635539,4016355392,3,1,11:50,Cal Poly,Stanford,0,0,25,1,10,1,Rush,Aiden Ramos run for 1 yd to the STAN 24,-0.3463709171906278,2024-09-07T23:02:36.000Z
+401635539101888301,401635539,4016355392,4,1,11:16,Cal Poly,Stanford,0,0,24,2,9,9,Pass Reception,Bo Kelly pass complete to Giancarlo Woods for 9 yds to the STAN 15 for a 1ST down,0.4882561898916023,2024-09-07T23:02:36.000Z
+401635539101895601,401635539,4016355392,5,1,10:43,Cal Poly,Stanford,0,0,15,1,10,0,Pass Incompletion,Bo Kelly pass incomplete,-0.320977659489319,2024-09-07T23:02:36.000Z
+401635539101897801,401635539,4016355392,7,1,10:21,Cal Poly,Stanford,0,0,25,2,20,-5,Rush,Kendric Sanders run for a loss of 5 yards to the STAN 30,-1.91670289909365,2024-09-07T23:02:36.000Z
+401635539101906201,401635539,4016355392,8,1,9:37,Cal Poly,Stanford,0,0,30,3,25,6,Pass Reception,Bo Kelly pass complete to Jake Woods for 6 yds to the STAN 24,0.2382043194355815,2024-09-07T23:02:36.000Z
+401635539101914301,401635539,4016355392,9,1,8:56,Cal Poly,Stanford,0,0,24,4,19,41,Blocked Field Goal,Noah Serna 41 yd FG BLOCKED blocked by,,2024-09-07T23:12:04.000Z
+401635539101896102,401635539,4016355392,6,1,10:38,Cal Poly,Stanford,0,0,15,2,10,-10,Penalty,"(10:38) SANDERS, Kendric rush to the left for a gain of 5 yards to the STA10 (EDWARDS, Scotty), clock 10:32. PENALTY CPU Holding on BOURLAND, Ty enforced 10 yards from the STA15 to the STA25 [NH]. NO PLAY (replay the down).",,2024-09-07T23:08:54.000Z
+401635539101919201,401635539,4016355393,2,1,8:07,Stanford,Cal Poly,0,0,66,2,12,-8,Sack,Ashton Daniels sacked by Elijah Ponder for a loss of 8 yards to the STAN 26,-0.7978499090988089,2024-09-07T23:02:36.000Z
+401635539101926901,401635539,4016355393,3,1,7:30,Stanford,Cal Poly,0,0,74,3,20,-5,Penalty,"Stanford Penalty, False Start (-5 Yards) to the STAN 21",,2024-09-07T23:17:34.000Z
+401635539101928601,401635539,4016355393,4,1,7:13,Stanford,Cal Poly,0,0,79,3,25,8,Pass Reception,Ashton Daniels pass complete to Elic Ayomanor for 8 yds to the STAN 29,0.0346186956807202,2024-09-07T23:02:36.000Z
+401635539101936201,401635539,4016355393,5,1,6:37,Stanford,Cal Poly,0,0,71,4,17,0,Punt,Aidan Flintoft punt for 38 yds,,2024-09-07T23:02:36.000Z
+401635539101914901,401635539,4016355393,1,1,8:50,Stanford,Cal Poly,0,0,64,1,10,-2,Rush,Ashton Daniels run for a loss of 2 yards to the STAN 34,-1.3571567025283562,2024-09-07T23:02:36.000Z
+401635539101936901,401635539,4016355394,1,1,6:30,Cal Poly,Stanford,0,0,67,1,10,0,Pass Incompletion,Bo Kelly pass incomplete,-0.956890163923906,2024-09-07T23:02:36.000Z
+401635539101937401,401635539,4016355394,2,1,6:25,Cal Poly,Stanford,0,0,67,2,10,0,Rush,Aiden Ramos run for no gain to the CP 33,-0.5416125590698764,2024-09-07T23:02:36.000Z
+401635539101945201,401635539,4016355394,3,1,5:47,Cal Poly,Stanford,0,0,67,3,10,5,Pass Reception,Bo Kelly pass complete to Aiden Ramos for 5 yds to the CP 38,0.02642554911697204,2024-09-07T23:02:36.000Z
+401635539101948801,401635539,4016355394,4,1,5:11,Cal Poly,Stanford,0,0,62,4,5,0,Punt,"Ryan Collins punt for 40 yds, downed at the STAN 22",,2024-09-07T23:02:36.000Z
+401635539101999903,401635539,4016355395,10,1,0:00,Stanford,Cal Poly,7,0,3,0,0,3,End Period,End of 1st Quarter,,2024-09-07T23:32:52.000Z
+401635539101949604,401635539,4016355395,1,1,5:03,Stanford,Cal Poly,0,0,78,1,10,7,Rush,Ashton Daniels run for 7 yds to the STAN 29,0.5574648631307815,2024-09-07T23:23:46.000Z
+401635539101957601,401635539,4016355395,2,1,4:23,Stanford,Cal Poly,0,0,71,2,3,11,Rush,Ismael Cisse run for 11 yds to the STAN 40 for a 1ST down,0.9576193350666653,2024-09-07T23:34:22.000Z
+401635539101965501,401635539,4016355395,3,1,3:44,Stanford,Cal Poly,0,0,60,1,10,11,Rush,Ashton Daniels run for 11 yds to the CP 49 for a 1ST down,0.994570052506427,2024-09-07T23:02:36.000Z
+401635539101969101,401635539,4016355395,4,1,3:08,Stanford,Cal Poly,0,0,49,1,10,2,Rush,Ashton Daniels run for 2 yds to the CP 47,-0.6159141942829951,2024-09-07T23:02:36.000Z
+401635539101977301,401635539,4016355395,5,1,2:26,Stanford,Cal Poly,0,0,47,2,8,41,Pass Reception,Ashton Daniels pass complete to Sedrick Irvin for 41 yds to the CP 6 for a 1ST down,2.3257549748549664,2024-09-07T23:02:36.000Z
+401635539101986001,401635539,4016355395,6,1,1:39,Stanford,Cal Poly,0,0,6,1,6,-5,Penalty,"Stanford Penalty, False Start (-5 Yards) to the CP 11",,2024-09-07T23:30:46.000Z
+401635539101987901,401635539,4016355395,7,1,1:20,Stanford,Cal Poly,0,0,11,1,11,7,Rush,Justin Lamson run for 7 yds to the CP 4,0.2574454394104465,2024-09-07T23:02:36.000Z
+401635539101995501,401635539,4016355395,8,1,0:44,Stanford,Cal Poly,0,0,4,2,4,-1,Rush,Justin Lamson run for a loss of 1 yard to the CP 5,-0.4277093887206295,2024-09-07T23:02:36.000Z
+401635539101999901,401635539,4016355395,9,1,0:00,Stanford,Cal Poly,7,0,5,3,5,5,Passing Touchdown,Ashton Daniels pass complete to Mudia Reuben for 5 yds for a TD (Emmet Kenney KICK),2.76159962916859,2024-09-07T23:32:52.000Z
+401635539102849902,401635539,4016355396,1,2,15:00,Stanford,Cal Poly,7,0,65,0,0,0,Kickoff,Emmet Kenney kickoff for 65 yds for a touchback,,2024-09-07T23:37:39.000Z
+401635539102849905,401635539,4016355396,2,2,15:00,Cal Poly,Stanford,0,7,75,1,10,17,Pass Reception,Bo Kelly pass complete to Giancarlo Woods for 17 yds to the CP 42 for a 1ST down,1.516051907682006,2024-09-07T23:38:23.000Z
+401635539102857101,401635539,4016355396,3,2,14:28,Cal Poly,Stanford,0,7,58,1,10,5,Rush,Evan Burkhart run for 5 yds to the CP 47,0.110039551743057,2024-09-07T23:38:23.000Z
+401635539102864401,401635539,4016355396,4,2,13:55,Cal Poly,Stanford,0,7,53,2,5,5,Pass Reception,Bo Kelly pass complete to Logan Booher for 5 yds to the STAN 48 for a 1ST down,0.7654298240163016,2024-09-07T23:38:23.000Z
+401635539102868102,401635539,4016355396,5,2,13:18,Cal Poly,Stanford,0,7,48,1,10,6,Pass Reception,Bo Kelly pass complete to Kendric Sanders for 6 yds to the STAN 42,0.3287785418261394,2024-09-07T23:38:23.000Z
+401635539102875601,401635539,4016355396,6,2,12:43,Cal Poly,Stanford,0,7,42,2,4,20,Pass Reception,Bo Kelly pass complete to Michael Briscoe for 20 yds to the STAN 22 for a 1ST down,0.7098325278053575,2024-09-07T23:38:23.000Z
+401635539102879001,401635539,4016355396,7,2,12:09,Cal Poly,Stanford,7,7,22,1,10,22,Passing Touchdown,Michael Briscoe pass complete to Jake Woods for 22 yds for a TD (Gianluca Dimauro KICK),2.64762276664846,2024-09-07T23:41:24.000Z
+401635539102879901,401635539,4016355397,2,2,12:00,Stanford,Cal Poly,7,7,68,1,10,3,Rush,Micah Ford run for 3 yds to the STAN 35,-0.3783931239488095,2024-09-07T23:38:23.000Z
+401635539102887201,401635539,4016355397,3,2,11:27,Stanford,Cal Poly,7,7,65,2,7,4,Pass Reception,Ashton Daniels pass complete to Ismael Cisse for 4 yds to the STAN 39,-0.1300757917399301,2024-09-07T23:38:23.000Z
+401635539102895201,401635539,4016355397,4,2,10:47,Stanford,Cal Poly,7,7,61,3,3,1,Rush,Ismael Cisse run for 1 yd to the STAN 40,-0.5983061624334871,2024-09-07T23:38:23.000Z
+401635539102899801,401635539,4016355397,5,2,10:01,Stanford,Cal Poly,7,7,60,4,2,6,Rush,Tristan Sinclair run for 6 yds to the STAN 46 for a 1ST down,2.4411882560788785,2024-09-07T23:38:23.000Z
+401635539102907801,401635539,4016355397,6,2,9:21,Stanford,Cal Poly,7,7,54,1,10,-1,Rush,Sedrick Irvin run for a loss of 1 yard to the STAN 45,-1.3849425437606688,2024-09-07T23:38:23.000Z
+401635539102879003,401635539,4016355397,1,2,12:09,Cal Poly,Stanford,7,7,65,0,0,27,Kickoff Return (Offense),"Gianluca Dimauro kickoff for 60 yds , Tiger Bachmeier return for 27 yds to the STAN 32",,2024-09-07T23:41:24.000Z
+401635539102964201,401635539,4016355397,16,2,3:57,Stanford,Cal Poly,7,7,4,4,4,0,Timeout,"Timeout Stanford, clock 03:57",,2024-09-07T23:56:12.000Z
+401635539102964202,401635539,4016355397,17,2,3:57,Stanford,Cal Poly,7,7,4,4,4,0,Pass Incompletion,Ashton Daniels pass incomplete,-4.017218287321738,2024-09-07T23:58:47.000Z
+401635539102914902,401635539,4016355397,7,2,8:50,Stanford,Cal Poly,7,7,55,2,11,6,Penalty,"(08:50) DANIELS, Ashton pass short up the middle incomplete intended for AYOMANOR, Elic thrown to the STA50, clock 08:47. PENALTY CPU Pass Interference on RIVERA, Mason enforced at the spot of the foul for 6 yards to the CPU49 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-07T23:38:23.000Z
+401635539102915201,401635539,4016355397,8,2,8:47,Stanford,Cal Poly,7,7,49,1,10,23,Pass Reception,Ashton Daniels pass complete to Ismael Cisse for 23 yds to the CP 26 for a 1ST down,1.0423284292290678,2024-09-07T23:49:38.000Z
+401635539102917501,401635539,4016355397,9,2,8:24,Stanford,Cal Poly,7,7,26,1,10,2,Rush,Sedrick Irvin run for 2 yds to the CP 24,-0.2528871890516275,2024-09-07T23:38:23.000Z
+401635539102925002,401635539,4016355397,10,2,7:49,Stanford,Cal Poly,7,7,24,2,8,-5,Penalty,"Stanford Penalty, False Start (-5 Yards) to the CP 29",,2024-09-07T23:52:03.000Z
+401635539102927501,401635539,4016355397,11,2,7:24,Stanford,Cal Poly,7,7,29,2,13,4,Rush,Sedrick Irvin run for 4 yds to the CP 25,-0.1036472958798437,2024-09-07T23:38:23.000Z
+401635539102935801,401635539,4016355397,12,2,6:41,Stanford,Cal Poly,7,7,25,3,9,17,Pass Reception,Ashton Daniels pass complete to Micah Ford for 17 yds to the CP 8 for a 1ST down,1.35213431427543,2024-09-07T23:38:23.000Z
+401635539102939701,401635539,4016355397,13,2,6:02,Stanford,Cal Poly,7,7,8,1,8,5,Rush,Ashton Daniels run for 5 yds to the CP 3,0.108174954739599,2024-09-07T23:38:23.000Z
+401635539102947801,401635539,4016355397,14,2,5:21,Stanford,Cal Poly,7,7,3,2,3,-2,Rush,Justin Lamson run for a loss of 2 yards to the CP 5,-0.550175015208497,2024-09-07T23:38:23.000Z
+401635539102956301,401635539,4016355397,15,2,4:36,Stanford,Cal Poly,7,7,5,3,5,1,Rush,Justin Lamson run for 1 yd to the CP 4,-0.221182083509672,2024-09-07T23:38:23.000Z
+401635539102984101,401635539,4016355398,5,2,1:58,Cal Poly,Stanford,7,7,76,3,6,4,Rush,Aiden Ramos run for 4 yds to the CP 28,-0.03968329303406293,2024-09-07T23:38:23.000Z
+401635539102976501,401635539,4016355398,3,2,2:34,Cal Poly,Stanford,7,7,81,2,11,5,Pass Reception,Bo Kelly pass complete to Michael Otterstedt for 5 yds to the CP 24,0.031050929207813383,2024-09-07T23:38:23.000Z
+401635539102969001,401635539,4016355398,2,2,3:09,Cal Poly,Stanford,7,7,80,1,10,-1,Rush,Aiden Ramos run for a loss of 1 yard to the CP 19,-0.6343354265717327,2024-09-07T23:38:23.000Z
+401635539102965302,401635539,4016355398,1,2,3:46,Cal Poly,Stanford,7,7,96,1,10,16,Pass Reception,Bo Kelly pass complete to Michael Briscoe for 16 yds to the CP 20 for a 1ST down,0.5525492834457211,2024-09-07T23:59:22.000Z
+401635539102979901,401635539,4016355398,4,2,2:00,Cal Poly,Stanford,7,7,76,3,6,0,Timeout,"Timeout Stanford, clock 02:00",,2024-09-08T00:04:52.000Z
+401635539102985701,401635539,4016355398,8,2,1:42,Cal Poly,Stanford,7,7,77,4,7,2,Punt,"Ryan Collins punt for 52 yds , Tiger Bachmeier returns for 2 yds to the STAN 27",,2024-09-07T23:38:23.000Z
+401635539102985102,401635539,4016355398,7,2,1:48,Cal Poly,Stanford,7,7,72,4,2,-5,Penalty,"(01:48) COLLINS, Ryan punt 47 yards to the STA25, fair catch by BACHMEIER, Tiger, clock 01:43. PENALTY Before the snap, CPU Illegal Formation enforced 5 yards from the CPU28 to the CPU23. NO PLAY (replay the down).",,2024-09-07T23:38:23.000Z
+401635539102985001,401635539,4016355398,6,2,1:49,Cal Poly,Stanford,7,7,72,4,2,0,Timeout,"Timeout Stanford, clock 01:49",,2024-09-08T00:08:30.000Z
+401635539102986801,401635539,4016355399,1,2,1:31,Stanford,Cal Poly,7,7,73,1,10,7,Pass Reception,Ashton Daniels pass complete to Micah Ford for 7 yds to the STAN 34,0.6338612725745634,2024-09-07T23:38:23.000Z
+401635539102988901,401635539,4016355399,2,2,1:10,Stanford,Cal Poly,7,7,66,2,3,7,Pass Reception,Ashton Daniels pass complete to Micah Ford for 7 yds to the STAN 41 for a 1ST down,0.639841811848946,2024-09-07T23:38:23.000Z
+401635539102989501,401635539,4016355399,3,2,1:04,Stanford,Cal Poly,7,7,59,1,10,9,Pass Reception,Ashton Daniels pass complete to Ismael Cisse for 9 yds to the 50 yard line,1.3220501527298012,2024-09-07T23:38:23.000Z
+401635539102995501,401635539,4016355399,4,2,0:44,Stanford,Cal Poly,7,7,50,2,1,27,Pass Reception,Ashton Daniels pass complete to Elic Ayomanor for 27 yds to the CP 23 for a 1ST down,0.6729845189973975,2024-09-07T23:38:23.000Z
+401635539102996401,401635539,4016355399,5,2,0:35,Stanford,Cal Poly,7,7,23,1,10,21,Pass Reception,Ashton Daniels pass complete to Sam Roush for 21 yds to the CP 2 for a 1ST down,1.4507423803991304,2024-09-07T23:38:23.000Z
+401635539102997801,401635539,4016355399,7,2,0:21,Stanford,Cal Poly,14,7,2,1,2,2,Rushing Touchdown,Justin Lamson run for 2 yds for a TD (Emmet Kenney KICK),1.213235297672098,2024-09-08T00:15:21.000Z
+401635539102997402,401635539,4016355399,6,2,0:25,Stanford,Cal Poly,7,7,2,1,10,0,Timeout,"Timeout Cal Poly, clock 00:25",,2024-09-08T00:15:16.000Z
+401635539102997803,401635539,40163553910,1,2,0:21,Stanford,Cal Poly,14,7,65,0,0,18,Kickoff Return (Offense),"Emmet Kenney kickoff for 62 yds , Evan Burkhart return for 18 yds to the CP 21",,2024-09-08T00:15:21.000Z
+401635539102999902,401635539,40163553910,3,2,0:00,Cal Poly,Stanford,7,14,80,0,10,0,End of Half,End of 2nd Quarter,,2024-09-08T00:18:16.000Z
+401635539102998401,401635539,40163553910,2,2,0:15,Cal Poly,Stanford,7,14,79,1,10,-1,Rush,"(00:15) [NHSG] Kneel down by KELLY, Bo at CPU20 (team loss of 1), clock 00:00.",-0.6653743866116795,2024-09-08T00:18:16.000Z
+401635539103854302,401635539,40163553911,2,3,14:56,Cal Poly,Stanford,7,14,73,1,10,-3,Rush,Aiden Ramos run for a loss of 3 yards to the CP 24,-1.0485617260413997,2024-09-08T00:40:03.000Z
+401635539103857801,401635539,40163553911,3,3,14:21,Cal Poly,Stanford,7,14,76,2,13,15,Pass Reception,Bo Kelly pass complete to Giancarlo Woods for 15 yds to the CP 39 for a 1ST down,2.1262611237984705,2024-09-08T00:39:48.000Z
+401635539103865401,401635539,40163553911,4,3,13:45,Cal Poly,Stanford,7,14,61,1,10,0,Pass Incompletion,Bo Kelly pass incomplete,-1.1077677360468863,2024-09-08T00:39:48.000Z
+401635539103865901,401635539,40163553911,5,3,13:40,Cal Poly,Stanford,7,14,61,2,10,1,Rush,Aiden Ramos run for 1 yd to the CP 40,-0.604003653721918,2024-09-08T00:39:48.000Z
+401635539103874301,401635539,40163553911,6,3,12:56,Cal Poly,Stanford,7,14,60,3,9,5,Pass Reception,Bo Kelly pass complete to Logan Booher for 5 yds to the CP 45,0.0397483490399644,2024-09-08T00:39:48.000Z
+401635539103884701,401635539,40163553911,7,3,11:52,Cal Poly,Stanford,7,21,55,4,4,90,Punt,"Ryan Collins punt for 45 yds , Tiger Bachmeier returns for 90 yds for a TD (Emmet Kenney KICK)",,2024-09-08T00:44:06.000Z
+401635539103849903,401635539,40163553911,1,3,15:00,Stanford,Cal Poly,14,7,65,0,0,14,Kickoff Return (Offense),"Emmet Kenney kickoff for 52 yds , Aiden Ramos return for 14 yds to the CP 27",,2024-09-08T00:39:48.000Z
+401635539103885101,401635539,40163553912,2,3,11:48,Cal Poly,Stanford,7,21,90,1,10,11,Pass Reception,Bo Kelly pass complete to Michael Briscoe for 11 yds to the CP 21 for a 1ST down,0.46330946332004874,2024-09-08T00:39:48.000Z
+401635539103888101,401635539,40163553912,3,3,11:18,Cal Poly,Stanford,7,21,79,1,10,6,Rush,Jaedon Matthews run for 6 yds to the CP 27,0.2977036772411737,2024-09-08T00:39:48.000Z
+401635539103896101,401635539,40163553912,4,3,10:38,Cal Poly,Stanford,7,21,73,2,4,0,Rush,Jaedon Matthews run for no gain to the CP 27,-0.7415975879341534,2024-09-08T00:39:48.000Z
+401635539103904301,401635539,40163553912,5,3,9:56,Cal Poly,Stanford,7,21,73,3,4,0,Pass Incompletion,Bo Kelly pass incomplete,-0.3544112236910806,2024-09-08T00:39:48.000Z
+401635539103904601,401635539,40163553912,6,3,9:53,Cal Poly,Stanford,7,21,73,4,4,10,Punt,"Ryan Collins punt for 43 yds , Tiger Bachmeier returns for 10 yds to the STAN 40",,2024-09-08T00:52:13.000Z
+401635539103884703,401635539,40163553912,1,3,11:52,Stanford,Cal Poly,21,7,65,0,0,60,Kickoff Return (Offense),"Emmet Kenney kickoff for 60 yds , Evan Burkhart return for no gain to the CP 10 , return for 3 yds to the CP 10 , Aaron Morris return for no gain to the CP 10",,2024-09-08T00:44:06.000Z
+401635539103905701,401635539,40163553913,1,3,9:42,Stanford,Cal Poly,21,7,60,1,10,3,Rush,Micah Ford run for 3 yds to the STAN 43,-0.4315308590496248,2024-09-08T00:39:48.000Z
+401635539103909101,401635539,40163553913,2,3,9:08,Stanford,Cal Poly,21,7,57,2,7,0,Pass Incompletion,Ashton Daniels pass incomplete,-1.0130007081040446,2024-09-08T00:39:48.000Z
+401635539103909601,401635539,40163553913,3,3,9:03,Stanford,Cal Poly,21,7,57,3,7,0,Timeout,"Timeout Stanford, clock 09:03",,2024-09-08T00:56:08.000Z
+401635539103909602,401635539,40163553913,4,3,9:03,Stanford,Cal Poly,21,7,57,3,7,17,Rush,Ashton Daniels run for 17 yds to the CP 40 for a 1ST down,3.012383027360004,2024-09-08T00:58:01.000Z
+401635539103917101,401635539,40163553913,5,3,8:28,Stanford,Cal Poly,21,7,40,1,10,1,Rush,Ashton Daniels run for 1 yd to the CP 39,-0.6465447438858387,2024-09-08T00:39:48.000Z
+401635539103925501,401635539,40163553913,6,3,7:44,Stanford,Cal Poly,21,7,39,2,9,19,Pass Reception,Ashton Daniels pass complete to Ismael Cisse for 19 yds to the CP 20 for a 1ST down,1.2176661587914808,2024-09-08T00:39:48.000Z
+401635539103929301,401635539,40163553913,7,3,7:06,Stanford,Cal Poly,21,7,20,1,10,-4,Pass Reception,Ashton Daniels pass complete to Micah Ford for a loss of 4 yards to the CP 24,-0.76207036562816,2024-09-08T00:39:48.000Z
+401635539103937201,401635539,40163553913,8,3,6:27,Stanford,Cal Poly,21,7,24,2,14,0,Pass Incompletion,Ashton Daniels pass incomplete,-0.6777353012544706,2024-09-08T00:39:48.000Z
+401635539103937502,401635539,40163553913,9,3,6:24,Stanford,Cal Poly,21,7,24,3,14,5,Penalty,"(06:24) DANIELS, Ashton pass deep to the left incomplete intended for CISSE, Ismael broken up by DUKES, Brian at the CPU0, clock 06:17. PENALTY CPU Offsides on FINAU, Soni enforced 5 yards from the CPU24 to the CPU19 [SG]. NO PLAY (replay the down).",,2024-09-08T01:01:02.000Z
+401635539103938201,401635539,40163553913,10,3,6:17,Stanford,Cal Poly,21,7,19,3,9,5,Pass Reception,Ashton Daniels pass complete to Ismael Cisse for 5 yds to the CP 14,0.0368587070716196,2024-09-08T01:01:54.000Z
+401635539103947301,401635539,40163553913,11,3,5:26,Stanford,Cal Poly,24,7,14,4,4,32,Field Goal Good,Emmet Kenney 32 yd FG GOOD,,2024-09-08T01:03:32.000Z
+401635539103947302,401635539,40163553914,1,3,5:26,Stanford,Cal Poly,24,7,65,0,0,0,Kickoff,Emmet Kenney kickoff for 65 yds for a touchback,,2024-09-08T01:06:57.000Z
+401635539103947401,401635539,40163553914,2,3,5:25,Cal Poly,Stanford,7,24,75,1,10,-1,Pass Reception,Bo Kelly pass complete to Aiden Ramos for a loss of 1 yard to the CP 24,-0.8014893508157099,2024-09-08T00:39:48.000Z
+401635539103954901,401635539,40163553914,3,3,4:50,Cal Poly,Stanford,7,24,76,2,11,13,Pass Interception Return,"Bo Kelly pass intercepted Collin Wright return for 13 yds to the CP 21 Ryan Collins fumbled, recovered by STAN Collin Wright C. Wright return for 0 yds",-0.12075552946296852,2024-09-08T01:19:32.000Z
+401635539103958701,401635539,40163553915,2,3,4:12,Stanford,Cal Poly,24,7,11,1,10,-2,Rush,Ashton Daniels run for a loss of 2 yards to the CP 13,-0.41030529891556,2024-09-08T00:39:48.000Z
+401635539103955601,401635539,40163553915,1,3,4:43,Stanford,Cal Poly,24,7,21,1,10,10,Rush,Chris Davis Jr. run for 10 yds to the CP 11 for a 1ST down,0.110557400427568,2024-09-08T00:39:48.000Z
+401635539103966301,401635539,40163553915,3,3,3:36,Stanford,Cal Poly,24,7,13,2,12,6,Pass Reception,Ashton Daniels pass complete to Ismael Cisse for 6 yds to the CP 7,0.092710254275946,2024-09-08T00:39:48.000Z
+401635539103975001,401635539,40163553915,4,3,2:49,Stanford,Cal Poly,24,7,7,3,6,2,Pass Reception,Ashton Daniels pass complete to Sam Roush for 2 yds to the CP 5,-0.1670114991940817,2024-09-08T00:39:48.000Z
+401635539103979701,401635539,40163553915,5,3,2:02,Stanford,Cal Poly,31,7,5,4,4,5,Passing Touchdown,Ashton Daniels pass complete to Sam Roush for 5 yds for a TD (Emmet Kenney KICK),3.0063459572016207,2024-09-08T01:12:12.000Z
+401635539104854801,401635539,40163553916,10,4,14:51,Cal Poly,Stanford,7,31,51,2,15,4,Pass Reception,Bo Kelly pass complete to Giancarlo Woods for 4 yds to the STAN 47,-0.1497940307312557,2024-09-08T01:22:54.000Z
+401635539104858001,401635539,40163553916,11,4,14:19,Cal Poly,Stanford,7,31,47,3,11,0,Pass Incompletion,Bo Kelly pass incomplete,-0.7572422608093561,2024-09-08T01:22:54.000Z
+401635539103998002,401635539,40163553916,7,3,0:00,Cal Poly,Stanford,7,31,63,0,10,17,End Period,End of 3rd Quarter,,2024-09-08T01:18:12.000Z
+401635539103979703,401635539,40163553916,1,3,2:02,Stanford,Cal Poly,31,7,65,0,0,17,Kickoff Return (Offense),"Emmet Kenney kickoff for 61 yds , Evan Burkhart return for 17 yds to the CP 21",,2024-09-08T01:12:12.000Z
+401635539103984201,401635539,40163553916,2,3,1:57,Cal Poly,Stanford,7,31,79,1,10,-1,Pass Reception,Bo Kelly pass complete to Kendric Sanders for a loss of 1 yard to the CP 20,-0.6653743866116795,2024-09-08T00:39:48.000Z
+401635539103987801,401635539,40163553916,3,3,1:21,Cal Poly,Stanford,7,31,80,2,11,0,Pass Incompletion,Bo Kelly pass incomplete,-0.23224048395353325,2024-09-08T00:39:48.000Z
+401635539103988101,401635539,40163553916,4,3,1:18,Cal Poly,Stanford,7,31,80,3,11,17,Pass Reception,Bo Kelly pass complete to Tyrece Fairly-Diyem for 17 yds to the CP 37 for a 1ST down,2.1776388668046183,2024-09-08T01:16:09.000Z
+401635539103994601,401635539,40163553916,5,3,0:53,Cal Poly,Stanford,7,31,63,1,10,0,Rush,Bo Kelly run for no gain to the CP 37,-1.065701080215459,2024-09-08T00:39:48.000Z
+401635539103998001,401635539,40163553916,6,3,0:19,Cal Poly,Stanford,7,31,63,2,10,17,Rush,Aiden Ramos run for 17 yds to the STAN 46 for a 1ST down,2.572924465658745,2024-09-08T00:39:48.000Z
+401635539104854701,401635539,40163553916,9,4,14:52,Cal Poly,Stanford,7,31,46,2,10,-5,Penalty,"Cal Poly Penalty, False Start (-5 Yards) to the CP 49",,2024-09-08T01:22:59.000Z
+401635539104858501,401635539,40163553916,12,4,14:14,Cal Poly,Stanford,7,31,47,4,11,0,Punt,"Jesse Ehrlich punt for 32 yds, fair catch by Tiger Bachmeier at the STAN 15",,2024-09-08T01:22:54.000Z
+401635539104854001,401635539,40163553916,8,4,14:59,Cal Poly,Stanford,7,31,46,1,10,0,Pass Incompletion,Bo Kelly pass incomplete,-1.0250974847844603,2024-09-08T01:22:10.000Z
+401635539104859001,401635539,40163553917,1,4,14:09,Stanford,Cal Poly,31,7,85,1,10,6,Pass Reception,Elijah Brown pass complete to Mudia Reuben for 6 yds to the STAN 21,0.246959168535291,2024-09-08T01:22:54.000Z
+401635539104866901,401635539,40163553917,2,4,13:30,Stanford,Cal Poly,31,7,79,2,4,1,Pass Reception,Elijah Brown pass complete to Ismael Cisse for 1 yd to the STAN 22,-0.48361850299540254,2024-09-08T01:22:54.000Z
+401635539104874901,401635539,40163553917,3,4,12:50,Stanford,Cal Poly,31,7,78,3,3,10,Pass Reception,Elijah Brown pass complete to Mudia Reuben for 10 yds to the STAN 32 for a 1ST down,1.3383101686934618,2024-09-08T01:22:54.000Z
+401635539104879301,401635539,40163553917,4,4,12:06,Stanford,Cal Poly,31,7,68,1,10,1,Rush,Sedrick Irvin run for 1 yd to the STAN 33,-0.7658255968233298,2024-09-08T01:22:54.000Z
+401635539104887401,401635539,40163553917,5,4,11:25,Stanford,Cal Poly,31,7,67,2,9,51,Pass Reception,Elijah Brown pass complete to Sedrick Irvin for 51 yds to the CP 16 for a 1ST down,3.716413591172815,2024-09-08T01:22:54.000Z
+401635539104895501,401635539,40163553917,6,4,10:44,Stanford,Cal Poly,31,7,16,1,10,4,Rush,Sedrick Irvin run for 4 yds to the CP 12,-0.0205045498028526,2024-09-08T01:22:54.000Z
+401635539104899701,401635539,40163553917,7,4,10:02,Stanford,Cal Poly,38,7,12,2,6,12,Passing Touchdown,Elijah Brown pass complete to Ismael Cisse for 12 yds for a TD (Emmet Kenney KICK),2.589227271095227,2024-09-08T01:29:38.000Z
+401635539104899703,401635539,40163553918,1,4,10:02,Stanford,Cal Poly,38,7,65,0,0,0,Kickoff,Emmet Kenney kickoff for 65 yds for a touchback,,2024-09-08T01:36:36.000Z
+401635539104899901,401635539,40163553918,2,4,10:00,Cal Poly,Stanford,7,38,75,1,10,5,Rush,Jaedon Matthews run for 5 yds to the CP 30,0.0945451165334843,2024-09-08T01:22:54.000Z
+401635539104907001,401635539,40163553918,3,4,9:29,Cal Poly,Stanford,7,38,70,2,5,-1,Rush,Jaedon Matthews run for a loss of 1 yard to the CP 29,-0.8597386283834778,2024-09-08T01:22:54.000Z
+401635539104914401,401635539,40163553918,4,4,8:55,Cal Poly,Stanford,7,38,71,3,6,16,Pass Reception,Jackson Akins pass complete to Aiden Ramos for 16 yds to the CP 45 for a 1ST down,2.56633539425495,2024-09-08T01:22:54.000Z
+401635539104918101,401635539,40163553918,5,4,8:18,Cal Poly,Stanford,7,38,55,1,10,2,Rush,Tyrece Fairly-Diyem run for 2 yds to the CP 47,-0.6797853383066688,2024-09-08T01:22:54.000Z
+401635539104925501,401635539,40163553918,6,4,7:44,Cal Poly,Stanford,7,38,53,2,8,6,Pass Reception,Jackson Akins pass complete to Jake Woods for 6 yds to the STAN 47,0.3543897049582192,2024-09-08T01:22:54.000Z
+401635539104929701,401635539,40163553918,7,4,7:02,Cal Poly,Stanford,7,38,47,3,2,-8,Sack,Jackson Akins sacked by Jshawn Frausto-Ramos for a loss of 8 yards to the CP 45,-2.2960092224348267,2024-09-08T01:22:54.000Z
+401635539104937901,401635539,40163553918,8,4,6:20,Cal Poly,Stanford,7,38,55,4,10,0,Punt,"Jesse Ehrlich punt for 40 yds , Tiger Bachmeier returns for no gain to the STAN 15",,2024-09-08T01:22:54.000Z
+401635539104984401,401635539,40163553919,10,4,1:55,Stanford,Cal Poly,41,7,25,4,16,43,Field Goal Good,Emmet Kenney 43 yd FG GOOD,,2024-09-08T01:56:53.000Z
+401635539104979901,401635539,40163553919,9,4,2:00,Stanford,Cal Poly,38,7,25,4,16,0,Timeout,"Timeout Stanford, clock 02:00",,2024-09-08T01:55:18.000Z
+401635539104938602,401635539,40163553919,1,4,6:13,Stanford,Cal Poly,38,7,85,1,10,7,Rush,Chris Davis Jr. run for 7 yds to the STAN 22,0.4482007778738044,2024-09-08T01:43:27.000Z
+401635539104945003,401635539,40163553919,2,4,5:49,Stanford,Cal Poly,38,7,78,2,3,15,Penalty,"Cal Poly Penalty, Targeting on PONDER, Elijah enforced (Elijah Ponder) to the STAN 42 for a 1ST down",,2024-09-08T01:22:54.000Z
+401635539104946201,401635539,40163553919,3,4,5:37,Stanford,Cal Poly,38,7,58,1,10,7,Rush,Chris Davis Jr. run for 7 yds to the STAN 49,0.6896384238174758,2024-09-08T01:22:54.000Z
+401635539104954301,401635539,40163553919,4,4,4:56,Stanford,Cal Poly,38,7,51,2,3,32,Rush,Chris Davis Jr. run for 32 yds to the CP 19 for a 1ST down,1.2676171595843166,2024-09-08T01:22:54.000Z
+401635539104959201,401635539,40163553919,5,4,4:07,Stanford,Cal Poly,38,7,19,1,10,-3,Rush,Chris Davis Jr. run for a loss of 3 yards to the CP 22,-0.627709326035724,2024-09-08T01:22:54.000Z
+401635539104967002,401635539,40163553919,6,4,3:29,Stanford,Cal Poly,38,7,22,2,13,-15,Penalty,"(03:29) BROWN, Elijah pass to the right complete for 11 yards to REUBEN, Mudia caught at the CPU11 and advanced to the CPU11, out of bounds, clock 03:24. PENALTY STA Pass Interference on BLACKBURN, Benji enforced 15 yards to the CPU37 [SG]. NO PLAY (replay the down).",,2024-09-08T01:22:54.000Z
+401635539104969301,401635539,40163553919,7,4,3:06,Stanford,Cal Poly,38,7,37,2,28,0,Rush,Chris Davis Jr. run for no gain to the CP 37,-0.7534826979053282,2024-09-08T01:22:54.000Z
+401635539104977801,401635539,40163553919,8,4,2:21,Stanford,Cal Poly,38,7,37,3,28,12,Pass Reception,Elijah Brown pass complete to Benjamin Blackburn for 12 yds to the CP 25,1.2414037149921509,2024-09-08T01:22:54.000Z
+401635539104989501,401635539,40163553920,3,4,1:04,Cal Poly,Stanford,7,41,63,2,9,11,Pass Reception,Jackson Akins pass complete to Ty Bourland for 11 yds to the CP 48 for a 1ST down,1.9922288677375477,2024-09-08T01:22:54.000Z
+401635539104996001,401635539,40163553920,4,4,0:39,Cal Poly,Stanford,7,41,52,1,10,-1,Rush,Kendric Sanders run for a loss of 1 yard to the CP 47,-1.374951836637621,2024-09-08T01:22:54.000Z
+401635539104999901,401635539,40163553920,5,4,0:00,Cal Poly,Stanford,7,41,53,2,11,0,Pass Incompletion,Jackson Akins pass incomplete,-0.918561526204125,2024-09-08T02:01:10.000Z
+401635539104999903,401635539,40163553920,6,4,0:00,Cal Poly,Stanford,7,41,53,0,11,0,End of Game,End of 4th Quarter,,2024-09-08T02:01:10.000Z
+401635539104984402,401635539,40163553920,1,4,1:55,Stanford,Cal Poly,41,7,65,0,0,34,Kickoff Return (Offense),"Emmet Kenney kickoff for 63 yds , Evan Burkhart return for 34 yds to the CP 36",,2024-09-08T01:56:53.000Z
+401635539104985202,401635539,40163553920,2,4,1:47,Cal Poly,Stanford,7,41,64,1,10,1,Rush,Kendric Sanders run for 1 yd to the CP 37,-0.8530905486726476,2024-09-08T01:58:14.000Z

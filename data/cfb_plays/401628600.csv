@@ -1,0 +1,189 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628600101854001,401628600,4016286001,2,1,14:59,Stony Brook,Stonehill,0,0,75,1,10,9,Pass Reception,Malachi Marshall pass complete to Jasiah Williams for 9 yds to the STBK 34,1.252308359788624,2024-09-07T19:35:51.000Z
+401628600101849907,401628600,4016286001,1,1,15:00,Stonehill,Stony Brook,0,0,65,0,0,0,Kickoff,Danny Hurley kickoff for 65 yds for a touchback,,2024-09-07T19:35:51.000Z
+401628600101856201,401628600,4016286001,3,1,14:37,Stony Brook,Stonehill,0,0,66,2,1,5,Rush,Malachi Marshall run for 5 yds to the STBK 39 for a 1ST down,-0.0295692765321684,2024-09-07T19:35:51.000Z
+401628600101858701,401628600,4016286001,4,1,14:12,Stony Brook,Stonehill,0,0,61,1,10,8,Pass Reception,Malachi Marshall pass complete to Cal Redman for 8 yds to the STBK 47,1.0249684172285607,2024-09-07T19:35:51.000Z
+401628600101864601,401628600,4016286001,5,1,13:53,Stony Brook,Stonehill,0,0,53,2,2,30,Pass Reception,Malachi Marshall pass complete to RJ Lamarre for 30 yds to the STO 23 for a 1ST down,1.1660699411650768,2024-09-07T19:35:51.000Z
+401628600101866201,401628600,4016286001,6,1,13:37,Stony Brook,Stonehill,0,0,23,1,10,6,Rush,Roland Dempster run for 6 yds to the STO 17,0.1912250505569165,2024-09-07T19:35:51.000Z
+401628600101869301,401628600,4016286001,7,1,13:06,Stony Brook,Stonehill,7,0,17,2,4,17,Rushing Touchdown,Roland Dempster run for 17 yds for a TD (Enda Kirby KICK),2.472752627514312,2024-09-07T19:40:57.000Z
+401628600101869303,401628600,4016286002,1,1,13:06,Stony Brook,Stonehill,7,0,65,0,0,9,Kickoff Return (Offense),"Spencer Biscoe kickoff for 62 yds , Kyree Drake return for 9 yds to the STO 12 Kyree Drake fumbled, recovered by STO return for no gain.",,2024-09-07T19:42:05.000Z
+401628600101869801,401628600,4016286002,2,1,13:01,Stonehill,Stony Brook,0,7,88,1,10,-5,Penalty,"Stonehill Penalty, Delay Of Game (Kyree Drake) to the STO 7",,2024-09-07T19:44:30.000Z
+401628600101884401,401628600,4016286002,6,1,11:55,Stonehill,Stony Brook,0,7,95,4,17,18,Punt,"Nick Tanzola punt for 43 yds , Jasiah Williams returns for 18 yds to the STO 30",,2024-09-07T19:35:51.000Z
+401628600101874201,401628600,4016286002,3,1,12:57,Stonehill,Stony Brook,0,7,93,1,15,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.1536062026417815,2024-09-07T19:44:44.000Z
+401628600101874501,401628600,4016286002,4,1,12:54,Stonehill,Stony Brook,0,7,93,2,15,-2,Rush,Zavion Woodard run for a loss of 2 yards to the STO 5,-0.08197877870903891,2024-09-07T19:35:51.000Z
+401628600101876701,401628600,4016286002,5,1,12:32,Stonehill,Stony Brook,0,7,95,3,17,0,Rush,Zavion Woodard run for no gain to the STO 5,-0.01960179468376034,2024-09-07T19:35:51.000Z
+401628600101885501,401628600,4016286003,1,1,11:44,Stony Brook,Stonehill,7,0,30,1,10,15,Rush,Roland Dempster run for 15 yds to the STO 15 for a 1ST down,0.256044043357688,2024-09-07T19:35:51.000Z
+401628600101888101,401628600,4016286003,2,1,11:18,Stony Brook,Stonehill,14,0,15,1,10,15,Rushing Touchdown,Roland Dempster run for 15 yds for a TD (Enda Kirby KICK),2.558199089565083,2024-09-07T19:49:54.000Z
+401628600101904801,401628600,4016286004,3,1,9:51,Stonehill,Stony Brook,0,14,90,4,13,0,Punt,"Nick Tanzola punt for 29 yds, downed at the STO 39",,2024-09-07T20:15:52.000Z
+401628600101896502,401628600,4016286004,1,1,10:34,Stonehill,Stony Brook,0,14,87,2,10,-3,Pass Reception,Ashur Carraha pass complete to Cody Ruff for a loss of 3 yards to the STO 10,-0.2355764921563326,2024-09-07T20:15:52.000Z
+401628600101904002,401628600,4016286004,2,1,9:59,Stonehill,Stony Brook,0,14,90,3,13,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.04391229261099027,2024-09-07T20:15:52.000Z
+401628600101996703,401628600,4016286004,4,1,0:32,Stonehill,Stony Brook,0,14,89,1,12,2,Rush,Zavion Woodard run for 2 yds to the STO 13,-0.18295577132328322,2024-09-07T20:15:52.000Z
+401628600101914302,401628600,4016286005,3,1,8:56,Stony Brook,Stonehill,14,0,37,3,8,5,Penalty,"(08:56) MARSHALL, Malachi pass deep to the left incomplete intended for COOK, Jayden broken up by IRVINE, Jordan at the STO17, clock 08:55. PENALTY SHC Offsides on ATHY, Zack enforced 5 yards from the STO37 to the STO32 [NHSG]. NO PLAY (replay the down).",,2024-09-07T19:35:51.000Z
+401628600101935601,401628600,4016286005,9,1,6:43,Stony Brook,Stonehill,17,0,23,4,11,40,Field Goal Good,Enda Kirby 40 yd FG GOOD,,2024-09-07T19:59:33.000Z
+401628600101904902,401628600,4016286005,1,1,9:50,Stony Brook,Stonehill,14,0,39,1,10,1,Rush,Roland Dempster run for 1 yd to the STO 38,-0.6215061842869627,2024-09-07T19:54:47.000Z
+401628600101908101,401628600,4016286005,2,1,9:18,Stony Brook,Stonehill,14,0,38,2,9,1,Rush,Roland Dempster run for 1 yd to the STO 37,-0.7582171600641079,2024-09-07T19:35:51.000Z
+401628600101914901,401628600,4016286005,4,1,8:50,Stony Brook,Stonehill,14,0,32,3,3,0,Rush,Brandon Boria run for no gain to the STO 32,-0.9542098500176301,2024-09-07T19:35:51.000Z
+401628600101918701,401628600,4016286005,5,1,8:12,Stony Brook,Stonehill,14,0,32,4,3,10,Pass Reception,Malachi Marshall pass complete to Cal Redman for 10 yds to the STO 22 for a 1ST down,1.8102257693946204,2024-09-07T19:35:51.000Z
+401628600101924501,401628600,4016286005,6,1,7:54,Stony Brook,Stonehill,14,0,22,1,10,2,Rush,Brandon Boria run for 2 yds to the STO 20,-0.218895918192836,2024-09-07T19:35:51.000Z
+401628600101927401,401628600,4016286005,7,1,7:25,Stony Brook,Stonehill,14,0,20,2,8,0,Pass Incompletion,Malachi Marshall pass incomplete,-0.4553733610177895,2024-09-07T19:35:51.000Z
+401628600101927701,401628600,4016286005,8,1,7:22,Stony Brook,Stonehill,14,0,20,3,8,-3,Sack,Malachi Marshall sacked by Richard Mosley III for a loss of 3 yards to the STO 23,-1.2452125789642814,2024-09-07T19:35:51.000Z
+401628600101935602,401628600,4016286006,1,1,6:43,Stony Brook,Stonehill,17,0,65,0,0,23,Kickoff Return (Offense),"Spencer Biscoe kickoff for 62 yds , Kyree Drake return for 23 yds to the STO 26",,2024-09-07T20:00:37.000Z
+401628600101947901,401628600,4016286006,5,1,5:20,Stonehill,Stony Brook,0,17,66,4,2,0,Punt,"Nick Tanzola punt for 52 yds, downed at the STBK 14",,2024-09-07T19:35:51.000Z
+401628600101948901,401628600,4016286006,6,1,5:10,Stony Brook,Stonehill,17,0,86,1,10,-5,Penalty,"Stony Brook Penalty, False Start (-5 Yards) to the STBK 9",,2024-09-07T20:05:12.000Z
+401628600101936401,401628600,4016286006,2,1,6:35,Stonehill,Stony Brook,0,17,74,1,10,1,Rush,Jarel Washington run for 1 yd to the STO 27,-0.6129109161878361,2024-09-07T19:35:51.000Z
+401628600101939101,401628600,4016286006,3,1,6:08,Stonehill,Stony Brook,0,17,73,2,9,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.43127540127432606,2024-09-07T19:35:51.000Z
+401628600101939301,401628600,4016286006,4,1,6:06,Stonehill,Stony Brook,0,17,73,3,9,7,Pass Reception,Ashur Carraha pass complete to Kyree Drake for 7 yds to the STO 34,0.18414302480678213,2024-09-07T19:35:51.000Z
+401628600101957001,401628600,4016286007,4,1,4:29,Stony Brook,Stonehill,17,0,86,4,10,0,Punt,"Clayton Taylor punt for 51 yds, downed at the STO 20",,2024-09-07T19:35:51.000Z
+401628600101949301,401628600,4016286007,1,1,5:06,Stony Brook,Stonehill,17,0,91,1,15,0,Pass Incompletion,Malachi Marshall pass incomplete,-0.17144938410316432,2024-09-07T20:06:27.000Z
+401628600101949501,401628600,4016286007,2,1,5:04,Stony Brook,Stonehill,17,0,91,2,15,5,Pass Reception,Malachi Marshall pass complete to Jayden Cook for 5 yds to the STBK 14,0.0116351527305287,2024-09-07T19:35:51.000Z
+401628600101956401,401628600,4016286007,3,1,4:35,Stony Brook,Stonehill,17,0,86,3,10,0,Pass Incompletion,Malachi Marshall pass incomplete,-0.0813814059367601,2024-09-07T19:35:51.000Z
+401628600101969101,401628600,4016286008,4,1,3:08,Stonehill,Stony Brook,0,17,76,4,6,0,Punt,Nick Tanzola punt for 76 yds for a touchback,,2024-09-07T19:35:51.000Z
+401628600101957901,401628600,4016286008,1,1,4:20,Stonehill,Stony Brook,0,17,80,1,10,2,Rush,Jacob Flynn run for 2 yds to the STO 22,-0.3623882030735057,2024-09-07T19:35:51.000Z
+401628600101964501,401628600,4016286008,2,1,3:54,Stonehill,Stony Brook,0,17,78,2,8,2,Rush,Jarel Washington run for 2 yds to the STO 24,-0.2408962942904136,2024-09-07T19:35:51.000Z
+401628600101968601,401628600,4016286008,3,1,3:13,Stonehill,Stony Brook,0,17,76,3,6,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.2368142460140934,2024-09-07T19:35:51.000Z
+401628600101996702,401628600,4016286009,7,1,0:00,Stony Brook,Stonehill,17,0,61,0,3,1,End Period,End of 1st Quarter,,2024-09-07T20:15:52.000Z
+401628600102854001,401628600,4016286009,8,2,14:59,Stony Brook,Stonehill,17,0,60,4,2,2,Punt,"Clayton Taylor punt for 54 yds , Nigel Henderson returns for 2 yds to the STO 8",,2024-09-07T20:18:42.000Z
+401628600101974701,401628600,4016286009,1,1,2:52,Stony Brook,Stonehill,17,0,80,1,10,2,Rush,Brandon Boria run for 2 yds to the STBK 22,-0.3623882030735057,2024-09-07T19:35:51.000Z
+401628600101977201,401628600,4016286009,2,1,2:27,Stony Brook,Stonehill,17,0,78,2,8,3,Rush,Brandon Boria run for 3 yds to the STBK 25,-0.15848083928310341,2024-09-07T19:35:51.000Z
+401628600101984301,401628600,4016286009,3,1,1:56,Stony Brook,Stonehill,17,0,75,3,5,7,Rush,Malachi Marshall run for 7 yds to the STBK 32 for a 1ST down,1.3876161223198524,2024-09-07T19:35:51.000Z
+401628600101986601,401628600,4016286009,4,1,1:33,Stony Brook,Stonehill,17,0,68,1,10,6,Rush,Brandon Boria run for 6 yds to the STBK 38,0.3855228600463665,2024-09-07T19:35:51.000Z
+401628600101989601,401628600,4016286009,5,1,1:03,Stony Brook,Stonehill,17,0,62,2,4,1,Rush,Malachi Marshall run for 1 yd to the STBK 39,-0.8939917757351061,2024-09-07T19:35:51.000Z
+401628600101996701,401628600,4016286009,6,1,0:32,Stony Brook,Stonehill,17,0,61,3,3,1,Rush,Johnny Martin run for 1 yd to the STBK 40,-0.5983061624334871,2024-09-07T19:35:51.000Z
+401628600102865601,401628600,40162860010,5,2,13:43,Stonehill,Stony Brook,0,17,59,2,5,0,Timeout,"Timeout Stony Brook, clock 13:43",,2024-09-07T20:21:11.000Z
+401628600102895401,401628600,40162860010,12,2,10:45,Stonehill,Stony Brook,0,17,25,4,1,0,Timeout,"Timeout Stony Brook, clock 10:45",,2024-09-07T20:25:12.000Z
+401628600102918301,401628600,40162860010,17,2,8:16,Stonehill,Stony Brook,0,17,17,4,4,35,Field Goal Missed,Danny Hurley 35 yd FG MISSED,,2024-09-07T20:31:11.000Z
+401628600102917701,401628600,40162860010,16,2,8:22,Stonehill,Stony Brook,0,17,17,3,4,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.5184934936990777,2024-09-07T20:18:32.000Z
+401628600102855301,401628600,40162860010,1,2,14:46,Stonehill,Stony Brook,0,17,92,1,10,3,Rush,Zavion Woodard run for 3 yds to the STO 11,-0.13240028095198575,2024-09-07T20:18:32.000Z
+401628600102858401,401628600,40162860010,2,2,14:15,Stonehill,Stony Brook,0,17,89,2,7,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.2454413738735015,2024-09-07T20:20:02.000Z
+401628600102858601,401628600,40162860010,3,2,14:13,Stonehill,Stony Brook,0,17,89,3,7,25,Pass Reception,Ashur Carraha pass complete to Cody Ruff for 25 yds to the STO 36 for a 1ST down,2.079354321241163,2024-09-07T20:18:32.000Z
+401628600102865101,401628600,40162860010,4,2,13:48,Stonehill,Stony Brook,0,17,64,1,10,5,Rush,Zavion Woodard run for 5 yds to the STO 41,0.1095374979928448,2024-09-07T20:18:32.000Z
+401628600102865901,401628600,40162860010,6,2,13:40,Stonehill,Stony Brook,0,17,59,2,5,10,Pass Reception,Ashur Carraha pass complete to Aidan Henry for 10 yds to the STBK 49 for a 1ST down,1.275324558145238,2024-09-07T20:18:32.000Z
+401628600102868001,401628600,40162860010,7,2,13:19,Stonehill,Stony Brook,0,17,49,1,10,2,Rush,Zavion Woodard run for 2 yds to the STBK 47,-0.6159141942829951,2024-09-07T20:18:32.000Z
+401628600102875601,401628600,40162860010,8,2,12:43,Stonehill,Stony Brook,0,17,47,2,8,13,Rush,Ashur Carraha run for 13 yds to the STBK 34 for a 1ST down,1.4415185850065735,2024-09-07T20:18:32.000Z
+401628600102879201,401628600,40162860010,9,2,12:07,Stonehill,Stony Brook,0,17,34,1,10,6,Pass Reception,Ashur Carraha pass complete to Jake Newsham for 6 yds to the STBK 28,0.228690499805612,2024-09-07T20:18:32.000Z
+401628600102887301,401628600,40162860010,10,2,11:26,Stonehill,Stony Brook,0,17,28,2,4,3,Rush,Zavion Woodard run for 3 yds to the STBK 25,-0.209882615613569,2024-09-07T20:18:32.000Z
+401628600102894601,401628600,40162860010,11,2,10:53,Stonehill,Stony Brook,0,17,25,3,1,0,Rush,Zavion Woodard run for no gain to the STBK 25,-0.7334110500176402,2024-09-07T20:18:32.000Z
+401628600102898301,401628600,40162860010,13,2,10:16,Stonehill,Stony Brook,0,17,25,4,1,2,Rush,Zavion Woodard run for 2 yds to the STBK 23 for a 1ST down,0.9873516486680387,2024-09-07T20:18:32.000Z
+401628600102906001,401628600,40162860010,14,2,9:39,Stonehill,Stony Brook,0,17,23,1,10,2,Rush,Zavion Woodard run for 2 yds to the STBK 21,-0.2265058372460335,2024-09-07T20:18:32.000Z
+401628600102914001,401628600,40162860010,15,2,8:59,Stonehill,Stony Brook,0,17,21,2,8,4,Rush,Ashur Carraha run for 4 yds to the STBK 17,-0.045283250987847,2024-09-07T20:18:32.000Z
+401628600102918501,401628600,40162860011,1,2,8:14,Stony Brook,Stonehill,17,0,80,1,10,6,Pass Reception,Malachi Marshall pass complete to Cal Redman for 6 yds to the STBK 26,0.2888240217992033,2024-09-07T20:18:32.000Z
+401628600102924301,401628600,40162860011,2,2,7:56,Stony Brook,Stonehill,17,0,74,2,4,0,Pass Incompletion,Malachi Marshall pass incomplete,-0.711661989572181,2024-09-07T20:32:06.000Z
+401628600102924401,401628600,40162860011,3,2,7:55,Stony Brook,Stonehill,17,0,74,3,4,15,Penalty,"Stonehill Penalty, Roughing the Passer on WILLIAMS, Christopher enforced (Jahnez Williams) to the STO 49 for a 1ST down",,2024-09-07T20:18:32.000Z
+401628600102925701,401628600,40162860011,4,2,7:42,Stony Brook,Stonehill,17,0,49,1,10,2,Rush,Roland Dempster run for 2 yds to the STO 47,-0.6159141942829951,2024-09-07T20:18:32.000Z
+401628600102927701,401628600,40162860011,5,2,7:22,Stony Brook,Stonehill,17,0,47,2,8,-5,Rush,Jasiah Williams run for a loss of 5 yards to the STBK 48,-2.02533689360094,2024-09-07T20:18:32.000Z
+401628600102935101,401628600,40162860011,6,2,6:48,Stony Brook,Stonehill,17,0,52,3,13,0,Pass Incompletion,Malachi Marshall pass incomplete,-0.5211735348386686,2024-09-07T20:18:32.000Z
+401628600102935701,401628600,40162860011,7,2,6:42,Stony Brook,Stonehill,17,0,52,4,13,0,Punt,"Clayton Taylor punt for 46 yds , Nigel Henderson returns for no gain to the STO 19",,2024-09-07T20:18:32.000Z
+401628600102936501,401628600,40162860012,1,2,6:34,Stonehill,Stony Brook,0,17,81,1,10,16,Pass Reception,Ashur Carraha pass complete to Aidan Henry for 16 yds to the STO 35 for a 1ST down,1.1959025103114618,2024-09-07T20:18:32.000Z
+401628600102939801,401628600,40162860012,2,2,6:01,Stonehill,Stony Brook,0,17,65,1,10,2,Rush,Zavion Woodard run for 2 yds to the STO 37,-0.63079683335922,2024-09-07T20:18:32.000Z
+401628600102946501,401628600,40162860012,3,2,5:34,Stonehill,Stony Brook,0,17,63,2,8,18,Rush,Zavion Woodard run for 18 yds to the STBK 45 for a 1ST down,2.396999758983487,2024-09-07T20:18:32.000Z
+401628600102949201,401628600,40162860012,4,2,5:07,Stonehill,Stony Brook,0,17,45,1,10,1,Rush,Zavion Woodard run for 1 yd to the STBK 44,-0.7709607025343227,2024-09-07T20:18:32.000Z
+401628600102956901,401628600,40162860012,5,2,4:30,Stonehill,Stony Brook,0,17,44,2,9,0,Pass Incompletion,Ashur Carraha pass incomplete,-1.0769566573515554,2024-09-07T20:18:32.000Z
+401628600102957001,401628600,40162860012,6,2,4:29,Stonehill,Stony Brook,0,17,44,3,9,0,Rush,Ashur Carraha run for no gain to the STBK 44,-0.9225941685485717,2024-09-07T20:41:44.000Z
+401628600102965001,401628600,40162860012,7,2,3:49,Stonehill,Stony Brook,0,17,44,4,9,0,Punt,Nick Tanzola punt for 25 yds,,2024-09-07T20:18:32.000Z
+401628600102965401,401628600,40162860013,1,2,3:45,Stony Brook,Stonehill,17,0,81,1,10,3,Rush,Roland Dempster run for 3 yds to the STBK 22,-0.2256553240907335,2024-09-07T20:18:32.000Z
+401628600102968201,401628600,40162860013,2,2,3:17,Stony Brook,Stonehill,17,0,78,2,7,6,Rush,Roland Dempster run for 6 yds to the STBK 28,0.2226913201454375,2024-09-07T20:18:32.000Z
+401628600102974701,401628600,40162860013,3,2,2:52,Stony Brook,Stonehill,17,0,72,3,1,9,Rush,Roland Dempster run for 9 yds to the STBK 37 for a 1ST down,1.3910727313703424,2024-09-07T20:18:32.000Z
+401628600102978901,401628600,40162860013,4,2,2:10,Stony Brook,Stonehill,23,0,63,1,10,63,Passing Touchdown,Malachi Marshall pass complete to Cole Bunicci for 63 yds for a TD (Enda Kirby PAT BLOCKED),5.05051079357775,2024-09-07T20:45:28.000Z
+401628600102978903,401628600,40162860014,1,2,2:10,Stony Brook,Stonehill,23,0,65,0,0,0,Kickoff,Spencer Biscoe kickoff for 65 yds for a touchback,,2024-09-07T20:48:19.000Z
+401628600102979901,401628600,40162860014,3,2,2:00,Stonehill,Stony Brook,0,23,66,2,1,0,Timeout,"Timeout Stony Brook, clock 02:00",,2024-09-07T20:49:02.000Z
+401628600102979001,401628600,40162860014,2,2,2:09,Stonehill,Stony Brook,0,23,75,1,10,9,Rush,Ashur Carraha run for 9 yds to the STO 34,1.252308359788624,2024-09-07T20:18:32.000Z
+401628600102984301,401628600,40162860014,4,2,1:56,Stonehill,Stony Brook,0,23,66,2,1,10,Rush,Jarel Washington run for 10 yds to the STO 44 for a 1ST down,0.4552639785533916,2024-09-07T20:18:32.000Z
+401628600102985701,401628600,40162860014,5,2,1:42,Stonehill,Stony Brook,0,23,56,1,10,2,Pass Reception,Ashur Carraha pass complete to Jarel Washington for 2 yds to the STO 46,-0.6840321413406637,2024-09-07T20:18:32.000Z
+401628600102988701,401628600,40162860014,6,2,1:12,Stonehill,Stony Brook,0,23,54,2,8,0,Pass Incompletion,Ashur Carraha pass incomplete,-1.0302301559913971,2024-09-07T20:18:32.000Z
+401628600102988901,401628600,40162860014,7,2,1:10,Stonehill,Stony Brook,0,23,54,3,8,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.6683230535186215,2024-09-07T20:18:32.000Z
+401628600102989701,401628600,40162860014,8,2,1:02,Stonehill,Stony Brook,0,23,54,4,8,0,Punt,Nick Tanzola punt for 24 yds,,2024-09-07T20:18:32.000Z
+401628600102999902,401628600,40162860015,3,2,0:00,Stony Brook,Stonehill,23,0,59,0,4,0,End of Half,End of 2nd Quarter,,2024-09-07T20:55:13.000Z
+401628600102994301,401628600,40162860015,1,2,0:56,Stony Brook,Stonehill,23,0,70,1,10,6,Rush,Brandon Boria run for 6 yds to the STBK 36,0.3731544450397237,2024-09-07T20:18:32.000Z
+401628600102996801,401628600,40162860015,2,2,0:31,Stony Brook,Stonehill,23,0,64,2,4,5,Rush,Brandon Boria run for 5 yds to the STBK 41 for a 1ST down,0.6606197240661924,2024-09-07T20:18:32.000Z
+401628600103854302,401628600,40162860015,4,3,14:56,Stonehill,Stony Brook,0,23,75,1,10,15,Penalty,"CARRAHA, Ashur pass up the middle incomplete intended for RUFF, Cody broken up by DUNCAN-NIUSULU, Shamoun at the STO35, clock 14:56. PENALTY STBK Roughing the Passer on FAULK, Rodney enforced 15 yards from the STO25 to the STO40 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-07T21:16:50.000Z
+401628600103849903,401628600,40162860016,1,3,15:00,Stony Brook,Stonehill,23,0,65,0,0,0,Kickoff,Spencer Biscoe kickoff for 65 yds for a touchback,,2024-09-07T21:16:50.000Z
+401628600103886501,401628600,40162860016,11,3,11:34,Stonehill,Stony Brook,3,23,4,4,4,21,Field Goal Good,Danny Hurley 21 yd FG GOOD,,2024-09-07T21:26:47.000Z
+401628600103854601,401628600,40162860016,2,3,14:53,Stonehill,Stony Brook,0,23,60,1,10,13,Pass Reception,Ashur Carraha pass complete to Jake Newsham for 13 yds to the STBK 47 for a 1ST down,1.1436983628772455,2024-09-07T21:16:50.000Z
+401628600103856301,401628600,40162860016,3,3,14:36,Stonehill,Stony Brook,0,23,47,1,10,0,Rush,Jarel Washington run for no gain to the STBK 47,-1.0507069190375147,2024-09-07T21:16:50.000Z
+401628600103859701,401628600,40162860016,4,3,14:02,Stonehill,Stony Brook,0,23,47,2,10,16,Pass Reception,Ashur Carraha pass complete to Jake Newsham for 16 yds to the STBK 31 for a 1ST down,1.8219629902309966,2024-09-07T21:16:50.000Z
+401628600103866401,401628600,40162860016,5,3,13:35,Stonehill,Stony Brook,0,23,31,1,10,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.5824837756999947,2024-09-07T21:16:50.000Z
+401628600103866901,401628600,40162860016,6,3,13:30,Stonehill,Stony Brook,0,23,31,2,10,1,Rush,Jarel Washington run for 1 yd to the STBK 30,-0.6047257118596008,2024-09-07T21:16:50.000Z
+401628600103874701,401628600,40162860016,7,3,12:52,Stonehill,Stony Brook,0,23,30,3,9,25,Pass Reception,Ashur Carraha pass complete to Cody Ruff for 25 yds to the STBK 5 for a 1ST down,2.1453748170736695,2024-09-07T21:16:50.000Z
+401628600103877801,401628600,40162860016,8,3,12:21,Stonehill,Stony Brook,0,23,5,1,5,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.554796850971046,2024-09-07T21:23:48.000Z
+401628600103878301,401628600,40162860016,9,3,12:16,Stonehill,Stony Brook,0,23,5,2,5,1,Rush,Ashur Carraha run for 1 yd to the STBK 4,-0.2573952299466615,2024-09-07T21:16:50.000Z
+401628600103886201,401628600,40162860016,10,3,11:37,Stonehill,Stony Brook,0,23,4,3,4,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.2868087912016805,2024-09-07T21:16:50.000Z
+401628600103887101,401628600,40162860017,1,3,11:28,Stonehill,Stony Brook,3,23,65,0,0,17,Kickoff Return (Offense),"Danny Hurley kickoff for 57 yds , Jasiah Williams return for 17 yds to the STBK 25",,2024-09-07T21:30:33.000Z
+401628600103888001,401628600,40162860017,2,3,11:19,Stony Brook,Stonehill,23,3,75,1,10,54,Rush,Roland Dempster run for 54 yds to the STO 21 for a 1ST down,3.4454583059258286,2024-09-07T21:16:50.000Z
+401628600103895701,401628600,40162860017,3,3,10:42,Stony Brook,Stonehill,23,3,21,1,10,4,Rush,Brandon Boria run for 4 yds to the STO 17,-0.0277001413248325,2024-09-07T21:16:50.000Z
+401628600103898401,401628600,40162860017,4,3,10:15,Stony Brook,Stonehill,23,3,17,2,6,5,Rush,Brandon Boria run for 5 yds to the STO 12,0.0745445095579775,2024-09-07T21:16:50.000Z
+401628600103904501,401628600,40162860017,5,3,9:54,Stony Brook,Stonehill,23,3,12,3,1,3,Rush,Roland Dempster run for 3 yds to the STO 9 for a 1ST down,0.16121462191588,2024-09-07T21:16:50.000Z
+401628600103908001,401628600,40162860017,6,3,9:19,Stony Brook,Stonehill,23,3,9,1,9,1,Rush,Roland Dempster run for 1 yd to the STO 8,-0.252533131086597,2024-09-07T21:16:50.000Z
+401628600103914701,401628600,40162860017,7,3,8:52,Stony Brook,Stonehill,23,3,8,2,8,-2,Rush,Malachi Marshall run for a loss of 2 yards to the STO 10,-0.40169477212503,2024-09-07T21:16:50.000Z
+401628600103917801,401628600,40162860017,8,3,8:21,Stony Brook,Stonehill,23,3,10,3,10,3,Rush,Johnny Martin run for 3 yds to the STO 7,-0.131164662595401,2024-09-07T21:16:50.000Z
+401628600103924701,401628600,40162860017,9,3,7:52,Stony Brook,Stonehill,30,3,3,1,3,3,Rushing Touchdown,Roland Dempster run for 3 yds for a TD (Enda Kirby KICK),1.464451732731337,2024-09-07T21:38:19.000Z
+401628600103945401,401628600,40162860018,6,3,5:45,Stonehill,Stony Brook,3,37,35,1,10,0,Sack,"Ashur Carraha sacked for a loss of 4 yards Ashur Carraha fumbled, recovered by STBK Sebastian Regis , return for 0 yards for a TD",-0.6918622905019662,2024-09-07T21:44:05.000Z
+401628600103924703,401628600,40162860018,1,3,7:52,Stony Brook,Stonehill,30,3,65,0,0,0,Kickoff,Spencer Biscoe kickoff for 65 yds for a touchback,,2024-09-07T21:38:30.000Z
+401628600103938901,401628600,40162860018,5,3,6:10,Stonehill,Stony Brook,3,30,50,1,10,15,Penalty,"Stony Brook Penalty, Defensive Pass Interference (Miles McGoy) to the STBK 35 for a 1ST down",,2024-09-07T21:42:03.000Z
+401628600103945403,401628600,40162860018,7,3,5:45,Stony Brook,Stonehill,30,3,65,0,0,-15,Kickoff,"Spencer Biscoe kickoff Stony Brook Penalty, Unnecessary Roughness (-15 Yards) to the STBK 20",,2024-09-07T21:44:05.000Z
+401628600103924705,401628600,40162860018,2,3,7:52,Stonehill,Stony Brook,3,30,75,1,10,-4,Rush,Zavion Woodard run for a loss of 4 yards to the STO 21,-1.0163607520985618,2024-09-07T21:38:30.000Z
+401628600103928101,401628600,40162860018,3,3,7:18,Stonehill,Stony Brook,3,30,79,2,14,1,Rush,Zavion Woodard run for 1 yd to the STO 22,-0.15004702568925676,2024-09-07T21:16:50.000Z
+401628600103935501,401628600,40162860018,4,3,6:44,Stonehill,Stony Brook,3,30,78,3,13,28,Pass Reception,Ashur Carraha pass complete to Jake Newsham for 28 yds to the 50 yard line for a 1ST down,3.4027509653877672,2024-09-07T21:16:50.000Z
+401628600103959101,401628600,40162860019,4,3,4:08,Stonehill,Stony Brook,3,37,3,3,3,0,Pass Incompletion,Ashur Carraha pass incomplete,-0.291784144723391,2024-09-07T21:51:34.000Z
+401628600103945404,401628600,40162860019,1,3,5:45,Stony Brook,Stonehill,37,3,65,0,0,70,Kickoff Return (Offense),"Spencer Biscoe kickoff for 40 yds , Kyree Drake return for 70 yds to the STBK 5",,2024-09-07T21:44:05.000Z
+401628600103946901,401628600,40162860019,2,3,5:30,Stonehill,Stony Brook,3,37,5,1,5,0,Rush,Jarel Washington run for no gain to the STBK 5,-0.554796850971046,2024-09-07T21:16:50.000Z
+401628600103959501,401628600,40162860019,5,3,4:04,Stonehill,Stony Brook,10,37,3,4,3,3,Passing Touchdown,Ashur Carraha pass complete to Cole Clarke for 3 yds for a TD (Danny Hurley KICK),2.916346544502382,2024-09-07T21:52:16.000Z
+401628600103955201,401628600,40162860019,3,3,4:47,Stonehill,Stony Brook,3,37,5,2,5,2,Rush,Jarel Washington run for 2 yds to the STBK 3,-0.185984708249071,2024-09-07T21:16:50.000Z
+401628600103959503,401628600,40162860020,1,3,4:04,Stonehill,Stony Brook,10,37,65,0,0,23,Kickoff Return (Offense),"Danny Hurley kickoff for 60 yds , Jasiah Williams return for 23 yds to the STBK 15",,2024-09-07T21:52:26.000Z
+401628600103984401,401628600,40162860020,6,3,1:55,Stony Brook,Stonehill,37,10,70,3,8,0,Timeout,"Timeout Stonehill, clock 01:55",,2024-09-07T21:57:17.000Z
+401628600103985001,401628600,40162860020,8,3,1:49,Stony Brook,Stonehill,37,10,70,4,8,0,Punt,"Clayton Taylor punt for 38 yds, fair catch by Nigel Henderson at the STO 32",,2024-09-07T21:16:50.000Z
+401628600103964301,401628600,40162860020,2,3,3:56,Stony Brook,Stonehill,37,10,85,1,10,7,Rush,Roland Dempster run for 7 yds to the STBK 22,0.4482007778738044,2024-09-07T21:16:50.000Z
+401628600103967701,401628600,40162860020,3,3,3:22,Stony Brook,Stonehill,37,10,78,2,3,6,Rush,Roland Dempster run for 6 yds to the STBK 28 for a 1ST down,0.317128059735353,2024-09-07T21:16:50.000Z
+401628600103974801,401628600,40162860020,4,3,2:51,Stony Brook,Stonehill,37,10,72,1,10,0,Rush,Roland Dempster run for no gain to the STBK 28,-0.7982008475508557,2024-09-07T21:16:50.000Z
+401628600103978101,401628600,40162860020,5,3,2:18,Stony Brook,Stonehill,37,10,72,2,10,2,Rush,Malachi Marshall run for 2 yds to the STBK 30,-0.27038846711114406,2024-09-07T21:16:50.000Z
+401628600103984801,401628600,40162860020,7,3,1:51,Stony Brook,Stonehill,37,10,70,3,8,0,Pass Incompletion,Malachi Marshall pass incomplete,-0.2694610798635253,2024-09-07T21:58:23.000Z
+401628600103985601,401628600,40162860021,1,3,1:43,Stonehill,Stony Brook,10,37,68,1,10,22,Rush,Ashur Carraha run for 22 yds to the STBK 46 for a 1ST down,1.9760233075073952,2024-09-07T21:16:50.000Z
+401628600103988001,401628600,40162860021,2,3,1:19,Stonehill,Stony Brook,10,37,46,1,10,3,Rush,Jarel Washington run for 3 yds to the STBK 43,-0.3418939310329067,2024-09-07T21:16:50.000Z
+401628600103995001,401628600,40162860021,3,3,0:49,Stonehill,Stony Brook,10,37,43,2,7,4,Pass Reception,Ashur Carraha pass complete to Cody Ruff for 4 yds to the STBK 39,-0.1409504060348146,2024-09-07T21:16:50.000Z
+401628600103997601,401628600,40162860021,4,3,0:23,Stonehill,Stony Brook,10,37,39,3,3,0,Pass Incompletion,Ashur Carraha pass incomplete,-1.1062801759678038,2024-09-07T21:16:50.000Z
+401628600103997901,401628600,40162860021,5,3,0:20,Stonehill,Stony Brook,10,37,39,4,3,-5,Penalty,"Stonehill Penalty, False Start (Cody Ruff) to the STBK 44",,2024-09-07T22:02:06.000Z
+401628600103998001,401628600,40162860021,6,3,0:19,Stonehill,Stony Brook,10,37,44,4,8,0,Punt,"Nick Tanzola punt for 43 yds, downed at the STBK 1",,2024-09-07T21:16:50.000Z
+401628600104854701,401628600,40162860022,3,4,14:52,Stony Brook,Stonehill,37,10,92,2,3,4,Rush,Roland Dempster run for 4 yds to the STBK 12 for a 1ST down,-0.0334018497712485,2024-09-07T22:06:34.000Z
+401628600104857901,401628600,40162860022,6,4,14:20,Stony Brook,Stonehill,37,10,67,1,10,2,Rush,"Johnny Martin run for 10 yds to the STBK 43 Stony Brook Penalty, Offensive Holding (Jayden Cook) to the STBK 35",-0.600458473868767,2024-09-07T22:06:34.000Z
+401628600104864701,401628600,40162860022,7,4,13:52,Stony Brook,Stonehill,37,10,65,1,8,0,Pass Incompletion,Malachi Marshall pass incomplete,-1.157067453195686,2024-09-07T22:06:34.000Z
+401628600104865701,401628600,40162860022,8,4,13:42,Stony Brook,Stonehill,37,10,65,2,8,3,Rush,Shakhi Carson run for 3 yds to the STBK 38,-0.3006573327054775,2024-09-07T22:06:34.000Z
+401628600104869101,401628600,40162860022,9,4,13:08,Stony Brook,Stonehill,37,10,62,3,5,20,Pass Reception,Malachi Marshall pass complete to Shakhi Carson for 20 yds to the STO 42 for a 1ST down,3.0352370041432692,2024-09-07T22:06:34.000Z
+401628600104876401,401628600,40162860022,10,4,12:35,Stony Brook,Stonehill,37,10,42,1,10,5,Rush,Shakhi Carson run for 5 yds to the STO 37,0.0899665338824123,2024-09-07T22:06:34.000Z
+401628600104894301,401628600,40162860022,14,4,10:56,Stony Brook,Stonehill,37,10,32,2,10,6,Rush,Johnny Martin run for 6 yds to the STO 26,0.2046644229650116,2024-09-07T22:06:34.000Z
+401628600104897601,401628600,40162860022,15,4,10:23,Stony Brook,Stonehill,37,10,26,3,4,3,Rush,Johnny Martin run for 3 yds to the STO 23,-0.248463433778875,2024-09-07T22:06:34.000Z
+401628600103998903,401628600,40162860022,2,3,0:00,Stony Brook,Stonehill,37,10,99,0,10,7,End Period,End of 3rd Quarter,,2024-09-07T21:16:50.000Z
+401628600104857601,401628600,40162860022,5,4,14:23,Stony Brook,Stonehill,37,10,67,1,10,0,Timeout,"Timeout Stony Brook, clock 14:23",,2024-09-07T22:06:51.000Z
+401628600103998902,401628600,40162860022,1,3,0:10,Stony Brook,Stonehill,37,10,99,1,10,7,Rush,Roland Dempster run for 7 yds to the STBK 8,0.29382171005634117,2024-09-07T22:02:40.000Z
+401628600104857201,401628600,40162860022,4,4,14:27,Stony Brook,Stonehill,37,10,88,1,10,15,Penalty,"Stonehill Penalty, Personal Foul (Jahnez Williams) to the STBK 33 for a 1ST down",,2024-09-07T22:06:34.000Z
+401628600104888801,401628600,40162860022,13,4,11:11,Stony Brook,Stonehill,37,10,27,2,5,-5,Penalty,"Stony Brook Penalty, False Start (Jayden Cook) to the STO 32",,2024-09-07T22:13:25.000Z
+401628600104879101,401628600,40162860022,11,4,12:08,Stony Brook,Stonehill,37,10,37,2,5,5,Rush,Shakhi Carson run for 5 yds to the STO 32 for a 1ST down,0.3334495121007493,2024-09-07T22:06:34.000Z
+401628600104886001,401628600,40162860022,12,4,11:39,Stony Brook,Stonehill,37,10,32,1,10,5,Rush,Johnny Martin run for 5 yds to the STO 27,0.0790402371080084,2024-09-07T22:06:34.000Z
+401628600104905001,401628600,40162860022,16,4,9:49,Stony Brook,Stonehill,37,10,23,4,1,1,Fumble Recovery (Opponent),"Shakhi Carson run for 1 yd to the STO 22 Shakhi Carson fumbled, recovered by STO Christopher Gill C. Gill return for 0 yds",-3.476421896389308,2024-09-07T22:06:34.000Z
+401628600104905301,401628600,40162860023,1,4,9:46,Stonehill,Stony Brook,10,37,78,1,10,4,Rush,Zavion Woodard run for 4 yds to the STO 26,-0.098522001264528,2024-09-07T22:06:34.000Z
+401628600104908001,401628600,40162860023,2,4,9:19,Stonehill,Stony Brook,10,37,74,2,6,16,Pass Reception,Ashur Carraha pass complete to Jacob Flynn for 16 yds to the STO 42 for a 1ST down,1.8088035915663347,2024-09-07T22:06:34.000Z
+401628600104914801,401628600,40162860023,3,4,8:51,Stonehill,Stony Brook,10,37,58,1,10,6,Rush,Jazir Francois run for 6 yds to the STO 48,0.3957205453341055,2024-09-07T22:06:34.000Z
+401628600104918001,401628600,40162860023,4,4,8:19,Stonehill,Stony Brook,10,37,52,2,4,0,Pass Incompletion,Ashur Carraha pass incomplete,-1.243353481543522,2024-09-07T22:06:34.000Z
+401628600104918401,401628600,40162860023,5,4,8:15,Stonehill,Stony Brook,10,37,52,3,4,25,Rush,"Ashur Carraha run for 25 yds to the STBK 27 for a 1ST down Stony Brook Penalty, Personal Foul (Calvin Harrison) to the STBK 13 for a 1ST down",2.668055306857246,2024-09-07T22:06:34.000Z
+401628600104919301,401628600,40162860023,7,4,8:06,Stonehill,Stony Brook,10,37,13,1,10,4,Rush,Jake Newsham run for 4 yds to the STBK 9,-0.017336858055032,2024-09-07T22:06:34.000Z
+401628600104926701,401628600,40162860023,8,4,7:32,Stonehill,Stony Brook,10,37,9,2,6,0,Pass Interception Return,"Ashur Carraha pass intercepted, touchback. Rudy Silvera return for no gain",-4.443733926899121,2024-09-07T22:23:02.000Z
+401628600104919101,401628600,40162860023,6,4,8:08,Stonehill,Stony Brook,10,37,13,1,10,0,Timeout,"Timeout Stony Brook, clock 08:08",,2024-09-07T22:20:22.000Z
+401628600104927001,401628600,40162860024,1,4,7:29,Stony Brook,Stonehill,37,10,80,1,10,-2,Rush,Johnny Martin run for a loss of 2 yards to the STBK 18,-0.6979456564143147,2024-09-07T22:06:34.000Z
+401628600104935401,401628600,40162860024,2,4,6:45,Stony Brook,Stonehill,37,10,82,2,12,0,Rush,Johnny Martin run for no gain to the STBK 18,-0.18372230882822294,2024-09-07T22:06:34.000Z
+401628600104939901,401628600,40162860024,3,4,6:00,Stony Brook,Stonehill,37,10,82,3,12,7,Rush,Tyler Knoop run for 7 yds to the STBK 25,0.07838991207012835,2024-09-07T22:06:34.000Z
+401628600104946901,401628600,40162860024,4,4,5:30,Stony Brook,Stonehill,37,10,75,4,5,3,Punt,"Clayton Taylor punt for 54 yds , Nigel Henderson returns for 3 yds to the STO 24",,2024-09-07T22:06:34.000Z
+401628600104948101,401628600,40162860025,1,4,5:18,Stonehill,Stony Brook,10,37,76,1,10,2,Rush,Ashur Carraha run for 2 yds to the STO 26,-0.43374920863139543,2024-09-07T22:06:34.000Z
+401628600104954401,401628600,40162860025,2,4,4:55,Stonehill,Stony Brook,10,37,74,2,8,-10,Sack,Ashur Carraha sacked by Sebastian Regis for a loss of 10 yards to the STO 16,-0.7673331140007065,2024-09-07T22:06:34.000Z
+401628600104958401,401628600,40162860025,3,4,4:15,Stonehill,Stony Brook,10,37,84,3,18,9,Pass Reception,Ashur Carraha pass complete to Jarel Washington for 9 yds to the STO 25,0.0747827463633168,2024-09-07T22:06:34.000Z
+401628600104966401,401628600,40162860025,4,4,3:35,Stonehill,Stony Brook,10,37,75,4,9,0,Punt,"Nick Tanzola punt for 37 yds, downed at the STBK 38",,2024-09-07T22:06:34.000Z
+401628600104968001,401628600,40162860026,1,4,3:19,Stony Brook,Stonehill,37,10,62,1,10,5,Rush,Johnny Martin run for 5 yds to the STBK 43,0.1104483361431646,2024-09-07T22:06:34.000Z
+401628600104975901,401628600,40162860026,2,4,2:40,Stony Brook,Stonehill,37,10,57,2,5,-2,Rush,Dylan Harris run for a loss of 2 yards to the STBK 41,-1.494387822729232,2024-09-07T22:06:34.000Z
+401628600104985401,401628600,40162860026,4,4,1:45,Stony Brook,Stonehill,37,10,69,3,17,6,Rush,Dylan Harris run for 6 yds to the STBK 37,0.05094837490084725,2024-09-07T22:06:34.000Z
+401628600104985601,401628600,40162860026,5,4,1:43,Stony Brook,Stonehill,37,10,63,4,11,0,Timeout,"Timeout Stonehill, clock 01:43",,2024-09-07T22:37:22.000Z
+401628600104984101,401628600,40162860026,3,4,1:58,Stony Brook,Stonehill,37,10,59,3,7,-10,Penalty,"(01:58) CARSON, Shakhi rush to the right for a gain of 59 yards to the SHC0, TOUCHDOWN SBU, score nullified by penalty, clock 01:49 (Play was confirmed after review). PENALTY SBU Holding enforced 10 yards from the SBU41 to the SBU31 [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:06:34.000Z
+401628600104985701,401628600,40162860026,6,4,1:42,Stony Brook,Stonehill,37,10,63,4,11,0,Punt,"Clayton Taylor punt for 44 yds , Nigel Henderson returns for no gain to the STO 10",,2024-09-07T22:06:34.000Z
+401628600104987101,401628600,40162860027,1,4,1:28,Stonehill,Stony Brook,10,37,90,1,10,6,Rush,Jarel Washington run for 6 yds to the STO 16,0.21149361044027692,2024-09-07T22:06:34.000Z
+401628600104994201,401628600,40162860027,2,4,0:57,Stonehill,Stony Brook,10,37,84,2,4,4,Pass Reception,Ashur Carraha pass complete to Cody Ruff for 4 yds to the STO 20 for a 1ST down,0.1962928470918248,2024-09-07T22:06:34.000Z
+401628600104995801,401628600,40162860027,3,4,0:41,Stonehill,Stony Brook,10,37,80,1,10,5,Pass Reception,Ashur Carraha pass complete to Jarel Washington for 5 yds to the STO 25,0.0855067756440384,2024-09-07T22:06:34.000Z
+401628600104999001,401628600,40162860027,4,4,0:09,Stonehill,Stony Brook,10,37,75,2,5,50,Pass Reception,Ashur Carraha pass complete to Cody Ruff for 50 yds to the STBK 25 for a 1ST down,3.600466657695007,2024-09-07T22:06:34.000Z
+401628600104999901,401628600,40162860027,6,4,0:00,Stonehill,Stony Brook,10,37,25,1,10,0,Pass Interception Return,"Ashur Carraha pass intercepted, touchback. Jaxon Witherspoon return for no gain",-4.2999156377339425,2024-09-07T22:43:33.000Z
+401628600104999801,401628600,40162860027,5,4,0:01,Stonehill,Stony Brook,10,37,25,1,10,0,Timeout,"Timeout Stonehill, clock 00:01",,2024-09-07T22:42:23.000Z
+401628600104999903,401628600,40162860027,7,4,0:00,Stony Brook,Stonehill,37,10,80,0,10,0,End of Game,End of 4th Quarter,,2024-09-07T22:43:33.000Z

@@ -1,0 +1,162 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628474101855201,401628474,4016284741,2,1,14:47,Wisconsin,South Dakota,0,0,75,1,10,8,Fumble Recovery (Own),"Chez Mellusi run for 8 yds to the WIS 33 Chez Mellusi fumbled, recovered by WIS return for 0 yds",0.9104368550610653,2024-09-07T19:35:49.000Z
+401628474101858301,401628474,4016284741,3,1,14:16,Wisconsin,South Dakota,0,0,67,2,2,32,Pass Reception,Tyler Van Dyke pass complete to Vinny Anthony II for 32 yds to the SDAK 35 for a 1ST down,2.1947294808833,2024-09-07T19:35:49.000Z
+401628474101864501,401628474,4016284741,4,1,13:54,Wisconsin,South Dakota,0,0,35,1,10,-3,Sack,Tyler Van Dyke sacked by Mi'Quise Grace for a loss of 3 yards to the SDAK 38,-1.246168530373263,2024-09-07T19:35:49.000Z
+401628474101867201,401628474,4016284741,5,1,13:27,Wisconsin,South Dakota,0,0,38,2,13,6,Rush,Chez Mellusi run for 6 yds to the SDAK 32,0.25060127717949,2024-09-07T19:35:49.000Z
+401628474101874801,401628474,4016284741,6,1,12:51,Wisconsin,South Dakota,0,0,32,3,7,22,Pass Reception,Tyler Van Dyke pass complete to Bryson Green for 22 yds to the SDAK 10 for a 1ST down,1.454329194721287,2024-09-07T19:35:49.000Z
+401628474101878301,401628474,4016284741,7,1,12:16,Wisconsin,South Dakota,0,0,10,1,10,1,Rush,Chez Mellusi run for 1 yd to the SDAK 9,-0.22620936096334,2024-09-07T19:35:49.000Z
+401628474101879601,401628474,4016284741,8,1,12:03,Wisconsin,South Dakota,7,0,9,2,9,9,Rushing Touchdown,Chez Mellusi run for 9 yds for a TD (Nathanial Vakos KICK),2.740036203212782,2024-09-07T19:39:48.000Z
+401628474101849908,401628474,4016284741,1,1,15:00,South Dakota,Wisconsin,0,0,65,0,0,22,Kickoff Return (Offense),"Zeke Mata kickoff for 62 yds , Trech Kekahuna return for 22 yds to the WIS 25",,2024-09-07T19:35:49.000Z
+401628474101879603,401628474,4016284742,1,1,12:03,South Dakota,Wisconsin,0,7,75,1,10,-5,Penalty,"South Dakota Penalty, Delay Of Game (Roman Tillmon) to the SDAK 20",,2024-09-07T19:39:48.000Z
+401628474101884501,401628474,4016284742,3,1,11:54,South Dakota,Wisconsin,0,7,80,1,15,25,Pass Reception,Aidan Bouman pass complete to Travis Theis for 25 yds to the SDAK 45 for a 1ST down,2.5425598606546043,2024-09-07T19:35:49.000Z
+401628474101887601,401628474,4016284742,4,1,11:23,South Dakota,Wisconsin,0,7,55,1,10,4,Pass Reception,Aidan Bouman pass complete to Quaron Adams for 4 yds to the SDAK 49,-0.1607620955039497,2024-09-07T19:35:49.000Z
+401628474101896001,401628474,4016284742,5,1,10:39,South Dakota,Wisconsin,0,7,51,2,6,3,Rush,Charles Pierre Jr. run for 3 yds to the WIS 48,-0.4300437506904018,2024-09-07T19:35:49.000Z
+401628474101904301,401628474,4016284742,6,1,9:56,South Dakota,Wisconsin,0,7,48,3,3,1,Rush,Travis Theis run for 1 yd to the WIS 47,-0.8791417612914305,2024-09-07T19:35:49.000Z
+401628474101908601,401628474,4016284742,7,1,9:13,South Dakota,Wisconsin,0,7,47,4,2,0,Punt,Tyler Ebel punt for 47 yds for a touchback,,2024-09-07T19:35:49.000Z
+401628474101879604,401628474,4016284742,2,1,12:03,Wisconsin,South Dakota,7,0,65,0,0,0,Kickoff,Gavin Lahm kickoff for 65 yds for a touchback,,2024-09-07T19:39:48.000Z
+401628474101909401,401628474,4016284743,1,1,9:05,Wisconsin,South Dakota,7,0,80,1,10,2,Rush,Cade Yacamelli run for 2 yds to the WIS 22,-0.3623882030735057,2024-09-07T19:35:49.000Z
+401628474101916901,401628474,4016284743,2,1,8:30,Wisconsin,South Dakota,7,0,78,2,8,11,Rush,Cade Yacamelli run for 11 yds to the WIS 33 for a 1ST down,1.3193893295374597,2024-09-07T19:35:49.000Z
+401628474101924001,401628474,4016284743,3,1,7:59,Wisconsin,South Dakota,7,0,67,1,10,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-0.956890163923906,2024-09-07T19:52:40.000Z
+401628474101924801,401628474,4016284743,4,1,7:51,Wisconsin,South Dakota,7,0,67,2,10,6,Rush,Cade Yacamelli run for 6 yds to the WIS 39,0.2329235576014152,2024-09-07T19:35:49.000Z
+401628474101928301,401628474,4016284743,5,1,7:16,Wisconsin,South Dakota,7,0,61,3,4,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-0.6558532445830183,2024-09-07T19:54:01.000Z
+401628474101928701,401628474,4016284743,6,1,7:12,Wisconsin,South Dakota,7,0,61,4,4,0,Punt,"Atticus Bertrams punt for 49 yds, downed at the SDAK 12",,2024-09-07T19:35:49.000Z
+401628474101929801,401628474,4016284744,1,1,7:01,South Dakota,Wisconsin,0,7,88,1,10,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.3826565410356668,2024-09-07T19:58:31.000Z
+401628474101934201,401628474,4016284744,2,1,6:57,South Dakota,Wisconsin,0,7,88,2,10,2,Pass Reception,Aidan Bouman pass complete to JJ Galbreath for 2 yds to the SDAK 14,-0.1105192699655202,2024-09-07T19:35:49.000Z
+401628474101938401,401628474,4016284744,3,1,6:15,South Dakota,Wisconsin,0,7,86,3,8,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.10617959143254475,2024-09-07T19:59:51.000Z
+401628474101938901,401628474,4016284744,4,1,6:10,South Dakota,Wisconsin,0,7,86,4,8,0,Punt,"Tyler Ebel punt for 49 yds, fair catch by Vinny Anthony II at the WIS 42",,2024-09-07T20:00:44.000Z
+401628474101939701,401628474,4016284745,1,1,6:02,Wisconsin,South Dakota,7,0,58,1,10,4,Rush,Chez Mellusi run for 4 yds to the WIS 46,-0.1665264279012551,2024-09-07T19:35:49.000Z
+401628474101947101,401628474,4016284745,2,1,5:28,Wisconsin,South Dakota,7,0,54,2,6,4,Rush,Chez Mellusi run for 4 yds to the 50 yard line,-0.1674796144111532,2024-09-07T19:35:49.000Z
+401628474101955101,401628474,4016284745,3,1,4:48,Wisconsin,South Dakota,14,0,50,3,2,50,Passing Touchdown,Tyler Van Dyke pass complete to C.J. Williams for 50 yds for a TD (Nathanial Vakos KICK),4.895709254351724,2024-09-07T20:03:05.000Z
+401628474101955103,401628474,4016284746,1,1,4:48,Wisconsin,South Dakota,14,0,65,0,0,0,Kickoff,Gavin Lahm kickoff for 65 yds for a touchback,,2024-09-07T20:03:05.000Z
+401628474101955105,401628474,4016284746,2,1,4:48,South Dakota,Wisconsin,0,14,75,1,10,16,Rush,Charles Pierre Jr. run for 16 yds to the SDAK 41 for a 1ST down,1.4187427699228943,2024-09-07T20:03:05.000Z
+401628474101964001,401628474,4016284746,3,1,3:59,South Dakota,Wisconsin,0,14,59,1,10,-1,Rush,Travis Theis run for a loss of 1 yard to the SDAK 40,-1.339680578309613,2024-09-07T19:35:49.000Z
+401628474101967601,401628474,4016284746,4,1,3:23,South Dakota,Wisconsin,0,14,60,2,11,5,Pass Reception,Aidan Bouman pass complete to Travis Theis for 5 yds to the SDAK 45,0.0597558626935956,2024-09-07T19:35:49.000Z
+401628474101975601,401628474,4016284746,5,1,2:43,South Dakota,Wisconsin,0,14,55,3,6,7,Pass Reception,Aidan Bouman pass complete to Carter Bell for 7 yds to the WIS 48 for a 1ST down,2.2527032291344877,2024-09-07T19:35:49.000Z
+401628474101979101,401628474,4016284746,6,1,2:08,South Dakota,Wisconsin,0,14,48,1,10,-7,Sack,Aidan Bouman sacked by Darryl Peterson for a loss of 7 yards to the SDAK 45,-2.53216409060774,2024-09-07T19:35:49.000Z
+401628474101987501,401628474,4016284746,7,1,1:24,South Dakota,Wisconsin,0,14,55,2,17,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.6028319708002181,2024-09-07T20:11:10.000Z
+401628474101987601,401628474,4016284746,8,1,1:23,South Dakota,Wisconsin,0,14,55,3,17,9,Pass Reception,Aidan Bouman pass complete to Travis Theis for 9 yds to the WIS 46,0.5214770312665511,2024-09-07T19:35:49.000Z
+401628474101995701,401628474,4016284746,9,1,0:42,South Dakota,Wisconsin,0,14,46,4,8,0,Punt,"Tyler Ebel punt for 41 yds, downed at the WIS 5",,2024-09-07T19:35:49.000Z
+401628474101999902,401628474,4016284747,3,1,0:00,Wisconsin,South Dakota,14,0,91,0,6,9,End Period,End of 1st Quarter,,2024-09-07T20:14:44.000Z
+401628474101996501,401628474,4016284747,1,1,0:34,Wisconsin,South Dakota,14,0,95,1,10,4,Rush,Chez Mellusi run for 4 yds to the WIS 9,-0.03441629082403441,2024-09-07T19:35:49.000Z
+401628474101999901,401628474,4016284747,2,1,0:00,Wisconsin,South Dakota,14,0,91,2,6,9,Pass Reception,Tyler Van Dyke pass complete to Vinny Anthony II for 9 yds to the WIS 18 for a 1ST down,0.4644800895659875,2024-09-07T20:14:44.000Z
+401628474102854701,401628474,4016284747,4,2,14:52,Wisconsin,South Dakota,14,0,82,1,10,-5,Rush,Chez Mellusi run for a loss of 5 yards to the WIS 13,-0.7542567690860764,2024-09-07T20:19:17.000Z
+401628474102858601,401628474,4016284747,5,2,14:13,Wisconsin,South Dakota,14,0,87,2,15,2,Rush,Tyler Van Dyke run for 2 yds to the WIS 15,-0.06313386759387107,2024-09-07T20:19:17.000Z
+401628474102866001,401628474,4016284747,6,2,13:39,Wisconsin,South Dakota,14,0,85,3,13,10,Pass Reception,Tyler Van Dyke pass complete to Will Pauling for 10 yds to the WIS 25,0.1788062318965613,2024-09-07T20:19:17.000Z
+401628474102874001,401628474,4016284747,7,2,12:59,Wisconsin,South Dakota,14,0,75,4,3,13,Punt,"Atticus Bertrams punt for 53 yds , Carter Bell returns for 13 yds to the SDAK 35",,2024-09-07T20:21:08.000Z
+401628474102907601,401628474,4016284748,8,2,9:23,South Dakota,Wisconsin,0,14,28,3,10,0,Timeout,"Timeout South Dakota, clock 09:23",,2024-09-07T20:26:54.000Z
+401628474102874701,401628474,4016284748,1,2,12:52,South Dakota,Wisconsin,0,14,65,1,10,3,Rush,Travis Theis run for 3 yds to the SDAK 38,-0.4062307312880424,2024-09-07T20:19:17.000Z
+401628474102878201,401628474,4016284748,2,2,12:17,South Dakota,Wisconsin,0,14,62,2,7,24,Pass Reception,Aidan Bouman pass complete to JJ Galbreath for 24 yds to the WIS 38 for a 1ST down,2.554355093394189,2024-09-07T20:22:29.000Z
+401628474102885501,401628474,4016284748,3,2,11:44,South Dakota,Wisconsin,0,14,38,1,10,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.7828922522763084,2024-09-07T20:23:09.000Z
+401628474102885801,401628474,4016284748,4,2,11:41,South Dakota,Wisconsin,0,14,38,2,10,10,Pass Reception,Aidan Bouman pass complete to Tristan Michaud for 10 yds to the WIS 28 for a 1ST down,1.1134704267230655,2024-09-07T20:19:17.000Z
+401628474102889801,401628474,4016284748,5,2,11:01,South Dakota,Wisconsin,0,14,28,1,10,2,Rush,Carter Bell run for 2 yds to the WIS 26,-0.2736731894519623,2024-09-07T20:19:17.000Z
+401628474102897801,401628474,4016284748,6,2,10:21,South Dakota,Wisconsin,0,14,26,2,8,3,Rush,Travis Theis run for 3 yds to the WIS 23,-0.1882756684305722,2024-09-07T20:19:17.000Z
+401628474102905001,401628474,4016284748,7,2,9:49,South Dakota,Wisconsin,0,14,23,3,5,-5,Penalty,"South Dakota Penalty, False Start (-5 Yards) to the WIS 28",,2024-09-07T20:25:59.000Z
+401628474102908401,401628474,4016284748,9,2,9:15,South Dakota,Wisconsin,0,14,28,3,10,17,Rush,Travis Theis run for 17 yds to the WIS 11 for a 1ST down,1.4550019687908033,2024-09-07T20:19:17.000Z
+401628474102916501,401628474,4016284748,10,2,8:34,South Dakota,Wisconsin,0,14,11,1,10,-1,Rush,Travis Theis run for a loss of 1 yard to the WIS 12,-0.350629501927024,2024-09-07T20:19:17.000Z
+401628474102924301,401628474,4016284748,11,2,7:56,South Dakota,Wisconsin,0,14,12,2,11,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.31307073157876,2024-09-07T20:31:12.000Z
+401628474102924601,401628474,4016284748,12,2,7:53,South Dakota,Wisconsin,0,14,12,3,11,4,Pass Reception,Aidan Bouman pass complete to Travis Theis for 4 yds to the WIS 8,-0.060649732559428,2024-09-07T20:19:17.000Z
+401628474102928501,401628474,4016284748,13,2,7:14,South Dakota,Wisconsin,3,14,8,4,7,25,Field Goal Good,Will Leyland 25 yd FG GOOD,,2024-09-07T20:32:29.000Z
+401628474102928502,401628474,4016284749,1,2,7:14,South Dakota,Wisconsin,3,14,65,0,0,18,Kickoff Return (Offense),"Zeke Mata kickoff for 58 yds , Trech Kekahuna return for 18 yds to the WIS 25",,2024-09-07T20:32:29.000Z
+401628474102945401,401628474,4016284749,5,2,5:45,Wisconsin,South Dakota,14,3,48,2,7,0,Timeout,"Timeout South Dakota, clock 05:45",,2024-09-07T20:39:07.000Z
+401628474102998801,401628474,4016284749,16,2,0:11,Wisconsin,South Dakota,14,3,7,4,2,0,Timeout,"Timeout South Dakota, clock 00:11",,2024-09-07T20:51:50.000Z
+401628474102929101,401628474,4016284749,2,2,7:08,Wisconsin,South Dakota,14,3,75,1,10,-5,Penalty,"(07:08) VAN DYKE, Tyler pass to the left complete for 11 yards to PAULING, Will caught at the WIS36 and advanced to the WIS36 (GANUES, Josiah), clock 06:58. PENALTY WIS Ineligible Receiver Downfield on Pass on BRUNNER, Joe enforced 5 yards from the WIS25 to the WIS20 [NHSG]. NO PLAY (replay the down).",,2024-09-07T20:19:17.000Z
+401628474102935801,401628474,4016284749,3,2,6:41,Wisconsin,South Dakota,14,3,80,1,15,29,Rush,Cade Yacamelli run for 29 yds to the WIS 49 for a 1ST down,2.8958058940780305,2024-09-07T20:19:17.000Z
+401628474102938501,401628474,4016284749,4,2,6:14,Wisconsin,South Dakota,14,3,51,1,10,3,Rush,Cade Yacamelli run for 3 yds to the SDAK 48,-0.395458128988178,2024-09-07T20:19:17.000Z
+401628474102946201,401628474,4016284749,6,2,5:37,Wisconsin,South Dakota,14,3,48,2,7,4,Rush,Jackson Acker run for 4 yds to the SDAK 44,-0.160190256168265,2024-09-07T20:19:17.000Z
+401628474102949301,401628474,4016284749,7,2,5:06,Wisconsin,South Dakota,14,3,44,3,3,4,Rush,Cade Yacamelli run for 4 yds to the SDAK 40 for a 1ST down,1.289966445112041,2024-09-07T20:19:17.000Z
+401628474102957801,401628474,4016284749,8,2,4:21,Wisconsin,South Dakota,14,3,40,1,10,7,Pass Reception,Tyler Van Dyke pass complete to Bryson Green for 7 yds to the SDAK 33,0.4473056556699185,2024-09-07T20:19:17.000Z
+401628474102965601,401628474,4016284749,9,2,3:43,Wisconsin,South Dakota,14,3,33,2,3,2,Rush,Chez Mellusi run for 2 yds to the SDAK 31,-0.4480912837820625,2024-09-07T20:19:17.000Z
+401628474102969001,401628474,4016284749,10,2,3:09,Wisconsin,South Dakota,14,3,31,3,1,5,Rush,Chez Mellusi run for 5 yds to the SDAK 26 for a 1ST down,0.4698326496413045,2024-09-07T20:19:17.000Z
+401628474102976101,401628474,4016284749,11,2,2:38,Wisconsin,South Dakota,14,3,26,1,10,4,Pass Reception,Tyler Van Dyke pass complete to Jackson Acker for 4 yds to the SDAK 22,-0.0380297652801275,2024-09-07T20:19:17.000Z
+401628474102979401,401628474,4016284749,12,2,2:05,Wisconsin,South Dakota,14,3,22,2,6,7,Pass Reception,Tyler Van Dyke pass complete to Cade Yacamelli for 7 yds to the SDAK 15 for a 1ST down,0.199832798123225,2024-09-07T20:19:17.000Z
+401628474102984801,401628474,4016284749,13,2,1:51,Wisconsin,South Dakota,14,3,15,1,10,4,Rush,Cade Yacamelli run for 4 yds to the SDAK 11,-0.019365161227934,2024-09-07T20:19:17.000Z
+401628474102987901,401628474,4016284749,14,2,1:20,Wisconsin,South Dakota,14,3,11,2,6,-2,Rush,Tyler Van Dyke run for a loss of 2 yards to the SDAK 13,-0.4894085083740303,2024-09-07T20:19:17.000Z
+401628474102996401,401628474,4016284749,15,2,0:35,Wisconsin,South Dakota,14,3,13,3,8,6,Pass Reception,Tyler Van Dyke pass complete to Cade Yacamelli for 6 yds to the SDAK 7,0.1141243022662713,2024-09-07T20:19:17.000Z
+401628474102999201,401628474,4016284749,17,2,0:07,Wisconsin,South Dakota,17,3,7,4,2,24,Field Goal Good,Nathanial Vakos 24 yd FG GOOD,,2024-09-07T20:52:59.000Z
+401628474102999902,401628474,40162847410,3,2,0:00,South Dakota,Wisconsin,3,17,77,0,10,0,End of Half,End of 2nd Quarter,,2024-09-07T20:54:45.000Z
+401628474102999202,401628474,40162847410,1,2,0:07,Wisconsin,South Dakota,17,3,65,0,0,0,Kickoff,Gavin Lahm kickoff for 65 yds for a touchback,,2024-09-07T20:52:59.000Z
+401628474102999204,401628474,40162847410,2,2,0:07,South Dakota,Wisconsin,3,17,75,1,10,-2,Rush,"(00:07) Kneel down by BOUMAN, Aidan at USD23 (team loss of 2), clock 00:00.",-0.8852575132705454,2024-09-07T20:52:59.000Z
+401628474103849902,401628474,40162847411,1,3,15:00,Wisconsin,South Dakota,17,3,65,0,0,0,Kickoff,Gavin Lahm kickoff for 65 yds for a touchback,,2024-09-07T21:15:45.000Z
+401628474103849905,401628474,40162847411,2,3,15:00,South Dakota,Wisconsin,3,17,75,1,10,5,Rush,Charles Pierre Jr. run for 5 yds to the SDAK 30,0.0945451165334843,2024-09-07T21:15:45.000Z
+401628474103858401,401628474,40162847411,3,3,14:15,South Dakota,Wisconsin,3,17,70,2,5,13,Rush,Charles Pierre Jr. run for 13 yds to the SDAK 43 for a 1ST down,1.5178933056765107,2024-09-07T21:15:45.000Z
+401628474103866601,401628474,40162847411,4,3,13:33,South Dakota,Wisconsin,3,17,57,1,10,17,Rush,Charles Pierre Jr. run for 17 yds to the WIS 40 for a 1ST down,1.2762675535739856,2024-09-07T21:15:45.000Z
+401628474103875101,401628474,40162847411,5,3,12:48,South Dakota,Wisconsin,3,17,40,1,10,5,Penalty,"Wisconsin Penalty, Delay Of Game (Elijah Hills) to the WIS 35",,2024-09-07T21:19:10.000Z
+401628474103876101,401628474,40162847411,6,3,12:38,South Dakota,Wisconsin,10,17,35,1,5,35,Rushing Touchdown,Keyondray Jones-Logan run for 35 yds for a TD (Will Leyland KICK),2.299187761564772,2024-09-07T21:19:41.000Z
+401628474103876103,401628474,40162847412,1,3,12:38,South Dakota,Wisconsin,10,17,65,0,0,22,Kickoff Return (Offense),"Zeke Mata kickoff for 60 yds , Trech Kekahuna return for 22 yds to the WIS 27",,2024-09-07T21:20:20.000Z
+401628474103876901,401628474,40162847412,2,3,12:30,Wisconsin,South Dakota,17,10,73,1,10,4,Rush,Tyler Van Dyke run for 4 yds to the WIS 31,-0.1248442803913914,2024-09-07T21:15:45.000Z
+401628474103879901,401628474,40162847412,3,3,12:00,Wisconsin,South Dakota,17,10,69,2,6,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-0.7118036090130389,2024-09-07T21:15:45.000Z
+401628474103885601,401628474,40162847412,4,3,11:43,Wisconsin,South Dakota,17,10,69,3,6,-7,Sack,Tyler Van Dyke sacked by Nick Gaes for a loss of 7 yards to the WIS 24,-0.5576411567662971,2024-09-07T21:15:45.000Z
+401628474103889201,401628474,40162847412,5,3,11:07,Wisconsin,South Dakota,17,10,76,4,13,0,Punt,"Atticus Bertrams punt for 45 yds, fair catch by Carter Bell at the SDAK 31",,2024-09-07T21:15:45.000Z
+401628474103889102,401628474,40162847413,1,3,11:08,South Dakota,Wisconsin,10,17,69,1,10,8,Rush,Carter Bell run for 8 yds to the SDAK 39,1.0102722158723196,2024-09-07T21:26:15.000Z
+401628474103897401,401628474,40162847413,2,3,10:25,South Dakota,Wisconsin,10,17,61,2,2,2,Rush,Charles Pierre Jr. run for 2 yds to the SDAK 41 for a 1ST down,-0.0619935605556973,2024-09-07T21:15:45.000Z
+401628474103905201,401628474,40162847413,3,3,9:47,South Dakota,Wisconsin,10,17,59,1,10,7,Rush,Charles Pierre Jr. run for 7 yds to the SDAK 48,0.6972022034641013,2024-09-07T21:58:07.000Z
+401628474103908201,401628474,40162847413,4,3,9:17,South Dakota,Wisconsin,10,17,52,2,3,-5,Penalty,"South Dakota Penalty, False Start (JJ Galbreath) to the SDAK 43",,2024-09-07T21:31:51.000Z
+401628474103914401,401628474,40162847413,5,3,8:55,South Dakota,Wisconsin,10,17,57,2,8,18,Pass Reception,Aidan Bouman pass complete to Carter Bell for 18 yds to the WIS 39 for a 1ST down,2.2027288190626066,2024-09-07T21:15:45.000Z
+401628474103918601,401628474,40162847413,6,3,8:13,South Dakota,Wisconsin,10,17,39,1,10,2,Rush,Charles Pierre Jr. run for 2 yds to the WIS 37,-0.436671624801777,2024-09-07T21:15:45.000Z
+401628474103926201,401628474,40162847413,7,3,7:37,South Dakota,Wisconsin,10,17,37,3,8,1,Rush,Travis Theis run for 1 yd to the WIS 36,-0.828962018973927,2024-09-07T21:33:30.000Z
+401628474103926701,401628474,40162847413,8,3,7:32,South Dakota,Wisconsin,10,17,37,2,8,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.9430517195492936,2024-09-07T21:33:35.000Z
+401628474103934901,401628474,40162847413,9,3,6:50,South Dakota,Wisconsin,10,17,36,4,7,28,Punt,"Tyler Ebel punt for 28 yds , Vinny Anthony II returns for no gain to the WIS 8 , returns for no gain to the WIS 8",,2024-09-07T21:35:19.000Z
+401628474103935701,401628474,40162847414,1,3,6:42,South Dakota,Wisconsin,10,17,8,1,8,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.357171386033373,2024-09-07T21:36:09.000Z
+401628474103936901,401628474,40162847414,2,3,6:30,South Dakota,Wisconsin,10,17,4,1,4,-3,Rush,Travis Theis run for a loss of 3 yards to the WIS 7,-0.918957949303762,2024-09-07T21:15:45.000Z
+401628474103944801,401628474,40162847414,3,3,5:51,South Dakota,Wisconsin,10,17,7,3,7,-8,Sack,Aidan Bouman sacked by Elijah Hills for a loss of 8 yards to the WIS 15,-1.391778076085272,2024-09-07T21:40:30.000Z
+401628474103945201,401628474,40162847414,4,3,5:47,South Dakota,Wisconsin,10,17,7,2,7,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.277446160702615,2024-09-07T21:40:34.000Z
+401628474103949301,401628474,40162847414,5,3,5:06,South Dakota,Wisconsin,13,17,15,4,15,32,Field Goal Good,Will Leyland 32 yd FG GOOD,,2024-09-07T21:41:53.000Z
+401628474103949302,401628474,40162847415,1,3,5:06,South Dakota,Wisconsin,13,17,65,0,0,18,Kickoff Return (Offense),"Zeke Mata kickoff for 65 yds , Trech Kekahuna return for 18 yds to the WIS 18",,2024-09-07T21:44:42.000Z
+401628474103949801,401628474,40162847415,2,3,5:01,Wisconsin,South Dakota,17,13,82,1,10,14,Rush,Cade Yacamelli run for 14 yds to the WIS 32 for a 1ST down,0.9689875336509912,2024-09-07T21:15:45.000Z
+401628474103957001,401628474,40162847415,3,3,4:29,Wisconsin,South Dakota,17,13,68,1,10,2,Rush,Tyler Van Dyke run for 2 yds to the WIS 34,-0.5836824413377926,2024-09-07T21:15:45.000Z
+401628474103959801,401628474,40162847415,4,3,4:01,Wisconsin,South Dakota,17,13,66,2,8,21,Pass Reception,Tyler Van Dyke pass complete to Will Pauling for 21 yds to the SDAK 45 for a 1ST down,2.626479071912584,2024-09-07T21:15:45.000Z
+401628474103967502,401628474,40162847415,5,3,3:24,Wisconsin,South Dakota,17,13,45,1,10,10,Penalty,"(03:24) VAN DYKE, Tyler pass to the right complete for 8 yards to GREEN, Bryson caught at the USD37 and advanced to the USD37 (MCKELVEY, Teven), out of bounds, clock 03:21. PENALTY USD Holding on HARDMAN, Gabriel enforced 10 yards from the USD45 to the USD35 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T21:15:45.000Z
+401628474103969301,401628474,40162847415,6,3,3:06,Wisconsin,South Dakota,17,13,35,1,10,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-0.6918622905019662,2024-09-07T21:48:55.000Z
+401628474103974101,401628474,40162847415,7,3,2:58,Wisconsin,South Dakota,17,13,35,2,10,2,Pass Reception,Tyler Van Dyke pass complete to Chez Mellusi for 2 yds to the SDAK 33,-0.4991802291350498,2024-09-07T21:15:45.000Z
+401628474103977601,401628474,40162847415,8,3,2:23,Wisconsin,South Dakota,17,13,33,3,8,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-1.0155543538349077,2024-09-07T21:50:06.000Z
+401628474103977801,401628474,40162847415,9,3,2:21,Wisconsin,South Dakota,20,13,33,4,8,50,Field Goal Good,Nathanial Vakos 50 yd FG GOOD,,2024-09-07T21:50:35.000Z
+401628474103977802,401628474,40162847416,1,3,2:21,Wisconsin,South Dakota,20,13,65,0,0,0,Kickoff,Gavin Lahm kickoff for 65 yds for a touchback,,2024-09-07T21:53:58.000Z
+401628474103978601,401628474,40162847416,2,3,2:13,South Dakota,Wisconsin,13,20,75,1,10,4,Pass Reception,Aidan Bouman pass complete to Keyondray Jones-Logan for 4 yds to the SDAK 29,-0.1142886249388964,2024-09-07T21:15:45.000Z
+401628474103985301,401628474,40162847416,3,3,1:46,South Dakota,Wisconsin,13,20,71,2,6,3,Rush,Charles Pierre Jr. run for 3 yds to the SDAK 32,-0.2748655161762548,2024-09-07T21:15:45.000Z
+401628474103989201,401628474,40162847416,4,3,1:07,South Dakota,Wisconsin,13,20,68,3,3,2,Pass Reception,Aidan Bouman pass complete to Jack Martens for 2 yds to the SDAK 34,-0.3345261769981986,2024-09-07T21:15:45.000Z
+401628474103997201,401628474,40162847416,5,3,0:27,South Dakota,Wisconsin,13,20,66,4,1,3,Punt,"Tyler Ebel punt for 39 yds , Vinny Anthony II returns for 3 yds to the WIS 30",,2024-09-07T21:57:05.000Z
+401628474103998002,401628474,40162847417,2,3,0:00,Wisconsin,South Dakota,20,13,70,0,10,9,End Period,End of 3rd Quarter,,2024-09-07T21:58:07.000Z
+401628474103998001,401628474,40162847417,1,3,0:19,Wisconsin,South Dakota,20,13,70,1,10,9,Pass Reception,Tyler Van Dyke pass complete to Will Pauling for 9 yds to the WIS 39,1.352349268401042,2024-09-07T21:15:45.000Z
+401628474104854601,401628474,40162847417,3,4,14:53,Wisconsin,South Dakota,20,13,61,3,1,-5,Penalty,"Wisconsin Penalty, False Start (-5 Yards) to the WIS 34",,2024-09-07T22:02:51.000Z
+401628474104854701,401628474,40162847417,4,4,14:52,Wisconsin,South Dakota,20,13,61,2,1,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-1.3922179055870938,2024-09-07T22:03:01.000Z
+401628474104855301,401628474,40162847417,5,4,14:46,Wisconsin,South Dakota,20,13,66,3,6,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-0.41860474378249357,2024-09-07T22:05:45.000Z
+401628474104857001,401628474,40162847417,6,4,14:29,Wisconsin,South Dakota,20,13,66,4,6,0,Punt,"Atticus Bertrams punt for 39 yds, fair catch by Carter Bell at the SDAK 27",,2024-09-07T22:02:51.000Z
+401628474104856701,401628474,40162847418,1,4,14:32,South Dakota,Wisconsin,13,20,73,1,10,5,Rush,Charles Pierre Jr. run for 5 yds to the SDAK 32,0.0980689416811309,2024-09-07T22:02:51.000Z
+401628474104859801,401628474,40162847418,2,4,14:01,South Dakota,Wisconsin,13,20,68,2,5,6,Rush,Charles Pierre Jr. run for 6 yds to the SDAK 38 for a 1ST down,0.8816428518613151,2024-09-07T22:02:51.000Z
+401628474104867301,401628474,40162847418,3,4,13:26,South Dakota,Wisconsin,13,20,62,1,10,0,Pass Incompletion,Aidan Bouman pass incomplete,-1.087995077167328,2024-09-07T22:08:31.000Z
+401628474104867801,401628474,40162847418,4,4,13:21,South Dakota,Wisconsin,13,20,62,2,10,1,Rush,Travis Theis run for 1 yd to the SDAK 39,-0.5784221485712022,2024-09-07T22:02:51.000Z
+401628474104875901,401628474,40162847418,5,4,12:40,South Dakota,Wisconsin,13,20,61,4,9,0,Punt,Tyler Ebel punt for 46 yds,,2024-09-07T22:09:52.000Z
+401628474104876201,401628474,40162847418,6,4,12:37,South Dakota,Wisconsin,13,20,61,3,9,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.4235741469021441,2024-09-07T22:09:58.000Z
+401628474104877601,401628474,40162847419,1,4,12:23,Wisconsin,South Dakota,20,13,85,1,10,23,Pass Reception,"Tyler Van Dyke pass complete to Trech Kekahuna for 8 yds to the WIS 23 for a 1ST down South Dakota Penalty, Horse Collar Tackle on MCKELVEY, Teven enforced (Teven McKelvey) to the WIS 38 for a 1ST down",1.667957909195719,2024-09-07T22:13:59.000Z
+401628474104879801,401628474,40162847419,2,4,12:01,Wisconsin,South Dakota,20,13,62,1,10,4,Rush,Chez Mellusi run for 4 yds to the WIS 42,-0.1660250563858484,2024-09-07T22:02:51.000Z
+401628474104887101,401628474,40162847419,3,4,11:28,Wisconsin,South Dakota,20,13,58,2,6,22,Pass Reception,"Tyler Van Dyke pass complete to Jackson Acker for 7 yds to the SDAK 49 for a 1ST down South Dakota Penalty, Face mask (15 yards) (Teven McKelvey) to the SDAK 36 for a 1ST down",2.108250602051543,2024-09-07T22:15:18.000Z
+401628474104889301,401628474,40162847419,4,4,11:06,Wisconsin,South Dakota,20,13,36,1,10,7,Rush,Chez Mellusi run for 7 yds to the SDAK 29,0.40306460138266,2024-09-07T22:02:51.000Z
+401628474104897001,401628474,40162847419,5,4,10:29,Wisconsin,South Dakota,20,13,29,3,3,15,Penalty,"South Dakota Penalty, Targeting on SHORTER, Dennis enforced (Dennis Shorter) to the SDAK 14 for a 1ST down",,2024-09-07T22:16:39.000Z
+401628474104897301,401628474,40162847419,6,4,10:26,Wisconsin,South Dakota,20,13,29,2,3,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-0.7184552981933003,2024-09-07T22:16:44.000Z
+401628474104897901,401628474,40162847419,7,4,10:20,Wisconsin,South Dakota,20,13,14,1,10,5,Rush,Chez Mellusi run for 5 yds to the SDAK 9,0.0745432474784075,2024-09-07T22:02:51.000Z
+401628474104905501,401628474,40162847419,8,4,9:44,Wisconsin,South Dakota,20,13,9,2,5,5,Rush,Chez Mellusi run for 5 yds to the SDAK 4 for a 1ST down,0.785549408986699,2024-09-07T22:02:51.000Z
+401628474104909701,401628474,40162847419,9,4,9:02,Wisconsin,South Dakota,20,13,4,1,4,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-0.6456997217339855,2024-09-07T22:20:56.000Z
+401628474104914101,401628474,40162847419,10,4,8:58,Wisconsin,South Dakota,20,13,4,2,4,3,Pass Reception,Tyler Van Dyke pass complete to C.J. Williams for 3 yds to the SDAK 1,-0.1201079887315895,2024-09-07T22:02:51.000Z
+401628474104919401,401628474,40162847419,11,4,8:05,Wisconsin,South Dakota,20,13,1,3,1,1,Penalty,"South Dakota Penalty, Delay Of Game (TEAM) to the SDAK 0 for a 1ST down",,2024-09-07T22:23:23.000Z
+401628474104919601,401628474,40162847419,12,4,8:03,Wisconsin,South Dakota,20,13,1,3,1,0,Rush,Chez Mellusi run for no gain to the SDAK 1,-0.331755745676551,2024-09-07T22:02:51.000Z
+401628474104925801,401628474,40162847419,13,4,7:41,Wisconsin,South Dakota,27,13,1,4,1,1,Rushing Touchdown,Chez Mellusi run for 1 yd for a TD (Nathanial Vakos KICK),2.785753974856101,2024-09-07T22:23:59.000Z
+401628474104925803,401628474,40162847420,1,4,7:41,Wisconsin,South Dakota,27,13,65,0,0,0,Kickoff,Gavin Lahm kickoff for 65 yds for a touchback,,2024-09-07T22:24:35.000Z
+401628474104926601,401628474,40162847420,2,4,7:33,South Dakota,Wisconsin,13,27,75,1,10,0,Pass Incompletion,Aidan Bouman pass incomplete,-0.7029700220436519,2024-09-07T22:29:19.000Z
+401628474104927101,401628474,40162847420,3,4,7:28,South Dakota,Wisconsin,13,27,75,2,10,4,Rush,Charles Pierre Jr. run for 4 yds to the SDAK 29,-0.06222348980634162,2024-09-07T22:02:51.000Z
+401628474104934901,401628474,40162847420,4,4,6:50,South Dakota,Wisconsin,13,27,71,3,6,-9,Sack,Aidan Bouman sacked by Christian Alliegro for a loss of 9 yards to the SDAK 20,-0.5167156126940782,2024-09-07T22:02:51.000Z
+401628474104938101,401628474,40162847420,5,4,6:18,South Dakota,Wisconsin,13,27,80,4,15,0,Punt,"Tyler Ebel punt for 37 yds, fair catch by Vinny Anthony II at the WIS 43",,2024-09-07T22:02:51.000Z
+401628474104985101,401628474,40162847421,11,4,1:48,Wisconsin,South Dakota,27,13,18,3,3,0,Timeout,"Timeout South Dakota, clock 01:48",,2024-09-07T22:02:51.000Z
+401628474104999902,401628474,40162847421,15,4,0:00,Wisconsin,South Dakota,27,13,2,0,4,0,End of Game,End of 4th Quarter,,2024-09-07T22:45:37.000Z
+401628474104938701,401628474,40162847421,1,4,6:12,Wisconsin,South Dakota,27,13,57,1,10,9,Pass Reception,Tyler Van Dyke pass complete to Bryson Green for 9 yds to the SDAK 48,1.2806291789588773,2024-09-07T22:02:51.000Z
+401628474104945701,401628474,40162847421,2,4,5:42,Wisconsin,South Dakota,27,13,48,2,1,1,Rush,Darrion Dupree run for 1 yd to the SDAK 47 for a 1ST down,-0.4285147227139808,2024-09-07T22:02:51.000Z
+401628474104948901,401628474,40162847421,3,4,5:10,Wisconsin,South Dakota,27,13,47,1,10,0,Pass Incompletion,Tyler Van Dyke pass incomplete,-1.0507069190375147,2024-09-07T22:34:59.000Z
+401628474104949401,401628474,40162847421,4,4,5:05,Wisconsin,South Dakota,27,13,47,2,10,5,Rush,Darrion Dupree run for 5 yds to the SDAK 42,0.0735878719947891,2024-09-07T22:02:51.000Z
+401628474104957701,401628474,40162847421,5,4,4:22,Wisconsin,South Dakota,27,13,42,3,5,6,Rush,Darrion Dupree run for 6 yds to the SDAK 36 for a 1ST down,1.5795431932953594,2024-09-07T22:02:51.000Z
+401628474104964701,401628474,40162847421,6,4,3:52,Wisconsin,South Dakota,27,13,36,1,10,8,Pass Reception,Tyler Van Dyke pass complete to Will Pauling for 8 yds to the SDAK 28,0.577261746429441,2024-09-07T22:02:51.000Z
+401628474104968201,401628474,40162847421,7,4,3:17,Wisconsin,South Dakota,27,13,28,2,2,0,Rush,Dilin Jones run for no gain to the SDAK 28,-0.7278027360831524,2024-09-07T22:02:51.000Z
+401628474104976601,401628474,40162847421,8,4,2:33,Wisconsin,South Dakota,27,13,28,3,2,3,Rush,Dilin Jones run for 3 yds to the SDAK 25 for a 1ST down,0.4612347224014499,2024-09-07T22:02:51.000Z
+401628474104979901,401628474,40162847421,9,4,2:00,Wisconsin,South Dakota,27,13,25,1,10,3,Rush,Darrion Dupree run for 3 yds to the SDAK 22,-0.1408898471373875,2024-09-07T22:02:51.000Z
+401628474104984301,401628474,40162847421,10,4,1:56,Wisconsin,South Dakota,27,13,22,2,7,4,Rush,Darrion Dupree run for 4 yds to the SDAK 18,-0.045211541849307,2024-09-07T22:39:33.000Z
+401628474104986001,401628474,40162847421,12,4,1:39,Wisconsin,South Dakota,27,13,18,3,3,5,Rush,Darrion Dupree run for 5 yds to the SDAK 13 for a 1ST down,0.347256536206905,2024-09-07T22:02:51.000Z
+401628474104988801,401628474,40162847421,13,4,1:11,Wisconsin,South Dakota,27,13,13,1,10,6,Rush,Dilin Jones run for 6 yds to the SDAK 7,0.180499623508462,2024-09-07T22:02:51.000Z
+401628474104997101,401628474,40162847421,14,4,0:28,Wisconsin,South Dakota,27,13,7,2,4,5,Rush,Dilin Jones run for 5 yds to the SDAK 2 for a 1ST down,1.145194293865287,2024-09-07T22:02:51.000Z

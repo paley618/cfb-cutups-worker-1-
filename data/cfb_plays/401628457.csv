@@ -1,0 +1,168 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628457101876701,401628457,4016284571,7,1,12:32,West Virginia,Penn State,0,0,59,4,6,0,Punt,Oliver Straw punt for 41 yds,,2024-08-31T16:10:47.000Z
+401628457101849907,401628457,4016284571,2,1,15:00,West Virginia,Penn State,0,0,75,1,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.7029700220436519,2024-08-31T16:00:37.000Z
+401628457101849910,401628457,4016284571,3,1,15:00,West Virginia,Penn State,0,0,75,2,10,12,Rush,Jahiem White run for 12 yds to the WVU 37 for a 1ST down,1.7302143481872232,2024-08-31T16:00:37.000Z
+401628457101849912,401628457,4016284571,4,1,15:00,West Virginia,Penn State,0,0,63,1,10,1,Pass Reception,Garrett Greene pass complete to Jahiem White for 1 yd to the WVU 38,-0.870939720055624,2024-08-31T16:00:37.000Z
+401628457101849914,401628457,4016284571,5,1,15:00,West Virginia,Penn State,0,0,62,2,9,3,Rush,CJ Donaldson Jr. run for 3 yds to the WVU 41,-0.3157537018266953,2024-08-31T16:00:37.000Z
+401628457101849916,401628457,4016284571,6,1,15:00,West Virginia,Penn State,0,0,59,3,6,0,Pass Reception,Garrett Greene pass complete to Kole Taylor for no gain to the WVU 41,-0.6094006658069526,2024-08-31T16:00:37.000Z
+401628457101849905,401628457,4016284571,1,1,15:00,Penn State,West Virginia,0,0,65,0,0,0,Kickoff,Gabriel Nwosu kickoff for 64 yds,,2024-08-31T16:00:37.000Z
+401628457101876703,401628457,4016284572,1,1,12:32,Penn State,West Virginia,0,0,82,1,10,5,Rush,Nicholas Singleton run for 5 yds to the PSU 23,0.0820151488011058,2024-08-31T16:13:31.000Z
+401628457101876704,401628457,4016284572,2,1,12:32,Penn State,West Virginia,0,0,77,2,5,3,Rush,Kaytron Allen run for 3 yds to the PSU 26,-0.2322195646104914,2024-08-31T16:13:31.000Z
+401628457101876705,401628457,4016284572,3,1,12:32,Penn State,West Virginia,0,0,74,3,2,7,Rush,Nicholas Singleton run for 7 yds to the PSU 33 for a 1ST down,1.2094459959610875,2024-08-31T16:13:31.000Z
+401628457101896101,401628457,4016284572,4,1,10:38,Penn State,West Virginia,0,0,67,1,10,-5,Fumble Recovery (Opponent),"run for a loss of 5 yards to the PSU 28 fumbled, recovered by WVU T.J. Jackson T. Jackson return for 0 yds",-1.5709433308588512,2024-08-31T16:16:29.000Z
+401628457101896901,401628457,4016284573,1,1,10:30,West Virginia,Penn State,0,0,28,1,10,-19,Fumble Recovery (Opponent),"run for a loss of 19 yards to the PSU 47 fumbled, recovered by PSU Jaylen Reed J. Reed return for 0 yds",-4.235985525861569,2024-08-31T16:19:15.000Z
+401628457101896903,401628457,4016284574,1,1,10:30,Penn State,West Virginia,0,0,53,1,10,4,Rush,Kaytron Allen run for 4 yds to the WVU 49,-0.1543469215353017,2024-08-31T16:19:15.000Z
+401628457101896904,401628457,4016284574,2,1,10:30,Penn State,West Virginia,0,0,49,2,6,0,Pass Incompletion,Drew Allar pass incomplete,-1.1607754377006163,2024-08-31T16:22:19.000Z
+401628457101896905,401628457,4016284574,3,1,10:30,Penn State,West Virginia,0,0,49,3,6,0,Rush,Kaytron Allen run for no gain to the WVU 49,-0.9179099346397166,2024-08-31T16:22:19.000Z
+401628457101908401,401628457,4016284574,4,1,9:15,Penn State,West Virginia,0,0,49,4,6,0,Punt,Riley Thompson punt for 49 yds for a touchback,,2024-08-31T16:23:51.000Z
+401628457101908403,401628457,4016284575,1,1,9:15,West Virginia,Penn State,0,0,80,1,10,-9,Fumble Recovery (Own),"Garrett Greene run for a loss of 9 yards to the WVU 9 Garrett Greene fumbled, recovered by WVU Garrett Greene",-0.9313784261032856,2024-08-31T16:33:48.000Z
+401628457101908405,401628457,4016284575,3,1,9:15,West Virginia,Penn State,0,0,86,2,16,10,Rush,Jahiem White run for 10 yds to the WVU 24,0.2616581654233583,2024-08-31T16:23:51.000Z
+401628457101908406,401628457,4016284575,4,1,9:15,West Virginia,Penn State,0,0,76,3,6,20,Pass Reception,Garrett Greene pass complete to Hudson Clement for 20 yds to the WVU 44 for a 1ST down,2.619159511589716,2024-08-31T16:23:51.000Z
+401628457101908407,401628457,4016284575,5,1,9:15,West Virginia,Penn State,0,0,56,1,10,11,Fumble Recovery (Own),"Garrett Greene run for 11 yds to the PSU 45 Garrett Greene fumbled, recovered by WVU return for 0 yds for a 1ST down",0.893668696312238,2024-08-31T16:33:48.000Z
+401628457101908408,401628457,4016284575,6,1,9:15,West Virginia,Penn State,0,0,45,1,10,10,Rush,Jahiem White run for 10 yds to the PSU 35 for a 1ST down,0.503925301290112,2024-08-31T16:23:51.000Z
+401628457101908404,401628457,4016284575,2,1,9:15,West Virginia,Penn State,0,0,91,2,21,5,Penalty,"Penn State Penalty, Offsides (5 Yards) to the WVU 14",,2024-08-31T16:23:51.000Z
+401628457101908409,401628457,4016284575,7,1,9:15,West Virginia,Penn State,0,0,35,1,10,1,Rush,Jahiem White run for 1 yd to the PSU 34,-0.5261823376010624,2024-08-31T16:23:51.000Z
+401628457101908410,401628457,4016284575,8,1,9:15,West Virginia,Penn State,0,0,34,2,9,8,Pass Reception,Garrett Greene pass complete to Rodney Gallagher III for 8 yds to the PSU 26,0.5420206639740234,2024-08-31T16:23:51.000Z
+401628457101908411,401628457,4016284575,9,1,9:15,West Virginia,Penn State,0,0,26,3,1,0,Rush,CJ Donaldson Jr. run for no gain to the PSU 26,-0.7631951994238603,2024-08-31T16:23:51.000Z
+401628457101908412,401628457,4016284575,10,1,9:15,West Virginia,Penn State,0,0,26,4,1,1,Rush,Garrett Greene run for 1 yd to the PSU 25 for a 1ST down,1.0198612945617977,2024-08-31T16:23:51.000Z
+401628457101908413,401628457,4016284575,11,1,9:15,West Virginia,Penn State,0,0,25,1,10,3,Rush,CJ Donaldson Jr. run for 3 yds to the PSU 22,-0.1408898471373875,2024-08-31T16:23:51.000Z
+401628457101908414,401628457,4016284575,12,1,9:15,West Virginia,Penn State,0,0,22,2,7,0,Pass Incompletion,Garrett Greene pass incomplete,-0.4998094827553564,2024-08-31T16:23:51.000Z
+401628457101908415,401628457,4016284575,13,1,9:15,West Virginia,Penn State,0,0,22,3,7,6,Pass Reception,Garrett Greene pass complete to Jahiem White for 6 yds to the PSU 16,0.1693280019250451,2024-08-31T16:23:51.000Z
+401628457101986401,401628457,4016284575,14,1,1:35,West Virginia,Penn State,0,0,16,4,1,0,Rush,Garrett Greene run for no gain to the PSU 16,-3.8285443097662437,2024-08-31T16:35:12.000Z
+401628457101986403,401628457,4016284576,1,1,1:35,Penn State,West Virginia,0,0,84,1,10,18,Pass Reception,Drew Allar pass complete to Harrison Wallace III for 18 yds to the PSU 34 for a 1ST down,1.2425999374740604,2024-08-31T16:35:12.000Z
+401628457101986404,401628457,4016284576,2,1,1:35,Penn State,West Virginia,0,0,66,1,10,2,Rush,Nicholas Singleton run for 2 yds to the PSU 36,-0.6162239991596916,2024-08-31T16:35:12.000Z
+401628457101999901,401628457,4016284576,3,1,0:00,Penn State,West Virginia,0,0,64,2,8,14,Pass Reception,Drew Allar pass complete to Harrison Wallace III for 14 yds to the 50 yard line for a 1ST down,2.111581456767933,2024-08-31T16:00:37.000Z
+401628457101999902,401628457,4016284576,4,1,0:00,Penn State,West Virginia,0,0,64,0,8,14,End Period,End of 1st Quarter,,2024-08-31T16:00:37.000Z
+401628457102854601,401628457,4016284576,5,2,14:53,Penn State,West Virginia,6,0,50,1,10,50,Passing Touchdown,Drew Allar pass complete to Harrison Wallace III for 50 yds for a TD (Two-Point Conversion failed),3.841411932121373,2024-08-31T16:42:42.000Z
+401628457102855101,401628457,4016284577,1,2,14:48,Penn State,West Virginia,6,0,65,0,0,15,Kickoff Return (Offense),"Gabriel Nwosu kickoff for 57 yds , Traylon Ray return for 15 yds to the WVU 23",,2024-08-31T16:47:54.000Z
+401628457102855103,401628457,4016284577,2,2,14:48,West Virginia,Penn State,0,6,77,1,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.6425305871127751,2024-08-31T16:47:54.000Z
+401628457102866101,401628457,4016284577,4,2,13:38,West Virginia,Penn State,0,6,75,4,8,0,Timeout,"Timeout Penn State, clock 13:38",,2024-08-31T16:50:20.000Z
+401628457102866801,401628457,4016284577,6,2,13:31,West Virginia,Penn State,0,6,75,4,8,0,Punt,Oliver Straw punt for 46 yds,,2024-08-31T16:53:36.000Z
+401628457102866102,401628457,4016284577,5,2,13:38,West Virginia,Penn State,0,6,78,3,11,3,Pass Reception,Garrett Greene pass complete to Treylan Davis for 3 yds to the WVU 25,-0.0523870369711803,2024-08-31T16:50:20.000Z
+401628457102855104,401628457,4016284577,3,2,14:48,West Virginia,Penn State,0,6,77,2,10,-1,Rush,Jahiem White run for a loss of 1 yard to the WVU 22,-0.34998589374129985,2024-08-31T16:47:54.000Z
+401628457102866807,401628457,4016284578,5,2,13:31,Penn State,West Virginia,6,0,45,2,10,-5,Penalty,"Penn State Penalty, False Start (-5 Yards) to the 50 yard line",,2024-08-31T16:57:13.000Z
+401628457102905301,401628457,4016284578,11,2,9:46,Penn State,West Virginia,13,0,20,1,10,20,Passing Touchdown,Drew Allar pass complete to Kaytron Allen for 20 yds for a TD (Sander Sahaydak KICK),2.617927729031699,2024-08-31T17:03:37.000Z
+401628457102866812,401628457,4016284578,10,2,13:31,Penn State,West Virginia,6,0,27,4,4,7,Pass Reception,Drew Allar pass complete to Tyler Warren for 7 yds to the WVU 20 for a 1ST down,1.520556427230149,2024-08-31T16:57:13.000Z
+401628457102866811,401628457,4016284578,9,2,13:31,Penn State,West Virginia,6,0,25,3,2,-2,Rush,Nicholas Singleton run for a loss of 2 yards to the WVU 27,-1.109921928846882,2024-08-31T16:57:13.000Z
+401628457102866810,401628457,4016284578,8,2,13:31,Penn State,West Virginia,6,0,29,2,6,4,Rush,Nicholas Singleton run for 4 yds to the WVU 25,-0.066037963198646,2024-08-31T16:57:13.000Z
+401628457102866809,401628457,4016284578,7,2,13:31,Penn State,West Virginia,6,0,33,1,10,4,Rush,Nicholas Singleton run for 4 yds to the WVU 29,-0.059449490714332,2024-08-31T16:57:13.000Z
+401628457102866808,401628457,4016284578,6,2,13:31,Penn State,West Virginia,6,0,50,2,15,17,Pass Reception,Drew Allar pass complete to Harrison Wallace III for 17 yds to the WVU 33 for a 1ST down,2.6913977364598907,2024-08-31T16:57:13.000Z
+401628457102866806,401628457,4016284578,4,2,13:31,Penn State,West Virginia,6,0,45,1,10,0,Pass Incompletion,Drew Allar pass incomplete,-0.997770018980635,2024-08-31T16:57:13.000Z
+401628457102866805,401628457,4016284578,3,2,13:31,Penn State,West Virginia,6,0,60,2,10,15,Rush,Drew Allar run for 15 yds to the WVU 45 for a 1ST down,2.4051577550681333,2024-08-31T16:57:13.000Z
+401628457102866804,401628457,4016284578,2,2,13:31,Penn State,West Virginia,6,0,60,1,10,0,Pass Incompletion,Drew Allar pass incomplete,-1.1247712359915258,2024-08-31T16:57:13.000Z
+401628457102866803,401628457,4016284578,1,2,13:31,Penn State,West Virginia,6,0,71,1,10,11,Rush,Beau Pribula run for 11 yds to the PSU 40 for a 1ST down,1.0187162686112892,2024-08-31T16:57:13.000Z
+401628457102905303,401628457,4016284579,1,2,9:46,Penn State,West Virginia,13,0,65,0,0,0,Kickoff,Gabriel Nwosu kickoff for 65 yds for a touchback,,2024-08-31T17:03:37.000Z
+401628457102905307,401628457,4016284579,4,2,9:46,West Virginia,Penn State,0,13,65,2,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.6004605992346148,2024-08-31T17:08:55.000Z
+401628457102905306,401628457,4016284579,3,2,9:46,West Virginia,Penn State,0,13,65,1,10,0,Pass Incompletion,Garrett Greene pass incomplete,-1.0146424556055624,2024-08-31T17:03:37.000Z
+401628457102905305,401628457,4016284579,2,2,9:46,West Virginia,Penn State,0,13,75,1,10,10,Rush,CJ Donaldson Jr. run for 10 yds to the WVU 35 for a 1ST down,0.8350381090299867,2024-08-31T17:03:37.000Z
+401628457102914602,401628457,4016284579,6,2,8:53,West Virginia,Penn State,0,13,65,3,10,16,Pass Reception,Garrett Greene pass complete to Preston Fox for 16 yds to the PSU 49 for a 1ST down,3.0954895138942637,2024-08-31T17:10:42.000Z
+401628457102914603,401628457,4016284579,7,2,8:53,West Virginia,Penn State,0,13,49,1,10,0,Rush,CJ Donaldson Jr. run for no gain to the PSU 49,-1.0955888671820908,2024-08-31T17:10:42.000Z
+401628457102914604,401628457,4016284579,8,2,8:53,West Virginia,Penn State,0,13,49,2,10,25,Pass Reception,Garrett Greene pass complete to Kole Taylor for 25 yds to the PSU 24 for a 1ST down,2.176481470212364,2024-08-31T17:10:42.000Z
+401628457102914605,401628457,4016284579,9,2,8:53,West Virginia,Penn State,0,13,24,1,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.4346450377339437,2024-08-31T17:10:42.000Z
+401628457102914606,401628457,4016284579,10,2,8:53,West Virginia,Penn State,0,13,24,2,10,1,Rush,Garrett Greene run for 1 yd to the PSU 23,-0.434730563506923,2024-08-31T17:15:25.000Z
+401628457102914607,401628457,4016284579,11,2,8:53,West Virginia,Penn State,0,13,23,3,9,3,Pass Reception,Garrett Greene pass complete to Traylon Ray for 3 yds to the PSU 20,-0.2577959583795373,2024-08-31T17:15:25.000Z
+401628457102938401,401628457,4016284579,12,2,6:15,West Virginia,Penn State,3,13,20,4,6,38,Field Goal Good,Michael Hayes II 38 yd FG GOOD,,2024-08-31T17:16:56.000Z
+401628457102914601,401628457,4016284579,5,2,8:53,West Virginia,Penn State,0,13,49,1,10,0,Timeout,"Timeout Penn State, clock 08:53",,2024-08-31T17:10:42.000Z
+401628457102938903,401628457,40162845710,2,2,6:10,Penn State,West Virginia,13,3,79,1,10,0,Pass Incompletion,Drew Allar pass incomplete,-0.585616097616759,2024-08-31T17:18:40.000Z
+401628457102938904,401628457,40162845710,3,2,6:10,Penn State,West Virginia,13,3,79,2,10,1,Rush,Kaytron Allen run for 1 yd to the PSU 22,-0.23310737334016896,2024-08-31T17:18:40.000Z
+401628457102938905,401628457,40162845710,4,2,6:10,Penn State,West Virginia,13,3,78,3,9,0,Pass Incompletion,Drew Allar pass incomplete,-0.14741647010293857,2024-08-31T17:18:40.000Z
+401628457102948601,401628457,40162845710,5,2,5:13,Penn State,West Virginia,13,3,78,4,9,0,Punt,"Riley Thompson punt for 42 yds, fair catch by Preston Fox at the WVU 36",,2024-08-31T17:21:43.000Z
+401628457102938901,401628457,40162845710,1,2,6:10,West Virginia,Penn State,3,13,65,0,0,18,Kickoff Return (Offense),"Michael Hayes II kickoff for 62 yds , Nicholas Singleton return for 18 yds to the PSU 21",,2024-08-31T17:18:40.000Z
+401628457102948608,401628457,40162845711,6,2,5:13,West Virginia,Penn State,3,13,39,1,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.814236079442537,2024-08-31T17:23:16.000Z
+401628457102948603,401628457,40162845711,1,2,5:13,West Virginia,Penn State,3,13,64,1,10,7,Pass Reception,Garrett Greene pass complete to Traylon Ray for 7 yds to the WVU 43,0.7106238902527534,2024-08-31T17:21:43.000Z
+401628457102948604,401628457,40162845711,2,2,5:13,West Virginia,Penn State,3,13,57,2,3,2,Rush,Ric'Darious Farmer run for 2 yds to the WVU 45,-0.7649118085233848,2024-08-31T17:23:16.000Z
+401628457102948607,401628457,40162845711,5,2,5:13,West Virginia,Penn State,3,13,48,2,5,9,Rush,CJ Donaldson Jr. run for 9 yds to the PSU 39 for a 1ST down,0.849089688944451,2024-08-31T17:23:16.000Z
+401628457102979901,401628457,40162845711,7,2,2:00,West Virginia,Penn State,3,13,37,3,8,0,Timeout,"Timeout West Virginia, clock 02:00",,2024-08-31T17:27:09.000Z
+401628457102979905,401628457,40162845711,11,2,2:00,West Virginia,Penn State,3,13,29,1,10,9,Rush,CJ Donaldson Jr. run for 9 yds to the PSU 20,0.678252223692433,2024-08-31T17:34:53.000Z
+401628457102979904,401628457,40162845711,10,2,2:00,West Virginia,Penn State,3,13,30,4,1,1,Rush,CJ Donaldson Jr. run for 1 yd to the PSU 29 for a 1ST down,1.2369759588074465,2024-08-31T17:34:53.000Z
+401628457102979903,401628457,40162845711,9,2,2:00,West Virginia,Penn State,3,13,37,3,8,7,Rush,Garrett Greene run for 7 yds to the PSU 30,0.4948847558770631,2024-08-31T17:27:09.000Z
+401628457102979902,401628457,40162845711,8,2,2:00,West Virginia,Penn State,3,13,39,2,10,2,Rush,Jaylen Anderson run for 2 yds to the PSU 37,-0.5654872649085336,2024-08-31T17:27:09.000Z
+401628457102995402,401628457,40162845711,13,2,0:45,West Virginia,Penn State,3,13,20,2,1,-1,Rush,CJ Donaldson Jr. run for a loss of 1 yard to the PSU 21,-0.775753865050211,2024-08-31T17:37:18.000Z
+401628457102995401,401628457,40162845711,12,2,0:45,West Virginia,Penn State,3,13,21,3,2,0,Timeout,"Timeout West Virginia, clock 00:45",,2024-08-31T17:37:18.000Z
+401628457102948605,401628457,40162845711,3,2,5:13,West Virginia,Penn State,3,13,55,3,1,2,Rush,CJ Donaldson Jr. run for 2 yds to the WVU 47 for a 1ST down,1.1061810924726547,2024-08-31T17:23:16.000Z
+401628457102948606,401628457,40162845711,4,2,5:13,West Virginia,Penn State,3,13,53,1,10,5,Rush,CJ Donaldson Jr. run for 5 yds to the PSU 48,0.1057711896973057,2024-08-31T17:23:16.000Z
+401628457102995403,401628457,40162845711,14,2,0:45,West Virginia,Penn State,3,13,21,3,2,0,Pass Incompletion,Garrett Greene pass incomplete,-0.6175391478481064,2024-08-31T17:37:18.000Z
+401628457102996201,401628457,40162845711,15,2,0:37,West Virginia,Penn State,6,13,21,4,2,39,Field Goal Good,Michael Hayes II 39 yd FG GOOD,,2024-08-31T17:39:22.000Z
+401628457102996701,401628457,40162845712,1,2,0:32,West Virginia,Penn State,6,13,65,0,0,20,Kickoff Return (Offense),"Michael Hayes II kickoff for 58 yds , Nicholas Singleton return for 20 yds to the PSU 27",,2024-08-31T17:41:13.000Z
+401628457102998902,401628457,40162845712,4,2,0:10,Penn State,West Virginia,13,6,18,1,10,0,Timeout,"Timeout West Virginia, clock 00:10",,2024-08-31T16:42:42.000Z
+401628457102999301,401628457,40162845712,5,2,0:06,Penn State,West Virginia,20,6,18,1,10,18,Passing Touchdown,Drew Allar pass complete to Harrison Wallace III for 18 yds for a TD (Sander Sahaydak KICK),2.591792709070591,2024-08-31T17:46:01.000Z
+401628457102996703,401628457,40162845712,2,2,0:32,Penn State,West Virginia,13,6,73,1,10,0,Rush,Nicholas Singleton run for no gain to the PSU 27,-0.766047035673644,2024-08-31T17:41:13.000Z
+401628457102998901,401628457,40162845712,3,2,0:10,Penn State,West Virginia,13,6,73,2,10,55,Pass Reception,Drew Allar pass complete to Omari Evans for 55 yds to the WVU 18 for a 1ST down,4.10696976082499,2024-08-31T16:42:42.000Z
+401628457102999801,401628457,40162845713,1,2,0:01,Penn State,West Virginia,20,6,65,0,0,20,Kickoff Return (Offense),"Gabriel Nwosu kickoff for 64 yds , Traylon Ray return for 20 yds to the WVU 21",,2024-08-31T17:49:01.000Z
+401628457102999903,401628457,40162845713,3,2,0:00,West Virginia,Penn State,6,20,72,0,10,0,End of Half,End of 2nd Quarter,,2024-08-31T16:42:42.000Z
+401628457102999901,401628457,40162845713,2,2,0:00,West Virginia,Penn State,6,20,79,1,10,7,Rush,Jaylen Anderson run for 7 yds to the WVU 28,0.5413772358558367,2024-08-31T17:50:14.000Z
+401628457103854404,401628457,40162845714,3,3,14:55,Penn State,West Virginia,20,6,77,2,9,2,Rush,Kaytron Allen run for 2 yds to the PSU 25,-0.22726486202938023,2024-08-31T20:26:07.000Z
+401628457103854405,401628457,40162845714,4,3,14:55,Penn State,West Virginia,20,6,75,3,7,10,Rush,Drew Allar run for 10 yds to the PSU 35 for a 1ST down,1.7707521830759676,2024-08-31T20:26:07.000Z
+401628457103854406,401628457,40162845714,5,3,14:55,Penn State,West Virginia,20,6,65,1,10,5,Rush,Kaytron Allen run for 5 yds to the PSU 40,0.1088137823196469,2024-08-31T20:26:07.000Z
+401628457103854407,401628457,40162845714,6,3,14:55,Penn State,West Virginia,20,6,60,2,5,13,Pass Reception,Drew Allar pass complete to Nicholas Singleton for 13 yds to the WVU 47 for a 1ST down,1.520700987105258,2024-08-31T20:26:07.000Z
+401628457103854408,401628457,40162845714,7,3,14:55,Penn State,West Virginia,20,6,47,1,10,0,Pass Reception,Drew Allar pass complete to Omari Evans for no gain to the WVU 47,-1.0507069190375147,2024-08-31T20:30:25.000Z
+401628457103854409,401628457,40162845714,8,3,14:55,Penn State,West Virginia,20,6,47,2,10,2,Rush,Beau Pribula run for 2 yds to the WVU 45,-0.6294232535609706,2024-08-31T20:30:25.000Z
+401628457103854410,401628457,40162845714,9,3,14:55,Penn State,West Virginia,20,6,45,3,8,10,Rush,Drew Allar run for 10 yds to the WVU 35 for a 1ST down,2.3207436300879594,2024-08-31T20:30:25.000Z
+401628457103898301,401628457,40162845714,11,3,10:16,Penn State,West Virginia,27,6,40,1,15,40,Rushing Touchdown,Nicholas Singleton run for 40 yds for a TD (Sander Sahaydak KICK),3.719490199329927,2024-08-31T20:33:19.000Z
+401628457103854411,401628457,40162845714,10,3,14:55,Penn State,West Virginia,20,6,35,1,10,-5,Penalty,"Penn State Penalty, False Start (Anthony Donkoh) to the WVU 40",,2024-08-31T20:30:25.000Z
+401628457103854401,401628457,40162845714,1,3,14:55,West Virginia,Penn State,6,20,65,0,0,18,Kickoff Return (Offense),"Michael Hayes II kickoff for 61 yds , Nicholas Singleton return for 18 yds to the PSU 22",,2024-08-31T20:24:10.000Z
+401628457103854403,401628457,40162845714,2,3,14:55,Penn State,West Virginia,20,6,78,1,10,1,Rush,Kaytron Allen run for 1 yd to the PSU 23,-0.5142195293967999,2024-08-31T20:24:10.000Z
+401628457103898303,401628457,40162845715,1,3,10:16,Penn State,West Virginia,27,6,65,0,0,0,Kickoff,Gabriel Nwosu kickoff for 60 yds,,2024-08-31T20:36:57.000Z
+401628457103898305,401628457,40162845715,2,3,10:16,West Virginia,Penn State,6,27,75,1,10,1,Rush,Jahiem White run for 1 yd to the WVU 26,-0.5874795431016855,2024-08-31T20:36:57.000Z
+401628457103898306,401628457,40162845715,3,3,10:16,West Virginia,Penn State,6,27,74,2,9,2,Pass Reception,Garrett Greene pass complete to Traylon Ray for 2 yds to the WVU 28,-0.2677195990543533,2024-08-31T20:36:57.000Z
+401628457103898307,401628457,40162845715,4,3,10:16,West Virginia,Penn State,6,27,72,3,7,-9,Sack,Garrett Greene sacked by Zane Durant for a loss of 9 yards to the WVU 19,-0.43497417390573734,2024-08-31T20:36:57.000Z
+401628457103918101,401628457,40162845715,5,3,8:18,West Virginia,Penn State,6,27,81,4,16,0,Punt,Oliver Straw punt for 44 yds,,2024-08-31T20:39:58.000Z
+401628457103918103,401628457,40162845716,1,3,8:18,Penn State,West Virginia,27,6,63,1,10,1,Rush,Kaytron Allen run for 1 yd to the PSU 38,-0.870939720055624,2024-08-31T20:42:35.000Z
+401628457103918104,401628457,40162845716,2,3,8:18,Penn State,West Virginia,27,6,62,2,9,1,Rush,Drew Allar run for 1 yd to the PSU 39,-0.6220315049154719,2024-08-31T20:42:35.000Z
+401628457103918105,401628457,40162845716,3,3,8:18,Penn State,West Virginia,27,6,61,3,8,4,Pass Reception,Drew Allar pass complete to Tyler Warren for 4 yds to the PSU 43,-0.0887968048458001,2024-08-31T20:42:35.000Z
+401628457103937501,401628457,40162845716,4,3,6:24,Penn State,West Virginia,27,6,57,4,4,0,Punt,"Riley Thompson punt for 46 yds, fair catch by Preston Fox at the WVU 11",,2024-08-31T20:48:01.000Z
+401628457103937504,401628457,40162845716,5,3,6:24,West Virginia,Penn State,6,27,89,1,10,5,Penalty,"GREENE, Garrett pass to the left complete for 3 yards to GALLAGHER III, Rodney caught at the WVU19 and advanced to the WVU14 (ROJAS, Tony). PENALTY PSU Offsides on CARTER, Abdul enforced 5 yards from the WVU11 to the WVU16 [SG]. NO PLAY (replay the down).",,2024-08-31T20:48:01.000Z
+401628457103937507,401628457,40162845717,2,3,6:24,West Virginia,Penn State,6,27,63,1,10,1,Rush,Garrett Greene run for 1 yd to the WVU 38,-0.870939720055624,2024-08-31T20:49:31.000Z
+401628457103937508,401628457,40162845717,3,3,6:24,West Virginia,Penn State,6,27,62,2,9,0,Pass Incompletion,Garrett Greene pass incomplete,-0.7476681406305525,2024-08-31T20:49:31.000Z
+401628457103937510,401628457,40162845717,4,3,6:24,West Virginia,Penn State,6,27,62,3,9,5,Penalty,"GREENE, Garrett pass up the middle incomplete intended for RAY, Traylon thrown to the PSU50. PENALTY PSU Offsides on DENNIS-SUTTON, Dani enforced 5 yards from the WVU38 to the WVU43 [SG]. NO PLAY (replay the down).",,2024-08-31T20:49:31.000Z
+401628457103937506,401628457,40162845717,1,3,6:24,West Virginia,Penn State,6,27,84,1,5,15,Penalty,"Penn State Penalty, Personal Foul (Abdul Carter) to the WVU 37 for a 1ST down",,2024-08-31T20:49:31.000Z
+401628457103937511,401628457,40162845717,5,3,6:24,West Virginia,Penn State,6,27,57,3,4,0,Pass Incompletion,Garrett Greene pass incomplete,-0.7827553840993211,2024-08-31T20:49:31.000Z
+401628457103955701,401628457,40162845717,6,3,4:42,West Virginia,Penn State,6,27,57,4,4,0,Punt,Oliver Straw punt for 45 yds,,2024-08-31T20:53:41.000Z
+401628457103977001,401628457,40162845718,6,3,2:29,Penn State,West Virginia,27,6,74,3,8,0,Timeout,"Timeout Penn State, clock 02:29",,2024-08-31T21:02:59.000Z
+401628457103977002,401628457,40162845718,7,3,2:29,Penn State,West Virginia,27,6,74,3,8,5,Rush,Drew Allar run for 5 yds to the PSU 31,0.02738823037362259,2024-08-31T21:02:59.000Z
+401628457103955704,401628457,40162845718,1,3,4:42,Penn State,West Virginia,27,6,88,1,10,5,Penalty,"ALLAR, Drew pass to the right incomplete intended for REYNOLDS, Luke thrown to the PSU12. PENALTY WVU Offsides on FRENCH, Ty enforced 5 yards from the PSU12 to the PSU17 [SG]. NO PLAY (replay the down).",,2024-08-31T21:00:58.000Z
+401628457103955706,401628457,40162845718,2,3,4:42,Penn State,West Virginia,27,6,83,1,5,4,Rush,Nicholas Singleton run for 4 yds to the PSU 21,-0.1091668157829151,2024-08-31T20:53:41.000Z
+401628457103955707,401628457,40162845718,3,3,4:42,Penn State,West Virginia,27,6,79,2,1,3,Rush,Nicholas Singleton run for 3 yds to the PSU 24 for a 1ST down,-0.2946922703495325,2024-08-31T20:53:41.000Z
+401628457103955708,401628457,40162845718,4,3,4:42,Penn State,West Virginia,27,6,76,1,10,0,Pass Incompletion,Drew Allar pass incomplete,-0.6723571521309859,2024-08-31T20:58:41.000Z
+401628457103969101,401628457,40162845718,5,3,3:08,Penn State,West Virginia,27,6,76,2,10,2,Rush,Kaytron Allen run for 2 yds to the PSU 26,-0.2158025737600342,2024-08-31T20:23:53.000Z
+401628457103985701,401628457,40162845718,8,3,1:42,Penn State,West Virginia,27,6,69,4,3,0,Punt,"Riley Thompson punt for 39 yds, fair catch by Preston Fox at the WVU 30",,2024-08-31T21:05:10.000Z
+401628457103999902,401628457,40162845719,4,3,0:00,West Virginia,Penn State,6,27,40,0,5,25,End Period,End of 3rd Quarter,,2024-08-31T21:07:56.000Z
+401628457103985703,401628457,40162845719,1,3,1:42,West Virginia,Penn State,6,27,70,1,10,25,Pass Reception,Garrett Greene pass complete to Traylon Ray for 25 yds to the PSU 45 for a 1ST down,2.2162724338372755,2024-08-31T21:05:10.000Z
+401628457103985704,401628457,40162845719,2,3,1:42,West Virginia,Penn State,6,27,45,1,10,5,Rush,Jahiem White run for 5 yds to the PSU 40,0.0943461181043617,2024-08-31T21:05:10.000Z
+401628457103999901,401628457,40162845719,3,3,0:00,West Virginia,Penn State,6,27,40,2,5,25,Pass Reception,Garrett Greene pass complete to Preston Fox for 25 yds to the PSU 15 for a 1ST down,0.8239688773976233,2024-08-31T21:07:56.000Z
+401628457104849902,401628457,40162845719,5,4,15:00,West Virginia,Penn State,6,27,15,1,10,-5,Rush,Jahiem White run for a loss of 5 yards to the PSU 20,-0.710843360182087,2024-08-31T21:10:50.000Z
+401628457104849906,401628457,40162845719,6,4,15:00,West Virginia,Penn State,6,27,20,2,15,5,Penalty,"GREENE, Garrett pass to the left incomplete intended for WHITE, Jahiem thrown to the PSU20. PENALTY PSU Offsides on CARTER, Abdul enforced 5 yards from the PSU20 to the PSU15 [NHSG]. NO PLAY (replay the down).",,2024-08-31T21:11:14.000Z
+401628457104849908,401628457,40162845719,7,4,15:00,West Virginia,Penn State,6,27,15,2,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.361206789772767,2024-08-31T21:11:14.000Z
+401628457104849910,401628457,40162845719,8,4,15:00,West Virginia,Penn State,6,27,15,3,10,0,Pass Incompletion,Garrett Greene pass incomplete,-0.5749405759083858,2024-08-31T21:11:14.000Z
+401628457104849913,401628457,40162845719,9,4,15:00,West Virginia,Penn State,6,27,15,4,10,14,Pass Reception,Garrett Greene pass complete to Hudson Clement for 14 yds to the PSU 1 for a 1ST down,2.877302839615112,2024-08-31T21:11:14.000Z
+401628457104849915,401628457,40162845719,10,4,15:00,West Virginia,Penn State,6,27,1,1,1,0,Rush,Nicco Marchiol run for no gain to the PSU 1,-0.962330962352563,2024-08-31T21:11:14.000Z
+401628457104849916,401628457,40162845719,11,4,15:00,West Virginia,Penn State,6,27,1,2,1,0,Pass Incompletion,Garrett Greene pass incomplete,-0.553645991706544,2024-08-31T21:11:14.000Z
+401628457104875001,401628457,40162845719,12,4,12:49,West Virginia,Penn State,12,27,1,3,1,1,Rushing Touchdown,CJ Donaldson Jr. run for 1 yd for a TD (Two-Point Conversion failed),2.45399822917955,2024-08-31T21:16:14.000Z
+401628457104875003,401628457,40162845720,1,4,12:49,West Virginia,Penn State,12,27,65,0,0,5,Kickoff Return (Offense),"Michael Hayes II kickoff for 40 yds , Andrew Rappleyea return for 5 yds to the PSU 30",,2024-08-31T21:16:14.000Z
+401628457104909901,401628457,40162845720,7,4,9:00,Penn State,West Virginia,34,12,19,2,9,19,Passing Touchdown,Beau Pribula pass complete to Tyler Warren for 19 yds for a TD (Sander Sahaydak KICK),2.90787217898589,2024-08-31T21:25:34.000Z
+401628457104875306,401628457,40162845720,6,4,12:46,Penn State,West Virginia,27,12,20,1,10,1,Rush,Kaytron Allen run for 1 yd to the WVU 19,-0.289944449954191,2024-08-31T21:24:30.000Z
+401628457104875305,401628457,40162845720,5,4,12:46,Penn State,West Virginia,27,12,23,3,3,3,Rush,Drew Allar run for 3 yds to the WVU 20 for a 1ST down,0.431697890544207,2024-08-31T21:21:02.000Z
+401628457104875304,401628457,40162845720,4,4,12:46,Penn State,West Virginia,27,12,30,2,10,7,Rush,Nicholas Singleton run for 7 yds to the WVU 23,0.32246240533739,2024-08-31T21:21:02.000Z
+401628457104875302,401628457,40162845720,2,4,12:46,Penn State,West Virginia,27,12,70,1,10,40,Rush,Nicholas Singleton run for 40 yds to the WVU 30 for a 1ST down,2.8785433859815726,2024-08-31T21:21:02.000Z
+401628457104875303,401628457,40162845720,3,4,12:46,Penn State,West Virginia,27,12,30,1,10,0,Rush,Nicholas Singleton run for no gain to the WVU 30,-0.557844891990525,2024-08-31T21:24:30.000Z
+401628457104909903,401628457,40162845721,1,4,9:00,Penn State,West Virginia,34,12,65,0,0,0,Kickoff,Gabriel Nwosu kickoff for 65 yds for a touchback,,2024-08-31T21:25:34.000Z
+401628457104909905,401628457,40162845721,2,4,9:00,West Virginia,Penn State,12,34,75,1,10,10,Rush,Garrett Greene run for 10 yds to the WVU 35 for a 1ST down,0.8350381090299867,2024-08-31T21:25:34.000Z
+401628457104909907,401628457,40162845721,3,4,9:00,West Virginia,Penn State,12,34,65,1,10,15,Penalty,"GREENE, Garrett pass deep to the right incomplete intended for ROBINSON, Justin thrown to the PSU32. PENALTY PSU Pass Interference on KIMBER, Jalen enforced 15 yards to the WVU50 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-08-31T21:25:34.000Z
+401628457104919901,401628457,40162845721,4,4,8:00,West Virginia,Penn State,12,34,50,1,10,-6,Sack,"Garrett Greene sacked for a loss of 6 yards to the WVU 43 Garrett Greene fumbled, recovered by PSU Dani Dennis-Sutton , return for 0 yards",-2.358868019121446,2024-08-31T21:32:54.000Z
+401628457104919903,401628457,40162845722,1,4,8:00,Penn State,West Virginia,34,12,43,1,10,2,Rush,Cam Wallace run for 2 yds to the WVU 41,-0.5109950870570472,2024-08-31T21:32:54.000Z
+401628457104964402,401628457,40162845722,7,4,3:55,Penn State,West Virginia,34,12,29,3,11,0,Rush,Cam Wallace run for no gain to the WVU 29,-0.9847343182051258,2024-08-31T21:37:02.000Z
+401628457104965101,401628457,40162845722,8,4,3:48,Penn State,West Virginia,34,12,29,4,11,47,Field Goal Missed,Sander Sahaydak 47 yd FG MISSED,,2024-08-31T21:40:07.000Z
+401628457104964401,401628457,40162845722,6,4,3:55,Penn State,West Virginia,34,12,29,4,11,0,Timeout,"Timeout Penn State, clock 03:55",,2024-08-31T21:37:02.000Z
+401628457104919904,401628457,40162845722,2,4,8:00,Penn State,West Virginia,34,12,41,2,8,1,Rush,Cam Wallace run for 1 yd to the WVU 40,-0.8113940966236051,2024-08-31T21:32:54.000Z
+401628457104919905,401628457,40162845722,3,4,8:00,Penn State,West Virginia,34,12,40,3,7,12,Rush,Beau Pribula run for 12 yds to the WVU 28 for a 1ST down,1.9107447974730756,2024-08-31T21:33:58.000Z
+401628457104919906,401628457,40162845722,4,4,8:00,Penn State,West Virginia,34,12,28,1,10,-2,Rush,Cam Wallace run for a loss of 2 yards to the WVU 30,-0.778522793180221,2024-08-31T21:33:58.000Z
+401628457104919907,401628457,40162845722,5,4,8:00,Penn State,West Virginia,34,12,30,2,12,1,Rush,Cam Wallace run for 1 yd to the WVU 29,-0.6171306198439676,2024-08-31T21:33:58.000Z
+401628457104965103,401628457,40162845723,1,4,3:48,West Virginia,Penn State,12,34,71,1,10,8,Rush,Nicco Marchiol run for 8 yds to the WVU 37,0.98359054098046,2024-08-31T21:40:07.000Z
+401628457104965104,401628457,40162845723,2,4,3:48,West Virginia,Penn State,12,34,63,2,2,5,Rush,Jaylen Anderson run for 5 yds to the WVU 42 for a 1ST down,0.2303231197351892,2024-08-31T21:40:07.000Z
+401628457104976201,401628457,40162845723,3,4,2:37,West Virginia,Penn State,12,34,58,1,10,0,Pass Interception Return,Nicco Marchiol pass intercepted Elliot Washington II return for no gain to the PSU 30,-2.4382967879606845,2024-08-31T21:42:37.000Z
+401628457104979902,401628457,40162845724,2,4,2:00,Penn State,West Virginia,34,12,70,1,10,3,Rush,Cam Wallace run for 3 yds to the PSU 33,-0.3563521541303736,2024-08-31T21:43:39.000Z
+401628457104999903,401628457,40162845724,6,4,0:00,Penn State,West Virginia,34,12,48,0,8,0,End of Game,End of 4th Quarter,,2024-08-31T21:55:10.000Z
+401628457104979901,401628457,40162845724,1,4,2:00,Penn State,West Virginia,34,12,67,2,7,0,Timeout,"Timeout West Virginia, clock 02:00",,2024-08-31T21:43:39.000Z
+401628457104979903,401628457,40162845724,3,4,2:00,Penn State,West Virginia,34,12,67,2,7,11,Rush,Cam Wallace run for 11 yds to the PSU 44 for a 1ST down,1.678955891655411,2024-08-31T21:43:39.000Z
+401628457104979904,401628457,40162845724,4,4,2:00,Penn State,West Virginia,34,12,56,1,10,2,Rush,Cam Wallace run for 2 yds to the PSU 46,-0.6840321413406637,2024-08-31T21:43:39.000Z
+401628457104999901,401628457,40162845724,5,4,0:00,Penn State,West Virginia,34,12,54,2,8,6,Rush,Cam Wallace run for 6 yds to the WVU 48,0.3546286381769157,2024-08-31T21:55:10.000Z

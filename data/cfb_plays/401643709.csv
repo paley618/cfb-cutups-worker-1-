@@ -1,0 +1,165 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401643709101849903,401643709,4016437091,1,1,15:00,Oregon State,San Diego State,0,0,65,1,10,0,Kickoff,Everett Hayes kickoff for 65 yds for a touchback,,2024-09-08T02:40:11.000Z
+401643709101854301,401643709,4016437091,2,1,14:56,San Diego State,Oregon State,0,0,75,1,10,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.7029700220436519,2024-09-08T02:40:11.000Z
+401643709101854901,401643709,4016437091,3,1,14:50,San Diego State,Oregon State,0,0,75,2,10,1,Rush,Marquez Cooper run for 1 yd to the SDSU 26,-0.29282347426074384,2024-09-08T02:40:17.000Z
+401643709101857901,401643709,4016437091,4,1,14:20,San Diego State,Oregon State,0,0,74,3,9,5,Pass Reception,Danny O'Neil pass complete to Nate Bennett for 5 yds to the SDSU 31,0.02335959259791131,2024-09-08T02:40:39.000Z
+401643709101865901,401643709,4016437091,5,1,13:40,San Diego State,Oregon State,0,0,69,4,4,8,Punt,"Tyler Pastula punt for 45 yds for a 1ST down , Trent Walker returns for 8 yds to the ORST 32 for a 1ST down",,2024-09-08T02:41:57.000Z
+401643709101865902,401643709,4016437091,6,1,13:40,San Diego State,Oregon State,0,0,69,4,4,8,Punt,"Tyler Pastula punt for 45 yds for a 1ST down , Trent Walker returns for 8 yds to the ORST 47 for a 1ST down",,2024-09-08T02:41:57.000Z
+401643709101866601,401643709,4016437092,1,1,13:33,Oregon State,San Diego State,0,0,53,1,10,8,Rush,Jam Griffin run for 8 yds to the SDSU 45,0.9027604054456208,2024-09-08T02:42:37.000Z
+401643709101874401,401643709,4016437092,2,1,12:55,Oregon State,San Diego State,0,0,45,2,2,16,Pass Reception,Gevani McCoy pass complete to Taz Reddicks for 16 yds to the SDSU 29 for a 1ST down,0.404237843529575,2024-09-08T02:43:13.000Z
+401643709101877201,401643709,4016437092,3,1,12:27,Oregon State,San Diego State,0,0,29,1,10,7,Pass Reception,Gevani McCoy pass complete to Jam Griffin for 7 yds to the SDSU 22,0.34844572143239,2024-09-08T02:43:54.000Z
+401643709101877801,401643709,4016437092,4,1,12:21,Oregon State,San Diego State,0,0,22,2,3,6,Rush,Jam Griffin run for 6 yds to the SDSU 16 for a 1ST down,-0.1288672581266524,2024-09-08T02:44:11.000Z
+401643709101885201,401643709,4016437092,5,1,11:47,Oregon State,San Diego State,7,0,16,1,10,16,Rushing Touchdown,Jam Griffin run for 16 yds for a TD (Everett Hayes KICK),2.5687227212923744,2024-09-08T02:44:48.000Z
+401643709101885203,401643709,4016437093,1,1,11:47,Oregon State,San Diego State,7,0,65,1,10,0,Kickoff,Everett Hayes kickoff for 65 yds for a touchback,,2024-09-08T02:48:14.000Z
+401643709101885801,401643709,4016437093,2,1,11:41,San Diego State,Oregon State,0,7,75,1,10,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.7029700220436519,2024-09-08T02:48:57.000Z
+401643709101886501,401643709,4016437093,3,1,11:34,San Diego State,Oregon State,0,7,75,2,10,3,Rush,Marquez Cooper run for 3 yds to the SDSU 28,-0.15222912011238687,2024-09-08T02:49:38.000Z
+401643709101895201,401643709,4016437093,4,1,10:47,San Diego State,Oregon State,0,7,77,3,12,21,Pass Reception,Danny O'Neil pass complete to Marquez Cooper for 21 yds to the SDSU 44 for a 1ST down,2.8417390630109303,2024-09-08T02:50:54.000Z
+401643709101896801,401643709,4016437093,5,1,10:31,San Diego State,Oregon State,0,7,56,1,10,4,Rush,Danny O'Neil run for 4 yds to the SDSU 48,-0.1632332623875107,2024-09-08T02:51:13.000Z
+401643709101899901,401643709,4016437093,6,1,10:00,San Diego State,Oregon State,0,7,52,2,6,2,Rush,Marquez Cooper run for 2 yds to the 50 yard line,-0.6860892197439377,2024-09-08T02:51:44.000Z
+401643709101904801,401643709,4016437093,7,1,9:51,San Diego State,Oregon State,0,7,50,3,4,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.9905673562071531,2024-09-08T02:51:57.000Z
+401643709101905501,401643709,4016437093,8,1,9:44,San Diego State,Oregon State,0,7,50,4,4,0,Punt,"Tyler Pastula punt for 43 yds, fair catch by Trent Walker at the ORST 7",,2024-09-08T02:52:36.000Z
+401643709101906201,401643709,4016437094,1,1,9:37,Oregon State,San Diego State,7,0,93,1,10,4,Rush,Anthony Hankerson run for 4 yds to the ORST 11,-0.03931026581467823,2024-09-08T02:55:51.000Z
+401643709101909501,401643709,4016437094,2,1,9:04,Oregon State,San Diego State,7,0,89,2,6,5,Rush,Anthony Hankerson run for 5 yds to the ORST 16,0.0640245345784276,2024-09-08T02:56:20.000Z
+401643709101917601,401643709,4016437094,3,1,8:23,Oregon State,San Diego State,7,0,84,3,1,6,Rush,Jam Griffin run for 6 yds to the ORST 22 for a 1ST down,0.576808140797179,2024-09-08T02:57:06.000Z
+401643709101925101,401643709,4016437094,4,1,7:48,Oregon State,San Diego State,7,0,78,1,10,0,Pass Incompletion,Gevani McCoy pass incomplete,-0.6135902757979226,2024-09-08T02:57:30.000Z
+401643709101925801,401643709,4016437094,5,1,7:41,Oregon State,San Diego State,7,0,78,2,10,12,Pass Reception,Gevani McCoy pass complete to David Wells Jr. for 12 yds to the ORST 34 for a 1ST down,1.5488056884094306,2024-09-08T02:58:19.000Z
+401643709101927301,401643709,4016437094,6,1,7:26,Oregon State,San Diego State,7,0,66,1,10,6,Rush,Jam Griffin run for 6 yds to the ORST 40,0.3949221212311402,2024-09-08T02:58:35.000Z
+401643709101934701,401643709,4016437094,7,1,6:52,Oregon State,San Diego State,7,0,60,2,4,3,Rush,Salahadin Allah run for 3 yds to the ORST 43,-0.4455280609860284,2024-09-08T02:59:12.000Z
+401643709101946703,401643709,4016437094,10,1,5:32,Oregon State,San Diego State,7,0,51,1,10,0,Timeout,"Timeout Oregon State, clock 05:32",,2024-09-08T03:00:55.000Z
+401643709101966001,401643709,4016437094,13,1,3:39,Oregon State,San Diego State,7,0,46,3,5,0,Rush,Jam Griffin run for no gain to the SDSU 46,-1.0313511972084246,2024-09-08T03:05:47.000Z
+401643709101958401,401643709,4016437094,12,1,4:15,Oregon State,San Diego State,7,0,50,2,9,4,Pass Reception,Gevani McCoy pass complete to Trent Walker for 4 yds to the SDSU 46,-0.166607447428085,2024-09-08T03:04:54.000Z
+401643709101955001,401643709,4016437094,11,1,4:49,Oregon State,San Diego State,7,0,51,1,10,1,Rush,Jam Griffin run for 1 yd to the 50 yard line,-0.889254676573113,2024-09-08T03:04:16.000Z
+401643709101974001,401643709,4016437094,14,1,2:59,Oregon State,San Diego State,7,0,46,4,5,0,Timeout,"Timeout Oregon State, clock 02:59",,2024-09-08T03:07:39.000Z
+401643709101938901,401643709,4016437094,8,1,6:10,Oregon State,San Diego State,7,0,57,3,1,0,Rush,Jake Reichle run for no gain to the ORST 43,-0.9863067491463609,2024-09-08T03:00:11.000Z
+401643709101946701,401643709,4016437094,9,1,5:32,Oregon State,San Diego State,7,0,57,4,1,6,Rush,Jake Reichle run for 6 yds to the ORST 49 for a 1ST down,2.4503148747379244,2024-09-08T03:00:31.000Z
+401643709101974802,401643709,4016437094,15,1,2:51,Oregon State,San Diego State,7,0,46,4,5,0,Pass Incompletion,Gevani McCoy pass incomplete,-0.9894194748974385,2024-09-08T03:08:44.000Z
+401643709101974803,401643709,4016437094,16,1,2:51,Oregon State,San Diego State,7,0,46,4,5,0,Pass Incompletion,Gevani McCoy pass incomplete,-0.9894194748974385,2024-09-08T03:08:44.000Z
+401643709101975701,401643709,4016437095,1,1,2:42,San Diego State,Oregon State,0,7,54,1,10,15,Rush,Marquez Cooper run for 15 yds to the ORST 39 for a 1ST down,1.044458982753657,2024-09-08T03:11:24.000Z
+401643709101978301,401643709,4016437095,2,1,2:16,San Diego State,Oregon State,0,7,64,1,20,3,Rush,Jaylon Armstead run for 3 yds to the SDSU 39,-0.238199633219156,2024-09-08T03:12:23.000Z
+401643709101984801,401643709,4016437095,3,1,1:51,San Diego State,Oregon State,0,7,61,2,17,5,Rush,Jaylon Armstead run for 5 yds to the SDSU 44,0.0315652831828288,2024-09-08T03:12:45.000Z
+401643709101988301,401643709,4016437095,4,1,1:16,San Diego State,Oregon State,0,7,56,3,12,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.44547693110892705,2024-09-08T03:13:12.000Z
+401643709101988901,401643709,4016437095,5,1,1:10,San Diego State,Oregon State,0,7,56,4,12,0,Punt,"Tyler Pastula punt for 44 yds, fair catch by Trent Walker at the ORST 12",,2024-09-08T03:14:01.000Z
+401643709101988902,401643709,4016437095,6,1,1:10,San Diego State,Oregon State,0,7,56,4,12,0,Punt,"Tyler Pastula punt for 44 yds, fair catch by Trent Walker at the ORST 22",,2024-09-08T03:14:01.000Z
+401643709101999902,401643709,4016437096,3,1,0:00,Oregon State,San Diego State,7,0,74,0,6,5,End Period,End of 1st Quarter,,2024-09-08T03:16:26.000Z
+401643709101989701,401643709,4016437096,1,1,1:02,Oregon State,San Diego State,7,0,78,1,10,4,Rush,Anthony Hankerson run for 4 yds to the ORST 26,-0.098522001264528,2024-09-08T03:15:17.000Z
+401643709101999901,401643709,4016437096,2,1,0:00,Oregon State,San Diego State,7,0,74,2,6,5,Rush,Zachary Card run for 5 yds to the ORST 31,0.0858315387015435,2024-09-08T03:16:26.000Z
+401643709102854401,401643709,4016437096,4,2,14:55,Oregon State,San Diego State,7,0,69,3,1,3,Rush,Anthony Hankerson run for 3 yds to the ORST 34 for a 1ST down,0.9479058751744925,2024-09-08T03:20:32.000Z
+401643709102858001,401643709,4016437096,5,2,14:19,Oregon State,San Diego State,7,0,66,1,10,23,Rush,Gabarri Johnson run for 23 yds to the SDSU 43 for a 1ST down,1.98439930179876,2024-09-08T03:21:20.000Z
+401643709102865801,401643709,4016437096,6,2,13:41,Oregon State,San Diego State,7,0,43,1,10,1,Rush,Anthony Hankerson run for 1 yd to the SDSU 42,-0.7221421996351935,2024-09-08T03:22:01.000Z
+401643709102869701,401643709,4016437096,7,2,13:02,Oregon State,San Diego State,7,0,42,2,9,3,Rush,Anthony Hankerson run for 3 yds to the SDSU 39,-0.3720330346341836,2024-09-08T03:22:43.000Z
+401643709102877501,401643709,4016437096,8,2,12:24,Oregon State,San Diego State,7,0,39,3,6,2,Rush,Anthony Hankerson run for 2 yds to the SDSU 41,-0.6232615495484967,2024-09-08T03:23:18.000Z
+401643709102885101,401643709,4016437096,9,2,11:48,Oregon State,San Diego State,7,0,41,4,8,0,Punt,"Josh Green punt for 32 yds, fair catch by Mekhi Shaw at the SDSU 9",,2024-09-08T03:23:53.000Z
+401643709102885103,401643709,4016437096,10,2,11:48,Oregon State,San Diego State,7,0,41,4,8,0,Punt,"Josh Green punt for 32 yds, fair catch by Mekhi Shaw at the SDSU 24",,2024-09-08T03:23:53.000Z
+401643709102886501,401643709,4016437097,1,2,11:34,San Diego State,Oregon State,0,7,76,1,10,3,Rush,Danny O'Neil run for 3 yds to the SDSU 27,-0.2835190304977822,2024-09-08T03:27:24.000Z
+401643709102888901,401643709,4016437097,2,2,11:10,San Diego State,Oregon State,0,7,73,2,7,8,Pass Reception,Danny O'Neil pass complete to Ja'Shaun Poke for 8 yds to the SDSU 35 for a 1ST down,1.186420363222238,2024-09-08T03:27:46.000Z
+401643709102894601,401643709,4016437097,3,2,10:53,San Diego State,Oregon State,0,7,70,1,15,7,Rush,Marquez Cooper run for 7 yds to the SDSU 37,0.4370482166890115,2024-09-08T03:28:37.000Z
+401643709102896701,401643709,4016437097,4,2,10:32,San Diego State,Oregon State,0,7,63,2,8,12,Rush,Marquez Cooper run for 12 yds to the SDSU 49 for a 1ST down,1.9501466401576157,2024-09-08T03:29:01.000Z
+401643709102899201,401643709,4016437097,5,2,10:07,San Diego State,Oregon State,0,7,70,2,15,8,Pass Reception,Danny O'Neil pass complete to Ja'Shaun Poke for 8 yds to the SDSU 38,0.3671954803492907,2024-09-08T03:29:52.000Z
+401643709102905601,401643709,4016437097,6,2,9:43,San Diego State,Oregon State,0,7,62,3,7,2,Pass Reception,Danny O'Neil pass complete to Michael Harrison for 2 yds to the SDSU 40,-0.3123961035848959,2024-09-08T03:30:15.000Z
+401643709102909401,401643709,4016437097,7,2,9:05,San Diego State,Oregon State,0,7,60,4,5,0,Punt,Tyler Pastula punt for 38 yds,,2024-09-08T03:31:04.000Z
+401643709102914101,401643709,4016437098,1,2,8:58,Oregon State,San Diego State,7,0,78,1,10,4,Rush,Jam Griffin run for 4 yds to the ORST 26,-0.098522001264528,2024-09-08T03:34:08.000Z
+401643709102918001,401643709,4016437098,2,2,8:19,Oregon State,San Diego State,7,0,74,2,6,9,Pass Reception,Gevani McCoy pass complete to Taz Reddicks for 9 yds to the ORST 35 for a 1ST down,1.1277897929143155,2024-09-08T03:34:46.000Z
+401643709102924601,401643709,4016437098,3,2,7:53,Oregon State,San Diego State,7,0,65,1,10,0,Pass Incompletion,Gevani McCoy pass incomplete,-1.0146424556055624,2024-09-08T03:35:10.000Z
+401643709102925201,401643709,4016437098,4,2,7:47,Oregon State,San Diego State,7,0,65,2,10,3,Rush,Jam Griffin run for 3 yds to the ORST 38,-0.2593418711179831,2024-09-08T03:36:07.000Z
+401643709102929701,401643709,4016437098,5,2,7:02,Oregon State,San Diego State,7,0,62,3,7,5,Pass Reception,Gevani McCoy pass complete to Trent Walker for 5 yds to the ORST 43,0.04768586682237164,2024-09-08T03:36:55.000Z
+401643709102937401,401643709,4016437098,6,2,6:25,Oregon State,San Diego State,7,0,57,4,2,0,Punt,"Josh Green punt for 45 yds, punt out-of-bounds at the SDSU 12",,2024-09-08T03:37:23.000Z
+401643709102938001,401643709,4016437099,1,2,6:19,San Diego State,Oregon State,0,7,88,1,10,5,Rush,Marquez Cooper run for 5 yds to the SDSU 17,0.07257903633006091,2024-09-08T03:40:28.000Z
+401643709102945201,401643709,4016437099,2,2,5:47,San Diego State,Oregon State,0,7,83,2,5,10,Pass Reception,Danny O'Neil pass complete to Louis Brown IV for 10 yds to the SDSU 27 for a 1ST down,0.725965521032319,2024-09-08T03:41:01.000Z
+401643709102948801,401643709,4016437099,3,2,5:11,San Diego State,Oregon State,0,7,83,1,20,2,Rush,Marquez Cooper run for 2 yds to the SDSU 19,-0.10737478457281036,2024-09-08T03:42:18.000Z
+401643709102955801,401643709,4016437099,4,2,4:41,San Diego State,Oregon State,0,7,81,2,18,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.10138737446865688,2024-09-08T03:42:35.000Z
+401643709102956901,401643709,4016437099,5,2,4:30,San Diego State,Oregon State,0,7,81,3,18,10,Rush,Marquez Cooper run for 10 yds to the SDSU 29,0.12359708714416408,2024-09-08T03:43:32.000Z
+401643709102964701,401643709,4016437099,6,2,3:52,San Diego State,Oregon State,0,7,71,4,8,10,Punt,"Tyler Pastula punt for 55 yds , Trent Walker returns for 10 yds to the ORST 26",,2024-09-08T03:44:14.000Z
+401643709102965201,401643709,40164370910,1,2,3:47,Oregon State,San Diego State,7,0,74,1,10,2,Rush,Salahadin Allah run for 2 yds to the ORST 28,-0.4716869696142973,2024-09-08T03:45:02.000Z
+401643709102997602,401643709,40164370910,9,2,0:23,Oregon State,San Diego State,7,0,21,2,4,0,Timeout,"Timeout Oregon State, clock 00:23",,2024-09-08T03:51:45.000Z
+401643709102999201,401643709,40164370910,12,2,0:07,Oregon State,San Diego State,7,0,21,4,4,38,Field Goal Missed,Everett Hayes 38 yd FG MISSED,,2024-09-08T03:54:34.000Z
+401643709102998801,401643709,40164370910,11,2,0:11,Oregon State,San Diego State,7,0,21,3,4,0,Pass Incompletion,Gevani McCoy pass incomplete,-0.627473486219845,2024-09-08T03:53:52.000Z
+401643709102998201,401643709,40164370910,10,2,0:17,Oregon State,San Diego State,7,0,21,2,4,0,Pass Incompletion,Gevani McCoy pass incomplete,-0.5227043526935145,2024-09-08T03:53:11.000Z
+401643709102969301,401643709,40164370910,2,2,3:06,Oregon State,San Diego State,7,0,72,2,8,7,Pass Reception,Gevani McCoy pass complete to Taz Reddicks for 7 yds to the ORST 35,0.4451681761346258,2024-09-08T03:45:38.000Z
+401643709102977301,401643709,40164370910,3,2,2:26,Oregon State,San Diego State,7,0,65,3,1,8,Rush,Salahadin Allah run for 8 yds to the ORST 43 for a 1ST down,1.567978408429311,2024-09-08T03:46:18.000Z
+401643709102985601,401643709,40164370910,4,2,1:43,Oregon State,San Diego State,7,0,57,1,10,6,Pass Reception,Gevani McCoy pass complete to Trent Walker for 6 yds to the ORST 49,0.391648506498802,2024-09-08T03:50:07.000Z
+401643709102987701,401643709,40164370910,5,2,1:22,Oregon State,San Diego State,7,0,51,2,4,3,Pass Reception,Gevani McCoy pass complete to Trent Walker for 3 yds to the SDSU 48,-0.4467162035675721,2024-09-08T03:50:27.000Z
+401643709102988601,401643709,40164370910,6,2,1:13,Oregon State,San Diego State,7,0,48,3,1,6,Rush,Salahadin Allah run for 6 yds to the SDSU 42 for a 1ST down,1.2254489230079726,2024-09-08T03:50:45.000Z
+401643709102995101,401643709,40164370910,7,2,0:48,Oregon State,San Diego State,7,0,42,1,10,15,Pass Reception,Gevani McCoy pass complete to Trent Walker for 15 yds to the SDSU 27 for a 1ST down,0.553654630180638,2024-09-08T03:51:15.000Z
+401643709102997601,401643709,40164370910,8,2,0:23,Oregon State,San Diego State,7,0,27,1,10,6,Rush,Gevani McCoy run for 6 yds to the SDSU 21,0.2009551098411215,2024-09-08T03:51:45.000Z
+401643709102999902,401643709,40164370911,2,2,0:00,San Diego State,Oregon State,0,7,79,0,10,-1,End of Half,End of 2nd Quarter,,2024-09-08T03:55:33.000Z
+401643709102999901,401643709,40164370911,1,2,0:00,San Diego State,Oregon State,0,7,79,1,10,1,Rush,Jaylon Armstead run for 1 yd to the SDSU 20,-0.4911317991443793,2024-09-08T03:55:28.000Z
+401643709103854501,401643709,40164370912,2,3,14:54,Oregon State,San Diego State,7,0,75,1,10,6,Rush,Anthony Hankerson run for 6 yds to the ORST 31,0.3333748010525683,2024-09-07T04:17:32.000Z
+401643709103858001,401643709,40164370912,3,3,14:19,Oregon State,San Diego State,7,0,69,2,4,6,Rush,Anthony Hankerson run for 6 yds to the ORST 37 for a 1ST down,0.693869525091003,2024-09-07T04:18:09.000Z
+401643709103865501,401643709,40164370912,4,3,13:44,Oregon State,San Diego State,7,0,63,1,10,1,Rush,Anthony Hankerson run for 1 yd to the ORST 38,-0.870939720055624,2024-09-07T04:22:22.000Z
+401643709103869701,401643709,40164370912,5,3,13:02,Oregon State,San Diego State,7,0,62,2,9,3,Pass Reception,Gevani McCoy pass complete to Taz Reddicks for 3 yds to the ORST 41,-0.3157537018266953,2024-09-07T04:22:58.000Z
+401643709103876301,401643709,40164370912,6,3,12:36,Oregon State,San Diego State,7,0,59,3,6,0,Pass Incompletion,Gevani McCoy pass incomplete,-0.6094006658069526,2024-09-07T04:23:24.000Z
+401643709103877401,401643709,40164370912,7,3,12:25,Oregon State,San Diego State,7,0,59,4,6,5,Punt,"Josh Green punt for 45 yds , Mekhi Shaw returns for 5 yds to the SDSU 19",,2024-09-07T04:24:23.000Z
+401643709103849903,401643709,40164370912,1,3,15:00,San Diego State,Oregon State,0,7,65,1,10,0,Kickoff,Gabriel Plascencia kickoff for 65 yds for a touchback,,2024-09-07T04:16:31.000Z
+401643709103878101,401643709,40164370913,1,3,12:18,San Diego State,Oregon State,0,7,81,1,10,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.5327945515514214,2024-09-07T04:27:25.000Z
+401643709103879201,401643709,40164370913,2,3,12:07,San Diego State,Oregon State,0,7,81,2,10,4,Rush,Marquez Cooper run for 4 yds to the SDSU 23,-0.041650887032063544,2024-09-07T04:27:55.000Z
+401643709103885601,401643709,40164370913,3,3,11:43,San Diego State,Oregon State,0,7,77,3,6,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.22398022422976105,2024-09-07T04:28:14.000Z
+401643709103886601,401643709,40164370913,4,3,11:33,San Diego State,Oregon State,0,7,77,4,6,3,Punt,"Tyler Pastula punt for 52 yds , Trent Walker returns for 3 yds to the ORST 28",,2024-09-07T04:29:07.000Z
+401643709103887201,401643709,40164370914,1,3,11:27,Oregon State,San Diego State,7,0,72,1,10,3,Rush,Jam Griffin run for 3 yds to the ORST 31,-0.3326246826501596,2024-09-07T04:32:07.000Z
+401643709103894501,401643709,40164370914,2,3,10:54,Oregon State,San Diego State,7,0,69,2,7,1,Rush,Jam Griffin run for 1 yd to the ORST 32,-0.5406427461487455,2024-09-07T04:32:41.000Z
+401643709103898501,401643709,40164370914,3,3,10:14,Oregon State,San Diego State,7,0,68,3,6,9,Pass Reception,Gevani McCoy pass complete to Trent Walker for 9 yds to the ORST 41 for a 1ST down,2.06988779126653,2024-09-07T04:33:16.000Z
+401643709103905901,401643709,40164370914,4,3,9:40,Oregon State,San Diego State,7,0,59,1,10,0,Pass Incompletion,Gevani McCoy pass incomplete,-1.1387859939569847,2024-09-07T04:33:48.000Z
+401643709103906301,401643709,40164370914,5,3,9:36,Oregon State,San Diego State,7,0,59,2,10,0,Pass Incompletion,Gevani McCoy pass incomplete,-0.7894428348388577,2024-09-07T04:34:24.000Z
+401643709103907401,401643709,40164370914,6,3,9:25,Oregon State,San Diego State,7,0,59,3,10,0,Penalty,"Oregon State Penalty, Offensive Holding (Yards) declined",,2024-09-07T04:35:15.000Z
+401643709103907901,401643709,40164370914,7,3,9:20,Oregon State,San Diego State,7,0,59,4,10,0,Punt,"Josh Green punt for 14 yds, punt out-of-bounds at the SDSU 45",,2024-09-07T04:37:18.000Z
+401643709103908701,401643709,40164370915,1,3,9:12,San Diego State,Oregon State,0,7,55,1,10,9,Rush,Marquez Cooper run for 9 yds to the ORST 46,1.2321065178353567,2024-09-07T04:37:44.000Z
+401643709103916501,401643709,40164370915,2,3,8:34,San Diego State,Oregon State,0,7,46,2,1,4,Pass Reception,Danny O'Neil pass complete to Jude Wolfe for 4 yds to the ORST 42 for a 1ST down,-0.2504287520911157,2024-09-07T04:38:43.000Z
+401643709103917601,401643709,40164370915,3,3,8:23,San Diego State,Oregon State,0,7,42,1,10,35,Pass Reception,"Danny O'Neil pass complete to Louis Brown IV for 35 yds to the ORST 7 for a 1ST down Oregon State Penalty, Defensive Pass Interference (Kobe Singleton) declined for a 1ST down",1.098180841244913,2024-09-07T04:39:09.000Z
+401643709103919201,401643709,40164370915,4,3,8:07,San Diego State,Oregon State,0,7,7,1,7,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.410393837690526,2024-09-07T04:39:32.000Z
+401643709103924201,401643709,40164370915,5,3,7:57,San Diego State,Oregon State,0,7,7,2,7,5,Rush,Marquez Cooper run for 5 yds to the ORST 2,0.062318183954876,2024-09-07T04:39:57.000Z
+401643709103924202,401643709,40164370915,6,3,7:57,San Diego State,Oregon State,0,7,2,3,2,0,Fumble Recovery (Opponent),"Danny O'Neil run for no gain to the ORST 2 Danny O'Neil fumbled, recovered by ORST Nikko Taylor",-4.455169715937139,2024-09-07T04:40:43.000Z
+401643709103999902,401643709,40164370916,15,3,0:00,Oregon State,San Diego State,7,0,20,0,6,5,End Period,End of 3rd Quarter,,2024-09-07T04:50:58.000Z
+401643709103925401,401643709,40164370916,1,3,7:45,Oregon State,San Diego State,7,0,98,1,10,5,Rush,Anthony Hankerson run for 5 yds to the ORST 7,0.060881488960485626,2024-09-07T04:41:08.000Z
+401643709103928801,401643709,40164370916,2,3,7:11,Oregon State,San Diego State,7,0,93,2,5,2,Rush,Anthony Hankerson run for 2 yds to the ORST 9,-0.18325126581340268,2024-09-07T04:41:44.000Z
+401643709103937001,401643709,40164370916,3,3,6:29,Oregon State,San Diego State,7,0,91,3,3,4,Rush,Gevani McCoy run for 4 yds to the ORST 13 for a 1ST down,0.4007564588860122,2024-09-07T04:42:22.000Z
+401643709103944501,401643709,40164370916,4,3,5:54,Oregon State,San Diego State,7,0,87,1,10,3,Rush,Anthony Hankerson run for 3 yds to the ORST 16,-0.16846587405937985,2024-09-07T04:43:06.000Z
+401643709103948101,401643709,40164370916,5,3,5:18,Oregon State,San Diego State,7,0,84,2,7,9,Pass Reception,Gevani McCoy pass complete to Trent Walker for 9 yds to the ORST 25 for a 1ST down,0.78750637320569,2024-09-07T04:43:36.000Z
+401643709103954901,401643709,40164370916,6,3,4:50,Oregon State,San Diego State,7,0,75,1,10,0,Pass Incompletion,Gevani McCoy pass incomplete,-0.7029700220436519,2024-09-07T04:44:18.000Z
+401643709103955702,401643709,40164370916,7,3,4:42,Oregon State,San Diego State,7,0,75,2,10,-10,Penalty,"(04:48) No Huddle-Shotgun McCoy,Gevani rush left for 9 yards gain to the OSU34, out of bounds at OSU34 PENALTY OSU Holding (Sikorski,Dylan) 10 yards from OSU25 to OSU15. NO PLAY.",,2024-09-07T04:45:01.000Z
+401643709103958302,401643709,40164370916,8,3,4:16,Oregon State,San Diego State,7,0,85,2,20,-5,Penalty,"(04:19) No Huddle-Shotgun McCoy,Gevani pass complete short right to Noga,Jeremiah caught at OSU20, for 8 yards to the OSU23 (Moretti,Kyle) PENALTY OSU Ineligible Downfield on Pass (Terry II,Jermaine) 5 yards from OSU15 to OSU10. NO PLAY.",,2024-09-07T04:46:17.000Z
+401643709103965301,401643709,40164370916,9,3,3:46,Oregon State,San Diego State,7,0,90,2,25,14,Pass Reception,Gevani McCoy pass complete to Anthony Hankerson for 14 yds to the ORST 24,0.19144393522782366,2024-09-07T04:47:02.000Z
+401643709103969401,401643709,40164370916,10,3,3:05,Oregon State,San Diego State,7,0,76,3,11,41,Pass Reception,Gevani McCoy pass complete to Trent Walker for 41 yds to the SDSU 35 for a 1ST down,4.200930193618853,2024-09-07T04:47:46.000Z
+401643709103977001,401643709,40164370916,11,3,2:29,Oregon State,San Diego State,7,0,35,1,10,11,Rush,Anthony Hankerson run for 11 yds to the SDSU 24 for a 1ST down,0.291150835169981,2024-09-07T04:48:30.000Z
+401643709103984901,401643709,40164370916,12,3,1:50,Oregon State,San Diego State,7,0,24,1,10,4,Rush,Anthony Hankerson run for 4 yds to the SDSU 20,-0.0334632336053265,2024-09-07T04:49:12.000Z
+401643709103989101,401643709,40164370916,13,3,1:08,Oregon State,San Diego State,7,0,20,2,6,0,Rush,Jam Griffin run for no gain to the SDSU 20,-0.4646330382023505,2024-09-07T04:49:57.000Z
+401643709103999901,401643709,40164370916,14,3,0:00,Oregon State,San Diego State,7,0,20,3,6,5,Rush,Jam Griffin run for 5 yds to the SDSU 15,0.0474088067949177,2024-09-07T04:50:58.000Z
+401643709104854601,401643709,40164370916,16,4,14:53,Oregon State,San Diego State,14,0,15,4,1,15,Rushing Touchdown,Anthony Hankerson run for 15 yds for a TD (Everett Hayes KICK),3.1321254136197343,2024-09-07T04:55:11.000Z
+401643709104865401,401643709,40164370917,5,4,13:45,San Diego State,Oregon State,0,14,65,1,10,0,Pass Incompletion,Danny O'Neil pass incomplete,-1.0146424556055624,2024-09-07T05:00:51.000Z
+401643709104866001,401643709,40164370917,6,4,13:39,San Diego State,Oregon State,0,14,65,2,10,0,Rush,Marquez Cooper run for no gain to the SDSU 35,-0.6004605992346148,2024-09-07T05:01:38.000Z
+401643709104868901,401643709,40164370917,7,4,13:10,San Diego State,Oregon State,0,14,65,3,10,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.30241592870214795,2024-09-07T05:02:04.000Z
+401643709104869703,401643709,40164370917,8,4,13:02,San Diego State,Oregon State,0,14,65,4,10,4,Blocked Punt,Tyler Pastula punt blocked by Amarion York blocked by Amarion York,,2024-09-07T05:03:10.000Z
+401643709104854603,401643709,40164370917,1,4,14:53,Oregon State,San Diego State,14,0,65,1,10,0,Kickoff,Everett Hayes kickoff for 65 yds for a touchback,,2024-09-07T04:55:11.000Z
+401643709104855801,401643709,40164370917,2,4,14:41,San Diego State,Oregon State,0,14,75,1,10,1,Rush,Danny O'Neil run for 1 yd to the SDSU 24,-0.5874795431016855,2024-09-07T05:00:11.000Z
+401643709104858301,401643709,40164370917,3,4,14:16,San Diego State,Oregon State,0,14,76,2,11,9,Pass Reception,Danny O'Neil pass complete to Ja'Shaun Poke for 9 yds to the SDSU 33,0.581901896190101,2024-09-07T05:00:23.000Z
+401643709104859401,401643709,40164370917,4,4,14:05,San Diego State,Oregon State,0,14,67,3,2,2,Rush,Marquez Cooper run for 2 yds to the SDSU 35 for a 1ST down,1.0546255636555957,2024-09-07T05:00:42.000Z
+401643709104875801,401643709,40164370918,1,4,12:41,Oregon State,San Diego State,14,0,54,1,10,4,Rush,Salahadin Allah run for 4 yds to the 50 yard line,-0.1577860825649198,2024-09-07T05:07:18.000Z
+401643709104877901,401643709,40164370918,2,4,12:20,Oregon State,San Diego State,14,0,50,2,6,3,Rush,Salahadin Allah run for 3 yds to the SDSU 47,-0.4267373477135532,2024-09-07T05:07:49.000Z
+401643709104885501,401643709,40164370918,3,4,11:44,Oregon State,San Diego State,14,0,47,3,3,9,Rush,Jam Griffin run for 9 yds to the SDSU 38 for a 1ST down,1.674828319378493,2024-09-07T05:08:26.000Z
+401643709104889301,401643709,40164370918,4,4,11:06,Oregon State,San Diego State,14,0,38,1,10,4,Rush,Salahadin Allah run for 4 yds to the SDSU 34,-0.080462810572756,2024-09-07T05:09:09.000Z
+401643709104897101,401643709,40164370918,5,4,10:28,Oregon State,San Diego State,14,0,34,2,6,0,Rush,Salahadin Allah run for no gain to the SDSU 34,-0.8356244462696232,2024-09-07T05:09:50.000Z
+401643709104905201,401643709,40164370918,6,4,9:47,Oregon State,San Diego State,14,0,34,3,6,-5,Penalty,PENALTY OSU Delay Of Game 5 yards from SDSU34 to SDSU39. NO PLAY.,,2024-09-07T05:10:34.000Z
+401643709104908201,401643709,40164370918,7,4,9:17,Oregon State,San Diego State,14,0,39,3,11,2,Pass Reception,Gabarri Johnson pass complete to Jam Griffin for 2 yds to the SDSU 37,-0.5874257974148467,2024-09-07T05:11:28.000Z
+401643709104914701,401643709,40164370918,8,4,8:52,Oregon State,San Diego State,14,0,37,4,9,54,Field Goal Missed,Everett Hayes 54 yd FG MISSED,,2024-09-07T05:12:05.000Z
+401643709104916701,401643709,40164370919,1,4,8:32,San Diego State,Oregon State,0,14,63,1,10,-2,Pass Reception,Danny O'Neil pass complete to Marquez Cooper for a loss of 2 yards to the SDSU 35,-1.3954766705179846,2024-09-07T05:15:11.000Z
+401643709104917701,401643709,40164370919,2,4,8:22,San Diego State,Oregon State,0,14,65,2,12,15,Penalty,"(08:29) No Huddle-Shotgun O'Neil,Danny pass incomplete deep left to Brooks,Baylin thrown to OSU45 PENALTY OSU Pass Interference (Jordan Jr.,Andre) 15 yards from SDSU35 to SDSU50, 1ST DOWN. NO PLAY.",,2024-09-07T05:15:26.000Z
+401643709104918301,401643709,40164370919,3,4,8:16,San Diego State,Oregon State,0,14,50,1,10,1,Rush,Marquez Cooper run for 1 yd to the ORST 49,-0.873884986133115,2024-09-07T05:16:51.000Z
+401643709104919201,401643709,40164370919,4,4,8:07,San Diego State,Oregon State,0,14,65,1,25,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.3487301636580451,2024-09-07T05:17:42.000Z
+401643709104919801,401643709,40164370919,5,4,8:01,San Diego State,Oregon State,0,14,65,2,25,0,Pass Incompletion,Danny O'Neil pass incomplete,-0.1668184145378646,2024-09-07T05:18:06.000Z
+401643709104924501,401643709,40164370919,6,4,7:54,San Diego State,Oregon State,0,14,65,3,25,7,Pass Reception,Danny O'Neil pass complete to Baylin Brooks for 7 yds to the SDSU 42,0.06213067444869135,2024-09-07T05:19:04.000Z
+401643709104926501,401643709,40164370919,7,4,7:34,San Diego State,Oregon State,0,14,58,4,18,0,Pass Incompletion,Danny O'Neil pass incomplete,0.21374620169924885,2024-09-07T05:19:19.000Z
+401643709104927001,401643709,40164370920,1,4,7:29,Oregon State,San Diego State,14,0,42,1,10,3,Rush,Jam Griffin run for 3 yds to the SDSU 39,-0.2936970531139116,2024-09-07T05:22:55.000Z
+401643709104935301,401643709,40164370920,2,4,6:46,Oregon State,San Diego State,14,0,39,2,7,11,Rush,Jam Griffin run for 11 yds to the SDSU 28 for a 1ST down,0.8246180505476046,2024-09-07T05:23:31.000Z
+401643709104939501,401643709,40164370920,3,4,6:04,Oregon State,San Diego State,14,0,28,1,10,3,Rush,Jam Griffin run for 3 yds to the SDSU 25,-0.158911195567058,2024-09-07T05:24:13.000Z
+401643709104948101,401643709,40164370920,4,4,5:18,Oregon State,San Diego State,14,0,25,2,7,4,Rush,Jam Griffin run for 4 yds to the SDSU 21,-0.054915446015634,2024-09-07T05:24:55.000Z
+401643709104956301,401643709,40164370920,5,4,4:36,Oregon State,San Diego State,21,0,21,3,3,21,Passing Touchdown,Bryce Caufield 21 Yd pass from Gevani McCoy (Everett Hayes Kick),2.977841115721123,2024-09-07T05:25:44.000Z
+401643709104957001,401643709,40164370921,2,4,4:29,San Diego State,Oregon State,0,21,75,1,10,2,Rush,Jaylon Armstead run for 2 yds to the SDSU 23,-0.45260367932203766,2024-09-07T05:28:22.000Z
+401643709104964701,401643709,40164370921,3,4,3:52,San Diego State,Oregon State,0,21,77,2,12,7,Rush,Jaylon Armstead run for 7 yds to the SDSU 30,0.22607015773811945,2024-09-07T05:29:08.000Z
+401643709104967001,401643709,40164370921,4,4,3:29,San Diego State,Oregon State,0,21,70,3,5,0,Rush,Jaylon Armstead run for no gain to the SDSU 30,-0.3716239049161505,2024-09-07T05:29:27.000Z
+401643709104974701,401643709,40164370921,5,4,2:52,San Diego State,Oregon State,0,21,70,4,5,0,Punt,"Tyler Pastula punt for 63 yds, punt out-of-bounds at the ORST 7",,2024-09-07T05:30:05.000Z
+401643709104956303,401643709,40164370921,1,4,4:36,Oregon State,San Diego State,21,0,65,1,10,0,Kickoff,Everett Hayes kickoff for 65 yds for a touchback,,2024-09-07T05:25:44.000Z
+401643709104976201,401643709,40164370922,1,4,2:37,Oregon State,San Diego State,21,0,93,1,10,2,Rush,Salahadin Allah run for 2 yds to the ORST 9,-0.19818242222171722,2024-09-07T05:31:08.000Z
+401643709104979801,401643709,40164370922,2,4,2:01,Oregon State,San Diego State,21,0,91,2,8,4,Rush,Salahadin Allah run for 4 yds to the ORST 13,-0.02506761514887224,2024-09-07T05:32:04.000Z
+401643709104984501,401643709,40164370922,3,4,1:54,Oregon State,San Diego State,21,0,87,3,4,3,Rush,Salahadin Allah run for 3 yds to the ORST 10,-0.07404532386689323,2024-09-07T05:35:08.000Z
+401643709104988101,401643709,40164370922,4,4,1:18,Oregon State,San Diego State,21,0,90,4,7,0,Punt,"Josh Green punt for 35 yds , Jordan Napier returns for no gain to the ORST 46",,2024-09-07T05:35:59.000Z
+401643709104994901,401643709,40164370923,1,4,0:50,San Diego State,Oregon State,0,21,46,1,10,-5,Sack,Danny O'Neil sacked by Nikko Taylor for a loss of 5 yards to the SDSU 49,-2.1423333613438125,2024-09-07T05:36:42.000Z
+401643709104999902,401643709,40164370923,3,4,0:00,San Diego State,Oregon State,0,21,51,0,15,6,End of Game,End of 4th Quarter,,2024-09-07T05:37:46.000Z
+401643709104999901,401643709,40164370923,2,4,0:00,San Diego State,Oregon State,0,21,51,2,15,6,Rush,Jaylon Armstead run for 6 yds to the ORST 45,0.2656761100752388,2024-09-07T05:37:46.000Z

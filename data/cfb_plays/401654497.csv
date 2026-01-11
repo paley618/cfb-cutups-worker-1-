@@ -1,0 +1,149 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401654497101849904,401654497,4016544972,1,1,15:00,Sacred Heart,Delaware State,0,0,75,1,10,0,Pass Reception,John Michalski pass complete to Mason Stahl,-0.7029700220436519,2024-08-31T22:04:18.000Z
+401654497101849905,401654497,4016544972,2,1,15:00,Sacred Heart,Delaware State,0,0,75,2,10,13,Rush,John Michalski run for 13 yds to the SHU 38 for a 1ST down,1.8277215010854828,2024-08-31T22:04:18.000Z
+401654497101849906,401654497,4016544972,3,1,15:00,Sacred Heart,Delaware State,0,0,62,1,10,7,Pass Reception,John Michalski pass complete to Ethan Hilliman for 7 yds to the SHU 45,0.7103851122578037,2024-08-31T22:04:18.000Z
+401654497101849907,401654497,4016544972,4,1,15:00,Sacred Heart,Delaware State,0,0,55,2,3,4,Rush,Jalen Madison run for 4 yds to the SHU 49 for a 1ST down,0.319251324528748,2024-08-31T22:04:18.000Z
+401654497101849908,401654497,4016544972,5,1,15:00,Sacred Heart,Delaware State,0,0,51,1,10,13,Pass Reception,John Michalski pass complete to Ethan Hilliman for 13 yds to the DSU 38 for a 1ST down,0.828774555307751,2024-08-31T22:04:18.000Z
+401654497101854401,401654497,4016544972,12,1,14:55,Delaware State,Sacred Heart,0,0,65,1,10,20,Kickoff,"Nathan Wilson kickoff for 60 yds , Ryan Palmieri return for 20 yds to the SHU 25",,2024-08-31T22:04:19.000Z
+401654497101849909,401654497,4016544972,6,1,15:00,Sacred Heart,Delaware State,0,0,38,1,10,7,Rush,Jalen Madison run for 7 yds to the DSU 31,0.423978038879877,2024-08-31T22:04:18.000Z
+401654497101849910,401654497,4016544972,7,1,15:00,Sacred Heart,Delaware State,0,0,31,2,3,2,Rush,Jalen Madison run for 2 yds to the DSU 29,-0.4177800580453803,2024-08-31T22:04:18.000Z
+401654497101849911,401654497,4016544972,8,1,15:00,Sacred Heart,Delaware State,0,0,29,3,1,4,Rush,Jalen Madison run for 4 yds to the DSU 25 for a 1ST down,0.3883103054846338,2024-08-31T22:04:18.000Z
+401654497101849912,401654497,4016544972,9,1,15:00,Sacred Heart,Delaware State,0,0,25,1,10,2,Rush,Jalen Madison run for 2 yds to the DSU 23,-0.2434763543774955,2024-08-31T22:04:18.000Z
+401654497101849913,401654497,4016544972,10,1,15:00,Sacred Heart,Delaware State,0,0,23,2,8,5,Pass Reception,John Michalski pass complete to Mason Stahl for 5 yds to the DSU 18,0.057374965390801,2024-08-31T22:04:18.000Z
+401654497101849914,401654497,4016544972,11,1,15:00,Sacred Heart,Delaware State,0,0,18,3,3,1,Rush,Jalen Madison run for 1 yd to the DSU 17,-0.4088555156325666,2024-08-31T22:04:18.000Z
+401654497101919401,401654497,4016544972,13,1,8:05,Sacred Heart,Delaware State,3,0,17,4,2,34,Field Goal Good,Matt Kling 34 yd FG GOOD,,2024-08-31T22:13:32.000Z
+401654497101919402,401654497,4016544974,1,1,8:05,Sacred Heart,Delaware State,3,0,65,1,10,0,Kickoff,Matt Kling kickoff for 65 yds for a touchback,,2024-08-31T22:16:46.000Z
+401654497101919403,401654497,4016544974,2,1,8:05,Delaware State,Sacred Heart,0,3,75,1,10,1,Rush,Jaden Sutton run for 1 yd to the DSU 26,-0.5874795431016855,2024-08-31T22:16:46.000Z
+401654497101919404,401654497,4016544974,3,1,8:05,Delaware State,Sacred Heart,0,3,74,2,9,1,Pass Reception,Marqui Adams pass complete to Edward Core for 1 yd to the DSU 27,-0.3439316523569813,2024-08-31T22:16:46.000Z
+401654497101919405,401654497,4016544974,4,1,8:05,Delaware State,Sacred Heart,0,3,73,3,8,9,Rush,Marqui Adams run for 9 yds to the DSU 36 for a 1ST down,1.8619737074046574,2024-08-31T22:16:46.000Z
+401654497101919406,401654497,4016544974,5,1,8:05,Delaware State,Sacred Heart,0,3,64,1,10,2,Rush,Jaden Sutton run for 2 yds to the DSU 38,-0.6439997383019928,2024-08-31T22:16:46.000Z
+401654497101919407,401654497,4016544974,6,1,8:05,Delaware State,Sacred Heart,0,3,62,2,8,11,Rush,Marqui Adams run for 11 yds to the DSU 49 for a 1ST down,1.8678251421843848,2024-08-31T22:16:46.000Z
+401654497101919408,401654497,4016544974,7,1,8:05,Delaware State,Sacred Heart,0,3,51,1,10,28,Pass Reception,Marqui Adams pass complete to Jordan Hull for 28 yds to the SHU 23 for a 1ST down,1.2593895258217105,2024-08-31T22:16:46.000Z
+401654497101919409,401654497,4016544974,8,1,8:05,Delaware State,Sacred Heart,0,3,23,1,10,4,Rush,Jaden Sutton run for 4 yds to the SHU 19,-0.0314047953383095,2024-08-31T22:16:46.000Z
+401654497101919410,401654497,4016544974,9,1,8:05,Delaware State,Sacred Heart,0,3,19,2,6,1,Pass Reception,Marqui Adams pass complete to NyGhee Lolley for 1 yd to the SHU 18,-0.3418667728673783,2024-08-31T22:16:46.000Z
+401654497101919411,401654497,4016544974,10,1,8:05,Delaware State,Sacred Heart,0,3,18,3,5,0,Pass Incompletion,pass incomplete to Jaden Sutton,-0.554520316054294,2024-08-31T22:16:46.000Z
+401654497101967601,401654497,4016544974,11,1,3:23,Delaware State,Sacred Heart,0,3,18,4,5,35,Field Goal Missed,Nathan Wilson 35 yd FG MISSED,,2024-08-31T22:25:19.000Z
+401654497101967607,401654497,4016544975,7,1,0:00,Sacred Heart,Delaware State,3,0,49,0,4,0,End Period,End of 1st Quarter,,2024-08-31T22:27:44.000Z
+401654497101849915,401654497,4016544975,1,1,15:00,Sacred Heart,Delaware State,3,0,49,2,4,1,Rush,Xavier Leigh run for 1 yd to the DSU 48,-0.9719944695160815,2024-08-31T22:04:18.000Z
+401654497101967602,401654497,4016544975,2,1,3:23,Sacred Heart,Delaware State,3,0,80,1,10,4,Rush,Xavier Leigh run for 4 yds to the SHU 24,-0.0884321258012219,2024-08-31T22:25:19.000Z
+401654497101967603,401654497,4016544975,3,1,3:23,Sacred Heart,Delaware State,3,0,76,2,6,7,Pass Reception,John Michalski pass complete to Ethan Hilliman for 7 yds to the SHU 31 for a 1ST down,0.867198916291275,2024-08-31T22:25:19.000Z
+401654497101967604,401654497,4016544975,4,1,3:23,Sacred Heart,Delaware State,3,0,69,1,10,7,Rush,John Michalski run for 7 yds to the SHU 38,0.6816920045798367,2024-08-31T22:25:19.000Z
+401654497101967605,401654497,4016544975,5,1,3:23,Sacred Heart,Delaware State,3,0,62,2,3,7,Rush,John Michalski run for 7 yds to the SHU 45 for a 1ST down,0.648985763218848,2024-08-31T22:25:19.000Z
+401654497101967606,401654497,4016544975,6,1,3:23,Sacred Heart,Delaware State,3,0,55,1,10,6,Rush,Xavier Leigh run for 6 yds to the DSU 49,0.38118862332173,2024-08-31T22:25:19.000Z
+401654497102849901,401654497,4016544975,8,2,15:00,Sacred Heart,Delaware State,3,0,48,3,3,-1,Rush,John Michalski run for a loss of 1 yard to the DSU 49,-1.2698572213835977,2024-08-31T22:31:21.000Z
+401654497102858701,401654497,4016544975,9,2,14:12,Sacred Heart,Delaware State,3,0,49,4,4,0,Punt,Mason VonJess punt for 39 yds,,2024-08-31T22:31:21.000Z
+401654497102849903,401654497,40165449713,1,2,15:00,Sacred Heart,Delaware State,6,7,84,1,10,-2,Rush,John Michalski run for a loss of 2 yards to the SHU 35,-0.5746773025397305,2024-08-31T22:31:21.000Z
+401654497102894302,401654497,4016544978,1,2,10:56,Delaware State,Sacred Heart,0,3,78,1,10,16,Rush,Kyree Benton run for 16 yds to the DSU 38 for a 1ST down,1.3189811616616316,2024-08-31T22:41:30.000Z
+401654497102898901,401654497,4016544978,2,2,10:10,Delaware State,Sacred Heart,0,3,62,1,10,0,Pass Incompletion,pass incomplete to NyGhee Lolley,-1.087995077167328,2024-08-31T22:47:16.000Z
+401654497102898902,401654497,4016544978,3,2,10:10,Delaware State,Sacred Heart,0,3,62,2,10,1,Rush,Marqui Adams run for 1 yd to the DSU 39,-0.5784221485712022,2024-08-31T22:47:16.000Z
+401654497102898903,401654497,4016544978,4,2,10:10,Delaware State,Sacred Heart,0,3,61,3,9,7,Pass Reception,Marqui Adams pass complete to Jayden Jenkins for 7 yds to the DSU 46,0.33489134116839203,2024-08-31T22:47:16.000Z
+401654497102898904,401654497,4016544978,5,2,10:10,Delaware State,Sacred Heart,0,3,54,4,2,3,Rush,Marqui Adams run for 3 yds to the DSU 49 for a 1ST down,2.36116232135669,2024-08-31T22:47:16.000Z
+401654497102926801,401654497,4016544978,6,2,7:31,Delaware State,Sacred Heart,0,3,48,2,7,7,Rush,Marqui Adams run for 7 yds to the SHU 41 for a 1ST down,1.0783057069845976,2024-08-31T22:53:14.000Z
+401654497102979902,401654497,4016544978,7,2,2:00,Delaware State,Sacred Heart,0,3,51,1,10,3,Rush,Jayden Jenkins run for 3 yds to the SHU 48,-0.395458128988178,2024-08-31T23:03:55.000Z
+401654497102979903,401654497,4016544978,8,2,2:00,Delaware State,Sacred Heart,7,3,41,1,10,41,Passing Touchdown,Kristian Tate 41 Yd pass from Marqui Adams (Nathan Wilson Kick),3.2405196258965194,2024-08-31T23:03:55.000Z
+401654497102858702,401654497,4016544976,1,2,14:12,Delaware State,Sacred Heart,0,3,90,1,10,0,Pass Incompletion,pass incomplete to Kyree Benton,-0.34929852451643395,2024-08-31T22:33:44.000Z
+401654497102858703,401654497,4016544976,2,2,14:12,Delaware State,Sacred Heart,0,3,90,2,10,-2,Sack,Marqui Adams sacked for a loss of 2 yards to the DSU 8,-0.18868256386067017,2024-08-31T22:33:44.000Z
+401654497102858704,401654497,4016544976,3,2,14:12,Delaware State,Sacred Heart,0,3,92,3,12,5,Pass Reception,Marqui Adams pass complete to Jaden Sutton for 5 yds to the DSU 13,0.00811682915722755,2024-08-31T22:33:44.000Z
+401654497102875901,401654497,4016544976,4,2,12:40,Delaware State,Sacred Heart,0,3,87,4,7,0,Punt,Nathan Wilson punt for 51 yds,,2024-08-31T22:35:30.000Z
+401654497102875902,401654497,4016544977,1,2,12:40,Sacred Heart,Delaware State,3,0,64,1,10,7,Rush,Elijah Ford run for 7 yds to the SHU 43,0.7106238902527534,2024-08-31T22:39:17.000Z
+401654497102875903,401654497,4016544977,2,2,12:40,Sacred Heart,Delaware State,3,0,57,2,3,0,Rush,"Jalen Madison run for 10 yds to the DSU 47 Sacred Heart Penalty, Offensive holding (Elijah Ford) to the SHU 43",-1.273149056539049,2024-08-31T22:39:17.000Z
+401654497102875904,401654497,4016544977,3,2,12:40,Sacred Heart,Delaware State,3,0,57,2,3,0,Pass Incompletion,pass incomplete to Charlie Gordiner,-1.273149056539049,2024-08-31T22:39:17.000Z
+401654497102875905,401654497,4016544977,4,2,12:40,Sacred Heart,Delaware State,3,0,57,3,3,-7,Sack,John Michalski sacked for a loss of 7 yards to the SHU 36,-1.4318799860280338,2024-08-31T22:39:17.000Z
+401654497102894301,401654497,4016544977,5,2,10:56,Sacred Heart,Delaware State,3,0,64,4,10,0,Punt,Mason VonJess punt for 42 yds,,2024-08-31T22:41:30.000Z
+401654497102985801,401654497,40165449710,13,2,1:41,Sacred Heart,Delaware State,6,7,24,4,4,41,Field Goal Good,Matt Kling 41 Yd Field Goal ,,2024-08-31T22:31:21.000Z
+401654497102936201,401654497,40165449710,1,2,6:37,Delaware State,Sacred Heart,1,3,65,1,10,18,Kickoff Return (Offense),"Nathan Wilson kickoff for 61 yds , Ryan Palmieri return for 18 yds to the SHU 22",,2024-08-31T22:57:13.000Z
+401654497102936202,401654497,40165449710,2,2,6:37,Sacred Heart,Delaware State,3,1,78,1,10,4,Pass Reception,John Michalski pass complete to Ethan Hilliman for 4 yds to the SHU 26,-0.098522001264528,2024-08-31T22:57:13.000Z
+401654497102936203,401654497,40165449710,3,2,6:37,Sacred Heart,Delaware State,3,1,74,2,6,8,Rush,Xavier Leigh run for 8 yds to the SHU 34 for a 1ST down,1.033737413876036,2024-08-31T22:57:13.000Z
+401654497102936204,401654497,40165449710,4,2,6:37,Sacred Heart,Delaware State,3,1,66,1,10,5,Pass Reception,John Michalski pass complete to Ethan Hilliman for 5 yds to the SHU 39,0.1079221455143812,2024-08-31T22:57:13.000Z
+401654497102936205,401654497,40165449710,5,2,6:37,Sacred Heart,Delaware State,3,1,61,2,5,-10,Rush,"Michalski,John rush (Wagner,Barry), PENALTY SHU holding (Scribner,Evan) 10 yards to the SHU49. Sacred Heart Penalty, Offensive holding (Evan Scribner) to the SHU 29",-1.9599770282285869,2024-08-31T22:57:13.000Z
+401654497102936206,401654497,40165449710,6,2,6:37,Sacred Heart,Delaware State,3,1,71,2,15,1,Rush,Xavier Leigh run for 1 yd to the SHU 30,-0.2285394250571926,2024-08-31T22:57:13.000Z
+401654497102936207,401654497,40165449710,7,2,6:37,Sacred Heart,Delaware State,3,1,70,3,14,24,Pass Reception,John Michalski pass complete to Mason Stahl for 24 yds to the DSU 46 for a 1ST down,3.6040342508713668,2024-08-31T22:57:13.000Z
+401654497102936208,401654497,40165449710,8,2,6:37,Sacred Heart,Delaware State,3,1,46,1,10,0,Pass Incompletion,"John Michalski pass incomplete to Ethan Hilliman, broken up by Travis Laster",-1.0250974847844603,2024-08-31T22:57:13.000Z
+401654497102936209,401654497,40165449710,9,2,6:37,Sacred Heart,Delaware State,3,1,46,2,10,16,Rush,Xavier Leigh run for 16 yds to the DSU 30 for a 1ST down,1.7541417599961535,2024-08-31T22:57:13.000Z
+401654497102936210,401654497,40165449710,10,2,6:37,Sacred Heart,Delaware State,3,1,30,1,10,1,Rush,Xavier Leigh run for 1 yd to the DSU 29,-0.424602465889258,2024-08-31T22:57:13.000Z
+401654497102936211,401654497,40165449710,11,2,6:37,Sacred Heart,Delaware State,3,1,29,2,9,5,Rush,John Michalski run for 5 yds to the DSU 24,0.056420743130831,2024-08-31T22:57:13.000Z
+401654497102979901,401654497,40165449710,12,2,2:00,Sacred Heart,Delaware State,3,1,24,3,4,0,Pass Incompletion,pass incomplete to Xavier Leigh,-0.7183212182304395,2024-08-31T23:03:55.000Z
+401654497102986201,401654497,40165449712,1,2,1:37,Sacred Heart,Delaware State,6,7,65,1,10,5,Kickoff Return (Offense),"Matt Kling kickoff for 43 yds , Jaden Sutton return for 5 yds to the DSU 27",,2024-08-31T23:09:13.000Z
+401654497102986202,401654497,40165449712,2,2,1:37,Delaware State,Sacred Heart,7,6,73,1,10,-8,Sack,Marqui Adams sacked for a loss of 8 yards to the DSU 19,-1.2974140587704763,2024-08-31T23:09:13.000Z
+401654497102986203,401654497,40165449712,3,2,1:37,Delaware State,Sacred Heart,-11,6,81,2,18,18,Pass Reception,Marqui Adams pass complete to NyGhee Lolley for 18 yds to the DSU 37 for a 1ST down,2.1796186994146627,2024-08-31T23:09:13.000Z
+401654497102986204,401654497,40165449712,4,2,1:37,Delaware State,Sacred Heart,7,6,63,1,10,-5,Penalty,"Delaware State Penalty, false start (NyGhee Lolley) to the DSU 32",,2024-08-31T23:09:13.000Z
+401654497102995601,401654497,40165449712,5,2,0:43,Delaware State,Sacred Heart,7,6,68,1,15,0,Pass Incompletion,pass incomplete to Jordan Hull,-0.6343563915083825,2024-08-31T23:12:10.000Z
+401654497102995602,401654497,40165449712,6,2,0:43,Delaware State,Sacred Heart,7,6,68,2,15,3,Rush,Marqui Adams run for 3 yds to the DSU 35,-0.14751318068663632,2024-08-31T23:15:14.000Z
+401654497102998101,401654497,40165449712,7,2,0:18,Delaware State,Sacred Heart,7,6,65,3,12,0,Pass Incompletion,"pass incomplete to Jayden Jenkins Delaware State Penalty, inelgible downfield on pass (Yards) to the DSU 35",-0.2508170853457674,2024-08-31T22:31:21.000Z
+401654497102999201,401654497,40165449712,8,2,0:07,Delaware State,Sacred Heart,7,6,65,4,12,0,Punt,Nathan Wilson punt for 49 yds,,2024-08-31T23:17:14.000Z
+401654497103879801,401654497,40165449716,3,3,12:01,Sacred Heart,Delaware State,6,7,75,3,7,0,Interception,John Michalski pass intercepted,0.013469193767302379,2024-08-31T23:48:17.000Z
+401654497103874602,401654497,40165449716,1,3,12:53,Sacred Heart,Delaware State,6,7,78,1,10,3,Rush,Jalen Madison run for 3 yds to the SHU 25,-0.2595333371439592,2024-08-31T23:46:12.000Z
+401654497103874603,401654497,40165449716,2,3,12:53,Sacred Heart,Delaware State,6,7,75,2,7,0,Pass Incompletion,pass incomplete to Ethan Hilliman,-0.48195105428222096,2024-08-31T23:46:12.000Z
+401654497103854801,401654497,40165449715,1,3,14:51,Sacred Heart,Delaware State,6,7,65,1,10,16,Kickoff Return (Offense),"Matt Kling kickoff for 55 yds , Jaden Sutton return for 16 yds to the DSU 26",,2024-08-31T23:41:27.000Z
+401654497103854802,401654497,40165449715,2,3,14:51,Delaware State,Sacred Heart,7,6,74,1,10,7,Rush,Jaden Sutton run for 7 yds to the DSU 33,0.6195700280317222,2024-08-31T23:41:27.000Z
+401654497103854803,401654497,40165449715,3,3,14:51,Delaware State,Sacred Heart,7,6,67,2,3,0,Rush,"Adams,Marqui rush middle (Brown,Tyreke).",-1.0261741772494029,2024-08-31T23:41:27.000Z
+401654497103854804,401654497,40165449715,4,3,14:51,Delaware State,Sacred Heart,7,6,67,3,3,2,Pass Reception,Marqui Adams pass complete to Kristian Tate for 2 yds to the DSU 35,-0.35118414710856616,2024-08-31T23:41:27.000Z
+401654497103854805,401654497,40165449715,5,3,14:51,Delaware State,Sacred Heart,7,6,65,4,1,-5,Penalty,"Delaware State Penalty, false start (Charles Brown Jr.) to the DSU 30",,2024-08-31T23:41:27.000Z
+401654497103874601,401654497,40165449715,6,3,12:53,Delaware State,Sacred Heart,7,6,70,4,6,0,Punt,Nathan Wilson punt for 48 yds,,2024-08-31T23:46:12.000Z
+401654497103879802,401654497,40165449717,1,3,12:01,Delaware State,Sacred Heart,7,6,40,1,10,0,Pass Incompletion,pass incomplete to Kristian Tate,-0.8457687366186873,2024-08-31T23:48:17.000Z
+401654497103879803,401654497,40165449717,2,3,12:01,Delaware State,Sacred Heart,7,6,40,2,10,9,Rush,Jaden Sutton run for 9 yds to the SHU 31,0.8449831085065433,2024-08-31T23:51:16.000Z
+401654497103879804,401654497,40165449717,3,3,12:01,Delaware State,Sacred Heart,7,6,31,3,1,4,Rush,Jaden Sutton run for 4 yds to the SHU 27 for a 1ST down,0.448553930657999,2024-08-31T23:51:16.000Z
+401654497103879805,401654497,40165449717,4,3,12:01,Delaware State,Sacred Heart,7,6,27,1,10,-15,Pass Incompletion,"Marqui Adams pass incomplete to Kristian Tate, broken up by Kenny Selby Delaware State Penalty, Offensive pass interference (Kristian Tate) to the SHU 42",-3.205427264488403,2024-08-31T23:51:16.000Z
+401654497103879806,401654497,40165449717,5,3,12:01,Delaware State,Sacred Heart,7,6,42,1,25,10,Pass Reception,Marqui Adams pass complete to Jaden Sutton for 10 yds to the SHU 32,1.030793302350265,2024-08-31T23:51:16.000Z
+401654497103879807,401654497,40165449717,6,3,12:01,Delaware State,Sacred Heart,7,6,32,2,15,0,Pass Incompletion,pass incomplete to Kristian Tate,-0.9350278602780905,2024-08-31T23:51:16.000Z
+401654497103879808,401654497,40165449717,7,3,12:01,Delaware State,Sacred Heart,7,6,32,3,15,-7,Sack,Marqui Adams sacked for a loss of 7 yards to the SHU 39,-1.9530928588370218,2024-08-31T23:51:16.000Z
+401654497103906001,401654497,40165449717,8,3,9:39,Delaware State,Sacred Heart,7,6,39,4,22,0,Punt,Nathan Wilson punt for 39 yds,,2024-08-31T23:57:14.000Z
+401654497103906002,401654497,40165449718,1,3,9:39,Sacred Heart,Delaware State,6,7,80,1,10,7,Rush,Xavier Leigh run for 7 yds to the SHU 27,0.5253025865520424,2024-08-31T23:57:14.000Z
+401654497103906003,401654497,40165449718,2,3,9:39,Sacred Heart,Delaware State,6,7,73,2,3,6,Rush,John Michalski run for 6 yds to the SHU 33 for a 1ST down,0.4316985399119116,2024-08-31T23:57:14.000Z
+401654497103906004,401654497,40165449718,3,3,9:39,Sacred Heart,Delaware State,6,7,67,1,10,12,Pass Reception,John Michalski pass complete to Ethan Hilliman for 12 yds to the SHU 45 for a 1ST down,1.1524434318247838,2024-08-31T23:57:14.000Z
+401654497103906005,401654497,40165449718,4,3,9:39,Sacred Heart,Delaware State,6,7,55,1,10,12,Rush,Xavier Leigh run for 12 yds to the DSU 43 for a 1ST down,0.9242431493855108,2024-08-31T23:57:14.000Z
+401654497103906006,401654497,40165449718,5,3,9:39,Sacred Heart,Delaware State,6,7,43,1,10,0,Pass Incompletion,pass incomplete to Xavier Leigh,-0.9391692565688832,2024-08-31T23:57:14.000Z
+401654497103906007,401654497,40165449718,6,3,9:39,Sacred Heart,Delaware State,6,7,43,2,10,15,Rush,John Michalski run for 15 yds to the DSU 28 for a 1ST down,1.5275248703613065,2024-08-31T23:57:14.000Z
+401654497103906008,401654497,40165449718,7,3,9:39,Sacred Heart,Delaware State,6,7,28,1,10,1,Rush,Xavier Leigh run for 1 yd to the DSU 27,-0.3905035886634815,2024-08-31T23:57:14.000Z
+401654497103906009,401654497,40165449718,8,3,9:39,Sacred Heart,Delaware State,6,7,27,2,9,13,Pass Reception,John Michalski pass complete to Ethan Hilliman for 13 yds to the DSU 14 for a 1ST down,0.606234887622831,2024-08-31T23:57:14.000Z
+401654497103906010,401654497,40165449718,9,3,9:39,Sacred Heart,Delaware State,6,7,14,1,10,1,Rush,Jalen Madison run for 1 yd to the DSU 13,-0.2453531896168325,2024-08-31T23:57:14.000Z
+401654497103906011,401654497,40165449718,10,3,9:39,Sacred Heart,Delaware State,6,7,13,2,9,0,Pass Incompletion,pass incomplete to Ethan Hilliman,-0.3245566957386374,2024-08-31T23:57:14.000Z
+401654497103906012,401654497,40165449718,11,3,9:39,Sacred Heart,Delaware State,6,7,13,3,9,0,Pass Incompletion,pass incomplete to Mason Stahl,-0.4917447658860486,2024-08-31T23:57:14.000Z
+401654497103949701,401654497,40165449718,12,3,5:02,Sacred Heart,Delaware State,9,7,13,4,9,30,Field Goal Good,Matt Kling 30 Yd Field Goal ,,2024-09-01T00:05:19.000Z
+401654497103949711,401654497,40165449720,10,3,0:00,Delaware State,Sacred Heart,7,9,39,0,4,0,End Period,End of 3rd Quarter,,2024-09-01T00:12:43.000Z
+401654497103949702,401654497,40165449720,2,3,5:02,Sacred Heart,Delaware State,9,7,65,1,10,0,Kickoff,Matt Kling kickoff for 65 yds for a touchback,,2024-09-01T00:05:19.000Z
+401654497103849902,401654497,40165449720,1,3,15:00,Delaware State,Sacred Heart,7,9,39,4,4,5,Pass Reception,Marqui Adams pass complete to Jayden Jenkins for 5 yds to the SHU 34 for a 1ST down,2.327657808507686,2024-08-31T23:41:09.000Z
+401654497103949703,401654497,40165449720,3,3,5:02,Delaware State,Sacred Heart,7,9,75,1,10,15,Pass Incompletion,"Marqui Adams pass incomplete to Jordan Hull for a 1ST down Sacred Heart Penalty, Defensive pass interference (Kenny Selby) to the DSU 40 for a 1ST down",1.320854515577646,2024-09-01T00:05:19.000Z
+401654497103949704,401654497,40165449720,4,3,5:02,Delaware State,Sacred Heart,7,9,60,1,10,8,Pass Reception,Marqui Adams pass complete to Edward Core for 8 yds to the DSU 48,1.0159674518504005,2024-09-01T00:05:19.000Z
+401654497103949705,401654497,40165449720,5,3,5:02,Delaware State,Sacred Heart,7,9,52,2,2,1,Rush,Jayden Jenkins run for 1 yd to the DSU 49,-1.0731465617637088,2024-09-01T00:05:19.000Z
+401654497103949706,401654497,40165449720,6,3,5:02,Delaware State,Sacred Heart,7,9,51,3,1,6,Rush,Marqui Adams run for 6 yds to the SHU 45 for a 1ST down,1.3375656289899158,2024-09-01T00:05:19.000Z
+401654497103949707,401654497,40165449720,7,3,5:02,Delaware State,Sacred Heart,7,9,45,1,10,5,Rush,Marqui Adams run for 5 yds to the SHU 40,0.0943461181043617,2024-09-01T00:05:19.000Z
+401654497103949708,401654497,40165449720,8,3,5:02,Delaware State,Sacred Heart,7,9,40,2,5,-6,Sack,Marqui Adams sacked for a loss of 6 yards to the SHU 46,-2.365867972695616,2024-09-01T00:05:19.000Z
+401654497103949709,401654497,40165449720,9,3,5:02,Delaware State,Sacred Heart,7,9,46,3,11,7,Pass Reception,Marqui Adams pass complete to Jayden Jenkins for 7 yds to the SHU 39,0.4836519702369664,2024-09-01T00:05:19.000Z
+401654497104849901,401654497,40165449720,11,4,15:00,Delaware State,Sacred Heart,7,9,34,1,10,21,Rush,Marqui Adams run for 21 yds to the SHU 13 for a 1ST down,0.397796945867823,2024-08-31T00:00:00.000Z
+401654497104849903,401654497,40165449720,12,4,15:00,Delaware State,Sacred Heart,7,9,13,1,10,4,Rush,Jaden Sutton run for 4 yds to the SHU 9,-0.017336858055032,2024-08-31T00:00:00.000Z
+401654497104849904,401654497,40165449720,13,4,15:00,Delaware State,Sacred Heart,7,9,9,2,6,1,Rush,Marqui Adams run for 1 yd to the SHU 8,-0.248935781401958,2024-09-01T00:17:29.000Z
+401654497104849905,401654497,40165449720,14,4,15:00,Delaware State,Sacred Heart,7,9,8,3,5,-4,Pass Reception,Marqui Adams pass complete to Jordan Hull for a loss of 4 yards to the SHU 12,-0.748025179373419,2024-09-01T00:17:29.000Z
+401654497104879601,401654497,40165449720,15,4,12:03,Delaware State,Sacred Heart,10,9,12,4,9,29,Field Goal Good,Nathan Wilson 29 Yd Field Goal ,,2024-09-01T00:22:06.000Z
+401654497104906701,401654497,40165449722,6,4,9:32,Sacred Heart,Delaware State,9,10,33,1,10,0,Interception,John Michalski pass intercepted,-4.096925226498012,2024-09-01T00:25:30.000Z
+401654497104884401,401654497,40165449722,1,4,11:55,Delaware State,Sacred Heart,10,9,65,1,10,25,Kickoff Return (Offense),"Nathan Wilson kickoff for 61 yds , Ryan Palmieri return for 25 yds to the SHU 29",,2024-09-01T00:23:18.000Z
+401654497104884402,401654497,40165449722,2,4,11:55,Sacred Heart,Delaware State,9,10,71,1,10,3,Rush,Jalen Madison run for 3 yds to the SHU 32,-0.3446420231971743,2024-09-01T00:23:18.000Z
+401654497104884403,401654497,40165449722,3,4,11:55,Sacred Heart,Delaware State,9,10,68,2,7,17,Rush,Jalen Madison run for 17 yds to the SHU 49 for a 1ST down,2.1968916920592,2024-09-01T00:23:18.000Z
+401654497104884404,401654497,40165449722,4,4,11:55,Sacred Heart,Delaware State,9,10,51,1,10,7,Rush,John Michalski run for 7 yds to the DSU 44,0.6049387793407243,2024-09-01T00:23:18.000Z
+401654497104884405,401654497,40165449722,5,4,11:55,Sacred Heart,Delaware State,9,10,44,2,3,11,Rush,Elijah Ford run for 11 yds to the DSU 33 for a 1ST down,0.4153536510502267,2024-09-01T00:23:18.000Z
+401654497104906702,401654497,40165449723,1,4,9:32,Delaware State,Sacred Heart,10,9,69,1,10,0,Pass Incompletion,pass incomplete to Kristian Tate,-0.8947814664467213,2024-09-01T00:27:14.000Z
+401654497104906703,401654497,40165449723,2,4,9:32,Delaware State,Sacred Heart,10,9,69,2,10,21,Pass Reception,Marqui Adams pass complete to Kyree Benton for 21 yds to the SHU 48 for a 1ST down,2.815838635281814,2024-09-01T00:27:14.000Z
+401654497104906704,401654497,40165449723,3,4,9:32,Delaware State,Sacred Heart,10,9,48,1,10,3,Rush,Jaden Sutton run for 3 yds to the SHU 45,-0.3648977045566397,2024-09-01T00:27:14.000Z
+401654497104918501,401654497,40165449723,4,4,8:14,Delaware State,Sacred Heart,10,9,45,2,7,6,Rush,Jaden Sutton run for 6 yds to the SHU 39,0.3341261834989807,2024-09-01T00:31:44.000Z
+401654497104927901,401654497,40165449723,5,4,7:20,Delaware State,Sacred Heart,17,9,39,3,1,39,Rushing Touchdown,Jaden Sutton 39 Yd Run (Nathan Wilson Kick),3.717005357337616,2024-09-01T00:31:58.000Z
+401654497104928402,401654497,40165449725,2,4,7:15,Sacred Heart,Delaware State,9,17,66,1,10,9,Rush,Xavier Leigh run for 9 yds to the SHU 43,1.3844644054795978,2024-09-01T00:37:16.000Z
+401654497104928403,401654497,40165449725,3,4,7:15,Sacred Heart,Delaware State,9,17,57,2,1,13,Rush,Xavier Leigh run for 13 yds to the DSU 44 for a 1ST down,0.5394226267399951,2024-09-01T00:37:16.000Z
+401654497104928404,401654497,40165449725,4,4,7:15,Sacred Heart,Delaware State,9,17,44,1,10,8,Pass Reception,John Michalski pass complete to Ethan Hilliman for 8 yds to the DSU 36,0.7112152626061283,2024-09-01T00:37:16.000Z
+401654497104928401,401654497,40165449725,1,4,7:15,Delaware State,Sacred Heart,17,9,65,1,10,20,Kickoff Return (Offense),"Nathan Wilson kickoff for 51 yds , Ryan Palmieri return for 20 yds to the SHU 34",,2024-09-01T00:37:16.000Z
+401654497104928405,401654497,40165449725,5,4,7:15,Sacred Heart,Delaware State,9,17,36,2,2,2,Rush,John Michalski run for 2 yds to the DSU 34 for a 1ST down,-0.235059066009777,2024-09-01T00:37:16.000Z
+401654497104928406,401654497,40165449725,6,4,7:15,Sacred Heart,Delaware State,9,17,34,1,10,10,Rush,John Michalski run for 10 yds to the DSU 24 for a 1ST down,0.255288212306695,2024-09-01T00:41:44.000Z
+401654497104928407,401654497,40165449725,7,4,7:15,Sacred Heart,Delaware State,9,17,24,1,10,3,Rush,John Michalski run for 3 yds to the DSU 21,-0.13566781579423,2024-09-01T00:41:44.000Z
+401654497104928408,401654497,40165449725,8,4,7:15,Sacred Heart,Delaware State,9,17,21,2,7,4,Rush,John Michalski run for 4 yds to the DSU 17,-0.042346721059076,2024-09-01T00:41:44.000Z
+401654497104928409,401654497,40165449725,9,4,7:15,Sacred Heart,Delaware State,9,17,17,3,3,8,Rush,Xavier Leigh run for 8 yds to the DSU 9 for a 1ST down,0.435214661813813,2024-09-01T00:41:44.000Z
+401654497104928410,401654497,40165449725,10,4,7:15,Sacred Heart,Delaware State,9,17,9,1,9,5,Rush,John Michalski run for 5 yds to the DSU 4,0.0903475831985075,2024-09-01T00:41:44.000Z
+401654497104984501,401654497,40165449725,11,4,1:54,Sacred Heart,Delaware State,15,17,4,2,4,4,Rushing Touchdown,Xavier Leigh 4 Yd Run (Two-Point Run Conversion Failed),2.3338902404479605,2024-09-01T00:43:47.000Z
+401654497104984602,401654497,40165449727,2,4,1:53,Delaware State,Sacred Heart,17,15,49,1,10,4,Rush,Jaden Sutton run for 4 yds to the SHU 45,-0.1369390380115582,2024-09-01T00:48:17.000Z
+401654497104985301,401654497,40165449727,3,4,1:46,Delaware State,Sacred Heart,17,15,45,2,6,3,Rush,Jaden Sutton run for 3 yds to the SHU 42,-0.3924728941164908,2024-09-01T00:51:51.000Z
+401654497104985801,401654497,40165449727,4,4,1:41,Delaware State,Sacred Heart,17,15,42,3,3,0,Rush,"Sutton,Jaden rush middle (Verbitsky,Nick;Talley,Myles).",-1.12928413262099,2024-09-01T00:52:06.000Z
+401654497104984601,401654497,40165449727,1,4,1:53,Sacred Heart,Delaware State,15,17,65,1,10,0,Kickoff,Matt Kling kickoff for 14 yds,,2024-09-01T00:48:17.000Z
+401654497104987301,401654497,40165449727,5,4,1:26,Delaware State,Sacred Heart,17,15,42,4,3,0,Punt,Nathan Wilson punt for 35 yds,,2024-09-01T00:55:15.000Z
+401654497104987302,401654497,40165449728,1,4,1:26,Sacred Heart,Delaware State,15,17,93,1,10,6,Pass Reception,John Michalski pass complete to Ethan Hilliman for 6 yds to the SHU 13,0.19369848195438877,2024-09-01T00:55:15.000Z
+401654497104987303,401654497,40165449728,2,4,1:26,Sacred Heart,Delaware State,15,17,87,2,4,0,Pass Incompletion,pass incomplete to Mason Stahl,-0.41694851932497823,2024-09-01T00:55:15.000Z
+401654497104987304,401654497,40165449728,3,4,1:26,Sacred Heart,Delaware State,15,17,87,3,4,0,Pass Incompletion,pass incomplete to Jalen Madison,-0.18012631905811727,2024-09-01T00:55:15.000Z
+401654497104989702,401654497,40165449729,1,4,1:02,Delaware State,Sacred Heart,17,15,13,1,10,-3,Rush,Marqui Adams run for a loss of 3 yards to the SHU 16,-0.502888093119463,2024-09-01T00:57:17.000Z
+401654497104989703,401654497,40165449729,2,4,1:02,Delaware State,Sacred Heart,17,15,16,2,13,-2,Rush,Marqui Adams run for a loss of 2 yards to the SHU 16,-0.6767799126137907,2024-09-01T00:57:17.000Z

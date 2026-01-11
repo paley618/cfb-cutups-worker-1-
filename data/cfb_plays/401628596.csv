@@ -1,0 +1,187 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628596101849905,401628596,4016285961,2,1,15:00,Monmouth,Lafayette,0,0,73,1,10,-2,Rush,Makhi Green run for a loss of 2 yards to the MONM 25,-0.9689027853396697,2024-09-07T16:02:41.000Z
+401628596101849906,401628596,4016285961,3,1,15:00,Monmouth,Lafayette,0,0,75,2,12,0,Pass Incompletion,Derek Robertson pass incomplete,-0.28138783772764064,2024-09-07T16:02:41.000Z
+401628596101865201,401628596,4016285961,4,1,13:47,Monmouth,Lafayette,0,0,75,3,12,0,Pass Interception Return,Derek Robertson pass intercepted Saiku White return for no gain to the MONM 40,0.1830060572892469,2024-09-07T16:09:58.000Z
+401628596101849903,401628596,4016285961,1,1,15:00,Lafayette,Monmouth,0,0,65,0,0,0,Kickoff,Jakob Trestik kickoff for 38 yds,,2024-09-07T16:02:41.000Z
+401628596101865205,401628596,4016285962,3,1,13:47,Lafayette,Monmouth,0,0,40,3,10,7,Pass Reception,Dean DeNobile pass complete to Jamar Curtis for 7 yds to the MONM 33,0.5100690206310076,2024-09-07T16:09:58.000Z
+401628596101885301,401628596,4016285962,4,1,11:46,Lafayette,Monmouth,0,0,33,4,3,0,Pass Incompletion,Dean DeNobile pass incomplete,-2.4488048311531756,2024-09-07T16:12:03.000Z
+401628596101865203,401628596,4016285962,1,1,13:47,Lafayette,Monmouth,0,0,40,1,10,-2,Rush,Jamar Curtis run for a loss of 2 yards to the MONM 42,-1.266245465415965,2024-09-07T16:09:58.000Z
+401628596101865204,401628596,4016285962,2,1,13:47,Lafayette,Monmouth,0,0,42,2,12,2,Rush,Jamar Curtis run for 2 yds to the MONM 40,-0.605969580124526,2024-09-07T16:09:58.000Z
+401628596101885303,401628596,4016285963,1,1,11:46,Monmouth,Lafayette,0,0,67,1,10,3,Rush,Rodney Nelson run for 3 yds to the MONM 36,-0.3884871214664028,2024-09-07T16:12:03.000Z
+401628596101885304,401628596,4016285963,2,1,11:46,Monmouth,Lafayette,0,0,64,2,7,5,Pass Reception,Derek Robertson pass complete to TJ Speight for 5 yds to the MONM 41,0.0897932034961926,2024-09-07T16:12:03.000Z
+401628596101885305,401628596,4016285963,3,1,11:46,Monmouth,Lafayette,0,0,59,3,2,0,Pass Incompletion,Derek Robertson pass incomplete,-0.8489185766162395,2024-09-07T16:12:03.000Z
+401628596101894801,401628596,4016285963,4,1,10:51,Monmouth,Lafayette,0,0,59,4,2,0,Punt,"Luke Schabel punt for 42 yds, fair catch by Mason Kuehner at the LAF 17",,2024-09-07T16:14:37.000Z
+401628596101894803,401628596,4016285964,1,1,10:51,Lafayette,Monmouth,0,0,83,1,9,12,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 12 yds to the LAF 29 for a 1ST down,0.6445224016129725,2024-09-07T16:14:37.000Z
+401628596101894804,401628596,4016285964,2,1,10:51,Lafayette,Monmouth,0,0,71,1,10,19,Pass Reception,Dean DeNobile pass complete to Jamar Curtis for 19 yds to the LAF 48 for a 1ST down,1.7675625840445337,2024-09-07T16:14:37.000Z
+401628596101894806,401628596,4016285964,4,1,10:51,Lafayette,Monmouth,0,0,52,2,10,9,Rush,Jamar Curtis run for 9 yds to the MONM 43,1.0989158507476413,2024-09-07T16:14:37.000Z
+401628596101894807,401628596,4016285964,5,1,10:51,Lafayette,Monmouth,0,0,43,3,1,3,Rush,Troy Bruce run for 3 yds to the MONM 40 for a 1ST down,0.863149542507619,2024-09-07T16:14:37.000Z
+401628596101894808,401628596,4016285964,6,1,10:51,Lafayette,Monmouth,0,0,40,1,10,5,Penalty,"Monmouth Penalty, Offsides (Justin O'Bannon) to the MONM 35",,2024-09-07T16:14:37.000Z
+401628596101894809,401628596,4016285964,7,1,10:51,Lafayette,Monmouth,0,0,35,1,5,8,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 8 yds to the MONM 27 for a 1ST down,-0.442093079826714,2024-09-07T16:14:37.000Z
+401628596101894810,401628596,4016285964,8,1,10:51,Lafayette,Monmouth,0,0,27,1,10,8,Pass Reception,Dean DeNobile pass complete to Chris Carasia for 8 yds to the MONM 19,0.489908565991971,2024-09-07T16:14:37.000Z
+401628596101894811,401628596,4016285964,9,1,10:51,Lafayette,Monmouth,0,0,19,2,2,0,Pass Incompletion,Dean DeNobile pass incomplete,-0.5756760364162915,2024-09-07T16:14:37.000Z
+401628596101894812,401628596,4016285964,10,1,10:51,Lafayette,Monmouth,0,0,19,3,2,5,Rush,Jamar Curtis run for 5 yds to the MONM 14 for a 1ST down,0.278765136636725,2024-09-07T16:14:37.000Z
+401628596101894813,401628596,4016285964,11,1,10:51,Lafayette,Monmouth,0,0,14,1,10,5,Rush,Jamar Curtis run for 5 yds to the MONM 9,0.0745432474784075,2024-09-07T16:14:37.000Z
+401628596101934001,401628596,4016285964,12,1,6:59,Lafayette,Monmouth,7,0,9,2,5,9,Rushing Touchdown,Jamar Curtis run for 9 yds for a TD (Jack Simonetta KICK),2.473739927700674,2024-09-07T16:21:15.000Z
+401628596101894805,401628596,4016285964,3,1,10:51,Lafayette,Monmouth,0,0,52,1,10,0,Pass Incompletion,Dean DeNobile pass incomplete,-1.1430602484821704,2024-09-07T16:14:37.000Z
+401628596101934005,401628596,4016285965,2,1,6:59,Monmouth,Lafayette,0,7,75,1,10,2,Pass Reception,Derek Robertson pass complete to Josh Derry for 2 yds to the MONM 27,-0.45260367932203766,2024-09-07T16:21:15.000Z
+401628596101934006,401628596,4016285965,3,1,6:59,Monmouth,Lafayette,0,7,73,2,8,8,Pass Reception,Derek Robertson pass complete to Tra Neal for 8 yds to the MONM 35 for a 1ST down,1.2876417883520244,2024-09-07T16:21:15.000Z
+401628596101934007,401628596,4016285965,4,1,6:59,Monmouth,Lafayette,0,7,65,1,10,2,Rush,Rodney Nelson run for 2 yds to the MONM 37,-0.63079683335922,2024-09-07T16:21:15.000Z
+401628596101934008,401628596,4016285965,5,1,6:59,Monmouth,Lafayette,0,7,63,2,8,15,Penalty,"Lafayette Penalty, Unsportsmanlike Conduct (De'Marion McCoy) to the LAF 45 for a 1ST down",,2024-09-07T16:21:15.000Z
+401628596101934009,401628596,4016285965,6,1,6:59,Monmouth,Lafayette,0,7,45,1,10,26,Pass Reception,Derek Robertson pass complete to Rodney Nelson for 26 yds to the LAF 19 for a 1ST down,0.872066456429545,2024-09-07T16:21:15.000Z
+401628596101934010,401628596,4016285965,7,1,6:59,Monmouth,Lafayette,0,7,19,1,10,1,Pass Reception,Derek Robertson pass complete to Rodney Nelson for 1 yd to the LAF 18,-0.280938211620716,2024-09-07T16:21:15.000Z
+401628596101934011,401628596,4016285965,8,1,6:59,Monmouth,Lafayette,0,7,18,2,9,-5,Penalty,"Monmouth Penalty, Ineligible Receiver Downfield on Pass on MORENO, Chris enforced (-5 Yards) to the LAF 23",,2024-09-07T16:21:15.000Z
+401628596101969301,401628596,4016285965,9,1,3:06,Monmouth,Lafayette,7,7,23,2,14,23,Passing Touchdown,Derek Robertson pass complete to Josh Derry for 23 yds for a TD (Michael Calton Jr. KICK),3.33459385144835,2024-09-07T16:30:34.000Z
+401628596101934003,401628596,4016285965,1,1,6:59,Lafayette,Monmouth,7,0,65,0,0,0,Kickoff,Jakob Trestik kickoff for 65 yds for a touchback,,2024-09-07T16:21:15.000Z
+401628596101986104,401628596,4016285966,7,1,1:38,Lafayette,Monmouth,7,7,52,1,10,5,Pass Reception,Dean DeNobile pass complete to Chris Carasia for 5 yds to the MONM 47,0.1045373160815773,2024-09-07T16:40:03.000Z
+401628596101986105,401628596,4016285966,8,1,1:38,Lafayette,Monmouth,7,7,47,2,5,0,Pass Incompletion,Dean DeNobile pass incomplete,-1.1735042367606727,2024-09-07T16:40:03.000Z
+401628596101986106,401628596,4016285966,9,1,1:38,Lafayette,Monmouth,7,7,47,3,5,11,Pass Reception,Dean DeNobile pass complete to Carson Persing for 11 yds to the MONM 36 for a 1ST down,2.0662431143757303,2024-09-07T16:40:03.000Z
+401628596101999901,401628596,4016285966,10,1,0:00,Lafayette,Monmouth,7,7,36,1,10,19,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 19 yds to the MONM 17 for a 1ST down,0.430874992229382,2024-09-07T16:40:59.000Z
+401628596102849902,401628596,4016285966,12,2,15:00,Lafayette,Monmouth,7,7,17,1,10,6,Rush,Jamar Curtis run for 6 yds to the MONM 11,0.18290098819408,2024-09-07T16:44:06.000Z
+401628596101969305,401628596,4016285966,2,1,3:06,Lafayette,Monmouth,7,7,75,1,10,2,Rush,Troy Bruce run for 2 yds to the LAF 27,-0.45260367932203766,2024-09-07T16:30:34.000Z
+401628596101969306,401628596,4016285966,3,1,3:06,Lafayette,Monmouth,7,7,73,2,8,1,Rush,Troy Bruce run for 1 yd to the LAF 28,-0.40259546283400116,2024-09-07T16:30:34.000Z
+401628596101986101,401628596,4016285966,4,1,1:38,Lafayette,Monmouth,7,7,72,3,7,10,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 10 yds to the LAF 38 for a 1ST down,1.9799506211978697,2024-09-07T16:40:03.000Z
+401628596101969303,401628596,4016285966,1,1,3:06,Monmouth,Lafayette,7,7,65,0,0,0,Kickoff,Vincenzo Rea kickoff for 65 yds for a touchback,,2024-09-07T16:30:34.000Z
+401628596101986102,401628596,4016285966,5,1,1:38,Lafayette,Monmouth,7,7,62,1,10,0,Timeout,"Timeout Monmouth, clock 01:38",,2024-09-07T16:40:03.000Z
+401628596101999902,401628596,4016285966,11,1,0:00,Lafayette,Monmouth,7,7,36,0,10,19,End Period,End of 1st Quarter,,2024-09-07T16:40:59.000Z
+401628596102865101,401628596,4016285966,13,2,13:48,Lafayette,Monmouth,7,7,11,2,4,-10,Penalty,"Lafayette Penalty, Offensive Holding (Dallas Holmes) to the MONM 15",,2024-09-07T16:46:46.000Z
+401628596102865104,401628596,4016285966,16,2,13:48,Lafayette,Monmouth,7,7,6,1,6,0,Pass Incompletion,Dean DeNobile pass incomplete,-0.476177221716661,2024-09-07T16:46:46.000Z
+401628596101986103,401628596,4016285966,6,1,1:38,Lafayette,Monmouth,7,7,62,1,10,10,Rush,Jamar Curtis run for 10 yds to the LAF 48 for a 1ST down,0.9449493519690596,2024-09-07T16:40:03.000Z
+401628596102865103,401628596,4016285966,15,2,13:48,Lafayette,Monmouth,7,7,15,2,8,9,Rush,Troy Bruce run for 9 yds to the MONM 6 for a 1ST down,0.7159521536351985,2024-09-07T16:46:46.000Z
+401628596102869801,401628596,4016285966,17,2,13:01,Lafayette,Monmouth,14,7,6,2,6,6,Rushing Touchdown,Troy Bruce run for 6 yds for a TD (Jack Simonetta KICK),2.528666992781938,2024-09-07T16:51:10.000Z
+401628596102865102,401628596,4016285966,14,2,13:48,Lafayette,Monmouth,7,7,15,2,8,0,Timeout,"Timeout Lafayette, clock 13:48",,2024-09-07T16:46:46.000Z
+401628596102874407,401628596,4016285967,6,2,12:55,Monmouth,Lafayette,7,14,30,2,4,5,Rush,Makhi Green run for 5 yds to the LAF 25 for a 1ST down,0.0711760712468955,2024-09-07T16:54:02.000Z
+401628596102874408,401628596,4016285967,7,2,12:55,Monmouth,Lafayette,7,14,25,1,10,6,Pass Reception,Derek Robertson pass complete to Max James for 6 yds to the LAF 19,0.1956069877394565,2024-09-07T16:54:02.000Z
+401628596102874409,401628596,4016285967,8,2,12:55,Monmouth,Lafayette,7,14,19,2,4,0,Pass Incompletion,Derek Robertson pass incomplete,-0.490743117184343,2024-09-07T16:54:02.000Z
+401628596102874410,401628596,4016285967,9,2,12:55,Monmouth,Lafayette,7,14,19,3,4,4,Rush,Sone Ntoh run for 4 yds to the LAF 15 for a 1ST down,0.437021402145861,2024-09-07T16:54:02.000Z
+401628596102874411,401628596,4016285967,10,2,12:55,Monmouth,Lafayette,7,14,15,1,10,12,Pass Reception,Derek Robertson pass complete to Max James for 12 yds to the LAF 3 for a 1ST down,1.093747356833746,2024-09-07T16:54:02.000Z
+401628596102874412,401628596,4016285967,11,2,12:55,Monmouth,Lafayette,7,14,3,1,3,-5,Sack,Derek Robertson sacked by Neriyan Brown for a loss of 5 yards to the LAF 8,-1.212319222001728,2024-09-07T16:54:02.000Z
+401628596102874413,401628596,4016285967,12,2,12:55,Monmouth,Lafayette,7,14,8,2,8,3,Rush,Sone Ntoh run for 3 yds to the LAF 5,-0.084828674435525,2024-09-07T16:54:02.000Z
+401628596102936201,401628596,4016285967,13,2,6:37,Monmouth,Lafayette,7,14,5,3,5,0,Pass Incompletion,Derek Robertson pass incomplete,-0.290992528642002,2024-09-07T17:02:02.000Z
+401628596102874403,401628596,4016285967,2,2,12:55,Monmouth,Lafayette,7,14,81,1,10,26,Pass Reception,Derek Robertson pass complete to Makhi Green for 26 yds to the MONM 45 for a 1ST down,2.1620062836864316,2024-09-07T16:54:02.000Z
+401628596102874404,401628596,4016285967,3,2,12:55,Monmouth,Lafayette,7,14,55,1,10,3,Rush,Makhi Green run for 3 yds to the MONM 48,-0.4238622892911614,2024-09-07T16:54:02.000Z
+401628596102874405,401628596,4016285967,4,2,12:55,Monmouth,Lafayette,7,14,52,2,7,16,Pass Reception,Derek Robertson pass complete to Marcus Middleton for 16 yds to the LAF 36 for a 1ST down,1.6896974315937303,2024-09-07T16:54:02.000Z
+401628596102874406,401628596,4016285967,5,2,12:55,Monmouth,Lafayette,7,14,36,1,10,6,Pass Reception,Derek Robertson pass complete to Max James for 6 yds to the LAF 30,0.239517661500843,2024-09-07T16:54:02.000Z
+401628596102874401,401628596,4016285967,1,2,12:55,Lafayette,Monmouth,14,7,65,0,0,19,Kickoff,"Jakob Trestik kickoff for 65 yds , TJ Speight return for 19 yds to the MONM 19",,2024-09-07T16:54:02.000Z
+401628596102936202,401628596,4016285967,14,2,6:37,Monmouth,Lafayette,7,14,5,4,5,0,Timeout,"Timeout Lafayette, clock 06:37",,2024-09-07T17:02:02.000Z
+401628596102936501,401628596,4016285967,15,2,6:34,Monmouth,Lafayette,14,14,5,4,5,5,Passing Touchdown,Derek Robertson pass complete to Max James for 5 yds for a TD (Michael Calton Jr. KICK),3.052592157810592,2024-09-07T17:07:40.000Z
+401628596102937003,401628596,4016285968,2,2,6:29,Lafayette,Monmouth,14,14,92,1,10,7,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 7 yds to the LAF 15,0.3585609771423703,2024-09-07T17:07:59.000Z
+401628596102937004,401628596,4016285968,3,2,6:29,Lafayette,Monmouth,14,14,85,2,3,5,Rush,Dean DeNobile run for 5 yds to the LAF 20 for a 1ST down,0.1040865014435335,2024-09-07T17:07:59.000Z
+401628596102937005,401628596,4016285968,4,2,6:29,Lafayette,Monmouth,14,14,80,1,10,0,Pass Incompletion,Dean DeNobile pass incomplete,-0.5586693796725282,2024-09-07T17:07:59.000Z
+401628596102937006,401628596,4016285968,5,2,6:29,Lafayette,Monmouth,14,14,80,2,10,15,Pass Reception,Dean DeNobile pass complete to Jamar Curtis for 15 yds to the LAF 35 for a 1ST down,1.7020101645862962,2024-09-07T17:07:59.000Z
+401628596102937007,401628596,4016285968,6,2,6:29,Lafayette,Monmouth,14,14,65,1,10,6,Pass Reception,Dean DeNobile pass complete to Savion McKinnon for 6 yds to the LAF 41,0.3983464844048346,2024-09-07T17:07:59.000Z
+401628596102937010,401628596,4016285968,9,2,6:29,Lafayette,Monmouth,14,14,51,1,10,0,Pass Incompletion,Dean DeNobile pass incomplete,-1.1301991718133413,2024-09-07T17:07:59.000Z
+401628596102937001,401628596,4016285968,1,2,6:29,Monmouth,Lafayette,14,14,65,0,0,0,Kickoff,"Vincenzo Rea kickoff for 64 yds , Gianlucca Tiberia return for no gain to the LAF 8",,2024-09-07T17:07:59.000Z
+401628596102979601,401628596,4016285968,12,2,2:03,Lafayette,Monmouth,14,14,58,4,17,0,Punt,"Jakob Trestik punt for 31 yds, fair catch by Makhi Green at the MONM 27",,2024-09-07T17:14:20.000Z
+401628596102937012,401628596,4016285968,11,2,6:29,Lafayette,Monmouth,14,14,58,3,17,0,Pass Incompletion,Dean DeNobile pass incomplete,-0.25937822484295303,2024-09-07T17:07:59.000Z
+401628596102937011,401628596,4016285968,10,2,6:29,Lafayette,Monmouth,14,14,51,2,10,-7,Sack,Dean DeNobile sacked by Sam Korpoi for a loss of 7 yards to the LAF 42,-1.881687717594259,2024-09-07T17:07:59.000Z
+401628596102937009,401628596,4016285968,8,2,6:29,Lafayette,Monmouth,14,14,59,3,4,8,Rush,Dean DeNobile run for 8 yds to the LAF 49 for a 1ST down,2.0839334794929596,2024-09-07T17:07:59.000Z
+401628596102937008,401628596,4016285968,7,2,6:29,Lafayette,Monmouth,14,14,59,2,4,0,Rush,Jamar Curtis run for no gain to the LAF 41,-1.1629301570993986,2024-09-07T17:07:59.000Z
+401628596102984201,401628596,4016285969,1,2,1:57,Monmouth,Lafayette,14,14,73,1,10,0,Pass Incompletion,Derek Robertson pass incomplete,-0.766047035673644,2024-09-07T17:17:23.000Z
+401628596102988801,401628596,4016285969,3,2,1:11,Monmouth,Lafayette,14,14,73,2,10,4,Rush,Rodney Nelson run for 4 yds to the MONM 31,-0.07060085373078628,2024-09-07T17:18:14.000Z
+401628596102984202,401628596,4016285969,2,2,1:57,Monmouth,Lafayette,14,14,73,2,10,0,Timeout,"Timeout Monmouth, clock 01:57",,2024-09-07T17:17:23.000Z
+401628596102988802,401628596,4016285969,4,2,1:11,Monmouth,Lafayette,14,14,69,3,6,0,Timeout,"Timeout Monmouth, clock 01:11",,2024-09-07T17:18:14.000Z
+401628596102994901,401628596,4016285969,6,2,0:50,Monmouth,Lafayette,14,14,69,4,6,39,Punt,"Luke Schabel punt for 46 yds , Mason Kuehner returns for 39 yds to the MONM 38",,2024-09-07T17:20:22.000Z
+401628596102988803,401628596,4016285969,5,2,1:11,Monmouth,Lafayette,14,14,69,3,6,0,Pass Incompletion,Derek Robertson pass incomplete,-0.35293968896594485,2024-09-07T17:18:14.000Z
+401628596102994904,401628596,40162859610,2,2,0:50,Lafayette,Monmouth,14,14,25,1,10,7,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 7 yds to the MONM 18,0.3286472091407865,2024-09-07T17:20:22.000Z
+401628596102994905,401628596,40162859610,3,2,0:50,Lafayette,Monmouth,14,14,18,2,3,0,Pass Incompletion,Dean DeNobile pass incomplete,-0.514748598127481,2024-09-07T17:20:22.000Z
+401628596102998701,401628596,40162859610,4,2,0:12,Lafayette,Monmouth,14,14,18,3,3,0,Pass Incompletion,Dean DeNobile pass incomplete,-0.53977741288398,2024-09-07T17:23:03.000Z
+401628596102994903,401628596,40162859610,1,2,0:50,Lafayette,Monmouth,14,14,38,1,10,13,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 13 yds to the MONM 25 for a 1ST down,0.3945082863191305,2024-09-07T17:20:22.000Z
+401628596102999101,401628596,40162859610,6,2,0:08,Lafayette,Monmouth,14,14,18,4,3,35,Field Goal Missed,Jack Simonetta 35 yd FG MISSED,,2024-09-07T17:24:04.000Z
+401628596102998702,401628596,40162859610,5,2,0:12,Lafayette,Monmouth,14,14,18,4,3,0,Timeout,"Timeout Monmouth, clock 00:12",,2024-09-07T17:23:03.000Z
+401628596102999901,401628596,40162859611,1,2,0:00,Monmouth,Lafayette,14,14,80,1,10,-1,Rush,"[NH] Kneel down by ROBERTSON, Derek at MON19 (team loss of 1), clock 00:00.",-0.6343354265717327,2024-09-07T17:24:59.000Z
+401628596102999903,401628596,40162859611,2,2,0:00,Monmouth,Lafayette,14,14,26,0,10,-55,End of Half,End of 2nd Quarter,,2024-09-07T17:24:59.000Z
+401628596103849906,401628596,40162859612,4,3,15:00,Lafayette,Monmouth,14,14,67,3,2,10,Rush,Jamar Curtis run for 10 yds to the LAF 43 for a 1ST down,1.832025876835604,2024-09-07T17:46:48.000Z
+401628596103849907,401628596,40162859612,5,3,15:00,Lafayette,Monmouth,14,14,57,1,10,0,Rush,Jamar Curtis run for no gain to the LAF 43,-1.15714755134967,2024-09-07T17:46:48.000Z
+401628596103849908,401628596,40162859612,6,3,15:00,Lafayette,Monmouth,14,14,57,2,10,15,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 15 yds to the MONM 42 for a 1ST down,2.3275287772888724,2024-09-07T17:46:48.000Z
+401628596103849909,401628596,40162859612,7,3,15:00,Lafayette,Monmouth,14,14,42,1,10,6,Pass Reception,Dean DeNobile pass complete to Carson Persing for 6 yds to the MONM 36,0.2799158523170034,2024-09-07T17:46:48.000Z
+401628596103849910,401628596,40162859612,8,3,15:00,Lafayette,Monmouth,14,14,36,2,4,2,Rush,Dean DeNobile run for 2 yds to the MONM 34,-0.4894830983540784,2024-09-07T17:46:48.000Z
+401628596103849911,401628596,40162859612,9,3,15:00,Lafayette,Monmouth,14,14,34,3,2,4,Rush,Jamar Curtis run for 4 yds to the MONM 30 for a 1ST down,0.690259584686428,2024-09-07T17:46:48.000Z
+401628596103849912,401628596,40162859612,10,3,15:00,Lafayette,Monmouth,14,14,30,1,10,3,Pass Reception,Dean DeNobile pass complete to Chris Carasia for 3 yds to the MONM 27,-0.17303361893288,2024-09-07T17:46:48.000Z
+401628596103849913,401628596,40162859612,11,3,15:00,Lafayette,Monmouth,14,14,27,2,7,0,Rush,Nahjee Adams run for no gain to the MONM 27,-0.6282538680570565,2024-09-07T17:46:48.000Z
+401628596103849914,401628596,40162859612,12,3,15:00,Lafayette,Monmouth,14,14,27,3,7,5,Pass Reception,Dean DeNobile pass complete to Carson Persing for 5 yds to the MONM 22,0.0525426843403398,2024-09-07T17:46:48.000Z
+401628596103849915,401628596,40162859612,13,3,15:00,Lafayette,Monmouth,14,14,22,4,2,3,Rush,Jamar Curtis run for 3 yds to the MONM 19 for a 1ST down,0.9585403069348447,2024-09-07T17:46:48.000Z
+401628596103928001,401628596,40162859612,19,3,7:19,Lafayette,Monmouth,21,14,2,2,2,2,Rushing Touchdown,Jamar Curtis run for 2 yds for a TD (Jack Simonetta KICK),2.067936525322223,2024-09-07T18:00:10.000Z
+401628596103849905,401628596,40162859612,3,3,15:00,Lafayette,Monmouth,14,14,67,2,2,0,Pass Incompletion,Dean DeNobile pass incomplete,-1.1300243096866742,2024-09-07T17:46:48.000Z
+401628596103849904,401628596,40162859612,2,3,15:00,Lafayette,Monmouth,14,14,75,1,10,8,Rush,Jamar Curtis run for 8 yds to the LAF 33,0.9104368550610653,2024-09-07T17:46:48.000Z
+401628596103849916,401628596,40162859612,14,3,15:00,Lafayette,Monmouth,14,14,19,1,10,9,Rush,Dean DeNobile run for 9 yds to the MONM 10,0.621912808977063,2024-09-07T17:46:48.000Z
+401628596103924501,401628596,40162859612,15,3,7:54,Lafayette,Monmouth,14,14,10,2,1,7,Rush,Jamar Curtis run for 7 yds to the MONM 3 for a 1ST down,0.518083086929123,2024-09-07T17:55:26.000Z
+401628596103849902,401628596,40162859612,1,3,15:00,Monmouth,Lafayette,14,14,65,0,0,0,Kickoff,Vincenzo Rea kickoff for 65 yds for a touchback,,2024-09-07T17:46:48.000Z
+401628596103924502,401628596,40162859612,16,3,7:54,Lafayette,Monmouth,14,14,3,1,10,0,Timeout,"Timeout Monmouth, clock 07:54",,2024-09-07T17:55:26.000Z
+401628596103924504,401628596,40162859612,18,3,7:54,Lafayette,Monmouth,14,14,3,1,3,1,Rush,Jamar Curtis run for 1 yd to the MONM 2,-0.603484792590886,2024-09-07T17:55:26.000Z
+401628596103924503,401628596,40162859612,17,3,7:54,Lafayette,Monmouth,14,14,3,1,3,1,Rush,Jamar Curtis run for 1 yd to the MONM 2,-0.603484792590886,2024-09-07T17:55:26.000Z
+401628596103928603,401628596,40162859613,2,3,7:13,Monmouth,Lafayette,14,21,78,1,10,3,Pass Reception,Derek Robertson pass complete to TJ Speight for 3 yds to the MONM 25,-0.2595333371439592,2024-09-07T18:03:03.000Z
+401628596103928604,401628596,40162859613,3,3,7:13,Monmouth,Lafayette,14,21,75,2,7,6,Pass Reception,Derek Robertson pass complete to Makhi Green for 6 yds to the MONM 31,0.2468428745809747,2024-09-07T18:03:03.000Z
+401628596103928605,401628596,40162859613,4,3,7:13,Monmouth,Lafayette,14,21,69,3,1,7,Rush,Sone Ntoh run for 7 yds to the MONM 38 for a 1ST down,1.331671624224616,2024-09-07T18:03:03.000Z
+401628596103928606,401628596,40162859613,5,3,7:13,Monmouth,Lafayette,14,21,62,1,10,1,Rush,Rodney Nelson run for 1 yd to the MONM 39,-0.8867433222723466,2024-09-07T18:03:03.000Z
+401628596103928608,401628596,40162859613,7,3,7:13,Monmouth,Lafayette,14,21,66,2,14,11,Pass Reception,Derek Robertson pass complete to Tra Neal for 11 yds to the MONM 45,1.119843157607467,2024-09-07T18:03:03.000Z
+401628596103928609,401628596,40162859613,8,3,7:13,Monmouth,Lafayette,14,21,55,3,3,6,Rush,Sone Ntoh run for 6 yds to the LAF 49 for a 1ST down,1.7721880524532772,2024-09-07T18:03:03.000Z
+401628596103928610,401628596,40162859613,9,3,7:13,Monmouth,Lafayette,14,21,49,1,10,23,Pass Reception,Derek Robertson pass complete to Tra Neal for 23 yds to the LAF 26 for a 1ST down,1.0423284292290678,2024-09-07T18:03:03.000Z
+401628596103928611,401628596,40162859613,10,3,7:13,Monmouth,Lafayette,14,21,26,1,10,11,Rush,Sone Ntoh run for 11 yds to the LAF 15 for a 1ST down,0.1618030328430975,2024-09-07T18:03:03.000Z
+401628596103928612,401628596,40162859613,11,3,7:13,Monmouth,Lafayette,14,21,15,1,10,2,Rush,Sone Ntoh run for 2 yds to the LAF 13,-0.179494976485374,2024-09-07T18:03:03.000Z
+401628596103928613,401628596,40162859613,12,3,7:13,Monmouth,Lafayette,14,21,13,2,8,11,Pass Reception,Derek Robertson pass complete to Tra Neal for 11 yds to the LAF 2 for a 1ST down,1.524458768378359,2024-09-07T18:03:03.000Z
+401628596103989903,401628596,40162859613,15,3,1:00,Monmouth,Lafayette,14,21,2,2,2,-1,Rush,Sone Ntoh run for a loss of 1 yard to the LAF 3,-0.556625874456768,2024-09-07T18:08:06.000Z
+401628596103928601,401628596,40162859613,1,3,7:13,Lafayette,Monmouth,21,14,65,0,0,18,Kickoff,"Jakob Trestik kickoff for 61 yds , Makhi Green return for 18 yds to the MONM 22",,2024-09-07T18:03:03.000Z
+401628596103928607,401628596,40162859613,6,3,7:13,Monmouth,Lafayette,14,21,61,2,9,-5,Penalty,"Monmouth Penalty, False Start (Marcus Middleton) to the MONM 34",,2024-09-07T18:03:03.000Z
+401628596103989901,401628596,40162859613,13,3,1:00,Monmouth,Lafayette,14,21,2,1,2,0,Rush,Sone Ntoh run for no gain to the LAF 2,-0.854701227650125,2024-09-07T18:08:06.000Z
+401628596103999902,401628596,40162859613,17,3,0:00,Monmouth,Lafayette,14,21,3,0,3,1,End Period,End of 3rd Quarter,,2024-09-07T18:14:34.000Z
+401628596103999901,401628596,40162859613,16,3,0:00,Monmouth,Lafayette,14,21,3,3,3,1,Rush,Sone Ntoh run for 1 yd to the LAF 2,-0.226790301475411,2024-09-07T18:14:34.000Z
+401628596104854901,401628596,40162859613,18,4,14:50,Monmouth,Lafayette,21,21,2,4,2,2,Passing Touchdown,Derek Robertson pass complete to Tra Neal for 2 yds for a TD (Michael Calton Jr. KICK),2.851352701254402,2024-09-07T18:14:43.000Z
+401628596103989902,401628596,40162859613,14,3,1:00,Monmouth,Lafayette,14,21,2,2,2,0,Timeout,"Timeout Lafayette, clock 01:00",,2024-09-07T18:08:06.000Z
+401628596104855705,401628596,40162859614,4,4,14:42,Lafayette,Monmouth,21,21,66,3,8,18,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 18 yds to the MONM 48 for a 1ST down,3.094658417982835,2024-09-07T18:17:43.000Z
+401628596104855706,401628596,40162859614,5,4,14:42,Lafayette,Monmouth,21,21,48,1,10,5,Rush,Nahjee Adams run for 5 yds to the MONM 43,0.0988833853941654,2024-09-07T18:17:43.000Z
+401628596104855707,401628596,40162859614,6,4,14:42,Lafayette,Monmouth,21,21,43,2,5,0,Pass Incompletion,Dean DeNobile pass incomplete,-1.0991546213533567,2024-09-07T18:17:43.000Z
+401628596104855708,401628596,40162859614,7,4,14:42,Lafayette,Monmouth,21,21,43,3,5,-3,Fumble Recovery (Own),"Dean DeNobile sacked for a loss of 3 yards to the MONM 46 Dean DeNobile fumbled, recovered by LAF Spencer Adams , return for 0 yards",-1.6132477941822154,2024-09-07T18:17:43.000Z
+401628596104886601,401628596,40162859614,8,4,11:33,Lafayette,Monmouth,21,21,46,4,8,0,Punt,"Jakob Trestik punt for 35 yds, fair catch by Makhi Green at the MONM 11",,2024-09-07T18:24:47.000Z
+401628596104855703,401628596,40162859614,2,4,14:42,Lafayette,Monmouth,21,21,68,1,10,2,Pass Reception,Dean DeNobile pass complete to Jamar Curtis for 2 yds to the LAF 34,-0.5836824413377926,2024-09-07T18:17:43.000Z
+401628596104855704,401628596,40162859614,3,4,14:42,Lafayette,Monmouth,21,21,66,2,8,0,Pass Incompletion,Dean DeNobile pass incomplete,-0.6778990972831398,2024-09-07T18:17:43.000Z
+401628596104855701,401628596,40162859614,1,4,14:42,Monmouth,Lafayette,21,21,65,0,0,30,Kickoff,"Vincenzo Rea kickoff for 63 yds , Gianlucca Tiberia return for 30 yds to the LAF 32",,2024-09-07T18:17:43.000Z
+401628596104887901,401628596,40162859615,1,4,11:20,Monmouth,Lafayette,28,21,89,1,10,89,Passing Touchdown,Derek Robertson pass complete to TJ Speight for 89 yds for a TD (Michael Calton Jr. KICK),6.763572308127672,2024-09-07T18:25:39.000Z
+401628596104888505,401628596,40162859616,4,4,11:14,Lafayette,Monmouth,21,28,70,3,5,7,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 7 yds to the LAF 37 for a 1ST down,1.6864316816759972,2024-09-07T18:27:37.000Z
+401628596104888506,401628596,40162859616,5,4,11:14,Lafayette,Monmouth,21,28,63,1,10,7,Pass Reception,Dean DeNobile pass complete to Jamar Curtis for 7 yds to the LAF 44,0.7113806413121412,2024-09-07T18:27:37.000Z
+401628596104888507,401628596,40162859616,6,4,11:14,Lafayette,Monmouth,21,28,56,2,3,39,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 39 yds to the MONM 17 for a 1ST down,1.759227049481195,2024-09-07T18:27:37.000Z
+401628596104888508,401628596,40162859616,7,4,11:14,Lafayette,Monmouth,21,28,17,1,10,-10,Penalty,"BRUCE, Troy rush to the left for a gain of 8 yards to the MON9 (ODOM, Alex). PENALTY LAF Holding enforced 10 yards from the MON17 to the MON27 [NHSG]. NO PLAY (replay the down).",,2024-09-07T18:27:37.000Z
+401628596104888509,401628596,40162859616,8,4,11:14,Lafayette,Monmouth,21,28,27,1,20,3,Rush,Jamar Curtis run for 3 yds to the MONM 24,-0.2048991087283822,2024-09-07T18:27:37.000Z
+401628596104888510,401628596,40162859616,9,4,11:14,Lafayette,Monmouth,21,28,24,2,17,6,Rush,Dean DeNobile run for 6 yds to the MONM 18,0.1548961066686978,2024-09-07T18:27:37.000Z
+401628596104927101,401628596,40162859616,11,4,7:28,Lafayette,Monmouth,21,28,18,3,11,0,Pass Incompletion,Dean DeNobile pass incomplete,-0.6982870722724784,2024-09-07T18:37:07.000Z
+401628596104888503,401628596,40162859616,2,4,11:14,Lafayette,Monmouth,21,28,75,1,10,1,Rush,Nahjee Adams run for 1 yd to the LAF 26,-0.5874795431016855,2024-09-07T18:27:37.000Z
+401628596104888504,401628596,40162859616,3,4,11:14,Lafayette,Monmouth,21,28,74,2,9,4,Rush,Jamar Curtis run for 4 yds to the LAF 30,-0.07170781243074043,2024-09-07T18:27:37.000Z
+401628596104888511,401628596,40162859616,10,4,11:14,Lafayette,Monmouth,21,28,24,2,17,6,Rush,Dean DeNobile run for 6 yds to the MONM 18,0.1548961066686978,2024-09-07T18:27:37.000Z
+401628596104888501,401628596,40162859616,1,4,11:14,Monmouth,Lafayette,28,21,65,0,0,15,Kickoff,"Vincenzo Rea kickoff for 55 yds , Mason Kuehner return for 15 yds to the LAF 25",,2024-09-07T18:27:37.000Z
+401628596104927104,401628596,40162859616,14,4,7:28,Lafayette,Monmouth,21,28,1,1,1,1,Penalty,"CURTIS, Jamar rush up the middle for no gain to the MON1 (MCCRARY, Damir). PENALTY Before the snap, MON Illegal Substitution enforced half the distance from the goal, 1 yards from the MON1 to the MON0 and results in a 1ST DOWN. NO PLAY (replay the down).",,2024-09-07T18:37:07.000Z
+401628596104937401,401628596,40162859616,17,4,6:25,Lafayette,Monmouth,28,28,2,2,2,2,Rushing Touchdown,Jamar Curtis 2 Yd Run (Jack Simonetta Kick),2.067936525322223,2024-09-07T18:14:34.000Z
+401628596104927106,401628596,40162859616,16,4,7:28,Lafayette,Monmouth,21,28,1,1,1,-1,Rush,Jamar Curtis run for a loss of 1 yard to the MONM 2,-1.12991525020178,2024-09-07T18:37:07.000Z
+401628596104927105,401628596,40162859616,15,4,7:28,Lafayette,Monmouth,21,28,1,1,1,-1,Rush,Jamar Curtis run for a loss of 1 yard to the MONM 2,-1.12991525020178,2024-09-07T18:37:07.000Z
+401628596104927103,401628596,40162859616,13,4,7:28,Lafayette,Monmouth,21,28,18,4,11,17,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 17 yds to the MONM 1 for a 1ST down,3.192404090396746,2024-09-07T18:37:07.000Z
+401628596104927102,401628596,40162859616,12,4,7:28,Lafayette,Monmouth,21,28,18,4,11,0,Timeout,"Timeout Monmouth, clock 07:28",,2024-09-07T18:37:07.000Z
+401628596104938105,401628596,40162859617,4,4,6:18,Monmouth,Lafayette,28,28,80,3,10,38,Pass Reception,Derek Robertson pass complete to Josh Derry for 38 yds to the LAF 42 for a 1ST down,3.910605555781938,2024-09-07T18:14:34.000Z
+401628596104938106,401628596,40162859617,5,4,6:18,Monmouth,Lafayette,28,28,42,1,10,2,Rush,Makhi Green run for 2 yds to the LAF 40,-0.4922124363662006,2024-09-07T18:14:34.000Z
+401628596104938107,401628596,40162859617,6,4,6:18,Monmouth,Lafayette,28,28,40,2,8,0,Pass Incompletion,Derek Robertson pass incomplete,-1.019175487371296,2024-09-07T18:14:34.000Z
+401628596104938108,401628596,40162859617,7,4,6:18,Monmouth,Lafayette,28,28,40,3,8,6,Pass Reception,Derek Robertson pass complete to Gavin Nelson for 6 yds to the LAF 34,0.294263578437203,2024-09-07T18:14:34.000Z
+401628596104938109,401628596,40162859617,8,4,6:18,Monmouth,Lafayette,28,28,34,4,2,8,Pass Reception,Derek Robertson pass complete to Josh Derry for 8 yds to the LAF 26 for a 1ST down,1.792057694464237,2024-09-07T19:13:55.000Z
+401628596104938101,401628596,40162859617,1,4,6:18,Lafayette,Monmouth,28,28,65,0,0,20,Kickoff,"Jakob Trestik kickoff for 65 yds , TJ Speight return for 20 yds to the MONM 20",,2024-09-07T18:14:34.000Z
+401628596104938110,401628596,40162859617,9,4,6:18,Monmouth,Lafayette,28,28,26,1,10,0,Pass Incompletion,Derek Robertson pass incomplete,-0.4710467974920665,2024-09-07T18:14:34.000Z
+401628596104938104,401628596,40162859617,3,4,6:18,Monmouth,Lafayette,28,28,80,2,10,0,Pass Incompletion,Derek Robertson pass incomplete,-0.2608138520764314,2024-09-07T18:14:34.000Z
+401628596104938103,401628596,40162859617,2,4,6:18,Monmouth,Lafayette,28,28,80,1,10,0,Rush,Josh Derry run for no gain to the MONM 20,-0.5586693796725282,2024-09-07T18:14:34.000Z
+401628596104979902,401628596,40162859617,11,4,2:00,Monmouth,Lafayette,28,28,26,2,10,9,Rush,Rodney Nelson run for 9 yds to the LAF 17,0.509223816537512,2024-09-07T18:51:34.000Z
+401628596104984501,401628596,40162859617,12,4,1:54,Monmouth,Lafayette,35,28,17,3,1,17,Rushing Touchdown,Sone Ntoh run for 17 yds for a TD (Michael Calton Jr. KICK),2.681825103362735,2024-09-07T18:53:45.000Z
+401628596104979901,401628596,40162859617,10,4,2:00,Monmouth,Lafayette,28,28,17,3,1,0,Timeout,"Timeout Monmouth, clock 02:00",,2024-09-07T18:51:34.000Z
+401628596104984704,401628596,40162859618,3,4,1:52,Lafayette,Monmouth,28,35,52,1,10,9,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 9 yds to the MONM 43,1.150899831387264,2024-09-07T18:56:20.000Z
+401628596104984706,401628596,40162859618,4,4,1:52,Lafayette,Monmouth,28,35,43,2,1,10,Penalty,"DENOBILE, Dean pass to the left incomplete intended for STEWARD, Elijah thrown to the MON43. PENALTY MON Holding on LANE, Emmanuel enforced 10 yards from the MON43 to the MON33 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T18:56:20.000Z
+401628596104984707,401628596,40162859618,5,4,1:52,Lafayette,Monmouth,28,35,33,1,10,21,Pass Reception,Dean DeNobile pass complete to Elijah Steward for 21 yds to the MONM 12 for a 1ST down,0.3729802314660625,2024-09-07T18:56:20.000Z
+401628596104994601,401628596,40162859618,6,4,0:53,Lafayette,Monmouth,34,35,12,1,10,12,Passing Touchdown,Dean DeNobile pass complete to Chris Carasia for 12 yds for a TD (Two-Point Conversion failed),2.5300945420359255,2024-09-07T18:59:36.000Z
+401628596104984703,401628596,40162859618,2,4,1:52,Lafayette,Monmouth,28,35,81,1,10,29,Pass Reception,Dean DeNobile pass complete to Chris Carasia for 29 yds to the LAF 48 for a 1ST down,2.4305652322923654,2024-09-07T18:56:20.000Z
+401628596104984701,401628596,40162859618,1,4,1:52,Monmouth,Lafayette,35,28,65,0,0,0,Kickoff,"Vincenzo Rea kickoff for 46 yds , Mason Kuehner return for no gain to the LAF 19",,2024-09-07T18:56:20.000Z
+401628596104994603,401628596,40162859618,7,4,0:53,Lafayette,Monmouth,34,35,0,1,10,0,Timeout,"Timeout Lafayette, clock 00:53",,2024-09-07T18:59:36.000Z
+401628596104996301,401628596,40162859619,2,4,0:36,Lafayette,Monmouth,40,35,42,2,1,42,Passing Touchdown,Dean DeNobile pass complete to Elijah Steward for 42 yds for a TD (Two-Point Conversion failed),2.800693848429852,2024-09-07T19:04:43.000Z
+401628596104994802,401628596,40162859619,1,4,0:51,Lafayette,Monmouth,34,35,51,1,10,9,Pass Reception,Dean DeNobile pass complete to Chris Carasia for 9 yds to the MONM 42,1.122673355463087,2024-09-07T19:03:17.000Z
+401628596104998601,401628596,40162859620,7,4,0:13,Monmouth,Lafayette,35,40,35,1,10,0,Pass Interception Return,Derek Robertson pass intercepted Gabe DuBois return for no gain to the LAF 30,-4.027411216223044,2024-09-07T19:11:54.000Z
+401628596104996307,401628596,40162859620,3,4,0:36,Monmouth,Lafayette,35,40,68,1,10,12,Pass Reception,Derek Robertson pass complete to Gavin Nelson for 12 yds to the MONM 44 for a 1ST down,1.1491279342625536,2024-09-07T19:06:27.000Z
+401628596104996308,401628596,40162859620,4,4,0:36,Monmouth,Lafayette,35,40,56,1,10,11,Penalty,"Lafayette Penalty, Defensive Pass Interference (Jalen Edwards) to the LAF 45 for a 1ST down",,2024-09-07T19:06:27.000Z
+401628596104996305,401628596,40162859620,2,4,0:36,Lafayette,Monmouth,40,35,65,0,0,0,Kickoff,Jakob Trestik kickoff for 33 yds,,2024-09-07T19:06:27.000Z
+401628596104996303,401628596,40162859620,1,4,0:36,Lafayette,Monmouth,40,35,0,1,10,0,Timeout,"Timeout Lafayette, clock 00:36",,2024-09-07T19:06:27.000Z
+401628596104997701,401628596,40162859620,5,4,0:22,Monmouth,Lafayette,35,40,35,1,10,0,Timeout,"Timeout Monmouth, clock 00:22",,2024-09-07T19:11:07.000Z
+401628596104997702,401628596,40162859620,6,4,0:22,Monmouth,Lafayette,35,40,45,1,10,10,Pass Reception,Derek Robertson pass complete to Max James for 10 yds to the LAF 35 for a 1ST down,0.503925301290112,2024-09-07T19:11:07.000Z
+401628596104998902,401628596,40162859621,2,4,0:10,Lafayette,Monmouth,40,35,70,1,10,-1,Rush,"[NH] Kneel down by DENOBILE, Dean at LAF29 (team loss of 1).",-0.990133578060151,2024-09-07T19:12:40.000Z
+401628596104999901,401628596,40162859621,3,4,0:00,Lafayette,Monmouth,40,35,71,2,11,-1,Rush,"[NH] Kneel down by DENOBILE, Dean at LAF28 (team loss of 1), clock 00:00.",-0.44781082707576925,2024-09-07T19:13:23.000Z
+401628596104999903,401628596,40162859621,4,4,0:00,Lafayette,Monmouth,40,35,72,0,11,0,End of Game,End of 4th Quarter,,2024-09-07T19:13:23.000Z
+401628596104998901,401628596,40162859621,1,4,0:10,Lafayette,Monmouth,40,35,71,2,11,0,Timeout,"Timeout Monmouth, clock 00:10",,2024-09-07T19:12:40.000Z

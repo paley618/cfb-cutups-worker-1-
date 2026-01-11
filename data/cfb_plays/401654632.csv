@@ -1,0 +1,151 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401654632101997503,401654632,4016546327,2,1,0:00,Sacred Heart,St. Anselm,0,0,64,0,10,0,End Period,End of 1st Quarter,,2024-09-07T17:39:07.000Z
+401654632101849908,401654632,4016546327,1,1,15:00,Sacred Heart,St. Anselm,0,0,64,1,10,3,Pass Reception,John Michalski pass complete to Dean Hangey for 3 yds to the SHU 39,-0.4136553890915255,2024-09-07T17:07:47.000Z
+401654632102849901,401654632,4016546327,3,2,15:00,Sacred Heart,St. Anselm,0,0,61,2,7,2,Rush,John Michalski run for 2 yds to the SHU 41,-0.5668749169380414,2024-09-07T17:39:51.000Z
+401654632102849903,401654632,4016546327,4,2,15:00,Sacred Heart,St. Anselm,0,0,59,3,5,0,Pass Incompletion,pass incomplete to Elijah Ford,-0.6617140534494768,2024-09-07T17:39:51.000Z
+401654632102858501,401654632,4016546327,5,2,14:14,Sacred Heart,St. Anselm,0,0,59,4,5,0,Punt,"Mason VonJess punt St. Anselm Penalty, roughing kicker (Jaeden Franco) to the SHU 41",,2024-09-07T17:43:13.000Z
+401654632102859901,401654632,4016546327,6,2,14:00,Sacred Heart,St. Anselm,0,0,59,4,5,8,Punt,"Mason VonJess punt for 39 yds for a 1ST down , Jude Santana returns for 8 yds to the STA 49 for a 1ST down Sacred Heart Penalty, personal foul (Luke Hackett) to the STA 43 for a 1ST down",,2024-09-07T17:43:40.000Z
+401654632101887802,401654632,4016546324,1,1,11:21,St. Anselm,Sacred Heart,0,0,39,1,10,0,Pass Incompletion,pass incomplete to Andrew Edwards,-0.814236079442537,2024-09-07T17:11:15.000Z
+401654632101887803,401654632,4016546324,2,1,11:21,St. Anselm,Sacred Heart,0,0,39,2,10,9,Rush,Jaidin Haynes run for 9 yds to the SHU 30,0.816992639830001,2024-09-07T17:11:15.000Z
+401654632101887804,401654632,4016546324,3,1,11:21,St. Anselm,Sacred Heart,0,0,30,3,1,9,Rush,Jaidin Haynes run for 9 yds to the SHU 21 for a 1ST down,0.505385180748594,2024-09-07T17:17:14.000Z
+401654632101887805,401654632,4016546324,4,1,11:21,St. Anselm,Sacred Heart,0,0,21,1,10,-3,Pass Reception,Anthony Santino pass complete to Anthony Almeida for a loss of 3 yards to the SHU 24,-0.6818841084579383,2024-09-07T17:17:14.000Z
+401654632101887806,401654632,4016546324,5,1,11:21,St. Anselm,Sacred Heart,0,0,24,2,13,-5,Penalty,"St. Anselm Penalty, false start (Thomas Walton) to the SHU 29",,2024-09-07T17:17:14.000Z
+401654632101887807,401654632,4016546324,6,1,11:21,St. Anselm,Sacred Heart,0,0,29,2,18,5,Rush,Anthony Almeida run for 5 yds to the SHU 24,0.0404594773728613,2024-09-07T17:17:14.000Z
+401654632101887808,401654632,4016546324,7,1,11:21,St. Anselm,Sacred Heart,0,0,24,3,13,7,Pass Reception,Anthony Santino pass complete to Jaidin Haynes for 7 yds to the SHU 17,0.3487981332889074,2024-09-07T17:17:14.000Z
+401654632101927001,401654632,4016546324,8,1,7:29,St. Anselm,Sacred Heart,0,0,17,4,6,34,Field Goal Missed,Patrick Carroll 34 yd FG MISSED,,2024-09-07T17:19:27.000Z
+401654632101927002,401654632,4016546325,1,1,7:29,Sacred Heart,St. Anselm,0,0,80,1,10,2,Rush,Xavier Leigh run for 2 yds to the SHU 22,-0.3623882030735057,2024-09-07T17:19:27.000Z
+401654632101927003,401654632,4016546325,2,1,7:29,Sacred Heart,St. Anselm,0,0,78,2,8,2,Rush,"Xavier Leigh run for 2 yds to the SHU 24 Sacred Heart Penalty, Offensive holding (Tim Suk) to the SHU 24",-0.2408962942904136,2024-09-07T17:19:27.000Z
+401654632101927004,401654632,4016546325,3,1,7:29,Sacred Heart,St. Anselm,0,0,76,3,6,5,Pass Reception,John Michalski pass complete to Kevin McGuire for 5 yds to the SHU 29,0.035976235049414385,2024-09-07T17:19:27.000Z
+401654632101945101,401654632,4016546325,4,1,5:48,Sacred Heart,St. Anselm,0,0,71,4,1,6,Punt,"Mason VonJess punt for 37 yds , Jude Santana returns for 6 yds to the STA 40",,2024-09-07T17:25:15.000Z
+401654632101854801,401654632,4016546322,6,1,14:51,Sacred Heart,St. Anselm,0,0,65,1,10,50,Kickoff,"Matt Kling kickoff for 65 yds , Najei Snyder return for 50 yds to the 50 yard line",,2024-09-07T17:04:23.000Z
+401654632101849904,401654632,4016546322,1,1,15:00,St. Anselm,Sacred Heart,0,0,50,1,10,-5,Penalty,"St. Anselm Penalty, delay of game (Ronan Noke) to the STA 45",,2024-09-07T17:04:23.000Z
+401654632101849905,401654632,4016546322,2,1,15:00,St. Anselm,Sacred Heart,0,0,55,1,15,-1,Rush,Jaidin Haynes run for a loss of 1 yard to the STA 44,-1.1755050417816537,2024-09-07T17:04:23.000Z
+401654632101849906,401654632,4016546322,3,1,15:00,St. Anselm,Sacred Heart,0,0,56,2,16,3,Rush,Jaidin Haynes run for 3 yds to the STA 47,-0.266103165309854,2024-09-07T17:04:23.000Z
+401654632101849907,401654632,4016546322,4,1,15:00,St. Anselm,Sacred Heart,0,0,50,4,10,0,Punt,Devin Wood punt for 38 yds,,2024-09-07T17:07:47.000Z
+401654632101849912,401654632,4016546322,5,1,15:00,St. Anselm,Sacred Heart,0,0,53,3,13,3,Pass Reception,Anthony Santino pass complete to Will Twadell for 3 yds to the 50 yard line,-0.2183391708894416,2024-09-07T17:07:47.000Z
+401654632101849909,401654632,4016546323,1,1,15:00,Sacred Heart,St. Anselm,0,0,88,1,10,2,Rush,Jalen Madison run for 2 yds to the SHU 14,-0.24856252157946201,2024-09-07T17:07:47.000Z
+401654632101849910,401654632,4016546323,2,1,15:00,Sacred Heart,St. Anselm,0,0,86,2,8,0,Pass Incompletion,pass incomplete to Mason Stahl,-0.244613289421725,2024-09-07T17:07:47.000Z
+401654632101849911,401654632,4016546323,3,1,15:00,Sacred Heart,St. Anselm,0,0,86,3,8,-8,Sack,John Michalski sacked for a loss of 8 yards to the SHU 6,-0.16785899640650914,2024-09-07T17:07:47.000Z
+401654632101887801,401654632,4016546323,4,1,11:21,Sacred Heart,St. Anselm,0,0,94,4,16,0,Punt,Mason VonJess punt for 33 yds,,2024-09-07T17:11:15.000Z
+401654632101945102,401654632,4016546326,1,1,5:48,St. Anselm,Sacred Heart,0,0,60,1,10,15,Pass Reception,Anthony Santino pass complete to Patrick Yesinko for 15 yds to the SHU 45 for a 1ST down,1.2803865190766075,2024-09-07T17:25:15.000Z
+401654632101945103,401654632,4016546326,2,1,5:48,St. Anselm,Sacred Heart,0,0,45,1,10,9,Rush,Jaidin Haynes run for 9 yds to the SHU 36,0.957003546754157,2024-09-07T17:27:27.000Z
+401654632101945104,401654632,4016546326,3,1,5:48,St. Anselm,Sacred Heart,0,0,36,2,1,-1,Rush,Jaidin Haynes run for a loss of 1 yard to the SHU 37,-1.1983992476977665,2024-09-07T17:27:27.000Z
+401654632101945105,401654632,4016546326,4,1,5:48,St. Anselm,Sacred Heart,0,0,37,3,2,3,Rush,Jaidin Haynes run for 3 yds to the SHU 34 for a 1ST down,0.7811836250970076,2024-09-07T17:27:27.000Z
+401654632101945106,401654632,4016546326,5,1,5:48,St. Anselm,Sacred Heart,0,0,34,1,10,-6,Rush,"Jaidin Haynes run for 4 yds to the SHU 30 St. Anselm Penalty, Offensive holding (Thomas Walton) to the SHU 40",-1.8149345179079521,2024-09-07T17:27:27.000Z
+401654632101945107,401654632,4016546326,6,1,5:48,St. Anselm,Sacred Heart,0,0,40,1,16,9,Pass Reception,Anthony Santino pass complete to Jude Santana for 9 yds to the SHU 31,0.6767217142474246,2024-09-07T17:27:27.000Z
+401654632101945108,401654632,4016546326,7,1,5:48,St. Anselm,Sacred Heart,0,0,31,2,7,2,Pass Reception,Anthony Santino pass complete to Jaidin Haynes for 2 yds to the SHU 29,-0.3981562831252977,2024-09-07T17:27:27.000Z
+401654632101945109,401654632,4016546326,8,1,5:48,St. Anselm,Sacred Heart,0,0,29,3,5,-10,Rush,"Haynes,Jaidin rush (Talley,Myles), PENALTY STA holding (Olinger,Ross) 10 yards to the SHU19. St. Anselm Penalty, Offensive holding (Ross Olinger) to the SHU 39",-2.858066222009663,2024-09-07T17:27:27.000Z
+401654632101987701,401654632,4016546326,9,1,1:22,St. Anselm,Sacred Heart,0,0,39,3,15,8,Pass Reception,Anthony Santino pass complete to Patrick Yesinko for 8 yds to the SHU 31,0.6944167639524501,2024-09-07T17:35:14.000Z
+401654632101997501,401654632,4016546326,10,1,0:24,St. Anselm,Sacred Heart,0,0,31,4,7,-5,Fumble Recovery (Opponent),"Jaidin Haynes run for a loss of 5 yards to the SHU 36 Jaidin Haynes fumbled, recovered by SHU Isaiah Bishop",-2.1372844818659473,2024-09-07T17:35:27.000Z
+401654632102877003,401654632,4016546329,1,2,12:29,Sacred Heart,St. Anselm,0,0,81,1,10,-2,Rush,Xavier Leigh run for a loss of 2 yards to the SHU 17,-0.664842805991146,2024-09-07T17:47:48.000Z
+401654632102877004,401654632,4016546329,2,2,12:29,Sacred Heart,St. Anselm,0,0,83,2,12,2,Rush,Xavier Leigh run for 2 yds to the SHU 19,-0.11444719232554945,2024-09-07T17:47:48.000Z
+401654632102877005,401654632,4016546329,3,2,12:29,Sacred Heart,St. Anselm,0,0,81,3,10,8,Rush,John Michalski run for 8 yds to the SHU 27,0.16783193768933735,2024-09-07T17:47:48.000Z
+401654632102896201,401654632,4016546329,4,2,10:37,Sacred Heart,St. Anselm,0,0,73,4,2,0,Punt,Mason VonJess punt for 39 yds,,2024-09-07T17:52:09.000Z
+401654632102918402,401654632,40165463211,1,2,8:15,Sacred Heart,St. Anselm,0,0,80,1,10,-1,Sack,John Michalski sacked for a loss of 1 yard to the SHU 19,-0.6343354265717327,2024-09-07T17:55:14.000Z
+401654632102918403,401654632,40165463211,2,2,8:15,Sacred Heart,St. Anselm,0,0,81,2,11,4,Rush,Jalen Madison run for 4 yds to the SHU 23,-0.038114045612198666,2024-09-07T17:55:14.000Z
+401654632102918404,401654632,40165463211,3,2,8:15,Sacred Heart,St. Anselm,0,0,77,3,7,7,Rush,John Michalski run for 7 yds to the SHU 30 for a 1ST down,1.3657207488846907,2024-09-07T17:55:14.000Z
+401654632102918405,401654632,40165463211,4,2,8:15,Sacred Heart,St. Anselm,0,0,70,1,10,-10,Rush,"Madison,Jalen rush (Nadeau,Jake), PENALTY SHU holding (Heshler,Blaise) 10 yards to the SHU40. Sacred Heart Penalty, Offensive holding (Blaise Heshler) to the SHU 20",-1.5599822965110652,2024-09-07T17:55:14.000Z
+401654632102918406,401654632,40165463211,5,2,8:15,Sacred Heart,St. Anselm,0,0,80,1,20,6,Rush,John Michalski run for 6 yds to the SHU 26,0.08777181279332247,2024-09-07T17:55:14.000Z
+401654632102946801,401654632,40165463211,6,2,5:31,Sacred Heart,St. Anselm,0,0,74,2,14,9,Pass Reception,John Michalski pass complete to Mason Stahl for 9 yds to the SHU 35,0.4634932562894516,2024-09-07T18:03:15.000Z
+401654632102946802,401654632,40165463211,7,2,5:31,Sacred Heart,St. Anselm,0,0,65,3,5,10,Pass Incompletion,"John Michalski pass incomplete to Ethan Hilliman for a 1ST down St. Anselm Penalty, Defensive pass interference (Brandon Potts) to the SHU 45 for a 1ST down",2.2279557197565927,2024-09-07T18:03:15.000Z
+401654632102946803,401654632,40165463211,8,2,5:31,Sacred Heart,St. Anselm,0,0,55,1,10,0,Rush,"Michalski,John rush middle (Laguerre,Stephen;Noke,Aidan).",-1.1618692012952412,2024-09-07T18:03:15.000Z
+401654632102946804,401654632,40165463211,9,2,5:31,Sacred Heart,St. Anselm,0,0,55,2,10,2,Rush,John Michalski run for 2 yds to the SHU 47,-0.5680099089337114,2024-09-07T18:03:15.000Z
+401654632102946805,401654632,40165463211,10,2,5:31,Sacred Heart,St. Anselm,0,0,53,3,8,27,Pass Reception,John Michalski pass complete to Mason Stahl for 27 yds to the STA 26 for a 1ST down,3.286490225137137,2024-09-07T18:03:15.000Z
+401654632102946806,401654632,40165463211,11,2,5:31,Sacred Heart,St. Anselm,0,0,26,1,10,3,Rush,Jalen Madison run for 3 yds to the STA 23,-0.1464938748677045,2024-09-07T18:03:15.000Z
+401654632102946807,401654632,40165463211,12,2,5:31,Sacred Heart,St. Anselm,0,0,23,2,7,10,Rush,John Michalski run for 10 yds to the STA 13 for a 1ST down,0.327566782230038,2024-09-07T18:03:15.000Z
+401654632102979901,401654632,40165463211,13,2,2:00,Sacred Heart,St. Anselm,0,0,13,1,10,5,Rush,Jalen Madison run for 5 yds to the STA 8,0.074681000091786,2024-09-07T18:11:16.000Z
+401654632102979902,401654632,40165463211,14,2,2:00,Sacred Heart,St. Anselm,0,0,8,2,5,0,Pass Incompletion,pass incomplete to Ben Evee,-0.340953639548776,2024-09-07T18:13:31.000Z
+401654632102979903,401654632,40165463211,15,2,2:00,Sacred Heart,St. Anselm,0,0,8,3,5,1,Rush,John Michalski run for 1 yd to the STA 7,-0.253504954892877,2024-09-07T18:13:31.000Z
+401654632102979904,401654632,40165463211,16,2,2:00,Sacred Heart,St. Anselm,0,0,7,4,4,-5,Penalty,"Sacred Heart Penalty, false start (Brian McNamara) to the STA 12",,2024-09-07T18:13:31.000Z
+401654632102989901,401654632,40165463211,17,2,1:00,Sacred Heart,St. Anselm,3,0,12,4,9,29,Field Goal Good,Matt Kling 29 yd FG GOOD,,2024-09-07T18:14:05.000Z
+401654632102877002,401654632,4016546328,4,2,12:29,St. Anselm,Sacred Heart,0,0,66,4,19,0,Punt,Devin Wood punt for 47 yds,,2024-09-07T17:47:48.000Z
+401654632102859902,401654632,4016546328,1,2,14:00,St. Anselm,Sacred Heart,0,0,57,1,10,-2,Rush,Anthony Santino run for a loss of 2 yards to the STA 41,-1.5648316162877771,2024-09-07T17:43:40.000Z
+401654632102859903,401654632,4016546328,2,2,14:00,St. Anselm,Sacred Heart,0,0,59,2,12,3,Rush,Jaidin Haynes run for 3 yds to the STA 44,-0.295451986372635,2024-09-07T17:47:15.000Z
+401654632102859904,401654632,4016546328,3,2,14:00,St. Anselm,Sacred Heart,0,0,56,3,9,-10,Sack,"Anthony Santino sacked for a loss of 10 yards to the STA 34 St. Anselm Penalty, Offensive holding (Braden Faiella) to the STA 34",-0.9882745529617836,2024-09-07T17:47:15.000Z
+401654632102896202,401654632,40165463210,1,2,10:37,St. Anselm,Sacred Heart,0,0,66,1,10,-4,Rush,Jaidin Haynes run for a loss of 4 yards to the STA 30,-1.4943524625812072,2024-09-07T17:52:09.000Z
+401654632102896203,401654632,40165463210,2,2,10:37,St. Anselm,Sacred Heart,0,0,70,2,14,1,Rush,Anthony Almeida run for 1 yd to the STA 31,-0.26723055770697535,2024-09-07T17:52:09.000Z
+401654632102896204,401654632,40165463210,3,2,10:37,St. Anselm,Sacred Heart,0,0,69,3,13,9,Rush,Anthony Almeida run for 9 yds to the STA 40,0.3296322656756079,2024-09-07T17:52:09.000Z
+401654632102918401,401654632,40165463210,4,2,8:15,St. Anselm,Sacred Heart,0,0,60,4,4,0,Punt,Devin Wood punt for 40 yds,,2024-09-07T17:55:14.000Z
+401654632102999501,401654632,40165463213,5,2,0:04,St. Anselm,Sacred Heart,0,3,74,4,16,0,Uncategorized,"fumbled, recovered by STA Devin Wood",,2024-09-07T18:22:02.000Z
+401654632102989902,401654632,40165463213,1,2,1:00,Sacred Heart,St. Anselm,3,0,65,1,10,0,Kickoff,Matt Kling kickoff for 33 yds,,2024-09-07T18:14:05.000Z
+401654632102989903,401654632,40165463213,2,2,1:00,St. Anselm,Sacred Heart,0,3,68,1,10,-7,Rush,Anthony Santino run for a loss of 7 yards to the STA 25,-1.5855935118558628,2024-09-07T18:14:05.000Z
+401654632102989904,401654632,40165463213,3,2,1:00,St. Anselm,Sacred Heart,0,3,75,2,17,-5,Rush,Anthony Santino run for a loss of 5 yards to the STA 20,-0.24905307032363397,2024-09-07T18:14:05.000Z
+401654632102998501,401654632,40165463213,4,2,0:14,St. Anselm,Sacred Heart,0,3,80,3,22,6,Rush,Anthony Almeida run for 6 yds to the STA 26,0.0141433144004086,2024-09-07T18:21:31.000Z
+401654632102999502,401654632,40165463214,1,2,0:04,Sacred Heart,St. Anselm,10,0,3,1,3,3,Rushing Touchdown,Xavier Leigh run for 3 yds for a TD (Matt Kling KICK),1.464451732731337,2024-09-07T18:22:02.000Z
+401654632103916702,401654632,40165463217,1,3,8:32,St. Anselm,Sacred Heart,0,10,73,1,10,0,Pass Incompletion,pass incomplete to Matthew Kelly,-0.766047035673644,2024-09-07T18:57:15.000Z
+401654632103916703,401654632,40165463217,2,3,8:32,St. Anselm,Sacred Heart,0,10,73,2,10,2,Rush,Patrick Yesinko run for 2 yds to the STA 29,-0.25573478264002514,2024-09-07T18:57:15.000Z
+401654632103916704,401654632,40165463217,3,3,8:32,St. Anselm,Sacred Heart,0,10,71,3,8,0,Pass Incompletion,pass incomplete to Blaine Burkhalter,-0.25342252778130003,2024-09-07T18:57:15.000Z
+401654632103926601,401654632,40165463217,4,3,7:33,St. Anselm,Sacred Heart,0,10,71,4,8,5,Punt,Devin Wood punt,,2024-09-07T19:03:20.000Z
+401654632103927701,401654632,40165463217,5,3,7:22,St. Anselm,Sacred Heart,0,10,66,4,3,6,Punt,"Devin Wood punt for 54 yds , Ryan Palmieri returns for 6 yds to the SHU 40 Sacred Heart Penalty, personal foul (Jalen Madison) to the SHU 9",,2024-09-07T19:04:09.000Z
+401654632103849910,401654632,40165463219,1,3,15:00,St. Anselm,Sacred Heart,0,10,26,1,10,3,Rush,Anthony Almeida run for 3 yds to the SHU 23,-0.1464938748677045,2024-09-07T18:46:34.000Z
+401654632103949412,401654632,40165463219,11,3,0:00,St. Anselm,Sacred Heart,0,10,26,0,10,0,End Period,End of 3rd Quarter,,2024-09-07T19:20:14.000Z
+401654632103949402,401654632,40165463219,2,3,5:05,St. Anselm,Sacred Heart,0,10,88,1,10,2,Rush,Anthony Almeida run for 2 yds to the STA 14,-0.24856252157946201,2024-09-07T19:11:30.000Z
+401654632103949403,401654632,40165463219,3,3,5:05,St. Anselm,Sacred Heart,0,10,86,2,8,10,Rush,Anthony Almeida run for 10 yds to the STA 24 for a 1ST down,0.8342041697479878,2024-09-07T19:11:30.000Z
+401654632103949404,401654632,40165463219,4,3,5:05,St. Anselm,Sacred Heart,0,10,76,1,10,0,Pass Incompletion,pass incomplete to Andrew Edwards,-0.6723571521309859,2024-09-07T19:11:30.000Z
+401654632103949405,401654632,40165463219,5,3,5:05,St. Anselm,Sacred Heart,0,10,76,2,10,10,Pass Reception,Anthony Santino pass complete to Blaine Burkhalter for 10 yds to the STA 34 for a 1ST down,1.4812061058171624,2024-09-07T19:11:30.000Z
+401654632103949406,401654632,40165463219,6,3,5:05,St. Anselm,Sacred Heart,0,10,66,1,10,6,Pass Reception,Anthony Santino pass complete to Anthony Almeida for 6 yds to the STA 40,0.3949221212311402,2024-09-07T19:11:30.000Z
+401654632103949407,401654632,40165463219,7,3,5:05,St. Anselm,Sacred Heart,0,10,60,2,4,6,Pass Reception,Anthony Santino pass complete to Will Twadell for 6 yds to the STA 46 for a 1ST down,0.756949730813266,2024-09-07T19:11:30.000Z
+401654632103949408,401654632,40165463219,8,3,5:05,St. Anselm,Sacred Heart,0,10,54,1,10,6,Pass Reception,Anthony Santino pass complete to Matthew Kelly for 6 yds to the SHU 48,0.374950753061633,2024-09-07T19:11:30.000Z
+401654632103949409,401654632,40165463219,9,3,5:05,St. Anselm,Sacred Heart,0,10,48,2,4,7,Rush,Jaidin Haynes run for 7 yds to the SHU 41 for a 1ST down,0.5694271587270556,2024-09-07T19:11:30.000Z
+401654632103949410,401654632,40165463219,10,3,5:05,St. Anselm,Sacred Heart,0,10,41,1,10,15,Pass Incompletion,"Anthony Santino pass incomplete to Blaine Burkhalter for a 1ST down Sacred Heart Penalty, Defensive pass interference (Jordan Campbell) to the SHU 26 for a 1ST down",0.5205175034883389,2024-09-07T19:11:30.000Z
+401654632104849901,401654632,40165463219,12,4,15:00,St. Anselm,Sacred Heart,0,10,23,2,7,-1,Rush,Anthony Santino run for a loss of 1 yard to the SHU 24,-0.6589683363680305,2024-09-07T00:00:00.000Z
+401654632104849903,401654632,40165463219,13,4,15:00,St. Anselm,Sacred Heart,0,10,24,3,8,0,Pass Incompletion,pass incomplete,-0.8012286376069558,2024-09-07T19:25:55.000Z
+401654632104856701,401654632,40165463219,14,4,14:32,St. Anselm,Sacred Heart,3,10,24,4,8,42,Field Goal Good,Patrick Carroll 42 yd FG GOOD,,2024-09-07T19:25:55.000Z
+401654632104857203,401654632,40165463219,15,4,14:27,St. Anselm,Sacred Heart,0,10,23,2,7,-1,Sack,Anthony Santino sacked for a loss of 1 yard to the SHU 24,-0.6589683363680305,2024-09-07T19:29:45.000Z
+401654632103854401,401654632,40165463216,9,3,14:55,St. Anselm,Sacred Heart,0,10,65,1,10,15,Kickoff Return (Offense),"Patrick Carroll kickoff for 54 yds , Ryan Palmieri return for 15 yds to the SHU 26 Ryan Palmieri fumbled, recovered by STA",,2024-09-07T19:20:14.000Z
+401654632103849902,401654632,40165463216,1,3,15:00,Sacred Heart,St. Anselm,10,0,74,1,10,3,Rush,Jalen Madison run for 3 yds to the SHU 29,-0.30809127134716,2024-09-07T18:46:34.000Z
+401654632103849903,401654632,40165463216,2,3,15:00,Sacred Heart,St. Anselm,10,0,71,2,7,12,Rush,Jalen Madison run for 12 yds to the SHU 41 for a 1ST down,1.6558552340096986,2024-09-07T18:46:34.000Z
+401654632103849904,401654632,40165463216,3,3,15:00,Sacred Heart,St. Anselm,10,0,59,1,10,-1,Rush,Jalen Madison run for a loss of 1 yard to the SHU 40,-1.339680578309613,2024-09-07T18:46:34.000Z
+401654632103849905,401654632,40165463216,4,3,15:00,Sacred Heart,St. Anselm,10,0,60,2,11,3,Rush,Jalen Madison run for 3 yds to the SHU 43,-0.3012739285672224,2024-09-07T18:46:34.000Z
+401654632103849906,401654632,40165463216,5,3,15:00,Sacred Heart,St. Anselm,10,0,57,3,8,7,Pass Reception,John Michalski pass complete to Kevin McGuire for 7 yds to the 50 yard line,0.4266288508626053,2024-09-07T18:46:34.000Z
+401654632103849907,401654632,40165463216,6,3,15:00,Sacred Heart,St. Anselm,10,0,50,4,1,3,Rush,Xavier Leigh run for 3 yds to the STA 47 for a 1ST down,2.260135764546227,2024-09-07T18:46:34.000Z
+401654632103849908,401654632,40165463216,7,3,15:00,Sacred Heart,St. Anselm,10,0,47,1,10,1,Rush,Xavier Leigh run for 1 yd to the STA 46,-0.8163903948325457,2024-09-07T18:46:34.000Z
+401654632103849909,401654632,40165463216,8,3,15:00,Sacred Heart,St. Anselm,10,0,46,2,9,16,Pass Reception,John Michalski pass complete to Ethan Hilliman for 16 yds to the STA 30 for a 1ST down,1.6153495031762046,2024-09-07T18:46:34.000Z
+401654632103899101,401654632,40165463216,10,3,10:08,Sacred Heart,St. Anselm,10,0,30,1,10,0,Rush,"Madison,Jalen rush right (Nadeau,Jake;Santiago,Alejandro).",-0.557844891990525,2024-09-07T18:46:34.000Z
+401654632103899102,401654632,40165463216,11,3,10:08,Sacred Heart,St. Anselm,10,0,30,2,10,0,Pass Incompletion,pass incomplete to Mason Stahl,-0.7638433871567597,2024-09-07T18:56:01.000Z
+401654632103899103,401654632,40165463216,12,3,10:08,Sacred Heart,St. Anselm,10,0,30,3,10,3,Rush,John Michalski run for 3 yds to the STA 27,-0.3475432127274817,2024-09-07T18:56:01.000Z
+401654632103916701,401654632,40165463216,13,3,8:32,Sacred Heart,St. Anselm,10,0,27,4,7,44,Field Goal Missed,Matt Kling 44 yd FG MISSED,,2024-09-07T18:57:15.000Z
+401654632103927702,401654632,40165463218,1,3,7:22,Sacred Heart,St. Anselm,10,0,91,1,10,6,Rush,Xavier Leigh run for 6 yds to the SHU 15,0.20527425780596875,2024-09-07T19:06:00.000Z
+401654632103927703,401654632,40165463218,2,3,7:22,Sacred Heart,St. Anselm,10,0,85,2,4,17,Rush,"Xavier Leigh run for 2 yds to the SHU 17 for a 1ST down St. Anselm Penalty, personal foul (Aidan Noke) to the SHU 32 for a 1ST down",1.0976009825770499,2024-09-07T19:06:00.000Z
+401654632103927704,401654632,40165463218,3,3,7:22,Sacred Heart,St. Anselm,10,0,68,1,10,0,Pass Incompletion,"John Michalski pass incomplete to Ethan Hilliman, broken up by Najei Snyder",-0.9262377870973815,2024-09-07T19:06:00.000Z
+401654632103927705,401654632,40165463218,4,3,7:22,Sacred Heart,St. Anselm,10,0,68,2,10,0,Pass Reception,John Michalski pass complete to Ethan Hilliman for no gain to the SHU 32,-0.5135431143257803,2024-09-07T19:06:00.000Z
+401654632103927706,401654632,40165463218,5,3,7:22,Sacred Heart,St. Anselm,10,0,68,3,10,-18,Pass Reception,"John Michalski pass complete to Xavier Leigh for a loss of 4 yards to the SHU 28 Sacred Heart Penalty, unsportsmanlike conduct (Ethan Hilliman) to the SHU 14",-0.44244224926146014,2024-09-07T19:06:00.000Z
+401654632103949401,401654632,40165463218,6,3,5:05,Sacred Heart,St. Anselm,10,0,86,4,28,0,Punt,Mason VonJess punt for 74 yds,,2024-09-07T19:11:30.000Z
+401654632104857201,401654632,40165463221,1,4,14:27,St. Anselm,Sacred Heart,3,10,65,1,10,0,Kickoff,Patrick Carroll kickoff for 16 yds,,2024-09-07T19:28:09.000Z
+401654632104857202,401654632,40165463221,2,4,14:27,Sacred Heart,St. Anselm,10,3,51,1,10,2,Rush,Jalen Madison run for 2 yds to the STA 49,-0.643630697434087,2024-09-07T19:29:45.000Z
+401654632104857204,401654632,40165463221,3,4,14:27,Sacred Heart,St. Anselm,10,3,49,2,8,2,Rush,John Michalski run for 2 yds to the STA 47,-0.6521809720664199,2024-09-07T19:29:45.000Z
+401654632104857205,401654632,40165463221,4,4,14:27,Sacred Heart,St. Anselm,10,3,47,3,6,0,Pass Incompletion,pass incomplete to Kevin McGuire,-0.9689555597926596,2024-09-07T19:29:45.000Z
+401654632104869101,401654632,40165463221,5,4,13:08,Sacred Heart,St. Anselm,10,3,47,4,6,0,Punt,Mason VonJess punt for 32 yds,,2024-09-07T19:33:16.000Z
+401654632104909901,401654632,40165463223,6,4,9:00,Sacred Heart,St. Anselm,10,3,45,4,10,0,Uncategorized,"fumbled, recovered by SHU Mason VonJess  rush middle for loss of 11 yards to the SHU44, fumble by TEAM recovered by SHU VonJess,Mason, VonJess,Mason rush , PENALTY SHU holding. Sacred Heart Penalty, Defensive holding (Yards) to the SHU 44",,
+401654632104886302,401654632,40165463223,1,4,11:36,Sacred Heart,St. Anselm,10,3,64,1,10,19,Rush,Xavier Leigh run for 19 yds to the STA 45 for a 1ST down,1.670678522708263,2024-09-07T19:35:46.000Z
+401654632104886303,401654632,40165463223,2,4,11:36,Sacred Heart,St. Anselm,10,3,45,1,10,-2,Rush,Xavier Leigh run for a loss of 2 yards to the STA 47,-1.456436989817803,2024-09-07T19:35:46.000Z
+401654632104886304,401654632,40165463223,3,4,11:36,Sacred Heart,St. Anselm,10,3,47,2,12,-9,Rush,Xavier Leigh run for a loss of 9 yards to the SHU 44,-2.091350993809592,2024-09-07T19:35:46.000Z
+401654632104886305,401654632,40165463223,4,4,11:36,Sacred Heart,St. Anselm,10,3,56,3,21,11,Rush,John Michalski run for 11 yds to the STA 45,0.6248190236644762,2024-09-07T19:35:46.000Z
+401654632104908401,401654632,40165463223,5,4,9:15,Sacred Heart,St. Anselm,10,3,45,4,10,-12,Fumble Recovery (Own),"Mason VonJess run for a loss of 12 yards to the SHU 43 Mason VonJess fumbled, recovered by SHU Mason VonJess  VonJess,Mason rush middle for loss of 12 yards to the SHU43, fumble by VonJess,Mason recovered by SHU VonJess,Mason, VonJess,Mason rush , PENALTY SHU holding. Sacred Heart Penalty, Defensive holding (Yards) to the SHU 43",-0.6005169549700131,2024-09-07T20:07:45.000Z
+401654632104869102,401654632,40165463222,1,4,13:08,St. Anselm,Sacred Heart,3,10,85,1,10,3,Rush,Anthony Santino run for 3 yds to the STA 18,-0.18582583063851654,2024-09-07T19:33:42.000Z
+401654632104869103,401654632,40165463222,2,4,13:08,St. Anselm,Sacred Heart,3,10,82,2,7,0,Pass Incompletion,pass incomplete to Matthew Kelly,-0.33976275070862094,2024-09-07T19:33:42.000Z
+401654632104869104,401654632,40165463222,3,4,13:08,St. Anselm,Sacred Heart,3,10,82,3,7,-5,Sack,Anthony Santino sacked for a loss of 5 yards to the STA 13,-0.21876191398867292,2024-09-07T19:33:42.000Z
+401654632104886301,401654632,40165463222,4,4,11:36,St. Anselm,Sacred Heart,3,10,87,4,12,0,Punt,Devin Wood punt for 51 yds,,2024-09-07T19:35:46.000Z
+401654632104908402,401654632,40165463224,1,4,9:15,St. Anselm,Sacred Heart,3,10,43,2,10,1,Rush,Anthony Santino run for 1 yd to the SHU 42,-0.838993440207636,2024-09-07T20:07:45.000Z
+401654632104908403,401654632,40165463224,2,4,9:15,St. Anselm,Sacred Heart,3,10,42,3,9,-7,Rush,Jaidin Haynes run for a loss of 7 yards to the SHU 49,-1.815642733105551,2024-09-07T20:07:45.000Z
+401654632104909902,401654632,40165463224,3,4,9:00,St. Anselm,Sacred Heart,3,10,44,1,10,1,Rush,Jaidin Haynes run for 1 yd to the SHU 43,-0.7468552089852203,
+401654632104909903,401654632,40165463224,4,4,9:00,St. Anselm,Sacred Heart,3,10,43,2,9,1,Rush,Anthony Santino run for 1 yd to the SHU 42,-0.8416334123942768,
+401654632104909904,401654632,40165463224,5,4,9:00,St. Anselm,Sacred Heart,3,10,42,3,8,-7,Rush,Jaidin Haynes run for a loss of 7 yards to the SHU 49,-1.902559022241217,
+401654632104929701,401654632,40165463224,6,4,7:02,St. Anselm,Sacred Heart,3,10,49,4,15,0,Punt,Devin Wood punt for 49 yds,,2024-09-07T19:50:10.000Z
+401654632104929702,401654632,40165463225,1,4,7:02,Sacred Heart,St. Anselm,10,3,80,1,10,4,Rush,Jalen Madison run for 4 yds to the SHU 24,-0.0884321258012219,2024-09-07T19:47:15.000Z
+401654632104929703,401654632,40165463225,2,4,7:02,Sacred Heart,St. Anselm,10,3,76,2,6,7,Pass Reception,John Michalski pass complete to Payton Rhoades for 7 yds to the SHU 31 for a 1ST down,0.867198916291275,2024-09-07T19:47:15.000Z
+401654632104929704,401654632,40165463225,3,4,7:02,Sacred Heart,St. Anselm,10,3,69,1,10,-1,Rush,John Michalski run for a loss of 1 yard to the SHU 30,-1.0285266263514474,2024-09-07T19:47:15.000Z
+401654632104929705,401654632,40165463225,4,4,7:02,Sacred Heart,St. Anselm,10,3,70,2,11,16,Pass Reception,John Michalski pass complete to Payton Rhoades for 16 yds to the SHU 46 for a 1ST down,2.4509200937812894,2024-09-07T19:47:15.000Z
+401654632104929706,401654632,40165463225,5,4,7:02,Sacred Heart,St. Anselm,10,3,54,1,10,9,Rush,John Michalski run for 9 yds to the STA 45,1.20588179851595,2024-09-07T19:50:10.000Z
+401654632104929707,401654632,40165463225,6,4,7:02,Sacred Heart,St. Anselm,10,3,45,2,1,18,Rush,John Michalski run for 18 yds to the STA 27 for a 1ST down,0.237734897777772,2024-09-07T19:50:10.000Z
+401654632104929708,401654632,40165463225,7,4,7:02,Sacred Heart,St. Anselm,10,3,27,1,10,4,Rush,Jalen Madison run for 4 yds to the STA 23,-0.0405526131909575,2024-09-07T19:50:10.000Z
+401654632104929709,401654632,40165463225,8,4,7:02,Sacred Heart,St. Anselm,10,3,23,2,6,9,Rush,Jalen Madison run for 9 yds to the STA 14 for a 1ST down,0.233550279403362,2024-09-07T19:50:10.000Z
+401654632104976801,401654632,40165463225,9,4,2:31,Sacred Heart,St. Anselm,10,3,14,1,10,6,Rush,Jalen Madison run for 6 yds to the STA 8,0.1809070651975925,2024-09-07T19:53:33.000Z
+401654632104977701,401654632,40165463225,10,4,2:22,Sacred Heart,St. Anselm,10,3,8,2,4,3,Rush,Jalen Madison run for 3 yds to the STA 5,-0.125069881036687,2024-09-07T19:54:09.000Z
+401654632104979901,401654632,40165463225,11,4,2:00,Sacred Heart,St. Anselm,10,3,5,3,1,2,Rush,Jalen Madison run for 2 yds to the STA 3 for a 1ST down,1.027994258286839,2024-09-07T19:57:33.000Z
+401654632104984401,401654632,40165463225,12,4,1:55,Sacred Heart,St. Anselm,10,3,3,1,3,0,Rush,"Madison,Jalen rush middle (Noke,Aidan;Laguerre,Stephen).",-0.746972881228756,2024-09-07T19:59:15.000Z
+401654632104985101,401654632,40165463225,13,4,1:48,Sacred Heart,St. Anselm,10,3,3,2,3,2,Rush,John Michalski run for 2 yds to the STA 1,-0.242573615219457,2024-09-07T20:01:36.000Z
+401654632104998101,401654632,40165463225,14,4,0:18,Sacred Heart,St. Anselm,10,3,1,3,1,0,Rush,"Madison,Jalen rush middle (Wood,Devin).",-0.331755745676551,2024-09-07T20:04:12.000Z
+401654632104998601,401654632,40165463225,15,4,0:13,Sacred Heart,St. Anselm,10,3,1,4,1,-1,Rush,Jalen Madison run for a loss of 1 yard to the STA 2,-4.214246025143899,2024-09-07T20:05:19.000Z
+401654632104998602,401654632,40165463226,1,4,0:13,St. Anselm,Sacred Heart,3,10,98,1,10,0,Pass Incompletion,pass incomplete to Will Twadell,-0.25037105050665875,2024-09-07T20:05:19.000Z
+401654632104999904,401654632,40165463226,2,4,0:00,St. Anselm,Sacred Heart,3,10,98,2,10,0,Pass Reception,Anthony Santino pass complete to Andrew Edwards for no gain to the STA 2,-0.10650397917408846,2024-09-07T20:07:45.000Z

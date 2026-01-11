@@ -1,0 +1,166 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401635540101854101,401635540,4016355401,2,1,14:58,Virginia Tech,Marshall,0,0,75,1,10,9,Pass Reception,Kyron Drones pass complete to Da'Quan Felton for 9 yds to the VT 34,1.252308359788624,2024-09-07T20:27:13.000Z
+401635540101856601,401635540,4016355401,3,1,14:33,Virginia Tech,Marshall,0,0,66,2,1,8,Fumble Recovery (Own),"Bhayshul Tuten run for 8 yds to the VT 42 Bhayshul Tuten fumbled, recovered by VT return for 0 yds for a 1ST down",0.2637435478933821,2024-09-07T20:27:13.000Z
+401635540101864701,401635540,4016355401,4,1,13:52,Virginia Tech,Marshall,0,0,58,1,10,15,Penalty,"Marshall Penalty, Face mask (15 yards) (Jaden Yates) to the MRSH 38 for a 1ST down",,2024-09-07T21:23:07.000Z
+401635540101867101,401635540,4016355401,5,1,13:28,Virginia Tech,Marshall,0,0,38,1,10,1,Pass Reception,Kyron Drones pass complete to Bhayshul Tuten for 1 yd to the MRSH 37,-0.596824390353605,2024-09-07T20:27:13.000Z
+401635540101874801,401635540,4016355401,6,1,12:51,Virginia Tech,Marshall,0,0,37,2,9,4,Pass Reception,Kyron Drones pass complete to Benji Gosnell for 4 yds to the MRSH 33,-0.1220925612409225,2024-09-07T21:23:07.000Z
+401635540101878101,401635540,4016355401,7,1,12:18,Virginia Tech,Marshall,0,0,33,3,5,0,Rush,Bhayshul Tuten run for no gain to the MRSH 33,-0.9950607759009475,2024-09-07T20:27:13.000Z
+401635540101885301,401635540,4016355401,8,1,11:46,Virginia Tech,Marshall,0,0,33,4,5,0,Pass Incompletion,Kyron Drones pass incomplete,-2.191429623919337,2024-09-07T20:27:13.000Z
+401635540101849909,401635540,4016355401,1,1,15:00,Marshall,Virginia Tech,0,0,65,0,0,0,Kickoff,Rece Verhoff kickoff for 65 yds for a touchback,,2024-09-07T20:27:13.000Z
+401635540101894401,401635540,4016355402,5,1,10:55,Virginia Tech,Marshall,0,0,80,1,10,0,Timeout,"Timeout Virginia Tech, clock 10:55",,2024-09-07T20:48:20.000Z
+401635540101886001,401635540,4016355402,1,1,11:39,Marshall,Virginia Tech,0,0,67,1,10,2,Pass Reception,Stone Earle pass complete to Elijah Metcalf for 2 yds to the MRSH 35,-0.600458473868767,2024-09-07T20:27:13.000Z
+401635540101888901,401635540,4016355402,2,1,11:10,Marshall,Virginia Tech,0,0,65,2,8,0,Pass Incompletion,Stone Earle pass incomplete,-0.7094238664971115,2024-09-07T20:27:13.000Z
+401635540101889101,401635540,4016355402,3,1,11:08,Marshall,Virginia Tech,0,0,65,3,8,0,Pass Incompletion,Stone Earle pass incomplete,-0.3653640252162109,2024-09-07T20:47:13.000Z
+401635540101894001,401635540,4016355402,4,1,10:59,Marshall,Virginia Tech,0,0,65,4,8,0,Punt,Alec Clark punt for 45 yds,,2024-09-07T20:27:13.000Z
+401635540101907501,401635540,4016355403,5,1,9:24,Marshall,Virginia Tech,0,0,60,1,10,0,Timeout,"Timeout Virginia Tech, clock 09:24",,2024-09-07T20:53:27.000Z
+401635540101894701,401635540,4016355403,1,1,10:52,Virginia Tech,Marshall,0,0,80,1,10,-1,Rush,Bhayshul Tuten run for a loss of 1 yard to the VT 19,-0.6343354265717327,2024-09-07T20:27:13.000Z
+401635540101897601,401635540,4016355403,2,1,10:23,Virginia Tech,Marshall,0,0,81,2,11,0,Pass Incompletion,Kyron Drones pass incomplete,-0.21903706809052714,2024-09-07T20:27:13.000Z
+401635540101898501,401635540,4016355403,3,1,10:14,Virginia Tech,Marshall,0,0,81,3,11,5,Rush,Kyron Drones run for 5 yds to the VT 24,0.01327375128424712,2024-09-07T20:27:13.000Z
+401635540101906501,401635540,4016355403,4,1,9:34,Virginia Tech,Marshall,0,0,76,4,6,10,Punt,"Peter Moore punt for 46 yds , Elijah Metcalf returns for 10 yds to the MRSH 40",,2024-09-07T20:27:13.000Z
+401635540101907701,401635540,4016355404,1,1,9:22,Marshall,Virginia Tech,0,0,60,1,10,7,Pass Reception,Stone Earle pass complete to Elijah Metcalf for 7 yds to the MRSH 47,0.7032387839448688,2024-09-07T20:27:13.000Z
+401635540101914101,401635540,4016355404,2,1,8:58,Marshall,Virginia Tech,0,0,53,2,3,0,Rush,Jordan Houston run for no gain to the MRSH 47,-1.2969331832924542,2024-09-07T20:27:13.000Z
+401635540101917501,401635540,4016355404,3,1,8:24,Marshall,Virginia Tech,0,0,53,3,3,22,Fumble Recovery (Own),"Stone Earle pass complete to Christian Fitzpatrick for 22 yds Christian Fitzpatrick fumbled, recovered by MRSH for a 1ST down",2.508648833418313,2024-09-07T21:23:07.000Z
+401635540101919401,401635540,4016355404,4,1,8:05,Marshall,Virginia Tech,0,0,31,1,10,0,Pass Incompletion,Stone Earle pass incomplete,-0.5824837756999947,2024-09-07T20:58:21.000Z
+401635540101924001,401635540,4016355404,5,1,7:59,Marshall,Virginia Tech,0,0,31,2,10,3,Rush,Jordan Houston run for 3 yds to the VT 28,-0.2553307023814781,2024-09-07T20:27:13.000Z
+401635540101927901,401635540,4016355404,6,1,7:20,Marshall,Virginia Tech,0,0,28,3,7,-2,Sack,Stone Earle sacked by Mose Phillips III for a loss of 2 yards to the VT 30,-1.3263942174797378,2024-09-07T20:27:13.000Z
+401635540101936101,401635540,4016355404,7,1,6:38,Marshall,Virginia Tech,0,0,30,4,9,48,Field Goal Missed,Rece Verhoff 48 yd FG MISSED,,2024-09-07T21:00:09.000Z
+401635540101935901,401635540,4016355405,1,1,6:40,Virginia Tech,Marshall,0,0,70,1,10,0,Timeout,"Timeout Virginia Tech, clock 06:40",,2024-09-07T20:27:13.000Z
+401635540101936201,401635540,4016355405,2,1,6:37,Virginia Tech,Marshall,0,0,70,1,10,7,Rush,Malachi Thomas run for 7 yds to the VT 37,0.6714265021529684,2024-09-07T20:27:13.000Z
+401635540101939201,401635540,4016355405,3,1,6:07,Virginia Tech,Marshall,0,0,63,2,3,5,Rush,Malachi Thomas run for 5 yds to the VT 42 for a 1ST down,0.4596568047120595,2024-09-07T20:27:13.000Z
+401635540101946501,401635540,4016355405,4,1,5:34,Virginia Tech,Marshall,0,0,58,1,10,0,Pass Incompletion,Kyron Drones pass incomplete,-1.1496266880203319,2024-09-07T21:23:07.000Z
+401635540101947201,401635540,4016355405,5,1,5:27,Virginia Tech,Marshall,0,0,58,2,10,9,Rush,Bhayshul Tuten run for 9 yds to the MRSH 49,1.0934486196579274,2024-09-07T20:27:13.000Z
+401635540101954501,401635540,4016355405,6,1,4:54,Virginia Tech,Marshall,0,0,49,3,1,-6,Sack,Kyron Drones sacked by Mike Green for a loss of 6 yards to the VT 45,-2.1200692875410114,2024-09-07T20:27:13.000Z
+401635540101958502,401635540,4016355405,7,1,4:14,Virginia Tech,Marshall,0,0,55,4,7,-5,Penalty,"(04:14) MOORE, Peter punt 47 yards to the MU8, fair catch by METCALF, Elijah, clock 04:07. PENALTY Before the snap, VT Illegal Formation enforced 5 yards from the VT45 to the VT40. NO PLAY (replay the down).",,2024-09-07T20:27:13.000Z
+401635540101959301,401635540,4016355405,8,1,4:06,Virginia Tech,Marshall,0,0,60,4,12,0,Punt,"Peter Moore punt for 44 yds, fair catch by Elijah Metcalf at the MRSH 16",,2024-09-07T20:27:13.000Z
+401635540101964101,401635540,4016355406,1,1,3:58,Marshall,Virginia Tech,0,0,84,1,10,0,Pass Incompletion,Stone Earle pass incomplete,-0.46182849902011913,2024-09-07T20:27:13.000Z
+401635540101964501,401635540,4016355406,2,1,3:54,Marshall,Virginia Tech,0,0,84,2,10,0,Rush,Jordan Houston run for no gain to the MRSH 16,-0.20870260143022978,2024-09-07T21:08:47.000Z
+401635540101968801,401635540,4016355406,3,1,3:11,Marshall,Virginia Tech,0,0,84,3,10,0,Pass Incompletion,Stone Earle pass incomplete,-0.09125284434587756,2024-09-07T20:27:13.000Z
+401635540101969401,401635540,4016355406,4,1,3:05,Marshall,Virginia Tech,0,0,84,4,10,18,Punt,"Alec Clark punt for 52 yds , Jaylin Lane returns for 18 yds to the 50 yard line",,2024-09-07T20:27:13.000Z
+401635540101975101,401635540,4016355407,1,1,2:48,Virginia Tech,Marshall,0,0,50,1,10,-4,Rush,Bhayshul Tuten run for a loss of 4 yards to the VT 46,-1.9960663408765047,2024-09-07T20:27:13.000Z
+401635540101978201,401635540,4016355407,2,1,2:17,Virginia Tech,Marshall,0,0,54,2,14,0,Pass Incompletion,Kyron Drones pass incomplete,-0.7589349417002609,2024-09-07T20:27:13.000Z
+401635540101978501,401635540,4016355407,3,1,2:14,Virginia Tech,Marshall,0,0,54,3,14,-1,Pass Reception,Kyron Drones pass complete to Jaylin Lane for a loss of 1 yard to the VT 45,-0.4886029184974774,2024-09-07T21:23:07.000Z
+401635540101986801,401635540,4016355407,4,1,1:31,Virginia Tech,Marshall,0,0,55,4,15,0,Punt,"Peter Moore punt for 40 yds, downed at the MRSH 15",,2024-09-07T20:27:13.000Z
+401635540101999901,401635540,4016355408,4,1,0:00,Marshall,Virginia Tech,0,7,83,4,8,58,Punt Return Touchdown,Jaylin Lane 58 Yd Punt Return (John Love Kick),-6.684102252643578,2024-09-07T21:23:07.000Z
+401635540101999903,401635540,4016355408,5,1,0:00,Virginia Tech,Marshall,7,0,3,0,0,3,End Period,End of 1st Quarter,,2024-09-07T21:16:51.000Z
+401635540101987701,401635540,4016355408,1,1,1:22,Marshall,Virginia Tech,0,0,85,1,10,-6,Rush,Elijah Metcalf run for a loss of 6 yards to the MRSH 9,-0.6734430635835169,2024-09-07T20:27:13.000Z
+401635540101995801,401635540,4016355408,2,1,0:41,Marshall,Virginia Tech,0,0,91,2,16,0,Pass Incompletion,Stone Earle pass incomplete,-0.0658959278801836,2024-09-07T21:15:42.000Z
+401635540101996101,401635540,4016355408,3,1,0:38,Marshall,Virginia Tech,0,0,91,3,16,8,Pass Reception,Stone Earle pass complete to Christian Fitzpatrick for 8 yds to the MRSH 17,0.04440279398248847,2024-09-07T20:27:13.000Z
+401635540102849903,401635540,4016355409,1,2,15:00,Virginia Tech,Marshall,7,0,65,0,0,0,Kickoff,Kyle Lowe kickoff for 65 yds for a touchback,,2024-09-07T21:23:07.000Z
+401635540102869002,401635540,4016355409,7,2,13:09,Virginia Tech,Marshall,7,0,20,1,10,0,Timeout,"Timeout Virginia Tech, clock 13:09",,2024-09-07T21:26:28.000Z
+401635540102854401,401635540,4016355409,2,2,14:55,Marshall,Virginia Tech,0,7,75,1,10,21,Rush,A.J. Turner run for 21 yds to the MRSH 46 for a 1ST down,1.8928575820361135,2024-09-07T21:23:07.000Z
+401635540102857201,401635540,4016355409,3,2,14:27,Marshall,Virginia Tech,0,7,54,1,10,0,Rush,A.J. Turner run for no gain to the MRSH 46,-1.1590089706435955,2024-09-07T21:23:07.000Z
+401635540102865001,401635540,4016355409,4,2,13:49,Marshall,Virginia Tech,0,7,54,2,10,7,Rush,Stone Earle run for 7 yds to the VT 47,0.5744855403651224,2024-09-07T21:23:07.000Z
+401635540102868001,401635540,4016355409,5,2,13:19,Marshall,Virginia Tech,0,7,47,3,3,0,Pass Incompletion,Stone Earle pass incomplete,-1.099244580204351,2024-09-07T21:23:07.000Z
+401635540102868501,401635540,4016355409,6,2,13:14,Marshall,Virginia Tech,0,7,47,4,3,0,Punt,Alec Clark punt for 47 yds for a touchback,,2024-09-07T21:23:07.000Z
+401635540102888801,401635540,40163554010,6,2,11:11,Marshall,Virginia Tech,0,7,85,1,10,0,Timeout,"Timeout Virginia Tech, clock 11:11",,2024-09-07T21:33:52.000Z
+401635540102869301,401635540,40163554010,1,2,13:06,Virginia Tech,Marshall,7,0,80,1,10,19,Rush,Bhayshul Tuten run for 19 yds to the VT 39 for a 1ST down,1.5310417591402368,2024-09-07T21:23:07.000Z
+401635540102876301,401635540,40163554010,2,2,12:36,Virginia Tech,Marshall,7,0,61,1,10,4,Rush,Bhayshul Tuten run for 4 yds to the VT 43,-0.1670469651624733,2024-09-07T21:23:07.000Z
+401635540102884101,401635540,40163554010,3,2,11:58,Virginia Tech,Marshall,7,0,57,2,6,2,Rush,run for 2 yds to the VT 45,-0.6585104536675087,2024-09-07T21:23:07.000Z
+401635540102887602,401635540,40163554010,4,2,11:23,Virginia Tech,Marshall,7,0,55,3,4,0,Penalty,"Virginia Tech Penalty, turnover on downs. PENALTY Intentional Grounding on DRONES, Kyron enforced a result of a (Yards) to the VT 41",,2024-09-07T21:23:07.000Z
+401635540102888401,401635540,40163554010,5,2,11:15,Virginia Tech,Marshall,7,0,60,4,9,0,Punt,"Peter Moore punt for 45 yds, fair catch by Elijah Metcalf at the MRSH 15",,2024-09-07T21:23:07.000Z
+401635540102889901,401635540,40163554011,3,2,11:00,Marshall,Virginia Tech,0,7,85,3,10,0,Timeout,"Timeout Virginia Tech, clock 11:00",,2024-09-07T21:23:07.000Z
+401635540102895301,401635540,40163554011,6,2,10:46,Virginia Tech,Marshall,7,0,35,1,10,0,Timeout,"Timeout Virginia Tech, clock 10:46",,2024-09-07T21:41:09.000Z
+401635540102889201,401635540,40163554011,1,2,11:07,Marshall,Virginia Tech,0,7,85,1,10,0,Pass Incompletion,Stone Earle pass incomplete,-0.4404078956667625,2024-09-07T21:37:51.000Z
+401635540102889401,401635540,40163554011,2,2,11:05,Marshall,Virginia Tech,0,7,85,2,10,0,Pass Incompletion,Stone Earle pass incomplete,-0.19768513834417423,2024-09-07T21:23:07.000Z
+401635540102894101,401635540,40163554011,4,2,10:58,Marshall,Virginia Tech,0,7,85,3,10,0,Pass Incompletion,Stone Earle pass incomplete,-0.08613457617564713,2024-09-07T21:23:07.000Z
+401635540102894801,401635540,40163554011,5,2,10:51,Marshall,Virginia Tech,0,7,85,4,10,0,Punt,Alec Clark punt for 20 yds,,2024-09-07T21:23:07.000Z
+401635540102895502,401635540,40163554011,7,2,10:44,Virginia Tech,Marshall,7,0,35,1,10,-15,Penalty,"(10:44) DRONES, Kyron pass up the middle incomplete intended for TUTEN, Bhayshul broken up by GREEN-MCKNIGHT, Jadarius at the MU45, clock 10:40. PENALTY VT Face mask on CLEMENTS, Parker enforced 15 yards from the MU35 to the VT50 [SG]. NO PLAY (replay the down).",,2024-09-07T21:23:07.000Z
+401635540102929101,401635540,40163554012,8,2,7:08,Virginia Tech,Marshall,7,0,15,3,15,0,Timeout,"Timeout Marshall, clock 07:08",,2024-09-07T21:50:31.000Z
+401635540102896201,401635540,40163554012,1,2,10:37,Virginia Tech,Marshall,7,0,50,1,25,10,Rush,Bhayshul Tuten run for 10 yds to the MRSH 40,1.1061420860558844,2024-09-07T21:23:07.000Z
+401635540102899301,401635540,40163554012,2,2,10:06,Virginia Tech,Marshall,7,0,40,2,15,25,Rush,Bhayshul Tuten run for 25 yds to the MRSH 15 for a 1ST down,2.0745977509175204,2024-09-07T21:23:07.000Z
+401635540102907501,401635540,40163554012,3,2,9:24,Virginia Tech,Marshall,7,0,15,1,10,4,Rush,Bhayshul Tuten run for 4 yds to the MRSH 11,-0.019365161227934,2024-09-07T21:23:07.000Z
+401635540102915201,401635540,40163554012,4,2,8:47,Virginia Tech,Marshall,7,0,11,2,6,9,Pass Reception,Kyron Drones pass complete to Jaylin Lane for 9 yds to the MRSH 2 for a 1ST down,1.364328953120919,2024-09-07T21:23:07.000Z
+401635540102919201,401635540,40163554012,5,2,8:07,Virginia Tech,Marshall,7,0,2,1,2,-15,Penalty,"(08:07) DRONES, Kyron pass short to the right complete for 2 yards to GOSNELL, Benji caught at the MU0 and advanced to the MU0, TOUCHDOWN VT, score nullified by penalty, clock 08:04 (Play was confirmed after review). PENALTY VT Illegal Block in the Back on FELTON, Da'Quan enforced 15 yards from the MU2 to the MU17 [NHSG]. NO PLAY (replay the down).",,2024-09-07T21:23:07.000Z
+401635540102924001,401635540,40163554012,6,2,7:59,Virginia Tech,Marshall,7,0,17,1,17,0,Pass Incompletion,Kyron Drones pass incomplete,-0.32024166020916,2024-09-07T21:23:07.000Z
+401635540102926201,401635540,40163554012,7,2,7:37,Virginia Tech,Marshall,7,0,17,2,17,2,Pass Reception,Kyron Drones pass complete to Bhayshul Tuten for 2 yds to the MRSH 15,-0.283580328815457,2024-09-07T21:23:07.000Z
+401635540102929401,401635540,40163554012,9,2,7:05,Virginia Tech,Marshall,7,0,15,3,15,-10,Sack,Kyron Drones sacked by Ra'Quan Thompson and TEAM for a loss of 10 yards to the MRSH 25,-2.692510195486001,2024-09-07T21:23:07.000Z
+401635540102937701,401635540,40163554012,10,2,6:22,Virginia Tech,Marshall,10,0,25,4,25,42,Field Goal Good,John Love 42 yd FG GOOD,,2024-09-07T21:52:32.000Z
+401635540102937702,401635540,40163554013,1,2,6:22,Virginia Tech,Marshall,10,0,65,0,0,0,Kickoff,Kyle Lowe kickoff for 65 yds for a touchback,,2024-09-07T21:52:32.000Z
+401635540102937901,401635540,40163554013,2,2,6:20,Marshall,Virginia Tech,0,10,75,1,10,4,Rush,A.J. Turner run for 4 yds to the MRSH 29,-0.1142886249388964,2024-09-07T21:23:07.000Z
+401635540102945401,401635540,40163554013,3,2,5:45,Marshall,Virginia Tech,0,10,71,2,6,4,Rush,Stone Earle run for 4 yds to the MRSH 33,-0.1052988296867126,2024-09-07T21:23:07.000Z
+401635540102949301,401635540,40163554013,4,2,5:06,Marshall,Virginia Tech,0,10,67,3,2,1,Rush,Stone Earle run for 1 yd to the MRSH 34,-0.5040928634877408,2024-09-07T21:23:07.000Z
+401635540102957401,401635540,40163554013,5,2,4:25,Marshall,Virginia Tech,0,10,66,4,1,0,Punt,Alec Clark punt for 38 yds,,2024-09-07T21:23:07.000Z
+401635540102957901,401635540,40163554014,1,2,4:20,Virginia Tech,Marshall,10,0,72,1,10,0,Rush,Malachi Thomas run for no gain to the VT 28,-0.7982008475508557,2024-09-07T21:23:07.000Z
+401635540102965201,401635540,40163554014,2,2,3:47,Virginia Tech,Marshall,10,0,72,2,10,0,Pass Incompletion,Kyron Drones pass incomplete,-0.41175635476850303,2024-09-07T21:23:07.000Z
+401635540102965401,401635540,40163554014,3,2,3:45,Virginia Tech,Marshall,10,0,72,3,10,-5,Penalty,"Virginia Tech Penalty, False Start (TEAM) to the VT 23",,2024-09-07T21:23:07.000Z
+401635540102965601,401635540,40163554014,4,2,3:43,Virginia Tech,Marshall,10,0,77,3,15,0,Pass Incompletion,Kyron Drones pass incomplete,-0.081064146420176,2024-09-07T21:23:07.000Z
+401635540102967502,401635540,40163554015,1,2,3:24,Marshall,Virginia Tech,0,10,5,1,5,3,Penalty,"EARLE, Stone pass up the middle incomplete intended for ROBINSON, Bryan broken up by DELANE, Mansoor at the VT5, clock 03:24. PENALTY VT Holding on DELANE, Mansoor enforced half the distance from the goal, 3 yards from the VT5 to the VT2 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-07T22:02:09.000Z
+401635540102968001,401635540,40163554015,2,2,3:19,Marshall,Virginia Tech,7,10,2,1,2,2,Rushing Touchdown,Ethan Payne run for 2 yds for a TD (Rece Verhoff KICK),1.213235297672098,2024-09-07T22:02:21.000Z
+401635540102979901,401635540,40163554016,5,2,2:00,Virginia Tech,Marshall,10,7,66,1,10,0,Timeout,"Timeout Virginia Tech, clock 02:00",,2024-09-07T22:08:21.000Z
+401635540102968003,401635540,40163554016,1,2,3:19,Marshall,Virginia Tech,7,10,65,0,0,18,Kickoff Return (Offense),"Rece Verhoff kickoff for 65 yds , Malachi Thomas return for 18 yds to the VT 18",,2024-09-07T22:02:21.000Z
+401635540102987501,401635540,40163554016,9,2,1:24,Virginia Tech,Marshall,10,7,60,4,4,0,Timeout,"Timeout Marshall, clock 01:24",,2024-09-07T21:23:07.000Z
+401635540102969101,401635540,40163554016,2,2,3:08,Virginia Tech,Marshall,10,7,82,1,10,3,Rush,Kyron Drones run for 3 yds to the VT 21,-0.2150808966639328,2024-09-07T21:23:07.000Z
+401635540102976901,401635540,40163554016,3,2,2:30,Virginia Tech,Marshall,10,7,79,2,7,3,Pass Reception,Kyron Drones pass complete to Bhayshul Tuten for 3 yds to the VT 24,-0.16801479549459056,2024-09-07T22:07:46.000Z
+401635540102978101,401635540,40163554016,4,2,2:18,Virginia Tech,Marshall,10,7,76,3,4,10,Pass Reception,Kyron Drones pass complete to Benji Gosnell for 10 yds to the VT 34 for a 1ST down,1.5346245517217598,2024-09-07T21:23:07.000Z
+401635540102984101,401635540,40163554016,6,2,1:58,Virginia Tech,Marshall,10,7,66,1,10,3,Rush,Bhayshul Tuten run for 3 yds to the VT 37,-0.3978048422172354,2024-09-07T21:23:07.000Z
+401635540102986401,401635540,40163554016,7,2,1:35,Virginia Tech,Marshall,10,7,63,2,7,2,Rush,Kyron Drones run for 2 yds to the VT 39,-0.5312559148784856,2024-09-07T21:23:07.000Z
+401635540102986501,401635540,40163554016,8,2,1:34,Virginia Tech,Marshall,10,7,61,3,5,1,Rush,Kyron Drones run for 1 yd to the VT 40,-0.5028899975168537,2024-09-07T22:11:51.000Z
+401635540102987701,401635540,40163554016,10,2,1:22,Virginia Tech,Marshall,10,7,60,4,4,43,Punt,"Peter Moore punt for 43 yds , Elijah Metcalf returns for a loss of 1 yard to the MRSH 16",,2024-09-07T21:23:07.000Z
+401635540102998601,401635540,40163554017,6,2,0:13,Marshall,Virginia Tech,7,10,80,4,6,0,Timeout,"Timeout Marshall, clock 00:13",,2024-09-07T22:19:55.000Z
+401635540102988701,401635540,40163554017,2,2,1:12,Marshall,Virginia Tech,7,10,91,2,17,0,Timeout,"Timeout Marshall, clock 01:12",,2024-09-07T21:23:07.000Z
+401635540102989102,401635540,40163554017,4,2,1:08,Marshall,Virginia Tech,7,10,84,3,10,0,Timeout,"Timeout Virginia Tech, clock 01:08",,2024-09-07T21:23:07.000Z
+401635540102988401,401635540,40163554017,1,2,1:15,Marshall,Virginia Tech,7,10,84,1,10,-7,Sack,Stone Earle sacked by Keyshawn Burgos and TEAM for a loss of 7 yards to the MRSH 9,-0.7282252617456759,2024-09-07T21:23:07.000Z
+401635540102988901,401635540,40163554017,3,2,1:10,Marshall,Virginia Tech,7,10,91,2,17,7,Rush,Jordan Houston run for 7 yds to the MRSH 16,0.057694161295327,2024-09-07T21:23:07.000Z
+401635540102989301,401635540,40163554017,5,2,1:06,Marshall,Virginia Tech,7,10,84,3,10,4,Rush,Jordan Houston run for 4 yds to the MRSH 20,-0.01529236272588006,2024-09-07T22:16:41.000Z
+401635540102999801,401635540,40163554017,7,2,0:01,Marshall,Virginia Tech,7,10,80,4,6,0,Punt,"Alec Clark punt for 48 yds, downed at the VT 32",,2024-09-07T22:21:39.000Z
+401635540102999903,401635540,40163554018,2,2,0:00,Virginia Tech,Marshall,10,7,60,0,10,0,End of Half,End of 2nd Quarter,,2024-09-07T22:21:39.000Z
+401635540102999901,401635540,40163554018,1,2,0:00,Virginia Tech,Marshall,10,7,68,1,10,8,Rush,Malachi Thomas run for 8 yds to the VT 40,1.0205002560261356,2024-09-07T22:21:39.000Z
+401635540103849904,401635540,40163554018,3,3,15:00,Marshall,Virginia Tech,7,10,75,1,10,-5,Penalty,"Marshall Penalty, False Start (-5 Yards) to the MRSH 20",,2024-09-07T00:00:00.000Z
+401635540103849905,401635540,40163554019,1,3,15:00,Virginia Tech,Marshall,10,7,65,0,0,0,Kickoff,Kyle Lowe kickoff for 65 yds for a touchback,,2024-09-07T00:00:00.000Z
+401635540103854101,401635540,40163554019,2,3,14:58,Marshall,Virginia Tech,7,10,80,1,15,0,Pass Incompletion,Stone Earle pass incomplete,-0.32565561419001554,2024-09-07T00:00:00.000Z
+401635540103855001,401635540,40163554019,3,3,14:49,Marshall,Virginia Tech,7,10,80,2,15,0,Pass Incompletion,Stone Earle pass incomplete,-0.14903888205704785,2024-09-07T22:44:54.000Z
+401635540103855401,401635540,40163554019,4,3,14:45,Marshall,Virginia Tech,7,10,80,3,15,0,Pass Incompletion,Stone Earle pass incomplete,-0.06579665004736057,2024-09-07T22:44:54.000Z
+401635540103855801,401635540,40163554019,5,3,14:41,Marshall,Virginia Tech,7,10,80,4,15,0,Punt,"Alec Clark punt for 30 yds, fair catch by Jaylin Lane at the 50 yard line",,2024-09-07T22:44:54.000Z
+401635540103856501,401635540,40163554020,1,3,14:34,Virginia Tech,Marshall,10,7,50,1,10,3,Rush,Bhayshul Tuten run for 3 yds to the MRSH 47,-0.385960016074776,2024-09-07T22:44:54.000Z
+401635540103865001,401635540,40163554020,2,3,13:49,Virginia Tech,Marshall,10,7,47,2,7,5,Rush,Bhayshul Tuten run for 5 yds to the MRSH 42,0.094980636116196,2024-09-07T22:44:54.000Z
+401635540103868401,401635540,40163554020,3,3,13:15,Virginia Tech,Marshall,10,7,42,3,2,3,Rush,Bhayshul Tuten run for 3 yds to the MRSH 39 for a 1ST down,0.991952757148402,2024-09-07T22:44:54.000Z
+401635540103875801,401635540,40163554020,4,3,12:41,Virginia Tech,Marshall,10,7,39,1,10,6,Rush,Bhayshul Tuten run for 6 yds to the MRSH 33,0.258293699621337,2024-09-07T22:44:54.000Z
+401635540103879201,401635540,40163554020,5,3,12:07,Virginia Tech,Marshall,10,7,33,2,4,3,Rush,P.J. Prioleau run for 3 yds to the MRSH 30,-0.255537139233873,2024-09-07T22:44:54.000Z
+401635540103887001,401635540,40163554020,6,3,11:29,Virginia Tech,Marshall,10,7,30,3,1,3,Rush,P.J. Prioleau run for 3 yds to the MRSH 27 for a 1ST down,0.396401153152601,2024-09-07T22:44:54.000Z
+401635540103894201,401635540,40163554020,7,3,10:57,Virginia Tech,Marshall,10,7,27,1,10,10,Rush,Kyron Drones run for 10 yds to the MRSH 17 for a 1ST down,0.161377738607072,2024-09-07T22:44:54.000Z
+401635540103898301,401635540,40163554020,8,3,10:16,Virginia Tech,Marshall,10,7,17,1,10,13,Pass Reception,Kyron Drones pass complete to Jaylin Lane for 13 yds to the MRSH 4 for a 1ST down,0.891712584070439,2024-09-07T22:44:54.000Z
+401635540103904801,401635540,40163554020,9,3,9:51,Virginia Tech,Marshall,10,7,4,1,4,0,Rush,Bhayshul Tuten run for no gain to the MRSH 4,-0.6456997217339855,2024-09-07T22:44:54.000Z
+401635540103908101,401635540,40163554020,10,3,9:18,Virginia Tech,Marshall,10,7,4,2,4,1,Rush,Bhayshul Tuten run for 1 yd to the MRSH 3,-0.2906721593310305,2024-09-07T22:44:54.000Z
+401635540103915601,401635540,40163554020,11,3,8:43,Virginia Tech,Marshall,10,7,3,3,3,2,Rush,Kyron Drones run for 2 yds to the MRSH 1,-0.16119157507711,2024-09-07T22:44:54.000Z
+401635540103919701,401635540,40163554020,12,3,8:02,Virginia Tech,Marshall,17,7,1,4,1,1,Rushing Touchdown,Bhayshul Tuten run for 1 yd for a TD (John Love KICK),2.785753974856101,2024-09-07T22:55:09.000Z
+401635540103919703,401635540,40163554021,1,3,8:02,Virginia Tech,Marshall,17,7,65,0,0,66,Kickoff,"Kyle Lowe kickoff for 65 yds for a touchback Marshall Penalty, Unsportsmanlike Conduct (1 Yards)",,2024-09-07T22:55:49.000Z
+401635540103925301,401635540,40163554021,2,3,7:46,Marshall,Virginia Tech,7,17,87,1,10,69,Rush,A.J. Turner run for 69 yds to the VT 18 for a 1ST down,4.105002909797041,2024-09-07T23:01:08.000Z
+401635540103928301,401635540,40163554021,3,3,7:16,Marshall,Virginia Tech,14,17,18,1,10,18,Passing Touchdown,Stone Earle pass complete to Christian Fitzpatrick for 18 yds for a TD (Rece Verhoff KICK),2.591792709070591,2024-09-07T23:02:31.000Z
+401635540103928303,401635540,40163554022,1,3,7:16,Marshall,Virginia Tech,14,17,65,0,0,0,Kickoff,Rece Verhoff kickoff for 40 yds,,2024-09-07T23:04:38.000Z
+401635540103928601,401635540,40163554022,2,3,7:13,Virginia Tech,Marshall,17,14,65,1,10,-1,Rush,Kyron Drones run for a loss of 1 yard to the VT 34,-1.1754014811374063,2024-09-07T22:44:54.000Z
+401635540103936801,401635540,40163554022,3,3,6:31,Virginia Tech,Marshall,17,14,66,2,11,49,Pass Reception,Kyron Drones pass complete to Stephen Gosnell for 49 yds to the MRSH 17 for a 1ST down,3.838215389044327,2024-09-07T22:44:54.000Z
+401635540103944301,401635540,40163554022,4,3,5:56,Virginia Tech,Marshall,17,14,17,1,10,4,Rush,Bhayshul Tuten run for 4 yds to the MRSH 13,-0.0217352641607655,2024-09-07T22:44:54.000Z
+401635540103947301,401635540,40163554022,5,3,5:26,Virginia Tech,Marshall,17,14,13,2,6,5,Rush,Bhayshul Tuten run for 5 yds to the MRSH 8,0.0740853602131435,2024-09-07T22:44:54.000Z
+401635540103954801,401635540,40163554022,6,3,4:51,Virginia Tech,Marshall,17,14,8,3,1,5,Rush,Kyron Drones run for 5 yds to the MRSH 3 for a 1ST down,1.063101274000699,2024-09-07T22:44:54.000Z
+401635540103958401,401635540,40163554022,7,3,4:15,Virginia Tech,Marshall,24,14,3,1,3,3,Rushing Touchdown,Kyron Drones run for 3 yds for a TD (John Love KICK),1.464451732731337,2024-09-07T23:10:09.000Z
+401635540103958404,401635540,40163554023,1,3,4:15,Virginia Tech,Marshall,24,14,65,0,0,0,Timeout,"Timeout Virginia Tech, clock 04:15",,2024-09-07T23:10:32.000Z
+401635540103958405,401635540,40163554023,2,3,4:15,Virginia Tech,Marshall,24,14,65,0,0,0,Kickoff,Kyle Lowe kickoff for 65 yds for a touchback,,2024-09-07T23:10:32.000Z
+401635540103958701,401635540,40163554023,3,3,4:12,Marshall,Virginia Tech,14,24,75,1,10,-5,Rush,Jordan Houston run for a loss of 5 yards to the MRSH 20,-1.0670735924396633,2024-09-07T22:44:54.000Z
+401635540103966001,401635540,40163554023,4,3,3:39,Marshall,Virginia Tech,14,24,80,2,15,6,Rush,Jordan Houston run for 6 yds to the MRSH 26,0.07128009613526753,2024-09-07T22:44:54.000Z
+401635540103974301,401635540,40163554023,5,3,2:56,Marshall,Virginia Tech,14,24,74,3,9,9,Rush,Stone Earle run for 9 yds to the MRSH 35 for a 1ST down,1.8308316053343825,2024-09-07T22:44:54.000Z
+401635540103976901,401635540,40163554023,6,3,2:30,Marshall,Virginia Tech,14,24,65,1,10,0,Pass Reception,Stone Earle pass complete to Toby Payne for no gain to the MRSH 35,-1.0146424556055624,2024-09-07T22:44:54.000Z
+401635540103979601,401635540,40163554023,7,3,2:03,Marshall,Virginia Tech,14,24,65,2,10,0,Pass Interception Return,Stone Earle pass intercepted Mansoor Delane return for no gain to the VT 44,-0.7426405337031028,2024-09-07T22:44:54.000Z
+401635540103997402,401635540,40163554024,5,3,0:00,Virginia Tech,Marshall,24,14,11,0,10,2,End Period,End of 3rd Quarter,,2024-09-07T23:21:40.000Z
+401635540104858503,401635540,40163554024,8,4,14:14,Virginia Tech,Marshall,24,14,65,0,0,0,Timeout,"Timeout Virginia Tech, clock 14:14",,2024-09-07T23:30:12.000Z
+401635540103984301,401635540,40163554024,1,3,1:56,Virginia Tech,Marshall,24,14,56,1,10,13,Rush,Bhayshul Tuten run for 13 yds to the MRSH 43 for a 1ST down,1.0178126934484517,2024-09-07T22:44:54.000Z
+401635540103987201,401635540,40163554024,2,3,1:27,Virginia Tech,Marshall,24,14,43,1,10,20,Pass Reception,Kyron Drones pass complete to Jaylin Lane for 20 yds to the MRSH 23 for a 1ST down,0.6883924098596257,2024-09-07T22:44:54.000Z
+401635540103995301,401635540,40163554024,3,3,0:46,Virginia Tech,Marshall,24,14,23,1,10,12,Penalty,"Marshall Penalty, Face mask (0 yards) (Mike Green) to the MRSH 11 for a 1ST down",,2024-09-07T22:44:54.000Z
+401635540103997401,401635540,40163554024,4,3,0:25,Virginia Tech,Marshall,24,14,11,1,10,2,Rush,Bhayshul Tuten run for 2 yds to the MRSH 9,-0.165648229401373,2024-09-07T22:44:54.000Z
+401635540104854201,401635540,40163554024,6,4,14:57,Virginia Tech,Marshall,24,14,9,2,8,4,Rush,Kyron Drones run for 4 yds to the MRSH 5,-0.020461859342591,2024-09-07T23:30:12.000Z
+401635540104858501,401635540,40163554024,7,4,14:14,Virginia Tech,Marshall,31,14,5,3,4,5,Passing Touchdown,Kyron Drones pass complete to Da'Quan Felton for 5 yds for a TD (John Love KICK),2.707849502111889,2024-09-07T23:30:12.000Z
+401635540104917602,401635540,40163554025,16,4,0:00,Virginia Tech,Marshall,31,14,95,1,10,0,Timeout,End of 4th quarter,,2024-09-07T23:39:50.000Z
+401635540104917101,401635540,40163554025,14,4,8:28,Marshall,Virginia Tech,14,31,5,4,2,0,Timeout,"Timeout Virginia Tech, clock 08:28",,2024-09-07T23:30:12.000Z
+401635540104858504,401635540,40163554025,1,4,14:14,Virginia Tech,Marshall,31,14,65,0,0,16,Kickoff Return (Offense),"Kyle Lowe kickoff for 64 yds , Ian Foster return for 16 yds to the MRSH 17",,2024-09-07T23:30:12.000Z
+401635540104859301,401635540,40163554025,2,4,14:06,Marshall,Virginia Tech,14,31,83,1,10,1,Rush,A.J. Turner run for 1 yd to the MRSH 18,-0.40702717159742274,2024-09-07T23:30:12.000Z
+401635540104866401,401635540,40163554025,3,4,13:35,Marshall,Virginia Tech,14,31,82,2,9,8,Rush,A.J. Turner run for 8 yds to the MRSH 26,0.41000488709017624,2024-09-07T23:30:12.000Z
+401635540104868701,401635540,40163554025,4,4,13:12,Marshall,Virginia Tech,14,31,74,3,1,5,Rush,Stone Earle run for 5 yds to the MRSH 31 for a 1ST down,0.9249138619438542,2024-09-07T23:30:12.000Z
+401635540104875601,401635540,40163554025,5,4,12:43,Marshall,Virginia Tech,14,31,69,1,10,25,Pass Reception,Stone Earle pass complete to Christian Fitzpatrick for 25 yds to the VT 44 for a 1ST down,2.1944086476050284,2024-09-07T23:30:12.000Z
+401635540104879601,401635540,40163554025,6,4,12:03,Marshall,Virginia Tech,14,31,44,1,10,0,Pass Incompletion,Stone Earle pass incomplete,-0.9690270974076257,2024-09-07T23:30:12.000Z
+401635540104884101,401635540,40163554025,7,4,11:58,Marshall,Virginia Tech,14,31,44,2,10,0,Pass Incompletion,Stone Earle pass incomplete,-1.0658475431296655,2024-09-07T23:30:12.000Z
+401635540104885401,401635540,40163554025,8,4,11:45,Marshall,Virginia Tech,14,31,44,3,10,7,Pass Reception,Stone Earle pass complete to Tychaun Chapman for 7 yds to the VT 37,0.5108420638941631,2024-09-07T23:30:12.000Z
+401635540104889001,401635540,40163554025,9,4,11:09,Marshall,Virginia Tech,14,31,37,4,3,5,Pass Reception,Stone Earle pass complete to Elijah Metcalf for 5 yds to the VT 32 for a 1ST down,2.065395508564187,2024-09-07T23:30:12.000Z
+401635540104896601,401635540,40163554025,10,4,10:33,Marshall,Virginia Tech,14,31,32,1,10,19,Pass Reception,Stone Earle pass complete to Carl Chester for 19 yds to the VT 13 for a 1ST down,0.3325902105431154,2024-09-07T23:30:12.000Z
+401635540104898501,401635540,40163554025,11,4,10:14,Marshall,Virginia Tech,14,31,13,1,10,2,Pass Reception,Stone Earle pass complete to Jordan Houston for 2 yds to the VT 11,-0.17192441059024,2024-09-07T23:30:12.000Z
+401635540104908601,401635540,40163554025,12,4,9:13,Marshall,Virginia Tech,14,31,11,2,8,4,Rush,Ethan Payne run for 4 yds to the VT 7,-0.023284229941044,2024-09-07T23:30:12.000Z
+401635540104909801,401635540,40163554025,13,4,9:01,Marshall,Virginia Tech,14,31,7,3,4,2,Rush,Stone Earle run for 2 yds to the VT 5,-0.173806307510274,2024-09-07T23:30:12.000Z
+401635540104917601,401635540,40163554025,15,4,8:23,Marshall,Virginia Tech,14,31,5,4,2,0,Pass Incompletion,Stone Earle pass incomplete,-4.092055836912595,2024-09-07T23:39:50.000Z

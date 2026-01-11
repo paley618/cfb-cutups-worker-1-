@@ -1,0 +1,185 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401654677101849906,401654677,4016546771,2,1,15:00,Furman,Charleston Southern,0,0,75,1,10,2,Rush,Grant Robinson run for 2 yds to the FUR 27,-0.45260367932203766,2024-09-07T22:02:19.000Z
+401654677101849907,401654677,4016546771,3,1,15:00,Furman,Charleston Southern,0,0,73,2,8,0,Pass Reception,Carson Jones pass complete to Joshua Harris for no gain to the FUR 27,-0.4788075161366292,2024-09-07T22:02:19.000Z
+401654677101865001,401654677,4016546771,4,1,13:49,Furman,Charleston Southern,0,0,73,3,8,0,Pass Interception Return,Carson Jones pass intercepted Chandler Perry return for no gain to the FUR 47,0.009166315179988338,2024-09-07T22:02:19.000Z
+401654677101849904,401654677,4016546771,1,1,15:00,Charleston Southern,Furman,0,0,65,0,0,0,Kickoff,Will Laing kickoff for 65 yds for a touchback,,2024-09-07T22:02:19.000Z
+401654677101865003,401654677,4016546772,1,1,13:49,Charleston Southern,Furman,0,0,47,1,10,9,Pass Reception,Rob McCoy Jr pass complete to Noah Jennings for 9 yds to the FUR 38,1.010286769016353,2024-09-07T22:02:19.000Z
+401654677101865004,401654677,4016546772,2,1,13:49,Charleston Southern,Furman,0,0,38,2,1,2,Rush,Autavius Ison run for 2 yds to the FUR 36 for a 1ST down,-0.407862622763719,2024-09-07T22:02:19.000Z
+401654677101865005,401654677,4016546772,3,1,13:49,Charleston Southern,Furman,0,0,36,1,10,0,Rush,Tyson Greenwade run for no gain to the FUR 36,-0.7215426143188567,2024-09-07T22:02:19.000Z
+401654677101865006,401654677,4016546772,4,1,13:49,Charleston Southern,Furman,0,0,36,2,10,3,Rush,Rob McCoy Jr run for 3 yds to the FUR 33,-0.3155537101994863,2024-09-07T22:02:19.000Z
+401654677101865007,401654677,4016546772,5,1,13:49,Charleston Southern,Furman,0,0,33,3,7,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-1.0098568739297917,2024-09-07T22:02:19.000Z
+401654677101888701,401654677,4016546772,6,1,11:12,Charleston Southern,Furman,0,0,33,4,7,-8,Sack,Rob McCoy Jr sacked by Luke Clark for a loss of 8 yards to the FUR 41,-1.9422687065380693,2024-09-07T22:12:35.000Z
+401654677101888703,401654677,4016546773,1,1,11:12,Furman,Charleston Southern,0,0,59,1,10,10,Rush,Myion Hicks run for 10 yds to the CHSO 49 for a 1ST down,0.896681798161179,2024-09-07T22:12:35.000Z
+401654677101888704,401654677,4016546773,2,1,11:12,Furman,Charleston Southern,0,0,49,1,10,0,Timeout,"Timeout Furman, clock 11:12",,2024-09-07T22:12:35.000Z
+401654677101888707,401654677,4016546773,5,1,11:12,Furman,Charleston Southern,0,0,31,2,7,-10,Penalty,"ROBINSON, Grant rush to the left for no gain to the CSU31 (PORTU, David). PENALTY FUR Holding enforced 10 yards from the CSU31 to the CSU41 [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:12:35.000Z
+401654677101909501,401654677,4016546773,8,1,9:04,Furman,Charleston Southern,0,0,32,4,8,50,Field Goal Missed,Ian Williams 50 yd FG MISSED,,2024-09-07T22:16:15.000Z
+401654677101888709,401654677,4016546773,7,1,11:12,Furman,Charleston Southern,0,0,41,3,17,9,Pass Reception,Carson Jones pass complete to Grant Robinson for 9 yds to the CHSO 32,0.8647791472008777,2024-09-07T22:12:35.000Z
+401654677101888708,401654677,4016546773,6,1,11:12,Furman,Charleston Southern,0,0,41,2,17,0,Pass Incompletion,Carson Jones pass incomplete,-0.9788267271359087,2024-09-07T22:12:35.000Z
+401654677101888706,401654677,4016546773,4,1,11:12,Furman,Charleston Southern,0,0,34,1,10,3,Rush,Myion Hicks run for 3 yds to the CHSO 31,-0.2066800678483923,2024-09-07T22:12:35.000Z
+401654677101888705,401654677,4016546773,3,1,11:12,Furman,Charleston Southern,0,0,49,1,10,15,Rush,Myion Hicks run for 15 yds to the CHSO 34 for a 1ST down,0.8256043907235783,2024-09-07T22:12:35.000Z
+401654677101909502,401654677,4016546773,9,1,9:04,Charleston Southern,Furman,0,0,68,1,10,0,Timeout,"Timeout Furman, clock 09:04",,2024-09-07T22:16:15.000Z
+401654677101909504,401654677,4016546774,1,1,9:04,Charleston Southern,Furman,0,0,68,1,10,4,Rush,Autavius Ison run for 4 yds to the CHSO 36,-0.1488498506411844,2024-09-07T22:16:15.000Z
+401654677101909505,401654677,4016546774,2,1,9:04,Charleston Southern,Furman,0,0,64,2,6,12,Pass Reception,Rob McCoy Jr pass complete to Noah Jennings for 12 yds to the CHSO 48 for a 1ST down,1.660106277572613,2024-09-07T22:16:15.000Z
+401654677101909506,401654677,4016546774,3,1,9:04,Charleston Southern,Furman,0,0,52,1,10,7,Rush,Autavius Ison run for 7 yds to the FUR 45,0.6193952681357987,2024-09-07T22:16:15.000Z
+401654677101909507,401654677,4016546774,4,1,9:04,Charleston Southern,Furman,0,0,45,2,3,8,Rush,Autavius Ison run for 8 yds to the FUR 37 for a 1ST down,0.3372503890978891,2024-09-07T22:16:15.000Z
+401654677101909509,401654677,4016546774,6,1,9:04,Charleston Southern,Furman,0,0,42,1,15,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.9629812872526866,2024-09-07T22:16:15.000Z
+401654677101909508,401654677,4016546774,5,1,9:04,Charleston Southern,Furman,0,0,37,1,10,-5,Penalty,"Charleston Southern Penalty, Delay Of Game (Joshua Hill) to the FUR 42",,2024-09-07T22:16:15.000Z
+401654677101909510,401654677,4016546774,7,1,9:04,Charleston Southern,Furman,0,0,42,2,15,8,Rush,Tyson Greenwade run for 8 yds to the FUR 34,0.6938153683851649,2024-09-07T22:16:15.000Z
+401654677101909511,401654677,4016546774,8,1,9:04,Charleston Southern,Furman,0,0,34,3,7,7,Pass Reception,Rob McCoy Jr pass complete to Tyson Greenwade for 7 yds to the FUR 27 for a 1ST down,1.3891585378207694,2024-09-07T22:16:15.000Z
+401654677101947901,401654677,4016546774,9,1,5:20,Charleston Southern,Furman,6,0,27,1,10,27,Passing Touchdown,Rob McCoy Jr pass complete to Noah Jennings for 27 yds for a TD (Reid Montgomery PAT MISSED),2.741280841391486,2024-09-07T22:27:44.000Z
+401654677101947903,401654677,4016546775,1,1,5:20,Charleston Southern,Furman,6,0,65,0,0,0,Kickoff,Will Laing kickoff for 65 yds for a touchback,,2024-09-07T22:27:44.000Z
+401654677101947905,401654677,4016546775,2,1,5:20,Furman,Charleston Southern,0,6,75,1,10,25,Pass Reception,Carson Jones pass complete to Ben Ferguson for 25 yds to the 50 yard line for a 1ST down,2.2363431875999487,2024-09-07T22:27:44.000Z
+401654677101947906,401654677,4016546775,3,1,5:20,Furman,Charleston Southern,0,6,50,1,10,1,Rush,Bailor Hughes run for 1 yd to the CHSO 49,-0.873884986133115,2024-09-07T22:27:44.000Z
+401654677101947907,401654677,4016546775,4,1,5:20,Furman,Charleston Southern,0,6,49,2,9,3,Rush,Carson Jones run for 3 yds to the CHSO 46,-0.4067541391909088,2024-09-07T22:27:44.000Z
+401654677101947908,401654677,4016546775,5,1,5:20,Furman,Charleston Southern,0,6,46,3,6,2,Pass Reception,Carson Jones pass complete to Grant Robinson for 2 yds to the CHSO 44,-0.6073643931241666,2024-09-07T22:27:44.000Z
+401654677101969901,401654677,4016546775,6,1,3:00,Furman,Charleston Southern,0,6,44,4,4,0,Punt,"Ian Williams punt for 25 yds, fair catch by Leon Thomas at the CHSO 19",,2024-09-07T22:32:37.000Z
+401654677101969903,401654677,4016546776,1,1,3:00,Charleston Southern,Furman,6,0,81,1,10,2,Rush,Autavius Ison run for 2 yds to the CHSO 21,-0.345885638069002,2024-09-07T22:32:37.000Z
+401654677101969904,401654677,4016546776,2,1,3:00,Charleston Southern,Furman,6,0,79,2,8,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.3491696287441286,2024-09-07T22:33:47.000Z
+401654677101969905,401654677,4016546776,3,1,3:00,Charleston Southern,Furman,6,0,79,3,8,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.15651254264732373,2024-09-07T22:33:47.000Z
+401654677101984001,401654677,4016546776,4,1,1:59,Charleston Southern,Furman,6,0,79,4,8,0,Punt,Gilbert Brown punt for 56 yds,,2024-09-07T22:35:38.000Z
+401654677101984003,401654677,4016546777,1,1,1:59,Furman,Charleston Southern,0,6,77,1,10,12,Rush,Myion Hicks run for 12 yds to the FUR 35 for a 1ST down,0.9676400834980621,2024-09-07T22:36:18.000Z
+401654677101999902,401654677,4016546777,5,1,0:00,Furman,Charleston Southern,0,6,57,0,2,0,End Period,End of 1st Quarter,,2024-09-07T22:38:05.000Z
+401654677101984004,401654677,4016546777,2,1,1:59,Furman,Charleston Southern,0,6,65,1,10,5,Rush,Grant Robinson run for 5 yds to the FUR 40,0.1088137823196469,2024-09-07T22:36:18.000Z
+401654677101984005,401654677,4016546777,3,1,1:59,Furman,Charleston Southern,0,6,60,2,5,3,Pass Reception,Carson Jones pass complete to Grant Robinson for 3 yds to the FUR 43,-0.4223723470917964,2024-09-07T22:36:18.000Z
+401654677101999901,401654677,4016546777,4,1,0:00,Furman,Charleston Southern,0,6,57,3,2,0,Rush,Grant Robinson run for no gain to the FUR 43,-0.9127398951290244,2024-09-07T22:38:05.000Z
+401654677102854501,401654677,4016546777,6,2,14:54,Furman,Charleston Southern,0,6,57,4,2,0,Punt,"Ian Williams punt for 39 yds, fair catch by Leon Thomas at the CHSO 18",,2024-09-07T22:42:19.000Z
+401654677102854503,401654677,4016546778,1,2,14:54,Charleston Southern,Furman,6,0,82,1,10,7,Pass Reception,Rob McCoy Jr pass complete to Jamil Bishop for 7 yds to the CHSO 25,0.4935789008473366,2024-09-07T22:42:19.000Z
+401654677102854504,401654677,4016546778,2,2,14:54,Charleston Southern,Furman,6,0,75,2,3,2,Rush,Tyson Greenwade run for 2 yds to the CHSO 27,-0.4935109268118812,2024-09-07T22:43:12.000Z
+401654677102854505,401654677,4016546778,3,2,14:54,Charleston Southern,Furman,6,0,73,3,1,3,Rush,Rob McCoy Jr run for 3 yds to the CHSO 30 for a 1ST down,0.7954437563530519,2024-09-07T22:43:12.000Z
+401654677102886002,401654677,4016546778,8,2,11:39,Furman,Charleston Southern,0,6,61,1,10,0,Timeout,"Timeout Furman, clock 11:39",,2024-09-07T22:47:22.000Z
+401654677102854506,401654677,4016546778,4,2,14:54,Charleston Southern,Furman,6,0,70,1,10,2,Rush,Jamil Bishop run for 2 yds to the CHSO 32,-0.547828113258845,2024-09-07T22:43:12.000Z
+401654677102854507,401654677,4016546778,5,2,14:54,Charleston Southern,Furman,6,0,68,2,8,-3,Rush,Rob McCoy Jr run for a loss of 3 yards to the CHSO 29,-0.8375086044923705,2024-09-07T22:43:12.000Z
+401654677102854509,401654677,4016546778,6,2,14:54,Charleston Southern,Furman,6,0,71,3,11,-12,Penalty,"Charleston Southern Penalty, Intentional Grounding (Rob McCoy Jr) to the CHSO 17",,2024-09-07T22:43:12.000Z
+401654677102886001,401654677,4016546778,7,2,11:39,Charleston Southern,Furman,6,0,83,4,23,2,Punt,"Gilbert Brown punt for 46 yds , Joshua Harris returns for 2 yds to the FUR 39",,2024-09-07T22:47:22.000Z
+401654677102928601,401654677,4016546779,12,2,7:13,Furman,Charleston Southern,3,6,7,4,7,25,Field Goal Good,Ian Williams 25 yd FG GOOD,,2024-09-07T22:57:29.000Z
+401654677102886009,401654677,4016546779,6,2,11:39,Furman,Charleston Southern,0,6,24,2,9,0,Rush,Myion Hicks run for no gain to the CHSO 24,-0.5632479242477367,2024-09-07T22:52:30.000Z
+401654677102886008,401654677,4016546779,5,2,11:39,Furman,Charleston Southern,0,6,25,1,10,1,Rush,Grant Robinson run for 1 yd to the CHSO 24,-0.3463709171906278,2024-09-07T22:49:41.000Z
+401654677102886007,401654677,4016546779,4,2,11:39,Furman,Charleston Southern,0,6,40,2,6,15,Rush,Colton Hinton run for 15 yds to the CHSO 25 for a 1ST down,0.8236680452636965,2024-09-07T22:49:41.000Z
+401654677102886006,401654677,4016546779,3,2,11:39,Furman,Charleston Southern,0,6,44,1,10,4,Rush,Bailor Hughes run for 4 yds to the CHSO 40,-0.1108700500197327,2024-09-07T22:49:41.000Z
+401654677102886005,401654677,4016546779,2,2,11:39,Furman,Charleston Southern,0,6,61,2,10,17,Rush,Bailor Hughes run for 17 yds to the CHSO 44 for a 1ST down,2.549901415001731,2024-09-07T22:49:41.000Z
+401654677102886004,401654677,4016546779,1,2,11:39,Furman,Charleston Southern,0,6,61,1,10,0,Pass Incompletion,Carson Jones pass incomplete,-1.1077677360468863,2024-09-07T22:49:41.000Z
+401654677102886011,401654677,4016546779,7,2,11:39,Furman,Charleston Southern,0,6,24,3,9,15,Penalty,"JONES, Carson pass deep up the middle incomplete intended for HINTON, Colton broken up by HIU, Kimo at the CSU5. PENALTY CSU Pass Interference enforced at the spot of the foul for 15 yards to the CSU9 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:52:30.000Z
+401654677102886013,401654677,4016546779,8,2,11:39,Furman,Charleston Southern,0,6,9,1,9,-5,Penalty,"ROBINSON, Grant rush to the left for a gain of 2 yards to the CSU7 (FOWLER, Trayson). PENALTY Before the snap, FUR Illegal Shift enforced 5 yards from the CSU9 to the CSU14. NO PLAY (replay the down).",,2024-09-07T22:52:30.000Z
+401654677102886014,401654677,4016546779,9,2,11:39,Furman,Charleston Southern,0,6,14,1,14,4,Rush,Grant Robinson run for 4 yds to the CHSO 10,-0.0218450044898266,2024-09-07T22:52:30.000Z
+401654677102886015,401654677,4016546779,10,2,11:39,Furman,Charleston Southern,0,6,10,2,10,3,Pass Reception,Carson Jones pass complete to Grant Robinson for 3 yds to the CHSO 7,-0.0853747272189674,2024-09-07T22:52:30.000Z
+401654677102886016,401654677,4016546779,11,2,11:39,Furman,Charleston Southern,0,6,7,3,7,0,Pass Incompletion,Carson Jones pass incomplete,-0.325035760733144,2024-09-07T22:52:30.000Z
+401654677102928606,401654677,40165467710,3,2,7:13,Charleston Southern,Furman,6,3,75,1,10,4,Rush,Isaiah Gordon run for 4 yds to the CHSO 29,-0.1142886249388964,2024-09-07T23:00:11.000Z
+401654677102928607,401654677,40165467710,4,2,7:13,Charleston Southern,Furman,6,3,71,2,6,-3,Rush,Rob McCoy Jr run for a loss of 3 yards to the CHSO 26,-0.8815048713654994,2024-09-07T23:00:11.000Z
+401654677102928608,401654677,40165467710,5,2,7:13,Charleston Southern,Furman,6,3,74,3,9,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.18876768235831598,2024-09-07T23:00:11.000Z
+401654677102945901,401654677,40165467710,6,2,5:40,Charleston Southern,Furman,6,3,74,4,9,0,Punt,"Gilbert Brown punt for 35 yds, downed at the FUR 39",,2024-09-07T23:03:31.000Z
+401654677102928604,401654677,40165467710,2,2,7:13,Furman,Charleston Southern,3,6,65,0,0,0,Kickoff,Ian Williams kickoff for 65 yds for a touchback,,2024-09-07T23:00:11.000Z
+401654677102928603,401654677,40165467710,1,2,7:13,Furman,Charleston Southern,3,6,65,0,65,0,Timeout,"Timeout Furman, clock 07:13",,2024-09-07T23:00:11.000Z
+401654677102945902,401654677,40165467710,7,2,5:40,Furman,Charleston Southern,3,6,61,1,10,0,Timeout,"Timeout Furman, clock 05:40",,2024-09-07T23:03:31.000Z
+401654677102945909,401654677,40165467711,6,2,5:40,Furman,Charleston Southern,3,6,27,2,12,22,Pass Reception,Trey Hedden pass complete to Brock Chappell for 22 yds to the CHSO 5 for a 1ST down,1.498997863552615,2024-09-07T23:06:41.000Z
+401654677102945908,401654677,40165467711,5,2,5:40,Furman,Charleston Southern,3,6,25,1,10,-2,Rush,Grant Robinson run for a loss of 2 yards to the CHSO 27,-0.6826943418454315,2024-09-07T23:06:41.000Z
+401654677102945905,401654677,40165467711,2,2,5:40,Furman,Charleston Southern,3,6,51,1,10,-4,Rush,Trey Hedden run for a loss of 4 yards to the FUR 45,-1.9986345588220844,2024-09-07T23:05:15.000Z
+401654677102945904,401654677,40165467711,1,2,5:40,Furman,Charleston Southern,3,6,61,1,10,10,Rush,Myion Hicks run for 10 yds to the FUR 49 for a 1ST down,0.931648832571927,2024-09-07T23:05:15.000Z
+401654677102945906,401654677,40165467711,3,2,5:40,Furman,Charleston Southern,3,6,55,2,14,0,Pass Incompletion,Trey Hedden pass incomplete,-0.7274445264481209,2024-09-07T23:06:41.000Z
+401654677102945907,401654677,40165467711,4,2,5:40,Furman,Charleston Southern,3,6,55,3,14,30,Pass Reception,Trey Hedden pass complete to Joshua Harris for 30 yds to the CHSO 25 for a 1ST down,3.9493619268970868,2024-09-07T23:06:41.000Z
+401654677102974301,401654677,40165467711,7,2,2:56,Furman,Charleston Southern,10,6,5,1,5,5,Passing Touchdown,Trey Hedden pass complete to Colton Hinton for 5 yds for a TD (Ian Williams KICK),1.883780840558874,2024-09-07T23:09:02.000Z
+401654677102974307,401654677,40165467712,3,2,2:56,Charleston Southern,Furman,6,10,75,1,10,4,Rush,Autavius Ison run for 4 yds to the CHSO 29,-0.1142886249388964,2024-09-07T23:09:02.000Z
+401654677102974305,401654677,40165467712,2,2,2:56,Furman,Charleston Southern,10,6,65,0,0,0,Kickoff,Ian Williams kickoff for 65 yds for a touchback,,2024-09-07T23:09:02.000Z
+401654677102974304,401654677,40165467712,1,2,2:56,Furman,Charleston Southern,10,6,65,0,65,0,Timeout,"Timeout Furman, clock 02:56",,2024-09-07T23:09:02.000Z
+401654677102979901,401654677,40165467712,4,2,2:00,Charleston Southern,Furman,6,10,54,1,10,0,Timeout,"Timeout Furman, clock 02:00",,2024-09-07T23:13:08.000Z
+401654677102979903,401654677,40165467712,6,2,2:00,Charleston Southern,Furman,6,10,54,1,10,1,Rush,Autavius Ison run for 1 yd to the CHSO 47,-0.921128701529616,2024-09-07T23:15:53.000Z
+401654677102979902,401654677,40165467712,5,2,2:00,Charleston Southern,Furman,6,10,71,2,6,17,Pass Reception,Rob McCoy Jr pass complete to Jamil Bishop for 17 yds to the CHSO 46 for a 1ST down,2.00714620697501,2024-09-07T23:13:08.000Z
+401654677102988002,401654677,40165467712,8,2,1:19,Charleston Southern,Furman,6,10,53,2,9,4,Pass Reception,Rob McCoy Jr pass complete to Noah Jennings for 4 yds to the FUR 49,-0.1647818472763464,2024-09-07T23:16:51.000Z
+401654677102988003,401654677,40165467712,9,2,1:19,Charleston Southern,Furman,6,10,49,3,5,6,Pass Reception,Rob McCoy Jr pass complete to Chris Rhone for 6 yds to the FUR 43 for a 1ST down,1.9184379985603162,2024-09-07T23:17:39.000Z
+401654677102988004,401654677,40165467712,10,2,1:19,Charleston Southern,Furman,6,10,43,1,10,9,Pass Reception,Rob McCoy Jr pass complete to Chris Rhone for 9 yds to the FUR 34,0.9071042242020542,2024-09-07T23:17:39.000Z
+401654677102988001,401654677,40165467712,7,2,1:19,Charleston Southern,Furman,6,10,49,3,5,0,Timeout,"Timeout Furman, clock 01:19",,2024-09-07T23:16:51.000Z
+401654677102996501,401654677,40165467712,12,2,0:34,Charleston Southern,Furman,6,10,31,1,10,0,Timeout,"Timeout Furman, clock 00:34",,2024-09-07T23:19:54.000Z
+401654677102997101,401654677,40165467712,14,2,0:28,Charleston Southern,Furman,14,10,31,1,10,31,Passing Touchdown,Rob McCoy Jr pass complete to Noah Jennings for 31 yds for a TD (G. Brown Run For Two-point Conversion),2.841946170072948,2024-09-07T23:21:24.000Z
+401654677102988005,401654677,40165467712,11,2,1:19,Charleston Southern,Furman,6,10,34,2,1,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.918991813044197,2024-09-07T23:17:39.000Z
+401654677102996502,401654677,40165467712,13,2,0:34,Charleston Southern,Furman,6,10,34,3,1,3,Rush,Autavius Ison run for 3 yds to the FUR 31 for a 1ST down,0.522311506700049,2024-09-07T23:19:54.000Z
+401654677102997601,401654677,40165467713,1,2,0:23,Charleston Southern,Furman,14,10,65,0,0,15,Kickoff,"Will Laing kickoff for 58 yds , Colton Hinton return for 15 yds to the FUR 22",,2024-09-07T23:23:25.000Z
+401654677102999903,401654677,40165467713,3,2,0:00,Furman,Charleston Southern,10,14,82,0,10,0,End of Half,End of 2nd Quarter,,2024-09-07T23:24:43.000Z
+401654677102999901,401654677,40165467713,2,2,0:00,Furman,Charleston Southern,10,14,78,1,10,-4,Fumble Recovery (Own),"Trey Hedden sacked for a loss of 4 yards to the FUR 18 Trey Hedden fumbled, recovered by FUR Brock Chappell , return for 0 yards",-0.8787696213293064,2024-09-07T23:24:43.000Z
+401654677103849908,401654677,40165467714,3,3,15:00,Charleston Southern,Furman,14,10,72,2,7,3,Rush,Autavius Ison run for 3 yds to the CHSO 31,-0.2389648696117614,2024-09-07T23:46:51.000Z
+401654677103849903,401654677,40165467714,1,3,15:00,Furman,Charleston Southern,10,14,65,0,0,0,Kickoff,Ian Williams kickoff for 65 yds for a touchback,,2024-09-07T00:00:00.000Z
+401654677103866002,401654677,40165467714,6,3,13:39,Furman,Charleston Southern,10,14,79,1,10,0,Timeout,"Timeout Furman, clock 13:39",,2024-09-07T23:48:48.000Z
+401654677103849906,401654677,40165467714,2,3,15:00,Charleston Southern,Furman,14,10,75,1,10,3,Pass Reception,Rob McCoy Jr pass complete to Noah Jennings for 3 yds to the CHSO 28,-0.2957674139440157,2024-09-07T23:46:51.000Z
+401654677103849909,401654677,40165467714,4,3,15:00,Charleston Southern,Furman,14,10,69,3,4,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.43770162015070735,2024-09-07T23:46:51.000Z
+401654677103866001,401654677,40165467714,5,3,13:39,Charleston Southern,Furman,14,10,69,4,4,0,Punt,"Gilbert Brown punt for 48 yds, downed at the FUR 21",,2024-09-07T23:48:48.000Z
+401654677103889101,401654677,40165467715,7,3,11:08,Furman,Charleston Southern,17,14,1,1,1,1,Rushing Touchdown,Myion Hicks run for 1 yd for a TD (Ian Williams KICK),0.938021275120443,2024-09-07T23:55:06.000Z
+401654677103866009,401654677,40165467715,6,3,13:39,Furman,Charleston Southern,10,14,18,3,10,17,Pass Reception,Trey Hedden pass complete to John Holbrook for 17 yds to the CHSO 1 for a 1ST down,2.428125210204774,2024-09-07T23:50:47.000Z
+401654677103866008,401654677,40165467715,5,3,13:39,Furman,Charleston Southern,10,14,18,2,10,0,Rush,Myion Hicks run for no gain to the CHSO 18,-0.423613027815584,2024-09-07T23:50:47.000Z
+401654677103866007,401654677,40165467715,4,3,13:39,Furman,Charleston Southern,10,14,18,1,10,0,Pass Incompletion,Trey Hedden pass incomplete,-0.350740748439042,2024-09-07T23:50:47.000Z
+401654677103866006,401654677,40165467715,3,3,13:39,Furman,Charleston Southern,10,14,82,3,13,64,Pass Reception,Trey Hedden pass complete to Ben Ferguson for 64 yds to the CHSO 18 for a 1ST down,4.691498775815585,2024-09-07T23:50:47.000Z
+401654677103866005,401654677,40165467715,2,3,13:39,Furman,Charleston Southern,10,14,82,2,13,0,Pass Incompletion,Trey Hedden pass incomplete,-0.1636966364929799,2024-09-07T23:50:47.000Z
+401654677103866004,401654677,40165467715,1,3,13:39,Furman,Charleston Southern,10,14,79,1,10,-3,Rush,Grant Robinson run for a loss of 3 yards to the FUR 18,-0.789060058576041,2024-09-07T23:50:47.000Z
+401654677103889111,401654677,40165467716,7,3,11:08,Charleston Southern,Furman,14,17,44,3,11,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.8472380426787085,2024-09-07T23:55:15.000Z
+401654677103889105,401654677,40165467716,2,3,11:08,Furman,Charleston Southern,17,14,65,0,0,0,Kickoff,Ian Williams kickoff for 65 yds for a touchback,,2024-09-07T23:55:15.000Z
+401654677103889104,401654677,40165467716,1,3,11:08,Furman,Charleston Southern,17,14,65,0,65,0,Timeout,"Timeout Furman, clock 11:08",,2024-09-07T23:55:15.000Z
+401654677103889107,401654677,40165467716,3,3,11:08,Charleston Southern,Furman,14,17,75,1,10,6,Rush,Tyson Greenwade run for 6 yds to the CHSO 31,0.3333748010525683,2024-09-07T23:55:15.000Z
+401654677103889108,401654677,40165467716,4,3,11:08,Charleston Southern,Furman,14,17,69,2,4,26,Rush,Tyson Greenwade run for 26 yds to the FUR 43 for a 1ST down,2.392010230737899,2024-09-07T23:55:15.000Z
+401654677103889109,401654677,40165467716,5,3,11:08,Charleston Southern,Furman,14,17,43,1,10,-12,Fumble Recovery (Own),"run for a loss of 12 yards to the CHSO 45 fumbled, recovered by CHSO Rob McCoy Jr R. McCoy Jr return for 0 yds",-3.252658219459218,2024-09-07T23:55:15.000Z
+401654677103889110,401654677,40165467716,6,3,11:08,Charleston Southern,Furman,14,17,55,2,22,11,Pass Reception,Rob McCoy Jr pass complete to Noah Jennings for 11 yds to the FUR 44,1.0384218161849335,2024-09-07T23:55:15.000Z
+401654677103917801,401654677,40165467716,8,3,8:21,Charleston Southern,Furman,14,17,44,4,11,0,Punt,Gilbert Brown punt for 44 yds for a touchback,,2024-09-08T00:02:47.000Z
+401654677103917803,401654677,40165467717,1,3,8:21,Furman,Charleston Southern,17,14,80,1,10,2,Rush,Bailor Hughes run for 2 yds to the FUR 22,-0.3623882030735057,2024-09-08T00:03:29.000Z
+401654677103917805,401654677,40165467717,2,3,8:21,Furman,Charleston Southern,17,14,78,2,8,-8,Penalty,"Furman Penalty, Intentional Grounding (Yards) to the FUR 14",,2024-09-08T00:03:29.000Z
+401654677103926501,401654677,40165467717,3,3,7:34,Furman,Charleston Southern,17,14,86,3,16,15,Pass Interception Return,Trey Hedden pass intercepted Tylan Hollis return for 15 yds to the FUR 9,0.3411586763510286,2024-09-08T00:05:53.000Z
+401654677103926503,401654677,40165467718,1,3,7:34,Charleston Southern,Furman,14,17,9,1,9,2,Rush,Autavius Ison run for 2 yds to the FUR 7,-0.182910644371269,2024-09-08T00:05:53.000Z
+401654677103935301,401654677,40165467718,2,3,6:46,Charleston Southern,Furman,21,17,7,2,7,7,Rushing Touchdown,Autavius Ison run for 7 yds for a TD (Reid Montgomery KICK),2.607148468017737,2024-09-08T00:07:09.000Z
+401654677103935304,401654677,40165467718,3,3,6:46,Charleston Southern,Furman,14,17,65,0,65,0,Timeout,"Timeout Furman, clock 06:46",,2024-09-08T00:11:02.000Z
+401654677103935821,401654677,40165467719,17,3,6:41,Furman,Charleston Southern,17,21,14,3,14,-5,Penalty,"Furman Penalty, False Start (TEAM) to the CHSO 19",,2024-09-08T00:13:05.000Z
+401654677103935801,401654677,40165467719,1,3,6:41,Charleston Southern,Furman,21,17,65,0,0,21,Kickoff,"Will Laing kickoff for 55 yds , Colton Hinton return for 21 yds to the FUR 31",,2024-09-08T00:11:30.000Z
+401654677103935803,401654677,40165467719,2,3,6:41,Furman,Charleston Southern,17,21,69,1,10,11,Rush,Myion Hicks run for 11 yds to the FUR 42 for a 1ST down,1.0455877930757342,2024-09-08T00:11:30.000Z
+401654677103935804,401654677,40165467719,3,3,6:41,Furman,Charleston Southern,17,21,58,1,10,0,Pass Incompletion,Trey Hedden pass incomplete,-1.1496266880203319,2024-09-08T00:11:30.000Z
+401654677103935805,401654677,40165467719,4,3,6:41,Furman,Charleston Southern,17,21,58,2,10,-10,Penalty,"HICKS, Myion rush to the left for no gain to the FUR42 (BRANTLEY, Champ;THOMAS, Leon). PENALTY FUR Holding enforced 10 yards from the FUR42 to the FUR32 [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:13:05.000Z
+401654677103935806,401654677,40165467719,5,3,6:41,Furman,Charleston Southern,17,21,68,2,20,19,Pass Reception,Trey Hedden pass complete to Ben Ferguson for 19 yds to the CHSO 49,2.41220157505579,2024-09-08T00:13:05.000Z
+401654677103935807,401654677,40165467719,6,3,6:41,Furman,Charleston Southern,17,21,49,3,1,0,Rush,Myion Hicks run for no gain to the CHSO 49,-1.1720838042036414,2024-09-08T00:13:05.000Z
+401654677103935808,401654677,40165467719,7,3,6:41,Furman,Charleston Southern,17,21,49,4,1,2,Rush,Myion Hicks run for 2 yds to the CHSO 47 for a 1ST down,2.176762843338931,2024-09-08T00:13:05.000Z
+401654677103935809,401654677,40165467719,8,3,6:41,Furman,Charleston Southern,17,21,47,1,10,3,Pass Reception,Trey Hedden pass complete to Grant Robinson for 3 yds to the CHSO 44,-0.3535783157576075,2024-09-08T00:13:05.000Z
+401654677103935811,401654677,40165467719,9,3,6:41,Furman,Charleston Southern,17,21,44,2,7,5,Penalty,"ROBINSON, Grant rush up the middle for a loss of 4 yards to the CSU48 (WILLIAMS, Davion). PENALTY CSU Offsides enforced 5 yards from the CSU44 to the CSU39 [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:13:05.000Z
+401654677103935813,401654677,40165467719,10,3,6:41,Furman,Charleston Southern,17,21,39,2,2,15,Penalty,"ROBINSON, Grant rush up the middle for a loss of 1 yard to the CSU40 (PUGH, Jalen). PENALTY CSU Personal Foul enforced 15 yards from the CSU39 to the CSU24 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:13:05.000Z
+401654677103935814,401654677,40165467719,11,3,6:41,Furman,Charleston Southern,17,21,24,1,10,2,Rush,Myion Hicks run for 2 yds to the CHSO 22,-0.234690741470521,2024-09-08T00:13:05.000Z
+401654677103935815,401654677,40165467719,12,3,6:41,Furman,Charleston Southern,17,21,22,2,8,0,Pass Incompletion,Trey Hedden pass incomplete,-0.501678537573664,2024-09-08T00:13:05.000Z
+401654677103935816,401654677,40165467719,13,3,6:41,Furman,Charleston Southern,17,21,22,3,8,14,Pass Reception,Trey Hedden pass complete to Brock Chappell for 14 yds to the CHSO 8 for a 1ST down,1.098207658951468,2024-09-08T00:13:05.000Z
+401654677103935817,401654677,40165467719,14,3,6:41,Furman,Charleston Southern,17,21,8,1,8,2,Rush,Myion Hicks run for 2 yds to the CHSO 6,-0.209067424082246,2024-09-08T00:13:05.000Z
+401654677103935819,401654677,40165467719,15,3,6:41,Furman,Charleston Southern,17,21,6,2,6,-10,Penalty,"HICKS, Myion rush to the left for a gain of 6 yards to the CSU0, TOUCHDOWN FUR, score nullified by penalty (Play was confirmed after review). PENALTY FUR Holding enforced 10 yards from the CSU6 to the CSU16 [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:13:05.000Z
+401654677103935820,401654677,40165467719,16,3,6:41,Furman,Charleston Southern,17,21,16,2,16,2,Pass Reception,Trey Hedden pass complete to Colton Hinton for 2 yds to the CHSO 14,-0.2520056496977945,2024-09-08T00:13:05.000Z
+401654677103935824,401654677,40165467719,18,3,6:41,Furman,Charleston Southern,17,21,19,3,19,5,Penalty,"Charleston Southern Penalty, Personal Foul (David Portu) to the CHSO 7",,2024-09-08T00:13:05.000Z
+401654677103999401,401654677,40165467719,19,3,0:05,Furman,Charleston Southern,17,21,7,1,7,-2,Fumble Recovery (Opponent),"Trey Hedden run for a loss of 2 yards to the CHSO 9 Trey Hedden fumbled, recovered by CHSO Edward Owusu E. Owusu return for 0 yds",-4.803245369672789,2024-09-08T00:25:48.000Z
+401654677103999902,401654677,40165467720,2,3,0:00,Charleston Southern,Furman,21,17,91,0,10,4,End Period,End of 3rd Quarter,,2024-09-08T00:26:29.000Z
+401654677104855601,401654677,40165467720,5,4,14:43,Charleston Southern,Furman,21,17,87,4,6,0,Punt,"Gilbert Brown punt for 36 yds, downed at the CHSO 49",,2024-09-08T00:32:17.000Z
+401654677104849904,401654677,40165467720,4,4,15:00,Charleston Southern,Furman,21,17,87,3,6,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.13386378151650558,2024-09-08T00:30:51.000Z
+401654677104849902,401654677,40165467720,3,4,15:00,Charleston Southern,Furman,21,17,87,2,6,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.30972161067687676,2024-09-08T00:30:22.000Z
+401654677103999901,401654677,40165467720,1,3,0:00,Charleston Southern,Furman,21,17,91,1,10,4,Rush,Autavius Ison run for 4 yds to the CHSO 13,-0.04486009398484114,2024-09-08T00:26:29.000Z
+401654677104855603,401654677,40165467721,1,4,14:43,Furman,Charleston Southern,17,21,49,1,10,4,Rush,Grant Robinson run for 4 yds to the CHSO 45,-0.1369390380115582,2024-09-08T00:32:17.000Z
+401654677104904902,401654677,40165467721,13,4,9:50,Furman,Charleston Southern,17,21,12,3,10,0,Pass Incompletion,Trey Hedden pass incomplete,-0.4881360085064532,2024-09-08T00:42:52.000Z
+401654677104905401,401654677,40165467721,14,4,9:45,Furman,Charleston Southern,20,21,12,4,10,30,Field Goal Good,Ian Williams 30 yd FG GOOD,,2024-09-08T00:43:20.000Z
+401654677104904901,401654677,40165467721,12,4,9:50,Furman,Charleston Southern,17,21,12,4,10,0,Timeout,"Timeout Furman, clock 09:50",,2024-09-08T00:41:18.000Z
+401654677104855604,401654677,40165467721,2,4,14:43,Furman,Charleston Southern,17,21,45,2,6,2,Rush,Grant Robinson run for 2 yds to the CHSO 43,-0.6394367613921065,2024-09-08T00:33:18.000Z
+401654677104855605,401654677,40165467721,3,4,14:43,Furman,Charleston Southern,17,21,43,3,4,10,Rush,Trey Hedden run for 10 yds to the CHSO 33 for a 1ST down,1.635631577538925,2024-09-08T00:33:18.000Z
+401654677104855606,401654677,40165467721,4,4,14:43,Furman,Charleston Southern,17,21,33,1,10,-11,Sack,Trey Hedden sacked by Omari Jenkins for a loss of 11 yards to the CHSO 44,-2.8086618778941794,2024-09-08T00:33:18.000Z
+401654677104855607,401654677,40165467721,5,4,14:43,Furman,Charleston Southern,17,21,44,2,21,0,Pass Incompletion,Trey Hedden pass incomplete,-0.7919695457519627,2024-09-08T00:33:18.000Z
+401654677104855608,401654677,40165467721,6,4,14:43,Furman,Charleston Southern,17,21,44,3,21,5,Penalty,"Charleston Southern Penalty, Offsides (TEAM) to the CHSO 39",,2024-09-08T00:33:18.000Z
+401654677104855610,401654677,40165467721,7,4,14:43,Furman,Charleston Southern,17,21,39,3,16,15,Penalty,"HEDDEN, Trey sacked for a loss of 8 yards at the CSU47 (BELL, Darrius). PENALTY CSU Personal Foul enforced 15 yards from the CSU39 to the CSU24 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-08T00:33:18.000Z
+401654677104855611,401654677,40165467721,8,4,14:43,Furman,Charleston Southern,17,21,24,1,10,8,Pass Reception,Trey Hedden pass complete to Colton Hinton for 8 yds to the CHSO 16,0.473141035171443,2024-09-08T00:33:18.000Z
+401654677104855612,401654677,40165467721,9,4,14:43,Furman,Charleston Southern,17,21,16,2,2,4,Rush,Grant Robinson run for 4 yds to the CHSO 12 for a 1ST down,-0.3217976286003935,2024-09-08T00:33:18.000Z
+401654677104855613,401654677,40165467721,10,4,14:43,Furman,Charleston Southern,17,21,12,1,10,0,Rush,Myion Hicks run for no gain to the CHSO 12,-0.2977696357406735,2024-09-08T00:33:18.000Z
+401654677104855614,401654677,40165467721,11,4,14:43,Furman,Charleston Southern,17,21,12,2,10,0,Pass Incompletion,Trey Hedden pass incomplete,-0.3089040454322213,2024-09-08T00:33:18.000Z
+401654677104905403,401654677,40165467722,1,4,9:45,Furman,Charleston Southern,20,21,65,0,65,0,Timeout,"Timeout Furman, clock 09:45",,2024-09-08T00:46:28.000Z
+401654677104905404,401654677,40165467722,2,4,9:45,Furman,Charleston Southern,20,21,65,0,0,0,Kickoff,Ian Williams kickoff for 65 yds for a touchback,,2024-09-08T00:46:28.000Z
+401654677104905410,401654677,40165467722,7,4,9:45,Charleston Southern,Furman,21,20,58,4,3,-5,Penalty,"Charleston Southern Penalty, Delay Of Game (TEAM) to the CHSO 37",,2024-09-08T00:49:20.000Z
+401654677104926701,401654677,40165467722,8,4,7:32,Charleston Southern,Furman,21,20,63,4,8,0,Punt,Gilbert Brown punt for 63 yds for a touchback,,2024-09-08T00:50:24.000Z
+401654677104905409,401654677,40165467722,6,4,9:45,Charleston Southern,Furman,21,20,58,3,3,0,Pass Incompletion,Rob McCoy Jr pass incomplete,-0.813051991048222,2024-09-08T00:46:28.000Z
+401654677104905408,401654677,40165467722,5,4,9:45,Charleston Southern,Furman,21,20,62,2,7,4,Rush,Jamil Bishop run for 4 yds to the CHSO 42,-0.1445590090813748,2024-09-08T00:46:28.000Z
+401654677104905407,401654677,40165467722,4,4,9:45,Charleston Southern,Furman,21,20,65,1,10,3,Rush,Autavius Ison run for 3 yds to the CHSO 38,-0.4062307312880424,2024-09-08T00:46:28.000Z
+401654677104905406,401654677,40165467722,3,4,9:45,Charleston Southern,Furman,21,20,75,1,10,10,Rush,Autavius Ison run for 10 yds to the CHSO 35 for a 1ST down,0.8350381090299867,2024-09-08T00:46:28.000Z
+401654677104926703,401654677,40165467722,9,4,7:32,Furman,Charleston Southern,20,21,20,1,10,0,Timeout,"Timeout Furman, clock 07:32",,2024-09-08T00:53:01.000Z
+401654677104926705,401654677,40165467723,1,4,7:32,Furman,Charleston Southern,20,21,80,1,10,4,Pass Reception,Trey Hedden pass complete to Joshua Harris for 4 yds to the FUR 24,-0.0884321258012219,2024-09-08T00:53:01.000Z
+401654677104926706,401654677,40165467723,2,4,7:32,Furman,Charleston Southern,20,21,76,2,6,-1,Rush,Bailor Hughes run for a loss of 1 yard to the FUR 23,-0.5840173463827094,2024-09-08T00:53:01.000Z
+401654677104939601,401654677,40165467723,3,4,6:03,Furman,Charleston Southern,20,21,77,3,7,9,Sack,"Trey Hedden sacked for a loss of 6 yards to the FUR 15 Trey Hedden fumbled, recovered by CHSO Tylan Hollis , return for 0 yards for a 1ST down Charleston Southern Penalty, Unsportsmanlike Conduct (TEAM) to the FUR 15 for a 1ST down",1.5391965521471747,2024-09-08T00:57:53.000Z
+401654677104939603,401654677,40165467724,1,4,6:03,Charleston Southern,Furman,21,20,32,1,10,4,Rush,Autavius Ison run for 4 yds to the FUR 28,-0.0558269791892986,2024-09-08T00:57:53.000Z
+401654677104939604,401654677,40165467724,2,4,6:03,Charleston Southern,Furman,21,20,28,2,6,5,Rush,Tyson Greenwade run for 5 yds to the FUR 23,0.0801976735266375,2024-09-08T00:57:53.000Z
+401654677104939605,401654677,40165467724,3,4,6:03,Charleston Southern,Furman,21,20,23,3,1,15,Rush,Autavius Ison run for 15 yds to the FUR 8 for a 1ST down,0.5275491625519315,2024-09-08T00:57:53.000Z
+401654677104939606,401654677,40165467724,4,4,6:03,Charleston Southern,Furman,21,20,8,1,8,2,Rush,Tyson Greenwade run for 2 yds to the FUR 6,-0.209067424082246,2024-09-08T00:57:53.000Z
+401654677104969101,401654677,40165467724,5,4,3:08,Charleston Southern,Furman,21,20,5,3,5,0,Timeout,"Timeout Furman, clock 03:08",,2024-09-08T01:01:28.000Z
+401654677104969102,401654677,40165467724,6,4,3:08,Charleston Southern,Furman,21,20,6,2,6,1,Rush,Rob McCoy Jr run for 1 yd to the FUR 5,-0.232932636386652,2024-09-08T01:02:32.000Z
+401654677104977702,401654677,40165467724,8,4,2:22,Charleston Southern,Furman,21,20,5,3,5,-1,Rush,Tyson Greenwade run for a loss of 1 yard to the FUR 6,-0.3660216060643396,2024-09-08T01:04:34.000Z
+401654677104978102,401654677,40165467724,10,4,2:18,Furman,Charleston Southern,20,24,75,1,10,-5,Penalty,"Furman Penalty, Delay Of Game (TEAM) to the FUR 20",,2024-09-08T01:05:02.000Z
+401654677104978101,401654677,40165467724,9,4,2:18,Charleston Southern,Furman,24,20,6,4,6,23,Field Goal Good,Reid Montgomery 23 yd FG GOOD,,2024-09-08T01:05:02.000Z
+401654677104977701,401654677,40165467724,7,4,2:22,Charleston Southern,Furman,21,20,6,4,6,0,Timeout,"Timeout Furman, clock 02:22",,2024-09-08T01:03:21.000Z
+401654677104978105,401654677,40165467725,2,4,2:18,Furman,Charleston Southern,20,24,80,1,15,0,Pass Incompletion,Trey Hedden pass incomplete,-0.32565561419001554,2024-09-08T01:05:02.000Z
+401654677104978103,401654677,40165467725,1,4,2:18,Charleston Southern,Furman,24,20,65,0,0,0,Kickoff,Will Laing kickoff for 65 yds for a touchback,,2024-09-08T01:05:02.000Z

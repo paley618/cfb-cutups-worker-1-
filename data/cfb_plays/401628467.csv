@@ -1,0 +1,181 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628467101854701,401628467,4016284671,2,1,14:52,Colorado,Nebraska,0,0,79,1,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.585616097616759,2024-09-07T23:36:26.000Z
+401628467101855101,401628467,4016284671,3,1,14:48,Colorado,Nebraska,0,0,79,2,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.2760618997483206,2024-09-07T23:36:58.000Z
+401628467101856001,401628467,4016284671,4,1,14:39,Colorado,Nebraska,0,0,79,3,10,-9,Sack,Shedeur Sanders sacked by Ty Robinson for a loss of 9 yards to the COLO 12,-0.1993021002478601,2024-09-07T23:37:38.000Z
+401628467101854501,401628467,4016284671,1,1,14:54,Nebraska,Colorado,0,0,65,1,10,20,Kickoff Return (Offense),"John Hohl kickoff for 64 yds , Jimmy Horn Jr. return for 20 yds to the COLO 21",,2024-09-07T23:35:59.000Z
+401628467101864301,401628467,4016284671,5,1,13:56,Colorado,Nebraska,0,0,88,4,19,12,Punt,"Mark Vassett punt for 49 yds , Isaiah Garcia-Castaneda returns for 12 yds to the COLO 49",,2024-09-07T23:38:29.000Z
+401628467101866201,401628467,4016284672,1,1,13:37,Nebraska,Colorado,0,0,49,1,10,-2,Pass Reception,Dylan Raiola pass complete to Rahmir Johnson for a loss of 2 yards to the NEB 49,-1.5598563607412999,2024-09-07T23:39:20.000Z
+401628467101875801,401628467,4016284672,3,1,12:41,Nebraska,Colorado,0,0,49,3,10,12,Rush,Dylan Raiola run for 12 yds to the COLO 37 for a 1ST down,2.8454359510622815,2024-09-07T23:40:17.000Z
+401628467101868201,401628467,4016284672,2,1,13:17,Nebraska,Colorado,0,0,51,2,12,2,Rush,Rahmir Johnson run for 2 yds to the COLO 49,-0.5746576701604768,2024-09-07T23:39:40.000Z
+401628467101879501,401628467,4016284672,4,1,12:04,Nebraska,Colorado,0,0,37,1,10,8,Pass Reception,Dylan Raiola pass complete to Jacory Barney Jr. for 8 yds to the COLO 29,0.5910137767334082,2024-09-07T23:41:31.000Z
+401628467101886601,401628467,4016284672,5,1,11:33,Nebraska,Colorado,0,0,29,2,2,4,Pass Reception,Dylan Raiola pass complete to Jahmal Banks for 4 yds to the COLO 25 for a 1ST down,-0.2396895075227225,2024-09-07T23:43:20.000Z
+401628467101889601,401628467,4016284672,6,1,11:03,Nebraska,Colorado,0,0,25,1,10,13,Rush,Dante Dowdell run for 13 yds to the COLO 12 for a 1ST down,0.169989820230132,2024-09-07T23:43:53.000Z
+401628467101896501,401628467,4016284672,7,1,10:34,Nebraska,Colorado,7,0,12,1,10,12,Rushing Touchdown,Dante Dowdell run for 12 yds for a TD (Tristan Alvano KICK),2.5300945420359255,2024-09-07T23:44:23.000Z
+401628467101897601,401628467,4016284673,1,1,10:23,Nebraska,Colorado,7,0,65,1,10,61,Kickoff Return (Offense),"John Hohl kickoff for 63 yds , Jimmy Horn Jr. return for 61 yds to the NEB 37",,2024-09-07T23:48:42.000Z
+401628467101898401,401628467,4016284673,2,1,10:15,Colorado,Nebraska,0,7,37,1,10,-11,Sack,Shedeur Sanders sacked by Nash Hutmacher for a loss of 11 yards to the NEB 48,-3.0015355915720816,2024-09-07T23:49:24.000Z
+401628467101906601,401628467,4016284673,3,1,9:33,Colorado,Nebraska,0,7,48,2,21,10,Pass Reception,Shedeur Sanders pass complete to Jimmy Horn Jr. for 10 yds to the NEB 38,1.0634429280347968,2024-09-07T23:50:08.000Z
+401628467101914701,401628467,4016284673,4,1,8:52,Colorado,Nebraska,0,7,38,3,11,10,Pass Reception,Shedeur Sanders pass complete to Will Sheppard for 10 yds to the NEB 28,1.1229321218112585,2024-09-07T23:50:49.000Z
+401628467101916801,401628467,4016284673,5,1,8:31,Colorado,Nebraska,0,7,28,4,1,2,Rush,Charlie Offerdahl run for 2 yds to the NEB 30,1.146567050794589,2024-09-07T23:51:22.000Z
+401628467101944801,401628467,4016284674,5,1,5:51,Nebraska,Colorado,7,0,62,4,2,0,Punt,Brian Buschini punt for 60 yds,,2024-09-07T23:58:20.000Z
+401628467101918101,401628467,4016284674,1,1,8:18,Nebraska,Colorado,7,0,70,1,10,-2,Pass Reception,Dylan Raiola pass complete to Jahmal Banks for a loss of 2 yards to the NEB 28,-1.1000424809387441,2024-09-07T23:54:40.000Z
+401628467101926301,401628467,4016284674,2,1,7:36,Nebraska,Colorado,7,0,72,2,12,4,Pass Reception,Dylan Raiola pass complete to Isaiah Neyor for 4 yds to the NEB 32,-0.06440076299831521,2024-09-07T23:55:31.000Z
+401628467101929102,401628467,4016284674,3,1,7:08,Nebraska,Colorado,7,0,68,3,8,-3,Rush,"Jacory Barney Jr. run for 7 yds to the NEB 39 Nebraska Penalty, Offensive Holding (Isaiah Neyor) to the NEB 29",-0.4061963394543122,2024-09-07T23:56:36.000Z
+401628467101936601,401628467,4016284674,4,1,6:33,Nebraska,Colorado,7,0,71,3,11,9,Pass Reception,Dylan Raiola pass complete to Rahmir Johnson for 9 yds to the NEB 38,0.3615854668917713,2024-09-07T23:57:31.000Z
+401628467101945301,401628467,4016284675,1,1,5:46,Colorado,Nebraska,0,14,98,1,10,7,Interception Return Touchdown,Tommi Hill 7 Yd Interception Return (Tristan Alvano Kick),-7.024817699099273,2024-09-08T00:02:16.000Z
+401628467101945303,401628467,4016284676,1,1,5:46,Nebraska,Colorado,14,0,65,1,10,0,Kickoff,Brian Buschini kickoff for 65 yds for a touchback,,2024-09-08T00:03:29.000Z
+401628467101957901,401628467,4016284676,5,1,4:20,Colorado,Nebraska,0,14,75,4,10,0,Punt,"Mark Vassett punt for 30 yds, punt out-of-bounds at the NEB 45",,2024-09-08T00:07:04.000Z
+401628467101947301,401628467,4016284676,2,1,5:26,Colorado,Nebraska,0,14,75,1,10,-5,Sack,Shedeur Sanders sacked by MJ Sherman for a loss of 5 yards to the COLO 20,-1.0670735924396633,2024-09-08T00:05:08.000Z
+401628467101954401,401628467,4016284676,3,1,4:55,Colorado,Nebraska,0,14,80,2,15,5,Pass Reception,Shedeur Sanders pass complete to LaJohntay Wester for 5 yds to the COLO 25,0.01699869327427272,2024-09-08T00:05:39.000Z
+401628467101957201,401628467,4016284676,4,1,4:27,Colorado,Nebraska,0,14,75,3,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.15871308844886392,2024-09-08T00:06:13.000Z
+401628467102854201,401628467,4016284677,13,2,14:57,Nebraska,Colorado,14,0,14,4,7,32,Field Goal Missed,Tristan Alvano 32 yd FG MISSED,,2024-09-08T00:21:53.000Z
+401628467101997002,401628467,4016284677,11,1,0:00,Nebraska,Colorado,14,0,20,0,13,0,End Period,End of 1st Quarter,,2024-09-07T23:36:24.000Z
+401628467101995701,401628467,4016284677,10,1,0:42,Nebraska,Colorado,14,0,20,3,13,0,Timeout,"Timeout Nebraska, clock 00:42",,2024-09-07T23:36:24.000Z
+401628467101958701,401628467,4016284677,1,1,4:12,Nebraska,Colorado,14,0,55,1,10,9,Rush,Dante Dowdell run for 9 yds to the COLO 46,1.2321065178353567,2024-09-08T00:10:04.000Z
+401628467101965601,401628467,4016284677,2,1,3:43,Nebraska,Colorado,14,0,46,2,1,2,Rush,Dante Dowdell run for 2 yds to the COLO 44 for a 1ST down,-0.368375638029013,2024-09-08T00:10:34.000Z
+401628467101968801,401628467,4016284677,3,1,3:11,Nebraska,Colorado,14,0,44,1,10,0,Pass Incompletion,Dylan Raiola pass incomplete,-0.9690270974076257,2024-09-08T00:11:15.000Z
+401628467101974001,401628467,4016284677,4,1,2:59,Nebraska,Colorado,14,0,44,2,10,11,Rush,Rahmir Johnson run for 11 yds to the COLO 33 for a 1ST down,1.478834681415659,2024-09-08T00:11:52.000Z
+401628467101976201,401628467,4016284677,5,1,2:37,Nebraska,Colorado,14,0,33,1,10,1,Rush,Rahmir Johnson run for 1 yd to the COLO 32,-0.482852560268812,2024-09-08T00:12:12.000Z
+401628467101979402,401628467,4016284677,6,1,2:05,Nebraska,Colorado,14,0,32,2,9,15,Penalty,"(02:11) No Huddle-Shotgun Raiola,Dylan pass incomplete deep left to Fidone II,Thomas thrown to CU 00 PENALTY CU Pass Interference (Silmon-Craig,Cam'Ron) 15 yards from CU 32 to CU 17, 1ST DOWN. NO PLAY.",,2024-09-08T00:13:04.000Z
+401628467101984401,401628467,4016284677,7,1,1:55,Nebraska,Colorado,14,0,17,1,10,2,Rush,Dante Dowdell run for 2 yds to the COLO 15,-0.1885388219160615,2024-09-08T00:13:49.000Z
+401628467101987102,401628467,4016284677,8,1,1:28,Nebraska,Colorado,14,0,15,2,8,10,Penalty,"(01:33) No Huddle-Shotgun Dowdell,Dante rush middle for 12 yards gain to the CU 03 (Silmon-Craig,Cam'Ron) PENALTY NEB Holding (Benhart,Bryce) 10 yards from CU 15 to CU 25. NO PLAY.",,2024-09-08T00:14:18.000Z
+401628467101994201,401628467,4016284677,9,1,0:57,Nebraska,Colorado,14,0,25,2,18,5,Pass Reception,Dylan Raiola pass complete to Jacory Barney Jr. for 5 yds to the COLO 20,0.034725043562828,2024-09-08T00:15:25.000Z
+401628467101999901,401628467,4016284677,12,1,0:00,Nebraska,Colorado,14,0,20,3,13,6,Pass Reception,Dylan Raiola pass complete to Isaiah Neyor for 6 yds to the COLO 14,0.1683733428290937,2024-09-08T00:17:42.000Z
+401628467102886901,401628467,4016284678,7,2,11:30,Colorado,Nebraska,0,14,68,4,10,0,Punt,Mark Vassett punt for 54 yds,,2024-09-08T00:21:53.000Z
+401628467102855001,401628467,4016284678,1,2,14:49,Colorado,Nebraska,0,14,80,1,10,4,Rush,Dallan Hayden run for 4 yds to the COLO 24,-0.0884321258012219,2024-09-08T00:22:40.000Z
+401628467102859401,401628467,4016284678,2,2,14:05,Colorado,Nebraska,0,14,76,2,6,1,Rush,Dallan Hayden run for 1 yd to the COLO 23,-0.43243691655538724,2024-09-08T00:23:24.000Z
+401628467102866901,401628467,4016284678,3,2,13:30,Colorado,Nebraska,0,14,77,3,7,9,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 9 yds to the COLO 32 for a 1ST down,1.5391965521471747,2024-09-08T00:24:07.000Z
+401628467102869701,401628467,4016284678,4,2,13:02,Colorado,Nebraska,0,14,68,1,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.9262377870973815,2024-09-08T00:24:41.000Z
+401628467102877501,401628467,4016284678,5,2,12:24,Colorado,Nebraska,0,14,68,2,10,2,Pass Reception,Shedeur Sanders pass complete to Sav'ell Smalls for 2 yds to the COLO 34,-0.33534375152355084,2024-09-08T00:25:57.000Z
+401628467102879301,401628467,4016284678,6,2,12:06,Colorado,Nebraska,0,14,66,3,8,-2,Sack,Shedeur Sanders sacked by Jimari Butler for a loss of 2 yards to the COLO 32,-0.4276465985823652,2024-09-08T00:26:13.000Z
+401628467102908001,401628467,4016284679,6,2,9:19,Nebraska,Colorado,14,0,62,1,10,15,Penalty,"(09:26) No Huddle-Shotgun Raiola,Dylan pass incomplete short right to Banks,Jahmal thrown to NEB48 PENALTY CU Personal Foul (Barnes Jr.,Anquin) 15 yards from NEB38 to CU 47, 1ST DOWN. NO PLAY.",,2024-09-08T00:33:18.000Z
+401628467102888901,401628467,4016284679,1,2,11:10,Nebraska,Colorado,14,0,86,1,10,13,Pass Reception,Dylan Raiola pass complete to Thomas Fidone II for 13 yds to the NEB 27 for a 1ST down,0.7273513821069626,2024-09-08T00:29:56.000Z
+401628467102894901,401628467,4016284679,2,2,10:50,Nebraska,Colorado,14,0,73,1,10,5,Penalty,"PENALTY CU Offside (Barnes Jr.,Anquin) 5 yards from NEB27 to NEB32. NO PLAY.",,2024-09-08T00:30:47.000Z
+401628467102895801,401628467,4016284679,3,2,10:41,Nebraska,Colorado,14,0,68,1,5,0,Pass Incompletion,Dylan Raiola pass incomplete,-1.3690749763703067,2024-09-08T00:31:08.000Z
+401628467102897001,401628467,4016284679,4,2,10:29,Nebraska,Colorado,14,0,68,2,5,3,Rush,Dante Dowdell run for 3 yds to the NEB 35,-0.3387972534061712,2024-09-08T00:31:41.000Z
+401628467102904801,401628467,4016284679,5,2,9:51,Nebraska,Colorado,14,0,65,3,2,3,Rush,Dante Dowdell run for 3 yds to the NEB 38 for a 1ST down,1.2204401052674863,2024-09-08T00:32:20.000Z
+401628467102909101,401628467,4016284679,7,2,9:08,Nebraska,Colorado,14,0,47,1,10,7,Rush,Rahmir Johnson run for 7 yds to the COLO 40,0.5447460725225992,2024-09-08T00:34:03.000Z
+401628467102915701,401628467,4016284679,8,2,8:42,Nebraska,Colorado,14,0,40,2,3,1,Rush,Rahmir Johnson run for 1 yd to the COLO 39,-0.8069672936940152,2024-09-08T00:34:31.000Z
+401628467102919001,401628467,4016284679,9,2,8:09,Nebraska,Colorado,14,0,39,3,2,2,Rush,Dante Dowdell run for 2 yds to the COLO 37 for a 1ST down,0.8240148309611028,2024-09-08T00:35:24.000Z
+401628467102935001,401628467,4016284679,10,2,6:49,Nebraska,Colorado,14,0,37,1,10,36,Pass Reception,Dylan Raiola pass complete to Jaylen Lloyd for 36 yds to the COLO 1 for a 1ST down,2.1133873563563004,2024-09-08T00:36:23.000Z
+401628467102935501,401628467,4016284679,11,2,6:44,Nebraska,Colorado,21,0,1,1,1,1,Rushing Touchdown,Dante Dowdell run for 1 yd for a TD (Tristan Alvano KICK),0.938021275120443,2024-09-08T00:36:55.000Z
+401628467102936101,401628467,40162846710,1,2,6:38,Nebraska,Colorado,21,0,65,1,10,18,Kickoff Return (Offense),"Brian Buschini kickoff for 58 yds , Jimmy Horn Jr. return for 18 yds to the COLO 25",,2024-09-08T00:40:57.000Z
+401628467102965802,401628467,40162846710,10,2,3:41,Colorado,Nebraska,0,21,12,3,6,0,Timeout,"Timeout Nebraska, clock 03:41",,2024-09-08T00:46:08.000Z
+401628467102937001,401628467,40162846710,2,2,6:29,Colorado,Nebraska,0,21,75,1,10,6,Rush,Charlie Offerdahl run for 6 yds to the COLO 31,0.3333748010525683,2024-09-08T00:41:41.000Z
+401628467102944701,401628467,40162846710,3,2,5:52,Colorado,Nebraska,0,21,69,2,4,28,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 28 yds to the NEB 41 for a 1ST down,2.5038606927722338,2024-09-08T00:42:19.000Z
+401628467102946601,401628467,40162846710,4,2,5:33,Colorado,Nebraska,0,21,41,1,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.8772679222659558,2024-09-08T00:42:44.000Z
+401628467102946901,401628467,40162846710,5,2,5:30,Colorado,Nebraska,0,21,41,2,10,-5,Penalty,"(05:33) PENALTY CU False Start (Brown,Tyler) 5 yards from NEB41 to NEB46. NO PLAY.",,2024-09-08T00:43:37.000Z
+401628467102947901,401628467,40162846710,6,2,5:20,Colorado,Nebraska,0,21,46,2,15,19,Pass Reception,Shedeur Sanders pass complete to Will Sheppard for 19 yds to the NEB 27 for a 1ST down,2.4728190009955373,2024-09-08T00:44:23.000Z
+401628467102955101,401628467,40162846710,7,2,4:48,Colorado,Nebraska,0,21,27,1,10,11,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 11 yds to the NEB 16 for a 1ST down,0.1725581200991116,2024-09-08T00:44:55.000Z
+401628467102958501,401628467,40162846710,8,2,4:14,Colorado,Nebraska,0,21,16,1,10,4,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 4 yds to the NEB 12,-0.0205045498028526,2024-09-08T00:45:33.000Z
+401628467102965801,401628467,40162846710,9,2,3:41,Colorado,Nebraska,0,21,12,2,6,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.3467737313347555,2024-09-08T00:46:08.000Z
+401628467102966301,401628467,40162846710,11,2,3:36,Colorado,Nebraska,0,21,12,3,6,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.4165499578659445,2024-09-08T00:48:19.000Z
+401628467102966601,401628467,40162846710,12,2,3:33,Colorado,Nebraska,0,21,12,4,6,29,Blocked Field Goal,Alejandro Mata 29 yd FG BLOCKED blocked by Ty Robinson,,2024-09-08T00:49:50.000Z
+401628467102968201,401628467,40162846711,1,2,3:17,Nebraska,Colorado,21,0,80,1,10,5,Pass Reception,Dylan Raiola pass complete to Isaiah Neyor for 5 yds to the NEB 25,0.0855067756440384,2024-09-08T00:52:33.000Z
+401628467102975801,401628467,40162846711,2,2,2:41,Nebraska,Colorado,21,0,75,2,5,1,Rush,Dylan Raiola run for 1 yd to the NEB 24,-0.5083447434170161,2024-09-08T00:53:10.000Z
+401628467102979001,401628467,40162846711,3,2,2:09,Nebraska,Colorado,21,0,76,3,6,0,Pass Incompletion,Dylan Raiola pass incomplete,-0.2368142460140934,2024-09-08T00:53:52.000Z
+401628467102979701,401628467,40162846711,4,2,2:02,Nebraska,Colorado,21,0,76,4,6,0,Punt,"Brian Buschini punt for 47 yds, fair catch by LaJohntay Wester at the COLO 29",,2024-09-08T00:54:42.000Z
+401628467102985502,401628467,40162846712,4,2,1:44,Colorado,Nebraska,0,21,75,3,14,0,Timeout,"Timeout Nebraska, clock 01:44",,2024-09-08T00:59:36.000Z
+401628467102984001,401628467,40162846712,1,2,1:59,Colorado,Nebraska,0,21,71,1,10,4,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 4 yds to the COLO 33,-0.1350508541150131,2024-09-08T00:55:33.000Z
+401628467102984802,401628467,40162846712,2,2,1:51,Colorado,Nebraska,0,21,67,2,6,-10,Penalty,"(01:59) No Huddle-Shotgun Sanders,Shedeur pass incomplete short right to Wester,LaJohntay thrown to CU 36 PENALTY CU Holding (Zilinskas,Hank) 10 yards from CU 33 to CU 23. NO PLAY.",,2024-09-08T00:58:49.000Z
+401628467102985501,401628467,40162846712,3,2,1:44,Colorado,Nebraska,0,21,77,2,16,2,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 2 yds to the COLO 25,-0.10955644252305952,2024-09-08T00:59:36.000Z
+401628467102986002,401628467,40162846712,5,2,1:39,Colorado,Nebraska,0,21,75,3,14,-5,Penalty,"(01:44) No Huddle-Shotgun Sanders,Shedeur sacked for loss of 17 yards to the CU 08 (Umanmielen,Princewill) PENALTY NEB Offside (Williams,James) 5 yards from CU 25 to CU 30. NO PLAY.",,2024-09-08T01:01:50.000Z
+401628467102986701,401628467,40162846712,6,2,1:32,Colorado,Nebraska,0,21,70,3,9,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.24285188526338786,2024-09-08T01:02:29.000Z
+401628467102987404,401628467,40162846712,7,2,1:25,Colorado,Nebraska,0,21,70,4,9,0,Punt,"Mark Vassett punt for 40 yds, fair catch by Isaiah Garcia-Castaneda at the NEB 30",,2024-09-08T01:03:39.000Z
+401628467102989001,401628467,40162846713,1,2,1:09,Nebraska,Colorado,21,0,70,1,10,6,Pass Reception,Dylan Raiola pass complete to Rahmir Johnson for 6 yds to the NEB 36,0.3731544450397237,2024-09-08T01:03:58.000Z
+401628467102994004,401628467,40162846713,2,2,0:59,Nebraska,Colorado,21,0,64,2,4,31,Pass Reception,"Dylan Raiola pass complete to Isaiah Neyor for 16 yds to the COLO 48 for a 1ST down Colorado Penalty, Targeting (Trevor Woods) to the COLO 33 for a 1ST down",2.4165573003626317,2024-09-08T01:04:28.000Z
+401628467102995302,401628467,40162846713,3,2,0:46,Nebraska,Colorado,21,0,33,1,10,15,Penalty,"(00:50) No Huddle-Shotgun Raiola,Dylan pass incomplete short right to Banks,Jahmal thrown to CU 16 PENALTY CU Pass Interference (McKinney,D.J.) 15 yards from CU 33 to CU 18, 1ST DOWN. NO PLAY.",,2024-09-08T01:06:32.000Z
+401628467102995901,401628467,40162846713,4,2,0:40,Nebraska,Colorado,28,0,18,1,10,18,Passing Touchdown,Dylan Raiola pass complete to Rahmir Johnson for 18 yds for a TD (Tristan Alvano KICK),2.591792709070591,2024-09-08T01:07:44.000Z
+401628467102999905,401628467,40162846714,9,2,0:00,Nebraska,Colorado,28,0,100,0,0,-57,End of Half,End of 2nd Quarter,,2024-09-08T01:15:09.000Z
+401628467102996003,401628467,40162846714,1,2,0:39,Nebraska,Colorado,28,0,65,1,10,0,Kickoff,Brian Buschini kickoff for 36 yds,,2024-09-08T01:10:15.000Z
+401628467102998801,401628467,40162846714,4,2,0:11,Colorado,Nebraska,0,28,54,2,7,0,Timeout,"Timeout Colorado, clock 00:11",,2024-09-08T00:21:53.000Z
+401628467102999702,401628467,40162846714,7,2,0:02,Colorado,Nebraska,0,28,43,1,10,0,Timeout,"Timeout Colorado, clock 00:02",,2024-09-08T01:13:58.000Z
+401628467102996501,401628467,40162846714,2,2,0:34,Colorado,Nebraska,0,28,71,1,10,14,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 14 yds to the COLO 43 for a 1ST down,1.310300175243638,2024-09-08T01:10:36.000Z
+401628467102998201,401628467,40162846714,3,2,0:17,Colorado,Nebraska,0,28,57,1,10,3,Rush,Shedeur Sanders run for 3 yds to the COLO 46,-0.4309799951978805,2024-09-08T01:11:07.000Z
+401628467102999001,401628467,40162846714,5,2,0:09,Colorado,Nebraska,0,28,54,2,7,0,Pass Incompletion,Shedeur Sanders pass incomplete,-1.0786402011262728,2024-09-08T01:12:45.000Z
+401628467102999701,401628467,40162846714,6,2,0:02,Colorado,Nebraska,0,28,54,3,7,11,Pass Reception,Shedeur Sanders pass complete to Jimmy Horn Jr. for 11 yds to the NEB 43 for a 1ST down,2.6225668059046257,2024-09-08T01:13:58.000Z
+401628467102999901,401628467,40162846714,8,2,0:00,Colorado,Nebraska,0,28,43,1,10,61,Field Goal Missed,Jace Feely 61 yd FG MISSED,,2024-09-08T01:15:09.000Z
+401628467103854501,401628467,40162846715,1,3,14:54,Colorado,Nebraska,0,28,65,1,10,19,Kickoff,"Jace Feely kickoff for 61 yds , Jacory Barney Jr. return for 19 yds to the NEB 23",,2024-09-08T01:37:29.000Z
+401628467103854502,401628467,40162846715,2,3,14:54,Colorado,Nebraska,0,28,65,1,10,19,Kickoff Return (Offense),"Jace Feely kickoff for 61 yds , Jacory Barney Jr. return for 19 yds to the NEB 23",,2024-09-08T01:37:29.000Z
+401628467103855301,401628467,40162846715,3,3,14:46,Nebraska,Colorado,28,0,77,1,10,1,Rush,Dante Dowdell run for 1 yd to the NEB 24,-0.5380287086286026,2024-09-08T01:37:49.000Z
+401628467103858301,401628467,40162846715,4,3,14:16,Nebraska,Colorado,28,0,76,2,9,0,Pass Incompletion,Dylan Raiola pass incomplete,-0.3657576890065082,2024-09-08T01:38:40.000Z
+401628467103864801,401628467,40162846715,5,3,13:51,Nebraska,Colorado,28,0,76,3,9,5,Pass Reception,Dylan Raiola pass complete to Rahmir Johnson for 5 yds to the NEB 29,0.02180393798655889,2024-09-08T01:39:15.000Z
+401628467103867501,401628467,40162846715,6,3,13:24,Nebraska,Colorado,28,0,71,4,4,14,Punt,"Brian Buschini punt for 44 yds , LaJohntay Wester returns for 14 yds to the COLO 41",,2024-09-08T01:40:06.000Z
+401628467103867502,401628467,40162846715,7,3,13:24,Nebraska,Colorado,28,0,71,4,4,14,Punt,"Brian Buschini punt for 44 yds , LaJohntay Wester returns for 14 yds to the COLO 41",,2024-09-08T01:40:06.000Z
+401628467103869801,401628467,40162846716,1,3,13:01,Colorado,Nebraska,0,28,59,1,10,14,Pass Reception,Shedeur Sanders pass complete to LaJohntay Wester for 14 yds to the NEB 45 for a 1ST down,1.1824982647313593,2024-09-08T01:40:59.000Z
+401628467103875401,401628467,40162846716,2,3,12:45,Colorado,Nebraska,0,28,45,1,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.997770018980635,2024-09-08T01:41:25.000Z
+401628467103877001,401628467,40162846716,3,3,12:29,Colorado,Nebraska,0,28,45,2,10,9,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 9 yds to the NEB 36,0.978263684725091,2024-09-08T01:42:04.000Z
+401628467103885201,401628467,40162846716,4,3,11:47,Colorado,Nebraska,0,28,36,3,1,30,Pass Reception,Shedeur Sanders pass complete to Will Sheppard for 30 yds to the NEB 6 for a 1ST down,1.443530648257335,2024-09-08T01:42:46.000Z
+401628467103887601,401628467,40162846716,5,3,11:23,Colorado,Nebraska,0,28,6,1,6,-4,Pass Reception,Shedeur Sanders pass complete to LaJohntay Wester for a loss of 4 yards to the NEB 10,-0.7467301304361076,2024-09-08T01:43:12.000Z
+401628467103894901,401628467,40162846716,6,3,10:50,Colorado,Nebraska,0,28,10,2,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.2792458253567104,2024-09-08T01:44:00.000Z
+401628467103895801,401628467,40162846716,7,3,10:41,Colorado,Nebraska,0,28,10,3,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.435155339591331,2024-09-08T01:44:47.000Z
+401628467103896101,401628467,40162846716,8,3,10:38,Colorado,Nebraska,3,28,10,4,10,27,Field Goal Good,Alejandro Mata 27 yd FG GOOD,,2024-09-08T01:45:18.000Z
+401628467103896201,401628467,40162846717,1,3,10:37,Colorado,Nebraska,3,28,65,1,10,0,Kickoff Return (Offense),"Jace Feely kickoff for 48 yds , Nate Boerkircher return for no gain to the NEB 17",,2024-09-08T01:49:01.000Z
+401628467103899901,401628467,40162846717,3,3,10:00,Nebraska,Colorado,28,3,69,1,10,2,Rush,Dante Dowdell run for 2 yds to the NEB 33,-0.5660789348414365,2024-09-08T01:49:55.000Z
+401628467103897901,401628467,40162846717,2,3,10:20,Nebraska,Colorado,28,3,83,1,10,14,Rush,Dante Dowdell run for 14 yds to the NEB 31 for a 1ST down,0.9278915774366077,2024-09-08T01:49:31.000Z
+401628467103908001,401628467,40162846717,4,3,9:19,Nebraska,Colorado,28,3,67,2,8,0,Pass Reception,Dylan Raiola pass complete to Jacory Barney Jr. for no gain to the NEB 33,-0.6469157130199852,2024-09-08T01:50:40.000Z
+401628467103914501,401628467,40162846717,5,3,8:54,Nebraska,Colorado,28,3,67,3,8,0,Pass Incompletion,Dylan Raiola pass incomplete,-0.32374585344816076,2024-09-08T01:51:09.000Z
+401628467103915501,401628467,40162846717,6,3,8:44,Nebraska,Colorado,28,3,67,4,8,1,Punt,"Brian Buschini punt for 54 yds , LaJohntay Wester returns for 1 yd to the COLO 14",,2024-09-08T01:51:51.000Z
+401628467103939904,401628467,40162846718,7,3,6:00,Colorado,Nebraska,3,28,59,4,10,4,Punt,"Mark Vassett punt for 47 yds , Isaiah Garcia-Castaneda returns for 4 yds to the NEB 8",,2024-09-08T02:01:14.000Z
+401628467103916001,401628467,40162846718,1,3,8:39,Colorado,Nebraska,3,28,86,1,10,6,Rush,Dallan Hayden run for 6 yds to the COLO 20,0.2392954147189048,2024-09-08T01:55:02.000Z
+401628467103924201,401628467,40162846718,2,3,7:57,Colorado,Nebraska,3,28,80,2,4,21,Pass Reception,Shedeur Sanders pass complete to Dallan Hayden for 21 yds to the COLO 41 for a 1ST down,1.7617590518115671,2024-09-08T01:55:38.000Z
+401628467103927401,401628467,40162846718,3,3,7:25,Colorado,Nebraska,3,28,59,1,10,-6,Sack,Shedeur Sanders sacked by Princewill Umanmielen for a loss of 6 yards to the COLO 35,-2.0756713262890445,2024-09-08T01:57:09.000Z
+401628467103935401,401628467,40162846718,4,3,6:45,Colorado,Nebraska,3,28,65,2,16,6,Pass Reception,Shedeur Sanders pass complete to Dallan Hayden for 6 yds to the COLO 41,0.14744249749320207,2024-09-08T01:57:42.000Z
+401628467103938901,401628467,40162846718,5,3,6:10,Colorado,Nebraska,3,28,59,3,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.4379753027366,2024-09-08T01:58:58.000Z
+401628467103939903,401628467,40162846718,6,3,6:00,Colorado,Nebraska,3,28,59,4,10,4,Punt,"Mark Vassett punt for 47 yds , Isaiah Garcia-Castaneda returns for 4 yds to the NEB 16",,2024-09-08T02:01:14.000Z
+401628467103997501,401628467,40162846719,12,3,0:24,Nebraska,Colorado,28,3,35,3,9,0,Timeout,"Timeout Colorado, clock 00:24",,2024-09-08T01:37:29.000Z
+401628467103999902,401628467,40162846719,14,3,0:00,Nebraska,Colorado,28,3,35,0,9,-5,End Period,End of 3rd Quarter,,2024-09-08T02:14:55.000Z
+401628467104854501,401628467,40162846719,15,4,14:54,Nebraska,Colorado,28,3,40,4,14,0,Punt,Dylan Raiola punt for 40 yds for a touchback,,2024-09-08T02:18:57.000Z
+401628467103944801,401628467,40162846719,1,3,5:51,Nebraska,Colorado,28,3,92,1,10,2,Rush,Dante Dowdell run for 2 yds to the NEB 10,-0.20709960786905768,2024-09-08T02:05:05.000Z
+401628467103948401,401628467,40162846719,2,3,5:15,Nebraska,Colorado,28,3,90,2,8,12,Pass Reception,Dylan Raiola pass complete to Rahmir Johnson for 12 yds to the NEB 22 for a 1ST down,0.7838200797189421,2024-09-08T02:05:48.000Z
+401628467103955901,401628467,40162846719,3,3,4:40,Nebraska,Colorado,28,3,78,1,10,6,Rush,Rahmir Johnson run for 6 yds to the NEB 28,0.3066560644610403,2024-09-08T02:06:23.000Z
+401628467103959101,401628467,40162846719,4,3,4:08,Nebraska,Colorado,28,3,72,2,4,4,Rush,Rahmir Johnson run for 4 yds to the NEB 32 for a 1ST down,0.4460180222382224,2024-09-08T02:06:58.000Z
+401628467103966201,401628467,40162846719,5,3,3:37,Nebraska,Colorado,28,3,68,1,10,1,Rush,Rahmir Johnson run for 1 yd to the NEB 31,-0.7658255968233298,2024-09-08T02:07:28.000Z
+401628467103969602,401628467,40162846719,6,3,3:03,Nebraska,Colorado,28,3,69,2,11,-9,Pass Reception,"Dylan Raiola pass complete to Jacory Barney Jr. for 1 yd to the NEB 32 Nebraska Penalty, Offensive Holding (-10 Yards) to the NEB 22",-0.7444311381271795,2024-09-08T02:08:40.000Z
+401628467103975302,401628467,40162846719,7,3,2:46,Nebraska,Colorado,28,3,78,2,20,-4,Pass Reception,"Dylan Raiola pass complete to Rahmir Johnson for 6 yds to the NEB 28 Nebraska Penalty, Illegal Block (-10 Yards) to the NEB 18",-0.1426275845198619,2024-09-08T02:09:15.000Z
+401628467103978601,401628467,40162846719,8,3,2:13,Nebraska,Colorado,28,3,82,2,24,25,Pass Reception,Dylan Raiola pass complete to Nate Boerkircher for 25 yds to the NEB 43 for a 1ST down,2.854107829210683,2024-09-08T02:10:24.000Z
+401628467103985701,401628467,40162846719,9,3,1:42,Nebraska,Colorado,28,3,57,1,10,21,Rush,Jacory Barney Jr. run for 21 yds to the COLO 36 for a 1ST down,1.4545386024975304,2024-09-08T02:10:58.000Z
+401628467103989601,401628467,40162846719,10,3,1:03,Nebraska,Colorado,28,3,36,1,10,0,Pass Incompletion,Dylan Raiola pass incomplete,-0.7215426143188567,2024-09-08T02:11:39.000Z
+401628467103994601,401628467,40162846719,11,3,0:53,Nebraska,Colorado,28,3,36,2,10,1,Rush,Dante Dowdell run for 1 yd to the COLO 35,-0.7260935147228553,2024-09-08T02:12:21.000Z
+401628467103999901,401628467,40162846719,13,3,0:00,Nebraska,Colorado,28,3,35,3,9,-5,Pass Reception,Dylan Raiola pass complete to Rahmir Johnson for a loss of 5 yards to the COLO 40,-1.9292111934134677,2024-09-08T02:14:55.000Z
+401628467104859001,401628467,40162846720,2,4,14:09,Colorado,Nebraska,3,28,72,2,2,1,Rush,Charlie Offerdahl run for 1 yd to the COLO 29,-0.8048533021948945,2024-09-08T02:20:35.000Z
+401628467104866101,401628467,40162846720,3,4,13:38,Colorado,Nebraska,3,28,71,3,1,0,Rush,Shedeur Sanders run for no gain to the COLO 29,-0.5611990698005247,2024-09-08T02:21:15.000Z
+401628467104874801,401628467,40162846720,4,4,12:51,Colorado,Nebraska,3,28,71,4,1,1,Rush,Charlie Offerdahl run for 1 yd to the COLO 28,1.2605795390152643,2024-09-08T02:22:14.000Z
+401628467104856001,401628467,40162846720,1,4,14:39,Colorado,Nebraska,3,28,80,1,10,8,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 8 yds to the COLO 28,0.7987441096809142,2024-09-08T02:20:07.000Z
+401628467104875901,401628467,40162846721,1,4,12:40,Nebraska,Colorado,28,3,28,1,10,3,Rush,Dante Dowdell run for 3 yds to the COLO 31,-0.158911195567058,2024-09-08T02:23:03.000Z
+401628467104884101,401628467,40162846721,2,4,11:58,Nebraska,Colorado,28,3,31,2,13,3,Rush,Emmett Johnson run for 3 yds to the COLO 28,-0.2858260726016653,2024-09-08T02:23:43.000Z
+401628467104887602,401628467,40162846721,3,4,11:23,Nebraska,Colorado,28,3,28,3,10,10,Penalty,"(11:28) No Huddle-Shotgun Raiola,Dylan pass complete short right to Neyor,Isaiah caught at CU 26, for 6 yards to the CU 22 (Hunter,Travis) PENALTY NEB Holding (Evans,Justin) 10 yards from CU 28 to CU 38. NO PLAY.",,2024-09-08T02:24:40.000Z
+401628467104894402,401628467,40162846721,5,4,10:55,Nebraska,Colorado,28,3,38,4,20,5,Penalty,PENALTY NEB Delay Of Game 5 yards from CU 38 to CU 43. NO PLAY.,,2024-09-08T02:25:39.000Z
+401628467104895001,401628467,40162846721,6,4,10:49,Nebraska,Colorado,28,3,43,4,25,1,Blocked Punt,"Brian Buschini punt blocked by BJ Green II, punt out-of-bounds at the COLO 42 blocked by BJ Green II",,2024-09-08T02:28:09.000Z
+401628467104894401,401628467,40162846721,4,4,10:55,Nebraska,Colorado,28,3,38,3,20,0,Pass Incompletion,Dylan Raiola pass incomplete,-0.6907988566885336,2024-09-08T02:25:39.000Z
+401628467104896101,401628467,40162846722,1,4,10:38,Colorado,Nebraska,3,28,58,1,10,17,Rush,Dallan Hayden run for 17 yds to the NEB 41 for a 1ST down,1.321183586142796,2024-09-08T02:30:35.000Z
+401628467104899501,401628467,40162846722,2,4,10:04,Colorado,Nebraska,3,28,41,1,10,0,Pass Incompletion,Shedeur Sanders pass incomplete,-0.8772679222659558,2024-09-08T02:31:22.000Z
+401628467104905401,401628467,40162846722,3,4,9:45,Colorado,Nebraska,3,28,41,2,10,21,Pass Reception,Shedeur Sanders pass complete to Travis Hunter for 21 yds to the NEB 20 for a 1ST down,1.4998598191307764,2024-09-08T02:32:01.000Z
+401628467104914401,401628467,40162846722,5,4,8:55,Colorado,Nebraska,3,28,10,1,10,5,Pass Reception,Shedeur Sanders pass complete to Jimmy Horn Jr. for 5 yds to the NEB 5,0.075249150719522,2024-09-08T02:36:24.000Z
+401628467104908501,401628467,40162846722,4,4,9:14,Colorado,Nebraska,3,28,20,1,10,10,Penalty,"Nebraska Penalty, Targeting (Nash Hutmacher) to the NEB 10 for a 1ST down",,2024-09-08T02:34:12.000Z
+401628467104915401,401628467,40162846722,6,4,8:45,Colorado,Nebraska,10,28,5,2,5,5,Passing Touchdown,Shedeur Sanders pass complete to LaJohntay Wester for 5 yds for a TD (Alejandro Mata KICK),2.43857769152992,2024-09-08T02:36:56.000Z
+401628467104915901,401628467,40162846723,1,4,8:40,Colorado,Nebraska,10,28,65,1,10,16,Kickoff Return (Offense),"Jace Feely kickoff for 60 yds , Jacory Barney Jr. return for 16 yds to the NEB 21",,2024-09-08T02:40:50.000Z
+401628467104946001,401628467,40162846723,8,4,5:39,Nebraska,Colorado,28,10,69,2,13,0,Timeout,"Timeout Nebraska, clock 05:39",,2024-09-08T02:18:48.000Z
+401628467104958601,401628467,40162846723,13,4,4:13,Nebraska,Colorado,28,10,68,4,12,0,Timeout,"Timeout Nebraska, clock 04:13",,2024-09-08T02:18:48.000Z
+401628467104918501,401628467,40162846723,2,4,8:14,Nebraska,Colorado,28,10,79,1,10,4,Rush,Dylan Raiola run for 4 yds to the NEB 17,-0.09341756947157,2024-09-08T02:41:42.000Z
+401628467104925601,401628467,40162846723,3,4,7:43,Nebraska,Colorado,28,10,83,2,14,3,Rush,Dante Dowdell run for 3 yds to the NEB 20,-0.06111464871409122,2024-09-08T02:42:15.000Z
+401628467104934102,401628467,40162846723,4,4,6:58,Nebraska,Colorado,28,10,80,3,11,-1,Pass Reception,"Dylan Raiola pass complete to Jacory Barney Jr. for 9 yds to the NEB 29 Nebraska Penalty, Offensive Holding (Rahmir Johnson) to the NEB 19",-0.11618992334233536,2024-09-08T02:43:45.000Z
+401628467104937301,401628467,40162846723,5,4,6:26,Nebraska,Colorado,28,10,81,3,12,15,Penalty,"(06:26) No Huddle-Shotgun Raiola,Dylan pass incomplete deep middle to Banks,Jahmal thrown to NEB50 PENALTY CU Roughing The Passer (Green,B.J.) 15 yards from NEB19 to NEB34, 1ST DOWN. NO PLAY.",,2024-09-08T02:44:36.000Z
+401628467104937303,401628467,40162846723,6,4,6:26,Nebraska,Colorado,28,10,66,1,10,-5,Penalty,"PENALTY NEB False Start (Fidone II,Thomas) 5 yards from NEB34 to NEB29. NO PLAY.",,2024-09-08T02:44:36.000Z
+401628467104938501,401628467,40162846723,7,4,6:14,Nebraska,Colorado,28,10,71,1,15,2,Rush,Rahmir Johnson run for 2 yds to the NEB 31,-0.3545631996296095,2024-09-08T02:46:28.000Z
+401628467104947101,401628467,40162846723,9,4,5:28,Nebraska,Colorado,28,10,69,2,13,-12,Penalty,"(05:39) No Huddle-Shotgun Johnson,Rahmir rush left for 0 yards to the NEB31, End Of Play PENALTY NEB Holding (Scott,Ben) 12 yards from NEB31 to NEB19. NO PLAY.",,2024-09-08T02:51:51.000Z
+401628467104947104,401628467,40162846723,10,4,5:28,Nebraska,Colorado,28,10,69,2,13,2,Rush,Rahmir Johnson run for 2 yds to the NEB 29,-0.24363358230315857,2024-09-08T02:51:51.000Z
+401628467104947801,401628467,40162846723,11,4,5:21,Nebraska,Colorado,28,10,81,2,25,6,Pass Reception,Dylan Raiola pass complete to Jacory Barney Jr. for 6 yds to the NEB 25,0.02188748562619834,2024-09-08T02:53:31.000Z
+401628467104955901,401628467,40162846723,12,4,4:40,Nebraska,Colorado,28,10,75,3,19,7,Rush,Dante Dowdell run for 7 yds to the NEB 32,0.05388908669196813,2024-09-08T02:54:18.000Z
+401628467104959703,401628467,40162846723,14,4,4:02,Nebraska,Colorado,28,10,68,4,12,0,Punt,"Brian Buschini punt for 49 yds , LaJohntay Wester returns for no gain to the COLO 9",,2024-09-08T02:57:30.000Z
+401628467104965201,401628467,40162846724,1,4,3:47,Colorado,Nebraska,10,28,91,1,10,6,Rush,Dallan Hayden run for 6 yds to the COLO 15,0.20527425780596875,2024-09-08T03:00:02.000Z
+401628467104967301,401628467,40162846724,2,4,3:26,Colorado,Nebraska,10,28,85,2,4,3,Rush,Ryan Staub run for 3 yds to the COLO 18,-0.1838518131716027,2024-09-08T03:00:54.000Z
+401628467104975001,401628467,40162846724,3,4,2:49,Colorado,Nebraska,10,28,82,3,1,3,Rush,Isaiah Augustave run for 3 yds to the COLO 21 for a 1ST down,0.47022872157335627,2024-09-08T03:01:25.000Z
+401628467104976501,401628467,40162846724,4,4,2:34,Colorado,Nebraska,10,28,79,1,10,0,Pass Incompletion,Ryan Staub pass incomplete,-0.585616097616759,2024-09-08T03:01:48.000Z
+401628467104977801,401628467,40162846724,5,4,2:21,Colorado,Nebraska,10,28,79,2,10,9,Rush,Ryan Staub run for 9 yds to the COLO 30,0.5762600220667844,2024-09-08T03:02:28.000Z
+401628467104979901,401628467,40162846724,6,4,2:00,Colorado,Nebraska,10,28,70,3,1,0,Pass Incompletion,Ryan Staub pass incomplete,-0.5870392989585209,2024-09-08T03:02:58.000Z
+401628467104984301,401628467,40162846724,7,4,1:56,Colorado,Nebraska,10,28,70,4,1,3,Rush,Isaiah Augustave run for 3 yds to the COLO 33 for a 1ST down,1.4978734951845025,2024-09-08T03:06:01.000Z
+401628467104986601,401628467,40162846724,8,4,1:33,Colorado,Nebraska,10,28,67,1,10,-8,Fumble Recovery (Own),"Ryan Staub sacked by Willis McGahee IV for a loss of 8 yards to the COLO 25 Ryan Staub fumbled, recovered by NEB Jimari Butler , return for 0 yards",-1.7046761512132962,2024-09-08T03:07:26.000Z
+401628467104999502,401628467,40162846725,3,4,0:00,Nebraska,Colorado,28,10,19,0,4,0,End of Game,End of 4th Quarter,,2024-09-08T03:09:32.000Z
+401628467104987501,401628467,40162846725,1,4,1:24,Nebraska,Colorado,28,10,25,1,10,5,Rush,Gabe Ervin Jr. run for 5 yds to the COLO 20,0.0753631044225715,2024-09-08T03:07:45.000Z
+401628467104995301,401628467,40162846725,2,4,0:46,Nebraska,Colorado,28,10,20,2,5,1,Rush,Gabe Ervin Jr. run for 1 yd to the COLO 19,-0.370499233867458,2024-09-08T03:08:14.000Z
+401628467104999901,401628467,40162846725,4,4,0:00,Nebraska,Colorado,28,10,19,3,4,-2,Rush,D. Raiola takes a knee,-0.884445922873688,2024-09-08T03:09:32.000Z

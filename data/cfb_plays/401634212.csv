@@ -1,0 +1,177 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401634212101859201,401634212,4016342121,4,1,14:07,South Dakota State,Oklahoma State,0,0,74,2,7,10,Pass Reception,Mark Gronowski pass complete to Griffin Wilde for a 1ST down,1.3345841415408177,2024-08-31T18:03:53.000Z
+401634212101867001,401634212,4016342121,5,1,13:29,South Dakota State,Oklahoma State,0,0,64,1,10,13,Pass Reception,Mark Gronowski pass complete to Amar Johnson for a 1ST down,1.223825403882392,2024-08-31T18:03:53.000Z
+401634212101874401,401634212,4016342121,6,1,12:55,South Dakota State,Oklahoma State,0,0,51,1,10,5,Rush,Mark Gronowski run for 5 yds to the OKST 46,0.1032144590601496,2024-08-31T18:03:53.000Z
+401634212101878901,401634212,4016342121,7,1,12:10,South Dakota State,Oklahoma State,0,0,46,2,5,3,Pass Reception,Mark Gronowski pass complete to Davin Stoffel,-0.4027010207769539,2024-08-31T18:06:48.000Z
+401634212101886701,401634212,4016342121,8,1,11:32,South Dakota State,Oklahoma State,0,0,43,3,2,0,Pass Incompletion,Mark Gronowski pass incomplete,-1.159364972203658,2024-08-31T18:06:52.000Z
+401634212101887201,401634212,4016342121,9,1,11:27,South Dakota State,Oklahoma State,0,0,43,4,2,0,Pass Incompletion,Mark Gronowski pass incomplete,-1.6177812621865986,2024-08-31T18:07:38.000Z
+401634212101854602,401634212,4016342121,2,1,14:53,Oklahoma State,South Dakota State,0,0,65,1,10,19,Kickoff Return (Offense),"Logan Ward kickoff for 61 yds , Angel Johnson return for 19 yds to the SDST 23",,2024-08-31T18:03:53.000Z
+401634212101854601,401634212,4016342121,1,1,14:53,Oklahoma State,South Dakota State,0,0,65,1,10,19,Kickoff,"Logan Ward kickoff for 61 yds , Angel Johnson return for 19 yds to the SDST 23",,2024-08-31T18:03:53.000Z
+401634212101855101,401634212,4016342121,3,1,14:48,South Dakota State,Oklahoma State,0,0,77,1,10,3,Rush,Amar Johnson run for 3 yds to the SDST 26,-0.2714196551267518,2024-08-31T18:03:53.000Z
+401634212101906001,401634212,4016342122,7,1,9:39,Oklahoma State,South Dakota State,0,0,37,4,3,6,Pass Reception,Alan Bowman pass complete to Rashod Owens for a 1ST down,2.0949687640802015,2024-08-31T18:10:41.000Z
+401634212101888601,401634212,4016342122,1,1,11:13,Oklahoma State,South Dakota State,0,0,57,1,10,3,Pass Reception,Alan Bowman pass complete to Brennan Presley,-0.4309799951978805,2024-08-31T18:08:32.000Z
+401634212101894301,401634212,4016342122,2,1,10:56,Oklahoma State,South Dakota State,0,0,54,2,7,0,Pass Reception,Alan Bowman pass complete to Brennan Presley,-1.0786402011262728,2024-08-31T18:08:51.000Z
+401634212101895901,401634212,4016342122,3,1,10:40,Oklahoma State,South Dakota State,0,0,54,3,7,10,Rush,Ollie Gordon II run for 10 yds to the SDST 44 for a 1ST down,2.5620545363254585,2024-08-31T18:09:12.000Z
+401634212101898101,401634212,4016342122,4,1,10:18,Oklahoma State,South Dakota State,0,0,44,1,10,4,Rush,Brennan Presley run for 4 yds to the SDST 40,-0.1108700500197327,2024-08-31T18:09:31.000Z
+401634212101899401,401634212,4016342122,5,1,10:05,Oklahoma State,South Dakota State,0,0,40,2,6,3,Rush,Ollie Gordon II run for 3 yds to the SDST 37,-0.338109427446941,2024-08-31T18:09:48.000Z
+401634212101904801,401634212,4016342122,6,1,9:51,Oklahoma State,South Dakota State,0,0,37,3,3,0,Pass Incompletion,Alan Bowman pass incomplete,-1.0750530991764542,2024-08-31T18:10:00.000Z
+401634212101908801,401634212,4016342122,8,1,9:11,Oklahoma State,South Dakota State,0,0,31,1,10,0,Pass Incompletion,Alan Bowman pass incomplete,-0.5824837756999947,2024-08-31T18:11:11.000Z
+401634212101909801,401634212,4016342122,9,1,9:01,Oklahoma State,South Dakota State,0,0,31,2,10,6,Pass Reception,Alan Bowman pass complete to Brennan Presley,0.1970405086538066,2024-08-31T18:11:49.000Z
+401634212101917901,401634212,4016342122,10,1,8:20,Oklahoma State,South Dakota State,0,0,25,3,4,0,Pass Incompletion,Alan Bowman pass incomplete,-0.7496565816018813,2024-08-31T18:12:28.000Z
+401634212101918401,401634212,4016342122,11,1,8:15,Oklahoma State,South Dakota State,3,0,25,4,4,42,Field Goal Good,Logan Ward 42 yd FG GOOD,,2024-08-31T18:13:05.000Z
+401634212101936001,401634212,4016342123,4,1,6:39,South Dakota State,Oklahoma State,0,3,74,3,9,12,Pass Reception,Mark Gronowski pass complete to Griffin Wilde for a 1ST down,2.1205449753462267,2024-08-31T18:19:15.000Z
+401634212101918402,401634212,4016342123,1,1,8:15,Oklahoma State,South Dakota State,3,0,65,1,10,0,Kickoff,Logan Ward kickoff for 65 yds for a touchback,,2024-08-31T18:16:42.000Z
+401634212101918901,401634212,4016342123,2,1,8:10,South Dakota State,Oklahoma State,0,3,75,1,10,8,Rush,Angel Johnson run for 8 yds to the SDST 33,0.9104368550610653,2024-08-31T18:17:30.000Z
+401634212101928501,401634212,4016342123,3,1,7:14,South Dakota State,Oklahoma State,0,3,67,2,2,-7,Pass Reception,Mark Gronowski pass complete to Angel Johnson,-1.906230351365461,2024-08-31T18:18:25.000Z
+401634212101944401,401634212,4016342123,5,1,5:55,South Dakota State,Oklahoma State,0,3,62,1,10,1,Pass Reception,Mark Gronowski pass complete to Angel Johnson,-0.8867433222723466,2024-08-31T18:19:57.000Z
+401634212101948001,401634212,4016342123,6,1,5:19,South Dakota State,Oklahoma State,0,3,61,2,9,1,Rush,Amar Johnson run for 1 yd to the SDST 40,-0.6475159090620152,2024-08-31T18:20:29.000Z
+401634212101956001,401634212,4016342123,7,1,4:39,South Dakota State,Oklahoma State,0,3,60,3,8,0,Pass Interception Return,Mark Gronowski pass intercepted Korie Black return for no gain to the SDST 47,-0.5127371279861475,2024-08-31T18:21:21.000Z
+401634212101966701,401634212,4016342124,3,1,3:32,Oklahoma State,South Dakota State,3,0,33,2,6,6,Pass Reception,Alan Bowman pass complete to Ollie Gordon II for a 1ST down,0.386013515081773,2024-08-31T18:28:27.000Z
+401634212101968601,401634212,4016342124,4,1,3:13,Oklahoma State,South Dakota State,3,0,27,1,10,6,Pass Reception,Alan Bowman pass complete to Gavin Freeman,0.2009551098411215,2024-08-31T18:28:58.000Z
+401634212101977601,401634212,4016342124,6,1,2:23,Oklahoma State,South Dakota State,3,0,13,1,10,7,Pass Reception,Alan Bowman pass complete to De'Zhaun Stribling,0.303353772724696,2024-08-31T18:29:42.000Z
+401634212101956901,401634212,4016342124,1,1,4:30,Oklahoma State,South Dakota State,3,0,47,1,10,10,Rush,Ollie Gordon II run for 10 yds to the SDST 37 for a 1ST down,0.5617936097896868,2024-08-31T18:24:22.000Z
+401634212101964001,401634212,4016342124,2,1,3:59,Oklahoma State,South Dakota State,3,0,37,1,10,4,Rush,Ollie Gordon II run for 4 yds to the SDST 33,-0.0758857249965158,2024-08-31T18:25:12.000Z
+401634212101975101,401634212,4016342124,5,1,2:48,Oklahoma State,South Dakota State,3,0,21,2,4,8,Rush,Alan Bowman run for 8 yds to the SDST 13 for a 1ST down,0.0013965165045175,2024-08-31T18:29:16.000Z
+401634212101979601,401634212,4016342124,7,1,2:03,Oklahoma State,South Dakota State,10,0,6,2,3,6,Passing Touchdown,Brennan Presley 6 Yd pass from Alan Bowman (Logan Ward Kick),2.235575442321151,2024-08-31T18:32:05.000Z
+401634212101997702,401634212,4016342125,4,1,0:00,South Dakota State,Oklahoma State,0,10,70,0,9,0,End Period,End of 1st Quarter,,2024-08-31T18:36:51.000Z
+401634212101984401,401634212,4016342125,1,1,1:55,Oklahoma State,South Dakota State,10,0,65,1,10,24,Kickoff Return (Offense),"Logan Ward kickoff for 60 yds , Angel Johnson return for 24 yds to the SDST 29",,2024-08-31T18:34:22.000Z
+401634212101985001,401634212,4016342125,2,1,1:49,South Dakota State,Oklahoma State,0,10,71,1,10,3,Rush,Mark Gronowski run for 3 yds to the SDST 26,-0.3446420231971743,2024-08-31T18:34:59.000Z
+401634212101989701,401634212,4016342125,3,1,1:02,South Dakota State,Oklahoma State,0,10,74,2,13,4,Pass Reception,Mark Gronowski pass complete to Amar Johnson,-0.05210576812582346,2024-08-31T18:35:48.000Z
+401634212101999901,401634212,4016342125,5,1,0:00,South Dakota State,Oklahoma State,0,10,70,3,9,40,Rush,Amar Johnson run for 40 yds to the OKST 30 for a 1ST down,4.158592688848151,2024-08-31T18:36:51.000Z
+401634212102855001,401634212,4016342125,6,2,14:49,South Dakota State,Oklahoma State,0,10,30,1,10,10,Rush,Mark Gronowski run for 10 yds to the OKST 20 for a 1ST down,0.196315403891072,2024-08-31T00:00:00.000Z
+401634212102858701,401634212,4016342125,7,2,14:12,South Dakota State,Oklahoma State,0,10,20,1,10,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.374805786232315,2024-08-31T18:41:37.000Z
+401634212102859501,401634212,4016342125,8,2,14:04,South Dakota State,Oklahoma State,0,10,30,1,20,13,Rush,Amar Johnson run for 13 yds to the OKST 17,0.7959138246444514,2024-08-31T18:42:49.000Z
+401634212102867901,401634212,4016342125,9,2,13:20,South Dakota State,Oklahoma State,0,10,17,2,7,1,Rush,Mark Gronowski run for 1 yd to the OKST 16,-0.305347219380412,2024-08-31T18:43:35.000Z
+401634212102878401,401634212,4016342125,10,2,12:15,South Dakota State,Oklahoma State,3,10,13,4,3,31,Field Goal Good,Hunter Dustman 31 yd FG GOOD,,2024-08-31T18:45:48.000Z
+401634212102887301,401634212,4016342126,3,2,11:26,Oklahoma State,South Dakota State,10,3,74,2,10,16,Pass Reception,Alan Bowman pass complete to De'Zhaun Stribling for a 1ST down,2.179320978535719,2024-08-31T18:51:24.000Z
+401634212102896701,401634212,4016342126,5,2,10:32,Oklahoma State,South Dakota State,10,3,55,2,7,6,Pass Reception,Alan Bowman pass complete to Brennan Presley,0.376359379023649,2024-08-31T18:52:22.000Z
+401634212102879001,401634212,4016342126,1,2,12:09,South Dakota State,Oklahoma State,3,10,65,1,10,25,Kickoff Return (Offense),"Hunter Dustman kickoff for 64 yds , Brennan Presley return for 25 yds to the OKST 26",,2024-08-31T18:48:54.000Z
+401634212102879801,401634212,4016342126,2,2,12:01,Oklahoma State,South Dakota State,10,3,74,1,10,0,Rush,Ollie Gordon II run for no gain to the OKST 26,-0.7342478781140684,2024-08-31T18:49:39.000Z
+401634212102889701,401634212,4016342126,4,2,11:02,Oklahoma State,South Dakota State,10,3,58,1,10,3,Rush,Ollie Gordon II run for 3 yds to the OKST 45,-0.4325374473860535,2024-08-31T18:51:50.000Z
+401634212102897901,401634212,4016342126,6,2,10:20,Oklahoma State,South Dakota State,10,3,49,3,1,4,Rush,Ollie Gordon II run for 4 yds to the SDST 45 for a 1ST down,1.141367195334652,2024-08-31T18:52:33.000Z
+401634212102899201,401634212,4016342126,7,2,10:07,Oklahoma State,South Dakota State,10,3,45,1,10,4,Rush,Ollie Gordon II run for 4 yds to the SDST 41,-0.1162027181056828,2024-08-31T18:52:50.000Z
+401634212102905901,401634212,4016342126,8,2,9:40,Oklahoma State,South Dakota State,10,3,41,2,6,8,Pass Reception,Alan Bowman pass complete to Sesi Vailahi for a 1ST down,0.6896420296707628,2024-08-31T18:53:46.000Z
+401634212102909001,401634212,4016342126,9,2,9:09,Oklahoma State,South Dakota State,10,3,33,1,10,3,Rush,Sesi Vailahi run for 3 yds to the SDST 30,-0.1975844330204505,2024-08-31T18:54:22.000Z
+401634212102916401,401634212,4016342126,10,2,8:35,Oklahoma State,South Dakota State,17,3,12,1,10,12,Rushing Touchdown,Ollie Gordon II run for 12 yds for a TD (Logan Ward KICK),2.5300945420359255,2024-08-31T18:55:46.000Z
+401634212102939601,401634212,4016342127,5,2,6:03,South Dakota State,Oklahoma State,3,17,40,3,4,4,Pass Reception,Mark Gronowski pass complete to Griffin Wilde for a 1ST down,1.2489641542601968,2024-08-31T19:02:53.000Z
+401634212102918201,401634212,4016342127,2,2,8:17,South Dakota State,Oklahoma State,3,17,75,1,10,29,Pass Reception,Mark Gronowski pass complete to Grahm Goering for a 1ST down,2.5344677115868572,2024-08-31T19:00:42.000Z
+401634212102926001,401634212,4016342127,3,2,7:39,South Dakota State,Oklahoma State,3,17,46,1,10,0,Rush,Angel Johnson run for no gain to the OKST 46,-1.0250974847844603,2024-08-31T19:01:23.000Z
+401634212102934001,401634212,4016342127,4,2,6:59,South Dakota State,Oklahoma State,3,17,46,2,10,6,Rush,Mark Gronowski run for 6 yds to the OKST 40,0.3086426436449319,2024-08-31T19:02:00.000Z
+401634212102916403,401634212,4016342127,1,2,8:35,Oklahoma State,South Dakota State,17,3,65,1,10,0,Kickoff,Wes Pahl kickoff for 65 yds for a touchback,,2024-08-31T19:00:19.000Z
+401634212102947902,401634212,4016342127,8,2,5:20,South Dakota State,Oklahoma State,3,17,31,3,5,0,Timeout,"Timeout Oklahoma State, clock 05:20",,2024-08-31T19:06:27.000Z
+401634212102964701,401634212,4016342127,10,2,3:52,South Dakota State,Oklahoma State,6,17,30,4,4,48,Field Goal Good,Hunter Dustman 48 yd FG GOOD,,2024-08-31T19:11:17.000Z
+401634212102956001,401634212,4016342127,9,2,4:39,South Dakota State,Oklahoma State,3,17,31,3,5,1,Rush,Amar Johnson run for 1 yd to the OKST 30,-0.7292425894780196,2024-08-31T19:10:24.000Z
+401634212102946901,401634212,4016342127,6,2,5:30,South Dakota State,Oklahoma State,3,17,36,1,10,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.7215426143188567,2024-08-31T19:05:49.000Z
+401634212102947901,401634212,4016342127,7,2,5:20,South Dakota State,Oklahoma State,3,17,36,2,10,5,Rush,Mark Gronowski run for 5 yds to the OKST 31,0.0610919348625973,2024-08-31T19:06:27.000Z
+401634212102966201,401634212,4016342128,2,2,3:37,Oklahoma State,South Dakota State,17,6,76,1,10,15,Pass Reception,Alan Bowman pass complete to De'Zhaun Stribling for a 1ST down,1.2906023069509247,2024-08-31T19:13:24.000Z
+401634212102975701,401634212,4016342128,4,2,2:42,Oklahoma State,South Dakota State,17,6,65,2,14,17,Pass Reception,Alan Bowman pass complete to Rashod Owens for a 1ST down,2.9169316012053503,2024-08-31T19:14:26.000Z
+401634212102965101,401634212,4016342128,1,2,3:48,South Dakota State,Oklahoma State,6,17,65,1,10,13,Kickoff Return (Offense),"Hunter Dustman kickoff for 54 yds , Cale Cabbiness return for 13 yds to the OKST 24",,2024-08-31T19:12:56.000Z
+401634212102989301,401634212,4016342128,7,2,1:06,Oklahoma State,South Dakota State,17,6,47,3,9,4,Pass Reception,Alan Bowman pass complete to Brennan Presley,-0.1524078349686276,2024-08-31T19:20:11.000Z
+401634212102985401,401634212,4016342128,6,2,1:45,Oklahoma State,South Dakota State,17,6,47,2,9,0,Pass Reception,Alan Bowman pass complete to Ollie Gordon II,-1.0830328413329795,2024-08-31T19:19:10.000Z
+401634212102994101,401634212,4016342128,9,2,0:58,Oklahoma State,South Dakota State,17,6,43,4,5,0,Punt,Hudson Kaak punt for 40 yds,,2024-08-31T19:21:27.000Z
+401634212102989302,401634212,4016342128,8,2,1:06,Oklahoma State,South Dakota State,17,6,43,4,5,0,Timeout,"Timeout Oklahoma State, clock 01:06",,2024-08-31T19:20:11.000Z
+401634212102969101,401634212,4016342128,3,2,3:08,Oklahoma State,South Dakota State,17,6,61,1,10,4,Rush,Ollie Gordon II run for 4 yds to the OKST 35,-0.1670469651624733,2024-08-31T19:13:58.000Z
+401634212102977001,401634212,4016342128,5,2,2:29,Oklahoma State,South Dakota State,17,6,48,1,10,1,Rush,Ollie Gordon II run for 1 yd to the SDST 47,-0.8372206360227173,2024-08-31T19:15:28.000Z
+401634212102996101,401634212,4016342129,2,2,0:38,South Dakota State,Oklahoma State,6,17,89,2,2,10,Pass Reception,Mark Gronowski pass complete to Grahm Goering for a 1ST down,0.1516379214987617,2024-08-31T19:22:39.000Z
+401634212102997001,401634212,4016342129,4,2,0:29,South Dakota State,Oklahoma State,6,17,79,2,10,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.2760618997483206,2024-08-31T19:23:56.000Z
+401634212102997401,401634212,4016342129,5,2,0:25,South Dakota State,Oklahoma State,6,17,79,3,10,1,Rush,Angel Johnson run for 1 yd to the SDST 20,-0.1044619436947869,2024-08-31T19:24:37.000Z
+401634212102998501,401634212,4016342129,7,2,0:14,South Dakota State,Oklahoma State,6,17,80,4,11,0,Punt,Hunter Dustman punt for 48 yds,,2024-08-31T19:25:54.000Z
+401634212102997402,401634212,4016342129,6,2,0:25,South Dakota State,Oklahoma State,6,17,80,4,11,0,Timeout,"Timeout Oklahoma State, clock 00:25",,2024-08-31T19:25:26.000Z
+401634212102995301,401634212,4016342129,1,2,0:46,South Dakota State,Oklahoma State,6,17,97,1,10,8,Rush,Amar Johnson run for 8 yds to the SDST 11,0.47534585042398364,2024-08-31T19:22:24.000Z
+401634212102996501,401634212,4016342129,3,2,0:34,South Dakota State,Oklahoma State,6,17,79,1,10,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.585616097616759,2024-08-31T19:23:11.000Z
+401634212102999002,401634212,40163421210,1,2,0:00,Oklahoma State,South Dakota State,17,6,68,0,10,0,End of Half,End of 2nd Quarter,,2024-08-31T19:27:25.000Z
+401634212102999901,401634212,40163421210,2,2,0:00,Oklahoma State,South Dakota State,17,6,68,1,10,3,Rush,Sesi Vailahi run for 3 yds to the OKST 29,-0.3783931239488095,2024-08-31T19:27:25.000Z
+401634212103865101,401634212,40163421211,4,3,13:48,Oklahoma State,South Dakota State,17,6,54,1,10,8,Pass Reception,Alan Bowman pass complete to De'Zhaun Stribling,0.9228976525664996,2024-08-31T19:52:10.000Z
+401634212103849904,401634212,40163421211,1,3,15:00,South Dakota State,Oklahoma State,6,17,65,1,10,0,Kickoff,Hunter Dustman kickoff for 54 yds,,2024-08-31T00:00:00.000Z
+401634212103854501,401634212,40163421211,2,3,14:54,Oklahoma State,South Dakota State,17,6,65,1,10,9,Rush,Ollie Gordon II run for 9 yds to the OKST 44,1.3846699650971743,2024-08-31T00:00:00.000Z
+401634212103857001,401634212,40163421211,3,3,14:29,Oklahoma State,South Dakota State,17,6,56,2,1,2,Rush,Ollie Gordon II run for 2 yds to the OKST 46 for a 1ST down,-0.3268504920910475,2024-08-31T00:00:00.000Z
+401634212103867301,401634212,40163421211,5,3,13:26,Oklahoma State,South Dakota State,17,6,46,2,2,1,Rush,Sesi Vailahi run for 1 yd to the SDST 45,-0.972383110738507,2024-08-31T00:00:00.000Z
+401634212103868801,401634212,40163421211,6,3,13:11,Oklahoma State,South Dakota State,17,6,45,3,1,2,Rush,Sesi Vailahi run for 2 yds to the SDST 43 for a 1ST down,0.8820129079263612,2024-08-31T00:00:00.000Z
+401634212103876601,401634212,40163421211,7,3,12:33,Oklahoma State,South Dakota State,17,6,43,1,10,9,Rush,Ollie Gordon II run for 9 yds to the SDST 34,0.9071042242020542,2024-08-31T19:52:10.000Z
+401634212103878701,401634212,40163421211,8,3,12:12,Oklahoma State,South Dakota State,17,6,34,2,1,0,Pass Incompletion,Alan Bowman pass incomplete,-0.918991813044197,2024-08-31T19:52:38.000Z
+401634212103879401,401634212,40163421211,9,3,12:05,Oklahoma State,South Dakota State,17,6,34,3,1,2,Rush,Ollie Gordon II run for 2 yds to the SDST 36,0.4927382511840346,2024-08-31T19:53:32.000Z
+401634212103889501,401634212,40163421211,10,3,11:04,Oklahoma State,South Dakota State,17,6,36,4,3,14,Pass Reception,Alan Bowman pass complete to Ollie Gordon II for a 1ST down,2.1916758583273777,2024-08-31T19:54:22.000Z
+401634212103895301,401634212,40163421211,11,3,10:46,Oklahoma State,South Dakota State,24,6,22,1,10,22,Passing Touchdown,Ollie Gordon II 22 Yd pass from Alan Bowman (Logan Ward Kick),2.64762276664846,2024-08-31T20:00:04.000Z
+401634212103895303,401634212,40163421212,1,3,10:46,Oklahoma State,South Dakota State,24,6,65,1,10,0,Kickoff,Wes Pahl kickoff for 65 yds for a touchback,,2024-08-31T20:00:04.000Z
+401634212103896801,401634212,40163421212,2,3,10:31,South Dakota State,Oklahoma State,6,24,75,1,10,21,Pass Reception,Mark Gronowski pass complete to Griffin Wilde for a 1ST down,1.8928575820361135,2024-08-31T20:04:46.000Z
+401634212103905101,401634212,40163421212,3,3,9:48,South Dakota State,Oklahoma State,6,24,54,1,10,33,Pass Reception,Mark Gronowski pass complete to Griffin Wilde for a 1ST down,1.552600723889715,2024-08-31T20:05:31.000Z
+401634212103908901,401634212,40163421212,4,3,9:10,South Dakota State,Oklahoma State,13,24,21,1,10,21,Passing Touchdown,Grahm Goering 21 Yd pass from Mark Gronowski (Hunter Dustman Kick),2.632296813795493,2024-08-31T20:06:20.000Z
+401634212103909701,401634212,40163421213,1,3,9:02,South Dakota State,Oklahoma State,13,24,65,1,10,17,Kickoff Return (Offense),"Hunter Dustman kickoff for 63 yds , Gavin Freeman return for 17 yds to the OKST 19",,2024-08-31T20:10:29.000Z
+401634212103914401,401634212,40163421213,2,3,8:55,Oklahoma State,South Dakota State,24,13,81,1,10,1,Rush,Ollie Gordon II run for 1 yd to the OKST 20,-0.4473552582060227,2024-08-31T20:11:16.000Z
+401634212103917601,401634212,40163421213,3,3,8:23,Oklahoma State,South Dakota State,24,13,80,2,9,0,Rush,Alan Bowman run for no gain to the OKST 20,-0.2936062338096743,2024-08-31T20:13:05.000Z
+401634212103925301,401634212,40163421213,4,3,7:46,Oklahoma State,South Dakota State,24,13,80,3,9,10,Pass Reception,Alan Bowman pass complete to De'Zhaun Stribling for a 1ST down,1.4867944941141502,2024-08-31T20:13:34.000Z
+401634212103927601,401634212,40163421213,5,3,7:23,Oklahoma State,South Dakota State,24,13,70,1,10,10,Pass Reception,Alan Bowman pass complete to Brennan Presley for a 1ST down,0.935885914760668,2024-08-31T20:13:57.000Z
+401634212103934501,401634212,40163421213,6,3,6:54,Oklahoma State,South Dakota State,24,13,60,1,10,2,Rush,Trent Howland run for 2 yds to the OKST 42,-0.6799841752385892,2024-08-31T20:15:45.000Z
+401634212103937001,401634212,40163421213,7,3,6:29,Oklahoma State,South Dakota State,31,13,58,2,8,58,Passing Touchdown,Rashod Owens 58 Yd pass from Alan Bowman (Logan Ward Kick),5.4368847793822646,2024-08-31T20:16:28.000Z
+401634212103937601,401634212,40163421214,2,3,6:23,South Dakota State,Oklahoma State,13,31,75,1,10,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.7029700220436519,2024-08-31T20:21:17.000Z
+401634212103938001,401634212,40163421214,3,3,6:19,South Dakota State,Oklahoma State,13,31,80,2,15,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.14903888205704785,2024-08-31T20:22:42.000Z
+401634212103938701,401634212,40163421214,4,3,6:12,South Dakota State,Oklahoma State,13,31,85,3,20,-4,Sack,Mark Gronowski sacked by Collin Oliver for a loss of 4 yards to the SDST 11,-0.0374513139029933,2024-08-31T20:24:14.000Z
+401634212103945902,401634212,40163421214,6,3,5:40,South Dakota State,Oklahoma State,13,31,89,4,24,0,Punt,"Hunter Dustman punt for 43 yds , Brennan Presley returns for no gain to the OKST 44",,2024-08-31T20:25:16.000Z
+401634212103945901,401634212,40163421214,5,3,5:40,South Dakota State,Oklahoma State,13,31,89,4,24,0,Punt,"Hunter Dustman punt for 43 yds , Brennan Presley returns for no gain to the OKST 44",,2024-08-31T20:24:49.000Z
+401634212103937003,401634212,40163421214,1,3,6:29,Oklahoma State,South Dakota State,31,13,65,1,10,0,Kickoff,Wes Pahl kickoff for 59 yds,,2024-08-31T20:19:38.000Z
+401634212103947101,401634212,40163421215,1,3,5:28,Oklahoma State,South Dakota State,31,13,56,1,10,27,Pass Reception,Alan Bowman pass complete to De'Zhaun Stribling for a 1ST down,1.581881596781194,2024-08-31T20:25:41.000Z
+401634212103966601,401634212,40163421215,5,3,3:33,Oklahoma State,South Dakota State,31,13,15,1,10,4,Rush,Ollie Gordon II run for 4 yds to the SDST 11,-0.019365161227934,2024-08-31T20:28:58.000Z
+401634212103974801,401634212,40163421215,6,3,2:51,Oklahoma State,South Dakota State,31,13,11,2,6,10,Rush,Ollie Gordon II run for 10 yds to the SDST 1 for a 1ST down,1.639542975672574,2024-08-31T20:29:29.000Z
+401634212103954201,401634212,40163421215,2,3,4:57,Oklahoma State,South Dakota State,31,13,29,1,10,3,Rush,Ollie Gordon II run for 3 yds to the SDST 26,-0.165753158468877,2024-08-31T20:26:17.000Z
+401634212103957801,401634212,40163421215,3,3,4:21,Oklahoma State,South Dakota State,31,13,26,2,7,5,Rush,Ollie Gordon II run for 5 yds to the SDST 21,0.068251517111099,2024-08-31T20:26:43.000Z
+401634212103964601,401634212,40163421215,4,3,3:53,Oklahoma State,South Dakota State,31,13,21,3,2,6,Rush,Ollie Gordon II run for 6 yds to the SDST 15 for a 1ST down,0.327603736390807,2024-08-31T20:28:33.000Z
+401634212103994401,401634212,40163421216,4,3,0:55,South Dakota State,Oklahoma State,13,45,64,1,10,4,Pass Reception,Mark Gronowski pass complete to Davin Stoffel,-0.1622709044233037,2024-08-31T20:36:34.000Z
+401634212103999901,401634212,40163421216,6,3,0:00,South Dakota State,Oklahoma State,13,45,60,2,6,0,Rush,Chase Mason run for no gain to the SDST 40,-0.9945585445183011,2024-08-31T20:37:31.000Z
+401634212104854801,401634212,40163421216,8,4,14:51,South Dakota State,Oklahoma State,13,38,60,4,6,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.11665588916507463,2024-08-31T20:42:13.000Z
+401634212103986501,401634212,40163421216,3,3,1:34,South Dakota State,Oklahoma State,13,45,74,2,8,10,Pass Reception,Mark Gronowski pass complete to Griffin Wilde for a 1ST down,1.4321749442718552,2024-08-31T20:35:54.000Z
+401634212103999402,401634212,40163421216,5,3,0:00,South Dakota State,Oklahoma State,13,45,60,0,6,0,End Period,End of 3rd Quarter,,2024-08-31T20:37:31.000Z
+401634212103977301,401634212,40163421216,1,3,2:26,Oklahoma State,South Dakota State,45,13,65,1,10,14,Kickoff Return (Offense),"Wes Pahl kickoff for 55 yds , Angel Johnson return for 14 yds to the SDST 24",,2024-08-31T20:34:38.000Z
+401634212103978201,401634212,40163421216,2,3,2:17,South Dakota State,Oklahoma State,13,45,76,1,10,2,Rush,Amar Johnson run for 2 yds to the SDST 26,-0.43374920863139543,2024-08-31T20:35:13.000Z
+401634212104854401,401634212,40163421216,7,4,14:55,South Dakota State,Oklahoma State,13,45,60,3,6,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.5793220541179895,2024-08-31T00:00:00.000Z
+401634212104854802,401634212,40163421216,9,4,14:51,South Dakota State,Oklahoma State,13,45,60,4,6,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.11665588916507463,2024-08-31T20:42:13.000Z
+401634212104855901,401634212,40163421217,1,4,14:40,Oklahoma State,South Dakota State,45,13,40,1,10,1,Rush,Sesi Vailahi run for 1 yd to the SDST 39,-0.6465447438858387,2024-08-31T20:42:53.000Z
+401634212104858201,401634212,40163421217,2,4,14:17,Oklahoma State,South Dakota State,45,13,39,2,9,4,Pass Reception,Alan Bowman pass complete to Gavin Freeman,-0.132495886979644,2024-08-31T20:43:17.000Z
+401634212104864401,401634212,40163421217,3,4,13:55,Oklahoma State,South Dakota State,45,13,35,3,5,0,Pass Incompletion,Alan Bowman pass incomplete,-1.0353479355691633,2024-08-31T20:43:52.000Z
+401634212104864901,401634212,40163421217,4,4,13:50,Oklahoma State,South Dakota State,41,13,35,4,5,52,Field Goal Good,Logan Ward 52 Yd Field Goal ,,2024-08-31T20:44:28.000Z
+401634212104865201,401634212,40163421218,1,4,13:47,Oklahoma State,South Dakota State,41,13,65,1,10,21,Kickoff Return (Offense),"Wes Pahl kickoff for 64 yds , Angel Johnson return for 21 yds to the SDST 22",,2024-08-31T20:47:40.000Z
+401634212104866401,401634212,40163421218,2,4,13:35,South Dakota State,Oklahoma State,13,41,78,1,10,6,Rush,Angel Johnson run for 6 yds to the SDST 28,0.3066560644610403,2024-08-31T20:48:27.000Z
+401634212104874301,401634212,40163421218,3,4,12:56,South Dakota State,Oklahoma State,13,41,72,2,4,12,Rush,Angel Johnson run for 12 yds to the SDST 40 for a 1ST down,1.2084281337364065,2024-08-31T20:49:06.000Z
+401634212104878901,401634212,40163421218,4,4,12:10,South Dakota State,Oklahoma State,20,41,60,1,10,60,Passing Touchdown,Griffin Wilde 60 Yd pass from Mark Gronowski (Hunter Dustman Kick),4.756900604143675,2024-08-31T20:49:50.000Z
+401634212104878903,401634212,40163421219,1,4,12:10,South Dakota State,Oklahoma State,20,41,65,1,10,0,Kickoff,Hunter Dustman kickoff for 42 yds,,2024-08-31T20:49:50.000Z
+401634212104879301,401634212,40163421219,2,4,12:06,Oklahoma State,South Dakota State,41,20,75,1,10,0,Pass Incompletion,Alan Bowman pass incomplete,-0.7029700220436519,2024-08-31T20:54:28.000Z
+401634212104884201,401634212,40163421219,3,4,11:57,Oklahoma State,South Dakota State,41,20,75,2,10,2,Rush,Ollie Gordon II run for 2 yds to the OKST 27,-0.2284411734150149,2024-08-31T20:55:02.000Z
+401634212104887501,401634212,40163421219,4,4,11:24,Oklahoma State,South Dakota State,41,20,73,3,8,0,Pass Incompletion,Alan Bowman pass incomplete,-0.22421028645399854,2024-08-31T20:55:37.000Z
+401634212104888901,401634212,40163421219,5,4,11:10,Oklahoma State,South Dakota State,41,20,73,4,8,0,Punt,Hudson Kaak punt for 73 yds for a touchback,,2024-08-31T20:58:13.000Z
+401634212104888903,401634212,40163421219,6,4,11:10,Oklahoma State,South Dakota State,41,20,73,4,8,0,Punt,Hudson Kaak punt for 73 yds for a touchback,,2024-08-31T20:58:13.000Z
+401634212104894101,401634212,40163421220,1,4,10:58,South Dakota State,Oklahoma State,20,41,90,1,10,2,Rush,Angel Johnson run for 2 yds to the SDST 12,-0.22662764690566295,2024-08-31T20:58:53.000Z
+401634212104897901,401634212,40163421220,2,4,10:20,South Dakota State,Oklahoma State,20,41,88,2,8,10,Penalty,"(10:20) Shotgun Gronowski,Mark pass incomplete deep left to Wilde,Griffin thrown to SDSU38 PENALTY OSU Holding (Smith,Cam) 10 yards from SDSU12 to SDSU22, 1ST DOWN. NO PLAY.",,2024-08-31T20:59:21.000Z
+401634212104898501,401634212,40163421220,3,4,10:14,South Dakota State,Oklahoma State,20,41,78,1,10,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.6135902757979226,2024-08-31T21:00:24.000Z
+401634212104899001,401634212,40163421220,4,4,10:09,South Dakota State,Oklahoma State,20,41,78,2,10,3,Rush,Mark Gronowski run for 3 yds to the SDST 25,-0.1278941156282576,2024-08-31T21:01:04.000Z
+401634212104907201,401634212,40163421220,5,4,9:27,South Dakota State,Oklahoma State,20,41,75,3,7,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.22276093528900454,2024-08-31T21:01:52.000Z
+401634212104908201,401634212,40163421220,6,4,9:17,South Dakota State,Oklahoma State,20,41,75,4,7,2,Punt,"Hunter Dustman punt for 53 yds , Gavin Freeman returns for 2 yds to the OKST 24",,2024-08-31T21:02:39.000Z
+401634212104908202,401634212,40163421220,7,4,9:17,South Dakota State,Oklahoma State,20,41,75,4,7,2,Punt,"Hunter Dustman punt for 53 yds , Gavin Freeman returns for 2 yds to the OKST 24",,2024-08-31T21:02:39.000Z
+401634212104909001,401634212,40163421221,1,4,9:09,Oklahoma State,South Dakota State,41,20,76,1,10,8,Rush,Ollie Gordon II run for 8 yds to the OKST 32,0.8892177775023722,2024-08-31T21:06:31.000Z
+401634212104914901,401634212,40163421221,2,4,8:50,Oklahoma State,South Dakota State,41,20,68,2,2,1,Rush,Ollie Gordon II run for 1 yd to the OKST 33,-0.9087685494986291,2024-08-31T21:06:47.000Z
+401634212104917601,401634212,40163421221,3,4,8:23,Oklahoma State,South Dakota State,41,20,67,3,1,0,Rush,Ollie Gordon II run for no gain to the OKST 33,-0.6708253208736892,2024-08-31T21:07:16.000Z
+401634212104925801,401634212,40163421221,4,4,7:41,Oklahoma State,South Dakota State,41,20,67,4,1,0,Punt,"Hudson Kaak punt for 51 yds, fair catch by Tucker Large at the SDST 16",,2024-08-31T21:08:01.000Z
+401634212104926701,401634212,40163421222,1,4,7:32,South Dakota State,Oklahoma State,20,41,84,1,10,9,Pass Reception,Mark Gronowski pass complete to Grahm Goering,0.9934753748705925,2024-08-31T21:08:53.000Z
+401634212104929901,401634212,40163421222,2,4,7:00,South Dakota State,Oklahoma State,20,41,75,2,1,13,Pass Reception,Mark Gronowski pass complete to Greyton Gannon for a 1ST down,0.6328903116535916,2024-08-31T21:09:20.000Z
+401634212104935501,401634212,40163421222,3,4,6:44,South Dakota State,Oklahoma State,20,41,62,1,10,2,Rush,Amar Johnson run for 2 yds to the SDST 40,-0.6656376494811928,2024-08-31T21:09:36.000Z
+401634212104944301,401634212,40163421222,4,4,5:56,South Dakota State,Oklahoma State,20,41,60,2,8,10,Pass Reception,Mark Gronowski pass complete to Kentrell Prejean to the 50 yard line for a 1ST down,1.7772293580393104,2024-08-31T21:10:22.000Z
+401634212104945401,401634212,40163421222,5,4,5:45,South Dakota State,Oklahoma State,20,41,50,1,10,0,Pass Incompletion,Mark Gronowski pass incomplete,-1.1143038065675126,2024-08-31T21:10:36.000Z
+401634212104946101,401634212,40163421222,6,4,5:38,South Dakota State,Oklahoma State,20,41,50,2,10,3,Rush,Amar Johnson run for 3 yds to the OKST 47,-0.3987948868419303,2024-08-31T21:11:31.000Z
+401634212104954201,401634212,40163421222,7,4,4:57,South Dakota State,Oklahoma State,20,41,47,3,7,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.9262616248121232,2024-08-31T21:12:08.000Z
+401634212104954901,401634212,40163421222,8,4,4:50,South Dakota State,Oklahoma State,20,41,47,4,7,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.7192277496570609,2024-08-31T21:12:59.000Z
+401634212104955801,401634212,40163421223,1,4,4:41,Oklahoma State,South Dakota State,41,20,53,1,10,2,Rush,Ollie Gordon II run for 2 yds to the OKST 45,-0.6653184217084503,2024-08-31T21:13:46.000Z
+401634212104959301,401634212,40163421223,2,4,4:06,Oklahoma State,South Dakota State,41,20,55,2,12,0,Pass Incompletion,Alan Bowman pass incomplete,-0.8164924833490277,2024-08-31T21:14:22.000Z
+401634212104959801,401634212,40163421223,3,4,4:01,Oklahoma State,South Dakota State,41,20,55,3,12,0,Pass Incompletion,Alan Bowman pass incomplete,-0.4725840390703073,2024-08-31T21:15:10.000Z
+401634212104964701,401634212,40163421223,4,4,3:52,Oklahoma State,South Dakota State,41,20,55,4,12,0,Punt,Hudson Kaak punt for 55 yds for a touchback,,2024-08-31T21:15:39.000Z
+401634212104965201,401634212,40163421224,1,4,3:47,South Dakota State,Oklahoma State,20,41,80,1,10,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.5586693796725282,2024-08-31T21:16:34.000Z
+401634212104965701,401634212,40163421224,2,4,3:42,South Dakota State,Oklahoma State,20,41,80,2,10,0,Pass Incompletion,Mark Gronowski pass incomplete,-0.2608138520764314,2024-08-31T21:17:09.000Z
+401634212104968701,401634212,40163421224,4,4,3:12,South Dakota State,Oklahoma State,20,41,76,4,6,0,Timeout,"Timeout Oklahoma State, clock 03:12",,2024-08-31T20:41:36.000Z
+401634212104969301,401634212,40163421224,5,4,3:06,South Dakota State,Oklahoma State,20,41,76,4,6,-9,Sack,Mark Gronowski sacked by Nick Martin for a loss of 9 yards to the SDST 15,0.2261565389831155,2024-08-31T21:19:12.000Z
+401634212104967801,401634212,40163421224,3,4,3:21,South Dakota State,Oklahoma State,20,41,80,3,10,4,Pass Reception,Mark Gronowski pass complete to Greyton Gannon,-0.02061551162905318,2024-08-31T21:17:56.000Z
+401634212104979901,401634212,40163421225,3,4,2:00,Oklahoma State,South Dakota State,41,20,10,3,5,0,Timeout,"Timeout Oklahoma State, clock 02:00",,2024-08-31T21:19:12.000Z
+401634212104988101,401634212,40163421225,4,4,1:18,Oklahoma State,South Dakota State,41,20,10,3,5,2,Pass Reception,Alan Bowman pass complete to Trent Howland,-0.1940521616456846,2024-08-31T21:19:12.000Z
+401634212104976501,401634212,40163421225,2,4,2:34,Oklahoma State,South Dakota State,41,20,12,2,7,2,Rush,Trent Howland run for 2 yds to the SDST 10,-0.178504342143816,2024-08-31T21:19:12.000Z
+401634212104974101,401634212,40163421225,1,4,2:58,Oklahoma State,South Dakota State,41,20,15,1,10,3,Rush,Trent Howland run for 3 yds to the SDST 12,-0.103053233199689,2024-08-31T21:19:12.000Z
+401634212104988901,401634212,40163421225,5,4,1:10,Oklahoma State,South Dakota State,44,20,8,4,3,25,Field Goal Good,Logan Ward 25 Yd Field Goal ,,2024-08-31T21:19:12.000Z
+401634212104999901,401634212,40163421226,3,4,0:00,South Dakota State,Oklahoma State,20,44,72,2,7,4,Rush,Kirby Vorhees run for 4 yds to the SDST 32,-0.0933867271711355,2024-08-31T21:19:12.000Z
+401634212104988902,401634212,40163421226,1,4,1:10,Oklahoma State,South Dakota State,44,20,65,1,10,0,Kickoff,Wes Pahl kickoff for 65 yds for a touchback,,2024-08-31T21:25:41.000Z
+401634212104999902,401634212,40163421226,4,4,0:00,South Dakota State,Oklahoma State,20,44,72,0,7,4,End of Game,End of 4th Quarter,,2024-08-31T21:19:12.000Z
+401634212104994101,401634212,40163421226,2,4,0:58,South Dakota State,Oklahoma State,20,44,75,1,10,3,Rush,Kirby Vorhees run for 3 yds to the SDST 28,-0.2957674139440157,2024-08-31T21:19:12.000Z

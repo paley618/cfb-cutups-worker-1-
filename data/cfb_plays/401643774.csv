@@ -1,0 +1,177 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401643774101849910,401643774,4016437741,2,1,15:00,Charlotte,James Madison,0,0,71,1,10,-2,Rush,Cartevious Norton run for a loss of 2 yards to the CLT 27,-1.0558527396551547,2024-09-01T00:06:11.000Z
+401643774101849912,401643774,4016437741,3,1,15:00,Charlotte,James Madison,0,0,73,2,12,6,Pass Reception,Max Brown pass complete to Henry Rutledge for 6 yds to the CLT 33,0.1456261759167994,2024-09-01T00:06:11.000Z
+401643774101849915,401643774,4016437741,4,1,15:00,Charlotte,James Madison,0,0,67,3,6,9,Pass Reception,Max Brown pass complete to Colin Weber for 9 yds to the CLT 42 for a 1ST down,2.1241402244540044,2024-09-01T00:06:11.000Z
+401643774101849917,401643774,4016437741,5,1,15:00,Charlotte,James Madison,0,0,58,1,10,10,Pass Reception,Max Brown pass complete to Colin Weber for 10 yds to the JMU 48 for a 1ST down,0.8754693757593585,2024-09-01T00:06:11.000Z
+401643774101849919,401643774,4016437741,6,1,15:00,Charlotte,James Madison,0,0,48,1,10,2,Rush,Cartevious Norton run for 2 yds to the JMU 46,-0.6002320779981093,2024-09-01T00:06:11.000Z
+401643774101849926,401643774,4016437741,8,1,15:00,Charlotte,James Madison,0,0,61,2,23,0,Pass Incompletion,Max Brown pass incomplete,-0.2640454517727546,2024-09-01T00:06:11.000Z
+401643774101849929,401643774,4016437741,9,1,15:00,Charlotte,James Madison,0,0,61,3,23,20,Rush,Max Brown run for 20 yds to the JMU 41,1.863861334283702,2024-09-01T00:06:11.000Z
+401643774101897101,401643774,4016437741,10,1,10:28,Charlotte,James Madison,0,0,41,4,3,0,Pass Incompletion,Max Brown pass incomplete,-1.674103753155979,2024-09-01T00:06:11.000Z
+401643774101897102,401643774,4016437741,11,1,10:28,James Madison,Charlotte,0,0,59,1,10,5,Penalty,"Charlotte Penalty, Offsides (5 Yards) to the JMU 46",,2024-09-01T00:06:11.000Z
+401643774101849924,401643774,4016437741,7,1,15:00,Charlotte,James Madison,0,0,46,2,8,-15,Penalty,"BROWN, Max pass short to the right complete for 4 yards to KENNON, Bryce caught at the JMU42 and advanced to the JMU42 (EAGLIN, Justin), out of bounds. PENALTY CLT Pass Interference on MYERS, Isaiah enforced 15 yards to the CLT39 [SG]. NO PLAY (replay the down).",,2024-09-01T00:06:11.000Z
+401643774101849907,401643774,4016437741,1,1,15:00,James Madison,Charlotte,0,0,65,0,0,28,Kickoff Return (Offense),"Noe Ruelas kickoff for 64 yds , Henry Rutledge return for 28 yds to the CLT 29",,2024-09-01T00:06:11.000Z
+401643774101897104,401643774,4016437742,1,1,10:28,James Madison,Charlotte,0,0,54,1,5,3,Rush,Ayo Adeyi run for 3 yds to the JMU 49,-0.4498497676011155,2024-09-01T00:06:11.000Z
+401643774101897105,401643774,4016437742,2,1,10:28,James Madison,Charlotte,0,0,51,2,2,-2,Rush,Ayo Adeyi run for a loss of 2 yards to the JMU 47,-1.8476173592333875,2024-09-01T00:06:11.000Z
+401643774101908801,401643774,4016437742,3,1,9:11,James Madison,Charlotte,0,0,53,4,4,0,Timeout,"Timeout James Madison, clock 09:11",,2024-09-01T00:06:11.000Z
+401643774101908804,401643774,4016437742,6,1,9:11,James Madison,Charlotte,0,0,10,1,10,2,Penalty,"Charlotte Penalty, Unnecessary Roughness (Stone Handy) to the CLT 4 for a 1ST down",,2024-09-01T00:19:49.000Z
+401643774101935501,401643774,4016437742,10,1,6:44,James Madison,Charlotte,0,0,3,4,3,0,Pass Incompletion,Alonza Barnett III pass incomplete,-4.083653455497618,2024-09-01T00:24:30.000Z
+401643774101908807,401643774,4016437742,9,1,9:11,James Madison,Charlotte,0,0,1,3,1,-2,Rush,Ayo Adeyi run for a loss of 2 yards to the CLT 3,-0.462348315322832,2024-09-01T00:21:58.000Z
+401643774101908806,401643774,4016437742,8,1,9:11,James Madison,Charlotte,0,0,2,2,2,1,Rush,Ayo Adeyi run for 1 yd to the CLT 1,-0.386061703857327,2024-09-01T00:21:58.000Z
+401643774101908805,401643774,4016437742,7,1,9:11,James Madison,Charlotte,0,0,4,1,4,2,Rush,Ayo Adeyi run for 2 yds to the CLT 2,-0.379746006608248,2024-09-01T00:21:58.000Z
+401643774101908803,401643774,4016437742,5,1,9:11,James Madison,Charlotte,0,0,53,4,4,43,Pass Reception,Alonza Barnett III pass complete to Cam Ross for 43 yds to the CLT 10 for a 1ST down,3.8958243695404042,2024-09-01T00:19:49.000Z
+401643774101908802,401643774,4016437742,4,1,9:11,James Madison,Charlotte,0,0,53,3,4,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.9078276011078685,2024-09-01T00:19:49.000Z
+401643774101935511,401643774,4016437743,9,1,6:44,Charlotte,James Madison,0,0,73,4,8,-5,Penalty,"Charlotte Penalty, Delay Of Game (-5 Yards) to the CLT 22",,2024-09-01T00:31:37.000Z
+401643774101986601,401643774,4016437743,10,1,1:33,Charlotte,James Madison,0,0,78,4,13,0,Punt,Michael O'Shaughnessy punt for 3 yds,,2024-09-01T00:35:30.000Z
+401643774101935510,401643774,4016437743,8,1,6:44,Charlotte,James Madison,0,0,73,3,8,0,Pass Reception,Max Brown pass complete to Hahsaun Wilson for no gain to the CLT 27,-0.22421028645399854,2024-09-01T00:31:37.000Z
+401643774101935509,401643774,4016437743,7,1,6:44,Charlotte,James Madison,0,0,71,2,6,-2,Fumble Recovery (Own),"Cartevious Norton run for a loss of 2 yards to the CLT 27 Cartevious Norton fumbled, recovered by CLT Cartevious Norton C. Norton return for 0 yds",-0.8171225705197704,2024-09-01T00:31:37.000Z
+401643774101935508,401643774,4016437743,6,1,6:44,Charlotte,James Madison,0,0,75,1,10,4,Rush,Max Brown run for 4 yds to the CLT 29,-0.1142886249388964,2024-09-01T00:27:15.000Z
+401643774101935507,401643774,4016437743,5,1,6:44,Charlotte,James Madison,0,0,85,3,10,10,Pass Reception,Max Brown pass complete to Sean Brown for 10 yds to the CLT 25 for a 1ST down,1.181299464164825,2024-09-01T00:27:15.000Z
+401643774101935506,401643774,4016437743,4,1,6:44,Charlotte,James Madison,0,0,86,2,11,1,Rush,Terron Kellman run for 1 yd to the CLT 15,-0.13920020589552085,2024-09-01T00:27:15.000Z
+401643774101935505,401643774,4016437743,3,1,6:44,Charlotte,James Madison,0,0,85,1,10,-1,Rush,Terron Kellman run for a loss of 1 yard to the CLT 14,-0.4988928281154159,2024-09-01T00:27:15.000Z
+401643774101935504,401643774,4016437743,2,1,6:44,Charlotte,James Madison,0,0,95,2,8,10,Rush,Terron Kellman run for 10 yds to the CLT 15 for a 1ST down,0.5041438549011952,2024-09-01T00:27:15.000Z
+401643774101935503,401643774,4016437743,1,1,6:44,Charlotte,James Madison,0,0,97,1,10,2,Rush,Terron Kellman run for 2 yds to the CLT 5,-0.16758684303650373,2024-09-01T00:27:15.000Z
+401643774101995801,401643774,4016437744,4,1,0:41,James Madison,Charlotte,3,0,25,4,10,43,Field Goal Good,Noe Ruelas 43 yd FG GOOD,,2024-09-01T00:40:38.000Z
+401643774101986605,401643774,4016437744,3,1,1:33,James Madison,Charlotte,0,0,25,3,10,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.8807199941665136,2024-09-01T00:37:50.000Z
+401643774101986604,401643774,4016437744,2,1,1:33,James Madison,Charlotte,0,0,25,2,10,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.6084005148647674,2024-09-01T00:37:50.000Z
+401643774101986603,401643774,4016437744,1,1,1:33,James Madison,Charlotte,0,0,25,1,10,0,Rush,Ayo Adeyi run for no gain to the CLT 25,-0.4522778946200265,2024-09-01T00:37:50.000Z
+401643774101995802,401643774,4016437745,1,1,0:41,James Madison,Charlotte,3,0,65,0,0,25,Kickoff Return (Offense),"Cristiano Rosa kickoff for 60 yds , Hahsaun Wilson return for 25 yds to the CLT 30",,2024-09-01T00:41:46.000Z
+401643774101999902,401643774,4016437745,3,1,0:00,Charlotte,James Madison,0,3,70,0,10,7,End Period,End of 1st Quarter,,2024-09-01T00:43:15.000Z
+401643774101999901,401643774,4016437745,2,1,0:00,Charlotte,James Madison,0,3,70,1,10,7,Rush,Terron Kellman run for 7 yds to the CLT 37,0.6714265021529684,2024-09-01T00:43:15.000Z
+401643774102858802,401643774,4016437745,5,2,14:11,Charlotte,James Madison,0,3,63,2,3,-3,Rush,run for a loss of 3 yards to the CLT 34,-1.6187282311375704,2024-09-01T00:48:50.000Z
+401643774102858803,401643774,4016437745,6,2,14:11,Charlotte,James Madison,0,3,66,3,6,13,Rush,Terron Kellman run for 13 yds to the CLT 47 for a 1ST down,2.5447888143156376,2024-09-01T00:49:58.000Z
+401643774102858804,401643774,4016437745,7,2,14:11,Charlotte,James Madison,0,3,53,1,10,0,Pass Incompletion,Max Brown pass incomplete,-1.1527089917962545,2024-09-01T00:49:58.000Z
+401643774102858805,401643774,4016437745,8,2,14:11,Charlotte,James Madison,0,3,53,2,10,4,Rush,Cartevious Norton run for 4 yds to the JMU 49,-0.1624133674396635,2024-09-01T00:49:58.000Z
+401643774102858801,401643774,4016437745,4,2,14:11,Charlotte,James Madison,0,3,66,3,6,0,Timeout,"Timeout Charlotte, clock 14:11",,2024-09-01T00:48:05.000Z
+401643774102875801,401643774,4016437745,9,2,12:41,Charlotte,James Madison,0,3,49,3,6,-7,Fumble Recovery (Opponent),"Max Brown run for a loss of 7 yards to the CLT 44 Max Brown fumbled, recovered by JMU Immanuel Bush I. Bush return for 0 yds",-1.5895782071907743,2024-09-01T00:54:28.000Z
+401643774102875803,401643774,4016437746,1,2,12:41,James Madison,Charlotte,3,0,44,1,10,9,Rush,Ayo Adeyi run for 9 yds to the CLT 35,0.9315823230417933,2024-09-01T00:52:33.000Z
+401643774102875804,401643774,4016437746,2,2,12:41,James Madison,Charlotte,3,0,35,2,1,10,Rush,Alonza Barnett III run for 10 yds to the CLT 25 for a 1ST down,-0.2187843277978295,2024-09-01T00:52:33.000Z
+401643774102888501,401643774,4016437746,3,2,11:14,James Madison,Charlotte,3,0,25,1,10,-11,Sack,"Alonza Barnett III sacked for a loss of 11 yards to the CLT 36 Alonza Barnett III fumbled, recovered by CLT Colin Coates , return for 0 yards",-2.247656459409047,2024-09-01T00:54:40.000Z
+401643774102888505,401643774,4016437747,3,2,11:14,Charlotte,James Madison,0,3,47,1,10,18,Pass Reception,Max Brown pass complete to Sean Brown for 18 yds to the JMU 29 for a 1ST down,0.824901056668318,2024-09-01T00:54:40.000Z
+401643774102888506,401643774,4016437747,4,2,11:14,Charlotte,James Madison,0,3,29,1,10,4,Rush,Cartevious Norton run for 4 yds to the JMU 25,-0.046112472291792,2024-09-01T00:54:40.000Z
+401643774102888507,401643774,4016437747,5,2,11:14,Charlotte,James Madison,0,3,25,2,6,-1,Rush,Cartevious Norton run for a loss of 1 yard to the JMU 26,-0.720043409841475,2024-09-01T00:54:40.000Z
+401643774102919001,401643774,4016437747,6,2,8:09,Charlotte,James Madison,7,3,26,3,7,26,Passing Touchdown,Max Brown pass complete to Isaiah Myers for 26 yds for a TD (Kyle Cunanan KICK),3.554457066731379,2024-09-01T01:01:27.000Z
+401643774102888503,401643774,4016437747,1,2,11:14,Charlotte,James Madison,0,3,64,1,10,1,Rush,Cartevious Norton run for 1 yd to the CLT 37,-0.8530905486726476,2024-09-01T00:54:40.000Z
+401643774102888504,401643774,4016437747,2,2,11:14,Charlotte,James Madison,0,3,63,2,9,16,Pass Reception,Max Brown pass complete to Sean Brown for 16 yds to the JMU 47 for a 1ST down,2.3870809151815484,2024-09-01T00:54:40.000Z
+401643774102919005,401643774,4016437748,2,2,8:09,James Madison,Charlotte,3,7,75,1,10,-2,Rush,Ayo Adeyi run for a loss of 2 yards to the JMU 23,-0.8852575132705454,2024-09-01T01:01:27.000Z
+401643774102919006,401643774,4016437748,3,2,8:09,James Madison,Charlotte,3,7,77,2,12,3,Rush,George Pettaway run for 3 yds to the JMU 26,-0.11053598303385037,2024-09-01T01:01:27.000Z
+401643774102929901,401643774,4016437748,4,2,7:00,James Madison,Charlotte,3,7,74,3,9,0,Pass Interception Return,Alonza Barnett III pass intercepted Dontae Balfour return for no gain to the CLT 36,0.07354861602571727,2024-09-01T01:07:43.000Z
+401643774102919003,401643774,4016437748,1,2,8:09,Charlotte,James Madison,7,3,65,0,0,0,Kickoff,Stephen Rusnak kickoff for 65 yds for a touchback,,2024-09-01T01:01:27.000Z
+401643774102929903,401643774,4016437749,1,2,7:00,Charlotte,James Madison,7,3,64,1,10,1,Pass Reception,Max Brown pass complete to Jake Clemons for 1 yd to the CLT 37,-0.8530905486726476,2024-09-01T01:07:43.000Z
+401643774102929904,401643774,4016437749,2,2,7:00,Charlotte,James Madison,7,3,63,2,9,0,Pass Incompletion,Max Brown pass incomplete,-0.7156844087137806,2024-09-01T01:07:43.000Z
+401643774102939001,401643774,4016437749,3,2,6:09,Charlotte,James Madison,7,3,63,3,9,-2,Pass Interception Return,Max Brown pass intercepted Justin Eaglin return for a loss of 2 yards to the JMU 34,-0.2840324348382408,2024-09-01T01:10:21.000Z
+401643774102939003,401643774,40164377410,1,2,6:09,James Madison,Charlotte,3,7,66,1,10,-1,Rush,Alonza Barnett III run for a loss of 1 yard to the JMU 33,-1.140315983000674,2024-09-01T01:13:30.000Z
+401643774102978301,401643774,40164377410,7,2,2:16,James Madison,Charlotte,3,7,11,3,6,0,Timeout,"Timeout James Madison, clock 02:16",,2024-09-01T01:18:33.000Z
+401643774102979902,401643774,40164377410,10,2,2:00,James Madison,Charlotte,3,7,11,3,6,2,Rush,Alonza Barnett III run for 2 yds to the CLT 9,-0.2049088795132228,2024-09-01T01:20:47.000Z
+401643774102978302,401643774,40164377410,8,2,2:16,James Madison,Charlotte,3,7,10,2,5,-1,Rush,Wayne Knight run for a loss of 1 yard to the CLT 11,-0.4300999276201569,2024-09-01T01:18:33.000Z
+401643774102984401,401643774,40164377410,11,2,1:55,James Madison,Charlotte,3,7,9,4,4,0,Pass Incompletion,Alonza Barnett III pass incomplete,-3.8812262025078628,2024-09-01T01:24:13.000Z
+401643774102979901,401643774,40164377410,9,2,2:00,James Madison,Charlotte,3,7,9,4,4,0,Timeout,"Timeout Charlotte, clock 02:00",,2024-09-01T01:20:47.000Z
+401643774102939004,401643774,40164377410,2,2,6:09,James Madison,Charlotte,3,7,67,2,11,4,Rush,Wayne Knight run for 4 yds to the JMU 37,-0.0934049125455427,2024-09-01T01:13:30.000Z
+401643774102939005,401643774,40164377410,3,2,6:09,James Madison,Charlotte,3,7,63,3,7,7,Pass Reception,Alonza Barnett III pass complete to Omarion Dollison for 7 yds to the JMU 44 for a 1ST down,2.200307503896525,2024-09-01T01:13:30.000Z
+401643774102939006,401643774,40164377410,4,2,6:09,James Madison,Charlotte,3,7,56,1,10,41,Rush,Cam Ross run for 41 yds to the CLT 15 for a 1ST down,1.811983691814223,2024-09-01T01:13:30.000Z
+401643774102939007,401643774,40164377410,5,2,6:09,James Madison,Charlotte,3,7,15,1,10,3,Rush,"George Pettaway run for 13 yds to the CLT 2 James Madison Penalty, Offensive Holding (-10 Yards) to the CLT 20",-0.103053233199689,2024-09-01T01:16:05.000Z
+401643774102939008,401643774,40164377410,6,2,6:09,James Madison,Charlotte,3,7,20,1,15,10,Pass Reception,Alonza Barnett III pass complete to Cam Ross for 10 yds to the CLT 10,0.4295968177449265,2024-09-01T01:16:05.000Z
+401643774102984403,401643774,40164377411,1,2,1:55,Charlotte,James Madison,7,3,91,1,10,4,Rush,Hahsaun Wilson run for 4 yds to the CLT 13,-0.04486009398484114,2024-09-01T01:25:18.000Z
+401643774102984404,401643774,40164377411,2,2,1:55,Charlotte,James Madison,7,3,87,2,6,12,Rush,Hahsaun Wilson run for 12 yds to the CLT 25 for a 1ST down,0.7892909302883977,2024-09-01T01:25:18.000Z
+401643774102984405,401643774,40164377411,3,2,1:55,Charlotte,James Madison,7,3,75,1,10,0,Pass Incompletion,Max Brown pass incomplete,-0.7029700220436519,2024-09-01T01:25:18.000Z
+401643774102984406,401643774,40164377411,4,2,1:55,Charlotte,James Madison,7,3,75,2,10,6,Pass Reception,Max Brown pass complete to Colin Weber for 6 yds to the CLT 31,0.16823773848787482,2024-09-01T01:25:18.000Z
+401643774102994501,401643774,40164377411,5,2,0:54,Charlotte,James Madison,7,3,69,3,4,0,Pass Interception Return,Max Brown pass intercepted Chris Fitzgerald return for no gain to the CLT 33,-0.3875125967229014,2024-09-01T01:28:18.000Z
+401643774102995001,401643774,40164377412,1,2,0:49,James Madison,Charlotte,9,7,33,1,10,33,Passing Touchdown,Alonza Barnett III pass complete to George Pettaway for 33 yds for a TD (Noe Ruelas PAT MISSED),2.903074773501988,2024-09-01T01:29:23.000Z
+401643774102995003,401643774,40164377413,1,2,0:49,James Madison,Charlotte,9,7,65,0,0,37,Kickoff Return (Offense),"Noe Ruelas kickoff for 63 yds , Henry Rutledge return for 37 yds to the CLT 39",,2024-09-01T01:30:54.000Z
+401643774102997901,401643774,40164377413,4,2,0:20,Charlotte,James Madison,7,9,53,4,2,0,Timeout,"Timeout Charlotte, clock 00:20",,2024-09-01T01:34:07.000Z
+401643774102998401,401643774,40164377413,6,2,0:15,Charlotte,James Madison,7,9,53,4,2,0,Punt,Michael O'Shaughnessy punt for 53 yds for a touchback,,2024-09-01T01:35:49.000Z
+401643774102997902,401643774,40164377413,5,2,0:20,Charlotte,James Madison,7,9,59,3,8,6,Pass Reception,Max Brown pass complete to Bryce Kennon for 6 yds to the CLT 47,0.2112033235460062,2024-09-01T01:34:07.000Z
+401643774102995005,401643774,40164377413,2,2,0:49,Charlotte,James Madison,7,9,61,1,10,2,Rush,Max Brown run for 2 yds to the CLT 41,-0.673782181215797,2024-09-01T01:30:54.000Z
+401643774102995006,401643774,40164377413,3,2,0:49,Charlotte,James Madison,7,9,59,2,8,0,Pass Incompletion,Max Brown pass incomplete,-0.8991648660998165,2024-09-01T01:30:54.000Z
+401643774102999903,401643774,40164377414,2,2,0:00,James Madison,Charlotte,9,7,82,0,10,0,End of Half,End of 2nd Quarter,,2024-09-01T01:36:43.000Z
+401643774102999901,401643774,40164377414,1,2,0:00,James Madison,Charlotte,9,7,80,1,10,-2,Rush,"[NH] Kneel down by JMU at JMU18 (team loss of 2), clock 00:00.",-0.6979456564143147,2024-09-01T01:36:43.000Z
+401643774103849902,401643774,40164377414,3,3,15:00,James Madison,Charlotte,9,7,75,1,10,0,Timeout,"Timeout Charlotte, clock 15:00",,2024-08-31T00:00:00.000Z
+401643774103849903,401643774,40164377415,1,3,15:00,Charlotte,James Madison,7,9,65,0,0,0,Kickoff,Stephen Rusnak kickoff for 65 yds for a touchback,,2024-08-31T00:00:00.000Z
+401643774103849906,401643774,40164377415,3,3,15:00,James Madison,Charlotte,9,7,75,1,10,2,Rush,Ayo Adeyi run for 2 yds to the JMU 27,-0.45260367932203766,2024-09-01T01:59:22.000Z
+401643774103858301,401643774,40164377415,4,3,14:16,James Madison,Charlotte,16,7,73,2,8,73,Passing Touchdown,Alonza Barnett III pass complete to Omarion Dollison for 73 yds for a TD (Noe Ruelas KICK),6.530358799043359,2024-09-01T01:59:22.000Z
+401643774103849904,401643774,40164377415,2,3,15:00,James Madison,Charlotte,9,7,25,1,10,0,Timeout,"Timeout Charlotte, clock 15:00",,2024-08-31T00:00:00.000Z
+401643774103858307,401643774,40164377416,3,3,14:16,Charlotte,James Madison,7,16,87,1,20,0,Rush,Terron Kellman run for no gain to the CLT 13,-0.12283758503004095,2024-09-01T02:01:14.000Z
+401643774103858308,401643774,40164377416,4,3,14:16,Charlotte,James Madison,7,16,87,2,20,-4,Sack,Max Brown sacked by Jacob Dobbs for a loss of 4 yards to the CLT 9,-0.07502301224762672,2024-09-01T02:01:14.000Z
+401643774103858310,401643774,40164377416,6,3,14:16,Charlotte,James Madison,7,16,50,1,10,1,Rush,Cartevious Norton run for 1 yd to the JMU 49,-0.873884986133115,2024-09-01T02:01:14.000Z
+401643774103858305,401643774,40164377416,2,3,14:16,Charlotte,James Madison,7,16,77,1,10,-10,Penalty,"Charlotte Penalty, Offensive Holding (-10 Yards) to the CLT 13",,2024-09-01T02:01:14.000Z
+401643774103858303,401643774,40164377416,1,3,14:16,James Madison,Charlotte,16,7,65,0,0,22,Kickoff Return (Offense),"Cristiano Rosa kickoff for 64 yds , Henry Rutledge return for 22 yds to the CLT 23",,2024-09-01T02:01:14.000Z
+401643774103896201,401643774,40164377416,7,3,10:37,Charlotte,James Madison,7,16,48,3,8,0,Timeout,"Timeout Charlotte, clock 10:37",,2024-09-01T02:07:03.000Z
+401643774103907401,401643774,40164377416,10,3,9:25,Charlotte,James Madison,7,16,46,4,6,0,Punt,"Michael O'Shaughnessy punt for 37 yds, fair catch by Yamir Knight at the JMU 9",,2024-09-01T02:08:48.000Z
+401643774103896203,401643774,40164377416,9,3,10:37,Charlotte,James Madison,7,16,48,3,8,2,Pass Reception,Max Brown pass complete to O'Mega Blake for 2 yds to the JMU 46,-0.5371132978503779,2024-09-01T02:07:03.000Z
+401643774103896202,401643774,40164377416,8,3,10:37,Charlotte,James Madison,7,16,49,2,9,1,Rush,Cartevious Norton run for 1 yd to the JMU 48,-0.8609667510410385,2024-09-01T02:07:03.000Z
+401643774103858309,401643774,40164377416,5,3,14:16,Charlotte,James Madison,7,16,91,3,24,41,Rush,Terron Kellman run for 41 yds to the 50 yard line for a 1ST down,3.5484640249133523,2024-09-01T02:01:14.000Z
+401643774103907411,401643774,40164377417,6,3,9:25,James Madison,Charlotte,16,7,74,2,5,-10,Penalty,"BARNETT III, Alonza scrambles to the left for a gain of 1 yard to the JMU27 (CULP, Elijah). PENALTY JMU Holding on PHIFER, Josh enforced 10 yards from the JMU26 to the JMU16 [SG]. NO PLAY (replay the down).",,2024-09-01T02:12:55.000Z
+401643774103907415,401643774,40164377417,10,3,9:25,James Madison,Charlotte,16,7,63,2,23,12,Rush,Ayo Adeyi run for 12 yds to the JMU 49,0.8336444923375286,2024-09-01T02:12:55.000Z
+401643774103907414,401643774,40164377417,9,3,9:25,James Madison,Charlotte,16,7,50,1,10,-13,Rush,run for a loss of 13 yards to the JMU 37,-3.150334834361691,2024-09-01T02:12:55.000Z
+401643774103907413,401643774,40164377417,8,3,9:25,James Madison,Charlotte,16,7,65,1,10,15,Pass Reception,Alonza Barnett III pass complete to Taylor Thompson for 15 yds to the 50 yard line for a 1ST down,1.401305078569962,2024-09-01T02:12:55.000Z
+401643774103907409,401643774,40164377417,5,3,9:25,James Madison,Charlotte,16,7,79,1,10,5,Rush,Ayo Adeyi run for 5 yds to the JMU 26,0.0872959704547682,2024-09-01T02:12:55.000Z
+401643774103907408,401643774,40164377417,4,3,9:25,James Madison,Charlotte,16,7,79,4,10,0,Rush,Ayo Adeyi run for no gain to the JMU 21 for a 1ST down,0.3155303293453011,2024-09-01T02:12:55.000Z
+401643774103907405,401643774,40164377417,3,3,9:25,James Madison,Charlotte,16,7,82,3,1,-2,Rush,Logan Kyle run for a loss of 2 yards to the JMU 16,-0.432007445102391,2024-09-01T02:12:55.000Z
+401643774103907404,401643774,40164377417,2,3,9:25,James Madison,Charlotte,16,7,88,2,7,6,Rush,George Pettaway run for 6 yds to the JMU 18,0.16023590840292634,2024-09-01T02:12:55.000Z
+401643774103907403,401643774,40164377417,1,3,9:25,James Madison,Charlotte,16,7,91,1,10,3,Pass Reception,Alonza Barnett III pass complete to Tyler Purdy for 3 yds to the JMU 12,-0.1388134637685603,2024-09-01T02:08:48.000Z
+401643774103907412,401643774,40164377417,7,3,9:25,James Madison,Charlotte,16,7,84,2,15,19,Rush,Alonza Barnett III run for 19 yds to the JMU 35 for a 1ST down,1.964103474833875,2024-09-01T02:12:55.000Z
+401643774103907416,401643774,40164377417,11,3,9:25,James Madison,Charlotte,16,7,51,3,11,1,Rush,Alonza Barnett III run for 1 yd to the 50 yard line,-0.5266200132965793,2024-09-01T02:12:55.000Z
+401643774103907418,401643774,40164377417,12,3,9:25,James Madison,Charlotte,16,7,84,4,3,5,Penalty,"HANSON, Ryan punt 34 yards to the JMU50 downed by REGAN, Chase. PENALTY CLT Running Into the kicker on HOPKINS, Adam enforced 5 yards from the JMU16 to the JMU21 and results in a 1ST DOWN [FAKE PUNT]. NO PLAY (replay the down).",,2024-09-01T02:12:55.000Z
+401643774103974601,401643774,40164377417,13,3,2:53,James Madison,Charlotte,16,7,50,4,10,0,Punt,"Ryan Hanson punt for 49 yds, downed at the CLT 1",,2024-09-01T02:24:05.000Z
+401643774103974603,401643774,40164377418,1,3,2:53,Charlotte,James Madison,7,16,99,1,10,0,Pass Incompletion,Max Brown pass incomplete,-0.24120998460901966,2024-09-01T02:26:10.000Z
+401643774103974604,401643774,40164377418,2,3,2:53,Charlotte,James Madison,7,16,99,2,10,0,Pass Incompletion,Max Brown pass incomplete,-0.10236731084207573,2024-09-01T02:26:10.000Z
+401643774103974605,401643774,40164377418,3,3,2:53,Charlotte,James Madison,7,16,99,3,10,0,Pass Incompletion,Max Brown pass incomplete,-0.04320091191286135,2024-09-01T02:26:10.000Z
+401643774103977201,401643774,40164377418,4,3,2:27,Charlotte,James Madison,7,16,99,4,10,0,Punt,"Michael O'Shaughnessy punt for 62 yds, downed at the JMU 37",,2024-09-01T02:29:50.000Z
+401643774103985002,401643774,40164377419,3,3,1:49,James Madison,Charlotte,16,7,59,2,6,0,Pass Incompletion,Alonza Barnett III pass incomplete,-1.0222685605653614,2024-09-01T02:31:22.000Z
+401643774103985003,401643774,40164377419,4,3,1:49,James Madison,Charlotte,16,7,59,3,6,16,Pass Reception,Alonza Barnett III pass complete to Brionne Penny for 16 yds to the CLT 43 for a 1ST down,2.8848341275292153,2024-09-01T02:31:22.000Z
+401643774103985004,401643774,40164377419,5,3,1:49,James Madison,Charlotte,16,7,43,1,10,5,Rush,Ayo Adeyi run for 5 yds to the CLT 38,0.0913907244107932,2024-09-01T02:31:22.000Z
+401643774103999901,401643774,40164377419,6,3,0:00,James Madison,Charlotte,16,7,38,2,5,27,Rush,Alonza Barnett III run for 27 yds to the CLT 11 for a 1ST down,0.739239950152136,2024-09-01T02:33:45.000Z
+401643774104849902,401643774,40164377419,8,4,15:00,James Madison,Charlotte,16,7,11,1,10,3,Rush,Ayo Adeyi run for 3 yds to the CLT 8,-0.094911316302818,2024-09-01T02:37:48.000Z
+401643774104858401,401643774,40164377419,9,4,14:15,James Madison,Charlotte,23,7,8,2,7,8,Rushing Touchdown,Ayo Adeyi run for 8 yds for a TD (Noe Ruelas KICK),2.616650729670743,2024-09-01T02:38:21.000Z
+401643774103999902,401643774,40164377419,7,3,0:00,James Madison,Charlotte,16,7,38,0,5,27,End Period,End of 3rd Quarter,,2024-09-01T02:33:45.000Z
+401643774103985001,401643774,40164377419,2,3,1:49,James Madison,Charlotte,16,7,59,3,6,0,Timeout,"Timeout Charlotte, clock 01:49",,2024-09-01T02:31:22.000Z
+401643774103977203,401643774,40164377419,1,3,2:27,James Madison,Charlotte,16,7,63,1,10,4,Rush,George Pettaway run for 4 yds to the JMU 41,-0.1644248613169578,2024-09-01T02:29:50.000Z
+401643774104858416,401643774,40164377420,13,4,14:15,Charlotte,James Madison,7,23,40,3,10,19,Pass Reception,Max Brown pass complete to Isaiah Myers for 19 yds to the JMU 21 for a 1ST down,2.428967375682339,2024-09-01T02:42:07.000Z
+401643774104858417,401643774,40164377420,14,4,14:15,Charlotte,James Madison,7,23,21,1,10,5,Pass Reception,Max Brown pass complete to Bryce Kennon for 5 yds to the JMU 16,0.07448863119052,2024-09-01T02:50:05.000Z
+401643774104858418,401643774,40164377420,15,4,14:15,Charlotte,James Madison,7,23,16,2,5,0,Pass Incompletion,Max Brown pass incomplete,-0.419574330888314,2024-09-01T02:50:05.000Z
+401643774104858419,401643774,40164377420,16,4,14:15,Charlotte,James Madison,7,23,16,3,5,0,Pass Incompletion,Max Brown pass incomplete,-0.501574330015505,2024-09-01T02:50:05.000Z
+401643774104909201,401643774,40164377420,17,4,9:07,Charlotte,James Madison,7,23,16,4,5,0,Pass Incompletion,Max Brown pass incomplete,-3.521043156491208,2024-09-01T02:52:08.000Z
+401643774104858403,401643774,40164377420,1,4,14:15,James Madison,Charlotte,23,7,65,0,0,0,Kickoff,Cristiano Rosa kickoff for 65 yds for a touchback,,2024-09-01T02:42:07.000Z
+401643774104858405,401643774,40164377420,2,4,14:15,Charlotte,James Madison,7,23,75,1,10,3,Rush,Cartevious Norton run for 3 yds to the CLT 28,-0.2957674139440157,2024-09-01T02:42:07.000Z
+401643774104858406,401643774,40164377420,3,4,14:15,Charlotte,James Madison,7,23,72,2,7,8,Pass Reception,Max Brown pass complete to Colin Weber for 8 yds to the CLT 36 for a 1ST down,1.2263299258900062,2024-09-01T02:42:07.000Z
+401643774104858407,401643774,40164377420,4,4,14:15,Charlotte,James Madison,7,23,64,1,10,0,Pass Incompletion,Max Brown pass incomplete,-1.041155320344064,2024-09-01T02:42:07.000Z
+401643774104858408,401643774,40164377420,5,4,14:15,Charlotte,James Madison,7,23,64,2,10,-3,Sack,Max Brown sacked by Trent Hendrick for a loss of 3 yards to the CLT 33,-0.8623831445985877,2024-09-01T02:42:07.000Z
+401643774104858409,401643774,40164377420,6,4,14:15,Charlotte,James Madison,7,23,67,3,13,8,Pass Reception,Max Brown pass complete to Sean Brown for 8 yds to the CLT 41,0.261294105463608,2024-09-01T02:42:07.000Z
+401643774104858410,401643774,40164377420,7,4,14:15,Charlotte,James Madison,7,23,59,4,5,8,Pass Reception,Max Brown pass complete to Sean Brown for 8 yds to the CLT 49 for a 1ST down,2.866069763361436,2024-09-01T02:42:07.000Z
+401643774104858411,401643774,40164377420,8,4,14:15,Charlotte,James Madison,7,23,51,1,10,8,Pass Reception,Max Brown pass complete to Colin Weber for 8 yds to the JMU 43,0.8604842386778613,2024-09-01T02:42:07.000Z
+401643774104858412,401643774,40164377420,9,4,14:15,Charlotte,James Madison,7,23,43,2,2,0,Pass Incompletion,Max Brown pass incomplete,-1.1599708003946656,2024-09-01T02:42:07.000Z
+401643774104858413,401643774,40164377420,10,4,14:15,Charlotte,James Madison,7,23,43,3,2,3,Rush,Terron Kellman run for 3 yds to the JMU 40 for a 1ST down,1.0338046216724024,2024-09-01T02:42:07.000Z
+401643774104858414,401643774,40164377420,11,4,14:15,Charlotte,James Madison,7,23,40,1,10,0,Pass Incompletion,Max Brown pass incomplete,-0.8457687366186873,2024-09-01T02:42:07.000Z
+401643774104858415,401643774,40164377420,12,4,14:15,Charlotte,James Madison,7,23,40,2,10,0,Pass Incompletion,Max Brown pass incomplete,-1.0264463089218037,2024-09-01T02:42:07.000Z
+401643774104909203,401643774,40164377421,1,4,9:07,James Madison,Charlotte,23,7,84,1,10,4,Pass Reception,Alonza Barnett III pass complete to Yamir Knight for 4 yds to the JMU 20,-0.0700258805898928,2024-09-01T02:52:08.000Z
+401643774104909204,401643774,40164377421,2,4,9:07,James Madison,Charlotte,23,7,80,2,6,9,Rush,Tyler Purdy run for 9 yds to the JMU 29 for a 1ST down,0.8737783350386028,2024-09-01T02:52:08.000Z
+401643774104909207,401643774,40164377421,4,4,9:07,James Madison,Charlotte,23,7,85,1,24,-1,Rush,George Pettaway run for a loss of 1 yard to the JMU 14,-0.10487469689161344,2024-09-01T02:58:33.000Z
+401643774104909208,401643774,40164377421,5,4,9:07,James Madison,Charlotte,23,7,86,2,25,15,Pass Reception,Alonza Barnett III pass complete to Taylor Thompson for 15 yds to the JMU 29,0.3076945812652152,2024-09-01T02:58:33.000Z
+401643774104936401,401643774,40164377421,7,4,6:35,James Madison,Charlotte,23,7,71,4,10,0,Timeout,"Timeout James Madison, clock 06:35",,2024-09-01T03:00:34.000Z
+401643774104937101,401643774,40164377421,9,4,6:28,James Madison,Charlotte,23,7,71,4,10,0,Punt,"Ryan Hanson punt for 46 yds, fair catch by Jairus Mack at the CLT 25",,2024-09-01T03:01:58.000Z
+401643774104936402,401643774,40164377421,8,4,6:35,James Madison,Charlotte,23,7,71,3,10,0,Pass Incompletion,Alonza Barnett III pass incomplete,-0.20540775687585722,2024-09-01T03:00:34.000Z
+401643774104909206,401643774,40164377421,3,4,9:07,James Madison,Charlotte,23,7,71,1,10,-14,Penalty,"QB Keeper BARNETT III, Alonza rush to the left for a gain of 1 yard to the JMU30 (WALLACE-BEMAH, Prince), out of bounds. PENALTY JMU Personal Foul on PHIFER, Josh enforced half the distance from the goal, 14 yards from the JMU29 to the JMU15 [NHSG]. NO PLAY (replay the down).",,2024-09-01T02:52:08.000Z
+401643774104909209,401643774,40164377421,6,4,9:07,James Madison,Charlotte,23,7,80,2,6,0,Penalty,"PENALTY JMU Unsportsmanlike Conduct on BARNETT III, Alonza CLT Unsportsmanlike Conduct on BUTLER, Dre , Offsetting penalties [NHSG]. NO PLAY (replay the down).",,2024-09-01T02:58:33.000Z
+401643774104937105,401643774,40164377422,3,4,6:28,Charlotte,James Madison,7,23,75,3,10,8,Pass Reception,Max Brown pass complete to Terron Kellman for 8 yds to the CLT 33,0.22917304828379947,2024-09-01T03:03:21.000Z
+401643774104937104,401643774,40164377422,2,4,6:28,Charlotte,James Madison,7,23,75,2,10,0,Pass Incompletion,Max Brown pass incomplete,-0.34710487712173865,2024-09-01T03:03:21.000Z
+401643774104937103,401643774,40164377422,1,4,6:28,Charlotte,James Madison,7,23,75,1,10,0,Pass Incompletion,Max Brown pass incomplete,-0.7029700220436519,2024-09-01T03:03:21.000Z
+401643774104937106,401643774,40164377422,4,4,6:28,Charlotte,James Madison,7,23,67,4,2,4,Pass Reception,Max Brown pass complete to Colin Weber for 4 yds to the CLT 37 for a 1ST down,1.8481461770251624,2024-09-01T03:03:21.000Z
+401643774104937107,401643774,40164377422,5,4,6:28,Charlotte,James Madison,7,23,63,1,10,10,Pass Reception,Max Brown pass complete to Sean Brown for 10 yds to the CLT 47 for a 1ST down,0.9552113600044425,2024-09-01T03:03:21.000Z
+401643774104937108,401643774,40164377422,6,4,6:28,Charlotte,James Madison,7,23,53,1,10,0,Pass Incompletion,Max Brown pass incomplete,-1.1527089917962545,2024-09-01T03:03:21.000Z
+401643774104937109,401643774,40164377422,7,4,6:28,Charlotte,James Madison,7,23,53,2,10,0,Pass Incompletion,Max Brown pass incomplete,-0.9619971707978011,2024-09-01T03:03:21.000Z
+401643774104937110,401643774,40164377422,8,4,6:28,Charlotte,James Madison,7,23,53,3,10,0,Pass Incompletion,Max Brown pass incomplete,-0.6105978704287018,2024-09-01T03:03:21.000Z
+401643774104956401,401643774,40164377422,9,4,4:35,Charlotte,James Madison,7,23,53,4,10,5,Pass Reception,Max Brown pass complete to Bryce Kennon for 5 yds to the JMU 48,-0.1793965334039349,2024-09-01T03:10:15.000Z
+401643774104979902,401643774,40164377423,6,4,2:00,James Madison,Charlotte,23,7,14,2,5,6,Rush,Alonza Barnett III run for 6 yds to the CLT 8 for a 1ST down,0.210526645477623,2024-09-01T03:16:34.000Z
+401643774104988501,401643774,40164377423,8,4,1:14,James Madison,Charlotte,23,7,1,2,1,0,Timeout,"Timeout James Madison, clock 01:14",,2024-09-01T03:20:37.000Z
+401643774104979903,401643774,40164377423,7,4,2:00,James Madison,Charlotte,23,7,8,1,10,0,Timeout,"Timeout Charlotte, clock 02:00",,2024-09-01T03:16:34.000Z
+401643774104957004,401643774,40164377423,2,4,4:29,James Madison,Charlotte,23,7,51,2,13,0,Timeout,"Timeout Charlotte, clock 04:29",,2024-09-01T03:11:12.000Z
+401643774104988901,401643774,40164377423,10,4,1:10,James Madison,Charlotte,30,7,1,2,1,1,Rushing Touchdown,George Pettaway run for 1 yd for a TD (Noe Ruelas KICK),1.900352237473006,2024-09-01T03:21:52.000Z
+401643774104988502,401643774,40164377423,9,4,1:14,James Madison,Charlotte,23,7,8,1,8,7,Rush,Tyler Purdy run for 7 yds to the CLT 1,0.419247331226686,2024-09-01T03:20:37.000Z
+401643774104957003,401643774,40164377423,1,4,4:29,James Madison,Charlotte,23,7,52,1,14,1,Rush,Ayo Adeyi run for 1 yd to the JMU 49,-0.8516563459090117,2024-09-01T03:13:16.000Z
+401643774104957005,401643774,40164377423,3,4,4:29,James Madison,Charlotte,23,7,51,2,13,-4,Rush,Ayo Adeyi run for a loss of 4 yards to the JMU 45,-1.3728273944127922,2024-09-01T03:11:12.000Z
+401643774104957006,401643774,40164377423,4,4,4:29,James Madison,Charlotte,23,7,55,3,17,36,Rush,Alonza Barnett III run for 36 yds to the CLT 19 for a 1ST down,4.216782269050392,2024-09-01T03:13:16.000Z
+401643774104957007,401643774,40164377423,5,4,4:29,James Madison,Charlotte,23,7,19,1,10,5,Rush,George Pettaway run for 5 yds to the CLT 14,0.074321414460208,2024-09-01T03:13:16.000Z
+401643774104999901,401643774,40164377424,4,4,0:00,Charlotte,James Madison,7,30,60,2,5,4,Rush,Hahsaun Wilson run for 4 yds to the CLT 44,-0.1614281338413991,2024-09-01T03:25:56.000Z
+401643774104999903,401643774,40164377424,5,4,0:00,Charlotte,James Madison,7,30,56,0,5,0,End of Game,End of 4th Quarter,,2024-09-01T03:25:56.000Z
+401643774104988906,401643774,40164377424,3,4,1:10,Charlotte,James Madison,7,30,65,1,10,5,Rush,Hahsaun Wilson run for 5 yds to the CLT 40,0.1088137823196469,2024-09-01T03:22:27.000Z
+401643774104988905,401643774,40164377424,2,4,1:10,Charlotte,James Madison,7,30,75,1,10,10,Rush,Hahsaun Wilson run for 10 yds to the CLT 35 for a 1ST down,0.8350381090299867,2024-09-01T03:22:27.000Z
+401643774104988903,401643774,40164377424,1,4,1:10,James Madison,Charlotte,30,7,65,0,0,0,Kickoff,Noe Ruelas kickoff for 65 yds for a touchback,,2024-09-01T03:22:27.000Z

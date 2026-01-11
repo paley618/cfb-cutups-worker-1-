@@ -1,0 +1,156 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401643784101854001,401643784,4016437841,2,1,14:59,Troy,Memphis,0,0,75,1,10,7,Rush,Gerald Green run for 7 yds to the TROY 32,0.604642460086338,2024-09-07T16:03:45.000Z
+401643784101857801,401643784,4016437841,4,1,14:21,Troy,Memphis,0,0,68,3,3,0,Pass Incompletion,Goose Crowder pass incomplete,-0.5139435334013278,2024-09-07T16:03:45.000Z
+401643784101858301,401643784,4016437841,5,1,14:16,Troy,Memphis,0,0,68,4,3,0,Punt,"Robert Cole punt for 38 yds, downed at the MEM 30",,2024-09-07T16:03:45.000Z
+401643784101849906,401643784,4016437841,1,1,15:00,Memphis,Troy,0,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-09-07T16:03:45.000Z
+401643784101857401,401643784,4016437841,3,1,14:25,Troy,Memphis,0,0,68,2,3,0,Pass Incompletion,Goose Crowder pass incomplete,-0.9937966012014892,2024-09-07T16:03:45.000Z
+401643784101859601,401643784,4016437842,1,1,14:03,Memphis,Troy,0,0,70,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-0.8627910327708888,2024-09-07T16:03:45.000Z
+401643784101864001,401643784,4016437842,2,1,13:59,Memphis,Troy,0,0,70,2,10,0,Pass Incompletion,Seth Henigan pass incomplete,-0.4604691796083076,2024-09-07T16:03:45.000Z
+401643784101864501,401643784,4016437842,3,1,13:54,Memphis,Troy,0,0,70,3,10,20,Pass Reception,Seth Henigan pass complete to Anthony Landphere for 20 yds to the 50 yard line for a 1ST down,3.174634799162167,2024-09-07T16:03:45.000Z
+401643784101867301,401643784,4016437842,4,1,13:26,Memphis,Troy,0,0,50,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-1.1143038065675126,2024-09-07T16:03:45.000Z
+401643784101868101,401643784,4016437842,5,1,13:18,Memphis,Troy,0,0,50,2,10,6,Pass Reception,Seth Henigan pass complete to Demeer Blankumsee for 6 yds to the TROY 44,0.3209798005253487,2024-09-07T16:03:45.000Z
+401643784101875901,401643784,4016437842,6,1,12:40,Memphis,Troy,0,0,44,3,4,4,Rush,Seth Henigan run for 4 yds to the TROY 40 for a 1ST down,1.445686794226196,2024-09-07T16:03:45.000Z
+401643784101879901,401643784,4016437842,7,1,12:00,Memphis,Troy,0,0,40,1,10,8,Pass Reception,Seth Henigan pass complete to Roc Taylor for 8 yds to the TROY 32,0.637524267916824,2024-09-07T16:03:45.000Z
+401643784101887303,401643784,4016437842,8,1,11:26,Memphis,Troy,0,0,32,2,2,-6,Rush,"Mario Anderson run for 9 yds to the TROY 23 Memphis Penalty, Face mask (15 yards) (-15 Yards) to the TROY 46",-2.062721932209117,2024-09-07T16:03:45.000Z
+401643784101889201,401643784,4016437842,9,1,11:07,Memphis,Troy,0,0,46,2,16,5,Pass Reception,Seth Henigan pass complete to Mario Anderson for 5 yds to the TROY 41,0.0527905700858593,2024-09-07T16:03:45.000Z
+401643784101897301,401643784,4016437842,10,1,10:26,Memphis,Troy,0,0,41,3,11,12,Pass Reception,Seth Henigan pass complete to Roc Taylor for 12 yds to the TROY 29 for a 1ST down,2.493516537071018,2024-09-07T16:03:45.000Z
+401643784101899901,401643784,4016437842,11,1,10:00,Memphis,Troy,0,0,29,1,10,10,Rush,Mario Anderson run for 10 yds to the TROY 19 for a 1ST down,0.183853555960589,2024-09-07T16:03:45.000Z
+401643784101907801,401643784,4016437842,12,1,9:21,Memphis,Troy,0,0,19,1,10,4,Pass Reception,Seth Henigan pass complete to Mario Anderson for 4 yds to the TROY 15,-0.024495891923003,2024-09-07T16:03:45.000Z
+401643784101915801,401643784,4016437842,13,1,8:41,Memphis,Troy,0,0,15,2,6,0,Penalty,"Troy Penalty, Roughing the Passer on LEE, Phillip Pass Interference on YANCEY, Damaje enforced (Phillip Lee) declined for a 1ST down",,2024-09-07T16:03:45.000Z
+401643784101916401,401643784,4016437842,14,1,8:35,Memphis,Troy,7,0,2,1,2,2,Rushing Touchdown,Brandon Thomas run for 2 yds for a TD (Caden Costa KICK),1.213235297672098,2024-09-07T16:18:37.000Z
+401643784101916403,401643784,4016437843,1,1,8:35,Memphis,Troy,7,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-09-07T16:22:48.000Z
+401643784101916601,401643784,4016437843,2,1,8:33,Troy,Memphis,0,7,75,1,10,4,Rush,Jordan Lovett run for 4 yds to the TROY 29,-0.1142886249388964,2024-09-07T16:03:45.000Z
+401643784101924001,401643784,4016437843,3,1,7:59,Troy,Memphis,0,7,71,2,6,5,Rush,Jordan Lovett run for 5 yds to the TROY 34,0.0912547629899487,2024-09-07T16:03:45.000Z
+401643784101928201,401643784,4016437843,4,1,7:17,Troy,Memphis,0,7,66,3,1,0,Rush,Jordan Lovett run for no gain to the TROY 34,-0.7006464561644021,2024-09-07T16:03:45.000Z
+401643784101935801,401643784,4016437843,5,1,6:41,Troy,Memphis,0,7,66,4,1,0,Punt,"Robert Cole punt for 39 yds, downed at the MEM 27",,2024-09-07T16:03:45.000Z
+401643784101936802,401643784,4016437844,1,1,6:31,Memphis,Troy,7,0,73,1,10,10,Penalty,"(06:31) HENIGAN, Seth pass deep up the middle incomplete intended for TAYLOR, Roc thrown to the TRO35; QB hurried by LEE, Phillip, clock 06:25. PENALTY TRO Holding on STARLING, Darrell enforced 10 yards from the MEM27 to the MEM37 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-07T16:03:45.000Z
+401643784101937601,401643784,4016437844,2,1,6:23,Memphis,Troy,7,0,63,1,10,0,Rush,Mario Anderson run for no gain to the MEM 37,-1.065701080215459,2024-09-07T16:03:45.000Z
+401643784101945101,401643784,4016437844,3,1,5:48,Memphis,Troy,7,0,63,2,10,0,Pass Incompletion,Seth Henigan pass incomplete,-0.6622137678957802,2024-09-07T16:03:45.000Z
+401643784101946001,401643784,4016437844,4,1,5:39,Memphis,Troy,7,0,63,3,10,4,Pass Reception,Seth Henigan pass complete to Greg Desrosiers Jr. for 4 yds to the MEM 41,-0.06817923957803274,2024-09-07T16:03:45.000Z
+401643784101954101,401643784,4016437844,5,1,4:58,Memphis,Troy,7,0,59,4,6,0,Punt,"Joshua Sloan punt for 59 yds for a touchback, PENALTY Before the snap, MEM Illegal Formation enforced at the deadball spot for 5 yards after the change of possession from the MEM 20 to the MEM 25",,2024-09-07T16:03:45.000Z
+401643784101999202,401643784,4016437845,10,1,0:00,Troy,Memphis,0,7,24,0,10,1,End Period,End of 1st Quarter,,2024-09-07T16:41:28.000Z
+401643784101955001,401643784,4016437845,1,1,4:49,Troy,Memphis,0,7,75,1,10,9,Pass Reception,Goose Crowder pass complete to Brody Dalton for 9 yds to the TROY 34,1.252308359788624,2024-09-07T16:03:45.000Z
+401643784101958701,401643784,4016437845,2,1,4:12,Troy,Memphis,0,7,66,2,1,6,Rush,Gerald Green run for 6 yds to the TROY 40 for a 1ST down,0.0685461557890222,2024-09-07T16:03:45.000Z
+401643784101966601,401643784,4016437845,3,1,3:33,Troy,Memphis,0,7,60,1,10,5,Rush,Goose Crowder run for 5 yds to the TROY 45,0.1106144250151839,2024-09-07T16:03:45.000Z
+401643784101974401,401643784,4016437845,4,1,2:55,Troy,Memphis,0,7,55,2,5,6,Rush,Gerald Green run for 6 yds to the MEM 49 for a 1ST down,0.8839556274912432,2024-09-07T16:03:45.000Z
+401643784101978301,401643784,4016437845,5,1,2:16,Troy,Memphis,0,7,49,1,10,-2,Rush,Gerald Green run for a loss of 2 yards to the TROY 49,-1.5598563607412999,2024-09-07T16:03:45.000Z
+401643784101985801,401643784,4016437845,6,1,1:41,Troy,Memphis,0,7,51,2,12,7,Pass Reception,Goose Crowder pass complete to Devonte Ross for 7 yds to the MEM 44,0.5385709771824896,2024-09-07T16:03:45.000Z
+401643784101988301,401643784,4016437845,7,1,1:16,Troy,Memphis,0,7,44,3,5,8,Pass Reception,Goose Crowder pass complete to Peyton Higgins for 8 yds to the MEM 36 for a 1ST down,1.7728378401822624,2024-09-07T16:03:45.000Z
+401643784101996001,401643784,4016437845,8,1,0:39,Troy,Memphis,0,7,36,1,10,15,Penalty,"Memphis Penalty, Unnecessary Roughness (Patrick Lucas Jr.) to the MEM 24 for a 1ST down",,2024-09-07T16:03:45.000Z
+401643784101999201,401643784,4016437845,9,1,0:07,Troy,Memphis,0,7,24,1,10,1,Pass Reception,Goose Crowder pass complete to Peyton Higgins for 1 yd to the MEM 23,-0.3334518667191766,2024-09-07T16:41:28.000Z
+401643784102854201,401643784,4016437845,11,2,14:57,Troy,Memphis,0,7,23,2,9,-3,Rush,Gerald Green run for a loss of 3 yards to the MEM 26,-1.0055805761321783,2024-09-07T00:00:00.000Z
+401643784102857501,401643784,4016437845,12,2,14:24,Troy,Memphis,0,7,26,3,12,12,Pass Reception,Goose Crowder pass complete to Devonte Ross for 12 yds to the MEM 14 for a 1ST down,1.4721872162792484,2024-09-07T16:45:49.000Z
+401643784102865901,401643784,4016437845,13,2,13:40,Troy,Memphis,0,7,14,1,10,3,Rush,Jordan Lovett run for 3 yds to the MEM 11,-0.1007251569352445,2024-09-07T16:45:49.000Z
+401643784102874801,401643784,4016437845,14,2,12:51,Troy,Memphis,7,7,11,2,7,11,Rushing Touchdown,Goose Crowder run for 11 yds for a TD (Scott Taylor Renfroe KICK),2.649008332114326,2024-09-07T16:47:36.000Z
+401643784102878501,401643784,4016437846,3,2,12:14,Memphis,Troy,7,7,49,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-1.0955888671820908,2024-09-07T16:45:49.000Z
+401643784102874803,401643784,4016437846,1,2,12:51,Troy,Memphis,7,7,65,0,0,0,Kickoff,Paddy McAteer kickoff for 65 yds for a touchback,,2024-09-07T16:47:36.000Z
+401643784102875001,401643784,4016437846,2,2,12:49,Memphis,Troy,7,7,75,1,10,26,Rush,Mario Anderson run for 26 yds to the TROY 49 for a 1ST down,2.3154245680840733,2024-09-07T16:45:49.000Z
+401643784102878901,401643784,4016437846,4,2,12:10,Memphis,Troy,7,7,49,2,10,13,Pass Reception,Seth Henigan pass complete to Koby Drake for 13 yds to the TROY 36 for a 1ST down,1.847141323805543,2024-09-07T16:45:49.000Z
+401643784102886901,401643784,4016437846,5,2,11:30,Memphis,Troy,7,7,36,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-0.7215426143188567,2024-09-07T16:45:49.000Z
+401643784102887601,401643784,4016437846,6,2,11:23,Memphis,Troy,7,7,36,2,10,12,Rush,Greg Desrosiers Jr. run for 12 yds to the TROY 24 for a 1ST down,1.0508827607256777,2024-09-07T16:45:49.000Z
+401643784102894101,401643784,4016437846,7,2,10:58,Memphis,Troy,7,7,24,1,10,7,Rush,Greg Desrosiers Jr. run for 7 yds to the TROY 17,0.324778503489089,2024-09-07T16:45:49.000Z
+401643784102898001,401643784,4016437846,8,2,10:19,Memphis,Troy,7,7,17,2,3,-3,Rush,Greg Desrosiers Jr. run for a loss of 3 yards to the TROY 20,-0.822874775296766,2024-09-07T16:45:49.000Z
+401643784102905801,401643784,4016437846,9,2,9:41,Memphis,Troy,7,7,20,3,6,9,Pass Reception,Seth Henigan pass complete to Mario Anderson for 9 yds to the TROY 11 for a 1ST down,0.657794807046727,2024-09-07T16:45:49.000Z
+401643784102914001,401643784,4016437846,10,2,8:59,Memphis,Troy,7,7,11,1,10,2,Rush,Mario Anderson run for 2 yds to the TROY 9,-0.165648229401373,2024-09-07T16:45:49.000Z
+401643784102917501,401643784,4016437846,11,2,8:24,Memphis,Troy,7,7,9,2,8,4,Pass Reception,Seth Henigan pass complete to Demeer Blankumsee for 4 yds to the TROY 5,-0.020461859342591,2024-09-07T16:45:49.000Z
+401643784102925701,401643784,4016437846,12,2,7:42,Memphis,Troy,7,7,5,3,4,4,Penalty,"Troy Penalty, Defensive Pass Interference (Damaje Yancey) to the TROY 1 for a 1ST down",,2024-09-07T16:45:49.000Z
+401643784102926401,401643784,4016437846,13,2,7:35,Memphis,Troy,14,7,1,1,1,1,Rushing Touchdown,Brandon Thomas run for 1 yd for a TD (Caden Costa KICK),0.938021275120443,2024-09-07T17:00:10.000Z
+401643784102927801,401643784,4016437847,3,2,7:21,Troy,Memphis,7,14,70,1,5,1,Rush,Gerald Green run for 1 yd to the TROY 31,-1.083945470122373,2024-09-07T16:45:49.000Z
+401643784102926403,401643784,4016437847,1,2,7:35,Memphis,Troy,14,7,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-09-07T17:00:27.000Z
+401643784102926502,401643784,4016437847,2,2,7:34,Troy,Memphis,7,14,75,1,10,5,Penalty,"(07:34) LOVETT, Jordan rush up the middle for a loss of 3 yards to the TRO22 (DENIS, Javon), clock 07:31. PENALTY MEM Offsides on DENIS, Javon enforced 5 yards from the TRO25 to the TRO30 [SG]. NO PLAY (replay the down).",,2024-09-07T16:45:49.000Z
+401643784102935201,401643784,4016437847,4,2,6:47,Troy,Memphis,7,14,69,2,4,1,Rush,Gerald Green run for 1 yd to the TROY 32,-0.7225289421677195,2024-09-07T16:45:49.000Z
+401643784102939101,401643784,4016437847,5,2,6:08,Troy,Memphis,7,14,68,3,3,7,Pass Reception,Matthew Caldwell pass complete to Peyton Higgins for 7 yds to the TROY 39 for a 1ST down,1.6118932243716066,2024-09-07T17:27:08.000Z
+401643784102946601,401643784,4016437847,6,2,5:33,Troy,Memphis,7,14,61,1,10,1,Pass Reception,Matthew Caldwell pass complete to Landon Parker for 1 yd to the TROY 40,-0.9002974178644043,2024-09-07T17:27:08.000Z
+401643784102955301,401643784,4016437847,7,2,4:46,Troy,Memphis,7,14,60,2,9,1,Rush,Jordan Lovett run for 1 yd to the TROY 41,-0.6726496294512092,2024-09-07T16:45:49.000Z
+401643784102958301,401643784,4016437847,8,2,4:16,Troy,Memphis,7,14,59,3,8,0,Pass Incompletion,Matthew Caldwell pass incomplete,-0.5168458897793737,2024-09-07T16:45:49.000Z
+401643784102958801,401643784,4016437847,9,2,4:11,Troy,Memphis,7,14,59,4,8,36,Punt,"Robert Cole punt for 45 yds , Koby Drake returns for 36 yds to the 50 yard line",,2024-09-07T17:09:04.000Z
+401643784102964202,401643784,4016437847,10,2,3:57,Memphis,Troy,14,7,50,1,10,15,Penalty,"(03:57) HENIGAN, Seth pass deep to the right incomplete intended for TAYLOR, Roc thrown to the TRO20, clock 03:53. PENALTY TRO Pass Interference on GREEN, LJ enforced 15 yards to the TRO35 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T16:45:49.000Z
+401643784102964701,401643784,4016437848,1,2,3:52,Memphis,Troy,14,7,35,1,10,14,Pass Reception,Seth Henigan pass complete to Demeer Blankumsee for 14 yds to the TROY 21 for a 1ST down,0.340291969981463,2024-09-07T16:45:49.000Z
+401643784102969201,401643784,4016437848,2,2,3:07,Memphis,Troy,21,7,21,1,10,21,Rushing Touchdown,Mario Anderson run for 21 yds for a TD (Caden Costa KICK),2.632296813795493,2024-09-07T17:14:23.000Z
+401643784102969301,401643784,4016437849,2,2,3:06,Troy,Memphis,7,21,75,1,10,6,Pass Reception,Matthew Caldwell pass complete to Zeriah Beason for 6 yds to the TROY 31,0.3333748010525683,2024-09-07T16:45:49.000Z
+401643784102969203,401643784,4016437849,1,2,3:07,Memphis,Troy,21,7,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-09-07T17:16:50.000Z
+401643784102979901,401643784,4016437849,4,2,2:00,Troy,Memphis,7,21,64,1,10,0,Timeout,"Timeout Memphis, clock 02:00",,2024-09-07T17:18:20.000Z
+401643784102986701,401643784,4016437849,6,2,1:32,Troy,Memphis,7,21,59,2,5,0,Rush,Gerald Green run for no gain to the TROY 41,-1.0900678040224117,2024-09-07T16:45:49.000Z
+401643784102984101,401643784,4016437849,5,2,1:58,Troy,Memphis,7,21,64,1,10,5,Pass Reception,Matthew Caldwell pass complete to Peyton Higgins for 5 yds to the TROY 41,0.1095374979928448,2024-09-07T16:45:49.000Z
+401643784102977501,401643784,4016437849,3,2,2:24,Troy,Memphis,7,21,69,2,4,5,Pass Reception,Matthew Caldwell pass complete to Zeriah Beason for 5 yds to the TROY 36 for a 1ST down,0.5971877108934222,2024-09-07T16:45:49.000Z
+401643784102989601,401643784,4016437849,7,2,1:03,Troy,Memphis,7,21,59,3,5,0,Pass Incompletion,Matthew Caldwell pass incomplete,-0.6617140534494768,2024-09-07T16:45:49.000Z
+401643784102994001,401643784,4016437849,8,2,0:59,Troy,Memphis,7,21,59,4,5,0,Punt,Robert Cole punt for 59 yds for a touchback,,2024-09-07T16:45:49.000Z
+401643784102999902,401643784,40164378410,3,2,0:00,Memphis,Troy,21,7,74,0,11,0,End of Half,End of 2nd Quarter,,2024-09-07T17:27:08.000Z
+401643784102994901,401643784,40164378410,1,2,0:50,Memphis,Troy,21,7,80,1,10,-1,Pass Reception,Seth Henigan pass complete to Roc Taylor for a loss of 1 yard to the MEM 19,-0.6343354265717327,2024-09-07T16:45:49.000Z
+401643784102997801,401643784,40164378410,2,2,0:21,Memphis,Troy,21,7,81,2,11,7,Rush,Greg Desrosiers Jr. run for 7 yds to the MEM 26,0.21149745879875503,2024-09-07T16:45:49.000Z
+401643784103854001,401643784,40164378411,2,3,14:59,Memphis,Troy,21,7,75,1,10,4,Rush,Mario Anderson run for 4 yds to the MEM 29,-0.1142886249388964,2024-09-07T00:00:00.000Z
+401643784103849903,401643784,40164378411,1,3,15:00,Troy,Memphis,7,21,65,0,0,0,Kickoff,Paddy McAteer kickoff for 65 yds for a touchback,,2024-09-07T00:00:00.000Z
+401643784103857201,401643784,40164378411,3,3,14:27,Memphis,Troy,21,7,71,2,6,-1,Pass Reception,Seth Henigan pass complete to Greg Desrosiers Jr. for a loss of 1 yard to the MEM 28,-0.7409105172171424,2024-09-07T17:49:11.000Z
+401643784103865401,401643784,40164378411,4,3,13:45,Memphis,Troy,21,7,72,3,7,0,Pass Incompletion,Seth Henigan pass incomplete,-0.26587881160037785,2024-09-07T17:49:11.000Z
+401643784103866001,401643784,40164378411,5,3,13:39,Memphis,Troy,21,7,72,4,7,0,Punt,"Joshua Sloan punt for 37 yds, fair catch by Devonte Ross at the TROY 35",,2024-09-07T17:49:11.000Z
+401643784103866501,401643784,40164378412,1,3,13:34,Troy,Memphis,7,21,65,1,10,-4,Fumble Recovery (Opponent),"Gerald Green run for a loss of 4 yards to the TROY 31 Gerald Green fumbled, recovered by MEM Elijah Herring E. Herring return for 0 yds",-1.7572829893086652,2024-09-07T17:49:11.000Z
+401643784103898301,401643784,40164378413,6,3,10:16,Memphis,Troy,24,7,14,4,5,32,Field Goal Good,Caden Costa 32 yd FG GOOD,,2024-09-07T17:55:44.000Z
+401643784103867301,401643784,40164378413,1,3,13:26,Memphis,Troy,21,7,31,1,10,8,Pass Reception,Seth Henigan pass complete to Roc Taylor for 8 yds to the TROY 23,0.521143846211366,2024-09-07T17:49:11.000Z
+401643784103874001,401643784,40164378413,2,3,12:59,Memphis,Troy,21,7,23,2,2,4,Rush,Mario Anderson run for 4 yds to the TROY 19 for a 1ST down,-0.283645304775941,2024-09-07T17:49:11.000Z
+401643784103877601,401643784,40164378413,3,3,12:23,Memphis,Troy,21,7,19,1,10,1,Pass Reception,Seth Henigan pass complete to Jamari Hawkins for 1 yd to the TROY 18,-0.280938211620716,2024-09-07T17:49:11.000Z
+401643784103885901,401643784,40164378413,4,3,11:40,Memphis,Troy,21,7,18,2,9,5,Pass Reception,Seth Henigan pass complete to Mario Anderson for 5 yds to the TROY 13,0.047016238158686,2024-09-07T17:49:11.000Z
+401643784103889901,401643784,40164378413,5,3,11:00,Memphis,Troy,21,7,13,3,4,-1,Rush,Mario Anderson run for a loss of 1 yard to the TROY 14,-0.539800355543514,2024-09-07T17:49:11.000Z
+401643784103898302,401643784,40164378414,1,3,10:16,Memphis,Troy,24,7,65,0,0,18,Kickoff Return (Offense),"Tristian Vandenberg kickoff for 64 yds , Jordan Lovett return for 18 yds to the TROY 19",,2024-09-07T17:55:44.000Z
+401643784103899203,401643784,40164378414,2,3,10:07,Troy,Memphis,7,24,81,1,10,6,Penalty,"(10:07) CALDWELL, Matthew pass to the left incomplete intended for PARKER, Landon thrown to the TRO25, clock 10:04. PENALTY MEM Pass Interference on ROSS, Davion enforced at the spot of the foul for 6 yards to the TRO25 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T17:49:11.000Z
+401643784103899701,401643784,40164378414,3,3,10:02,Troy,Memphis,7,24,75,1,10,7,Rush,Damien Taylor run for 7 yds to the TROY 32,0.604642460086338,2024-09-07T17:49:11.000Z
+401643784103905701,401643784,40164378414,4,3,9:42,Troy,Memphis,7,24,68,2,3,-2,Rush,Jordan Lovett run for a loss of 2 yards to the TROY 30,-1.263829815618764,2024-09-07T17:49:11.000Z
+401643784103909801,401643784,40164378414,5,3,9:01,Troy,Memphis,7,24,70,3,5,-3,Sack,Matthew Caldwell sacked by Elijah Herring for a loss of 3 yards to the TROY 27,-0.4964341263802394,2024-09-07T17:49:11.000Z
+401643784103917901,401643784,40164378414,6,3,8:20,Troy,Memphis,7,24,73,4,8,0,Punt,"Robert Cole punt for 42 yds, fair catch by Koby Drake at the MEM 31",,2024-09-07T17:49:11.000Z
+401643784103918701,401643784,40164378415,1,3,8:12,Memphis,Troy,24,7,69,1,10,13,Pass Reception,Seth Henigan pass complete to Marcello Bussey for 13 yds to the MEM 44 for a 1ST down,1.2371082237357438,2024-09-07T17:49:11.000Z
+401643784103926701,401643784,40164378415,2,3,7:32,Memphis,Troy,24,7,56,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-1.1612466882658818,2024-09-07T17:49:11.000Z
+401643784103927701,401643784,40164378415,3,3,7:22,Memphis,Troy,24,7,56,2,10,10,Rush,Mario Anderson run for 10 yds to the TROY 46 for a 1ST down,1.9881420615107235,2024-09-07T17:49:11.000Z
+401643784103934701,401643784,40164378415,4,3,6:52,Memphis,Troy,24,7,46,1,10,22,Rush,Mario Anderson run for 22 yds to the TROY 24 for a 1ST down,0.8618494595274893,2024-09-07T17:49:11.000Z
+401643784103938401,401643784,40164378415,5,3,6:15,Memphis,Troy,24,7,24,1,10,20,Rush,Seth Henigan run for 20 yds to the TROY 4 for a 1ST down,0.993247429893,2024-09-07T17:49:11.000Z
+401643784103946701,401643784,40164378415,6,3,5:32,Memphis,Troy,31,7,4,1,4,4,Passing Touchdown,"Seth Henigan pass complete to Brendan Doyle for 4 yds for a TD PENALTY TRO Roughing the Passer on LEE, Phillip MEM Unsportsmanlike Conduct , Offsetting deadball penalties, result of the play stands. (Caden Costa KICK)",1.688190518713975,2024-09-07T18:13:26.000Z
+401643784103946801,401643784,40164378416,2,3,5:31,Troy,Memphis,7,31,75,1,10,-1,Rush,Jordan Lovett run for a loss of 1 yard to the TROY 24,-0.8014893508157099,2024-09-07T17:49:11.000Z
+401643784103955101,401643784,40164378416,3,3,4:48,Troy,Memphis,7,31,76,2,11,10,Pass Reception,Matthew Caldwell pass complete to Peyton Higgins for 10 yds to the TROY 34,0.7784554888667623,2024-09-07T17:49:11.000Z
+401643784103957201,401643784,40164378416,4,3,4:27,Troy,Memphis,7,31,66,3,1,24,Rush,Damien Taylor run for 24 yds to the MEM 42 for a 1ST down,2.805853510098145,2024-09-07T17:49:11.000Z
+401643784103946703,401643784,40164378416,1,3,5:32,Memphis,Troy,31,7,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-09-07T18:13:26.000Z
+401643784103965901,401643784,40164378416,5,3,3:40,Troy,Memphis,7,31,42,1,10,0,Timeout,"Timeout Troy, clock 03:40",,2024-09-07T18:19:33.000Z
+401643784103966201,401643784,40164378416,6,3,3:37,Troy,Memphis,7,31,42,1,10,8,Pass Reception,Matthew Caldwell pass complete to Devonte Ross for 8 yds to the MEM 34,0.672809139285251,2024-09-07T17:49:11.000Z
+401643784103974401,401643784,40164378416,7,3,2:55,Troy,Memphis,7,31,34,2,2,-4,Rush,Damien Taylor run for a loss of 4 yards to the MEM 38,-1.7326242950169066,2024-09-07T17:49:11.000Z
+401643784103978701,401643784,40164378416,8,3,2:12,Troy,Memphis,7,31,38,3,6,33,Pass Reception,Matthew Caldwell pass complete to Zeriah Beason for 33 yds to the MEM 5 for a 1ST down,2.470969786744906,2024-09-07T17:49:11.000Z
+401643784103987701,401643784,40164378416,9,3,1:22,Troy,Memphis,7,31,5,1,5,1,Rush,Damien Taylor run for 1 yd to the MEM 4,-0.4501093998890865,2024-09-07T17:49:11.000Z
+401643784103995701,401643784,40164378416,10,3,0:42,Troy,Memphis,7,31,4,2,4,0,Pass Incompletion,Matthew Caldwell pass incomplete,-0.362082681028621,2024-09-07T18:28:11.000Z
+401643784103996601,401643784,40164378416,11,3,0:33,Troy,Memphis,7,31,4,3,4,0,Pass Incompletion,Matthew Caldwell pass incomplete,-0.2868087912016805,2024-09-07T18:24:39.000Z
+401643784103997001,401643784,40164378416,12,3,0:29,Troy,Memphis,10,31,4,4,4,22,Field Goal Good,Scott Taylor Renfroe 22 yd FG GOOD,,2024-09-07T18:25:28.000Z
+401643784103997002,401643784,40164378417,1,3,0:29,Troy,Memphis,10,31,65,0,0,0,Kickoff,Paddy McAteer kickoff for 65 yds for a touchback,,2024-09-07T18:25:28.000Z
+401643784103997202,401643784,40164378417,3,3,0:00,Memphis,Troy,31,10,75,0,10,4,End Period,End of 3rd Quarter,,2024-09-07T18:28:11.000Z
+401643784103997201,401643784,40164378417,2,3,0:27,Memphis,Troy,31,10,75,1,10,4,Rush,Mario Anderson run for 4 yds to the MEM 29,-0.1142886249388964,2024-09-07T17:49:11.000Z
+401643784104854002,401643784,40164378417,4,4,14:59,Memphis,Troy,31,10,71,2,6,11,Penalty,"(14:59) HENIGAN, Seth pass up the middle incomplete intended for TAYLOR, Roc broken up by GREEN, LJ at the MEM40, clock 14:57. PENALTY TRO Pass Interference on GREEN, LJ enforced at the spot of the foul for 11 yards to the MEM40 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T18:32:17.000Z
+401643784104854401,401643784,40164378417,5,4,14:55,Memphis,Troy,31,10,60,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-1.1247712359915258,2024-09-07T18:32:17.000Z
+401643784104854901,401643784,40164378417,6,4,14:50,Memphis,Troy,31,10,60,2,10,28,Rush,Greg Desrosiers Jr. run for 28 yds to the TROY 32 for a 1ST down,3.010152414546239,2024-09-07T18:32:17.000Z
+401643784104858901,401643784,40164378417,7,4,14:10,Memphis,Troy,31,10,32,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-0.6082596672078662,2024-09-07T18:32:17.000Z
+401643784104859401,401643784,40164378417,8,4,14:05,Memphis,Troy,31,10,32,2,10,26,Pass Reception,Seth Henigan pass complete to Demeer Blankumsee for 26 yds to the TROY 6 for a 1ST down,1.4272893217315517,2024-09-07T18:32:17.000Z
+401643784104866001,401643784,40164378417,9,4,13:39,Memphis,Troy,31,10,6,1,6,2,Rush,Mario Anderson run for 2 yds to the TROY 4,-0.2814004693826835,2024-09-07T18:32:17.000Z
+401643784104869601,401643784,40164378417,10,4,13:03,Memphis,Troy,38,10,4,2,4,4,Rushing Touchdown,Mario Anderson run for 4 yds for a TD (Caden Costa KICK),2.3338902404479605,2024-09-07T18:36:02.000Z
+401643784104874801,401643784,40164378418,3,4,12:51,Troy,Memphis,10,38,75,2,10,8,Rush,Gerald Green run for 8 yds to the TROY 33,0.4833825674180429,2024-09-07T18:32:17.000Z
+401643784104878501,401643784,40164378418,5,4,12:14,Troy,Memphis,10,38,72,3,7,15,Pass Reception,Matthew Caldwell pass complete to Peyton Higgins for 15 yds to the TROY 43 for a 1ST down,2.4676375643660338,2024-09-07T18:32:17.000Z
+401643784104886201,401643784,40164378418,6,4,11:37,Troy,Memphis,10,38,57,1,10,0,Pass Incompletion,Matthew Caldwell pass incomplete,-1.15714755134967,2024-09-07T18:32:17.000Z
+401643784104886901,401643784,40164378418,7,4,11:30,Troy,Memphis,10,38,57,2,10,4,Rush,Matthew Caldwell run for 4 yds to the TROY 47,-0.1498323988275079,2024-09-07T18:32:17.000Z
+401643784104897501,401643784,40164378418,9,4,10:24,Troy,Memphis,10,38,31,1,10,16,Pass Reception,Matthew Caldwell pass complete to Zeriah Beason for 16 yds to the MEM 15 for a 1ST down,0.283747080507865,2024-09-07T18:32:17.000Z
+401643784104905101,401643784,40164378418,10,4,9:48,Troy,Memphis,10,38,15,1,10,7,Rush,Devonte Ross run for 7 yds to the MEM 8,0.304923286072843,2024-09-07T18:32:17.000Z
+401643784104909301,401643784,40164378418,11,4,9:06,Troy,Memphis,10,38,8,2,3,0,Pass Incompletion,Matthew Caldwell pass incomplete,-0.431583653196981,2024-09-07T18:32:17.000Z
+401643784104909801,401643784,40164378418,12,4,9:01,Troy,Memphis,10,38,8,3,3,0,Pass Incompletion,Matthew Caldwell pass incomplete,-0.3489493698650516,2024-09-07T18:32:17.000Z
+401643784104914101,401643784,40164378418,13,4,8:58,Troy,Memphis,10,38,8,4,3,4,Rush,Matthew Caldwell run for 4 yds to the MEM 4 for a 1ST down,1.3456183078402977,2024-09-07T18:32:17.000Z
+401643784104918101,401643784,40164378418,14,4,8:18,Troy,Memphis,10,38,4,1,4,2,Rush,Damien Taylor run for 2 yds to the MEM 2,-0.379746006608248,2024-09-07T18:32:17.000Z
+401643784104926301,401643784,40164378418,15,4,7:36,Troy,Memphis,10,38,2,2,2,1,Rush,Damien Taylor run for 1 yd to the MEM 1,-0.386061703857327,2024-09-07T18:32:17.000Z
+401643784104869603,401643784,40164378418,1,4,13:03,Memphis,Troy,38,10,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-09-07T18:40:22.000Z
+401643784104874001,401643784,40164378418,2,4,12:59,Troy,Memphis,10,38,75,1,10,0,Pass Incompletion,Matthew Caldwell pass incomplete,-0.7029700220436519,2024-09-07T18:32:17.000Z
+401643784104878401,401643784,40164378418,4,4,12:15,Troy,Memphis,10,38,67,3,2,-5,Penalty,"Troy Penalty, Illegal Snap on STANLEY, Boaz enforced (Boaz Stanley) to the TROY 28",,2024-09-07T18:42:49.000Z
+401643784104894501,401643784,40164378418,8,4,10:54,Troy,Memphis,10,38,53,3,6,15,Penalty,"Memphis Penalty, Roughing the Passer on BALDWIN, Devin enforced (15 Yards) to the MEM 31 for a 1ST down",,2024-09-07T18:32:17.000Z
+401643784104935201,401643784,40164378418,16,4,6:47,Troy,Memphis,17,38,1,3,1,1,Rushing Touchdown,Matthew Caldwell run for 1 yd for a TD (Scott Taylor Renfroe KICK),2.45399822917955,2024-09-07T18:53:45.000Z
+401643784104935203,401643784,40164378419,1,4,6:47,Troy,Memphis,17,38,65,0,0,38,Kickoff Return (Offense),"Paddy McAteer kickoff for 63 yds , Ja'Koby Banks return for 38 yds to the MEM 27 Memphis Penalty, Offensive Holding (10 Yards) to the MEM 10",,2024-09-07T18:53:45.000Z
+401643784104957001,401643784,40164378419,5,4,4:29,Memphis,Troy,38,17,72,2,3,15,Penalty,"Troy Penalty, Face mask (15 yards) (Darrell Starling) to the MEM 48 for a 1ST down",,2024-09-07T18:32:17.000Z
+401643784104968201,401643784,40164378419,7,4,3:17,Memphis,Troy,38,17,47,2,5,3,Rush,Greg Desrosiers Jr. run for 3 yds to the TROY 44,-0.4118159435173503,2024-09-07T18:32:17.000Z
+401643784104984501,401643784,40164378419,10,4,1:54,Memphis,Troy,38,17,44,4,2,0,Punt,"Joshua Sloan punt for 43 yds, downed at the TROY 1",,2024-09-07T18:32:17.000Z
+401643784104979901,401643784,40164378419,9,4,2:00,Memphis,Troy,38,17,44,4,2,0,Timeout,"Timeout Memphis, clock 02:00",,2024-09-07T19:04:21.000Z
+401643784104936101,401643784,40164378419,2,4,6:38,Memphis,Troy,38,17,90,1,10,7,Pass Reception,Seth Henigan pass complete to Koby Drake for 7 yds to the MEM 17,0.38157906422711824,2024-09-07T18:32:17.000Z
+401643784104944601,401643784,40164378419,3,4,5:53,Memphis,Troy,38,17,83,2,3,4,Rush,Mario Anderson run for 4 yds to the MEM 21 for a 1ST down,0.0817303990929305,2024-09-07T18:32:17.000Z
+401643784104948901,401643784,40164378419,4,4,5:10,Memphis,Troy,38,17,79,1,10,7,Rush,Mario Anderson run for 7 yds to the MEM 28,0.5413772358558367,2024-09-07T18:32:17.000Z
+401643784104964001,401643784,40164378419,6,4,3:59,Memphis,Troy,38,17,52,1,10,5,Rush,Greg Desrosiers Jr. run for 5 yds to the TROY 47,0.1045373160815773,2024-09-07T18:32:17.000Z
+401643784104976601,401643784,40164378419,8,4,2:33,Memphis,Troy,38,17,44,3,2,0,Rush,Greg Desrosiers Jr. run for no gain to the TROY 44,-1.160853186367655,2024-09-07T18:32:17.000Z
+401643784104999902,401643784,40164378420,4,4,0:00,Troy,Memphis,17,38,85,0,4,0,End of Game,End of 4th Quarter,,2024-09-07T19:09:25.000Z
+401643784104984901,401643784,40164378420,1,4,1:50,Troy,Memphis,17,38,99,1,10,4,Rush,Tucker Kilcrease run for 4 yds to the TROY 5,-0.026373985240724984,2024-09-07T18:32:17.000Z
+401643784104988801,401643784,40164378420,2,4,1:11,Troy,Memphis,17,38,95,2,6,2,Rush,Damien Taylor run for 2 yds to the TROY 7,-0.14520071743077345,2024-09-07T18:32:17.000Z
+401643784104996901,401643784,40164378420,3,4,0:30,Troy,Memphis,17,38,93,3,4,8,Rush,Tucker Kilcrease run for 8 yds to the TROY 15 for a 1ST down,0.542293004665698,2024-09-07T18:32:17.000Z

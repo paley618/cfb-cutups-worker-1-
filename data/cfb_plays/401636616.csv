@@ -1,0 +1,174 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401636616101856401,401636616,4016366161,2,1,14:35,Tulane,Kansas State,0,0,76,1,10,3,Rush,Makhi Hughes run for 3 yds to the TULN 27,-0.2835190304977822,2024-09-07T16:04:48.000Z
+401636616101858201,401636616,4016366161,3,1,14:17,Tulane,Kansas State,0,0,73,2,7,5,Rush,Makhi Hughes run for 5 yds to the TULN 32,0.0744555037945159,2024-09-07T16:05:07.000Z
+401636616101866701,401636616,4016366161,4,1,13:32,Tulane,Kansas State,0,0,68,3,2,25,Pass Reception,"Darian Mensah pass complete to Makhi Hughes for 10 yds to the KSU 42 for a 1ST down Kansas State Penalty, Personal Foul (15 Yards) to the KSU 43 for a 1ST down",3.002311782188203,2024-09-07T16:06:45.000Z
+401636616101866702,401636616,4016366161,5,1,13:32,Tulane,Kansas State,0,0,43,1,10,6,Pass Reception,Darian Mensah pass complete to Makhi Hughes for 6 yds to the KSU 37,0.2876660938940478,2024-09-07T16:06:45.000Z
+401636616101869101,401636616,4016366161,6,1,13:08,Tulane,Kansas State,0,0,37,2,4,0,Rush,Makhi Hughes run for no gain to the KSU 37,-0.9354587580761516,2024-09-07T16:07:31.000Z
+401636616101876501,401636616,4016366161,7,1,12:34,Tulane,Kansas State,0,0,37,3,4,3,Rush,Shaadie Clayton-Johnson run for 3 yds to the KSU 34,-0.3745007895977893,2024-09-07T16:08:06.000Z
+401636616101879501,401636616,4016366161,8,1,12:04,Tulane,Kansas State,0,0,34,4,1,0,Rush,Shaadie Clayton-Johnson run for no gain to the KSU 34,-2.6253364582892527,2024-09-07T16:08:56.000Z
+401636616101854501,401636616,4016366161,1,1,14:54,Kansas State,Tulane,0,0,65,1,10,22,Kickoff Return (Offense),"Chris Tennant kickoff for 63 yds , Shaadie Clayton-Johnson return for 22 yds to the TULN 24",,2024-09-07T16:04:00.000Z
+401636616101879801,401636616,4016366162,1,1,12:01,Kansas State,Tulane,0,0,66,1,10,0,Pass Incompletion,Avery Johnson pass incomplete to DJ Giddens,-0.9864556271674072,2024-09-07T16:10:23.000Z
+401636616101884901,401636616,4016366162,2,1,11:50,Kansas State,Tulane,0,0,66,2,10,6,Rush,DJ Giddens run for 6 yds to the KSU 40,0.2415196239015955,2024-09-07T16:14:28.000Z
+401636616101888101,401636616,4016366162,3,1,11:18,Kansas State,Tulane,0,0,60,3,4,0,Pass Incompletion,Avery Johnson pass incomplete to DJ Giddens,-0.687014751346763,2024-09-07T16:14:48.000Z
+401636616101888901,401636616,4016366162,4,1,11:10,Kansas State,Tulane,0,0,60,4,4,0,Punt,"Simon McClannan punt for 41 yds, fair catch by Dontae Fleming at the TULN 19",,2024-09-07T16:15:36.000Z
+401636616101894501,401636616,4016366163,1,1,10:54,Tulane,Kansas State,0,0,81,1,10,3,Rush,Makhi Hughes run for 3 yds to the TULN 22,-0.2256553240907335,2024-09-07T16:16:29.000Z
+401636616101897801,401636616,4016366163,2,1,10:21,Tulane,Kansas State,0,0,78,2,7,39,Rush,Makhi Hughes run for 39 yds to the KSU 39 for a 1ST down,3.523836290161979,2024-09-07T16:17:03.000Z
+401636616101904301,401636616,4016366163,3,1,9:56,Tulane,Kansas State,0,0,39,1,10,-1,Rush,Makhi Hughes run for a loss of 1 yard to the KSU 40,-1.015195614654532,2024-09-07T16:17:35.000Z
+401636616101908101,401636616,4016366163,4,1,9:18,Tulane,Kansas State,0,0,40,2,11,0,Pass Incompletion,Darian Mensah pass incomplete to Alex Bauman,-1.0291233349696824,2024-09-07T16:18:12.000Z
+401636616101908102,401636616,4016366163,5,1,9:18,Tulane,Kansas State,0,0,40,3,11,0,Timeout,"Timeout Tulane, clock 09:18",,2024-09-07T16:18:12.000Z
+401636616101909501,401636616,4016366163,7,1,9:04,Tulane,Kansas State,0,0,40,4,11,0,Punt,"Will Karoll punt for 28 yds, fair catch by Keagan Johnson at the KSU 12",,2024-09-07T16:24:22.000Z
+401636616101908701,401636616,4016366163,6,1,9:12,Tulane,Kansas State,0,0,40,3,11,0,Pass Incompletion,Darian Mensah pass incomplete to Makhi Hughes,-0.9467172263806604,2024-09-07T16:22:45.000Z
+401636616101914601,401636616,4016366164,1,1,8:53,Kansas State,Tulane,0,0,88,1,10,7,Rush,DJ Giddens run for 7 yds to the KSU 19,0.4067090181335251,2024-09-07T16:24:29.000Z
+401636616101917701,401636616,4016366164,2,1,8:22,Kansas State,Tulane,0,0,81,2,3,6,Rush,DJ Giddens run for 6 yds to the KSU 25 for a 1ST down,0.2467958537294699,2024-09-07T16:24:52.000Z
+401636616101924001,401636616,4016366164,3,1,7:59,Kansas State,Tulane,0,0,75,1,10,8,Pass Reception,Avery Johnson pass complete to Keagan Johnson for 8 yds to the KSU 33,0.9104368550610653,2024-09-07T16:25:48.000Z
+401636616101926101,401636616,4016366164,4,1,7:38,Kansas State,Tulane,0,0,67,2,2,5,Rush,DJ Giddens run for 5 yds to the KSU 38 for a 1ST down,0.2143146239807656,2024-09-07T16:29:18.000Z
+401636616101929401,401636616,4016366164,5,1,7:05,Kansas State,Tulane,0,0,62,1,10,2,Pass Reception,Avery Johnson pass complete to Tre Spivey for 2 yds to the KSU 40,-0.6656376494811928,2024-09-07T16:30:02.000Z
+401636616101947301,401636616,4016366164,6,1,5:26,Kansas State,Tulane,0,0,60,2,8,10,Pass Reception,Avery Johnson pass complete to Garrett Oakley for 10 yds to the 50 yard line for a 1ST down,1.7772293580393104,2024-09-07T16:30:46.000Z
+401636616101947302,401636616,4016366164,7,1,5:26,Kansas State,Tulane,0,0,50,1,10,4,Rush,Dylan Edwards run for 4 yds to the TULN 46,-0.141734208558013,2024-09-07T16:30:46.000Z
+401636616101949401,401636616,4016366164,8,1,5:05,Kansas State,Tulane,0,0,46,2,6,18,Rush,Avery Johnson run for 18 yds to the TULN 28 for a 1ST down,1.219131666540955,2024-09-07T16:31:57.000Z
+401636616101954001,401636616,4016366164,9,1,4:59,Kansas State,Tulane,0,0,28,1,10,-5,Penalty,"Kansas State Penalty, False Start (Taylor Poitier) to the TULN 33",,2024-09-07T16:32:21.000Z
+401636616101956401,401636616,4016366164,10,1,4:35,Kansas State,Tulane,0,0,33,1,15,0,Pass Incompletion,Avery Johnson pass incomplete to Dante Cephas,-0.7014240022488174,2024-09-07T16:33:14.000Z
+401636616101957401,401636616,4016366164,11,1,4:25,Kansas State,Tulane,0,0,33,2,15,2,Rush,DJ Giddens run for 2 yds to the TULN 31,-0.5329804761942026,2024-09-07T16:33:59.000Z
+401636616101966301,401636616,4016366164,12,1,3:36,Kansas State,Tulane,0,0,31,3,13,1,Rush,Avery Johnson run for 1 yd to the TULN 30,-0.8012072034097474,2024-09-07T16:34:27.000Z
+401636616101969401,401636616,4016366164,13,1,3:05,Kansas State,Tulane,3,0,30,4,12,48,Field Goal Good,Chris Tennant 48 yd FG GOOD,,2024-09-07T16:35:05.000Z
+401636616101975001,401636616,4016366165,2,1,2:49,Tulane,Kansas State,0,3,73,1,10,3,Rush,Makhi Hughes run for 3 yds to the TULN 30,-0.3204076759721195,2024-09-07T16:37:35.000Z
+401636616101977701,401636616,4016366165,3,1,2:22,Tulane,Kansas State,0,3,70,2,7,12,Pass Reception,Darian Mensah pass complete to Dontae Fleming for 12 yds to the TULN 42 for a 1ST down,1.6914198981547406,2024-09-07T16:38:14.000Z
+401636616101979501,401636616,4016366165,4,1,2:04,Tulane,Kansas State,0,3,58,1,10,2,Rush,Makhi Hughes run for 2 yds to the TULN 44,-0.686234543960909,2024-09-07T16:40:08.000Z
+401636616101988401,401636616,4016366165,5,1,1:15,Tulane,Kansas State,0,3,56,2,8,53,Pass Reception,Darian Mensah pass complete to Dontae Fleming for 53 yds to the KSU 3 for a 1ST down,3.7834860232688876,2024-09-07T16:40:49.000Z
+401636616101995001,401636616,4016366165,6,1,0:49,Tulane,Kansas State,7,3,3,1,3,3,Rushing Touchdown,Makhi Hughes run for 3 yds for a TD (Jacob Barnes KICK),1.464451732731337,2024-09-07T16:41:51.000Z
+401636616101974101,401636616,4016366165,1,1,2:58,Kansas State,Tulane,3,0,65,4,12,25,Kickoff Return (Offense),"Chris Tennant kickoff for 63 yds , Shaadie Clayton-Johnson return for 25 yds to the TULN 27",,2024-09-07T16:37:22.000Z
+401636616101998901,401636616,4016366166,2,1,0:10,Kansas State,Tulane,3,7,93,1,10,1,Rush,DJ Giddens run for 1 yd to the KSU 8,-0.25741288696273923,2024-09-07T16:45:08.000Z
+401636616101999801,401636616,4016366166,3,1,0:01,Kansas State,Tulane,3,7,92,2,9,0,Pass Incompletion,Avery Johnson pass incomplete to Garrett Oakley,-0.16018625543355292,2024-09-07T16:45:32.000Z
+401636616102855801,401636616,4016366166,5,2,14:41,Kansas State,Tulane,3,7,92,3,9,4,Rush,Avery Johnson run for 4 yds to the KSU 12,-0.00932655592366595,2024-09-07T00:00:00.000Z
+401636616102857901,401636616,4016366166,6,2,14:20,Kansas State,Tulane,3,7,88,4,5,0,Punt,"Simon McClannan punt for 26 yds, punt out-of-bounds at the KSU 38",,2024-09-07T16:50:40.000Z
+401636616101995501,401636616,4016366166,1,1,0:44,Tulane,Kansas State,7,3,65,1,10,10,Kickoff Return (Offense),"Ethan Head kickoff for 61 yds , Jayce Brown return for 10 yds to the KSU 45 Kansas State Penalty, Offensive Holding (7 Yards) to the KSU 7",,2024-09-07T16:44:47.000Z
+401636616101999802,401636616,4016366166,4,1,0:00,Kansas State,Tulane,3,7,92,0,9,0,End Period,End of 1st Quarter,,2024-09-07T16:45:32.000Z
+401636616102858401,401636616,4016366167,1,2,14:15,Tulane,Kansas State,7,3,38,1,10,7,Rush,Darian Mensah run for 7 yds to the KSU 31,0.423978038879877,2024-09-07T16:51:36.000Z
+401636616102865101,401636616,4016366167,2,2,13:48,Tulane,Kansas State,7,3,31,2,3,-5,Penalty,"Tulane Penalty, False Start (-5 Yards) to the KSU 36",,2024-09-07T16:52:18.000Z
+401636616102867901,401636616,4016366167,3,2,13:17,Tulane,Kansas State,14,3,36,2,8,36,Passing Touchdown,Alex Bauman 36 Yd pass from Darian Mensah (Jacob Barnes Kick),3.5133981716928684,2024-09-07T16:53:39.000Z
+401636616102869301,401636616,4016366168,2,2,13:06,Kansas State,Tulane,3,35,75,1,10,51,Rush,DJ Giddens run for 51 yds to the TULN 24 for a 1ST down,3.3963171711143465,2024-09-07T16:58:45.000Z
+401636616102878101,401636616,4016366168,4,2,12:18,Kansas State,Tulane,3,35,29,1,15,0,Rush,DJ Giddens run for no gain to the TULN 29,-0.5785628504815373,2024-09-07T17:00:33.000Z
+401636616102886601,401636616,4016366168,5,2,11:33,Kansas State,Tulane,3,35,29,2,15,17,Pass Reception,Avery Johnson pass complete to Jayce Brown for 17 yds to the TULN 12 for a 1ST down,1.2054851864226226,2024-09-07T17:03:43.000Z
+401636616102867903,401636616,4016366168,1,2,13:20,Tulane,Kansas State,-7,3,65,2,8,0,Kickoff,Ethan Head kickoff for 65 yds for a touchback,,2024-09-07T16:53:44.000Z
+401636616102877201,401636616,4016366168,3,2,12:27,Kansas State,Tulane,3,35,24,1,10,-5,Penalty,"Kansas State Penalty, Ineligible Downfield on Pass (Carver Willis) to the TULN 29",,2024-09-07T17:00:05.000Z
+401636616102888001,401636616,4016366168,7,2,11:19,Kansas State,Tulane,3,35,12,1,10,3,Rush,DJ Giddens run for 3 yds to the TULN 9,-0.0966670992271315,2024-09-07T17:07:25.000Z
+401636616102895701,401636616,4016366168,8,2,10:42,Kansas State,Tulane,3,35,9,2,7,2,Rush,Avery Johnson run for 2 yds to the TULN 7,-0.162885629979781,2024-09-07T17:08:05.000Z
+401636616102898301,401636616,4016366168,9,2,10:16,Kansas State,Tulane,10,14,7,3,5,7,Passing Touchdown,Will Swanson 7 Yd pass from Avery Johnson (Chris Tennant Kick),2.789647271242838,2024-09-07T17:11:01.000Z
+401636616102887101,401636616,4016366168,6,2,11:28,Kansas State,Tulane,3,35,12,1,10,0,Timeout,"Timeout Tulane, clock 11:28",,2024-09-07T17:06:02.000Z
+401636616102945401,401636616,4016366169,11,2,5:45,Tulane,Kansas State,14,10,9,2,9,1,Rush,Makhi Hughes run for 1 yd to the KSU 8,-0.206049980978473,2024-09-07T17:21:05.000Z
+401636616102918901,401636616,4016366169,5,2,8:10,Tulane,Kansas State,14,10,68,1,10,37,Pass Reception,Darian Mensah pass complete to Mario Williams for 37 yds to the KSU 31 for a 1ST down,2.6773645455689117,2024-09-07T17:17:52.000Z
+401636616102926901,401636616,4016366169,7,2,7:30,Tulane,Kansas State,14,10,36,1,15,17,Pass Reception,Darian Mensah pass complete to Mario Williams for 17 yds to the KSU 19 for a 1ST down,0.8693248118973232,2024-09-07T17:18:56.000Z
+401636616102929301,401636616,4016366169,8,2,7:06,Tulane,Kansas State,14,10,19,1,10,0,Pass Incompletion,Darian Mensah pass incomplete to Dontae Fleming,-0.362321296557512,2024-09-07T17:19:07.000Z
+401636616102934801,401636616,4016366169,9,2,6:51,Tulane,Kansas State,14,10,19,2,10,10,Rush,Arnold Barnes III run for 10 yds to the KSU 9 for a 1ST down,0.542531101548567,2024-09-07T17:19:55.000Z
+401636616102937801,401636616,4016366169,10,2,6:21,Tulane,Kansas State,14,10,9,1,9,0,Rush,Arnold Barnes III run for no gain to the KSU 9,-0.315798379566314,2024-09-07T17:20:24.000Z
+401636616102899901,401636616,4016366169,2,2,10:00,Tulane,Kansas State,14,10,79,1,10,7,Pass Reception,Darian Mensah pass complete to Mario Williams for 7 yds to the TULN 28,0.5413772358558367,2024-09-07T17:15:38.000Z
+401636616102909601,401636616,4016366169,3,2,9:03,Tulane,Kansas State,14,10,72,2,3,2,Rush,Arnold Barnes III run for 2 yds to the TULN 30,-0.5507333114058114,2024-09-07T17:16:35.000Z
+401636616102914801,401636616,4016366169,4,2,8:51,Tulane,Kansas State,14,10,70,3,1,2,Rush,Arnold Barnes III run for 2 yds to the TULN 32 for a 1ST down,0.8205801497252709,2024-09-07T17:16:47.000Z
+401636616102949301,401636616,4016366169,12,2,5:06,Tulane,Kansas State,14,10,8,3,8,-14,Sack,Darian Mensah sacked by Damian Ilalio for a loss of 14 yards to the KSU 22,-2.755887070509383,2024-09-07T17:24:45.000Z
+401636616102954201,401636616,4016366169,13,2,4:57,Tulane,Kansas State,17,10,22,4,0,40,Field Goal Good,Jacob Barnes 40 Yd Field Goal ,,2024-09-07T17:25:10.000Z
+401636616102924601,401636616,4016366169,6,2,7:53,Tulane,Kansas State,14,10,31,1,10,-5,Penalty,"Tulane Penalty, False Start (Derrick Graham) to the KSU 36",,2024-09-07T17:18:12.000Z
+401636616102899001,401636616,4016366169,1,2,10:09,Kansas State,Tulane,10,14,65,3,5,19,Kickoff Return (Offense),"Chris Tennant kickoff for 63 yds , Shaadie Clayton-Johnson return for 19 yds to the TULN 21",,2024-09-07T17:14:55.000Z
+401636616102956701,401636616,40163661610,2,2,4:32,Kansas State,Tulane,10,17,75,1,10,-2,Pass Reception,Avery Johnson pass complete to Dylan Edwards for a loss of 2 yards to the KSU 23,-0.8852575132705454,2024-09-07T17:27:22.000Z
+401636616102956901,401636616,40163661610,3,2,4:30,Kansas State,Tulane,10,17,77,2,12,0,Pass Incompletion,Avery Johnson pass incomplete,-0.2489092113983693,2024-09-07T17:27:30.000Z
+401636616102959601,401636616,40163661610,4,2,4:03,Kansas State,Tulane,10,17,77,3,12,4,Rush,Avery Johnson run for 4 yds to the KSU 27,-0.02145475724375068,2024-09-07T17:28:30.000Z
+401636616102965401,401636616,40163661610,5,2,3:45,Kansas State,Tulane,10,17,73,4,8,2,Punt,"Simon McClannan punt for 43 yds , Dontae Fleming returns for 2 yds to the TULN 32",,2024-09-07T17:28:53.000Z
+401636616102954202,401636616,40163661610,1,2,4:57,Tulane,Kansas State,17,10,65,4,23,0,Kickoff,Ethan Head kickoff for 65 yds for a touchback,,2024-09-07T17:25:10.000Z
+401636616102988701,401636616,40163661611,5,2,1:12,Tulane,Kansas State,17,10,19,2,3,-1,Rush,Makhi Hughes run for a loss of 1 yard to the KSU 20,-0.6409467959291035,2024-09-07T17:38:15.000Z
+401636616102967601,401636616,40163661611,1,2,3:23,Tulane,Kansas State,17,10,68,1,10,-1,Rush,Makhi Hughes run for a loss of 1 yard to the TULN 31,-1.0665559328497487,2024-09-07T17:29:56.000Z
+401636616102974101,401636616,40163661611,2,2,2:58,Tulane,Kansas State,17,10,69,2,11,28,Pass Reception,Darian Mensah pass complete to Yulkeith Brown for 28 yds to the KSU 41 for a 1ST down,3.3453470225950888,2024-09-07T17:30:31.000Z
+401636616102976901,401636616,40163661611,3,2,2:30,Tulane,Kansas State,17,10,41,1,10,15,Pass Reception,Darian Mensah pass complete to Dontae Fleming for 15 yds to the KSU 26 for a 1ST down,0.5205175034883389,2024-09-07T17:33:03.000Z
+401636616102986001,401636616,40163661611,4,2,1:39,Tulane,Kansas State,17,10,26,1,10,7,Rush,Makhi Hughes run for 7 yds to the KSU 19,0.3329255493143055,2024-09-07T17:37:44.000Z
+401636616102988702,401636616,40163661611,6,2,1:12,Tulane,Kansas State,17,10,20,3,4,0,Timeout,"Timeout Kansas State, clock 01:12",,2024-09-07T17:38:15.000Z
+401636616102989201,401636616,40163661611,7,2,1:07,Tulane,Kansas State,17,10,20,3,4,-3,Pass Reception,Darian Mensah pass complete to Makhi Hughes for a loss of 3 yards to the KSU 23,-1.1067991852087875,2024-09-07T16:50:40.000Z
+401636616102989801,401636616,40163661611,9,2,1:01,Tulane,Kansas State,20,10,23,4,7,41,Field Goal Good,Jacob Barnes 41 Yd Field Goal ,,2024-09-07T17:41:08.000Z
+401636616102989301,401636616,40163661611,8,2,1:06,Tulane,Kansas State,17,10,23,4,7,0,Timeout,"Timeout Kansas State, clock 01:06",,2024-09-07T16:50:40.000Z
+401636616102996301,401636616,40163661612,3,2,0:36,Kansas State,Tulane,10,20,69,2,4,14,Rush,Avery Johnson run for 14 yds to the KSU 45 for a 1ST down,1.4677670813523882,2024-09-07T17:44:07.000Z
+401636616102995601,401636616,40163661612,2,2,0:43,Kansas State,Tulane,10,20,75,1,10,6,Rush,DJ Giddens run for 6 yds to the KSU 31,0.3333748010525683,2024-09-07T17:43:56.000Z
+401636616102997101,401636616,40163661612,4,2,0:28,Kansas State,Tulane,10,20,55,1,10,0,Pass Incompletion,Avery Johnson pass incomplete to Jayce Brown,-1.1618692012952412,2024-09-07T17:44:27.000Z
+401636616102997901,401636616,40163661612,5,2,0:20,Kansas State,Tulane,10,20,55,2,10,10,Pass Reception,Avery Johnson pass complete to Tre Spivey for 10 yds to the TULN 45 for a 1ST down,1.9619683535445382,2024-09-07T17:45:07.000Z
+401636616102998701,401636616,40163661612,6,2,0:12,Kansas State,Tulane,10,20,45,1,10,0,Pass Incompletion,Avery Johnson pass incomplete to Sterling Lockett,-0.997770018980635,2024-09-07T17:45:25.000Z
+401636616102999301,401636616,40163661612,7,2,0:06,Kansas State,Tulane,10,20,45,2,10,10,Pass Reception,Avery Johnson pass complete to Keagan Johnson for 10 yds to the TULN 35 for a 1ST down,1.501695320270747,2024-09-07T17:46:15.000Z
+401636616102999902,401636616,40163661612,11,2,0:00,Kansas State,Tulane,10,20,35,0,10,0,End of Half,End of 2nd Quarter,,2024-09-07T17:49:22.000Z
+401636616102999901,401636616,40163661612,10,2,0:00,Kansas State,Tulane,10,20,35,1,10,53,Field Goal Missed,Chris Tennant 53 yd FG MISSED,,2024-09-07T17:49:22.000Z
+401636616102999303,401636616,40163661612,9,2,0:06,Kansas State,Tulane,10,20,35,1,10,0,Timeout,"Timeout Tulane, clock 00:06",,2024-09-07T17:46:39.000Z
+401636616102999302,401636616,40163661612,8,2,0:06,Kansas State,Tulane,10,20,35,1,10,0,Timeout,"Timeout Kansas State, clock 00:06",,2024-09-07T17:46:39.000Z
+401636616102989802,401636616,40163661612,1,2,1:01,Tulane,Kansas State,20,10,65,4,7,0,Kickoff,Ethan Head kickoff for 65 yds for a touchback,,2024-09-07T17:41:08.000Z
+401636616103854701,401636616,40163661613,2,3,14:52,Kansas State,Tulane,10,20,75,1,10,4,Rush,DJ Giddens run for 4 yds to the KSU 29,-0.1142886249388964,2024-09-07T18:12:11.000Z
+401636616103858901,401636616,40163661613,3,3,14:10,Kansas State,Tulane,10,20,71,2,6,0,Rush,DJ Giddens run for no gain to the KSU 29,-0.6509048869110972,2024-09-07T18:12:47.000Z
+401636616103866401,401636616,40163661613,4,3,13:35,Kansas State,Tulane,10,20,71,3,6,4,Pass Reception,Avery Johnson pass complete to DJ Giddens for 4 yds to the KSU 33,-0.05570833903159756,2024-09-07T18:13:23.000Z
+401636616103869501,401636616,40163661613,5,3,13:04,Kansas State,Tulane,10,20,67,4,2,0,Punt,"Simon McClannan punt for 47 yds, fair catch by Dontae Fleming at the TULN 20",,2024-09-07T18:14:06.000Z
+401636616103849901,401636616,40163661613,1,3,15:00,Tulane,Kansas State,20,10,65,1,10,0,Kickoff,Ethan Head kickoff for 65 yds for a touchback,,2024-09-07T18:11:19.000Z
+401636616103874101,401636616,40163661614,1,3,12:58,Tulane,Kansas State,20,10,80,1,10,0,Pass Incompletion,Darian Mensah pass incomplete to Yulkeith Brown,-0.5586693796725282,2024-09-07T18:14:57.000Z
+401636616103875601,401636616,40163661614,2,3,12:43,Tulane,Kansas State,20,10,80,2,10,4,Rush,Makhi Hughes run for 4 yds to the TULN 24,-0.04461511769139115,2024-09-07T18:15:39.000Z
+401636616103879001,401636616,40163661614,3,3,12:09,Tulane,Kansas State,20,10,76,3,6,-2,Pass Reception,Darian Mensah pass complete to Makhi Hughes for a loss of 2 yards to the TULN 22,-0.2930877961416982,2024-09-07T18:17:34.000Z
+401636616103887201,401636616,40163661614,4,3,11:27,Tulane,Kansas State,20,10,78,4,8,53,Punt,"Will Karoll punt for 43 yds, fair catch by Dylan Edwards at the KSU 35 Kansas State Penalty, Offensive Holding (Donovan McIntosh) to the KSU 25",,2024-09-07T18:17:39.000Z
+401636616103887901,401636616,40163661615,1,3,11:20,Kansas State,Tulane,10,20,75,1,10,15,Penalty,"Johnson, Avery pass incomplete to Johnson, Keagan, PENALTY TULANE pass interference (Edwards, Johnathan) 15 yards to the KANSASST40, NO PLAY, 1ST DOWN KANSASST.",,2024-09-07T18:21:44.000Z
+401636616103889601,401636616,40163661615,2,3,11:03,Kansas State,Tulane,10,20,60,1,10,8,Rush,Keagan Johnson run for 8 yds to the KSU 48,1.0159674518504005,2024-09-07T18:21:57.000Z
+401636616103897901,401636616,40163661615,3,3,10:20,Kansas State,Tulane,10,20,52,2,2,10,Rush,Dylan Edwards run for 10 yds to the TULN 42 for a 1ST down,0.445997680721151,2024-09-07T18:22:40.000Z
+401636616103904001,401636616,40163661615,4,3,9:59,Kansas State,Tulane,10,20,42,1,10,27,Rush,Dylan Edwards run for 27 yds to the TULN 15 for a 1ST down,0.736736382007041,2024-09-07T18:23:22.000Z
+401636616103907801,401636616,40163661615,5,3,9:21,Kansas State,Tulane,10,20,15,1,10,0,Pass Incompletion,Avery Johnson pass incomplete to Garrett Oakley,-0.320977659489319,2024-09-07T18:23:47.000Z
+401636616103908201,401636616,40163661615,6,3,9:17,Kansas State,Tulane,10,20,15,2,10,8,Rush,DJ Giddens run for 8 yds to the TULN 7,0.280273789676688,2024-09-07T18:24:32.000Z
+401636616103917601,401636616,40163661615,7,3,8:23,Kansas State,Tulane,10,20,7,3,2,-3,Rush,DJ Giddens run for a loss of 3 yards to the TULN 10,-0.6109009174782541,2024-09-07T18:25:16.000Z
+401636616103925001,401636616,40163661615,8,3,7:49,Kansas State,Tulane,13,20,10,4,5,28,Field Goal Good,Chris Tennant 28 Yd Field Goal ,,2024-09-07T18:26:35.000Z
+401636616103927701,401636616,40163661616,2,3,7:22,Tulane,Kansas State,20,13,75,1,10,-10,Penalty,"Tulane Penalty, Offensive Holding (Josh Remetich) to the TULN 15",,2024-09-07T18:32:06.000Z
+401636616103928401,401636616,40163661616,3,3,7:15,Tulane,Kansas State,20,13,85,1,20,10,Rush,Makhi Hughes run for 10 yds to the TULN 25,0.3792088858395717,2024-09-07T18:32:21.000Z
+401636616103936401,401636616,40163661616,4,3,6:35,Tulane,Kansas State,20,13,75,2,10,-3,Sack,Darian Mensah sacked by Austin Romaine for a loss of 3 yards to the TULN 22,-0.4634377557441667,2024-09-07T18:33:20.000Z
+401636616103945201,401636616,40163661616,5,3,5:47,Tulane,Kansas State,20,13,78,3,13,4,Rush,Makhi Hughes run for 4 yds to the TULN 26,-0.01815340087489315,2024-09-07T18:33:46.000Z
+401636616103948301,401636616,40163661616,6,3,5:16,Tulane,Kansas State,20,13,74,4,9,0,Punt,"Will Karoll punt for 40 yds, fair catch by Dylan Edwards at the KSU 34",,2024-09-07T18:34:17.000Z
+401636616103925002,401636616,40163661616,1,3,7:49,Kansas State,Tulane,13,20,65,4,5,0,Kickoff,Chris Tennant kickoff for 65 yds for a touchback,,2024-09-07T18:30:16.000Z
+401636616103955001,401636616,40163661617,1,3,4:49,Kansas State,Tulane,13,20,66,1,10,12,Pass Reception,Avery Johnson pass complete to DJ Giddens for 12 yds to the KSU 46 for a 1ST down,1.1518718520444062,2024-09-07T18:38:28.000Z
+401636616103956901,401636616,40163661617,2,3,4:30,Kansas State,Tulane,13,20,54,1,10,-6,Rush,Avery Johnson run for a loss of 6 yards to the KSU 40,-2.283793885532822,2024-09-07T18:38:49.000Z
+401636616103965401,401636616,40163661617,3,3,3:45,Kansas State,Tulane,13,20,60,2,16,3,Rush,Avery Johnson run for 3 yds to the KSU 43,-0.21801638187986067,2024-09-07T18:39:35.000Z
+401636616103974601,401636616,40163661617,4,3,2:53,Kansas State,Tulane,13,20,57,3,13,12,Pass Reception,Avery Johnson pass complete to Brayden Loftin for 12 yds to the TULN 45,1.254468787913849,2024-09-07T18:40:27.000Z
+401636616103977301,401636616,40163661617,5,3,2:26,Kansas State,Tulane,20,20,45,4,1,45,Passing Touchdown,DJ Giddens 45 Yd pass from Avery Johnson (Chris Tennant Kick),5.432239017184042,2024-09-07T18:41:35.000Z
+401636616103998902,401636616,40163661618,8,3,0:00,Tulane,Kansas State,20,20,20,0,10,-2,End Period,End of 3rd Quarter,,2024-09-07T18:50:28.000Z
+401636616103978101,401636616,40163661618,1,3,2:18,Kansas State,Tulane,20,20,65,4,1,44,Kickoff Return (Offense),"Chris Tennant kickoff for 65 yds , Shaadie Clayton-Johnson return for 44 yds to the TULN 44",,2024-09-07T18:43:09.000Z
+401636616103978602,401636616,40163661618,2,3,2:13,Tulane,Kansas State,20,20,56,1,10,-10,Penalty,"Mensah, Darian pass incomplete to Fleming, Dontae, dropped pass, PENALTY TULANE holding (Barnes III, Arnold) 10 yards to the TULANE34, NO PLAY.",,2024-09-07T18:44:04.000Z
+401636616103985501,401636616,40163661618,3,3,1:44,Tulane,Kansas State,20,20,66,1,20,4,Fumble Recovery (Own),"Arnold Barnes III run for 4 yds to the TULN 38 Arnold Barnes III fumbled, recovered by TULN Arnold Barnes III",-0.0972258554095244,2024-09-07T18:46:06.000Z
+401636616103985502,401636616,40163661618,4,3,1:44,Tulane,Kansas State,20,20,62,2,16,-5,Penalty,"Tulane Penalty, Illegal Motion (Vincent Murphy) to the TULN 33",,2024-09-07T18:46:06.000Z
+401636616103988301,401636616,40163661618,5,3,1:16,Tulane,Kansas State,20,20,67,2,21,0,Pass Incompletion,Darian Mensah pass incomplete,-0.2057793885139576,2024-09-07T18:47:22.000Z
+401636616103994101,401636616,40163661618,6,3,0:58,Tulane,Kansas State,20,20,67,3,21,47,Pass Reception,Darian Mensah pass complete to Mario Williams for 47 yds to the KSU 20 for a 1ST down,4.62487974106,2024-09-07T18:48:00.000Z
+401636616103998901,401636616,40163661618,7,3,0:10,Tulane,Kansas State,20,20,20,1,10,-2,Sack,Darian Mensah sacked by Brendan Mott for a loss of 2 yards to the KSU 22,-0.5546489104665645,2024-09-07T18:48:36.000Z
+401636616104855001,401636616,40163661618,9,4,14:49,Tulane,Kansas State,20,20,22,2,12,9,Rush,Ty Thompson run for 9 yds to the KSU 13,0.4038157860462985,2024-09-07T18:55:03.000Z
+401636616104859801,401636616,40163661618,10,4,14:01,Tulane,Kansas State,27,20,13,3,3,13,Passing Touchdown,Alex Bauman 13 Yd pass from Darian Mensah (Jacob Barnes Kick),2.768760853451965,2024-09-07T18:56:11.000Z
+401636616104859803,401636616,40163661619,1,4,14:01,Tulane,Kansas State,27,20,65,3,3,0,Kickoff,Ethan Head kickoff for 65 yds for a touchback,,2024-09-07T18:56:11.000Z
+401636616104866001,401636616,40163661619,2,4,13:39,Kansas State,Tulane,20,27,75,1,10,33,Pass Reception,Avery Johnson pass complete to Keagan Johnson for 33 yds to the TULN 42 for a 1ST down,2.7828196481491974,2024-09-07T18:58:41.000Z
+401636616104866401,401636616,40163661619,3,4,13:35,Kansas State,Tulane,20,27,42,1,10,11,Pass Reception,Avery Johnson pass complete to Will Swanson for 11 yds to the TULN 31 for a 1ST down,0.452989301499176,2024-09-07T18:58:54.000Z
+401636616104874301,401636616,40163661619,4,4,12:56,Kansas State,Tulane,20,27,31,1,10,4,Rush,DJ Giddens run for 4 yds to the TULN 27,-0.05239887278951,2024-09-07T18:59:33.000Z
+401636616104879401,401636616,40163661619,5,4,12:05,Kansas State,Tulane,20,27,27,2,6,4,Rush,DJ Giddens run for 4 yds to the TULN 23,-0.058323094493883,2024-09-07T19:00:16.000Z
+401636616104885501,401636616,40163661619,6,4,11:44,Kansas State,Tulane,20,27,23,3,2,10,Rush,DJ Giddens run for 10 yds to the TULN 13 for a 1ST down,0.413738922310494,2024-09-07T19:00:46.000Z
+401636616104887901,401636616,40163661619,7,4,11:20,Kansas State,Tulane,27,27,13,1,10,13,Rushing Touchdown,Dylan Edwards 13 Yd Run (Chris Tennant Kick),2.538929215045847,2024-09-07T19:01:54.000Z
+401636616104888501,401636616,40163661620,1,4,11:14,Kansas State,Tulane,27,27,65,1,10,23,Kickoff Return (Offense),"Chris Tennant kickoff for 64 yds , Shaadie Clayton-Johnson return for 23 yds to the TULN 24",,2024-09-07T19:05:57.000Z
+401636616104895501,401636616,40163661620,2,4,10:44,Tulane,Kansas State,27,27,76,1,10,22,Pass Reception,Darian Mensah pass complete to Mario Williams for 22 yds to the TULN 46 for a 1ST down,1.9607208057305827,2024-09-07T19:06:45.000Z
+401636616104897601,401636616,40163661620,3,4,10:23,Tulane,Kansas State,27,27,54,1,10,4,Rush,Makhi Hughes run for 4 yds to the 50 yard line,-0.1577860825649198,2024-09-07T19:07:05.000Z
+401636616104906601,401636616,40163661620,4,4,9:33,Tulane,Kansas State,27,27,50,2,6,32,Rush,Makhi Hughes run for 32 yds to the KSU 18 for a 1ST down,1.7508909111795368,2024-09-07T19:07:55.000Z
+401636616104908001,401636616,40163661620,5,4,9:19,Tulane,Kansas State,27,27,18,1,10,-2,Pass Reception,Darian Mensah pass complete to Mario Williams for a loss of 2 yards to the KSU 20,-0.513865362089344,2024-09-07T19:08:59.000Z
+401636616104914801,401636616,40163661620,6,4,8:51,Tulane,Kansas State,27,27,20,2,12,-5,Penalty,"Tulane Penalty, False Start (Reggie Brown) to the KSU 25",,2024-09-07T19:09:18.000Z
+401636616104918601,401636616,40163661620,7,4,8:13,Tulane,Kansas State,27,34,25,2,17,60,Fumble Return Touchdown,Jack Fabris 60 Yd Fumble Return (Chris Tennant Kick),-10.35436824154321,2024-09-07T19:10:54.000Z
+401636616104925601,401636616,40163661621,2,4,7:43,Tulane,Kansas State,27,34,81,1,10,-2,Sack,Darian Mensah sacked by Austin Moore for a loss of 2 yards to the TULN 17,-0.664842805991146,2024-09-07T19:18:34.000Z
+401636616104919301,401636616,40163661621,1,4,8:06,Kansas State,Tulane,34,27,65,1,10,19,Kickoff Return (Offense),"Chris Tennant kickoff for 65 yds , Shaadie Clayton-Johnson return for 19 yds to the TULN 19",,2024-09-07T19:14:32.000Z
+401636616104928901,401636616,40163661621,3,4,7:10,Tulane,Kansas State,27,34,83,2,12,3,Pass Reception,Darian Mensah pass complete to Yulkeith Brown for 3 yds to the TULN 20,-0.07611868602455107,2024-09-07T19:19:40.000Z
+401636616104937501,401636616,40163661621,4,4,6:24,Tulane,Kansas State,27,34,80,3,9,17,Pass Reception,Darian Mensah pass complete to Dontae Fleming for 17 yds to the TULN 37 for a 1ST down,2.1290702194407434,2024-09-07T19:20:07.000Z
+401636616104939901,401636616,40163661621,5,4,6:00,Tulane,Kansas State,27,34,63,1,10,0,Pass Incompletion,Darian Mensah pass incomplete to Mario Williams,-1.065701080215459,2024-09-07T19:20:47.000Z
+401636616104945001,401636616,40163661621,6,4,5:49,Tulane,Kansas State,27,34,63,2,10,1,Rush,Makhi Hughes run for 1 yd to the TULN 38,-0.5529067804707175,2024-09-07T19:21:30.000Z
+401636616104948101,401636616,40163661621,7,4,5:18,Tulane,Kansas State,27,34,62,3,9,0,Pass Incompletion,Darian Mensah pass incomplete to Alex Bauman,-0.39906977707034574,2024-09-07T19:21:48.000Z
+401636616104948901,401636616,40163661621,8,4,5:10,Tulane,Kansas State,27,34,62,4,9,0,Punt,Will Karoll punt for 62 yds for a touchback,,2024-09-07T19:22:31.000Z
+401636616104955401,401636616,40163661622,1,4,4:45,Kansas State,Tulane,34,27,80,1,10,-1,Rush,DJ Giddens run for a loss of 1 yard to the KSU 19,-0.6343354265717327,2024-09-07T19:26:09.000Z
+401636616104957201,401636616,40163661622,2,4,4:27,Kansas State,Tulane,34,27,81,2,11,1,Rush,DJ Giddens run for 1 yd to the KSU 20,-0.18514780517722684,2024-09-07T19:27:04.000Z
+401636616104965301,401636616,40163661622,3,4,3:46,Kansas State,Tulane,34,27,80,3,10,2,Pass Reception,Avery Johnson pass complete to DJ Giddens for 2 yds to the KSU 22,-0.07688906175665798,2024-09-07T19:27:17.000Z
+401636616104968801,401636616,40163661622,4,4,3:11,Kansas State,Tulane,34,27,78,4,8,0,Punt,"Simon McClannan punt for 38 yds, downed at the TULN 40",,2024-09-07T19:27:52.000Z
+401636616104969701,401636616,40163661623,1,4,3:02,Tulane,Kansas State,27,34,60,1,10,1,Rush,Makhi Hughes run for 1 yd to the TULN 41,-0.9114215282702052,2024-09-07T19:28:37.000Z
+401636616104998701,401636616,40163661623,10,4,0:12,Tulane,Kansas State,27,34,16,1,0,0,Pass Incompletion,Darian Mensah pass incomplete to Alex Bauman,,2024-09-07T19:42:15.000Z
+401636616104998201,401636616,40163661623,9,4,0:17,Tulane,Kansas State,27,34,1,1,0,-14,Penalty,"Tulane Penalty, Offensive Pass Interference (Dontae Fleming) to the KSU 16",,2024-09-07T19:40:01.000Z
+401636616104998702,401636616,40163661623,11,4,0:12,Tulane,Kansas State,27,34,16,2,0,0,Timeout,"Timeout Kansas State, clock 00:12",,2024-09-07T19:42:15.000Z
+401636616104998703,401636616,40163661623,12,4,0:12,Tulane,Kansas State,27,34,16,2,0,0,Pass Interception Return,"Darian Mensah pass intercepted, touchback. VJ Payne return for no gain",,2024-09-07T19:42:15.000Z
+401636616104978901,401636616,40163661623,2,4,2:10,Tulane,Kansas State,27,34,59,2,9,26,Pass Reception,Darian Mensah pass complete to Makhi Hughes for 26 yds to the KSU 33 for a 1ST down,2.7652473589118927,2024-09-07T19:29:45.000Z
+401636616104984301,401636616,40163661623,3,4,1:56,Tulane,Kansas State,27,34,33,1,10,12,Penalty,"Kansas State Penalty, Defensive Pass Interference (VJ Payne) to the KSU 21 for a 1ST down",,2024-09-07T19:34:37.000Z
+401636616104984901,401636616,40163661623,4,4,1:50,Tulane,Kansas State,27,34,21,1,10,0,Pass Incompletion,Darian Mensah pass incomplete to Mario Williams,-0.3882383440694163,2024-09-07T19:35:04.000Z
+401636616104985601,401636616,40163661623,5,4,1:43,Tulane,Kansas State,27,34,21,2,10,-10,Penalty,"Tulane Penalty, Offensive Holding (-10 Yards) to the KSU 31",,2024-09-07T19:36:31.000Z
+401636616104988001,401636616,40163661623,6,4,1:19,Tulane,Kansas State,27,34,31,2,20,9,Rush,Makhi Hughes run for 9 yds to the KSU 22,0.714913722379503,2024-09-07T19:36:59.000Z
+401636616104994501,401636616,40163661623,7,4,0:54,Tulane,Kansas State,27,34,22,3,11,5,Rush,Darian Mensah run for 5 yds to the KSU 17,0.0385835279253007,2024-09-07T19:37:25.000Z
+401636616104997201,401636616,40163661623,8,4,0:27,Tulane,Kansas State,27,34,17,4,6,16,Rush,"Darian Mensah run for 15 yds to the KSU 2 for a 1ST down Kansas State Penalty, Defensive Holding (1 Yards) to the KSU 1 for a 1ST down",2.6764235882105805,2024-09-07T19:38:54.000Z
+401636616104998704,401636616,40163661624,1,4,0:12,Kansas State,Tulane,34,27,80,1,10,-10,Penalty,"Kansas State Penalty, Unsportsmanlike Conduct (-10 Yards) to the KSU 10",,2024-09-07T19:42:15.000Z
+401636616104999902,401636616,40163661624,3,4,0:00,Kansas State,Tulane,34,27,90,0,20,-1,End of Game,End of 4th Quarter,,2024-09-07T19:45:55.000Z
+401636616104999901,401636616,40163661624,2,4,0:00,Kansas State,Tulane,34,27,90,1,20,-1,Rush,TEAM run for a loss of 1 yard to the KSU 9,-0.1134902776387543,2024-09-07T19:45:55.000Z

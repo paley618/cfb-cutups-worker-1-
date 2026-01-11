@@ -1,0 +1,143 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628602101849902,401628602,4016286022,1,1,15:00,Villanova,Colgate,0,0,65,1,10,0,Kickoff,Ethan Gettman kickoff for 65 yds,,2024-09-07T00:00:00.000Z
+401628602101849910,401628602,4016286022,6,1,15:00,Colgate,Villanova,0,0,62,4,7,-5,Penalty,"Colgate Penalty, delay of game (Shelby Pruett) to the COLG 33",,2024-09-07T22:06:17.000Z
+401628602101874801,401628602,4016286022,7,1,12:51,Colgate,Villanova,0,0,67,4,12,0,Punt,Shelby Pruett punt for 41 yds,,2024-09-07T22:13:31.000Z
+401628602101849905,401628602,4016286022,2,1,15:00,Colgate,Villanova,0,0,75,1,10,4,Pass Reception,Zach Osborne pass complete to Michael Brescia for 4 yds to the COLG 29,-0.1142886249388964,2024-09-07T22:06:17.000Z
+401628602101849906,401628602,4016286022,3,1,15:00,Colgate,Villanova,0,0,71,2,6,6,Rush,Marco Maldonado run for 6 yds to the COLG 35 for a 1ST down,0.9493267339688831,2024-09-07T22:06:17.000Z
+401628602101849908,401628602,4016286022,4,1,15:00,Colgate,Villanova,0,0,62,2,7,0,Pass Incompletion,"Michael Brescia pass incomplete to Brady Hutchison, broken up by Ayden Howard",-0.8677535954355031,2024-09-07T22:06:17.000Z
+401628602101849909,401628602,4016286022,5,1,15:00,Colgate,Villanova,0,0,62,3,7,0,Pass Incompletion,pass incomplete to Marco Maldonado,-0.4769471385968531,2024-09-07T22:06:17.000Z
+401628602101896401,401628602,4016286023,7,1,10:35,Villanova,Colgate,0,0,39,4,7,0,Punt,Connor Watkins punt for 31 yds,,2024-09-07T22:17:13.000Z
+401628602101874802,401628602,4016286023,1,1,12:51,Villanova,Colgate,0,0,74,1,10,11,Pass Reception,Connor Watkins pass complete to Devin Smith for 11 yds to the VILL 37 for a 1ST down,0.9562655188832156,2024-09-07T22:13:31.000Z
+401628602101874803,401628602,4016286023,2,1,12:51,Villanova,Colgate,0,0,63,1,10,6,Rush,Isaiah Ragland run for 6 yds to the VILL 43,0.4024109850387187,2024-09-07T22:13:31.000Z
+401628602101874804,401628602,4016286023,3,1,12:51,Villanova,Colgate,0,0,57,2,4,15,Pass Reception,Connor Watkins pass complete to Jaylan Sanchez for 15 yds to the COLG 42 for a 1ST down,1.3531643369669075,2024-09-07T22:13:31.000Z
+401628602101874805,401628602,4016286023,4,1,12:51,Villanova,Colgate,0,0,42,1,10,3,Pass Reception,Connor Watkins pass complete to Timmy Furgeson for 3 yds to the COLG 39,-0.2936970531139116,2024-09-07T22:13:31.000Z
+401628602101874806,401628602,4016286023,5,1,12:51,Villanova,Colgate,0,0,39,2,7,0,Pass Incompletion,pass incomplete to Kenyon Miles,-0.9908118029689649,2024-09-07T22:13:31.000Z
+401628602101874807,401628602,4016286023,6,1,12:51,Villanova,Colgate,0,0,39,3,7,0,Pass Incompletion,pass incomplete to Kenyon Miles,-1.0514495825835406,2024-09-07T22:16:04.000Z
+401628602101896407,401628602,4016286024,6,1,10:35,Colgate,Villanova,0,0,75,3,8,5,Penalty,"Villanova Penalty, off-side (Ayden Howard) to the COLG 30",,2024-09-07T22:19:16.000Z
+401628602101926401,401628602,4016286024,8,1,7:35,Colgate,Villanova,0,0,68,4,1,0,Punt,Shelby Pruett punt for 43 yds,,2024-09-07T22:25:28.000Z
+401628602101896402,401628602,4016286024,1,1,10:35,Colgate,Villanova,0,0,92,1,10,4,Rush,Michael Brescia run for 4 yds to the COLG 12,-0.04199996337451673,2024-09-07T22:17:13.000Z
+401628602101896403,401628602,4016286024,2,1,10:35,Colgate,Villanova,0,0,88,2,6,0,Pass Incompletion,pass incomplete to Brady Hutchison,-0.2968288122870346,2024-09-07T22:19:16.000Z
+401628602101896404,401628602,4016286024,3,1,10:35,Colgate,Villanova,0,0,88,3,6,11,Rush,Michael Brescia run for 11 yds to the COLG 23 for a 1ST down,0.9771769556631611,2024-09-07T22:19:16.000Z
+401628602101896405,401628602,4016286024,4,1,10:35,Colgate,Villanova,0,0,77,1,10,2,Rush,Marco Maldonado run for 2 yds to the COLG 25,-0.41522254917671025,2024-09-07T22:19:16.000Z
+401628602101896406,401628602,4016286024,5,1,10:35,Colgate,Villanova,0,0,75,2,8,0,Pass Incompletion,"Michael Brescia pass incomplete to Treyvhon Saunders, broken up by Ethan Potter",-0.4311353787193166,2024-09-07T22:19:16.000Z
+401628602101896408,401628602,4016286024,7,1,10:35,Colgate,Villanova,0,0,70,3,3,2,Rush,Zach Osborne run for 2 yds to the COLG 32,-0.30307117656874816,2024-09-07T22:19:16.000Z
+401628602101947601,401628602,4016286025,4,1,5:23,Villanova,Colgate,0,0,70,4,5,0,Punt,Ethan Gettman punt for 47 yds,,2024-09-07T22:27:48.000Z
+401628602101926402,401628602,4016286025,1,1,7:35,Villanova,Colgate,0,0,75,1,10,2,Rush,Isaiah Wright run for 2 yds to the VILL 27,-0.45260367932203766,2024-09-07T22:25:28.000Z
+401628602101926403,401628602,4016286025,2,1,7:35,Villanova,Colgate,0,0,73,2,8,5,Rush,Isaiah Wright run for 5 yds to the VILL 32,0.06344953820688644,2024-09-07T22:25:28.000Z
+401628602101926404,401628602,4016286025,3,1,7:35,Villanova,Colgate,0,0,68,3,3,-2,Rush,Isaiah Ragland run for a loss of 2 yards to the VILL 30,-0.6416571193334253,2024-09-07T22:25:28.000Z
+401628602101964901,401628602,4016286026,4,1,3:50,Colgate,Villanova,0,0,71,4,3,0,Punt,Shelby Pruett punt for 43 yds,,2024-09-07T22:33:19.000Z
+401628602101947602,401628602,4016286026,1,1,5:23,Colgate,Villanova,0,0,77,1,9,4,Rush,Michael Brescia run for 4 yds to the COLG 27,-0.1107045789867475,2024-09-07T22:27:48.000Z
+401628602101947603,401628602,4016286026,2,1,5:23,Colgate,Villanova,0,0,73,2,5,2,Rush,Michael Brescia run for 2 yds to the COLG 29,-0.4274277752221574,2024-09-07T22:27:48.000Z
+401628602101947604,401628602,4016286026,3,1,5:23,Colgate,Villanova,0,0,71,3,3,0,Pass Incompletion,pass incomplete to Marco Maldonado,-0.4420887229103867,2024-09-07T22:27:48.000Z
+401628602101964902,401628602,4016286027,1,1,3:50,Villanova,Colgate,0,0,72,1,10,1,Rush,David Avit run for 1 yd to the VILL 29,-0.6645196581023116,2024-09-07T22:33:47.000Z
+401628602101974001,401628602,4016286027,2,1,2:59,Villanova,Colgate,7,0,71,2,9,71,Passing Touchdown,Connor Watkins pass complete to Devin Smith for 71 yds for a TD (Ethan Gettman KICK),6.520152370368364,2024-09-07T22:35:45.000Z
+401628602101974003,401628602,4016286029,2,1,2:59,Villanova,Colgate,7,0,65,1,10,0,Kickoff,Ethan Gettman kickoff for 65 yds for a touchback,,2024-09-07T22:37:14.000Z
+401628602101974010,401628602,4016286029,8,1,0:00,Colgate,Villanova,0,7,27,0,10,0,End Period,End of 1st Quarter,,2024-09-07T22:45:16.000Z
+401628602102859501,401628602,4016286029,11,2,14:04,Colgate,Villanova,3,7,21,4,4,39,Field Goal Good,Luke Vogeler 39 yd FG GOOD,,2024-09-07T22:46:14.000Z
+401628602101849911,401628602,4016286029,1,1,15:00,Colgate,Villanova,0,7,27,1,10,0,Rush,"Maldonado,Marco rush right (Trinh,Ty;Sapp,Christian).",-0.490975886965904,2024-09-07T22:06:17.000Z
+401628602101974004,401628602,4016286029,3,1,2:59,Colgate,Villanova,0,7,75,1,10,36,Pass Reception,Michael Brescia pass complete to Treyvhon Saunders for 36 yds to the VILL 39 for a 1ST down,2.9373165647897705,2024-09-07T22:37:14.000Z
+401628602101974005,401628602,4016286029,4,1,2:59,Colgate,Villanova,0,7,39,1,10,0,Rush,"Cassamajor,Brendan rush middle (Howard,Ayden).",-0.814236079442537,2024-09-07T22:39:18.000Z
+401628602101974006,401628602,4016286029,5,1,2:59,Colgate,Villanova,0,7,39,2,10,8,Pass Reception,Michael Brescia pass complete to Brady Hutchison for 8 yds to the VILL 31,0.635416231576954,2024-09-07T22:39:18.000Z
+401628602101974007,401628602,4016286029,6,1,2:59,Colgate,Villanova,0,7,31,3,2,0,Rush,"Brescia,Michael rush middle (Nwobodo,Obinna).",-0.9194939262657353,2024-09-07T22:39:18.000Z
+401628602101974008,401628602,4016286029,7,1,2:59,Colgate,Villanova,0,7,31,4,2,4,Pass Reception,Michael Brescia pass complete to Brady Hutchison for 4 yds to the VILL 27 for a 1ST down,1.4974714876713833,2024-09-07T22:39:18.000Z
+401628602102849901,401628602,4016286029,9,2,15:00,Colgate,Villanova,0,7,27,2,10,6,Pass Reception,Zach Osborne pass complete to Michael Brescia for 6 yds to the VILL 21,0.169226644113511,2024-09-07T22:45:16.000Z
+401628602102849903,401628602,4016286029,10,2,15:00,Colgate,Villanova,0,7,21,3,4,0,Pass Incompletion,pass incomplete to Brady Hutchison,-0.627473486219845,2024-09-07T22:45:16.000Z
+401628602102864201,401628602,40162860211,1,2,13:57,Colgate,Villanova,3,7,65,1,10,21,Kickoff,"Luke Vogeler kickoff for 64 yds , Christian Sapp return for 21 yds to the VILL 22",,2024-09-07T22:49:15.000Z
+401628602102877601,401628602,40162860211,6,2,12:23,Villanova,Colgate,7,3,58,4,13,0,Punt,Ethan Gettman punt for 33 yds,,2024-09-07T22:53:15.000Z
+401628602102864202,401628602,40162860211,2,2,13:57,Villanova,Colgate,7,3,78,1,10,23,Pass Reception,Connor Watkins pass complete to Daniel Lopes for 23 yds to the VILL 45 for a 1ST down,1.9953715650247572,2024-09-07T22:49:15.000Z
+401628602102864203,401628602,40162860211,3,2,13:57,Villanova,Colgate,7,3,55,1,10,0,Pass Incompletion,pass incomplete to Jaylan Sanchez,-1.1618692012952412,2024-09-07T22:49:15.000Z
+401628602102864204,401628602,40162860211,4,2,13:57,Villanova,Colgate,7,3,55,2,10,0,Pass Incompletion,pass incomplete to Devin Smith,-0.9098186366856273,2024-09-07T22:52:11.000Z
+401628602102864205,401628602,40162860211,5,2,13:57,Villanova,Colgate,7,3,55,3,10,-3,Sack,Connor Watkins sacked for a loss of 3 yards to the VILL 42,-0.7492572050458604,2024-09-07T22:52:11.000Z
+401628602102895101,401628602,40162860212,4,2,10:48,Colgate,Villanova,3,7,67,4,2,0,Punt,Shelby Pruett punt for 47 yds,,2024-09-07T22:55:27.000Z
+401628602102877602,401628602,40162860212,1,2,12:23,Colgate,Villanova,3,7,75,1,10,0,Pass Incompletion,pass incomplete to Winston Moore,-0.7029700220436519,2024-09-07T22:53:15.000Z
+401628602102877603,401628602,40162860212,2,2,12:23,Colgate,Villanova,3,7,75,2,10,2,Rush,Marco Maldonado run for 2 yds to the COLG 27,-0.2284411734150149,2024-09-07T22:53:15.000Z
+401628602102877604,401628602,40162860212,3,2,12:23,Colgate,Villanova,3,7,73,3,8,6,Pass Reception,Michael Brescia pass complete to Marco Maldonado for 6 yds to the COLG 33,0.11050934457707573,2024-09-07T22:53:15.000Z
+401628602102915301,401628602,40162860213,4,2,8:46,Villanova,Colgate,7,3,75,4,5,0,Punt,Ethan Gettman punt for 48 yds,,2024-09-07T23:00:11.000Z
+401628602102895102,401628602,40162860213,1,2,10:48,Villanova,Colgate,7,3,80,1,10,6,Rush,Isaiah Ragland run for 6 yds to the VILL 26,0.2888240217992033,2024-09-07T22:55:27.000Z
+401628602102895103,401628602,40162860213,2,2,10:48,Villanova,Colgate,7,3,74,2,4,0,Rush,"Ragland,Isaiah rush middle (Kelly,Joe;Sims,Ashawn).",-0.711661989572181,2024-09-07T22:55:27.000Z
+401628602102895104,401628602,40162860213,3,2,10:48,Villanova,Colgate,7,3,74,3,4,-1,Pass Reception,Connor Watkins pass complete to Isaiah Ragland for a loss of 1 yard to the VILL 25,-0.38044008539943164,2024-09-07T22:55:27.000Z
+401628602102915304,401628602,40162860214,3,2,8:46,Colgate,Villanova,3,7,58,1,10,5,Penalty,"Villanova Penalty, encroachment (Obinna Nwobodo) to the COLG 47",,2024-09-07T23:00:11.000Z
+401628602102964101,401628602,40162860214,11,2,3:58,Colgate,Villanova,3,7,17,4,3,34,Field Goal Missed,Luke Vogeler 34 yd FG MISSED,,2024-09-07T23:07:35.000Z
+401628602102915302,401628602,40162860214,1,2,8:46,Colgate,Villanova,3,7,73,1,10,8,Pass Reception,Michael Brescia pass complete to Zach Osborne for 8 yds to the COLG 35,0.9497789757518991,2024-09-07T23:00:11.000Z
+401628602102915303,401628602,40162860214,2,2,8:46,Colgate,Villanova,3,7,65,2,2,7,Pass Reception,Michael Brescia pass complete to Winston Moore for 7 yds to the COLG 42 for a 1ST down,0.421233246430722,2024-09-07T23:00:11.000Z
+401628602102915305,401628602,40162860214,4,2,8:46,Colgate,Villanova,3,7,53,1,5,0,Pass Incompletion,pass incomplete to Brendan Cassamajor,-1.3198428916369984,2024-09-07T23:00:11.000Z
+401628602102915306,401628602,40162860214,5,2,8:46,Colgate,Villanova,3,7,53,2,5,1,Rush,Brendan Cassamajor run for 1 yd to the COLG 48,-0.9576724879524735,2024-09-07T23:00:11.000Z
+401628602102915307,401628602,40162860214,6,2,8:46,Colgate,Villanova,3,7,52,3,4,5,Pass Reception,Michael Brescia pass complete to Treyvhon Saunders for 5 yds to the VILL 47 for a 1ST down,1.796133906982302,2024-09-07T23:00:11.000Z
+401628602102915308,401628602,40162860214,7,2,8:46,Colgate,Villanova,3,7,47,1,10,23,Pass Reception,Michael Brescia pass complete to Winston Moore for 23 yds to the VILL 24 for a 1ST down,0.931764292659455,2024-09-07T23:00:11.000Z
+401628602102915309,401628602,40162860214,8,2,8:46,Colgate,Villanova,3,7,24,1,10,1,Rush,Marco Maldonado run for 1 yd to the VILL 23,-0.3334518667191766,2024-09-07T23:00:11.000Z
+401628602102915310,401628602,40162860214,9,2,8:46,Colgate,Villanova,3,7,23,2,9,0,Pass Incompletion,pass incomplete to Treyvhon Saunders,-0.5359237345216901,2024-09-07T23:00:11.000Z
+401628602102915311,401628602,40162860214,10,2,8:46,Colgate,Villanova,3,7,23,3,9,6,Pass Reception,Michael Brescia pass complete to Marco Maldonado for 6 yds to the VILL 17,0.1758352043138931,2024-09-07T23:00:11.000Z
+401628602102995301,401628602,40162860215,11,2,0:46,Villanova,Colgate,7,3,45,4,26,0,Punt,Ethan Gettman punt for 45 yds,,2024-09-07T23:19:33.000Z
+401628602102964102,401628602,40162860215,1,2,3:58,Villanova,Colgate,7,3,80,1,10,6,Pass Reception,Connor Watkins pass complete to Kenyon Miles for 6 yds to the VILL 26,0.2888240217992033,2024-09-07T23:07:35.000Z
+401628602102964103,401628602,40162860215,2,2,3:58,Villanova,Colgate,7,3,74,2,4,20,Pass Reception,Connor Watkins pass complete to Devin Smith for 20 yds to the VILL 46 for a 1ST down,1.9123362361206915,2024-09-07T23:07:35.000Z
+401628602102964104,401628602,40162860215,3,2,3:58,Villanova,Colgate,7,3,54,1,10,6,Rush,David Avit run for 6 yds to the COLG 48,0.374950753061633,2024-09-07T23:07:35.000Z
+401628602102964105,401628602,40162860215,4,2,3:58,Villanova,Colgate,7,3,48,2,4,3,Pass Reception,Connor Watkins pass complete to Devin Smith for 3 yds to the COLG 45,-0.4244362112336404,2024-09-07T23:07:35.000Z
+401628602102964106,401628602,40162860215,5,2,3:58,Villanova,Colgate,7,3,45,3,1,3,Rush,Isaiah Ragland run for 3 yds to the COLG 42 for a 1ST down,0.9394475242850914,2024-09-07T23:07:35.000Z
+401628602102964107,401628602,40162860215,6,2,3:58,Villanova,Colgate,7,3,42,1,10,6,Pass Reception,Connor Watkins pass complete to Daniel Lopes for 6 yds to the COLG 36,0.2799158523170034,2024-09-07T23:15:52.000Z
+401628602102964108,401628602,40162860215,7,2,3:58,Villanova,Colgate,7,3,36,2,4,7,Pass Reception,Connor Watkins pass complete to Daniel Lopes for 7 yds to the COLG 29 for a 1ST down,0.2267184346570086,2024-09-07T23:15:52.000Z
+401628602102964109,401628602,40162860215,8,2,3:58,Villanova,Colgate,7,3,29,1,10,0,Pass Incompletion,pass incomplete to Kenyon Miles,-0.534372502378378,2024-09-07T23:15:52.000Z
+401628602102964110,401628602,40162860215,9,2,3:58,Villanova,Colgate,7,3,29,2,10,0,Pass Incompletion,pass incomplete to Isaiah Ragland,-0.732204526648056,2024-09-07T23:15:52.000Z
+401628602102964111,401628602,40162860215,10,2,3:58,Villanova,Colgate,7,3,29,3,10,-16,Sack,Connor Watkins sacked for a loss of 16 yards to the COLG 45,-3.096172603700084,2024-09-07T23:15:52.000Z
+401628602102999701,401628602,40162860216,6,2,0:02,Colgate,Villanova,3,7,77,4,17,0,Punt,Shelby Pruett punt for 60 yds,,2024-09-07T23:23:33.000Z
+401628602102995302,401628602,40162860216,1,2,0:46,Colgate,Villanova,3,7,80,1,10,5,Pass Reception,Michael Brescia pass complete to Marco Maldonado for 5 yds to the COLG 25,0.0855067756440384,2024-09-07T23:19:33.000Z
+401628602102995303,401628602,40162860216,2,2,0:46,Colgate,Villanova,3,7,75,2,5,5,Pass Reception,Michael Brescia pass complete to Treyvhon Saunders for 5 yds to the COLG 30 for a 1ST down,0.607764501056721,2024-09-07T23:19:33.000Z
+401628602102995304,401628602,40162860216,3,2,0:46,Colgate,Villanova,3,7,70,1,10,0,Pass Incompletion,pass incomplete to Brady Hutchison,-0.8627910327708888,2024-09-07T23:19:33.000Z
+401628602102995305,401628602,40162860216,4,2,0:46,Colgate,Villanova,3,7,70,2,10,5,Pass Reception,Michael Brescia pass complete to Marco Maldonado for 5 yds to the COLG 35,0.05100859460227445,2024-09-07T23:21:34.000Z
+401628602102995306,401628602,40162860216,5,2,0:46,Colgate,Villanova,3,7,65,3,5,-12,Sack,Michael Brescia sacked for a loss of 12 yards to the COLG 23,-0.8547553890100401,2024-09-07T23:21:34.000Z
+401628602103854701,401628602,40162860219,6,3,14:52,Colgate,Villanova,3,7,65,1,10,36,Kickoff,"Luke Vogeler kickoff for 64 yds , Christian Sapp return for 36 yds to the VILL 37",,2024-09-07T23:47:19.000Z
+401628602103849902,401628602,40162860219,1,3,15:00,Villanova,Colgate,7,3,63,1,10,6,Pass Reception,Connor Watkins pass complete to Ja'briel Mace for 6 yds to the VILL 43,0.4024109850387187,2024-09-07T23:47:19.000Z
+401628602103849903,401628602,40162860219,2,3,15:00,Villanova,Colgate,7,3,57,2,4,23,Rush,Isaiah Ragland run for 23 yds to the COLG 34 for a 1ST down,1.7113736476253616,2024-09-07T23:47:19.000Z
+401628602103849904,401628602,40162860219,3,3,15:00,Villanova,Colgate,7,3,34,1,10,5,Rush,Isaiah Ragland run for 5 yds to the COLG 29,0.08067951505409,2024-09-07T23:47:19.000Z
+401628602103849905,401628602,40162860219,4,3,15:00,Villanova,Colgate,7,3,29,2,5,25,Pass Reception,Connor Watkins pass complete to Jaylan Sanchez for 25 yds to the COLG 4 for a 1ST down,1.167856127145605,2024-09-07T23:47:19.000Z
+401628602103849906,401628602,40162860219,5,3,15:00,Villanova,Colgate,7,3,4,1,4,3,Rush,Connor Watkins run for 3 yds to the COLG 1,-0.212161718759031,2024-09-07T23:47:19.000Z
+401628602103884601,401628602,40162860219,7,3,11:53,Villanova,Colgate,14,3,1,2,1,1,Rushing Touchdown,Isaiah Ragland run for 1 yd for a TD (Ethan Gettman KICK),1.900352237473006,2024-09-07T23:47:19.000Z
+401628602103885101,401628602,40162860221,1,3,11:48,Villanova,Colgate,14,3,65,1,10,16,Kickoff,"Ethan Gettman kickoff for 65 yds , Winston Moore return for 16 yds to the COLG 16",,2024-09-07T23:53:57.000Z
+401628602103885102,401628602,40162860221,2,3,11:48,Colgate,Villanova,3,14,84,1,10,5,Rush,Michael Brescia run for 5 yds to the COLG 21,0.07867780591471615,2024-09-07T23:53:57.000Z
+401628602103885103,401628602,40162860221,3,3,11:48,Colgate,Villanova,3,14,79,2,5,7,Pass Reception,Michael Brescia pass complete to Brady Hutchison for 7 yds to the COLG 28 for a 1ST down,0.6450588090229061,2024-09-07T23:53:57.000Z
+401628602103885104,401628602,40162860221,4,3,11:48,Colgate,Villanova,3,14,72,1,10,6,Pass Reception,Michael Brescia pass complete to Treyvhon Saunders for 6 yds to the COLG 34,0.3584299311182697,2024-09-07T23:53:57.000Z
+401628602103885105,401628602,40162860221,5,3,11:48,Colgate,Villanova,3,14,66,2,4,3,Rush,Marco Maldonado run for 3 yds to the COLG 37,-0.3918071295446754,2024-09-07T23:53:57.000Z
+401628602103885106,401628602,40162860221,6,3,11:48,Colgate,Villanova,3,14,63,3,1,2,Pass Reception,Michael Brescia pass complete to Treyvhon Saunders for 2 yds to the COLG 39 for a 1ST down,1.033993874227592,2024-09-07T23:53:57.000Z
+401628602103885107,401628602,40162860221,7,3,11:48,Colgate,Villanova,3,14,61,1,10,-1,Pass Reception,Zach Osborne pass complete to for a loss of 1 yard to the COLG 38,-1.2959010674243847,2024-09-07T23:53:57.000Z
+401628602103885108,401628602,40162860221,8,3,11:48,Colgate,Villanova,3,14,62,2,11,-1,Rush,Michael Brescia run for a loss of 1 yard to the COLG 37,-0.7354392615285379,2024-09-07T23:53:57.000Z
+401628602103885109,401628602,40162860221,9,3,11:48,Colgate,Villanova,3,14,63,3,12,15,Pass Incompletion,"Michael Brescia pass incomplete to Brady Hutchison for a 1ST down Villanova Penalty, Defensive pass interference (Isas Waxter) to the VILL 48 for a 1ST down",3.2001225291378317,2024-09-07T23:53:57.000Z
+401628602103885110,401628602,40162860221,10,3,11:48,Colgate,Villanova,3,14,48,1,10,15,Rush,Michael Brescia run for 15 yds to the VILL 33 for a 1ST down,0.783159062777969,2024-09-07T23:53:57.000Z
+401628602103885111,401628602,40162860221,11,3,11:48,Colgate,Villanova,3,14,33,1,10,2,Rush,Michael Brescia run for 2 yds to the VILL 31,-0.3377843039747627,2024-09-07T23:53:57.000Z
+401628602103885112,401628602,40162860221,12,3,11:48,Colgate,Villanova,3,14,31,2,8,1,Rush,Michael Brescia run for 1 yd to the VILL 30,-0.5768624397027543,2024-09-07T23:53:57.000Z
+401628602103885113,401628602,40162860221,13,3,11:48,Colgate,Villanova,3,14,30,3,7,0,Pass Incompletion,Michael Brescia pass incomplete to Treyvhon Saunders,-0.9483272737564585,2024-09-07T23:53:57.000Z
+401628602103949501,401628602,40162860221,14,3,5:04,Colgate,Villanova,3,14,30,4,7,0,Pass Incompletion,pass incomplete to Brady Hutchison,-2.2339512090640365,2024-09-08T00:03:36.000Z
+401628602103959301,401628602,40162860222,5,3,4:06,Villanova,Colgate,14,3,59,4,10,0,Punt,Ethan Gettman punt for 46 yds,,2024-09-08T00:06:14.000Z
+401628602103949502,401628602,40162860222,1,3,5:04,Villanova,Colgate,14,3,70,1,10,11,Pass Reception,Connor Watkins pass complete to Isaiah Ragland for 11 yds to the VILL 41 for a 1ST down,1.0337741691059161,2024-09-08T00:03:36.000Z
+401628602103949503,401628602,40162860222,2,3,5:04,Villanova,Colgate,14,3,59,1,10,0,Pass Incompletion,pass incomplete to Kenyon Miles,-1.1387859939569847,2024-09-08T00:03:36.000Z
+401628602103949504,401628602,40162860222,3,3,5:04,Villanova,Colgate,14,3,59,2,10,0,Pass Incompletion,"Connor Watkins pass incomplete to David Avit, broken up by Nick Marsh",-0.7894428348388577,2024-09-08T00:03:36.000Z
+401628602103949505,401628602,40162860222,4,3,5:04,Villanova,Colgate,14,3,59,3,10,0,Pass Incompletion,pass incomplete to Jaylan Sanchez,-0.4379753027366,2024-09-08T00:05:53.000Z
+401628602103989401,401628602,40162860223,7,3,1:05,Colgate,Villanova,3,14,76,4,10,0,Punt,Shelby Pruett punt for 45 yds,,2024-09-08T00:13:54.000Z
+401628602103959303,401628602,40162860223,2,3,4:06,Colgate,Villanova,3,14,87,2,10,5,Penalty,"Villanova Penalty, encroachment (Obinna Nwobodo) to the COLG 18",,2024-09-08T00:06:14.000Z
+401628602103959302,401628602,40162860223,1,3,4:06,Colgate,Villanova,3,14,87,1,10,0,Pass Incompletion,pass incomplete to Zach Osborne,-0.40084650139258127,2024-09-08T00:06:14.000Z
+401628602103959304,401628602,40162860223,3,3,4:06,Colgate,Villanova,3,14,82,2,5,6,Rush,Zach Osborne run for 6 yds to the COLG 24 for a 1ST down,0.4771505939497205,2024-09-08T00:06:14.000Z
+401628602103959305,401628602,40162860223,4,3,4:06,Colgate,Villanova,3,14,76,1,10,7,Pass Reception,Michael Brescia pass complete to Zach Osborne for 7 yds to the COLG 31,0.5892240913275142,2024-09-08T00:06:14.000Z
+401628602103959306,401628602,40162860223,5,3,4:06,Colgate,Villanova,3,14,69,2,3,-6,Pass Reception,Zach Osborne pass complete to Brendan Cassamajor for a loss of 6 yards to the COLG 25,-1.538182484969444,2024-09-08T00:06:14.000Z
+401628602103959307,401628602,40162860223,6,3,4:06,Colgate,Villanova,3,14,75,3,9,-1,Rush,Michael Brescia run for a loss of 1 yard to the COLG 24,-0.20007370263907817,2024-09-08T00:06:14.000Z
+401628602103989403,401628602,40162860224,3,3,0:00,Villanova,Colgate,14,3,64,0,5,0,End Period,End of 3rd Quarter,,2024-09-08T00:18:16.000Z
+401628602103849907,401628602,40162860224,1,3,15:00,Villanova,Colgate,14,3,64,2,5,0,Rush,"Ragland,Isaiah rush middle (Allen,Asauni).",-0.946565887314053,2024-09-07T23:47:19.000Z
+401628602103989402,401628602,40162860224,2,3,1:05,Villanova,Colgate,14,3,69,1,10,5,Rush,Isaiah Ragland run for 5 yds to the VILL 36,0.1043573190685727,2024-09-08T00:13:54.000Z
+401628602104849901,401628602,40162860224,4,4,15:00,Villanova,Colgate,14,3,64,3,5,12,Pass Reception,Connor Watkins pass complete to for 12 yds to the VILL 48 for a 1ST down,2.441445284650099,2024-09-08T00:23:14.000Z
+401628602104849903,401628602,40162860224,5,4,15:00,Villanova,Colgate,14,3,52,1,10,0,Rush,"Mace,Ja'briel rush middle (Sweeney,Christian;Taddeo,Andrew).",-1.1430602484821704,2024-09-08T00:23:14.000Z
+401628602104849904,401628602,40162860224,6,4,15:00,Villanova,Colgate,14,3,52,2,10,-10,Rush,"Ragland,Isaiah rush (Stinespring,Josh), PENALTY NOV holding (Reyes,RJ) 10 yards to the COL42. Villanova Penalty, Offensive holding (RJ Reyes) to the VILL 38",-1.9900487140490908,2024-09-08T00:24:00.000Z
+401628602104849905,401628602,40162860224,7,4,15:00,Villanova,Colgate,14,3,62,2,20,11,Pass Reception,Connor Watkins pass complete to Luke Daly for 11 yds to the VILL 49,0.870536677019552,2024-09-08T00:24:00.000Z
+401628602104849906,401628602,40162860224,8,4,15:00,Villanova,Colgate,14,3,51,3,9,9,Rush,Connor Watkins run for 9 yds to the COLG 42 for a 1ST down,2.659129557039856,2024-09-08T00:24:00.000Z
+401628602104849907,401628602,40162860224,9,4,15:00,Villanova,Colgate,14,3,42,1,10,13,Rush,David Avit run for 13 yds to the COLG 29 for a 1ST down,0.506634286974012,2024-09-08T00:24:00.000Z
+401628602104849908,401628602,40162860224,10,4,15:00,Villanova,Colgate,14,3,29,1,10,12,Rush,Connor Watkins run for 12 yds to the COLG 17 for a 1ST down,0.208398081813698,2024-09-08T00:24:00.000Z
+401628602104849909,401628602,40162860224,11,4,15:00,Villanova,Colgate,14,3,17,1,10,0,Pass Incompletion,pass incomplete to Ja'briel Mace,-0.340019558909725,2024-09-08T00:24:00.000Z
+401628602104849910,401628602,40162860224,12,4,15:00,Villanova,Colgate,14,3,17,2,10,9,Rush,"for a 1ST down Colgate Penalty, unsportsmanlike conduct (Nick Marsh) to the COLG 8 for a 1ST down",0.392369654962103,2024-09-08T00:24:00.000Z
+401628602104899301,401628602,40162860224,13,4,10:06,Villanova,Colgate,21,3,8,1,8,8,Passing Touchdown,Connor Watkins pass complete to Devin Smith for 8 yds for a TD (Ethan Gettman KICK),2.319599568699692,2024-09-08T00:29:14.000Z
+401628602104899303,401628602,40162860226,1,4,10:06,Villanova,Colgate,21,3,65,1,10,0,Kickoff,Ethan Gettman kickoff for 58 yds,,2024-09-08T00:33:16.000Z
+401628602104899304,401628602,40162860226,2,4,10:06,Colgate,Villanova,3,21,75,1,10,25,Rush,Michael Brescia run for 25 yds to the 50 yard line for a 1ST down,2.2363431875999487,2024-09-08T00:33:16.000Z
+401628602104899305,401628602,40162860226,3,4,10:06,Colgate,Villanova,3,21,50,1,10,2,Rush,Michael Brescia run for 2 yds to the VILL 48,-0.63044122362105,2024-09-08T00:33:16.000Z
+401628602104899306,401628602,40162860226,4,4,10:06,Colgate,Villanova,3,21,48,2,8,0,Pass Incompletion,pass incomplete to Brendan Cassamajor,-1.1044105135531035,2024-09-08T00:33:16.000Z
+401628602104899307,401628602,40162860226,5,4,10:06,Colgate,Villanova,3,21,48,3,8,0,Pass Incompletion,pass incomplete to Treyvhon Saunders,-0.8552184337457032,2024-09-08T00:33:16.000Z
+401628602104914301,401628602,40162860226,6,4,8:56,Colgate,Villanova,3,21,48,4,8,0,Pass Incompletion,pass incomplete to Treyvhon Saunders,-0.5685178969587703,2024-09-08T00:38:01.000Z
+401628602104914305,401628602,40162860227,4,4,8:56,Villanova,Colgate,21,3,31,1,10,5,Rush,Isaiah Ragland run for 5 yds to the COLG 26,0.0783240996557135,2024-09-08T00:39:32.000Z
+401628602104914302,401628602,40162860227,1,4,8:56,Villanova,Colgate,21,3,52,1,10,10,Pass Reception,Connor Watkins pass complete to Ja'briel Mace for 10 yds to the COLG 42 for a 1ST down,0.713118817138307,2024-09-08T00:39:32.000Z
+401628602104914303,401628602,40162860227,2,4,8:56,Villanova,Colgate,21,3,42,1,10,8,Rush,David Avit run for 8 yds to the COLG 34,0.672809139285251,2024-09-08T00:39:32.000Z
+401628602104914304,401628602,40162860227,3,4,8:56,Villanova,Colgate,21,3,34,2,2,3,Rush,David Avit run for 3 yds to the COLG 31 for a 1ST down,-0.219819837786075,2024-09-08T00:39:32.000Z
+401628602104914306,401628602,40162860227,5,4,8:56,Villanova,Colgate,21,3,26,2,5,6,Rush,Isaiah Ragland run for 6 yds to the COLG 26 for a 1ST down,0.1456943413855355,2024-09-08T00:39:32.000Z

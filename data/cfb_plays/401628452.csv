@@ -1,0 +1,157 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628452101849909,401628452,4016284521,2,1,15:00,Fresno State,Michigan,0,0,75,1,10,1,Rush,Elijah Gilliam run for 1 yd to the FRES 26,-0.5874795431016855,2024-08-31T23:35:05.000Z
+401628452101849911,401628452,4016284521,3,1,15:00,Fresno State,Michigan,0,0,74,2,9,3,Pass Reception,Mikey Keene pass complete to Jalen Moss for 3 yds to the FRES 29,-0.17771396874830803,2024-08-31T23:35:05.000Z
+401628452101866801,401628452,4016284521,4,1,13:31,Fresno State,Michigan,0,0,71,3,6,5,Pass Interception Return,Mikey Keene pass intercepted Zeke Berry return for 5 yds to the FRES 31,-0.15705136842868495,2024-08-31T23:39:17.000Z
+401628452101849906,401628452,4016284521,1,1,15:00,Michigan,Fresno State,0,0,65,0,0,0,Kickoff,Tommy Doman kickoff for 65 yds for a touchback,,2024-08-31T23:35:05.000Z
+401628452101889601,401628452,4016284522,5,1,11:03,Michigan,Fresno State,7,0,3,2,3,3,Passing Touchdown,Alex Orji pass complete to Donovan Edwards for 3 yds for a TD (Dominic Zvada KICK),2.211424613960093,2024-08-31T23:43:06.000Z
+401628452101866803,401628452,4016284522,1,1,13:31,Michigan,Fresno State,0,0,31,1,10,2,Rush,Donovan Edwards run for 2 yds to the FRES 29,-0.3100175172690756,2024-08-31T23:37:30.000Z
+401628452101866804,401628452,4016284522,2,1,13:31,Michigan,Fresno State,0,0,29,2,8,13,Pass Reception,Davis Warren pass complete to Colston Loveland for 13 yds to the FRES 16 for a 1ST down,0.5832409660496491,2024-08-31T23:37:30.000Z
+401628452101866805,401628452,4016284522,3,1,13:31,Michigan,Fresno State,0,0,16,1,10,9,Rush,Semaj Morgan run for 9 yds to the FRES 7,0.6158412752510894,2024-08-31T23:39:17.000Z
+401628452101866806,401628452,4016284522,4,1,13:31,Michigan,Fresno State,0,0,3,1,3,0,Rush,Donovan Edwards run for no gain to the FRES 3,-0.746972881228756,2024-08-31T23:39:17.000Z
+401628452101889603,401628452,4016284523,1,1,11:03,Michigan,Fresno State,7,0,65,0,0,0,Kickoff,Tommy Doman kickoff for 65 yds for a touchback,,2024-08-31T23:46:45.000Z
+401628452101889605,401628452,4016284523,2,1,11:03,Fresno State,Michigan,0,7,75,1,10,2,Rush,Malik Sherrod run for 2 yds to the FRES 27,-0.45260367932203766,2024-08-31T23:46:45.000Z
+401628452101889606,401628452,4016284523,3,1,11:03,Fresno State,Michigan,0,7,73,2,8,4,Pass Reception,Mikey Keene pass complete to Mac Dalena for 4 yds to the FRES 31,-0.08212860423373947,2024-08-31T23:46:45.000Z
+401628452101889607,401628452,4016284523,4,1,11:03,Fresno State,Michigan,0,7,69,3,4,19,Pass Reception,Mikey Keene pass complete to Jalen Moss for 19 yds to the 50 yard line for a 1ST down,2.7710754711557257,2024-08-31T23:46:45.000Z
+401628452101889608,401628452,4016284523,5,1,11:03,Fresno State,Michigan,0,7,50,1,10,0,Pass Incompletion,Mikey Keene pass incomplete,-1.1143038065675126,2024-08-31T23:46:45.000Z
+401628452101889609,401628452,4016284523,6,1,11:03,Fresno State,Michigan,0,7,50,2,10,1,Rush,Malik Sherrod run for 1 yd to the MICH 49,-0.8294419024325973,2024-08-31T23:46:45.000Z
+401628452101889610,401628452,4016284523,7,1,11:03,Fresno State,Michigan,0,7,49,3,9,-8,Sack,Mikey Keene sacked by Josaiah Stewart for a loss of 8 yards to the FRES 43,-1.3923658030529849,2024-08-31T23:46:45.000Z
+401628452101918001,401628452,4016284523,8,1,8:19,Fresno State,Michigan,0,7,57,4,17,10,Punt,"Clay Lawrence punt for 40 yds , Semaj Morgan returns for 10 yds to the MICH 27",,2024-08-31T23:51:06.000Z
+401628452101918003,401628452,4016284524,1,1,8:19,Michigan,Fresno State,7,0,73,1,10,8,Rush,Kalel Mullings run for 8 yds to the MICH 35,0.9497789757518991,2024-08-31T23:51:06.000Z
+401628452101918004,401628452,4016284524,2,1,8:19,Michigan,Fresno State,7,0,65,2,2,5,Rush,Kalel Mullings run for 5 yds to the MICH 40 for a 1ST down,0.2260358543263621,2024-08-31T23:51:06.000Z
+401628452101918005,401628452,4016284524,3,1,8:19,Michigan,Fresno State,7,0,60,1,10,0,Pass Reception,Davis Warren pass complete to Semaj Morgan for no gain to the MICH 40,-1.1247712359915258,2024-08-31T23:51:06.000Z
+401628452101918006,401628452,4016284524,4,1,8:19,Michigan,Fresno State,7,0,60,2,10,0,Rush,Kalel Mullings run for no gain to the MICH 40,-0.7576599502448165,2024-08-31T23:51:06.000Z
+401628452101918007,401628452,4016284524,5,1,8:19,Michigan,Fresno State,7,0,60,3,10,3,Pass Reception,Davis Warren pass complete to Tyler Morris for 3 yds to the MICH 43,-0.18382120812461888,2024-08-31T23:51:06.000Z
+401628452101949201,401628452,4016284524,6,1,5:07,Michigan,Fresno State,7,0,57,4,7,0,Punt,"Tommy Doman punt for 37 yds, fair catch by Jalen Moss at the FRES 20",,2024-08-31T23:57:29.000Z
+401628452101949203,401628452,4016284525,1,1,5:07,Fresno State,Michigan,0,7,80,1,10,7,Pass Reception,Mikey Keene pass complete to Raylen Sharpe for 7 yds to the FRES 27,0.5253025865520424,2024-08-31T23:57:29.000Z
+401628452101949204,401628452,4016284525,2,1,5:07,Fresno State,Michigan,0,7,73,2,3,0,Pass Incompletion,Mikey Keene pass incomplete,-0.8317821150672237,2024-08-31T23:57:29.000Z
+401628452101949205,401628452,4016284525,3,1,5:07,Fresno State,Michigan,0,7,73,3,3,-3,Pass Reception,Mikey Keene pass complete to Elijah Gilliam for a loss of 3 yards to the FRES 24,-0.5336192148628314,2024-08-31T23:57:29.000Z
+401628452101965901,401628452,4016284525,4,1,3:40,Fresno State,Michigan,0,7,76,4,6,22,Punt,"Clay Lawrence punt for 41 yds , Semaj Morgan returns for 22 yds to the FRES 43",,2024-09-01T00:03:47.000Z
+401628452101967601,401628452,4016284526,1,1,3:23,Michigan,Fresno State,7,0,43,1,10,33,Pass Interception Return,Davis Warren pass intercepted Cam Lockridge return for 33 yds to the FRES 35,-3.6476299120691458,2024-09-01T00:07:16.000Z
+401628452101967603,401628452,4016284527,1,1,3:23,Fresno State,Michigan,0,7,65,1,10,3,Rush,Malik Sherrod run for 3 yds to the FRES 38,-0.4062307312880424,2024-09-01T00:07:16.000Z
+401628452101967604,401628452,4016284527,2,1,3:23,Fresno State,Michigan,0,7,62,2,7,8,Rush,Malik Sherrod run for 8 yds to the FRES 46 for a 1ST down,1.4640502042941692,2024-09-01T00:07:16.000Z
+401628452101967605,401628452,4016284527,3,1,3:23,Fresno State,Michigan,0,7,54,1,10,1,Rush,Malik Sherrod run for 1 yd to the FRES 47,-0.921128701529616,2024-09-01T00:08:43.000Z
+401628452101967606,401628452,4016284527,4,1,3:23,Fresno State,Michigan,0,7,53,2,9,0,Pass Incompletion,Mikey Keene pass incomplete,-1.005776819037436,2024-09-01T00:08:43.000Z
+401628452101967607,401628452,4016284527,5,1,3:23,Fresno State,Michigan,0,7,53,3,9,0,Pass Incompletion,Mikey Keene pass incomplete,-0.6542406523621773,2024-09-01T00:08:43.000Z
+401628452101988901,401628452,4016284527,6,1,1:10,Fresno State,Michigan,0,7,53,4,9,0,Punt,"Clay Lawrence punt for 40 yds, fair catch by Semaj Morgan at the MICH 13",,2024-09-01T00:11:10.000Z
+401628452101999902,401628452,4016284528,3,1,0:00,Michigan,Fresno State,7,0,83,0,6,5,End Period,End of 1st Quarter,,2024-09-01T00:13:03.000Z
+401628452101988903,401628452,4016284528,1,1,1:10,Michigan,Fresno State,7,0,87,1,10,4,Rush,Donovan Edwards run for 4 yds to the MICH 17,-0.05810963665836066,2024-09-01T00:11:10.000Z
+401628452101999901,401628452,4016284528,2,1,0:00,Michigan,Fresno State,7,0,83,2,6,5,Pass Reception,Davis Warren pass complete to Colston Loveland for 5 yds to the MICH 22,0.07139862684178855,2024-09-01T00:13:03.000Z
+401628452102849902,401628452,4016284528,4,2,15:00,Michigan,Fresno State,7,0,78,3,1,0,Rush,Kalel Mullings run for no gain to the MICH 22,-0.41122256607169394,2024-09-01T00:17:07.000Z
+401628452102859001,401628452,4016284528,5,2,14:09,Michigan,Fresno State,7,0,78,4,1,0,Punt,"Tommy Doman punt for 39 yds, fair catch by Jalen Moss at the FRES 39",,2024-09-01T00:17:57.000Z
+401628452102859003,401628452,4016284529,1,2,14:09,Fresno State,Michigan,0,7,61,1,10,12,Pass Reception,Mikey Keene pass complete to Jalen Moss for 12 yds to the MICH 49 for a 1ST down,1.0926854848276177,2024-09-01T00:17:57.000Z
+401628452102859004,401628452,4016284529,2,2,14:09,Fresno State,Michigan,0,7,49,1,10,0,Rush,Elijah Gilliam run for no gain to the MICH 49,-1.0955888671820908,2024-09-01T00:17:57.000Z
+401628452102859005,401628452,4016284529,3,2,14:09,Fresno State,Michigan,0,7,49,2,10,0,Pass Incompletion,Mikey Keene pass incomplete,-1.038925163719686,2024-09-01T00:17:57.000Z
+401628452102859006,401628452,4016284529,4,2,14:09,Fresno State,Michigan,0,7,49,3,10,0,Pass Incompletion,Mikey Keene pass incomplete,-0.736912945019438,2024-09-01T00:17:57.000Z
+401628452102875701,401628452,4016284529,5,2,12:42,Fresno State,Michigan,0,7,49,4,10,0,Punt,Clay Lawrence punt for 49 yds for a touchback,,2024-09-01T00:21:22.000Z
+401628452102875703,401628452,40162845210,1,2,12:42,Michigan,Fresno State,7,0,80,1,10,0,Pass Incompletion,Davis Warren pass incomplete,-0.5586693796725282,2024-09-01T00:21:22.000Z
+401628452102875704,401628452,40162845210,2,2,12:42,Michigan,Fresno State,7,0,80,2,10,-1,Rush,Donovan Edwards run for a loss of 1 yard to the MICH 19,-0.2947031149897317,2024-09-01T00:26:58.000Z
+401628452102875705,401628452,40162845210,3,2,12:42,Michigan,Fresno State,7,0,81,3,11,-9,Sack,Davis Warren sacked by Ezra Christensen for a loss of 9 yards to the MICH 10,-0.1561727979244525,2024-09-01T00:26:58.000Z
+401628452102894101,401628452,40162845210,4,2,10:58,Michigan,Fresno State,7,0,90,4,20,0,Punt,"Tommy Doman punt for 44 yds , Jalen Moss returns for no gain to the FRES 39",,2024-09-01T00:28:55.000Z
+401628452102894103,401628452,40162845211,1,2,10:58,Fresno State,Michigan,0,7,61,1,10,2,Rush,Malik Sherrod run for 2 yds to the FRES 41,-0.673782181215797,2024-09-01T00:32:22.000Z
+401628452102894104,401628452,40162845211,2,2,10:58,Fresno State,Michigan,0,7,59,2,8,23,Pass Reception,Mikey Keene pass complete to Jalen Moss for 23 yds to the MICH 36 for a 1ST down,2.518020122666867,2024-09-01T00:32:22.000Z
+401628452102894105,401628452,40162845211,3,2,10:58,Fresno State,Michigan,0,7,36,1,10,7,Pass Reception,Mikey Keene pass complete to Mac Dalena for 7 yds to the MICH 29,0.40306460138266,2024-09-01T00:32:22.000Z
+401628452102894106,401628452,40162845211,4,2,10:58,Fresno State,Michigan,0,7,29,2,3,4,Rush,Malik Sherrod run for 4 yds to the MICH 25 for a 1ST down,-0.0923708686349215,2024-09-01T00:32:22.000Z
+401628452102894107,401628452,40162845211,5,2,10:58,Fresno State,Michigan,0,7,25,1,10,2,Rush,Malik Sherrod run for 2 yds to the MICH 23,-0.2434763543774955,2024-09-01T00:32:22.000Z
+401628452102894108,401628452,40162845211,6,2,10:58,Fresno State,Michigan,0,7,23,2,8,0,Rush,Malik Sherrod run for no gain to the MICH 23,-0.5265664548341907,2024-09-01T00:32:22.000Z
+401628452102894109,401628452,40162845211,7,2,10:58,Fresno State,Michigan,0,7,23,3,8,0,Pass Incompletion,Mikey Keene pass incomplete,-0.7701289820414613,2024-09-01T00:32:22.000Z
+401628452102926401,401628452,40162845211,8,2,7:35,Fresno State,Michigan,3,7,23,4,8,41,Field Goal Good,Dylan Lynch 41 yd FG GOOD,,2024-09-01T00:36:30.000Z
+401628452102927203,401628452,40162845212,2,2,7:27,Michigan,Fresno State,7,3,74,1,10,1,Rush,Kalel Mullings run for 1 yd to the MICH 27,-0.6129109161878361,2024-09-01T00:40:30.000Z
+401628452102927201,401628452,40162845212,1,2,7:27,Fresno State,Michigan,3,7,65,0,0,26,Kickoff Return (Offense),"Dylan Lynch kickoff for 65 yds , Kalel Mullings return for 26 yds to the MICH 26",,2024-09-01T00:40:30.000Z
+401628452102967401,401628452,40162845212,7,2,3:25,Michigan,Fresno State,7,3,37,1,10,0,Timeout,"Timeout Michigan, clock 03:25",,2024-09-01T00:45:20.000Z
+401628452102979901,401628452,40162845212,10,2,2:00,Michigan,Fresno State,7,3,27,2,12,0,Timeout,"Timeout Michigan, clock 02:00",,2024-09-01T00:47:52.000Z
+401628452102996801,401628452,40162845212,14,2,0:31,Michigan,Fresno State,10,3,27,4,12,45,Field Goal Good,Dominic Zvada 45 yd FG GOOD,,2024-09-01T00:52:49.000Z
+401628452102979904,401628452,40162845212,13,2,2:00,Michigan,Fresno State,7,3,24,3,9,-3,Pass Reception,Davis Warren pass complete to Donovan Edwards for a loss of 3 yards to the FRES 27,-1.4559150933662064,2024-09-01T00:47:52.000Z
+401628452102979903,401628452,40162845212,12,2,2:00,Michigan,Fresno State,7,3,27,2,12,3,Rush,Kalel Mullings run for 3 yds to the FRES 24,-0.226924499592933,2024-09-01T00:47:52.000Z
+401628452102979902,401628452,40162845212,11,2,2:00,Michigan,Fresno State,7,3,25,1,10,-2,Rush,Donovan Edwards run for a loss of 2 yards to the FRES 27,-0.6826943418454315,2024-09-01T00:47:52.000Z
+401628452102967403,401628452,40162845212,9,2,3:25,Michigan,Fresno State,7,3,37,1,10,12,Pass Reception,Davis Warren pass complete to Colston Loveland for 12 yds to the FRES 25 for a 1ST down,0.3513242692106857,2024-09-01T00:46:16.000Z
+401628452102967402,401628452,40162845212,8,2,3:25,Michigan,Fresno State,7,3,47,2,5,10,Pass Reception,Davis Warren pass complete to Colston Loveland for 10 yds to the FRES 37 for a 1ST down,0.8521083411521105,2024-09-01T00:46:16.000Z
+401628452102927204,401628452,40162845212,3,2,7:27,Michigan,Fresno State,7,3,73,2,9,11,Pass Reception,Davis Warren pass complete to Kendrick Bell for 11 yds to the MICH 38 for a 1ST down,1.6666835879693114,2024-09-01T00:41:45.000Z
+401628452102927205,401628452,40162845212,4,2,7:27,Michigan,Fresno State,7,3,62,1,10,5,Rush,Kalel Mullings run for 5 yds to the MICH 43,0.1104483361431646,2024-09-01T00:41:45.000Z
+401628452102927206,401628452,40162845212,5,2,7:27,Michigan,Fresno State,7,3,57,2,5,5,Rush,Kalel Mullings run for 5 yds to the MICH 48 for a 1ST down,0.834501015825895,2024-09-01T00:41:45.000Z
+401628452102927207,401628452,40162845212,6,2,7:27,Michigan,Fresno State,7,3,52,1,10,5,Rush,Kalel Mullings run for 5 yds to the FRES 47,0.1045373160815773,2024-09-01T00:41:45.000Z
+401628452102996802,401628452,40162845213,1,2,0:31,Michigan,Fresno State,10,3,65,0,0,0,Kickoff,Tommy Doman kickoff for 65 yds for a touchback,,2024-09-01T00:54:51.000Z
+401628452102999901,401628452,40162845213,2,2,0:00,Fresno State,Michigan,3,10,75,1,10,9,Rush,Elijah Gilliam run for 9 yds to the FRES 34,1.252308359788624,2024-09-01T00:55:27.000Z
+401628452102999903,401628452,40162845213,3,2,0:00,Fresno State,Michigan,3,10,66,0,10,0,End of Half,End of 2nd Quarter,,2024-09-01T00:55:27.000Z
+401628452103854601,401628452,40162845214,1,3,14:53,Fresno State,Michigan,3,10,65,0,0,27,Kickoff Return (Offense),"Dylan Lynch kickoff for 65 yds , Kalel Mullings return for 27 yds to the MICH 27",,2024-09-01T01:18:18.000Z
+401628452103854603,401628452,40162845214,2,3,14:53,Michigan,Fresno State,10,3,73,1,10,3,Pass Reception,Davis Warren pass complete to Colston Loveland for 3 yds to the MICH 30,-0.3204076759721195,2024-09-01T01:18:18.000Z
+401628452103854604,401628452,40162845214,3,3,14:53,Michigan,Fresno State,10,3,70,2,7,1,Rush,Alex Orji run for 1 yd to the MICH 31,-0.5162402134323107,2024-09-01T01:18:18.000Z
+401628452103854605,401628452,40162845214,4,3,14:53,Michigan,Fresno State,10,3,69,3,6,20,Pass Reception,Davis Warren pass complete to Colston Loveland for 20 yds to the FRES 49 for a 1ST down,3.0070327719891186,2024-09-01T01:18:18.000Z
+401628452103854606,401628452,40162845214,5,3,14:53,Michigan,Fresno State,10,3,49,1,10,0,Pass Incompletion,Davis Warren pass incomplete,-1.0955888671820908,2024-09-01T01:20:44.000Z
+401628452103854607,401628452,40162845214,6,3,14:53,Michigan,Fresno State,10,3,49,2,10,6,Pass Reception,Davis Warren pass complete to Colston Loveland for 6 yds to the FRES 43,0.319213067778426,2024-09-01T01:20:44.000Z
+401628452103854608,401628452,40162845214,7,3,14:53,Michigan,Fresno State,10,3,43,3,4,9,Pass Reception,Davis Warren pass complete to Tyler Morris for 9 yds to the FRES 34 for a 1ST down,1.601980190127243,2024-09-01T01:20:44.000Z
+401628452103854609,401628452,40162845214,8,3,14:53,Michigan,Fresno State,10,3,34,1,10,3,Rush,Donovan Edwards run for 3 yds to the FRES 31,-0.2066800678483923,2024-09-01T01:20:44.000Z
+401628452103854611,401628452,40162845214,9,3,14:53,Michigan,Fresno State,10,3,31,2,7,-10,Penalty,"EDWARDS, Donovan rush to the left for a gain of 10 yards to the FS21 (FOREMAN, Korey), out of bounds. PENALTY UOM Holding on PRIEBE, Josh enforced 10 yards from the FS31 to the FS41 [SG]. NO PLAY (replay the down).",,2024-09-01T01:20:44.000Z
+401628452103854612,401628452,40162845214,10,3,14:53,Michigan,Fresno State,10,3,41,2,17,0,Pass Incompletion,Davis Warren pass incomplete,-0.9788267271359087,2024-09-01T01:20:44.000Z
+401628452103854613,401628452,40162845214,11,3,14:53,Michigan,Fresno State,10,3,41,3,17,6,Rush,Kalel Mullings run for 6 yds to the FRES 35,0.2336151394106381,2024-09-01T01:20:44.000Z
+401628452103907801,401628452,40162845214,12,3,9:21,Michigan,Fresno State,13,3,35,4,11,53,Field Goal Good,Dominic Zvada 53 yd FG GOOD,,2024-09-01T01:26:33.000Z
+401628452103907802,401628452,40162845215,1,3,9:21,Michigan,Fresno State,13,3,65,0,0,0,Kickoff,Tommy Doman kickoff for 65 yds for a touchback,,2024-09-01T01:26:33.000Z
+401628452103907806,401628452,40162845215,4,3,9:21,Fresno State,Michigan,3,13,64,1,10,0,Rush,Malik Sherrod run for no gain to the FRES 36,-1.041155320344064,2024-09-01T01:30:45.000Z
+401628452103907804,401628452,40162845215,2,3,9:21,Fresno State,Michigan,3,13,75,1,10,-8,Sack,Mikey Keene sacked by Rayshaun Benny for a loss of 8 yards to the FRES 17,-1.17598648705635,2024-09-01T01:26:33.000Z
+401628452103907805,401628452,40162845215,3,3,9:21,Fresno State,Michigan,3,13,83,2,18,19,Pass Reception,Mikey Keene pass complete to Mac Dalena for 19 yds to the FRES 36 for a 1ST down,2.1065489990023405,2024-09-01T01:30:45.000Z
+401628452103907807,401628452,40162845215,5,3,9:21,Fresno State,Michigan,3,13,64,2,10,12,Pass Reception,Mikey Keene pass complete to Jalen Moss for 12 yds to the FRES 48 for a 1ST down,2.180293639408964,2024-09-01T01:30:45.000Z
+401628452103907808,401628452,40162845215,6,3,9:21,Fresno State,Michigan,3,13,52,1,10,0,Rush,Malik Sherrod run for no gain to the FRES 48,-1.1430602484821704,2024-09-01T01:30:45.000Z
+401628452103907809,401628452,40162845215,7,3,9:21,Fresno State,Michigan,3,13,52,2,10,2,Rush,Malik Sherrod run for 2 yds to the 50 yard line,-0.604641046078992,2024-09-01T01:30:45.000Z
+401628452103907810,401628452,40162845215,8,3,9:21,Fresno State,Michigan,3,13,50,3,8,-1,Pass Reception,Mikey Keene pass complete to Malik Sherrod for a loss of 1 yard to the FRES 49,-0.9160249282928659,2024-09-01T01:30:45.000Z
+401628452103947901,401628452,40162845215,9,3,5:20,Fresno State,Michigan,3,13,51,4,9,0,Punt,Clay Lawrence punt for 42 yds,,2024-09-01T01:34:32.000Z
+401628452103947903,401628452,40162845216,1,3,5:20,Michigan,Fresno State,13,3,91,1,10,1,Rush,Donovan Edwards run for 1 yd to the MICH 10,-0.2808878686512184,2024-09-01T01:37:39.000Z
+401628452103947904,401628452,40162845216,2,3,5:20,Michigan,Fresno State,13,3,90,2,9,11,Rush,Alex Orji run for 11 yds to the MICH 21 for a 1ST down,0.7725390348589407,2024-09-01T01:37:39.000Z
+401628452103947905,401628452,40162845216,3,3,5:20,Michigan,Fresno State,13,3,79,1,10,7,Rush,Donovan Edwards run for 7 yds to the MICH 28,0.5413772358558367,2024-09-01T01:37:39.000Z
+401628452103947906,401628452,40162845216,4,3,5:20,Michigan,Fresno State,13,3,72,2,3,4,Rush,Donovan Edwards run for 4 yds to the MICH 32 for a 1ST down,0.2698468383194595,2024-09-01T01:37:39.000Z
+401628452103947907,401628452,40162845216,5,3,5:20,Michigan,Fresno State,13,3,68,1,10,0,Pass Incompletion,Davis Warren pass incomplete,-0.9262377870973815,2024-09-01T01:37:39.000Z
+401628452103947908,401628452,40162845216,6,3,5:20,Michigan,Fresno State,13,3,68,2,10,11,Rush,Alex Orji run for 11 yds to the MICH 43 for a 1ST down,1.9802318052279144,2024-09-01T01:37:39.000Z
+401628452103947909,401628452,40162845216,7,3,5:20,Michigan,Fresno State,13,3,57,1,10,0,Pass Incompletion,Davis Warren pass incomplete,-1.15714755134967,2024-09-01T01:37:39.000Z
+401628452103947910,401628452,40162845216,8,3,5:20,Michigan,Fresno State,13,3,57,2,10,0,Pass Incompletion,Davis Warren pass incomplete,-0.851527740432628,2024-09-01T01:37:39.000Z
+401628452103947911,401628452,40162845216,9,3,5:20,Michigan,Fresno State,13,3,57,3,10,0,Pass Incompletion,Davis Warren pass incomplete,-0.491927477050429,2024-09-01T01:37:39.000Z
+401628452103984401,401628452,40162845216,10,3,1:55,Michigan,Fresno State,13,3,57,4,10,0,Punt,"Tommy Doman punt for 43 yds, fair catch by Jalen Moss at the FRES 14",,2024-09-01T01:47:23.000Z
+401628452103984403,401628452,40162845217,1,3,1:55,Fresno State,Michigan,3,13,86,1,10,2,Rush,Elijah Gilliam run for 2 yds to the FRES 16,-0.27305302769881834,2024-09-01T01:50:24.000Z
+401628452103984404,401628452,40162845217,2,3,1:55,Fresno State,Michigan,3,13,84,2,8,0,Pass Incompletion,Mikey Keene pass incomplete,-0.26997857214098175,2024-09-01T01:50:24.000Z
+401628452103984405,401628452,40162845217,3,3,1:55,Fresno State,Michigan,3,13,84,3,8,0,Pass Incompletion,Mikey Keene pass incomplete,-0.11808565048813158,2024-09-01T01:50:24.000Z
+401628452103988901,401628452,40162845217,4,3,1:10,Fresno State,Michigan,3,13,84,4,8,0,Punt,"Clay Lawrence punt for 47 yds, fair catch by Semaj Morgan at the MICH 37",,2024-09-01T01:52:21.000Z
+401628452103988903,401628452,40162845218,1,3,1:10,Michigan,Fresno State,13,3,63,1,10,8,Rush,Kalel Mullings run for 8 yds to the MICH 45,1.0359877217814513,2024-09-01T01:52:21.000Z
+401628452103999902,401628452,40162845218,3,3,0:00,Michigan,Fresno State,13,3,55,0,2,3,End Period,End of 3rd Quarter,,2024-09-01T01:54:12.000Z
+401628452103999901,401628452,40162845218,2,3,0:00,Michigan,Fresno State,13,3,55,2,2,3,Pass Reception,Davis Warren pass complete to Tyler Morris for 3 yds to the MICH 48 for a 1ST down,0.006468783085868,2024-09-01T01:54:12.000Z
+401628452104849902,401628452,40162845218,4,4,15:00,Michigan,Fresno State,13,3,52,1,10,4,Rush,Kalel Mullings run for 4 yds to the FRES 48,-0.1504912861657514,2024-09-01T01:58:30.000Z
+401628452104849903,401628452,40162845218,5,4,15:00,Michigan,Fresno State,13,3,48,2,6,0,Pass Incompletion,Davis Warren pass incomplete,-1.156867358544499,2024-09-01T01:58:30.000Z
+401628452104849906,401628452,40162845218,6,4,15:00,Michigan,Fresno State,13,3,48,3,6,8,Pass Reception,Davis Warren pass complete to Semaj Morgan for 8 yds to the FRES 40 for a 1ST down,2.1263637894833405,2024-09-01T01:58:30.000Z
+401628452104849909,401628452,40162845218,7,4,15:00,Michigan,Fresno State,13,3,40,1,10,3,Rush,Alex Orji run for 3 yds to the FRES 37,-0.270025967249902,2024-09-01T02:00:15.000Z
+401628452104849910,401628452,40162845218,8,4,15:00,Michigan,Fresno State,13,3,37,2,7,0,Pass Incompletion,Alex Orji pass incomplete,-0.934430506952081,2024-09-01T02:00:15.000Z
+401628452104849912,401628452,40162845218,9,4,15:00,Michigan,Fresno State,13,3,37,3,7,0,Pass Incompletion,Davis Warren pass incomplete,-1.051045390297732,2024-09-01T02:00:15.000Z
+401628452104875701,401628452,40162845218,10,4,12:42,Michigan,Fresno State,16,3,37,4,7,55,Field Goal Good,Dominic Zvada 55 yd FG GOOD,,2024-09-01T02:02:39.000Z
+401628452104875704,401628452,40162845219,2,4,12:42,Fresno State,Michigan,3,16,75,1,10,-3,Rush,Malik Sherrod run for a loss of 3 yards to the FRES 22,-0.9562833890771465,2024-09-01T02:06:53.000Z
+401628452104875705,401628452,40162845219,3,4,12:42,Fresno State,Michigan,3,16,78,2,13,28,Pass Reception,Mikey Keene pass complete to Jalen Moss for 28 yds to the 50 yard line for a 1ST down,3.192626576677095,2024-09-01T02:06:53.000Z
+401628452104875702,401628452,40162845219,1,4,12:42,Michigan,Fresno State,16,3,65,0,0,0,Kickoff,Tommy Doman kickoff for 65 yds for a touchback,,2024-09-01T02:02:39.000Z
+401628452104875706,401628452,40162845219,4,4,12:42,Fresno State,Michigan,3,16,50,1,10,16,Pass Reception,Mikey Keene pass complete to Mac Dalena for 16 yds to the MICH 34 for a 1ST down,0.904685771207703,2024-09-01T02:06:53.000Z
+401628452104875707,401628452,40162845219,5,4,12:42,Fresno State,Michigan,3,16,34,1,10,15,Pass Reception,Mikey Keene pass complete to Nathan Acevedo for 15 yds to the MICH 19 for a 1ST down,0.332278532276147,2024-09-01T02:06:53.000Z
+401628452104875712,401628452,40162845219,6,4,12:42,Fresno State,Michigan,3,16,19,1,10,3,Rush,Joshua Wood run for 3 yds to the MICH 16,-0.114691276393927,2024-09-01T02:06:53.000Z
+401628452104875713,401628452,40162845219,7,4,12:42,Fresno State,Michigan,3,16,16,2,7,0,Pass Incompletion,Mikey Keene pass incomplete,-0.3835955463237236,2024-09-01T02:06:53.000Z
+401628452104899301,401628452,40162845219,8,4,10:06,Fresno State,Michigan,10,16,19,3,10,16,Passing Touchdown,Raylen Sharpe 16 Yd pass from Mikey Keene (Dylan Lynch Kick),3.41350295768218,2024-09-01T02:17:58.000Z
+401628452104899901,401628452,40162845220,1,4,10:00,Fresno State,Michigan,10,16,65,0,0,21,Kickoff Return (Offense),"Dylan Lynch kickoff for 61 yds , Kalel Mullings return for 21 yds to the MICH 25",,2024-09-01T02:18:29.000Z
+401628452104899903,401628452,40162845220,2,4,10:00,Michigan,Fresno State,16,10,75,1,10,3,Rush,Donovan Edwards run for 3 yds to the MICH 28,-0.2957674139440157,2024-09-01T02:18:29.000Z
+401628452104899904,401628452,40162845220,3,4,10:00,Michigan,Fresno State,16,10,72,2,7,6,Rush,Donovan Edwards run for 6 yds to the MICH 34,0.272733551995068,2024-09-01T02:19:46.000Z
+401628452104899905,401628452,40162845220,4,4,10:00,Michigan,Fresno State,16,10,66,3,1,6,Rush,Alex Orji run for 6 yds to the MICH 40 for a 1ST down,1.3438883775265937,2024-09-01T02:19:46.000Z
+401628452104899906,401628452,40162845220,5,4,10:00,Michigan,Fresno State,16,10,60,1,10,21,Rush,Kalel Mullings run for 21 yds to the FRES 39 for a 1ST down,1.6164620492121244,2024-09-01T02:19:46.000Z
+401628452104899907,401628452,40162845220,6,4,10:00,Michigan,Fresno State,16,10,39,1,10,15,Rush,Kalel Mullings run for 15 yds to the FRES 24 for a 1ST down,0.459000606324576,2024-09-01T02:19:46.000Z
+401628452104899908,401628452,40162845220,7,4,10:00,Michigan,Fresno State,16,10,24,1,10,6,Rush,Kalel Mullings run for 6 yds to the FRES 18,0.193301563662509,2024-09-01T02:19:46.000Z
+401628452104945601,401628452,40162845220,8,4,5:43,Michigan,Fresno State,23,10,18,2,4,18,Passing Touchdown,Davis Warren pass complete to Colston Loveland for 18 yds for a TD (Dominic Zvada KICK),2.488136384944466,2024-09-01T02:23:24.000Z
+401628452104964202,401628452,40162845221,9,4,3:57,Michigan,Fresno State,23,10,3,0,0,-15,Penalty,"Michigan Penalty, Unsportsmanlike Conduct (Will Johnson) to the FRES 18",,2024-09-01T02:36:56.000Z
+401628452104945603,401628452,40162845221,1,4,5:43,Michigan,Fresno State,23,10,65,0,0,0,Kickoff,Tommy Doman kickoff for 65 yds for a touchback,,2024-09-01T02:28:04.000Z
+401628452104945605,401628452,40162845221,2,4,5:43,Fresno State,Michigan,10,23,75,1,10,0,Pass Incompletion,Mikey Keene pass incomplete,-0.7029700220436519,2024-09-01T02:28:04.000Z
+401628452104945608,401628452,40162845221,3,4,5:43,Fresno State,Michigan,10,23,39,2,4,15,Penalty,"Michigan Penalty, Face mask (15 yards) (TJ Guy) to the MICH 20 for a 1ST down",,2024-09-01T02:33:27.000Z
+401628452104945609,401628452,40162845221,4,4,5:43,Fresno State,Michigan,10,23,20,1,10,10,Pass Reception,Mikey Keene pass complete to Kamron Beachem for 10 yds to the MICH 10 for a 1ST down,0.104100886782257,2024-09-01T02:33:27.000Z
+401628452104945610,401628452,40162845221,5,4,5:43,Fresno State,Michigan,10,23,75,2,10,15,Penalty,"KEENE, Mikey pass up the middle intercepted by PAIGE, Makari at the FS39 intended for MOSS, Jalen. Paige return for 27 yards to the FS12 (VELEZ, Osmar). PENALTY UOM Roughing the Passer on GUY, T.J. enforced 15 yards from the FS25 to the FS40 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-01T02:33:27.000Z
+401628452104945613,401628452,40162845221,6,4,5:43,Fresno State,Michigan,10,23,45,1,10,-5,Penalty,"Fresno State Penalty, False Start (Braylen Nelson) to the 50 yard line",,2024-09-01T02:33:27.000Z
+401628452104945614,401628452,40162845221,7,4,5:43,Fresno State,Michigan,10,23,50,1,15,11,Pass Reception,Mikey Keene pass complete to Malik Sherrod for 11 yds to the MICH 39,1.3688275706490458,2024-09-01T02:33:27.000Z
+401628452104964201,401628452,40162845221,8,4,3:57,Fresno State,Michigan,10,30,10,1,10,86,Interception Return Touchdown,Mikey Keene pass intercepted Will Johnson return for 86 yds for a TD (Dominic Zvada KICK),-11.486173157750558,2024-09-01T02:36:56.000Z
+401628452104999906,401628452,40162845221,10,4,0:00,Fresno State,Michigan,10,23,60,1,10,15,Penalty,"Michigan Penalty, Unsportsmanlike Conduct (Jaishawn Barham) to the MICH 45 for a 1ST down",,2024-09-01T02:50:34.000Z
+401628452104964206,401628452,40162845222,2,4,3:57,Fresno State,Michigan,10,30,75,1,10,9,Pass Reception,Mikey Keene pass complete to Kamron Beachem for 9 yds to the FRES 34,1.252308359788624,2024-09-01T02:36:56.000Z
+401628452104964207,401628452,40162845222,3,4,3:57,Fresno State,Michigan,10,30,66,2,1,3,Pass Reception,Mikey Keene pass complete to Chedon James for 3 yds to the FRES 37 for a 1ST down,-0.2250640336450526,2024-09-01T02:36:56.000Z
+401628452104964208,401628452,40162845222,4,4,3:57,Fresno State,Michigan,10,30,63,1,10,0,Pass Incompletion,Mikey Keene pass incomplete,-1.065701080215459,2024-09-01T02:41:46.000Z
+401628452104964209,401628452,40162845222,5,4,3:57,Fresno State,Michigan,10,30,63,2,10,15,Pass Reception,Mikey Keene pass complete to Mac Dalena for 15 yds to the MICH 48 for a 1ST down,2.4299780375132523,2024-09-01T02:41:46.000Z
+401628452104964204,401628452,40162845222,1,4,3:57,Michigan,Fresno State,30,10,65,0,0,0,Kickoff,Tommy Doman kickoff for 65 yds for a touchback,,2024-09-01T02:36:56.000Z
+401628452104979901,401628452,40162845222,6,4,2:00,Fresno State,Michigan,10,30,62,2,24,0,Timeout,"Timeout Michigan, clock 02:00",,2024-09-01T02:43:15.000Z
+401628452104979902,401628452,40162845222,7,4,2:00,Fresno State,Michigan,10,30,48,1,10,-14,Sack,Mikey Keene sacked by Josaiah Stewart for a loss of 14 yards to the FRES 38,-3.3116839582122912,2024-09-01T02:43:15.000Z
+401628452104979903,401628452,40162845222,8,4,2:00,Fresno State,Michigan,10,30,62,2,24,6,Pass Reception,Mikey Keene pass complete to Mac Dalena for 6 yds to the FRES 44,0.09036563331533642,2024-09-01T02:43:15.000Z
+401628452104979904,401628452,40162845222,9,4,2:00,Fresno State,Michigan,10,30,56,3,18,2,Rush,Malik Sherrod run for 2 yds to the FRES 46,-0.18260104860114623,2024-09-01T02:43:15.000Z
+401628452104998001,401628452,40162845222,10,4,0:19,Fresno State,Michigan,10,30,54,4,16,0,Punt,"Clay Lawrence punt for 36 yds, downed at the MICH 18",,2024-09-01T02:48:21.000Z
+401628452104999902,401628452,40162845223,1,4,0:00,Michigan,Fresno State,30,10,85,0,10,3,End of Game,End of 4th Quarter,,2024-09-01T02:49:12.000Z
+401628452104999903,401628452,40162845223,2,4,0:00,Michigan,Fresno State,30,10,82,1,10,-3,Rush,"Kneel down by WARREN, Davis at UOM15 (team loss of 3), clock 00:00.",-0.6810194554592206,2024-09-01T02:49:12.000Z

@@ -1,0 +1,189 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401634305101854401,401634305,4016343051,1,1,14:55,Kent State,Pittsburgh,0,0,65,0,0,26,Kickoff Return (Offense),"Andrew Glass kickoff for 65 yds , Kenny Johnson return for 26 yds to the PITT 5",,2024-08-31T16:09:10.000Z
+401634305101854403,401634305,4016343051,2,1,14:55,Pittsburgh,Kent State,0,0,95,1,10,9,Pass Reception,Eli Holstein pass complete to Kenny Johnson for 9 yds to the PITT 14,0.7145775730505983,2024-08-31T16:12:51.000Z
+401634305101854404,401634305,4016343051,3,1,14:55,Pittsburgh,Kent State,0,0,86,2,1,5,Rush,Desmond Reid run for 5 yds to the PITT 19 for a 1ST down,-0.2348350460185911,2024-08-31T16:09:10.000Z
+401634305101854405,401634305,4016343051,4,1,14:55,Pittsburgh,Kent State,0,0,81,1,10,2,Pass Reception,Eli Holstein pass complete to Gavin Bartholomew for 2 yds to the PITT 21,-0.345885638069002,2024-08-31T16:12:51.000Z
+401634305101854406,401634305,4016343051,5,1,14:55,Pittsburgh,Kent State,0,0,79,2,8,14,Pass Reception,Eli Holstein pass complete to Raphael Williams Jr. for 14 yds to the PITT 35 for a 1ST down,1.5417881483804639,2024-08-31T16:09:10.000Z
+401634305101854407,401634305,4016343051,6,1,14:55,Pittsburgh,Kent State,0,0,65,1,10,6,Rush,Desmond Reid run for 6 yds to the PITT 41,0.3983464844048346,2024-08-31T16:12:51.000Z
+401634305101854408,401634305,4016343051,7,1,14:55,Pittsburgh,Kent State,0,0,59,2,4,9,Pass Reception,Eli Holstein pass complete to Konata Mumpfield for 9 yds to the 50 yard line for a 1ST down,1.0029585941651271,2024-08-31T16:12:51.000Z
+401634305101854409,401634305,4016343051,8,1,14:55,Pittsburgh,Kent State,0,0,50,1,10,3,Rush,Desmond Reid run for 3 yds to the KENT 47,-0.385960016074776,2024-08-31T16:12:51.000Z
+401634305101854410,401634305,4016343051,9,1,14:55,Pittsburgh,Kent State,0,0,47,2,7,46,Pass Reception,Eli Holstein pass complete to Kenny Johnson for 46 yds to the KENT 1 for a 1ST down,3.289350673075706,2024-08-31T16:12:51.000Z
+401634305101884302,401634305,4016343051,10,1,11:56,Pittsburgh,Kent State,7,0,11,1,11,11,Passing Touchdown,Eli Holstein pass complete to Konata Mumpfield for 11 yds for a TD (Ben Sauls KICK),2.591335679858407,2024-08-31T16:15:17.000Z
+401634305101884309,401634305,4016343051,11,1,11:56,Pittsburgh,Kent State,0,0,1,1,1,-10,Penalty,"QB Keeper HOLSTEIN, Eli rush to the right for a gain of 1 yard to the KSU0, TOUCHDOWN PIT, score nullified by penalty, clock 11:56 (Play was confirmed after review). PENALTY PIT Holding on OVERMAN, Jake enforced 10 yards from the KSU1 to the KSU11 [NHSG]. NO PLAY (replay the down).",,2024-08-31T16:15:17.000Z
+401634305101884304,401634305,4016343052,1,1,11:56,Pittsburgh,Kent State,7,0,65,0,0,0,Kickoff,Ben Sauls kickoff for 60 yds,,2024-08-31T16:15:17.000Z
+401634305101884306,401634305,4016343052,2,1,11:56,Kent State,Pittsburgh,0,7,75,1,10,1,Rush,Ky Thomas run for 1 yd to the KENT 26,-0.5874795431016855,2024-08-31T16:15:17.000Z
+401634305101884307,401634305,4016343052,3,1,11:56,Kent State,Pittsburgh,0,7,74,2,9,0,Pass Incompletion,Devin Kargman pass incomplete,-0.40831395320271024,2024-08-31T16:15:17.000Z
+401634305101884308,401634305,4016343052,4,1,11:56,Kent State,Pittsburgh,0,7,74,3,9,2,Pass Reception,Devin Kargman pass complete to Chrishon McCray for 2 yds to the KENT 28,-0.12528445745202088,2024-08-31T16:15:17.000Z
+401634305101898401,401634305,4016343052,5,1,10:15,Kent State,Pittsburgh,0,14,72,4,7,78,Punt,"Josh Smith punt for 50 yds , Desmond Reid returns for 78 yds for a TD (Ben Sauls KICK)",,2024-08-31T16:20:18.000Z
+401634305101898403,401634305,4016343053,1,1,10:15,Pittsburgh,Kent State,14,0,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-08-31T16:22:27.000Z
+401634305101898405,401634305,4016343053,2,1,10:15,Kent State,Pittsburgh,0,14,75,1,10,21,Pass Reception,"Devin Kargman pass complete to Luke Floriea for 6 yds to the KENT 31 for a 1ST down Pittsburgh Penalty, Face mask (15 yards) (Phillip O'Brien Jr.) to the KENT 46 for a 1ST down",1.8928575820361135,2024-08-31T16:22:27.000Z
+401634305101898406,401634305,4016343053,3,1,10:15,Kent State,Pittsburgh,0,14,54,1,10,0,Rush,Ky Thomas run for no gain to the KENT 46,-1.1590089706435955,2024-08-31T16:22:27.000Z
+401634305101898407,401634305,4016343053,4,1,10:15,Kent State,Pittsburgh,0,14,54,2,10,7,Pass Reception,Devin Kargman pass complete to Ky Thomas for 7 yds to the PITT 47,0.5744855403651224,2024-08-31T16:22:27.000Z
+401634305101898408,401634305,4016343053,5,1,10:15,Kent State,Pittsburgh,0,14,47,3,3,8,Rush,Ky Thomas run for 8 yds to the PITT 39 for a 1ST down,1.62898241303213,2024-08-31T16:22:27.000Z
+401634305101898409,401634305,4016343053,6,1,10:15,Kent State,Pittsburgh,0,14,39,1,10,0,Pass Incompletion,Devin Kargman pass incomplete,-0.814236079442537,2024-08-31T16:22:27.000Z
+401634305101898410,401634305,4016343053,7,1,10:15,Kent State,Pittsburgh,0,14,39,2,10,-2,Rush,Curtis Douglas run for a loss of 2 yards to the PITT 41,-1.4468572462703337,2024-08-31T16:22:27.000Z
+401634305101898411,401634305,4016343053,8,1,10:15,Kent State,Pittsburgh,0,14,41,3,12,5,Penalty,"Pittsburgh Penalty, Offsides (Jimmy Scott) to the PITT 36",,2024-08-31T16:22:27.000Z
+401634305101898412,401634305,4016343053,9,1,10:15,Kent State,Pittsburgh,0,14,36,3,7,0,Pass Incompletion,Devin Kargman pass incomplete,-1.0456665971037056,2024-08-31T16:22:27.000Z
+401634305101935601,401634305,4016343053,10,1,6:43,Kent State,Pittsburgh,7,14,36,4,7,36,Passing Touchdown,Devin Kargman pass complete to Luke Floriea for 36 yds for a TD (Andrew Glass KICK),5.349123918256549,2024-08-31T16:28:35.000Z
+401634305101936307,401634305,4016343054,3,1,6:36,Pittsburgh,Kent State,14,7,78,1,18,19,Pass Reception,Eli Holstein pass complete to Gavin Bartholomew for 19 yds to the PITT 41 for a 1ST down,2.2551882787994675,2024-08-31T16:33:42.000Z
+401634305101936308,401634305,4016343054,4,1,6:36,Pittsburgh,Kent State,14,7,59,1,10,3,Rush,Derrick Davis Jr. run for 3 yds to the PITT 44,-0.4327220980688242,2024-08-31T16:33:42.000Z
+401634305101936301,401634305,4016343054,1,1,6:36,Kent State,Pittsburgh,7,14,65,0,0,30,Kickoff Return (Offense),"Andrew Glass kickoff for 65 yds , Kenny Johnson return for 30 yds to the PITT 30",,2024-08-31T16:32:47.000Z
+401634305101936306,401634305,4016343054,2,1,6:36,Pittsburgh,Kent State,14,7,70,1,10,-8,Penalty,"Pittsburgh Penalty, Offensive Holding (Gavin Bartholomew) to the PITT 14",,2024-08-31T16:33:42.000Z
+401634305101936309,401634305,4016343054,5,1,6:36,Pittsburgh,Kent State,14,7,56,2,7,-10,Sack,Eli Holstein sacked by Naim Muhammad for a loss of 10 yards to the PITT 34,-2.05493430721838,2024-08-31T16:33:42.000Z
+401634305101936310,401634305,4016343054,6,1,6:36,Pittsburgh,Kent State,14,7,66,3,17,-2,Sack,Eli Holstein sacked by Kameron Olds for a loss of 2 yards to the PITT 32,-0.1810082814351528,2024-08-31T16:33:42.000Z
+401634305101965701,401634305,4016343054,7,1,3:42,Pittsburgh,Kent State,14,7,68,4,19,0,Punt,Caleb Junko punt for 43 yds,,2024-08-31T16:43:33.000Z
+401634305101965703,401634305,4016343055,1,1,3:42,Kent State,Pittsburgh,7,14,75,1,10,0,Pass Incompletion,Devin Kargman pass incomplete,-0.7029700220436519,2024-08-31T16:43:33.000Z
+401634305101965704,401634305,4016343055,2,1,3:42,Kent State,Pittsburgh,7,14,75,2,10,-1,Rush,Ky Thomas run for a loss of 1 yard to the KENT 24,-0.3927938356308358,2024-08-31T16:44:38.000Z
+401634305101965705,401634305,4016343055,3,1,3:42,Kent State,Pittsburgh,7,14,76,3,11,3,Rush,Ky Thomas run for 3 yds to the KENT 27,-0.05985762423817764,2024-08-31T16:44:38.000Z
+401634305101979401,401634305,4016343055,4,1,2:05,Kent State,Pittsburgh,7,14,73,4,8,0,Punt,"punt for 52 yds, downed at the PITT 21",,2024-08-31T16:45:51.000Z
+401634305101979405,401634305,4016343056,1,1,2:05,Pittsburgh,Kent State,14,7,75,3,6,24,Pass Reception,Eli Holstein pass complete to Kenny Johnson for 24 yds to the PITT 49 for a 1ST down,3.040543694107723,2024-08-31T16:45:51.000Z
+401634305101979406,401634305,4016343056,2,1,2:05,Pittsburgh,Kent State,14,7,51,1,10,4,Pass Reception,Eli Holstein pass complete to Raphael Williams Jr. for 4 yds to the KENT 47,-0.1462695033279216,2024-08-31T16:45:51.000Z
+401634305101979407,401634305,4016343056,3,1,2:05,Pittsburgh,Kent State,14,7,47,2,6,4,Rush,Desmond Reid run for 4 yds to the KENT 43,-0.1532170583888827,2024-08-31T16:45:51.000Z
+401634305102868401,401634305,4016343056,11,2,13:15,Pittsburgh,Kent State,14,7,2,3,2,0,Timeout,"Timeout Pittsburgh, clock 13:15",,2024-08-31T16:57:58.000Z
+401634305101979409,401634305,4016343056,6,1,0:00,Pittsburgh,Kent State,14,7,43,0,2,28,End Period,End of 1st Quarter,,2024-08-31T16:45:51.000Z
+401634305102868402,401634305,4016343056,12,2,13:15,Pittsburgh,Kent State,14,7,4,2,4,2,Rush,Derrick Davis Jr. run for 2 yds to the KENT 2,-0.2109400436149005,2024-08-31T16:57:58.000Z
+401634305101979408,401634305,4016343056,4,1,2:05,Pittsburgh,Kent State,14,7,43,3,2,28,Rush,Desmond Reid run for 28 yds to the KENT 15 for a 1ST down,1.6646546760446603,2024-08-31T16:45:51.000Z
+401634305101979412,401634305,4016343056,5,1,2:05,Pittsburgh,Kent State,14,7,79,2,10,4,Rush,Eli Holstein run for 4 yds to the PITT 25,-0.04776001056674683,2024-08-31T16:45:51.000Z
+401634305102849902,401634305,4016343056,7,2,15:00,Pittsburgh,Kent State,14,7,15,1,10,3,Rush,Desmond Reid run for 3 yds to the KENT 12,-0.103053233199689,2024-08-31T16:50:09.000Z
+401634305102849903,401634305,4016343056,8,2,15:00,Pittsburgh,Kent State,14,7,12,2,7,0,Pass Incompletion,Eli Holstein pass incomplete,-0.327630498967477,2024-08-31T16:50:09.000Z
+401634305102849906,401634305,4016343056,9,2,15:00,Pittsburgh,Kent State,14,7,12,3,7,2,Pass Reception,Eli Holstein pass complete to Desmond Reid for 2 yds to the KENT 10,-0.2209210551237192,2024-08-31T16:50:09.000Z
+401634305102865101,401634305,4016343056,10,2,13:48,Pittsburgh,Kent State,14,7,4,1,4,0,Pass Incompletion,Eli Holstein pass incomplete,-0.6456997217339855,2024-08-31T16:56:53.000Z
+401634305102868901,401634305,4016343056,13,2,13:10,Pittsburgh,Kent State,21,7,2,3,2,2,Rushing Touchdown,Derrick Davis Jr. run for 2 yds for a TD (Ben Sauls KICK),2.544830284062861,2024-08-31T16:59:10.000Z
+401634305102868903,401634305,4016343057,1,2,13:10,Pittsburgh,Kent State,21,7,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-08-31T17:00:45.000Z
+401634305102894101,401634305,4016343057,5,2,10:58,Kent State,Pittsburgh,7,21,80,4,15,0,Punt,Josh Smith punt for 35 yds,,2024-08-31T17:04:33.000Z
+401634305102868905,401634305,4016343057,2,2,13:10,Kent State,Pittsburgh,7,21,75,1,10,-7,Sack,Devin Kargman sacked by Rasheem Biles for a loss of 7 yards to the KENT 18,-1.1457661500935084,2024-08-31T17:00:45.000Z
+401634305102868906,401634305,4016343057,3,2,13:10,Kent State,Pittsburgh,7,21,82,2,17,2,Rush,Ky Thomas run for 2 yds to the KENT 20,-0.07034632440320276,2024-08-31T17:00:45.000Z
+401634305102868907,401634305,4016343057,4,2,13:10,Kent State,Pittsburgh,7,21,80,3,15,0,Rush,Ky Thomas run for no gain to the KENT 20,-0.06579665004736057,2024-08-31T17:00:45.000Z
+401634305102894103,401634305,4016343058,1,2,10:58,Pittsburgh,Kent State,21,7,55,1,10,-4,Pass Reception,Eli Holstein pass complete to Kenny Johnson for a loss of 4 yards to the PITT 41,-1.9549773558467223,2024-08-31T17:04:33.000Z
+401634305102894104,401634305,4016343058,2,2,10:58,Pittsburgh,Kent State,21,7,59,2,14,5,Pass Reception,Eli Holstein pass complete to Daniel Carter for 5 yds to the PITT 46,0.0454108464691601,2024-08-31T17:04:33.000Z
+401634305102894105,401634305,4016343058,3,2,10:58,Pittsburgh,Kent State,21,7,54,3,9,13,Rush,Eli Holstein run for 13 yds to the KENT 41 for a 1ST down,2.945660120797408,2024-08-31T17:04:33.000Z
+401634305102894106,401634305,4016343058,4,2,10:58,Pittsburgh,Kent State,21,7,41,1,10,10,Pass Reception,Eli Holstein pass complete to Konata Mumpfield for 10 yds to the KENT 31 for a 1ST down,0.3985734558235714,2024-08-31T17:08:51.000Z
+401634305102894107,401634305,4016343058,5,2,10:58,Pittsburgh,Kent State,21,7,31,1,10,5,Rush,Daniel Carter run for 5 yds to the KENT 26,0.0783240996557135,2024-08-31T17:08:51.000Z
+401634305102894108,401634305,4016343058,6,2,10:58,Pittsburgh,Kent State,21,7,26,2,5,14,Rush,Daniel Carter run for 14 yds to the KENT 12 for a 1ST down,0.233527528381309,2024-08-31T17:08:51.000Z
+401634305102894109,401634305,4016343058,7,2,10:58,Pittsburgh,Kent State,21,7,12,1,10,5,Rush,Daniel Carter run for 5 yds to the KENT 7,0.0748456356820665,2024-08-31T17:08:51.000Z
+401634305102924901,401634305,4016343058,8,2,7:50,Pittsburgh,Kent State,28,7,7,2,5,7,Passing Touchdown,Eli Holstein pass complete to Raphael Williams Jr. for 7 yds for a TD (Ben Sauls KICK),2.455248906353859,2024-08-31T17:12:50.000Z
+401634305102925601,401634305,4016343059,1,2,7:43,Pittsburgh,Kent State,28,7,65,0,0,25,Kickoff Return (Offense),"Ben Sauls kickoff for 55 yds , Luke Floriea return for 25 yds to the KENT 35",,2024-08-31T17:15:41.000Z
+401634305102925603,401634305,4016343059,2,2,7:43,Kent State,Pittsburgh,7,28,65,1,10,-6,Rush,Ky Thomas run for a loss of 6 yards to the KENT 29,-1.7211551417846715,2024-08-31T17:15:41.000Z
+401634305102925604,401634305,4016343059,3,2,7:43,Kent State,Pittsburgh,7,28,71,2,16,0,Rush,Ky Thomas run for no gain to the KENT 29,-0.245858487766756,2024-08-31T17:15:41.000Z
+401634305102925605,401634305,4016343059,4,2,7:43,Kent State,Pittsburgh,7,28,71,3,16,-1,Rush,Curtis Douglas run for a loss of 1 yard to the KENT 28,-0.12652953628569996,2024-08-31T17:15:41.000Z
+401634305102947101,401634305,4016343059,5,2,5:28,Pittsburgh,Kent State,28,14,72,4,17,34,Fumble Return Touchdown,Naim Muhammad 34 Yd Fumble Return (Andrew Glass Kick),-6.663739823471538,2024-08-31T17:20:05.000Z
+401634305102947701,401634305,40163430510,1,2,5:22,Kent State,Pittsburgh,14,28,65,0,0,17,Kickoff Return (Offense),"Andrew Glass kickoff for 62 yds , Kenny Johnson return for 17 yds to the PITT 20",,2024-08-31T17:20:55.000Z
+401634305102989404,401634305,40163430510,14,2,1:05,Kent State,Pittsburgh,14,28,36,1,10,-5,Penalty,"KARGMAN, Devin pass deep to the left incomplete intended for MCCRAY, Chrishon broken up by MCMILLON, Donovan at the PIT20; QB hurried by BASS, Jordan. PENALTY KSU Ineligible Receiver Downfield on Pass on WILLIAMS, Elijah enforced 5 yards from the PIT36 to the PIT41 [NHSG]. NO PLAY (replay the down).",,2024-08-31T17:30:34.000Z
+401634305102989401,401634305,40163430510,13,2,1:05,Pittsburgh,Kent State,28,14,7,3,2,60,Pass Interception Return,Eli Holstein pass intercepted Alex Branch return for 60 yds to the PITT 36,-4.401097040622286,2024-08-31T17:30:34.000Z
+401634305102947713,401634305,40163430510,12,2,5:22,Pittsburgh,Kent State,28,14,9,2,4,2,Rush,Desmond Reid run for 2 yds to the KENT 7,-0.222141229116369,2024-08-31T17:23:09.000Z
+401634305102947712,401634305,40163430510,11,2,5:22,Pittsburgh,Kent State,28,14,15,1,10,6,Pass Reception,Eli Holstein pass complete to Censere Lee for 6 yds to the KENT 9,0.181437359303738,2024-08-31T17:23:09.000Z
+401634305102947711,401634305,40163430510,10,2,5:22,Pittsburgh,Kent State,28,14,27,1,10,12,Pass Reception,Eli Holstein pass complete to Censere Lee for 12 yds to the KENT 15 for a 1ST down,0.183081751826403,2024-08-31T17:23:09.000Z
+401634305102947703,401634305,40163430510,2,2,5:22,Pittsburgh,Kent State,28,14,80,1,10,0,Pass Incompletion,Eli Holstein pass incomplete,-0.5586693796725282,2024-08-31T17:20:55.000Z
+401634305102947704,401634305,40163430510,3,2,5:22,Pittsburgh,Kent State,28,14,80,2,10,5,Rush,Desmond Reid run for 5 yds to the PITT 25,0.03780033731591903,2024-08-31T17:20:55.000Z
+401634305102947705,401634305,40163430510,4,2,5:22,Pittsburgh,Kent State,28,14,75,3,5,7,Pass Reception,Eli Holstein pass complete to Kenny Johnson for 7 yds to the PITT 32 for a 1ST down,1.3876161223198524,2024-08-31T17:20:55.000Z
+401634305102947706,401634305,40163430510,5,2,5:22,Pittsburgh,Kent State,28,14,68,1,10,2,Rush,Desmond Reid run for 2 yds to the PITT 34,-0.5836824413377926,2024-08-31T17:23:09.000Z
+401634305102947707,401634305,40163430510,6,2,5:22,Pittsburgh,Kent State,28,14,66,2,8,6,Pass Reception,Eli Holstein pass complete to Desmond Reid for 6 yds to the PITT 40,0.2935133147661074,2024-08-31T17:23:09.000Z
+401634305102947708,401634305,40163430510,7,2,5:22,Pittsburgh,Kent State,28,14,60,3,2,3,Rush,Desmond Reid run for 3 yds to the PITT 43 for a 1ST down,1.3441631447022182,2024-08-31T17:23:09.000Z
+401634305102947709,401634305,40163430510,8,2,5:22,Pittsburgh,Kent State,28,14,57,1,10,13,Pass Reception,Eli Holstein pass complete to Kenny Johnson for 13 yds to the KENT 44 for a 1ST down,1.0524343400013052,2024-08-31T17:23:09.000Z
+401634305102947710,401634305,40163430510,9,2,5:22,Pittsburgh,Kent State,28,14,44,1,10,17,Pass Reception,Eli Holstein pass complete to Censere Lee for 17 yds to the KENT 27 for a 1ST down,0.6716015161185352,2024-08-31T17:23:09.000Z
+401634305102989406,401634305,40163430511,1,2,1:05,Kent State,Pittsburgh,14,28,41,1,15,0,Pass Incompletion,Devin Kargman pass incomplete,-0.9391384986641071,2024-08-31T17:30:34.000Z
+401634305102995302,401634305,40163430511,3,2,0:46,Kent State,Pittsburgh,14,28,41,2,15,2,Rush,Ky Thomas run for 2 yds to the PITT 39,-0.5995621263554156,2024-08-31T17:33:10.000Z
+401634305102996301,401634305,40163430511,4,2,0:36,Kent State,Pittsburgh,14,28,39,3,13,7,Pass Interception Return,Devin Kargman pass intercepted Donovan McMillon return for 7 yds to the PITT 10,-1.6724887067465737,2024-08-31T17:35:15.000Z
+401634305102995301,401634305,40163430511,2,2,0:46,Kent State,Pittsburgh,14,28,39,3,13,0,Timeout,"Timeout Pittsburgh, clock 00:46",,2024-08-31T17:33:10.000Z
+401634305102996306,401634305,40163430512,4,2,0:36,Pittsburgh,Kent State,28,14,78,3,10,9,Pass Reception,Eli Holstein pass complete to Censere Lee for 9 yds to the PITT 31,0.27922475699869853,2024-08-31T17:35:15.000Z
+401634305102999701,401634305,40163430512,7,2,0:02,Pittsburgh,Kent State,28,14,74,4,6,0,Punt,"Caleb Junko punt for 47 yds, fair catch by Luke Floriea at the KENT 27",,2024-08-31T17:39:48.000Z
+401634305102998903,401634305,40163430512,6,2,0:10,Pittsburgh,Kent State,28,14,74,4,6,0,Timeout,"Timeout Pittsburgh, clock 00:10",,2024-08-31T17:38:00.000Z
+401634305102998902,401634305,40163430512,5,2,0:10,Pittsburgh,Kent State,28,14,69,4,1,-5,Penalty,"Pittsburgh Penalty, False Start (-5 Yards) to the PITT 26",,2024-08-31T17:38:00.000Z
+401634305102996303,401634305,40163430512,1,2,0:36,Pittsburgh,Kent State,28,14,90,1,10,12,Pass Reception,Eli Holstein pass complete to Censere Lee for 12 yds to the PITT 22 for a 1ST down,0.5218594507960823,2024-08-31T17:35:15.000Z
+401634305102996304,401634305,40163430512,2,2,0:36,Pittsburgh,Kent State,28,14,78,1,10,0,Pass Incompletion,Eli Holstein pass incomplete,-0.6135902757979226,2024-08-31T17:35:15.000Z
+401634305102996305,401634305,40163430512,3,2,0:36,Pittsburgh,Kent State,28,14,78,2,10,0,Pass Incompletion,Eli Holstein pass incomplete,-0.29227926870296894,2024-08-31T17:35:15.000Z
+401634305102999902,401634305,40163430513,2,2,0:00,Kent State,Pittsburgh,14,28,75,0,10,0,End of Half,End of 2nd Quarter,,2024-08-31T17:40:33.000Z
+401634305102999703,401634305,40163430513,1,2,0:02,Kent State,Pittsburgh,14,28,73,1,10,-2,Rush,run for a loss of 2 yards to the KENT 25,-0.9689027853396697,2024-08-31T17:39:48.000Z
+401634305103849904,401634305,40163430514,2,3,15:00,Kent State,Pittsburgh,14,28,75,1,10,0,Pass Incompletion,Devin Kargman pass incomplete,-0.7029700220436519,2024-08-31T18:01:18.000Z
+401634305103849906,401634305,40163430514,3,3,15:00,Kent State,Pittsburgh,14,28,75,2,10,0,Pass Incompletion,Devin Kargman pass incomplete,-0.34710487712173865,2024-08-31T18:01:18.000Z
+401634305103849902,401634305,40163430514,1,3,15:00,Pittsburgh,Kent State,28,14,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-08-31T18:01:18.000Z
+401634305103859601,401634305,40163430514,4,3,14:03,Kent State,Pittsburgh,14,28,66,4,1,0,Timeout,"Timeout Pittsburgh, clock 14:03",,2024-08-31T18:03:52.000Z
+401634305103859608,401634305,40163430514,11,3,14:03,Kent State,Pittsburgh,14,28,41,1,10,3,Rush,Curtis Douglas run for 3 yds to the PITT 38,-0.2817600859254661,2024-08-31T18:06:08.000Z
+401634305103859605,401634305,40163430514,8,3,14:03,Kent State,Pittsburgh,14,28,55,2,1,0,Rush,Ky Thomas run for no gain to the KENT 45,-1.435971808205819,2024-08-31T18:06:08.000Z
+401634305103859604,401634305,40163430514,7,3,14:03,Kent State,Pittsburgh,14,28,64,1,10,9,Rush,Ky Thomas run for 9 yds to the KENT 45,1.3816838899351875,2024-08-31T18:06:08.000Z
+401634305103859603,401634305,40163430514,6,3,14:03,Kent State,Pittsburgh,14,28,66,4,1,2,Rush,Tommy Ulatowski run for 2 yds to the KENT 36 for a 1ST down,1.6542428300593404,2024-08-31T18:03:52.000Z
+401634305103859602,401634305,40163430514,5,3,14:03,Kent State,Pittsburgh,14,28,75,3,10,9,Pass Reception,Devin Kargman pass complete to Chrishon McCray for 9 yds to the KENT 34,0.3263945810520408,2024-08-31T18:03:52.000Z
+401634305103859606,401634305,40163430514,9,3,14:03,Kent State,Pittsburgh,14,28,55,3,1,3,Rush,Devin Kargman run for 3 yds to the KENT 48 for a 1ST down,1.1934262373355313,2024-08-31T18:06:08.000Z
+401634305103859607,401634305,40163430514,10,3,14:03,Kent State,Pittsburgh,14,28,52,1,10,11,Pass Reception,Devin Kargman pass complete to Luke Floriea for 11 yds to the PITT 41 for a 1ST down,0.7675346628139116,2024-08-31T18:06:08.000Z
+401634305103859609,401634305,40163430514,12,3,14:03,Kent State,Pittsburgh,14,28,38,2,7,9,Pass Reception,Devin Kargman pass complete to Chrishon McCray for 9 yds to the PITT 29 for a 1ST down,0.7339785272238735,2024-08-31T18:06:08.000Z
+401634305103906301,401634305,40163430514,13,3,9:36,Kent State,Pittsburgh,21,28,29,1,10,29,Passing Touchdown,Devin Kargman pass complete to Chrishon McCray for 29 yds for a TD (Andrew Glass KICK),2.788301184598112,2024-08-31T18:09:16.000Z
+401634305103906801,401634305,40163430515,1,3,9:31,Kent State,Pittsburgh,21,28,65,0,0,29,Kickoff Return (Offense),"Andrew Glass kickoff for 63 yds , Kenny Johnson return for 29 yds to the PITT 31",,2024-08-31T18:14:03.000Z
+401634305103906803,401634305,40163430515,2,3,9:31,Pittsburgh,Kent State,28,21,69,1,10,14,Pass Reception,Eli Holstein pass complete to Konata Mumpfield for 14 yds to the PITT 45 for a 1ST down,1.3306777677986847,2024-08-31T18:14:03.000Z
+401634305103906804,401634305,40163430515,3,3,9:31,Pittsburgh,Kent State,28,21,55,1,10,9,Pass Reception,Eli Holstein pass complete to Jake Overman for 9 yds to the KENT 46,1.2321065178353567,2024-08-31T18:17:57.000Z
+401634305103916001,401634305,40163430515,4,3,8:39,Pittsburgh,Kent State,35,21,46,2,1,46,Rushing Touchdown,Desmond Reid run for 46 yds for a TD (Ben Sauls KICK),3.0445067194810083,2024-08-31T18:18:25.000Z
+401634305103916003,401634305,40163430516,1,3,8:39,Pittsburgh,Kent State,35,21,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-08-31T18:18:25.000Z
+401634305103916005,401634305,40163430516,2,3,8:39,Kent State,Pittsburgh,21,35,75,1,10,0,Pass Incompletion,Devin Kargman pass incomplete,-0.7029700220436519,2024-08-31T18:18:25.000Z
+401634305103916006,401634305,40163430516,3,3,8:39,Kent State,Pittsburgh,21,35,75,2,10,41,Pass Reception,Devin Kargman pass complete to Luke Floriea for 41 yds to the PITT 34 for a 1ST down,3.8439989808513033,2024-08-31T18:18:25.000Z
+401634305103916007,401634305,40163430516,4,3,8:39,Kent State,Pittsburgh,21,35,34,1,10,6,Rush,Ky Thomas run for 6 yds to the PITT 28,0.228690499805612,2024-08-31T18:18:25.000Z
+401634305103916008,401634305,40163430516,5,3,8:39,Kent State,Pittsburgh,21,35,28,2,4,9,Rush,Ky Thomas run for 9 yds to the PITT 19 for a 1ST down,0.103588032470535,2024-08-31T18:18:25.000Z
+401634305103916009,401634305,40163430516,6,3,8:39,Kent State,Pittsburgh,21,35,19,1,10,1,Pass Reception,Devin Kargman pass complete to Ky Thomas for 1 yd to the PITT 18,-0.280938211620716,2024-08-31T18:18:25.000Z
+401634305103944101,401634305,40163430516,7,3,5:58,Kent State,Pittsburgh,21,35,18,2,9,0,Pass Incompletion,Devin Kargman pass incomplete,-0.415945299207808,2024-08-31T18:26:19.000Z
+401634305103944102,401634305,40163430516,8,3,5:58,Kent State,Pittsburgh,21,35,18,3,9,0,Pass Incompletion,Devin Kargman pass incomplete,-0.639420536387652,2024-08-31T18:26:19.000Z
+401634305103945101,401634305,40163430516,9,3,5:48,Kent State,Pittsburgh,24,35,18,4,9,36,Field Goal Good,Andrew Glass 36 yd FG GOOD,,2024-08-31T18:28:54.000Z
+401634305103945103,401634305,40163430517,2,3,5:48,Kent State,Pittsburgh,24,35,65,0,0,0,Kickoff,Andrew Glass kickoff for 65 yds,,2024-08-31T18:28:54.000Z
+401634305103945102,401634305,40163430517,1,3,5:48,Pittsburgh,Kent State,35,24,75,1,10,15,Penalty,"Kent State Penalty, Unnecessary Roughness (Josh Baka) to the PITT 40 for a 1ST down",,2024-08-31T18:28:54.000Z
+401634305103945105,401634305,40163430517,3,3,5:48,Pittsburgh,Kent State,35,24,60,1,10,3,Rush,Desmond Reid run for 3 yds to the PITT 43,-0.4315308590496248,2024-08-31T18:28:54.000Z
+401634305103945106,401634305,40163430517,4,3,5:48,Pittsburgh,Kent State,35,24,57,2,7,21,Pass Reception,Eli Holstein pass complete to Gavin Bartholomew for 21 yds to the KENT 36 for a 1ST down,2.177653368179504,2024-08-31T18:28:54.000Z
+401634305103945107,401634305,40163430517,5,3,5:48,Pittsburgh,Kent State,35,24,36,1,10,14,Pass Reception,Eli Holstein pass complete to Gavin Bartholomew for 14 yds to the KENT 22 for a 1ST down,0.363155328365336,2024-08-31T18:28:54.000Z
+401634305103945108,401634305,40163430517,6,3,5:48,Pittsburgh,Kent State,35,24,22,1,10,0,Pass Incompletion,Eli Holstein pass incomplete,-0.402662020534962,2024-08-31T18:28:54.000Z
+401634305103945109,401634305,40163430517,7,3,5:48,Pittsburgh,Kent State,35,24,22,2,10,0,Pass Incompletion,Eli Holstein pass incomplete,-0.5229247355568223,2024-08-31T18:28:54.000Z
+401634305103945110,401634305,40163430517,8,3,5:48,Pittsburgh,Kent State,35,24,22,3,10,12,Pass Reception,Eli Holstein pass complete to Konata Mumpfield for 12 yds to the KENT 10 for a 1ST down,1.0593826804908022,2024-08-31T18:28:54.000Z
+401634305103966501,401634305,40163430517,9,3,3:34,Pittsburgh,Kent State,42,24,10,1,10,10,Passing Touchdown,Eli Holstein pass complete to Kenny Johnson for 10 yds for a TD (Ben Sauls KICK),2.513826842249442,2024-08-31T18:36:08.000Z
+401634305103966503,401634305,40163430518,1,3,3:34,Pittsburgh,Kent State,42,24,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-08-31T18:36:08.000Z
+401634305103999902,401634305,40163430518,8,3,0:00,Kent State,Pittsburgh,24,42,51,0,10,1,End Period,End of 3rd Quarter,,2024-08-31T18:42:46.000Z
+401634305103966505,401634305,40163430518,2,3,3:34,Kent State,Pittsburgh,24,42,75,1,10,7,Rush,Ky Thomas run for 7 yds to the KENT 32,0.604642460086338,2024-08-31T18:38:25.000Z
+401634305103966506,401634305,40163430518,3,3,3:34,Kent State,Pittsburgh,24,42,68,2,3,5,Pass Reception,Devin Kargman pass complete to Luke Floriea for 5 yds to the KENT 37 for a 1ST down,0.4226018660572333,2024-08-31T18:38:25.000Z
+401634305103966507,401634305,40163430518,4,3,3:34,Kent State,Pittsburgh,24,42,63,1,10,7,Rush,Curtis Douglas run for 7 yds to the KENT 44,0.7113806413121412,2024-08-31T18:38:25.000Z
+401634305103966508,401634305,40163430518,5,3,3:34,Kent State,Pittsburgh,24,42,56,2,3,0,Rush,Curtis Douglas run for no gain to the KENT 44,-1.2841938956333578,2024-08-31T18:38:25.000Z
+401634305103966509,401634305,40163430518,6,3,3:34,Kent State,Pittsburgh,24,42,56,3,3,5,Pass Reception,Devin Kargman pass complete to Luke Floriea for 5 yds to the KENT 49 for a 1ST down,1.6999568440060278,2024-08-31T18:38:25.000Z
+401634305103999901,401634305,40163430518,7,3,0:00,Kent State,Pittsburgh,24,42,51,1,10,1,Rush,Ky Thomas run for 1 yd to the 50 yard line,-0.889254676573113,2024-08-31T18:42:46.000Z
+401634305104849902,401634305,40163430518,9,4,15:00,Kent State,Pittsburgh,24,42,50,2,9,-1,Rush,Ky Thomas run for a loss of 1 yard to the KENT 49,-1.2466861413986694,2024-08-31T18:46:53.000Z
+401634305104849905,401634305,40163430518,10,4,15:00,Kent State,Pittsburgh,24,42,51,3,10,7,Pass Reception,Devin Kargman pass complete to Ky Thomas for 7 yds to the PITT 44,0.4528198666186843,2024-08-31T18:46:53.000Z
+401634305104866601,401634305,40163430518,11,4,13:33,Kent State,Pittsburgh,24,42,44,4,3,0,Rush,Ky Thomas run for no gain to the PITT 44,-1.393511844753963,2024-08-31T18:48:30.000Z
+401634305104866604,401634305,40163430518,12,4,13:33,Pittsburgh,Kent State,42,24,56,1,10,15,Penalty,"HOLSTEIN, Eli pass up the middle incomplete intended for LEE, Censere thrown to the PIT50. PENALTY KSU Roughing the Passer on OLDS, Kameron enforced 15 yards from the PIT44 to the KSU41 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-31T18:48:30.000Z
+401634305104884701,401634305,40163430519,5,4,11:52,Pittsburgh,Kent State,45,24,32,4,11,50,Field Goal Good,Ben Sauls 50 yd FG GOOD,,2024-08-31T18:52:06.000Z
+401634305104866606,401634305,40163430519,1,4,13:33,Pittsburgh,Kent State,42,24,41,1,10,10,Pass Reception,Eli Holstein pass complete to Gavin Bartholomew for 10 yds to the KENT 31 for a 1ST down,0.3985734558235714,2024-08-31T18:50:13.000Z
+401634305104866607,401634305,40163430519,2,4,13:33,Pittsburgh,Kent State,42,24,31,1,10,3,Rush,Derrick Davis Jr. run for 3 yds to the KENT 28,-0.1807619553029143,2024-08-31T18:50:13.000Z
+401634305104866608,401634305,40163430519,3,4,13:33,Pittsburgh,Kent State,42,24,28,2,7,-4,Sack,Eli Holstein sacked by Stephen Daley for a loss of 4 yards to the KENT 32,-1.3971942164087192,2024-08-31T18:50:13.000Z
+401634305104866609,401634305,40163430519,4,4,13:33,Pittsburgh,Kent State,42,24,32,3,11,0,Pass Incompletion,Eli Holstein pass incomplete,-1.0144245799080593,2024-08-31T18:50:13.000Z
+401634305104884702,401634305,40163430520,1,4,11:52,Pittsburgh,Kent State,45,24,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-08-31T18:52:06.000Z
+401634305104884706,401634305,40163430520,3,4,11:52,Kent State,Pittsburgh,24,45,75,2,10,-6,Penalty,"Kent State Penalty, Intentional Grounding (Devin Kargman) to the KENT 19",,2024-08-31T18:57:17.000Z
+401634305104884708,401634305,40163430520,5,4,11:52,Kent State,Pittsburgh,24,45,82,4,17,-5,Penalty,"Kent State Penalty, Illegal Substitution (TEAM) to the KENT 8",,2024-08-31T18:57:17.000Z
+401634305104884704,401634305,40163430520,2,4,11:52,Kent State,Pittsburgh,24,45,75,1,10,0,Pass Incompletion,Devin Kargman pass incomplete,-0.7029700220436519,2024-08-31T18:52:06.000Z
+401634305104884707,401634305,40163430520,4,4,11:52,Kent State,Pittsburgh,24,45,82,3,17,0,Pass Incompletion,Devin Kargman pass incomplete,-0.0460942134255955,2024-08-31T18:57:17.000Z
+401634305104886801,401634305,40163430520,6,4,11:31,Kent State,Pittsburgh,24,45,87,4,22,0,Punt,"Josh Smith punt for 42 yds, fair catch by Desmond Reid at the PITT 45",,2024-08-31T19:00:02.000Z
+401634305104906701,401634305,40163430521,5,4,9:32,Pittsburgh,Kent State,52,24,6,1,6,6,Passing Touchdown,Nate Yarnell pass complete to Raphael Williams Jr. for 6 yds for a TD (Ben Sauls KICK),2.052489771065277,2024-08-31T19:05:01.000Z
+401634305104886803,401634305,40163430521,1,4,11:31,Pittsburgh,Kent State,45,24,55,1,10,16,Pass Reception,Nate Yarnell pass complete to Censere Lee for 16 yds to the KENT 39 for a 1ST down,1.136174682384814,2024-08-31T19:00:24.000Z
+401634305104886804,401634305,40163430521,2,4,11:31,Pittsburgh,Kent State,45,24,39,1,10,3,Rush,Desmond Reid run for 3 yds to the KENT 36,-0.2585563392598456,2024-08-31T19:00:24.000Z
+401634305104886805,401634305,40163430521,3,4,11:31,Pittsburgh,Kent State,45,24,36,2,7,-2,Sack,Nate Yarnell sacked by Mattheus Carroll for a loss of 2 yards to the KENT 38,-1.3420415935032288,2024-08-31T19:00:24.000Z
+401634305104886806,401634305,40163430521,4,4,11:31,Pittsburgh,Kent State,45,24,38,3,9,32,Rush,Desmond Reid run for 32 yds to the KENT 6 for a 1ST down,2.6885467166293484,2024-08-31T19:00:24.000Z
+401634305104906707,401634305,40163430522,4,4,9:32,Kent State,Pittsburgh,24,52,81,3,16,-4,Sack,Devin Kargman sacked by Isaiah Neal and Chief Borders for a loss of 4 yards to the KENT 15,-0.0765866635575172,2024-08-31T19:08:15.000Z
+401634305104906711,401634305,40163430522,7,4,9:32,Kent State,Pittsburgh,24,52,70,1,10,11,Rush,Curtis Douglas run for 11 yds to the KENT 41 for a 1ST down,1.0337741691059161,2024-08-31T19:08:15.000Z
+401634305104906703,401634305,40163430522,1,4,9:32,Pittsburgh,Kent State,52,24,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-08-31T19:08:15.000Z
+401634305104956702,401634305,40163430522,12,4,4:32,Kent State,Pittsburgh,24,52,39,2,3,1,Rush,Curtis Douglas run for 1 yd to the PITT 38,-0.7816551120506521,2024-08-31T19:17:33.000Z
+401634305104957401,401634305,40163430522,13,4,4:25,Kent State,Pittsburgh,24,52,38,3,2,-9,Sack,"Devin Kargman sacked for a loss of 9 yards to the PITT 47 Devin Kargman fumbled, recovered by PITT Brandon George , return for 0 yards",-2.797462832713151,2024-08-31T19:22:47.000Z
+401634305104956701,401634305,40163430522,11,4,4:32,Kent State,Pittsburgh,24,52,38,3,2,0,Timeout,"Timeout Pittsburgh, clock 04:32",,2024-08-31T19:17:33.000Z
+401634305104906705,401634305,40163430522,2,4,9:32,Kent State,Pittsburgh,24,52,75,1,10,-6,Sack,Devin Kargman sacked by Kyle Louis for a loss of 6 yards to the KENT 19,-1.1098077151473014,2024-08-31T19:08:15.000Z
+401634305104906708,401634305,40163430522,5,4,9:32,Kent State,Pittsburgh,24,52,85,4,20,15,Penalty,"Pittsburgh Penalty, Leaping on THOMPSON, Keye enforced (Keye Thompson) to the KENT 30 for a 1ST down",,2024-08-31T19:08:15.000Z
+401634305104906710,401634305,40163430522,6,4,9:32,Kent State,Pittsburgh,24,52,70,1,10,64,Penalty,"KARGMAN, Devin pass deep to the right complete for 64 yards to MARTIN, DaShawn caught at the PIT50 and advanced to the PIT50 (LYNUM, Tamon), 1ST DOWN. PENALTY KSU Face mask on RAWLISON, Jaire PIT Horse Collar Tackle on LYNUM, Tamon , Offsetting penalties [SG]. NO PLAY (replay the down).",,2024-08-31T19:08:15.000Z
+401634305104906706,401634305,40163430522,3,4,9:32,Kent State,Pittsburgh,24,52,81,2,16,0,Pass Incompletion,Devin Kargman pass incomplete,-0.1252856325382581,2024-08-31T19:08:15.000Z
+401634305104906712,401634305,40163430522,8,4,9:32,Kent State,Pittsburgh,24,52,59,1,10,0,Rush,Curtis Douglas run for no gain to the KENT 41,-1.1387859939569847,2024-08-31T19:08:15.000Z
+401634305104906713,401634305,40163430522,9,4,9:32,Kent State,Pittsburgh,24,52,59,2,10,13,Pass Reception,Devin Kargman pass complete to Ali Fisher for 13 yds to the PITT 46 for a 1ST down,2.2545109356209476,2024-08-31T19:08:15.000Z
+401634305104906714,401634305,40163430522,10,4,9:32,Kent State,Pittsburgh,24,52,46,1,10,7,Rush,Curtis Douglas run for 7 yds to the PITT 39,0.529748291879379,2024-08-31T19:08:15.000Z
+401634305104967004,401634305,40163430523,6,4,3:29,Pittsburgh,Kent State,52,24,39,1,10,5,Pass Reception,Nate Yarnell pass complete to Lamar Seymore for 5 yds to the KENT 34,0.086001265551813,2024-08-31T19:25:08.000Z
+401634305104967005,401634305,40163430523,7,4,3:29,Pittsburgh,Kent State,52,24,34,2,5,0,Pass Incompletion,Nate Yarnell pass incomplete,-0.834862003904032,2024-08-31T19:25:08.000Z
+401634305104967006,401634305,40163430523,8,4,3:29,Pittsburgh,Kent State,52,24,34,3,5,8,Rush,Nate Yarnell run for 8 yds to the KENT 26 for a 1ST down,1.1692971708755895,2024-08-31T19:25:08.000Z
+401634305104967007,401634305,40163430523,9,4,3:29,Pittsburgh,Kent State,52,24,26,1,10,5,Rush,Nate Yarnell run for 5 yds to the KENT 21,0.0757087852917575,2024-08-31T19:25:08.000Z
+401634305104967008,401634305,40163430523,10,4,3:29,Pittsburgh,Kent State,52,24,21,2,5,0,Pass Incompletion,Nate Yarnell pass incomplete,-0.498915817517064,2024-08-31T19:25:08.000Z
+401634305104967009,401634305,40163430523,11,4,3:29,Pittsburgh,Kent State,52,24,21,3,5,0,Pass Incompletion,Nate Yarnell pass incomplete,-0.641281466979601,2024-08-31T19:25:08.000Z
+401634305104957403,401634305,40163430523,1,4,4:25,Pittsburgh,Kent State,52,24,53,1,10,4,Rush,Nate Yarnell run for 4 yds to the KENT 49,-0.1543469215353017,2024-08-31T19:22:47.000Z
+401634305104957404,401634305,40163430523,2,4,4:25,Pittsburgh,Kent State,52,24,49,2,6,4,Rush,Daniel Carter run for 4 yds to the KENT 45,-0.1599080992362156,2024-08-31T19:22:47.000Z
+401634305104967002,401634305,40163430523,4,4,3:29,Pittsburgh,Kent State,52,24,45,3,2,0,Pass Incompletion,Nate Yarnell pass incomplete,-1.1588553753149922,2024-08-31T19:25:08.000Z
+401634305104967001,401634305,40163430523,3,4,3:29,Pittsburgh,Kent State,52,24,45,4,2,0,Timeout,"Timeout Pittsburgh, clock 03:29",,2024-08-31T19:25:08.000Z
+401634305104967003,401634305,40163430523,5,4,3:29,Pittsburgh,Kent State,52,24,45,4,2,6,Pass Reception,Nate Yarnell pass complete to Jake Overman for 6 yds to the KENT 39 for a 1ST down,2.4279712747282662,2024-08-31T19:25:08.000Z
+401634305104985201,401634305,40163430523,12,4,1:47,Pittsburgh,Kent State,55,24,21,4,5,39,Field Goal Good,Ben Sauls 39 yd FG GOOD,,2024-08-31T19:31:21.000Z
+401634305104985202,401634305,40163430524,1,4,1:47,Pittsburgh,Kent State,55,24,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-08-31T19:31:21.000Z
+401634305104999902,401634305,40163430524,5,4,0:00,Kent State,Pittsburgh,24,55,80,0,15,0,End of Game,End of 4th Quarter,,2024-08-31T19:34:09.000Z
+401634305104985204,401634305,40163430524,2,4,1:47,Kent State,Pittsburgh,24,55,75,1,10,-3,Rush,Marques Hicks run for a loss of 3 yards to the KENT 22,-0.9562833890771465,2024-08-31T19:31:21.000Z
+401634305104985205,401634305,40163430524,3,4,1:47,Kent State,Pittsburgh,24,55,78,2,13,-2,Rush,Marques Hicks run for a loss of 2 yards to the KENT 20,-0.2598290854195646,2024-08-31T19:33:31.000Z
+401634305104985206,401634305,40163430524,4,4,1:47,Kent State,Pittsburgh,24,55,80,3,15,0,Rush,Marques Hicks run for no gain to the KENT 20,-0.06579665004736057,2024-08-31T19:33:31.000Z

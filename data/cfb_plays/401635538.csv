@@ -1,0 +1,185 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401635538101868601,401635538,4016355381,5,1,13:13,Cincinnati,Pittsburgh,0,0,61,2,8,15,Pass Reception,Brendan Sorsby pass complete to Sterling Berkhalter for 15 yds to the PITT 46 for a 1ST down,2.1628881455094113,2024-09-07T16:00:38.000Z
+401635538101876201,401635538,4016355381,6,1,12:37,Cincinnati,Pittsburgh,0,0,46,1,10,3,Rush,Evan Pryor run for 3 yds to the PITT 43,-0.3418939310329067,2024-09-07T16:00:38.000Z
+401635538101884601,401635538,4016355381,7,1,11:53,Cincinnati,Pittsburgh,0,0,43,2,7,0,Pass Incompletion,Brendan Sorsby pass incomplete,-1.0810154131899805,2024-09-07T16:00:38.000Z
+401635538101885201,401635538,4016355381,8,1,11:47,Cincinnati,Pittsburgh,0,0,43,3,7,-7,Sack,Brendan Sorsby sacked by Sincere Edwards for a loss of 7 yards to the 50 yard line,-1.9302472193876223,2024-09-07T16:07:00.000Z
+401635538101889301,401635538,4016355381,9,1,11:06,Cincinnati,Pittsburgh,0,0,50,4,14,0,Punt,Mason Fletcher punt for 50 yds for a touchback,,2024-09-07T16:00:38.000Z
+401635538101849911,401635538,4016355381,2,1,15:00,Cincinnati,Pittsburgh,0,0,75,1,10,1,Pass Reception,Brendan Sorsby pass complete to Joe Royer for 1 yd to the CIN 26,-0.5874795431016855,2024-09-07T16:00:38.000Z
+401635538101857601,401635538,4016355381,3,1,14:23,Cincinnati,Pittsburgh,0,0,74,2,9,11,Rush,Corey Kiner run for 11 yds to the CIN 37 for a 1ST down,1.6147238692452568,2024-09-07T16:00:38.000Z
+401635538101865201,401635538,4016355381,4,1,13:47,Cincinnati,Pittsburgh,0,0,63,1,10,2,Rush,Corey Kiner run for 2 yds to the CIN 39,-0.6556647600661254,2024-09-07T16:00:38.000Z
+401635538101849908,401635538,4016355381,1,1,15:00,Pittsburgh,Cincinnati,0,0,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-09-07T16:00:38.000Z
+401635538101898701,401635538,4016355382,4,1,10:12,Pittsburgh,Cincinnati,0,0,44,2,10,0,Pass Incompletion,Eli Holstein pass incomplete,-1.0658475431296655,2024-09-07T16:00:38.000Z
+401635538101899101,401635538,4016355382,5,1,10:08,Pittsburgh,Cincinnati,0,0,44,3,10,15,Pass Reception,Eli Holstein pass complete to Konata Mumpfield for 15 yds to the CIN 29 for a 1ST down,2.6594558134492003,2024-09-07T16:00:38.000Z
+401635538101905501,401635538,4016355382,6,1,9:44,Pittsburgh,Cincinnati,0,0,29,1,10,3,Rush,Desmond Reid run for 3 yds to the CIN 26,-0.165753158468877,2024-09-07T16:00:38.000Z
+401635538101908501,401635538,4016355382,7,1,9:14,Pittsburgh,Cincinnati,0,0,26,2,7,0,Pass Interception Return,"Eli Holstein pass intercepted, touchback. Josh Minkins return for no gain",-4.045945656933011,2024-09-07T16:00:38.000Z
+401635538101896301,401635538,4016355382,2,1,10:36,Pittsburgh,Cincinnati,0,0,67,1,10,23,Rush,Desmond Reid run for 23 yds to the CIN 44 for a 1ST down,2.0161743116311275,2024-09-07T16:00:38.000Z
+401635538101894201,401635538,4016355382,1,1,10:57,Pittsburgh,Cincinnati,0,0,80,1,10,13,Pass Reception,Eli Holstein pass complete to Gavin Bartholomew for 13 yds to the PITT 33 for a 1ST down,0.957001126463954,2024-09-07T16:00:38.000Z
+401635538101898301,401635538,4016355382,3,1,10:16,Pittsburgh,Cincinnati,0,0,44,1,10,0,Pass Incompletion,Eli Holstein pass incomplete,-0.9690270974076257,2024-09-07T16:00:38.000Z
+401635538101909202,401635538,4016355383,1,1,9:07,Cincinnati,Pittsburgh,0,0,80,1,10,28,Rush,Corey Kiner run for 28 yds to the CIN 48 for a 1ST down,2.3780035068946717,2024-09-07T16:12:13.000Z
+401635538101916201,401635538,4016355383,2,1,8:37,Cincinnati,Pittsburgh,0,0,52,1,10,0,Rush,Corey Kiner run for no gain to the CIN 48,-1.1430602484821704,2024-09-07T16:00:38.000Z
+401635538101919801,401635538,4016355383,3,1,8:01,Cincinnati,Pittsburgh,0,0,52,2,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.9850636246407553,2024-09-07T16:00:38.000Z
+401635538101925201,401635538,4016355383,4,1,7:47,Cincinnati,Pittsburgh,7,0,52,3,10,52,Passing Touchdown,Brendan Sorsby pass complete to Jamoi Mayes for 52 yds for a TD (Carter Brown KICK),6.136178161833357,2024-09-07T16:17:42.000Z
+401635538101939701,401635538,4016355384,6,1,6:02,Pittsburgh,Cincinnati,0,7,41,2,6,5,Rush,Eli Holstein run for 5 yds to the CIN 36,0.0966963838501388,2024-09-07T16:00:38.000Z
+401635538101946201,401635538,4016355384,7,1,5:37,Pittsburgh,Cincinnati,0,7,36,3,1,4,Rush,Desmond Reid run for 4 yds to the CIN 32 for a 1ST down,0.6245009937336496,2024-09-07T16:00:38.000Z
+401635538101954501,401635538,4016355384,8,1,4:54,Pittsburgh,Cincinnati,0,7,32,1,10,0,Pass Incompletion,Eli Holstein pass incomplete,-0.6082596672078662,2024-09-07T16:00:38.000Z
+401635538101955101,401635538,4016355384,9,1,4:48,Pittsburgh,Cincinnati,0,7,32,2,10,3,Rush,Eli Holstein run for 3 yds to the CIN 29,-0.2673817153639586,2024-09-07T16:26:51.000Z
+401635538101925702,401635538,4016355384,2,1,7:42,Pittsburgh,Cincinnati,0,7,77,1,10,14,Rush,Desmond Reid run for 14 yds to the PITT 37 for a 1ST down,1.1598463006116466,2024-09-07T16:23:56.000Z
+401635538101927901,401635538,4016355384,3,1,7:20,Pittsburgh,Cincinnati,0,7,63,1,10,6,Rush,Desmond Reid run for 6 yds to the PITT 43,0.4024109850387187,2024-09-07T16:00:38.000Z
+401635538101929901,401635538,4016355384,4,1,7:00,Pittsburgh,Cincinnati,0,7,57,2,4,12,Pass Reception,Eli Holstein pass complete to Raphael Williams Jr. for 12 yds to the CIN 45 for a 1ST down,1.1715857234719635,2024-09-07T16:00:38.000Z
+401635538101936601,401635538,4016355384,5,1,6:33,Pittsburgh,Cincinnati,0,7,45,1,10,4,Rush,Desmond Reid run for 4 yds to the CIN 41,-0.1162027181056828,2024-09-07T16:00:38.000Z
+401635538101925203,401635538,4016355384,1,1,7:47,Cincinnati,Pittsburgh,7,0,65,0,0,21,Kickoff Return (Offense),"Nathan Hawks kickoff for 63 yds , Kenny Johnson return for 21 yds to the PITT 23",,2024-09-07T16:22:44.000Z
+401635538101955601,401635538,4016355384,10,1,4:43,Pittsburgh,Cincinnati,0,7,29,3,7,0,Timeout,"Timeout Pittsburgh, clock 04:43",,2024-09-07T16:27:33.000Z
+401635538101964701,401635538,4016355384,12,1,3:52,Pittsburgh,Cincinnati,3,7,29,4,7,47,Field Goal Good,Ben Sauls 47 yd FG GOOD,,2024-09-07T16:32:57.000Z
+401635538101959701,401635538,4016355384,11,1,4:02,Pittsburgh,Cincinnati,0,7,29,3,7,0,Pass Incompletion,Eli Holstein pass incomplete,-0.9232432234551168,2024-09-07T16:31:06.000Z
+401635538101974901,401635538,4016355385,5,1,2:50,Cincinnati,Pittsburgh,7,3,38,1,10,32,Pass Reception,Brendan Sorsby pass complete to Joe Royer for 32 yds to the PITT 6 for a 1ST down,1.042102877519911,2024-09-07T16:00:38.000Z
+401635538101979301,401635538,4016355385,6,1,2:06,Cincinnati,Pittsburgh,7,3,6,1,6,1,Rush,Brendan Sorsby run for 1 yd to the PITT 5,-0.386087920464643,2024-09-07T16:00:38.000Z
+401635538101988801,401635538,4016355385,7,1,1:11,Cincinnati,Pittsburgh,14,3,5,2,5,5,Passing Touchdown,Brendan Sorsby pass complete to Tony Johnson for 5 yds for a TD (Carter Brown KICK),2.43857769152992,2024-09-07T16:38:49.000Z
+401635538101964702,401635538,4016355385,1,1,3:52,Pittsburgh,Cincinnati,3,7,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-09-07T16:32:57.000Z
+401635538101968501,401635538,4016355385,4,1,3:14,Cincinnati,Pittsburgh,7,3,72,3,7,34,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 34 yds to the PITT 38 for a 1ST down,3.8383616132921725,2024-09-07T16:35:37.000Z
+401635538101968201,401635538,4016355385,3,1,3:17,Cincinnati,Pittsburgh,7,3,72,2,7,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.5594317282120231,2024-09-07T16:00:38.000Z
+401635538101964801,401635538,4016355385,2,1,3:51,Cincinnati,Pittsburgh,7,3,75,1,10,3,Rush,Corey Kiner run for 3 yds to the CIN 28,-0.2957674139440157,2024-09-07T16:00:38.000Z
+401635538101989302,401635538,4016355386,2,1,1:06,Pittsburgh,Cincinnati,3,14,86,1,10,4,Pass Reception,Eli Holstein pass complete to Desmond Reid for 4 yds to the PITT 18,-0.0618919815702137,2024-09-07T16:41:12.000Z
+401635538101995501,401635538,4016355386,3,1,0:44,Pittsburgh,Cincinnati,3,14,82,2,6,0,Pass Incompletion,Eli Holstein pass incomplete,-0.38752284685742744,2024-09-07T16:00:38.000Z
+401635538101996101,401635538,4016355386,4,1,0:38,Pittsburgh,Cincinnati,3,14,82,3,6,0,Pass Incompletion,Eli Holstein pass incomplete,-0.17122726283270137,2024-09-07T16:00:38.000Z
+401635538101996601,401635538,4016355386,5,1,0:33,Pittsburgh,Cincinnati,3,14,82,4,6,0,Punt,Caleb Junko punt for 44 yds,,2024-09-07T16:43:04.000Z
+401635538101988803,401635538,4016355386,1,1,1:11,Cincinnati,Pittsburgh,14,3,65,0,0,23,Kickoff Return (Offense),"Nathan Hawks kickoff for 62 yds , Kenny Johnson return for 23 yds to the PITT 14",,2024-09-07T16:41:04.000Z
+401635538101997501,401635538,4016355387,1,1,0:24,Cincinnati,Pittsburgh,14,3,62,1,10,4,Rush,Evan Pryor run for 4 yds to the CIN 42,-0.1660250563858484,2024-09-07T16:46:32.000Z
+401635538102849902,401635538,4016355387,3,2,15:00,Cincinnati,Pittsburgh,14,3,58,2,6,2,Rush,Evan Pryor run for 2 yds to the CIN 44,-0.647342172414742,2024-09-07T16:49:24.000Z
+401635538102857801,401635538,4016355387,4,2,14:21,Cincinnati,Pittsburgh,14,3,56,3,4,15,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 15 yds to the PITT 41 for a 1ST down,2.5258512435835616,2024-09-07T16:49:24.000Z
+401635538102865201,401635538,4016355387,5,2,13:47,Cincinnati,Pittsburgh,14,3,41,1,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.8772679222659558,2024-09-07T16:49:24.000Z
+401635538102865701,401635538,4016355387,6,2,13:42,Cincinnati,Pittsburgh,14,3,41,2,10,2,Rush,Corey Kiner run for 2 yds to the PITT 39,-0.5919546022022004,2024-09-07T16:50:26.000Z
+401635538102869801,401635538,4016355387,7,2,13:01,Cincinnati,Pittsburgh,14,3,39,3,8,9,Pass Reception,Brendan Sorsby pass complete to Corey Kiner for 9 yds to the PITT 30 for a 1ST down,1.8954990174419046,2024-09-07T16:49:24.000Z
+401635538102876401,401635538,4016355387,8,2,12:35,Cincinnati,Pittsburgh,14,3,30,1,10,1,Rush,Brendan Sorsby run for 1 yd to the PITT 29,-0.424602465889258,2024-09-07T16:49:24.000Z
+401635538102884401,401635538,4016355387,9,2,11:55,Cincinnati,Pittsburgh,14,3,29,2,9,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.7126310422096543,2024-09-07T16:49:24.000Z
+401635538102885001,401635538,4016355387,10,2,11:49,Cincinnati,Pittsburgh,14,3,29,3,9,12,Pass Reception,Brendan Sorsby pass complete to Tyrin Smith for 12 yds to the PITT 17 for a 1ST down,1.3715735382372694,2024-09-07T16:55:25.000Z
+401635538102896101,401635538,4016355387,12,2,10:38,Cincinnati,Pittsburgh,14,3,30,1,23,-2,Rush,Chance Williams run for a loss of 2 yards to the PITT 32,-1.2576131245739308,2024-09-07T16:49:24.000Z
+401635538102899701,401635538,4016355387,13,2,10:02,Cincinnati,Pittsburgh,14,3,32,2,25,7,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 7 yds to the PITT 25,0.4602766242865234,2024-09-07T16:49:24.000Z
+401635538102907702,401635538,4016355387,14,2,9:22,Cincinnati,Pittsburgh,14,3,25,3,18,-10,Penalty,"(09:22) SORSBY, Brendan pass up the middle complete for 19 yards to TURNER, Aaron caught at the PIT11 and advanced to the PIT6 (GANDY, Ryland), clock 09:15. PENALTY CIN Holding on TINSLEY, Dartanyan enforced 10 yards from the PIT25 to the PIT35 [SG]. NO PLAY (replay the down).",,2024-09-07T16:49:24.000Z
+401635538102914501,401635538,4016355387,15,2,8:54,Cincinnati,Pittsburgh,14,3,35,3,28,4,Pass Reception,Brendan Sorsby pass complete to Aaron Turner for 4 yds to the PITT 31,-0.10288042534678435,2024-09-07T16:49:24.000Z
+401635538102918801,401635538,4016355387,16,2,8:11,Cincinnati,Pittsburgh,17,3,31,4,24,49,Field Goal Good,Carter Brown 49 yd FG GOOD,,2024-09-07T17:02:55.000Z
+401635538101997502,401635538,4016355387,2,1,0:00,Cincinnati,Pittsburgh,14,3,62,0,10,4,End Period,End of 1st Quarter,,2024-09-07T16:45:44.000Z
+401635538102889403,401635538,4016355387,11,2,11:05,Cincinnati,Pittsburgh,14,3,17,1,10,-15,Penalty,"Cincinnati Penalty, Personal Foul (Corey Kiner) to the PITT 30",,2024-09-07T16:49:24.000Z
+401635538102918802,401635538,4016355388,1,2,8:11,Cincinnati,Pittsburgh,17,3,65,0,0,13,Kickoff Return (Offense),"Nathan Hawks kickoff for 58 yds , Kenny Johnson return for 13 yds to the PITT 10",,2024-09-07T17:02:55.000Z
+401635538102927801,401635538,4016355388,4,2,7:21,Pittsburgh,Cincinnati,3,17,78,1,10,-10,Penalty,"Pittsburgh Penalty, Offensive Holding (Gavin Bartholomew) to the PITT 15",,2024-09-07T16:49:24.000Z
+401635538102937001,401635538,4016355388,8,2,6:29,Pittsburgh,Cincinnati,3,17,83,4,15,0,Punt,"Caleb Junko punt for 39 yds, downed at the CIN 44",,2024-09-07T16:49:24.000Z
+401635538102936001,401635538,4016355388,7,2,6:39,Pittsburgh,Cincinnati,3,17,83,3,15,0,Pass Incompletion,Eli Holstein pass incomplete,-0.05363851414369235,2024-09-07T17:09:50.000Z
+401635538102935601,401635538,4016355388,6,2,6:43,Pittsburgh,Cincinnati,3,17,83,2,15,0,Pass Incompletion,Eli Holstein pass incomplete,-0.12256126593852379,2024-09-07T16:49:24.000Z
+401635538102929301,401635538,4016355388,5,2,7:06,Pittsburgh,Cincinnati,3,17,85,1,17,2,Pass Reception,Eli Holstein pass complete to Desmond Reid for 2 yds to the PITT 17,-0.12857632375019712,2024-09-07T16:49:24.000Z
+401635538102925401,401635538,4016355388,3,2,7:45,Pittsburgh,Cincinnati,3,17,81,2,1,3,Rush,Desmond Reid run for 3 yds to the PITT 22 for a 1ST down,-0.3064478558388091,2024-09-07T16:49:24.000Z
+401635538102919801,401635538,4016355388,2,2,8:01,Pittsburgh,Cincinnati,3,17,90,1,10,9,Rush,Desmond Reid run for 9 yds to the PITT 19,0.8283073066348914,2024-09-07T16:49:24.000Z
+401635538102947901,401635538,4016355389,4,2,5:20,Cincinnati,Pittsburgh,17,3,44,2,10,11,Pass Reception,Brendan Sorsby pass complete to Sterling Berkhalter for 11 yds to the PITT 33 for a 1ST down,1.478834681415659,2024-09-07T16:49:24.000Z
+401635538102955701,401635538,4016355389,5,2,4:42,Cincinnati,Pittsburgh,17,3,33,1,10,5,Rush,Corey Kiner run for 5 yds to the PITT 28,0.079824986683601,2024-09-07T16:49:24.000Z
+401635538102959901,401635538,4016355389,6,2,4:00,Cincinnati,Pittsburgh,17,3,28,2,5,4,Rush,Brendan Sorsby run for 4 yds to the PITT 24,-0.058173005669557,2024-09-07T16:49:24.000Z
+401635538102968102,401635538,4016355389,8,2,3:18,Cincinnati,Pittsburgh,17,3,24,3,1,0,Rush,Chance Williams run for no gain to the PITT 24,-0.7044528069096806,2024-09-07T17:18:50.000Z
+401635538102975501,401635538,4016355389,9,2,2:44,Cincinnati,Pittsburgh,17,3,24,4,1,3,Rush,Corey Kiner run for 3 yds to the PITT 21 for a 1ST down,0.9535787856021316,2024-09-07T16:49:24.000Z
+401635538102979901,401635538,4016355389,10,2,2:00,Cincinnati,Pittsburgh,17,3,21,1,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.3882383440694163,2024-09-07T16:49:24.000Z
+401635538102984401,401635538,4016355389,11,2,1:55,Cincinnati,Pittsburgh,17,3,21,2,10,10,Rush,Corey Kiner run for 10 yds to the PITT 11 for a 1ST down,0.4987957444969843,2024-09-07T16:49:24.000Z
+401635538102988101,401635538,4016355389,12,2,1:18,Cincinnati,Pittsburgh,17,3,11,1,10,4,Rush,Corey Kiner run for 4 yds to the PITT 7,-0.015606283624097,2024-09-07T16:49:24.000Z
+401635538102996301,401635538,4016355389,13,2,0:36,Cincinnati,Pittsburgh,17,3,7,2,6,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.301988761015517,2024-09-07T16:49:24.000Z
+401635538102947301,401635538,4016355389,3,2,5:26,Cincinnati,Pittsburgh,17,3,44,1,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.9690270974076257,2024-09-07T16:49:24.000Z
+401635538102945101,401635538,4016355389,2,2,5:48,Cincinnati,Pittsburgh,17,3,47,2,1,3,Rush,Corey Kiner run for 3 yds to the PITT 44 for a 1ST down,-0.2998161870934803,2024-09-07T16:49:24.000Z
+401635538102937802,401635538,4016355389,1,2,6:21,Cincinnati,Pittsburgh,17,3,56,1,10,9,Pass Reception,Brendan Sorsby pass complete to Corey Kiner for 9 yds to the PITT 47,1.257116610962765,2024-09-07T17:11:16.000Z
+401635538102996602,401635538,4016355389,15,2,0:33,Cincinnati,Pittsburgh,17,3,7,3,6,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.3199002464910233,2024-09-07T17:26:59.000Z
+401635538102997401,401635538,4016355389,16,2,0:25,Cincinnati,Pittsburgh,17,3,7,4,6,25,Field Goal Missed,Carter Brown 25 Yard Field Goal Missed,,2024-09-07T16:49:24.000Z
+401635538102996601,401635538,4016355389,14,2,0:33,Cincinnati,Pittsburgh,17,3,7,3,6,0,Timeout,"Timeout Cincinnati, clock 00:33",,2024-09-07T17:26:59.000Z
+401635538102968101,401635538,4016355389,7,2,3:18,Cincinnati,Pittsburgh,17,3,24,3,1,0,Timeout,"Timeout Cincinnati, clock 03:18",,2024-09-07T17:18:50.000Z
+401635538103854601,401635538,40163553810,7,3,14:53,Cincinnati,Pittsburgh,17,3,65,0,0,-15,Kickoff,"Nathan Hawks kickoff Cincinnati Penalty, Unnecessary Roughness (-15 Yards) to the CIN 20",,2024-09-07T17:57:29.000Z
+401635538102998601,401635538,40163553810,2,2,0:13,Pittsburgh,Cincinnati,3,17,60,1,10,0,Timeout,"Timeout Pittsburgh, clock 00:13",,2024-09-07T17:30:23.000Z
+401635538102999901,401635538,40163553810,5,2,0:00,Pittsburgh,Cincinnati,6,17,35,1,10,53,Field Goal Good,Ben Sauls 53 yd FG GOOD,,2024-09-07T17:32:25.000Z
+401635538102999903,401635538,40163553810,6,2,0:00,Pittsburgh,Cincinnati,3,17,65,0,0,0,End of Half,End of 2nd Quarter,,2024-09-07T17:32:25.000Z
+401635538102999301,401635538,40163553810,4,2,0:06,Pittsburgh,Cincinnati,3,17,60,2,10,25,Pass Reception,Eli Holstein pass complete to Konata Mumpfield for 25 yds to the CIN 35 for a 1ST down,2.9090830563582455,2024-09-07T17:32:25.000Z
+401635538102998602,401635538,40163553810,3,2,0:13,Pittsburgh,Cincinnati,3,17,60,1,10,0,Pass Incompletion,Eli Holstein pass incomplete,-1.1247712359915258,2024-09-07T17:30:23.000Z
+401635538102997602,401635538,40163553810,1,2,0:23,Pittsburgh,Cincinnati,3,17,80,1,10,20,Pass Reception,Eli Holstein pass complete to Desmond Reid for 20 yds to the PITT 40 for a 1ST down,1.6291571914614273,2024-09-07T17:29:25.000Z
+401635538103857601,401635538,40163553811,2,3,14:23,Pittsburgh,Cincinnati,6,17,49,1,10,4,Rush,Desmond Reid run for 4 yds to the CIN 45,-0.1369390380115582,2024-09-07T17:56:34.000Z
+401635538103858701,401635538,40163553811,3,3,14:12,Pittsburgh,Cincinnati,6,17,45,2,6,-1,Rush,"Eli Holstein run for 9 yds to the PITT 36 Pittsburgh Penalty, Offensive Holding (Jason Collier Jr.) to the PITT 49",-1.3592489004925614,2024-09-07T17:56:34.000Z
+401635538103869801,401635538,40163553811,4,3,13:01,Pittsburgh,Cincinnati,6,17,51,2,12,9,Rush,Desmond Reid run for 9 yds to the CIN 42,1.0304444286132508,2024-09-07T18:00:58.000Z
+401635538103869802,401635538,40163553811,5,3,13:01,Pittsburgh,Cincinnati,6,17,42,3,3,0,Rush,Desmond Reid run for no gain to the CIN 42,-1.12928413262099,2024-09-07T18:00:58.000Z
+401635538103874001,401635538,40163553811,6,3,12:59,Pittsburgh,Cincinnati,6,17,42,4,3,0,Pass Incompletion,Eli Holstein pass incomplete,-1.5789733836137128,2024-09-07T17:56:34.000Z
+401635538103854602,401635538,40163553811,1,3,14:53,Cincinnati,Pittsburgh,17,6,65,0,0,40,Kickoff Return (Offense),"Nathan Hawks kickoff for 54 yds , Kenny Johnson return for 40 yds to the CIN 49",,2024-09-07T17:57:29.000Z
+401635538103927401,401635538,40163553812,12,3,7:25,Cincinnati,Pittsburgh,24,6,16,3,11,16,Passing Touchdown,Brendan Sorsby pass complete to Joe Royer for 16 yds for a TD (Carter Brown KICK),3.3393917916803133,2024-09-07T18:11:39.000Z
+401635538103879101,401635538,40163553812,1,3,12:08,Cincinnati,Pittsburgh,17,6,58,1,10,3,Rush,Corey Kiner run for 3 yds to the CIN 45,-0.4325374473860535,2024-09-07T17:56:34.000Z
+401635538103884701,401635538,40163553812,2,3,11:52,Cincinnati,Pittsburgh,17,6,55,2,7,16,Pass Reception,Brendan Sorsby pass complete to Tony Johnson for 16 yds to the PITT 39 for a 1ST down,1.853802104493818,2024-09-07T17:56:34.000Z
+401635538103887401,401635538,40163553812,3,3,11:25,Cincinnati,Pittsburgh,17,6,39,1,10,7,Rush,Brendan Sorsby run for 7 yds to the PITT 32,0.435345095661706,2024-09-07T17:56:34.000Z
+401635538103889001,401635538,40163553812,4,3,11:09,Cincinnati,Pittsburgh,17,6,32,2,3,3,Pass Reception,Brendan Sorsby pass complete to Tony Johnson for 3 yds to the PITT 29 for a 1ST down,-0.083207725328267,2024-09-07T17:56:34.000Z
+401635538103895901,401635538,40163553812,5,3,10:40,Cincinnati,Pittsburgh,17,6,29,1,10,1,Rush,Corey Kiner run for 1 yd to the PITT 28,-0.4070770134362323,2024-09-07T17:56:34.000Z
+401635538103899601,401635538,40163553812,6,3,10:03,Cincinnati,Pittsburgh,17,6,28,2,9,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.6814576725824767,2024-09-07T17:56:34.000Z
+401635538103904001,401635538,40163553812,7,3,9:59,Cincinnati,Pittsburgh,17,6,28,3,9,13,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 13 yds to the PITT 15 for a 1ST down,1.318636781051738,2024-09-07T18:04:31.000Z
+401635538103908201,401635538,40163553812,8,3,9:17,Cincinnati,Pittsburgh,17,6,15,1,10,-5,Penalty,"Cincinnati Penalty, False Start (Deondre Buford) to the PITT 20",,2024-09-07T17:56:34.000Z
+401635538103914701,401635538,40163553812,9,3,8:52,Cincinnati,Pittsburgh,17,6,20,1,15,0,Timeout,"Timeout Cincinnati, clock 08:52",,2024-09-07T18:06:39.000Z
+401635538103918701,401635538,40163553812,11,3,8:12,Cincinnati,Pittsburgh,17,6,13,2,8,-3,Rush,Evan Pryor run for a loss of 3 yards to the PITT 16,-0.6016977256298564,2024-09-07T17:56:34.000Z
+401635538103914801,401635538,40163553812,10,3,8:51,Cincinnati,Pittsburgh,17,6,20,1,15,7,Pass Reception,Brendan Sorsby pass complete to Aaron Turner for 7 yds to the PITT 13,0.175667742053227,2024-09-07T17:56:34.000Z
+401635538103927405,401635538,40163553813,2,3,7:25,Pittsburgh,Cincinnati,6,24,75,1,10,3,Pass Reception,Eli Holstein pass complete to Derrick Davis Jr. for 3 yds to the PITT 28,-0.2957674139440157,2024-09-07T18:16:14.000Z
+401635538103929801,401635538,40163553813,3,3,7:01,Pittsburgh,Cincinnati,6,24,72,2,7,0,Pass Incompletion,Eli Holstein pass incomplete,-0.5594317282120231,2024-09-07T17:56:34.000Z
+401635538103934001,401635538,40163553813,4,3,6:59,Pittsburgh,Cincinnati,6,24,72,3,7,0,Pass Incompletion,pass incomplete,-0.26587881160037785,2024-09-07T18:17:40.000Z
+401635538103934901,401635538,40163553813,5,3,6:50,Pittsburgh,Cincinnati,6,24,72,4,7,0,Punt,Caleb Junko punt for 12 yds,,2024-09-07T17:56:34.000Z
+401635538103927403,401635538,40163553813,1,3,7:25,Cincinnati,Pittsburgh,24,6,65,0,0,0,Kickoff,Nathan Hawks kickoff for 65 yds for a touchback,,2024-09-07T18:16:14.000Z
+401635538103935101,401635538,40163553814,1,3,6:48,Cincinnati,Pittsburgh,24,6,40,1,10,4,Rush,Corey Kiner run for 4 yds to the PITT 36,-0.090113775884788,2024-09-07T17:56:34.000Z
+401635538103938901,401635538,40163553814,2,3,6:10,Cincinnati,Pittsburgh,24,6,36,2,6,26,Rush,Corey Kiner run for 26 yds to the PITT 10 for a 1ST down,0.765336077572687,2024-09-07T17:56:34.000Z
+401635538103947001,401635538,40163553814,3,3,5:29,Cincinnati,Pittsburgh,24,6,10,1,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.2853930592519426,2024-09-07T17:56:34.000Z
+401635538103947401,401635538,40163553814,4,3,5:25,Cincinnati,Pittsburgh,24,6,10,2,10,1,Rush,Corey Kiner run for 1 yd to the PITT 9,-0.2108927532308514,2024-09-07T18:21:22.000Z
+401635538103954201,401635538,40163553814,5,3,4:57,Cincinnati,Pittsburgh,24,6,9,3,9,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.39104614280078,2024-09-07T17:56:34.000Z
+401635538103954901,401635538,40163553814,6,3,4:50,Cincinnati,Pittsburgh,27,6,9,4,9,26,Field Goal Good,Carter Brown 26 yd FG GOOD,,2024-09-07T18:27:05.000Z
+401635538103954904,401635538,40163553815,2,3,4:50,Pittsburgh,Cincinnati,6,27,75,1,10,9,Rush,Desmond Reid run for 9 yds to the PITT 34,1.252308359788624,2024-09-07T18:28:24.000Z
+401635538103957101,401635538,40163553815,3,3,4:28,Pittsburgh,Cincinnati,6,27,66,2,1,-10,Penalty,"Pittsburgh Penalty, Offensive Holding (-10 Yards) to the 50 yard line for a 1ST down",,2024-09-07T17:56:34.000Z
+401635538103958601,401635538,40163553815,4,3,4:13,Pittsburgh,Cincinnati,6,27,50,1,10,11,Rush,Eli Holstein run for 11 yds to the CIN 39 for a 1ST down,0.700973377189822,2024-09-07T17:56:34.000Z
+401635538103965601,401635538,40163553815,5,3,3:43,Pittsburgh,Cincinnati,6,27,39,1,10,10,Rush,Eli Holstein run for 10 yds to the CIN 29 for a 1ST down,0.352137370333439,2024-09-07T17:56:34.000Z
+401635538103967601,401635538,40163553815,6,3,3:23,Pittsburgh,Cincinnati,6,27,29,1,10,8,Pass Reception,Eli Holstein pass complete to Censere Lee for 8 yds to the CIN 21,0.504148977298673,2024-09-07T17:56:34.000Z
+401635538103969801,401635538,40163553815,7,3,3:01,Pittsburgh,Cincinnati,6,27,21,2,2,0,Pass Incompletion,Eli Holstein pass incomplete,-0.601650618656451,2024-09-07T17:56:34.000Z
+401635538103975101,401635538,40163553815,8,3,2:48,Pittsburgh,Cincinnati,6,27,21,3,2,4,Rush,Kenny Johnson run for 4 yds to the CIN 17 for a 1ST down,0.305899723171476,2024-09-07T17:56:34.000Z
+401635538103977501,401635538,40163553815,9,3,2:24,Pittsburgh,Cincinnati,6,27,8,1,8,-8,Sack,Eli Holstein sacked by Jonathan Thompson for a loss of 8 yards to the CIN 16,-0.8569470360079965,2024-09-07T17:56:34.000Z
+401635538103986001,401635538,40163553815,10,3,1:39,Pittsburgh,Cincinnati,6,27,16,2,16,5,Rush,Eli Holstein run for 5 yds to the CIN 11,0.0236770555262655,2024-09-07T17:56:34.000Z
+401635538103995301,401635538,40163553815,11,3,0:46,Pittsburgh,Cincinnati,13,27,11,3,11,11,Passing Touchdown,Eli Holstein pass complete to Konata Mumpfield for 11 yds for a TD (Ben Sauls KICK),3.152869549181423,2024-09-07T18:38:01.000Z
+401635538103954902,401635538,40163553815,1,3,4:50,Cincinnati,Pittsburgh,27,6,65,0,0,0,Kickoff,Nathan Hawks kickoff for 65 yds for a touchback,,2024-09-07T18:28:24.000Z
+401635538103996001,401635538,40163553816,2,3,0:39,Cincinnati,Pittsburgh,27,13,78,1,10,0,Rush,Corey Kiner run for no gain to the CIN 22,-0.6135902757979226,2024-09-07T17:56:34.000Z
+401635538104849902,401635538,40163553816,4,4,15:00,Cincinnati,Pittsburgh,27,13,78,2,10,26,Rush,Corey Kiner run for 26 yds to the CIN 48 for a 1ST down,2.8775207894286137,2024-09-07T18:45:59.000Z
+401635538104857301,401635538,40163553816,5,4,14:26,Cincinnati,Pittsburgh,27,13,52,1,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-1.1430602484821704,2024-09-07T18:45:59.000Z
+401635538104858001,401635538,40163553816,6,4,14:19,Cincinnati,Pittsburgh,27,13,52,2,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.9850636246407553,2024-09-07T18:45:59.000Z
+401635538104858401,401635538,40163553816,7,4,14:15,Cincinnati,Pittsburgh,27,13,52,3,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.6418714100938061,2024-09-07T18:47:19.000Z
+401635538104858801,401635538,40163553816,8,4,14:11,Cincinnati,Pittsburgh,27,13,52,4,10,0,Punt,"Mason Fletcher punt for 34 yds, downed at the PITT 18",,2024-09-07T18:45:59.000Z
+401635538103996002,401635538,40163553816,3,3,0:00,Cincinnati,Pittsburgh,27,13,78,0,10,0,End Period,End of 3rd Quarter,,2024-09-07T18:41:44.000Z
+401635538103995303,401635538,40163553816,1,3,0:46,Pittsburgh,Cincinnati,13,27,65,0,0,18,Kickoff Return (Offense),"Ben Sauls kickoff for 61 yds , Logan Wilson return for 18 yds to the CIN 22",,2024-09-07T18:38:01.000Z
+401635538104859601,401635538,40163553817,1,4,14:03,Pittsburgh,Cincinnati,13,27,82,1,10,5,Rush,Eli Holstein run for 5 yds to the PITT 23,0.0820151488011058,2024-09-07T18:45:59.000Z
+401635538104866301,401635538,40163553817,2,4,13:36,Pittsburgh,Cincinnati,13,27,77,2,5,16,Rush,Desmond Reid run for 16 yds to the PITT 39 for a 1ST down,1.5512670640268789,2024-09-07T18:45:59.000Z
+401635538104868401,401635538,40163553817,3,4,13:15,Pittsburgh,Cincinnati,13,27,61,1,10,16,Pass Reception,Eli Holstein pass complete to Desmond Reid for 16 yds to the CIN 45 for a 1ST down,1.378501951397798,2024-09-07T18:45:59.000Z
+401635538104875701,401635538,40163553817,4,4,12:42,Pittsburgh,Cincinnati,13,27,45,1,10,9,Pass Reception,Eli Holstein pass complete to Jake Overman for 9 yds to the CIN 36,0.957003546754157,2024-09-07T18:45:59.000Z
+401635538104879101,401635538,40163553817,5,4,12:08,Pittsburgh,Cincinnati,13,27,36,2,1,-2,Pass Reception,Eli Holstein pass complete to Jake Overman for a loss of 2 yards to the CIN 38,-1.4230875354326642,2024-09-07T18:45:59.000Z
+401635538104886701,401635538,40163553817,6,4,11:32,Pittsburgh,Cincinnati,13,27,38,3,3,0,Rush,Derrick Davis Jr. run for no gain to the CIN 38,-1.092140486458577,2024-09-07T18:45:59.000Z
+401635538104895801,401635538,40163553817,7,4,10:41,Pittsburgh,Cincinnati,19,27,38,4,3,38,Passing Touchdown,Eli Holstein pass complete to Konata Mumpfield for 38 yds for a TD (Two-Point Conversion failed),5.034738560204152,2024-09-07T18:52:48.000Z
+401635538104895805,401635538,40163553818,2,4,10:41,Cincinnati,Pittsburgh,27,19,75,1,10,11,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 11 yds to the CIN 36 for a 1ST down,0.9305625119459905,2024-09-07T18:52:48.000Z
+401635538104904001,401635538,40163553818,3,4,9:59,Cincinnati,Pittsburgh,27,19,64,1,10,4,Rush,Chance Williams run for 4 yds to the CIN 40,-0.1622709044233037,2024-09-07T18:45:59.000Z
+401635538104908301,401635538,40163553818,4,4,9:16,Cincinnati,Pittsburgh,27,19,60,2,6,1,Rush,Chance Williams run for 1 yd to the CIN 41,-0.8182594016062632,2024-09-07T18:45:59.000Z
+401635538104895803,401635538,40163553818,1,4,10:41,Pittsburgh,Cincinnati,19,27,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-09-07T18:52:48.000Z
+401635538104924201,401635538,40163553818,6,4,7:57,Cincinnati,Pittsburgh,27,19,68,4,14,0,Punt,"Mason Fletcher punt for 62 yds, downed at the PITT 6",,2024-09-07T18:45:59.000Z
+401635538104918201,401635538,40163553818,5,4,8:17,Cincinnati,Pittsburgh,27,19,59,3,5,-9,Sack,Brendan Sorsby sacked by Shadarian Harrison for a loss of 9 yards to the CIN 32,-1.1478714905404184,2024-09-07T18:45:59.000Z
+401635538104928001,401635538,40163553819,2,4,7:19,Pittsburgh,Cincinnati,19,27,82,1,10,7,Rush,Desmond Reid run for 7 yds to the PITT 25,0.4935789008473366,2024-09-07T18:45:59.000Z
+401635538104929901,401635538,40163553819,3,4,7:00,Pittsburgh,Cincinnati,19,27,75,2,3,4,Pass Reception,Eli Holstein pass complete to Censere Lee for 4 yds to the PITT 29 for a 1ST down,0.2191024756905495,2024-09-07T18:45:59.000Z
+401635538104936101,401635538,40163553819,4,4,6:38,Pittsburgh,Cincinnati,19,27,71,1,10,1,Rush,Desmond Reid run for 1 yd to the PITT 30,-0.6903738736488947,2024-09-07T18:45:59.000Z
+401635538104938801,401635538,40163553819,5,4,6:11,Pittsburgh,Cincinnati,19,27,70,2,9,14,Pass Reception,Eli Holstein pass complete to Raphael Williams Jr. for 14 yds to the PITT 44 for a 1ST down,2.0958079650245534,2024-09-07T18:45:59.000Z
+401635538104944401,401635538,40163553819,6,4,5:55,Pittsburgh,Cincinnati,19,27,56,1,10,0,Pass Incompletion,Eli Holstein pass incomplete,-1.1612466882658818,2024-09-07T18:45:59.000Z
+401635538104945901,401635538,40163553819,7,4,5:40,Pittsburgh,Cincinnati,25,27,56,2,10,56,Passing Touchdown,Eli Holstein pass complete to Desmond Reid for 56 yds for a TD (Two-Point Conversion failed),5.531429469645188,2024-09-07T19:08:38.000Z
+401635538104925601,401635538,40163553819,1,4,7:43,Pittsburgh,Cincinnati,19,27,94,1,10,12,Pass Reception,Eli Holstein pass complete to Gavin Bartholomew for 12 yds to the PITT 18 for a 1ST down,0.4083952114881759,2024-09-07T18:45:59.000Z
+401635538104946001,401635538,40163553820,2,4,5:39,Cincinnati,Pittsburgh,27,25,75,1,10,8,Rush,Corey Kiner run for 8 yds to the CIN 33,0.9104368550610653,2024-09-07T18:45:59.000Z
+401635538104954101,401635538,40163553820,3,4,4:58,Cincinnati,Pittsburgh,27,25,67,2,2,12,Pass Reception,Brendan Sorsby pass complete to Jamoi Mayes for 12 yds to the CIN 45 for a 1ST down,0.8907050273438912,2024-09-07T18:45:59.000Z
+401635538104958501,401635538,40163553820,4,4,4:14,Cincinnati,Pittsburgh,27,25,55,1,10,9,Rush,Corey Kiner run for 9 yds to the PITT 46,1.2321065178353567,2024-09-07T18:45:59.000Z
+401635538104966901,401635538,40163553820,5,4,3:30,Cincinnati,Pittsburgh,27,25,46,2,1,-2,Rush,Evan Pryor run for a loss of 2 yards to the PITT 48,-1.8229123640297082,2024-09-07T18:45:59.000Z
+401635538104974901,401635538,40163553820,6,4,2:50,Cincinnati,Pittsburgh,27,25,48,3,3,0,Pass Incompletion,Brendan Sorsby pass incomplete,-1.0834960063268841,2024-09-07T18:45:59.000Z
+401635538104975301,401635538,40163553820,7,4,2:46,Cincinnati,Pittsburgh,27,25,48,4,3,0,Punt,Mason Fletcher punt for 48 yds for a touchback,,2024-09-07T19:17:24.000Z
+401635538104945903,401635538,40163553820,1,4,5:40,Pittsburgh,Cincinnati,25,27,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-09-07T19:08:38.000Z
+401635538104976201,401635538,40163553821,1,4,2:37,Pittsburgh,Cincinnati,25,27,80,1,10,-2,Rush,Desmond Reid run for a loss of 2 yards to the PITT 18,-0.6979456564143147,2024-09-07T18:45:59.000Z
+401635538104978301,401635538,40163553821,2,4,2:16,Pittsburgh,Cincinnati,25,27,82,2,12,8,Pass Reception,Eli Holstein pass complete to Desmond Reid for 8 yds to the PITT 26,0.27510768864133706,2024-09-07T18:45:59.000Z
+401635538104984002,401635538,40163553821,3,4,1:59,Pittsburgh,Cincinnati,25,27,74,3,4,5,Penalty,"(01:59) DAVIS JR., Derrick rush up the middle for no gain to the PIT26 (CORLEONE, Dontay;WILSON, Kam), clock 01:55. PENALTY Before the snap, CIN Delay Of Game on WILSON, Kam enforced 5 yards from the PIT26 to the PIT31 and results in a 1ST DOWN. NO PLAY (replay the down).",,2024-09-07T18:45:59.000Z
+401635538104987701,401635538,40163553821,4,4,1:22,Pittsburgh,Cincinnati,25,27,69,1,10,7,Rush,Eli Holstein run for 7 yds to the PITT 38,0.6816920045798367,2024-09-07T18:45:59.000Z
+401635538104988602,401635538,40163553821,5,4,1:13,Pittsburgh,Cincinnati,25,27,62,2,3,9,Rush,Desmond Reid run for 9 yds to the PITT 47 for a 1ST down,0.8302995669619053,2024-09-07T19:26:11.000Z
+401635538104994201,401635538,40163553821,6,4,0:57,Pittsburgh,Cincinnati,25,27,53,1,10,34,Pass Reception,Eli Holstein pass complete to Konata Mumpfield for 34 yds to the CIN 19 for a 1ST down,1.4908518049357846,2024-09-07T18:45:59.000Z
+401635538104994901,401635538,40163553821,7,4,0:50,Pittsburgh,Cincinnati,25,27,19,1,10,6,Rush,Derrick Davis Jr. run for 6 yds to the CIN 13,0.184964409309442,2024-09-07T19:27:23.000Z
+401635538104996901,401635538,40163553821,8,4,0:30,Pittsburgh,Cincinnati,25,27,13,2,4,-6,Sack,Eli Holstein sacked by Dontay Corleone for a loss of 6 yards to the CIN 19,-0.994019738354099,2024-09-07T18:45:59.000Z
+401635538104997701,401635538,40163553821,10,4,0:22,Pittsburgh,Cincinnati,25,27,19,3,10,2,Rush,Derrick Davis Jr. run for 2 yds to the CIN 17,-0.3677255202131846,2024-09-07T18:45:59.000Z
+401635538104998201,401635538,40163553821,12,4,0:17,Pittsburgh,Cincinnati,28,27,17,4,8,35,Field Goal Good,Ben Sauls 35 yd FG GOOD,,2024-09-07T19:30:50.000Z
+401635538104997901,401635538,40163553821,11,4,0:20,Pittsburgh,Cincinnati,25,27,17,4,8,0,Timeout,"Timeout Cincinnati, clock 00:20",,2024-09-07T18:45:59.000Z
+401635538104997601,401635538,40163553821,9,4,0:23,Pittsburgh,Cincinnati,25,27,19,3,10,0,Timeout,"Timeout Pittsburgh, clock 00:23",,2024-09-07T19:27:54.000Z
+401635538104999802,401635538,40163553822,4,4,0:01,Cincinnati,Pittsburgh,27,28,73,3,8,0,Timeout,"Timeout Pittsburgh, clock 00:01",,2024-09-07T19:34:01.000Z
+401635538104998202,401635538,40163553822,1,4,0:17,Pittsburgh,Cincinnati,28,27,65,0,0,0,Kickoff,Ben Sauls kickoff for 65 yds for a touchback,,2024-09-07T19:32:18.000Z
+401635538104999903,401635538,40163553822,6,4,0:00,Cincinnati,Pittsburgh,27,28,65,0,8,30,End of Game,End of 4th Quarter,,2024-09-07T19:36:28.000Z
+401635538104998801,401635538,40163553822,3,4,0:11,Cincinnati,Pittsburgh,27,28,69,2,4,-4,Sack,Brendan Sorsby sacked by Nate Matlack for a loss of 4 yards to the CIN 27,-1.2647859965112351,2024-09-07T18:45:59.000Z
+401635538104998301,401635538,40163553822,2,4,0:16,Cincinnati,Pittsburgh,27,28,75,1,10,6,Pass Reception,Brendan Sorsby pass complete to Aaron Turner for 6 yds to the CIN 31,0.3333748010525683,2024-09-07T18:45:59.000Z
+401635538104999901,401635538,40163553822,5,4,0:00,Cincinnati,Pittsburgh,27,28,73,3,8,8,Fumble Recovery (Opponent),"Brendan Sorsby pass complete to Corey Kiner for 8 yds Corey Kiner fumbled, recovered by PITT Javon McIntyre J. McIntyre return for 0 yds",0.009166315179988338,2024-09-07T19:36:28.000Z

@@ -1,0 +1,19 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401655621101849914,401655621,4016556211,4,1,15:00,Cal Poly,San Diego,0,0,72,3,7,12,Pass Reception,Bo Kelly pass complete to Kian Salehi for 12 yds to the CP 40 for a 1ST down,2.176053657733685,2024-09-01T00:01:05.000Z
+401655621101849911,401655621,4016556211,3,1,15:00,Cal Poly,San Diego,0,0,75,2,10,3,Pass Reception,Bo Kelly pass complete to Michael Briscoe for 3 yds to the CP 28,-0.15222912011238687,2024-09-01T00:01:05.000Z
+401655621101849908,401655621,4016556211,2,1,15:00,Cal Poly,San Diego,0,0,75,1,10,0,Pass Incompletion,Bo Kelly pass incomplete,-0.7029700220436519,2024-09-01T00:01:05.000Z
+401655621101849917,401655621,4016556211,5,1,15:00,Cal Poly,San Diego,0,0,60,1,10,17,Pass Reception,Bo Kelly pass complete to Giancarlo Woods for 17 yds to the USD 43 for a 1ST down,1.4045305162128212,2024-09-01T00:05:00.000Z
+401655621101849918,401655621,4016556211,6,1,15:00,Cal Poly,San Diego,0,0,43,1,10,0,Pass Incompletion,Bo Kelly pass incomplete,-0.9391692565688832,2024-09-01T00:05:00.000Z
+401655621101849921,401655621,4016556211,7,1,15:00,Cal Poly,San Diego,0,0,43,2,10,0,Rush,Aiden Ramos run for no gain to the USD 43,-1.060943078602227,2024-09-01T00:05:00.000Z
+401655621101849922,401655621,4016556211,8,1,15:00,Cal Poly,San Diego,0,0,43,3,10,0,Pass Incompletion,Bo Kelly pass incomplete,-0.9110484955798565,2024-09-01T00:05:00.000Z
+401655621101874601,401655621,4016556211,9,1,12:53,Cal Poly,San Diego,0,0,43,4,10,0,Punt,"Ryan Collins punt for 41 yds, downed at the USD 2",,2024-09-01T00:07:56.000Z
+401655621101849906,401655621,4016556211,1,1,15:00,San Diego,Cal Poly,0,0,65,0,0,0,Kickoff,Aidan Lehman kickoff for 65 yds for a touchback,,2024-09-01T00:01:05.000Z
+401655621101874604,401655621,4016556212,2,1,12:53,San Diego,Cal Poly,0,0,70,1,10,1,Rush,Matt Colombo run for 1 yd to the USD 31,-0.716015480823808,2024-09-01T00:08:39.000Z
+401655621101874603,401655621,4016556212,1,1,12:53,San Diego,Cal Poly,0,0,98,1,10,28,Rush,Matt Colombo run for 28 yds to the USD 30 for a 1ST down,1.2823957819963834,2024-09-01T00:07:56.000Z
+401655621101874605,401655621,4016556212,3,1,12:53,San Diego,Cal Poly,0,0,69,2,9,7,Rush,Matt Colombo run for 7 yds to the USD 38,0.4445663660529781,2024-09-01T00:08:39.000Z
+401655621101874606,401655621,4016556212,4,1,12:53,San Diego,Cal Poly,0,0,62,3,2,5,Rush,Matt Colombo run for 5 yds to the USD 43 for a 1ST down,1.4989189361638466,2024-09-01T00:08:39.000Z
+401655621101874607,401655621,4016556212,5,1,12:53,San Diego,Cal Poly,0,0,57,1,10,-5,Sack,Grant Sergent sacked by Jordan Sanders for a loss of 5 yards to the USD 38,-2.0455124058591982,2024-09-01T00:08:39.000Z
+401655621101874608,401655621,4016556212,6,1,12:53,San Diego,Cal Poly,0,0,62,2,15,7,Pass Reception,Grant Sergent pass complete to Cole Monach for 7 yds to the USD 45,0.351442618109739,2024-09-01T00:08:39.000Z
+401655621101874609,401655621,4016556212,7,1,12:53,San Diego,Cal Poly,0,0,55,3,8,7,Pass Reception,Grant Sergent pass complete to Matt Colombo for 7 yds to the CP 48,0.4554238851989788,2024-09-01T00:08:39.000Z
+401655621101874610,401655621,4016556212,8,1,12:53,San Diego,Cal Poly,0,0,48,4,1,4,Rush,Matt Colombo run for 4 yds to the CP 44 for a 1ST down,2.2910802425517858,2024-09-01T00:08:39.000Z
+401655621101874611,401655621,4016556212,9,1,12:53,San Diego,Cal Poly,0,0,44,1,10,6,Rush,Isaiah Smith run for 6 yds to the CP 38,0.295635896925372,2024-09-01T00:08:39.000Z

@@ -1,0 +1,169 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401636610101854001,401636610,4016366101,2,1,14:59,Baylor,Tarleton State,0,0,66,1,10,3,Rush,Richard Reese run for 3 yds to the BAY 37,-0.3978048422172354,2024-08-31T23:00:56.000Z
+401636610101855801,401636610,4016366101,3,1,14:41,Baylor,Tarleton State,0,0,63,2,7,6,Rush,Richard Reese run for 6 yds to the BAY 43,0.3471989024623472,2024-08-31T23:00:56.000Z
+401636610101857801,401636610,4016366101,4,1,14:21,Baylor,Tarleton State,0,0,57,3,1,4,Rush,Richard Reese run for 4 yds to the BAY 47 for a 1ST down,1.2920758959111946,2024-08-31T23:00:56.000Z
+401636610101859201,401636610,4016366101,5,1,14:07,Baylor,Tarleton State,0,0,53,1,10,14,Pass Reception,Dequan Finn pass complete to Josh Cameron for 14 yds to the TAR 39 for a 1ST down,0.9548608786417567,2024-08-31T23:00:56.000Z
+401636610101866201,401636610,4016366101,6,1,13:37,Baylor,Tarleton State,7,0,39,1,10,39,Rushing Touchdown,Dequan Finn run for 39 yds for a TD (Isaiah Hankins KICK),3.140438554931551,2024-08-31T23:06:40.000Z
+401636610101849907,401636610,4016366101,1,1,15:00,Tarleton State,Baylor,0,0,65,0,0,0,Kickoff,Michael James kickoff for 31 yds,,2024-08-31T23:00:56.000Z
+401636610101866203,401636610,4016366102,1,1,13:37,Tarleton State,Baylor,0,7,25,1,10,0,Timeout,"Timeout Baylor, clock 13:37",,2024-08-31T23:06:40.000Z
+401636610101866204,401636610,4016366102,2,1,13:37,Baylor,Tarleton State,7,0,65,0,0,0,Kickoff,Jack Stone kickoff for 65 yds for a touchback,,2024-08-31T23:06:40.000Z
+401636610101879701,401636610,4016366102,6,1,12:02,Tarleton State,Baylor,0,7,64,1,10,0,Rush,Kayvon Britten run for no gain to the TAR 36,-1.041155320344064,2024-08-31T23:43:20.000Z
+401636610101876601,401636610,4016366102,5,1,12:33,Tarleton State,Baylor,0,7,69,3,4,5,Rush,Kayvon Britten run for 5 yds to the TAR 36 for a 1ST down,1.4652947955017677,2024-08-31T23:00:56.000Z
+401636610101869201,401636610,4016366102,4,1,13:07,Tarleton State,Baylor,0,7,73,2,8,4,Rush,Kayvon Britten run for 4 yds to the TAR 31,-0.08212860423373947,2024-08-31T23:43:20.000Z
+401636610101866206,401636610,4016366102,3,1,13:37,Tarleton State,Baylor,0,7,75,1,10,2,Rush,Kayvon Britten run for 2 yds to the TAR 27,-0.45260367932203766,2024-08-31T23:06:40.000Z
+401636610101886601,401636610,4016366102,7,1,11:33,Tarleton State,Baylor,0,7,64,2,10,-7,Sack,Jaden Pete sacked by Garmon Randolph for a loss of 7 yards to the TAR 29,-1.0401899817997444,2024-08-31T23:00:56.000Z
+401636610101894701,401636610,4016366102,8,1,10:52,Tarleton State,Baylor,0,7,71,3,17,-5,Fumble Recovery (Own),"run for a loss of 5 yards to the TAR 24 fumbled, recovered by TAR Kayvon Britten K. Britten return for 0 yds",-0.14840785889007704,2024-08-31T23:00:56.000Z
+401636610101898501,401636610,4016366102,9,1,10:14,Tarleton State,Baylor,0,7,76,4,22,0,Punt,"Adrian Guzman punt for 39 yds, fair catch by Josh Cameron at the BAY 37",,2024-08-31T23:00:56.000Z
+401636610101899001,401636610,4016366103,1,1,10:09,Baylor,Tarleton State,7,0,63,1,10,0,Pass Incompletion,Dequan Finn pass incomplete,-1.065701080215459,2024-08-31T23:00:56.000Z
+401636610101899401,401636610,4016366103,2,1,10:05,Baylor,Tarleton State,7,0,63,2,10,5,Rush,Dawson Pendergrass run for 5 yds to the BAY 42,0.062211084497986,2024-08-31T23:00:56.000Z
+401636610101907102,401636610,4016366103,3,1,9:28,Baylor,Tarleton State,7,0,58,3,5,-10,Penalty,"(09:28) QB Keeper FINN, Dequan rush up the middle for a gain of 3 yards to the BAY45 (HOLT, Caden), clock 09:29. PENALTY BAY Holding on AIGBEDION, Omar enforced 10 yards from the BAY42 to the BAY32 [NHSG]. NO PLAY (replay the down).",,2024-08-31T23:20:56.000Z
+401636610101908001,401636610,4016366103,4,1,9:19,Baylor,Tarleton State,7,0,68,3,15,8,Pass Reception,Dequan Finn pass complete to Dawson Pendergrass for 8 yds to the BAY 40,0.2025781056378788,2024-08-31T23:00:56.000Z
+401636610101916501,401636610,4016366103,5,1,8:34,Baylor,Tarleton State,7,0,60,4,7,0,Punt,Palmer Williams punt for 37 yds,,2024-08-31T23:00:56.000Z
+401636610101917102,401636610,4016366104,1,1,8:28,Tarleton State,Baylor,0,7,77,1,10,-3,Rush,Jaden Pete run for a loss of 3 yards to the TAR 20,-0.8695179268452096,2024-08-31T23:22:21.000Z
+401636610101924901,401636610,4016366104,2,1,7:50,Tarleton State,Baylor,0,7,80,2,13,0,Pass Incompletion,Jaden Pete pass incomplete,-0.18534491240974305,2024-08-31T23:00:56.000Z
+401636610101925301,401636610,4016366104,3,1,7:46,Tarleton State,Baylor,0,7,80,3,13,-8,Sack,Jaden Pete sacked by Treven Ma'ae for a loss of 8 yards to the TAR 12,-0.12989762982440833,2024-08-31T23:00:56.000Z
+401636610101929101,401636610,4016366104,4,1,7:08,Tarleton State,Baylor,0,7,88,4,21,0,Punt,Adrian Guzman punt for 34 yds,,2024-08-31T23:00:56.000Z
+401636610101929802,401636610,4016366105,1,1,7:01,Baylor,Tarleton State,7,0,46,1,10,0,Rush,Dequan Finn run for no gain to the TAR 46,-1.0250974847844603,2024-08-31T23:25:01.000Z
+401636610101934901,401636610,4016366105,2,1,6:50,Baylor,Tarleton State,7,0,46,2,10,5,Pass Reception,Dequan Finn pass complete to Ashtyn Hawkins for 5 yds to the TAR 41,0.0729886527331746,2024-08-31T23:00:56.000Z
+401636610101939501,401636610,4016366105,3,1,6:04,Baylor,Tarleton State,7,0,41,3,5,6,Rush,Richard Reese run for 6 yds to the TAR 35 for a 1ST down,1.522807456408794,2024-08-31T23:00:56.000Z
+401636610101945301,401636610,4016366105,4,1,5:46,Baylor,Tarleton State,7,0,35,1,10,3,Rush,Richard Reese run for 3 yds to the TAR 32,-0.2162251621009335,2024-08-31T23:00:56.000Z
+401636610101954701,401636610,4016366105,5,1,4:52,Baylor,Tarleton State,14,0,32,2,7,32,Passing Touchdown,Dequan Finn pass complete to Ashtyn Hawkins for 32 yds for a TD (Isaiah Hankins KICK),3.1888139458778895,2024-08-31T23:28:20.000Z
+401636610101954703,401636610,4016366106,1,1,4:52,Baylor,Tarleton State,14,0,65,0,0,0,Kickoff,Jack Stone kickoff for 65 yds for a touchback,,2024-08-31T23:33:20.000Z
+401636610101955001,401636610,4016366106,2,1,4:49,Tarleton State,Baylor,0,14,75,1,10,3,Rush,Derrel Kelley III run for 3 yds to the TAR 28,-0.2957674139440157,2024-08-31T23:00:56.000Z
+401636610101958701,401636610,4016366106,3,1,4:12,Tarleton State,Baylor,0,21,72,2,7,35,Interception Return Touchdown,Jaden Pete pass intercepted Keaton Thomas return for 35 yds for a TD (Isaiah Hankins KICK),-7.626477466334663,2024-08-31T23:34:21.000Z
+401636610101959001,401636610,4016366107,1,1,4:09,Baylor,Tarleton State,21,0,65,0,0,0,Kickoff Return (Offense),"Jack Stone kickoff for 65 yds , Deangelo Rosemond return for no gain to the TAR 8",,2024-08-31T23:00:56.000Z
+401636610101959801,401636610,4016366107,2,1,4:01,Tarleton State,Baylor,0,21,92,1,10,3,Rush,Derrel Kelley III run for 3 yds to the TAR 11,-0.13240028095198575,2024-08-31T23:00:56.000Z
+401636610101967401,401636610,4016366107,3,1,3:25,Tarleton State,Baylor,0,21,89,2,7,4,Rush,Daniel Greek run for 4 yds to the TAR 15,-0.03178152746507301,2024-08-31T23:00:56.000Z
+401636610101975401,401636610,4016366107,4,1,2:45,Tarleton State,Baylor,0,21,85,3,3,2,Rush,Derrel Kelley III run for 2 yds to the TAR 17,-0.14739694403326453,2024-08-31T23:00:56.000Z
+401636610101984101,401636610,4016366107,5,1,1:58,Tarleton State,Baylor,0,21,83,4,1,0,Punt,"Adrian Guzman punt for 40 yds, downed at the BAY 43",,2024-08-31T23:40:08.000Z
+401636610101999902,401636610,4016366108,5,1,0:00,Baylor,Tarleton State,21,0,61,0,14,0,End Period,End of 1st Quarter,,2024-08-31T23:43:20.000Z
+401636610101984701,401636610,4016366108,1,1,1:52,Baylor,Tarleton State,21,0,57,1,10,-11,Sack,Dequan Finn sacked by Caimyn Layne for a loss of 11 yards to the BAY 32,-2.59821986536768,2024-08-31T23:00:56.000Z
+401636610101987801,401636610,4016366108,2,1,1:21,Baylor,Tarleton State,21,0,68,2,21,2,Pass Reception,Dequan Finn pass complete to Richard Reese for 2 yds to the BAY 34,-0.1285064816388095,2024-08-31T23:00:56.000Z
+401636610101996201,401636610,4016366108,3,1,0:37,Baylor,Tarleton State,21,0,66,3,19,5,Pass Reception,Dequan Finn pass complete to Richard Reese for 5 yds to the BAY 39,0.00934372888265056,2024-08-31T23:00:56.000Z
+401636610101999901,401636610,4016366108,4,1,0:00,Baylor,Tarleton State,21,0,61,4,14,0,Punt,"Palmer Williams punt for 50 yds, fair catch by Blake Smith at the TAR 11",,2024-08-31T23:43:20.000Z
+401636610102855201,401636610,4016366109,1,2,14:47,Tarleton State,Baylor,0,21,89,1,10,4,Rush,Kayvon Britten run for 4 yds to the TAR 15,-0.05111426634582639,2024-08-31T23:47:09.000Z
+401636610102857401,401636610,4016366109,2,2,14:25,Tarleton State,Baylor,0,21,85,2,6,2,Rush,Kayvon Britten run for 2 yds to the TAR 17,-0.21923357047779835,2024-08-31T23:47:09.000Z
+401636610102864701,401636610,4016366109,3,2,13:52,Tarleton State,Baylor,0,21,83,3,4,-5,Penalty,"Tarleton State Penalty, False Start (-5 Yards) to the TAR 12",,2024-08-31T23:48:10.000Z
+401636610102866501,401636610,4016366109,4,2,13:34,Tarleton State,Baylor,0,21,88,3,9,5,Rush,Kayvon Britten run for 5 yds to the TAR 17,0.01550524527129138,2024-08-31T23:47:09.000Z
+401636610102874501,401636610,4016366109,5,2,12:54,Tarleton State,Baylor,0,21,83,4,4,0,Punt,"Adrian Guzman punt for 49 yds, fair catch by Josh Cameron at the BAY 34",,2024-08-31T23:47:09.000Z
+401636610102875002,401636610,40163661010,1,2,12:49,Baylor,Tarleton State,21,0,66,1,10,7,Rush,Dawson Pendergrass run for 7 yds to the BAY 41,0.7039091622223153,2024-08-31T23:52:25.000Z
+401636610102877501,401636610,40163661010,2,2,12:24,Baylor,Tarleton State,21,0,59,2,3,8,Rush,Dawson Pendergrass run for 8 yds to the BAY 49 for a 1ST down,0.70949302361436,2024-08-31T23:47:09.000Z
+401636610102879701,401636610,40163661010,3,2,12:02,Baylor,Tarleton State,21,0,51,1,10,2,Rush,Dawson Pendergrass run for 2 yds to the TAR 49,-0.643630697434087,2024-08-31T23:47:09.000Z
+401636610102885901,401636610,40163661010,4,2,11:40,Baylor,Tarleton State,21,0,49,2,8,2,Rush,Dawson Pendergrass run for 2 yds to the TAR 47,-0.6521809720664199,2024-08-31T23:47:09.000Z
+401636610102888401,401636610,40163661010,5,2,11:15,Baylor,Tarleton State,21,0,47,3,6,39,Pass Reception,Dequan Finn pass complete to Ketron Jackson Jr. for 39 yds to the TAR 8 for a 1ST down,2.899579304693754,2024-08-31T23:47:09.000Z
+401636610102895201,401636610,40163661010,6,2,10:47,Baylor,Tarleton State,21,0,8,1,8,0,Pass Incompletion,Dequan Finn pass incomplete,-0.357171386033373,2024-08-31T23:54:28.000Z
+401636610102895601,401636610,40163661010,7,2,10:43,Baylor,Tarleton State,21,0,8,2,8,4,Rush,Dawson Pendergrass run for 4 yds to the TAR 4,-0.0192019667435165,2024-08-31T23:47:09.000Z
+401636610102898001,401636610,40163661010,8,2,10:19,Baylor,Tarleton State,21,0,4,3,4,3,Rush,Dawson Pendergrass run for 3 yds to the TAR 1,-0.0897810533795195,2024-08-31T23:47:09.000Z
+401636610102904001,401636610,40163661010,9,2,9:59,Baylor,Tarleton State,28,0,1,4,1,1,Rushing Touchdown,Dawson Pendergrass run for 1 yd for a TD (Isaiah Hankins KICK),2.785753974856101,2024-08-31T23:55:42.000Z
+401636610102904003,401636610,40163661011,1,2,9:59,Baylor,Tarleton State,28,0,65,0,0,0,Kickoff,Jack Stone kickoff for 65 yds for a touchback,,2024-09-01T00:00:14.000Z
+401636610102904101,401636610,40163661011,2,2,9:58,Tarleton State,Baylor,0,28,75,1,10,0,Rush,Derrel Kelley III run for no gain to the TAR 25,-0.7029700220436519,2024-08-31T23:47:09.000Z
+401636610102907701,401636610,40163661011,3,2,9:22,Tarleton State,Baylor,0,28,75,2,10,1,Rush,Derrel Kelley III run for 1 yd to the TAR 26,-0.29282347426074384,2024-08-31T23:47:09.000Z
+401636610102915001,401636610,40163661011,4,2,8:49,Tarleton State,Baylor,0,28,74,3,9,0,Pass Incompletion,Daniel Greek pass incomplete,-0.18876768235831598,2024-08-31T23:47:09.000Z
+401636610102918701,401636610,40163661011,5,2,8:12,Tarleton State,Baylor,0,28,74,4,9,0,Punt,Adrian Guzman punt for 34 yds,,2024-09-01T00:05:32.000Z
+401636610102959502,401636610,40163661012,9,2,4:04,Baylor,Tarleton State,28,0,38,3,12,15,Penalty,"(04:04) FINN, Dequan pass deep to the right incomplete intended for TRIGG, Michael broken up by STUART, Donta at the TAR20, clock 03:51. PENALTY TAR Pass Interference on STUART, Donta enforced 15 yards to the TAR23 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-31T23:47:09.000Z
+401636610102965301,401636610,40163661012,10,2,3:46,Baylor,Tarleton State,28,0,23,1,10,16,Pass Reception,Dequan Finn pass complete to Michael Trigg for 16 yds to the TAR 7 for a 1ST down,0.4672230477440175,2024-08-31T23:47:09.000Z
+401636610102955901,401636610,40163661012,8,2,4:40,Baylor,Tarleton State,28,0,40,2,14,2,Rush,Richard Reese run for 2 yds to the TAR 38,-0.5972730943919426,2024-08-31T23:47:09.000Z
+401636610102947501,401636610,40163661012,7,2,5:24,Baylor,Tarleton State,28,0,36,1,10,-4,Rush,Dequan Finn run for a loss of 4 yards to the TAR 40,-1.5030445796560097,2024-08-31T23:47:09.000Z
+401636610102918901,401636610,40163661012,1,2,8:10,Baylor,Tarleton State,28,0,60,1,10,8,Rush,Richard Reese run for 8 yds to the BAY 48,1.0159674518504005,2024-08-31T23:47:09.000Z
+401636610102924701,401636610,40163661012,2,2,7:52,Baylor,Tarleton State,28,0,52,2,2,0,Rush,Richard Reese run for no gain to the BAY 48,-1.349831919218449,2024-08-31T23:47:09.000Z
+401636610102928801,401636610,40163661012,3,2,7:11,Baylor,Tarleton State,28,0,52,3,2,3,Rush,Dawson Pendergrass run for 3 yds to the TAR 49 for a 1ST down,1.3284345198744756,2024-08-31T23:47:09.000Z
+401636610102936101,401636610,40163661012,4,2,6:38,Baylor,Tarleton State,28,0,49,1,10,3,Rush,Richard Reese run for 3 yds to the TAR 46,-0.375732386813203,2024-08-31T23:47:09.000Z
+401636610102938501,401636610,40163661012,5,2,6:14,Baylor,Tarleton State,28,0,46,2,7,2,Pass Reception,Dequan Finn pass complete to Jadon Porter for 2 yds to the TAR 44,-0.6455529967456072,2024-08-31T23:47:09.000Z
+401636610102944601,401636610,40163661012,6,2,5:53,Baylor,Tarleton State,28,0,44,3,5,8,Rush,Richard Reese run for 8 yds to the TAR 36 for a 1ST down,1.7728378401822624,2024-08-31T23:47:09.000Z
+401636610102967402,401636610,40163661012,11,2,3:25,Baylor,Tarleton State,28,0,7,1,7,-10,Penalty,"(03:25) QB Keeper FINN, Dequan rush to the left for a gain of 6 yards to the TAR1, End of Play, clock 03:21. PENALTY BAY Holding on FUGAR, Sidney enforced 10 yards from the TAR7 to the TAR17 [NHSG]. NO PLAY (replay the down).",,2024-08-31T23:47:09.000Z
+401636610102969401,401636610,40163661012,12,2,3:05,Baylor,Tarleton State,28,0,17,1,17,0,Pass Interception Return,"Dequan Finn pass intercepted, touchback. Kasyus Kurns return for no gain",-4.061049094706361,2024-08-31T23:47:09.000Z
+401636610102974302,401636610,40163661012,13,2,2:56,Tarleton State,Baylor,0,28,80,1,10,15,Penalty,"(02:56) GREEK, Daniel pass deep to the right incomplete intended for COOPER, Darius thrown to the TAR48, clock 02:50. PENALTY BAY Pass Interference on THORNTON JR., LeVar enforced 15 yards to the TAR35 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-31T23:47:09.000Z
+401636610102984002,401636610,40163661013,4,2,1:59,Baylor,Tarleton State,28,0,100,0,0,0,Timeout,"Timeout Baylor, clock 01:59",,2024-09-01T00:51:10.000Z
+401636610102998701,401636610,40163661013,8,2,0:12,Tarleton State,Baylor,0,28,7,3,6,0,Timeout,"Timeout Baylor, clock 00:12",,2024-08-31T23:47:09.000Z
+401636610102999701,401636610,40163661013,10,2,0:02,Tarleton State,Baylor,0,28,7,4,6,24,Field Goal Missed,Michael James 24 yd FG MISSED,,2024-09-01T00:29:19.000Z
+401636610102998801,401636610,40163661013,9,2,0:11,Tarleton State,Baylor,0,28,7,3,6,0,Pass Incompletion,Daniel Greek pass incomplete,-0.3199002464910233,2024-09-01T00:27:07.000Z
+401636610102975101,401636610,40163661013,1,2,2:48,Tarleton State,Baylor,0,28,65,1,10,35,Pass Reception,Daniel Greek pass complete to Darius Cooper for 35 yds to the BAY 30 for a 1ST down,2.428473877768564,2024-08-31T23:47:09.000Z
+401636610102979401,401636610,40163661013,2,2,2:05,Tarleton State,Baylor,0,28,30,1,10,0,Rush,Kayvon Britten run for no gain to the BAY 30,-0.557844891990525,2024-08-31T23:47:09.000Z
+401636610102984001,401636610,40163661013,3,2,1:59,Tarleton State,Baylor,0,28,30,2,10,4,Pass Reception,Daniel Greek pass complete to Dawson Hearne for 4 yds to the BAY 26,-0.091057456811928,2024-08-31T23:47:09.000Z
+401636610102988001,401636610,40163661013,5,2,1:19,Tarleton State,Baylor,0,28,26,3,6,3,Penalty,"Baylor Penalty, Personal Foul (Steve Linton) to the BAY 11 for a 1ST down",,2024-08-31T23:47:09.000Z
+401636610102995601,401636610,40163661013,6,2,0:43,Tarleton State,Baylor,0,28,11,1,10,2,Rush,Kayvon Britten run for 2 yds to the BAY 9,-0.165648229401373,2024-08-31T23:47:09.000Z
+401636610102998601,401636610,40163661013,7,2,0:13,Tarleton State,Baylor,0,28,9,2,8,2,Rush,Kayvon Britten run for 2 yds to the BAY 7,-0.151946815238241,2024-08-31T23:47:09.000Z
+401636610102999903,401636610,40163661014,2,2,0:00,Baylor,Tarleton State,28,0,77,0,10,0,End of Half,End of 2nd Quarter,,2024-09-01T00:29:19.000Z
+401636610102999901,401636610,40163661014,1,2,0:00,Baylor,Tarleton State,28,0,80,1,10,3,Rush,Richard Reese run for 3 yds to the BAY 23,-0.2366097161141063,2024-09-01T00:29:19.000Z
+401636610103879001,401636610,40163661015,8,3,12:09,Tarleton State,Baylor,0,28,20,3,7,3,Rush,Daniel Greek run for 3 yds to the BAY 17,-0.2030102398247617,2024-09-01T00:51:10.000Z
+401636610103887604,401636610,40163661015,9,3,11:23,Tarleton State,Baylor,3,28,17,4,4,34,Field Goal Good,Adrian Guzman 34 yd FG GOOD,,2024-09-01T00:59:14.000Z
+401636610103849930,401636610,40163661015,1,3,15:00,Baylor,Tarleton State,28,0,65,0,0,0,Kickoff,Isaiah Hankins kickoff for 65 yds for a touchback,,2024-09-01T00:51:10.000Z
+401636610103849931,401636610,40163661015,2,3,15:00,Tarleton State,Baylor,0,28,75,1,10,9,Pass Reception,Daniel Greek pass complete to Darius Cooper for 9 yds to the TAR 34,1.252308359788624,2024-09-01T00:51:10.000Z
+401636610103856301,401636610,40163661015,3,3,14:36,Tarleton State,Baylor,0,28,66,2,1,30,Rush,Kayvon Britten run for 30 yds to the BAY 36 for a 1ST down,1.8146686649189017,2024-09-01T00:51:10.000Z
+401636610103859401,401636610,40163661015,4,3,14:05,Tarleton State,Baylor,0,28,36,1,10,9,Rush,Kayvon Britten run for 9 yds to the BAY 27,0.766162278539236,2024-09-01T00:51:10.000Z
+401636610103866901,401636610,40163661015,5,3,13:30,Tarleton State,Baylor,0,28,27,2,1,4,Pass Reception,Daniel Greek pass complete to Dawson Hearne for 4 yds to the BAY 23 for a 1ST down,-0.4193618615966685,2024-09-01T00:51:10.000Z
+401636610103874801,401636610,40163661015,6,3,12:51,Tarleton State,Baylor,0,28,23,1,10,0,Pass Incompletion,Daniel Greek pass incomplete,-0.4181180581276075,2024-09-01T00:51:10.000Z
+401636610103875301,401636610,40163661015,7,3,12:46,Tarleton State,Baylor,0,28,23,2,10,3,Rush,Derrel Kelley III run for 3 yds to the BAY 20,-0.169154283980589,2024-09-01T00:53:45.000Z
+401636610103918801,401636610,40163661016,9,3,8:11,Baylor,Tarleton State,35,3,17,2,10,17,Passing Touchdown,Dequan Finn pass complete to Michael Trigg for 17 yds for a TD (Isaiah Hankins KICK),2.919922661694139,2024-09-01T01:04:22.000Z
+401636610103887605,401636610,40163661016,1,3,11:23,Tarleton State,Baylor,3,28,65,0,0,8,Kickoff Return (Offense),"Michael James kickoff for 36 yds , Josh Cameron return for 8 yds to the BAY 37",,2024-09-01T00:59:14.000Z
+401636610103888401,401636610,40163661016,2,3,11:15,Baylor,Tarleton State,28,3,63,1,10,1,Rush,Dawson Pendergrass run for 1 yd to the BAY 38,-0.870939720055624,2024-09-01T00:51:10.000Z
+401636610103895901,401636610,40163661016,3,3,10:40,Baylor,Tarleton State,28,3,62,2,9,1,Pass Reception,Dequan Finn pass complete to Dawson Pendergrass for 1 yd to the BAY 39,-0.6220315049154719,2024-09-01T00:51:10.000Z
+401636610103899801,401636610,40163661016,4,3,10:01,Baylor,Tarleton State,28,3,61,3,8,22,Pass Reception,Dequan Finn pass complete to Monaray Baldwin for 22 yds to the TAR 39 for a 1ST down,3.403043463617295,2024-09-01T00:51:10.000Z
+401636610103906902,401636610,40163661016,5,3,9:30,Baylor,Tarleton State,28,3,39,1,10,10,Penalty,"(09:30) FINN, Dequan pass deep to the left intercepted by RAWLS, Ty at the TAR0 intended for JACKSON JR., Ketron. Rawls return for 0 yards to the TAR0, touchback., clock 09:28. PENALTY TAR Holding on RAWLS, Ty enforced 10 yards from the TAR39 to the TAR29 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-01T00:51:10.000Z
+401636610103907701,401636610,40163661016,6,3,9:22,Baylor,Tarleton State,28,3,29,1,10,8,Rush,Dawson Pendergrass run for 8 yds to the TAR 21,0.504148977298673,2024-09-01T00:51:10.000Z
+401636610103909001,401636610,40163661016,7,3,9:09,Baylor,Tarleton State,28,3,21,2,2,4,Rush,Dawson Pendergrass run for 4 yds to the TAR 17 for a 1ST down,-0.295750895484975,2024-09-01T00:51:10.000Z
+401636610103915001,401636610,40163661016,8,3,8:49,Baylor,Tarleton State,28,3,17,1,10,0,Rush,Dawson Pendergrass run for no gain to the TAR 17,-0.340019558909725,2024-09-01T00:51:10.000Z
+401636610103926301,401636610,40163661017,3,3,7:36,Tarleton State,Baylor,3,35,73,2,8,7,Rush,Braelon Bridges run for 7 yds to the TAR 34,0.4295698173730899,2024-09-01T00:51:10.000Z
+401636610103929001,401636610,40163661017,4,3,7:09,Tarleton State,Baylor,3,35,66,3,1,3,Rush,Braelon Bridges run for 3 yds to the TAR 37 for a 1ST down,1.050278188092519,2024-09-01T00:51:10.000Z
+401636610103936101,401636610,40163661017,5,3,6:38,Tarleton State,Baylor,3,35,63,1,10,11,Pass Reception,Daniel Greek pass complete to Benjamin Omayebu for 11 yds to the TAR 48 for a 1ST down,1.0424565048673191,2024-09-01T00:51:10.000Z
+401636610103939101,401636610,40163661017,6,3,6:08,Tarleton State,Baylor,3,35,52,1,10,1,Rush,Braelon Bridges run for 1 yd to the TAR 49,-0.9023678946876946,2024-09-01T00:51:10.000Z
+401636610103946901,401636610,40163661017,7,3,5:30,Tarleton State,Baylor,3,35,51,2,9,11,Pass Reception,Daniel Greek pass complete to Benjamin Omayebu for 11 yds to the BAY 40 for a 1ST down,1.7213730394607847,2024-09-01T00:51:10.000Z
+401636610103954401,401636610,40163661017,8,3,4:55,Tarleton State,Baylor,3,35,40,1,10,0,Pass Incompletion,Daniel Greek pass incomplete,-0.8457687366186873,2024-09-01T00:51:10.000Z
+401636610103955201,401636610,40163661017,9,3,4:47,Tarleton State,Baylor,3,35,40,2,10,6,Rush,Braelon Bridges run for 6 yds to the BAY 34,0.2694749369408686,2024-09-01T00:51:10.000Z
+401636610103959301,401636610,40163661017,10,3,4:06,Tarleton State,Baylor,3,35,34,3,4,1,Rush,Braelon Bridges run for 1 yd to the BAY 33,-0.7858522252316646,2024-09-01T00:51:10.000Z
+401636610103966901,401636610,40163661017,11,3,3:30,Tarleton State,Baylor,3,35,33,4,3,0,Pass Incompletion,Daniel Greek pass incomplete,-2.4488048311531756,2024-09-01T01:14:08.000Z
+401636610103918803,401636610,40163661017,1,3,8:11,Baylor,Tarleton State,35,3,65,0,0,0,Kickoff,Isaiah Hankins kickoff for 65 yds for a touchback,,2024-09-01T01:06:36.000Z
+401636610103919001,401636610,40163661017,2,3,8:09,Tarleton State,Baylor,3,35,75,1,10,2,Rush,Braelon Bridges run for 2 yds to the TAR 27,-0.45260367932203766,2024-09-01T00:51:10.000Z
+401636610103967301,401636610,40163661018,1,3,3:26,Baylor,Tarleton State,35,3,67,1,10,21,Pass Reception,Dequan Finn pass complete to Jadon Porter for 21 yds to the TAR 46 for a 1ST down,1.8857692610066845,2024-09-01T00:51:10.000Z
+401636610103969301,401636610,40163661018,2,3,3:06,Baylor,Tarleton State,35,3,46,1,10,0,Pass Incompletion,Dequan Finn pass incomplete,-1.0250974847844603,2024-09-01T00:51:10.000Z
+401636610103974301,401636610,40163661018,3,3,2:56,Baylor,Tarleton State,35,3,46,2,10,0,Pass Interception Return,Dequan Finn pass intercepted Ty Rawls return for no gain to the TAR 3,-2.4316151070810754,2024-09-01T00:51:10.000Z
+401636610103995401,401636610,40163661019,4,3,0:45,Tarleton State,Baylor,3,35,91,4,4,9,Punt,"Adrian Guzman punt for 34 yds , Josh Cameron returns for 9 yds to the TAR 34",,2024-09-01T00:51:10.000Z
+401636610103974802,401636610,40163661019,1,3,2:51,Tarleton State,Baylor,3,35,97,1,10,1,Rush,Derrel Kelley III run for 1 yd to the TAR 4,-0.2184310249941177,2024-09-01T01:21:08.000Z
+401636610103979501,401636610,40163661019,2,3,2:04,Tarleton State,Baylor,3,35,96,2,9,6,Pass Reception,Daniel Greek pass complete to Benjamin Omayebu for 6 yds to the TAR 10,0.09017630393485554,2024-09-01T00:51:10.000Z
+401636610103987101,401636610,40163661019,3,3,1:28,Tarleton State,Baylor,3,35,90,3,3,-1,Rush,Daniel Greek run for a loss of 1 yard to the TAR 9,-0.21198496650893084,2024-09-01T00:51:10.000Z
+401636610103998702,401636610,40163661020,3,3,0:00,Baylor,Tarleton State,35,3,36,0,12,24,End Period,End of 3rd Quarter,,2024-09-01T01:25:40.000Z
+401636610103996201,401636610,40163661020,1,3,0:37,Baylor,Tarleton State,35,3,34,1,10,-2,Rush,Richard Reese run for a loss of 2 yards to the TAR 36,-1.0093112073139319,2024-09-01T00:51:10.000Z
+401636610103998701,401636610,40163661020,2,3,0:12,Baylor,Tarleton State,35,3,36,2,12,24,Rush,Richard Reese run for 24 yds to the TAR 12 for a 1ST down,1.4159428261916762,2024-09-01T01:25:40.000Z
+401636610104854001,401636610,40163661020,4,4,14:59,Baylor,Tarleton State,35,3,12,1,10,5,Rush,Richard Reese run for 5 yds to the TAR 7,0.0748456356820665,2024-09-01T01:29:28.000Z
+401636610104855701,401636610,40163661020,5,4,14:42,Baylor,Tarleton State,35,3,7,2,5,0,Pass Incompletion,Dequan Finn pass incomplete,-0.334398364888979,2024-09-01T01:29:28.000Z
+401636610104856501,401636610,40163661020,6,4,14:34,Baylor,Tarleton State,35,3,7,3,5,2,Rush,Richard Reese run for 2 yds to the TAR 5,-0.168823807315315,2024-09-01T01:29:28.000Z
+401636610104864201,401636610,40163661020,7,4,13:57,Baylor,Tarleton State,35,3,5,4,3,0,Pass Incompletion,Dequan Finn pass incomplete,-4.041528921441847,2024-09-01T01:29:28.000Z
+401636610104864704,401636610,40163661021,1,4,13:52,Tarleton State,Baylor,3,35,94,1,10,0,Pass Incompletion,Daniel Greek pass incomplete,-0.2935937291294204,2024-09-01T01:30:57.000Z
+401636610104865501,401636610,40163661021,2,4,13:44,Tarleton State,Baylor,3,35,94,2,10,1,Rush,Braelon Bridges run for 1 yd to the TAR 7,-0.10634716869407777,2024-09-01T02:13:59.000Z
+401636610104869001,401636610,40163661021,3,4,13:09,Tarleton State,Baylor,3,35,93,3,9,0,Rush,Derrel Kelley III run for no gain to the TAR 7,-0.06528090529302233,2024-09-01T01:29:28.000Z
+401636610104877001,401636610,40163661021,4,4,12:29,Tarleton State,Baylor,3,35,93,4,9,9,Punt,"Adrian Guzman punt for 46 yds , Josh Cameron returns for 9 yds to the TAR 44",,2024-09-01T02:13:59.000Z
+401636610104878301,401636610,40163661022,1,4,12:16,Baylor,Tarleton State,35,3,44,1,10,6,Rush,Dawson Pendergrass run for 6 yds to the TAR 38,0.295635896925372,2024-09-01T01:29:28.000Z
+401636610104884401,401636610,40163661022,2,4,11:55,Baylor,Tarleton State,35,3,38,2,4,3,Rush,Dawson Pendergrass run for 3 yds to the TAR 35,-0.3113254846363364,2024-09-01T01:29:28.000Z
+401636610104885901,401636610,40163661022,3,4,11:40,Baylor,Tarleton State,35,3,35,3,1,2,Rush,Dawson Pendergrass run for 2 yds to the TAR 33 for a 1ST down,0.5254971717189977,2024-09-01T01:29:28.000Z
+401636610104887901,401636610,40163661022,4,4,11:20,Baylor,Tarleton State,35,3,33,1,10,8,Penalty,"Tarleton State Penalty, Personal Foul (AJ Owens) to the TAR 12 for a 1ST down",,2024-09-01T01:29:28.000Z
+401636610104888901,401636610,40163661022,5,4,11:10,Baylor,Tarleton State,35,3,12,1,10,-12,Fumble Recovery (Own),"Dequan Finn run for a loss of 12 yards to the TAR 24 Dequan Finn fumbled, recovered by BAY Dequan Finn D. Finn return for 0 yds",-1.4589931038385497,2024-09-01T01:29:28.000Z
+401636610104897301,401636610,40163661022,6,4,10:26,Baylor,Tarleton State,35,3,24,2,22,0,Pass Incompletion,Dequan Finn pass incomplete,-0.9151481598249427,2024-09-01T01:29:28.000Z
+401636610104897401,401636610,40163661022,7,4,10:25,Baylor,Tarleton State,35,3,24,3,22,-5,Penalty,"Baylor Penalty, False Start (Omar Aigbedion) to the TAR 29",,2024-09-01T01:41:55.000Z
+401636610104898101,401636610,40163661022,8,4,10:18,Baylor,Tarleton State,35,3,29,3,27,7,Rush,Dequan Finn run for 7 yds to the TAR 22,0.4307884641466338,2024-09-01T01:29:28.000Z
+401636610104906201,401636610,40163661022,9,4,9:37,Baylor,Tarleton State,38,3,22,4,20,39,Field Goal Good,Isaiah Hankins 39 yd FG GOOD,,2024-09-01T01:44:06.000Z
+401636610104906202,401636610,40163661023,1,4,9:37,Baylor,Tarleton State,38,3,65,0,0,0,Kickoff,Connor Hawkins kickoff for 65 yds for a touchback,,2024-09-01T01:44:06.000Z
+401636610104906401,401636610,40163661023,2,4,9:35,Tarleton State,Baylor,3,38,75,1,10,3,Rush,Derrel Kelley III run for 3 yds to the TAR 28,-0.2957674139440157,2024-09-01T01:29:28.000Z
+401636610104909602,401636610,40163661023,3,4,9:03,Tarleton State,Baylor,3,38,72,2,7,-10,Penalty,"(09:03) KELLEY III, Derrel rush to the right for no gain to the TAR28 (MILLER, Brooks;THORNTON JR., LeVar), clock 08:58. PENALTY TAR Holding on ERNST, Layton enforced 10 yards from the TAR28 to the TAR18 [NHSG]. NO PLAY (replay the down).",,2024-09-01T01:29:28.000Z
+401636610104916201,401636610,40163661023,4,4,8:37,Tarleton State,Baylor,3,38,82,2,17,0,Rush,Derrel Kelley III run for no gain to the TAR 18,-0.1052159632619274,2024-09-01T01:29:28.000Z
+401636610104924301,401636610,40163661023,5,4,7:56,Tarleton State,Baylor,3,38,82,3,17,6,Rush,Derrel Kelley III run for 6 yds to the TAR 24,0.0219249640762902,2024-09-01T01:29:28.000Z
+401636610104928301,401636610,40163661023,6,4,7:16,Tarleton State,Baylor,3,38,76,4,11,0,Punt,"Adrian Guzman punt for 44 yds, downed at the BAY 16",,2024-09-01T01:29:28.000Z
+401636610104929503,401636610,40163661024,1,4,7:04,Baylor,Tarleton State,38,3,83,1,10,-2,Rush,Richard Reese run for a loss of 2 yards to the BAY 15,-0.6032159591482795,2024-09-01T01:50:43.000Z
+401636610104936401,401636610,40163661024,2,4,6:35,Baylor,Tarleton State,38,3,85,2,12,0,Pass Incompletion,Sawyer Robertson pass incomplete,-0.15392310877578377,2024-09-01T01:29:28.000Z
+401636610104937201,401636610,40163661024,3,4,6:27,Baylor,Tarleton State,38,3,85,3,12,23,Pass Reception,Sawyer Robertson pass complete to Matthew Klopfenstein for 23 yds to the BAY 38 for a 1ST down,2.33931800979623,2024-09-01T01:54:19.000Z
+401636610104939201,401636610,40163661024,4,4,6:07,Baylor,Tarleton State,38,3,62,1,10,2,Rush,Richard Reese run for 2 yds to the BAY 40,-0.6656376494811928,2024-09-01T01:55:03.000Z
+401636610104946801,401636610,40163661024,5,4,5:31,Baylor,Tarleton State,38,3,60,2,8,3,Rush,Richard Reese run for 3 yds to the BAY 43,-0.3585969852767423,2024-09-01T01:29:28.000Z
+401636610104948702,401636610,40163661024,6,4,5:12,Baylor,Tarleton State,38,3,57,3,5,10,Penalty,"(05:12) ROBERTSON, Sawyer pass short to the left incomplete intended for CAMERON, Josh thrown to the BAY47, clock 05:06. PENALTY TAR Holding on KURNS, Kasyus enforced 10 yards from the BAY43 to the TAR47 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-01T01:29:28.000Z
+401636610104949301,401636610,40163661024,7,4,5:06,Baylor,Tarleton State,38,3,47,1,10,14,Pass Reception,Sawyer Robertson pass complete to Monaray Baldwin for 14 yds to the TAR 33 for a 1ST down,0.710127467764442,2024-09-01T01:57:45.000Z
+401636610104956601,401636610,40163661024,8,4,4:33,Baylor,Tarleton State,38,3,33,1,10,0,Pass Incompletion,Sawyer Robertson pass incomplete,-0.6351269961541294,2024-09-01T01:29:28.000Z
+401636610104957201,401636610,40163661024,9,4,4:27,Baylor,Tarleton State,38,3,33,2,10,3,Rush,Dawson Pendergrass run for 3 yds to the TAR 30,-0.2795197475233876,2024-09-01T01:29:28.000Z
+401636610104964801,401636610,40163661024,10,4,3:51,Baylor,Tarleton State,45,3,30,3,7,30,Passing Touchdown,Sawyer Robertson pass complete to Ketron Jackson Jr. for 30 yds for a TD (Connor Hawkins KICK),3.817721517179505,2024-09-01T02:02:45.000Z
+401636610104964803,401636610,40163661025,1,4,3:51,Baylor,Tarleton State,45,3,65,0,0,0,Kickoff,Connor Hawkins kickoff for 65 yds for a touchback,,2024-09-01T02:02:45.000Z
+401636610104979901,401636610,40163661025,5,4,2:00,Tarleton State,Baylor,3,45,68,4,3,0,Timeout,"Timeout Baylor, clock 02:00",,2024-09-01T02:07:15.000Z
+401636610104984201,401636610,40163661025,6,4,1:57,Tarleton State,Baylor,3,45,68,4,3,0,Punt,"Adrian Guzman punt for 39 yds, fair catch by Josh Cameron at the BAY 29",,2024-09-01T01:29:28.000Z
+401636610104965701,401636610,40163661025,2,4,3:42,Tarleton State,Baylor,3,45,75,1,10,0,Rush,Braelon Bridges run for no gain to the TAR 25,-0.7029700220436519,2024-09-01T01:29:28.000Z
+401636610104969101,401636610,40163661025,3,4,3:08,Tarleton State,Baylor,3,45,75,2,10,3,Rush,Braelon Bridges run for 3 yds to the TAR 28,-0.15222912011238687,2024-09-01T01:29:28.000Z
+401636610104977401,401636610,40163661025,4,4,2:25,Tarleton State,Baylor,3,45,72,3,7,4,Rush,Braelon Bridges run for 4 yds to the TAR 32,-0.04789853236044017,2024-09-01T01:29:28.000Z
+401636610104999902,401636610,40163661026,4,4,0:00,Baylor,Tarleton State,45,3,47,0,10,0,End of Game,End of 4th Quarter,,2024-09-01T02:13:07.000Z
+401636610104997401,401636610,40163661026,3,4,0:25,Baylor,Tarleton State,45,3,66,3,5,19,Pass Reception,Nate Bennett pass complete to Micah Gifford for 19 yds to the TAR 47 for a 1ST down,2.9434565135267636,2024-09-01T01:29:28.000Z
+401636610104989001,401636610,40163661026,2,4,1:09,Baylor,Tarleton State,45,3,70,2,9,4,Rush,Joseph Hagman run for 4 yds to the BAY 34,-0.0906680083893345,2024-09-01T01:29:28.000Z
+401636610104984801,401636610,40163661026,1,4,1:51,Baylor,Tarleton State,45,3,71,1,10,1,Rush,Joseph Hagman run for 1 yd to the BAY 30,-0.6903738736488947,2024-09-01T01:29:28.000Z

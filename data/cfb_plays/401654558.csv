@@ -1,0 +1,164 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401654558101985505,401654558,4016545583,4,1,0:00,Southern,Savannah St,0,0,55,0,20,-13,End Period,End of 1st Quarter,,2024-09-07T23:49:47.000Z
+401654558101867107,401654558,4016545583,1,1,13:28,Southern,Savannah St,0,0,55,1,10,15,Rush,Kendric Rhymes run for 15 yds to the SAV 40 for a 1ST down,1.087564093379024,2024-09-07T23:49:47.000Z
+401654558101867108,401654558,4016545583,2,1,13:28,Southern,Savannah St,0,0,40,1,10,0,Pass Incompletion,"Noah Bodden pass incomplete to Quay Davis, broken up by Deandre Creary",-0.8457687366186873,2024-09-07T23:49:47.000Z
+401654558101867109,401654558,4016545583,3,1,13:28,Southern,Savannah St,0,0,40,2,10,0,Pass Incompletion,pass incomplete to Tyler Kirkwood,-1.0264463089218037,2024-09-07T23:49:47.000Z
+401654558101849904,401654558,4016545582,1,1,15:00,Savannah St,Southern,0,0,19,1,10,-6,Rush,Jadon Adams run for a loss of 6 yards to the SOU 25,-0.9664618360821197,2024-09-07T23:38:25.000Z
+401654558101849905,401654558,4016545582,2,1,15:00,Savannah St,Southern,0,0,25,2,16,-3,Rush,Da'Shun Mitchell run for a loss of 3 yards to the SOU 28,-1.381793689648383,2024-09-07T23:38:25.000Z
+401654558101849906,401654558,4016545582,3,1,15:00,Savannah St,Southern,0,0,28,3,19,0,Pass Incompletion,pass incomplete to Demeke Colbert,-0.970586342714423,2024-09-07T23:38:25.000Z
+401654558101854401,401654558,4016545582,4,1,14:55,Southern,Savannah St,0,0,65,1,10,0,Kickoff,"Joshua Griffin kickoff , Hudson Primus return for no gain to the SOU 19",,2024-09-07T23:49:47.000Z
+401654558101867101,401654558,4016545582,5,1,13:28,Savannah St,Southern,0,0,28,4,19,0,Punt,Lexington Matthews punt for no gain,,2024-09-07T23:49:47.000Z
+401654558101867104,401654558,4016545584,1,1,13:28,Savannah St,Southern,0,0,45,1,10,-17,Rush,Randy Scott run for a loss of 17 yards to the SAV 38,-3.618072735300667,2024-09-07T23:49:47.000Z
+401654558101894601,401654558,4016545584,4,1,10:53,Savannah St,Southern,0,0,59,4,24,18,Punt,"Lexington Matthews punt for 52 yds , Horacio Johnson returns for 18 yds to the SOU 25",,2024-09-07T23:49:47.000Z
+401654558101867105,401654558,4016545584,2,1,13:28,Savannah St,Southern,0,0,62,2,27,0,Pass Reception,Jadon Adams pass complete to Braylon Fowler for no gain to the SAV 38,-0.17451332938852993,2024-09-07T23:49:47.000Z
+401654558101867106,401654558,4016545584,3,1,13:28,Savannah St,Southern,0,0,62,3,27,3,Pass Reception,Jadon Adams pass complete to Shamarcus Poole for 3 yds to the SAV 41,-0.0370818175075982,2024-09-07T23:49:47.000Z
+401654558101908101,401654558,4016545585,4,1,9:18,Southern,Savannah St,0,0,74,4,9,-5,Punt,Kenny Pham punt,,2024-09-07T23:49:47.000Z
+401654558101908701,401654558,4016545585,5,1,9:12,Southern,Savannah St,0,0,79,4,14,0,Punt,Kenny Pham punt for 40 yds,,2024-09-07T23:49:47.000Z
+401654558101894602,401654558,4016545585,1,1,10:53,Southern,Savannah St,0,0,75,1,10,3,Rush,Kendric Rhymes run for 3 yds to the SOU 28,-0.2957674139440157,2024-09-07T23:49:47.000Z
+401654558101894603,401654558,4016545585,2,1,10:53,Southern,Savannah St,0,0,72,2,7,0,Pass Incompletion,pass incomplete to Kendric Rhymes,-0.5594317282120231,2024-09-07T23:49:47.000Z
+401654558101894604,401654558,4016545585,3,1,10:53,Southern,Savannah St,0,0,72,3,7,-2,Sack,Noah Bodden sacked for a loss of 2 yards to the SOU 26,-0.32936203650667295,2024-09-07T23:49:47.000Z
+401654558101926601,401654558,4016545586,4,1,7:33,Savannah St,Southern,0,0,58,4,7,0,Punt,Lexington Matthews punt for 57 yds,,2024-09-07T23:49:47.000Z
+401654558101908702,401654558,4016545586,1,1,9:12,Savannah St,Southern,0,0,61,1,10,3,Rush,Jadon Adams run for 3 yds to the SAV 42,-0.428981456130188,2024-09-07T23:49:47.000Z
+401654558101908703,401654558,4016545586,2,1,9:12,Savannah St,Southern,0,0,58,2,7,0,Rush,"Adams,Jadon rush right (West,Elijah).",-0.9867640368726639,2024-09-07T23:49:47.000Z
+401654558101908704,401654558,4016545586,3,1,9:12,Savannah St,Southern,0,0,58,3,7,0,Pass Incompletion,"Jadon Adams pass incomplete to Randy Scott, broken up by Horacio Johnson",-0.5911254181598018,2024-09-07T23:49:47.000Z
+401654558101974401,401654558,4016545587,10,1,2:55,Southern,Savannah St,3,0,27,4,16,44,Field Goal Good,Joshua Griffin 44 yd FG GOOD,,2024-09-07T23:38:25.000Z
+401654558101926602,401654558,4016545587,1,1,7:33,Southern,Savannah St,0,0,99,1,10,0,Pass Incompletion,pass incomplete to Kobe Dillon,-0.24120998460901966,2024-09-07T23:49:47.000Z
+401654558101926603,401654558,4016545587,2,1,7:33,Southern,Savannah St,0,0,99,2,10,4,Rush,Kobe Dillon run for 4 yds to the SOU 5,-0.01164920371741118,2024-09-07T23:49:47.000Z
+401654558101926604,401654558,4016545587,3,1,7:33,Southern,Savannah St,0,0,95,3,6,11,Rush,Noah Bodden run for 11 yds to the SOU 16 for a 1ST down,0.6651697129921654,2024-09-07T23:49:47.000Z
+401654558101926605,401654558,4016545587,4,1,7:33,Southern,Savannah St,0,0,84,1,10,5,Rush,Kobe Dillon run for 5 yds to the SOU 21,0.07867780591471615,2024-09-07T23:49:47.000Z
+401654558101926606,401654558,4016545587,5,1,7:33,Southern,Savannah St,0,0,79,2,5,3,Rush,Kobe Dillon run for 3 yds to the SOU 24,-0.211765815862333,2024-09-07T23:49:47.000Z
+401654558101926607,401654558,4016545587,6,1,7:33,Southern,Savannah St,0,0,76,3,2,55,Rush,"Noah Bodden run for 40 yds to the SAV 36 Savannah State Penalty, personal foul (Hudson Primus) to the SAV 21",4.080160523355798,2024-09-07T23:49:47.000Z
+401654558101926608,401654558,4016545587,7,1,7:33,Southern,Savannah St,0,0,21,1,10,0,Rush,"Rhymes,Kendric rush middle (Brewton,Tavare;Bentley,John ""Wesley"").",-0.3882383440694163,2024-09-07T23:49:47.000Z
+401654558101926609,401654558,4016545587,8,1,7:33,Southern,Savannah St,0,0,21,2,10,5,Rush,Kendric Rhymes run for 5 yds to the SAV 16,0.0431526443716223,2024-09-07T23:49:47.000Z
+401654558101926610,401654558,4016545587,9,1,7:33,Southern,Savannah St,0,0,16,3,5,-11,Sack,Noah Bodden sacked for a loss of 11 yards to the SAV 27,-2.542563540097398,2024-09-07T23:49:47.000Z
+401654558101974801,401654558,4016545589,1,1,2:51,Southern,Savannah St,3,0,65,1,10,13,Kickoff,"Joshua Griffin kickoff for 65 yds , Joseph Hampton return for 13 yds to the SAV 13",,2024-09-07T23:49:47.000Z
+401654558101974802,401654558,4016545589,2,1,2:51,Savannah St,Southern,0,3,87,1,10,6,Rush,Jadon Adams run for 6 yds to the SAV 19,0.23191006772714043,2024-09-07T23:49:47.000Z
+401654558101984701,401654558,4016545589,3,1,1:52,Savannah St,Southern,7,3,81,2,4,81,Rushing Touchdown,Jadon Adams run for 81 yds for a TD (Jimmy Mal KICK),6.464885551140491,2024-09-07T23:46:23.000Z
+401654558101985501,401654558,40165455811,2,1,1:44,Savannah St,Southern,7,3,65,1,10,19,Kickoff,"Lexington Matthews kickoff for 62 yds , Chandler Whitfield return for 19 yds to the SOU 22",,2024-09-07T23:49:47.000Z
+401654558102896901,401654558,40165455811,15,2,10:30,Southern,Savannah St,6,7,21,4,3,38,Field Goal Good,Joshua Griffin 38 yd FG GOOD,,2024-09-07T23:59:39.000Z
+401654558101849908,401654558,40165455811,1,1,15:00,Southern,Savannah St,3,7,68,1,10,2,Rush,Kobe Dillon run for 2 yds to the SOU 34,-0.5836824413377926,2024-09-07T23:38:25.000Z
+401654558101985502,401654558,40165455811,3,1,1:44,Southern,Savannah St,3,7,78,1,10,5,Rush,Kobe Dillon run for 5 yds to the SOU 27,0.0891040604736997,2024-09-07T23:49:47.000Z
+401654558101985503,401654558,40165455811,4,1,1:44,Southern,Savannah St,3,7,73,2,5,5,Rush,Kobe Dillon run for 5 yds to the SOU 32 for a 1ST down,0.663570026225563,2024-09-07T23:49:47.000Z
+401654558102849901,401654558,40165455811,5,2,15:00,Southern,Savannah St,3,7,66,2,8,6,Pass Reception,Noah Bodden pass complete to Chandler Whitfield for 6 yds to the SOU 40,0.2935133147661074,2024-09-07T23:59:39.000Z
+401654558102849903,401654558,40165455811,6,2,15:00,Southern,Savannah St,3,7,60,3,2,1,Rush,Kendric Rhymes run for 1 yd to the SOU 41,-0.6792317970833226,2024-09-07T23:59:39.000Z
+401654558102849904,401654558,40165455811,7,2,15:00,Southern,Savannah St,3,7,59,4,1,1,Rush,Noah Bodden run for 1 yd to the SOU 42 for a 1ST down,1.9270084272575518,2024-09-07T23:59:39.000Z
+401654558102849905,401654558,40165455811,8,2,15:00,Southern,Savannah St,3,7,58,1,10,16,Pass Reception,"Noah Bodden pass complete to Jermaine Minor Jr. for 16 yds to the SAV 42 for a 1ST down Savannah State Penalty, Defensive pass interference (Gary Davis Jr.) to the SAV 42 for a 1ST down",1.2667677404671915,2024-09-07T23:59:39.000Z
+401654558102849906,401654558,40165455811,9,2,15:00,Southern,Savannah St,3,7,42,1,10,3,Rush,Kendric Rhymes run for 3 yds to the SAV 39,-0.2936970531139116,2024-09-07T23:59:39.000Z
+401654558102849907,401654558,40165455811,10,2,15:00,Southern,Savannah St,3,7,39,2,7,-8,Fumble Recovery (Own),"Noah Bodden sacked for a loss of 8 yards to the SAV 47 Noah Bodden fumbled, recovered by SOU Kendric Rhymes , return for 0 yards",-2.6402574144842124,2024-09-07T23:59:39.000Z
+401654558102849908,401654558,40165455811,11,2,15:00,Southern,Savannah St,3,7,47,3,15,19,Pass Reception,Noah Bodden pass complete to Darren Morris for 19 yds to the SAV 28 for a 1ST down,3.4648754650318168,2024-09-07T23:59:39.000Z
+401654558102885401,401654558,40165455811,12,2,11:45,Southern,Savannah St,3,7,28,1,10,1,Rush,Kobe Dillon run for 1 yd to the SAV 27,-0.3905035886634815,2024-09-08T00:05:00.000Z
+401654558102885402,401654558,40165455811,13,2,11:45,Southern,Savannah St,3,7,27,2,9,6,Pass Reception,Noah Bodden pass complete to Dupree Fuller for 6 yds to the SAV 21,0.1766769470807895,2024-09-08T00:05:00.000Z
+401654558102885403,401654558,40165455811,14,2,11:45,Southern,Savannah St,3,7,21,3,3,0,Pass Incompletion,pass incomplete to Tyler Kirkwood,-0.6192206331352957,2024-09-08T00:05:00.000Z
+401654558102914409,401654558,40165455814,8,2,8:55,Southern,Savannah St,6,7,41,4,2,5,Penalty,"Savannah State Penalty, substitution infraction (Shamarcus Poole) to the SAV 36 for a 1ST down",,2024-09-08T00:17:35.000Z
+401654558102984401,401654558,40165455814,15,2,1:55,Southern,Savannah St,9,7,32,4,17,49,Field Goal Good,Joshua Griffin 49 yd FG GOOD,,2024-09-08T00:33:52.000Z
+401654558102914413,401654558,40165455814,12,2,8:55,Southern,Savannah St,6,7,25,1,10,0,Pass Incompletion,pass incomplete to Chandler Whitfield,-0.4522778946200265,2024-09-08T00:17:35.000Z
+401654558102914402,401654558,40165455814,1,2,8:55,Southern,Savannah St,6,7,75,1,10,12,Rush,Tyler Kirkwood run for 12 yds to the SOU 37 for a 1ST down,1.0272443261435713,2024-09-08T00:15:53.000Z
+401654558102914403,401654558,40165455814,2,2,8:55,Southern,Savannah St,6,7,63,1,10,7,Pass Reception,Czavian Teasett pass complete to Darren Morris for 7 yds to the SOU 44,0.7113806413121412,2024-09-08T00:15:53.000Z
+401654558102914404,401654558,40165455814,3,2,8:55,Southern,Savannah St,6,7,56,2,3,1,Rush,Kobe Dillon run for 1 yd to the SOU 45,-1.036256220645587,2024-09-08T00:17:35.000Z
+401654558102914405,401654558,40165455814,4,2,8:55,Southern,Savannah St,6,7,55,3,2,6,Rush,Kendric Rhymes run for 6 yds to the SAV 49 for a 1ST down,1.6130558212739476,2024-09-08T00:17:35.000Z
+401654558102914406,401654558,40165455814,5,2,8:55,Southern,Savannah St,6,7,49,1,10,0,Pass Incompletion,pass incomplete to Chandler Whitfield,-1.0955888671820908,2024-09-08T00:17:35.000Z
+401654558102914407,401654558,40165455814,6,2,8:55,Southern,Savannah St,6,7,49,2,10,5,Rush,Kendric Rhymes run for 5 yds to the SAV 44,0.0743034836232805,2024-09-08T00:17:35.000Z
+401654558102914408,401654558,40165455814,7,2,8:55,Southern,Savannah St,6,7,44,3,5,3,Rush,Kendric Rhymes run for 3 yds to the SAV 41,-0.4066501410115198,2024-09-08T00:17:35.000Z
+401654558102914410,401654558,40165455814,9,2,8:55,Southern,Savannah St,6,7,36,1,10,9,Pass Reception,Czavian Teasett pass complete to Kobe Dillon for 9 yds to the SAV 27,0.766162278539236,2024-09-08T00:17:35.000Z
+401654558102914411,401654558,40165455814,10,2,8:55,Southern,Savannah St,6,7,27,2,1,0,Rush,"Dillion,Kobe rush middle (Bell,Darrian;White,Akeem).",-0.753417680452554,2024-09-08T00:17:35.000Z
+401654558102914412,401654558,40165455814,11,2,8:55,Southern,Savannah St,6,7,27,3,1,2,Rush,Kendric Rhymes run for 2 yds to the SAV 25 for a 1ST down,0.2979491346610565,2024-09-08T00:17:35.000Z
+401654558102914414,401654558,40165455814,13,2,8:55,Southern,Savannah St,6,7,25,2,10,-6,Sack,Czavian Teasett sacked for a loss of 6 yards to the SAV 31,-1.7478843330349234,2024-09-08T00:17:35.000Z
+401654558102975701,401654558,40165455814,14,2,2:42,Southern,Savannah St,6,7,31,3,16,-1,Pass Reception,Czavian Teasett pass complete to Chandler Whitfield for a loss of 1 yard to the SAV 32,-1.160565350738584,2024-09-08T00:27:35.000Z
+401654558102896902,401654558,40165455813,1,2,10:30,Southern,Savannah St,6,7,65,1,10,0,Kickoff,Joshua Griffin kickoff for 65 yds for a touchback,,2024-09-07T23:59:39.000Z
+401654558102914401,401654558,40165455813,5,2,8:55,Savannah St,Southern,7,6,75,4,10,5,Punt,"Lexington Matthews punt for 55 yds, punt out-of-bounds at the SOU 25 , Chandler Whitfield returns for 5 yds to the SOU 25",,2024-09-08T00:15:53.000Z
+401654558102896903,401654558,40165455813,2,2,10:30,Savannah St,Southern,7,6,75,1,10,4,Rush,Shamarcus Poole run for 4 yds to the SAV 29,-0.1142886249388964,2024-09-07T23:59:39.000Z
+401654558102896904,401654558,40165455813,3,2,10:30,Savannah St,Southern,7,6,71,2,6,-4,Rush,Shamarcus Poole run for a loss of 4 yards to the SAV 25,-0.9357862742264942,2024-09-08T00:13:16.000Z
+401654558102896905,401654558,40165455813,4,2,10:30,Savannah St,Southern,7,6,75,3,10,0,Pass Incompletion,pass incomplete,-0.15871308844886392,2024-09-08T00:13:16.000Z
+401654558102984402,401654558,40165455816,1,2,1:55,Southern,Savannah St,9,7,65,1,10,0,Kickoff,Joshua Griffin kickoff for 65 yds for a touchback,,2024-09-08T00:33:52.000Z
+401654558102987001,401654558,40165455816,5,2,1:29,Savannah St,Southern,7,9,81,4,16,0,Punt,Lexington Matthews punt for 19 yds,,2024-09-08T00:41:17.000Z
+401654558102984403,401654558,40165455816,2,2,1:55,Savannah St,Southern,7,9,75,1,10,1,Pass Reception,Jadon Adams pass complete to Demeke Colbert for 1 yd to the SAV 26,-0.5874795431016855,2024-09-08T00:33:52.000Z
+401654558102984404,401654558,40165455816,3,2,1:55,Savannah St,Southern,7,9,74,2,9,-4,Pass Reception,Jadon Adams pass complete to Demeke Colbert for a loss of 4 yards to the SAV 22,-0.5789282346861331,2024-09-08T00:33:52.000Z
+401654558102985701,401654558,40165455816,4,2,1:42,Savannah St,Southern,7,9,78,3,13,-3,Rush,Joseph Hampton run for a loss of 3 yards to the SAV 19,-0.12376553827395755,2024-09-08T00:40:03.000Z
+401654558102987002,401654558,40165455817,1,2,1:29,Southern,Savannah St,9,7,38,1,10,0,Pass Incompletion,pass incomplete to Darren Morris,-0.7828922522763084,2024-09-08T00:41:17.000Z
+401654558102987003,401654558,40165455817,2,2,1:29,Southern,Savannah St,9,7,38,2,10,0,Pass Incompletion,pass incomplete to Darren Morris,-0.9886314711142071,2024-09-08T00:41:17.000Z
+401654558102988901,401654558,40165455817,3,2,1:10,Southern,Savannah St,16,7,38,3,10,38,Passing Touchdown,Czavian Teasett pass complete to Chandler Whitfield for 38 yds for a TD (Joshua Griffin KICK),4.8661163719757035,2024-09-08T00:43:15.000Z
+401654558102988903,401654558,40165455819,1,2,1:10,Southern,Savannah St,16,7,65,1,10,0,Kickoff,Joshua Griffin kickoff for 65 yds for a touchback,,2024-09-08T00:43:15.000Z
+401654558102988904,401654558,40165455819,2,2,1:10,Savannah St,Southern,7,16,75,1,10,0,Pass Incompletion,pass incomplete,-0.7029700220436519,2024-09-08T00:46:09.000Z
+401654558102988905,401654558,40165455819,3,2,1:10,Savannah St,Southern,7,16,75,2,10,-3,Sack,Jadon Adams sacked for a loss of 3 yards to the SAV 22,-0.4634377557441667,2024-09-08T00:46:09.000Z
+401654558102988906,401654558,40165455819,4,2,1:10,Savannah St,Southern,7,16,78,3,13,9,Rush,Joseph Hampton run for 9 yds to the SAV 35,0.19397387408133415,2024-09-08T00:46:09.000Z
+401654558103854501,401654558,40165455821,6,3,14:54,Savannah St,Southern,7,16,65,1,10,17,Kickoff,"Lexington Matthews kickoff for 54 yds , Chandler Whitfield return for 17 yds to the SOU 48 Southern Penalty, Offensive holding (10 Yards) to the SOU 18",,2024-09-08T01:11:43.000Z
+401654558103925501,401654558,40165455821,17,3,7:44,Southern,Savannah St,16,7,28,4,18,0,Missed Field Goal Return,"Joshua Griffin 45 yd FG MISSED , Elijah Norwood return for no gain to the SOU 20",,2024-09-08T01:27:25.000Z
+401654558103875801,401654558,40165455821,7,3,12:41,Southern,Savannah St,16,7,47,1,10,2,Rush,Kendric Rhymes run for 2 yds to the SAV 45,-0.583582209593514,2024-09-08T01:11:20.000Z
+401654558103849902,401654558,40165455821,1,3,15:00,Southern,Savannah St,16,7,82,1,10,8,Rush,Kobe Dillon run for 8 yds to the SOU 26,0.7526495917572377,2024-09-08T01:11:20.000Z
+401654558103849903,401654558,40165455821,2,3,15:00,Southern,Savannah St,16,7,74,2,2,14,Rush,CJ Russell run for 14 yds to the SOU 40 for a 1ST down,0.9787480533919376,2024-09-08T01:11:20.000Z
+401654558103849904,401654558,40165455821,3,3,15:00,Southern,Savannah St,16,7,60,1,10,-1,Rush,CJ Russell run for a loss of 1 yard to the SOU 39,-1.319414526540232,2024-09-08T01:11:20.000Z
+401654558103849905,401654558,40165455821,4,3,15:00,Southern,Savannah St,16,7,61,2,11,9,Rush,Czavian Teasett run for 9 yds to the SOU 48,0.9855500591721835,2024-09-08T01:11:20.000Z
+401654558103849906,401654558,40165455821,5,3,15:00,Southern,Savannah St,16,7,52,3,2,5,Rush,"for a 1ST down Savannah State Penalty, off-side (Shamarcus Poole) to the SAV 47 for a 1ST down",1.477562830245294,2024-09-08T01:11:20.000Z
+401654558103875802,401654558,40165455821,8,3,12:41,Southern,Savannah St,16,7,45,2,8,11,Pass Reception,Czavian Teasett pass complete to Kendric Rhymes for 11 yds to the SAV 34 for a 1ST down,1.260058289946274,2024-09-08T01:19:22.000Z
+401654558103875803,401654558,40165455821,9,3,12:41,Southern,Savannah St,16,7,34,1,10,4,Pass Reception,Czavian Teasett pass complete to Darren Morris for 4 yds to the SAV 30,-0.063267952570744,2024-09-08T01:19:22.000Z
+401654558103875804,401654558,40165455821,10,3,12:41,Southern,Savannah St,16,7,30,2,6,0,Pass Incompletion,pass incomplete to Chandler Whitfield,-0.711882124036327,2024-09-08T01:19:48.000Z
+401654558103875805,401654558,40165455821,11,3,12:41,Southern,Savannah St,16,7,30,3,6,-6,Rush,"Teasett,Czavian rush (Booker,Ahlik), PENALTY SOU false start 6 yards to the SSU24. Southern Penalty, false start (-6 Yards) to the SAV 36",-2.193059588606106,2024-09-08T01:19:48.000Z
+401654558103875807,401654558,40165455821,12,3,12:41,Southern,Savannah St,16,7,36,3,12,16,Pass Reception,Czavian Teasett pass complete to Jermaine Minor Jr. for 16 yds to the SAV 20 for a 1ST down,2.2979661601118817,2024-09-08T01:19:48.000Z
+401654558103875808,401654558,40165455821,13,3,12:41,Southern,Savannah St,16,7,20,1,10,-10,Rush,"Teasett,Czavian rush (Jones,Williiam), PENALTY SOU holding 10 yards to the SSU10. Southern Penalty, Offensive holding (-10 Yards) to the SAV 30",-1.6630481060458226,2024-09-08T01:19:48.000Z
+401654558103875809,401654558,40165455821,14,3,12:41,Southern,Savannah St,16,7,30,1,20,-4,Rush,Kendric Rhymes run for a loss of 4 yards to the SAV 34,-1.5642796580101663,2024-09-08T01:19:48.000Z
+401654558103875810,401654558,40165455821,15,3,12:41,Southern,Savannah St,16,7,34,2,24,0,Pass Incompletion,"Czavian Teasett pass incomplete to Tyler Kirkwood, broken up by Uchenna Nwoha",-0.9478636426474489,2024-09-08T01:19:48.000Z
+401654558103875811,401654558,40165455821,16,3,12:41,Southern,Savannah St,16,7,34,3,24,6,Rush,Czavian Teasett run for 6 yds to the SAV 28,0.2210087112128844,2024-09-08T01:19:48.000Z
+401654558103938901,401654558,40165455822,4,3,6:10,Savannah St,Southern,10,16,16,4,6,33,Field Goal Good,Jimmy Mal 33 yd FG GOOD,,2024-09-08T01:35:16.000Z
+401654558103925502,401654558,40165455822,1,3,7:44,Savannah St,Southern,7,16,20,1,10,3,Rush,Shamarcus Poole run for 3 yds to the SOU 17,-0.118259586028175,2024-09-08T01:27:25.000Z
+401654558103925503,401654558,40165455822,2,3,7:44,Savannah St,Southern,7,16,17,2,7,1,Rush,Shamarcus Poole run for 1 yd to the SOU 16,-0.305347219380412,2024-09-08T01:27:25.000Z
+401654558103925504,401654558,40165455822,3,3,7:44,Savannah St,Southern,7,16,16,3,6,0,Pass Incompletion,pass incomplete to Da'Shun Mitchell,-0.5144970361253522,2024-09-08T01:27:25.000Z
+401654558103939801,401654558,40165455824,1,3,6:01,Savannah St,Southern,10,16,65,1,10,17,Kickoff,"Lexington Matthews kickoff for 59 yds , CJ Russell return for 17 yds to the SOU 23",,2024-09-08T01:37:16.000Z
+401654558103939802,401654558,40165455824,2,3,6:01,Southern,Savannah St,16,10,77,1,10,2,Rush,CJ Russell run for 2 yds to the SOU 25,-0.41522254917671025,2024-09-08T01:37:16.000Z
+401654558103939803,401654558,40165455824,3,3,6:01,Southern,Savannah St,16,10,75,2,8,17,Pass Reception,Czavian Teasett pass complete to Dupree Fuller for 17 yds to the SOU 42 for a 1ST down,2.0638764313267917,2024-09-08T01:37:16.000Z
+401654558103939804,401654558,40165455824,4,3,6:01,Southern,Savannah St,16,10,58,1,10,8,Pass Reception,Czavian Teasett pass complete to Darren Morris for 8 yds to the 50 yard line,0.9916447666850381,2024-09-08T01:39:43.000Z
+401654558103939805,401654558,40165455824,5,3,6:01,Southern,Savannah St,16,10,50,2,2,0,Pass Incompletion,"Czavian Teasett pass incomplete to Tyler Kirkwood, broken up by Hudson Primus",-1.3256508089974464,2024-09-08T01:39:43.000Z
+401654558103939806,401654558,40165455824,6,3,6:01,Southern,Savannah St,16,10,50,3,2,19,Rush,CJ Russell run for 19 yds to the SAV 31 for a 1ST down,2.053763084278776,2024-09-08T01:39:43.000Z
+401654558103966401,401654558,40165455824,7,3,3:35,Southern,Savannah St,23,10,31,1,10,31,Passing Touchdown,Czavian Teasett pass complete to Dupree Fuller for 31 yds for a TD (Joshua Griffin KICK),2.841946170072948,2024-09-08T01:43:34.000Z
+401654558103966403,401654558,40165455826,1,3,3:35,Southern,Savannah St,23,10,65,1,10,0,Kickoff,Joshua Griffin kickoff for 65 yds for a touchback,,2024-09-08T01:43:34.000Z
+401654558103984901,401654558,40165455826,5,3,1:50,Savannah St,Southern,10,23,75,4,10,3,Punt,"Lexington Matthews punt for 36 yds , Chandler Whitfield returns for 3 yds to the SOU 42",,2024-09-08T01:49:17.000Z
+401654558103966404,401654558,40165455826,2,3,3:35,Savannah St,Southern,10,23,75,1,10,2,Pass Reception,Jadon Adams pass complete to Shamarcus Poole for 2 yds to the SAV 27,-0.45260367932203766,2024-09-08T01:43:34.000Z
+401654558103966405,401654558,40165455826,3,3,3:35,Savannah St,Southern,10,23,73,2,8,-2,Rush,Joseph Hampton run for a loss of 2 yards to the SAV 25,-0.5974712198433529,2024-09-08T01:43:34.000Z
+401654558103966406,401654558,40165455826,4,3,3:35,Savannah St,Southern,10,23,75,3,10,0,Pass Incompletion,"Jadon Adams pass incomplete to Demeke Colbert, broken up by Herman Brister III",-0.15871308844886392,2024-09-08T01:43:34.000Z
+401654558103984908,401654558,40165455827,7,3,0:00,Southern,Savannah St,23,10,47,0,10,0,End Period,End of 3rd Quarter,,2024-09-08T01:55:55.000Z
+401654558104865902,401654558,40165455827,12,4,13:40,Southern,Savannah St,23,10,3,1,10,-62,Pass Incompletion,Czavian Teasett pass incomplete to Calvin Collier,,2024-09-08T02:04:55.000Z
+401654558103849907,401654558,40165455827,1,3,15:00,Southern,Savannah St,23,10,47,3,10,20,Pass Reception,Czavian Teasett pass complete to Jermaine Minor Jr. for 20 yds to the SAV 27 for a 1ST down,2.982451893283633,2024-09-08T01:11:20.000Z
+401654558103984902,401654558,40165455827,2,3,1:50,Southern,Savannah St,23,10,58,1,10,-10,Rush,"Rhymes,Kendric rush (Buchanan,Cayden), PENALTY SOU holding 10 yards to the SSU48. Southern Penalty, Offensive holding (-10 Yards) to the SOU 32",-2.468379643418195,2024-09-08T01:51:18.000Z
+401654558103984903,401654558,40165455827,3,3,1:50,Southern,Savannah St,23,10,68,1,20,1,Rush,Czavian Teasett run for 1 yd to the SOU 33,-0.36184680029705607,2024-09-08T01:51:18.000Z
+401654558103984904,401654558,40165455827,4,3,1:50,Southern,Savannah St,23,10,67,2,19,20,Pass Reception,Czavian Teasett pass complete to Cameron Jackson for 20 yds to the SAV 47 for a 1ST down,3.3490391080979984,2024-09-08T01:51:18.000Z
+401654558103984905,401654558,40165455827,5,3,1:50,Southern,Savannah St,23,10,47,1,10,0,Pass Incompletion,Czavian Teasett pass incomplete to Cameron Jackson,-1.0507069190375147,2024-09-08T01:51:18.000Z
+401654558103984906,401654558,40165455827,6,3,1:50,Southern,Savannah St,23,10,47,2,10,0,Pass Incompletion,pass incomplete to Darren Morris,-1.0598235743711744,2024-09-08T01:51:18.000Z
+401654558104849901,401654558,40165455827,8,4,15:00,Southern,Savannah St,23,10,27,1,10,11,Rush,Kobe Dillon run for 11 yds to the SAV 16 for a 1ST down,0.1725581200991116,2024-09-07T00:00:00.000Z
+401654558104849903,401654558,40165455827,9,4,15:00,Southern,Savannah St,23,10,16,1,10,6,Rush,Kobe Dillon run for 6 yds to the SAV 10,0.1820990038493714,2024-09-07T00:00:00.000Z
+401654558104849904,401654558,40165455827,10,4,15:00,Southern,Savannah St,23,10,10,2,4,6,Rush,"Kobe Dillon run for 1 yd to the SAV 9 for a 1ST down Savannah State Penalty, personal foul (Pearce Brown) to the SAV 4 for a 1ST down",0.698433198729028,2024-09-07T00:00:00.000Z
+401654558104865901,401654558,40165455827,11,4,13:40,Southern,Savannah St,29,10,4,1,4,4,Rushing Touchdown,Kendric Rhymes run for 4 yds for a TD,1.688190518713975,2024-09-07T00:00:00.000Z
+401654558104917403,401654558,40165455830,9,4,8:25,Southern,Savannah St,35,10,33,1,25,33,Passing Touchdown,Czavian Teasett pass complete to Darren Morris for 33 yds for a TD,4.15501113087922,2024-09-08T02:21:20.000Z
+401654558104917402,401654558,40165455830,8,4,8:25,Southern,Savannah St,29,10,3,1,10,-62,Pass Reception,Czavian Teasett pass complete to Kobe Dillon for no gain to the SOU 35,,2024-09-08T02:21:20.000Z
+401654558104885902,401654558,40165455830,1,4,11:40,Southern,Savannah St,29,10,40,1,10,-5,Rush,CJ Russell run for a loss of 5 yards to the SAV 45,-1.927606356965283,2024-09-08T02:13:17.000Z
+401654558104885903,401654558,40165455830,2,4,11:40,Southern,Savannah St,29,10,45,2,15,10,Pass Reception,Czavian Teasett pass complete to Jermaine Minor Jr. for 10 yds to the SAV 35,1.1485657260998003,2024-09-08T02:13:17.000Z
+401654558104885904,401654558,40165455830,3,4,11:40,Southern,Savannah St,29,10,35,3,5,6,Pass Reception,Czavian Teasett pass complete to Darren Morris for 6 yds to the SAV 29 for a 1ST down,1.1797885902047116,2024-09-08T02:13:17.000Z
+401654558104885905,401654558,40165455830,4,4,11:40,Southern,Savannah St,29,10,29,1,10,0,Pass Incompletion,pass incomplete to Dupree Fuller,-0.534372502378378,2024-09-08T02:13:17.000Z
+401654558104885906,401654558,40165455830,5,4,11:40,Southern,Savannah St,29,10,29,2,10,0,Pass Incompletion,Czavian Teasett pass incomplete to Chandler Whitfield,-0.732204526648056,2024-09-08T02:13:17.000Z
+401654558104906601,401654558,40165455830,6,4,9:33,Southern,Savannah St,29,10,29,3,10,11,Pass Reception,Czavian Teasett pass complete to Kobe Dillon for 11 yds to the SAV 18 for a 1ST down,1.463085504553955,2024-09-08T02:19:20.000Z
+401654558104906602,401654558,40165455830,7,4,9:33,Southern,Savannah St,29,10,18,1,10,-15,Pass Reception,"Czavian Teasett pass complete to Jermaine Minor Jr. for no gain to the SAV 18 Southern Penalty, Offensive pass interference (-15 Yards) to the SAV 33",-2.5208650231053915,2024-09-08T02:19:20.000Z
+401654558104866501,401654558,40165455829,1,4,13:34,Southern,Savannah St,29,10,65,1,10,11,Kickoff,"Joshua Griffin kickoff for 61 yds , Joseph Hampton return for 11 yds to the SAV 15",,2024-09-08T02:06:03.000Z
+401654558104885901,401654558,40165455829,6,4,11:40,Savannah St,Southern,10,29,94,4,19,11,Punt,"Lexington Matthews punt for 45 yds , Chandler Whitfield returns for 11 yds to the SAV 40",,2024-09-08T02:13:17.000Z
+401654558104866502,401654558,40165455829,2,4,13:34,Savannah St,Southern,10,29,85,1,10,-5,Pass Incompletion,"Jadon Adams pass incomplete to Braylon Fowler, broken up by CJ Russell Savannah State Penalty, inelgible downfield on pass (-5 Yards) to the SAV 10",-0.6500761561906545,2024-09-08T02:06:03.000Z
+401654558104866503,401654558,40165455829,3,4,13:34,Savannah St,Southern,10,29,90,1,15,-4,Rush,Shamarcus Poole run for a loss of 4 yards to the SAV 6,-0.2537219371186259,2024-09-08T02:06:03.000Z
+401654558104866504,401654558,40165455829,4,4,13:34,Savannah St,Southern,10,29,94,2,19,0,Pass Incompletion,"Jadon Adams pass incomplete to Khiry Wallace, broken up by Elijah West",-0.03796703102386179,2024-09-08T02:06:03.000Z
+401654558104866505,401654558,40165455829,5,4,13:34,Savannah St,Southern,10,29,94,3,19,0,Rush,"Adams,Jadon rush middle (Harry,Darrius).",-0.01630344035143685,2024-09-08T02:06:03.000Z
+401654558104918004,401654558,40165455832,4,4,8:19,Savannah St,Southern,10,35,78,3,11,5,Pass Reception,Jadon Adams pass complete to Jordan Springs for 5 yds to the SAV 27,0.01473831295188964,2024-09-08T02:25:15.000Z
+401654558104918001,401654558,40165455832,1,4,8:19,Southern,Savannah St,35,10,65,1,10,15,Kickoff,"Joshua Griffin kickoff for 57 yds , Joseph Hampton return for 15 yds to the SAV 23",,2024-09-08T02:25:15.000Z
+401654558104918005,401654558,40165455832,5,4,8:19,Savannah St,Southern,10,35,73,4,6,-5,Penalty,"Savannah State Penalty, false start (Shamarcus Poole) to the SAV 22",,2024-09-08T02:25:15.000Z
+401654558104939501,401654558,40165455832,6,4,6:04,Savannah St,Southern,10,35,78,4,11,5,Punt,"Lexington Matthews punt for 53 yds, punt out-of-bounds at the SOU 15 , Chandler Whitfield returns for 5 yds to the SOU 27 Southern Penalty, illegal block (Kyle Willimas) to the SOU 15",,2024-09-08T02:29:32.000Z
+401654558104918002,401654558,40165455832,2,4,8:19,Savannah St,Southern,10,35,77,1,10,0,Pass Incompletion,pass incomplete,-0.6425305871127751,2024-09-08T02:25:15.000Z
+401654558104918003,401654558,40165455832,3,4,8:19,Savannah St,Southern,10,35,77,2,10,-1,Rush,Joseph Hampton run for a loss of 1 yard to the SAV 22,-0.34998589374129985,2024-09-08T02:25:15.000Z
+401654558104939502,401654558,40165455833,1,4,6:04,Southern,Savannah St,35,10,85,1,10,6,Rush,Tyce Fusilier run for 6 yds to the SOU 21,0.246959168535291,2024-09-08T02:29:32.000Z
+401654558104939503,401654558,40165455833,2,4,6:04,Southern,Savannah St,35,10,79,2,4,2,Rush,Tyce Fusilier run for 2 yds to the SOU 23,-0.3720458749677702,2024-09-08T02:29:32.000Z
+401654558104939504,401654558,40165455833,3,4,6:04,Southern,Savannah St,35,10,77,3,2,0,Pass Incompletion,pass incomplete to Tyce Fusilier,-0.37470631340543026,2024-09-08T02:29:32.000Z
+401654558104956101,401654558,40165455833,4,4,4:38,Southern,Savannah St,35,10,77,4,2,4,Punt,"Kenny Pham punt for 36 yds , Allie Brown returns for 4 yds to the SAV 45",,2024-09-08T02:31:56.000Z
+401654558104956103,401654558,40165455834,2,4,4:38,Savannah St,Southern,10,35,47,2,2,-3,Rush,Kendarius Brown run for a loss of 3 yards to the 50 yard line,-2.031585094338313,2024-09-08T02:34:03.000Z
+401654558104956104,401654558,40165455834,3,4,4:38,Savannah St,Southern,10,35,50,3,5,-10,Sack,Christian Burks sacked for a loss of 10 yards to the SAV 40,-1.8208851999084512,2024-09-08T02:34:03.000Z
+401654558104978901,401654558,40165455834,4,4,2:10,Savannah St,Southern,10,35,60,4,15,0,Punt,Lexington Matthews punt for 60 yds,,2024-09-08T02:35:17.000Z
+401654558104956102,401654558,40165455834,1,4,4:38,Savannah St,Southern,10,35,55,1,10,8,Pass Reception,Jadon Adams pass complete to Da'Shun Mitchell for 8 yds to the SOU 47,0.9420759997342945,2024-09-08T02:31:56.000Z
+401654558104978902,401654558,40165455835,1,4,2:10,Southern,Savannah St,35,10,80,1,10,3,Rush,Tyce Fusilier run for 3 yds to the SOU 23,-0.2366097161141063,2024-09-08T02:35:17.000Z
+401654558104979901,401654558,40165455835,2,4,2:00,Southern,Savannah St,35,10,77,2,7,76,Pass Reception,Czavian Teasett pass complete to Khalil Harris for 76 yds to the SAV 1 for a 1ST down,5.684646236598766,2024-09-08T02:42:07.000Z
+401654558104989401,401654558,40165455835,3,4,1:05,Southern,Savannah St,35,10,1,1,1,0,Rush,"Remo,Barry rush middle (Jackson,Marlon;Lane,Brandon).",-0.962330962352563,2024-09-08T02:04:50.000Z
+401654558104998502,401654558,40165455835,5,4,0:14,Southern,Savannah St,35,10,3,1,10,-5,Penalty,"Southern Penalty, delay of game (-5 Yards) to the SAV 8",,2024-09-08T02:43:16.000Z
+401654558104998501,401654558,40165455835,4,4,0:14,Southern,Savannah St,42,10,1,2,1,1,Rushing Touchdown,"Barry Remo run for 1 yd for a TD Southern Penalty, delay of game (-5 Yards) to the SAV 8 (Joshua Griffin KICK)",1.900352237473006,2024-09-08T02:43:16.000Z
+401654558104999201,401654558,40165455837,1,4,0:07,Southern,Savannah St,42,10,65,1,10,17,Kickoff,"Joshua Griffin kickoff for 59 yds , Hudson Primus return for 17 yds to the SAV 23",,2024-09-08T02:46:55.000Z
+401654558104999202,401654558,40165455837,2,4,0:07,Savannah St,Southern,10,42,77,1,10,-1,Rush,Christian Burks run for a loss of 1 yard to the SAV 23,-0.7311835987198103,2024-09-08T02:46:55.000Z

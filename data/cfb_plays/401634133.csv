@@ -1,0 +1,171 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401634133101857401,401634133,4016341331,2,1,14:25,East Tennessee State,App State,0,0,75,1,10,16,Pass Reception,Jaylen King pass complete to Jonathan Burns for a 1ST down,1.4187427699228943,2024-08-31T19:37:15.000Z
+401634133101859601,401634133,4016341331,3,1,14:03,East Tennessee State,App State,0,0,59,1,10,5,Rush,Bryson Irby run for 5 yds to the ETSU 46,0.1104175997643273,2024-08-31T20:09:55.000Z
+401634133101866501,401634133,4016341331,4,1,13:34,East Tennessee State,App State,0,0,54,2,5,0,Pass Reception,Jaylen King pass complete to Bryson Irby,-1.18115859347677,2024-08-31T19:37:15.000Z
+401634133101869001,401634133,4016341331,5,1,13:09,East Tennessee State,App State,0,0,54,3,5,0,Pass Incompletion,Jaylen King pass incomplete,-0.8207107379888506,2024-08-31T20:09:55.000Z
+401634133101869701,401634133,4016341331,6,1,13:02,East Tennessee State,App State,0,0,54,4,5,0,Punt,"Nate Brackett punt for 39 yds, fair catch by Kaedin Robinson at the APP 15",,2024-08-31T19:37:15.000Z
+401634133101849903,401634133,4016341331,1,1,15:00,App State,East Tennessee State,0,0,65,1,10,0,Kickoff,Michael Hughes kickoff for 65 yds for a touchback,,2024-08-31T19:37:15.000Z
+401634133101874801,401634133,4016341332,1,1,12:51,App State,East Tennessee State,0,0,85,1,10,2,Rush,Kanye Roberts run for 2 yds to the APP 17,-0.28628930380234063,2024-08-31T19:37:15.000Z
+401634133101878101,401634133,4016341332,2,1,12:18,App State,East Tennessee State,7,0,83,2,8,83,Passing Touchdown,Christan Horn 83 Yd pass from Joey Aguilar (Michael Hughes Kick),6.90725085367755,2024-08-31T19:41:10.000Z
+401634133101897901,401634133,4016341333,7,1,10:20,East Tennessee State,App State,0,7,66,3,15,18,Pass Reception,Jaylen King pass complete to Karim Page for a 1ST down,3.4052869902523,2024-08-31T19:37:15.000Z
+401634133101878301,401634133,4016341333,2,1,12:16,East Tennessee State,App State,0,7,75,1,10,4,Rush,Devontae Houston run for 4 yds to the ETSU 29,-0.1142886249388964,2024-08-31T19:37:15.000Z
+401634133101885101,401634133,4016341333,3,1,11:48,East Tennessee State,App State,0,7,71,2,6,10,Rush,Devontae Houston run for 10 yds to the ETSU 39 for a 1ST down,1.3370277081953519,2024-08-31T19:44:41.000Z
+401634133101888401,401634133,4016341333,5,1,11:15,East Tennessee State,App State,0,7,71,1,20,0,Pass Incompletion,Jaylen King pass incomplete,-0.35679752346389737,2024-08-31T19:46:18.000Z
+401634133101894001,401634133,4016341333,6,1,10:59,East Tennessee State,App State,0,7,71,2,20,5,Rush,Jaylen King run for 5 yds to the ETSU 34,0.01363020731346066,2024-08-31T19:37:15.000Z
+401634133101899401,401634133,4016341333,8,1,10:05,East Tennessee State,App State,0,7,48,1,10,1,Rush,Devontae Houston run for 1 yd to the APP 49,-0.8372206360227173,2024-08-31T19:47:59.000Z
+401634133101906101,401634133,4016341333,9,1,9:38,East Tennessee State,App State,0,7,49,2,11,3,Rush,Devontae Houston run for 3 yds to the APP 46,-0.393597789089073,2024-08-31T19:37:15.000Z
+401634133101909201,401634133,4016341333,10,1,9:07,East Tennessee State,App State,0,7,46,3,8,3,Rush,Devontae Houston run for 3 yds to the APP 43,-0.3698106262872613,2024-08-31T19:37:15.000Z
+401634133101917201,401634133,4016341333,11,1,8:27,East Tennessee State,App State,0,7,43,4,5,0,Pass Incompletion,Jaylen King pass incomplete,-1.2411048513957184,2024-08-31T19:51:55.000Z
+401634133101887701,401634133,4016341333,4,1,11:22,East Tennessee State,App State,0,7,61,1,10,-10,Penalty,"(11:28) No Huddle-Shotgun King,Jaylen pass incomplete short left to Johnson,AJ thrown to ETSU39 PENALTY ETSU Holding (Bailey,Derrell) 10 yards from ETSU39 to ETSU29. NO PLAY.",,2024-08-31T19:45:28.000Z
+401634133101878103,401634133,4016341333,1,1,12:18,App State,East Tennessee State,7,0,65,1,10,0,Kickoff,Michael Hughes kickoff for 65 yds for a touchback,,2024-08-31T19:41:10.000Z
+401634133101917203,401634133,4016341334,1,1,8:27,App State,East Tennessee State,7,0,57,1,10,13,Rush,Kaedin Robinson run for 13 yds to the ETSU 44 for a 1ST down,1.0524343400013052,2024-08-31T19:51:55.000Z
+401634133101924303,401634133,4016341334,2,1,7:56,App State,East Tennessee State,7,0,44,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.9690270974076257,2024-08-31T20:09:55.000Z
+401634133101925503,401634133,4016341334,3,1,7:44,App State,East Tennessee State,7,0,44,2,10,7,Rush,Joey Aguilar run for 7 yds to the ETSU 37,0.520047619940952,2024-08-31T20:09:55.000Z
+401634133101928501,401634133,4016341334,4,1,7:14,App State,East Tennessee State,7,0,37,3,3,5,Rush,Kanye Roberts run for 5 yds to the ETSU 32 for a 1ST down,0.9903424093877325,2024-08-31T19:54:00.000Z
+401634133101935701,401634133,4016341334,5,1,6:42,App State,East Tennessee State,7,0,32,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.6082596672078662,2024-08-31T19:54:19.000Z
+401634133101936401,401634133,4016341334,6,1,6:35,App State,East Tennessee State,7,0,32,2,10,10,Rush,Kanye Roberts run for 10 yds to the ETSU 22 for a 1ST down,0.8321563261483687,2024-08-31T19:55:01.000Z
+401634133101939901,401634133,4016341334,7,1,6:00,App State,East Tennessee State,7,0,22,1,10,18,Rush,Maquel Haywood run for 18 yds to the ETSU 4 for a 1ST down,0.959432247934485,2024-08-31T19:55:36.000Z
+401634133101947201,401634133,4016341334,8,1,5:27,App State,East Tennessee State,7,0,4,1,4,0,Rush,Kanye Roberts run for no gain to the ETSU 4,-0.6456997217339855,2024-08-31T19:56:12.000Z
+401634133101958401,401634133,4016341334,10,1,4:15,App State,East Tennessee State,7,0,14,2,14,1,Rush,Anderson Castle run for 1 yd to the ETSU 15,-0.2916407586935977,2024-08-31T19:58:30.000Z
+401634133101959101,401634133,4016341334,11,1,4:08,App State,East Tennessee State,7,0,15,3,15,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.733599810487368,2024-08-31T19:58:47.000Z
+401634133101959601,401634133,4016341334,12,1,4:03,App State,East Tennessee State,10,0,15,4,15,32,Field Goal Good,Michael Hughes 32 yd FG GOOD,,2024-08-31T20:02:50.000Z
+401634133101954902,401634133,4016341334,9,1,4:50,App State,East Tennessee State,7,0,4,2,4,-10,Penalty,"(04:55) No Huddle-Shotgun Aguilar,Joey pass complete short middle to Wilson,Eli caught at ETSU03, for 4 yards to the ETSU00 TOUCHDOWN nullified by penalty, clock 04:50 PENALTY App Illegal Block in Back (Horn,Christan) 10 yards from ETSU04 to ETSU14. NO PLAY.",,2024-08-31T19:56:58.000Z
+401634133101964601,401634133,4016341335,2,1,3:53,East Tennessee State,App State,0,10,75,1,10,6,Rush,Jaylen King run for 6 yds to the ETSU 31,0.3333748010525683,2024-08-31T20:03:48.000Z
+401634133101966601,401634133,4016341335,3,1,3:33,East Tennessee State,App State,0,10,69,2,4,1,Rush,Bryson Irby run for 1 yd to the ETSU 32,-0.7225289421677195,2024-08-31T20:04:04.000Z
+401634133101974801,401634133,4016341335,4,1,2:51,East Tennessee State,App State,0,10,68,3,3,2,Rush,Jaylen King run for 2 yds to the ETSU 34,-0.3345261769981986,2024-08-31T20:04:47.000Z
+401634133101959602,401634133,4016341335,1,1,4:03,App State,East Tennessee State,10,0,65,1,10,0,Kickoff,Michael Hughes kickoff for 65 yds for a touchback,,2024-08-31T20:02:50.000Z
+401634133101976301,401634133,4016341335,5,1,2:36,East Tennessee State,App State,0,10,66,4,1,0,Timeout,"Timeout East Tennessee State, clock 02:36",,2024-08-31T20:09:55.000Z
+401634133101999902,401634133,4016341335,9,1,0:00,East Tennessee State,App State,0,10,55,0,1,0,End Period,End of 1st Quarter,,2024-08-31T20:09:55.000Z
+401634133102854801,401634133,4016341335,11,2,14:51,East Tennessee State,App State,0,10,57,4,3,0,Punt,Nate Brackett punt for 57 yds for a touchback,,2024-08-31T21:01:13.000Z
+401634133102849902,401634133,4016341335,10,2,15:00,East Tennessee State,App State,0,10,55,3,1,2,Rush,Jaylen King run for 2 yds to the ETSU 43,1.1061810924726547,2024-08-31T20:14:12.000Z
+401634133101989401,401634133,4016341335,8,1,1:05,East Tennessee State,App State,0,10,57,2,3,2,Rush,Devontae Houston run for 2 yds to the ETSU 45,-0.7649118085233848,2024-08-31T20:08:55.000Z
+401634133101987501,401634133,4016341335,7,1,1:24,East Tennessee State,App State,0,10,64,1,10,7,Rush,Jaylen King run for 7 yds to the ETSU 43,0.7106238902527534,2024-08-31T20:07:22.000Z
+401634133101979401,401634133,4016341335,6,1,2:05,East Tennessee State,App State,0,10,66,4,1,2,Rush,Bryson Irby run for 2 yds to the ETSU 36 for a 1ST down,1.6542428300593404,2024-08-31T20:06:45.000Z
+401634133102908401,401634133,4016341336,12,2,9:15,App State,East Tennessee State,10,0,31,2,10,15,Pass Reception,Joey Aguilar pass complete to Kanye Roberts for a 1ST down,0.8557072244805682,2024-08-31T21:01:13.000Z
+401634133102899401,401634133,4016341336,10,2,10:05,App State,East Tennessee State,10,0,49,2,16,18,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson for a 1ST down,2.7754287284002856,2024-08-31T21:01:13.000Z
+401634133102888801,401634133,4016341336,6,2,11:11,App State,East Tennessee State,10,0,59,1,15,12,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson,1.8730491015827653,2024-08-31T21:01:13.000Z
+401634133102915401,401634133,4016341336,13,2,8:45,App State,East Tennessee State,10,0,16,1,10,9,Rush,Kanye Roberts run for 9 yds to the ETSU 7,0.6158412752510894,2024-08-31T21:01:13.000Z
+401634133102886401,401634133,4016341336,5,2,11:35,App State,East Tennessee State,10,0,54,1,10,-5,Penalty,"PENALTY App False Start (Samuel,Markell) 5 yards from App46 to App41. NO PLAY.",,2024-08-31T21:01:13.000Z
+401634133102894201,401634133,4016341336,8,2,10:57,App State,East Tennessee State,10,0,43,1,10,-10,Penalty,"(10:59) No Huddle-Shotgun Roberts,Kanye rush middle for 1 yard loss to the ETSU44 (George,Jaylen; Wilson,Teddy) PENALTY App Holding (Larkins,David) 10 yards from ETSU43 to App47. NO PLAY.",,2024-08-31T21:01:13.000Z
+401634133102926101,401634133,4016341336,15,2,7:38,App State,East Tennessee State,17,0,1,1,1,1,Rushing Touchdown,Joey Aguilar run for 1 yd for a TD (Michael Hughes KICK),0.938021275120443,2024-08-31T20:23:02.000Z
+401634133102919401,401634133,4016341336,14,2,8:05,App State,East Tennessee State,10,0,7,2,1,6,Rush,Joey Aguilar run for 6 yds to the ETSU 1 for a 1ST down,1.014860170920842,2024-08-31T21:01:13.000Z
+401634133102904901,401634133,4016341336,11,2,9:50,App State,East Tennessee State,10,0,31,1,10,0,Pass Reception,Joey Aguilar pass complete to Kanye Roberts,-0.5824837756999947,2024-08-31T21:01:13.000Z
+401634133102896401,401634133,4016341336,9,2,10:35,App State,East Tennessee State,10,0,53,1,20,4,Rush,Kanye Roberts run for 4 yds to the ETSU 49,-0.1584368628325237,2024-08-31T21:01:13.000Z
+401634133102889901,401634133,4016341336,7,2,11:00,App State,East Tennessee State,10,0,47,2,3,4,Rush,Anderson Castle run for 4 yds to the ETSU 43 for a 1ST down,0.1859547342497781,2024-08-31T21:01:13.000Z
+401634133102878901,401634133,4016341336,4,2,12:10,App State,East Tennessee State,10,0,58,3,3,4,Rush,Anderson Castle run for 4 yds to the APP 46 for a 1ST down,1.608609213375544,2024-08-31T21:01:13.000Z
+401634133102865401,401634133,4016341336,2,2,13:45,App State,East Tennessee State,10,0,65,1,10,7,Rush,Anderson Castle run for 7 yds to the APP 42,0.7081222799232592,2024-08-31T21:01:13.000Z
+401634133102858401,401634133,4016341336,1,2,14:15,App State,East Tennessee State,10,0,80,1,10,15,Pass Reception,Joey Aguilar pass complete to Anderson Castle for a 1ST down,1.143340784913768,2024-08-31T21:01:13.000Z
+401634133102875901,401634133,4016341336,3,2,12:40,App State,East Tennessee State,10,0,58,2,3,0,Rush,Anderson Castle run for no gain to the APP 42,-1.2589120202926765,2024-08-31T21:01:13.000Z
+401634133102928007,401634133,4016341337,1,2,7:19,App State,East Tennessee State,17,0,65,1,10,23,Kickoff Return (Offense),"Michael Hughes kickoff for 63 yds , Devontae Houston return for 23 yds to the ETSU 25",,2024-08-31T20:30:28.000Z
+401634133102928010,401634133,4016341337,2,2,7:19,East Tennessee State,App State,0,17,75,1,10,0,Penalty,"(07:19) No Huddle-Shotgun King,Jaylen pass incomplete deep left to Page,Karim thrown to App40 PENALTY App Pass Interference declined App Roughing The Passer (Farrar,Derrell) 15 yards from ETSU25 to ETSU40, 1ST DOWN. NO PLAY.",,
+401634133102944401,401634133,4016341337,6,2,5:55,East Tennessee State,App State,0,17,58,4,8,0,Punt,Nate Brackett punt for 58 yds for a touchback,,2024-08-31T20:36:17.000Z
+401634133102937901,401634133,4016341337,5,2,6:20,East Tennessee State,App State,0,17,60,3,10,2,Rush,Jaylen King run for 2 yds to the ETSU 42,-0.2718939602772199,2024-08-31T20:33:17.000Z
+401634133102936501,401634133,4016341337,4,2,6:34,East Tennessee State,App State,0,17,60,2,10,0,Pass Incompletion,Jaylen King pass incomplete,-0.7576599502448165,2024-08-31T20:32:58.000Z
+401634133102936101,401634133,4016341337,3,2,6:38,East Tennessee State,App State,0,17,60,1,10,0,Pass Reception,Gino English pass complete to Ephraim Floyd,-1.1247712359915258,2024-08-31T20:32:52.000Z
+401634133102948601,401634133,4016341338,2,2,5:13,App State,East Tennessee State,17,0,76,2,6,10,Pass Reception,Joey Aguilar pass complete to William Fowles for a 1ST down,1.1377205316767105,2024-08-31T20:37:02.000Z
+401634133102959301,401634133,4016341338,5,2,4:06,App State,East Tennessee State,17,0,65,3,9,10,Penalty,"East Tennessee State Penalty, Defensive Holding (Nick Hunter) to the APP 49 for a 1ST down",,2024-08-31T20:38:50.000Z
+401634133102965602,401634133,4016341338,7,2,3:43,App State,East Tennessee State,17,0,51,2,10,-10,Penalty,"(03:50) No Huddle-Shotgun Marshall,Ahmani rush left for 11 yards gain to the ETSU40 (Hope,Chris) PENALTY App Holding (Hollifield,Jack) 10 yards from App49 to App39. NO PLAY.",,2024-08-31T20:40:14.000Z
+401634133102976401,401634133,4016341338,10,2,2:35,App State,East Tennessee State,17,0,55,4,14,0,Punt,"Mitchell Lake punt for 30 yds, fair catch by Xavier Gaillardetz at the ETSU 25",,2024-08-31T20:42:43.000Z
+401634133102976403,401634133,4016341338,11,2,2:35,App State,East Tennessee State,17,0,55,4,14,0,Punt,"Mitchell Lake punt for 30 yds, fair catch by Xavier Gaillardetz at the ETSU 15",,2024-08-31T20:42:43.000Z
+401634133102975501,401634133,4016341338,9,2,2:44,App State,East Tennessee State,17,0,55,3,14,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.404567629261547,2024-08-31T20:41:59.000Z
+401634133102968201,401634133,4016341338,8,2,3:17,App State,East Tennessee State,17,0,61,2,20,6,Pass Reception,Joey Aguilar pass complete to Eli Wilson,0.1324229254253808,2024-08-31T20:41:32.000Z
+401634133102964801,401634133,4016341338,6,2,3:51,App State,East Tennessee State,17,0,51,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-1.1301991718133413,2024-08-31T20:39:36.000Z
+401634133102955601,401634133,4016341338,4,2,4:43,App State,East Tennessee State,17,0,66,2,10,1,Rush,Ahmani Marshall run for 1 yd to the APP 35,-0.4782834761770474,2024-08-31T20:38:02.000Z
+401634133102955101,401634133,4016341338,3,2,4:48,App State,East Tennessee State,17,0,66,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.9864556271674072,2024-08-31T20:37:22.000Z
+401634133102945201,401634133,4016341338,1,2,5:47,App State,East Tennessee State,17,0,80,1,10,4,Rush,Ahmani Marshall run for 4 yds to the APP 24,-0.0884321258012219,2024-08-31T20:36:30.000Z
+401634133102985001,401634133,4016341339,2,2,1:49,East Tennessee State,App State,7,17,80,2,5,80,Rushing Touchdown,Devontae Houston run for 80 yds for a TD (Ewan Johnson KICK),6.543884038814618,2024-08-31T20:47:49.000Z
+401634133102976901,401634133,4016341339,1,2,2:30,East Tennessee State,App State,0,17,85,1,10,5,Pass Reception,Jaylen King pass complete to Karim Page,0.07707751106059126,2024-08-31T20:44:07.000Z
+401634133102985601,401634133,40163413310,1,2,1:43,East Tennessee State,App State,7,17,65,1,10,27,Kickoff Return (Offense),"Ewan Johnson kickoff for 62 yds , Kanye Roberts return for 27 yds to the APP 30",,2024-08-31T20:50:04.000Z
+401634133102987601,401634133,40163413310,4,2,1:23,App State,East Tennessee State,17,7,67,3,7,3,Pass Reception,Joey Aguilar pass complete to Eli Wilson,-0.15796228823205194,2024-08-31T20:52:18.000Z
+401634133102986701,401634133,40163413310,3,2,1:32,App State,East Tennessee State,17,7,67,2,7,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.7077961708131388,2024-08-31T20:51:13.000Z
+401634133102986201,401634133,40163413310,2,2,1:37,App State,East Tennessee State,17,7,70,1,10,3,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson,-0.3563521541303736,2024-08-31T20:50:41.000Z
+401634133102988101,401634133,40163413310,6,2,1:18,App State,East Tennessee State,17,7,64,4,4,0,Punt,"Mitchell Lake punt for 44 yds, fair catch by Xavier Gaillardetz at the ETSU 20",,2024-08-31T20:53:23.000Z
+401634133102987602,401634133,40163413310,5,2,1:23,App State,East Tennessee State,17,7,64,4,4,0,Timeout,"Timeout East Tennessee State, clock 01:23",,2024-08-31T20:52:18.000Z
+401634133102988604,401634133,40163413311,1,2,1:13,East Tennessee State,App State,7,17,80,1,10,1,Rush,Devontae Houston run for 1 yd to the ETSU 21,-0.46882789768185695,2024-08-31T20:54:11.000Z
+401634133102988903,401634133,40163413311,3,2,1:10,East Tennessee State,App State,7,17,79,2,9,0,Pass Incompletion,Jaylen King pass incomplete,-0.31009262307283425,2024-08-31T20:55:04.000Z
+401634133102989603,401634133,40163413311,4,2,1:03,East Tennessee State,App State,7,17,79,3,9,0,Pass Incompletion,Jaylen King pass incomplete,-0.13875783656262275,2024-08-31T20:55:43.000Z
+401634133102994501,401634133,40163413311,5,2,0:54,East Tennessee State,App State,7,17,79,4,9,0,Punt,Nate Brackett punt for 51 yds,,2024-08-31T20:56:28.000Z
+401634133102988605,401634133,40163413311,2,2,1:13,East Tennessee State,App State,7,17,79,2,9,0,Timeout,"Timeout App State, clock 01:13",,2024-08-31T20:54:11.000Z
+401634133102995001,401634133,40163413312,1,2,0:49,App State,East Tennessee State,17,7,72,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.7982008475508557,2024-08-31T20:57:26.000Z
+401634133102995501,401634133,40163413312,2,2,0:44,App State,East Tennessee State,17,7,72,2,10,5,Pass Reception,Joey Aguilar pass complete to Anderson Castle,0.04798574660955701,2024-08-31T20:58:12.000Z
+401634133102995801,401634133,40163413312,3,2,0:41,App State,East Tennessee State,17,7,67,3,5,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.4381545907354214,2024-08-31T20:58:31.000Z
+401634133102996401,401634133,40163413312,4,2,0:35,App State,East Tennessee State,17,7,67,4,5,0,Punt,"Mitchell Lake punt for 43 yds, fair catch by Xavier Gaillardetz at the ETSU 24",,2024-08-31T20:59:35.000Z
+401634133102999901,401634133,40163413313,1,2,0:00,East Tennessee State,App State,7,17,76,1,10,5,Rush,Bryson Irby run for 5 yds to the ETSU 29,0.0927395188594593,2024-08-31T21:01:13.000Z
+401634133102999902,401634133,40163413313,2,2,0:00,East Tennessee State,App State,7,17,76,0,10,5,End of Half,End of 2nd Quarter,,2024-08-31T21:00:36.000Z
+401634133103854503,401634133,40163413314,2,3,14:54,App State,East Tennessee State,17,7,73,1,10,6,Rush,Anderson Castle run for 6 yds to the APP 33,0.3503911107524118,2024-08-31T21:24:20.000Z
+401634133103854504,401634133,40163413314,3,3,14:54,App State,East Tennessee State,17,7,67,2,4,0,Rush,Anderson Castle run for no gain to the APP 33,-0.933246510865966,2024-08-31T21:24:20.000Z
+401634133103854507,401634133,40163413314,5,3,14:54,App State,East Tennessee State,17,7,52,1,10,3,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson,-0.4041069346079117,2024-08-31T21:24:20.000Z
+401634133103854508,401634133,40163413314,6,3,14:54,App State,East Tennessee State,17,7,49,2,7,6,Rush,Anderson Castle run for 6 yds to the ETSU 43,0.3599625368733827,2024-08-31T21:24:20.000Z
+401634133103854509,401634133,40163413314,7,3,14:54,App State,East Tennessee State,17,7,43,3,1,2,Rush,Anderson Castle run for 2 yds to the ETSU 41 for a 1ST down,0.8116790605484406,2024-08-31T21:24:20.000Z
+401634133103854510,401634133,40163413314,8,3,14:54,App State,East Tennessee State,17,7,41,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.8772679222659558,2024-08-31T21:24:20.000Z
+401634133103854511,401634133,40163413314,9,3,14:54,App State,East Tennessee State,17,7,41,2,10,0,Rush,Maquel Haywood run for no gain to the ETSU 41,-1.0411051963664768,2024-08-31T21:24:20.000Z
+401634133103854512,401634133,40163413314,10,3,14:54,App State,East Tennessee State,17,7,41,3,10,9,Pass Reception,Joey Aguilar pass complete to Makai Jackson,0.9637683355548194,2024-08-31T21:24:20.000Z
+401634133103894501,401634133,40163413314,11,3,10:54,App State,East Tennessee State,17,7,32,4,1,2,Rush,Maquel Haywood run for 2 yds to the ETSU 34,1.3808812760513616,2024-08-31T21:29:39.000Z
+401634133103854505,401634133,40163413314,4,3,14:54,App State,East Tennessee State,17,7,67,3,4,15,Penalty,"East Tennessee State Penalty, Defensive Pass Interference (Jayvon Henderson) to the APP 48 for a 1ST down",,2024-08-31T21:24:20.000Z
+401634133103854501,401634133,40163413314,1,3,14:54,East Tennessee State,App State,7,17,65,1,10,22,Kickoff Return (Offense),"Ewan Johnson kickoff for 60 yds , Kanye Roberts return for 22 yds to the APP 27",,2024-08-31T21:24:20.000Z
+401634133103894504,401634133,40163413315,2,3,10:54,East Tennessee State,App State,7,17,63,2,7,28,Pass Reception,Jaylen King pass complete to Cameron Lewis for a 1ST down,2.7619854481698938,2024-08-31T21:29:39.000Z
+401634133103894507,401634133,40163413315,5,3,10:54,East Tennessee State,App State,7,17,21,2,8,13,Pass Reception,Jaylen King pass complete to Cameron Lewis for a 1ST down,0.57088394661757,2024-08-31T21:29:39.000Z
+401634133103894508,401634133,40163413315,6,3,10:54,East Tennessee State,App State,7,17,8,1,8,6,Pass Reception,Jaylen King pass complete to Cameron Lewis,0.251663043377469,2024-08-31T21:29:39.000Z
+401634133103894503,401634133,40163413315,1,3,10:54,East Tennessee State,App State,7,17,66,1,10,3,Rush,Jaylen King run for 3 yds to the ETSU 37,-0.3978048422172354,2024-08-31T21:29:39.000Z
+401634133103894505,401634133,40163413315,3,3,10:54,East Tennessee State,App State,7,17,35,1,10,12,Rush,Jaylen King run for 12 yds to the APP 23 for a 1ST down,0.3086111057057275,2024-08-31T21:29:39.000Z
+401634133103894506,401634133,40163413315,4,3,10:54,East Tennessee State,App State,7,17,23,1,10,2,Rush,Bryson Irby run for 2 yds to the APP 21,-0.2265058372460335,2024-08-31T21:29:39.000Z
+401634133103894509,401634133,40163413315,7,3,10:54,East Tennessee State,App State,7,17,2,2,2,2,Rush,Jaylen King run for 2 yds to the APP 4,,2024-08-31T21:29:39.000Z
+401634133103894510,401634133,40163413315,8,3,10:54,East Tennessee State,App State,7,17,4,3,4,1,Rush,Bryson Irby run for 1 yd to the APP 3,-0.2203736230258005,2024-08-31T21:29:39.000Z
+401634133103945001,401634133,40163413315,11,3,5:49,East Tennessee State,App State,10,17,8,4,8,25,Field Goal Good,Ewan Johnson 25 yd FG GOOD,,2024-08-31T21:37:13.000Z
+401634133103944701,401634133,40163413315,10,3,5:52,East Tennessee State,App State,7,17,8,4,8,0,Timeout,"Timeout East Tennessee State, clock 05:52",,2024-08-31T21:35:32.000Z
+401634133103894511,401634133,40163413315,9,3,10:54,East Tennessee State,App State,7,17,3,4,3,-5,Penalty,PENALTY ETSU Illegal Substitution 5 yards from App03 to App08. NO PLAY.,,2024-08-31T21:29:39.000Z
+401634133103945004,401634133,40163413316,2,3,5:49,App State,East Tennessee State,17,10,75,1,10,6,Pass Reception,Joey Aguilar pass complete to Christan Horn,0.3333748010525683,2024-08-31T21:37:13.000Z
+401634133103949501,401634133,40163413316,3,3,5:04,App State,East Tennessee State,17,10,69,2,4,15,Pass Reception,Joey Aguilar pass complete to Makai Jackson for a 1ST down,1.5594827809835452,2024-08-31T21:41:28.000Z
+401634133103958201,401634133,40163413316,6,3,4:17,App State,East Tennessee State,17,10,52,3,8,13,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson for a 1ST down,2.785193297997285,2024-08-31T21:42:55.000Z
+401634133103955301,401634133,40163413316,4,3,4:46,App State,East Tennessee State,17,10,54,1,10,2,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson,-0.6735165476975664,2024-08-31T21:41:51.000Z
+401634133103956801,401634133,40163413316,5,3,4:31,App State,East Tennessee State,17,10,52,2,8,0,Pass Incompletion,Joey Aguilar pass incomplete,-1.0672177675460617,2024-08-31T21:42:04.000Z
+401634133103959701,401634133,40163413316,7,3,4:02,App State,East Tennessee State,17,10,39,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.814236079442537,2024-08-31T21:43:08.000Z
+401634133103965701,401634133,40163413316,8,3,3:42,App State,East Tennessee State,17,10,39,2,10,5,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson,0.065375341090318,2024-08-31T21:44:01.000Z
+401634133103967601,401634133,40163413316,9,3,3:23,App State,East Tennessee State,17,10,34,3,5,0,Pass Incompletion,Joey Aguilar pass incomplete,-1.0164838033385433,2024-08-31T21:44:19.000Z
+401634133103968501,401634133,40163413316,10,3,3:14,App State,East Tennessee State,24,10,34,4,5,34,Passing Touchdown,Eli Wilson 34 Yd pass from Joey Aguilar (Michael Hughes Kick),4.905783096622313,2024-08-31T21:44:59.000Z
+401634133103945002,401634133,40163413316,1,3,5:49,East Tennessee State,App State,10,17,65,1,10,0,Kickoff,Ewan Johnson kickoff for 65 yds for a touchback,,2024-08-31T21:37:13.000Z
+401634133103975701,401634133,40163413317,3,3,2:42,East Tennessee State,App State,10,24,85,1,20,0,Rush,Devontae Houston run for no gain to the ETSU 15,-0.140464090692074,2024-08-31T21:50:46.000Z
+401634133103979901,401634133,40163413317,4,3,2:00,East Tennessee State,App State,10,24,85,2,20,-5,Sack,Jaylen King sacked by Thomas Davis for a loss of 5 yards to the ETSU 10,-0.09010559045132195,2024-08-31T21:51:18.000Z
+401634133103988701,401634133,40163413317,5,3,1:12,East Tennessee State,App State,10,24,90,3,25,-9,Sack,Jaylen King sacked for a loss of 9 yards to the ETSU 1,-0.01771047674155479,2024-08-31T21:52:06.000Z
+401634133103995903,401634133,40163413317,8,3,0:40,East Tennessee State,App State,10,24,99,4,34,0,Punt,"Nate Brackett punt for 42 yds , Kaedin Robinson returns for no gain to the APP 46",,2024-08-31T21:53:26.000Z
+401634133103995902,401634133,40163413317,7,3,0:40,East Tennessee State,App State,10,24,99,4,34,0,Punt,"Nate Brackett punt for 42 yds , Kaedin Robinson returns for no gain to the APP 46",,2024-08-31T21:53:26.000Z
+401634133103995901,401634133,40163413317,6,3,0:40,East Tennessee State,App State,10,24,99,4,34,0,Punt,"Nate Brackett punt for 42 yds , Kaedin Robinson returns for no gain to the ETSU 43",,2024-08-31T21:52:57.000Z
+401634133103974001,401634133,40163413317,2,3,2:59,East Tennessee State,App State,10,24,75,1,10,-10,Penalty,"(03:12) No Huddle-Shotgun King,Jaylen pass complete short left to Page,Karim caught at ETSU36, for 0 yards to the ETSU25 PENALTY ETSU Holding (Smith,Luke) 10 yards from ETSU25 to ETSU15. NO PLAY.",,2024-08-31T21:50:19.000Z
+401634133103968503,401634133,40163413317,1,3,3:14,App State,East Tennessee State,24,10,65,1,10,0,Kickoff,Michael Hughes kickoff for 65 yds for a touchback,,2024-08-31T21:44:59.000Z
+401634133103999901,401634133,40163413318,2,3,0:00,App State,East Tennessee State,24,10,54,1,10,7,Pass Reception,Joey Aguilar pass complete to Kanye Roberts,0.6465727155045757,2024-08-31T21:54:44.000Z
+401634133104855101,401634133,40163413318,3,4,14:48,App State,East Tennessee State,31,10,47,2,3,47,Rushing Touchdown,Makai Jackson run for 47 yds for a TD (Michael Hughes KICK),3.5383248221806323,2024-08-31T00:00:00.000Z
+401634133103999202,401634133,40163413318,1,3,0:00,App State,East Tennessee State,24,10,54,0,10,0,End Period,End of 3rd Quarter,,2024-08-31T21:21:58.000Z
+401634133104859201,401634133,40163413319,3,4,14:07,East Tennessee State,App State,10,31,73,2,8,15,Pass Reception,Jaylen King pass complete to AJ Johnson for a 1ST down,1.9686555870040436,2024-08-31T22:02:01.000Z
+401634133104867201,401634133,40163413319,5,4,13:27,East Tennessee State,App State,10,31,55,2,7,10,Pass Reception,Jaylen King pass complete to AJ Johnson for a 1ST down,1.517726574358301,2024-08-31T22:02:41.000Z
+401634133104855801,401634133,40163413319,2,4,14:41,East Tennessee State,App State,10,31,75,1,10,2,Rush,Bryson Irby run for 2 yds to the ETSU 27,-0.45260367932203766,2024-08-31T22:01:37.000Z
+401634133104864301,401634133,40163413319,4,4,13:56,East Tennessee State,App State,10,31,58,1,10,3,Rush,Bryson Irby run for 3 yds to the ETSU 45,-0.4325374473860535,2024-08-31T22:02:20.000Z
+401634133104868601,401634133,40163413319,6,4,13:13,East Tennessee State,App State,10,31,45,1,10,10,Rush,Bryson Irby run for 10 yds to the APP 35 for a 1ST down,0.503925301290112,2024-08-31T22:02:57.000Z
+401634133104875401,401634133,40163413319,7,4,12:45,East Tennessee State,App State,10,31,35,1,10,3,Rush,Bryson Irby run for 3 yds to the APP 32,-0.2162251621009335,2024-08-31T22:03:29.000Z
+401634133104879401,401634133,40163413319,8,4,12:05,East Tennessee State,App State,10,31,32,2,7,0,Pass Incompletion,Jaylen King pass incomplete,-0.7793420910928395,2024-08-31T22:04:02.000Z
+401634133104884001,401634133,40163413319,9,4,11:59,East Tennessee State,App State,10,31,32,3,7,0,Pass Incompletion,Jaylen King pass incomplete,-0.9919047692460377,2024-08-31T22:04:48.000Z
+401634133104884601,401634133,40163413319,10,4,11:53,East Tennessee State,App State,10,31,32,4,7,0,Pass Incompletion,Jaylen King pass incomplete,-2.0399391937832334,2024-08-31T22:08:08.000Z
+401634133104855001,401634133,40163413319,1,4,14:49,App State,East Tennessee State,31,10,65,1,10,0,Kickoff,Michael Hughes kickoff for 65 yds for a touchback,,2024-08-31T22:30:30.000Z
+401634133104916001,401634133,40163413320,7,4,8:39,App State,East Tennessee State,38,10,1,3,1,1,Rushing Touchdown,Joey Aguilar run for 1 yd for a TD (Michael Hughes KICK),2.45399822917955,2024-08-31T22:12:00.000Z
+401634133104897101,401634133,40163413320,4,4,10:28,App State,East Tennessee State,31,10,20,3,9,15,Pass Reception,Joey Aguilar pass complete to Kanye Roberts for a 1ST down,1.5086655324958966,2024-08-31T22:10:10.000Z
+401634133104887701,401634133,40163413320,1,4,11:22,App State,East Tennessee State,31,10,68,1,10,47,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson for a 1ST down,2.8870139018463665,2024-08-31T22:08:46.000Z
+401634133104888301,401634133,40163413320,2,4,11:16,App State,East Tennessee State,31,10,21,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.3882383440694163,2024-08-31T22:09:00.000Z
+401634133104889001,401634133,40163413320,3,4,11:09,App State,East Tennessee State,31,10,21,2,10,1,Rush,Kanye Roberts run for 1 yd to the ETSU 20,-0.3719112151898614,2024-08-31T22:09:27.000Z
+401634133104904401,401634133,40163413320,5,4,9:55,App State,East Tennessee State,31,10,5,1,5,2,Rush,Kanye Roberts run for 2 yds to the ETSU 3,-0.327643773401219,2024-08-31T22:10:45.000Z
+401634133104908301,401634133,40163413320,6,4,9:16,App State,East Tennessee State,31,10,3,2,3,2,Rush,Kanye Roberts run for 2 yds to the ETSU 1,-0.242573615219457,2024-08-31T22:11:17.000Z
+401634133104917001,401634133,40163413321,2,4,8:29,East Tennessee State,App State,10,38,75,1,10,3,Rush,Devontae Houston run for 3 yds to the ETSU 28,-0.2957674139440157,2024-08-31T22:16:23.000Z
+401634133104924401,401634133,40163413321,3,4,7:55,East Tennessee State,App State,10,38,72,2,7,5,Rush,Devontae Houston run for 5 yds to the ETSU 33,0.0761799593184067,2024-08-31T22:16:56.000Z
+401634133104928801,401634133,40163413321,4,4,7:11,East Tennessee State,App State,10,38,67,3,2,3,Rush,Devontae Houston run for 3 yds to the ETSU 36 for a 1ST down,1.1501499665715995,2024-08-31T22:17:48.000Z
+401634133104936101,401634133,40163413321,5,4,6:38,East Tennessee State,App State,10,38,64,1,10,3,Rush,Devontae Houston run for 3 yds to the ETSU 39,-0.4136553890915255,2024-08-31T22:18:10.000Z
+401634133104939301,401634133,40163413321,6,4,6:06,East Tennessee State,App State,10,38,61,2,7,8,Rush,Devontae Houston run for 8 yds to the ETSU 47 for a 1ST down,1.4655485632935488,2024-08-31T22:18:46.000Z
+401634133104947601,401634133,40163413321,7,4,5:23,East Tennessee State,App State,10,38,53,1,10,3,Rush,Bryson Irby run for 3 yds to the 50 yard line,-0.4117922810157673,2024-08-31T22:19:26.000Z
+401634133104956001,401634133,40163413321,8,4,4:39,East Tennessee State,App State,10,38,50,2,7,3,Rush,Bryson Irby run for 3 yds to the APP 47,-0.4202965318693454,2024-08-31T22:20:11.000Z
+401634133104964401,401634133,40163413321,9,4,3:55,East Tennessee State,App State,10,38,47,3,4,11,Pass Reception,Jaylen King pass complete to Hakeem Meggett for a 1ST down,1.9166101514446243,2024-08-31T22:21:02.000Z
+401634133104968501,401634133,40163413321,10,4,3:14,East Tennessee State,App State,10,38,36,1,10,-7,Sack,Jaylen King sacked by Derrell Farrar for a loss of 7 yards to the APP 43,-2.1520210033191507,2024-08-31T22:21:34.000Z
+401634133104978701,401634133,40163413321,12,4,2:12,East Tennessee State,App State,10,38,48,2,22,2,Rush,Devontae Houston run for 2 yds to the APP 46,-0.40682413367993586,2024-08-31T22:24:17.000Z
+401634133104984801,401634133,40163413321,13,4,1:51,East Tennessee State,App State,10,38,46,3,20,5,Rush,Jaylen King run for 5 yds to the APP 41,0.02821345792780594,2024-08-31T22:26:48.000Z
+401634133104989201,401634133,40163413321,14,4,1:07,East Tennessee State,App State,10,38,41,4,15,0,Punt,Nate Brackett punt for 41 yds for a touchback,,2024-08-31T22:27:16.000Z
+401634133104976601,401634133,40163413321,11,4,2:33,East Tennessee State,App State,10,38,43,2,17,-5,Penalty,PENALTY ETSU Delay Of Game 5 yards from App43 to App48. NO PLAY.,,2024-08-31T22:22:36.000Z
+401634133104916003,401634133,40163413321,1,4,8:39,App State,East Tennessee State,38,10,65,1,10,0,Kickoff,Michael Hughes kickoff for 65 yds for a touchback,,2024-08-31T22:16:01.000Z
+401634133104999902,401634133,40163413322,3,4,0:00,App State,East Tennessee State,38,10,77,0,7,8,End of Game,End of 4th Quarter,,2024-08-31T22:29:20.000Z
+401634133104994001,401634133,40163413322,1,4,0:59,App State,East Tennessee State,38,10,80,1,10,3,Rush,Maquel Haywood run for 3 yds to the APP 23,-0.2366097161141063,2024-08-31T22:28:18.000Z
+401634133104999901,401634133,40163413322,2,4,0:00,App State,East Tennessee State,38,10,77,2,7,8,Rush,Ahmani Marshall run for 8 yds to the APP 31 for a 1ST down,1.0153765066041593,2024-08-31T22:30:30.000Z

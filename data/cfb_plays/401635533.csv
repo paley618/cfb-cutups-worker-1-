@@ -1,0 +1,193 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401635533101855401,401635533,4016355331,1,1,14:45,Northwestern,Duke,0,0,92,1,15,2,Rush,Cam Porter run for 2 yds to the NU 10,-0.1066930255884957,2024-09-07T01:05:07.000Z
+401635533101879001,401635533,4016355331,6,1,12:09,Northwestern,Duke,0,0,28,3,4,2,Pass Reception,Mike Wright pass complete to Mike Wright for 2 yds to the DUKE 26,-0.4538654387692507,2024-09-07T01:11:01.000Z
+401635533101874401,401635533,4016355331,4,1,12:55,Northwestern,Duke,0,0,34,1,10,0,Pass Incompletion,Mike Wright pass incomplete,-0.6630222646782312,2024-09-07T01:09:30.000Z
+401635533101858001,401635533,4016355331,2,1,14:19,Northwestern,Duke,0,0,90,2,13,44,Rush,Cam Porter run for 44 yds to the DUKE 46 for a 1ST down,3.6879094465602176,2024-09-07T01:05:07.000Z
+401635533101866501,401635533,4016355331,3,1,13:34,Northwestern,Duke,0,0,46,1,10,12,Pass Reception,Mike Wright pass complete to Marshall Lang for 12 yds to the DUKE 34 for a 1ST down,0.6065612472207943,2024-09-07T01:05:07.000Z
+401635533101875001,401635533,4016355331,5,1,12:49,Northwestern,Duke,0,0,34,2,10,6,Pass Reception,Mike Wright pass complete to A.J. Henning for 6 yds to the DUKE 28,0.2205236080546946,2024-09-07T01:05:07.000Z
+401635533101885301,401635533,4016355331,7,1,11:46,Northwestern,Duke,3,0,26,4,2,44,Field Goal Good,Jack Olsen 44 yd FG GOOD,,2024-09-07T01:11:31.000Z
+401635533101996903,401635533,4016355331,8,1,0:30,Northwestern,Duke,0,0,75,1,10,-5,Penalty,"Northwestern Penalty, False Start (TEAM) to the NU 20",,2024-09-07T01:42:43.000Z
+401635533101885302,401635533,4016355332,1,1,11:46,Northwestern,Duke,3,0,65,0,0,15,Kickoff Return (Offense),"Luke Akers kickoff for 63 yds , Peyton Jones return for 15 yds to the DUKE 17",,2024-09-07T01:14:11.000Z
+401635533101886301,401635533,4016355332,2,1,11:36,Duke,Northwestern,0,3,83,1,10,2,Rush,Jaquez Moore run for 2 yds to the DUKE 19,-0.3147690788048898,2024-09-07T01:05:07.000Z
+401635533101888401,401635533,4016355332,3,1,11:15,Duke,Northwestern,0,3,81,2,8,3,Pass Reception,Maalik Murphy pass complete to Jeremiah Hasley for 3 yds to the DUKE 22,-0.13476645764065243,2024-09-07T01:05:07.000Z
+401635533101896001,401635533,4016355332,4,1,10:39,Duke,Northwestern,0,3,78,3,5,6,Pass Reception,Maalik Murphy pass complete to Sahmir Hagans for 6 yds to the DUKE 28 for a 1ST down,1.1290854067311473,2024-09-07T01:05:07.000Z
+401635533101898101,401635533,4016355332,5,1,10:18,Duke,Northwestern,0,3,72,1,10,9,Pass Reception,Maalik Murphy pass complete to Sahmir Hagans for 9 yds to the DUKE 37,1.3191287933513696,2024-09-07T01:05:07.000Z
+401635533101905201,401635533,4016355332,6,1,9:47,Duke,Northwestern,0,3,63,2,1,-1,Rush,Star Thomas run for a loss of 1 yard to the DUKE 36,-1.57031818861062,2024-09-07T01:05:07.000Z
+401635533101908701,401635533,4016355332,7,1,9:12,Duke,Northwestern,0,3,64,3,2,9,Rush,Star Thomas run for 9 yds to the DUKE 45 for a 1ST down,1.8302088702089376,2024-09-07T01:05:07.000Z
+401635533101915001,401635533,4016355332,8,1,8:49,Duke,Northwestern,0,3,55,1,10,3,Pass Reception,Maalik Murphy pass complete to Nicky Dalmolin for 3 yds to the DUKE 48,-0.4238622892911614,2024-09-07T01:05:07.000Z
+401635533101918701,401635533,4016355332,9,1,8:12,Duke,Northwestern,0,3,52,2,7,1,Rush,Jaquez Moore run for 1 yd to the DUKE 49,-0.8950582179941425,2024-09-07T01:05:07.000Z
+401635533101925701,401635533,4016355332,10,1,7:42,Duke,Northwestern,0,3,51,3,6,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.8603959659552948,2024-09-07T01:19:25.000Z
+401635533101926501,401635533,4016355332,11,1,7:34,Duke,Northwestern,0,3,51,4,6,0,Punt,Kade Reynoldson punt for 47 yds,,2024-09-07T01:20:11.000Z
+401635533101927001,401635533,4016355333,1,1,7:29,Northwestern,Duke,3,0,96,1,10,-1,Rush,Joseph Himon II run for a loss of 1 yard to the NU 3,-0.3061761981358444,2024-09-07T01:05:07.000Z
+401635533101934701,401635533,4016355333,2,1,6:52,Northwestern,Duke,3,0,97,2,11,5,Rush,Joseph Himon II run for 5 yds to the NU 8,0.02121050097117028,2024-09-07T01:05:07.000Z
+401635533101938601,401635533,4016355333,3,1,6:13,Northwestern,Duke,3,0,92,3,6,0,Pass Interception Return,Mike Wright pass intercepted Terry Moore return for no gain to the NU 29,0.22357277621549798,2024-09-07T01:25:30.000Z
+401635533101939201,401635533,4016355334,1,1,6:07,Duke,Northwestern,0,3,29,1,10,8,Rush,Jaquez Moore run for 8 yds to the NU 21,0.504148977298673,2024-09-07T01:26:16.000Z
+401635533101945301,401635533,4016355334,2,1,5:46,Duke,Northwestern,0,3,21,2,2,3,Rush,Star Thomas run for 3 yds to the NU 18 for a 1ST down,-0.307640501771152,2024-09-07T01:05:07.000Z
+401635533101948201,401635533,4016355334,3,1,5:17,Duke,Northwestern,0,3,18,1,10,2,Rush,Star Thomas run for 2 yds to the NU 16,-0.193673324211422,2024-09-07T01:05:07.000Z
+401635533101954901,401635533,4016355334,4,1,4:50,Duke,Northwestern,7,3,16,2,8,16,Passing Touchdown,Maalik Murphy pass complete to Eli Pancol for 16 yds for a TD (Todd Pelino KICK),2.785466033282013,2024-09-07T01:27:49.000Z
+401635533101954903,401635533,4016355335,1,1,4:50,Duke,Northwestern,7,3,65,0,0,0,Kickoff,Ryan Degyansky kickoff for 65 yds for a touchback,,2024-09-07T01:31:52.000Z
+401635533101955501,401635533,4016355335,2,1,4:44,Northwestern,Duke,3,7,75,1,10,11,Pass Reception,Mike Wright pass complete to Cam Porter for 11 yds to the NU 36 for a 1ST down,0.9305625119459905,2024-09-07T01:05:07.000Z
+401635533101958501,401635533,4016355335,3,1,4:14,Northwestern,Duke,3,7,64,1,10,0,Pass Incompletion,Mike Wright pass incomplete,-1.041155320344064,2024-09-07T01:33:20.000Z
+401635533101959101,401635533,4016355335,4,1,4:08,Northwestern,Duke,3,7,64,2,10,5,Rush,Mike Wright run for 5 yds to the NU 41,0.060625014314497,2024-09-07T01:05:07.000Z
+401635533101967001,401635533,4016355335,5,1,3:29,Northwestern,Duke,3,7,59,3,5,-3,Rush,Cam Porter run for a loss of 3 yards to the NU 38,-0.9051715017847419,2024-09-07T01:05:07.000Z
+401635533101974501,401635533,4016355335,6,1,2:54,Northwestern,Duke,3,7,62,4,8,3,Punt,"Luke Akers punt for 35 yds , Que'Sean Brown returns for 3 yds to the DUKE 30",,2024-09-07T01:05:07.000Z
+401635533101975001,401635533,4016355336,1,1,2:49,Duke,Northwestern,7,3,70,1,10,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.8627910327708888,2024-09-07T01:05:07.000Z
+401635533101975701,401635533,4016355336,2,1,2:42,Duke,Northwestern,7,3,70,2,10,3,Rush,Peyton Jones run for 3 yds to the DUKE 33,-0.20135729217262366,2024-09-07T01:05:07.000Z
+401635533101979501,401635533,4016355336,3,1,2:04,Duke,Northwestern,7,3,67,3,7,2,Rush,Maalik Murphy run for 2 yds to the DUKE 35,-0.23574086713786357,2024-09-07T01:05:07.000Z
+401635533101987601,401635533,4016355336,4,1,1:23,Duke,Northwestern,7,3,65,4,5,7,Punt,"Kade Reynoldson punt for 60 yds , A.J. Henning returns for 7 yds to the NU 12",,2024-09-07T01:05:07.000Z
+401635533101988501,401635533,4016355337,1,1,1:14,Northwestern,Duke,3,7,88,1,10,2,Pass Reception,Mike Wright pass complete to Calvin Johnson II for 2 yds to the NU 14,-0.24856252157946201,2024-09-07T01:05:07.000Z
+401635533102887901,401635533,4016355337,10,2,11:20,Northwestern,Duke,3,7,44,1,5,7,Pass Reception,Mike Wright pass complete to A.J. Henning for 7 yds to the DUKE 37 for a 1ST down,-0.4375750463777042,2024-09-07T01:47:37.000Z
+401635533102888101,401635533,4016355337,11,2,11:18,Northwestern,Duke,3,7,37,1,10,0,Timeout,"Timeout Northwestern, clock 11:18",,2024-09-07T01:51:47.000Z
+401635533102886002,401635533,4016355337,9,2,11:39,Northwestern,Duke,3,7,49,1,10,5,Penalty,"QB Keeper WRIGHT, Mike rush to the left for no gain to the DU49, out of bounds, clock 11:39. PENALTY DU Offsides on WILLIAMS, Wesley enforced 5 yards from the DU49 to the DU44 [SG]. NO PLAY (replay the down).",,2024-09-07T01:50:57.000Z
+401635533101996902,401635533,4016355337,3,1,0:00,Northwestern,Duke,3,7,86,0,8,12,End Period,End of 1st Quarter,,2024-09-07T01:42:43.000Z
+401635533102899401,401635533,4016355337,13,2,10:05,Northwestern,Duke,3,7,27,1,10,-5,Penalty,"Northwestern Penalty, False Start (-5 Yards) to the DUKE 32",,2024-09-07T01:56:37.000Z
+401635533102914201,401635533,4016355337,15,2,8:57,Northwestern,Duke,3,7,29,2,12,-4,Rush,Caleb Komolafe run for a loss of 4 yards to the DUKE 33,-1.6089102650194071,2024-09-07T01:47:37.000Z
+401635533102906101,401635533,4016355337,14,2,9:38,Northwestern,Duke,3,7,32,1,15,3,Rush,Caleb Komolafe run for 3 yds to the DUKE 29,-0.2097975494151357,2024-09-07T01:47:37.000Z
+401635533102896301,401635533,4016355337,12,2,10:36,Northwestern,Duke,3,7,37,1,10,10,Rush,Mike Wright run for 10 yds to the DUKE 27 for a 1ST down,0.3101277900852572,2024-09-07T01:55:51.000Z
+401635533101996901,401635533,4016355337,2,1,0:30,Northwestern,Duke,3,7,86,2,8,12,Rush,Mike Wright run for 12 yds to the NU 26 for a 1ST down,0.9730462007028127,2024-09-07T01:05:07.000Z
+401635533102854602,401635533,4016355337,4,2,14:53,Northwestern,Duke,3,7,74,1,10,-10,Penalty,"(14:53) KOMOLAFE, Caleb rush up the middle for a gain of 8 yards to the NU34 (STINSON, Jaylen), clock 14:52. PENALTY NU Holding on GORDON, Thomas enforced 10 yards from the NU26 to the NU16 [SG]. NO PLAY (replay the down).",,2024-09-07T01:47:37.000Z
+401635533102857001,401635533,4016355337,5,2,14:29,Northwestern,Duke,3,7,84,1,20,4,Pass Reception,Mike Wright pass complete to Joseph Himon II for 4 yds to the NU 20,-0.02974049789859645,2024-09-07T01:47:37.000Z
+401635533102865101,401635533,4016355337,6,2,13:48,Northwestern,Duke,3,7,80,2,16,4,Rush,Caleb Komolafe run for 4 yds to the NU 24,-0.02623869222317055,2024-09-07T01:47:37.000Z
+401635533102869901,401635533,4016355337,7,2,13:00,Northwestern,Duke,3,7,76,3,12,16,Pass Reception,Mike Wright pass complete to Thomas Gordon for 16 yds to the NU 40 for a 1ST down,2.441103612382756,2024-09-07T01:47:37.000Z
+401635533102878001,401635533,4016355337,8,2,12:19,Northwestern,Duke,3,7,60,1,10,11,Pass Reception,Mike Wright pass complete to A.J. Henning for 11 yds to the DUKE 49 for a 1ST down,0.994570052506427,2024-09-07T01:47:37.000Z
+401635533102919001,401635533,4016355337,16,2,8:09,Northwestern,Duke,3,7,33,3,16,-7,Rush,Mike Wright run for a loss of 7 yards to the DUKE 40,-1.8232459025335386,2024-09-07T01:47:37.000Z
+401635533102926801,401635533,4016355337,17,2,7:31,Northwestern,Duke,3,7,40,4,23,28,Punt,"Luke Akers punt 28 yards to the DU12 muffed by Que'Sean Brown at the DU12, recovered by NU FITZGERALD, Robert at the DU11, returned 0 yards to the DUKE 11",,2024-09-07T01:59:43.000Z
+401635533102928001,401635533,4016355338,1,2,7:19,Northwestern,Duke,3,7,11,1,10,2,Rush,Cam Porter run for 2 yds to the DUKE 9,-0.165648229401373,2024-09-07T01:47:37.000Z
+401635533102936701,401635533,4016355338,2,2,6:32,Northwestern,Duke,10,7,4,1,4,4,Rushing Touchdown,Cam Porter run for 4 yds for a TD (Jack Olsen KICK),1.688190518713975,2024-09-07T02:02:34.000Z
+401635533102936703,401635533,4016355339,1,2,6:32,Northwestern,Duke,10,7,65,0,0,0,Kickoff,Luke Akers kickoff for 65 yds for a touchback,,2024-09-07T02:02:38.000Z
+401635533102937201,401635533,4016355339,2,2,6:27,Duke,Northwestern,7,10,75,1,10,4,Pass Reception,Maalik Murphy pass complete to Jordan Moore for 4 yds to the DUKE 29,-0.1142886249388964,2024-09-07T01:47:37.000Z
+401635533102939601,401635533,4016355339,3,2,6:03,Duke,Northwestern,7,10,71,2,6,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.6509048869110972,2024-09-07T02:08:37.000Z
+401635533102944301,401635533,4016355339,4,2,5:56,Duke,Northwestern,7,10,71,3,6,11,Pass Reception,Maalik Murphy pass complete to Jordan Moore for 11 yds to the DUKE 40 for a 1ST down,2.0860480274276396,2024-09-07T01:47:37.000Z
+401635533102945901,401635533,4016355339,5,2,5:40,Duke,Northwestern,7,10,60,1,10,4,Rush,Star Thomas run for 4 yds to the DUKE 44,-0.1674744380827829,2024-09-07T01:47:37.000Z
+401635533102948701,401635533,4016355339,6,2,5:12,Duke,Northwestern,7,10,56,2,6,0,Pass Incompletion,Maalik Murphy pass incomplete,-1.0936657162538443,2024-09-07T02:10:02.000Z
+401635533102949101,401635533,4016355339,7,2,5:08,Duke,Northwestern,7,10,56,3,6,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.7032169794909455,2024-09-07T02:10:41.000Z
+401635533102949801,401635533,4016355339,8,2,5:01,Duke,Northwestern,7,10,56,4,6,0,Punt,"Kade Reynoldson punt for 44 yds, fair catch by A.J. Henning at the NU 12",,2024-09-07T02:11:39.000Z
+401635533102954301,401635533,40163553310,1,2,4:56,Northwestern,Duke,10,7,88,1,10,-3,Rush,Joseph Himon II run for a loss of 3 yards to the NU 9,-0.5097751588176553,2024-09-07T01:47:37.000Z
+401635533102958401,401635533,40163553310,2,2,4:15,Northwestern,Duke,10,7,91,2,13,0,Pass Incompletion,Mike Wright pass incomplete,-0.09652572996017739,2024-09-07T02:15:28.000Z
+401635533102958801,401635533,40163553310,3,2,4:11,Northwestern,Duke,10,7,91,3,13,0,Pass Incompletion,Mike Wright pass incomplete,-0.04146130037309084,2024-09-07T02:15:47.000Z
+401635533102959601,401635533,40163553310,4,2,4:03,Northwestern,Duke,10,7,91,4,13,0,Punt,"Luke Akers punt for 40 yds , Que'Sean Brown returns for no gain to the DUKE 41",,2024-09-07T02:16:41.000Z
+401635533102964102,401635533,40163553311,1,2,3:58,Duke,Northwestern,7,10,59,1,10,2,Rush,Star Thomas run for 2 yds to the DUKE 43,-0.6841550241957303,2024-09-07T01:47:37.000Z
+401635533102967302,401635533,40163553311,2,2,3:26,Duke,Northwestern,7,10,57,2,8,5,Rush,Star Thomas run for 5 yds to the DUKE 48,0.0871592310078384,2024-09-07T01:47:37.000Z
+401635533102975703,401635533,40163553311,3,2,2:42,Duke,Northwestern,7,10,52,3,3,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.9944183972399357,2024-09-07T02:19:59.000Z
+401635533102976401,401635533,40163553311,4,2,2:35,Duke,Northwestern,7,10,52,4,3,0,Punt,"Kade Reynoldson punt for 42 yds, fair catch by A.J. Henning at the NU 10",,2024-09-07T02:21:26.000Z
+401635533102977201,401635533,40163553312,1,2,2:27,Northwestern,Duke,10,7,90,1,10,25,Pass Reception,Mike Wright pass complete to Bryce Kirtz for 25 yds to the NU 35 for a 1ST down,1.5511272424458697,2024-09-07T01:47:37.000Z
+401635533102984301,401635533,40163553312,2,2,1:56,Northwestern,Duke,10,7,65,1,10,0,Pass Incompletion,Mike Wright pass incomplete,-1.0146424556055624,2024-09-07T02:29:35.000Z
+401635533102984901,401635533,40163553312,3,2,1:50,Northwestern,Duke,10,7,65,2,10,0,Pass Incompletion,Mike Wright pass incomplete,-0.6004605992346148,2024-09-07T02:30:15.000Z
+401635533102985601,401635533,40163553312,4,2,1:43,Northwestern,Duke,10,7,65,3,10,0,Pass Incompletion,Mike Wright pass incomplete,-0.30241592870214795,2024-09-07T02:31:11.000Z
+401635533102985901,401635533,40163553312,5,2,1:40,Northwestern,Duke,10,7,65,4,10,0,Punt,"Luke Akers punt for 46 yds, fair catch by Que'Sean Brown at the DUKE 19",,2024-09-07T01:47:37.000Z
+401635533102998901,401635533,40163553313,4,2,0:10,Duke,Northwestern,7,10,79,4,8,0,Timeout,"Timeout Northwestern, clock 00:10",,2024-09-07T01:47:37.000Z
+401635533102987001,401635533,40163553313,1,2,1:29,Duke,Northwestern,7,10,81,1,10,0,Rush,Star Thomas run for no gain to the DUKE 19,-0.5327945515514214,2024-09-07T01:47:37.000Z
+401635533102994501,401635533,40163553313,2,2,0:54,Duke,Northwestern,7,10,81,2,10,3,Rush,Star Thomas run for 3 yds to the DUKE 22,-0.1073247230014367,2024-09-07T01:47:37.000Z
+401635533102998601,401635533,40163553313,3,2,0:13,Duke,Northwestern,7,10,78,3,7,-1,Rush,Star Thomas run for a loss of 1 yard to the DUKE 21,-0.2114485349075963,2024-09-07T01:47:37.000Z
+401635533102999201,401635533,40163553313,5,2,0:07,Duke,Northwestern,7,10,79,4,8,0,Punt,"Kade Reynoldson punt for 39 yds, fair catch by A.J. Henning at the NU 40",,2024-09-07T01:47:37.000Z
+401635533102999902,401635533,40163553314,2,2,0:00,Northwestern,Duke,10,7,61,0,10,0,End of Half,End of 2nd Quarter,,2024-09-07T02:35:38.000Z
+401635533102999701,401635533,40163553314,1,2,0:02,Northwestern,Duke,10,7,60,1,10,-1,Rush,"(00:02) [SG] Kneel down by WRIGHT, Mike at NU39 (team loss of 1), clock 00:00.",-1.319414526540232,2024-09-07T02:35:38.000Z
+401635533103854901,401635533,40163553315,2,3,14:50,Duke,Northwestern,7,10,76,1,10,4,Rush,Star Thomas run for 4 yds to the DUKE 28,-0.1089877410850981,2024-09-07T02:57:07.000Z
+401635533103857601,401635533,40163553315,4,3,14:23,Duke,Northwestern,7,10,72,3,6,-4,Sack,Maalik Murphy sacked by R.J. Pearson for a loss of 4 yards to the DUKE 24,-0.4183545666067854,2024-09-07T02:57:07.000Z
+401635533103865301,401635533,40163553315,5,3,13:46,Duke,Northwestern,7,10,76,4,10,0,Blocked Punt,"punt blocked by Noah Taylor blocked by Noah Taylor , returns for no gain to the DUKE 9",,2024-09-07T03:00:29.000Z
+401635533103854301,401635533,40163553315,1,3,14:56,Northwestern,Duke,10,7,65,0,0,13,Kickoff Return (Offense),"Luke Akers kickoff for 54 yds , Peyton Jones return for 13 yds to the DUKE 24",,2024-09-07T02:57:30.000Z
+401635533103857001,401635533,40163553315,3,3,14:29,Duke,Northwestern,7,10,72,2,6,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.6216897885891246,2024-09-07T02:58:49.000Z
+401635533103865701,401635533,40163553316,1,3,13:42,Northwestern,Duke,10,7,9,1,9,-2,Rush,Cam Porter run for a loss of 2 yards to the DUKE 11,-0.4321682271789485,2024-09-07T02:57:07.000Z
+401635533103869901,401635533,40163553316,2,3,13:00,Northwestern,Duke,10,7,11,2,11,0,Pass Incompletion,Mike Wright pass incomplete,-0.2964634983560065,2024-09-07T02:57:07.000Z
+401635533103874801,401635533,40163553316,3,3,12:51,Northwestern,Duke,10,7,11,3,11,0,Pass Incompletion,Mike Wright pass incomplete,-0.485959022955045,2024-09-07T03:02:31.000Z
+401635533103874901,401635533,40163553316,4,3,12:50,Northwestern,Duke,10,7,11,4,11,29,Field Goal Missed,Jack Olsen 29 yd FG MISSED,,2024-09-07T02:57:07.000Z
+401635533103875701,401635533,40163553317,1,3,12:42,Duke,Northwestern,7,10,80,1,10,4,Rush,Peyton Jones run for 4 yds to the DUKE 24,-0.0884321258012219,2024-09-07T02:57:07.000Z
+401635533103878401,401635533,40163553317,2,3,12:15,Duke,Northwestern,7,10,76,2,6,0,Pass Interception Return,Maalik Murphy pass intercepted Calvin Johnson II return for no gain to the DUKE 45,-0.5255100785936753,2024-09-07T03:07:07.000Z
+401635533103878901,401635533,40163553318,1,3,12:10,Northwestern,Duke,10,7,45,1,10,-1,Rush,Caleb Komolafe run for a loss of 1 yard to the DUKE 46,-1.2270097040600767,2024-09-07T02:57:07.000Z
+401635533103887401,401635533,40163553318,2,3,11:25,Northwestern,Duke,10,7,46,2,11,8,Pass Reception,Mike Wright pass complete to Thomas Gordon for 8 yds to the DUKE 38,0.7609257153815694,2024-09-07T02:57:07.000Z
+401635533103896801,401635533,40163553318,3,3,10:31,Northwestern,Duke,10,7,38,3,3,-5,Fumble Recovery (Opponent),"Caleb Komolafe run for a loss of 5 yards to the DUKE 46 Caleb Komolafe fumbled, recovered by DUKE Ozzie Nicholas O. Nicholas return for 3 yds",-3.0574019262544248,2024-09-07T03:10:57.000Z
+401635533103897401,401635533,40163553319,1,3,10:25,Duke,Northwestern,7,10,54,1,10,4,Rush,Star Thomas run for 4 yds to the 50 yard line,-0.1577860825649198,2024-09-07T02:57:07.000Z
+401635533103904201,401635533,40163553319,2,3,9:57,Duke,Northwestern,7,10,50,2,6,7,Rush,Henry Belin IV run for 7 yds to the NU 43 for a 1ST down,0.9903135323192735,2024-09-07T02:57:07.000Z
+401635533103907301,401635533,40163553319,3,3,9:26,Duke,Northwestern,7,10,43,1,10,5,Rush,Henry Belin IV run for 5 yds to the NU 38,0.0913907244107932,2024-09-07T02:57:07.000Z
+401635533103909701,401635533,40163553319,4,3,9:02,Duke,Northwestern,7,10,38,2,5,7,Pass Reception,Henry Belin IV pass complete to Jordan Moore for 7 yds to the NU 31 for a 1ST down,0.419033193447113,2024-09-07T02:57:07.000Z
+401635533103916202,401635533,40163553319,5,3,8:37,Duke,Northwestern,7,10,31,1,10,0,Penalty,"QB Keeper BELIN IV, Henry rush to the right for no gain to the NU31 (SMITH, Evan), clock 08:37. PENALTY DU Holding declined DU Tripping on FINA, Bruno enforced 15 yards from the NU31 to the NU46 [NHSG]. NO PLAY (replay the down).",,
+401635533103917701,401635533,40163553319,6,3,8:22,Duke,Northwestern,7,10,46,1,25,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.8927334089699519,2024-09-07T03:16:53.000Z
+401635533103918401,401635533,40163553319,7,3,8:15,Duke,Northwestern,7,10,46,2,25,15,Pass Reception,Maalik Murphy pass complete to Nicky Dalmolin for 15 yds to the NU 31,2.0391687378104284,2024-09-07T02:57:07.000Z
+401635533103924001,401635533,40163553319,8,3,7:59,Duke,Northwestern,7,10,31,3,10,-5,Penalty,"Duke Penalty, False Start (Bruno Fina) to the NU 36",,2024-09-07T03:17:51.000Z
+401635533103926301,401635533,40163553319,9,3,7:36,Duke,Northwestern,7,10,36,3,15,4,Rush,Peyton Jones run for 4 yds to the NU 32,-0.1631936868307379,2024-09-07T02:57:07.000Z
+401635533103929901,401635533,40163553319,10,3,7:00,Duke,Northwestern,10,10,32,4,11,49,Field Goal Good,Todd Pelino 49 yd FG GOOD,,2024-09-07T03:19:02.000Z
+401635533103929902,401635533,40163553320,1,3,7:00,Duke,Northwestern,10,10,65,0,0,0,Kickoff,Ryan Degyansky kickoff for 65 yds for a touchback,,2024-09-07T03:19:02.000Z
+401635533103934601,401635533,40163553320,2,3,6:53,Northwestern,Duke,10,10,75,1,10,11,Pass Reception,Mike Wright pass complete to Cam Porter for 11 yds to the NU 36 for a 1ST down,0.9305625119459905,2024-09-07T02:57:07.000Z
+401635533103938601,401635533,40163553320,3,3,6:13,Northwestern,Duke,10,10,64,1,10,2,Rush,Cam Porter run for 2 yds to the NU 38,-0.6439997383019928,2024-09-07T02:57:07.000Z
+401635533103946301,401635533,40163553320,4,3,5:36,Northwestern,Duke,10,10,62,2,8,5,Rush,Cam Porter run for 5 yds to the NU 43,0.0814745720156971,2024-09-07T02:57:07.000Z
+401635533103954701,401635533,40163553320,5,3,4:52,Northwestern,Duke,10,10,57,3,3,0,Pass Incompletion,Mike Wright pass incomplete,-0.8451240228241659,2024-09-07T03:26:30.000Z
+401635533103955201,401635533,40163553320,6,3,4:47,Northwestern,Duke,10,10,57,4,3,0,Punt,"Luke Akers punt for 37 yds, fair catch by Que'Sean Brown at the DUKE 20",,2024-09-07T02:57:07.000Z
+401635533103956101,401635533,40163553321,1,3,4:38,Duke,Northwestern,10,10,80,1,10,14,Pass Reception,Maalik Murphy pass complete to Jordan Moore for 14 yds to the DUKE 34 for a 1ST down,1.0492884058754886,2024-09-07T02:57:07.000Z
+401635533103958201,401635533,40163553321,2,3,4:17,Duke,Northwestern,10,10,66,1,10,9,Pass Reception,Maalik Murphy pass complete to Jordan Moore for 9 yds to the DUKE 43,1.3844644054795978,2024-09-07T02:57:07.000Z
+401635533103964201,401635533,40163553321,3,3,3:57,Duke,Northwestern,10,10,57,2,1,10,Pass Reception,Maalik Murphy pass complete to Jontavis Robertson for 10 yds to the NU 47 for a 1ST down,0.3391027429835864,2024-09-07T02:57:07.000Z
+401635533103966701,401635533,40163553321,4,3,3:32,Duke,Northwestern,10,10,47,1,10,4,Pass Reception,Maalik Murphy pass complete to Que'Sean Brown for 4 yds to the NU 43,-0.126781416396501,2024-09-07T02:57:07.000Z
+401635533103969801,401635533,40163553321,5,3,3:01,Duke,Northwestern,10,10,43,2,6,3,Rush,Peyton Jones run for 3 yds to the NU 40,-0.3723174293795102,2024-09-07T02:57:07.000Z
+401635533103977201,401635533,40163553321,6,3,2:27,Duke,Northwestern,10,10,40,3,3,1,Rush,Peyton Jones run for 1 yd to the NU 39,-0.8828628300964781,2024-09-07T02:57:07.000Z
+401635533103984701,401635533,40163553321,7,3,1:52,Duke,Northwestern,10,10,39,4,2,0,Pass Incompletion,Maalik Murphy pass incomplete,-2.0048360828610807,2024-09-07T03:33:23.000Z
+401635533103984702,401635533,40163553321,8,3,1:52,Northwestern,Duke,10,10,61,1,10,5,Penalty,"Duke Penalty, Offsides (5 Yards) to the NU 44",,2024-09-07T03:33:23.000Z
+401635533103985401,401635533,40163553322,1,3,1:45,Northwestern,Duke,10,10,56,1,5,0,Pass Incompletion,Mike Wright pass incomplete,-1.3859847176982445,2024-09-07T03:35:11.000Z
+401635533103998202,401635533,40163553322,6,3,0:00,Northwestern,Duke,10,10,42,0,2,11,End Period,End of 3rd Quarter,,2024-09-07T03:38:40.000Z
+401635533103985402,401635533,40163553322,2,3,1:45,Northwestern,Duke,10,10,56,2,5,0,Timeout,"Timeout Northwestern, clock 01:45",,2024-09-07T03:35:11.000Z
+401635533103994601,401635533,40163553322,4,3,0:53,Northwestern,Duke,10,10,50,1,10,8,Pass Reception,Mike Wright pass complete to A.J. Henning for 8 yds to the DUKE 42,0.838762649996877,2024-09-07T02:57:07.000Z
+401635533103986201,401635533,40163553322,3,3,1:37,Northwestern,Duke,10,10,56,2,5,6,Pass Reception,Mike Wright pass complete to Duke Olges for 6 yds to the 50 yard line for a 1ST down,0.9029788009038934,2024-09-07T02:57:07.000Z
+401635533103998201,401635533,40163553322,5,3,0:17,Northwestern,Duke,10,10,42,2,2,11,Rush,Joseph Himon II run for 11 yds to the DUKE 31 for a 1ST down,0.160703112051548,2024-09-07T02:57:07.000Z
+401635533104854401,401635533,40163553322,7,4,14:55,Northwestern,Duke,10,10,31,1,10,2,Rush,Joseph Himon II run for 2 yds to the DUKE 29,-0.3100175172690756,2024-09-07T03:43:00.000Z
+401635533104858301,401635533,40163553322,8,4,14:16,Northwestern,Duke,10,10,29,2,8,0,Rush,Mike Wright run for no gain to the DUKE 29,-0.6971224254482103,2024-09-07T03:43:43.000Z
+401635533104865501,401635533,40163553322,9,4,13:44,Northwestern,Duke,10,10,29,3,8,10,Rush,Joseph Himon II run for 10 yds to the DUKE 19 for a 1ST down,1.244638484152711,2024-09-07T03:44:30.000Z
+401635533104869001,401635533,40163553322,10,4,13:09,Northwestern,Duke,10,10,19,1,10,-1,Rush,A.J. Henning run for a loss of 1 yard to the DUKE 20,-0.445785871283439,2024-09-07T03:43:00.000Z
+401635533104877201,401635533,40163553322,11,4,12:27,Northwestern,Duke,10,10,20,2,11,2,Pass Reception,Mike Wright pass complete to A.J. Henning for 2 yds to the DUKE 18,-0.251097639545085,2024-09-07T03:43:00.000Z
+401635533104885601,401635533,40163553322,12,4,11:43,Northwestern,Duke,10,10,18,3,9,0,Pass Incompletion,Mike Wright pass incomplete,-0.639420536387652,2024-09-07T03:46:25.000Z
+401635533104886001,401635533,40163553322,13,4,11:39,Northwestern,Duke,13,10,18,4,9,35,Field Goal Good,Jack Olsen 35 yd FG GOOD,,2024-09-07T03:47:02.000Z
+401635533104886002,401635533,40163553323,1,4,11:39,Northwestern,Duke,13,10,65,0,0,27,Kickoff Return (Offense),"Luke Akers kickoff for 63 yds , Peyton Jones return for 27 yds to the DUKE 13",,2024-09-07T03:47:02.000Z
+401635533104887201,401635533,40163553323,2,4,11:27,Duke,Northwestern,10,13,87,1,10,1,Rush,Star Thomas run for 1 yd to the DUKE 14,-0.3371041738193785,2024-09-07T03:43:00.000Z
+401635533104889401,401635533,40163553323,3,4,11:05,Duke,Northwestern,10,13,86,2,9,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.21376129491922757,2024-09-07T03:51:46.000Z
+401635533104889701,401635533,40163553323,4,4,11:02,Duke,Northwestern,10,13,86,3,9,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.09281302057629047,2024-09-07T03:43:00.000Z
+401635533104894601,401635533,40163553323,5,4,10:53,Duke,Northwestern,10,13,86,4,9,0,Punt,"Kade Reynoldson punt for 48 yds , A.J. Henning returns for no gain to the NU 38",,2024-09-07T03:53:19.000Z
+401635533104906502,401635533,40163553324,3,4,9:34,Northwestern,Duke,13,10,52,1,10,15,Penalty,"WRIGHT, Mike pass deep to the left incomplete intended for GORDON, Thomas thrown to the DU34, clock 09:34. PENALTY DU Pass Interference on HOWARD, Alex enforced 15 yards to the DU37 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-07T03:58:01.000Z
+401635533104907202,401635533,40163553324,5,4,9:27,Northwestern,Duke,13,10,37,2,10,0,Timeout,"Timeout Northwestern, clock 09:27",,2024-09-07T03:59:05.000Z
+401635533104895201,401635533,40163553324,1,4,10:47,Northwestern,Duke,13,10,62,1,10,3,Pass Reception,Mike Wright pass complete to A.J. Henning for 3 yds to the NU 41,-0.4251117664036599,2024-09-07T03:43:00.000Z
+401635533104899201,401635533,40163553324,2,4,10:07,Northwestern,Duke,13,10,59,2,7,7,Pass Reception,Mike Wright pass complete to A.J. Henning for 7 yds to the NU 48 for a 1ST down,1.3700611183727196,2024-09-07T03:43:00.000Z
+401635533104907201,401635533,40163553324,4,4,9:27,Northwestern,Duke,13,10,37,1,10,0,Pass Incompletion,Mike Wright pass incomplete,-0.7519361608312708,2024-09-07T03:59:05.000Z
+401635533104908001,401635533,40163553324,6,4,9:19,Northwestern,Duke,13,10,37,2,10,-2,Rush,Mike Wright run for a loss of 2 yards to the DUKE 39,-1.405232462288282,2024-09-07T03:43:00.000Z
+401635533104916101,401635533,40163553324,7,4,8:38,Northwestern,Duke,13,10,39,3,12,0,Pass Incompletion,Mike Wright pass incomplete,-0.9383355468716115,2024-09-06T04:03:46.000Z
+401635533104916601,401635533,40163553324,8,4,8:33,Northwestern,Duke,13,10,39,4,12,0,Punt,Luke Akers punt for 39 yds for a touchback,,2024-09-07T03:43:00.000Z
+401635533104917501,401635533,40163553325,1,4,8:24,Duke,Northwestern,10,13,80,1,10,15,Pass Reception,Maalik Murphy pass complete to Jordan Moore for 15 yds to the DUKE 35 for a 1ST down,1.143340784913768,2024-09-07T03:43:00.000Z
+401635533104919401,401635533,40163553325,2,4,8:05,Duke,Northwestern,10,13,65,1,10,4,Pass Reception,Maalik Murphy pass complete to Jordan Moore for 4 yds to the DUKE 39,-0.1595952673507188,2024-09-07T03:43:00.000Z
+401635533104925601,401635533,40163553325,3,4,7:43,Duke,Northwestern,10,13,61,2,6,11,Pass Reception,Maalik Murphy pass complete to Sahmir Hagans for 11 yds to the 50 yard line for a 1ST down,1.5609003459206805,2024-09-07T03:43:00.000Z
+401635533104967402,401635533,40163553325,10,4,3:25,Northwestern,Duke,13,10,81,4,11,0,Timeout,"Timeout Duke, clock 03:25",,2024-09-06T04:14:37.000Z
+401635533104927002,401635533,40163553325,4,4,7:29,Duke,Northwestern,10,13,50,1,10,5,Penalty,"MURPHY, Maalik pass up the middle incomplete intended for MOORE, Jordan thrown to the NU40, clock 07:29. PENALTY Before the snap, NU Illegal Substitution enforced 5 yards from the NU50 to the NU45. NO PLAY (replay the down).",,2024-09-06T04:06:18.000Z
+401635533104927403,401635533,40163553325,5,4,7:25,Duke,Northwestern,10,13,45,1,5,15,Penalty,"MURPHY, Maalik pass up the middle incomplete intended for DALMOLIN, Nicky thrown to the NU36, clock 07:25. PENALTY NU Pass Interference on AZEMA, Coco enforced 15 yards to the NU30 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-06T04:07:10.000Z
+401635533104955202,401635533,40163553325,6,4,4:47,Duke,Northwestern,10,13,35,1,10,-10,Penalty,"Duke Penalty, Offensive Holding (Joshua Pickett) to the NU 45",,2024-09-06T04:13:17.000Z
+401635533104957402,401635533,40163553325,7,4,4:25,Duke,Northwestern,10,13,45,1,20,21,Pass Reception,Maalik Murphy pass complete to Nicky Dalmolin for 21 yds to the NU 24 for a 1ST down,2.003528673702423,2024-09-07T03:43:00.000Z
+401635533104965102,401635533,40163553325,8,4,3:48,Duke,Northwestern,10,13,24,1,10,5,Pass Reception,Maalik Murphy pass complete to Jontavis Robertson for 5 yds to the NU 19,0.075070788233958,2024-09-07T03:43:00.000Z
+401635533104967401,401635533,40163553325,9,4,3:25,Duke,Northwestern,10,13,19,3,5,3,Rush,Star Thomas run for 3 yds to the NU 16,-0.179839240857943,2024-09-06T04:14:37.000Z
+401635533104967802,401635533,40163553325,11,4,3:21,Duke,Northwestern,10,13,19,2,5,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.463932173439051,2024-09-06T04:15:02.000Z
+401635533104979501,401635533,40163553325,12,4,2:04,Duke,Northwestern,10,13,16,4,2,33,Field Goal Missed,Todd Pelino 33 yd FG MISSED,,2024-09-06T04:19:16.000Z
+401635533104979902,401635533,40163553325,13,4,2:00,Northwestern,Duke,13,10,80,1,10,-10,Penalty,"Northwestern Penalty, Offensive Holding (Thomas Gordon) to the NU 10",,2024-09-06T04:19:28.000Z
+401635533104979904,401635533,40163553326,1,4,2:00,Northwestern,Duke,13,10,90,1,20,3,Rush,Cam Porter run for 3 yds to the NU 13,-0.04523694571272417,2024-09-06T04:19:28.000Z
+401635533104979905,401635533,40163553326,2,4,2:00,Northwestern,Duke,13,10,87,2,17,4,Pass Reception,Mike Wright pass complete to Bryce Kirtz for 4 yds to the NU 17,-0.0141166008809899,2024-09-06T04:19:28.000Z
+401635533104979906,401635533,40163553326,3,4,2:00,Northwestern,Duke,13,10,83,3,13,2,Rush,Cam Porter run for 2 yds to the NU 19,-0.0449145145833025,2024-09-06T04:19:28.000Z
+401635533104979907,401635533,40163553326,4,4,2:00,Northwestern,Duke,13,10,81,4,11,9,Punt,"Luke Akers punt for 45 yds , Que'Sean Brown returns for 9 yds to the DUKE 45",,2024-09-06T04:19:28.000Z
+401635533104979909,401635533,40163553327,1,4,2:00,Duke,Northwestern,10,13,55,1,10,9,Pass Reception,Maalik Murphy pass complete to Sahmir Hagans for 9 yds to the NU 46,1.2321065178353567,2024-09-06T04:19:28.000Z
+401635533104979910,401635533,40163553327,2,4,2:00,Duke,Northwestern,10,13,46,2,1,0,Pass Incompletion,Maalik Murphy pass incomplete,-1.2838054719013667,2024-09-06T04:19:28.000Z
+401635533104979911,401635533,40163553327,3,4,2:00,Duke,Northwestern,10,13,46,3,1,13,Pass Reception,Maalik Murphy pass complete to Javon Harvey for 13 yds to the NU 33 for a 1ST down,1.425237417880387,2024-09-06T04:19:28.000Z
+401635533104985001,401635533,40163553327,4,4,1:49,Duke,Northwestern,10,13,33,1,10,0,Rush,Star Thomas run for no gain to the NU 33,-0.6351269961541294,2024-09-06T04:23:16.000Z
+401635533104985002,401635533,40163553327,5,4,1:49,Duke,Northwestern,10,13,33,2,10,11,Pass Reception,Maalik Murphy pass complete to Jordan Moore for 11 yds to the NU 22 for a 1ST down,0.8905790030076574,2024-09-06T04:23:16.000Z
+401635533104998401,401635533,40163553327,6,4,0:15,Duke,Northwestern,10,13,22,1,10,-1,Sack,Maalik Murphy sacked by Anto Saka for a loss of 1 yard to the NU 23,-0.4989426720254894,2024-09-06T04:33:19.000Z
+401635533104998402,401635533,40163553327,7,4,0:15,Duke,Northwestern,10,13,23,2,11,11,Rush,Star Thomas run for 11 yds to the NU 12 for a 1ST down,0.6164708966380239,2024-09-06T04:33:19.000Z
+401635533104998403,401635533,40163553327,8,4,0:15,Duke,Northwestern,10,13,12,1,10,0,Pass Incompletion,Maalik Murphy pass incomplete,-0.2977696357406735,2024-09-06T04:33:19.000Z
+401635533104998404,401635533,40163553327,9,4,0:15,Duke,Northwestern,10,13,12,2,10,9,Rush,Star Thomas run for 9 yds to the NU 3,0.35568511338766,2024-09-06T04:33:19.000Z
+401635533104998405,401635533,40163553327,10,4,0:15,Duke,Northwestern,10,13,3,3,1,-1,Pass Reception,Maalik Murphy pass complete to Jordan Moore for a loss of 1 yard to the NU 4,-0.415559856389845,2024-09-06T04:33:19.000Z
+401635533104998501,401635533,40163553327,11,4,0:14,Duke,Northwestern,13,13,4,4,2,22,Field Goal Good,Todd Pelino 22 yd FG GOOD,,2024-09-07T03:43:00.000Z
+401635533104998601,401635533,40163553328,1,4,0:13,Duke,Northwestern,13,13,65,0,0,0,Kickoff Return (Offense),"Ryan Degyansky kickoff for 37 yds , Duke Olges return for no gain to the NU 28",,2024-09-06T04:34:50.000Z
+401635533104999902,401635533,40163553328,3,4,0:00,Northwestern,Duke,13,13,65,0,10,0,End of Regulation,End of 4th Quarter,,2024-09-06T04:35:53.000Z
+401635533104998901,401635533,40163553328,2,4,0:10,Northwestern,Duke,13,13,72,1,10,7,Rush,Mike Wright run for 7 yds to the NU 35,0.6473671294139649,2024-09-07T03:43:00.000Z
+401635533105292191,401635533,40163553329,1,5,0:00,Northwestern,Duke,13,13,25,1,10,6,Rush,Cam Porter run for 6 yds to the DUKE 19,0.1956069877394565,2024-09-06T04:37:30.000Z
+401635533105292202,401635533,40163553329,2,5,0:00,Northwestern,Duke,13,13,19,2,4,1,Rush,Cam Porter run for 1 yd to the DUKE 18,-0.381708376726151,2024-09-06T04:37:30.000Z
+401635533105292213,401635533,40163553329,3,5,0:00,Northwestern,Duke,13,13,18,3,3,8,Pass Reception,Mike Wright pass complete to A.J. Henning for 8 yds to the DUKE 10 for a 1ST down,0.37235890900331,2024-09-06T04:37:30.000Z
+401635533105292224,401635533,40163553329,4,5,0:00,Northwestern,Duke,20,13,10,1,10,10,Rushing Touchdown,Cam Porter 10 Yd Run (Jack Olsen Kick),2.513826842249442,2024-09-06T04:37:30.000Z
+401635533105302251,401635533,40163553330,1,5,0:00,Duke,Northwestern,20,20,25,1,10,25,Passing Touchdown,Maalik Murphy pass complete to Jordan Moore for 25 yds for a TD (Todd Pelino KICK),2.7000843622660575,2024-09-06T04:48:50.000Z
+401635533105312322,401635533,40163553331,2,5,0:00,Duke,Northwestern,26,20,3,1,3,3,Passing Touchdown,Eli Pancol 3 Yd pass from Maalik Murphy (Two-Point Pass Conversion Failed),1.464451732731337,2024-09-06T04:48:50.000Z
+401635533105312311,401635533,40163553331,1,5,0:00,Duke,Northwestern,20,20,25,1,10,22,Pass Reception,Maalik Murphy pass complete to Jordan Moore for 22 yds to the NU 3 for a 1ST down,1.2356326295347204,2024-09-06T04:48:50.000Z
+401635533105322418,401635533,40163553332,7,5,0:00,Northwestern,Duke,20,26,11,0,9,-78,End of Game,End of OT,,2024-09-06T04:48:50.000Z
+401635533105322406,401635533,40163553332,6,5,0:00,Northwestern,Duke,20,26,11,4,9,0,Pass Incompletion,Mike Wright pass incomplete,-3.500422887185465,2024-09-06T04:48:50.000Z
+401635533105322395,401635533,40163553332,5,5,0:00,Northwestern,Duke,20,26,3,3,1,-8,Rush,Mike Wright run for a loss of 8 yards to the DUKE 11,-1.027398048425596,2024-09-06T04:48:50.000Z
+401635533105322384,401635533,40163553332,4,5,0:00,Northwestern,Duke,20,26,7,2,5,4,Rush,Cam Porter run for 4 yds to the DUKE 3,-0.01693015803508,2024-09-06T04:48:50.000Z
+401635533105322373,401635533,40163553332,3,5,0:00,Northwestern,Duke,20,26,12,1,10,5,Pass Reception,Mike Wright pass complete to Cam Porter for 5 yds to the DUKE 7,0.0748456356820665,2024-09-06T04:48:50.000Z
+401635533105322362,401635533,40163553332,2,5,0:00,Northwestern,Duke,20,26,18,2,3,6,Rush,Cam Porter run for 6 yds to the DUKE 12 for a 1ST down,-0.1586573889106545,2024-09-06T04:48:50.000Z
+401635533105322351,401635533,40163553332,1,5,0:00,Northwestern,Duke,20,26,25,1,10,7,Rush,Cam Porter run for 7 yds to the DUKE 18,0.3286472091407865,2024-09-06T04:48:50.000Z

@@ -1,0 +1,164 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401654845101849903,401654845,4016548451,1,1,15:00,Eastern Illinois,Illinois,0,0,65,1,10,0,Kickoff,Julian Patino kickoff for 65 yds for a touchback,,2024-08-30T01:16:14.000Z
+401654845101854501,401654845,4016548451,2,1,14:54,Illinois,Eastern Illinois,0,0,75,1,10,9,Rush,Aidan Laughery run for 9 yds to the ILL 34,1.252308359788624,2024-08-30T01:17:01.000Z
+401654845101857801,401654845,4016548451,3,1,14:21,Illinois,Eastern Illinois,0,0,66,2,1,7,Pass Reception,Luke Altmyer pass complete to Aidan Laughery for a 1ST down,0.1664344101342703,2024-08-30T01:17:31.000Z
+401654845101864401,401654845,4016548451,4,1,13:55,Illinois,Eastern Illinois,0,0,59,1,10,2,Rush,Aidan Laughery run for 2 yds to the ILL 43,-0.6841550241957303,2024-08-30T01:18:00.000Z
+401654845101868101,401654845,4016548451,5,1,13:18,Illinois,Eastern Illinois,0,0,57,2,8,2,Rush,Aidan Laughery run for 2 yds to the ILL 45,-0.5957696914202871,2024-08-30T01:18:33.000Z
+401654845101875601,401654845,4016548451,6,1,12:43,Illinois,Eastern Illinois,0,0,55,3,6,0,Pass Incompletion,Luke Altmyer pass incomplete,-0.7351396050304411,2024-08-30T01:19:10.000Z
+401654845101876201,401654845,4016548451,7,1,12:37,Illinois,Eastern Illinois,0,0,55,4,6,0,Punt,"Hugh Robertson punt for 38 yds, fair catch by Cooper Willman at the EIU 17",,2024-08-30T01:20:07.000Z
+401654845101876601,401654845,4016548452,1,1,12:33,Eastern Illinois,Illinois,0,0,83,1,10,5,Penalty,"(12:34) No Huddle-Shotgun Flowers,MJ rush middle for 2 yards loss to the EIU15 (Bailey,Matthew) PENALTY ILL Offside (Jacas,Gabe) 5 yards from EIU17 to EIU22. NO PLAY.",,2024-08-30T01:23:33.000Z
+401654845101877801,401654845,4016548452,2,1,12:21,Eastern Illinois,Illinois,0,0,78,1,5,0,Pass Incompletion,Pierce Holley pass incomplete,-1.0774008857125903,2024-08-30T01:23:58.000Z
+401654845101878401,401654845,4016548452,3,1,12:15,Eastern Illinois,Illinois,0,0,78,2,5,2,Rush,MJ Flowers run for 2 yds to the EIU 24,-0.343110189776433,2024-08-30T01:24:34.000Z
+401654845101889801,401654845,4016548452,4,1,11:01,Eastern Illinois,Illinois,0,0,76,3,3,3,Pass Reception,Pierce Holley pass complete to Eli Mirza for a 1ST down,0.8652524977835414,2024-08-30T01:16:42.000Z
+401654845101894001,401654845,4016548452,5,1,10:59,Eastern Illinois,Illinois,0,0,73,1,10,0,Pass Incompletion,Pierce Holley pass incomplete,-0.766047035673644,2024-08-30T01:25:58.000Z
+401654845101894701,401654845,4016548452,6,1,10:52,Eastern Illinois,Illinois,0,0,73,2,10,11,Rush,MJ Flowers run for 11 yds to the EIU 38 for a 1ST down,1.74575882921609,2024-08-30T01:26:27.000Z
+401654845101898601,401654845,4016548452,7,1,10:13,Eastern Illinois,Illinois,0,0,62,1,10,7,Pass Reception,Pierce Holley pass complete to Jay Pearson,0.7103851122578037,2024-08-30T01:27:11.000Z
+401654845101905701,401654845,4016548452,8,1,9:42,Eastern Illinois,Illinois,0,0,55,2,3,27,Pass Reception,Pierce Holley pass complete to Eli Mirza for a 1ST down,1.478604054283256,2024-08-30T01:27:53.000Z
+401654845101907201,401654845,4016548452,9,1,9:27,Eastern Illinois,Illinois,0,0,28,1,10,5,Fumble Recovery (Opponent),"Jay Pearson run for 5 yds to the ILL 23 Jay Pearson fumbled, recovered by ILL Seth Coleman",-4.235985525861569,2024-08-30T01:28:57.000Z
+401654845101908101,401654845,4016548453,1,1,9:18,Illinois,Eastern Illinois,0,0,77,1,10,12,Pass Reception,Luke Altmyer pass complete to Zakhari Franklin for a 1ST down,0.9676400834980621,2024-08-30T01:31:40.000Z
+401654845101909901,401654845,4016548453,2,1,9:00,Illinois,Eastern Illinois,0,0,65,1,10,3,Rush,Kaden Feagin run for 3 yds to the ILL 38,-0.4062307312880424,2024-08-30T01:32:00.000Z
+401654845101918001,401654845,4016548453,3,1,8:19,Illinois,Eastern Illinois,0,0,62,2,7,3,Rush,Kaden Feagin run for 3 yds to the ILL 41,-0.3583529414065216,2024-08-30T01:32:40.000Z
+401654845101959001,401654845,4016548453,12,1,4:09,Illinois,Eastern Illinois,0,0,65,1,10,10,Kickoff Return (Offense),"Ethan Moczulski kickoff for 65 yds , Mark Aitken return for 10 yds to the EIU 45 Eastern Illinois Penalty, Offensive Holding (5 Yards) to the EIU 5",,2024-08-30T01:44:20.000Z
+401654845101927101,401654845,4016548453,4,1,7:28,Illinois,Eastern Illinois,0,0,59,3,4,8,Pass Reception,Luke Altmyer pass complete to Pat Bryant for a 1ST down,2.0839334794929596,2024-08-30T01:33:30.000Z
+401654845101929301,401654845,4016548453,5,1,7:06,Illinois,Eastern Illinois,0,0,51,1,10,0,Pass Reception,Luke Altmyer pass complete to Pat Bryant,-1.1301991718133413,2024-08-30T01:33:55.000Z
+401654845101935601,401654845,4016548453,6,1,6:43,Illinois,Eastern Illinois,0,0,51,2,10,29,Rush,Kaden Feagin run for 29 yds to the EIU 22 for a 1ST down,2.4059436090578203,2024-08-30T01:34:25.000Z
+401654845101939201,401654845,4016548453,7,1,6:07,Illinois,Eastern Illinois,0,0,22,1,10,5,Rush,Kaden Feagin run for 5 yds to the EIU 17,0.074636067054974,2024-08-30T01:35:01.000Z
+401654845101949101,401654845,4016548453,8,1,5:08,Illinois,Eastern Illinois,0,0,17,2,5,7,Pass Reception,Luke Altmyer pass complete to Kenari Wilcher for a 1ST down,0.059159857344044,2024-08-30T01:36:05.000Z
+401654845101955201,401654845,4016548453,9,1,4:47,Illinois,Eastern Illinois,0,0,10,1,10,-5,Penalty,"PENALTY ILL False Start (Gesky,Josh) 5 yards from EIU10 to EIU15. NO PLAY.",,2024-08-30T01:36:32.000Z
+401654845101957801,401654845,4016548453,10,1,4:21,Illinois,Eastern Illinois,0,0,15,1,15,0,Pass Incompletion,Luke Altmyer pass incomplete,-0.2708740164564478,2024-08-30T01:37:08.000Z
+401654845101958401,401654845,4016548453,11,1,4:15,Illinois,Eastern Illinois,7,0,15,2,15,15,Passing Touchdown,Pat Bryant 15 Yd pass from Luke Altmyer (David Olano Kick),3.1022564978943983,2024-08-30T01:40:26.000Z
+401654845101964001,401654845,4016548454,1,1,3:59,Eastern Illinois,Illinois,0,7,95,1,10,3,Rush,Eli Mirza run for 3 yds to the EIU 8,-0.11533988478327295,2024-08-30T01:45:35.000Z
+401654845101967901,401654845,4016548454,2,1,3:20,Eastern Illinois,Illinois,0,7,92,2,7,1,Rush,MJ Flowers run for 1 yd to the EIU 9,-0.18181485771631767,2024-08-30T01:46:09.000Z
+401654845101975501,401654845,4016548454,3,1,2:44,Eastern Illinois,Illinois,0,7,91,3,6,0,Pass Incompletion,Pierce Holley pass incomplete,-0.11214471953939054,2024-08-30T01:46:47.000Z
+401654845101976701,401654845,4016548454,4,1,2:32,Eastern Illinois,Illinois,0,7,91,4,6,30,Punt,"Jacob Horvath punt for 46 yds , Mac Resetich returns for 30 yds to the EIU 25",,2024-08-30T01:47:45.000Z
+401654845101977201,401654845,4016548455,1,1,2:27,Illinois,Eastern Illinois,7,0,25,1,10,5,Rush,Josh McCray run for 5 yds to the EIU 20,0.0753631044225715,2024-08-30T01:50:39.000Z
+401654845101984601,401654845,4016548455,2,1,1:53,Illinois,Eastern Illinois,7,0,20,2,5,16,Pass Reception,Luke Altmyer pass complete to Zakhari Franklin for a 1ST down,0.936530739129511,2024-08-30T01:51:20.000Z
+401654845101988101,401654845,4016548455,3,1,1:18,Illinois,Eastern Illinois,7,0,4,1,4,1,Rush,Josh McCray run for 1 yd to the EIU 5,-0.523234095246118,2024-08-30T01:51:55.000Z
+401654845101995601,401654845,4016548455,4,1,0:43,Illinois,Eastern Illinois,14,0,5,2,5,5,Passing Touchdown,Tanner Arkin 5 Yd pass from Luke Altmyer (David Olano Kick),2.43857769152992,2024-08-30T01:52:42.000Z
+401654845102854401,401654845,4016548456,4,2,14:55,Eastern Illinois,Illinois,0,14,73,2,8,0,Interception,Pierce Holley pass intercepted,-0.46964120095664086,2024-08-30T01:59:51.000Z
+401654845101996102,401654845,4016548456,2,1,0:00,Eastern Illinois,Illinois,0,14,75,0,10,0,End Period,End of 1st Quarter,,2024-08-30T01:56:15.000Z
+401654845101995603,401654845,4016548456,1,1,0:43,Illinois,Eastern Illinois,14,0,65,1,10,0,Kickoff,Ethan Moczulski kickoff for 65 yds for a touchback,,2024-08-30T01:52:42.000Z
+401654845101999901,401654845,4016548456,3,1,0:00,Eastern Illinois,Illinois,0,14,75,1,10,2,Rush,MJ Flowers run for 2 yds to the EIU 27,-0.45260367932203766,2024-08-30T01:56:15.000Z
+401654845102855101,401654845,4016548457,1,2,14:48,Illinois,Eastern Illinois,14,0,61,1,10,22,Rush,Kaden Feagin run for 22 yds to the EIU 39 for a 1ST down,1.714577481533315,2024-08-30T02:02:57.000Z
+401654845102859501,401654845,4016548457,2,2,14:04,Illinois,Eastern Illinois,14,0,39,1,10,9,Rush,Luke Altmyer run for 9 yds to the EIU 30,0.819805400875158,2024-08-30T02:03:44.000Z
+401654845102894301,401654845,4016548457,7,2,10:56,Illinois,Eastern Illinois,14,0,9,1,9,0,Timeout,"Timeout Eastern Illinois, clock 10:56",,2024-08-30T01:59:48.000Z
+401654845102898001,401654845,4016548457,9,2,10:19,Illinois,Eastern Illinois,14,0,8,2,8,0,Pass Incompletion,Luke Altmyer pass incomplete,-0.26931522945819,2024-08-30T02:10:22.000Z
+401654845102866901,401654845,4016548457,3,2,13:30,Illinois,Eastern Illinois,14,0,30,2,1,0,Rush,Kaden Feagin run for no gain to the EIU 30,-0.817048840487694,2024-08-30T02:04:16.000Z
+401654845102875201,401654845,4016548457,4,2,12:47,Illinois,Eastern Illinois,14,0,30,3,1,3,Rush,Luke Altmyer run for 3 yds to the EIU 27 for a 1ST down,0.396401153152601,2024-08-30T02:05:16.000Z
+401654845102879501,401654845,4016548457,5,2,12:04,Illinois,Eastern Illinois,14,0,27,1,10,0,Pass Reception,Luke Altmyer pass complete to Aidan Laughery,-0.490975886965904,2024-08-30T02:05:37.000Z
+401654845102886701,401654845,4016548457,6,2,11:32,Illinois,Eastern Illinois,14,0,27,2,10,18,Rush,Aidan Laughery run for 18 yds to the EIU 9 for a 1ST down,0.808018904710922,2024-08-30T02:06:16.000Z
+401654845102894801,401654845,4016548457,8,2,10:51,Illinois,Eastern Illinois,14,0,9,1,9,1,Rush,Aidan Laughery run for 1 yd to the EIU 8,-0.252533131086597,2024-08-30T02:09:51.000Z
+401654845102898501,401654845,4016548457,10,2,10:14,Illinois,Eastern Illinois,14,0,8,3,8,0,Pass Incompletion,Luke Altmyer pass incomplete,-0.354205173792517,2024-08-30T02:10:56.000Z
+401654845102898901,401654845,4016548457,11,2,10:10,Illinois,Eastern Illinois,17,0,8,4,8,26,Field Goal Good,David Olano 26 yd FG GOOD,,2024-08-30T02:11:36.000Z
+401654845102899401,401654845,4016548458,1,2,10:05,Illinois,Eastern Illinois,17,0,65,1,10,15,Kickoff Return (Offense),"Ethan Moczulski kickoff for 65 yds , Terrance Gipson return for 15 yds to the EIU 15",,2024-08-30T02:13:40.000Z
+401654845102904001,401654845,4016548458,2,2,9:59,Eastern Illinois,Illinois,0,17,85,1,10,0,Rush,MJ Flowers run for no gain to the EIU 15,-0.4404078956667625,2024-08-30T02:14:08.000Z
+401654845102907201,401654845,4016548458,3,2,9:27,Eastern Illinois,Illinois,0,17,85,2,10,2,Rush,MJ Flowers run for 2 yds to the EIU 17,-0.12981330562549065,2024-08-30T02:14:55.000Z
+401654845102915301,401654845,4016548458,4,2,8:46,Eastern Illinois,Illinois,0,17,83,3,8,0,Pass Incompletion,Pierce Holley pass incomplete,-0.12471499618895887,2024-08-30T02:15:23.000Z
+401654845102916101,401654845,4016548458,5,2,8:38,Eastern Illinois,Illinois,0,17,83,4,8,0,Punt,Jacob Horvath punt for 33 yds,,2024-08-30T02:16:52.000Z
+401654845102917301,401654845,4016548459,1,2,8:26,Illinois,Eastern Illinois,17,0,45,1,10,-1,Pass Reception,Luke Altmyer pass complete to Hank Beatty,-1.2270097040600767,2024-08-30T02:19:14.000Z
+401654845102925301,401654845,4016548459,2,2,7:46,Illinois,Eastern Illinois,17,0,46,2,11,1,Rush,Kaden Feagin run for 1 yd to the EIU 47,-0.8380616859478174,2024-08-30T02:19:54.000Z
+401654845102929701,401654845,4016548459,3,2,7:02,Illinois,Eastern Illinois,17,0,47,3,12,3,Pass Reception,Luke Altmyer pass complete to Hank Beatty,-0.3053567654013856,2024-08-30T02:20:50.000Z
+401654845102936801,401654845,4016548459,4,2,6:31,Illinois,Eastern Illinois,17,0,44,4,9,0,Punt,Hugh Robertson punt for 44 yds for a touchback,,2024-08-30T02:21:25.000Z
+401654845102937501,401654845,40165484510,1,2,6:24,Eastern Illinois,Illinois,0,17,80,1,10,0,Pass Incompletion,Pierce Holley pass incomplete,-0.5586693796725282,2024-08-30T02:22:24.000Z
+401654845102938201,401654845,40165484510,2,2,6:17,Eastern Illinois,Illinois,0,17,80,2,10,5,Rush,Jay Pearson run for 5 yds to the EIU 25,0.03780033731591903,2024-08-30T02:23:00.000Z
+401654845102946601,401654845,40165484510,3,2,5:33,Eastern Illinois,Illinois,0,17,75,3,5,5,Penalty,"(05:36) No Huddle-Shotgun Holley,Pierce pass incomplete short middle to Mirza,Eli thrown to EIU29 PENALTY ILL Offside (Coleman,Seth) 5 yards from EIU25 to EIU30, 1ST DOWN. NO PLAY.",,2024-08-30T02:23:47.000Z
+401654845102947201,401654845,40165484510,4,2,5:27,Eastern Illinois,Illinois,0,17,70,1,10,1,Rush,Jay Pearson run for 1 yd to the EIU 31,-0.716015480823808,2024-08-30T02:25:33.000Z
+401654845102954801,401654845,40165484510,5,2,4:51,Eastern Illinois,Illinois,0,17,69,2,9,0,Pass Interception Return,Pierce Holley pass intercepted Torrie Cox Jr. return for no gain to the EIU 29,-0.5911980002718487,2024-08-30T02:26:39.000Z
+401654845102955301,401654845,40165484511,1,2,4:46,Illinois,Eastern Illinois,17,0,29,1,10,1,Rush,Josh McCray run for 1 yd to the EIU 28,-0.4070770134362323,2024-08-30T02:27:04.000Z
+401654845102958601,401654845,40165484511,2,2,4:13,Illinois,Eastern Illinois,24,0,28,2,9,28,Passing Touchdown,Pat Bryant 28 Yd pass from Luke Altmyer (David Olano Kick),3.1953781980343443,2024-08-30T02:27:46.000Z
+401654845102958603,401654845,40165484512,1,2,4:13,Illinois,Eastern Illinois,24,0,65,1,10,0,Kickoff,Ethan Moczulski kickoff for 65 yds for a touchback,,2024-08-30T02:27:46.000Z
+401654845102959201,401654845,40165484512,2,2,4:07,Eastern Illinois,Illinois,0,24,75,1,10,0,Pass Incompletion,Pierce Holley pass incomplete,-0.7029700220436519,2024-08-30T02:31:12.000Z
+401654845102965001,401654845,40165484512,3,2,3:49,Eastern Illinois,Illinois,0,24,75,2,10,5,Pass Reception,Pierce Holley pass complete to MJ Flowers,0.04378266651122598,2024-08-30T02:32:12.000Z
+401654845102968601,401654845,40165484512,4,2,3:13,Eastern Illinois,Illinois,0,24,70,3,5,3,Rush,Pierce Holley run for 3 yds to the EIU 33,-0.16171449534916515,2024-08-30T02:32:49.000Z
+401654845102974801,401654845,40165484512,5,2,2:51,Eastern Illinois,Illinois,0,24,67,4,2,-5,Penalty,PENALTY EIU Illegal Substitution 5 yards from EIU33 to EIU28. NO PLAY.,,2024-08-30T02:33:30.000Z
+401654845102977001,401654845,40165484512,6,2,2:29,Eastern Illinois,Illinois,0,24,72,4,7,0,Punt,Jacob Horvath punt for 39 yds,,2024-08-30T02:34:36.000Z
+401654845102978301,401654845,40165484513,1,2,2:16,Illinois,Eastern Illinois,24,0,67,1,10,17,Pass Reception,Luke Altmyer pass complete to Malik Elzy to the 50 yard line for a 1ST down,1.5876447370197757,2024-08-30T02:35:23.000Z
+401654845102985101,401654845,40165484513,3,2,1:48,Illinois,Eastern Illinois,24,0,50,1,10,4,Rush,Aidan Laughery run for 4 yds to the EIU 46,-0.141734208558013,2024-08-30T02:38:33.000Z
+401654845102986301,401654845,40165484513,4,2,1:36,Illinois,Eastern Illinois,24,0,46,2,6,12,Pass Reception,Luke Altmyer pass complete to Pat Bryant for a 1ST down,1.046419979765716,2024-08-30T02:38:54.000Z
+401654845102986901,401654845,40165484513,5,2,1:30,Illinois,Eastern Illinois,31,0,34,1,10,34,Passing Touchdown,Malik Elzy 34 Yd pass from Luke Altmyer (David Olano Kick),2.93672616091367,2024-08-30T02:39:44.000Z
+401654845102979901,401654845,40165484513,2,2,2:00,Illinois,Eastern Illinois,24,0,50,1,10,0,Timeout,"Timeout Illinois, clock 02:00",,2024-08-30T01:59:48.000Z
+401654845102998401,401654845,40165484514,4,2,0:15,Eastern Illinois,Illinois,0,31,70,3,5,4,Rush,Jay Pearson run for 4 yds to the EIU 34,-0.06449296258092385,2024-08-30T02:43:52.000Z
+401654845102999301,401654845,40165484514,6,2,0:06,Eastern Illinois,Illinois,0,31,66,4,1,4,Punt,"Jacob Horvath punt for 45 yds , Mac Resetich returns for 4 yds to the ILL 25",,2024-08-30T02:45:20.000Z
+401654845102998402,401654845,40165484514,5,2,0:15,Eastern Illinois,Illinois,0,31,66,4,1,0,Timeout,"Timeout Illinois, clock 00:15",,2024-08-30T02:43:52.000Z
+401654845102986903,401654845,40165484514,1,2,1:30,Illinois,Eastern Illinois,31,0,65,1,10,0,Kickoff,Ethan Moczulski kickoff for 65 yds for a touchback,,2024-08-30T02:39:44.000Z
+401654845102987501,401654845,40165484514,2,2,1:24,Eastern Illinois,Illinois,0,31,75,1,10,3,Rush,Jay Pearson run for 3 yds to the EIU 28,-0.2957674139440157,2024-08-30T02:42:36.000Z
+401654845102989901,401654845,40165484514,3,2,1:00,Eastern Illinois,Illinois,0,31,72,2,7,2,Rush,Jay Pearson run for 2 yds to the EIU 30,-0.36341994158841023,2024-08-30T02:43:01.000Z
+401654845102999902,401654845,40165484515,2,2,0:00,Illinois,Eastern Illinois,31,0,75,0,10,-2,End of Half,End of 2nd Quarter,,2024-08-30T02:45:59.000Z
+401654845102999901,401654845,40165484515,1,2,0:00,Illinois,Eastern Illinois,31,0,75,1,10,-2,Rush,L. Altmyer takes a knee,-0.8852575132705454,2024-08-30T02:45:59.000Z
+401654845103854401,401654845,40165484516,2,3,14:55,Eastern Illinois,Illinois,0,31,65,1,10,0,Rush,MJ Flowers run for no gain to the EIU 35,-1.0146424556055624,2024-08-30T03:08:53.000Z
+401654845103858301,401654845,40165484516,3,3,14:16,Eastern Illinois,Illinois,0,31,65,2,10,-3,Pass Reception,Pierce Holley pass complete to MJ Flowers,-0.818030414021857,2024-08-30T03:09:30.000Z
+401654845103868501,401654845,40165484516,5,3,13:14,Eastern Illinois,Illinois,0,31,63,3,8,10,Pass Reception,Pierce Holley pass complete to DeAirious Smith for a 1ST down,2.5516314288211603,2024-08-30T03:11:49.000Z
+401654845103874501,401654845,40165484516,6,3,12:54,Eastern Illinois,Illinois,0,31,53,1,10,5,Pass Reception,Pierce Holley pass complete to Cooper Willman,0.1057711896973057,2024-08-30T03:12:11.000Z
+401654845103877101,401654845,40165484516,7,3,12:28,Eastern Illinois,Illinois,0,31,48,2,5,0,Pass Incompletion,Pierce Holley pass incomplete,-1.1848014830685507,2024-08-30T03:12:37.000Z
+401654845103877801,401654845,40165484516,8,3,12:21,Eastern Illinois,Illinois,0,31,48,3,5,2,Rush,Pierce Holley run for 2 yds to the 50 yard line,-0.6093895483709826,2024-08-30T03:13:27.000Z
+401654845103885501,401654845,40165484516,9,3,11:44,Eastern Illinois,Illinois,0,31,50,4,7,0,Punt,"Jacob Horvath punt for 36 yds, fair catch by Mac Resetich at the ILL 14",,2024-08-30T03:14:13.000Z
+401654845103864801,401654845,40165484516,4,3,13:51,Eastern Illinois,Illinois,0,31,68,3,13,5,Penalty,"(13:56) No Huddle-Shotgun Holley,Pierce sacked for loss of 2 yards to the EIU30 (Jacas,Gabe) PENALTY ILL Offside (Bryant,Alec) 5 yards from EIU32 to EIU37. NO PLAY.",,2024-08-30T03:10:44.000Z
+401654845103849904,401654845,40165484516,1,3,15:00,Illinois,Eastern Illinois,31,0,65,1,10,0,Kickoff,Ethan Moczulski kickoff,,2024-08-30T03:08:16.000Z
+401654845103908701,401654845,40165484517,6,3,9:12,Illinois,Eastern Illinois,31,0,40,1,20,7,Rush,Kaden Feagin run for 7 yds to the EIU 33,0.405774289296495,2024-08-30T03:20:52.000Z
+401654845103916602,401654845,40165484517,7,3,8:33,Illinois,Eastern Illinois,31,0,33,2,13,11,Pass Reception,"Luke Altmyer pass complete to Kenari Wilcher for a 1ST down Eastern Illinois Penalty, Personal Foul (Nick Coates) to the EIU 11 for a 1ST down",0.908247434095655,2024-08-30T03:21:30.000Z
+401654845103919101,401654845,40165484517,8,3,8:08,Illinois,Eastern Illinois,31,0,11,1,10,9,Rush,Aidan Laughery run for 9 yds to the EIU 2,0.613120222765927,2024-08-30T03:22:33.000Z
+401654845103926801,401654845,40165484517,9,3,7:31,Illinois,Eastern Illinois,31,0,2,2,1,1,Rush,Kaden Feagin run for 1 yd for a 1ST down,0.970597915481555,2024-08-30T03:23:16.000Z
+401654845103898901,401654845,40165484517,4,3,10:10,Illinois,Eastern Illinois,31,0,59,2,9,29,Pass Reception,Luke Altmyer pass complete to Ashton Hollins for a 1ST down,2.8540789994911098,2024-08-30T03:19:17.000Z
+401654845103886301,401654845,40165484517,1,3,11:36,Illinois,Eastern Illinois,31,0,86,1,10,4,Rush,Aidan Laughery run for 4 yds to the ILL 18,-0.0618919815702137,2024-08-30T03:17:15.000Z
+401654845103894902,401654845,40165484517,2,3,10:50,Illinois,Eastern Illinois,31,0,82,2,6,15,Pass Reception,"Luke Altmyer pass complete to Collin Dixon for a 1ST down Eastern Illinois Penalty, Roughing The Passer (Joel Barrows) to the ILL 40 for a 1ST down",1.292902128757964,2024-08-30T03:18:36.000Z
+401654845103897401,401654845,40165484517,3,3,10:25,Illinois,Eastern Illinois,31,0,60,1,10,1,Rush,Aidan Laughery run for 1 yd to the ILL 41,-0.9114215282702052,2024-08-30T03:19:04.000Z
+401654845103906501,401654845,40165484517,5,3,9:34,Illinois,Eastern Illinois,31,0,30,1,10,-10,Penalty,"(09:36) Shotgun Laughery,Aidan rush middle for 0 yards to the EIU30 (Porter,Phoenix) PENALTY ILL Holding (Davis,J.C.) 10 yards from EIU30 to EIU40. NO PLAY.",,2024-08-30T03:20:22.000Z
+401654845103929501,401654845,40165484517,10,3,7:04,Illinois,Eastern Illinois,38,0,1,1,1,1,Rushing Touchdown,Kaden Feagin run for 1 yd for a TD (David Olano KICK),0.938021275120443,2024-08-30T03:26:37.000Z
+401654845103934201,401654845,40165484518,2,3,6:57,Eastern Illinois,Illinois,0,38,75,1,10,3,Rush,MJ Flowers run for 3 yds to the EIU 28,-0.2957674139440157,2024-08-30T03:30:40.000Z
+401654845103939301,401654845,40165484518,3,3,6:06,Eastern Illinois,Illinois,0,38,72,2,7,6,Pass Reception,Pierce Holley pass complete to Cooper Willman,0.272733551995068,2024-08-30T03:31:31.000Z
+401654845103939302,401654845,40165484518,4,3,6:06,Eastern Illinois,Illinois,0,38,66,3,1,0,Timeout,"Timeout Illinois, clock 06:06",,2024-08-30T03:31:31.000Z
+401654845103929503,401654845,40165484518,1,3,7:04,Illinois,Eastern Illinois,38,0,65,1,10,0,Kickoff,Ethan Moczulski kickoff for 65 yds for a touchback,,2024-08-30T03:26:37.000Z
+401654845103939602,401654845,40165484518,5,3,6:03,Eastern Illinois,Illinois,0,38,66,3,1,-5,Penalty,"(06:04) No Huddle Holley,Pierce rush middle for 1 yard gain to the EIU35 (Briggs Jr.,Dennis) PENALTY EIU False Start (Tanelus,Elkhanan) 5 yards from EIU34 to EIU29. NO PLAY.",,2024-08-30T03:34:54.000Z
+401654845103949301,401654845,40165484518,7,3,5:06,Eastern Illinois,Illinois,0,38,63,1,10,7,Pass Reception,Pierce Holley pass complete to DeAirious Smith,0.7113806413121412,2024-08-30T03:36:31.000Z
+401654845103944401,401654845,40165484518,6,3,5:55,Eastern Illinois,Illinois,0,38,71,3,6,8,Pass Reception,Pierce Holley pass complete to Eli Mirza for a 1ST down,1.7924378379935648,2024-08-30T03:35:48.000Z
+401654845103956601,401654845,40165484518,9,3,4:33,Eastern Illinois,Illinois,0,38,41,1,10,-5,Sack,Pierce Holley sacked by Joe Barna for a loss of 5 yards to the ILL 46,-1.9735802164905039,2024-08-30T03:37:49.000Z
+401654845103955901,401654845,40165484518,8,3,4:40,Eastern Illinois,Illinois,0,38,56,2,3,15,Penalty,"(04:45) No Huddle-Shotgun Holley,Pierce pass incomplete deep left to Smith,DeAirious thrown to ILL25 PENALTY ILL Pass Interference (Patterson,Kaleb) 15 yards from EIU44 to ILL41, 1ST DOWN. NO PLAY.",,2024-08-30T03:37:03.000Z
+401654845103964001,401654845,40165484518,10,3,3:59,Eastern Illinois,Illinois,0,38,46,2,15,7,Rush,MJ Flowers run for 7 yds to the ILL 39,0.5043576920223476,2024-08-30T03:38:29.000Z
+401654845103967101,401654845,40165484518,11,3,3:28,Eastern Illinois,Illinois,0,38,39,3,8,0,Pass Incompletion,Pierce Holley pass incomplete,-1.0338282438090935,2024-08-30T03:39:05.000Z
+401654845103968101,401654845,40165484518,12,3,3:18,Eastern Illinois,Illinois,0,38,39,4,8,0,Fumble Recovery (Own),"Pierce Holley pass complete to DeAirious Smith DeAirious Smith fumbled, recovered by ILL Kaleb Patterson",-1.2564296058262308,2024-08-30T03:40:14.000Z
+401654845103999902,401654845,40165484519,6,3,0:00,Illinois,Eastern Illinois,38,0,22,0,10,2,End Period,End of 3rd Quarter,,2024-08-30T03:46:27.000Z
+401654845103968801,401654845,40165484519,1,3,3:11,Illinois,Eastern Illinois,38,0,87,1,10,29,Rush,Aidan Laughery run for 29 yds to the ILL 42 for a 1ST down,2.135092406828316,2024-08-30T03:43:13.000Z
+401654845103976701,401654845,40165484519,2,3,2:32,Illinois,Eastern Illinois,38,0,58,1,10,15,Rush,Luke Altmyer run for 15 yds to the EIU 43 for a 1ST down,1.2093331241084613,2024-08-30T03:44:01.000Z
+401654845103984301,401654845,40165484519,3,3,1:56,Illinois,Eastern Illinois,38,0,43,1,10,9,Rush,Kaden Feagin run for 9 yds to the EIU 34,0.9071042242020542,2024-08-30T03:44:28.000Z
+401654845103988101,401654845,40165484519,4,3,1:18,Illinois,Eastern Illinois,38,0,34,2,1,12,Rush,Kaden Feagin run for 12 yds to the EIU 22 for a 1ST down,-0.20235690291966,2024-08-30T03:45:06.000Z
+401654845103999901,401654845,40165484519,5,3,0:00,Illinois,Eastern Illinois,38,0,22,1,10,2,Rush,Kaden Feagin run for 2 yds to the EIU 20,-0.218895918192836,2024-08-30T03:46:27.000Z
+401654845104854201,401654845,40165484519,7,4,14:57,Illinois,Eastern Illinois,38,0,20,2,8,0,Pass Incompletion,Luke Altmyer pass incomplete,-0.4553733610177895,2024-08-30T03:49:15.000Z
+401654845104854902,401654845,40165484519,8,4,14:50,Illinois,Eastern Illinois,38,0,20,3,8,9,Pass Reception,"Luke Altmyer pass complete to Josh McCray for a 1ST down Eastern Illinois Penalty, Illegal Use Of Hands (Joel Barrows) to the EIU 8 for a 1ST down",0.8001526324911605,2024-08-30T03:50:11.000Z
+401654845104857801,401654845,40165484519,9,4,14:21,Illinois,Eastern Illinois,38,0,8,1,8,2,Rush,Josh McCray run for 2 yds to the EIU 6,-0.209067424082246,2024-08-30T03:51:05.000Z
+401654845104864801,401654845,40165484519,10,4,13:51,Illinois,Eastern Illinois,45,0,6,2,6,6,Rushing Touchdown,Josh McCray run for 6 yds for a TD (David Olano KICK),2.528666992781938,2024-08-30T03:51:40.000Z
+401654845104874001,401654845,40165484520,5,4,12:59,Eastern Illinois,Illinois,0,45,75,4,10,0,Punt,Jacob Horvath punt for 49 yds,,2024-08-30T03:57:52.000Z
+401654845104864803,401654845,40165484520,1,4,13:51,Illinois,Eastern Illinois,45,0,65,1,10,0,Kickoff,Ethan Moczulski kickoff for 65 yds for a touchback,,2024-08-30T03:51:40.000Z
+401654845104866001,401654845,40165484520,2,4,13:39,Eastern Illinois,Illinois,0,45,75,1,10,0,Rush,Kendi Young run for no gain to the EIU 25,-0.7029700220436519,2024-08-30T03:56:04.000Z
+401654845104868201,401654845,40165484520,3,4,13:17,Eastern Illinois,Illinois,0,45,75,2,10,0,Pass Incompletion,Pierce Holley pass incomplete,-0.34710487712173865,2024-08-30T03:56:25.000Z
+401654845104868701,401654845,40165484520,4,4,13:12,Eastern Illinois,Illinois,0,45,75,3,10,0,Pass Incompletion,Pierce Holley pass incomplete,-0.15871308844886392,2024-08-30T03:57:00.000Z
+401654845104874601,401654845,40165484521,1,4,12:53,Illinois,Eastern Illinois,45,0,74,1,10,3,Rush,Kaden Feagin run for 3 yds to the ILL 29,-0.30809127134716,2024-08-30T03:58:40.000Z
+401654845104878701,401654845,40165484521,2,4,12:12,Illinois,Eastern Illinois,45,0,71,2,7,6,Rush,Kaden Feagin run for 6 yds to the ILL 35,0.2815724778674885,2024-08-30T03:59:15.000Z
+401654845104886401,401654845,40165484521,3,4,11:35,Illinois,Eastern Illinois,45,0,65,3,1,6,Rush,Kaden Feagin run for 6 yds to the ILL 41 for a 1ST down,1.3742827561422102,2024-08-30T03:59:54.000Z
+401654845104889501,401654845,40165484521,4,4,11:04,Illinois,Eastern Illinois,45,0,59,1,10,0,Pass Incompletion,Donovan Leary pass incomplete,-1.1387859939569847,2024-08-29T04:00:29.000Z
+401654845104894201,401654845,40165484521,5,4,10:57,Illinois,Eastern Illinois,45,0,59,2,10,2,Rush,Jordan Anderson run for 2 yds to the ILL 43,-0.5021685129198507,2024-08-29T04:01:04.000Z
+401654845104897701,401654845,40165484521,6,4,10:22,Illinois,Eastern Illinois,45,0,57,3,8,0,Pass Incompletion,Donovan Leary pass incomplete,-0.5753756750205063,2024-08-29T04:01:49.000Z
+401654845104898401,401654845,40165484521,7,4,10:15,Illinois,Eastern Illinois,45,0,57,4,8,0,Punt,"Hugh Robertson punt for 41 yds, fair catch by Cooper Willman at the EIU 16",,2024-08-29T04:02:30.000Z
+401654845104899801,401654845,40165484522,1,4,10:01,Eastern Illinois,Illinois,0,45,84,1,10,5,Pass Reception,Pierce Holley pass complete to Kendi Young,0.07867780591471615,2024-08-29T04:05:09.000Z
+401654845104907501,401654845,40165484522,3,4,9:24,Eastern Illinois,Illinois,0,45,79,3,5,17,Pass Reception,Pierce Holley pass complete to CJ Nelson for a 1ST down,2.054259780704686,2024-08-29T04:06:24.000Z
+401654845104906201,401654845,40165484522,2,4,9:37,Eastern Illinois,Illinois,0,45,79,2,5,0,Pass Incompletion,Pierce Holley pass incomplete,-0.506571900095218,2024-08-29T04:05:34.000Z
+401654845104914001,401654845,40165484522,4,4,8:59,Eastern Illinois,Illinois,0,45,62,1,10,0,Pass Incompletion,Pierce Holley pass incomplete,-1.087995077167328,2024-08-29T04:06:49.000Z
+401654845104915901,401654845,40165484522,5,4,8:40,Eastern Illinois,Illinois,0,45,62,2,10,4,Pass Reception,Pierce Holley pass complete to CJ Nelson,-0.126245501854279,2024-08-29T04:07:41.000Z
+401654845104918601,401654845,40165484522,6,4,8:13,Eastern Illinois,Illinois,0,45,58,3,6,0,Pass Incompletion,Pierce Holley pass incomplete,-0.6401731194806475,2024-08-29T04:08:07.000Z
+401654845104919501,401654845,40165484522,7,4,8:04,Eastern Illinois,Illinois,0,45,58,4,6,4,Punt,"Jacob Horvath punt for 48 yds , Mac Resetich returns for 4 yds to the ILL 14",,2024-08-29T04:08:50.000Z
+401654845104979901,401654845,40165484523,10,4,2:00,Illinois,Eastern Illinois,45,0,40,4,11,0,Timeout,"Timeout Illinois, clock 02:00",,2024-08-30T03:49:15.000Z
+401654845104925401,401654845,40165484523,1,4,7:45,Illinois,Eastern Illinois,45,0,86,1,10,16,Rush,Ca'Lil Valentine run for 16 yds to the ILL 30 for a 1ST down,0.9672802974245558,2024-08-29T04:11:57.000Z
+401654845104928901,401654845,40165484523,2,4,7:10,Illinois,Eastern Illinois,45,0,70,1,10,1,Rush,Ca'Lil Valentine run for 1 yd to the ILL 31,-0.716015480823808,2024-08-29T04:12:25.000Z
+401654845104938001,401654845,40165484523,3,4,6:19,Illinois,Eastern Illinois,45,0,69,2,9,11,Pass Reception,Donovan Leary pass complete to Ashton Hollins for a 1ST down,1.8470987876888358,2024-08-29T04:13:17.000Z
+401654845104945701,401654845,40165484523,4,4,5:42,Illinois,Eastern Illinois,45,0,58,1,10,1,Rush,Ca'Lil Valentine run for 1 yd to the ILL 41,-0.9258054961347764,2024-08-29T04:13:57.000Z
+401654845104954201,401654845,40165484523,5,4,4:57,Illinois,Eastern Illinois,45,0,59,2,11,2,Rush,Ca'Lil Valentine run for 2 yds to the ILL 43,-0.4724362029517062,2024-08-29T04:14:41.000Z
+401654845104959401,401654845,40165484523,6,4,4:05,Illinois,Eastern Illinois,45,0,57,3,9,18,Pass Reception,Donovan Leary pass complete to Carson Goda for a 1ST down,3.250147709197619,2024-08-29T04:15:28.000Z
+401654845104967201,401654845,40165484523,7,4,3:27,Illinois,Eastern Illinois,45,0,39,1,10,1,Rush,Jordan Anderson run for 1 yd to the EIU 38,-0.6215061842869627,2024-08-29T04:16:15.000Z
+401654845104975801,401654845,40165484523,8,4,2:41,Illinois,Eastern Illinois,45,0,38,2,9,0,Pass Incompletion,Donovan Leary pass incomplete,-0.9790917484761117,2024-08-29T04:16:54.000Z
+401654845104976401,401654845,40165484523,9,4,2:35,Illinois,Eastern Illinois,45,0,38,3,9,2,Rush,Jordan Anderson run for 2 yds to the EIU 40,-0.6080874305619232,2024-08-29T04:17:43.000Z
+401654845104984601,401654845,40165484523,11,4,1:53,Illinois,Eastern Illinois,45,0,40,4,11,0,Punt,"Hugh Robertson punt for 33 yds, fair catch by Cooper Willman at the EIU 7",,2024-08-29T04:21:11.000Z
+401654845104994201,401654845,40165484524,2,4,0:57,Eastern Illinois,Illinois,0,45,91,2,8,11,Pass Reception,Pierce Holley pass complete to DeAirious Smith for a 1ST down,0.685631838518665,2024-08-29T04:23:14.000Z
+401654845104996701,401654845,40165484524,4,4,0:32,Eastern Illinois,Illinois,0,45,80,2,10,9,Pass Reception,Pierce Holley pass complete to DeAirious Smith,0.5525601871585479,2024-08-29T04:24:06.000Z
+401654845104999902,401654845,40165484524,6,4,0:00,Eastern Illinois,Illinois,0,45,71,0,1,0,End of Game,End of 4th Quarter,,2024-08-29T04:24:41.000Z
+401654845104985301,401654845,40165484524,1,4,1:46,Eastern Illinois,Illinois,0,45,93,1,10,2,Rush,Kendi Young run for 2 yds to the EIU 9,-0.19818242222171722,2024-08-29T04:22:08.000Z
+401654845104995001,401654845,40165484524,3,4,0:49,Eastern Illinois,Illinois,0,45,80,1,10,0,Pass Incompletion,Pierce Holley pass incomplete,-0.5586693796725282,2024-08-29T04:23:26.000Z
+401654845104999901,401654845,40165484524,5,4,0:00,Eastern Illinois,Illinois,0,45,71,3,1,0,Rush,Kendi Young run for no gain to the EIU 29,-0.5611990698005247,2024-08-29T04:24:41.000Z

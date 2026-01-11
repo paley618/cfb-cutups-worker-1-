@@ -1,0 +1,162 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401656598101854501,401656598,4016565982,7,1,14:54,Mercyhurst,Howard,0,0,65,1,10,25,Kickoff,"Kaedon Kline kickoff for 60 yds , Anthony Reagan Jr. return for 25 yds to the HOW 30",,2024-09-07T23:05:15.000Z
+401656598101849904,401656598,4016565982,1,1,15:00,Howard,Mercyhurst,0,0,70,1,10,30,Pass Reception,Ja'Shawn Scroggins pass complete to Isiah Williams for 30 yds to the MERC 40 for a 1ST down,2.5037373749670024,2024-09-07T23:05:15.000Z
+401656598101849905,401656598,4016565982,2,1,15:00,Howard,Mercyhurst,0,0,40,1,10,-1,Rush,Jarett Hunter run for a loss of 1 yard to the MERC 41,-1.0526226150183255,2024-09-07T23:05:15.000Z
+401656598101849906,401656598,4016565982,3,1,15:00,Howard,Mercyhurst,0,0,41,2,11,7,Rush,Jarett Hunter run for 7 yds to the MERC 34,0.4763288153405067,2024-09-07T23:05:15.000Z
+401656598101849907,401656598,4016565982,4,1,15:00,Howard,Mercyhurst,0,0,34,3,4,5,Rush,Jarett Hunter run for 5 yds to the MERC 29 for a 1ST down,0.9770417590170478,2024-09-07T23:05:15.000Z
+401656598101849908,401656598,4016565982,5,1,15:00,Howard,Mercyhurst,0,0,29,1,10,14,Pass Reception,Ja'Shawn Scroggins pass complete to Isiah Williams for 14 yds to the MERC 15 for a 1ST down,0.230102095033029,2024-09-07T23:05:15.000Z
+401656598101849909,401656598,4016565982,6,1,15:00,Howard,Mercyhurst,0,0,15,1,10,3,Rush,Jarett Hunter run for 3 yds to the MERC 12,-0.103053233199689,2024-09-07T23:05:15.000Z
+401656598101886701,401656598,4016565982,8,1,11:32,Howard,Mercyhurst,0,0,12,2,7,10,Fumble Recovery (Opponent),"Breylin Smith run for 10 yds to the MERC 2 Breylin Smith fumbled, recovered by MERC Nevan Novitski",-4.338747677235228,2024-09-07T23:09:15.000Z
+401656598101886702,401656598,4016565983,1,1,11:32,Mercyhurst,Howard,0,0,98,1,10,3,Pass Reception,Adam Urena pass complete to Joe Kerbacher for 3 yds to the MERC 5,-0.10121494484965776,2024-09-07T23:09:15.000Z
+401656598101886703,401656598,4016565983,2,1,11:32,Mercyhurst,Howard,0,0,95,2,7,8,Rush,Earnest Davis run for 8 yds to the MERC 13 for a 1ST down,0.3796016268827529,2024-09-07T23:09:15.000Z
+401656598101886704,401656598,4016565983,3,1,11:32,Mercyhurst,Howard,0,0,87,1,10,31,Pass Reception,Adam Urena pass complete to Joe Kerbacher for 31 yds to the MERC 44 for a 1ST down,2.3266128374883257,2024-09-07T23:09:15.000Z
+401656598101886705,401656598,4016565983,4,1,11:32,Mercyhurst,Howard,0,0,56,1,10,0,Pass Incompletion,Adam Urena pass incomplete to Russell Pytlak,-1.1612466882658818,2024-09-07T23:14:04.000Z
+401656598101886706,401656598,4016565983,5,1,11:32,Mercyhurst,Howard,0,0,56,2,10,4,Rush,Earnest Davis run for 4 yds to the MERC 48,-0.1536513822659238,2024-09-07T23:09:15.000Z
+401656598101886707,401656598,4016565983,6,1,11:32,Mercyhurst,Howard,0,0,52,3,6,7,Pass Reception,Adam Urena pass complete to Earnest Davis for 7 yds to the HOW 45 for a 1ST down,2.2085667668440436,2024-09-07T23:15:52.000Z
+401656598101886708,401656598,4016565983,7,1,11:32,Mercyhurst,Howard,0,0,45,1,10,12,Rush,Earnest Davis run for 12 yds to the HOW 33 for a 1ST down,0.57343931156508,2024-09-07T23:15:52.000Z
+401656598101886709,401656598,4016565983,8,1,11:32,Mercyhurst,Howard,0,0,33,1,10,-1,Pass Reception,Adam Urena pass complete to Earnest Davis for a loss of 1 yard to the HOW 34,-0.7964053957016795,2024-09-07T23:15:52.000Z
+401656598101886710,401656598,4016565983,9,1,11:32,Mercyhurst,Howard,0,0,34,2,11,12,Fumble Recovery (Own),"Adam Urena pass complete to Russell Pytlak for 12 yds Adam Urena fumbled, recovered by MERC Russell Pytlak for a 1ST down",1.0518574025552074,2024-09-07T23:15:52.000Z
+401656598101886711,401656598,4016565983,10,1,11:32,Mercyhurst,Howard,0,0,22,1,10,15,Pass Reception,Adam Urena pass complete to Rylan Davison for 15 yds to the HOW 7 for a 1ST down,0.450868136321249,2024-09-07T23:15:52.000Z
+401656598101886712,401656598,4016565983,11,1,11:32,Mercyhurst,Howard,0,0,7,1,7,0,Pass Incompletion,"Adam Urena pass incomplete to Joe Kerbacher, broken up by Xavier Robiou",-0.410393837690526,2024-09-07T23:15:52.000Z
+401656598101886713,401656598,4016565983,12,1,11:32,Mercyhurst,Howard,0,0,7,2,7,3,Rush,Earnest Davis run for 3 yds to the HOW 4,-0.0888244534588445,2024-09-07T23:15:52.000Z
+401656598101886714,401656598,4016565983,13,1,11:32,Mercyhurst,Howard,0,0,4,3,4,0,Pass Incompletion,"Adam Urena pass incomplete to Joe Kerbacher, broken up by Jabari Knighten",-0.2868087912016805,2024-09-07T23:15:52.000Z
+401656598101945501,401656598,4016565983,14,1,5:44,Mercyhurst,Howard,3,0,4,4,4,21,Field Goal Good,Nathan Nagucki 21 yd FG GOOD,,2024-09-07T23:25:33.000Z
+401656598101945502,401656598,4016565985,1,1,5:44,Mercyhurst,Howard,3,0,65,1,10,0,Kickoff,Kaedon Kline kickoff for 65 yds for a touchback,,2024-09-07T23:29:45.000Z
+401656598101945503,401656598,4016565985,2,1,5:44,Howard,Mercyhurst,0,3,75,1,10,5,Rush,Jarett Hunter run for 5 yds to the HOW 30,0.0945451165334843,2024-09-07T23:29:45.000Z
+401656598101945504,401656598,4016565985,3,1,5:44,Howard,Mercyhurst,0,3,70,2,5,7,Rush,Ja'Shawn Scroggins run for 7 yds to the HOW 37 for a 1ST down,0.932699209610087,2024-09-07T23:29:45.000Z
+401656598101945505,401656598,4016565985,4,1,5:44,Howard,Mercyhurst,0,3,63,1,10,14,Pass Reception,Ja'Shawn Scroggins pass complete to Kasey Hawthorne for 14 yds to the MERC 49 for a 1ST down,1.288180241940502,2024-09-07T23:29:45.000Z
+401656598101945506,401656598,4016565985,5,1,5:44,Howard,Mercyhurst,0,3,49,1,10,26,Rush,Ja'Shawn Scroggins run for 26 yds to the MERC 23 for a 1ST down,1.0983528735660197,2024-09-07T23:29:45.000Z
+401656598101945507,401656598,4016565985,6,1,5:44,Howard,Mercyhurst,0,3,23,1,10,2,Rush,Jarett Hunter run for 2 yds to the MERC 21,-0.2265058372460335,2024-09-07T23:29:45.000Z
+401656598101945508,401656598,4016565985,7,1,5:44,Howard,Mercyhurst,0,3,21,2,8,0,Pass Incompletion,Ja'Shawn Scroggins pass incomplete to Isiah Williams,-0.47794201886493,2024-09-07T23:29:45.000Z
+401656598101945509,401656598,4016565985,8,1,5:44,Howard,Mercyhurst,0,3,21,3,8,-21,Pass Reception,"Ja'Shawn Scroggins pass complete to Jarett Hunter for a loss of 11 yards to the MERC 32 Howard Penalty, Offensive holding (Cam May) to the MERC 31",-3.7919523547761127,2024-09-07T23:29:45.000Z
+401656598101945510,401656598,4016565985,9,1,5:44,Howard,Mercyhurst,0,3,31,3,18,12,Pass Reception,Ja'Shawn Scroggins pass complete to Eden James for 12 yds to the MERC 19,1.3900800265239004,2024-09-07T23:29:45.000Z
+401656598101988301,401656598,4016565985,10,1,1:16,Howard,Mercyhurst,0,3,19,4,6,37,Field Goal Missed,Dylan West 37 yd FG MISSED,,2024-09-07T23:37:15.000Z
+401656598101988304,401656598,4016565986,4,1,0:00,Mercyhurst,Howard,3,0,68,0,10,0,End Period,End of 1st Quarter,,2024-09-07T23:41:32.000Z
+401656598101849910,401656598,4016565986,1,1,15:00,Mercyhurst,Howard,3,0,68,2,10,1,Rush,Ayron Rodriguez run for 1 yd to the MERC 33,-0.43133289269019487,2024-09-07T23:05:15.000Z
+401656598101988302,401656598,4016565986,2,1,1:16,Mercyhurst,Howard,3,0,80,1,10,12,Rush,Joe Kerbacher run for 12 yds to the MERC 32 for a 1ST down,0.8667470799632433,2024-09-07T23:37:15.000Z
+401656598101988303,401656598,4016565986,3,1,1:16,Mercyhurst,Howard,3,0,68,1,10,0,Pass Incompletion,Adam Urena pass incomplete to Cameron Barmore,-0.9262377870973815,2024-09-07T23:37:15.000Z
+401656598102849901,401656598,4016565986,5,2,15:00,Mercyhurst,Howard,3,0,67,3,9,-8,Sack,Adam Urena sacked for a loss of 8 yards to the MERC 25,-0.47429584726056717,2024-09-07T23:43:32.000Z
+401656598102864201,401656598,4016565986,6,2,13:57,Mercyhurst,Howard,3,0,75,4,17,14,Punt,"Hunter Pittman punt for 52 yds , Richie Ilarraza returns for 14 yds to the HOW 39 Howard Penalty, illegal block (Kedrick Green) to the HOW 27",,2024-09-07T23:44:19.000Z
+401656598102928001,401656598,4016565989,1,2,7:19,Howard,Mercyhurst,7,3,65,1,10,5,Kickoff,"Dylan West kickoff for 59 yds , Chaz Davis return for 5 yds to the MERC 11",,2024-09-07T23:43:32.000Z
+401656598102928401,401656598,4016565989,2,2,7:15,Mercyhurst,Howard,3,7,89,1,10,0,Fumble Recovery (Opponent),"Davis,Earnest rush right , fumble by Davis,Earnest recovered by HOW Hollon,Terrance, Hollon,Terrance rush. Earnest Davis fumbled, recovered by HOW Terrance Hollon",-0.23642769187232826,2024-09-08T00:01:21.000Z
+401656598102864202,401656598,4016565987,1,2,13:57,Howard,Mercyhurst,0,3,73,1,10,0,Rush,"James,Eden rush middle (Novitski,Nevan).",-0.766047035673644,2024-09-07T23:49:19.000Z
+401656598102864203,401656598,4016565987,2,2,13:57,Howard,Mercyhurst,0,3,73,2,10,5,Rush,Jarett Hunter run for 5 yds to the HOW 32,0.04653708659430665,2024-09-07T23:49:19.000Z
+401656598102864204,401656598,4016565987,3,2,13:57,Howard,Mercyhurst,0,3,68,3,5,9,Rush,Ja'Shawn Scroggins run for 9 yds to the HOW 41 for a 1ST down,1.9932130335028466,2024-09-07T23:49:19.000Z
+401656598102864205,401656598,4016565987,4,2,13:57,Howard,Mercyhurst,0,3,59,1,10,0,Rush,"James,Eden rush right (Mackey,Anthony).",-1.1387859939569847,2024-09-07T23:49:19.000Z
+401656598102864206,401656598,4016565987,5,2,13:57,Howard,Mercyhurst,0,3,59,2,10,7,Rush,Ja'Shawn Scroggins run for 7 yds to the HOW 48,0.5417902007690928,2024-09-07T23:49:19.000Z
+401656598102864207,401656598,4016565987,6,2,13:57,Howard,Mercyhurst,0,3,52,3,3,15,Pass Reception,Ja'Shawn Scroggins pass complete to Eden James for 15 yds to the MERC 37 for a 1ST down,2.204599511509576,2024-09-07T23:49:19.000Z
+401656598102864208,401656598,4016565987,7,2,13:57,Howard,Mercyhurst,0,3,37,1,10,14,Pass Reception,Ja'Shawn Scroggins pass complete to Se'Quan Osborne for 14 yds to the MERC 23 for a 1ST down,0.3874309534055147,2024-09-07T23:49:19.000Z
+401656598102864209,401656598,4016565987,8,2,13:57,Howard,Mercyhurst,0,3,23,1,10,-1,Rush,Eden James run for a loss of 1 yard to the MERC 24,-0.5191767230513005,2024-09-07T23:49:19.000Z
+401656598102864210,401656598,4016565987,9,2,13:57,Howard,Mercyhurst,0,3,24,2,11,12,Rush,Jarett Hunter run for 12 yds to the MERC 12 for a 1ST down,0.6530598590866035,2024-09-07T23:49:19.000Z
+401656598102864211,401656598,4016565987,10,2,13:57,Howard,Mercyhurst,0,3,12,1,10,1,Rush,Ja'Shawn Scroggins run for 1 yd to the MERC 11,-0.234891535825625,2024-09-07T23:49:19.000Z
+401656598102927401,401656598,4016565987,11,2,7:25,Howard,Mercyhurst,7,3,11,2,9,11,Rushing Touchdown,Jarett Hunter run for 11 yds for a TD (Dylan West KICK),2.7649860778615505,2024-09-07T23:53:54.000Z
+401656598102928402,401656598,40165659810,1,2,7:15,Howard,Mercyhurst,7,3,11,1,10,-7,Rush,Eden James run for a loss of 7 yards to the MERC 18,-0.776103281252638,2024-09-08T00:01:21.000Z
+401656598102928403,401656598,40165659810,2,2,7:15,Howard,Mercyhurst,7,3,18,2,17,0,Pass Incompletion,"Ja'Shawn Scroggins pass incomplete to Jarett Hunter, broken up by Braylon Beckwith",-0.582461327111478,2024-09-08T00:01:21.000Z
+401656598102928404,401656598,40165659810,3,2,7:15,Howard,Mercyhurst,7,3,18,3,17,0,Pass Incompletion,"Ja'Shawn Scroggins pass incomplete to Richie Ilarraza, broken up by Zach Hill",-0.8825346950907526,2024-09-08T00:01:21.000Z
+401656598102938801,401656598,40165659810,4,2,6:11,Howard,Mercyhurst,7,3,18,4,17,35,Field Goal Missed,Dylan West 35 yd FG MISSED,,2024-09-08T00:03:23.000Z
+401656598102938802,401656598,40165659811,1,2,6:11,Mercyhurst,Howard,3,7,80,1,10,-5,Sack,Adam Urena sacked for a loss of 5 yards to the MERC 15,-0.8335810986071985,2024-09-08T00:03:23.000Z
+401656598102938803,401656598,40165659811,2,2,6:11,Mercyhurst,Howard,3,7,85,2,15,0,Rush,"Trobel,Brian rush right (Gallop, Jr.,Kenny).",-0.10782395428385258,2024-09-08T00:03:23.000Z
+401656598102938804,401656598,40165659811,3,2,6:11,Mercyhurst,Howard,3,7,85,3,15,6,Pass Reception,Adam Urena pass complete to Joe Kerbacher for 6 yds to the MERC 21,0.02372669557373716,2024-09-08T00:03:23.000Z
+401656598102965001,401656598,40165659811,4,2,3:49,Mercyhurst,Howard,3,7,79,4,9,0,Punt,Garrett McGuire punt for 35 yds,,2024-09-08T00:11:36.000Z
+401656598102965002,401656598,40165659812,1,2,3:49,Howard,Mercyhurst,7,3,56,1,10,0,Rush,"Hunter,Jarett rush middle (Malis,Max;Buterbaugh,Tyler).",-1.1612466882658818,2024-09-08T00:13:15.000Z
+401656598102965003,401656598,40165659812,2,2,3:49,Howard,Mercyhurst,7,3,56,2,10,9,Pass Reception,Ja'Shawn Scroggins pass complete to Richie Ilarraza for 9 yds to the MERC 47,1.1076786914763288,2024-09-08T00:13:15.000Z
+401656598102965004,401656598,40165659812,3,2,3:49,Howard,Mercyhurst,7,3,47,3,1,0,Rush,"Scroggins,Ja'Shawn rush (Malis,Max).",-1.1917707693778203,2024-09-08T00:13:15.000Z
+401656598102965005,401656598,40165659812,4,2,3:49,Howard,Mercyhurst,7,3,47,4,1,1,Rush,Jarett Hunter run for 1 yd to the MERC 46 for a 1ST down,2.072234139412215,2024-09-08T00:13:15.000Z
+401656598102965006,401656598,40165659812,5,2,3:49,Howard,Mercyhurst,7,3,46,1,10,0,Pass Incompletion,Ja'Shawn Scroggins pass incomplete to Jarett Hunter,-1.0250974847844603,2024-09-08T00:13:15.000Z
+401656598102965007,401656598,40165659812,6,2,3:49,Howard,Mercyhurst,7,3,46,2,10,5,Pass Reception,Ja'Shawn Scroggins pass complete to Breylin Smith for 5 yds to the MERC 41,0.0729886527331746,2024-09-08T00:13:15.000Z
+401656598102965008,401656598,40165659812,7,2,3:49,Howard,Mercyhurst,7,3,41,3,5,30,Pass Reception,Ja'Shawn Scroggins pass complete to Breylin Smith for 30 yds to the MERC 11 for a 1ST down,1.973656826817825,2024-09-08T00:13:15.000Z
+401656598102965009,401656598,40165659812,8,2,3:49,Howard,Mercyhurst,7,3,11,1,10,4,Rush,Richie Ilarraza run for 4 yds to the MERC 7,-0.015606283624097,2024-09-08T00:13:15.000Z
+401656598102989201,401656598,40165659812,9,2,1:07,Howard,Mercyhurst,14,3,7,2,6,7,Rushing Touchdown,Jarett Hunter run for 7 yds for a TD (Dylan West KICK),2.537345696992022,2024-09-08T00:21:17.000Z
+401656598102994001,401656598,40165659814,2,2,0:59,Howard,Mercyhurst,14,3,80,1,10,26,Kickoff,"Dylan West kickoff for 59 yds , Chaz Davis return for 26 yds to the MERC 47",,2024-09-08T00:23:16.000Z
+401656598102989203,401656598,40165659814,1,2,1:07,Howard,Mercyhurst,14,3,65,1,10,-15,Kickoff,"Dylan West kickoff Howard Penalty, unsportsmanlike conduct (Josiah Chenault) to the HOW 20",,2024-09-08T00:21:17.000Z
+401656598102994002,401656598,40165659814,3,2,0:59,Mercyhurst,Howard,3,14,53,1,10,-9,Sack,Adam Urena sacked for a loss of 9 yards to the MERC 38,-2.676279402164104,2024-09-08T00:23:53.000Z
+401656598102994901,401656598,40165659814,4,2,0:50,Mercyhurst,Howard,3,14,62,2,19,0,Pass Incompletion,Adam Urena pass incomplete,-0.3436703868431694,2024-09-08T00:25:14.000Z
+401656598102994902,401656598,40165659814,5,2,0:50,Mercyhurst,Howard,3,14,62,3,19,12,Pass Reception,Adam Urena pass complete to Joe Kerbacher for 12 yds to the 50 yard line,0.6399989635798837,2024-09-08T00:25:14.000Z
+401656598102997401,401656598,40165659814,6,2,0:25,Mercyhurst,Howard,3,14,50,4,7,0,Pass Incompletion,Adam Urena pass incomplete to Austin Urena,-0.5247497409993027,2024-09-08T00:27:34.000Z
+401656598102849903,401656598,40165659815,1,2,15:00,Howard,Mercyhurst,14,3,49,3,9,-10,Sack,Ja'Shawn Scroggins sacked for a loss of 10 yards to the HOW 35,-1.4593325788920843,2024-09-07T23:43:32.000Z
+401656598102997402,401656598,40165659815,2,2,0:25,Howard,Mercyhurst,14,3,50,1,10,0,Pass Incompletion,Ja'Shawn Scroggins pass incomplete to Jarett Hunter,-1.1143038065675126,2024-09-08T00:27:34.000Z
+401656598102997403,401656598,40165659815,3,2,0:25,Howard,Mercyhurst,14,3,50,2,10,1,Rush,Ja'Shawn Scroggins run for 1 yd to the MERC 49,-0.8294419024325973,2024-09-08T00:27:34.000Z
+401656598103914803,401656598,40165659820,1,3,8:51,Howard,Mercyhurst,21,3,65,1,10,0,Kickoff,Dylan West kickoff for 65 yds for a touchback,,2024-09-08T01:11:57.000Z
+401656598103915401,401656598,40165659820,2,3,8:45,Mercyhurst,Howard,3,21,75,1,10,0,Pass Incompletion,Adam Urena pass incomplete to Cameron Barmore,-0.7029700220436519,2024-09-08T01:17:20.000Z
+401656598103915402,401656598,40165659820,3,3,8:45,Mercyhurst,Howard,3,21,75,2,10,1,Rush,Ayron Rodriguez run for 1 yd to the MERC 26,-0.29282347426074384,2024-09-08T01:17:20.000Z
+401656598103915403,401656598,40165659820,4,3,8:45,Mercyhurst,Howard,3,21,74,3,9,11,Pass Reception,Adam Urena pass complete to Chaz Davis for 11 yds to the MERC 37 for a 1ST down,2.023037822447967,2024-09-08T01:19:30.000Z
+401656598103915404,401656598,40165659820,5,3,8:45,Mercyhurst,Howard,3,21,63,1,10,0,Pass Incompletion,"Adam Urena pass incomplete to Cameron Barmore, broken up by Robert Jones III",-1.065701080215459,2024-09-08T01:19:30.000Z
+401656598103915405,401656598,40165659820,6,3,8:45,Mercyhurst,Howard,3,21,63,2,10,0,Pass Incompletion,Adam Urena pass incomplete to Joe Kerbacher,-0.6622137678957802,2024-09-08T01:19:30.000Z
+401656598103915406,401656598,40165659820,7,3,8:45,Mercyhurst,Howard,3,21,63,3,10,10,Pass Incompletion,"Adam Urena pass incomplete to Cameron Barmore, broken up by Jamel Stewart for a 1ST down Howard Penalty, Defensive holding (Robert Jones III) to the MERC 47 for a 1ST down",2.6831262081156817,2024-09-08T01:19:30.000Z
+401656598103915407,401656598,40165659820,8,3,8:45,Mercyhurst,Howard,3,21,53,1,10,13,Rush,Ayron Rodriguez run for 13 yds to the HOW 40 for a 1ST down,0.9062502896359667,2024-09-08T01:19:30.000Z
+401656598103915408,401656598,40165659820,9,3,8:45,Mercyhurst,Howard,3,21,40,1,10,1,Rush,Ayron Rodriguez run for 1 yd to the HOW 39,-0.6465447438858387,2024-09-08T01:19:30.000Z
+401656598103915409,401656598,40165659820,10,3,8:45,Mercyhurst,Howard,3,21,39,2,9,15,Pass Incompletion,"Adam Urena pass incomplete to Rylan Davison, broken up by Jabari Knighten for a 1ST down Howard Penalty, Defensive pass interference (Jabari Knighten) to the HOW 24 for a 1ST down",1.1541559392162046,2024-09-08T01:19:30.000Z
+401656598103915410,401656598,40165659820,11,3,8:45,Mercyhurst,Howard,3,21,24,1,10,-5,Pass Reception,Adam Urena pass complete to Joe Kerbacher for a loss of 5 yards to the HOW 29,-1.054141779851573,2024-09-08T01:19:30.000Z
+401656598103915411,401656598,40165659820,12,3,8:45,Mercyhurst,Howard,3,21,29,2,15,13,Rush,"Ayron Rodriguez run for a loss of 2 yards to the HOW 31 for a 1ST down Howard Penalty, face mask (15 yards) (Noah Miles) to the HOW 14 for a 1ST down",0.983391706630174,2024-09-08T01:19:30.000Z
+401656598103915412,401656598,40165659820,13,3,8:45,Mercyhurst,Howard,3,21,14,1,10,12,Pass Reception,"Adam Urena pass complete to Alejandro Vazquez for 10 yds to the HOW 4 Howard Penalty, roughing passer (Noah Miles) to the HOW 2",1.3350478775069834,2024-09-08T01:19:30.000Z
+401656598103958101,401656598,40165659820,14,3,4:18,Mercyhurst,Howard,10,21,2,1,2,2,Rushing Touchdown,Ayron Rodriguez run for 2 yds for a TD (Nathan Nagucki KICK),1.213235297672098,2024-09-08T01:27:16.000Z
+401656598103854601,401656598,40165659817,5,3,14:53,Howard,Mercyhurst,14,3,65,1,10,31,Kickoff,"Dylan West kickoff for 59 yds , Chaz Davis return for 31 yds to the MERC 37",,2024-09-08T00:51:39.000Z
+401656598103849902,401656598,40165659817,1,3,15:00,Mercyhurst,Howard,3,14,63,1,10,-5,Penalty,"Mercyhurst Penalty, delay of game (Adam Urena) to the MERC 32",,2024-09-08T00:58:57.000Z
+401656598103849903,401656598,40165659817,2,3,15:00,Mercyhurst,Howard,3,14,68,1,15,0,Rush,"Rodriguez,Ayron rush middle (Gallop, Jr.,Kenny;Abdul-Ali,Ishaun).",-0.6343563915083825,2024-09-08T00:58:57.000Z
+401656598103849904,401656598,40165659817,3,3,15:00,Mercyhurst,Howard,3,14,68,2,15,0,Pass Incompletion,"Adam Urena pass incomplete to Joe Kerbacher, broken up by Jamel Stewart",-0.32782717017448526,2024-09-08T00:58:57.000Z
+401656598103849905,401656598,40165659817,4,3,15:00,Mercyhurst,Howard,3,14,68,3,15,7,Pass Reception,Adam Urena pass complete to Joe Kerbacher for 7 yds to the MERC 39,0.12922283907543886,2024-09-08T00:58:57.000Z
+401656598103868001,401656598,40165659817,6,3,13:19,Mercyhurst,Howard,3,14,61,4,8,0,Punt,Garrett McGuire punt for 25 yds,,2024-09-08T00:58:57.000Z
+401656598103868002,401656598,40165659818,1,3,13:19,Howard,Mercyhurst,14,3,89,1,35,8,Rush,Jarett Hunter run for 8 yds to the HOW 19,0.03149097215647689,2024-09-08T00:58:57.000Z
+401656598103868003,401656598,40165659818,2,3,13:19,Howard,Mercyhurst,14,3,81,2,1,14,Rush,Jarett Hunter run for 14 yds to the HOW 33 for a 1ST down,0.5364802773611643,2024-09-08T00:58:57.000Z
+401656598103868004,401656598,40165659818,3,3,13:19,Howard,Mercyhurst,14,3,64,1,10,-10,Penalty,"Howard Penalty, unsportsmanlike conduct (Judah McJimpsey) to the HOW 11",,2024-09-08T00:58:57.000Z
+401656598103868005,401656598,40165659818,4,3,13:19,Howard,Mercyhurst,14,3,67,1,10,6,Rush,Jarett Hunter run for 6 yds to the HOW 39,0.3906282102434897,2024-09-08T00:58:57.000Z
+401656598103868006,401656598,40165659818,5,3,13:19,Howard,Mercyhurst,14,3,61,2,4,15,Rush,Ja'Shawn Scroggins run for 15 yds to the MERC 46 for a 1ST down,1.4951410507631948,2024-09-08T00:58:57.000Z
+401656598103868008,401656598,40165659818,6,3,13:19,Howard,Mercyhurst,14,3,28,1,10,0,Pass Incompletion,"Ja'Shawn Scroggins pass incomplete to Kasey Hawthorne, broken up by Dominic McGhee",-0.512081873784803,2024-09-08T00:58:57.000Z
+401656598103868009,401656598,40165659818,7,3,13:19,Howard,Mercyhurst,14,3,28,2,10,13,Rush,Jarett Hunter run for 13 yds to the MERC 15 for a 1ST down,0.717897258358151,2024-09-08T00:58:57.000Z
+401656598103868010,401656598,40165659818,8,3,13:19,Howard,Mercyhurst,14,3,15,1,10,4,Rush,Jarett Hunter run for 4 yds to the MERC 11,-0.019365161227934,2024-09-08T00:58:57.000Z
+401656598103914801,401656598,40165659818,9,3,8:51,Howard,Mercyhurst,21,3,11,2,6,11,Passing Touchdown,Ja'Shawn Scroggins pass complete to Nathanial Clark for 11 yds for a TD (Dylan West KICK),2.577564250793017,2024-09-08T01:11:57.000Z
+401656598103958601,401656598,40165659822,1,3,4:13,Mercyhurst,Howard,10,21,65,1,10,19,Kickoff,"Kaedon Kline kickoff for 58 yds , Anthony Reagan Jr. return for 19 yds to the HOW 26",,2024-09-08T01:31:16.000Z
+401656598103958602,401656598,40165659822,2,3,4:13,Howard,Mercyhurst,21,10,74,1,10,0,Rush,"James,Eden rush right (Thomas,Will).",-0.7342478781140684,2024-09-08T01:31:16.000Z
+401656598103958603,401656598,40165659822,3,3,4:13,Howard,Mercyhurst,21,10,74,2,10,3,Rush,Eden James run for 3 yds to the HOW 29,-0.1612079826681692,2024-09-08T01:31:16.000Z
+401656598103958604,401656598,40165659822,4,3,4:13,Howard,Mercyhurst,21,10,71,3,7,0,Pass Incompletion,Ja'Shawn Scroggins pass incomplete to Cyrus Wilson,-0.2821474529492116,2024-09-08T01:31:16.000Z
+401656598103974601,401656598,40165659822,5,3,2:53,Howard,Mercyhurst,21,10,71,4,7,0,Punt,Jaydon Green punt for 43 yds,,2024-09-08T01:33:18.000Z
+401656598104854003,401656598,40165659823,6,4,14:59,Mercyhurst,Howard,18,21,3,1,10,-62,Pass Reception,Adam Urena pass complete to Rylan Davison for no gain to the MERC 35,,2024-09-08T01:40:59.000Z
+401656598103974605,401656598,40165659823,4,3,0:00,Mercyhurst,Howard,10,21,15,0,10,0,End Period,End of 3rd Quarter,,2024-09-08T01:39:41.000Z
+401656598103849907,401656598,40165659823,1,3,15:00,Mercyhurst,Howard,10,21,15,1,10,7,Rush,Brian Trobel run for 7 yds to the HOW 8,0.304923286072843,2024-09-08T00:58:57.000Z
+401656598103974602,401656598,40165659823,2,3,2:53,Mercyhurst,Howard,10,21,72,1,10,1,Rush,Brian Trobel run for 1 yd to the MERC 29,-0.6645196581023116,2024-09-08T01:33:18.000Z
+401656598103974603,401656598,40165659823,3,3,2:53,Mercyhurst,Howard,10,21,71,2,9,56,Rush,Brian Trobel run for 56 yds to the HOW 15 for a 1ST down,3.961953280803281,2024-09-08T01:33:18.000Z
+401656598104854001,401656598,40165659823,5,4,14:59,Mercyhurst,Howard,18,21,8,2,3,8,Passing Touchdown,Adam Urena pass complete to Rylan Davison for no gain for a TD,2.25327580349224,2024-09-08T01:40:59.000Z
+401656598104854201,401656598,40165659825,1,4,14:57,Mercyhurst,Howard,18,21,65,1,10,17,Kickoff,"Kaedon Kline kickoff for 64 yds , Anthony Reagan Jr. return for 17 yds to the HOW 18",,2024-09-08T01:40:59.000Z
+401656598104854202,401656598,40165659825,2,4,14:57,Howard,Mercyhurst,21,18,82,1,10,-5,Penalty,"Howard Penalty, delay of game (Ja'Shawn Scroggins) to the HOW 13",,2024-09-08T01:40:59.000Z
+401656598104854203,401656598,40165659825,3,4,14:57,Howard,Mercyhurst,21,18,87,1,15,7,Rush,Jarett Hunter run for 7 yds to the HOW 20,0.20886207654535838,2024-09-08T01:40:59.000Z
+401656598104854204,401656598,40165659825,4,4,14:57,Howard,Mercyhurst,21,18,80,2,8,12,Rush,Jarett Hunter run for 12 yds to the HOW 32 for a 1ST down,1.2989920006960993,2024-09-08T01:40:59.000Z
+401656598104854205,401656598,40165659825,5,4,14:57,Howard,Mercyhurst,21,18,68,1,10,0,Pass Incompletion,Ja'Shawn Scroggins pass incomplete to Breylin Smith,-0.9262377870973815,2024-09-08T01:40:59.000Z
+401656598104854206,401656598,40165659825,6,4,14:57,Howard,Mercyhurst,21,18,68,2,10,-3,Rush,Jarett Hunter run for a loss of 3 yards to the HOW 29,-0.6940439224269745,2024-09-08T01:40:59.000Z
+401656598104854207,401656598,40165659825,7,4,14:57,Howard,Mercyhurst,21,18,71,3,13,0,Pass Incompletion,Ja'Shawn Scroggins pass incomplete to Jarett Hunter,-0.15130862611013995,2024-09-08T01:40:59.000Z
+401656598104876401,401656598,40165659825,8,4,12:35,Howard,Mercyhurst,21,18,71,4,13,0,Punt,Jaydon Green punt for 42 yds,,2024-09-08T01:51:20.000Z
+401656598104877301,401656598,40165659826,2,4,12:26,Mercyhurst,Howard,18,21,71,2,10,0,Uncategorized,"fumbled, recovered by HOW Ishaun Abdul-Ali",,2024-09-08T01:55:18.000Z
+401656598104876402,401656598,40165659826,1,4,12:35,Mercyhurst,Howard,18,21,71,1,10,0,Pass Incompletion,Adam Urena pass incomplete to Joe Kerbacher,-0.8305196050291288,2024-09-08T01:51:20.000Z
+401656598104877302,401656598,40165659827,1,4,12:26,Howard,Mercyhurst,21,18,26,1,10,1,Rush,Jarett Hunter run for 1 yd to the MERC 25,-0.3601692954121845,2024-09-08T01:55:18.000Z
+401656598104877303,401656598,40165659827,2,4,12:26,Howard,Mercyhurst,21,18,25,2,9,19,Rush,Ja'Shawn Scroggins run for 19 yds to the MERC 6 for a 1ST down,1.027681646755088,2024-09-08T01:55:18.000Z
+401656598104877304,401656598,40165659827,3,4,12:26,Howard,Mercyhurst,21,18,6,1,6,4,Rush,Jarett Hunter run for 4 yds to the MERC 2,-0.015446754256946,2024-09-08T01:55:18.000Z
+401656598104877305,401656598,40165659827,4,4,12:26,Howard,Mercyhurst,21,18,2,2,2,0,Rush,"Hunter,Jarett rush middle (Hill,Zach).",-0.476893758740638,2024-09-08T01:55:18.000Z
+401656598104877306,401656598,40165659827,5,4,12:26,Howard,Mercyhurst,21,18,2,3,2,1,Rush,Jarett Hunter run for 1 yd to the MERC 1,-0.24092369079324,2024-09-08T01:55:18.000Z
+401656598104905101,401656598,40165659827,6,4,9:48,Howard,Mercyhurst,27,18,1,4,1,1,Rushing Touchdown,Jarett Hunter run for 1 yd for a TD (Dylan West PAT MISSED),2.785753974856101,2024-09-08T01:55:54.000Z
+401656598104905601,401656598,40165659829,1,4,9:43,Howard,Mercyhurst,27,18,65,1,10,13,Kickoff,"Dylan West kickoff for 49 yds , Brian Trobel return for 13 yds to the MERC 29",,2024-09-08T02:01:19.000Z
+401656598104905602,401656598,40165659829,2,4,9:43,Mercyhurst,Howard,18,27,71,1,10,-1,Pass Reception,Adam Urena pass complete to Joe Kerbacher for a loss of 1 yard to the MERC 28,-0.9516524041477066,2024-09-08T02:01:19.000Z
+401656598104905603,401656598,40165659829,3,4,9:43,Mercyhurst,Howard,18,27,72,2,11,7,Pass Reception,Adam Urena pass complete to Russell Pytlak for 7 yds to the MERC 35,0.3202530997358535,2024-09-08T02:01:19.000Z
+401656598104905604,401656598,40165659829,4,4,9:43,Mercyhurst,Howard,18,27,65,3,4,5,Pass Reception,Adam Urena pass complete to Rylan Davison for 5 yds to the MERC 40 for a 1ST down,1.6501155730231423,2024-09-08T02:01:19.000Z
+401656598104905605,401656598,40165659829,5,4,9:43,Mercyhurst,Howard,18,27,60,1,10,1,Rush,Ayron Rodriguez run for 1 yd to the MERC 41,-0.9114215282702052,2024-09-08T02:01:19.000Z
+401656598104905606,401656598,40165659829,6,4,9:43,Mercyhurst,Howard,18,27,59,2,9,12,Pass Reception,Adam Urena pass complete to Russell Pytlak for 12 yds to the HOW 47 for a 1ST down,2.0551198911474504,2024-09-08T02:01:19.000Z
+401656598104905607,401656598,40165659829,7,4,9:43,Mercyhurst,Howard,18,27,47,1,10,6,Rush,Ayron Rodriguez run for 6 yds to the HOW 41,0.3204144720350344,2024-09-08T02:01:19.000Z
+401656598104905608,401656598,40165659829,8,4,9:43,Mercyhurst,Howard,18,27,41,2,4,28,Pass Reception,Adam Urena pass complete to Chaz Davis for 28 yds to the HOW 13 for a 1ST down,0.7538585541855486,2024-09-08T02:01:19.000Z
+401656598104948701,401656598,40165659829,9,4,5:12,Mercyhurst,Howard,25,27,13,1,10,13,Passing Touchdown,Adam Urena pass complete to Cameron Barmore for 13 yds for a TD (Nathan Nagucki KICK),2.538929215045847,2024-09-08T02:09:48.000Z
+401656598104948703,401656598,40165659831,1,4,5:12,Mercyhurst,Howard,25,27,65,1,10,0,Kickoff,Kaedon Kline kickoff for 65 yds for a touchback,,2024-09-08T02:13:19.000Z
+401656598104948704,401656598,40165659831,2,4,5:12,Howard,Mercyhurst,27,25,75,1,10,2,Rush,Jarett Hunter run for 2 yds to the HOW 27,-0.45260367932203766,2024-09-08T02:13:19.000Z
+401656598104948705,401656598,40165659831,3,4,5:12,Howard,Mercyhurst,27,25,73,2,8,6,Rush,Ja'Shawn Scroggins run for 6 yds to the HOW 33,0.23301622469642863,2024-09-08T02:13:19.000Z
+401656598104948706,401656598,40165659831,4,4,5:12,Howard,Mercyhurst,27,25,67,3,2,-1,Rush,Jarett Hunter run for a loss of 1 yard to the HOW 32,-0.68351021989087,2024-09-08T02:13:19.000Z
+401656598104968401,401656598,40165659831,5,4,3:15,Howard,Mercyhurst,27,25,68,4,3,0,Punt,Jaydon Green punt for 29 yds,,2024-09-08T02:15:19.000Z
+401656598104968402,401656598,40165659832,1,4,3:15,Mercyhurst,Howard,25,27,61,1,10,3,Rush,Ayron Rodriguez run for 3 yds to the MERC 42,-0.428981456130188,2024-09-08T02:15:19.000Z
+401656598104968403,401656598,40165659832,2,4,3:15,Mercyhurst,Howard,25,27,58,2,7,-8,Sack,"Adam Urena sacked for a loss of 8 yards to the MERC 34 Mercyhurst Penalty, intentional grounding (Adam Urena) to the MERC 34",-1.807523333937203,2024-09-08T02:15:19.000Z
+401656598104968404,401656598,40165659832,3,4,3:15,Mercyhurst,Howard,25,27,66,3,15,2,Pass Reception,Adam Urena pass complete to Ayron Rodriguez for 2 yds to the MERC 36,-0.11857352599840267,2024-09-08T02:21:17.000Z
+401656598104968405,401656598,40165659832,4,4,3:15,Mercyhurst,Howard,25,27,64,4,13,16,Pass Reception,Adam Urena pass complete to Chaz Davis for 16 yds to the HOW 48 for a 1ST down,3.5238605162507026,2024-09-08T02:21:17.000Z
+401656598104968406,401656598,40165659832,5,4,3:15,Mercyhurst,Howard,25,27,48,1,10,13,Rush,Ayron Rodriguez run for 13 yds to the HOW 35 for a 1ST down,0.713645052503001,2024-09-08T02:21:17.000Z
+401656598104968407,401656598,40165659832,6,4,3:15,Mercyhurst,Howard,25,27,35,1,10,13,Pass Reception,Adam Urena pass complete to Rylan Davison for 13 yds to the HOW 22 for a 1ST down,0.324966017128496,2024-09-08T02:21:17.000Z
+401656598104968408,401656598,40165659832,7,4,3:15,Mercyhurst,Howard,25,27,22,1,10,0,Rush,"Rodriguez,Ayron rush middle (Martin III,Emerson).",-0.402662020534962,2024-09-08T02:21:17.000Z
+401656598104995803,401656598,40165659832,8,4,0:41,Mercyhurst,Howard,31,27,22,2,10,22,Passing Touchdown,Adam Urena pass complete to Cameron Barmore for 22 yds for a TD,3.050284787183422,2024-09-08T02:26:03.000Z
+401656598104995804,401656598,40165659834,1,4,0:41,Mercyhurst,Howard,31,27,65,1,10,0,Kickoff,Kaedon Kline kickoff for 65 yds for a touchback,,2024-09-08T02:26:03.000Z
+401656598104995805,401656598,40165659834,2,4,0:41,Howard,Mercyhurst,27,31,75,1,10,15,Rush,Ja'Shawn Scroggins run for 15 yds to the HOW 40 for a 1ST down,1.320854515577646,2024-09-08T02:26:03.000Z
+401656598104995806,401656598,40165659834,3,4,0:41,Howard,Mercyhurst,27,31,60,1,10,0,Pass Incompletion,"Ja'Shawn Scroggins pass incomplete to Jarett Hunter, broken up by Jonas King",-1.1247712359915258,2024-09-08T02:26:03.000Z
+401656598104995807,401656598,40165659834,4,4,0:41,Howard,Mercyhurst,27,31,60,2,10,14,Pass Reception,Ja'Shawn Scroggins pass complete to Keenan Fortenberry for 14 yds to the MERC 46 for a 1ST down,2.338384432000737,2024-09-08T02:26:03.000Z
+401656598104995808,401656598,40165659834,5,4,0:41,Howard,Mercyhurst,27,31,46,1,10,26,Rush,Ja'Shawn Scroggins run for 26 yds to the MERC 20 for a 1ST down,0.9253596791027653,2024-09-08T02:26:03.000Z
+401656598104999701,401656598,40165659834,6,4,0:02,Howard,Mercyhurst,32,31,20,1,10,37,Field Goal Good,"Dylan West 37 yd FG GOOD Mercyhurst Penalty, substitution infraction (Anthony Mackey) to the MERC 20",,2024-09-08T02:31:45.000Z

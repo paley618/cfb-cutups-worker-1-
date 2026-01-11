@@ -1,0 +1,157 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401634245101854603,401634245,4016342451,2,1,14:53,Valparaiso,Youngstown State,0,0,75,1,10,-5,Penalty,"Valparaiso Penalty, Delay Of Game (-5 Yards) to the VAL 20",,2024-09-07T18:06:32.000Z
+401634245101854601,401634245,4016342451,1,1,14:53,Youngstown State,Valparaiso,0,0,65,0,0,0,Kickoff,Andrew Lastovka kickoff for 65 yds for a touchback,,2024-09-07T18:06:32.000Z
+401634245101855501,401634245,4016342451,3,1,14:44,Valparaiso,Youngstown State,0,7,80,1,15,0,Fumble Recovery (Opponent),"Ryan Mann run for a loss of 16 yards Ryan Mann fumbled, recovered by YSU Stephon Hall S. Hall return for 4 yds for a TD (Andrew Lastovka KICK)",-0.18082690202903073,2024-09-07T18:07:06.000Z
+401634245101855901,401634245,4016342452,2,1,14:40,Valparaiso,Youngstown State,0,7,75,1,10,7,Pass Reception,Rowan Keefe pass complete to Chris Gundy for 7 yds to the VAL 32,0.604642460086338,2024-09-07T18:02:10.000Z
+401634245101858801,401634245,4016342452,3,1,14:11,Valparaiso,Youngstown State,0,7,68,2,3,4,Rush,Michael Mansaray run for 4 yds to the VAL 36 for a 1ST down,0.3259200518596525,2024-09-07T18:02:10.000Z
+401634245101865801,401634245,4016342452,4,1,13:41,Valparaiso,Youngstown State,0,7,64,1,10,14,Rush,Michael Mansaray run for 14 yds to the 50 yard line for a 1ST down,1.305780675653958,2024-09-07T18:02:10.000Z
+401634245101869101,401634245,4016342452,5,1,13:08,Valparaiso,Youngstown State,0,7,50,1,10,0,Pass Incompletion,Rowan Keefe pass incomplete,-1.1143038065675126,2024-09-07T18:02:10.000Z
+401634245101869401,401634245,4016342452,6,1,13:05,Valparaiso,Youngstown State,0,7,50,2,10,0,Pass Incompletion,Rowan Keefe pass incomplete,-1.0237730924311421,2024-09-07T18:11:24.000Z
+401634245101874701,401634245,4016342452,7,1,12:52,Valparaiso,Youngstown State,0,7,50,3,10,0,Pass Incompletion,Rowan Keefe pass incomplete,-0.7052334563220866,2024-09-07T18:13:02.000Z
+401634245101855503,401634245,4016342452,1,1,14:44,Youngstown State,Valparaiso,7,0,65,0,0,0,Kickoff,Andrew Lastovka kickoff for 65 yds for a touchback,,2024-09-07T18:07:06.000Z
+401634245101875501,401634245,4016342452,8,1,12:44,Valparaiso,Youngstown State,0,7,50,4,10,0,Punt,Sam Johnson punt for 37 yds,,2024-09-07T18:02:10.000Z
+401634245101875601,401634245,4016342453,1,1,12:43,Youngstown State,Valparaiso,7,0,87,1,10,4,Rush,Tyshon King run for 4 yds to the YSU 17,-0.05810963665836066,2024-09-07T18:02:10.000Z
+401634245101879001,401634245,4016342453,2,1,12:09,Youngstown State,Valparaiso,7,0,83,2,6,2,Pass Reception,Beau Brungard pass complete to Max Tomczak for 2 yds to the YSU 19,-0.24030631462996155,2024-09-07T18:02:10.000Z
+401634245101887401,401634245,4016342453,3,1,11:25,Youngstown State,Valparaiso,7,0,81,3,4,8,Pass Reception,Beau Brungard pass complete to Tyshon King for 8 yds to the YSU 27 for a 1ST down,1.0624961359340173,2024-09-07T18:02:10.000Z
+401634245101895601,401634245,4016342453,4,1,10:43,Youngstown State,Valparaiso,7,0,73,1,10,2,Rush,Ethan Wright run for 2 yds to the YSU 29,-0.4908856028320683,2024-09-07T18:02:10.000Z
+401634245101904001,401634245,4016342453,5,1,9:59,Youngstown State,Valparaiso,7,0,71,2,8,-2,Pass Reception,Beau Brungard pass complete to Ethan Wright for a loss of 2 yards to the YSU 27,-0.6642457548641767,2024-09-07T18:02:10.000Z
+401634245101909601,401634245,4016342453,6,1,9:03,Youngstown State,Valparaiso,14,0,73,3,10,73,Passing Touchdown,Beau Brungard pass complete to Max Tomczak for 73 yds for a TD (Andrew Lastovka KICK),7.087846791918182,2024-09-07T18:17:58.000Z
+401634245101909603,401634245,4016342454,1,1,9:03,Youngstown State,Valparaiso,14,0,65,0,0,20,Kickoff Return (Offense),"Andrew Lastovka kickoff for 64 yds , Brian Thomas return for 20 yds to the VAL 21",,2024-09-07T18:17:58.000Z
+401634245101918801,401634245,4016342454,5,1,8:11,Valparaiso,Youngstown State,0,14,79,4,10,0,Punt,Sam Johnson punt for 37 yds,,2024-09-07T18:02:10.000Z
+401634245101914102,401634245,4016342454,2,1,8:58,Valparaiso,Youngstown State,0,14,79,1,10,0,Rush,Michael Mansaray run for no gain to the VAL 21,-0.585616097616759,2024-09-07T18:21:29.000Z
+401634245101918001,401634245,4016342454,3,1,8:19,Valparaiso,Youngstown State,0,14,79,2,10,0,Pass Incompletion,Rowan Keefe pass incomplete,-0.2760618997483206,2024-09-07T18:02:10.000Z
+401634245101918401,401634245,4016342454,4,1,8:15,Valparaiso,Youngstown State,0,14,79,3,10,0,Pass Incompletion,Rowan Keefe pass incomplete,-0.12331754216306565,2024-09-07T18:23:07.000Z
+401634245101919501,401634245,4016342455,1,1,8:04,Youngstown State,Valparaiso,14,0,58,1,10,-1,Sack,Beau Brungard sacked by Sam Hafner for a loss of 1 yard to the YSU 41,-1.3564468491381483,2024-09-07T18:02:10.000Z
+401634245101928201,401634245,4016342455,2,1,7:17,Youngstown State,Valparaiso,14,0,59,2,11,6,Rush,Da'Shaun Whatley run for 6 yds to the YSU 47,0.2761226236445111,2024-09-07T18:02:10.000Z
+401634245101936301,401634245,4016342455,3,1,6:36,Youngstown State,Valparaiso,14,0,53,3,5,15,Pass Reception,Beau Brungard pass complete to Max Tomczak for 15 yds to the VAL 38 for a 1ST down,2.547434788947765,2024-09-07T18:02:10.000Z
+401634245101944901,401634245,4016342455,4,1,5:50,Youngstown State,Valparaiso,14,0,38,1,10,13,Rush,Latrell Fordham run for 13 yds to the VAL 25 for a 1ST down,0.3945082863191305,2024-09-07T18:02:10.000Z
+401634245101949501,401634245,4016342455,5,1,5:04,Youngstown State,Valparaiso,14,0,25,1,10,7,Rush,Tyshon King run for 7 yds to the VAL 18,0.3286472091407865,2024-09-07T18:02:10.000Z
+401634245101958001,401634245,4016342455,6,1,4:19,Youngstown State,Valparaiso,14,0,18,2,3,10,Rush,Tyshon King run for 10 yds to the VAL 8 for a 1ST down,0.051837584425579,2024-09-07T18:02:10.000Z
+401634245101966801,401634245,4016342455,7,1,3:31,Youngstown State,Valparaiso,14,0,8,1,8,1,Rush,Tyshon King run for 1 yd to the VAL 7,-0.287548899318045,2024-09-07T18:02:10.000Z
+401634245101975301,401634245,4016342455,8,1,2:46,Youngstown State,Valparaiso,14,0,7,2,7,3,Rush,Ethan Wright run for 3 yds to the VAL 4,-0.0888244534588445,2024-09-07T18:02:10.000Z
+401634245101979901,401634245,4016342455,9,1,2:00,Youngstown State,Valparaiso,21,0,4,3,4,4,Rushing Touchdown,Beau Brungard run for 4 yds for a TD (Andrew Lastovka KICK),2.6959729214765815,2024-09-07T18:32:55.000Z
+401634245101984801,401634245,4016342456,2,1,1:51,Valparaiso,Youngstown State,0,21,76,1,10,0,Pass Incompletion,Caron Tyler pass incomplete,-0.6723571521309859,2024-09-07T18:02:10.000Z
+401634245101984901,401634245,4016342456,3,1,1:50,Valparaiso,Youngstown State,0,21,76,2,10,10,Pass Reception,Caron Tyler pass complete to Gary Givens III for 10 yds to the VAL 34 for a 1ST down,1.4812061058171624,2024-09-07T18:37:12.000Z
+401634245101988801,401634245,4016342456,4,1,1:11,Valparaiso,Youngstown State,0,21,66,1,10,9,Rush,Brian Thomas run for 9 yds to the VAL 43,1.3844644054795978,2024-09-07T18:02:10.000Z
+401634245101996402,401634245,4016342456,6,1,0:00,Valparaiso,Youngstown State,0,21,57,0,1,5,End Period,End of 1st Quarter,,2024-09-07T18:39:30.000Z
+401634245101979903,401634245,4016342456,1,1,2:00,Youngstown State,Valparaiso,21,0,65,0,0,17,Kickoff Return (Offense),"Andrew Lastovka kickoff for 58 yds , Brian Thomas return for 17 yds to the VAL 24",,2024-09-07T18:32:55.000Z
+401634245101996401,401634245,4016342456,5,1,0:35,Valparaiso,Youngstown State,0,21,57,2,1,5,Rush,Ryan Mann run for 5 yds to the VAL 48 for a 1ST down,-0.0557493044604146,2024-09-07T18:02:10.000Z
+401634245102854101,401634245,4016342456,7,2,14:58,Valparaiso,Youngstown State,0,21,52,1,10,4,Rush,Caron Tyler run for 4 yds to the YSU 48,-0.1504912861657514,2024-09-07T18:43:27.000Z
+401634245102858202,401634245,4016342456,8,2,14:17,Valparaiso,Youngstown State,0,21,48,2,6,-10,Penalty,"(14:17) TYLER, Caron scrambles up the middle for a gain of 7 yards to the YSU41 (SHAHID, Makai), clock 14:13. PENALTY VAL Holding on EBERHART, Tyler enforced 10 yards from the YSU48 to the VAL42 [SG]. NO PLAY (replay the down).",,2024-09-07T18:43:27.000Z
+401634245102859801,401634245,4016342456,9,2,14:01,Valparaiso,Youngstown State,0,21,58,2,16,16,Rush,Caron Tyler run for 16 yds to the YSU 42 for a 1ST down,3.0458531131052915,2024-09-07T18:43:27.000Z
+401634245102868201,401634245,4016342456,10,2,13:17,Valparaiso,Youngstown State,0,21,42,1,10,0,Pass Incompletion,Caron Tyler pass incomplete,-0.908489395271188,2024-09-07T18:43:27.000Z
+401634245102869001,401634245,4016342456,11,2,13:09,Valparaiso,Youngstown State,0,21,42,2,10,3,Rush,Caron Tyler run for 3 yds to the YSU 39,-0.3760194608116885,2024-09-07T18:43:27.000Z
+401634245102877501,401634245,4016342456,12,2,12:24,Valparaiso,Youngstown State,8,21,39,3,7,39,Passing Touchdown,Caron Tyler pass complete to Gary Givens III for 39 yds for a TD (Ryan Mann pass to Jake Vickers for Two-Point Conversion),4.5794443276550005,2024-09-07T18:47:15.000Z
+401634245102877505,401634245,4016342457,2,2,12:24,Youngstown State,Valparaiso,21,8,75,1,10,5,Pass Reception,Beau Brungard pass complete to Cyrus Traugh for 5 yds to the YSU 30,0.0945451165334843,2024-09-07T18:50:14.000Z
+401634245102877503,401634245,4016342457,1,2,12:24,Valparaiso,Youngstown State,8,21,65,0,0,0,Kickoff,Ryan Hawk kickoff for 65 yds for a touchback,,2024-09-07T18:50:14.000Z
+401634245102885601,401634245,4016342457,3,2,11:43,Youngstown State,Valparaiso,21,8,70,2,5,2,Rush,Ethan Wright run for 2 yds to the YSU 32,-0.4836992576486355,2024-09-07T18:43:27.000Z
+401634245102889801,401634245,4016342457,4,2,11:01,Youngstown State,Valparaiso,21,8,68,3,3,0,Pass Incompletion,Beau Brungard pass incomplete,-0.5139435334013278,2024-09-07T18:43:27.000Z
+401634245102894401,401634245,4016342457,5,2,10:55,Youngstown State,Valparaiso,21,8,68,4,3,0,Punt,Brendon Kilpatrick punt for 28 yds,,2024-09-07T18:53:54.000Z
+401634245102915402,401634245,4016342458,4,2,8:45,Valparaiso,Youngstown State,8,21,7,1,10,0,Timeout,"Timeout Valparaiso, clock 08:45",,2024-09-07T18:59:30.000Z
+401634245102916201,401634245,4016342458,5,2,8:37,Valparaiso,Youngstown State,15,21,7,1,7,7,Rushing Touchdown,Caron Tyler run for 7 yds for a TD (Ryan Hawk KICK),2.196754630327211,2024-09-07T19:01:10.000Z
+401634245102895101,401634245,4016342458,1,2,10:48,Valparaiso,Youngstown State,8,21,60,1,10,4,Rush,Michael Mansaray run for 4 yds to the VAL 44,-0.1674744380827829,2024-09-07T18:43:27.000Z
+401634245102899001,401634245,4016342458,2,2,10:09,Valparaiso,Youngstown State,8,21,56,2,6,33,Rush,Caron Tyler run for 33 yds to the YSU 23 for a 1ST down,2.2603973641552297,2024-09-07T18:43:27.000Z
+401634245102907101,401634245,4016342458,3,2,9:28,Valparaiso,Youngstown State,8,21,23,1,10,16,Pass Reception,Caron Tyler pass complete to Jake Vickers for 16 yds to the YSU 7 for a 1ST down,0.4672230477440175,2024-09-07T18:43:27.000Z
+401634245102916203,401634245,4016342459,1,2,8:37,Valparaiso,Youngstown State,15,21,65,0,0,25,Kickoff Return (Offense),"Ryan Hawk kickoff for 65 yds , Latrell Fordham return for 25 yds to the YSU 25",,2024-09-07T19:05:52.000Z
+401634245102939401,401634245,4016342459,6,2,6:05,Youngstown State,Valparaiso,28,15,65,2,10,65,Rushing Touchdown,Beau Brungard run for 65 yds for a TD (Andrew Lastovka KICK),6.257359466296897,2024-09-07T19:09:46.000Z
+401634245102929101,401634245,4016342459,4,2,7:08,Youngstown State,Valparaiso,21,15,66,3,1,1,Rush,Ethan Wright run for 1 yd to the YSU 35 for a 1ST down,0.8580719709789344,2024-09-07T18:43:27.000Z
+401634245102924801,401634245,4016342459,3,2,7:51,Youngstown State,Valparaiso,21,15,73,2,8,7,Rush,Beau Brungard run for 7 yds to the YSU 34,0.4295698173730899,2024-09-07T18:43:27.000Z
+401634245102917001,401634245,4016342459,2,2,8:29,Youngstown State,Valparaiso,21,15,75,1,10,2,Rush,Tyshon King run for 2 yds to the YSU 27,-0.45260367932203766,2024-09-07T18:43:27.000Z
+401634245102937701,401634245,4016342459,5,2,6:22,Youngstown State,Valparaiso,21,15,65,1,10,0,Pass Incompletion,Beau Brungard pass incomplete,-1.0146424556055624,2024-09-07T18:43:27.000Z
+401634245102939403,401634245,40163424510,1,2,6:05,Youngstown State,Valparaiso,28,15,65,0,0,18,Kickoff Return (Offense),"Andrew Lastovka kickoff for 62 yds , Brian Thomas return for 18 yds to the VAL 21",,2024-09-07T19:11:42.000Z
+401634245102948201,401634245,40163424510,3,2,5:17,Valparaiso,Youngstown State,15,28,80,2,11,0,Rush,Caron Tyler run for no gain to the VAL 20,-0.23224048395353325,2024-09-07T18:43:27.000Z
+401634245102944002,401634245,40163424510,2,2,5:59,Valparaiso,Youngstown State,15,28,79,1,10,-1,Rush,Michael Mansaray run for a loss of 1 yard to the VAL 20,-0.6653743866116795,2024-09-07T19:11:55.000Z
+401634245102956301,401634245,40163424510,4,2,4:36,Valparaiso,Youngstown State,15,28,80,3,11,17,Pass Reception,Caron Tyler pass complete to Evan Jernegan for 17 yds to the VAL 37 for a 1ST down,2.1776388668046183,2024-09-07T18:43:27.000Z
+401634245102964101,401634245,40163424510,5,2,3:58,Valparaiso,Youngstown State,15,28,63,1,10,5,Rush,Michael Mansaray run for 5 yds to the VAL 42,0.1100844824489312,2024-09-07T18:43:27.000Z
+401634245102967501,401634245,40163424510,6,2,3:24,Valparaiso,Youngstown State,15,28,58,2,5,3,Rush,Michael Mansaray run for 3 yds to the VAL 45,-0.434960061782377,2024-09-07T18:43:27.000Z
+401634245102976901,401634245,40163424510,7,2,2:30,Valparaiso,Youngstown State,22,28,55,3,2,55,Rushing Touchdown,Caron Tyler run for 55 yds for a TD (Ryan Hawk KICK),5.375386372911196,2024-09-07T19:16:09.000Z
+401634245102976903,401634245,40163424511,1,2,2:30,Valparaiso,Youngstown State,22,28,65,0,0,0,Kickoff,Ryan Hawk kickoff for 65 yds for a touchback,,2024-09-07T19:18:33.000Z
+401634245102984001,401634245,40163424511,4,2,1:59,Youngstown State,Valparaiso,28,22,64,1,10,0,Timeout,"Timeout Youngstown State, clock 01:59",,2024-09-07T18:43:27.000Z
+401634245102977301,401634245,40163424511,2,2,2:26,Youngstown State,Valparaiso,28,22,75,1,10,9,Rush,Beau Brungard run for 9 yds to the YSU 34,1.252308359788624,2024-09-07T18:43:27.000Z
+401634245102979501,401634245,40163424511,3,2,2:04,Youngstown State,Valparaiso,28,22,66,2,1,2,Rush,Tyshon King run for 2 yds to the YSU 36 for a 1ST down,-0.3217458478426334,2024-09-07T18:43:27.000Z
+401634245102985001,401634245,40163424511,5,2,1:49,Youngstown State,Valparaiso,35,22,64,1,10,64,Rushing Touchdown,Ethan Wright run for 64 yds for a TD (Andrew Lastovka KICK),5.147192607775331,2024-09-07T19:22:11.000Z
+401634245102985003,401634245,40163424512,1,2,1:49,Youngstown State,Valparaiso,35,22,65,0,0,5,Kickoff Return (Offense),"Andrew Lastovka kickoff for 51 yds , Brian Thomas return for 5 yds to the VAL 19",,2024-09-07T19:22:11.000Z
+401634245102998201,401634245,40163424512,5,2,0:17,Valparaiso,Youngstown State,22,35,71,3,10,0,Timeout,"Timeout Valparaiso, clock 00:17",,2024-09-07T19:27:33.000Z
+401634245102998602,401634245,40163424512,7,2,0:13,Valparaiso,Youngstown State,22,35,68,4,7,0,Timeout,"Timeout Youngstown State, clock 00:13",,2024-09-07T19:28:26.000Z
+401634245102999601,401634245,40163424512,8,2,0:03,Valparaiso,Youngstown State,22,35,68,4,7,6,Punt,"Sam Johnson punt for 53 yds , Cyrus Traugh returns for 6 yds to the YSU 21",,2024-09-07T19:29:59.000Z
+401634245102998601,401634245,40163424512,6,2,0:13,Valparaiso,Youngstown State,22,35,71,3,10,3,Rush,Michael Mansaray run for 3 yds to the VAL 32,-0.09231055932640597,2024-09-07T19:28:26.000Z
+401634245102985801,401634245,40163424512,2,2,1:41,Valparaiso,Youngstown State,22,35,81,1,10,10,Rush,Caron Tyler run for 10 yds to the VAL 29 for a 1ST down,0.663002648247832,2024-09-07T18:43:27.000Z
+401634245102988801,401634245,40163424512,3,2,1:11,Valparaiso,Youngstown State,22,35,71,1,10,0,Pass Incompletion,Caron Tyler pass incomplete,-0.8305196050291288,2024-09-07T18:43:27.000Z
+401634245102989501,401634245,40163424512,4,2,1:04,Valparaiso,Youngstown State,22,35,71,2,10,0,Rush,Michael Mansaray run for no gain to the VAL 29,-0.43555458427823446,2024-09-07T18:43:27.000Z
+401634245102999902,401634245,40163424513,2,2,0:00,Youngstown State,Valparaiso,35,22,80,0,10,0,End of Half,End of 2nd Quarter,,2024-09-07T19:30:34.000Z
+401634245102999603,401634245,40163424513,1,2,0:03,Youngstown State,Valparaiso,35,22,79,1,10,-1,Rush,"(00:03) [NH] Kneel down by BRUNGARD, Beau at YSU20 (team loss of 1), clock 00:00.",-0.6653743866116795,2024-09-07T19:29:59.000Z
+401634245103854902,401634245,40163424514,2,3,14:50,Youngstown State,Valparaiso,35,22,69,1,10,3,Rush,Tyshon King run for 3 yds to the YSU 34,-0.367641675563645,2024-09-07T00:00:00.000Z
+401634245103858501,401634245,40163424514,3,3,14:14,Youngstown State,Valparaiso,42,22,66,2,7,66,Rushing Touchdown,Beau Brungard run for 66 yds for a TD (Andrew Lastovka KICK),5.974932680678695,2024-09-07T19:53:23.000Z
+401634245103849903,401634245,40163424514,1,3,15:00,Valparaiso,Youngstown State,22,35,65,0,0,31,Kickoff Return (Offense),"Ryan Hawk kickoff for 65 yds , Latrell Fordham return for 31 yds to the YSU 31",,2024-09-07T00:00:00.000Z
+401634245103859002,401634245,40163424515,2,3,14:09,Valparaiso,Youngstown State,22,42,79,1,10,0,Rush,Caron Tyler run for no gain to the VAL 21,-0.585616097616759,2024-09-07T19:55:26.000Z
+401634245103867201,401634245,40163424515,3,3,13:27,Valparaiso,Youngstown State,22,42,79,2,10,-3,Sack,Caron Tyler sacked by Michael Voitus for a loss of 3 yards to the VAL 18,-0.3671405974522619,2024-09-07T19:52:54.000Z
+401634245103875601,401634245,40163424515,4,3,12:43,Valparaiso,Youngstown State,22,42,82,3,13,0,Pass Reception,Caron Tyler pass complete to Jake Vickers for no gain to the VAL 18,-0.0719585240326675,2024-09-07T19:52:54.000Z
+401634245103858503,401634245,40163424515,1,3,14:14,Youngstown State,Valparaiso,42,22,65,0,0,14,Kickoff Return (Offense),"Andrew Lastovka kickoff for 58 yds , Brian Thomas return for 14 yds to the VAL 21",,2024-09-07T19:53:38.000Z
+401634245103877002,401634245,40163424515,5,3,12:29,Valparaiso,Youngstown State,22,42,82,4,13,-2,Penalty,"(12:29) JOHNSON, Sam punt 48 yards to the YSU34, TRAUGH, Cyrus returned -2 yards to the YSU32 (YEATS, Devin), clock 12:26. PENALTY VAL Personal Foul on YEATS, Devin YSU Illegal Block in the Back on HARRIS, DJ , Offsetting penalties [FAKE PUNT]. NO PLAY (replay the down).",,2024-09-07T19:52:54.000Z
+401634245103877701,401634245,40163424515,6,3,12:22,Valparaiso,Youngstown State,22,42,82,4,13,0,Punt,"Sam Johnson punt for 65 yds, downed at the YSU 17",,2024-09-07T19:52:54.000Z
+401634245103878901,401634245,40163424516,1,3,12:10,Youngstown State,Valparaiso,42,22,83,1,10,-10,Penalty,"Youngstown State Penalty, Offensive Holding (Stephon Hall) to the YSU 12",,2024-09-07T19:52:54.000Z
+401634245103885601,401634245,40163424516,2,3,11:43,Youngstown State,Valparaiso,42,22,88,1,15,3,Rush,Beau Brungard run for 3 yds to the YSU 15,-0.0888914391966189,2024-09-07T19:52:54.000Z
+401634245103889901,401634245,40163424516,3,3,11:00,Youngstown State,Valparaiso,42,22,85,2,12,7,Rush,Beau Brungard run for 7 yds to the YSU 22,0.1536804227027373,2024-09-07T19:52:54.000Z
+401634245103898701,401634245,40163424516,4,3,10:12,Youngstown State,Valparaiso,42,22,78,3,5,4,Pass Reception,Beau Brungard pass complete to Cyrus Traugh for 4 yds to the YSU 26,-0.03781872343823611,2024-09-07T19:52:54.000Z
+401634245103906701,401634245,40163424516,5,3,9:32,Youngstown State,Valparaiso,42,22,74,4,1,0,Punt,"Brendon Kilpatrick punt for 46 yds, downed at the VAL 28",,2024-09-07T19:52:54.000Z
+401634245103938401,401634245,40163424517,7,3,6:15,Valparaiso,Youngstown State,25,42,9,4,9,26,Field Goal Good,Ryan Hawk 26 yd FG GOOD,,2024-09-07T20:18:40.000Z
+401634245103907402,401634245,40163424517,1,3,9:25,Valparaiso,Youngstown State,22,42,72,1,10,9,Rush,Michael Mansaray run for 9 yds to the VAL 37,1.3191287933513696,2024-09-07T20:09:29.000Z
+401634245103915601,401634245,40163424517,2,3,8:43,Valparaiso,Youngstown State,22,42,63,2,1,-4,Rush,Brian Thomas run for a loss of 4 yards to the VAL 33,-2.0693438942926683,2024-09-07T19:52:54.000Z
+401634245103917401,401634245,40163424517,3,3,8:25,Valparaiso,Youngstown State,22,42,67,3,5,57,Pass Reception,Caron Tyler pass complete to Chris Gundy for 57 yds to the YSU 10 for a 1ST down,4.092020970957909,2024-09-07T19:52:54.000Z
+401634245103918901,401634245,40163424517,4,3,8:10,Valparaiso,Youngstown State,22,42,10,1,10,3,Rush,Michael Mansaray run for 3 yds to the YSU 7,-0.093321625768295,2024-09-07T19:52:54.000Z
+401634245103927101,401634245,40163424517,5,3,7:28,Valparaiso,Youngstown State,22,42,7,2,7,-4,Rush,Nehemiah Dukes run for a loss of 4 yards to the YSU 11,-0.545721081163686,2024-09-07T19:52:54.000Z
+401634245103934901,401634245,40163424517,6,3,6:50,Valparaiso,Youngstown State,22,42,11,3,11,2,Rush,Caron Tyler run for 2 yds to the YSU 9,-0.248289248351593,2024-09-07T19:52:54.000Z
+401634245103938801,401634245,40163424518,2,3,6:11,Youngstown State,Valparaiso,42,25,75,1,10,1,Pass Reception,Beau Brungard pass complete to Da'Shaun Whatley for 1 yd to the YSU 26,-0.5874795431016855,2024-09-07T19:52:54.000Z
+401634245103946901,401634245,40163424518,3,3,5:30,Youngstown State,Valparaiso,42,25,74,2,9,-1,Rush,Da'Shaun Whatley run for a loss of 1 yard to the YSU 25,-0.46259535606370505,2024-09-07T19:52:54.000Z
+401634245103954801,401634245,40163424518,4,3,4:51,Youngstown State,Valparaiso,42,25,75,3,10,6,Pass Reception,Beau Brungard pass complete to Latrell Fordham for 6 yds to the YSU 31,0.07764099545890613,2024-09-07T19:52:54.000Z
+401634245103958701,401634245,40163424518,5,3,4:12,Youngstown State,Valparaiso,42,25,69,4,4,0,Punt,Brendon Kilpatrick punt for 29 yds,,2024-09-07T19:52:54.000Z
+401634245103938402,401634245,40163424518,1,3,6:15,Valparaiso,Youngstown State,25,42,65,0,0,0,Kickoff,Ryan Hawk kickoff for 65 yds for a touchback,,2024-09-07T20:21:29.000Z
+401634245103959401,401634245,40163424519,1,3,4:05,Valparaiso,Youngstown State,25,42,60,1,10,0,Pass Incompletion,Caron Tyler pass incomplete,-1.1247712359915258,2024-09-07T19:52:54.000Z
+401634245103964201,401634245,40163424519,2,3,3:57,Valparaiso,Youngstown State,25,42,60,2,10,1,Rush,Ryan Mann run for 1 yd to the VAL 41,-0.6294708353139953,2024-09-07T19:52:54.000Z
+401634245103968401,401634245,40163424519,3,3,3:15,Valparaiso,Youngstown State,25,42,59,3,9,22,Pass Reception,Caron Tyler pass complete to Gary Givens III for 22 yds to the YSU 37 for a 1ST down,3.4597340439724533,2024-09-07T19:52:54.000Z
+401634245103969701,401634245,40163424519,4,3,3:02,Valparaiso,Youngstown State,25,42,37,1,10,2,Rush,Caron Tyler run for 2 yds to the YSU 35,-0.4014146126260343,2024-09-07T19:52:54.000Z
+401634245103987201,401634245,40163424519,7,3,1:27,Valparaiso,Youngstown State,25,42,39,4,12,0,Timeout,"Timeout Valparaiso, clock 01:27",,2024-09-07T20:28:41.000Z
+401634245103987202,401634245,40163424519,8,3,1:27,Valparaiso,Youngstown State,25,42,39,4,12,0,Pass Incompletion,Caron Tyler pass incomplete,-0.8530871985320925,2024-09-07T20:28:41.000Z
+401634245103978001,401634245,40163424519,5,3,2:19,Valparaiso,Youngstown State,25,42,35,2,8,-4,Sack,Caron Tyler sacked by Jaelen Crider for a loss of 4 yards to the YSU 39,-1.7557540104935185,2024-09-07T19:52:54.000Z
+401634245103986601,401634245,40163424519,6,3,1:33,Valparaiso,Youngstown State,25,42,39,3,12,0,Pass Incompletion,Caron Tyler pass incomplete,-0.9383355468716115,2024-09-07T19:52:54.000Z
+401634245104885301,401634245,40163424520,9,4,11:46,Youngstown State,Valparaiso,49,25,8,2,7,8,Passing Touchdown,Beau Brungard pass complete to Max Tomczak for 8 yds for a TD (Andrew Lastovka KICK),2.616650729670743,2024-09-07T20:42:55.000Z
+401634245103996402,401634245,40163424520,3,3,0:00,Youngstown State,Valparaiso,42,25,60,0,9,4,End Period,End of 3rd Quarter,,2024-09-07T20:32:59.000Z
+401634245104885303,401634245,40163424520,10,4,11:46,Youngstown State,Valparaiso,42,25,65,0,0,-15,Kickoff,"Andrew Lastovka kickoff Youngstown State Penalty, Personal Foul (Joe Sferra) to the YSU 20",,2024-09-07T20:42:55.000Z
+401634245104876601,401634245,40163424520,8,4,12:33,Youngstown State,Valparaiso,42,25,11,1,10,3,Rush,Tyshon King run for 3 yds to the VAL 8,-0.094911316302818,2024-09-07T20:37:11.000Z
+401634245104859901,401634245,40163424520,6,4,14:00,Youngstown State,Valparaiso,42,25,22,1,10,5,Pass Reception,Beau Brungard pass complete to Tyshon King for 5 yds to the VAL 17,0.074636067054974,2024-09-07T20:37:11.000Z
+401634245104856201,401634245,40163424520,5,4,14:37,Youngstown State,Valparaiso,42,25,48,1,10,26,Rush,Beau Brungard run for 26 yds to the VAL 22 for a 1ST down,1.038611069631497,2024-09-07T20:37:11.000Z
+401634245104854101,401634245,40163424520,4,4,14:58,Youngstown State,Valparaiso,42,25,56,3,5,8,Rush,Beau Brungard run for 8 yds to the VAL 48 for a 1ST down,2.2112909098885307,2024-09-07T20:37:11.000Z
+401634245103996401,401634245,40163424520,2,3,0:35,Youngstown State,Valparaiso,42,25,60,2,9,4,Rush,Ethan Wright run for 4 yds to the YSU 44,-0.1422112918392174,2024-09-07T19:52:54.000Z
+401634245103988101,401634245,40163424520,1,3,1:18,Youngstown State,Valparaiso,42,25,61,1,10,1,Rush,Ethan Wright run for 1 yd to the YSU 40,-0.9002974178644043,2024-09-07T19:52:54.000Z
+401634245104868201,401634245,40163424520,7,4,13:17,Youngstown State,Valparaiso,42,25,17,2,5,6,Rush,Tyshon King run for 6 yds to the VAL 11 for a 1ST down,0.051247286225561,2024-09-07T20:37:11.000Z
+401634245104886002,401634245,40163424521,2,4,11:39,Valparaiso,Youngstown State,25,49,67,1,10,0,Pass Incompletion,Caron Tyler pass incomplete,-0.956890163923906,2024-09-07T20:47:19.000Z
+401634245104886301,401634245,40163424521,3,4,11:36,Valparaiso,Youngstown State,25,49,67,2,10,2,Rush,Michael Mansaray run for 2 yds to the VAL 35,-0.3529921764419726,2024-09-07T20:48:01.000Z
+401634245104894201,401634245,40163424521,4,4,10:57,Valparaiso,Youngstown State,25,49,65,3,8,-1,Sack,Caron Tyler sacked by DeShawn Carter and Tyler Bukur for a loss of 1 yard to the VAL 34,-0.41375521748362143,2024-09-07T20:37:11.000Z
+401634245104885304,401634245,40163424521,1,4,11:46,Youngstown State,Valparaiso,49,25,65,0,0,18,Kickoff Return (Offense),"Andrew Lastovka kickoff for 50 yds , Brian Thomas return for 18 yds to the VAL 33",,2024-09-07T20:42:55.000Z
+401634245104898301,401634245,40163424521,5,4,10:16,Valparaiso,Youngstown State,25,49,66,4,9,-8,Punt,"Sam Johnson punt for 41 yds , Cyrus Traugh returns for a loss of 8 yards to the YSU 17",,2024-09-07T20:50:22.000Z
+401634245104899102,401634245,40163424522,1,4,10:08,Youngstown State,Valparaiso,49,25,83,1,10,0,Pass Incompletion,Beau Brungard pass incomplete,-0.48436415563340685,2024-09-07T20:50:42.000Z
+401634245104899901,401634245,40163424522,2,4,10:00,Youngstown State,Valparaiso,49,25,83,2,10,13,Rush,Da'Shaun Whatley run for 13 yds to the YSU 30 for a 1ST down,1.3267602192807209,2024-09-07T20:37:11.000Z
+401634245104908401,401634245,40163424522,3,4,9:15,Youngstown State,Valparaiso,49,25,70,1,10,3,Rush,Da'Shaun Whatley run for 3 yds to the YSU 33,-0.3563521541303736,2024-09-07T20:37:11.000Z
+401634245104916901,401634245,40163424522,4,4,8:30,Youngstown State,Valparaiso,49,25,67,2,7,5,Rush,Da'Shaun Whatley run for 5 yds to the YSU 38,0.0849030393595438,2024-09-07T20:37:11.000Z
+401634245104926001,401634245,40163424522,5,4,7:39,Youngstown State,Valparaiso,49,25,62,3,2,6,Rush,Da'Shaun Whatley run for 6 yds to the YSU 44 for a 1ST down,1.5940528522958672,2024-09-07T20:37:11.000Z
+401634245104934701,401634245,40163424522,6,4,6:52,Youngstown State,Valparaiso,49,25,56,1,10,20,Rush,Jaden Gilbert run for 20 yds to the VAL 36 for a 1ST down,1.35940468636551,2024-09-07T20:37:11.000Z
+401634245104944301,401634245,40163424522,7,4,5:56,Youngstown State,Valparaiso,56,25,36,1,10,36,Rushing Touchdown,Jaden Gilbert run for 36 yds for a TD (Andrew Lastovka KICK),3.010778095013796,2024-09-07T20:57:38.000Z
+401634245104944303,401634245,40163424523,1,4,5:56,Youngstown State,Valparaiso,56,25,65,0,0,20,Kickoff Return (Offense),"Andrew Lastovka kickoff for 62 yds , Brian Thomas return for 20 yds to the VAL 23",,2024-09-07T20:59:34.000Z
+401634245104945301,401634245,40163424523,3,4,5:46,Valparaiso,Youngstown State,25,56,77,1,10,3,Rush,Ryan Mann run for 3 yds to the VAL 26,-0.2714196551267518,2024-09-07T20:37:11.000Z
+401634245104947701,401634245,40163424523,4,4,5:22,Valparaiso,Youngstown State,25,56,74,2,7,-1,Pass Reception,Caron Tyler pass complete to Semaj Bolin for a loss of 1 yard to the VAL 25,-0.5749382727692751,2024-09-07T20:37:11.000Z
+401634245104955401,401634245,40163424523,5,4,4:45,Valparaiso,Youngstown State,25,56,75,3,8,0,Pass Incompletion,Caron Tyler pass incomplete,-0.19854558992922833,2024-09-07T20:37:11.000Z
+401634245104956101,401634245,40163424523,6,4,4:38,Valparaiso,Youngstown State,25,56,75,4,8,22,Punt,"Sam Johnson punt for 29 yds , Cyrus Traugh returns for 22 yds to the VAL 32",,2024-09-07T20:37:11.000Z
+401634245104945001,401634245,40163424523,2,4,5:49,Valparaiso,Youngstown State,25,56,77,1,10,0,Timeout,"Timeout Valparaiso, clock 05:49",,2024-09-07T21:01:23.000Z
+401634245104977801,401634245,40163424524,4,4,2:21,Youngstown State,Valparaiso,56,25,16,3,8,0,Timeout,"Timeout Youngstown State, clock 02:21",,2024-09-07T21:06:57.000Z
+401634245104978201,401634245,40163424524,5,4,2:17,Youngstown State,Valparaiso,56,25,16,3,8,5,Rush,Brady Shannon run for 5 yds to the VAL 11,0.0358762559078175,2024-09-07T20:37:11.000Z
+401634245104979901,401634245,40163424524,6,4,2:00,Youngstown State,Valparaiso,56,25,11,4,3,0,Timeout,"Timeout Youngstown State, clock 02:00",,2024-09-07T21:08:32.000Z
+401634245104956702,401634245,40163424524,1,4,4:32,Youngstown State,Valparaiso,56,25,32,1,10,14,Rush,Brady Shannon run for 14 yds to the VAL 18 for a 1ST down,0.2797267165183714,2024-09-07T21:03:56.000Z
+401634245104964801,401634245,40163424524,2,4,3:51,Youngstown State,Valparaiso,56,25,18,1,10,1,Rush,Cephus Harris III run for 1 yd to the VAL 17,-0.27260880361605,2024-09-07T20:37:11.000Z
+401634245104969001,401634245,40163424524,3,4,3:09,Youngstown State,Valparaiso,56,25,17,2,9,1,Rush,Cephus Harris III run for 1 yd to the VAL 16,-0.297771171518121,2024-09-07T20:37:11.000Z
+401634245104984401,401634245,40163424524,7,4,1:55,Youngstown State,Valparaiso,59,25,11,4,3,29,Field Goal Good,Andrew Lastovka 29 yd FG GOOD,,2024-09-07T21:10:54.000Z
+401634245104984402,401634245,40163424525,1,4,1:55,Youngstown State,Valparaiso,59,25,65,0,0,27,Kickoff Return (Offense),"Andrew Lastovka kickoff for 62 yds , Amir Simmons return for 27 yds to the VAL 30",,2024-09-07T21:10:54.000Z
+401634245104985401,401634245,40163424525,2,4,1:45,Valparaiso,Youngstown State,25,59,70,1,10,0,Pass Interception Return,Caron Tyler pass intercepted Jeremiah Robinson return for no gain to the YSU 46,-1.3072134810956566,2024-09-07T20:37:11.000Z
+401634245104999901,401634245,40163424526,3,4,0:00,Youngstown State,Valparaiso,59,25,58,3,14,-2,Rush,"[NH] Kneel down by BLANC, Max at YSU40 (team loss of 2), clock 00:00.",-0.41587370739105456,2024-09-07T21:16:16.000Z
+401634245104985803,401634245,40163424526,2,4,1:41,Youngstown State,Valparaiso,59,25,56,2,12,-2,Rush,"[NH] Kneel down by BLANC, Max at YSU42 (team loss of 2).",-1.0092848868351654,2024-09-07T21:14:00.000Z
+401634245104985802,401634245,40163424526,1,4,1:41,Youngstown State,Valparaiso,59,25,54,1,10,-2,Rush,"[NH] Kneel down by BLANC, Max at YSU44 (team loss of 2).",-1.5969758000886054,2024-09-07T21:14:00.000Z
+401634245104999903,401634245,40163424526,4,4,0:00,Youngstown State,Valparaiso,59,25,60,0,14,0,End of Game,End of 4th Quarter,,2024-09-07T21:16:16.000Z

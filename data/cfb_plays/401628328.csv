@@ -1,0 +1,172 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628328101849903,401628328,4016283281,2,1,15:00,Temple,Oklahoma,0,0,75,1,10,0,Pass Incompletion,Forrest Brock pass incomplete to Antonio Jones,-0.7029700220436519,2024-08-30T23:05:59.000Z
+401628328101854401,401628328,4016283281,3,1,14:55,Temple,Oklahoma,0,0,75,2,10,2,Rush,Forrest Brock run for 2 yds to the TEM 27,-0.2284411734150149,2024-08-30T23:07:41.000Z
+401628328101857901,401628328,4016283281,4,1,14:20,Temple,Oklahoma,0,0,73,3,8,0,Pass Incompletion,Forrest Brock pass incomplete to Dante Wright,-0.22421028645399854,2024-08-30T23:08:17.000Z
+401628328101859601,401628328,4016283281,5,1,14:03,Temple,Oklahoma,0,0,73,4,8,0,Punt,"Dante Atton punt for 49 yds, downed at the OU 24",,2024-08-30T23:09:04.000Z
+401628328101849902,401628328,4016283281,1,1,15:00,Oklahoma,Temple,0,0,65,1,10,0,Kickoff,Zach Schmit kickoff for 65 yds for a touchback,,2024-08-30T23:05:59.000Z
+401628328101869901,401628328,4016283282,4,1,13:00,Oklahoma,Temple,0,0,22,2,7,0,Rush,Gavin Sawchuk run for no gain to the TEM 22,-0.4998094827553564,2024-08-30T23:11:15.000Z
+401628328101876901,401628328,4016283282,5,1,12:30,Oklahoma,Temple,0,0,22,3,7,6,Rush,Jackson Arnold run for 6 yds to the TEM 16,0.1693280019250451,2024-08-30T23:11:42.000Z
+401628328101884901,401628328,4016283282,6,1,11:50,Oklahoma,Temple,0,0,16,4,1,2,Rush,Gavin Sawchuk run for 2 yds to the TEM 14 for a 1ST down,0.6231725150546747,2024-08-30T23:13:43.000Z
+401628328101888201,401628328,4016283282,7,1,11:17,Oklahoma,Temple,7,0,14,1,10,14,Passing Touchdown,Jackson Arnold pass complete to Bauer Sharp for 14 yds for a TD (Tyler Keltner KICK),2.5482831751790815,2024-08-30T23:14:28.000Z
+401628328101859602,401628328,4016283282,1,1,14:03,Oklahoma,Temple,0,0,76,1,10,4,Rush,Deion Burks run for 4 yds to the OU 28,-0.1089877410850981,2024-08-30T23:09:04.000Z
+401628328101865701,401628328,4016283282,2,1,13:42,Oklahoma,Temple,0,0,72,2,6,47,Pass Reception,Jackson Arnold pass complete to Jalil Farooq for 47 yds to the TEM 25 for a 1ST down,3.5545217222348313,2024-08-30T23:10:31.000Z
+401628328101867901,401628328,4016283282,3,1,13:20,Oklahoma,Temple,0,0,25,1,10,3,Pass Reception,Jackson Arnold pass complete to Deion Burks for 3 yds to the TEM 22,-0.1408898471373875,2024-08-30T23:10:54.000Z
+401628328101888203,401628328,4016283283,1,1,11:17,Oklahoma,Temple,7,0,65,1,10,0,Kickoff,Zach Schmit kickoff for 65 yds for a touchback,,2024-08-30T23:18:33.000Z
+401628328101888204,401628328,4016283283,2,1,11:17,Temple,Oklahoma,0,7,75,1,10,2,Rush,Joquez Smith run for 2 yds to the TEM 27,-0.45260367932203766,2024-08-30T23:18:33.000Z
+401628328101895701,401628328,4016283283,3,1,10:42,Temple,Oklahoma,0,7,73,2,8,9,Rush,Dante Wright run for 9 yds to the TEM 36 for a 1ST down,1.3831661912680282,2024-08-30T23:20:12.000Z
+401628328101899301,401628328,4016283283,4,1,10:06,Temple,Oklahoma,0,7,64,1,10,0,Pass Incompletion,Forrest Brock pass incomplete to James Della Pesca,-1.041155320344064,2024-08-30T23:20:35.000Z
+401628328101904901,401628328,4016283283,5,1,9:50,Temple,Oklahoma,0,7,64,2,10,7,Fumble Recovery (Opponent),"Forrest Brock run for 7 yds to the TEM 43 Forrest Brock fumbled, forced by Ethan Downs, recovered by OU Da'Jon Terry",-0.8116520718806051,2024-08-30T23:22:06.000Z
+401628328101904902,401628328,4016283284,1,1,9:50,Oklahoma,Temple,7,0,43,1,10,4,Rush,Taylor Tatum run for 4 yds to the TEM 39,-0.1055620972164722,2024-08-30T23:25:24.000Z
+401628328101907201,401628328,4016283284,2,1,9:27,Oklahoma,Temple,7,0,39,2,6,7,Pass Reception,Jackson Arnold pass complete to Bauer Sharp for 7 yds to the TEM 32 for a 1ST down,0.586412759558364,2024-08-30T23:25:42.000Z
+401628328101909701,401628328,4016283284,3,1,9:02,Oklahoma,Temple,7,0,32,1,10,5,Rush,Deion Burks run for 5 yds to the TEM 27,0.0790402371080084,2024-08-30T23:26:06.000Z
+401628328101916501,401628328,4016283284,4,1,8:34,Oklahoma,Temple,7,0,27,2,5,13,Rush,Jovantae Barnes run for 13 yds to the TEM 14 for a 1ST down,0.2441960133018725,2024-08-30T23:30:47.000Z
+401628328101919201,401628328,4016283284,5,1,8:07,Oklahoma,Temple,14,0,14,1,10,14,Passing Touchdown,Jackson Arnold pass complete to Deion Burks for 14 yds for a TD (Tyler Keltner KICK),2.5482831751790815,2024-08-30T23:31:16.000Z
+401628328101919203,401628328,4016283285,1,1,8:07,Oklahoma,Temple,14,0,65,1,10,22,Kickoff Return (Offense),"Zach Schmit kickoff for 64 yds , E.J. Wilson return for 22 yds to the TEM 23",,2024-08-30T23:32:58.000Z
+401628328101919801,401628328,4016283285,2,1,8:01,Temple,Oklahoma,0,14,77,1,10,8,Rush,Ashton Allen run for 8 yds to the TEM 31,0.8672445366681929,2024-08-30T23:33:45.000Z
+401628328101927001,401628328,4016283285,3,1,7:29,Temple,Oklahoma,0,14,69,2,2,0,Pass Incompletion,Forrest Brock pass incomplete to Ashton Allen,-1.0659056536823615,2024-08-30T23:34:17.000Z
+401628328101927401,401628328,4016283285,4,1,7:25,Temple,Oklahoma,0,14,69,3,2,3,Rush,E.J. Wilson run for 3 yds to the TEM 34 for a 1ST down,1.0722488214739512,2024-08-30T23:34:51.000Z
+401628328101935801,401628328,4016283285,5,1,6:41,Temple,Oklahoma,0,14,66,1,10,0,Rush,Forrest Brock run for no gain to the TEM 34,-0.9864556271674072,2024-08-30T23:35:35.000Z
+401628328101939601,401628328,4016283285,6,1,6:03,Temple,Oklahoma,0,14,66,2,10,0,Pass Incompletion,Forrest Brock pass incomplete to Antwain Littleton,-0.5706151419644927,2024-08-30T23:36:22.000Z
+401628328101944201,401628328,4016283285,7,1,5:57,Temple,Oklahoma,0,14,66,3,10,-7,Sack,Forrest Brock sacked by Gracen Halton for a loss of 7 yards to the TEM 27,-0.44779040662689074,2024-08-30T23:36:59.000Z
+401628328101949801,401628328,4016283285,8,1,5:01,Temple,Oklahoma,0,14,73,4,17,0,Punt,"Dante Atton punt for 58 yds, downed at the OU 15",,2024-08-30T23:37:44.000Z
+401628328101949802,401628328,4016283286,1,1,5:01,Oklahoma,Temple,14,0,85,1,10,2,Rush,Jackson Arnold run for 2 yds to the OU 17,-0.28628930380234063,2024-08-30T23:38:32.000Z
+401628328101957301,401628328,4016283286,2,1,4:26,Oklahoma,Temple,14,0,83,2,8,-4,Sack,Jackson Arnold sacked by Latrell Jean for a loss of 4 yards to the OU 13,-0.398593558865449,2024-08-30T23:39:15.000Z
+401628328101964801,401628328,4016283286,3,1,3:51,Oklahoma,Temple,14,0,87,3,12,0,Pass Incompletion,Jackson Arnold pass incomplete to Jake Roberts,-0.0594676326680208,2024-08-30T23:39:44.000Z
+401628328101966001,401628328,4016283286,4,1,3:39,Oklahoma,Temple,14,0,87,4,12,0,Punt,"Luke Elzinga punt for 40 yds, punt out-of-bounds at the TEM 47",,2024-08-30T23:40:39.000Z
+401628328101966002,401628328,4016283287,1,1,3:39,Temple,Oklahoma,0,14,53,1,10,-2,Pass Reception,Forrest Brock pass complete to Joquez Smith for a loss of 2 yards to the TEM 45,-1.598627696551306,2024-08-30T23:40:39.000Z
+401628328101974001,401628328,4016283287,2,1,2:59,Temple,Oklahoma,0,14,55,2,12,1,Rush,Joquez Smith run for 1 yd to the TEM 46,-0.6746653583036801,2024-08-30T23:42:02.000Z
+401628328101979401,401628328,4016283287,3,1,2:05,Temple,Oklahoma,0,14,54,3,11,10,Pass Interception Return,Forrest Brock pass intercepted Kani Walker return for 10 yds to the TEM 34,-0.6314075115717062,2024-08-30T23:43:13.000Z
+401628328101979402,401628328,4016283288,1,1,2:05,Oklahoma,Temple,14,0,34,1,10,-5,Penalty,"Oklahoma Penalty, False Start (Brenen Thompson) to the TEM 39",,2024-08-30T23:43:13.000Z
+401628328101979403,401628328,4016283288,2,1,2:05,Oklahoma,Temple,14,0,39,1,15,0,Pass Reception,Jackson Arnold pass complete to Brenen Thompson for no gain to the TEM 39,-0.885782140695527,2024-08-30T23:43:13.000Z
+401628328101986501,401628328,4016283288,3,1,1:34,Oklahoma,Temple,14,0,39,2,15,6,Pass Reception,Jackson Arnold pass complete to Bauer Sharp for 6 yds to the TEM 33,0.2598850773468617,2024-08-30T23:45:06.000Z
+401628328101994401,401628328,4016283288,4,1,0:55,Oklahoma,Temple,14,0,33,3,9,0,Pass Incompletion,Jackson Arnold pass incomplete to Andrel Anthony,-1.0191116936452518,2024-08-30T23:45:59.000Z
+401628328101995601,401628328,4016283288,5,1,0:43,Oklahoma,Temple,17,0,33,4,9,50,Field Goal Good,Tyler Keltner 50 yd FG GOOD,,2024-08-30T23:47:16.000Z
+401628328101995604,401628328,4016283289,3,1,0:00,Temple,Oklahoma,0,17,75,0,10,-1,End Period,End of 1st Quarter,,2024-08-30T23:50:07.000Z
+401628328101995602,401628328,4016283289,1,1,0:43,Oklahoma,Temple,17,0,65,4,9,0,Kickoff,Zach Schmit kickoff for 65 yds for a touchback,,2024-08-30T23:47:16.000Z
+401628328101995603,401628328,4016283289,2,1,0:43,Temple,Oklahoma,0,17,75,1,10,-1,Rush,Antwain Littleton run for a loss of 1 yard to the TEM 24,-0.8014893508157099,2024-08-30T23:47:16.000Z
+401628328102849901,401628328,4016283289,4,2,15:00,Temple,Oklahoma,0,17,76,2,11,28,Pass Reception,Forrest Brock pass complete to Dante Wright for 28 yds to the OU 48 for a 1ST down,3.1930106342570745,2024-08-30T23:53:46.000Z
+401628328102856901,401628328,4016283289,5,2,14:30,Temple,Oklahoma,0,17,48,1,10,0,Rush,Antwain Littleton run for no gain to the OU 48,-1.0742999147475647,2024-08-30T23:54:12.000Z
+401628328102865401,401628328,4016283289,6,2,13:45,Temple,Oklahoma,0,17,48,2,10,3,Rush,Forrest Brock run for 3 yds to the OU 45,-0.4010378431857991,2024-08-30T23:54:58.000Z
+401628328102874301,401628328,4016283289,7,2,12:56,Temple,Oklahoma,0,17,45,3,7,3,Fumble Recovery (Opponent),"Forrest Brock pass complete to Dante Wright for 3 yds Dante Wright fumbled, forced by Robert Spears-Jennings, recovered by OU Robert Spears-Jennings",-1.8384284057866793,2024-08-30T23:56:19.000Z
+401628328102874302,401628328,40162832810,1,2,12:56,Oklahoma,Temple,17,0,58,1,10,4,Rush,Gavin Sawchuk run for 4 yds to the OU 46,-0.1665264279012551,2024-08-30T23:59:21.000Z
+401628328102876401,401628328,40162832810,2,2,12:35,Oklahoma,Temple,17,0,54,2,6,0,Rush,Jackson Arnold run for no gain to the OU 46,-1.1287444411219418,2024-08-30T23:59:47.000Z
+401628328102884301,401628328,40162832810,3,2,11:56,Oklahoma,Temple,17,0,54,3,6,5,Pass Reception,Jackson Arnold pass complete to Brenen Thompson for 5 yds to the TEM 49,0.067008996457151,2024-08-31T00:00:43.000Z
+401628328102888901,401628328,40162832810,4,2,11:10,Oklahoma,Temple,17,0,49,4,1,7,Rush,Jackson Arnold run for 7 yds to the TEM 42 for a 1ST down,2.4950296130332372,2024-08-31T00:01:07.000Z
+401628328102895002,401628328,40162832810,5,2,10:49,Oklahoma,Temple,17,0,42,1,10,0,Pass Incompletion,Jackson Arnold pass incomplete to J.J. Hester,-0.908489395271188,2024-08-31T00:01:34.000Z
+401628328102895702,401628328,40162832810,6,2,10:42,Oklahoma,Temple,17,0,42,2,10,5,Rush,Deion Burks run for 5 yds to the TEM 37,0.0692298947987828,2024-08-31T00:02:06.000Z
+401628328102898501,401628328,40162832810,7,2,10:14,Oklahoma,Temple,17,0,37,3,5,4,Pass Reception,Jackson Arnold pass complete to Brenen Thompson for 4 yds to the TEM 33,-0.1495974894554913,2024-08-31T00:02:38.000Z
+401628328102905102,401628328,40162832810,8,2,9:48,Oklahoma,Temple,17,0,33,4,1,5,Rush,Gavin Sawchuk run for 5 yds to the TEM 28 for a 1ST down,1.5197779873615895,2024-08-31T00:03:06.000Z
+401628328102905103,401628328,40162832810,9,2,9:48,Oklahoma,Temple,17,0,33,4,1,0,Timeout,"Timeout Oklahoma, clock 09:48",,2024-08-31T00:03:06.000Z
+401628328102919401,401628328,40162832810,13,2,8:05,Oklahoma,Temple,20,0,24,4,6,42,Field Goal Good,Tyler Keltner 42 yd FG GOOD,,2024-08-31T00:08:55.000Z
+401628328102918301,401628328,40162832810,12,2,8:16,Oklahoma,Temple,17,0,24,3,6,0,Pass Incompletion,Jackson Arnold pass incomplete to Brenen Thompson,-0.7539828282362944,2024-08-31T00:08:13.000Z
+401628328102914501,401628328,40162832810,11,2,8:54,Oklahoma,Temple,17,0,24,2,6,0,Rush,Gavin Sawchuk run for no gain to the TEM 24,-0.5500129890782886,2024-08-31T00:07:38.000Z
+401628328102907601,401628328,40162832810,10,2,9:23,Oklahoma,Temple,17,0,28,1,10,4,Rush,Gavin Sawchuk run for 4 yds to the TEM 24,-0.043244644569821,2024-08-31T00:07:18.000Z
+401628328102919402,401628328,40162832811,1,2,8:05,Oklahoma,Temple,20,0,65,4,6,19,Kickoff Return (Offense),"Zach Schmit kickoff for 65 yds , E.J. Wilson return for 19 yds to the TEM 19",,2024-08-31T00:08:55.000Z
+401628328102924201,401628328,40162832811,2,2,7:57,Temple,Oklahoma,0,20,81,1,10,-1,Rush,E.J. Wilson run for a loss of 1 yard to the TEM 18,-0.6045972881119024,2024-08-31T00:13:21.000Z
+401628328102928701,401628328,40162832811,3,2,7:12,Temple,Oklahoma,0,20,82,2,11,0,Pass Incompletion,Forrest Brock pass incomplete to Reese Clark,-0.20667287608417073,2024-08-30T23:53:46.000Z
+401628328102929201,401628328,40162832811,4,2,7:07,Temple,Oklahoma,0,20,82,3,11,-5,Pass Incompletion,"Forrest Brock pass incomplete to James Della Pesca Temple Penalty, Illegal Touching (James Della Pesca) to the TEM 13",-0.13237792733256093,2024-08-31T00:16:15.000Z
+401628328102934901,401628328,40162832811,5,2,6:50,Temple,Oklahoma,0,20,87,4,16,13,Punt,"Dante Atton punt for 44 yds , Peyton Bowen returns for 13 yds to the TEM 44",,2024-08-31T00:16:50.000Z
+401628328102934902,401628328,40162832812,1,2,6:50,Oklahoma,Temple,20,0,44,1,10,0,Pass Incompletion,Jackson Arnold pass incomplete to Brenen Thompson,-0.9690270974076257,2024-08-31T00:16:50.000Z
+401628328102935601,401628328,40162832812,2,2,6:43,Oklahoma,Temple,20,0,44,2,10,18,Rush,"Jovantae Barnes run for 3 yds to the TEM 41 for a 1ST down Temple Penalty, Personal Foul (Sekou Kromah) to the TEM 26 for a 1ST down",1.6619073325094664,2024-08-31T00:18:36.000Z
+401628328102937601,401628328,40162832812,3,2,6:23,Oklahoma,Temple,20,0,26,1,10,6,Pass Reception,Jackson Arnold pass complete to Brenen Thompson for 6 yds to the TEM 20,0.1981539364012105,2024-08-31T00:19:02.000Z
+401628328102944001,401628328,40162832812,4,2,5:59,Oklahoma,Temple,20,0,20,2,4,12,Rush,Jovantae Barnes run for 12 yds to the TEM 8 for a 1ST down,0.202248617307278,2024-08-31T00:19:25.000Z
+401628328102947101,401628328,40162832812,5,2,5:28,Oklahoma,Temple,27,0,8,1,8,8,Passing Touchdown,Jackson Arnold pass complete to Deion Burks for 8 yds for a TD (Tyler Keltner KICK),2.319599568699692,2024-08-31T00:19:44.000Z
+401628328102947103,401628328,40162832813,1,2,5:28,Oklahoma,Temple,27,0,65,1,10,0,Kickoff,Zach Schmit kickoff for 65 yds for a touchback,,2024-08-31T00:19:44.000Z
+401628328102947104,401628328,40162832813,2,2,5:28,Temple,Oklahoma,0,27,75,1,10,-2,Sack,Forrest Brock sacked by Kendel Dolby for a loss of 2 yards to the TEM 23,-0.8852575132705454,2024-08-31T00:19:44.000Z
+401628328102955101,401628328,40162832813,3,2,4:48,Temple,Oklahoma,0,27,77,2,12,-1,Rush,Dante Wright run for a loss of 1 yard to the TEM 22,-0.2811502645172732,2024-08-31T00:22:57.000Z
+401628328102959101,401628328,40162832813,4,2,4:08,Temple,Oklahoma,0,27,78,3,13,10,Rush,Forrest Brock run for 10 yds to the TEM 32,0.26331010327133964,2024-08-31T00:24:01.000Z
+401628328102968001,401628328,40162832813,5,2,3:19,Temple,Oklahoma,0,27,68,4,3,-5,Penalty,"Temple Penalty, False Start (E.J. Wilson) to the TEM 27",,2024-08-31T00:25:46.000Z
+401628328102974001,401628328,40162832813,6,2,2:59,Temple,Oklahoma,0,27,73,4,8,0,Punt,"Dante Atton punt for 38 yds, fair catch by Peyton Bowen at the OU 35",,2024-08-31T00:26:07.000Z
+401628328102979901,401628328,40162832814,4,2,2:00,Oklahoma,Temple,27,0,48,3,8,5,Penalty,"Arnold, Jackson pass incomplete to Carreon, Ivan, PENALTY TEMPLE offside (Badmus, Sultan) 5 yards to the TEMPLE43, NO PLAY.",,2024-08-31T00:31:49.000Z
+401628328102986101,401628328,40162832814,7,2,1:38,Oklahoma,Temple,27,0,44,4,4,0,Punt,"Jackson Arnold punt for 39 yds, downed at the TEM 5",,2024-08-31T00:34:19.000Z
+401628328102985101,401628328,40162832814,6,2,1:48,Oklahoma,Temple,27,0,44,4,4,0,Timeout,"Timeout Temple, clock 01:48",,2024-08-31T00:32:40.000Z
+401628328102974002,401628328,40162832814,1,2,2:59,Oklahoma,Temple,27,0,65,1,10,15,Rush,Jackson Arnold run for 15 yds to the 50 yard line for a 1ST down,1.401305078569962,2024-08-31T00:26:07.000Z
+401628328102976601,401628328,40162832814,2,2,2:33,Oklahoma,Temple,27,0,50,1,10,0,Pass Incompletion,Jackson Arnold pass incomplete to J.J. Hester,-1.1143038065675126,2024-08-31T00:26:39.000Z
+401628328102977101,401628328,40162832814,3,2,2:28,Oklahoma,Temple,27,0,50,2,10,2,Pass Reception,Jackson Arnold pass complete to Ivan Carreon for 2 yds to the TEM 48,-0.6205479306066408,2024-08-31T00:27:17.000Z
+401628328102984401,401628328,40162832814,5,2,1:55,Oklahoma,Temple,27,0,43,3,3,-1,Rush,Jackson Arnold run for a loss of 1 yard to the TEM 44,-1.3448785609050198,2024-08-31T00:32:22.000Z
+401628328102986102,401628328,40162832815,1,2,1:38,Temple,Oklahoma,0,27,95,1,10,0,Rush,Joquez Smith run for no gain to the TEM 5,-0.2817215454175761,2024-08-31T00:34:19.000Z
+401628328102986501,401628328,40162832815,2,2,1:34,Temple,Oklahoma,0,27,95,2,10,0,Timeout,"Timeout Oklahoma, clock 01:34",,2024-08-31T00:35:10.000Z
+401628328102986502,401628328,40162832815,3,2,1:34,Temple,Oklahoma,0,27,95,2,10,-2,Penalty,"Brock, Forrest pass complete to Smith, Joquez for 7 yards to the TEMPLE12, PENALTY TEMPLE holding (Faminu, James) 2 yards to the TEMPLE3, NO PLAY.",,2024-08-31T00:35:10.000Z
+401628328102988501,401628328,40162832815,4,2,1:14,Temple,Oklahoma,0,27,97,2,12,3,Fumble Recovery (Opponent),"Joquez Smith run for 3 yds to the TEM 6 Joquez Smith fumbled, forced by Gracen Halton, recovered by OU Billy Bowman Jr.",0.26758433059265396,2024-08-31T00:38:01.000Z
+401628328102988502,401628328,40162832816,1,2,1:14,Oklahoma,Temple,27,0,6,1,6,1,Rush,Jovantae Barnes run for 1 yd to the TEM 5,-0.386087920464643,2024-08-31T00:38:01.000Z
+401628328102996301,401628328,40162832816,2,2,0:36,Oklahoma,Temple,34,0,5,2,5,5,Passing Touchdown,Jackson Arnold pass complete to Deion Burks for 5 yds for a TD (Tyler Keltner KICK),2.43857769152992,2024-08-31T00:39:09.000Z
+401628328102996302,401628328,40162832816,3,2,0:36,Oklahoma,Temple,27,0,3,2,0,-5,Penalty,"Oklahoma Penalty, Delay of Game (Josh Plaster) to the TEM 8",,2024-08-31T00:39:54.000Z
+401628328102996701,401628328,40162832817,2,2,0:32,Temple,Oklahoma,0,34,81,1,10,12,Rush,E.J. Wilson run for 12 yds to the TEM 31 for a 1ST down,0.8313285158877469,2024-08-31T00:42:22.000Z
+401628328102998601,401628328,40162832817,3,2,0:13,Temple,Oklahoma,0,34,69,1,10,3,Rush,E.J. Wilson run for 3 yds to the TEM 34,-0.367641675563645,2024-08-31T00:42:49.000Z
+401628328102996304,401628328,40162832817,1,2,0:36,Oklahoma,Temple,34,0,65,2,14,14,Kickoff Return (Offense),"Zach Schmit kickoff for 60 yds , E.J. Wilson return for 14 yds to the TEM 19",,2024-08-31T00:39:54.000Z
+401628328102998602,401628328,40162832817,4,2,0:00,Temple,Oklahoma,0,34,69,0,10,3,End of Half,End of 2nd Quarter,,2024-08-30T23:53:46.000Z
+401628328103849902,401628328,40162832818,2,3,15:00,Oklahoma,Temple,34,0,65,1,10,1,Pass Reception,Jackson Arnold pass complete to Deion Burks for 1 yd to the OU 36,-0.8334176637748527,2024-08-31T01:05:10.000Z
+401628328103857301,401628328,40162832818,3,3,14:26,Oklahoma,Temple,34,0,64,2,9,-4,Sack,Jackson Arnold sacked by Demerick Morris and Cam'Ron Stewart for a loss of 4 yards to the OU 32,-0.9992552058525668,2024-08-31T01:06:34.000Z
+401628328103849901,401628328,40162832818,1,3,15:00,Temple,Oklahoma,0,34,65,1,10,0,Kickoff,Maddux Trujillo kickoff for 63 yds,,2024-08-31T01:05:10.000Z
+401628328103865501,401628328,40162832818,4,3,13:44,Oklahoma,Temple,34,0,68,3,13,5,Pass Reception,Jackson Arnold pass complete to Deion Burks for 5 yds to the OU 37,0.016982831005205593,2024-08-31T01:06:55.000Z
+401628328103874901,401628328,40162832818,5,3,12:50,Oklahoma,Temple,34,0,63,4,8,0,Punt,"Luke Elzinga punt for 51 yds, fair catch by Dante Wright at the TEM 12",,2024-08-31T01:08:03.000Z
+401628328103878101,401628328,40162832819,2,3,12:18,Temple,Oklahoma,0,34,86,2,8,7,Pass Reception,Forrest Brock pass complete to Antonio Jones for 7 yds to the TEM 21,0.2640867407891383,2024-08-31T01:09:21.000Z
+401628328103888801,401628328,40162832819,4,3,11:11,Temple,Oklahoma,0,34,84,3,6,5,Pass Reception,Forrest Brock pass complete to Dante Wright for 5 yds to the TEM 21,0.02956616203002139,2024-08-31T01:10:38.000Z
+401628328103874902,401628328,40162832819,1,3,12:50,Temple,Oklahoma,0,34,88,1,10,2,Rush,Forrest Brock run for 2 yds to the TEM 14,-0.24856252157946201,2024-08-31T01:08:55.000Z
+401628328103885701,401628328,40162832819,3,3,11:42,Temple,Oklahoma,0,34,79,3,1,-5,Penalty,"Brock, Forrest rush for 3 yards to the TEMPLE24, PENALTY TEMPLE illegal formation 5 yards to the TEMPLE16, NO PLAY.",,2024-08-31T01:10:06.000Z
+401628328103898001,401628328,40162832819,5,3,10:19,Temple,Oklahoma,0,34,79,4,1,0,Punt,"Dante Atton punt for 36 yds, punt out-of-bounds at the OU 43",,2024-08-31T01:11:28.000Z
+401628328103909901,401628328,40162832820,5,3,9:00,Oklahoma,Temple,34,0,12,2,1,8,Rush,"Jackson Arnold run for 4 yds to the TEM 8 for a 1ST down Temple Penalty, Unnecessary Roughness (Torey Richardson) to the TEM 4 for a 1ST down",0.315834297387442,2024-08-31T01:21:00.000Z
+401628328103898002,401628328,40162832820,1,3,10:19,Oklahoma,Temple,34,0,57,1,10,6,Rush,Sam Franklin run for 6 yds to the OU 49,0.391648506498802,2024-08-31T01:11:28.000Z
+401628328103904201,401628328,40162832820,2,3,9:57,Oklahoma,Temple,34,0,51,2,4,30,Rush,Sam Franklin run for 30 yds to the TEM 21 for a 1ST down,1.4413713772170316,2024-08-31T01:15:32.000Z
+401628328103907401,401628328,40162832820,4,3,9:25,Oklahoma,Temple,34,0,26,1,15,14,Rush,Jackson Arnold run for 14 yds to the TEM 12,1.0546906411197623,2024-08-31T01:20:17.000Z
+401628328103906501,401628328,40162832820,3,3,9:34,Oklahoma,Temple,34,0,21,1,10,-5,Penalty,"Oklahoma Penalty, False Start (Febechi Nwaiwu) to the TEM 26",,2024-08-31T01:15:56.000Z
+401628328103915301,401628328,40162832820,6,3,8:46,Oklahoma,Temple,34,0,4,1,4,-1,Rush,Sam Franklin run for a loss of 1 yard to the TEM 5,-0.750387172815945,2024-08-31T01:22:13.000Z
+401628328103918701,401628328,40162832820,7,3,8:12,Oklahoma,Temple,34,0,5,2,5,0,Pass Incompletion,Jackson Arnold pass incomplete to Deion Burks,-0.32302193763867,2024-08-31T01:22:43.000Z
+401628328103919301,401628328,40162832820,8,3,8:06,Oklahoma,Temple,34,0,5,3,5,0,Pass Incompletion,Jackson Arnold pass incomplete,-0.290992528642002,2024-08-31T01:25:14.000Z
+401628328103924601,401628328,40162832820,9,3,7:53,Oklahoma,Temple,37,0,5,4,5,24,Field Goal Good,Tyler Keltner 24 yd FG GOOD,,2024-08-31T01:26:18.000Z
+401628328103924603,401628328,40162832821,2,3,7:53,Temple,Oklahoma,0,37,75,1,10,0,Pass Incompletion,Forrest Brock pass incomplete to Ashton Allen,-0.7029700220436519,2024-08-31T01:30:03.000Z
+401628328103925101,401628328,40162832821,3,3,7:48,Temple,Oklahoma,0,37,75,2,10,1,Rush,Forrest Brock run for 1 yd to the TEM 26,-0.29282347426074384,2024-08-31T01:31:43.000Z
+401628328103929301,401628328,40162832821,4,3,7:06,Temple,Oklahoma,0,37,74,3,9,34,Pass Reception,"Forrest Brock pass complete to Antwain Littleton for 19 yds to the OU 45 for a 1ST down Oklahoma Penalty, Personal Foul (Robert Spears-Jennings) to the OU 40 for a 1ST down",3.8844994720883763,2024-08-31T01:32:56.000Z
+401628328103935101,401628328,40162832821,5,3,6:48,Temple,Oklahoma,0,37,40,1,10,4,Rush,Terrez Worthy run for 4 yds to the OU 36,-0.090113775884788,2024-08-31T01:33:28.000Z
+401628328103939301,401628328,40162832821,6,3,6:06,Temple,Oklahoma,0,37,36,2,6,3,Rush,Antwain Littleton run for 3 yds to the OU 33,-0.2898728533651003,2024-08-31T01:34:09.000Z
+401628328103947101,401628328,40162832821,7,3,5:28,Temple,Oklahoma,0,37,33,3,3,14,Pass Reception,Forrest Brock pass complete to John Adams for 14 yds to the OU 19 for a 1ST down,0.9645881445497063,2024-08-31T01:34:52.000Z
+401628328103955401,401628328,40162832821,8,3,4:45,Temple,Oklahoma,0,37,19,1,10,-7,Sack,Forrest Brock sacked by Ethan Downs for a loss of 7 yards to the OU 26,-1.102926232030377,2024-08-31T01:35:45.000Z
+401628328103959301,401628328,40162832821,9,3,4:06,Temple,Oklahoma,0,37,26,2,17,-5,Sack,Forrest Brock sacked by Ashton Sanders and Gracen Halton for a loss of 5 yards to the OU 31,-1.8719557557426203,2024-08-31T01:36:34.000Z
+401628328103924602,401628328,40162832821,1,3,7:53,Oklahoma,Temple,37,0,65,4,11,0,Kickoff,Zach Schmit kickoff for 65 yds for a touchback,,2024-08-31T01:30:03.000Z
+401628328103968101,401628328,40162832821,10,3,3:18,Temple,Oklahoma,0,37,31,3,22,0,Timeout,"Timeout Temple, clock 03:18",,2024-08-31T01:36:55.000Z
+401628328103968102,401628328,40162832821,11,3,3:18,Temple,Oklahoma,0,37,31,3,22,0,Pass Incompletion,Forrest Brock pass incomplete to Dante Wright,-0.8311756812307172,2024-08-31T01:36:55.000Z
+401628328103969201,401628328,40162832821,12,3,3:07,Temple,Oklahoma,3,37,31,4,22,49,Field Goal Good,Maddux Trujillo 49 yd FG GOOD,,2024-08-31T01:39:23.000Z
+401628328103969202,401628328,40162832822,1,3,3:07,Temple,Oklahoma,3,37,65,4,22,0,Kickoff,Maddux Trujillo kickoff for 65 yds for a touchback,,2024-08-31T01:39:23.000Z
+401628328103989301,401628328,40162832822,5,3,1:06,Oklahoma,Temple,37,3,66,4,1,0,Punt,"Luke Elzinga punt for 37 yds, downed at the TEM 29",,2024-08-31T01:43:57.000Z
+401628328103969203,401628328,40162832822,2,3,3:07,Oklahoma,Temple,37,3,75,1,10,4,Pass Reception,Jackson Arnold pass complete to Andrel Anthony for 4 yds to the OU 29,-0.1142886249388964,2024-08-31T01:41:50.000Z
+401628328103976901,401628328,40162832822,3,3,2:30,Oklahoma,Temple,37,3,71,2,6,-5,Sack,Jackson Arnold sacked by Tyquan King for a loss of 5 yards to the OU 24,-0.9814752327355913,2024-08-31T01:42:17.000Z
+401628328103979901,401628328,40162832822,4,3,2:00,Oklahoma,Temple,37,3,76,3,11,10,Pass Reception,Jackson Arnold pass complete to Bauer Sharp for 10 yds to the OU 34,0.37208353956113793,2024-08-31T01:42:44.000Z
+401628328103997102,401628328,40162832823,3,3,0:00,Temple,Oklahoma,3,37,60,0,10,3,End Period,End of 3rd Quarter,,2024-08-31T01:45:20.000Z
+401628328103997101,401628328,40162832823,2,3,0:28,Temple,Oklahoma,3,37,60,1,10,3,Rush,Antwain Littleton run for 3 yds to the TEM 43,-0.4315308590496248,2024-08-31T01:44:52.000Z
+401628328103989302,401628328,40162832823,1,3,1:06,Temple,Oklahoma,3,37,71,1,10,11,Pass Reception,Forrest Brock pass complete to Antonio Jones for 11 yds to the TEM 40 for a 1ST down,1.0187162686112892,2024-08-31T01:43:57.000Z
+401628328104857801,401628328,40162832823,5,4,14:21,Temple,Oklahoma,3,37,56,3,6,-5,Penalty,"Temple Penalty, False Start (Antonio Jones) to the TEM 39",,2024-08-31T01:50:34.000Z
+401628328104865201,401628328,40162832823,7,4,13:47,Temple,Oklahoma,3,37,61,4,11,0,Punt,"Dante Atton punt for 38 yds, fair catch by Peyton Bowen at the OU 23",,2024-08-31T01:52:16.000Z
+401628328104859701,401628328,40162832823,6,4,14:02,Temple,Oklahoma,3,37,61,3,11,0,Pass Incompletion,Forrest Brock pass incomplete to Antonio Jones,-0.3559466290105586,2024-08-31T01:51:05.000Z
+401628328104849901,401628328,40162832823,4,4,15:00,Temple,Oklahoma,3,37,57,2,7,1,Rush,Antwain Littleton run for 1 yd to the TEM 44,-0.8296092952870024,2024-08-31T01:49:49.000Z
+401628328104867401,401628328,40162832824,2,4,13:25,Oklahoma,Temple,37,3,73,2,6,-10,Penalty,"Hawkins Jr., Michael rush for 20 yards to the OU47, PENALTY OU holding (Bates, Joshua) 10 yards to the OU17, NO PLAY.",,2024-08-31T01:56:22.000Z
+401628328104875001,401628328,40162832824,4,4,12:49,Oklahoma,Temple,37,3,83,3,16,10,Pass Reception,Michael Hawkins Jr. pass complete to Bauer Sharp for 10 yds to the OU 27,0.13737774481000198,2024-08-31T01:57:36.000Z
+401628328104874401,401628328,40162832824,3,4,12:55,Oklahoma,Temple,37,3,83,2,16,0,Pass Incompletion,Michael Hawkins Jr. pass incomplete to Bauer Sharp,-0.1096816685857771,2024-08-31T01:56:55.000Z
+401628328104865202,401628328,40162832824,1,4,13:47,Oklahoma,Temple,37,3,77,1,10,4,Rush,Jovantae Barnes run for 4 yds to the OU 27,-0.1037214304952529,2024-08-31T01:55:34.000Z
+401628328104879801,401628328,40162832824,5,4,12:01,Oklahoma,Temple,37,3,73,4,6,0,Timeout,"Timeout Oklahoma, clock 12:01",,2024-08-31T01:58:22.000Z
+401628328104885501,401628328,40162832824,6,4,11:44,Temple,Oklahoma,3,44,73,4,6,21,Fumble Return Touchdown,Jaren Kanak 21 Yd Fumble Return (Tyler Keltner Kick),-6.811864737908418,2024-08-31T02:00:59.000Z
+401628328104885503,401628328,40162832825,1,4,11:44,Oklahoma,Temple,44,3,65,1,10,0,Kickoff,Zach Schmit kickoff for 65 yds for a touchback,,2024-08-31T02:00:59.000Z
+401628328104917601,401628328,40162832825,8,4,8:23,Temple,Oklahoma,3,44,38,1,10,5,Rush,E.J. Wilson run for 5 yds to the OU 33,0.084800241468987,2024-08-31T02:09:10.000Z
+401628328104885504,401628328,40162832825,2,4,11:44,Temple,Oklahoma,3,44,75,1,10,0,Pass Incompletion,Forrest Brock pass incomplete to Reese Clark,-0.7029700220436519,2024-08-31T02:00:59.000Z
+401628328104886101,401628328,40162832825,3,4,11:38,Temple,Oklahoma,3,44,75,2,10,9,Rush,E.J. Wilson run for 9 yds to the TEM 34,0.6799361600947043,2024-08-31T02:05:56.000Z
+401628328104894601,401628328,40162832825,4,4,10:53,Temple,Oklahoma,3,44,66,3,1,2,Rush,John Adams run for 2 yds to the TEM 36 for a 1ST down,0.9535963738949382,2024-08-31T02:06:37.000Z
+401628328104898501,401628328,40162832825,5,4,10:14,Temple,Oklahoma,3,44,64,1,10,9,Pass Reception,Forrest Brock pass complete to Ashton Allen for 9 yds to the TEM 45,1.3816838899351875,2024-08-31T02:07:23.000Z
+401628328104906601,401628328,40162832825,6,4,9:33,Temple,Oklahoma,3,44,55,2,1,1,Rush,Forrest Brock run for 1 yd to the TEM 46 for a 1ST down,-0.4193888198450646,2024-08-31T02:08:03.000Z
+401628328104915001,401628328,40162832825,7,4,8:49,Temple,Oklahoma,3,44,54,1,10,16,Pass Reception,Forrest Brock pass complete to Landon Morris for 16 yds to the OU 38 for a 1ST down,1.09030488910002,2024-08-31T02:08:46.000Z
+401628328104926501,401628328,40162832825,9,4,7:34,Temple,Oklahoma,3,44,33,2,5,41,Pass Interception Return,"Forrest Brock pass intercepted Jaydan Hardy return for 26 yds to the OU 7 Oklahoma Penalty, Personal Foul (Taylor Wein) to the OU 15",-3.990207592883799,2024-08-31T02:11:40.000Z
+401628328104959901,401628328,40162832826,9,4,4:00,Oklahoma,Temple,44,3,8,2,8,0,Rush,Michael Hawkins Jr. run for no gain to the TEM 8,-0.26931522945819,2024-08-31T02:19:15.000Z
+401628328104968801,401628328,40162832826,10,4,3:11,Oklahoma,Temple,51,3,8,3,8,8,Rushing Touchdown,Taylor Tatum run for 8 yds for a TD (Tyler Keltner KICK),2.946086184191255,2024-08-31T02:22:06.000Z
+401628328104926502,401628328,40162832826,1,4,7:34,Oklahoma,Temple,44,3,85,1,10,-7,Penalty,"Oklahoma Penalty, Personal Foul (Taylor Wein) to the OU 8",,2024-08-31T02:11:40.000Z
+401628328104926503,401628328,40162832826,2,4,7:34,Oklahoma,Temple,44,3,92,1,10,19,Rush,Taylor Tatum run for 19 yds to the OU 27 for a 1ST down,0.91598983996907,2024-08-31T02:11:40.000Z
+401628328104929101,401628328,40162832826,3,4,7:08,Oklahoma,Temple,44,3,73,1,10,10,Rush,Michael Hawkins Jr. run for 10 yds to the OU 37 for a 1ST down,0.8822046406441864,2024-08-31T02:15:29.000Z
+401628328104936101,401628328,40162832826,4,4,6:38,Oklahoma,Temple,44,3,63,1,10,3,Rush,Taylor Tatum run for 3 yds to the OU 40,-0.4199785122886155,2024-08-31T02:15:43.000Z
+401628328104939001,401628328,40162832826,5,4,6:09,Oklahoma,Temple,44,3,60,2,7,35,Rush,Taylor Tatum run for 35 yds to the TEM 25 for a 1ST down,2.770404943600308,2024-08-31T02:16:45.000Z
+401628328104947501,401628328,40162832826,6,4,5:24,Oklahoma,Temple,44,3,25,1,10,7,Pass Reception,Michael Hawkins Jr. pass complete to Zion Ragins for 7 yds to the TEM 18,0.3286472091407865,2024-08-31T02:17:36.000Z
+401628328104955201,401628328,40162832826,7,4,4:47,Oklahoma,Temple,44,3,18,2,3,10,Rush,Sam Franklin run for 10 yds to the TEM 8 for a 1ST down,0.051837584425579,2024-08-31T02:18:05.000Z
+401628328104959301,401628328,40162832826,8,4,4:06,Oklahoma,Temple,44,3,8,1,8,0,Pass Incompletion,Michael Hawkins Jr. pass incomplete to Jaquaize Pettaway,-0.357171386033373,2024-08-31T02:18:31.000Z
+401628328104968803,401628328,40162832827,1,4,3:11,Oklahoma,Temple,51,3,65,3,10,0,Kickoff,Zach Schmit kickoff for 65 yds for a touchback,,2024-08-31T02:22:06.000Z
+401628328104968804,401628328,40162832827,2,4,3:11,Temple,Oklahoma,3,51,75,1,10,4,Rush,Terrez Worthy run for 4 yds to the TEM 29,-0.1142886249388964,2024-08-31T02:22:06.000Z
+401628328104976401,401628328,40162832827,3,4,2:35,Temple,Oklahoma,3,51,71,2,6,10,Pass Reception,Forrest Brock pass complete to Ashton Allen for 10 yds to the TEM 39 for a 1ST down,1.3370277081953519,2024-08-31T02:23:35.000Z
+401628328104979901,401628328,40162832827,4,4,2:00,Temple,Oklahoma,3,51,61,1,10,2,Rush,Antwain Littleton run for 2 yds to the TEM 41,-0.673782181215797,2024-08-31T02:27:52.000Z
+401628328104986801,401628328,40162832827,5,4,1:31,Temple,Oklahoma,3,51,59,2,8,10,Pass Reception,Forrest Brock pass complete to Xavier Irvin for 10 yds to the OU 49 for a 1ST down,1.7664676660434147,2024-08-31T02:28:22.000Z
+401628328104994302,401628328,40162832827,6,4,0:56,Temple,Oklahoma,3,51,49,1,10,-7,Sack,Forrest Brock sacked by Markus Strong for a loss of 7 yards to the TEM 44,-2.5273694623584895,2024-08-31T02:29:02.000Z
+401628328104998002,401628328,40162832827,7,4,0:19,Temple,Oklahoma,3,51,56,2,17,-2,Sack,Forrest Brock sacked by Markus Strong for a loss of 2 yards to the TEM 42,-0.723048625411904,2024-08-31T02:29:53.000Z

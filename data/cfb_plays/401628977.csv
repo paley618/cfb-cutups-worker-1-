@@ -1,0 +1,182 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628977101874902,401628977,4016289771,6,1,12:50,Notre Dame,Northern Illinois,0,0,51,1,10,-10,Penalty,"(12:50) LOVE, Jeremiyah rush to the left for a gain of 2 yards to the NIU49 (FUHRMAN, Christian;WILLIAMS, Jalonnie), clock 12:44. PENALTY UND Holding on SCHRAUTH, Billy enforced 10 yards from the UND49 to the UND39 [NHSG]. NO PLAY (replay the down).",,2024-09-07T19:33:43.000Z
+401628977101879801,401628977,4016289771,8,1,12:01,Notre Dame,Northern Illinois,0,0,53,2,12,0,Pass Incompletion,Riley Leonard pass incomplete,-0.87538968896492,2024-09-07T19:33:43.000Z
+401628977101884201,401628977,4016289771,9,1,11:57,Notre Dame,Northern Illinois,0,0,53,3,12,14,Pass Reception,Riley Leonard pass complete to Mitchell Evans for 14 yds to the NIU 39 for a 1ST down,3.2464641030670434,2024-09-07T19:33:43.000Z
+401628977101887901,401628977,4016289771,10,1,11:20,Notre Dame,Northern Illinois,0,0,39,1,10,1,Rush,Riley Leonard run for 1 yd to the NIU 38,-0.6215061842869627,2024-09-07T19:33:43.000Z
+401628977101895701,401628977,4016289771,11,1,10:42,Notre Dame,Northern Illinois,0,0,38,2,9,11,Pass Reception,Riley Leonard pass complete to Jaden Greathouse for 11 yds to the NIU 27 for a 1ST down,1.0206638978270277,2024-09-07T19:33:43.000Z
+401628977101898601,401628977,4016289771,12,1,10:13,Notre Dame,Northern Illinois,0,0,27,1,10,9,Rush,Riley Leonard run for 9 yds to the NIU 18,0.661453117654322,2024-09-07T19:33:43.000Z
+401628977101854602,401628977,4016289771,2,1,14:53,Notre Dame,Northern Illinois,0,0,75,1,10,7,Pass Reception,Riley Leonard pass complete to Beaux Collins for 7 yds to the ND 32,0.604642460086338,2024-09-07T19:33:43.000Z
+401628977101857201,401628977,4016289771,3,1,14:27,Notre Dame,Northern Illinois,0,0,68,2,3,7,Rush,Riley Leonard run for 7 yds to the ND 39 for a 1ST down,0.6180966231701175,2024-09-07T19:33:43.000Z
+401628977101864201,401628977,4016289771,4,1,13:57,Notre Dame,Northern Illinois,0,0,61,1,10,5,Rush,Jeremiyah Love run for 5 yds to the ND 44,0.1106253034395996,2024-09-07T19:33:43.000Z
+401628977101867301,401628977,4016289771,5,1,13:26,Notre Dame,Northern Illinois,0,0,56,2,5,5,Rush,Riley Leonard run for 5 yds to the ND 49 for a 1ST down,0.8210235291323273,2024-09-07T19:33:43.000Z
+401628977101876401,401628977,4016289771,7,1,12:35,Notre Dame,Northern Illinois,0,0,61,1,20,8,Pass Reception,Riley Leonard pass complete to Jaden Greathouse for 8 yds to the ND 47,0.6367702382437556,2024-09-07T19:33:43.000Z
+401628977101849907,401628977,4016289771,1,1,15:00,Northern Illinois,Notre Dame,0,0,65,0,0,21,Kickoff Return (Offense),"Austin Bullock kickoff for 61 yds , Jayden Harrison return for 21 yds to the ND 25",,2024-09-07T19:24:30.000Z
+401628977101917104,401628977,4016289771,16,1,8:28,Notre Dame,Northern Illinois,7,0,65,0,0,0,Timeout,"Timeout Notre Dame, clock 08:28",,2024-09-07T19:43:27.000Z
+401628977101906501,401628977,4016289771,13,1,9:34,Notre Dame,Northern Illinois,0,0,18,2,1,6,Rush,Jeremiyah Love run for 6 yds to the NIU 12 for a 1ST down,-0.4502668182987615,2024-09-07T19:33:43.000Z
+401628977101908601,401628977,4016289771,14,1,9:13,Notre Dame,Northern Illinois,0,0,12,1,10,1,Rush,Jeremiyah Love run for 1 yd to the NIU 11,-0.234891535825625,2024-09-07T19:33:43.000Z
+401628977101917101,401628977,4016289771,15,1,8:28,Notre Dame,Northern Illinois,7,0,11,2,9,11,Rushing Touchdown,Riley Leonard run for 11 yds for a TD (Mitch Jeter KICK),2.7649860778615505,2024-09-07T19:41:10.000Z
+401628977101917105,401628977,4016289772,1,1,8:28,Notre Dame,Northern Illinois,7,0,65,0,0,2,Kickoff Return (Offense),"Mitch Jeter kickoff for 65 yds , Gavin Williams return for 2 yds to the NIU 2",,2024-09-07T19:43:27.000Z
+401628977101946401,401628977,4016289772,6,1,5:35,Northern Illinois,Notre Dame,7,7,83,2,5,83,Passing Touchdown,"Ethan Hampton pass complete to Antario Brown for 83 yds for a TD Notre Dame Penalty, Roughing the Passer on Rylie Mills. (Kanon Woodill KICK)",6.658680955254256,2024-09-07T19:53:28.000Z
+401628977101937301,401628977,4016289772,5,1,6:26,Northern Illinois,Notre Dame,0,7,88,1,10,5,Rush,Trayvon Rudolph run for 5 yds to the NIU 17,0.07257903633006091,2024-09-07T19:33:43.000Z
+401628977101928401,401628977,4016289772,4,1,7:15,Northern Illinois,Notre Dame,0,7,91,3,3,3,Rush,Ethan Hampton run for 3 yds to the NIU 12 for a 1ST down,0.3662920861693273,2024-09-07T19:33:43.000Z
+401628977101924801,401628977,4016289772,3,1,7:51,Northern Illinois,Notre Dame,0,7,93,2,5,2,Rush,Antario Brown run for 2 yds to the NIU 9,-0.18325126581340268,2024-09-07T19:33:43.000Z
+401628977101917501,401628977,4016289772,2,1,8:24,Northern Illinois,Notre Dame,0,7,98,1,10,5,Rush,Antario Brown run for 5 yds to the NIU 7,0.060881488960485626,2024-09-07T19:33:43.000Z
+401628977101946407,401628977,4016289773,3,1,5:35,Notre Dame,Northern Illinois,7,7,75,1,10,1,Rush,Jadarian Price run for 1 yd to the ND 26,-0.5874795431016855,2024-09-07T19:53:28.000Z
+401628977101949401,401628977,4016289773,4,1,5:05,Notre Dame,Northern Illinois,7,7,74,2,9,-1,Pass Reception,Riley Leonard pass complete to Jadarian Price for a loss of 1 yard to the ND 25,-0.46259535606370505,2024-09-07T19:33:43.000Z
+401628977101957301,401628977,4016289773,5,1,4:26,Notre Dame,Northern Illinois,7,7,75,3,10,-9,Sack,Riley Leonard sacked by Devonte O'Malley for a loss of 9 yards to the ND 16,-0.2575828404190039,2024-09-07T19:33:43.000Z
+401628977101965201,401628977,4016289773,6,1,3:47,Notre Dame,Northern Illinois,7,7,84,4,19,0,Punt,James Rendell punt for 39 yds,,2024-09-07T19:33:43.000Z
+401628977101946405,401628977,4016289773,2,1,5:35,Northern Illinois,Notre Dame,7,7,50,0,0,0,Kickoff,Austin Bullock kickoff for 50 yds for a touchback,,2024-09-07T19:53:28.000Z
+401628977101946404,401628977,4016289773,1,1,5:35,Northern Illinois,Notre Dame,7,7,65,0,0,0,Timeout,"Timeout Notre Dame, clock 05:35",,2024-09-07T19:53:28.000Z
+401628977101965801,401628977,4016289773,7,1,3:41,Northern Illinois,Notre Dame,7,7,55,1,10,0,Timeout,"Timeout Notre Dame, clock 03:41",,2024-09-07T19:33:43.000Z
+401628977101978601,401628977,4016289774,5,1,2:13,Northern Illinois,Notre Dame,10,7,25,4,8,42,Field Goal Good,Kanon Woodill 42 yd FG GOOD,,2024-09-07T20:05:51.000Z
+401628977101977601,401628977,4016289774,4,1,2:23,Northern Illinois,Notre Dame,7,7,25,3,8,0,Pass Incompletion,Ethan Hampton pass incomplete,-0.831644544890821,2024-09-07T20:05:06.000Z
+401628977101977301,401628977,4016289774,3,1,2:26,Northern Illinois,Notre Dame,7,7,25,2,8,0,Pass Incompletion,Trayvon Rudolph pass incomplete,-0.579657351242977,2024-09-07T19:33:43.000Z
+401628977101969501,401628977,4016289774,2,1,3:04,Northern Illinois,Notre Dame,7,7,27,1,10,2,Rush,Antario Brown run for 2 yds to the ND 25,-0.262946006262057,2024-09-07T19:33:43.000Z
+401628977101965802,401628977,4016289774,1,1,3:41,Northern Illinois,Notre Dame,7,7,55,1,10,28,Rush,Antario Brown run for 28 yds to the ND 27 for a 1ST down,1.535332395924879,2024-09-07T19:33:43.000Z
+401628977101978603,401628977,4016289774,6,1,2:13,Northern Illinois,Notre Dame,10,7,65,0,0,0,Timeout,"Timeout Notre Dame, clock 02:13",,2024-09-07T20:05:51.000Z
+401628977101979501,401628977,4016289775,2,1,2:04,Notre Dame,Northern Illinois,7,10,63,1,10,8,Pass Reception,Riley Leonard pass complete to Jeremiyah Love for 8 yds to the ND 45,1.0359877217814513,2024-09-07T19:33:43.000Z
+401628977101987201,401628977,4016289775,3,1,1:27,Notre Dame,Northern Illinois,7,10,55,2,2,0,Pass Incompletion,Riley Leonard pass incomplete,-1.360863301114897,2024-09-07T19:33:43.000Z
+401628977101987401,401628977,4016289775,4,1,1:25,Notre Dame,Northern Illinois,7,10,55,3,2,4,Rush,Riley Leonard run for 4 yds to the ND 49 for a 1ST down,1.452019169018257,2024-09-07T20:10:55.000Z
+401628977101994801,401628977,4016289775,5,1,0:51,Notre Dame,Northern Illinois,7,10,51,1,10,0,Pass Interception Return,Riley Leonard pass intercepted Christian Fuhrman return for no gain to the NIU 45,-3.076632796107061,2024-09-07T19:33:43.000Z
+401628977101978604,401628977,4016289775,1,1,2:13,Northern Illinois,Notre Dame,10,7,65,0,0,34,Kickoff Return (Offense),"Austin Bullock kickoff for 62 yds , Jayden Harrison return for 34 yds to the ND 37",,2024-09-07T20:05:51.000Z
+401628977101995401,401628977,4016289776,1,1,0:45,Northern Illinois,Notre Dame,10,7,55,1,10,43,Pass Reception,Ethan Hampton pass complete to Antario Brown for 43 yds to the ND 12 for a 1ST down,1.7465186952804395,2024-09-07T19:33:43.000Z
+401628977102854101,401628977,4016289776,3,2,14:58,Northern Illinois,Notre Dame,10,7,12,1,10,0,Pass Incompletion,Ethan Hampton pass incomplete,-0.2977696357406735,2024-09-07T20:17:54.000Z
+401628977102854601,401628977,4016289776,4,2,14:53,Northern Illinois,Notre Dame,10,7,12,2,10,2,Rush,Ethan Hampton run for 2 yds to the ND 10,-0.161561009875187,2024-09-07T20:17:54.000Z
+401628977102859201,401628977,4016289776,5,2,14:07,Northern Illinois,Notre Dame,10,7,10,3,8,6,Rush,Antario Brown run for 6 yds to the ND 4,0.101686266873002,2024-09-07T20:17:54.000Z
+401628977101995402,401628977,4016289776,2,1,0:00,Northern Illinois,Notre Dame,10,7,55,0,10,43,End Period,End of 1st Quarter,,2024-09-07T20:14:05.000Z
+401628977102866001,401628977,4016289776,7,2,13:39,Northern Illinois,Notre Dame,13,7,4,4,2,21,Field Goal Good,Kanon Woodill 21 yd FG GOOD,,2024-09-07T20:17:54.000Z
+401628977102865601,401628977,4016289776,6,2,13:43,Northern Illinois,Notre Dame,10,7,4,4,2,0,Timeout,"Timeout Northern Illinois, clock 13:43",,2024-09-07T20:20:06.000Z
+401628977102866002,401628977,4016289776,8,2,13:39,Northern Illinois,Notre Dame,13,7,65,0,0,0,Timeout,"Timeout Notre Dame, clock 13:39",,2024-09-07T20:17:54.000Z
+401628977102866402,401628977,4016289777,2,2,13:35,Notre Dame,Northern Illinois,7,13,71,1,10,15,Rush,Jadarian Price run for 15 yds to the ND 44 for a 1ST down,1.4054340913756587,2024-09-07T20:24:26.000Z
+401628977102874101,401628977,4016289777,3,2,12:58,Notre Dame,Northern Illinois,7,13,56,1,10,0,Pass Incompletion,Riley Leonard pass incomplete,-1.1612466882658818,2024-09-07T20:17:54.000Z
+401628977102874601,401628977,4016289777,4,2,12:53,Notre Dame,Northern Illinois,7,13,56,2,10,15,Pass Reception,Riley Leonard pass complete to Beaux Collins for 15 yds to the NIU 41 for a 1ST down,2.2909098437486684,2024-09-07T20:17:54.000Z
+401628977102877801,401628977,4016289777,5,2,12:21,Notre Dame,Northern Illinois,7,13,41,1,10,2,Rush,Riley Leonard run for 2 yds to the NIU 39,-0.4734810315767391,2024-09-07T20:17:54.000Z
+401628977102884101,401628977,4016289777,6,2,11:58,Notre Dame,Northern Illinois,7,13,39,2,8,-2,Rush,Riley Leonard run for a loss of 2 yards to the NIU 41,-1.4448920870556936,2024-09-07T20:17:54.000Z
+401628977102887301,401628977,4016289777,7,2,11:26,Notre Dame,Northern Illinois,7,13,41,3,10,2,Rush,Riley Leonard run for 2 yds to the NIU 39,-0.5846776496448172,2024-09-07T20:17:54.000Z
+401628977102895601,401628977,4016289777,8,2,10:43,Notre Dame,Northern Illinois,7,13,39,4,8,0,Punt,"James Rendell punt for 28 yds, fair catch by Dane Pardridge at the NIU 11",,2024-09-07T20:17:54.000Z
+401628977102866003,401628977,4016289777,1,2,13:39,Northern Illinois,Notre Dame,13,7,65,0,0,9,Kickoff Return (Offense),"Austin Bullock kickoff for 45 yds , Devyn Ford return for 9 yds to the ND 29",,2024-09-07T20:17:54.000Z
+401628977102896201,401628977,4016289777,9,2,10:37,Northern Illinois,Notre Dame,13,7,89,1,10,0,Timeout,"Timeout Notre Dame, clock 10:37",,2024-09-07T20:28:41.000Z
+401628977102916501,401628977,4016289778,4,2,8:34,Northern Illinois,Notre Dame,13,7,76,2,7,5,Rush,Antario Brown run for 5 yds to the NIU 29,0.06947201550415816,2024-09-07T20:17:54.000Z
+401628977102908501,401628977,4016289778,3,2,9:14,Northern Illinois,Notre Dame,13,7,79,1,10,3,Pass Reception,Ethan Hampton pass complete to Brock Lampe for 3 yds to the NIU 24,-0.24791478712197265,2024-09-07T20:17:54.000Z
+401628977102904301,401628977,4016289778,2,2,9:56,Northern Illinois,Notre Dame,13,7,90,2,11,11,Rush,Antario Brown run for 11 yds to the NIU 21 for a 1ST down,0.8466847505537389,2024-09-07T20:17:54.000Z
+401628977102896203,401628977,4016289778,1,2,10:37,Northern Illinois,Notre Dame,13,7,89,1,10,-1,Rush,Antario Brown run for a loss of 1 yard to the NIU 10,-0.413647232243223,2024-09-07T20:31:48.000Z
+401628977102925201,401628977,4016289778,6,2,7:47,Northern Illinois,Notre Dame,13,7,71,3,2,6,Rush,Antario Brown run for 6 yds to the NIU 35 for a 1ST down,1.2662605507436355,2024-09-07T20:17:54.000Z
+401628977102929401,401628977,4016289778,7,2,7:05,Northern Illinois,Notre Dame,13,7,65,1,10,0,Pass Incompletion,Ethan Hampton pass incomplete,-1.0146424556055624,2024-09-07T20:17:54.000Z
+401628977102929701,401628977,4016289778,8,2,7:02,Northern Illinois,Notre Dame,13,7,65,2,10,6,Rush,Gavin Williams run for 6 yds to the NIU 41,0.2500587829109984,2024-09-07T20:17:54.000Z
+401628977102937901,401628977,4016289778,9,2,6:20,Northern Illinois,Notre Dame,13,7,59,3,4,0,Pass Incompletion,Ethan Hampton pass incomplete,-0.7186703560809607,2024-09-07T20:17:54.000Z
+401628977102938301,401628977,4016289778,10,2,6:16,Northern Illinois,Notre Dame,13,7,59,4,4,0,Punt,"Tom Foley punt for 29 yds, fair catch by Jaden Greathouse at the ND 30",,2024-09-07T20:38:03.000Z
+401628977102925001,401628977,4016289778,5,2,7:49,Northern Illinois,Notre Dame,13,7,71,3,2,0,Timeout,"Timeout Northern Illinois, clock 07:49",,2024-09-07T20:34:46.000Z
+401628977102939001,401628977,4016289778,11,2,6:09,Notre Dame,Northern Illinois,7,13,70,1,10,0,Timeout,"Timeout Notre Dame, clock 06:09",,2024-09-07T20:17:54.000Z
+401628977102968301,401628977,4016289779,8,2,3:16,Notre Dame,Northern Illinois,7,13,47,4,4,0,Punt,"James Rendell punt for 35 yds, downed at the NIU 12",,2024-09-07T20:17:54.000Z
+401628977102967801,401628977,4016289779,7,2,3:21,Notre Dame,Northern Illinois,7,13,47,3,4,0,Pass Incompletion,Riley Leonard pass incomplete,-1.0551802473396048,2024-09-07T20:17:54.000Z
+401628977102959401,401628977,4016289779,6,2,4:05,Notre Dame,Northern Illinois,7,13,49,2,6,2,Pass Reception,Riley Leonard pass complete to Jeremiyah Love for 2 yds to the NIU 47,-0.677741891349811,2024-09-07T20:17:54.000Z
+401628977102956501,401628977,4016289779,5,2,4:34,Notre Dame,Northern Illinois,7,13,53,1,10,4,Rush,Jeremiyah Love run for 4 yds to the NIU 49,-0.1543469215353017,2024-09-07T20:17:54.000Z
+401628977102949201,401628977,4016289779,4,2,5:07,Notre Dame,Northern Illinois,7,13,65,3,5,12,Pass Reception,Riley Leonard pass complete to Mitchell Evans for 12 yds to the ND 47 for a 1ST down,2.40926952349965,2024-09-07T20:17:54.000Z
+401628977102946501,401628977,4016289779,3,2,5:34,Notre Dame,Northern Illinois,7,13,61,3,1,17,Rush,"Jeremiyah Love run for 27 yds to the NIU 34 Notre Dame Penalty, Offensive Holding (-10 Yards) to the ND 35",2.3197727985803738,2024-09-07T20:42:34.000Z
+401628977102946001,401628977,4016289779,2,2,5:39,Notre Dame,Northern Illinois,7,13,61,2,1,0,Pass Incompletion,Riley Leonard pass incomplete,-1.3922179055870938,2024-09-07T20:17:54.000Z
+401628977102939002,401628977,4016289779,1,2,6:09,Notre Dame,Northern Illinois,7,13,70,1,10,9,Rush,Jeremiyah Love run for 9 yds to the ND 39,1.352349268401042,2024-09-07T20:17:54.000Z
+401628977102978201,401628977,40162897710,2,2,2:17,Northern Illinois,Notre Dame,13,7,87,2,9,0,Timeout,"Timeout Northern Illinois, clock 02:17",,2024-09-07T20:48:41.000Z
+401628977102979001,401628977,40162897710,3,2,2:09,Northern Illinois,Notre Dame,13,7,87,2,9,8,Rush,Antario Brown run for 8 yds to the NIU 21,0.33734234066437185,2024-09-07T20:17:54.000Z
+401628977102969402,401628977,40162897710,1,2,3:05,Northern Illinois,Notre Dame,13,7,88,1,10,1,Rush,Antario Brown run for 1 yd to the NIU 13,-0.32181812145469557,2024-09-07T20:46:55.000Z
+401628977102979902,401628977,40162897710,5,2,2:00,Northern Illinois,Notre Dame,13,7,79,3,1,0,Rush,Antario Brown run for no gain to the NIU 21,-0.394048559462032,2024-09-07T20:50:10.000Z
+401628977102979901,401628977,40162897710,4,2,2:00,Northern Illinois,Notre Dame,13,7,79,3,1,0,Timeout,"Timeout Notre Dame, clock 02:00",,2024-09-07T20:50:10.000Z
+401628977102985001,401628977,40162897710,6,2,1:49,Northern Illinois,Notre Dame,13,7,79,4,1,0,Timeout,"Timeout Notre Dame, clock 01:49",,2024-09-07T20:53:09.000Z
+401628977102985201,401628977,40162897710,7,2,1:47,Northern Illinois,Notre Dame,13,7,79,4,1,0,Punt,Tom Foley punt for 40 yds,,2024-09-07T20:17:54.000Z
+401628977102994501,401628977,40162897711,3,2,0:54,Notre Dame,Northern Illinois,7,13,49,1,10,0,Rush,Devyn Ford run for no gain to the NIU 49,-1.0955888671820908,2024-09-07T20:17:54.000Z
+401628977102988501,401628977,40162897711,2,2,1:14,Notre Dame,Northern Illinois,7,13,55,2,4,6,Pass Reception,Riley Leonard pass complete to Devyn Ford for 6 yds to the NIU 49 for a 1ST down,0.6900820385139141,2024-09-07T20:17:54.000Z
+401628977102985802,401628977,40162897711,1,2,1:41,Notre Dame,Northern Illinois,7,13,61,1,10,6,Pass Reception,Riley Leonard pass complete to Beaux Collins for 6 yds to the ND 45,0.4026034463137036,2024-09-07T20:54:02.000Z
+401628977102999902,401628977,40162897711,12,2,0:00,Notre Dame,Northern Illinois,7,13,74,0,3,48,End of Half,End of 2nd Quarter,,2024-09-07T21:01:30.000Z
+401628977102999601,401628977,40162897711,10,2,0:03,Notre Dame,Northern Illinois,7,13,30,4,3,0,Timeout,"Timeout Notre Dame, clock 00:03",,2024-09-07T21:00:15.000Z
+401628977102994801,401628977,40162897711,4,2,0:51,Notre Dame,Northern Illinois,7,13,49,2,10,0,Timeout,"Timeout Notre Dame, clock 00:51",,2024-09-07T20:55:35.000Z
+401628977102994802,401628977,40162897711,5,2,0:51,Notre Dame,Northern Illinois,7,13,49,2,10,-14,Fumble Recovery (Own),"Riley Leonard sacked for a loss of 14 yards to the ND 37 TEAM fumbled, recovered by ND , return for 0 yards",-2.3800386236421343,2024-09-07T20:55:35.000Z
+401628977102995601,401628977,40162897711,6,2,0:43,Notre Dame,Northern Illinois,7,13,63,3,24,26,Pass Reception,"Riley Leonard pass complete to Jaden Greathouse for 11 yds to the NIU 48 for a 1ST down Northern Illinois Penalty, Personal Foul (Nate Valcarcel) to the NIU 37 for a 1ST down",4.18654941098473,2024-09-07T20:56:54.000Z
+401628977102996201,401628977,40162897711,7,2,0:37,Notre Dame,Northern Illinois,7,13,37,1,10,3,Pass Reception,Riley Leonard pass complete to Kris Mitchell for 3 yds to the NIU 34,-0.2366089144620603,2024-09-07T20:58:51.000Z
+401628977102998101,401628977,40162897711,8,2,0:18,Notre Dame,Northern Illinois,7,13,34,2,7,0,Pass Incompletion,Riley Leonard pass incomplete,-0.8424218332734518,2024-09-07T20:17:54.000Z
+401628977102998701,401628977,40162897711,9,2,0:12,Notre Dame,Northern Illinois,7,13,34,3,7,4,Rush,Aneyas Williams run for 4 yds to the NIU 30,-0.146533196859771,2024-09-07T20:17:54.000Z
+401628977102999602,401628977,40162897711,11,2,0:03,Notre Dame,Northern Illinois,7,13,30,4,3,48,Blocked Field Goal,"Mitch Jeter 48 yd FG blocked by Cade Haberman, recovered by NIU Santana Banner, returned 47 yards to the ND 26",,2024-09-07T21:01:11.000Z
+401628977103849902,401628977,40162897712,1,3,15:00,Notre Dame,Northern Illinois,7,13,65,0,0,0,Kickoff,Mitch Jeter kickoff for 64 yds fair catch by JaVaughn Byrd at the NIU 25,,2024-09-07T21:22:37.000Z
+401628977103874701,401628977,40162897712,6,3,12:52,Northern Illinois,Notre Dame,13,7,38,1,10,0,Timeout,"Timeout Notre Dame, clock 12:52",,2024-09-07T21:22:37.000Z
+401628977103879401,401628977,40162897712,9,3,12:05,Northern Illinois,Notre Dame,13,7,32,3,4,0,Timeout,"Timeout Notre Dame, clock 12:05",,2024-09-07T21:29:30.000Z
+401628977103888201,401628977,40162897712,12,3,11:17,Notre Dame,Northern Illinois,7,13,64,1,10,0,Timeout,"Timeout Notre Dame, clock 11:17",,2024-09-07T21:32:17.000Z
+401628977103854101,401628977,40162897712,2,3,14:58,Northern Illinois,Notre Dame,13,7,75,1,10,1,Rush,Antario Brown run for 1 yd to the NIU 26,-0.5874795431016855,2024-09-07T21:22:37.000Z
+401628977103858001,401628977,40162897712,3,3,14:19,Northern Illinois,Notre Dame,13,7,74,2,9,10,Rush,Antario Brown run for 10 yds to the NIU 36 for a 1ST down,1.518042055047676,2024-09-07T21:22:37.000Z
+401628977103866001,401628977,40162897712,4,3,13:39,Northern Illinois,Notre Dame,13,7,64,1,10,12,Pass Reception,Ethan Hampton pass complete to Cam Thompson for 12 yds to the NIU 48 for a 1ST down,1.1391383190649,2024-09-07T21:22:37.000Z
+401628977103869701,401628977,40162897712,5,3,13:02,Northern Illinois,Notre Dame,13,7,52,1,10,14,Pass Reception,Ethan Hampton pass complete to Keyshaun Pipkin for 14 yds to the ND 38 for a 1ST down,0.913461640125243,2024-09-07T21:22:37.000Z
+401628977103876101,401628977,40162897712,7,3,12:38,Northern Illinois,Notre Dame,13,7,38,1,10,6,Rush,Antario Brown run for 6 yds to the ND 32,0.2517020867787,2024-09-07T21:22:37.000Z
+401628977103879001,401628977,40162897712,8,3,12:09,Northern Illinois,Notre Dame,13,7,32,2,4,0,Pass Incompletion,Ethan Hampton pass incomplete,-0.781180687607332,2024-09-07T21:22:37.000Z
+401628977103879601,401628977,40162897712,10,3,12:03,Northern Illinois,Notre Dame,13,7,32,3,4,-4,Rush,Antario Brown run for a loss of 4 yards to the ND 36,-1.8437845117160414,2024-09-07T21:22:37.000Z
+401628977103887801,401628977,40162897712,11,3,11:21,Northern Illinois,Notre Dame,13,7,36,4,8,53,Field Goal Missed,Kanon Woodill 53 yd FG MISSED,,2024-09-07T21:22:37.000Z
+401628977103888401,401628977,40162897713,1,3,11:15,Notre Dame,Northern Illinois,7,13,64,1,10,3,Rush,Jeremiyah Love run for 3 yds to the ND 39,-0.4136553890915255,2024-09-07T21:22:37.000Z
+401628977103895401,401628977,40162897713,2,3,10:45,Notre Dame,Northern Illinois,7,13,61,2,7,9,Pass Reception,Riley Leonard pass complete to Jaden Greathouse for 9 yds to the ND 48 for a 1ST down,1.5527937081564256,2024-09-07T21:22:37.000Z
+401628977103898101,401628977,40162897713,3,3,10:18,Notre Dame,Northern Illinois,7,13,52,1,10,1,Rush,Jeremiyah Love run for 1 yd to the ND 49,-0.9023678946876946,2024-09-07T21:22:37.000Z
+401628977103906201,401628977,40162897713,4,3,9:37,Notre Dame,Northern Illinois,7,13,51,2,9,10,Pass Reception,Riley Leonard pass complete to Kris Mitchell for 10 yds to the NIU 41 for a 1ST down,1.6699025575016062,2024-09-07T21:22:37.000Z
+401628977103909101,401628977,40162897713,5,3,9:08,Notre Dame,Northern Illinois,7,13,41,1,10,7,Rush,Jeremiyah Love run for 7 yds to the NIU 34,0.4598399849082394,2024-09-07T21:22:37.000Z
+401628977103916501,401628977,40162897713,6,3,8:34,Notre Dame,Northern Illinois,14,13,34,2,3,34,Rushing Touchdown,Jeremiyah Love run for 34 yds for a TD (Mitch Jeter KICK),2.78067964098828,2024-09-07T21:38:06.000Z
+401628977103916505,401628977,40162897714,2,3,8:34,Notre Dame,Northern Illinois,14,13,65,0,0,0,Kickoff,Mitch Jeter kickoff for 55 yds fair catch by JaVaughn Byrd at the NIU 25,,2024-09-07T21:38:29.000Z
+401628977103916504,401628977,40162897714,1,3,8:34,Notre Dame,Northern Illinois,14,13,65,0,0,0,Timeout,"Timeout Notre Dame, clock 08:34",,2024-09-07T21:38:29.000Z
+401628977103964901,401628977,40162897714,11,3,3:50,Northern Illinois,Notre Dame,13,14,48,2,14,0,Timeout,"Timeout Notre Dame, clock 03:50",,2024-09-07T21:22:37.000Z
+401628977103916701,401628977,40162897714,3,3,8:32,Northern Illinois,Notre Dame,13,14,75,1,10,2,Rush,Antario Brown run for 2 yds to the NIU 27,-0.45260367932203766,2024-09-07T21:22:37.000Z
+401628977103924901,401628977,40162897714,4,3,7:50,Northern Illinois,Notre Dame,13,14,73,2,8,6,Rush,Antario Brown run for 6 yds to the NIU 33,0.23301622469642863,2024-09-07T21:22:37.000Z
+401628977103929401,401628977,40162897714,5,3,7:05,Northern Illinois,Notre Dame,13,14,67,3,2,12,Pass Reception,Ethan Hampton pass complete to Tristen Tewes for 12 yds to the NIU 45 for a 1ST down,2.0207293370305655,2024-09-07T21:22:37.000Z
+401628977103938001,401628977,40162897714,6,3,6:19,Northern Illinois,Notre Dame,13,14,55,1,10,3,Rush,Antario Brown run for 3 yds to the NIU 48,-0.4238622892911614,2024-09-07T21:22:37.000Z
+401628977103946701,401628977,40162897714,7,3,5:32,Northern Illinois,Notre Dame,13,14,52,2,7,6,Rush,Gavin Williams run for 6 yds to the ND 46,0.3721633352251514,2024-09-07T21:22:37.000Z
+401628977103954101,401628977,40162897714,8,3,4:58,Northern Illinois,Notre Dame,13,14,46,3,1,2,Rush,Ethan Hampton run for 2 yds to the ND 44 for a 1ST down,0.9154298338723537,2024-09-07T21:22:37.000Z
+401628977103958501,401628977,40162897714,9,3,4:14,Northern Illinois,Notre Dame,13,14,44,1,10,2,Rush,"George Dimopoulos run for 12 yds to the NIU 32 Northern Illinois Penalty, Offensive Holding (-10 Yards) to the 50 yard line",-0.52968574160999,2024-09-07T21:48:12.000Z
+401628977103964501,401628977,40162897714,10,3,3:54,Northern Illinois,Notre Dame,13,14,50,1,16,2,Rush,Gavin Williams run for 2 yds to the ND 48,-0.613818049492572,2024-09-07T21:22:37.000Z
+401628977103966201,401628977,40162897714,12,3,3:37,Northern Illinois,Notre Dame,13,14,48,2,14,7,Rush,Gavin Williams run for 7 yds to the ND 41,0.5139988770841075,2024-09-07T21:22:37.000Z
+401628977103974601,401628977,40162897714,13,3,2:53,Northern Illinois,Notre Dame,13,14,41,3,7,0,Pass Incompletion,Ethan Hampton pass incomplete,-1.0381135967514794,2024-09-07T21:22:37.000Z
+401628977103975401,401628977,40162897714,14,3,2:45,Northern Illinois,Notre Dame,13,14,41,4,7,0,Punt,punt for 41 yds for a touchback,,2024-09-07T21:53:30.000Z
+401628977103975403,401628977,40162897715,1,3,2:45,Notre Dame,Northern Illinois,14,13,80,1,10,1,Rush,Jadarian Price run for 1 yd to the ND 21,-0.46882789768185695,2024-09-07T21:53:30.000Z
+401628977103978601,401628977,40162897715,2,3,2:13,Notre Dame,Northern Illinois,14,13,79,2,9,4,Pass Reception,Riley Leonard pass complete to Jayden Thomas for 4 yds to the ND 25,-0.05204114467475218,2024-09-07T21:22:37.000Z
+401628977103984701,401628977,40162897715,3,3,1:52,Notre Dame,Northern Illinois,14,13,75,3,5,0,Pass Incompletion,Riley Leonard pass incomplete,-0.28240901081580017,2024-09-07T21:22:37.000Z
+401628977103985601,401628977,40162897715,4,3,1:43,Notre Dame,Northern Illinois,14,13,75,4,5,3,Punt,"James Rendell punt for 38 yds , Dane Pardridge returns for 3 yds to the NIU 40",,2024-09-07T21:22:37.000Z
+401628977103997804,401628977,40162897716,5,3,0:00,Northern Illinois,Notre Dame,13,14,42,0,3,-9,End Period,End of 3rd Quarter,,2024-09-07T22:02:10.000Z
+401628977104878801,401628977,40162897716,11,4,12:11,Notre Dame,Northern Illinois,14,13,70,1,10,0,Timeout,"Timeout Notre Dame, clock 12:11",,2024-09-07T22:05:58.000Z
+401628977103986102,401628977,40162897716,1,3,1:38,Northern Illinois,Notre Dame,13,14,60,1,10,11,Rush,Ethan Hampton run for 11 yds to the ND 49 for a 1ST down,0.994570052506427,2024-09-07T21:57:06.000Z
+401628977103988801,401628977,40162897716,2,3,1:11,Northern Illinois,Notre Dame,13,14,49,1,10,0,Pass Incompletion,Ethan Hampton pass incomplete,-1.0955888671820908,2024-09-07T21:22:37.000Z
+401628977103989301,401628977,40162897716,3,3,1:06,Northern Illinois,Notre Dame,13,14,49,2,10,7,Rush,Gavin Williams run for 7 yds to the ND 42,0.5661769350540417,2024-09-07T21:22:37.000Z
+401628977103997803,401628977,40162897716,4,3,0:21,Northern Illinois,Notre Dame,13,14,42,3,3,-10,Penalty,"Northern Illinois Penalty, Offensive Holding (-10 Yards) to the NIU 49",,2024-09-07T21:22:37.000Z
+401628977104854101,401628977,40162897716,6,4,14:58,Northern Illinois,Notre Dame,13,14,51,3,12,13,Pass Reception,Ethan Hampton pass complete to Grayson Barnes for 13 yds to the ND 38 for a 1ST down,3.1561829816782643,2024-09-07T22:05:58.000Z
+401628977104857601,401628977,40162897716,7,4,14:23,Northern Illinois,Notre Dame,13,14,38,1,10,0,Rush,Gavin Williams run for no gain to the ND 38,-0.7828922522763084,2024-09-07T22:05:58.000Z
+401628977104866101,401628977,40162897716,8,4,13:38,Northern Illinois,Notre Dame,13,14,38,2,10,6,Rush,Gavin Williams run for 6 yds to the ND 32,0.2534136514476764,2024-09-07T22:05:58.000Z
+401628977104874101,401628977,40162897716,9,4,12:58,Northern Illinois,Notre Dame,13,14,32,3,4,2,Rush,Antario Brown run for 2 yds to the ND 30,-0.5280448933500833,2024-09-07T22:05:58.000Z
+401628977104878601,401628977,40162897716,10,4,12:13,Northern Illinois,Notre Dame,13,14,30,4,2,0,Pass Incompletion,Ethan Hampton pass incomplete,-2.8478838572360967,2024-09-07T22:05:58.000Z
+401628977104879002,401628977,40162897717,1,4,12:09,Notre Dame,Northern Illinois,14,13,70,1,10,2,Pass Reception,Riley Leonard pass complete to Jaden Greathouse for 2 yds to the ND 32,-0.547828113258845,2024-09-07T22:11:41.000Z
+401628977104885901,401628977,40162897717,2,4,11:40,Notre Dame,Northern Illinois,14,13,68,2,8,3,Rush,Jeremiyah Love run for 3 yds to the ND 35,-0.2639543249097694,2024-09-07T22:05:58.000Z
+401628977104889801,401628977,40162897717,3,4,11:01,Notre Dame,Northern Illinois,14,13,65,3,5,0,Pass Incompletion,Riley Leonard pass incomplete,-0.4881067539127617,2024-09-07T22:05:58.000Z
+401628977104894101,401628977,40162897717,4,4,10:58,Notre Dame,Northern Illinois,14,13,65,4,5,8,Punt,"James Rendell punt for 44 yds , Dane Pardridge returns for 8 yds to the NIU 29",,2024-09-07T22:12:56.000Z
+401628977104925001,401628977,40162897718,7,4,7:49,Notre Dame,Northern Illinois,14,13,75,1,10,0,Timeout,"Timeout Notre Dame, clock 07:49",,2024-09-07T22:18:18.000Z
+401628977104896001,401628977,40162897718,1,4,10:39,Northern Illinois,Notre Dame,13,14,71,1,10,4,Rush,Gavin Williams run for 4 yds to the NIU 33,-0.1350508541150131,2024-09-07T22:05:58.000Z
+401628977104899801,401628977,40162897718,2,4,10:01,Northern Illinois,Notre Dame,13,14,67,2,6,8,Pass Reception,Ethan Hampton pass complete to George Dimopoulos for 8 yds to the NIU 41 for a 1ST down,1.2516553770715504,2024-09-07T22:05:58.000Z
+401628977104907601,401628977,40162897718,3,4,9:23,Northern Illinois,Notre Dame,13,14,59,1,10,1,Rush,Gavin Williams run for 1 yd to the NIU 42,-0.9199637917398017,2024-09-07T22:05:58.000Z
+401628977104915201,401628977,40162897718,4,4,8:47,Northern Illinois,Notre Dame,13,14,58,2,9,3,Rush,Gavin Williams run for 3 yds to the NIU 45,-0.3599609238762157,2024-09-07T22:05:58.000Z
+401628977104924001,401628977,40162897718,5,4,7:59,Northern Illinois,Notre Dame,13,14,55,3,6,0,Pass Incompletion,Ethan Hampton pass incomplete,-0.7351396050304411,2024-09-07T22:05:58.000Z
+401628977104924401,401628977,40162897718,6,4,7:55,Northern Illinois,Notre Dame,13,14,55,4,6,0,Punt,"Tom Foley punt for 30 yds, fair catch by Jaden Greathouse at the ND 25",,2024-09-07T22:17:40.000Z
+401628977104944401,401628977,40162897719,5,4,5:55,Northern Illinois,Notre Dame,13,14,50,1,10,0,Timeout,"Timeout Notre Dame, clock 05:55",,2024-09-07T22:23:24.000Z
+401628977104925003,401628977,40162897719,1,4,7:49,Notre Dame,Northern Illinois,14,13,75,1,10,7,Rush,Jadarian Price run for 7 yds to the ND 32,0.604642460086338,2024-09-07T22:18:48.000Z
+401628977104928601,401628977,40162897719,2,4,7:13,Notre Dame,Northern Illinois,14,13,68,2,3,8,Pass Reception,Riley Leonard pass complete to Beaux Collins for 8 yds to the ND 40 for a 1ST down,0.7162120554913081,2024-09-07T22:05:58.000Z
+401628977104936001,401628977,40162897719,3,4,6:39,Notre Dame,Northern Illinois,14,13,60,1,10,9,Pass Reception,Riley Leonard pass complete to Beaux Collins for 9 yds to the ND 49,1.339431621541097,2024-09-07T22:05:58.000Z
+401628977104939201,401628977,40162897719,4,4,6:07,Notre Dame,Northern Illinois,14,13,51,2,1,33,Pass Interception Return,Riley Leonard pass intercepted Amariyun Knighten return for 33 yds to the 50 yard line,-3.5825310173974216,2024-09-07T22:05:58.000Z
+401628977104979901,401628977,40162897720,7,4,2:00,Northern Illinois,Notre Dame,13,14,31,4,2,0,Timeout,"Timeout Notre Dame, clock 02:00",,2024-09-07T22:30:30.000Z
+401628977104985202,401628977,40162897720,10,4,1:47,Northern Illinois,Notre Dame,13,14,27,2,9,0,Timeout,"Timeout Notre Dame, clock 01:47",,2024-09-07T22:34:07.000Z
+401628977104995601,401628977,40162897720,12,4,0:43,Northern Illinois,Notre Dame,13,14,20,3,2,0,Timeout,"Timeout Northern Illinois, clock 00:43",,2024-09-07T22:37:25.000Z
+401628977104996803,401628977,40162897720,16,4,0:31,Northern Illinois,Notre Dame,16,14,65,0,0,0,Timeout,"Timeout Northern Illinois, clock 00:31",,2024-09-07T22:43:22.000Z
+401628977104996301,401628977,40162897720,14,4,0:36,Northern Illinois,Notre Dame,13,14,19,4,1,0,Timeout,"Timeout Notre Dame, clock 00:36",,2024-09-07T22:39:13.000Z
+401628977104944403,401628977,40162897720,1,4,5:55,Northern Illinois,Notre Dame,13,14,50,1,10,9,Rush,Gavin Williams run for 9 yds to the ND 41,1.094285718541039,2024-09-07T22:25:17.000Z
+401628977104948501,401628977,40162897720,2,4,5:14,Northern Illinois,Notre Dame,13,14,41,2,1,0,Rush,Gavin Williams run for no gain to the ND 41,-1.132096065375069,2024-09-07T22:05:58.000Z
+401628977104956601,401628977,40162897720,3,4,4:33,Northern Illinois,Notre Dame,13,14,41,3,1,2,Rush,Grayson Barnes run for 2 yds to the ND 39 for a 1ST down,0.738783724023852,2024-09-07T22:05:58.000Z
+401628977104964001,401628977,40162897720,4,4,3:59,Northern Illinois,Notre Dame,13,14,39,1,10,-2,Rush,Gavin Williams run for a loss of 2 yards to the ND 41,-1.2238472477956,2024-09-07T22:05:58.000Z
+401628977104968201,401628977,40162897720,5,4,3:17,Northern Illinois,Notre Dame,13,14,41,2,12,8,Pass Reception,Ethan Hampton pass complete to Dane Pardridge for 8 yds to the ND 33,0.6711470442619517,2024-09-07T22:05:58.000Z
+401628977104976501,401628977,40162897720,6,4,2:34,Northern Illinois,Notre Dame,13,14,33,3,4,2,Pass Reception,Ethan Hampton pass complete to Andrew McElroy for 2 yds to the ND 31,-0.54561357059767,2024-09-07T22:05:58.000Z
+401628977104984301,401628977,40162897720,8,4,1:56,Northern Illinois,Notre Dame,13,14,31,4,2,3,Rush,Ethan Hampton run for 3 yds to the ND 28 for a 1ST down,1.4747378549244383,2024-09-07T22:05:58.000Z
+401628977104985201,401628977,40162897720,9,4,1:47,Northern Illinois,Notre Dame,13,14,28,1,10,1,Rush,Gavin Williams run for 1 yd to the ND 27,-0.3905035886634815,2024-09-07T22:34:07.000Z
+401628977104985401,401628977,40162897720,11,4,1:45,Northern Illinois,Notre Dame,13,14,27,2,9,7,Rush,Gavin Williams run for 7 yds to the ND 20,0.2990497291126335,2024-09-07T22:05:58.000Z
+401628977104995602,401628977,40162897720,13,4,0:43,Northern Illinois,Notre Dame,13,14,20,3,2,1,Rush,Gavin Williams run for 1 yd to the ND 19,-0.4496548750886813,2024-09-07T22:37:25.000Z
+401628977104996801,401628977,40162897720,15,4,0:31,Northern Illinois,Notre Dame,16,14,19,4,1,35,Field Goal Good,Kanon Woodill 35 yd FG GOOD,,2024-09-07T22:41:33.000Z
+401628977104996804,401628977,40162897721,1,4,0:31,Northern Illinois,Notre Dame,16,14,65,0,0,25,Kickoff Return (Offense),"Austin Bullock kickoff for 53 yds , Jayden Harrison return for 25 yds to the ND 37",,2024-09-07T22:43:22.000Z
+401628977104999902,401628977,40162897721,7,4,0:00,Notre Dame,Northern Illinois,14,16,47,0,10,-6,End of Game,End of 4th Quarter,,2024-09-07T22:48:11.000Z
+401628977104997502,401628977,40162897721,2,4,0:24,Notre Dame,Northern Illinois,14,16,63,1,10,0,Pass Incompletion,Riley Leonard pass incomplete,-1.065701080215459,2024-09-07T22:44:37.000Z
+401628977104998201,401628977,40162897721,3,4,0:17,Notre Dame,Northern Illinois,14,16,63,2,10,19,Pass Reception,Riley Leonard pass complete to Kris Mitchell for 19 yds to the NIU 44 for a 1ST down,2.703329516283188,2024-09-07T22:05:58.000Z
+401628977104999001,401628977,40162897721,4,4,0:09,Notre Dame,Northern Illinois,14,16,44,1,10,0,Pass Incompletion,Riley Leonard pass incomplete,-0.9690270974076257,2024-09-07T22:46:28.000Z
+401628977104999002,401628977,40162897721,5,4,0:09,Notre Dame,Northern Illinois,14,16,44,2,10,0,Pass Incompletion,Riley Leonard pass incomplete,-1.0658475431296655,2024-09-07T22:46:28.000Z
+401628977104999401,401628977,40162897721,6,4,0:05,Notre Dame,Northern Illinois,14,16,44,3,10,62,Blocked Field Goal,Mitch Jeter 62 yd FG blocked by Cade Haberman,,2024-09-07T22:47:05.000Z

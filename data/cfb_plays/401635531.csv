@@ -1,0 +1,151 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401635531101854401,401635531,4016355311,2,1,14:55,Boston College,Duquesne,0,0,79,1,10,-1,Pass Reception,Thomas Castellanos pass complete to Lewis Bond for a loss of 1 yard to the BC 20,-0.6653743866116795,2024-09-07T19:31:54.000Z
+401635531101858001,401635531,4016355311,3,1,14:19,Boston College,Duquesne,0,0,80,2,11,-1,Pass Reception,Thomas Castellanos pass complete to Lewis Bond for a loss of 1 yard to the BC 19,-0.26228297974464176,2024-09-07T19:31:54.000Z
+401635531101865501,401635531,4016355311,4,1,13:44,Boston College,Duquesne,0,0,81,3,12,8,Rush,Thomas Castellanos run for 8 yds to the BC 27,0.12935223197226084,2024-09-07T19:31:54.000Z
+401635531101849903,401635531,4016355311,1,1,15:00,Duquesne,Boston College,0,0,65,0,0,18,Kickoff,"Andrew Smith kickoff for 62 yds , Jayden McGowan return for 18 yds to the BC 21",,2024-09-07T19:31:54.000Z
+401635531101869901,401635531,4016355311,5,1,13:00,Boston College,Duquesne,0,0,73,4,4,0,Punt,Sam Candotti punt for 20 yds,,2024-09-07T19:31:54.000Z
+401635531101878101,401635531,4016355312,1,1,12:18,Duquesne,Boston College,0,0,39,2,7,2,Rush,JaMario Clements run for 2 yds to the BC 37,-0.5455624473584936,2024-09-07T19:37:42.000Z
+401635531101886101,401635531,4016355312,2,1,11:38,Duquesne,Boston College,0,0,37,3,5,0,Pass Incompletion,Darius Perrantes pass incomplete,-1.0644495812891197,2024-09-07T19:31:54.000Z
+401635531101886501,401635531,4016355312,3,1,11:34,Duquesne,Boston College,0,0,37,4,5,-5,Penalty,"Duquesne Penalty, Delay Of Game (Darius Perrantes) to the BC 42",,2024-09-07T19:38:59.000Z
+401635531101886502,401635531,4016355312,4,1,11:34,Duquesne,Boston College,0,0,42,4,10,0,Punt,Kyle Romenick punt for 42 yds for a touchback,,2024-09-07T19:38:59.000Z
+401635531101994301,401635531,4016355312,5,1,0:56,Duquesne,Boston College,0,0,42,1,10,3,Rush,JaMario Clements run for 3 yds to the BC 39,-0.2936970531139116,2024-09-07T19:37:00.000Z
+401635531101887402,401635531,4016355313,1,1,11:25,Boston College,Duquesne,0,0,80,1,10,2,Rush,Kye Robichaux run for 2 yds to the BC 22,-0.3623882030735057,2024-09-07T19:31:54.000Z
+401635531101894601,401635531,4016355313,2,1,10:53,Boston College,Duquesne,0,0,78,2,8,30,Pass Reception,Thomas Castellanos pass complete to Jerand Bradley for 30 yds to the DUQ 48 for a 1ST down,3.0622121623986516,2024-09-07T19:31:54.000Z
+401635531101897401,401635531,4016355313,3,1,10:25,Boston College,Duquesne,0,0,48,1,10,15,Penalty,"Duquesne Penalty, Block below the waist on DAVIS, Carnell enforced (Nell Davis) to the DUQ 31 for a 1ST down",,2024-09-07T19:31:54.000Z
+401635531101898601,401635531,4016355313,4,1,10:13,Boston College,Duquesne,0,0,31,1,10,2,Rush,Kye Robichaux run for 2 yds to the DUQ 29,-0.3100175172690756,2024-09-07T19:31:54.000Z
+401635531101906601,401635531,4016355313,5,1,9:33,Boston College,Duquesne,0,0,29,2,8,0,Pass Incompletion,Thomas Castellanos pass incomplete,-0.6971224254482103,2024-09-07T19:31:54.000Z
+401635531101907101,401635531,4016355313,6,1,9:28,Boston College,Duquesne,0,0,29,3,8,26,Pass Reception,Thomas Castellanos pass complete to Lewis Bond for 26 yds to the DUQ 3 for a 1ST down,2.384634380058897,2024-09-07T19:31:54.000Z
+401635531101915901,401635531,4016355313,7,1,8:40,Boston College,Duquesne,7,0,3,1,3,3,Rushing Touchdown,Treshaun Ward run for 3 yds for a TD (Luca Lombardo KICK),1.464451732731337,2024-09-07T19:49:43.000Z
+401635531101935801,401635531,4016355314,6,1,6:41,Duquesne,Boston College,0,7,65,4,0,5,Rush,JaMario Clements run for 5 yds to the DUQ 40 for a 1ST down,,2024-09-07T19:31:54.000Z
+401635531101915903,401635531,4016355314,1,1,8:40,Boston College,Duquesne,7,0,65,0,0,0,Kickoff,Luca Lombardo kickoff for 65 yds for a touchback,,2024-09-07T19:49:43.000Z
+401635531101916101,401635531,4016355314,2,1,8:38,Duquesne,Boston College,0,7,75,1,10,1,Pass Reception,Darius Perrantes pass complete to Jermaine Johnson for 1 yd to the DUQ 26,-0.5874795431016855,2024-09-07T19:31:54.000Z
+401635531101919801,401635531,4016355314,3,1,8:01,Duquesne,Boston College,0,7,74,2,9,4,Rush,JaMario Clements run for 4 yds to the DUQ 30,-0.07170781243074043,2024-09-07T19:31:54.000Z
+401635531101927701,401635531,4016355314,4,1,7:22,Duquesne,Boston College,0,7,70,3,5,0,Rush,Darius Perrantes run for no gain to the DUQ 30,-0.3716239049161505,2024-09-07T19:31:54.000Z
+401635531101935101,401635531,4016355314,5,1,6:48,Duquesne,Boston College,0,7,70,4,5,5,Penalty,"(06:48) ROMENICK, Kyle punt 38 yards to the BOS32, fair catch by MCGOWAN, Jayden, clock 06:46. PENALTY BOS Running Into the kicker on MCGOWAN, Owen enforced 5 yards from the DUQ30 to the DUQ35 and results in a 1ST DOWN [FAKE PUNT]. NO PLAY (replay the down).",,2024-09-07T19:31:54.000Z
+401635531101939301,401635531,4016355314,7,1,6:06,Duquesne,Boston College,0,7,60,1,10,6,Rush,JaMario Clements run for 6 yds to the DUQ 46,0.4012419719961234,2024-09-07T19:31:54.000Z
+401635531101947101,401635531,4016355314,8,1,5:28,Duquesne,Boston College,0,7,54,2,4,6,Pass Reception,Darius Perrantes pass complete to Jermaine Johnson for 6 yds to the BC 48 for a 1ST down,0.669424795867595,2024-09-07T19:31:54.000Z
+401635531101954801,401635531,4016355314,9,1,4:51,Duquesne,Boston College,0,7,48,1,10,1,Rush,JaMario Clements run for 1 yd to the BC 47,-0.8372206360227173,2024-09-07T19:31:54.000Z
+401635531101959101,401635531,4016355314,10,1,4:08,Duquesne,Boston College,0,7,47,2,9,0,Pass Incompletion,Darius Perrantes pass incomplete,-1.0830328413329795,2024-09-07T19:31:54.000Z
+401635531101964001,401635531,4016355314,11,1,3:59,Duquesne,Boston College,0,7,47,3,9,0,Punt,"Michael Berarducci punt for 41 yds, downed at the BC 6",,2024-09-07T19:31:54.000Z
+401635531101965001,401635531,4016355315,1,1,3:49,Boston College,Duquesne,7,0,94,1,10,7,Rush,Treshaun Ward run for 7 yds to the BC 13,0.3376322450612754,2024-09-07T19:31:54.000Z
+401635531101968101,401635531,4016355315,2,1,3:18,Boston College,Duquesne,7,0,87,2,3,2,Rush,Treshaun Ward run for 2 yds to the BC 15,-0.311451367040144,2024-09-07T19:31:54.000Z
+401635531101975901,401635531,4016355315,3,1,2:40,Boston College,Duquesne,7,0,85,3,1,11,Rush,Kye Robichaux run for 11 yds to the BC 26 for a 1ST down,0.8637362702989293,2024-09-07T19:31:54.000Z
+401635531101984801,401635531,4016355315,4,1,1:51,Boston College,Duquesne,7,0,74,1,10,2,Rush,Treshaun Ward run for 2 yds to the BC 28,-0.4716869696142973,2024-09-07T19:31:54.000Z
+401635531101987901,401635531,4016355315,5,1,1:20,Boston College,Duquesne,14,0,72,2,8,72,Passing Touchdown,Thomas Castellanos pass complete to Reed Harris for 72 yds for a TD (Luca Lombardo KICK),6.478463282075263,2024-09-07T20:05:52.000Z
+401635531101988501,401635531,4016355316,2,1,1:14,Duquesne,Boston College,0,14,80,1,10,3,Pass Reception,Darius Perrantes pass complete to Shawn Solomon Jr. for 3 yds to the DUQ 23,-0.2366097161141063,2024-09-07T19:31:54.000Z
+401635531101994302,401635531,4016355316,3,1,0:56,Duquesne,Boston College,0,14,77,2,7,15,Pass Reception,Darius Perrantes pass complete to Tedy Afful for 15 yds to the DUQ 38 for a 1ST down,1.6696638710397185,2024-09-07T19:37:00.000Z
+401635531102849902,401635531,4016355316,6,2,15:00,Duquesne,Boston College,0,14,57,1,5,0,Rush,Shawn Solomon Jr. run for no gain to the DUQ 43,-1.402799460286996,2024-09-07T20:15:41.000Z
+401635531102857601,401635531,4016355316,7,2,14:23,Duquesne,Boston College,0,14,57,2,5,0,Pass Reception,Darius Perrantes pass complete to Tedy Afful for no gain to the DUQ 43,-1.1346829709010997,2024-09-07T20:15:41.000Z
+401635531102867101,401635531,4016355316,8,2,13:28,Duquesne,Boston College,0,21,57,3,5,45,Interception Return Touchdown,Khari Johnson 45 Yd Interception Return (Luca Lombardo Kick),-8.022761724562574,2024-09-07T20:17:26.000Z
+401635531101999903,401635531,4016355316,5,1,0:00,Duquesne,Boston College,0,14,62,0,10,5,End Period,End of 1st Quarter,,2024-09-07T20:11:16.000Z
+401635531101999902,401635531,4016355316,4,1,0:00,Duquesne,Boston College,0,14,62,1,10,5,Penalty,"PERRANTES, Darius pass deep to the right incomplete intended for AFFUL, Tedy broken up by JACKSON, Amari at the BOS30, clock 00:00. PENALTY BOS Offsides on EZEIRUAKU, Donovan enforced 5 yards from the DUQ38 to the DUQ43 [NHSG]. NO PLAY (replay the down).",,2024-09-07T20:11:16.000Z
+401635531101987903,401635531,4016355316,1,1,1:20,Boston College,Duquesne,14,0,65,0,0,14,Kickoff Return (Offense),"Luca Lombardo kickoff for 59 yds , Jermaine Johnson return for 14 yds to the DUQ 20",,2024-09-07T20:05:52.000Z
+401635531102867201,401635531,4016355317,2,2,13:27,Duquesne,Boston College,0,21,75,1,10,6,Rush,JaMario Clements run for 6 yds to the DUQ 31,0.3333748010525683,2024-09-07T20:15:41.000Z
+401635531102876001,401635531,4016355317,3,2,12:39,Duquesne,Boston College,0,21,69,2,4,4,Rush,JaMario Clements run for 4 yds to the DUQ 35 for a 1ST down,0.5016633079774184,2024-09-07T20:15:41.000Z
+401635531102867103,401635531,4016355317,1,2,13:28,Boston College,Duquesne,21,0,65,0,0,0,Kickoff,Luca Lombardo kickoff for 65 yds for a touchback,,2024-09-07T20:17:26.000Z
+401635531102877301,401635531,4016355317,4,2,12:26,Duquesne,Boston College,0,21,65,1,10,0,Timeout,"Timeout Boston College, clock 12:26",,2024-09-07T20:21:30.000Z
+401635531102877302,401635531,4016355317,5,2,12:26,Duquesne,Boston College,0,21,65,1,10,-2,Rush,JaMario Clements run for a loss of 2 yards to the DUQ 33,-1.3169300165905415,2024-09-07T20:21:30.000Z
+401635531102885901,401635531,4016355317,6,2,11:40,Duquesne,Boston College,0,21,67,2,12,0,Pass Incompletion,Darius Perrantes pass incomplete,-0.4542686160428877,2024-09-07T20:15:41.000Z
+401635531102886001,401635531,4016355317,7,2,11:39,Duquesne,Boston College,0,21,67,3,12,0,Pass Incompletion,Darius Perrantes pass incomplete,-0.21933845556457765,2024-09-07T20:25:08.000Z
+401635531102886901,401635531,4016355317,8,2,11:30,Duquesne,Boston College,0,21,67,4,12,12,Punt,"Kyle Romenick punt for 41 yds , Jayden McGowan returns for 12 yds to the BC 38",,2024-09-07T20:15:41.000Z
+401635531102887601,401635531,4016355318,1,2,11:23,Boston College,Duquesne,21,0,62,1,10,3,Rush,Treshaun Ward run for 3 yds to the BC 41,-0.4251117664036599,2024-09-07T20:15:41.000Z
+401635531102895201,401635531,4016355318,2,2,10:47,Boston College,Duquesne,21,0,59,2,7,25,Pass Reception,Thomas Castellanos pass complete to Lewis Bond for 25 yds to the DUQ 34 for a 1ST down,2.4413892461694804,2024-09-07T20:15:41.000Z
+401635531102897901,401635531,4016355318,3,2,10:20,Boston College,Duquesne,21,0,34,1,10,5,Rush,Treshaun Ward run for 5 yds to the DUQ 29,0.08067951505409,2024-09-07T20:15:41.000Z
+401635531102906001,401635531,4016355318,4,2,9:39,Boston College,Duquesne,21,0,29,2,5,19,Rush,Turbo Richard run for 19 yds to the DUQ 10 for a 1ST down,0.342219803610138,2024-09-07T20:15:41.000Z
+401635531102909401,401635531,4016355318,5,2,9:05,Boston College,Duquesne,21,0,10,1,10,3,Rush,Turbo Richard run for 3 yds to the DUQ 7,-0.093321625768295,2024-09-07T20:15:41.000Z
+401635531102915901,401635531,4016355318,6,2,8:40,Boston College,Duquesne,21,0,7,2,7,3,Rush,Kye Robichaux run for 3 yds to the DUQ 4,-0.0888244534588445,2024-09-07T20:15:41.000Z
+401635531102924001,401635531,4016355318,7,2,7:59,Boston College,Duquesne,28,0,4,3,4,4,Passing Touchdown,Thomas Castellanos pass complete to Kamari Morales for 4 yds for a TD (Luca Lombardo KICK),2.6959729214765815,2024-09-07T20:33:25.000Z
+401635531102924003,401635531,4016355319,1,2,7:59,Boston College,Duquesne,28,0,65,0,0,0,Kickoff,Luca Lombardo kickoff for 65 yds for a touchback,,2024-09-07T20:33:25.000Z
+401635531102924101,401635531,4016355319,2,2,7:58,Duquesne,Boston College,0,28,75,1,10,2,Rush,Shawn Solomon Jr. run for 2 yds to the DUQ 27,-0.45260367932203766,2024-09-07T20:15:41.000Z
+401635531102928601,401635531,4016355319,3,2,7:13,Duquesne,Boston College,0,28,73,2,8,-2,Rush,Shawn Solomon Jr. run for a loss of 2 yards to the DUQ 25,-0.5974712198433529,2024-09-07T20:15:41.000Z
+401635531102937101,401635531,4016355319,4,2,6:28,Duquesne,Boston College,0,28,75,3,10,0,Pass Incompletion,Darius Perrantes pass incomplete,-0.15871308844886392,2024-09-07T20:15:41.000Z
+401635531102938001,401635531,4016355319,5,2,6:19,Duquesne,Boston College,0,28,75,4,10,7,Punt,"Kyle Romenick punt for 35 yds , Jayden McGowan returns for 7 yds to the BC 47",,2024-09-07T21:01:36.000Z
+401635531102938701,401635531,40163553110,1,2,6:12,Boston College,Duquesne,28,0,53,1,10,4,Rush,Datrell Jones run for 4 yds to the DUQ 49,-0.1543469215353017,2024-09-07T20:15:41.000Z
+401635531102946801,401635531,40163553110,2,2,5:31,Boston College,Duquesne,35,0,49,2,6,49,Passing Touchdown,Thomas Castellanos pass complete to Lewis Bond for 49 yds for a TD (Luca Lombardo KICK),4.249646355108609,2024-09-07T20:43:18.000Z
+401635531102946803,401635531,40163553111,1,2,5:31,Boston College,Duquesne,35,0,65,0,0,0,Kickoff,Luca Lombardo kickoff for 65 yds for a touchback,,2024-09-07T20:43:18.000Z
+401635531102947001,401635531,40163553111,2,2,5:29,Duquesne,Boston College,0,35,75,1,10,4,Pass Reception,Darius Perrantes pass complete to Jermaine Johnson for 4 yds to the DUQ 29,-0.1142886249388964,2024-09-07T20:15:41.000Z
+401635531102948801,401635531,40163553111,3,2,5:11,Duquesne,Boston College,0,35,71,2,6,16,Rush,JaMario Clements run for 16 yds to the DUQ 45 for a 1ST down,1.915430507343853,2024-09-07T20:15:41.000Z
+401635531102956101,401635531,40163553111,4,2,4:38,Duquesne,Boston College,0,35,55,1,10,0,Rush,Shawn Solomon Jr. run for no gain to the DUQ 45,-1.1618692012952412,2024-09-07T20:15:41.000Z
+401635531102964201,401635531,40163553111,5,2,3:57,Duquesne,Boston College,0,35,55,2,10,10,Pass Reception,Darius Perrantes pass complete to Tedy Afful for 10 yds to the BC 45 for a 1ST down,1.9619683535445382,2024-09-07T20:15:41.000Z
+401635531102968801,401635531,40163553111,6,2,3:11,Duquesne,Boston College,0,35,45,1,10,2,Rush,Shawn Solomon Jr. run for 2 yds to the BC 43,-0.548127712470997,2024-09-07T20:15:41.000Z
+401635531102977501,401635531,40163553111,7,2,2:24,Duquesne,Boston College,0,35,43,2,8,0,Pass Incompletion,Darius Perrantes pass incomplete,-1.0744871250513215,2024-09-07T20:15:41.000Z
+401635531102977802,401635531,40163553111,8,2,2:21,Duquesne,Boston College,0,35,43,3,8,0,Penalty,"Duquesne Penalty, turnover on downs. PENALTY Intentional Grounding on PERRANTES, Darius enforced a result of a (Yards) to the DUQ 48",,2024-09-07T20:49:47.000Z
+401635531102979301,401635531,40163553111,9,2,2:06,Duquesne,Boston College,0,35,53,4,18,4,Punt,"Kyle Romenick punt for 42 yds , Jayden McGowan returns for 4 yds to the BC 15",,2024-09-07T20:15:41.000Z
+401635531102994801,401635531,40163553112,5,2,0:51,Boston College,Duquesne,42,0,30,2,4,30,Passing Touchdown,Thomas Castellanos pass complete to Treshaun Ward for 30 yds for a TD (Luca Lombardo KICK),2.771260433512953,2024-09-07T20:57:52.000Z
+401635531102979901,401635531,40163553112,1,2,2:00,Boston College,Duquesne,35,0,85,1,10,7,Rush,Kye Robichaux run for 7 yds to the BC 22,0.4482007778738044,2024-09-07T20:52:42.000Z
+401635531102984101,401635531,40163553112,2,2,1:58,Boston College,Duquesne,35,0,78,2,3,27,Rush,Treshaun Ward run for 27 yds to the BC 49 for a 1ST down,2.2493935681084665,2024-09-07T20:15:41.000Z
+401635531102986102,401635531,40163553112,3,2,1:38,Boston College,Duquesne,35,0,51,1,10,15,Penalty,"(01:38) CASTELLANOS, Thomas pass deep to the right incomplete intended for MCGOWAN, Jayden thrown to the DUQ15, clock 01:36. PENALTY DUQ Pass Interference on JONES, T.J. enforced 15 yards to the DUQ36 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-07T20:15:41.000Z
+401635531102986401,401635531,40163553112,4,2,1:35,Boston College,Duquesne,35,0,36,1,10,6,Rush,Treshaun Ward run for 6 yds to the DUQ 30,0.239517661500843,2024-09-07T20:15:41.000Z
+401635531102994803,401635531,40163553113,1,2,0:51,Boston College,Duquesne,42,0,65,0,0,0,Kickoff,Luca Lombardo kickoff for 65 yds for a touchback,,2024-09-07T20:58:41.000Z
+401635531102999902,401635531,40163553113,4,2,0:00,Duquesne,Boston College,0,42,75,0,8,0,End of Half,End of 2nd Quarter,,2024-09-07T20:15:41.000Z
+401635531102995201,401635531,40163553113,2,2,0:47,Duquesne,Boston College,0,42,75,1,10,2,Rush,Shawn Solomon Jr. run for 2 yds to the DUQ 27,-0.45260367932203766,2024-09-07T20:15:41.000Z
+401635531102999301,401635531,40163553113,3,2,0:06,Duquesne,Boston College,0,42,73,2,8,-2,Rush,"(00:06) [NH] Kneel down by PERRANTES, Darius at DUQ25 (team loss of 2).",-0.5974712198433529,2024-09-07T20:15:41.000Z
+401635531103849902,401635531,40163553114,1,3,15:00,Boston College,Duquesne,42,0,65,0,0,0,Kickoff,Liam Connor kickoff for 65 yds for a touchback,,2024-09-07T21:22:06.000Z
+401635531103849905,401635531,40163553114,2,3,15:00,Duquesne,Boston College,0,42,75,1,10,-3,Rush,Shawn Solomon Jr. run for a loss of 3 yards to the DUQ 22,-0.9562833890771465,2024-09-07T21:22:06.000Z
+401635531103858601,401635531,40163553114,3,3,14:13,Duquesne,Boston College,0,42,78,2,13,1,Pass Interception Return,Darius Perrantes pass intercepted Jalen Cheek return for 1 yd to the DUQ 44,0.03403850879846804,2024-09-07T21:22:06.000Z
+401635531103859502,401635531,40163553114,4,3,14:04,Boston College,Duquesne,42,0,44,1,10,-10,Penalty,"(14:04) JONES, Datrell rush to the left for a gain of 9 yards to the DUQ35 (BARNES, CJ), clock 14:00. PENALTY BOS Holding on CLINE, Kevin enforced 10 yards from the DUQ44 to the BOS46 [SG]. NO PLAY (replay the down).",,2024-09-07T21:22:06.000Z
+401635531103865401,401635531,40163553115,1,3,13:45,Boston College,Duquesne,42,0,54,1,20,3,Rush,Datrell Jones run for 3 yds to the BC 49,-0.3502247531752829,2024-09-07T21:22:06.000Z
+401635531103868801,401635531,40163553115,2,3,13:11,Boston College,Duquesne,42,0,51,2,17,2,Rush,Jacobe Robinson run for 2 yds to the DUQ 49,-0.4651542813791893,2024-09-07T21:22:06.000Z
+401635531103876701,401635531,40163553115,3,3,12:32,Boston College,Duquesne,42,0,49,3,15,-2,Sack,"Jacobe Robinson sacked for a loss of 2 yards to the DUQ 47 Jacobe Robinson fumbled, recovered by DUQ Kevin Kurzinger , return for 0 yards",-0.675666609573522,2024-09-07T21:26:59.000Z
+401635531103877402,401635531,40163553116,1,3,12:25,Duquesne,Boston College,0,42,53,1,10,0,Pass Incompletion,Darius Perrantes pass incomplete,-1.1527089917962545,2024-09-07T21:27:34.000Z
+401635531103878301,401635531,40163553116,2,3,12:16,Duquesne,Boston College,0,42,53,2,10,11,Rush,Shawn Solomon Jr. run for 11 yds to the BC 42 for a 1ST down,1.9530729537974383,2024-09-07T21:22:06.000Z
+401635531103886301,401635531,40163553116,3,3,11:36,Duquesne,Boston College,0,42,42,1,10,1,Rush,Shawn Solomon Jr. run for 1 yd to the BC 41,-0.6970479149495327,2024-09-07T21:22:06.000Z
+401635531103889401,401635531,40163553116,4,3,11:05,Duquesne,Boston College,0,42,41,2,9,23,Pass Reception,Darius Perrantes pass complete to Tedy Afful for 23 yds to the BC 18 for a 1ST down,1.4001906774510657,2024-09-07T21:22:06.000Z
+401635531103896701,401635531,40163553116,5,3,10:32,Duquesne,Boston College,0,42,18,1,10,0,Rush,Shawn Solomon Jr. run for no gain to the BC 18,-0.350740748439042,2024-09-07T21:22:06.000Z
+401635531103904501,401635531,40163553116,6,3,9:54,Duquesne,Boston College,0,42,18,2,10,5,Rush,Shawn Solomon Jr. run for 5 yds to the BC 13,0.041046352184617,2024-09-07T21:22:06.000Z
+401635531103906901,401635531,40163553116,7,3,9:30,Duquesne,Boston College,0,42,13,3,5,0,Pass Incompletion,Darius Perrantes pass incomplete,-0.430591868554536,2024-09-07T21:22:06.000Z
+401635531103908001,401635531,40163553116,8,3,9:19,Duquesne,Boston College,0,42,13,4,5,31,Field Goal Missed,Brian Bruzdewicz 31 yd FG MISSED,,2024-09-07T21:22:06.000Z
+401635531103908901,401635531,40163553117,1,3,9:10,Boston College,Duquesne,42,0,80,1,10,-1,Rush,Turbo Richard run for a loss of 1 yard to the BC 19,-0.6343354265717327,2024-09-07T21:22:06.000Z
+401635531103916701,401635531,40163553117,2,3,8:32,Boston College,Duquesne,42,0,81,2,11,-2,Fumble Recovery (Own),"Jacobe Robinson run for a loss of 2 yards to the BC 27 Jacobe Robinson fumbled, recovered by BC Jacobe Robinson J. Robinson return for 10 yds",-0.2709454950914214,2024-09-07T21:22:06.000Z
+401635531103924701,401635531,40163553117,3,3,7:52,Boston College,Duquesne,42,0,73,3,3,3,Rush,Turbo Richard run for 3 yds to the BC 30 for a 1ST down,0.9997508052159407,2024-09-07T21:22:06.000Z
+401635531103927201,401635531,40163553117,4,3,7:27,Boston College,Duquesne,42,0,70,1,10,1,Rush,Turbo Richard run for 1 yd to the BC 31,-0.716015480823808,2024-09-07T21:22:06.000Z
+401635531103934501,401635531,40163553117,5,3,6:54,Boston College,Duquesne,42,0,69,2,9,8,Rush,Turbo Richard run for 8 yds to the BC 39,0.6761468436377563,2024-09-07T21:22:06.000Z
+401635531103938001,401635531,40163553117,6,3,6:19,Boston College,Duquesne,42,0,61,3,1,3,Rush,Turbo Richard run for 3 yds to the BC 42 for a 1ST down,1.1709519440510796,2024-09-07T21:22:06.000Z
+401635531103946201,401635531,40163553117,7,3,5:37,Boston College,Duquesne,42,0,58,1,10,11,Rush,Datrell Jones run for 11 yds to the DUQ 47 for a 1ST down,0.9485009707728855,2024-09-07T21:22:06.000Z
+401635531103948501,401635531,40163553117,8,3,5:14,Boston College,Duquesne,42,0,47,1,10,0,Rush,Datrell Jones run for no gain to the DUQ 47,-1.0507069190375147,2024-09-07T21:22:06.000Z
+401635531103957001,401635531,40163553117,9,3,4:29,Boston College,Duquesne,49,0,47,2,10,47,Rushing Touchdown,Datrell Jones run for 47 yds for a TD (Liam Connor KICK),4.663909160303945,2024-09-07T21:47:03.000Z
+401635531103958001,401635531,40163553118,2,3,4:19,Duquesne,Boston College,0,49,75,1,10,1,Rush,Jordan Heisey run for 1 yd to the DUQ 26,-0.5874795431016855,2024-09-07T21:22:06.000Z
+401635531103965501,401635531,40163553118,3,3,3:44,Duquesne,Boston College,0,49,74,2,9,5,Pass Reception,Jordan Heisey pass complete to Khiryn Boyd for 5 yds to the DUQ 31,0.05274725954590843,2024-09-07T21:22:06.000Z
+401635531103957003,401635531,40163553118,1,3,4:29,Boston College,Duquesne,49,0,65,0,0,0,Kickoff,Liam Connor kickoff for 65 yds for a touchback,,2024-09-07T21:50:58.000Z
+401635531103969601,401635531,40163553118,4,3,3:03,Duquesne,Boston College,0,49,69,3,4,0,Pass Incompletion,Jordan Heisey pass incomplete,-0.43770162015070735,2024-09-07T21:53:19.000Z
+401635531103974201,401635531,40163553118,5,3,2:57,Duquesne,Boston College,0,49,69,4,4,15,Punt,"Kyle Romenick punt for 41 yds , Turbo Richard returns for 15 yds to the BC 43",,2024-09-07T21:22:06.000Z
+401635531103984901,401635531,40163553119,3,3,1:50,Boston College,Duquesne,49,0,39,2,6,4,Rush,Turbo Richard run for 4 yds to the DUQ 35,-0.1145828532125906,2024-09-07T21:22:06.000Z
+401635531103975001,401635531,40163553119,1,3,2:49,Boston College,Duquesne,49,0,57,1,10,14,Rush,Turbo Richard run for 14 yds to the DUQ 43 for a 1ST down,1.1129466095804723,2024-09-07T21:22:06.000Z
+401635531103977701,401635531,40163553119,2,3,2:22,Boston College,Duquesne,49,0,43,1,10,4,Rush,Turbo Richard run for 4 yds to the DUQ 39,-0.1055620972164722,2024-09-07T21:22:06.000Z
+401635531103988101,401635531,40163553119,4,3,1:18,Boston College,Duquesne,49,0,35,3,2,-2,Rush,Turbo Richard run for a loss of 2 yards to the DUQ 37,-1.497291833388811,2024-09-07T21:22:06.000Z
+401635531103995401,401635531,40163553119,5,3,0:45,Boston College,Duquesne,49,0,37,4,4,0,Timeout,"Timeout Duquesne, clock 00:45",,2024-09-07T21:56:40.000Z
+401635531103995403,401635531,40163553119,7,3,0:00,Boston College,Duquesne,49,0,37,0,4,12,End Period,End of 3rd Quarter,,2024-09-07T21:58:29.000Z
+401635531103995402,401635531,40163553119,6,3,0:45,Boston College,Duquesne,49,0,37,4,4,12,Pass Reception,Jacobe Robinson pass complete to Luke McLaughlin for 12 yds to the DUQ 25 for a 1ST down,2.3697225094826706,2024-09-07T21:56:40.000Z
+401635531104854101,401635531,40163553119,8,4,14:58,Boston College,Duquesne,49,0,25,1,10,6,Rush,Turbo Richard run for 6 yds to the DUQ 19,0.1956069877394565,2024-09-07T22:02:31.000Z
+401635531104856901,401635531,40163553119,9,4,14:30,Boston College,Duquesne,49,0,19,2,4,5,Rush,Turbo Richard run for 5 yds to the DUQ 14 for a 1ST down,-0.0438058006524805,2024-09-07T22:02:31.000Z
+401635531104864802,401635531,40163553119,10,4,13:51,Boston College,Duquesne,49,0,14,1,10,-10,Penalty,"(13:51) RICHARD, Turbo rush up the middle for a gain of 4 yards to the DUQ10 (LENZ, Connor;CARSON, Jaelen), clock 13:47. PENALTY BOS Holding on DAUGHERTY, Eryx enforced 10 yards from the DUQ14 to the DUQ24 [SG]. NO PLAY (replay the down).",,2024-09-07T22:02:31.000Z
+401635531104867001,401635531,40163553119,11,4,13:29,Boston College,Duquesne,49,0,24,1,20,1,Rush,Jacobe Robinson run for 1 yd to the DUQ 23,-0.417999047390401,2024-09-07T22:02:31.000Z
+401635531104869901,401635531,40163553119,12,4,13:00,Boston College,Duquesne,49,0,23,2,19,5,Rush,Jordan McDonald run for 5 yds to the DUQ 18,0.032404993581652,2024-09-07T22:02:31.000Z
+401635531104878301,401635531,40163553119,13,4,12:16,Boston College,Duquesne,49,0,18,3,14,11,Pass Reception,Jacobe Robinson pass complete to Matt Ragan for 11 yds to the DUQ 7,0.6358344291229053,2024-09-07T22:02:31.000Z
+401635531104886101,401635531,40163553119,14,4,11:38,Boston College,Duquesne,49,0,7,4,3,0,Pass Incompletion,Jacobe Robinson pass incomplete,-3.9930622443207753,2024-09-07T22:02:31.000Z
+401635531104925701,401635531,40163553120,7,4,7:42,Duquesne,Boston College,0,49,76,4,6,0,Punt,"Kyle Romenick punt for 49 yds, downed at the BC 27",,2024-09-07T22:02:31.000Z
+401635531104886701,401635531,40163553120,1,4,11:32,Duquesne,Boston College,0,49,93,1,10,4,Rush,Caleb Jones run for 4 yds to the DUQ 11,-0.03931026581467823,2024-09-07T22:02:31.000Z
+401635531104894601,401635531,40163553120,2,4,10:53,Duquesne,Boston College,0,49,89,2,6,1,Rush,Caleb Jones run for 1 yd to the DUQ 12,-0.23923485591376092,2024-09-07T22:02:31.000Z
+401635531104899801,401635531,40163553120,3,4,10:01,Duquesne,Boston College,0,49,88,3,5,8,Pass Reception,Jordan Heisey pass complete to Daniel Tarabrella for 8 yds to the DUQ 20 for a 1ST down,0.765994538025387,2024-09-07T22:02:31.000Z
+401635531104908101,401635531,40163553120,4,4,9:18,Duquesne,Boston College,0,49,80,1,10,4,Rush,Caleb Jones run for 4 yds to the DUQ 24,-0.0884321258012219,2024-09-07T22:02:31.000Z
+401635531104916401,401635531,40163553120,5,4,8:35,Duquesne,Boston College,0,49,76,2,6,0,Rush,Caleb Jones run for no gain to the DUQ 24,-0.5148523715626974,2024-09-07T22:02:31.000Z
+401635531104925301,401635531,40163553120,6,4,7:46,Duquesne,Boston College,0,49,76,3,6,0,Pass Incompletion,Jordan Heisey pass incomplete,-0.2368142460140934,2024-09-07T22:13:12.000Z
+401635531104926901,401635531,40163553121,1,4,7:30,Boston College,Duquesne,49,0,73,1,10,0,Rush,Turbo Richard run for no gain to the BC 27,-0.766047035673644,2024-09-07T22:02:31.000Z
+401635531104934201,401635531,40163553121,2,4,6:57,Boston College,Duquesne,49,0,73,2,10,7,Rush,Turbo Richard run for 7 yds to the BC 34,0.34190740440546197,2024-09-07T22:02:31.000Z
+401635531104938401,401635531,40163553121,3,4,6:15,Boston College,Duquesne,49,0,66,3,3,1,Rush,Jacobe Robinson run for 1 yd to the BC 35,-0.4759470105451662,2024-09-07T22:02:31.000Z
+401635531104947301,401635531,40163553121,4,4,5:26,Boston College,Duquesne,49,0,65,4,2,0,Punt,"Sam Candotti punt for 39 yds, downed at the DUQ 26",,2024-09-07T22:02:31.000Z
+401635531104966201,401635531,40163553122,5,4,3:37,Duquesne,Boston College,0,49,76,4,12,6,Punt,"Michael Berarducci punt for 40 yds , Isaiah Farris returns for 6 yds to the BC 42",,2024-09-07T22:26:06.000Z
+401635531104965201,401635531,40163553122,4,4,3:47,Duquesne,Boston College,0,49,76,4,12,0,Timeout,"Timeout Boston College, clock 03:47",,2024-09-07T22:24:35.000Z
+401635531104964801,401635531,40163553122,3,4,3:51,Duquesne,Boston College,0,49,76,3,12,0,Pass Incompletion,Xavier Rice pass incomplete,-0.11952702463961362,2024-09-07T22:02:31.000Z
+401635531104956301,401635531,40163553122,2,4,4:36,Duquesne,Boston College,0,49,76,2,12,0,Rush,Anthony Bonner run for no gain to the DUQ 24,-0.2646511608377127,2024-09-07T22:02:31.000Z
+401635531104949401,401635531,40163553122,1,4,5:05,Duquesne,Boston College,0,49,74,1,10,-2,Rush,Anthony Bonner run for a loss of 2 yards to the DUQ 24,-0.926576743227753,2024-09-07T22:02:31.000Z
+401635531104987301,401635531,40163553123,5,4,1:26,Boston College,Duquesne,56,0,9,1,9,9,Rushing Touchdown,Jacobe Robinson run for 9 yds for a TD (Liam Connor KICK),2.424237823646468,2024-09-07T22:32:01.000Z
+401635531104966801,401635531,40163553123,1,4,3:31,Boston College,Duquesne,49,0,58,1,10,25,Rush,Jordan McDonald run for 25 yds to the DUQ 33 for a 1ST down,1.6586284385373276,2024-09-07T22:02:31.000Z
+401635531104974201,401635531,40163553123,2,4,2:57,Boston College,Duquesne,49,0,33,1,10,12,Rush,Jordan McDonald run for 12 yds to the DUQ 21 for a 1ST down,0.270777959706495,2024-09-07T22:02:31.000Z
+401635531104977701,401635531,40163553123,3,4,2:22,Boston College,Duquesne,49,0,21,1,10,4,Rush,Jordan McDonald run for 4 yds to the DUQ 17,-0.0277001413248325,2024-09-07T22:02:31.000Z
+401635531104979901,401635531,40163553123,4,4,2:00,Boston College,Duquesne,49,0,17,2,6,8,Rush,Jordan McDonald run for 8 yds to the DUQ 9 for a 1ST down,0.2357591314738575,2024-09-07T22:02:31.000Z
+401635531104999902,401635531,40163553124,5,4,0:00,Duquesne,Boston College,0,56,80,0,8,0,End of Game,End of 4th Quarter,,2024-09-07T22:36:03.000Z
+401635531104987303,401635531,40163553124,2,4,1:26,Boston College,Duquesne,56,0,65,0,0,11,Kickoff Return (Offense),"Liam Connor kickoff for 57 yds , Riley Lisgar return for 11 yds to the DUQ 19",,2024-09-07T22:33:45.000Z
+401635531104987101,401635531,40163553124,1,4,1:28,Duquesne,Boston College,0,56,81,1,10,0,Rush,Anthony Bonner run for no gain to the DUQ 19,-0.5327945515514214,2024-09-07T22:02:31.000Z
+401635531104994901,401635531,40163553124,3,4,0:50,Duquesne,Boston College,0,56,81,2,10,2,Rush,Anthony Bonner run for 2 yds to the DUQ 21,-0.16226071526170927,2024-09-07T22:02:31.000Z
+401635531104998701,401635531,40163553124,4,4,0:12,Duquesne,Boston College,0,56,79,3,8,-1,Rush,Anthony Bonner run for a loss of 1 yard to the DUQ 20,-0.17659880154238028,2024-09-07T22:02:31.000Z

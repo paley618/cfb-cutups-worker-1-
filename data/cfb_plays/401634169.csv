@@ -1,0 +1,162 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401634169101849905,401634169,4016341691,2,1,15:00,Indiana State,Purdue,0,0,75,1,10,0,Rush,Plez Lawrence run for no gain to the INST 25,-0.7029700220436519,2024-08-31T16:05:43.000Z
+401634169101849906,401634169,4016341691,3,1,15:00,Indiana State,Purdue,0,0,75,2,10,3,Pass Reception,Elijah Owens pass complete to Rashad Rochelle for 3 yds to the INST 28,-0.15222912011238687,2024-08-31T16:05:43.000Z
+401634169101849907,401634169,4016341691,4,1,15:00,Indiana State,Purdue,0,0,72,3,7,3,Rush,Plez Lawrence run for 3 yds to the INST 31,-0.11723476155044565,2024-08-31T16:05:43.000Z
+401634169101875101,401634169,4016341691,5,1,12:48,Indiana State,Purdue,0,0,69,4,4,14,Punt,"Harry Traum punt for 38 yds , Dillon Thieneman returns for 14 yds to the PUR 45",,2024-08-31T16:05:44.000Z
+401634169101849903,401634169,4016341691,1,1,15:00,Purdue,Indiana State,0,0,65,0,0,0,Kickoff,Ben Freehill kickoff for 65 yds for a touchback,,2024-08-31T16:05:43.000Z
+401634169101875103,401634169,4016341692,1,1,12:48,Purdue,Indiana State,0,0,55,1,10,11,Pass Reception,Hudson Card pass complete to Jahmal Edrine for 11 yds to the INST 44 for a 1ST down,0.8637308798063437,2024-08-31T16:05:44.000Z
+401634169101875104,401634169,4016341692,2,1,12:48,Purdue,Indiana State,0,0,44,1,10,12,Pass Reception,Hudson Card pass complete to Jahmal Edrine for 12 yds to the INST 32 for a 1ST down,0.5413629319210589,2024-08-31T16:05:44.000Z
+401634169101884301,401634169,4016341692,3,1,11:56,Purdue,Indiana State,0,0,32,1,10,11,Rush,Devin Mockobee run for 11 yds to the INST 21 for a 1ST down,0.2392226117934694,2024-08-31T16:05:43.000Z
+401634169101889701,401634169,4016341692,4,1,11:02,Purdue,Indiana State,0,0,21,1,10,3,Rush,Devin Mockobee run for 3 yds to the INST 18,-0.122124214578021,2024-08-31T16:07:22.000Z
+401634169101889702,401634169,4016341692,5,1,11:02,Purdue,Indiana State,0,0,18,2,7,8,Pass Reception,Hudson Card pass complete to Max Klare for 8 yds to the INST 10 for a 1ST down,0.240594186124072,2024-08-31T16:07:22.000Z
+401634169101889703,401634169,4016341692,6,1,11:02,Purdue,Indiana State,0,0,10,1,10,6,Pass Reception,Hudson Card pass complete to Drew Biber for 6 yds to the INST 4,0.1799366018014815,2024-08-31T16:07:22.000Z
+401634169101889704,401634169,4016341692,7,1,11:02,Purdue,Indiana State,0,0,4,2,4,-5,Sack,Hudson Card sacked by Geoffrey Brown for a loss of 5 yards to the INST 9,-0.6762224142842755,2024-08-31T16:07:22.000Z
+401634169101909201,401634169,4016341692,8,1,9:07,Purdue,Indiana State,7,0,9,3,9,9,Passing Touchdown,Max Klare 9 Yd pass from Hudson Card (Spencer Porath Kick),3.010112654732236,2024-08-31T16:05:43.000Z
+401634169101909204,401634169,4016341693,1,1,9:07,Purdue,Indiana State,7,0,65,0,0,0,Kickoff,Ben Freehill kickoff for 65 yds for a touchback,,2024-08-31T16:13:06.000Z
+401634169101909206,401634169,4016341693,2,1,9:07,Indiana State,Purdue,0,7,75,1,10,10,Rush,Elijah Owens run for 10 yds to the INST 35 for a 1ST down,0.8350381090299867,2024-08-31T16:13:06.000Z
+401634169101915601,401634169,4016341693,3,1,8:43,Indiana State,Purdue,0,7,65,1,10,-1,Rush,Shen Butler-Lawson run for a loss of 1 yard to the INST 34,-1.1754014811374063,2024-08-31T16:05:43.000Z
+401634169101915602,401634169,4016341693,4,1,8:43,Indiana State,Purdue,0,7,66,2,11,5,Rush,Shen Butler-Lawson run for 5 yds to the INST 39,0.0504254355053702,2024-08-31T16:14:44.000Z
+401634169101915603,401634169,4016341693,5,1,8:43,Indiana State,Purdue,0,7,61,3,6,0,Pass Incompletion,Elijah Owens pass incomplete,-0.5500549337832448,2024-08-31T16:14:44.000Z
+401634169101934001,401634169,4016341693,6,1,6:59,Indiana State,Purdue,0,7,61,4,6,0,Punt,"Harry Traum punt for 41 yds, downed at the PUR 20",,2024-08-31T16:16:58.000Z
+401634169101934003,401634169,4016341694,1,1,6:59,Purdue,Indiana State,7,0,80,1,10,12,Pass Reception,Hudson Card pass complete to Max Klare for 12 yds to the PUR 32 for a 1ST down,0.8667470799632433,2024-08-31T16:16:58.000Z
+401634169101934004,401634169,4016341694,2,1,6:59,Purdue,Indiana State,7,0,68,1,10,-1,Rush,Reggie Love III run for a loss of 1 yard to the PUR 31,-1.0665559328497487,2024-08-31T16:16:58.000Z
+401634169101934005,401634169,4016341694,3,1,6:59,Purdue,Indiana State,7,0,69,2,11,12,Pass Reception,Hudson Card pass complete to Jaron Tibbs for 12 yds to the PUR 43 for a 1ST down,2.1205499509802817,2024-08-31T16:16:58.000Z
+401634169101934006,401634169,4016341694,4,1,6:59,Purdue,Indiana State,7,0,57,1,10,0,Pass Incompletion,Hudson Card pass incomplete,-1.15714755134967,2024-08-31T16:16:58.000Z
+401634169101946701,401634169,4016341694,5,1,5:32,Purdue,Indiana State,7,0,57,2,10,19,Pass Reception,Hudson Card pass complete to De'Nylon Morrissette for 19 yds to the INST 38 for a 1ST down,2.527871600275809,2024-08-31T16:22:01.000Z
+401634169101946702,401634169,4016341694,6,1,5:32,Purdue,Indiana State,7,0,38,1,10,7,Rush,Reggie Love III run for 7 yds to the INST 31,0.423978038879877,2024-08-31T16:22:21.000Z
+401634169101946703,401634169,4016341694,7,1,5:32,Purdue,Indiana State,7,0,31,2,3,2,Rush,Devin Mockobee run for 2 yds to the INST 29,-0.4177800580453803,2024-08-31T16:22:21.000Z
+401634169101959101,401634169,4016341694,8,1,4:08,Purdue,Indiana State,7,0,29,3,1,2,Fumble Recovery (Opponent),"Hudson Card pass complete to Drew Biber for 2 yds fumbled, forced by Maddix Blackwell, recovered by INST Garret Ollendieck G. Ollendieck return for 0 yds",-3.9116053322493087,2024-08-31T16:23:44.000Z
+401634169101959103,401634169,4016341695,1,1,4:08,Indiana State,Purdue,0,7,73,1,10,0,Rush,Plez Lawrence run for no gain to the INST 27,-0.766047035673644,2024-08-31T16:23:44.000Z
+401634169101959104,401634169,4016341695,2,1,4:08,Indiana State,Purdue,0,7,73,2,10,10,Rush,Plez Lawrence run for 10 yds to the INST 37 for a 1ST down,1.6482516763178303,2024-08-31T16:23:44.000Z
+401634169101959105,401634169,4016341695,3,1,4:08,Indiana State,Purdue,0,7,63,1,10,0,Pass Incompletion,Elijah Owens pass incomplete,-1.065701080215459,2024-08-31T16:23:44.000Z
+401634169101974101,401634169,4016341695,4,1,2:58,Indiana State,Purdue,0,7,63,2,10,-5,Rush,Rashad Rochelle run for a loss of 5 yards to the INST 32,-1.0185416391600342,2024-08-31T16:05:43.000Z
+401634169101976901,401634169,4016341695,5,1,2:30,Indiana State,Purdue,0,7,68,3,15,10,Rush,Shen Butler-Lawson run for 10 yds to the INST 42,0.3875529848169501,2024-08-31T16:28:36.000Z
+401634169101985001,401634169,4016341695,6,1,1:49,Indiana State,Purdue,0,7,58,4,5,-6,Penalty,"Indiana State Penalty, Delay Of Game (Harry Traum) to the INST 36",,2024-08-31T16:29:29.000Z
+401634169101987301,401634169,4016341695,7,1,1:26,Indiana State,Purdue,0,7,64,4,11,0,Punt,"Harry Traum punt for 40 yds, fair catch by Dillon Thieneman at the PUR 24",,2024-08-31T16:30:07.000Z
+401634169101999902,401634169,4016341696,4,1,0:00,Purdue,Indiana State,7,0,66,0,10,43,End Period,End of 1st Quarter,,2024-08-31T16:05:43.000Z
+401634169102849902,401634169,4016341696,5,2,15:00,Purdue,Indiana State,7,0,23,1,10,2,Rush,Devin Mockobee run for 2 yds to the INST 21,-0.2265058372460335,2024-08-31T16:37:15.000Z
+401634169101987303,401634169,4016341696,1,1,1:26,Purdue,Indiana State,7,0,76,1,10,2,Pass Reception,Hudson Card pass complete to Devin Mockobee for 2 yds to the PUR 26,-0.43374920863139543,2024-08-31T16:30:07.000Z
+401634169101987304,401634169,4016341696,2,1,1:26,Purdue,Indiana State,7,0,74,2,8,8,Pass Reception,Hudson Card pass complete to Shamar Rigby for 8 yds to the PUR 34 for a 1ST down,1.242598162317572,2024-08-31T16:30:07.000Z
+401634169101999901,401634169,4016341696,3,1,0:00,Purdue,Indiana State,7,0,66,1,10,43,Pass Reception,Hudson Card pass complete to Max Klare for 43 yds to the INST 23 for a 1ST down,2.6727917116583857,2024-08-31T16:05:43.000Z
+401634169102855901,401634169,4016341696,6,2,14:40,Purdue,Indiana State,7,0,21,2,8,1,Rush,Devin Mockobee run for 1 yd to the INST 20,-0.360766504862163,2024-08-31T16:37:15.000Z
+401634169102859501,401634169,4016341696,7,2,14:04,Purdue,Indiana State,7,0,20,3,7,12,Rush,Reggie Love III run for 12 yds to the INST 8 for a 1ST down,0.931650451479733,2024-08-31T16:38:16.000Z
+401634169102867801,401634169,4016341696,8,2,13:21,Purdue,Indiana State,14,0,8,1,8,8,Passing Touchdown,Hudson Card pass complete to Jaron Tibbs for 8 yds for a TD (Spencer Porath KICK),2.319599568699692,2024-08-31T16:38:49.000Z
+401634169102868303,401634169,4016341697,2,2,13:16,Indiana State,Purdue,0,14,78,1,10,1,Rush,Shen Butler-Lawson run for 1 yd to the INST 23,-0.5142195293967999,2024-08-31T16:42:27.000Z
+401634169102868301,401634169,4016341697,1,2,13:16,Purdue,Indiana State,14,0,65,0,0,22,Kickoff Return (Offense),"Ben Freehill kickoff for 65 yds , Rashad Rochelle return for 22 yds to the INST 22",,2024-08-31T16:42:27.000Z
+401634169102884601,401634169,4016341697,3,2,11:53,Indiana State,Purdue,0,14,77,3,9,0,Timeout,"Timeout Purdue, clock 11:53",,2024-08-31T16:44:31.000Z
+401634169102885701,401634169,4016341697,6,2,11:42,Indiana State,Purdue,0,14,77,4,9,0,Punt,"Harry Traum punt for 34 yds, fair catch by Dillon Thieneman at the PUR 43",,2024-08-31T16:46:33.000Z
+401634169102884603,401634169,4016341697,5,2,11:53,Indiana State,Purdue,0,14,77,3,9,0,Pass Incompletion,Elijah Owens pass incomplete,-0.15670669522114178,2024-08-31T16:45:08.000Z
+401634169102884602,401634169,4016341697,4,2,11:53,Indiana State,Purdue,0,14,77,2,9,0,Rush,Shen Butler-Lawson run for no gain to the INST 23,-0.3461369454848935,2024-08-31T16:45:08.000Z
+401634169102897002,401634169,4016341698,4,2,10:29,Purdue,Indiana State,14,0,3,0,0,-5,Penalty,"Purdue Penalty, Delay Of Game (-5 Yards) to the INST 8",,2024-08-31T16:50:33.000Z
+401634169102897001,401634169,4016341698,3,2,10:29,Purdue,Indiana State,21,0,8,1,8,8,Passing Touchdown,Hudson Card pass complete to De'Nylon Morrissette for 8 yds for a TD (Spencer Porath KICK),2.319599568699692,2024-08-31T16:50:33.000Z
+401634169102885704,401634169,4016341698,2,2,11:42,Purdue,Indiana State,14,0,21,1,10,13,Rush,Devin Mockobee run for 13 yds to the INST 8 for a 1ST down,0.312697245095801,2024-08-31T16:46:33.000Z
+401634169102885703,401634169,4016341698,1,2,11:42,Purdue,Indiana State,14,0,57,1,10,36,Rush,Devin Mockobee run for 36 yds to the INST 21 for a 1ST down,1.8330198837158336,2024-08-31T16:46:33.000Z
+401634169102897501,401634169,4016341699,1,2,10:24,Purdue,Indiana State,21,0,65,0,0,14,Kickoff Return (Offense),"Ben Freehill kickoff for 64 yds , Rashad Rochelle return for 14 yds to the INST 15",,2024-08-31T16:54:49.000Z
+401634169102908903,401634169,4016341699,5,2,9:10,Indiana State,Purdue,0,21,67,3,3,15,Penalty,"OWENS, Elijah pass up the middle incomplete dropped by NEUENSCHWANDER, Nick thrown to the ISU30. PENALTY PUR Roughing the Passer on SILLAH, Shitta enforced 15 yards from the ISU33 to the ISU48 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-08-31T16:57:00.000Z
+401634169102925501,401634169,4016341699,7,2,7:44,Indiana State,Purdue,0,21,51,2,9,11,Rush,Shen Butler-Lawson run for 11 yds to the PUR 40 for a 1ST down,1.7213730394607847,2024-08-31T16:59:40.000Z
+401634169102897503,401634169,4016341699,2,2,10:24,Indiana State,Purdue,0,21,85,1,10,11,Rush,Elijah Owens run for 11 yds to the INST 26 for a 1ST down,0.6141852374142438,2024-08-31T16:54:49.000Z
+401634169102899901,401634169,4016341699,3,2,10:00,Indiana State,Purdue,0,21,74,1,10,6,Rush,Plez Lawrence run for 6 yds to the INST 32,0.3420124320108239,2024-08-31T16:37:15.000Z
+401634169102908901,401634169,4016341699,4,2,9:10,Indiana State,Purdue,0,21,68,2,4,1,Rush,Plez Lawrence run for 1 yd to the INST 33,-0.7486165812285045,2024-08-31T16:57:00.000Z
+401634169102908904,401634169,4016341699,6,2,9:10,Indiana State,Purdue,0,21,52,1,10,1,Rush,Plez Lawrence run for 1 yd to the INST 49,-0.9023678946876946,2024-08-31T16:57:00.000Z
+401634169102925502,401634169,4016341699,8,2,7:44,Indiana State,Purdue,0,21,40,1,10,-1,Rush,Shen Butler-Lawson run for a loss of 1 yard to the PUR 41,-1.0526226150183255,2024-08-31T17:00:24.000Z
+401634169102925503,401634169,4016341699,9,2,7:44,Indiana State,Purdue,0,21,41,2,11,0,Pass Incompletion,Elijah Owens pass incomplete,-1.0401459627134635,2024-08-31T17:00:24.000Z
+401634169102938801,401634169,4016341699,10,2,6:11,Indiana State,Purdue,0,21,41,3,11,-1,Sack,Elijah Owens sacked by Kydran Jenkins for a loss of 1 yard to the PUR 42,-1.0800884399934532,2024-08-31T17:01:46.000Z
+401634169102948201,401634169,4016341699,11,2,5:17,Indiana State,Purdue,0,21,42,4,12,0,Punt,Harry Traum punt for 42 yds for a touchback,,2024-08-31T17:02:20.000Z
+401634169102985301,401634169,40163416910,12,2,1:46,Purdue,Indiana State,21,0,67,4,12,0,Punt,Keelan Crimmins punt for 43 yds,,2024-08-31T17:12:51.000Z
+401634169102984601,401634169,40163416910,11,2,1:53,Purdue,Indiana State,21,0,67,4,12,0,Timeout,"Timeout Purdue, clock 01:53",,2024-08-31T17:11:46.000Z
+401634169102979902,401634169,40163416910,10,2,2:00,Purdue,Indiana State,21,0,69,3,14,-5,Penalty,"Purdue Penalty, False Start (DJ Wingfield) to the PUR 26",,2024-08-31T17:09:41.000Z
+401634169102979901,401634169,40163416910,9,2,2:00,Purdue,Indiana State,21,0,74,3,19,0,Timeout,"Timeout Purdue, clock 02:00",,2024-08-31T17:08:21.000Z
+401634169102948203,401634169,40163416910,1,2,5:17,Purdue,Indiana State,21,0,80,1,10,1,Rush,Reggie Love III run for 1 yd to the PUR 21,-0.46882789768185695,2024-08-31T17:02:20.000Z
+401634169102948204,401634169,40163416910,2,2,5:17,Purdue,Indiana State,21,0,79,2,9,5,Pass Reception,Hudson Card pass complete to Shamar Rigby for 5 yds to the PUR 26,0.04598992990887929,2024-08-31T17:02:20.000Z
+401634169102948205,401634169,40163416910,3,2,5:17,Purdue,Indiana State,21,0,74,3,4,9,Rush,Hudson Card run for 9 yds to the PUR 35 for a 1ST down,1.5661787526867457,2024-08-31T17:02:20.000Z
+401634169102964402,401634169,40163416910,4,2,3:55,Purdue,Indiana State,21,0,65,1,10,-10,Penalty,"(03:55) CARD, Hudson pass deep up the middle complete for 27 yards to EDRINE, Jahmal caught at the ISU38 and advanced to the ISU38 (KING, Trey). PENALTY PUR Holding on SALES JR., Joshua enforced 10 yards from the PUR35 to the PUR25 [NHSG]. NO PLAY (replay the down).",,2024-08-31T17:05:06.000Z
+401634169102964403,401634169,40163416910,5,2,3:55,Purdue,Indiana State,21,0,75,1,20,3,Pass Reception,Hudson Card pass complete to Devin Mockobee for 3 yds to the PUR 28,-0.12466761631110934,2024-08-31T17:05:06.000Z
+401634169102969902,401634169,40163416910,6,2,3:00,Purdue,Indiana State,21,0,72,2,17,-10,Penalty,"(03:00) CARD, Hudson pass deep up the middle complete for 34 yards to KLARE, Max caught at the ISU43 and advanced to the ISU38 (BLACKWELL, Maddix). PENALTY PUR Holding on COLY, Bakyne enforced 10 yards from the PUR28 to the PUR18 [NHSG]. NO PLAY (replay the down).",,2024-08-31T17:06:30.000Z
+401634169102969903,401634169,40163416910,7,2,3:00,Purdue,Indiana State,21,0,82,2,27,13,Pass Reception,Hudson Card pass complete to Drew Biber for 13 yds to the PUR 31,0.2149630477097766,2024-08-31T17:06:30.000Z
+401634169102979101,401634169,40163416910,8,2,2:08,Purdue,Indiana State,21,0,74,3,19,7,Rush,Devin Mockobee run for 7 yds to the PUR 33,0.05775597904811302,2024-08-31T16:37:15.000Z
+401634169102985304,401634169,40163416911,2,2,1:46,Indiana State,Purdue,0,21,74,2,8,15,Penalty,"Purdue Penalty, Face mask (15 yards) (Jeffrey M'Ba) to the INST 42 for a 1ST down",,2024-08-31T17:12:51.000Z
+401634169102998401,401634169,40163416911,8,2,0:15,Indiana State,Purdue,0,21,26,1,10,0,Pass Incompletion,Elijah Owens pass incomplete,-0.4710467974920665,2024-08-31T17:18:23.000Z
+401634169102997703,401634169,40163416911,7,2,0:22,Indiana State,Purdue,0,21,46,1,10,20,Rush,Elijah Owens run for 20 yds to the PUR 26 for a 1ST down,0.8232852857262838,2024-08-31T17:16:05.000Z
+401634169102997702,401634169,40163416911,6,2,0:22,Indiana State,Purdue,0,21,54,3,6,8,Pass Reception,Elijah Owens pass complete to Rashad Rochelle for 8 yds to the PUR 46 for a 1ST down,2.313686672928048,2024-08-31T17:16:05.000Z
+401634169102985306,401634169,40163416911,4,2,1:46,Indiana State,Purdue,0,21,55,2,7,1,Pass Reception,Elijah Owens pass complete to Zavion Taylor for 1 yd to the INST 46,-0.8627334216371434,2024-08-31T17:12:51.000Z
+401634169102985305,401634169,40163416911,3,2,1:46,Indiana State,Purdue,0,21,58,1,10,3,Rush,Plez Lawrence run for 3 yds to the INST 45,-0.4325374473860535,2024-08-31T17:12:51.000Z
+401634169102985303,401634169,40163416911,1,2,1:46,Indiana State,Purdue,0,21,76,1,10,2,Rush,Plez Lawrence run for 2 yds to the INST 26,-0.43374920863139543,2024-08-31T17:12:51.000Z
+401634169102999903,401634169,40163416911,11,2,0:00,Indiana State,Purdue,0,21,27,0,11,-46,End of Half,End of 2nd Quarter,,2024-08-31T17:20:11.000Z
+401634169102997701,401634169,40163416911,5,2,0:22,Indiana State,Purdue,0,21,46,1,10,0,Timeout,"Timeout Purdue, clock 00:22",,2024-08-31T17:16:05.000Z
+401634169102998901,401634169,40163416911,9,2,0:10,Indiana State,Purdue,0,21,26,2,10,-1,Rush,Elijah Owens run for a loss of 1 yard to the PUR 27,-0.8085410762284315,2024-08-31T17:19:32.000Z
+401634169102999901,401634169,40163416911,10,2,0:00,Indiana State,Purdue,0,21,27,3,11,45,Field Goal Missed,Sebastian Lopez 45 yd FG MISSED,,2024-08-31T17:20:11.000Z
+401634169103854503,401634169,40163416912,2,3,14:54,Purdue,Indiana State,21,0,66,1,10,20,Pass Reception,Hudson Card pass complete to Jahmal Edrine for 20 yds to the INST 46 for a 1ST down,1.79348198159515,2024-08-31T17:42:12.000Z
+401634169103854501,401634169,40163416912,1,3,14:54,Indiana State,Purdue,0,21,65,0,0,33,Kickoff Return (Offense),"Sebastian Lopez kickoff for 64 yds , Elijah Jackson return for 33 yds to the PUR 34",,2024-08-31T17:42:12.000Z
+401634169103854504,401634169,40163416912,3,3,14:54,Purdue,Indiana State,21,0,46,1,10,4,Rush,Devin Mockobee run for 4 yds to the INST 42,-0.1215209117621187,2024-08-31T17:42:12.000Z
+401634169103854505,401634169,40163416912,4,3,14:54,Purdue,Indiana State,21,0,42,2,6,-1,Pass Reception,Hudson Card pass complete to Max Klare for a loss of 1 yard to the INST 43,-1.3013884324607685,2024-08-31T17:42:12.000Z
+401634169103867401,401634169,40163416912,5,3,13:25,Purdue,Indiana State,21,0,43,3,7,12,Rush,Hudson Card run for 12 yds to the INST 31 for a 1ST down,2.1242505822844038,2024-08-31T17:42:05.000Z
+401634169103874201,401634169,40163416912,6,3,12:57,Purdue,Indiana State,21,0,31,1,10,16,Pass Reception,Hudson Card pass complete to Jahmal Edrine for 16 yds to the INST 15 for a 1ST down,0.283747080507865,2024-08-31T17:45:02.000Z
+401634169103878901,401634169,40163416912,7,3,12:10,Purdue,Indiana State,21,0,15,1,10,5,Pass Reception,Hudson Card pass complete to Jaron Tibbs for 5 yds to the INST 10,0.0744340992063255,2024-08-31T17:45:31.000Z
+401634169103885401,401634169,40163416912,8,3,11:45,Purdue,Indiana State,21,0,10,2,5,4,Rush,Devin Mockobee run for 4 yds to the INST 6,-0.0197063205213685,2024-08-31T17:45:52.000Z
+401634169103887401,401634169,40163416912,9,3,11:25,Purdue,Indiana State,21,0,6,3,1,-5,Penalty,"Purdue Penalty, False Start (Marcus Mbow) to the INST 11",,2024-08-31T17:46:17.000Z
+401634169103887402,401634169,40163416912,10,3,11:25,Purdue,Indiana State,21,0,11,3,6,5,Pass Reception,Hudson Card pass complete to Jaron Tibbs for 5 yds to the INST 6,0.0401777684738904,2024-08-31T17:46:17.000Z
+401634169103895601,401634169,40163416912,11,3,10:43,Purdue,Indiana State,28,0,6,4,1,6,Rushing Touchdown,Reggie Love III run for 6 yds for a TD (Spencer Porath KICK),2.873687149505024,2024-08-31T17:47:13.000Z
+401634169103895603,401634169,40163416913,1,3,10:43,Purdue,Indiana State,28,0,65,0,0,0,Kickoff,Ben Freehill kickoff for 65 yds for a touchback,,2024-08-31T17:50:54.000Z
+401634169103895605,401634169,40163416913,2,3,10:43,Indiana State,Purdue,0,28,75,1,10,10,Rush,Elijah Owens run for 10 yds to the INST 35 for a 1ST down,0.8350381090299867,2024-08-31T17:50:54.000Z
+401634169103899001,401634169,40163416913,3,3,10:09,Indiana State,Purdue,0,28,65,1,10,2,Rush,Plez Lawrence run for 2 yds to the INST 37,-0.63079683335922,2024-08-31T17:42:05.000Z
+401634169103907401,401634169,40163416913,4,3,9:25,Indiana State,Purdue,0,28,63,2,8,-2,Rush,Rashad Rochelle run for a loss of 2 yards to the INST 35,-0.9843062214809573,2024-08-31T17:53:32.000Z
+401634169103907402,401634169,40163416913,5,3,9:25,Indiana State,Purdue,0,28,65,3,10,-6,Sack,Elijah Owens sacked by Will Heldt for a loss of 6 yards to the INST 29,-0.4642907968087222,2024-08-31T17:53:32.000Z
+401634169103919401,401634169,40163416913,6,3,8:05,Indiana State,Purdue,0,28,71,4,16,13,Punt,"Harry Traum punt for 34 yds , Dillon Thieneman returns for 13 yds to the 50 yard line",,2024-08-31T17:54:49.000Z
+401634169103938901,401634169,40163416914,4,3,6:10,Purdue,Indiana State,35,0,31,1,10,31,Passing Touchdown,Hudson Card pass complete to Leland Smith for 31 yds for a TD (Spencer Porath KICK),2.841946170072948,2024-08-31T18:06:06.000Z
+401634169103925502,401634169,40163416914,1,3,7:44,Purdue,Indiana State,28,0,50,1,10,6,Rush,Reggie Love III run for 6 yds to the INST 44,0.345257937612164,2024-08-31T17:55:16.000Z
+401634169103925503,401634169,40163416914,2,3,7:44,Purdue,Indiana State,28,0,44,2,4,-10,Penalty,"Purdue Penalty, Offensive Holding (Jahmal Edrine) to the INST 47 for a 1ST down",,2024-08-31T17:55:16.000Z
+401634169103925505,401634169,40163416914,3,3,7:44,Purdue,Indiana State,28,0,47,2,7,16,Pass Reception,Hudson Card pass complete to Leland Smith for 16 yds to the INST 31 for a 1ST down,1.385425778123201,2024-08-31T17:55:16.000Z
+401634169103938903,401634169,40163416915,1,3,6:10,Purdue,Indiana State,35,0,65,0,0,0,Kickoff,Ben Freehill kickoff for 65 yds for a touchback,,2024-08-31T18:00:19.000Z
+401634169103938905,401634169,40163416915,2,3,6:10,Indiana State,Purdue,0,35,75,1,10,-2,Rush,Shen Butler-Lawson run for a loss of 2 yards to the INST 23,-0.8852575132705454,2024-08-31T18:00:19.000Z
+401634169103957901,401634169,40163416915,5,3,4:20,Indiana State,Purdue,0,35,77,4,12,2,Punt,"Harry Traum punt for 40 yds , Dillon Thieneman returns for 2 yds to the PUR 39",,2024-08-31T18:06:17.000Z
+401634169103938906,401634169,40163416915,3,3,6:10,Indiana State,Purdue,0,35,77,2,12,-3,Rush,Shen Butler-Lawson run for a loss of 3 yards to the INST 20,-0.33085496122616576,2024-08-31T18:00:19.000Z
+401634169103938907,401634169,40163416915,4,3,6:10,Indiana State,Purdue,0,35,80,3,15,3,Rush,Shen Butler-Lawson run for 3 yds to the INST 23,-0.02989452748622767,2024-08-31T18:00:19.000Z
+401634169103964105,401634169,40163416916,4,3,3:58,Purdue,Indiana State,35,0,50,1,10,0,Pass Incompletion,Ryan Browne pass incomplete,-1.1143038065675126,2024-08-31T18:06:23.000Z
+401634169103975102,401634169,40163416916,6,3,2:48,Purdue,Indiana State,35,0,63,3,23,9,Pass Reception,Ryan Browne pass complete to Jayden Dixon-Veal for 9 yds to the PUR 46,0.1945869373728426,2024-08-31T18:11:27.000Z
+401634169103975101,401634169,40163416916,5,3,2:48,Purdue,Indiana State,35,0,50,2,10,-15,Penalty,"Purdue Penalty, Personal Foul (De'Nylon Morrissette) to the PUR 37",,2024-08-31T18:11:27.000Z
+401634169103979901,401634169,40163416916,7,3,2:00,Purdue,Indiana State,35,0,54,4,14,0,Punt,Keelan Crimmins punt for 54 yds for a touchback,,2024-08-31T18:12:53.000Z
+401634169103964102,401634169,40163416916,1,3,3:58,Purdue,Indiana State,35,0,61,1,10,6,Rush,Devin Mockobee run for 6 yds to the PUR 45,0.4026034463137036,2024-08-31T18:06:23.000Z
+401634169103964103,401634169,40163416916,2,3,3:58,Purdue,Indiana State,35,0,55,2,4,0,Pass Incompletion,Ryan Browne pass incomplete,-1.2281608651436855,2024-08-31T18:06:23.000Z
+401634169103964104,401634169,40163416916,3,3,3:58,Purdue,Indiana State,35,0,55,3,4,5,Rush,Ryan Browne run for 5 yds to the 50 yard line for a 1ST down,1.839161523173475,2024-08-31T18:06:23.000Z
+401634169103985702,401634169,40163416917,1,3,1:42,Indiana State,Purdue,0,35,80,1,10,15,Pass Reception,Elijah Owens pass complete to Rashad Rochelle for 15 yds to the INST 35 for a 1ST down,1.143340784913768,2024-08-31T18:12:58.000Z
+401634169103985703,401634169,40163416917,2,3,1:42,Indiana State,Purdue,0,35,65,1,10,-2,Rush,Plez Lawrence run for a loss of 2 yards to the INST 33,-1.3169300165905415,2024-08-31T18:12:58.000Z
+401634169103995901,401634169,40163416917,3,3,0:40,Indiana State,Purdue,0,35,67,2,12,23,Pass Reception,Elijah Owens pass complete to Matt Ross for 23 yds to the PUR 44 for a 1ST down,3.146764669771855,2024-08-31T18:17:34.000Z
+401634169103999901,401634169,40163416917,4,3,0:00,Indiana State,Purdue,0,35,44,1,10,-1,Sack,Elijah Owens sacked by Will Heldt for a loss of 1 yard to the PUR 45,-1.1949447420126127,2024-08-31T18:18:54.000Z
+401634169103999902,401634169,40163416917,5,3,0:00,Indiana State,Purdue,0,35,44,0,10,-1,End Period,End of 3rd Quarter,,2024-08-31T18:18:54.000Z
+401634169104866601,401634169,40163416917,9,4,13:33,Indiana State,Purdue,0,35,50,4,16,0,Punt,Harry Traum punt for 41 yds,,2024-08-31T18:24:32.000Z
+401634169104849904,401634169,40163416917,6,4,15:00,Indiana State,Purdue,0,35,45,2,11,-10,Penalty,"(15:00) OWENS, Elijah pass short up the middle incomplete intended for RIOS, Kai thrown to the PUR40. PENALTY ISU Holding on TODT, Alex enforced 10 yards from the PUR45 to the ISU45 [NHSG]. NO PLAY (replay the down).",,2024-08-31T18:21:59.000Z
+401634169104849906,401634169,40163416917,7,4,15:00,Indiana State,Purdue,0,35,55,2,21,0,Rush,Shen Butler-Lawson run for no gain to the INST 45,-0.4570024378764632,2024-08-31T18:21:59.000Z
+401634169104857401,401634169,40163416917,8,4,14:25,Indiana State,Purdue,0,35,55,3,21,5,Rush,Elijah Owens run for 5 yds to the 50 yard line,0.015459220975517773,2024-08-31T18:21:59.000Z
+401634169104866603,401634169,40163416918,1,4,13:33,Purdue,Indiana State,35,0,91,1,10,3,Rush,Jaheim Merriweather run for 3 yds to the PUR 12,-0.1388134637685603,2024-08-31T18:24:32.000Z
+401634169104869901,401634169,40163416918,2,4,13:00,Purdue,Indiana State,35,0,88,2,7,3,Pass Reception,Ryan Browne pass complete to George Burhenn for 3 yds to the PUR 15,-0.10655400697781126,2024-08-31T18:21:59.000Z
+401634169104876401,401634169,40163416918,3,4,12:35,Purdue,Indiana State,35,0,85,3,4,14,Pass Reception,Ryan Browne pass complete to Jayden Dixon-Veal for 14 yds to the PUR 29 for a 1ST down,1.291936554016285,2024-08-31T18:26:28.000Z
+401634169104879901,401634169,40163416918,4,4,12:00,Purdue,Indiana State,35,0,71,1,10,2,Rush,Elijah Jackson run for 2 yds to the PUR 31,-0.5291040057203755,2024-08-31T18:27:01.000Z
+401634169104888601,401634169,40163416918,5,4,11:13,Purdue,Indiana State,42,0,69,2,8,69,Rushing Touchdown,Elijah Jackson run for 69 yds for a TD (Spencer Porath KICK),6.30472087847534,2024-08-31T18:27:34.000Z
+401634169104888605,401634169,40163416919,2,4,11:13,Indiana State,Purdue,0,42,75,1,10,2,Rush,Carson Dunn run for 2 yds to the INST 27,-0.45260367932203766,2024-08-31T18:28:22.000Z
+401634169104895901,401634169,40163416919,3,4,10:40,Indiana State,Purdue,0,42,73,2,8,0,Rush,Carson Dunn run for no gain to the INST 27,-0.4788075161366292,2024-08-31T18:21:59.000Z
+401634169104888603,401634169,40163416919,1,4,11:13,Purdue,Indiana State,42,0,65,0,0,0,Kickoff,Ben Freehill kickoff for 62 yds,,2024-08-31T18:28:22.000Z
+401634169104895902,401634169,40163416919,4,4,10:40,Indiana State,Purdue,0,42,73,3,8,2,Rush,Carson Dunn run for 2 yds to the INST 29,-0.14847204328918462,2024-08-31T18:34:56.000Z
+401634169104907901,401634169,40163416919,5,4,9:20,Indiana State,Purdue,0,42,71,4,6,14,Punt,"Harry Traum punt for 49 yds , Andrew Sowinski returns for 14 yds to the PUR 36",,2024-08-31T18:36:05.000Z
+401634169104914102,401634169,40163416920,1,4,8:58,Purdue,Indiana State,42,0,64,1,10,8,Pass Reception,Ryan Browne pass complete to Andrew Sowinski for 8 yds to the PUR 44,1.0378360233616295,2024-08-31T18:38:23.000Z
+401634169104914103,401634169,40163416920,2,4,8:58,Purdue,Indiana State,42,0,56,2,2,8,Rush,Ryan Browne run for 8 yds to the INST 48 for a 1ST down,0.4231227481337444,2024-08-31T18:38:23.000Z
+401634169104914105,401634169,40163416920,3,4,8:58,Purdue,Indiana State,42,0,48,1,10,-10,Penalty,"QB Keeper BROWNE, Ryan rush up the middle for a gain of 36 yards to the ISU12 (BENNETT, Shane). PENALTY PUR Holding on GRIFFIN, Luke enforced 10 yards from the ISU48 to the PUR42 [NHSG]. NO PLAY (replay the down).",,2024-08-31T18:38:23.000Z
+401634169104925901,401634169,40163416920,4,4,7:40,Purdue,Indiana State,42,0,58,1,20,12,Pass Reception,Ryan Browne pass complete to Andrew Sowinski for 12 yds to the INST 46,1.6220506061615048,2024-08-31T18:21:59.000Z
+401634169104925903,401634169,40163416920,5,4,7:40,Purdue,Indiana State,42,0,46,2,8,0,Penalty,"BROWNE, Ryan pass deep to the left complete for 32 yards to BRANCH, Arhmad caught at the ISU15 and advanced to the ISU14, out of bounds. PENALTY PUR Ineligible Receiver Downfield on Pass on GRANT, Jalen declined PUR Holding on GRIFFIN, Luke enforced 10 yards from the ISU46 to the PUR44 [NHSG]. NO PLAY (replay the down).",,
+401634169104934601,401634169,40163416920,6,4,6:53,Purdue,Indiana State,42,0,56,2,18,0,Pass Incompletion,Ryan Browne pass incomplete,-0.5339762237890282,2024-08-31T18:42:37.000Z
+401634169104935001,401634169,40163416920,7,4,6:49,Purdue,Indiana State,42,0,56,3,18,-3,Sack,Ryan Browne sacked by Dallas Westhoff for a loss of 3 yards to the PUR 41,-0.3651118747205837,2024-08-31T18:43:18.000Z
+401634169104939601,401634169,40163416920,8,4,6:03,Purdue,Indiana State,42,0,59,4,21,0,Punt,"Keelan Crimmins punt for 43 yds, fair catch by Rashad Rochelle at the INST 16",,2024-08-31T18:44:03.000Z
+401634169104939603,401634169,40163416921,1,4,6:03,Indiana State,Purdue,0,42,84,1,10,1,Rush,Korbin Allen run for 1 yd to the INST 17,-0.3882045720730636,2024-08-31T18:44:03.000Z
+401634169104947401,401634169,40163416921,2,4,5:25,Indiana State,Purdue,0,42,83,2,9,2,Rush,Korbin Allen run for 2 yds to the INST 19,-0.1638202522851815,2024-08-31T18:21:59.000Z
+401634169104954901,401634169,40163416921,3,4,4:50,Indiana State,Purdue,0,42,81,3,7,1,Rush,Korbin Allen run for 1 yd to the INST 20,-0.1337986388179839,2024-08-31T18:46:14.000Z
+401634169104965501,401634169,40163416921,4,4,3:44,Indiana State,Purdue,0,42,80,4,6,0,Blocked Punt,punt blocked by Leland Smith blocked by Leland Smith,,2024-08-31T18:47:32.000Z
+401634169104979901,401634169,40163416922,5,4,2:00,Purdue,Indiana State,42,0,4,3,4,0,Timeout,"Timeout Purdue, clock 02:00",,2024-08-31T18:50:19.000Z
+401634169104965503,401634169,40163416922,1,4,3:44,Purdue,Indiana State,42,0,35,1,10,12,Rush,Elijah Jackson run for 12 yds to the INST 23 for a 1ST down,0.3086111057057275,2024-08-31T18:47:32.000Z
+401634169104965504,401634169,40163416922,2,4,3:44,Purdue,Indiana State,42,0,23,1,10,16,Pass Reception,Ryan Browne pass complete to Jesse Watson for 16 yds to the INST 7 for a 1ST down,0.4672230477440175,2024-08-31T18:47:32.000Z
+401634169104965505,401634169,40163416922,3,4,3:44,Purdue,Indiana State,42,0,7,1,7,0,Pass Incompletion,Ryan Browne pass incomplete,-0.410393837690526,2024-08-31T18:47:32.000Z
+401634169104978201,401634169,40163416922,4,4,2:17,Purdue,Indiana State,42,0,7,2,7,3,Rush,Jaheim Merriweather run for 3 yds to the INST 4,-0.0888244534588445,2024-08-31T18:21:59.000Z
+401634169104984301,401634169,40163416922,6,4,1:56,Purdue,Indiana State,49,0,4,3,4,4,Rushing Touchdown,Jaheim Merriweather run for 4 yds for a TD (Spencer Porath KICK),2.6959729214765815,2024-08-31T18:52:59.000Z
+401634169104985001,401634169,40163416923,1,4,1:49,Purdue,Indiana State,49,0,65,0,0,30,Kickoff Return (Offense),"Ben Freehill kickoff for 62 yds , Rashad Rochelle return for 30 yds to the INST 33",,2024-08-31T18:54:55.000Z
+401634169104999903,401634169,40163416923,5,4,0:00,Indiana State,Purdue,0,49,61,0,9,0,End of Game,End of 4th Quarter,,2024-08-31T18:57:17.000Z
+401634169104985003,401634169,40163416923,2,4,1:49,Indiana State,Purdue,0,49,67,1,10,1,Rush,Carson Dunn run for 1 yd to the INST 34,-0.7895437741198555,2024-08-31T18:54:55.000Z
+401634169104985004,401634169,40163416923,3,4,1:49,Indiana State,Purdue,0,49,66,2,9,0,Rush,Carson Dunn run for no gain to the INST 34,-0.6218103749060155,2024-08-31T18:54:55.000Z
+401634169104999901,401634169,40163416923,4,4,0:00,Indiana State,Purdue,0,49,66,3,9,5,Rush,Korbin Allen run for 5 yds to the INST 39,0.0315342981203619,2024-08-31T18:57:17.000Z

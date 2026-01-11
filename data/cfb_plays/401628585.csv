@@ -1,0 +1,162 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628585101854501,401628585,4016285851,1,1,14:54,UAlbany,Long Island University,0,0,65,1,10,18,Kickoff,"James Bozek kickoff for 63 yds , Cory Nichols return for 18 yds to the LIU 20",,2024-08-31T23:16:11.000Z
+401628585101854503,401628585,4016285851,2,1,14:54,Long Island University,UAlbany,0,0,80,1,10,4,Pass Reception,Luca Stanzani pass complete to Cory Nichols,-0.0884321258012219,2024-08-31T23:16:11.000Z
+401628585101854504,401628585,4016285851,3,1,14:54,Long Island University,UAlbany,0,0,76,2,6,1,Rush,Luca Stanzani run for 1 yd to the LIU 23,-0.43243691655538724,2024-08-31T23:16:11.000Z
+401628585101854505,401628585,4016285851,4,1,14:54,Long Island University,UAlbany,0,0,77,3,7,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.19834493688263335,2024-08-31T23:16:11.000Z
+401628585101867501,401628585,4016285851,5,1,13:24,Long Island University,UAlbany,0,0,77,4,7,17,Punt,"Will Lynch punt for 46 yds, punt out-of-bounds at the ALB 48 , Jamal Cooney returns for 17 yds to the ALB 48",,2024-08-31T23:16:11.000Z
+401628585101867503,401628585,4016285852,1,1,13:24,UAlbany,Long Island University,0,0,52,1,10,5,Rush,Griffin Woodell run for 5 yds to the LIU 47,0.1045373160815773,2024-08-31T23:16:11.000Z
+401628585101867504,401628585,4016285852,2,1,13:24,UAlbany,Long Island University,0,0,47,2,5,6,Rush,Griffin Woodell run for 6 yds to the LIU 41 for a 1ST down,0.6629973467323343,2024-08-31T23:16:11.000Z
+401628585101867505,401628585,4016285852,3,1,13:24,UAlbany,Long Island University,0,0,41,1,10,15,Pass Reception,Myles Burkett pass complete to Griffin Woodell for a 1ST down,0.5205175034883389,2024-08-31T23:16:11.000Z
+401628585101867506,401628585,4016285852,4,1,13:24,UAlbany,Long Island University,0,0,26,1,10,1,Rush,Griffin Woodell run for 1 yd to the LIU 25,-0.3601692954121845,2024-08-31T23:16:11.000Z
+401628585101867507,401628585,4016285852,5,1,13:24,UAlbany,Long Island University,0,0,25,2,9,0,Pass Incompletion,Myles Burkett pass incomplete,-0.591562465154757,2024-08-31T23:16:11.000Z
+401628585101867508,401628585,4016285852,6,1,13:24,UAlbany,Long Island University,0,0,25,3,9,0,Pass Incompletion,Myles Burkett pass incomplete,-0.8562259914857897,2024-08-31T23:16:11.000Z
+401628585101896501,401628585,4016285852,7,1,10:34,UAlbany,Long Island University,3,0,25,4,9,40,Field Goal Good,John Opalko 40 yd FG GOOD,,2024-08-31T23:16:12.000Z
+401628585101896507,401628585,4016285853,5,1,10:34,Long Island University,UAlbany,0,3,59,2,7,5,Pass Reception,Luca Stanzani pass complete to Michael Love,0.0961141164386436,2024-08-31T23:16:12.000Z
+401628585101896502,401628585,4016285853,1,1,10:34,UAlbany,Long Island University,3,0,65,1,10,0,Kickoff,James Bozek kickoff for 65 yds,,2024-08-31T23:16:12.000Z
+401628585101896504,401628585,4016285853,2,1,10:34,Long Island University,UAlbany,0,3,75,1,10,6,Rush,Ludovick Choquette run for 6 yds to the LIU 31,0.3333748010525683,2024-08-31T23:16:12.000Z
+401628585101896505,401628585,4016285853,3,1,10:34,Long Island University,UAlbany,0,3,69,2,4,7,Pass Reception,Luca Stanzani pass complete to Brandon Niemenski for a 1ST down,0.7913766779892626,2024-08-31T23:16:12.000Z
+401628585101896506,401628585,4016285853,4,1,10:34,Long Island University,UAlbany,0,3,62,1,10,3,Rush,Ethan Greenwood run for 3 yds to the LIU 41,-0.4251117664036599,2024-08-31T23:16:12.000Z
+401628585101896508,401628585,4016285853,6,1,10:34,Long Island University,UAlbany,0,3,54,3,2,0,Rush,Ludovick Choquette run for no gain to the LIU 46,-1.0025282346051219,2024-08-31T23:16:12.000Z
+401628585101934101,401628585,4016285853,7,1,6:58,Long Island University,UAlbany,0,3,54,4,2,0,Punt,"Will Lynch punt for 37 yds, fair catch by Jacari Carter at the ALB 17",,2024-08-31T23:16:11.000Z
+401628585101934103,401628585,4016285854,1,1,6:58,UAlbany,Long Island University,3,0,83,1,10,3,Rush,Griffin Woodell run for 3 yds to the ALB 14,-0.204908473427289,2024-08-31T23:16:11.000Z
+401628585101934104,401628585,4016285854,2,1,6:58,UAlbany,Long Island University,3,0,86,2,13,5,Pass Reception,Myles Burkett pass complete to Griffin Woodell,0.01905876595505518,2024-08-31T23:16:11.000Z
+401628585101934105,401628585,4016285854,3,1,6:58,UAlbany,Long Island University,3,0,81,3,8,-4,Sack,Myles Burkett sacked by Taveon Wheeler for a loss of 4 yards to the ALB 15,-0.19484385317305455,2024-08-31T23:16:11.000Z
+401628585101955601,401628585,4016285854,4,1,4:43,UAlbany,Long Island University,3,0,85,4,12,5,Punt,"Owen Lawson punt for 73 yds , Michael Love returns for 5 yds to the LIU 17",,2024-08-31T23:23:14.000Z
+401628585101955603,401628585,4016285855,1,1,4:43,Long Island University,UAlbany,0,3,83,1,10,3,Rush,Ludovick Choquette run for 3 yds to the LIU 20,-0.204908473427289,2024-08-31T23:23:14.000Z
+401628585101955604,401628585,4016285855,2,1,4:43,Long Island University,UAlbany,0,3,80,2,7,-5,Sack,Luca Stanzani sacked by Brock Boyer for a loss of 5 yards to the LIU 15,-0.5522305944967743,2024-08-31T23:23:14.000Z
+401628585101955605,401628585,4016285855,3,1,4:43,Long Island University,UAlbany,0,3,85,3,12,44,Rush,Ludovick Choquette run for 44 yds to the ALB 41 for a 1ST down,4.051802024579201,2024-08-31T23:27:12.000Z
+401628585101955606,401628585,4016285855,4,1,4:43,Long Island University,UAlbany,0,3,41,1,10,-10,Sack,Luca Stanzani sacked by Jack Iuliano for a loss of 10 yards to the LIU 49,-2.9520118424834525,2024-08-31T23:27:12.000Z
+401628585101955607,401628585,4016285855,5,1,4:43,Long Island University,UAlbany,0,3,51,2,20,4,Pass Reception,Luca Stanzani pass complete to Nasir Hennigan,-0.1219037263000198,2024-08-31T23:27:12.000Z
+401628585101955608,401628585,4016285855,6,1,4:43,Long Island University,UAlbany,0,3,47,3,16,14,Pass Reception,Luca Stanzani pass complete to Kahlil Overton,1.895463233485354,2024-08-31T23:27:12.000Z
+401628585101999401,401628585,4016285855,7,1,0:05,Long Island University,UAlbany,0,3,33,4,2,0,Timeout,"Timeout Long Island University, clock 00:05",,2024-08-31T23:16:11.000Z
+401628585101999902,401628585,4016285855,9,1,0:00,Long Island University,UAlbany,0,3,33,0,2,12,End Period,End of 1st Quarter,,2024-08-31T23:31:53.000Z
+401628585102854501,401628585,4016285855,10,2,14:54,Long Island University,UAlbany,7,3,21,1,10,21,Passing Touchdown,Brandon Niemenski 21 Yd pass from Luca Stanzani (Michael Coney Kick),2.632296813795493,2024-08-31T23:35:12.000Z
+401628585101999901,401628585,4016285855,8,1,0:00,Long Island University,UAlbany,0,3,33,4,2,12,Pass Reception,Luca Stanzani pass complete to Aviyon Smith-Mack for a 1ST down,1.7866751473991447,2024-08-31T23:31:53.000Z
+401628585102855001,401628585,4016285856,1,2,14:49,Long Island University,UAlbany,7,3,65,1,10,12,Kickoff Return (Offense),"Michael Coney kickoff for 60 yds , Jamal Cooney return for 12 yds to the ALB 17",,2024-08-31T23:37:13.000Z
+401628585102865801,401628585,4016285856,5,2,13:41,UAlbany,Long Island University,3,7,83,4,10,0,Punt,Owen Lawson punt for 41 yds,,2024-08-31T23:41:13.000Z
+401628585102855005,401628585,4016285856,4,2,14:49,UAlbany,Long Island University,3,7,83,3,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.09676307571242226,2024-08-31T23:39:15.000Z
+401628585102855004,401628585,4016285856,3,2,14:49,UAlbany,Long Island University,3,7,83,2,10,0,Rush,Griffin Woodell run for no gain to the ALB 17,-0.22048200027874199,2024-08-31T23:39:15.000Z
+401628585102855003,401628585,4016285856,2,2,14:49,UAlbany,Long Island University,3,7,83,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.48436415563340685,2024-08-31T23:37:13.000Z
+401628585102865805,401628585,4016285857,3,2,13:41,Long Island University,UAlbany,7,3,50,3,2,7,Pass Reception,Luca Stanzani pass complete to Michael Love for a 1ST down,1.5433391664208695,2024-08-31T23:41:13.000Z
+401628585102865808,401628585,4016285857,5,2,13:41,Long Island University,UAlbany,7,3,53,1,20,13,Pass Reception,Luca Stanzani pass complete to Ludovick Choquette,1.8008026882589367,2024-08-31T23:41:13.000Z
+401628585102865807,401628585,4016285857,4,2,13:41,Long Island University,UAlbany,7,3,43,1,10,-10,Penalty,"No Huddle-Shotgun Greenwood,Ethan rush left for 21 yards gain to the UALB22 (Patrick,Denzel), out of bounds PENALTY LIU Holding (Overton,Kahlil) 10 yards from UALB43 to LIU47. NO PLAY.",,2024-08-31T23:41:13.000Z
+401628585102906201,401628585,4016285857,8,2,9:37,Long Island University,UAlbany,7,3,43,4,10,0,Punt,"Will Lynch punt for 28 yds, fair catch by Jacari Carter at the ALB 15",,2024-08-31T23:49:28.000Z
+401628585102865810,401628585,4016285857,7,2,13:41,Long Island University,UAlbany,7,3,43,3,10,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.9110484955798565,2024-08-31T23:45:41.000Z
+401628585102865804,401628585,4016285857,2,2,13:41,Long Island University,UAlbany,7,3,53,2,5,3,Rush,Luca Stanzani run for 3 yds to the 50 yard line,-0.4440455940554653,2024-08-31T23:41:13.000Z
+401628585102865803,401628585,4016285857,1,2,13:41,Long Island University,UAlbany,7,3,58,1,10,5,Rush,Ludovick Choquette run for 5 yds to the LIU 47,0.110039551743057,2024-08-31T23:41:13.000Z
+401628585102865809,401628585,4016285857,6,2,13:41,Long Island University,UAlbany,7,3,40,2,7,3,Rush,Nasir Hennigan run for 3 yds to the ALB 43,-0.342027404731185,2024-08-31T23:41:13.000Z
+401628585102928401,401628585,4016285858,5,2,7:15,UAlbany,Long Island University,3,7,71,4,6,0,Punt,"Owen Lawson punt for 43 yds, fair catch by Michael Love at the LIU 14",,2024-08-31T23:53:13.000Z
+401628585102906206,401628585,4016285858,4,2,9:37,UAlbany,Long Island University,3,7,71,3,6,0,Pass Incompletion,Myles Burkett pass incomplete,-0.3146897268978579,2024-08-31T23:51:28.000Z
+401628585102906205,401628585,4016285858,3,2,9:37,UAlbany,Long Island University,3,7,72,2,7,1,Rush,Griffin Woodell run for 1 yd to the ALB 29,-0.46942609790597783,2024-08-31T23:51:28.000Z
+401628585102906204,401628585,4016285858,2,2,9:37,UAlbany,Long Island University,3,7,75,1,10,3,Pass Reception,Myles Burkett pass complete to Carter Moses,-0.2957674139440157,2024-08-31T23:49:28.000Z
+401628585102906203,401628585,4016285858,1,2,9:37,UAlbany,Long Island University,3,7,85,1,10,10,Rush,Griffin Woodell run for 10 yds to the ALB 25 for a 1ST down,0.5432064301538883,2024-08-31T23:49:28.000Z
+401628585102937901,401628585,4016285859,4,2,6:20,Long Island University,UAlbany,7,3,85,4,9,0,Punt,Will Lynch punt for 39 yds,,2024-08-31T23:57:13.000Z
+401628585102928405,401628585,4016285859,1,2,7:15,Long Island University,UAlbany,7,3,86,1,10,1,Rush,Ludovick Choquette run for 1 yd to the LIU 15,-0.35325258158203354,2024-08-31T23:53:13.000Z
+401628585102928406,401628585,4016285859,2,2,7:15,Long Island University,UAlbany,7,3,85,2,9,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.2250051851301169,2024-08-31T23:53:13.000Z
+401628585102928407,401628585,4016285859,3,2,7:15,Long Island University,UAlbany,7,3,85,3,9,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.09803481040410136,2024-08-31T23:53:13.000Z
+401628585102937905,401628585,40162858510,2,2,6:20,UAlbany,Long Island University,3,7,54,1,10,10,Pass Reception,Myles Burkett pass complete to MarQeese Dietz for a 1ST down,0.7720151801751867,2024-08-31T23:57:13.000Z
+401628585102937906,401628585,40162858510,3,2,6:20,UAlbany,Long Island University,3,7,44,1,10,3,Pass Reception,Myles Burkett pass complete to Carter Moses,-0.3178831342797892,2024-08-31T23:57:13.000Z
+401628585102954301,401628585,40162858510,4,2,4:56,UAlbany,Long Island University,3,7,41,2,7,0,Interception,Myles Burkett pass intercepted,-3.2692345082101895,2024-09-01T00:01:13.000Z
+401628585102954302,401628585,40162858510,5,2,4:56,UAlbany,Long Island University,3,7,41,3,7,5,Pass Reception,Myles Burkett pass complete to Seven McGee,0.0684637602899245,2024-09-01T00:05:13.000Z
+401628585102959601,401628585,40162858510,6,2,4:03,UAlbany,Long Island University,3,7,36,4,2,0,Rush,Griffin Woodell run for no gain to the LIU 36,-2.297246944315553,2024-09-01T00:05:32.000Z
+401628585102937904,401628585,40162858510,1,2,6:20,UAlbany,Long Island University,3,7,44,1,10,0,Timeout,"Timeout UAlbany, clock 06:20",,2024-08-31T23:57:13.000Z
+401628585102964501,401628585,40162858511,1,2,3:54,Long Island University,UAlbany,7,10,64,1,10,20,Fumble Return Touchdown,Jack Iuliano 20 Yd Fumble Return (John Opalko Kick),-8.852807392224669,2024-09-01T00:07:15.000Z
+401628585102964503,401628585,40162858512,1,2,3:54,UAlbany,Long Island University,10,7,65,1,10,0,Kickoff,James Bozek kickoff for 65 yds for a touchback,,2024-09-01T00:09:30.000Z
+401628585102979901,401628585,40162858512,5,2,2:00,Long Island University,UAlbany,7,10,39,1,10,0,Timeout,"Timeout UAlbany, clock 02:00",,2024-08-31T23:35:12.000Z
+401628585102995801,401628585,40162858512,8,2,0:41,Long Island University,UAlbany,14,10,12,2,3,12,Passing Touchdown,Michael Love 12 Yd pass from Luca Stanzani (Michael Coney Kick),2.293629265822801,2024-09-01T00:15:15.000Z
+401628585102979903,401628585,40162858512,7,2,2:00,Long Island University,UAlbany,7,10,19,1,10,7,Rush,Ludovick Choquette run for 7 yds to the ALB 12,0.310818362814722,2024-09-01T00:13:14.000Z
+401628585102979902,401628585,40162858512,6,2,2:00,Long Island University,UAlbany,7,10,39,1,10,20,Rush,Luca Stanzani run for 20 yds to the ALB 19 for a 1ST down,0.535990926294028,2024-09-01T00:13:14.000Z
+401628585102964505,401628585,40162858512,2,2,3:54,Long Island University,UAlbany,7,10,75,1,10,26,Rush,Ludovick Choquette run for 26 yds to the ALB 49 for a 1ST down,2.3154245680840733,2024-09-01T00:09:30.000Z
+401628585102964506,401628585,40162858512,3,2,3:54,Long Island University,UAlbany,7,10,49,1,10,9,Rush,Luca Stanzani run for 9 yds to the ALB 40,1.0659606614607482,2024-09-01T00:09:30.000Z
+401628585102964507,401628585,40162858512,4,2,3:54,Long Island University,UAlbany,7,10,40,2,1,1,Rush,Ludovick Choquette run for 1 yd to the ALB 39 for a 1ST down,-0.444068664755051,2024-09-01T00:09:30.000Z
+401628585102995803,401628585,40162858513,1,2,0:41,Long Island University,UAlbany,14,10,65,1,10,0,Kickoff,Michael Coney kickoff for 65 yds for a touchback,,2024-09-01T00:15:15.000Z
+401628585102996901,401628585,40162858513,2,2,0:30,UAlbany,Long Island University,17,14,75,1,10,75,Passing Touchdown,Seven McGee 75 Yd pass from Myles Burkett (John Opalko Kick),6.0777551197213215,2024-09-01T00:17:46.000Z
+401628585102996903,401628585,40162858514,1,2,0:30,UAlbany,Long Island University,17,14,65,1,10,0,Kickoff,James Bozek kickoff for 63 yds,,2024-09-01T00:17:46.000Z
+401628585102999902,401628585,40162858514,3,2,0:00,Long Island University,UAlbany,14,17,75,0,10,3,End of Half,End of 2nd Quarter,,2024-09-01T00:21:14.000Z
+401628585102999901,401628585,40162858514,2,2,0:00,Long Island University,UAlbany,14,17,75,1,10,3,Rush,Ludovick Choquette run for 3 yds to the LIU 28,-0.2957674139440157,2024-09-01T00:21:14.000Z
+401628585103854603,401628585,40162858515,2,3,14:53,UAlbany,Long Island University,17,14,70,1,10,-7,Pass Reception,Myles Burkett pass complete to Seven McGee,-1.4524598057774947,2024-08-31T00:00:00.000Z
+401628585103854604,401628585,40162858515,3,3,14:53,UAlbany,Long Island University,17,14,77,2,17,0,Pass Incompletion,Myles Burkett pass incomplete,-0.14822996487153972,2024-09-01T00:51:13.000Z
+401628585103864601,401628585,40162858515,5,3,13:53,UAlbany,Long Island University,17,14,77,4,17,23,Punt,"Owen Lawson punt for 37 yds , Leisaan Hibbert returns for 23 yds to the ALB 37",,2024-09-01T00:52:04.000Z
+401628585103854605,401628585,40162858515,4,3,14:53,UAlbany,Long Island University,17,14,77,3,17,0,Penalty,"UAlbany Penalty, Offensive Pass Interference (Yards) declined",,
+401628585103854601,401628585,40162858515,1,3,14:53,Long Island University,UAlbany,14,17,65,1,10,24,Kickoff Return (Offense),"Michael Coney kickoff for 59 yds , Jamal Cooney return for 24 yds to the ALB 30",,2024-08-31T00:00:00.000Z
+401628585103864603,401628585,40162858516,1,3,13:53,Long Island University,UAlbany,14,17,37,1,10,15,Pass Reception,Luca Stanzani pass complete to Aviyon Smith-Mack for a 1ST down,0.4037858648282832,2024-09-01T00:55:14.000Z
+401628585103864604,401628585,40162858516,2,3,13:53,Long Island University,UAlbany,14,17,22,1,10,9,Rush,Ethan Greenwood run for 9 yds to the ALB 13,0.6322416389314145,2024-09-01T00:52:04.000Z
+401628585103864605,401628585,40162858516,3,3,13:53,Long Island University,UAlbany,14,17,13,2,1,-2,Pass Reception,Luca Stanzani pass complete to Ludovick Choquette,-0.7956806606616115,2024-09-01T00:55:14.000Z
+401628585103864606,401628585,40162858516,4,3,13:53,Long Island University,UAlbany,14,17,15,3,3,4,Pass Reception,Luca Stanzani pass complete to Aviyon Smith-Mack for a 1ST down,0.289322375010732,2024-09-01T00:55:14.000Z
+401628585103895001,401628585,40162858516,5,3,10:49,Long Island University,UAlbany,21,17,11,1,10,11,Passing Touchdown,Ludovick Choquette 11 Yd pass from Luca Stanzani (Michael Coney Kick),2.521739413367925,2024-09-01T00:55:50.000Z
+401628585103896101,401628585,40162858517,1,3,10:38,Long Island University,UAlbany,21,17,65,1,10,55,Kickoff Return (Offense),"Michael Coney kickoff for 64 yds , Jamal Cooney return for 55 yds to the LIU 44",,2024-09-01T01:00:01.000Z
+401628585103896103,401628585,40162858517,2,3,10:38,UAlbany,Long Island University,17,21,44,1,10,41,Rush,Griffin Woodell run for 41 yds to the LIU 3 for a 1ST down,1.9484306247786842,2024-09-01T01:00:01.000Z
+401628585103904201,401628585,40162858517,3,3,9:57,UAlbany,Long Island University,24,21,3,1,3,3,Rushing Touchdown,Griffin Woodell run for 3 yds for a TD (John Opalko KICK),1.464451732731337,2024-09-01T01:01:28.000Z
+401628585103904205,401628585,40162858518,2,3,9:57,Long Island University,UAlbany,21,24,75,1,10,15,Rush,Ludovick Choquette run for 15 yds to the LIU 40 for a 1ST down,1.320854515577646,2024-09-01T01:01:28.000Z
+401628585103904203,401628585,40162858518,1,3,9:57,UAlbany,Long Island University,24,21,65,1,10,0,Kickoff,James Bozek kickoff for 65 yds for a touchback,,2024-09-01T01:01:28.000Z
+401628585103905001,401628585,40162858518,3,3,9:49,Long Island University,UAlbany,21,24,60,1,10,0,Timeout,"Timeout UAlbany, clock 09:49",,2024-09-01T00:50:31.000Z
+401628585103905003,401628585,40162858518,4,3,9:49,Long Island University,UAlbany,21,24,60,1,10,-10,Penalty,"No Huddle-Shotgun Stanzani,Luca pass complete short right to Smith-Mack,Aviyon caught at UALB46, for 13 yards to the UALB47 (Patrick,Denzel) PENALTY LIU Holding (Giwa,Moshood) 10 yards from LIU40 to LIU30. NO PLAY.",,2024-09-01T01:07:14.000Z
+401628585103905005,401628585,40162858518,5,3,9:49,Long Island University,UAlbany,21,24,70,1,20,-5,Penalty,"PENALTY LIU False Start (Nichols,Cory) 5 yards from LIU30 to LIU25. NO PLAY.",,2024-09-01T01:07:14.000Z
+401628585103926701,401628585,40162858518,9,3,7:32,Long Island University,UAlbany,21,24,73,4,23,0,Punt,Will Lynch punt for 53 yds,,2024-09-01T01:11:14.000Z
+401628585103905009,401628585,40162858518,8,3,9:49,Long Island University,UAlbany,21,24,74,3,24,1,Rush,Ludovick Choquette run for 1 yd to the LIU 27,-0.03515396192441946,2024-09-01T01:07:14.000Z
+401628585103905008,401628585,40162858518,7,3,9:49,Long Island University,UAlbany,21,24,74,2,24,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.09339652548118238,2024-09-01T01:07:14.000Z
+401628585103905007,401628585,40162858518,6,3,9:49,Long Island University,UAlbany,21,24,75,1,25,1,Rush,Ethan Greenwood run for no gain to the LIU 26,-0.14825277660959202,2024-09-01T01:07:14.000Z
+401628585103926710,401628585,40162858519,8,3,7:32,UAlbany,Long Island University,24,21,44,3,4,5,Penalty,"PENALTY LIU Offside (Wheeler,Taveon) 5 yards from LIU44 to LIU39, 1ST DOWN. NO PLAY.",,2024-09-01T01:11:14.000Z
+401628585103926717,401628585,40162858519,14,3,7:32,UAlbany,Long Island University,24,21,26,3,8,1,Rush,Griffin Woodell run for 1 yd to the LIU 25,-0.6588613692625866,2024-09-01T01:11:14.000Z
+401628585103926716,401628585,40162858519,13,3,7:32,UAlbany,Long Island University,24,21,26,2,8,0,Pass Incompletion,Myles Burkett pass incomplete,-0.607748585389043,2024-09-01T01:11:14.000Z
+401628585103926715,401628585,40162858519,12,3,7:32,UAlbany,Long Island University,24,21,28,1,10,2,Rush,Myles Burkett run for 2 yds to the LIU 26,-0.2736731894519623,2024-09-01T01:11:14.000Z
+401628585103926714,401628585,40162858519,11,3,7:32,UAlbany,Long Island University,24,21,32,3,3,4,Rush,Faysal Aden run for 4 yds to the LIU 28 for a 1ST down,0.7396242118870193,2024-09-01T01:11:14.000Z
+401628585103926713,401628585,40162858519,10,3,7:32,UAlbany,Long Island University,24,21,39,2,10,7,Rush,Faysal Aden run for 7 yds to the LIU 32,0.4510359483486377,2024-09-01T01:11:14.000Z
+401628585103926712,401628585,40162858519,9,3,7:32,UAlbany,Long Island University,24,21,39,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.814236079442537,2024-09-01T01:11:14.000Z
+401628585103926709,401628585,40162858519,7,3,7:32,UAlbany,Long Island University,24,21,44,2,4,0,Pass Incompletion,Myles Burkett pass incomplete,-1.138581943654328,2024-09-01T01:11:14.000Z
+401628585103926708,401628585,40162858519,6,3,7:32,UAlbany,Long Island University,24,21,50,1,10,6,Rush,Griffin Woodell run for 6 yds to the LIU 44,0.345257937612164,2024-09-01T01:11:14.000Z
+401628585103926707,401628585,40162858519,5,3,7:32,UAlbany,Long Island University,24,21,63,3,5,13,Pass Reception,Myles Burkett pass complete to Seven McGee to the 50 yard line for a 1ST down,2.5499725084291898,2024-09-01T01:11:14.000Z
+401628585103926706,401628585,40162858519,4,3,7:32,UAlbany,Long Island University,24,21,68,2,10,5,Rush,Faysal Aden run for 5 yds to the ALB 37,0.0541640621886783,2024-09-01T01:11:14.000Z
+401628585103926705,401628585,40162858519,3,3,7:32,UAlbany,Long Island University,24,21,68,1,10,0,Pass Incompletion,Myles Burkett pass incomplete,-0.9262377870973815,2024-09-01T01:11:14.000Z
+401628585103926704,401628585,40162858519,2,3,7:32,UAlbany,Long Island University,24,21,74,2,4,6,Rush,Griffin Woodell run for 6 yds to the ALB 32 for a 1ST down,0.57792305816404,2024-09-01T01:11:14.000Z
+401628585103926703,401628585,40162858519,1,3,7:32,UAlbany,Long Island University,24,21,80,1,10,6,Rush,Griffin Woodell run for 6 yds to the ALB 26,0.2888240217992033,2024-09-01T01:11:14.000Z
+401628585103996801,401628585,40162858519,16,3,0:31,UAlbany,Long Island University,27,21,25,4,7,41,Field Goal Good,John Opalko 41 yd FG GOOD,,2024-09-01T01:25:29.000Z
+401628585103996301,401628585,40162858519,15,3,0:36,UAlbany,Long Island University,24,21,25,4,7,0,Timeout,"Timeout UAlbany, clock 00:36",,2024-09-01T00:50:31.000Z
+401628585103999901,401628585,40162858520,3,3,0:00,Long Island University,UAlbany,21,27,75,1,10,12,Rush,Nasir Hennigan run for 12 yds to the LIU 37 for a 1ST down,1.0272443261435713,2024-09-01T01:28:05.000Z
+401628585104849902,401628585,40162858520,4,4,15:00,Long Island University,UAlbany,21,27,63,1,10,4,Pass Reception,Luca Stanzani pass complete to Brandon Niemenski,-0.1644248613169578,2024-09-01T01:31:44.000Z
+401628585104849903,401628585,40162858520,5,4,15:00,Long Island University,UAlbany,21,27,59,2,6,7,Rush,Ludovick Choquette run for 7 yds to the LIU 48 for a 1ST down,1.206881366184277,2024-09-01T01:31:44.000Z
+401628585103996805,401628585,40162858520,2,3,0:00,Long Island University,UAlbany,21,27,75,0,10,0,End Period,End of 3rd Quarter,,2024-09-01T00:50:31.000Z
+401628585103996802,401628585,40162858520,1,3,0:31,UAlbany,Long Island University,27,21,65,1,10,0,Kickoff,James Bozek kickoff for 65 yds for a touchback,,2024-09-01T01:25:29.000Z
+401628585104849911,401628585,40162858520,9,4,15:00,Long Island University,UAlbany,21,27,47,1,10,3,Rush,Ethan Greenwood run for 3 yds to the ALB 44,-0.3535783157576075,2024-09-01T01:37:13.000Z
+401628585104849905,401628585,40162858520,6,4,15:00,Long Island University,UAlbany,21,27,52,1,10,-10,Pass Reception,"Luca Stanzani pass complete to Michael Love Long Island University Penalty, Illegal Block (Donnie Hardin) to the ALB 47",-2.816547416921101,2024-09-01T01:31:44.000Z
+401628585104849908,401628585,40162858520,7,4,15:00,Long Island University,UAlbany,21,27,47,1,5,-10,Penalty,"No Huddle-Shotgun Stanzani,Luca rush middle for 7 yards gain to the UALB40, End Of Play PENALTY LIU Holding (Hardin,Donnie) 10 yards from UALB47 to LIU43. NO PLAY.",,2024-09-01T01:37:13.000Z
+401628585104849909,401628585,40162858520,8,4,15:00,Long Island University,UAlbany,21,27,57,1,15,10,Penalty,"No Huddle-Shotgun Stanzani,Luca pass incomplete short left to Choquette,Ludovick thrown to LIU45 PENALTY UALB Holding (Iuliano,Jack) 10 yards from LIU43 to UALB47, 1ST DOWN. NO PLAY.",,2024-09-01T01:37:13.000Z
+401628585104849912,401628585,40162858520,10,4,15:00,Long Island University,UAlbany,21,27,44,2,7,18,Rush,Ethan Greenwood run for 18 yds to the ALB 26 for a 1ST down,1.246778434615857,2024-09-01T01:37:13.000Z
+401628585104849913,401628585,40162858520,11,4,15:00,Long Island University,UAlbany,21,27,26,1,10,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.4710467974920665,2024-09-01T01:37:13.000Z
+401628585104849914,401628585,40162858520,12,4,15:00,Long Island University,UAlbany,21,27,26,2,10,3,Rush,Ludovick Choquette run for 3 yds to the ALB 23,-0.1986945799422628,2024-09-01T01:37:13.000Z
+401628585104849915,401628585,40162858520,13,4,15:00,Long Island University,UAlbany,21,27,23,3,7,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.7450790543892561,2024-09-01T01:37:13.000Z
+401628585104896801,401628585,40162858520,14,4,10:31,Long Island University,UAlbany,21,27,23,4,7,38,Field Goal Missed,Michael Coney 38 yd FG MISSED,,2024-09-01T01:41:14.000Z
+401628585104896806,401628585,40162858521,3,4,10:31,UAlbany,Long Island University,27,21,74,3,7,33,Pass Reception,Myles Burkett pass complete to Seven McGee for a 1ST down,3.747943853750387,2024-09-01T01:43:28.000Z
+401628585104896804,401628585,40162858521,1,4,10:31,UAlbany,Long Island University,27,21,77,1,10,5,Pass Reception,Myles Burkett pass complete to Jackson Parker,0.090922002905697,2024-09-01T01:43:28.000Z
+401628585104896805,401628585,40162858521,2,4,10:31,UAlbany,Long Island University,27,21,72,2,5,2,Rush,Griffin Woodell run for 2 yds to the ALB 26,-0.44584859669929244,2024-09-01T01:43:28.000Z
+401628585104896807,401628585,40162858521,4,4,10:31,UAlbany,Long Island University,27,21,41,1,10,1,Rush,Griffin Woodell run for 1 yd to the LIU 40,-0.6717839246394793,2024-09-01T01:43:28.000Z
+401628585104896808,401628585,40162858521,5,4,10:31,UAlbany,Long Island University,27,21,40,2,9,0,Rush,Griffin Woodell run for no gain to the LIU 40,-1.02281513636375,2024-09-01T01:43:28.000Z
+401628585104896809,401628585,40162858521,6,4,10:31,UAlbany,Long Island University,27,21,40,3,9,0,Pass Incompletion,Myles Burkett pass incomplete,-1.001181957872566,2024-09-01T01:43:28.000Z
+401628585104935401,401628585,40162858521,7,4,6:45,UAlbany,Long Island University,27,21,40,4,9,0,Punt,"Owen Lawson punt for 31 yds, fair catch by Michael Love at the LIU 9",,2024-09-01T01:49:14.000Z
+401628585104935403,401628585,40162858522,1,4,6:45,Long Island University,UAlbany,21,27,91,1,10,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.334056406101074,2024-09-01T01:51:14.000Z
+401628585104935404,401628585,40162858522,2,4,6:45,Long Island University,UAlbany,21,27,91,2,10,6,Rush,Ludovick Choquette run for 6 yds to the LIU 15,0.08868893535470244,2024-09-01T01:51:14.000Z
+401628585104935405,401628585,40162858522,3,4,6:45,Long Island University,UAlbany,21,27,85,3,4,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.19635137337003972,2024-09-01T01:51:14.000Z
+401628585104945201,401628585,40162858522,4,4,5:47,Long Island University,UAlbany,21,27,85,4,4,0,Punt,"Will Lynch punt for 45 yds, punt out-of-bounds at the ALB 40",,2024-09-01T01:53:28.000Z
+401628585104945204,401628585,40162858523,2,4,5:47,UAlbany,Long Island University,27,21,59,2,9,10,Pass Reception,Myles Burkett pass complete to Levi Wentz for a 1ST down,1.9059915807766323,2024-09-01T01:53:28.000Z
+401628585104945203,401628585,40162858523,1,4,5:47,UAlbany,Long Island University,27,21,60,1,10,1,Rush,Griffin Woodell run for 1 yd to the ALB 41,-0.9114215282702052,2024-09-01T01:53:28.000Z
+401628585104945205,401628585,40162858523,3,4,5:47,UAlbany,Long Island University,27,21,49,1,10,3,Rush,Griffin Woodell run for 3 yds to the LIU 46,-0.375732386813203,2024-09-01T01:53:28.000Z
+401628585104945206,401628585,40162858523,4,4,5:47,UAlbany,Long Island University,27,21,46,2,7,1,Rush,Griffin Woodell run for 1 yd to the LIU 47,-0.8863117331841454,2024-09-01T01:53:28.000Z
+401628585104945207,401628585,40162858523,5,4,5:47,UAlbany,Long Island University,27,21,47,3,8,0,Pass Incompletion,Myles Burkett pass incomplete,-0.8837000512172395,2024-09-01T01:57:22.000Z
+401628585104976701,401628585,40162858523,6,4,2:32,UAlbany,Long Island University,27,21,47,4,8,0,Punt,Owen Lawson punt for 47 yds for a touchback,,2024-09-01T01:59:13.000Z
+401628585104976703,401628585,40162858524,1,4,2:32,Long Island University,UAlbany,21,27,80,1,10,16,Pass Reception,Luca Stanzani pass complete to Michael Love for a 1ST down,1.2388651878297718,2024-09-01T02:01:42.000Z
+401628585104979901,401628585,40162858524,2,4,2:00,Long Island University,UAlbany,21,27,64,1,10,0,Timeout,"Timeout UAlbany, clock 02:00",,2024-09-01T01:37:13.000Z
+401628585104989401,401628585,40162858524,8,4,1:05,Long Island University,UAlbany,21,27,39,3,10,0,Timeout,"Timeout UAlbany, clock 01:05",,2024-09-01T02:06:14.000Z
+401628585104989402,401628585,40162858524,9,4,1:05,Long Island University,UAlbany,21,27,39,3,10,0,Pass Reception,Luca Stanzani pass complete to Ludovick Choquette,-0.9911936548982448,2024-09-01T02:06:14.000Z
+401628585104979906,401628585,40162858524,7,4,2:00,Long Island University,UAlbany,21,27,39,2,10,0,Pass Incompletion,Luca Stanzani pass incomplete,-1.008878077670078,2024-09-01T02:01:57.000Z
+401628585104979905,401628585,40162858524,6,4,2:00,Long Island University,UAlbany,21,27,39,1,10,0,Pass Incompletion,Luca Stanzani pass incomplete,-0.814236079442537,2024-09-01T02:01:57.000Z
+401628585104979904,401628585,40162858524,5,4,2:00,Long Island University,UAlbany,21,27,42,2,2,3,Pass Reception,Luca Stanzani pass complete to Kahlil Overton for a 1ST down,-0.137789272807055,2024-09-01T02:01:57.000Z
+401628585104979903,401628585,40162858524,4,4,2:00,Long Island University,UAlbany,21,27,50,1,10,8,Rush,Luca Stanzani run for 8 yds to the ALB 42,0.838762649996877,2024-09-01T02:01:57.000Z
+401628585104979902,401628585,40162858524,3,4,2:00,Long Island University,UAlbany,21,27,64,1,10,14,Pass Reception,Luca Stanzani pass complete to Michael Love to the 50 yard line for a 1ST down,1.305780675653958,2024-09-01T01:37:13.000Z
+401628585104994501,401628585,40162858524,10,4,0:54,Long Island University,UAlbany,21,27,39,4,10,0,Timeout,"Timeout Long Island University, clock 00:54",,2024-09-01T01:37:13.000Z
+401628585104995201,401628585,40162858524,11,4,0:47,Long Island University,UAlbany,21,27,39,4,10,1,Rush,Luca Stanzani run for 1 yd to the ALB 38,-1.0452536330575892,2024-09-01T02:07:59.000Z
+401628585104995203,401628585,40162858525,1,4,0:47,UAlbany,Long Island University,27,21,62,1,10,-7,Rush,M. Burkett takes a knee,-1.9899799073710502,2024-09-01T02:07:59.000Z
+401628585104999902,401628585,40162858525,6,4,0:00,UAlbany,Long Island University,27,21,70,0,18,-1,End of Game,End of 4th Quarter,,2024-09-01T02:11:15.000Z
+401628585104995601,401628585,40162858525,2,4,0:43,UAlbany,Long Island University,27,21,69,2,17,0,Timeout,"Timeout Long Island University, clock 00:43",,2024-09-01T01:37:13.000Z
+401628585104996001,401628585,40162858525,4,4,0:39,UAlbany,Long Island University,27,21,70,3,18,0,Timeout,"Timeout Long Island University, clock 00:39",,2024-09-01T02:09:57.000Z
+401628585104995602,401628585,40162858525,3,4,0:43,UAlbany,Long Island University,27,21,69,2,17,-1,Rush,M. Burkett takes a knee,-0.28966675724594193,2024-09-01T02:09:42.000Z
+401628585104999901,401628585,40162858525,5,4,0:00,UAlbany,Long Island University,27,21,70,3,18,-1,Rush,M. Burkett takes a knee,-0.11204861428438483,2024-09-01T02:11:15.000Z

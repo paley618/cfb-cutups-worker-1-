@@ -1,0 +1,157 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628339101849908,401628339,4016283391,2,1,15:00,Tennessee Tech,Georgia,0,0,75,1,10,-4,Pass Reception,Jordyn Potts pass complete to Tremel Jones for a loss of 4 yards to the TNTC 21,-1.0163607520985618,2024-09-07T18:03:04.000Z
+401628339101857801,401628339,4016283391,3,1,14:21,Tennessee Tech,Georgia,0,0,79,2,14,3,Rush,Jalen Mitchell run for 3 yds to the TNTC 24,-0.07940310557592589,2024-09-07T18:03:04.000Z
+401628339101849905,401628339,4016283391,1,1,15:00,Georgia,Tennessee Tech,0,0,65,0,0,0,Kickoff,Peyton Woodring kickoff for 65 yds for a touchback,,2024-09-07T18:03:04.000Z
+401628339101866801,401628339,4016283391,4,1,13:31,Tennessee Tech,Georgia,0,0,76,3,11,0,Timeout,"Timeout Tennessee Tech, clock 13:31",,2024-09-07T18:05:17.000Z
+401628339101875001,401628339,4016283391,6,1,12:49,Tennessee Tech,Georgia,0,0,69,4,4,46,Punt,"Spencer Ashby punt for 37 yds , Anthony Evans III returns for 46 yds to the TNTC 22",,2024-09-07T18:03:04.000Z
+401628339101866802,401628339,4016283391,5,1,13:31,Tennessee Tech,Georgia,0,0,76,3,11,7,Rush,Jalen Mitchell run for 7 yds to the TNTC 31,0.12332995396800328,2024-09-07T18:05:17.000Z
+401628339101877201,401628339,4016283392,1,1,12:27,Georgia,Tennessee Tech,7,0,22,1,10,22,Passing Touchdown,Carson Beck pass complete to Dillon Bell for 22 yds for a TD (Peyton Woodring KICK),2.64762276664846,2024-09-07T18:10:36.000Z
+401628339101896801,401628339,4016283393,5,1,10:31,Tennessee Tech,Georgia,0,7,74,4,9,7,Punt,"Spencer Ashby punt for 39 yds , Anthony Evans III returns for 7 yds to the UGA 42",,2024-09-07T18:03:04.000Z
+401628339101877203,401628339,4016283393,1,1,12:27,Georgia,Tennessee Tech,7,0,65,0,0,0,Kickoff,Peyton Woodring kickoff for 60 yds,,2024-09-07T18:14:16.000Z
+401628339101897803,401628339,4016283393,6,1,10:21,Georgia,Tennessee Tech,7,0,58,1,10,-10,Penalty,"(10:21) ETIENNE, Trevor rush up the middle for a gain of 5 yards to the UGA47 (PHILYAW, Omari), clock 10:15. PENALTY UGA Holding on RATLEDGE, Tate enforced 10 yards from the UGA42 to the UGA32 [SG]. NO PLAY (replay the down).",,2024-09-07T18:17:48.000Z
+401628339101888901,401628339,4016283393,4,1,11:10,Tennessee Tech,Georgia,0,7,79,3,14,5,Rush,Kyron Cumby run for 5 yds to the TNTC 26,0.00888836656706805,2024-09-07T18:03:04.000Z
+401628339101885301,401628339,4016283393,3,1,11:46,Tennessee Tech,Georgia,0,7,71,2,6,-8,Sack,Jordyn Potts sacked by KJ Bolden for a loss of 8 yards to the TNTC 21,-1.0791609202908834,2024-09-07T18:03:04.000Z
+401628339101877501,401628339,4016283393,2,1,12:24,Tennessee Tech,Georgia,0,7,75,1,10,4,Rush,Jordan Yates run for 4 yds to the TNTC 29,-0.1142886249388964,2024-09-07T18:03:04.000Z
+401628339101907401,401628339,4016283394,2,1,9:25,Georgia,Tennessee Tech,7,0,64,2,16,5,Pass Reception,Carson Beck pass complete to Arian Smith for 5 yds to the UGA 41,0.0304650946939171,2024-09-07T18:03:04.000Z
+401628339101915101,401628339,4016283394,3,1,8:48,Georgia,Tennessee Tech,7,0,59,3,11,13,Pass Reception,Carson Beck pass complete to Oscar Delp for 13 yds to the TNTC 46 for a 1ST down,3.11363226957506,2024-09-07T18:03:04.000Z
+401628339101899801,401628339,4016283394,1,1,10:01,Georgia,Tennessee Tech,7,0,68,1,20,4,Pass Reception,Carson Beck pass complete to Trevor Etienne for 4 yds to the UGA 36,-0.08699022333606884,2024-09-07T18:03:04.000Z
+401628339101917301,401628339,4016283394,4,1,8:26,Georgia,Tennessee Tech,7,0,46,1,10,12,Pass Reception,Carson Beck pass complete to Dominic Lovett for 12 yds to the TNTC 34 for a 1ST down,0.6065612472207943,2024-09-07T18:03:04.000Z
+401628339101919701,401628339,4016283394,5,1,8:02,Georgia,Tennessee Tech,7,0,34,1,10,14,Pass Reception,Carson Beck pass complete to Arian Smith for 14 yds to the TNTC 20 for a 1ST down,0.318798431881971,2024-09-07T18:03:04.000Z
+401628339101927401,401628339,4016283394,6,1,7:25,Georgia,Tennessee Tech,7,0,20,1,10,14,Pass Reception,Carson Beck pass complete to Branson Robinson for 14 yds to the TNTC 6 for a 1ST down,0.565437957966422,2024-09-07T18:03:04.000Z
+401628339101936201,401628339,4016283394,7,1,6:37,Georgia,Tennessee Tech,14,0,6,1,6,6,Passing Touchdown,Carson Beck pass complete to Colbie Young for 6 yds for a TD (Peyton Woodring KICK),2.052489771065277,2024-09-07T18:22:19.000Z
+401628339101936203,401628339,4016283395,1,1,6:37,Georgia,Tennessee Tech,14,0,65,0,0,0,Kickoff,Peyton Woodring kickoff for 61 yds,,2024-09-07T18:23:04.000Z
+401628339101956602,401628339,4016283395,5,1,4:33,Tennessee Tech,Georgia,0,14,67,3,12,11,Rush,Jordyn Potts run for 11 yds to the TNTC 44,0.7023888692185443,2024-09-07T18:29:20.000Z
+401628339101956603,401628339,4016283395,6,1,4:33,Tennessee Tech,Georgia,0,14,56,4,1,4,Rush,Jay Parker run for 4 yds to the TNTC 48 for a 1ST down,2.3034724853957886,2024-09-07T18:29:20.000Z
+401628339101956601,401628339,4016283395,4,1,4:33,Tennessee Tech,Georgia,0,14,56,4,1,0,Timeout,"Timeout Tennessee Tech, clock 04:33",,2024-09-07T18:29:20.000Z
+401628339101936205,401628339,4016283395,2,1,6:37,Tennessee Tech,Georgia,0,14,65,1,10,5,Rush,Kyron Cumby run for 5 yds to the TNTC 40,0.1088137823196469,2024-09-07T18:23:04.000Z
+401628339101936206,401628339,4016283395,3,1,6:37,Tennessee Tech,Georgia,0,14,60,2,5,-7,Sack,Jordyn Potts sacked by Christen Miller for a loss of 7 yards to the TNTC 33,-1.8800124149530761,2024-09-07T18:23:04.000Z
+401628339101956604,401628339,4016283395,7,1,4:33,Tennessee Tech,Georgia,0,14,52,1,10,5,Rush,Obie Sanni run for 5 yds to the UGA 47,0.1045373160815773,2024-09-07T18:29:20.000Z
+401628339101956605,401628339,4016283395,8,1,4:33,Tennessee Tech,Georgia,0,14,47,2,5,-1,Rush,Kyron Cumby run for a loss of 1 yard to the UGA 48,-1.4118959607918278,2024-09-07T18:29:20.000Z
+401628339101977701,401628339,4016283395,9,1,2:22,Tennessee Tech,Georgia,0,14,48,3,6,-12,Fumble Recovery (Own),"Jordyn Potts run for a loss of 12 yards to the TNTC 40 Jordyn Potts fumbled, recovered by TNTC Jordyn Potts J. Potts return for 0 yds",-1.9263710295502845,2024-09-07T18:33:06.000Z
+401628339101984701,401628339,4016283395,10,1,1:52,Tennessee Tech,Georgia,0,14,60,4,18,0,Punt,"Spencer Ashby punt for 40 yds , Anthony Evans III returns for no gain to the UGA 20",,2024-09-07T18:34:12.000Z
+401628339101999902,401628339,4016283396,7,1,0:00,Georgia,Tennessee Tech,14,0,45,0,5,3,End Period,End of 1st Quarter,,2024-09-07T18:37:18.000Z
+401628339102885401,401628339,4016283396,17,2,11:45,Georgia,Tennessee Tech,17,0,9,4,8,27,Field Goal Good,Peyton Woodring 27 yd FG GOOD,,2024-09-07T18:42:44.000Z
+401628339101984703,401628339,4016283396,1,1,1:52,Georgia,Tennessee Tech,14,0,80,1,10,4,Rush,Trevor Etienne run for 4 yds to the UGA 24,-0.0884321258012219,2024-09-07T18:34:12.000Z
+401628339101984704,401628339,4016283396,2,1,1:52,Georgia,Tennessee Tech,14,0,76,2,6,10,Pass Reception,Carson Beck pass complete to Trevor Etienne for 10 yds to the UGA 34 for a 1ST down,1.1377205316767105,2024-09-07T18:34:12.000Z
+401628339101984705,401628339,4016283396,3,1,1:52,Georgia,Tennessee Tech,14,0,66,1,10,5,Pass Reception,Carson Beck pass complete to Dillon Bell for 5 yds to the UGA 39,0.1079221455143812,2024-09-07T18:34:12.000Z
+401628339101984706,401628339,4016283396,4,1,1:52,Georgia,Tennessee Tech,14,0,61,2,5,11,Pass Reception,Carson Beck pass complete to Dominic Lovett for 11 yds to the 50 yard line for a 1ST down,1.38743531209386,2024-09-07T18:37:07.000Z
+401628339101984708,401628339,4016283396,5,1,1:52,Georgia,Tennessee Tech,14,0,50,1,10,5,Penalty,"BECK, Carson pass deep to the left incomplete intended for BELL, Dillon thrown to the TTU5. PENALTY TTU Offsides on VAUGHN, Seth enforced 5 yards from the TTU50 to the TTU45 [NHSG]. NO PLAY (replay the down).",,2024-09-07T18:34:12.000Z
+401628339101999901,401628339,4016283396,6,1,0:00,Georgia,Tennessee Tech,14,0,45,1,5,3,Rush,Nate Frazier run for 3 yds to the TNTC 42,-0.34261845979535,2024-09-07T18:37:18.000Z
+401628339102849902,401628339,4016283396,8,2,15:00,Georgia,Tennessee Tech,14,0,42,2,2,5,Rush,Nate Frazier run for 5 yds to the TNTC 37 for a 1ST down,-0.0487593493522472,2024-09-07T18:41:15.000Z
+401628339102849904,401628339,4016283396,9,2,15:00,Georgia,Tennessee Tech,14,0,37,1,10,0,Pass Incompletion,Carson Beck pass incomplete,-0.7519361608312708,2024-09-07T18:41:15.000Z
+401628339102849907,401628339,4016283396,10,2,15:00,Georgia,Tennessee Tech,14,0,37,2,10,11,Rush,Branson Robinson run for 11 yds to the TNTC 26 for a 1ST down,1.0833426698998334,2024-09-07T18:41:15.000Z
+401628339102849910,401628339,4016283396,11,2,15:00,Georgia,Tennessee Tech,14,0,26,1,10,9,Rush,Trevor Etienne run for 9 yds to the TNTC 17,0.6542321147630225,2024-09-07T18:42:44.000Z
+401628339102849912,401628339,4016283396,12,2,15:00,Georgia,Tennessee Tech,14,0,17,2,1,6,Pass Reception,Carson Beck pass complete to Lawson Luckie for 6 yds to the TNTC 11 for a 1ST down,-0.455969405722767,2024-09-07T18:42:44.000Z
+401628339102849914,401628339,4016283396,13,2,15:00,Georgia,Tennessee Tech,14,0,11,1,10,7,Rush,Trevor Etienne run for 7 yds to the TNTC 4,0.30254910822179,2024-09-07T18:42:44.000Z
+401628339102849917,401628339,4016283396,14,2,15:00,Georgia,Tennessee Tech,14,0,4,2,3,0,Pass Incompletion,Carson Beck pass incomplete,-0.415930713016581,2024-09-07T18:42:44.000Z
+401628339102849918,401628339,4016283396,15,2,15:00,Georgia,Tennessee Tech,14,0,4,3,3,0,Pass Incompletion,Carson Beck pass incomplete,-0.301544994122148,2024-09-07T18:42:44.000Z
+401628339102849921,401628339,4016283396,16,2,15:00,Georgia,Tennessee Tech,14,0,4,4,3,-5,Penalty,"Georgia Penalty, Delay Of Game (-5 Yards) to the TNTC 9",,2024-09-07T18:42:44.000Z
+401628339102885404,401628339,4016283397,2,2,11:45,Tennessee Tech,Georgia,0,17,75,1,10,1,Rush,Jalen Mitchell run for 1 yd to the TNTC 26,-0.5874795431016855,2024-09-07T18:50:34.000Z
+401628339102885405,401628339,4016283397,3,2,11:45,Tennessee Tech,Georgia,0,17,74,2,9,5,Rush,Jalen Mitchell run for 5 yds to the TNTC 31,0.05274725954590843,2024-09-07T18:50:34.000Z
+401628339102885407,401628339,4016283397,5,2,11:45,Tennessee Tech,Georgia,0,17,74,3,9,10,Rush,Kyron Cumby run for 10 yds to the TNTC 36 for a 1ST down,1.9263560082503863,2024-09-07T18:50:34.000Z
+401628339102885408,401628339,4016283397,6,2,11:45,Tennessee Tech,Georgia,0,17,64,1,10,6,Rush,Ethan Roberts run for 6 yds to the TNTC 42,0.4008542507084805,2024-09-07T18:50:34.000Z
+401628339102885409,401628339,4016283397,7,2,11:45,Tennessee Tech,Georgia,0,17,58,2,4,10,Rush,Torin Baker run for 10 yds to the UGA 48 for a 1ST down,1.0601045207868935,2024-09-07T18:50:34.000Z
+401628339102885410,401628339,4016283397,8,2,11:45,Tennessee Tech,Georgia,0,17,48,1,10,0,Rush,Obie Sanni run for no gain to the UGA 48,-1.0742999147475647,2024-09-07T18:50:34.000Z
+401628339102885411,401628339,4016283397,9,2,11:45,Tennessee Tech,Georgia,0,17,48,2,10,4,Rush,Ethan Roberts run for 4 yds to the UGA 44,-0.1659698499919937,2024-09-07T18:50:34.000Z
+401628339102885412,401628339,4016283397,10,2,11:45,Tennessee Tech,Georgia,0,17,44,3,6,6,Rush,Torin Baker run for 6 yds to the UGA 38 for a 1ST down,1.8319109524343273,2024-09-07T18:50:34.000Z
+401628339102885413,401628339,4016283397,11,2,11:45,Tennessee Tech,Georgia,0,17,38,1,10,-1,Rush,Torin Baker run for a loss of 1 yard to the UGA 39,-0.977642243698774,2024-09-07T18:50:34.000Z
+401628339102885402,401628339,4016283397,1,2,11:45,Georgia,Tennessee Tech,17,0,65,0,0,0,Kickoff,Peyton Woodring kickoff for 65 yds for a touchback,,2024-09-07T18:50:34.000Z
+401628339102954101,401628339,4016283397,12,2,4:58,Tennessee Tech,Georgia,0,17,40,3,12,0,Timeout,"Timeout Tennessee Tech, clock 04:58",,2024-09-07T18:42:44.000Z
+401628339102957601,401628339,4016283397,15,2,4:23,Tennessee Tech,Georgia,0,17,41,4,13,0,Punt,Spencer Ashby punt for 41 yds for a touchback,,2024-09-07T18:42:44.000Z
+401628339102954103,401628339,4016283397,14,2,4:58,Tennessee Tech,Georgia,0,17,40,3,12,-1,Rush,Kyron Cumby run for a loss of 1 yard to the UGA 41,-1.069581342339502,2024-09-07T18:59:55.000Z
+401628339102954102,401628339,4016283397,13,2,4:58,Tennessee Tech,Georgia,0,17,39,2,11,-1,Rush,Jalen Mitchell run for a loss of 1 yard to the UGA 40,-1.2332697992021748,2024-09-07T18:59:55.000Z
+401628339102885406,401628339,4016283397,4,2,11:45,Tennessee Tech,Georgia,0,17,69,3,4,-5,Penalty,"Tennessee Tech Penalty, Illegal Substitution (Jay Parker) to the TNTC 26",,2024-09-07T18:50:34.000Z
+401628339102957606,401628339,4016283398,4,2,4:23,Georgia,Tennessee Tech,17,0,23,1,10,11,Rush,Carson Beck run for 11 yds to the TNTC 12 for a 1ST down,0.133883136035303,2024-09-07T19:04:12.000Z
+401628339102957605,401628339,4016283398,3,2,4:23,Georgia,Tennessee Tech,17,0,27,2,2,4,Rush,Cash Jones run for 4 yds to the TNTC 23 for a 1ST down,-0.2557659613900625,2024-09-07T19:04:12.000Z
+401628339102957604,401628339,4016283398,2,2,4:23,Georgia,Tennessee Tech,17,0,35,1,10,8,Pass Reception,Carson Beck pass complete to Dillon Bell for 8 yds to the TNTC 27,0.56437706709579,2024-09-07T19:04:12.000Z
+401628339102957603,401628339,4016283398,1,2,4:23,Georgia,Tennessee Tech,17,0,80,1,10,45,Rush,Trevor Etienne run for 45 yds to the TNTC 35 for a 1ST down,3.413469011828147,2024-09-07T19:04:12.000Z
+401628339102979902,401628339,4016283398,6,2,2:00,Georgia,Tennessee Tech,17,0,12,1,10,4,Pass Reception,Carson Beck pass complete to Arian Smith for 4 yds to the TNTC 8,-0.016436925799308,2024-09-07T18:42:44.000Z
+401628339102979903,401628339,4016283398,7,2,2:00,Georgia,Tennessee Tech,17,0,8,2,6,-2,Rush,Branson Robinson run for a loss of 2 yards to the TNTC 10,-0.4428937198165525,2024-09-07T18:42:44.000Z
+401628339102988801,401628339,4016283398,8,2,1:11,Georgia,Tennessee Tech,24,0,10,3,8,10,Passing Touchdown,Carson Beck pass complete to Dominic Lovett for 10 yds for a TD (Peyton Woodring KICK),2.989425187651786,2024-09-07T18:42:44.000Z
+401628339102979901,401628339,4016283398,5,2,2:00,Georgia,Tennessee Tech,17,0,8,2,6,0,Timeout,"Timeout Georgia, clock 02:00",,2024-09-07T18:42:44.000Z
+401628339102988803,401628339,4016283399,1,2,1:11,Georgia,Tennessee Tech,24,0,65,0,0,0,Kickoff,Peyton Woodring kickoff for 65 yds for a touchback,,2024-09-07T19:16:18.000Z
+401628339102989501,401628339,4016283399,2,2,1:04,Tennessee Tech,Georgia,0,24,78,2,13,0,Timeout,"Timeout Georgia, clock 01:04",,2024-09-07T18:42:44.000Z
+401628339102989502,401628339,4016283399,3,2,1:04,Tennessee Tech,Georgia,0,24,75,1,10,-3,Pass Reception,Jordyn Potts pass complete to Kyron Cumby for a loss of 3 yards to the TNTC 22,-0.9562833890771465,2024-09-07T19:18:25.000Z
+401628339102994102,401628339,4016283399,5,2,0:58,Tennessee Tech,Georgia,0,24,78,2,13,0,Rush,Torin Baker run for no gain to the TNTC 22,-0.21012438871067207,2024-09-07T19:19:34.000Z
+401628339102994602,401628339,4016283399,7,2,0:53,Tennessee Tech,Georgia,0,24,78,3,13,4,Rush,Torin Baker run for 4 yds to the TNTC 26,-0.01815340087489315,2024-09-07T19:20:37.000Z
+401628339102995405,401628339,4016283399,10,2,0:45,Georgia,Tennessee Tech,24,0,65,1,15,10,Penalty,"BECK, Carson pass deep up the middle incomplete intended for LOVETT, Dominic thrown to the TTU40. PENALTY TTU Holding on WILLIFORD, Caldra enforced 10 yards from the UGA35 to the UGA45 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-07T19:22:20.000Z
+401628339102995402,401628339,4016283399,9,2,0:45,Georgia,Tennessee Tech,24,0,60,1,10,-5,Penalty,"Georgia Penalty, False Start (-5 Yards) to the UGA 35",,2024-09-07T19:22:20.000Z
+401628339102995401,401628339,4016283399,8,2,0:45,Tennessee Tech,Georgia,0,24,74,4,9,4,Punt,"Spencer Ashby punt for 38 yds , Anthony Evans III returns for 4 yds to the UGA 40",,2024-09-07T18:42:44.000Z
+401628339102994601,401628339,4016283399,6,2,0:53,Tennessee Tech,Georgia,0,24,74,4,9,0,Timeout,"Timeout Georgia, clock 00:53",,2024-09-07T19:20:37.000Z
+401628339102994101,401628339,4016283399,4,2,0:58,Tennessee Tech,Georgia,0,24,78,3,13,0,Timeout,"Timeout Georgia, clock 00:58",,2024-09-07T19:19:34.000Z
+401628339102995410,401628339,40162833910,4,2,0:45,Georgia,Tennessee Tech,24,0,44,3,10,-2,Rush,Carson Beck run for a loss of 2 yards to the TNTC 46,-1.156845550109229,2024-09-07T19:22:20.000Z
+401628339102999901,401628339,40162833910,5,2,0:00,Georgia,Tennessee Tech,24,0,46,4,12,0,Pass Incompletion,Carson Beck pass incomplete,-0.39539745184345865,2024-09-07T19:26:35.000Z
+401628339102999903,401628339,40162833910,6,2,0:00,Georgia,Tennessee Tech,24,0,46,0,12,-8,End of Half,End of 2nd Quarter,,2024-09-07T19:26:35.000Z
+401628339102995408,401628339,40162833910,2,2,0:45,Georgia,Tennessee Tech,24,0,44,1,10,0,Pass Incompletion,Carson Beck pass incomplete,-0.9690270974076257,2024-09-07T19:22:20.000Z
+401628339102995407,401628339,40162833910,1,2,0:45,Georgia,Tennessee Tech,24,0,55,1,10,11,Pass Reception,Carson Beck pass complete to Dillon Bell for 11 yds to the TNTC 44 for a 1ST down,0.8637308798063437,2024-09-07T19:22:20.000Z
+401628339102995409,401628339,40162833910,3,2,0:45,Georgia,Tennessee Tech,24,0,44,2,10,0,Pass Incompletion,Carson Beck pass incomplete,-1.0658475431296655,2024-09-07T19:22:20.000Z
+401628339103849905,401628339,40162833911,2,3,15:00,Georgia,Tennessee Tech,24,0,75,1,10,13,Rush,Trevor Etienne run for 13 yds to the UGA 38 for a 1ST down,1.124751479041831,2024-09-07T19:47:46.000Z
+401628339103849902,401628339,40162833911,1,3,15:00,Tennessee Tech,Georgia,0,24,65,0,0,0,Kickoff,Dom LeBlanc kickoff for 65 yds for a touchback,,2024-09-07T19:47:46.000Z
+401628339103849907,401628339,40162833911,3,3,15:00,Georgia,Tennessee Tech,24,0,62,1,10,0,Pass Incompletion,Carson Beck pass incomplete,-1.087995077167328,2024-09-07T19:47:46.000Z
+401628339103849910,401628339,40162833911,4,3,15:00,Georgia,Tennessee Tech,24,0,62,2,10,3,Rush,Nate Frazier run for 3 yds to the UGA 41,-0.2959444094187394,2024-09-07T19:47:46.000Z
+401628339103849913,401628339,40162833911,5,3,15:00,Georgia,Tennessee Tech,24,0,59,3,7,9,Rush,Carson Beck run for 9 yds to the 50 yard line for a 1ST down,2.495531195144185,2024-09-07T19:47:46.000Z
+401628339103874501,401628339,40162833911,6,3,12:54,Georgia,Tennessee Tech,31,0,50,1,10,50,Passing Touchdown,Carson Beck pass complete to Arian Smith for 50 yds for a TD (Peyton Woodring KICK),3.841411932121373,2024-09-07T19:47:46.000Z
+401628339103875501,401628339,40162833912,2,3,12:44,Tennessee Tech,Georgia,0,31,75,1,10,2,Fumble Recovery (Opponent),"Jordan Yates run for 2 yds to the TNTC 27 Jordan Yates fumbled, recovered by UGA Dan Jackson D. Jackson return for 0 yds",-0.9222448802786785,2024-09-07T19:56:25.000Z
+401628339103874503,401628339,40162833912,1,3,12:54,Georgia,Tennessee Tech,31,0,65,0,0,0,Kickoff,Peyton Woodring kickoff for 63 yds,,2024-09-07T19:51:13.000Z
+401628339103875504,401628339,40162833912,3,3,12:44,Georgia,Tennessee Tech,31,0,27,1,10,0,Penalty,"ROBINSON, Branson rush to the left for a gain of 24 yards to the TTU3 (DANLEY, Trace), out of bounds. PENALTY UGA Holding on JACKSON III, Michael declined UGA Holding on GREENE III, Earnest enforced 10 yards from the TTU27 to the TTU37 [SG]. NO PLAY (replay the down).",,
+401628339103877802,401628339,40162833913,2,3,12:21,Georgia,Tennessee Tech,31,0,3,0,0,-5,Penalty,"Georgia Penalty, Delay Of Game (-5 Yards) to the TNTC 8",,2024-09-07T19:47:46.000Z
+401628339103877801,401628339,40162833913,1,3,12:21,Georgia,Tennessee Tech,38,0,37,1,20,37,Passing Touchdown,Carson Beck pass complete to Lawson Luckie for 37 yds for a TD (Peyton Woodring KICK),3.9899176129178944,2024-09-07T19:47:46.000Z
+401628339103877804,401628339,40162833914,1,3,12:21,Georgia,Tennessee Tech,38,0,65,0,0,0,Kickoff,Peyton Woodring kickoff for 51 yds,,2024-09-07T20:00:21.000Z
+401628339103877806,401628339,40162833914,2,3,12:21,Tennessee Tech,Georgia,0,38,75,1,10,0,Pass Incompletion,Jordyn Potts pass incomplete,-0.7029700220436519,2024-09-07T20:00:21.000Z
+401628339103877807,401628339,40162833914,3,3,12:21,Tennessee Tech,Georgia,0,38,75,2,10,3,Rush,Torin Baker run for 3 yds to the TNTC 28,-0.15222912011238687,2024-09-07T20:00:21.000Z
+401628339103877808,401628339,40162833914,4,3,12:21,Tennessee Tech,Georgia,0,38,72,3,7,0,Pass Incompletion,Jordyn Potts pass incomplete,-0.26587881160037785,2024-09-07T20:00:21.000Z
+401628339103887901,401628339,40162833914,5,3,11:20,Tennessee Tech,Georgia,0,38,72,4,7,5,Punt,"Spencer Ashby punt for 46 yds , Anthony Evans III returns for 5 yds to the UGA 31",,2024-09-07T20:06:41.000Z
+401628339103887903,401628339,40162833915,1,3,11:20,Georgia,Tennessee Tech,38,0,69,1,10,5,Pass Reception,Gunner Stockton pass complete to Jaden Reddell for 5 yds to the UGA 36,0.1043573190685727,2024-09-07T20:06:41.000Z
+401628339103887904,401628339,40162833915,2,3,11:20,Georgia,Tennessee Tech,38,0,64,2,5,1,Rush,Nate Frazier run for 1 yd to the UGA 37,-0.7833352143675967,2024-09-07T20:06:41.000Z
+401628339103887905,401628339,40162833915,3,3,11:20,Georgia,Tennessee Tech,38,0,63,3,4,3,Pass Reception,Gunner Stockton pass complete to Cole Speer for 3 yds to the UGA 40,-0.2554248838349604,2024-09-07T20:06:41.000Z
+401628339103887906,401628339,40162833915,4,3,11:20,Georgia,Tennessee Tech,38,0,60,4,1,1,Rush,Gunner Stockton run for 1 yd to the UGA 41 for a 1ST down,1.8826814344506069,2024-09-07T20:06:41.000Z
+401628339103887907,401628339,40162833915,5,3,11:20,Georgia,Tennessee Tech,38,0,59,1,10,0,Pass Incompletion,Gunner Stockton pass incomplete,-1.1387859939569847,2024-09-07T20:06:41.000Z
+401628339103887908,401628339,40162833915,6,3,11:20,Georgia,Tennessee Tech,38,0,59,2,10,21,Pass Reception,Gunner Stockton pass complete to Sacovie White for 21 yds to the TNTC 38 for a 1ST down,2.703205695170224,2024-09-07T20:06:41.000Z
+401628339103887909,401628339,40162833915,7,3,11:20,Georgia,Tennessee Tech,38,0,38,1,10,9,Rush,Nate Frazier run for 9 yds to the TNTC 29,0.800789073122285,2024-09-07T20:06:41.000Z
+401628339103887910,401628339,40162833915,8,3,11:20,Georgia,Tennessee Tech,38,0,29,2,1,9,Pass Reception,Gunner Stockton pass complete to Nitro Tuggle for 9 yds to the TNTC 20 for a 1ST down,-0.324124153568796,2024-09-07T20:06:41.000Z
+401628339103887911,401628339,40162833915,9,3,11:20,Georgia,Tennessee Tech,38,0,20,1,10,7,Pass Reception,Gunner Stockton pass complete to Branson Robinson for 7 yds to the TNTC 13,0.312961885301428,2024-09-07T20:06:41.000Z
+401628339103935301,401628339,40162833915,10,3,6:46,Georgia,Tennessee Tech,45,0,13,2,3,13,Rushing Touchdown,Branson Robinson run for 13 yds for a TD (Peyton Woodring KICK),2.304965843730271,2024-09-07T19:47:46.000Z
+401628339103935303,401628339,40162833916,1,3,6:46,Georgia,Tennessee Tech,45,0,65,0,0,0,Kickoff,Charlie Ham kickoff for 60 yds,,2024-09-07T20:16:18.000Z
+401628339103939401,401628339,40162833916,2,3,6:05,Tennessee Tech,Georgia,0,45,75,2,10,0,Timeout,"Timeout Tennessee Tech, clock 06:05",,2024-09-07T19:47:46.000Z
+401628339103939402,401628339,40162833916,3,3,6:05,Tennessee Tech,Georgia,0,45,75,1,10,0,Rush,Obie Sanni run for no gain to the TNTC 25,-0.7029700220436519,2024-09-07T20:19:22.000Z
+401628339103939403,401628339,40162833916,4,3,6:05,Tennessee Tech,Georgia,0,45,75,2,10,15,Penalty,"Georgia Penalty, Face mask (15 yards) (Justyn Rhett) to the TNTC 49 for a 1ST down",,2024-09-07T20:19:22.000Z
+401628339103939404,401628339,40162833916,5,3,6:05,Tennessee Tech,Georgia,0,45,51,1,10,9,Rush,Obie Sanni run for 9 yds to the UGA 42,1.122673355463087,2024-09-07T20:19:22.000Z
+401628339103939405,401628339,40162833916,6,3,6:05,Tennessee Tech,Georgia,0,45,42,2,1,0,Rush,Kyron Cumby run for no gain to the UGA 42,-1.1637570333089164,2024-09-07T20:19:22.000Z
+401628339103939406,401628339,40162833916,7,3,6:05,Tennessee Tech,Georgia,0,45,42,3,1,4,Pass Reception,Jordyn Potts pass complete to Kyron Cumby for 4 yds to the UGA 38 for a 1ST down,0.8698582331535805,2024-09-07T20:22:18.000Z
+401628339103939407,401628339,40162833916,8,3,6:05,Tennessee Tech,Georgia,0,45,38,1,10,1,Rush,Torin Baker run for 1 yd to the UGA 37,-0.596824390353605,2024-09-07T20:22:18.000Z
+401628339103939409,401628339,40162833916,9,3,6:05,Tennessee Tech,Georgia,0,45,37,2,9,-16,Penalty,"POTTS, Jordyn pass deep to the right complete for 25 yards to PARKER, Jay caught at the UGA20 and advanced to the UGA12 (RHETT, Justyn). PENALTY TTU Pass Interference on SHIELDS, Luke enforced 16 yards to the TTU47 [SG]. NO PLAY (replay the down).",,2024-09-07T20:22:18.000Z
+401628339103939410,401628339,40162833916,10,3,6:05,Tennessee Tech,Georgia,0,45,53,2,25,12,Pass Reception,Jordyn Potts pass complete to D.J. Linkins for 12 yds to the UGA 41,1.1684594959303842,2024-09-07T20:22:18.000Z
+401628339103939411,401628339,40162833916,11,3,6:05,Tennessee Tech,Georgia,0,45,41,3,13,3,Rush,Torin Baker run for 3 yds to the UGA 38,-0.3525054026676866,2024-09-07T20:22:18.000Z
+401628339103988201,401628339,40162833916,12,3,1:17,Tennessee Tech,Georgia,0,45,38,4,10,0,Punt,"Spencer Ashby punt for 28 yds, fair catch by Anthony Evans III at the UGA 10",,2024-09-07T20:26:43.000Z
+401628339103999902,401628339,40162833917,4,3,0:00,Georgia,Tennessee Tech,45,0,81,0,1,8,End Period,End of 3rd Quarter,,2024-09-07T19:47:46.000Z
+401628339103988203,401628339,40162833917,1,3,1:17,Georgia,Tennessee Tech,45,0,90,1,10,7,Rush,Nate Frazier run for 7 yds to the UGA 17,0.38157906422711824,2024-09-07T20:26:43.000Z
+401628339103988204,401628339,40162833917,2,3,1:17,Georgia,Tennessee Tech,45,0,83,2,3,2,Rush,Chauncey Bowens run for 2 yds to the UGA 19,-0.36199085539925596,2024-09-07T20:26:43.000Z
+401628339103999901,401628339,40162833917,3,3,0:00,Georgia,Tennessee Tech,45,0,81,3,1,8,Rush,Chauncey Bowens run for 8 yds to the UGA 27 for a 1ST down,0.8415406100874057,2024-09-07T19:47:46.000Z
+401628339104899901,401628339,40162833917,5,4,10:00,Georgia,Tennessee Tech,45,0,73,1,10,-7,Sack,Gunner Stockton sacked by Kanstin Brooks for a loss of 7 yards to the UGA 20,-1.262945592997939,2024-09-07T00:00:00.000Z
+401628339104899903,401628339,40162833917,6,4,10:00,Georgia,Tennessee Tech,45,0,80,2,17,-10,Penalty,"BOWENS, Chauncey rush up the middle for a gain of 9 yards to the UGA29 (GARCIA, Angel). PENALTY UGA Holding on CALHOUN, Daniel enforced 10 yards from the UGA20 to the UGA10 [NHSG]. NO PLAY (replay the down).",,2024-09-07T20:33:13.000Z
+401628339104899904,401628339,40162833917,7,4,10:00,Georgia,Tennessee Tech,45,0,90,2,27,11,Pass Reception,Gunner Stockton pass complete to Anthony Evans III for 11 yds to the UGA 21,0.07532402732193334,2024-09-07T20:33:13.000Z
+401628339104899905,401628339,40162833917,8,4,10:00,Georgia,Tennessee Tech,45,0,79,3,16,14,Pass Reception,Gunner Stockton pass complete to Cole Speer for 14 yds to the UGA 35,0.4652471705746173,2024-09-07T20:33:13.000Z
+401628339104926101,401628339,40162833917,9,4,7:38,Georgia,Tennessee Tech,45,0,65,4,2,0,Punt,"Brett Thorson punt for 55 yds, fair catch by Jordan Yates at the TNTC 10",,2024-09-07T20:33:13.000Z
+401628339104926103,401628339,40162833918,1,4,7:38,Tennessee Tech,Georgia,0,45,90,1,10,0,Pass Incompletion,Jordyn Potts pass incomplete,-0.34929852451643395,2024-09-07T20:36:26.000Z
+401628339104926104,401628339,40162833918,2,4,7:38,Tennessee Tech,Georgia,0,45,90,2,10,2,Rush,Kyron Cumby run for 2 yds to the TNTC 12,-0.09968499126273044,2024-09-07T20:36:26.000Z
+401628339104926105,401628339,40162833918,3,4,7:38,Tennessee Tech,Georgia,0,45,88,3,8,-8,Sack,Jordyn Potts sacked by Jordan Thomas for a loss of 8 yards to the TNTC 4,-0.15145297956014758,2024-09-07T20:36:26.000Z
+401628339104944301,401628339,40162833918,4,4,5:56,Tennessee Tech,Georgia,0,45,96,4,16,0,Punt,"Spencer Ashby punt for 46 yds, downed at the 50 yard line",,2024-09-07T20:33:13.000Z
+401628339104944303,401628339,40162833919,1,4,5:56,Georgia,Tennessee Tech,45,0,50,1,10,15,Penalty,"Tennessee Tech Penalty, Personal Foul (Omari Philyaw) to the TNTC 26 for a 1ST down",,2024-09-07T20:41:02.000Z
+401628339104944306,401628339,40162833919,4,4,5:56,Georgia,Tennessee Tech,45,0,15,1,10,4,Rush,Chauncey Bowens run for 4 yds to the TNTC 11,-0.019365161227934,2024-09-07T20:41:02.000Z
+401628339104944305,401628339,40162833919,3,4,5:56,Georgia,Tennessee Tech,45,0,25,2,9,10,Pass Reception,Gunner Stockton pass complete to Michael Jackson III for 10 yds to the TNTC 15 for a 1ST down,0.521972328255282,2024-09-07T20:41:02.000Z
+401628339104944304,401628339,40162833919,2,4,5:56,Georgia,Tennessee Tech,45,0,26,1,10,1,Pass Reception,Gunner Stockton pass complete to Sacovie White for 1 yd to the TNTC 25,-0.3601692954121845,2024-09-07T20:41:02.000Z
+401628339104944309,401628339,40162833919,6,4,5:56,Georgia,Tennessee Tech,45,0,21,2,16,0,Pass Incompletion,Gunner Stockton pass incomplete,-0.644320627333867,2024-09-07T20:41:02.000Z
+401628339104944308,401628339,40162833919,5,4,5:56,Georgia,Tennessee Tech,45,0,11,2,6,-10,Penalty,"QB Keeper STOCKTON, Gunner rush to the left for no gain to the TTU11 (BOLTON, Toby). PENALTY UGA Holding on JACKSON, Jahzare enforced 10 yards from the TTU11 to the TTU21 [NHSG]. NO PLAY (replay the down).",,2024-09-07T20:41:02.000Z
+401628339104944310,401628339,40162833919,7,4,5:56,Georgia,Tennessee Tech,45,0,21,3,16,8,Rush,Gunner Stockton run for 8 yds to the TNTC 13,0.4754371607352963,2024-09-07T20:41:02.000Z
+401628339104969201,401628339,40162833919,8,4,3:07,Georgia,Tennessee Tech,48,0,13,4,8,32,Field Goal Good,Peyton Woodring 32 yd FG GOOD,,2024-09-07T20:33:13.000Z
+401628339104969202,401628339,40162833920,1,4,3:07,Georgia,Tennessee Tech,48,0,65,0,0,0,Kickoff,Charlie Ham kickoff for 65 yds for a touchback,,2024-09-07T20:52:50.000Z
+401628339104999903,401628339,40162833920,11,4,0:00,Tennessee Tech,Georgia,0,48,65,0,0,0,End of Game,End of 4th Quarter,,2024-09-07T20:33:13.000Z
+401628339104999701,401628339,40162833920,8,4,0:02,Tennessee Tech,Georgia,0,48,15,3,11,0,Timeout,"Timeout Tennessee Tech, clock 00:02",,2024-09-07T20:33:13.000Z
+401628339104979901,401628339,40162833920,3,4,2:00,Tennessee Tech,Georgia,0,48,27,1,10,0,Timeout,"Timeout Georgia, clock 02:00",,2024-09-07T20:33:13.000Z
+401628339104969204,401628339,40162833920,2,4,3:07,Tennessee Tech,Georgia,0,48,75,1,10,7,Rush,Aidan Littles run for 7 yds to the TNTC 32,0.604642460086338,2024-09-07T20:52:50.000Z
+401628339104979902,401628339,40162833920,4,4,2:00,Tennessee Tech,Georgia,0,48,68,2,3,15,Penalty,"Georgia Penalty, Face mask (15 yards) (Justyn Rhett) to the UGA 27 for a 1ST down",,2024-09-07T20:56:08.000Z
+401628339104979903,401628339,40162833920,5,4,2:00,Tennessee Tech,Georgia,0,48,27,1,10,7,Rush,Aidan Littles run for 7 yds to the UGA 20,0.3376362038341565,2024-09-07T20:56:08.000Z
+401628339104979904,401628339,40162833920,6,4,2:00,Tennessee Tech,Georgia,0,48,20,2,3,6,Rush,Aidan Littles run for 6 yds to the UGA 14 for a 1ST down,-0.144638537621752,2024-09-07T20:56:08.000Z
+401628339104979905,401628339,40162833920,7,4,2:00,Tennessee Tech,Georgia,0,48,14,1,10,-2,Rush,Aidan Littles run for a loss of 2 yards to the UGA 16,-0.447935627360474,2024-09-07T20:56:08.000Z
+401628339104999702,401628339,40162833920,9,4,0:02,Tennessee Tech,Georgia,0,48,16,2,12,1,Rush,Aidan Littles run for 1 yd to the UGA 15,-0.3009056021842385,2024-09-07T21:03:52.000Z
+401628339104999901,401628339,40162833920,10,4,0:00,Tennessee Tech,Georgia,3,48,15,3,11,32,Field Goal Good,Hayden Olsen 32 yd FG GOOD,,2024-09-07T20:33:13.000Z

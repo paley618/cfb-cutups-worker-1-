@@ -1,0 +1,185 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401629040101849912,401629040,4016290401,2,1,15:00,Massachusetts,Toledo,0,0,75,1,10,5,Pass Reception,Taisun Phommachanh pass complete to Anthony Simpson for 5 yds to the MASS 30,0.0945451165334843,2024-09-07T19:27:36.000Z
+401629040101857801,401629040,4016290401,3,1,14:21,Massachusetts,Toledo,0,0,70,2,5,-2,Rush,Jalen John run for a loss of 2 yards to the MASS 28,-0.9497442586895231,2024-09-07T19:27:36.000Z
+401629040101866101,401629040,4016290401,4,1,13:38,Massachusetts,Toledo,0,0,72,3,7,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.26587881160037785,2024-09-07T19:27:36.000Z
+401629040101849909,401629040,4016290401,1,1,15:00,Toledo,Massachusetts,0,0,65,0,0,0,Kickoff,Michael Denning kickoff for 65 yds for a touchback,,2024-09-07T19:27:36.000Z
+401629040101866201,401629040,4016290401,5,1,13:37,Massachusetts,Toledo,0,0,72,4,7,0,Timeout,"Timeout Toledo, clock 13:37",,2024-09-07T19:35:38.000Z
+401629040101866401,401629040,4016290401,6,1,13:35,Massachusetts,Toledo,0,0,72,4,7,0,Punt,"CJ Kolodziey punt for 35 yds , Bryson Hammer returns for no gain to the TOL 28 Toledo Penalty, Offensive Holding (10 Yards) to the TOL 49",,2024-09-07T19:36:38.000Z
+401629040101874401,401629040,4016290402,2,1,12:55,Toledo,Massachusetts,0,0,48,2,7,-5,Penalty,"Toledo Penalty, Illegal Motion (-5 Yards) to the TOL 47",,2024-09-07T19:38:48.000Z
+401629040101878601,401629040,4016290402,5,1,12:13,Toledo,Massachusetts,0,0,47,4,6,-5,Penalty,"Toledo Penalty, Delay Of Game (-5 Yards) to the TOL 48",,2024-09-07T19:39:46.000Z
+401629040101878602,401629040,4016290402,6,1,12:13,Toledo,Massachusetts,0,0,52,4,11,1,Punt,"Emilio Duran punt for 48 yds , Sterling Galban returns for 1 yd to the MASS 5",,2024-09-07T19:39:46.000Z
+401629040101878201,401629040,4016290402,4,1,12:17,Toledo,Massachusetts,0,0,47,3,6,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.9689555597926596,2024-09-07T19:27:36.000Z
+401629040101875201,401629040,4016290402,3,1,12:47,Toledo,Massachusetts,0,0,53,2,12,6,Rush,Jacquez Stuart run for 6 yds to the MASS 47,0.2923340956402285,2024-09-07T19:27:36.000Z
+401629040101867502,401629040,4016290402,1,1,13:24,Toledo,Massachusetts,0,0,51,1,10,3,Rush,Jacquez Stuart run for 3 yds to the MASS 48,-0.395458128988178,2024-09-07T19:36:45.000Z
+401629040101899301,401629040,4016290403,4,1,10:06,Massachusetts,Toledo,0,0,91,4,6,0,Punt,"CJ Kolodziey punt for 43 yds, downed at the TOL 48",,2024-09-07T19:27:36.000Z
+401629040101895401,401629040,4016290403,3,1,10:45,Massachusetts,Toledo,0,0,94,3,9,3,Rush,Jalen John run for 3 yds to the MASS 9,-0.0258954873445596,2024-09-07T19:27:36.000Z
+401629040101887201,401629040,4016290403,2,1,11:27,Massachusetts,Toledo,0,0,96,2,11,2,Rush,Jalen John run for 2 yds to the MASS 6,-0.0646437954472514,2024-09-07T19:27:36.000Z
+401629040101879601,401629040,4016290403,1,1,12:03,Massachusetts,Toledo,0,0,95,1,10,-1,Sack,Taisun Phommachanh sacked by Jackson Barrow and Cavon Butler for a loss of 1 yard to the MASS 4,-0.31876017924717015,2024-09-07T19:27:36.000Z
+401629040101906302,401629040,4016290404,4,1,9:36,Toledo,Massachusetts,0,0,52,4,10,2,Punt,"Emilio Duran punt for 40 yds , Sterling Galban returns for 2 yds to the MASS 14",,2024-09-07T19:52:38.000Z
+401629040101906301,401629040,4016290404,3,1,9:36,Toledo,Massachusetts,0,0,52,3,10,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.6418714100938061,2024-09-07T19:52:38.000Z
+401629040101905401,401629040,4016290404,2,1,9:45,Toledo,Massachusetts,0,0,52,2,10,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.9850636246407553,2024-09-07T19:52:02.000Z
+401629040101904001,401629040,4016290404,1,1,9:59,Toledo,Massachusetts,0,0,52,1,10,0,Pass Incompletion,Tucker Gleason pass incomplete,-1.1430602484821704,2024-09-07T19:27:36.000Z
+401629040101916401,401629040,4016290405,4,1,8:35,Massachusetts,Toledo,0,0,87,4,11,0,Punt,"CJ Kolodziey punt for 38 yds, fair catch by Bryson Hammer at the TOL 49",,2024-09-07T19:27:36.000Z
+401629040101908601,401629040,4016290405,3,1,9:13,Massachusetts,Toledo,0,0,88,3,12,1,Rush,Taisun Phommachanh run for 1 yd to the MASS 13,-0.04746230057515176,2024-09-07T19:27:36.000Z
+401629040101908201,401629040,4016290405,2,1,9:17,Massachusetts,Toledo,0,0,88,2,12,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.129768957373388,2024-09-07T19:54:09.000Z
+401629040101906701,401629040,4016290405,1,1,9:32,Massachusetts,Toledo,0,0,86,1,10,-2,Rush,Taisun Phommachanh run for a loss of 2 yards to the MASS 12,-0.522030626580742,2024-09-07T19:27:36.000Z
+401629040101935701,401629040,4016290406,4,1,6:42,Toledo,Massachusetts,0,0,49,4,8,0,Punt,Emilio Duran punt for 49 yds for a touchback,,2024-09-07T19:27:36.000Z
+401629040101928201,401629040,4016290406,3,1,7:17,Toledo,Massachusetts,0,0,52,3,11,3,Pass Reception,Tucker Gleason pass complete to Jacquez Stuart for 3 yds to the MASS 49,-0.2612259758709668,2024-09-07T19:27:36.000Z
+401629040101924601,401629040,4016290406,2,1,7:53,Toledo,Massachusetts,0,0,48,2,7,-4,Rush,Willie Shaw III run for a loss of 4 yards to the TOL 48,-1.912567874534412,2024-09-07T19:27:36.000Z
+401629040101916802,401629040,4016290406,1,1,8:31,Toledo,Massachusetts,0,0,51,1,10,3,Rush,Willie Shaw III run for 3 yds to the MASS 48,-0.395458128988178,2024-09-07T19:55:34.000Z
+401629040101936401,401629040,4016290407,1,1,6:35,Massachusetts,Toledo,0,0,80,1,10,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.5586693796725282,2024-09-07T19:27:36.000Z
+401629040101936901,401629040,4016290407,2,1,6:30,Massachusetts,Toledo,0,0,80,2,10,8,Pass Reception,Taisun Phommachanh pass complete to Sterling Galban for 8 yds to the MASS 28,0.3899518655027565,2024-09-07T20:01:33.000Z
+401629040101944902,401629040,4016290407,4,1,5:50,Massachusetts,Toledo,0,0,72,3,2,1,Pass Reception,Taisun Phommachanh pass complete to CJ Hester for 1 yd to the MASS 29,-0.3985907481447333,2024-09-07T20:04:07.000Z
+401629040101949701,401629040,4016290407,5,1,5:02,Massachusetts,Toledo,0,0,71,4,1,0,Punt,"punt for 38 yds, fair catch by Bryson Hammer at the TOL 33",,2024-09-07T19:27:36.000Z
+401629040101944901,401629040,4016290407,3,1,5:50,Massachusetts,Toledo,0,0,72,3,2,0,Timeout,"Timeout Massachusetts, clock 05:50",,2024-09-07T20:03:06.000Z
+401629040101954202,401629040,4016290408,1,1,4:57,Toledo,Massachusetts,0,0,67,1,10,5,Rush,Willie Shaw III run for 5 yds to the TOL 38,0.1068735075937823,2024-09-07T20:05:04.000Z
+401629040101956601,401629040,4016290408,2,1,4:33,Toledo,Massachusetts,0,0,62,2,5,4,Rush,Willie Shaw III run for 4 yds to the TOL 42,-0.1551664723485473,2024-09-07T19:27:36.000Z
+401629040101959601,401629040,4016290408,3,1,4:03,Toledo,Massachusetts,0,0,58,3,1,18,Rush,Tucker Gleason run for 18 yds to the MASS 40 for a 1ST down,2.288300489958573,2024-09-07T19:27:36.000Z
+401629040101968001,401629040,4016290408,4,1,3:19,Toledo,Massachusetts,7,0,40,1,10,40,Passing Touchdown,Tucker Gleason pass complete to Jerjuan Newton for 40 yds for a TD (Dylan Cunanan KICK),3.189049143937341,2024-09-07T20:07:22.000Z
+401629040101968701,401629040,4016290409,2,1,3:12,Massachusetts,Toledo,0,7,91,1,10,7,Rush,Brandon Campbell run for 7 yds to the MASS 16,0.3698057877633616,2024-09-07T19:27:36.000Z
+401629040101995502,401629040,4016290409,7,1,0:00,Massachusetts,Toledo,0,7,72,0,4,25,End Period,End of 1st Quarter,,2024-09-07T20:14:14.000Z
+401629040101968003,401629040,4016290409,1,1,3:19,Toledo,Massachusetts,7,0,65,0,0,65,Kickoff,"Michael Denning kickoff for 65 yds , Sterling Galban return for no gain to the MASS 9 Sterling Galban fumbled, recovered by MASS return for 0 yds , return for no gain to the MASS 9",,2024-09-07T20:09:25.000Z
+401629040101975901,401629040,4016290409,3,1,2:40,Massachusetts,Toledo,0,7,84,2,3,6,Rush,Brandon Campbell run for 6 yds to the MASS 22 for a 1ST down,0.1803953659203943,2024-09-07T19:27:36.000Z
+401629040101978701,401629040,4016290409,4,1,2:12,Massachusetts,Toledo,0,7,78,1,10,-2,Rush,Brandon Campbell run for a loss of 2 yards to the MASS 20,-0.7686606851401576,2024-09-07T19:27:36.000Z
+401629040101986901,401629040,4016290409,5,1,1:30,Massachusetts,Toledo,0,7,80,2,12,8,Pass Reception,Taisun Phommachanh pass complete to Jacquon Gibson for 8 yds to the MASS 28,0.30297972165746057,2024-09-07T19:27:36.000Z
+401629040101995501,401629040,4016290409,6,1,0:44,Massachusetts,Toledo,0,7,72,3,4,25,Pass Reception,Taisun Phommachanh pass complete to Jakobie Keeney-James for 25 yds to the TOL 47 for a 1ST down,3.124463524557389,2024-09-07T19:27:36.000Z
+401629040102849902,401629040,4016290409,8,2,15:00,Massachusetts,Toledo,0,7,47,1,10,39,Pass Reception,Taisun Phommachanh pass complete to Jacquon Gibson for 39 yds to the TOL 8 for a 1ST down,1.293602672566738,2024-09-07T20:18:33.000Z
+401629040102858601,401629040,4016290409,9,2,14:13,Massachusetts,Toledo,0,7,8,1,8,2,Rush,Brandon Campbell run for 2 yds to the TOL 6,-0.209067424082246,2024-09-07T20:18:33.000Z
+401629040102866601,401629040,4016290409,10,2,13:33,Massachusetts,Toledo,0,7,6,2,6,0,Rush,Taisun Phommachanh run for no gain to the TOL 6,-0.29509485739271,2024-09-07T20:18:33.000Z
+401629040102874901,401629040,4016290409,11,2,12:50,Massachusetts,Toledo,0,7,6,3,6,-5,Penalty,"Massachusetts Penalty, False Start (Sterling Galban) to the TOL 11",,2024-09-07T20:20:32.000Z
+401629040102876601,401629040,4016290409,12,2,12:33,Massachusetts,Toledo,0,7,11,3,11,6,Pass Reception,Taisun Phommachanh pass complete to Matt Smith for 6 yds to the TOL 5,0.100277391370831,2024-09-07T20:18:33.000Z
+401629040102884701,401629040,4016290409,13,2,11:52,Massachusetts,Toledo,3,7,5,4,5,23,Field Goal Good,Jacob Lurie 23 yd FG GOOD,,2024-09-07T20:21:53.000Z
+401629040102884702,401629040,40162904010,1,2,11:52,Massachusetts,Toledo,3,7,65,0,0,0,Kickoff,CJ Kolodziey kickoff for 65 yds for a touchback,,2024-09-07T20:21:53.000Z
+401629040102884704,401629040,40162904010,2,2,11:52,Toledo,Massachusetts,7,3,75,1,10,15,Penalty,"Massachusetts Penalty, Targeting on JOHNSON, Gerrell enforced (Gerrell Johnson) to the TOL 44 for a 1ST down",,2024-09-07T20:21:53.000Z
+401629040102886001,401629040,40162904010,3,2,11:39,Toledo,Massachusetts,7,3,56,1,10,15,Penalty,"Massachusetts Penalty, Unsportsmanlike Conduct (Gerrell Johnson) to the MASS 41 for a 1ST down",,2024-09-07T20:26:28.000Z
+401629040102886901,401629040,40162904010,4,2,11:30,Toledo,Massachusetts,7,3,41,1,10,4,Pass Reception,Tucker Gleason pass complete to Jacquez Stuart for 4 yds to the MASS 37,-0.0951556089752721,2024-09-07T20:18:33.000Z
+401629040102894801,401629040,40162904010,5,2,10:51,Toledo,Massachusetts,7,3,37,2,6,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.9293643294984868,2024-09-07T20:18:33.000Z
+401629040102895601,401629040,40162904010,6,2,10:43,Toledo,Massachusetts,7,3,37,3,6,12,Penalty,"Massachusetts Penalty, Face mask (12 yards) (Gerrell Johnson) to the MASS 12 for a 1ST down",,2024-09-07T20:18:33.000Z
+401629040102896801,401629040,40162904010,7,2,10:31,Toledo,Massachusetts,7,3,12,1,10,1,Rush,Connor Walendzak run for 1 yd to the MASS 11,-0.234891535825625,2024-09-07T20:18:33.000Z
+401629040102904201,401629040,40162904010,8,2,9:57,Toledo,Massachusetts,7,3,11,2,9,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.2954261778871175,2024-09-07T20:18:33.000Z
+401629040102904501,401629040,40162904010,9,2,9:54,Toledo,Massachusetts,7,3,11,3,9,3,Pass Reception,Tucker Gleason pass complete to Junior Vandeross III for 3 yds to the MASS 8,-0.1326324165473433,2024-09-07T20:31:51.000Z
+401629040102909001,401629040,40162904010,10,2,9:09,Toledo,Massachusetts,10,3,8,4,6,26,Field Goal Good,Dylan Cunanan 26 yd FG GOOD,,2024-09-07T20:33:10.000Z
+401629040102909002,401629040,40162904011,1,2,9:09,Toledo,Massachusetts,10,3,65,0,0,0,Kickoff,Michael Denning kickoff for 46 yds,,2024-09-07T20:36:50.000Z
+401629040102909101,401629040,40162904011,2,2,9:08,Massachusetts,Toledo,3,10,75,1,10,4,Rush,Jalen John run for 4 yds to the MASS 29,-0.1142886249388964,2024-09-07T20:18:33.000Z
+401629040102916301,401629040,40162904011,3,2,8:36,Massachusetts,Toledo,3,10,71,2,6,3,Rush,Jalen John run for 3 yds to the MASS 32,-0.2748655161762548,2024-09-07T20:18:33.000Z
+401629040102924701,401629040,40162904011,4,2,7:52,Massachusetts,Toledo,3,10,68,3,3,6,Rush,Jalen John run for 6 yds to the MASS 38 for a 1ST down,1.513905620156982,2024-09-07T20:18:33.000Z
+401629040102928001,401629040,40162904011,5,2,7:19,Massachusetts,Toledo,3,10,62,1,10,-2,Rush,Jalen John run for a loss of 2 yards to the MASS 36,-1.431509275302468,2024-09-07T20:18:33.000Z
+401629040102935401,401629040,40162904011,6,2,6:45,Massachusetts,Toledo,3,10,64,2,12,7,Pass Reception,Taisun Phommachanh pass complete to Jakobie Keeney-James for 7 yds to the MASS 43,0.4072746405445331,2024-09-07T20:18:33.000Z
+401629040102939601,401629040,40162904011,7,2,6:03,Massachusetts,Toledo,3,10,57,3,5,7,Pass Reception,Taisun Phommachanh pass complete to Jaelyn Lay for 7 yds to the 50 yard line for a 1ST down,2.1358263433160527,2024-09-07T20:18:33.000Z
+401629040102947301,401629040,40162904011,8,2,5:26,Massachusetts,Toledo,3,10,50,1,10,23,Pass Reception,Taisun Phommachanh pass complete to Jakobie Keeney-James for 23 yds to the TOL 27 for a 1ST down,1.100131090729887,2024-09-07T20:18:33.000Z
+401629040102955101,401629040,40162904011,9,2,4:48,Massachusetts,Toledo,3,10,27,1,10,6,Pass Reception,Taisun Phommachanh pass complete to Jacquon Gibson for 6 yds to the TOL 21,0.2009551098411215,2024-09-07T20:18:33.000Z
+401629040102958401,401629040,40162904011,10,2,4:15,Massachusetts,Toledo,3,10,21,2,4,8,Rush,Jalen John run for 8 yds to the TOL 13 for a 1ST down,0.0013965165045175,2024-09-07T20:18:33.000Z
+401629040102966701,401629040,40162904011,11,2,3:32,Massachusetts,Toledo,3,10,13,1,10,-1,Rush,Jalen John run for a loss of 1 yard to the TOL 14,-0.368994498525638,2024-09-07T20:18:33.000Z
+401629040102975701,401629040,40162904011,12,2,2:42,Massachusetts,Toledo,10,10,14,2,11,14,Passing Touchdown,Taisun Phommachanh pass complete to Jakobie Keeney-James for 14 yds for a TD (Jacob Lurie KICK),2.907923713571485,2024-09-07T20:43:41.000Z
+401629040102976801,401629040,40162904012,3,2,2:31,Massachusetts,Toledo,10,17,65,1,10,7,Rush,CJ Hester run for 7 yds to the MASS 42,0.7081222799232592,2024-09-07T20:18:33.000Z
+401629040102979801,401629040,40162904012,4,2,2:01,Massachusetts,Toledo,10,17,58,2,3,5,Rush,CJ Hester run for 5 yds to the MASS 47 for a 1ST down,0.4392952971947679,2024-09-07T20:18:33.000Z
+401629040102976702,401629040,40162904012,2,2,2:32,Massachusetts,Toledo,10,17,65,0,0,98,Kickoff Return Touchdown,Jacquez Stuart 98 Yd Kickoff Return (Dylan Cunanan Kick),,2024-09-07T20:48:27.000Z
+401629040102976601,401629040,40162904012,1,2,2:33,Toledo,Massachusetts,17,10,65,0,0,0,Kickoff,Michael Denning kickoff for 54 yds,,2024-09-07T20:18:33.000Z
+401629040102984101,401629040,40162904012,5,2,1:58,Massachusetts,Toledo,10,17,53,1,10,0,Timeout,"Timeout Toledo, clock 01:58",,2024-09-07T20:52:55.000Z
+401629040102986502,401629040,40162904012,7,2,1:34,Massachusetts,Toledo,10,17,49,2,6,5,Penalty,"(01:34) PHOMMACHANH, Taisun scrambles up the middle for a gain of 2 yards to the TOL47 (HOLT, Deshawn), clock 01:29. PENALTY TOL Offsides on HOLT, Deshawn enforced 5 yards from the TOL49 to the TOL44 [NHSG]. NO PLAY (replay the down).",,2024-09-07T20:18:33.000Z
+401629040102996501,401629040,40162904012,13,2,0:34,Massachusetts,Toledo,10,17,19,3,2,0,Timeout,"Timeout Massachusetts, clock 00:34",,2024-09-07T20:59:49.000Z
+401629040102999502,401629040,40162904012,15,2,0:04,Massachusetts,Toledo,10,17,24,4,7,0,Timeout,"Timeout Toledo, clock 00:04",,2024-09-07T21:02:44.000Z
+401629040102999801,401629040,40162904012,16,2,0:01,Massachusetts,Toledo,13,17,24,4,7,42,Field Goal Good,Jacob Lurie 42 Yd Field Goal ,,2024-09-07T21:04:28.000Z
+401629040102999802,401629040,40162904012,17,2,0:01,Massachusetts,Toledo,13,17,65,0,0,35,Kickoff Return (Offense),"CJ Kolodziey kickoff for 35 yds , Connor Walendzak return for no gain to the TOL 30 , return for no gain to the TOL 30",,2024-09-07T21:04:28.000Z
+401629040102996901,401629040,40162904012,14,2,0:30,Massachusetts,Toledo,10,17,19,3,2,-5,Sack,Taisun Phommachanh sacked by Anthony Dunn Jr. and Martez Poynter for a loss of 5 yards to the TOL 24,-1.391195761682873,2024-09-07T20:18:33.000Z
+401629040102996101,401629040,40162904012,12,2,0:38,Massachusetts,Toledo,10,17,23,2,6,4,Pass Reception,Taisun Phommachanh pass complete to Jacquon Gibson for 4 yds to the TOL 19,-0.045214857233363,2024-09-07T20:18:33.000Z
+401629040102995601,401629040,40162904012,11,2,0:43,Massachusetts,Toledo,10,17,27,1,10,4,Rush,Taisun Phommachanh run for 4 yds to the TOL 23,-0.0405526131909575,2024-09-07T20:18:33.000Z
+401629040102989101,401629040,40162904012,10,2,1:08,Massachusetts,Toledo,10,17,41,2,10,14,Pass Reception,Taisun Phommachanh pass complete to Jakobie Keeney-James for 14 yds to the TOL 27 for a 1ST down,1.3765067067709893,2024-09-07T20:57:49.000Z
+401629040102988801,401629040,40162904012,9,2,1:11,Massachusetts,Toledo,10,17,41,1,10,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.8772679222659558,2024-09-07T20:18:33.000Z
+401629040102987001,401629040,40162904012,8,2,1:29,Massachusetts,Toledo,10,17,44,2,1,3,Rush,CJ Hester run for 3 yds to the TOL 41 for a 1ST down,-0.3239425290625954,2024-09-07T20:56:24.000Z
+401629040102984102,401629040,40162904012,6,2,1:58,Massachusetts,Toledo,10,17,53,1,10,4,Pass Reception,Taisun Phommachanh pass complete to Jacquon Gibson for 4 yds to the TOL 49,-0.1543469215353017,2024-09-07T20:52:55.000Z
+401629040102999902,401629040,40162904012,18,2,0:00,Toledo,Massachusetts,17,10,35,0,10,-35,End of Half,End of 2nd Quarter,,2024-09-07T21:06:40.000Z
+401629040103854203,401629040,40162904013,3,3,14:57,Toledo,Massachusetts,17,13,60,1,10,0,Rush,Jacquez Stuart run for no gain to the TOL 40,-1.1247712359915258,2024-09-07T21:28:07.000Z
+401629040103857901,401629040,40162904013,4,3,14:20,Toledo,Massachusetts,17,13,60,2,10,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.7576599502448165,2024-09-07T21:28:02.000Z
+401629040103858401,401629040,40162904013,5,3,14:15,Toledo,Massachusetts,17,13,60,3,10,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.41258781688897184,2024-09-07T21:29:24.000Z
+401629040103859801,401629040,40162904013,6,3,14:01,Toledo,Massachusetts,17,13,60,4,10,9,Punt,"Emilio Duran punt for 40 yds , Sterling Galban returns for 9 yds to the MASS 29",,2024-09-07T21:31:08.000Z
+401629040103854202,401629040,40162904013,2,3,14:57,Toledo,Massachusetts,17,13,75,1,10,15,Penalty,"GLEASON, Tucker pass up the middle incomplete intended for NEWTON, Jerjuan thrown to the TOL40, clock 14:57. PENALTY MAS Pass Interference on RUTHERFORD, Isaiah enforced 15 yards to the TOL40 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T21:28:07.000Z
+401629040103849903,401629040,40162904013,1,3,15:00,Massachusetts,Toledo,13,17,65,0,0,0,Kickoff,CJ Kolodziey kickoff for 65 yds for a touchback,,2024-09-07T21:28:02.000Z
+401629040103916503,401629040,40162904014,15,3,8:34,Massachusetts,Toledo,13,17,31,1,15,15,Penalty,"Toledo Penalty, Block below the waist on BOWERS, Nasir enforced (Nasir Bowers) to the TOL 17 for a 1ST down",,2024-09-07T21:28:02.000Z
+401629040103914301,401629040,40162904014,14,3,8:56,Massachusetts,Toledo,13,17,26,1,10,-5,Penalty,"Massachusetts Penalty, False Start (TEAM) to the TOL 31",,2024-09-07T21:46:05.000Z
+401629040103867402,401629040,40162904014,3,3,13:25,Massachusetts,Toledo,13,17,66,3,5,5,Penalty,"(13:25) PHOMMACHANH, Taisun pass to the left incomplete intended for SMITH, Matt thrown to the MAS41, clock 13:23. PENALTY TOL Offsides on RAGIN, D'Andre enforced 5 yards from the MAS34 to the MAS39 and results in a 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T21:28:02.000Z
+401629040103864101,401629040,40162904014,1,3,13:58,Massachusetts,Toledo,13,17,71,1,10,5,Rush,Jalen John run for 5 yds to the MASS 34,0.1013807738833972,2024-09-07T21:28:02.000Z
+401629040103866801,401629040,40162904014,2,3,13:31,Massachusetts,Toledo,13,17,66,2,5,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.8824226559216264,2024-09-07T21:28:02.000Z
+401629040103867601,401629040,40162904014,4,3,13:23,Massachusetts,Toledo,13,17,61,1,10,1,Rush,Jalen John run for 1 yd to the MASS 40,-0.9002974178644043,2024-09-07T21:35:08.000Z
+401629040103875601,401629040,40162904014,5,3,12:43,Massachusetts,Toledo,13,17,60,2,9,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.8114739719044,2024-09-07T21:28:02.000Z
+401629040103875901,401629040,40162904014,6,3,12:40,Massachusetts,Toledo,13,17,60,3,9,10,Pass Reception,Taisun Phommachanh pass complete to Jakobie Keeney-James for 10 yds to the 50 yard line for a 1ST down,2.7253754941122974,2024-09-07T21:36:40.000Z
+401629040103879701,401629040,40162904014,7,3,12:02,Massachusetts,Toledo,13,17,50,1,10,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-1.1143038065675126,2024-09-07T21:28:02.000Z
+401629040103884301,401629040,40162904014,8,3,11:56,Massachusetts,Toledo,13,17,50,2,10,2,Rush,Jalen John run for 2 yds to the TOL 48,-0.6205479306066408,2024-09-07T21:38:36.000Z
+401629040103888401,401629040,40162904014,9,3,11:15,Massachusetts,Toledo,13,17,48,3,8,11,Pass Reception,Taisun Phommachanh pass complete to Jacquon Gibson for 11 yds to the TOL 37 for a 1ST down,2.5248550378187833,2024-09-07T21:28:02.000Z
+401629040103894001,401629040,40162904014,10,3,10:59,Massachusetts,Toledo,13,17,37,1,10,0,Rush,Taisun Phommachanh run for no gain to the TOL 37,-0.7519361608312708,2024-09-07T21:28:02.000Z
+401629040103898001,401629040,40162904014,11,3,10:19,Massachusetts,Toledo,13,17,37,2,10,6,Rush,CJ Hester run for 6 yds to the TOL 31,0.245184076245314,2024-09-07T21:28:02.000Z
+401629040103905901,401629040,40162904014,12,3,9:40,Massachusetts,Toledo,13,17,31,3,4,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.9341040359929857,2024-09-07T21:28:02.000Z
+401629040103906901,401629040,40162904014,13,3,9:30,Massachusetts,Toledo,13,17,31,4,4,5,Pass Reception,Taisun Phommachanh pass complete to CJ Hester for 5 yds to the TOL 26 for a 1ST down,1.7722626296475052,2024-09-07T21:28:02.000Z
+401629040103918503,401629040,40162904014,16,3,8:14,Massachusetts,Toledo,13,17,17,1,10,3,Pass Reception,Taisun Phommachanh pass complete to CJ Hester for 3 yds to the TOL 14,-0.108377033597897,2024-09-07T21:28:02.000Z
+401629040103926603,401629040,40162904014,17,3,7:33,Massachusetts,Toledo,13,17,14,2,7,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.3536521900141785,2024-09-07T21:28:02.000Z
+401629040103927003,401629040,40162904014,18,3,7:29,Massachusetts,Toledo,13,17,14,3,7,2,Rush,Taisun Phommachanh run for 2 yds to the TOL 12,-0.246793653855029,2024-09-07T21:28:02.000Z
+401629040103935501,401629040,40162904014,19,3,6:44,Massachusetts,Toledo,16,17,12,4,5,30,Field Goal Good,Jacob Lurie 30 yd FG GOOD,,2024-09-07T21:50:45.000Z
+401629040103935502,401629040,40162904015,1,3,6:44,Massachusetts,Toledo,16,17,65,0,0,0,Kickoff,CJ Kolodziey kickoff for 65 yds for a touchback,,2024-09-07T21:54:02.000Z
+401629040103935801,401629040,40162904015,2,3,6:41,Toledo,Massachusetts,17,16,75,1,10,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.7029700220436519,2024-09-07T21:28:02.000Z
+401629040103936201,401629040,40162904015,3,3,6:37,Toledo,Massachusetts,17,16,75,2,10,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.34710487712173865,2024-09-07T21:28:02.000Z
+401629040103936601,401629040,40162904015,4,3,6:33,Toledo,Massachusetts,17,16,75,3,10,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.15871308844886392,2024-09-07T21:55:32.000Z
+401629040103937501,401629040,40162904015,5,3,6:24,Toledo,Massachusetts,17,16,75,4,10,0,Punt,"James Roe punt for 33 yds, fair catch by Sterling Galban at the MASS 42",,2024-09-07T21:28:02.000Z
+401629040103937702,401629040,40162904016,1,3,6:22,Massachusetts,Toledo,16,17,58,1,10,18,Rush,Taisun Phommachanh run for 18 yds to the TOL 40 for a 1ST down,1.3726540681019745,2024-09-07T21:56:58.000Z
+401629040103945401,401629040,40162904016,2,3,5:45,Massachusetts,Toledo,16,17,40,1,10,1,Rush,CJ Hester run for 1 yd to the TOL 39,-0.6465447438858387,2024-09-07T21:28:02.000Z
+401629040103949101,401629040,40162904016,3,3,5:08,Massachusetts,Toledo,16,17,39,2,9,-1,Rush,Taisun Phommachanh run for a loss of 1 yard to the TOL 40,-1.2256703016546524,2024-09-07T21:28:02.000Z
+401629040103957601,401629040,40162904016,4,3,4:23,Massachusetts,Toledo,16,17,40,3,10,0,Pass Interception Return,Taisun Phommachanh pass intercepted Braden Awls return for no gain to the TOL 27,-1.938735810522168,2024-09-07T21:28:02.000Z
+401629040103959101,401629040,40162904017,1,3,4:08,Toledo,Massachusetts,24,16,73,1,10,73,Passing Touchdown,Tucker Gleason pass complete to Junior Vandeross III for 73 yds for a TD (Dylan Cunanan KICK),5.932715434221937,2024-09-07T22:02:09.000Z
+401629040103959103,401629040,40162904018,1,3,4:08,Toledo,Massachusetts,24,16,65,0,0,21,Kickoff,"Michael Denning kickoff for 65 yds , T.Y. Harding return for 21 yds to the MASS 21",,2024-09-07T22:02:09.000Z
+401629040103964301,401629040,40162904018,2,3,3:56,Massachusetts,Toledo,16,24,79,1,10,17,Pass Reception,Taisun Phommachanh pass complete to Matt Smith for 17 yds to the MASS 38 for a 1ST down,1.3775311491376652,2024-09-07T21:28:02.000Z
+401629040103967601,401629040,40162904018,3,3,3:23,Massachusetts,Toledo,16,24,62,1,10,2,Rush,Brandon Campbell run for 2 yds to the MASS 40,-0.6656376494811928,2024-09-07T21:28:02.000Z
+401629040103975901,401629040,40162904018,4,3,2:40,Massachusetts,Toledo,16,24,60,2,8,2,Rush,Taisun Phommachanh run for 2 yds to the MASS 42,-0.5486029295404142,2024-09-07T21:28:02.000Z
+401629040103979001,401629040,40162904018,5,3,2:09,Massachusetts,Toledo,16,24,58,3,6,-7,Sack,Taisun Phommachanh sacked by Deshawn Holt for a loss of 7 yards to the MASS 35,-1.0571923591130332,2024-09-07T21:28:02.000Z
+401629040103987301,401629040,40162904018,6,3,1:26,Massachusetts,Toledo,16,24,65,4,13,7,Punt,"CJ Kolodziey punt for 35 yds , Bryson Hammer returns for 7 yds to the TOL 37",,2024-09-07T21:28:02.000Z
+401629040103987702,401629040,40162904019,1,3,1:22,Toledo,Massachusetts,24,16,63,1,10,0,Pass Incompletion,Tucker Gleason pass incomplete,-1.065701080215459,2024-09-07T22:06:39.000Z
+401629040103988501,401629040,40162904019,2,3,1:14,Toledo,Massachusetts,24,16,63,2,10,5,Rush,Jacquez Stuart run for 5 yds to the TOL 42,0.062211084497986,2024-09-07T21:28:02.000Z
+401629040103995301,401629040,40162904019,3,3,0:46,Toledo,Massachusetts,24,16,58,3,5,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.69319973884107,2024-09-07T22:14:20.000Z
+401629040103996001,401629040,40162904019,4,3,0:39,Toledo,Massachusetts,24,16,58,4,5,0,Punt,"James Roe punt for 35 yds, fair catch by Sterling Galban at the MASS 23",,2024-09-07T21:28:02.000Z
+401629040103996702,401629040,40162904020,3,3,0:00,Massachusetts,Toledo,16,24,77,0,10,4,End Period,End of 3rd Quarter,,2024-09-07T22:11:49.000Z
+401629040103996501,401629040,40162904020,1,3,0:34,Massachusetts,Toledo,16,24,77,1,10,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.6425305871127751,2024-09-07T21:28:02.000Z
+401629040103996701,401629040,40162904020,2,3,0:32,Massachusetts,Toledo,16,24,77,2,10,4,Pass Reception,Taisun Phommachanh pass complete to Sterling Galban for 4 yds to the MASS 27,-0.054609598729499,2024-09-07T22:10:35.000Z
+401629040104854101,401629040,40162904020,4,4,14:58,Massachusetts,Toledo,16,24,73,3,6,-1,Rush,Taisun Phommachanh run for a loss of 1 yard to the MASS 26,-0.31719202680321334,2024-09-07T22:15:57.000Z
+401629040104858001,401629040,40162904020,5,4,14:19,Massachusetts,Toledo,16,24,74,4,7,0,Punt,"CJ Kolodziey punt for 29 yds, fair catch by Bryson Hammer at the TOL 45",,2024-09-07T22:16:07.000Z
+401629040104859001,401629040,40162904021,1,4,14:09,Toledo,Massachusetts,24,16,55,1,10,9,Rush,Willie Shaw III run for 9 yds to the MASS 46,1.2321065178353567,2024-09-07T22:16:07.000Z
+401629040104864801,401629040,40162904021,2,4,13:51,Toledo,Massachusetts,24,16,46,2,1,3,Rush,Willie Shaw III run for 3 yds to the MASS 43 for a 1ST down,-0.3078633684498459,2024-09-07T22:16:07.000Z
+401629040104868801,401629040,40162904021,3,4,13:11,Toledo,Massachusetts,24,16,43,1,10,39,Pass Reception,Tucker Gleason pass complete to Junior Vandeross III for 39 yds to the MASS 4 for a 1ST down,1.6641795692168793,2024-09-07T22:16:07.000Z
+401629040104876901,401629040,40162904021,4,4,12:30,Toledo,Massachusetts,31,16,4,1,4,4,Rushing Touchdown,Willie Shaw III run for 4 yds for a TD (Dylan Cunanan KICK),1.688190518713975,2024-09-07T22:19:29.000Z
+401629040104876903,401629040,40162904022,1,4,12:30,Toledo,Massachusetts,31,16,65,0,0,0,Kickoff,Michael Denning kickoff for 65 yds for a touchback,,2024-09-07T22:19:29.000Z
+401629040104877201,401629040,40162904022,2,4,12:27,Massachusetts,Toledo,16,31,75,1,10,4,Rush,CJ Hester run for 4 yds to the MASS 29,-0.1142886249388964,2024-09-07T22:16:07.000Z
+401629040104884301,401629040,40162904022,3,4,11:56,Massachusetts,Toledo,16,31,71,2,6,15,Pass Reception,Taisun Phommachanh pass complete to Matt Smith for 15 yds to the MASS 44 for a 1ST down,1.821860963280912,2024-09-07T22:16:07.000Z
+401629040104887601,401629040,40162904022,4,4,11:23,Massachusetts,Toledo,16,31,56,1,10,3,Rush,CJ Hester run for 3 yds to the MASS 47,-0.42807362159939,2024-09-07T22:16:07.000Z
+401629040104895501,401629040,40162904022,5,4,10:44,Massachusetts,Toledo,16,31,53,2,7,2,Pass Reception,Taisun Phommachanh pass complete to CJ Hester for 2 yds to the MASS 49,-0.6616996148588435,2024-09-07T22:16:07.000Z
+401629040104899901,401629040,40162904022,6,4,10:00,Massachusetts,Toledo,16,31,51,3,5,-3,Pass Reception,Taisun Phommachanh pass complete to Sterling Galban for a loss of 3 yards to the MASS 46,-1.292812114392449,2024-09-07T22:16:07.000Z
+401629040104907801,401629040,40162904022,7,4,9:21,Massachusetts,Toledo,16,31,54,4,8,-12,Sack,Taisun Phommachanh sacked by Darius Alexander and Emmanuel McNeil-Warren for a loss of 12 yards to the MASS 34,-0.2472318677700116,2024-09-07T22:16:07.000Z
+401629040104908801,401629040,40162904023,1,4,9:11,Toledo,Massachusetts,31,16,34,1,10,1,Rush,Willie Shaw III run for 1 yd to the MASS 33,-0.504093995421519,2024-09-07T22:16:07.000Z
+401629040104915401,401629040,40162904023,2,4,8:45,Toledo,Massachusetts,31,16,33,2,9,0,Pass Incompletion,Tucker Gleason pass incomplete,-0.838413792626838,2024-09-07T22:16:07.000Z
+401629040104915701,401629040,40162904023,3,4,8:42,Toledo,Massachusetts,31,16,33,3,9,6,Pass Reception,Tucker Gleason pass complete to Connor Walendzak for 6 yds to the MASS 27,0.2554592398105806,2024-09-07T22:16:07.000Z
+401629040104919501,401629040,40162904023,4,4,8:04,Toledo,Massachusetts,31,16,27,4,3,0,Timeout,"Timeout Toledo, clock 08:04",,2024-09-07T22:30:06.000Z
+401629040104919502,401629040,40162904023,5,4,8:04,Toledo,Massachusetts,31,16,27,4,3,0,Pass Incompletion,Tucker Gleason pass incomplete,-2.9762252908485536,2024-09-07T22:31:57.000Z
+401629040104974405,401629040,40162904024,11,4,2:55,Massachusetts,Toledo,16,31,65,0,0,-15,Kickoff,"Riley Moore kickoff Massachusetts Penalty, Offsides (Savion Robinson) to the MASS 25",,2024-09-07T22:46:24.000Z
+401629040104974301,401629040,40162904024,10,4,2:56,Massachusetts,Toledo,23,31,8,2,8,8,Rushing Touchdown,Taisun Phommachanh run for 8 yds for a TD (Jacob Lurie KICK),2.676770954733065,2024-09-07T22:40:07.000Z
+401629040104966501,401629040,40162904024,9,4,3:34,Massachusetts,Toledo,16,31,6,1,6,-2,Rush,Taisun Phommachanh run for a loss of 2 yards to the TOL 8,-0.624281183667788,2024-09-07T22:16:07.000Z
+401629040104958201,401629040,40162904024,8,4,4:17,Massachusetts,Toledo,16,31,13,4,2,7,Rush,Taisun Phommachanh run for 7 yds to the TOL 6 for a 1ST down,1.0785472084055847,2024-09-07T22:16:07.000Z
+401629040104954901,401629040,40162904024,7,4,4:50,Massachusetts,Toledo,16,31,16,3,5,3,Rush,Jalen John run for 3 yds to the TOL 13,-0.1536544659775747,2024-09-07T22:16:07.000Z
+401629040104946701,401629040,40162904024,6,4,5:32,Massachusetts,Toledo,16,31,21,2,10,5,Rush,Jalen John run for 5 yds to the TOL 16,0.0431526443716223,2024-09-07T22:36:50.000Z
+401629040104946401,401629040,40162904024,5,4,5:35,Massachusetts,Toledo,16,31,21,1,10,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.3882383440694163,2024-09-07T22:16:07.000Z
+401629040104939601,401629040,40162904024,4,4,6:03,Massachusetts,Toledo,16,31,29,2,5,8,Rush,Taisun Phommachanh run for 8 yds to the TOL 21 for a 1ST down,0.223749832064087,2024-09-07T22:16:07.000Z
+401629040104937401,401629040,40162904024,3,4,6:25,Massachusetts,Toledo,16,31,34,1,10,5,Rush,Taisun Phommachanh run for 5 yds to the TOL 29,0.08067951505409,2024-09-07T22:16:07.000Z
+401629040104929501,401629040,40162904024,2,4,7:04,Massachusetts,Toledo,16,31,48,1,10,14,Pass Reception,Taisun Phommachanh pass complete to Sterling Galban for 14 yds to the TOL 34 for a 1ST down,0.749507675366287,2024-09-07T22:16:07.000Z
+401629040104924202,401629040,40162904024,1,4,7:57,Massachusetts,Toledo,16,31,73,1,10,25,Rush,Taisun Phommachanh run for 25 yds to the TOL 48 for a 1ST down,2.2464815979419797,2024-09-07T22:33:53.000Z
+401629040104975901,401629040,40162904025,2,4,2:40,Toledo,Massachusetts,31,23,25,1,5,12,Rush,Connor Walendzak run for 12 yds to the MASS 13 for a 1ST down,-0.442398101508654,2024-09-07T22:48:11.000Z
+401629040104976201,401629040,40162904025,3,4,2:37,Toledo,Massachusetts,31,23,13,1,10,4,Rush,Connor Walendzak run for 4 yds to the MASS 9,-0.017336858055032,2024-09-07T22:16:07.000Z
+401629040104976202,401629040,40162904025,4,4,2:37,Toledo,Massachusetts,31,23,9,2,6,0,Timeout,"Timeout Massachusetts, clock 02:37",,2024-09-07T22:16:07.000Z
+401629040104975501,401629040,40162904025,1,4,2:44,Toledo,Massachusetts,31,23,13,1,10,0,Timeout,"Timeout Massachusetts, clock 02:44",,2024-09-07T22:16:07.000Z
+401629040104976801,401629040,40162904025,5,4,2:31,Toledo,Massachusetts,31,23,9,2,6,2,Rush,Connor Walendzak run for 2 yds to the MASS 7,-0.177871782476252,2024-09-07T22:16:07.000Z
+401629040104976802,401629040,40162904025,6,4,2:31,Toledo,Massachusetts,31,23,7,3,4,0,Timeout,"Timeout Massachusetts, clock 02:31",,2024-09-07T22:16:07.000Z
+401629040104977301,401629040,40162904025,7,4,2:26,Toledo,Massachusetts,38,23,7,3,4,7,Passing Touchdown,Tucker Gleason pass complete to Anthony Torres for 7 yds for a TD (Dylan Cunanan KICK),2.734137855577131,2024-09-07T22:51:34.000Z
+401629040104977305,401629040,40162904026,2,4,2:26,Massachusetts,Toledo,23,38,75,1,10,-4,Sack,Taisun Phommachanh sacked by Malachi Davis for a loss of 4 yards to the MASS 21,-1.0163607520985618,2024-09-07T22:52:12.000Z
+401629040104979801,401629040,40162904026,3,4,2:01,Massachusetts,Toledo,23,38,79,2,14,10,Pass Reception,Taisun Phommachanh pass complete to Jalen John for 10 yds to the MASS 31,0.48162846854278474,2024-09-07T22:16:07.000Z
+401629040104984502,401629040,40162904026,5,4,1:54,Massachusetts,Toledo,23,38,69,3,4,0,Pass Incompletion,Taisun Phommachanh pass incomplete,-0.43770162015070735,2024-09-07T22:55:19.000Z
+401629040104984801,401629040,40162904026,6,4,1:51,Massachusetts,Toledo,23,38,69,4,4,0,Pass Incompletion,Taisun Phommachanh pass incomplete,0.05018902342780596,2024-09-07T22:58:32.000Z
+401629040104984501,401629040,40162904026,4,4,1:54,Massachusetts,Toledo,23,38,69,3,4,0,Timeout,"Timeout Toledo, clock 01:54",,2024-09-07T22:55:19.000Z
+401629040104977303,401629040,40162904026,1,4,2:26,Toledo,Massachusetts,38,23,65,0,0,0,Kickoff,Michael Denning kickoff for 65 yds for a touchback,,2024-09-07T22:52:12.000Z
+401629040104985602,401629040,40162904027,1,4,1:43,Toledo,Massachusetts,38,23,31,1,10,-5,Rush,"(01:43) [NHSG] Kneel down by GLEASON, Tucker at MAS36 (team loss of 5), clock 01:38.",-1.4278606050470992,2024-09-07T22:59:02.000Z
+401629040104989701,401629040,40162904027,2,4,1:02,Toledo,Massachusetts,38,23,36,2,15,-3,Rush,"(01:02) [NHSG] Kneel down by GLEASON, Tucker at MAS39 (team loss of 3), clock 00:54.",-1.6073245341479758,2024-09-07T22:16:07.000Z
+401629040104997001,401629040,40162904027,3,4,0:29,Toledo,Massachusetts,38,23,39,3,18,-1,Rush,"(00:29) [NHSG] Kneel down by GLEASON, Tucker at MAS40 (team loss of 1), clock 00:19.",-0.8455446819923981,2024-09-07T22:16:07.000Z
+401629040104999902,401629040,40162904027,4,4,0:00,Toledo,Massachusetts,38,23,40,0,18,0,End of Game,End of 4th Quarter,,2024-09-07T23:01:42.000Z

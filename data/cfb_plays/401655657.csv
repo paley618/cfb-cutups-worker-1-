@@ -1,0 +1,170 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401655657101849907,401655657,4016556571,2,1,15:00,Upper Iowa University,Butler,0,0,75,1,10,4,Rush,RJ Wells run for 4 yds to the UPP 29,-0.1142886249388964,2024-08-31T17:02:31.000Z
+401655657101857801,401655657,4016556571,3,1,14:21,Upper Iowa University,Butler,0,0,71,2,6,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.6509048869110972,2024-08-31T17:02:31.000Z
+401655657101858001,401655657,4016556571,4,1,14:19,Upper Iowa University,Butler,0,0,71,3,6,9,Rush,RJ Wells run for 9 yds to the UPP 38 for a 1ST down,1.8899449908918244,2024-08-31T17:02:31.000Z
+401655657101866101,401655657,4016556571,5,1,13:38,Upper Iowa University,Butler,0,0,62,1,10,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-1.087995077167328,2024-08-31T17:02:31.000Z
+401655657101866501,401655657,4016556571,6,1,13:34,Upper Iowa University,Butler,0,0,62,2,10,4,Rush,RJ Wells run for 4 yds to the UPP 42,-0.126245501854279,2024-08-31T17:02:31.000Z
+401655657101874901,401655657,4016556571,7,1,12:50,Upper Iowa University,Butler,0,0,58,3,6,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.6401731194806475,2024-08-31T17:02:31.000Z
+401655657101875501,401655657,4016556571,8,1,12:44,Upper Iowa University,Butler,0,0,58,4,6,0,Punt,RJ Wells punt for 37 yds,,2024-08-31T17:02:31.000Z
+401655657101849905,401655657,4016556571,1,1,15:00,Butler,Upper Iowa University,0,0,65,0,0,0,Kickoff,Ryan Short kickoff for 65 yds for a touchback,,2024-08-31T17:02:31.000Z
+401655657101875902,401655657,4016556572,1,1,12:40,Butler,Upper Iowa University,0,0,79,1,10,2,Rush,Joey Suchy run for 2 yds to the BUT 23,-0.3794776766448038,2024-08-31T17:09:25.000Z
+401655657101884001,401655657,4016556572,2,1,11:59,Butler,Upper Iowa University,0,0,77,2,8,7,Pass Reception,Nick Howard pass complete to Billy Dozier for 7 yds to the BUT 30,0.3701216010948292,2024-08-31T17:02:31.000Z
+401655657101894501,401655657,4016556572,4,1,10:54,Butler,Upper Iowa University,0,0,75,3,6,2,Rush,Reagan Andrew run for 2 yds to the BUT 27,-0.1649290262005545,2024-08-31T17:02:31.000Z
+401655657101898901,401655657,4016556572,5,1,10:10,Butler,Upper Iowa University,0,0,73,4,4,0,Punt,"Ryan Short punt for 41 yds, fair catch by Willy Camacho at the UPP 32",,2024-08-31T17:02:31.000Z
+401655657101888801,401655657,4016556572,3,1,11:11,Butler,Upper Iowa University,0,0,70,3,1,-5,Penalty,"Butler Penalty, Delay Of Game (-5 Yards) to the BUT 25",,2024-08-31T17:11:49.000Z
+401655657101899202,401655657,4016556573,1,1,10:07,Upper Iowa University,Butler,0,0,68,1,10,-1,Rush,RJ Wells run for a loss of 1 yard to the UPP 31,-1.0665559328497487,2024-08-31T17:13:03.000Z
+401655657101907301,401655657,4016556573,2,1,9:26,Upper Iowa University,Butler,0,0,69,2,11,24,Pass Interception Return,Darryl Overstreet Jr. pass intercepted Nick Bafia return for 24 yds to the UPP 8,-0.4141333515083918,2024-08-31T17:02:31.000Z
+401655657101908202,401655657,4016556574,1,1,9:17,Butler,Upper Iowa University,0,0,8,1,8,3,Rush,Nick Howard run for 3 yds to the UPP 5,-0.118978122830228,2024-08-31T17:14:39.000Z
+401655657101916901,401655657,4016556574,2,1,8:30,Butler,Upper Iowa University,0,0,5,2,5,4,Pass Reception,Nick Howard pass complete to Joey Suchy for 4 yds to the UPP 1,-0.01542053764963,2024-08-31T17:02:31.000Z
+401655657101925101,401655657,4016556574,3,1,7:48,Butler,Upper Iowa University,6,0,1,3,1,1,Rushing Touchdown,Nick Howard run for 1 yd for a TD (Ryan Short PAT MISSED),2.45399822917955,2024-08-31T17:16:48.000Z
+401655657101925104,401655657,4016556574,4,1,7:48,Butler,Upper Iowa University,-1,0,65,0,0,0,Timeout,"Timeout Butler, clock 07:48",,2024-08-31T17:16:48.000Z
+401655657101925105,401655657,4016556575,1,1,7:48,Butler,Upper Iowa University,5,0,65,0,0,36,Kickoff Return (Offense),"Ryan Short kickoff for 64 yds , Jayden Mitchell return for 36 yds to the UPP 37",,2024-08-31T17:16:48.000Z
+401655657101926201,401655657,4016556575,2,1,7:37,Upper Iowa University,Butler,0,5,63,1,10,9,Rush,Jayden Mitchell run for 9 yds to the UPP 46,1.3755540761931897,2024-08-31T17:02:31.000Z
+401655657101934101,401655657,4016556575,3,1,6:58,Upper Iowa University,Butler,0,5,54,2,1,2,Rush,Jayden Mitchell run for 2 yds to the UPP 48 for a 1ST down,-0.3330975713258705,2024-08-31T17:02:31.000Z
+401655657101938701,401655657,4016556575,4,1,6:12,Upper Iowa University,Butler,0,5,52,1,10,2,Rush,RJ Wells run for 2 yds to the 50 yard line,-0.6553095017301357,2024-08-31T17:02:31.000Z
+401655657101946501,401655657,4016556575,5,1,5:34,Upper Iowa University,Butler,0,5,50,2,8,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-1.0923917928310267,2024-08-31T17:02:31.000Z
+401655657101946801,401655657,4016556575,6,1,5:31,Upper Iowa University,Butler,0,5,50,3,8,4,Rush,RJ Wells run for 4 yds to the BUT 46,-0.145097030045644,2024-08-31T17:23:08.000Z
+401655657101955101,401655657,4016556575,7,1,4:48,Upper Iowa University,Butler,0,5,46,4,4,11,Pass Reception,Darryl Overstreet Jr. pass complete to Mante Morrow for 11 yds to the BUT 35 for a 1ST down,2.928263829540281,2024-08-31T17:02:31.000Z
+401655657101957002,401655657,4016556575,8,1,4:29,Upper Iowa University,Butler,0,5,35,1,10,-10,Penalty,"(04:29) MITCHELL, Jayden rush to the right for a gain of 2 yards to the BU33 (ONUOHA, Onye;MACK II, Frenchi), clock 04:24. PENALTY UIU Holding on MANU, Izayah enforced 10 yards from the BU35 to the BU45 [NHSG]. NO PLAY (replay the down).",,2024-08-31T17:02:31.000Z
+401655657101958901,401655657,4016556575,9,1,4:10,Upper Iowa University,Butler,0,5,45,1,20,8,Rush,RJ Wells run for 8 yds to the BUT 37,0.660805167070018,2024-08-31T17:02:31.000Z
+401655657101967101,401655657,4016556575,10,1,3:28,Upper Iowa University,Butler,0,5,37,2,12,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.9892537381077594,2024-08-31T17:02:31.000Z
+401655657101967401,401655657,4016556575,11,1,3:25,Upper Iowa University,Butler,0,6,37,3,12,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.975003140873074,2024-08-31T17:02:31.000Z
+401655657101967601,401655657,4016556575,12,1,3:23,Upper Iowa University,Butler,0,6,37,4,12,0,Punt,Darryl Overstreet Jr. punt for 37 yds for a touchback,,2024-08-31T17:26:36.000Z
+401655657101968401,401655657,4016556576,1,1,3:15,Butler,Upper Iowa University,6,0,80,1,10,0,Pass Interception Return,Reagan Andrew pass intercepted Zacarius Murray return for no gain to the BUT 24,-0.6139422043948972,2024-08-31T17:02:31.000Z
+401655657101968602,401655657,4016556577,1,1,3:13,Upper Iowa University,Butler,0,6,24,1,10,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.4346450377339437,2024-08-31T17:28:49.000Z
+401655657101969301,401655657,4016556577,2,1,3:06,Upper Iowa University,Butler,0,6,24,2,10,9,Pass Interception Return,Darryl Overstreet Jr. pass intercepted Onye Onuoha return for 9 yds to the BUT 17,-3.8839170136590813,2024-08-31T17:02:31.000Z
+401655657101998502,401655657,4016556578,8,1,0:00,Butler,Upper Iowa University,6,0,67,0,7,5,End Period,End of 1st Quarter,,2024-08-31T17:34:58.000Z
+401655657102849902,401655657,4016556578,9,2,15:00,Butler,Upper Iowa University,6,0,62,4,2,0,Punt,Ryan Short punt for 52 yds,,2024-08-31T17:38:27.000Z
+401655657101974002,401655657,4016556578,1,1,2:59,Butler,Upper Iowa University,6,0,83,1,10,0,Rush,Billy Dozier run for no gain to the BUT 17,-0.48436415563340685,2024-08-31T17:29:37.000Z
+401655657101978001,401655657,4016556578,2,1,2:19,Butler,Upper Iowa University,6,0,83,2,10,0,Pass Incompletion,Nick Howard pass incomplete,-0.22048200027874199,2024-08-31T17:02:31.000Z
+401655657101978501,401655657,4016556578,3,1,2:14,Butler,Upper Iowa University,6,0,83,3,10,9,Pass Reception,Reagan Andrew pass complete to Joey Audia for 9 yds to the BUT 26,0.2174918960283705,2024-08-31T17:31:03.000Z
+401655657101987301,401655657,4016556578,4,1,1:26,Butler,Upper Iowa University,6,0,74,4,1,4,Rush,Reagan Andrew run for 4 yds to the BUT 30 for a 1ST down,1.3297503235310923,2024-08-31T17:02:31.000Z
+401655657101995101,401655657,4016556578,5,1,0:48,Butler,Upper Iowa University,6,0,70,1,10,3,Rush,Billy Dozier run for 3 yds to the BUT 33,-0.3563521541303736,2024-08-31T17:02:31.000Z
+401655657101998401,401655657,4016556578,6,1,0:15,Butler,Upper Iowa University,6,0,67,2,7,0,Pass Incompletion,Reagan Andrew pass incomplete,-0.7077961708131388,2024-08-31T17:02:31.000Z
+401655657101998501,401655657,4016556578,7,1,0:14,Butler,Upper Iowa University,6,0,67,3,7,5,Pass Reception,Reagan Andrew pass complete to Joey Audia for 5 yds to the BUT 38,0.0403970740840682,2024-08-31T17:33:55.000Z
+401655657102854702,401655657,4016556579,1,2,14:52,Upper Iowa University,Butler,0,6,90,1,10,2,Rush,RJ Wells run for 2 yds to the UPP 12,-0.22662764690566295,2024-08-31T17:38:27.000Z
+401655657102858801,401655657,4016556579,2,2,14:11,Upper Iowa University,Butler,0,6,88,2,8,6,Rush,Jayden Mitchell run for 6 yds to the UPP 18,0.13589630831586685,2024-08-31T17:38:27.000Z
+401655657102867101,401655657,4016556579,3,2,13:28,Upper Iowa University,Butler,0,6,82,3,2,27,Pass Reception,Darryl Overstreet Jr. pass complete to Mante Morrow for 27 yds to the UPP 45 for a 1ST down,2.6079623544106356,2024-08-31T17:38:27.000Z
+401655657102875301,401655657,4016556579,4,2,12:46,Upper Iowa University,Butler,0,6,55,1,10,-1,Rush,RJ Wells run for a loss of 1 yard to the UPP 44,-1.3838406426271828,2024-08-31T17:38:27.000Z
+401655657102879501,401655657,4016556579,5,2,12:04,Upper Iowa University,Butler,0,6,56,2,11,3,Rush,Jayden Mitchell run for 3 yds to the UPP 47,-0.3460384676017698,2024-08-31T17:38:27.000Z
+401655657102887001,401655657,4016556579,6,2,11:29,Upper Iowa University,Butler,0,6,53,3,8,-5,Penalty,"Upper Iowa University Penalty, False Start (Klay Seehase) to the UPP 42",,2024-08-31T17:42:52.000Z
+401655657102887901,401655657,4016556579,7,2,11:20,Upper Iowa University,Butler,0,6,58,3,13,-5,Penalty,"Upper Iowa University Penalty, False Start (Noah Schirmers) to the UPP 37",,2024-08-31T17:43:47.000Z
+401655657102894201,401655657,4016556579,8,2,10:57,Upper Iowa University,Butler,0,6,63,3,18,13,Rush,RJ Wells run for 13 yds to the 50 yard line,0.8045768858973412,2024-08-31T17:38:27.000Z
+401655657102898601,401655657,4016556579,9,2,10:13,Upper Iowa University,Butler,0,6,50,4,5,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.6944958481924655,2024-08-31T17:38:27.000Z
+401655657102924104,401655657,40165565710,5,2,7:58,Butler,Upper Iowa University,6,0,65,0,0,0,Timeout,"Timeout Butler, clock 07:58",,2024-08-31T17:49:19.000Z
+401655657102898802,401655657,40165565710,1,2,10:11,Butler,Upper Iowa University,6,0,50,1,10,31,Rush,Nick Howard run for 31 yds to the UPP 19 for a 1ST down,1.23696430348385,2024-08-31T17:46:15.000Z
+401655657102907601,401655657,40165565710,2,2,9:23,Butler,Upper Iowa University,6,0,19,1,10,1,Pass Reception,Nick Howard pass complete to Billy Dozier for 1 yd to the UPP 18,-0.280938211620716,2024-08-31T17:38:27.000Z
+401655657102915601,401655657,40165565710,3,2,8:43,Butler,Upper Iowa University,6,0,18,2,9,2,Rush,Billy Dozier run for 2 yds to the UPP 16,-0.2173486110969346,2024-08-31T17:38:27.000Z
+401655657102924101,401655657,40165565710,4,2,7:58,Butler,Upper Iowa University,13,0,16,3,7,16,Passing Touchdown,Reagan Andrew pass complete to William Enneking for 16 yds for a TD (Ryan Short KICK),3.1027344513551736,2024-08-31T17:49:19.000Z
+401655657102924803,401655657,40165565711,3,2,7:51,Upper Iowa University,Butler,0,13,88,1,15,28,Rush,RJ Wells run for 28 yds to the UPP 40 for a 1ST down,2.2926064983596426,2024-08-31T17:52:10.000Z
+401655657102928701,401655657,40165565711,4,2,7:12,Upper Iowa University,Butler,0,13,60,1,10,1,Rush,Jayden Mitchell run for 1 yd to the UPP 41,-0.9114215282702052,2024-08-31T17:38:27.000Z
+401655657102936701,401655657,40165565711,5,2,6:32,Upper Iowa University,Butler,0,13,59,2,9,8,Pass Reception,Darryl Overstreet Jr. pass complete to Mante Morrow for 8 yds to the UPP 49,0.8542424183568968,2024-08-31T17:38:27.000Z
+401655657102944801,401655657,40165565711,6,2,5:51,Upper Iowa University,Butler,0,13,51,3,1,0,Rush,Eddie Burgess run for no gain to the UPP 49,-1.1398418153687135,2024-08-31T17:38:27.000Z
+401655657102949401,401655657,40165565711,7,2,5:05,Upper Iowa University,Butler,0,13,51,4,1,1,Rush,Darryl Overstreet Jr. run for 1 yd to the 50 yard line for a 1ST down,2.1125095973043244,2024-08-31T17:38:27.000Z
+401655657102958301,401655657,40165565711,8,2,4:16,Upper Iowa University,Butler,0,13,50,1,10,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-1.1143038065675126,2024-08-31T17:38:27.000Z
+401655657102924801,401655657,40165565711,2,2,7:51,Upper Iowa University,Butler,0,13,83,1,10,-5,Penalty,"Upper Iowa University Penalty, Illegal Substitution (Zacarius Murray) to the UPP 12",,2024-08-31T17:52:10.000Z
+401655657102924105,401655657,40165565711,1,2,7:58,Butler,Upper Iowa University,13,0,65,0,0,15,Kickoff Return (Offense),"Ryan Short kickoff for 63 yds , Jayden Mitchell return for 15 yds to the UPP 17",,2024-08-31T17:49:19.000Z
+401655657102966601,401655657,40165565711,12,2,3:33,Upper Iowa University,Butler,0,13,47,4,7,0,Punt,punt for 47 yds for a touchback,,2024-08-31T17:38:27.000Z
+401655657102958601,401655657,40165565711,9,2,4:13,Upper Iowa University,Butler,0,13,50,2,10,0,Timeout,"Timeout Upper Iowa University, clock 04:13",,2024-08-31T17:57:28.000Z
+401655657102966401,401655657,40165565711,11,2,3:35,Upper Iowa University,Butler,0,13,47,3,7,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.9262616248121232,2024-08-31T17:38:27.000Z
+401655657102958602,401655657,40165565711,10,2,4:13,Upper Iowa University,Butler,0,13,50,2,10,3,Rush,RJ Wells run for 3 yds to the BUT 47,-0.3987948868419303,2024-08-31T17:57:28.000Z
+401655657102967202,401655657,40165565712,1,2,3:27,Butler,Upper Iowa University,13,0,80,1,10,-10,Penalty,"Butler Penalty, Offensive Holding (-10 Yards) to the BUT 11",,2024-08-31T18:01:10.000Z
+401655657102977701,401655657,40165565712,4,2,2:22,Butler,Upper Iowa University,13,0,89,3,19,6,Rush,Reagan Andrew run for 6 yds to the BUT 17,0.01123314527613939,2024-08-31T17:38:27.000Z
+401655657102974201,401655657,40165565712,3,2,2:57,Butler,Upper Iowa University,13,0,89,2,19,0,Rush,Joey Suchy run for no gain to the BUT 11,-0.05259024793177946,2024-08-31T17:38:27.000Z
+401655657102969701,401655657,40165565712,2,2,3:02,Butler,Upper Iowa University,13,0,89,1,19,0,Pass Incompletion,Reagan Andrew pass incomplete,-0.12026687315495543,2024-08-31T17:38:27.000Z
+401655657102978701,401655657,40165565712,6,2,2:12,Butler,Upper Iowa University,13,0,83,4,13,6,Punt,"Ryan Short punt for 34 yds , Willy Camacho returns for 6 yds to the BUT 45",,2024-08-31T17:38:27.000Z
+401655657102978601,401655657,40165565712,5,2,2:13,Butler,Upper Iowa University,13,0,83,4,13,0,Timeout,"Timeout Upper Iowa University, clock 02:13",,2024-08-31T18:04:44.000Z
+401655657102979602,401655657,40165565713,1,2,2:03,Upper Iowa University,Butler,0,13,45,1,10,8,Rush,Jayden Mitchell run for 8 yds to the BUT 37,0.73144036017254,2024-08-31T18:06:07.000Z
+401655657102989601,401655657,40165565713,7,2,1:03,Upper Iowa University,Butler,7,13,23,4,2,23,Passing Touchdown,Darryl Overstreet Jr. pass complete to Eddie Burgess for 23 yds for a TD (Henry Vakerics KICK),3.6257729721491234,2024-08-31T18:11:09.000Z
+401655657102984301,401655657,40165565713,2,2,1:56,Upper Iowa University,Butler,0,13,37,2,2,0,Timeout,"Timeout Butler, clock 01:56",,2024-08-31T18:06:52.000Z
+401655657102985601,401655657,40165565713,6,2,1:43,Upper Iowa University,Butler,0,13,31,3,10,8,Rush,RJ Wells run for 8 yds to the BUT 23,0.5939882832215846,2024-08-31T17:38:27.000Z
+401655657102985201,401655657,40165565713,5,2,1:47,Upper Iowa University,Butler,0,13,31,2,10,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.7953313095977654,2024-08-31T18:09:05.000Z
+401655657102984701,401655657,40165565713,4,2,1:52,Upper Iowa University,Butler,0,13,31,1,10,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.5824837756999947,2024-08-31T18:08:35.000Z
+401655657102984302,401655657,40165565713,3,2,1:56,Upper Iowa University,Butler,0,13,37,2,2,6,Pass Reception,Darryl Overstreet Jr. pass complete to Chris Ndushabandi for 6 yds to the BUT 31 for a 1ST down,-0.09687244517842,2024-08-31T18:06:52.000Z
+401655657102989604,401655657,40165565713,8,2,1:03,Upper Iowa University,Butler,0,13,65,0,0,0,Timeout,"Timeout Butler, clock 01:03",,2024-08-31T18:11:09.000Z
+401655657102994102,401655657,40165565714,2,2,0:58,Butler,Upper Iowa University,13,7,75,1,10,-5,Fumble Recovery (Own),"Reagan Andrew run for a loss of 5 yards to the BUT 23 Reagan Andrew fumbled, recovered by BUT Billy Dozier B. Dozier return for 3 yds",-1.0670735924396633,2024-08-31T18:13:54.000Z
+401655657102994601,401655657,40165565714,3,2,0:53,Butler,Upper Iowa University,13,7,77,2,12,2,Rush,Joey Suchy run for 2 yds to the BUT 25,-0.16481738589484518,2024-08-31T18:14:58.000Z
+401655657102999001,401655657,40165565714,5,2,0:09,Butler,Upper Iowa University,19,7,70,3,5,70,Passing Touchdown,Reagan Andrew pass complete to Luke Wooten for 70 yds for a TD (Ryan Short PAT MISSED),6.7369424752537475,2024-08-31T18:16:57.000Z
+401655657102997801,401655657,40165565714,4,2,0:21,Butler,Upper Iowa University,13,7,75,3,10,5,Penalty,"Upper Iowa University Penalty, Offsides (Baxter Bohr) to the BUT 30",,2024-08-31T18:16:22.000Z
+401655657102989605,401655657,40165565714,1,2,1:03,Upper Iowa University,Butler,7,13,65,0,0,15,Kickoff Return (Offense),"Nathan Behne kickoff for 55 yds , Joey Audia return for 15 yds to the BUT 25",,2024-08-31T18:11:09.000Z
+401655657102999007,401655657,40165565715,3,2,0:09,Upper Iowa University,Butler,7,19,75,1,10,-2,Rush,"(00:09) Kneel down by OVERSTREET JR., Darryl at UIU23 (team loss of 2), clock 00:07.",-0.8852575132705454,2024-08-31T18:16:57.000Z
+401655657102999902,401655657,40165565715,4,2,0:00,Upper Iowa University,Butler,7,19,77,0,10,0,End of Half,End of 2nd Quarter,,2024-08-31T18:20:29.000Z
+401655657102999005,401655657,40165565715,2,2,0:09,Butler,Upper Iowa University,19,7,65,0,0,0,Kickoff,Ryan Short kickoff for 62 yds,,2024-08-31T18:16:57.000Z
+401655657102999004,401655657,40165565715,1,2,0:09,Butler,Upper Iowa University,19,7,65,0,0,0,Timeout,"Timeout Butler, clock 00:09",,2024-08-31T18:16:57.000Z
+401655657103849905,401655657,40165565716,2,3,15:00,Butler,Upper Iowa University,19,7,75,1,10,11,Rush,Billy Dozier run for 11 yds to the BUT 36 for a 1ST down,0.9305625119459905,2024-08-31T18:44:12.000Z
+401655657103857401,401655657,40165565716,3,3,14:25,Butler,Upper Iowa University,19,7,64,1,10,0,Pass Incompletion,Reagan Andrew pass incomplete,-1.041155320344064,2024-08-31T18:44:12.000Z
+401655657103857801,401655657,40165565716,4,3,14:21,Butler,Upper Iowa University,19,7,64,2,10,2,Rush,Ershod Jasey II run for 2 yds to the BUT 38,-0.4083322546240318,2024-08-31T18:44:12.000Z
+401655657103868101,401655657,40165565716,6,3,13:18,Butler,Upper Iowa University,19,7,57,3,3,0,Pass Incompletion,Reagan Andrew pass incomplete,-0.8451240228241659,2024-08-31T18:44:12.000Z
+401655657103868501,401655657,40165565716,7,3,13:14,Butler,Upper Iowa University,19,7,57,4,3,0,Punt,Ryan Short punt for 45 yds,,2024-08-31T18:47:21.000Z
+401655657103865802,401655657,40165565716,5,3,13:41,Butler,Upper Iowa University,19,7,62,3,8,5,Penalty,"(13:41) ANDREW, Reagan pass short to the right complete for 3 yards to ALLEN JR., Derek caught at the BU41 and advanced to the BU41, End of Play, clock 13:37. PENALTY UIU Offsides on POWERS, Braden enforced 5 yards from the BU38 to the BU43 [SG]. NO PLAY (replay the down).",,2024-08-31T18:44:12.000Z
+401655657103849902,401655657,40165565716,1,3,15:00,Upper Iowa University,Butler,7,19,65,0,0,0,Kickoff,Nathan Behne kickoff for 65 yds for a touchback,,2024-08-31T18:44:12.000Z
+401655657103869202,401655657,40165565717,1,3,13:07,Upper Iowa University,Butler,7,19,88,1,10,1,Rush,Aboubacar Barry run for 1 yd to the UPP 13,-0.32181812145469557,2024-08-31T18:48:03.000Z
+401655657103876501,401655657,40165565717,2,3,12:34,Upper Iowa University,Butler,7,19,87,2,9,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.20324501811652596,2024-08-31T18:44:12.000Z
+401655657103877002,401655657,40165565717,3,3,12:29,Upper Iowa University,Butler,7,19,87,3,9,-5,Penalty,"Upper Iowa University Penalty, False Start (Klay Seehase) to the UPP 8",,2024-08-31T18:50:58.000Z
+401655657103877003,401655657,40165565717,4,3,12:29,Upper Iowa University,Butler,7,19,92,3,14,0,Timeout,"Timeout Butler, clock 12:29",,2024-08-31T18:50:58.000Z
+401655657103884801,401655657,40165565717,6,3,11:51,Upper Iowa University,Butler,7,19,90,4,12,0,Punt,RJ Wells punt for 55 yds,,2024-08-31T18:44:12.000Z
+401655657103877201,401655657,40165565717,5,3,12:27,Upper Iowa University,Butler,7,19,92,3,14,2,Rush,Aboubacar Barry run for 2 yds to the UPP 10,-0.0227007819868765,2024-08-31T18:44:12.000Z
+401655657103894201,401655657,40165565718,2,3,10:57,Butler,Upper Iowa University,26,7,58,2,3,58,Passing Touchdown,Nick Howard pass complete to Derek Allen Jr. for 58 yds for a TD (Sam Taglia KICK),4.534594730768076,2024-08-31T18:55:53.000Z
+401655657103885601,401655657,40165565718,1,3,11:43,Butler,Upper Iowa University,19,7,65,1,10,7,Rush,Nick Howard run for 7 yds to the BUT 42,0.7081222799232592,2024-08-31T18:44:12.000Z
+401655657103894204,401655657,40165565718,3,3,10:57,Butler,Upper Iowa University,19,7,65,0,0,0,Timeout,"Timeout Butler, clock 10:57",,2024-08-31T18:58:30.000Z
+401655657103894902,401655657,40165565719,2,3,10:50,Upper Iowa University,Butler,7,26,80,1,10,3,Rush,Aboubacar Barry run for 3 yds to the UPP 23,-0.2366097161141063,2024-08-31T18:58:40.000Z
+401655657103898601,401655657,40165565719,3,3,10:13,Upper Iowa University,Butler,7,26,77,2,7,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.43583975606982506,2024-08-31T18:44:12.000Z
+401655657103898801,401655657,40165565719,4,3,10:11,Upper Iowa University,Butler,7,26,77,3,7,14,Pass Reception,Darryl Overstreet Jr. pass complete to Willy Camacho for 14 yds to the UPP 37 for a 1ST down,2.007996474211284,2024-08-31T19:00:31.000Z
+401655657103906401,401655657,40165565719,5,3,9:35,Upper Iowa University,Butler,7,26,63,1,10,-9,Sack,Darryl Overstreet Jr. sacked by Adam Sturtz for a loss of 9 yards to the UPP 28,-2.0479130996438633,2024-08-31T18:44:12.000Z
+401655657103914801,401655657,40165565719,6,3,8:51,Upper Iowa University,Butler,7,26,72,2,19,9,Rush,Darryl Overstreet Jr. run for 9 yds to the UPP 37,0.31999825153262407,2024-08-31T18:44:12.000Z
+401655657103918601,401655657,40165565719,7,3,8:13,Upper Iowa University,Butler,7,26,63,3,10,7,Rush,Aboubacar Barry run for 7 yds to the UPP 44,0.27828259522360366,2024-08-31T18:44:12.000Z
+401655657103926601,401655657,40165565719,8,3,7:33,Upper Iowa University,Butler,7,26,56,4,3,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.49985695353461423,2024-08-31T18:44:12.000Z
+401655657103926901,401655657,40165565719,9,3,7:30,Butler,Upper Iowa University,26,7,44,1,10,15,Penalty,"Upper Iowa University Penalty, Unsportsmanlike Conduct (Eddie Burgess) to the UPP 29 for a 1ST down",,2024-08-31T19:06:11.000Z
+401655657103894205,401655657,40165565719,1,3,10:57,Butler,Upper Iowa University,26,7,65,0,0,17,Kickoff Return (Offense),"Ryan Short kickoff for 62 yds , Willy Camacho return for 17 yds to the UPP 20",,2024-08-31T18:58:30.000Z
+401655657103926903,401655657,40165565720,1,3,7:30,Butler,Upper Iowa University,26,7,29,1,10,7,Rush,Ershod Jasey II run for 7 yds to the UPP 22,0.34844572143239,2024-08-31T19:06:11.000Z
+401655657103935001,401655657,40165565720,2,3,6:49,Butler,Upper Iowa University,33,7,22,2,3,22,Rushing Touchdown,Reagan Andrew run for 22 yds for a TD (Sam Taglia KICK),2.439855463165722,2024-08-31T19:08:20.000Z
+401655657103935004,401655657,40165565720,3,3,6:49,Butler,Upper Iowa University,26,7,65,0,0,0,Timeout,"Timeout Butler, clock 06:49",,2024-08-31T19:08:20.000Z
+401655657103935005,401655657,40165565721,1,3,6:49,Butler,Upper Iowa University,33,7,65,0,0,14,Kickoff Return (Offense),"Ryan Short kickoff for 50 yds , Willy Camacho return for 14 yds to the UPP 10",,2024-08-31T19:08:20.000Z
+401655657103986801,401655657,40165565721,12,3,1:31,Upper Iowa University,Butler,7,33,34,2,10,0,Pass Interception Return,Darryl Overstreet Jr. pass intercepted Brayton Spetter return for no gain to the BUT 14,-3.4002515744080988,2024-08-31T19:18:17.000Z
+401655657103986301,401655657,40165565721,11,3,1:36,Upper Iowa University,Butler,7,33,34,1,10,0,Pass Incompletion,Darryl Overstreet Jr. pass incomplete,-0.6630222646782312,2024-08-31T18:44:12.000Z
+401655657103978601,401655657,40165565721,10,3,2:13,Upper Iowa University,Butler,7,33,41,2,7,7,Pass Reception,Darryl Overstreet Jr. pass complete to Lonny Melvin for 7 yds to the BUT 34 for a 1ST down,0.7940393308761405,2024-08-31T18:44:12.000Z
+401655657103974801,401655657,40165565721,9,3,2:51,Upper Iowa University,Butler,7,33,44,1,10,3,Rush,Jayden Mitchell run for 3 yds to the BUT 41,-0.3178831342797892,2024-08-31T18:44:12.000Z
+401655657103968701,401655657,40165565721,8,3,3:12,Upper Iowa University,Butler,7,33,59,2,5,15,Rush,Jayden Mitchell run for 15 yds to the BUT 44 for a 1ST down,1.6247727522724649,2024-08-31T18:44:12.000Z
+401655657103964601,401655657,40165565721,7,3,3:53,Upper Iowa University,Butler,7,33,64,1,10,5,Pass Reception,Darryl Overstreet Jr. pass complete to Waylon Bolibaugh for 5 yds to the UPP 41,0.1095374979928448,2024-08-31T18:44:12.000Z
+401655657103957901,401655657,40165565721,6,3,4:20,Upper Iowa University,Butler,7,33,69,2,5,5,Pass Reception,Darryl Overstreet Jr. pass complete to Willy Camacho for 5 yds to the UPP 36 for a 1ST down,0.7632575514031394,2024-08-31T18:44:12.000Z
+401655657103954301,401655657,40165565721,5,3,4:56,Upper Iowa University,Butler,7,33,74,1,10,5,Pass Reception,Darryl Overstreet Jr. pass complete to Willy Camacho for 5 yds to the UPP 31,0.0963261532824955,2024-08-31T18:44:12.000Z
+401655657103947801,401655657,40165565721,4,3,5:21,Upper Iowa University,Butler,7,33,82,3,2,8,Pass Reception,Darryl Overstreet Jr. pass complete to Cam Williams for 8 yds to the UPP 26 for a 1ST down,0.8777992792660347,2024-08-31T18:44:12.000Z
+401655657103939901,401655657,40165565721,3,3,6:00,Upper Iowa University,Butler,7,33,87,2,7,5,Rush,Jayden Mitchell run for 5 yds to the UPP 18,0.05488306579238689,2024-08-31T18:44:12.000Z
+401655657103935602,401655657,40165565721,2,3,6:43,Upper Iowa University,Butler,7,33,90,1,10,3,Rush,Jayden Mitchell run for 3 yds to the UPP 13,-0.14561440438218298,2024-08-31T19:11:10.000Z
+401655657104857801,401655657,40165565722,5,4,14:21,Butler,Upper Iowa University,33,7,67,1,10,23,Rush,Joey Audia run for 23 yds to the UPP 44 for a 1ST down,2.0161743116311275,2024-08-31T19:25:39.000Z
+401655657104854001,401655657,40165565722,4,4,14:59,Butler,Upper Iowa University,33,7,79,3,3,12,Rush,Nick Howard run for 12 yds to the BUT 33 for a 1ST down,1.4555330964236175,2024-08-31T19:25:39.000Z
+401655657103995502,401655657,40165565722,3,3,0:00,Butler,Upper Iowa University,33,7,81,0,5,2,End Period,End of 3rd Quarter,,2024-08-31T19:22:36.000Z
+401655657103995501,401655657,40165565722,2,3,0:44,Butler,Upper Iowa University,33,7,81,2,5,2,Rush,Billy Dozier run for 2 yds to the BUT 21,-0.30004948776646057,2024-08-31T18:44:12.000Z
+401655657103987502,401655657,40165565722,1,3,1:24,Butler,Upper Iowa University,33,7,86,1,10,5,Rush,Billy Dozier run for 5 yds to the BUT 19,0.07552653853059345,2024-08-31T19:20:46.000Z
+401655657104865502,401655657,40165565722,7,4,13:44,Butler,Upper Iowa University,33,7,44,1,10,25,Pass Reception,Nick Howard pass complete to Drew Cassens for 25 yds to the UPP 19 for a 1ST down,0.8084347288724983,2024-08-31T19:26:54.000Z
+401655657104865501,401655657,40165565722,6,4,13:44,Butler,Upper Iowa University,33,7,44,1,10,0,Timeout,"Timeout Butler, clock 13:44",,2024-08-31T19:26:54.000Z
+401655657104874501,401655657,40165565722,8,4,12:54,Butler,Upper Iowa University,40,7,19,1,10,19,Passing Touchdown,Reagan Andrew pass complete to Archie Cox for 19 yds for a TD (Sam Taglia KICK),2.604447628637523,2024-08-31T19:29:21.000Z
+401655657104874505,401655657,40165565723,2,4,12:54,Butler,Upper Iowa University,40,7,65,0,0,0,Kickoff,Sam Taglia kickoff for 57 yds,,2024-08-31T19:29:21.000Z
+401655657104874507,401655657,40165565723,3,4,12:54,Upper Iowa University,Butler,7,40,65,1,10,3,Rush,Jayden Mitchell run for 3 yds to the UPP 38,-0.4062307312880424,2024-08-31T19:29:21.000Z
+401655657104874504,401655657,40165565723,1,4,12:54,Butler,Upper Iowa University,40,7,65,0,0,0,Timeout,"Timeout Butler, clock 12:54",,2024-08-31T19:29:21.000Z
+401655657104878501,401655657,40165565723,4,4,12:14,Upper Iowa University,Butler,7,40,62,2,7,2,Pass Reception,Darryl Overstreet Jr. pass complete to Isaiah Gray for 2 yds to the UPP 40,-0.5493962205352663,2024-08-31T19:25:39.000Z
+401655657104885701,401655657,40165565723,5,4,11:42,Upper Iowa University,Butler,7,40,60,3,5,4,Rush,Jayden Mitchell run for 4 yds to the UPP 44,-0.1131828115915763,2024-08-31T19:25:39.000Z
+401655657104889901,401655657,40165565723,6,4,11:00,Upper Iowa University,Butler,7,40,56,4,1,0,Punt,Henry Vakerics punt for 13 yds,,2024-08-31T19:25:39.000Z
+401655657104894501,401655657,40165565724,1,4,10:54,Butler,Upper Iowa University,40,7,57,1,10,3,Fumble Recovery (Own),"Landon Hochstein pass complete to Ershod Jasey II for 3 yds fumbled, recovered by BUT",-0.4309799951978805,2024-08-31T19:25:39.000Z
+401655657104896801,401655657,40165565724,2,4,10:31,Butler,Upper Iowa University,40,7,54,2,7,4,Rush,Landon Hochstein run for 4 yds to the 50 yard line,-0.1667975788008905,2024-08-31T19:25:39.000Z
+401655657104904601,401655657,40165565724,3,4,9:53,Butler,Upper Iowa University,40,7,50,3,3,19,Pass Reception,Landon Hochstein pass complete to Joey Audia for 19 yds to the UPP 31 for a 1ST down,2.2211481014371497,2024-08-31T19:25:39.000Z
+401655657104909001,401655657,40165565724,4,4,9:09,Butler,Upper Iowa University,40,7,31,1,10,-5,Rush,Landon Hochstein run for a loss of 5 yards to the UPP 36,-1.4278606050470992,2024-08-31T19:25:39.000Z
+401655657104917301,401655657,40165565724,5,4,8:26,Butler,Upper Iowa University,40,7,36,2,15,5,Pass Reception,Landon Hochstein pass complete to Archie Cox for 5 yds to the UPP 31,0.0500455197493392,2024-08-31T19:25:39.000Z
+401655657104925301,401655657,40165565724,6,4,7:46,Butler,Upper Iowa University,40,7,31,3,10,1,Pass Reception,Landon Hochstein pass complete to Griffin Caldwell for 1 yd to the UPP 30,-0.7863936102634506,2024-08-31T19:25:39.000Z
+401655657104929501,401655657,40165565724,7,4,7:04,Butler,Upper Iowa University,40,7,30,4,9,0,Pass Interception Return,Landon Hochstein pass intercepted Tyler Owen return for no gain to the UPP 12,-1.9938451343658414,2024-08-31T19:25:39.000Z
+401655657104977901,401655657,40165565725,8,4,2:20,Upper Iowa University,Butler,7,40,55,3,6,-1,Fumble Recovery (Opponent),"run for a loss of 1 yard to the UPP 44 fumbled, recovered by BUT Kwame Achampong K. Achampong return for 0 yds",-1.0610629345855553,2024-08-31T19:25:39.000Z
+401655657104969401,401655657,40165565725,7,4,3:05,Upper Iowa University,Butler,7,40,57,2,8,2,Rush,Jayden Mitchell run for 2 yds to the UPP 45,-0.5957696914202871,2024-08-31T19:25:39.000Z
+401655657104965101,401655657,40165565725,6,4,3:48,Upper Iowa University,Butler,7,40,59,1,10,2,Rush,Aboubacar Barry run for 2 yds to the UPP 43,-0.6841550241957303,2024-08-31T19:25:39.000Z
+401655657104956701,401655657,40165565725,5,4,4:32,Upper Iowa University,Butler,7,40,61,3,2,2,Rush,Aboubacar Barry run for 2 yds to the UPP 41 for a 1ST down,1.2293313958524017,2024-08-31T19:25:39.000Z
+401655657104929702,401655657,40165565725,1,4,7:02,Upper Iowa University,Butler,7,40,88,1,10,3,Rush,Jayden Mitchell run for 3 yds to the UPP 15,-0.16043022196263834,2024-08-31T19:42:21.000Z
+401655657104938101,401655657,40165565725,2,4,6:18,Upper Iowa University,Butler,7,40,85,2,7,16,Rush,Jayden Mitchell run for 16 yds to the UPP 31 for a 1ST down,1.2843992084319051,2024-08-31T19:25:39.000Z
+401655657104946301,401655657,40165565725,3,4,5:36,Upper Iowa University,Butler,7,40,69,1,10,2,Rush,Jayden Mitchell run for 2 yds to the UPP 33,-0.5660789348414365,2024-08-31T19:25:39.000Z
+401655657104954601,401655657,40165565725,4,4,4:53,Upper Iowa University,Butler,7,40,67,2,8,6,Rush,Aboubacar Barry run for 6 yds to the UPP 39,0.2850261943056571,2024-08-31T19:25:39.000Z
+401655657104978502,401655657,40165565726,1,4,2:14,Butler,Upper Iowa University,40,7,44,1,10,1,Rush,Griffin Caldwell run for 1 yd to the UPP 43,-0.7468552089852203,2024-08-31T19:49:52.000Z
+401655657104979901,401655657,40165565726,2,4,2:00,Butler,Upper Iowa University,40,7,43,2,9,0,Timeout,"Timeout Butler, clock 02:00",,2024-08-31T19:50:46.000Z
+401655657104984001,401655657,40165565726,3,4,1:59,Butler,Upper Iowa University,40,7,43,2,9,0,Rush,Michael Nix run for no gain to the UPP 43,-1.0681101271786932,2024-08-31T19:25:39.000Z
+401655657104987301,401655657,40165565726,4,4,1:26,Butler,Upper Iowa University,40,7,43,3,9,0,Pass Incompletion,Sage Shindler pass incomplete,-0.9459898924641718,2024-08-31T19:25:39.000Z
+401655657104987601,401655657,40165565726,5,4,1:23,Butler,Upper Iowa University,40,7,43,4,9,0,Punt,"Ryan Short punt for 38 yds, downed at the UPP 5",,2024-08-31T19:25:39.000Z
+401655657104999902,401655657,40165565727,3,4,0:00,Upper Iowa University,Butler,7,40,90,0,5,0,End of Game,End of 4th Quarter,,2024-08-31T19:56:04.000Z
+401655657104988601,401655657,40165565727,1,4,1:13,Upper Iowa University,Butler,7,40,95,1,10,2,Rush,Aboubacar Barry run for 2 yds to the UPP 7,-0.18192014215060848,2024-08-31T19:25:39.000Z
+401655657104997101,401655657,40165565727,2,4,0:28,Upper Iowa University,Butler,7,40,93,2,8,3,Rush,Aboubacar Barry run for 3 yds to the UPP 10,-0.07312634958357302,2024-08-31T19:25:39.000Z

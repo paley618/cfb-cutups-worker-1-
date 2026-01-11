@@ -1,0 +1,187 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628469101854801,401628469,4016284691,2,1,14:51,Oregon,Boise State,0,0,75,1,10,7,Rush,Jordan James run for 7 yds to the ORE 32,0.604642460086338,2024-09-08T02:07:53.000Z
+401628469101858001,401628469,4016284691,3,1,14:19,Oregon,Boise State,0,0,68,2,3,-6,Sack,Dillon Gabriel sacked by Ahmed Hassanein for a loss of 6 yards to the ORE 26,-1.6004359563907338,2024-09-08T02:07:53.000Z
+401628469101849903,401628469,4016284691,1,1,15:00,Boise State,Oregon,0,0,65,1,10,0,Kickoff,Taren Schive kickoff for 65 yds for a touchback,,2024-09-08T02:07:53.000Z
+401628469101865101,401628469,4016284691,4,1,13:48,Oregon,Boise State,0,0,74,3,9,5,Penalty,"(13:53) No Huddle-Shotgun Gabriel,Dillon pass complete short left to Holden,Traeshon caught at ORE30, for 7 yards to the ORE33 (Benefield,Ty; McCoy,A'Marion) PENALTY BSU Offside (Virgin-Morgan,Jayden) 5 yards from ORE26 to ORE31. NO PLAY.",,2024-09-08T02:07:53.000Z
+401628469101867601,401628469,4016284691,5,1,13:23,Oregon,Boise State,0,0,69,3,4,2,Rush,Dillon Gabriel run for 2 yds to the ORE 33,-0.286169567325814,2024-09-08T02:07:53.000Z
+401628469101876301,401628469,4016284691,6,1,12:36,Oregon,Boise State,0,0,67,4,2,17,Punt,"Ross James punt for 33 yds , Latrell Caples returns for 17 yds to the ORE 49",,2024-09-08T02:10:22.000Z
+401628469101877201,401628469,4016284692,1,1,12:27,Boise State,Oregon,0,0,49,1,10,4,Rush,Sire Gaines run for 4 yds to the ORE 45,-0.1369390380115582,2024-09-08T02:07:53.000Z
+401628469101885101,401628469,4016284692,2,1,11:48,Boise State,Oregon,0,0,45,2,6,4,Rush,Ashton Jeanty run for 4 yds to the ORE 41,-0.1449228473880205,2024-09-08T02:07:53.000Z
+401628469101886801,401628469,4016284692,3,1,11:31,Boise State,Oregon,0,0,41,3,2,17,Rush,Ashton Jeanty run for 17 yds to the ORE 24 for a 1ST down,1.362754488429852,2024-09-08T02:07:53.000Z
+401628469101894801,401628469,4016284692,4,1,10:51,Boise State,Oregon,0,0,24,1,10,4,Rush,Ashton Jeanty run for 4 yds to the ORE 20,-0.0334632336053265,2024-09-08T02:07:53.000Z
+401628469101897801,401628469,4016284692,5,1,10:21,Boise State,Oregon,0,0,20,2,6,-5,Penalty,"PENALTY BSU False Start (Schmidt,Hall) 5 yards from ORE20 to ORE25. NO PLAY.",,2024-09-08T02:07:53.000Z
+401628469101904201,401628469,4016284692,6,1,9:57,Boise State,Oregon,0,0,25,2,11,0,Pass Reception,Maddux Madsen pass complete to Chris Marshall for no gain to the ORE 25,-0.6293481074675658,2024-09-08T02:07:53.000Z
+401628469101906601,401628469,4016284692,7,1,9:33,Boise State,Oregon,0,0,25,3,11,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.9043674766044807,2024-09-08T02:18:18.000Z
+401628469101907001,401628469,4016284692,8,1,9:29,Boise State,Oregon,3,0,25,4,11,42,Field Goal Good,Jonah Dalmas 42 yd FG GOOD,,2024-09-08T02:19:07.000Z
+401628469101907002,401628469,4016284693,1,1,9:29,Boise State,Oregon,3,0,65,1,10,0,Kickoff,Taren Schive kickoff for 65 yds for a touchback,,2024-09-08T02:19:07.000Z
+401628469101908101,401628469,4016284693,2,1,9:18,Oregon,Boise State,0,3,75,1,10,3,Rush,Jordan James run for 3 yds to the ORE 28,-0.2957674139440157,2024-09-08T02:07:53.000Z
+401628469101914201,401628469,4016284693,3,1,8:57,Oregon,Boise State,0,3,72,2,7,5,Rush,Jordan James run for 5 yds to the ORE 33,0.0761799593184067,2024-09-08T02:07:53.000Z
+401628469101917301,401628469,4016284693,4,1,8:26,Oregon,Boise State,0,3,67,3,2,1,Pass Reception,Dillon Gabriel pass complete to Evan Stewart for 1 yd to the ORE 34,-0.5040928634877408,2024-09-08T02:07:53.000Z
+401628469101925701,401628469,4016284693,5,1,7:42,Oregon,Boise State,0,3,66,4,1,-5,Penalty,"PENALTY ORE Delay Of Game (Gabriel,Dillon) 5 yards from ORE34 to ORE29. NO PLAY.",,2024-09-08T02:07:53.000Z
+401628469101928301,401628469,4016284693,6,1,7:16,Oregon,Boise State,0,3,71,4,6,0,Punt,"Ross James punt for 51 yds, fair catch by Latrell Caples at the BOIS 20",,2024-09-08T02:07:53.000Z
+401628469101928901,401628469,4016284694,1,1,7:10,Boise State,Oregon,3,0,80,1,10,2,Rush,Ashton Jeanty run for 2 yds to the BOIS 18,-0.3623882030735057,2024-09-08T02:07:53.000Z
+401628469101936401,401628469,4016284694,2,1,6:35,Boise State,Oregon,3,0,82,2,12,6,Pass Reception,Maddux Madsen pass complete to Latrell Caples for 6 yds to the BOIS 24,0.0946611590503954,2024-09-08T02:07:53.000Z
+401628469101939001,401628469,4016284694,3,1,6:09,Boise State,Oregon,3,0,76,3,6,4,Pass Reception,Maddux Madsen pass complete to Chase Penry for 4 yds to the BOIS 28,-0.03968329303406293,2024-09-08T02:07:53.000Z
+401628469101947201,401628469,4016284694,4,1,5:27,Boise State,Oregon,3,0,72,4,2,0,Punt,"James Ferguson-Reynolds punt for 44 yds, fair catch by Tez Johnson at the ORE 28",,2024-09-08T02:31:57.000Z
+401628469101948201,401628469,4016284695,1,1,5:17,Oregon,Boise State,0,3,72,1,10,67,Pass Reception,Dillon Gabriel pass complete to Evan Stewart for 67 yds to the BOIS 5 for a 1ST down,3.9718518717071785,2024-09-08T02:07:53.000Z
+401628469101954801,401628469,4016284695,2,1,4:51,Oregon,Boise State,0,3,5,1,5,4,Rush,Noah Whittington run for 4 yds to the BOIS 1,-0.016571396914132,2024-09-08T02:34:55.000Z
+401628469101956301,401628469,4016284695,3,1,4:36,Oregon,Boise State,7,3,1,2,1,1,Rushing Touchdown,Dillon Gabriel run for 1 yd for a TD (Atticus Sappington KICK),1.900352237473006,2024-09-08T02:35:10.000Z
+401628469101999902,401628469,4016284696,11,1,0:00,Boise State,Oregon,3,7,11,0,10,8,End Period,End of 1st Quarter,,2024-09-08T02:45:04.000Z
+401628469101968601,401628469,4016284696,4,1,3:13,Boise State,Oregon,3,7,33,1,10,7,Rush,Ashton Jeanty run for 7 yds to the ORE 26,0.376233844475481,2024-09-08T02:40:03.000Z
+401628469101956303,401628469,4016284696,1,1,4:36,Oregon,Boise State,7,3,65,1,10,0,Kickoff,Atticus Sappington kickoff for 65 yds,,2024-09-08T02:35:10.000Z
+401628469101956901,401628469,4016284696,2,1,4:30,Boise State,Oregon,3,7,75,1,10,21,Pass Reception,Maddux Madsen pass complete to Cameron Camper for 21 yds to the BOIS 46 for a 1ST down,1.8928575820361135,2024-09-08T02:38:34.000Z
+401628469101964801,401628469,4016284696,3,1,3:51,Boise State,Oregon,3,7,54,1,10,21,Pass Reception,Maddux Madsen pass complete to Latrell Caples for 21 yds to the ORE 33 for a 1ST down,1.28182276418322,2024-09-08T02:39:11.000Z
+401628469101976102,401628469,4016284696,5,1,2:38,Boise State,Oregon,3,7,26,2,3,-5,Penalty,"(02:43) Jeanty,Ashton rush right for 9 yards gain to the ORE17 (Jacobs,Jestin; Bassa,Jeffrey) PENALTY BSU Illegal Formation (Camper,Cameron) 5 yards from ORE26 to ORE31. NO PLAY.",,2024-09-08T02:40:42.000Z
+401628469101978701,401628469,4016284696,6,1,2:12,Boise State,Oregon,3,7,31,2,8,6,Rush,Ashton Jeanty run for 6 yds to the ORE 25,0.2122968500617847,2024-09-08T02:41:26.000Z
+401628469101986901,401628469,4016284696,7,1,1:30,Boise State,Oregon,3,7,25,3,2,3,Rush,Ashton Jeanty run for 3 yds to the ORE 22 for a 1ST down,0.380939460766506,2024-09-08T02:42:10.000Z
+401628469101994301,401628469,4016284696,8,1,0:56,Boise State,Oregon,3,7,22,1,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.402662020534962,2024-09-08T02:42:36.000Z
+401628469101995001,401628469,4016284696,9,1,0:49,Boise State,Oregon,3,7,22,2,10,11,Penalty,"(00:54) Shotgun Madsen,Maddux pass incomplete short left to Strachan,Prince thrown to ORE15 PENALTY ORE Roughing The Passer (Harmon,Derrick) 11 yard from ORE22 to ORE11, 1ST DOWN. NO PLAY.",,2024-09-08T02:43:17.000Z
+401628469101999901,401628469,4016284696,10,1,0:00,Boise State,Oregon,3,7,11,1,10,8,Rush,Maddux Madsen run for 8 yds to the ORE 3,0.4458816745421395,2024-09-08T02:45:04.000Z
+401628469102854801,401628469,4016284696,12,2,14:51,Boise State,Oregon,3,7,3,2,2,0,Rush,Ashton Jeanty run for no gain to the ORE 3,-0.4785298925827135,2024-09-08T02:49:27.000Z
+401628469102857901,401628469,4016284696,13,2,14:20,Boise State,Oregon,10,7,3,3,2,3,Rushing Touchdown,Ashton Jeanty run for 3 yds for a TD (Jonah Dalmas KICK),2.554387631408499,2024-09-08T02:49:44.000Z
+401628469102857903,401628469,4016284697,1,2,14:20,Boise State,Oregon,10,7,65,1,10,0,Kickoff,Taren Schive kickoff for 65 yds for a touchback,,2024-09-08T02:49:44.000Z
+401628469102859001,401628469,4016284697,2,2,14:09,Oregon,Boise State,7,10,75,1,10,6,Pass Reception,Dillon Gabriel pass complete to Kenyon Sadiq for 6 yds to the ORE 31,0.3333748010525683,2024-09-08T02:52:27.000Z
+401628469102866701,401628469,4016284697,3,2,13:32,Oregon,Boise State,7,10,69,2,4,12,Rush,Jordan James run for 12 yds to the ORE 43 for a 1ST down,1.2790636211574267,2024-09-08T02:53:12.000Z
+401628469102869301,401628469,4016284697,4,2,13:06,Oregon,Boise State,7,10,57,1,10,3,Pass Reception,Dillon Gabriel pass complete to Tez Johnson for 3 yds to the ORE 46,-0.4309799951978805,2024-09-08T02:53:47.000Z
+401628469102876301,401628469,4016284697,5,2,12:36,Oregon,Boise State,7,10,54,2,7,-8,Sack,Dillon Gabriel sacked by Rodney Robinson for a loss of 8 yards to the ORE 38,-2.087929180910235,2024-09-08T02:54:03.000Z
+401628469102884201,401628469,4016284697,6,2,11:57,Oregon,Boise State,7,10,62,3,15,-7,Sack,Dillon Gabriel sacked by Seyi Oladipo for a loss of 7 yards to the ORE 31,-0.3687533490443968,2024-09-08T02:54:42.000Z
+401628469102888401,401628469,4016284697,7,2,11:15,Oregon,Boise State,7,10,69,4,22,0,Punt,Ross James punt for 69 yds for a touchback,,2024-09-08T02:55:32.000Z
+401628469102888901,401628469,4016284698,1,2,11:10,Boise State,Oregon,10,7,80,1,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.5586693796725282,2024-09-08T02:58:34.000Z
+401628469102889801,401628469,4016284698,2,2,11:01,Boise State,Oregon,10,7,80,2,10,1,Rush,Ashton Jeanty run for 1 yd to the BOIS 19,-0.22025114108216304,2024-09-08T02:59:19.000Z
+401628469102898601,401628469,4016284698,3,2,10:13,Boise State,Oregon,10,7,81,3,11,0,Pass Reception,Maddux Madsen pass complete to Ashton Jeanty for no gain to the BOIS 19,-0.09682294158419678,2024-09-08T03:00:04.000Z
+401628469102906401,401628469,4016284698,4,2,9:35,Boise State,Oregon,10,7,81,4,11,24,Punt,"James Ferguson-Reynolds punt for 39 yds , Tez Johnson returns for 24 yds to the BOIS 34",,2024-09-08T03:00:57.000Z
+401628469102907101,401628469,4016284699,1,2,9:28,Oregon,Boise State,14,10,34,1,10,34,Passing Touchdown,Dillon Gabriel pass complete to Evan Stewart for 34 yds for a TD (Atticus Sappington KICK),2.93672616091367,2024-09-08T03:01:46.000Z
+401628469102907103,401628469,40162846910,1,2,9:28,Oregon,Boise State,14,10,65,1,10,0,Kickoff,Atticus Sappington kickoff for 65 yds for a touchback,,2024-09-08T03:01:46.000Z
+401628469102908101,401628469,40162846910,2,2,9:18,Boise State,Oregon,10,14,75,1,10,2,Rush,Sire Gaines run for 2 yds to the BOIS 27,-0.45260367932203766,2024-09-08T03:06:34.000Z
+401628469102915601,401628469,40162846910,3,2,8:43,Boise State,Oregon,10,14,73,2,8,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.4788075161366292,2024-09-08T03:07:04.000Z
+401628469102916101,401628469,40162846910,4,2,8:38,Boise State,Oregon,10,14,73,3,8,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.22421028645399854,2024-09-08T03:08:14.000Z
+401628469102916901,401628469,40162846910,5,2,8:30,Boise State,Oregon,10,14,73,4,8,0,Punt,"James Ferguson-Reynolds punt for 45 yds, fair catch by Tez Johnson at the ORE 28",,2024-09-08T03:08:40.000Z
+401628469102917601,401628469,40162846911,1,2,8:23,Oregon,Boise State,14,10,72,1,10,-10,Penalty,"(08:26) No Huddle-Shotgun Johnson,Tez rush right for 7 yards gain to the ORE35 (Washington,Zion) PENALTY ORE Holding (Sadiq,Kenyon) 10 yards from ORE28 to ORE18. NO PLAY.",,2024-09-08T03:09:21.000Z
+401628469102924301,401628469,40162846911,2,2,7:56,Oregon,Boise State,14,10,82,1,20,4,Pass Reception,Dillon Gabriel pass complete to Traeshon Holden for 4 yds to the ORE 22,-0.03441088851485752,2024-09-08T03:10:21.000Z
+401628469102924401,401628469,40162846911,3,2,7:55,Oregon,Boise State,14,10,78,2,16,-11,Penalty,"PENALTY ORE UNS: Unsportsmanlike Conduct (Holden,Traeshon) 11 yard from ORE22 to ORE11. NO PLAY.",,2024-09-08T03:10:55.000Z
+401628469102926801,401628469,40162846911,4,2,7:31,Oregon,Boise State,14,10,89,2,27,4,Rush,Dillon Gabriel run for 4 yds to the ORE 15,-0.00472517951111406,2024-09-08T03:11:23.000Z
+401628469102934801,401628469,40162846911,5,2,6:51,Oregon,Boise State,14,10,85,3,23,-11,Sack,Dillon Gabriel sacked by Andrew Simpson for a loss of 11 yards to the ORE 4,-0.0325344996188468,2024-09-08T03:12:02.000Z
+401628469102939501,401628469,40162846911,6,2,6:04,Oregon,Boise State,14,10,96,4,34,22,Punt,"Ross James punt for 48 yds , Cooper Jones returns for 22 yds to the ORE 30",,2024-09-08T03:13:08.000Z
+401628469102944301,401628469,40162846912,1,2,5:56,Boise State,Oregon,10,14,30,1,10,0,Rush,Ashton Jeanty run for no gain to the ORE 30,-0.557844891990525,2024-09-08T03:13:47.000Z
+401628469102948301,401628469,40162846912,2,2,5:16,Boise State,Oregon,10,14,30,2,10,13,Pass Reception,Maddux Madsen pass complete to Latrell Caples for 13 yds to the ORE 17 for a 1ST down,0.792184922128882,2024-09-08T03:14:29.000Z
+401628469102954801,401628469,40162846912,3,2,4:51,Boise State,Oregon,17,14,17,1,10,17,Passing Touchdown,Maddux Madsen pass complete to Cameron Camper for 17 yds for a TD (Jonah Dalmas KICK),2.579903102784414,2024-09-08T03:15:08.000Z
+401628469102954803,401628469,40162846913,1,2,4:51,Boise State,Oregon,17,14,65,1,10,0,Kickoff,Taren Schive kickoff for 65 yds for a touchback,,2024-09-08T03:15:08.000Z
+401628469102955701,401628469,40162846913,2,2,4:42,Oregon,Boise State,14,17,75,1,10,11,Rush,Jordan James run for 11 yds to the ORE 36 for a 1ST down,0.9305625119459905,2024-09-08T03:20:01.000Z
+401628469102958001,401628469,40162846913,3,2,4:19,Oregon,Boise State,14,17,64,1,10,3,Rush,Jordan James run for 3 yds to the ORE 33,-0.4136553890915255,2024-09-08T03:20:22.000Z
+401628469102965701,401628469,40162846913,4,2,3:42,Oregon,Boise State,14,17,67,2,13,3,Rush,Jordan James run for 3 yds to the ORE 36,-0.18481611837750211,2024-09-08T03:20:58.000Z
+401628469102968401,401628469,40162846913,5,2,3:15,Oregon,Boise State,14,17,64,3,10,15,Pass Reception,"Dillon Gabriel pass complete to Terrance Ferguson for 15 yds to the BOIS 49 for a 1ST down Boise State Penalty, Defensive Offside (Ty Benefield) declined for a 1ST down",3.057055210308139,2024-09-08T03:21:36.000Z
+401628469102974101,401628469,40162846913,6,2,2:58,Oregon,Boise State,14,17,49,1,10,4,Pass Reception,Dillon Gabriel pass complete to Evan Stewart for 4 yds to the BOIS 45,-0.1369390380115582,2024-09-08T03:22:02.000Z
+401628469102976201,401628469,40162846913,7,2,2:37,Oregon,Boise State,14,17,45,2,6,0,Pass Incompletion,Dillon Gabriel pass incomplete,-1.1251050819857902,2024-09-08T03:22:36.000Z
+401628469102977601,401628469,40162846913,8,2,2:23,Oregon,Boise State,14,17,45,3,6,-1,Pass Reception,Dillon Gabriel pass complete to Tez Johnson for a loss of 1 yard to the BOIS 46,-1.1852739477483087,2024-09-08T03:24:13.000Z
+401628469102984701,401628469,40162846913,9,2,1:52,Oregon,Boise State,14,17,46,4,7,0,Punt,Ross James punt for 46 yds for a touchback,,2024-09-08T03:27:35.000Z
+401628469102985801,401628469,40162846914,1,2,1:41,Boise State,Oregon,17,14,80,1,10,31,Rush,Ashton Jeanty run for 31 yds to the ORE 49 for a 1ST down,2.6237272439678545,2024-09-08T03:28:32.000Z
+401628469102985802,401628469,40162846914,2,2,1:41,Boise State,Oregon,17,14,49,1,10,1,Rush,Ashton Jeanty run for 1 yd to the ORE 48,-0.8564651345494897,2024-09-08T03:28:32.000Z
+401628469102995301,401628469,40162846914,7,2,0:46,Boise State,Oregon,17,14,27,3,2,0,Timeout,"Timeout Oregon, clock 00:46",,2024-09-08T02:49:27.000Z
+401628469102996101,401628469,40162846914,8,2,0:38,Boise State,Oregon,17,14,27,3,2,12,Rush,Ashton Jeanty run for 12 yds to the ORE 15 for a 1ST down,0.556199537888421,2024-09-08T03:33:24.000Z
+401628469102987801,401628469,40162846914,3,2,1:21,Boise State,Oregon,17,14,48,2,9,3,Pass Reception,Maddux Madsen pass complete to Austin Bolt for 3 yds to the ORE 45,-0.4055789854478587,2024-09-08T03:30:19.000Z
+401628469102988501,401628469,40162846914,4,2,1:14,Boise State,Oregon,17,14,45,3,6,10,Pass Reception,Maddux Madsen pass complete to Matt Lauter for 10 yds to the ORE 35 for a 1ST down,2.0517858878576405,2024-09-08T03:30:48.000Z
+401628469102989901,401628469,40162846914,5,2,1:00,Boise State,Oregon,17,14,35,1,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.6918622905019662,2024-09-08T03:30:57.000Z
+401628469102994801,401628469,40162846914,6,2,0:51,Boise State,Oregon,17,14,35,2,10,8,Pass Reception,Maddux Madsen pass complete to Ashton Jeanty for 8 yds to the ORE 27,0.5500524468254182,2024-09-08T03:31:49.000Z
+401628469102997201,401628469,40162846914,9,2,0:27,Boise State,Oregon,17,14,15,1,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.320977659489319,2024-09-08T03:33:35.000Z
+401628469102997901,401628469,40162846914,10,2,0:20,Boise State,Oregon,17,14,15,2,10,12,Pass Reception,Maddux Madsen pass complete to Prince Strachan for 12 yds to the ORE 3 for a 1ST down,1.414725016323065,2024-09-08T03:34:20.000Z
+401628469102998901,401628469,40162846914,11,2,0:10,Boise State,Oregon,17,14,3,1,3,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.746972881228756,2024-09-08T03:34:36.000Z
+401628469102999401,401628469,40162846914,12,2,0:05,Boise State,Oregon,17,14,3,2,3,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.413137785818898,2024-09-08T03:35:37.000Z
+401628469102999701,401628469,40162846914,13,2,0:02,Boise State,Oregon,20,14,3,3,3,20,Field Goal Good,Jonah Dalmas 20 yd FG GOOD,,2024-09-08T03:36:20.000Z
+401628469102999702,401628469,40162846915,1,2,0:02,Boise State,Oregon,20,14,65,1,10,0,Kickoff,Taren Schive kickoff for 35 yds,,2024-09-08T03:36:20.000Z
+401628469102999902,401628469,40162846915,3,2,0:00,Oregon,Boise State,14,20,70,0,10,-1,End of Half,End of 2nd Quarter,,2024-09-08T03:38:19.000Z
+401628469102999901,401628469,40162846915,2,2,0:00,Oregon,Boise State,14,20,70,1,10,-1,Rush,D. Gabriel takes a knee,-0.990133578060151,2024-09-08T03:38:19.000Z
+401628469103849903,401628469,40162846916,1,3,15:00,Oregon,Boise State,14,20,65,1,10,0,Kickoff,Atticus Sappington kickoff for 65 yds for a touchback,,2024-09-08T03:59:31.000Z
+401628469103854501,401628469,40162846916,2,3,14:54,Boise State,Oregon,20,14,75,1,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.7029700220436519,2024-09-07T04:00:14.000Z
+401628469103855101,401628469,40162846916,3,3,14:48,Boise State,Oregon,20,14,75,2,10,5,Rush,Ashton Jeanty run for 5 yds to the BOIS 30,0.04378266651122598,2024-09-07T04:00:58.000Z
+401628469103859301,401628469,40162846916,4,3,14:06,Boise State,Oregon,20,14,70,3,5,8,Pass Reception,Maddux Madsen pass complete to Austin Bolt for 8 yds to the BOIS 38 for a 1ST down,1.7839388345742568,2024-09-07T04:01:39.000Z
+401628469103866501,401628469,40162846916,5,3,13:34,Boise State,Oregon,20,14,62,1,10,4,Rush,Sire Gaines run for 4 yds to the BOIS 42,-0.1660250563858484,2024-09-07T04:02:29.000Z
+401628469103874101,401628469,40162846916,6,3,12:58,Boise State,Oregon,20,14,58,2,6,3,Rush,Sire Gaines run for 3 yds to the BOIS 45,-0.4154899070251864,2024-09-07T04:02:49.000Z
+401628469103877701,401628469,40162846916,7,3,12:22,Boise State,Oregon,20,14,55,3,3,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.9078767371915273,2024-09-07T04:03:22.000Z
+401628469103878501,401628469,40162846916,8,3,12:14,Boise State,Oregon,20,14,55,4,3,0,Punt,"James Ferguson-Reynolds punt for 43 yds, fair catch by Tez Johnson at the ORE 12",,2024-09-07T04:04:17.000Z
+401628469103918302,401628469,40162846917,8,3,8:16,Oregon,Boise State,14,20,65,1,10,60,Kickoff,"Atticus Sappington kickoff for 65 yds for a touchback Oregon Penalty, Defensive Offside (Sione Laulea)",,2024-09-07T04:19:17.000Z
+401628469103918301,401628469,40162846917,7,3,8:16,Oregon,Boise State,14,20,65,1,10,0,Kickoff,"Atticus Sappington kickoff for 65 yds for a touchback Oregon Penalty, Defensive Offside (Jurrion Dickey)",,2024-09-07T04:19:17.000Z
+401628469103879101,401628469,40162846917,1,3,12:08,Oregon,Boise State,14,20,88,1,10,10,Rush,Jordan James run for 10 yds to the ORE 22 for a 1ST down,0.4592751892431943,2024-09-07T04:07:17.000Z
+401628469103888702,401628469,40162846917,2,3,11:12,Oregon,Boise State,14,20,78,1,10,15,Penalty,"Boise State Penalty, Targeting (Alexander Teubner) to the ORE 39 for a 1ST down",,2024-09-07T04:10:16.000Z
+401628469103895201,401628469,40162846917,3,3,10:47,Oregon,Boise State,14,20,61,1,10,-10,Penalty,"(10:52) No Huddle-Shotgun James,Jordan rush left for 6 yards gain to the ORE45 (Washington,Zion) PENALTY ORE Holding (Harper II,Marcus) 10 yards from ORE39 to ORE29. NO PLAY.",,2024-09-07T04:10:43.000Z
+401628469103897901,401628469,40162846917,4,3,10:20,Oregon,Boise State,14,20,71,1,20,10,Rush,Jordan James run for 10 yds to the ORE 39,0.7855697378700679,2024-09-07T04:11:37.000Z
+401628469103904801,401628469,40162846917,5,3,9:51,Oregon,Boise State,14,20,61,2,10,2,Rush,Noah Whittington run for 2 yds to the ORE 41,-0.4651793112687272,2024-09-07T04:12:05.000Z
+401628469103909001,401628469,40162846917,6,3,9:09,Oregon,Boise State,20,20,59,3,8,59,Passing Touchdown,Dillon Gabriel pass complete to Traeshon Holden for 59 yds for a TD (Atticus Sappington PAT MISSED),6.4279630837804795,2024-09-07T04:12:46.000Z
+401628469103919301,401628469,40162846918,1,3,8:06,Boise State,Oregon,20,20,70,1,10,2,Rush,Ashton Jeanty run for 2 yds to the BOIS 28,-0.547828113258845,2024-09-07T04:19:17.000Z
+401628469103919302,401628469,40162846918,2,3,8:06,Boise State,Oregon,20,20,72,2,12,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.33790192419717613,2024-09-07T04:19:17.000Z
+401628469103919303,401628469,40162846918,3,3,8:06,Boise State,Oregon,20,20,72,3,12,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.15640808346597715,2024-09-07T04:19:17.000Z
+401628469103919304,401628469,40162846918,4,3,8:06,Boise State,Oregon,20,20,72,4,12,0,Punt,"James Ferguson-Reynolds punt for 68 yds, punt out-of-bounds at the ORE 4",,2024-09-07T04:19:17.000Z
+401628469103924301,401628469,40162846919,1,3,7:56,Oregon,Boise State,20,20,96,1,10,10,Rush,Jordan James run for 10 yds to the ORE 14 for a 1ST down,0.27854026272192467,2024-09-07T04:23:30.000Z
+401628469103926802,401628469,40162846919,2,3,7:31,Oregon,Boise State,20,20,86,1,10,-7,Penalty,"(07:36) Shotgun James,Jordan rush right for 14 yards gain to the ORE28, out of bounds at ORE28 PENALTY ORE Holding (Laloulu,Iapani) 7 yards from ORE14 to ORE07. NO PLAY.",,2024-09-07T04:24:23.000Z
+401628469103934101,401628469,40162846919,3,3,6:58,Oregon,Boise State,20,20,93,1,17,1,Rush,Noah Whittington run for 1 yd to the ORE 8,-0.10077673793661378,2024-09-07T04:25:13.000Z
+401628469103937501,401628469,40162846919,4,3,6:24,Oregon,Boise State,20,20,92,2,16,3,Rush,Noah Whittington run for 3 yds to the ORE 11,-0.0272637247137677,2024-09-07T04:25:49.000Z
+401628469103945801,401628469,40162846919,5,3,5:41,Oregon,Boise State,20,20,89,3,13,2,Rush,Jayden Limar run for 2 yds to the ORE 13,-0.0308004897224059,2024-09-07T04:26:31.000Z
+401628469103949401,401628469,40162846919,6,3,5:05,Oregon,Boise State,20,20,87,4,11,0,Punt,"Ross James punt for 49 yds, punt out-of-bounds at the BOIS 38",,2024-09-07T04:27:11.000Z
+401628469103954201,401628469,40162846920,1,3,4:57,Boise State,Oregon,20,20,62,1,10,0,Rush,Ashton Jeanty run for no gain to the BOIS 38,-1.087995077167328,2024-09-07T04:30:21.000Z
+401628469103957501,401628469,40162846920,2,3,4:24,Boise State,Oregon,20,20,62,2,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.6938325521359872,2024-09-07T04:30:45.000Z
+401628469103958201,401628469,40162846920,3,3,4:17,Boise State,Oregon,20,20,62,3,10,0,Penalty,"Boise State Penalty, Illegal Formation (Ty Benefield) declined",,2024-09-07T04:31:37.000Z
+401628469103964201,401628469,40162846920,4,3,3:57,Boise State,Oregon,20,27,62,4,10,85,Punt,"James Ferguson-Reynolds punt for 47 yds , Tez Johnson returns for 85 yds for a TD (Atticus Sappington KICK)",,2024-09-07T04:32:57.000Z
+401628469103964204,401628469,40162846921,1,3,3:57,Oregon,Boise State,27,20,65,1,10,0,Kickoff,Atticus Sappington kickoff for 63 yds,,2024-09-07T04:32:57.000Z
+401628469103964701,401628469,40162846921,2,3,3:52,Boise State,Oregon,20,27,65,1,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-1.0146424556055624,2024-09-07T04:36:00.000Z
+401628469103966001,401628469,40162846921,3,3,3:39,Boise State,Oregon,20,27,65,2,10,6,Rush,Sire Gaines run for 6 yds to the BOIS 41,0.2500587829109984,2024-09-07T04:19:17.000Z
+401628469103974301,401628469,40162846921,4,3,2:56,Boise State,Oregon,20,27,59,3,4,8,Rush,Ashton Jeanty run for 8 yds to the BOIS 49 for a 1ST down,2.0839334794929596,2024-09-07T04:37:42.000Z
+401628469103976501,401628469,40162846921,5,3,2:34,Boise State,Oregon,20,27,51,1,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-1.1301991718133413,2024-09-07T04:37:58.000Z
+401628469103977401,401628469,40162846921,6,3,2:25,Boise State,Oregon,20,27,51,2,10,3,Rush,Sire Gaines run for 3 yds to the ORE 48,-0.3956528240979669,2024-09-07T04:38:52.000Z
+401628469103985601,401628469,40162846921,7,3,1:43,Boise State,Oregon,20,27,48,3,7,11,Pass Reception,Maddux Madsen pass complete to Latrell Caples for 11 yds to the ORE 37 for a 1ST down,2.397810568327504,2024-09-07T04:39:28.000Z
+401628469103988401,401628469,40162846921,8,3,1:15,Boise State,Oregon,20,27,37,1,10,0,Pass Reception,Maddux Madsen pass complete to Latrell Caples for no gain to the ORE 37,-0.7519361608312708,2024-09-07T04:39:52.000Z
+401628469103995101,401628469,40162846921,9,3,0:48,Boise State,Oregon,20,27,37,2,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.965964585356966,2024-09-07T04:40:19.000Z
+401628469103997201,401628469,40162846921,10,3,0:27,Boise State,Oregon,20,27,37,3,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-1.0141995897501808,2024-09-07T04:41:15.000Z
+401628469103997701,401628469,40162846921,11,3,0:22,Boise State,Oregon,20,27,37,4,10,54,Field Goal Missed,Jonah Dalmas 54 yd FG MISSED,,2024-09-07T04:43:07.000Z
+401628469103999902,401628469,40162846922,2,3,0:00,Oregon,Boise State,27,20,63,0,10,3,End Period,End of 3rd Quarter,,2024-09-07T04:19:17.000Z
+401628469103999901,401628469,40162846922,1,3,0:00,Oregon,Boise State,27,20,63,1,10,3,Rush,Noah Whittington run for 3 yds to the ORE 40,-0.4199785122886155,2024-09-07T04:19:17.000Z
+401628469104854701,401628469,40162846922,3,4,14:52,Oregon,Boise State,27,20,60,2,7,8,Rush,Noah Whittington run for 8 yds to the ORE 48 for a 1ST down,1.4624350171559346,2024-09-07T04:48:34.000Z
+401628469104857701,401628469,40162846922,4,4,14:22,Oregon,Boise State,27,20,52,1,10,8,Pass Reception,Dillon Gabriel pass complete to Traeshon Holden for 8 yds to the BOIS 44,0.881884677547804,2024-09-07T04:48:59.000Z
+401628469104864401,401628469,40162846922,5,4,13:55,Oregon,Boise State,27,20,44,2,2,9,Rush,Dillon Gabriel run for 9 yds to the BOIS 35 for a 1ST down,0.153580827385671,2024-09-07T04:49:27.000Z
+401628469104868001,401628469,40162846922,6,4,13:19,Oregon,Boise State,27,20,35,1,10,5,Fumble Recovery (Own),"Dillon Gabriel pass complete to Patrick Herbert for 5 yds Patrick Herbert fumbled, recovered by BOIS Marco Notarainni",0.081604517220205,2024-09-07T04:50:33.000Z
+401628469104869601,401628469,40162846923,2,4,13:03,Boise State,Oregon,20,27,65,1,10,35,Kickoff Return (Offense),"Taren Schive kickoff for 63 yds , Noah Whittington return for 35 yds to the ORE 30 Oregon Penalty, Offensive Holding (10 Yards) to the ORE 12",,2024-09-07T04:55:34.000Z
+401628469104869001,401628469,40162846923,1,4,13:09,Boise State,Oregon,27,27,70,1,10,70,Rushing Touchdown,Ashton Jeanty run for 70 yds for a TD (Jonah Dalmas KICK),5.692786518904343,2024-09-07T04:51:08.000Z
+401628469104874601,401628469,40162846924,1,4,12:53,Oregon,Boise State,27,27,88,1,10,9,Rush,Jordan James run for 9 yds to the ORE 21,0.8803339185180583,2024-09-07T04:56:44.000Z
+401628469104878302,401628469,40162846924,3,4,12:16,Oregon,Boise State,27,27,79,2,1,1,Fumble Recovery (Opponent),"Dillon Gabriel run for 1 yd to the ORE 22 Dillon Gabriel fumbled, recovered by BOIS Ty Benefield",-1.1490739269337418,2024-09-07T04:57:40.000Z
+401628469104878301,401628469,40162846924,2,4,12:16,Oregon,Boise State,27,27,79,2,1,1,Fumble Recovery (Opponent),"Dillon Gabriel run for 1 yd to the ORE 22 Dillon Gabriel fumbled, recovered by BOIS Ty Benefield",-1.1490739269337418,2024-09-07T04:57:40.000Z
+401628469104884101,401628469,40162846925,1,4,11:58,Boise State,Oregon,27,27,22,1,10,5,Pass Reception,Maddux Madsen pass complete to Cameron Camper for 5 yds to the ORE 17,0.074636067054974,2024-09-07T04:58:18.000Z
+401628469104886601,401628469,40162846925,2,4,11:33,Boise State,Oregon,27,27,17,2,5,6,Rush,Ashton Jeanty run for 6 yds to the ORE 11 for a 1ST down,0.051247286225561,2024-09-07T04:58:44.000Z
+401628469104894401,401628469,40162846925,3,4,10:55,Boise State,Oregon,27,27,11,1,10,3,Rush,Ashton Jeanty run for 3 yds to the ORE 8,-0.094911316302818,2024-09-07T04:59:32.000Z
+401628469104898401,401628469,40162846925,4,4,10:15,Boise State,Oregon,34,27,8,2,7,8,Rushing Touchdown,Ashton Jeanty run for 8 yds for a TD (Jonah Dalmas KICK),2.616650729670743,2024-09-07T05:00:02.000Z
+401628469104904002,401628469,40162846926,1,4,9:59,Boise State,Oregon,34,34,65,1,10,0,Kickoff Return Touchdown,Jayden Limar 0 Yd Kickoff Return (Atticus Sappington Kick),-1.0146424556055624,2024-09-07T05:09:51.000Z
+401628469104904601,401628469,40162846926,3,4,9:53,Boise State,Oregon,34,35,75,1,10,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.7029700220436519,2024-09-07T05:10:00.000Z
+401628469104904003,401628469,40162846926,2,4,9:59,Oregon,Boise State,35,34,65,1,10,0,Kickoff,Atticus Sappington kickoff for 65 yds for a touchback,,2024-09-07T05:05:56.000Z
+401628469104905901,401628469,40162846926,4,4,9:40,Boise State,Oregon,34,35,75,2,10,3,Rush,Ashton Jeanty run for 3 yds to the BOIS 28,-0.15222912011238687,2024-09-07T05:10:48.000Z
+401628469104914101,401628469,40162846926,5,4,8:58,Boise State,Oregon,34,35,72,3,7,9,Pass Reception,Maddux Madsen pass complete to Cameron Camper for 9 yds to the BOIS 37 for a 1ST down,1.88244346829961,2024-09-07T05:11:25.000Z
+401628469104914701,401628469,40162846926,6,4,8:52,Boise State,Oregon,34,35,63,1,10,-5,Penalty,"PENALTY BSU False Start (Holmes,Zach) 5 yards from BSU37 to BSU32. NO PLAY.",,2024-09-07T05:11:51.000Z
+401628469104917501,401628469,40162846926,7,4,8:24,Boise State,Oregon,34,35,68,1,15,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.6343563915083825,2024-09-07T05:12:18.000Z
+401628469104918401,401628469,40162846926,8,4,8:15,Boise State,Oregon,34,35,68,2,15,2,Rush,Ashton Jeanty run for 2 yds to the BOIS 34,-0.21734424927500573,2024-09-07T05:13:20.000Z
+401628469104926501,401628469,40162846926,9,4,7:34,Boise State,Oregon,34,35,66,3,13,-1,Sack,Maddux Madsen sacked by Jordan Burch for a loss of 1 yard to the BOIS 33,-0.24088783614106024,2024-09-07T05:13:38.000Z
+401628469104934401,401628469,40162846926,10,4,6:55,Boise State,Oregon,34,35,67,4,14,0,Punt,"James Ferguson-Reynolds punt for 43 yds, fair catch by Tez Johnson at the ORE 24",,2024-09-07T05:14:23.000Z
+401628469104935001,401628469,40162846927,1,4,6:49,Oregon,Boise State,35,34,76,1,10,6,Pass Reception,Dillon Gabriel pass complete to Evan Stewart for 6 yds to the ORE 30,0.3245554637561217,2024-09-07T05:17:41.000Z
+401628469104937801,401628469,40162846927,2,4,6:21,Oregon,Boise State,35,34,70,2,4,10,Pass Reception,Dillon Gabriel pass complete to Terrance Ferguson for 10 yds to the ORE 40 for a 1ST down,1.0641622755159936,2024-09-07T05:18:08.000Z
+401628469104944501,401628469,40162846927,3,4,5:54,Oregon,Boise State,35,34,60,1,10,-5,Penalty,"(06:00) No Huddle-Shotgun James,Jordan rush right for 0 yards to the ORE40 (Benefield,Ty; Oladipo,Seyi) PENALTY ORE Illegal Shift (Laloulu,Iapani) 5 yards from ORE40 to ORE35. NO PLAY.",,2024-09-07T05:19:14.000Z
+401628469104954001,401628469,40162846927,4,4,4:59,Oregon,Boise State,35,34,65,1,15,2,Pass Reception,Dillon Gabriel pass complete to Tez Johnson for a loss of 1 yard to the ORE 34 to for 2 yds to the ORE 34,-0.4669281856825264,2024-09-07T05:20:00.000Z
+401628469104954801,401628469,40162846927,5,4,4:51,Oregon,Boise State,35,34,66,2,16,0,Pass Incompletion,Dillon Gabriel pass incomplete,-0.34124262424887597,2024-09-07T05:20:07.000Z
+401628469104955601,401628469,40162846927,6,4,4:43,Oregon,Boise State,35,34,66,3,16,0,Pass Incompletion,Dillon Gabriel pass incomplete,-0.16113419265144113,2024-09-07T05:20:53.000Z
+401628469104956601,401628469,40162846927,7,4,4:33,Oregon,Boise State,35,34,66,4,16,4,Punt,"Ross James punt for 48 yds , Latrell Caples returns for 4 yds to the BOIS 22",,2024-09-07T05:21:48.000Z
+401628469104965001,401628469,40162846928,2,4,3:49,Boise State,Oregon,34,35,74,2,6,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.5661585529417099,2024-09-07T05:23:08.000Z
+401628469104957401,401628469,40162846928,1,4,4:25,Boise State,Oregon,34,35,78,1,10,4,Rush,Ashton Jeanty run for 4 yds to the BOIS 26,-0.098522001264528,2024-09-07T05:22:40.000Z
+401628469104965501,401628469,40162846928,3,4,3:44,Boise State,Oregon,34,35,74,3,6,0,Pass Incompletion,Maddux Madsen pass incomplete,-0.2651018088073833,2024-09-07T05:23:46.000Z
+401628469104966301,401628469,40162846928,4,4,3:36,Boise State,Oregon,34,35,74,4,6,0,Punt,"James Ferguson-Reynolds punt for 42 yds, fair catch by Tez Johnson at the ORE 32",,2024-09-07T05:24:39.000Z
+401628469104967401,401628469,40162846929,1,4,3:25,Oregon,Boise State,35,34,68,1,10,14,Pass Reception,Dillon Gabriel pass complete to Kenyon Sadiq for 14 yds to the ORE 46 for a 1ST down,1.3344131779566515,2024-09-07T05:25:39.000Z
+401628469104984501,401628469,40162846929,4,4,1:54,Oregon,Boise State,35,34,45,3,1,2,Pass Reception,Dillon Gabriel pass complete to Terrance Ferguson for 2 yds to the BOIS 43 for a 1ST down,0.8820129079263612,2024-09-07T05:30:45.000Z
+401628469104987701,401628469,40162846929,6,4,1:22,Oregon,Boise State,35,34,22,2,4,0,Timeout,"Timeout Oregon, clock 01:22",,2024-09-07T04:48:34.000Z
+401628469104996001,401628469,40162846929,11,4,0:39,Oregon,Boise State,35,34,8,1,8,1,Rush,Jordan James run for 1 yd to the BOIS 7,-0.287548899318045,2024-09-07T05:35:35.000Z
+401628469104995801,401628469,40162846929,10,4,0:41,Oregon,Boise State,35,34,19,3,1,11,Rush,Jordan James run for 11 yds to the BOIS 8 for a 1ST down,0.410385101006554,2024-09-07T05:34:09.000Z
+401628469104988601,401628469,40162846929,8,4,1:13,Oregon,Boise State,35,34,22,2,4,3,Rush,Jordan James run for 3 yds to the BOIS 19,-0.169993355986572,2024-09-07T05:33:31.000Z
+401628469104987801,401628469,40162846929,7,4,1:21,Oregon,Boise State,35,34,28,1,10,6,Rush,Jordan James run for 6 yds to the BOIS 22,0.204023160418757,2024-09-07T05:32:06.000Z
+401628469104995601,401628469,40162846929,9,4,0:43,Oregon,Boise State,35,34,8,1,8,0,Timeout,"Timeout Oregon, clock 00:43",,2024-09-07T04:48:34.000Z
+401628469104996901,401628469,40162846929,13,4,0:30,Oregon,Boise State,35,34,5,3,5,0,Timeout,"Timeout Oregon, clock 00:30",,2024-09-07T04:48:34.000Z
+401628469104996002,401628469,40162846929,12,4,0:39,Oregon,Boise State,35,34,7,2,7,0,Timeout,"Timeout Oregon, clock 00:39",,2024-09-07T05:35:35.000Z
+401628469104999701,401628469,40162846929,16,4,0:02,Oregon,Boise State,35,34,7,4,7,0,Timeout,"Timeout Oregon, clock 00:02",,2024-09-07T04:48:34.000Z
+401628469104999902,401628469,40162846929,18,4,0:00,Oregon,Boise State,37,34,65,0,10,0,End of Game,End of 4th Quarter,,2024-09-07T05:40:09.000Z
+401628469104968801,401628469,40162846929,2,4,3:11,Oregon,Boise State,35,34,54,1,10,2,Rush,Jordan James run for 2 yds to the ORE 48,-0.6735165476975664,2024-09-07T05:26:21.000Z
+401628469104976401,401628469,40162846929,3,4,2:35,Oregon,Boise State,35,34,52,2,8,7,Pass Reception,Dillon Gabriel pass complete to Traeshon Holden for 7 yds to the BOIS 45,0.624031089525559,2024-09-07T05:26:57.000Z
+401628469104986901,401628469,40162846929,5,4,1:30,Oregon,Boise State,35,34,43,1,10,15,Penalty,"(01:34) Shotgun Gabriel,Dillon pass incomplete deep left to Holden,Traeshon thrown to BSU00 PENALTY BSU Pass Interference (Earby,Jeremiah) 15 yards from BSU43 to BSU28, 1ST DOWN. NO PLAY.",,2024-09-07T05:31:17.000Z
+401628469104997001,401628469,40162846929,14,4,0:29,Oregon,Boise State,35,34,7,2,7,2,Rush,Jordan James run for 2 yds to the BOIS 5,-0.154451161150853,2024-09-07T05:36:45.000Z
+401628469104999201,401628469,40162846929,15,4,0:07,Oregon,Boise State,35,34,5,3,5,2,Rush,Dillon Gabriel run for 2 yds to the BOIS 7,-0.154746915333792,2024-09-07T05:38:06.000Z
+401628469104999901,401628469,40162846929,17,4,0:00,Oregon,Boise State,37,34,7,4,7,25,Field Goal Good,Atticus Sappington 25 Yd Field Goal ,,2024-09-07T05:39:28.000Z

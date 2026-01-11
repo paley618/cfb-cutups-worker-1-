@@ -1,0 +1,147 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401636380101849905,401636380,4016363801,1,1,15:00,Louisiana,Grambling,0,0,65,0,0,0,Kickoff,Kenneth Almendares kickoff for 65 yds,,2024-09-01T00:01:02.000Z
+401636380101864401,401636380,4016363801,4,1,13:55,Grambling,Louisiana,0,0,56,2,10,0,Timeout,"Timeout Grambling, clock 13:55",,2024-09-01T00:05:45.000Z
+401636380101876601,401636380,4016363801,7,1,12:33,Grambling,Louisiana,0,0,49,4,3,0,Punt,Johnny Schifano punt for 31 yds,,2024-09-01T00:04:35.000Z
+401636380101868601,401636380,4016363801,6,1,13:13,Grambling,Louisiana,0,0,48,3,2,-1,Pass Reception,Myles Crawley pass complete to Tony Forrest Jr. for a loss of 1 yard to the UL 49,-1.3307327139270102,2024-09-01T00:04:35.000Z
+401636380101864402,401636380,4016363801,5,1,13:55,Grambling,Louisiana,0,0,56,2,10,8,Rush,Ke'travion Hargrove run for 8 yds to the UL 48,0.8318431851021338,2024-09-01T00:05:45.000Z
+401636380101856501,401636380,4016363801,3,1,14:34,Grambling,Louisiana,0,0,56,1,10,0,Rush,Ke'travion Hargrove run for no gain to the GRAM 44,-1.1612466882658818,2024-09-01T00:04:35.000Z
+401636380101849908,401636380,4016363801,2,1,15:00,Grambling,Louisiana,0,0,75,1,10,19,Pass Reception,Myles Crawley pass complete to Javon Robinson for 19 yds to the GRAM 44 for a 1ST down,1.7075723383420156,2024-09-01T00:04:35.000Z
+401636380101877102,401636380,4016363802,1,1,12:28,Louisiana,Grambling,0,0,82,1,10,50,Pass Reception,Ben Wooldridge pass complete to Harvey Broussard for 50 yds to the GRAM 32 for a 1ST down,3.6167788237038883,2024-09-01T00:08:52.000Z
+401636380101884001,401636380,4016363802,2,1,11:59,Louisiana,Grambling,0,0,32,1,10,4,Pass Reception,Ben Wooldridge pass complete to Jacob Bernard for 4 yds to the GRAM 28,-0.0558269791892986,2024-09-01T00:04:35.000Z
+401636380101886101,401636380,4016363802,3,1,11:38,Louisiana,Grambling,0,0,28,2,6,5,Pass Reception,Ben Wooldridge pass complete to Jacob Bernard for 5 yds to the GRAM 23,0.0801976735266375,2024-09-01T00:04:35.000Z
+401636380101888801,401636380,4016363802,4,1,11:11,Louisiana,Grambling,0,0,23,3,1,2,Rush,Dre'lyn Washington run for 2 yds to the GRAM 21 for a 1ST down,0.2148519174561305,2024-09-01T00:04:35.000Z
+401636380101896401,401636380,4016363802,5,1,10:35,Louisiana,Grambling,0,0,21,1,10,4,Rush,Dre'lyn Washington run for 4 yds to the GRAM 17,-0.0277001413248325,2024-09-01T00:04:35.000Z
+401636380101904001,401636380,4016363802,6,1,9:59,Louisiana,Grambling,0,0,17,2,6,11,Pass Reception,Ben Wooldridge pass complete to Robert Williams for 11 yds to the GRAM 6 for a 1ST down,0.6075071840550486,2024-09-01T00:04:35.000Z
+401636380101906501,401636380,4016363802,7,1,9:34,Louisiana,Grambling,0,0,6,1,6,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.476177221716661,2024-09-01T00:04:35.000Z
+401636380101909501,401636380,4016363802,8,1,9:04,Louisiana,Grambling,7,0,6,2,6,6,Rushing Touchdown,Dre'lyn Washington run for 6 yds for a TD (Kenneth Almendares KICK),2.528666992781938,2024-09-01T00:13:13.000Z
+401636380101909503,401636380,4016363803,1,1,9:04,Louisiana,Grambling,7,0,65,0,0,0,Kickoff,Kenneth Almendares kickoff for 60 yds,,2024-09-01T00:18:00.000Z
+401636380101947901,401636380,4016363803,9,1,5:20,Grambling,Louisiana,0,7,31,4,5,48,Field Goal Missed,Reed Harradine 48 yd FG MISSED,,2024-09-01T00:22:44.000Z
+401636380101946703,401636380,4016363803,8,1,5:32,Grambling,Louisiana,0,7,31,3,5,0,Pass Incompletion,Myles Crawley pass incomplete,-0.9456317595121763,2024-09-01T00:31:34.000Z
+401636380101914001,401636380,4016363803,2,1,8:59,Grambling,Louisiana,0,7,75,1,10,13,Pass Reception,Myles Crawley pass complete to Nicholas Howard for 13 yds to the GRAM 38 for a 1ST down,1.124751479041831,2024-09-01T00:04:35.000Z
+401636380101916901,401636380,4016363803,3,1,8:30,Grambling,Louisiana,0,7,62,1,10,4,Pass Reception,Myles Crawley pass complete to Jalen Johnson for 4 yds to the GRAM 42,-0.1660250563858484,2024-09-01T00:04:35.000Z
+401636380101919901,401636380,4016363803,4,1,8:00,Grambling,Louisiana,0,7,58,2,6,10,Rush,Tre Bradford run for 10 yds to the UL 48 for a 1ST down,1.432794860785382,2024-09-01T00:31:34.000Z
+401636380101927302,401636380,4016363803,5,1,7:26,Grambling,Louisiana,0,7,48,1,10,12,Rush,Tre Bradford run for 12 yds to the UL 36 for a 1ST down,0.675455741266161,2024-09-01T00:31:34.000Z
+401636380101935503,401636380,4016363803,6,1,6:44,Grambling,Louisiana,0,7,36,1,10,8,Pass Reception,Myles Crawley pass complete to Javon Robinson for 8 yds to the UL 28,0.577261746429441,2024-09-01T00:31:34.000Z
+401636380101938803,401636380,4016363803,7,1,6:11,Grambling,Louisiana,0,7,28,2,2,-3,Rush,Tre Bradford run for a loss of 3 yards to the UL 31,-1.2377124258857004,2024-09-01T00:31:34.000Z
+401636380101998502,401636380,4016363804,10,1,0:00,Louisiana,Grambling,7,0,29,0,5,10,End Period,End of 1st Quarter,,2024-09-01T00:31:30.000Z
+401636380101947903,401636380,4016363804,1,1,5:20,Louisiana,Grambling,7,0,69,1,10,5,Rush,Elijah Davis run for 5 yds to the UL 36,0.1043573190685727,2024-09-01T00:22:44.000Z
+401636380101954201,401636380,4016363804,2,1,4:57,Louisiana,Grambling,7,0,64,2,5,4,Pass Reception,Ben Wooldridge pass complete to Harvey Broussard for 4 yds to the UL 40,-0.147245733234799,2024-09-01T00:04:35.000Z
+401636380101957801,401636380,4016363804,3,1,4:21,Louisiana,Grambling,7,0,60,3,1,4,Rush,Ben Wooldridge run for 4 yds to the UL 44 for a 1ST down,1.27999663790197,2024-09-01T00:04:35.000Z
+401636380101966401,401636380,4016363804,4,1,3:35,Louisiana,Grambling,7,0,56,1,10,4,Pass Reception,Ben Wooldridge pass complete to Lance LeGendre for 4 yds to the UL 48,-0.1632332623875107,2024-09-01T00:04:35.000Z
+401636380101974101,401636380,4016363804,5,1,2:58,Louisiana,Grambling,7,0,52,2,6,1,Pass Reception,Ben Wooldridge pass complete to Caden Jensen for 1 yd to the UL 49,-0.9265399740707227,2024-09-01T00:04:35.000Z
+401636380101978801,401636380,4016363804,6,1,2:11,Louisiana,Grambling,7,0,51,3,5,17,Pass Reception,Ben Wooldridge pass complete to Jacob Bernard for 17 yds to the GRAM 34 for a 1ST down,2.5232298569238694,2024-09-01T00:04:35.000Z
+401636380101986001,401636380,4016363804,7,1,1:39,Louisiana,Grambling,7,0,34,1,10,4,Rush,Ben Wooldridge run for 4 yds to the GRAM 30,-0.063267952570744,2024-09-01T00:04:35.000Z
+401636380101994201,401636380,4016363804,8,1,0:57,Louisiana,Grambling,7,0,30,2,6,1,Rush,Zylan Perry run for 1 yd to the GRAM 29,-0.541568398402946,2024-09-01T00:04:35.000Z
+401636380101998501,401636380,4016363804,9,1,0:14,Louisiana,Grambling,7,0,29,3,5,10,Pass Reception,Ben Wooldridge pass complete to Terrance Carter for 10 yds to the GRAM 19 for a 1ST down,0.937114883249837,2024-09-01T00:04:35.000Z
+401636380102849902,401636380,4016363804,11,2,15:00,Louisiana,Grambling,7,0,19,1,10,2,Rush,Elijah Davis run for 2 yds to the GRAM 17,-0.199249940829709,2024-09-01T00:35:27.000Z
+401636380102857501,401636380,4016363804,12,2,14:24,Louisiana,Grambling,7,0,17,2,8,4,Rush,Elijah Davis run for 4 yds to the GRAM 13,-0.034672032632321,2024-09-01T00:35:27.000Z
+401636380102866901,401636380,4016363804,13,2,13:30,Louisiana,Grambling,14,0,13,3,4,13,Passing Touchdown,Ben Wooldridge pass complete to Harvey Broussard for 13 yds for a TD (Kenneth Almendares KICK),2.838369602099553,2024-09-01T00:36:50.000Z
+401636380102866903,401636380,4016363805,1,2,13:30,Louisiana,Grambling,14,0,65,0,0,7,Kickoff Return (Offense),"Kenneth Almendares kickoff for 56 yds , Jacoby Bellazar return for 7 yds to the GRAM 16",,2024-09-01T00:36:50.000Z
+401636380102899202,401636380,4016363805,10,2,10:07,Louisiana,Grambling,14,0,3,0,0,-5,Penalty,"Louisiana Penalty, False Start (-5 Yards) to the GRAM 8",,2024-09-01T00:47:56.000Z
+401636380102867502,401636380,4016363805,2,2,13:24,Grambling,Louisiana,0,14,84,1,10,2,Rush,Ke'travion Hargrove run for 2 yds to the GRAM 18,-0.30019486377203375,2024-09-01T00:41:49.000Z
+401636380102869601,401636380,4016363805,3,2,13:03,Grambling,Louisiana,0,14,82,2,8,0,Pass Incompletion,Myles Crawley pass incomplete,-0.29878805256599783,2024-09-01T00:35:27.000Z
+401636380102875801,401636380,4016363805,4,2,12:41,Grambling,Louisiana,0,14,82,3,8,14,Pass Reception,Myles Crawley pass complete to Jacoby Bellazar for 14 yds to the GRAM 32 for a 1ST down,1.6590415278998467,2024-09-01T00:42:44.000Z
+401636380102878201,401636380,4016363805,5,2,12:17,Grambling,Louisiana,0,14,68,1,10,8,Rush,Ke'travion Hargrove run for 8 yds to the GRAM 40,1.0205002560261356,2024-09-01T00:35:27.000Z
+401636380102886201,401636380,4016363805,6,2,11:37,Grambling,Louisiana,0,14,60,2,2,1,Rush,Ke'travion Hargrove run for 1 yd to the GRAM 41,-1.066208939115709,2024-09-01T00:35:27.000Z
+401636380102894001,401636380,4016363805,7,2,10:59,Grambling,Louisiana,0,14,59,3,1,6,Pass Reception,Myles Crawley pass complete to Jacoby Bellazar for 6 yds to the GRAM 47 for a 1ST down,1.4697199651581254,2024-09-01T00:35:27.000Z
+401636380102897501,401636380,4016363805,8,2,10:24,Grambling,Louisiana,0,14,53,1,10,0,Pass Incompletion,Myles Crawley pass incomplete,-1.1527089917962545,2024-09-01T00:35:27.000Z
+401636380102899201,401636380,4016363805,9,2,10:07,Grambling,Louisiana,0,21,53,2,10,50,Interception Return Touchdown,Myles Crawley pass intercepted Caleb Kibodi return for 50 yds for a TD (Kenneth Almendares KICK),-8.751991574630438,2024-09-01T00:47:13.000Z
+401636380102899204,401636380,4016363806,1,2,10:07,Louisiana,Grambling,21,0,65,0,0,11,Kickoff Return (Offense),"Kenneth Almendares kickoff for 55 yds , Tylon Williams return for 11 yds to the GRAM 21",,2024-09-01T00:47:56.000Z
+401636380102928401,401636380,4016363806,8,2,7:15,Grambling,Louisiana,0,21,59,4,5,0,Punt,"Johnny Schifano punt for 39 yds , Jacob Bernard returns for no gain to the UL 11",,2024-09-01T01:00:12.000Z
+401636380102927701,401636380,4016363806,7,2,7:22,Grambling,Louisiana,0,21,59,3,5,0,Pass Incompletion,Myles Crawley pass incomplete,-0.6617140534494768,2024-09-01T00:35:27.000Z
+401636380102899802,401636380,4016363806,2,2,10:01,Grambling,Louisiana,0,21,79,1,10,3,Rush,Ke'travion Hargrove run for 3 yds to the GRAM 24,-0.24791478712197265,2024-09-01T00:54:44.000Z
+401636380102908001,401636380,4016363806,3,2,9:19,Grambling,Louisiana,0,21,76,2,7,0,Pass Incompletion,Myles Crawley pass incomplete,-0.4583337173228852,2024-09-01T00:35:27.000Z
+401636380102908401,401636380,4016363806,4,2,9:15,Grambling,Louisiana,0,21,76,3,7,12,Pass Reception,Myles Crawley pass complete to Nicholas Howard for 12 yds to the GRAM 36 for a 1ST down,1.8895906864866827,2024-09-01T00:56:19.000Z
+401636380102916601,401636380,4016363806,5,2,8:33,Grambling,Louisiana,0,21,64,1,10,4,Pass Reception,Myles Crawley pass complete to Nicholas Howard for 4 yds to the GRAM 40,-0.1622709044233037,2024-09-01T00:35:27.000Z
+401636380102919901,401636380,4016363806,6,2,8:00,Grambling,Louisiana,0,21,60,2,6,1,Pass Reception,Myles Crawley pass complete to Jacoby Bellazar for 1 yd to the GRAM 41,-0.8182594016062632,2024-09-01T00:35:27.000Z
+401636380102929402,401636380,4016363807,1,2,7:05,Louisiana,Grambling,21,0,89,1,10,0,Rush,Dre'lyn Washington run for no gain to the UL 11,-0.36548578366266504,2024-09-01T01:01:29.000Z
+401636380102937601,401636380,4016363807,2,2,6:23,Louisiana,Grambling,21,0,89,2,10,13,Pass Reception,Ben Wooldridge pass complete to Caden Jensen for 13 yds to the UL 24 for a 1ST down,0.9834397483745461,2024-09-01T00:35:27.000Z
+401636380102945001,401636380,4016363807,3,2,5:49,Louisiana,Grambling,21,0,76,1,10,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.6723571521309859,2024-09-01T00:35:27.000Z
+401636380102945601,401636380,4016363807,4,2,5:43,Louisiana,Grambling,21,0,76,2,10,11,Pass Reception,Ben Wooldridge pass complete to Robert Williams for 11 yds to the UL 35 for a 1ST down,1.5752584848554418,2024-09-01T00:35:27.000Z
+401636380102954101,401636380,4016363807,5,2,4:58,Louisiana,Grambling,21,0,65,1,10,9,Pass Reception,Ben Wooldridge pass complete to Harvey Broussard for 9 yds to the UL 44,1.3846699650971743,2024-09-01T00:35:27.000Z
+401636380102959301,401636380,4016363807,6,2,4:06,Louisiana,Grambling,27,0,56,2,1,56,Passing Touchdown,Ben Wooldridge pass complete to Tavion Smith for 56 yds for a TD (Two-Point Conversion failed),3.8580470455941605,2024-09-01T01:06:41.000Z
+401636380102978501,401636380,4016363808,5,2,2:14,Grambling,Louisiana,0,27,91,3,18,2,Rush,Ke'travion Hargrove run for 2 yds to the GRAM 11,-0.0148826065023355,2024-09-01T01:25:30.000Z
+401636380102959303,401636380,4016363808,1,2,4:06,Louisiana,Grambling,27,0,65,0,0,6,Kickoff Return (Offense),"Tony Sterner kickoff for 54 yds , Tylon Williams return for 6 yds to the GRAM 17",,2024-09-01T01:06:41.000Z
+401636380102964002,401636380,4016363808,2,2,3:59,Grambling,Louisiana,0,27,83,1,10,-1,Rush,Tre Bradford run for a loss of 1 yard to the GRAM 16,-0.5490975841390808,2024-09-01T01:08:59.000Z
+401636380102968201,401636380,4016363808,3,2,3:17,Grambling,Louisiana,0,27,84,2,11,-2,Pass Reception,Myles Crawley pass complete to Tre Bradford for a loss of 2 yards to the GRAM 14,-0.22779554867674623,2024-09-01T00:35:27.000Z
+401636380102976601,401636380,4016363808,4,2,2:33,Grambling,Louisiana,0,27,86,3,13,-5,Penalty,"Grambling Penalty, Delay Of Game (Myles Crawley) to the GRAM 9",,2024-09-01T00:35:27.000Z
+401636380102979901,401636380,4016363808,6,2,2:00,Grambling,Louisiana,0,27,89,4,16,5,Punt,"Johnny Schifano punt for 42 yds , Jacob Bernard returns for 5 yds to the GRAM 48",,2024-09-01T00:35:27.000Z
+401636380102985103,401636380,4016363808,7,2,1:48,Louisiana,Grambling,27,0,48,1,10,5,Penalty,"(01:48) WOOLDRIDGE, Ben pass deep to the right incomplete intended for BROUSSARD, Harvey thrown to the GSU32, clock 01:44. PENALTY GSU Offsides on HORTON, Jonathan enforced 5 yards from the GSU48 to the GSU43 [NHSG]. NO PLAY (replay the down).",,2024-09-01T01:16:03.000Z
+401636380102989101,401636380,4016363809,4,2,1:08,Louisiana,Grambling,27,0,24,2,10,0,Rush,Ben Wooldridge run for no gain to the GRAM 24,-0.5789972760549578,2024-09-01T01:18:49.000Z
+401636380102988501,401636380,4016363809,3,2,1:14,Louisiana,Grambling,27,0,24,1,10,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.4346450377339437,2024-09-01T01:18:06.000Z
+401636380102987801,401636380,4016363809,2,2,1:21,Louisiana,Grambling,27,0,39,2,1,15,Pass Reception,Ben Wooldridge pass complete to Terrance Carter for 15 yds to the GRAM 24 for a 1ST down,-0.033104983411594,2024-09-01T00:35:27.000Z
+401636380102985501,401636380,4016363809,1,2,1:44,Louisiana,Grambling,27,0,43,1,5,4,Rush,Elijah Davis run for 4 yds to the GRAM 39,-0.07815130475927,2024-09-01T01:16:46.000Z
+401636380102995201,401636380,4016363809,5,2,0:47,Louisiana,Grambling,27,0,24,3,10,0,Timeout,"Timeout Louisiana, clock 00:47",,2024-09-01T01:19:55.000Z
+401636380102995301,401636380,4016363809,6,2,0:46,Louisiana,Grambling,27,0,24,3,10,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.8529890865505045,2024-09-01T00:35:27.000Z
+401636380102996001,401636380,4016363809,7,2,0:39,Louisiana,Grambling,30,0,24,4,10,41,Field Goal Good,Kenneth Almendares 41 yd FG GOOD,,2024-09-01T01:22:10.000Z
+401636380102996002,401636380,40163638010,1,2,0:39,Louisiana,Grambling,30,0,65,0,0,21,Kickoff Return (Offense),"Tony Sterner kickoff for 65 yds , Tylon Williams return for 21 yds to the GRAM 21",,2024-09-01T01:22:10.000Z
+401636380102999902,401636380,40163638010,3,2,0:00,Grambling,Louisiana,0,30,76,0,7,0,End of Half,End of 2nd Quarter,,2024-09-01T01:25:03.000Z
+401636380102996602,401636380,40163638010,2,2,0:33,Grambling,Louisiana,0,30,79,1,10,3,Rush,Tre Bradford run for 3 yds to the GRAM 24,-0.24791478712197265,2024-09-01T01:23:52.000Z
+401636380103858401,401636380,40163638011,3,3,14:15,Louisiana,Grambling,30,0,55,1,10,2,Pass Reception,Ben Wooldridge pass complete to Jacob Bernard for 2 yds to the UL 47,-0.6797853383066688,2024-09-01T01:47:54.000Z
+401636380103849903,401636380,40163638011,1,3,15:00,Grambling,Louisiana,0,30,65,0,0,32,Kickoff Return (Offense),"Reed Harradine kickoff for 65 yds , Zylan Perry return for 32 yds to the UL 32",,2024-09-01T01:47:54.000Z
+401636380103854701,401636380,40163638011,2,3,14:52,Louisiana,Grambling,30,0,68,1,10,13,Rush,Dre'lyn Washington run for 13 yds to the UL 45 for a 1ST down,1.2426974783254945,2024-09-01T01:47:54.000Z
+401636380103866401,401636380,40163638011,4,3,13:35,Louisiana,Grambling,30,0,53,2,8,0,Pass Interception Return,Ben Wooldridge pass intercepted Blake Davis return for no gain to the GRAM 44,-2.0436014243769662,2024-09-01T01:47:54.000Z
+401636380103866802,401636380,40163638012,1,3,13:31,Grambling,Louisiana,0,30,56,1,10,0,Pass Incompletion,Myles Crawley pass incomplete,-1.1612466882658818,2024-09-01T01:50:21.000Z
+401636380103867401,401636380,40163638012,2,3,13:25,Grambling,Louisiana,0,30,56,2,10,0,Pass Reception,Myles Crawley pass complete to Tre Bradford for no gain to the GRAM 44,-0.8812901257339192,2024-09-01T01:51:15.000Z
+401636380103875701,401636380,40163638012,3,3,12:42,Grambling,Louisiana,0,30,56,3,10,4,Pass Reception,Myles Crawley pass complete to Nicholas Howard for 4 yds to the GRAM 48,-0.1023068451238158,2024-09-01T01:47:54.000Z
+401636380103884801,401636380,40163638012,4,3,11:51,Grambling,Louisiana,0,30,52,4,6,0,Punt,"Johnny Schifano punt for 36 yds, fair catch by Jacob Bernard at the UL 21",,2024-09-01T01:47:54.000Z
+401636380103885302,401636380,40163638013,1,3,11:46,Louisiana,Grambling,30,0,79,1,10,19,Pass Reception,Ben Wooldridge pass complete to Lance LeGendre for 19 yds to the UL 40 for a 1ST down,1.5736341856734803,2024-09-01T01:53:37.000Z
+401636380103888201,401636380,40163638013,2,3,11:17,Louisiana,Grambling,30,0,60,1,10,17,Rush,Elijah Davis run for 17 yds to the GRAM 43 for a 1ST down,1.4045305162128212,2024-09-01T01:47:54.000Z
+401636380103894101,401636380,40163638013,3,3,10:58,Louisiana,Grambling,30,0,43,1,10,15,Pass Reception,Ben Wooldridge pass complete to Robert Williams for 15 yds to the GRAM 28 for a 1ST down,0.5883556137924232,2024-09-01T01:47:54.000Z
+401636380103898001,401636380,40163638013,4,3,10:19,Louisiana,Grambling,30,0,28,1,10,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.512081873784803,2024-09-01T01:47:54.000Z
+401636380103898601,401636380,40163638013,5,3,10:13,Louisiana,Grambling,30,0,28,2,10,15,Pass Reception,Ben Wooldridge pass complete to Caden Jensen for 15 yds to the GRAM 13 for a 1ST down,0.737167132877387,2024-09-01T01:47:54.000Z
+401636380103906601,401636380,40163638013,6,3,9:33,Louisiana,Grambling,30,0,13,1,10,3,Rush,Elijah Davis run for 3 yds to the GRAM 10,-0.098600859057136,2024-09-01T01:47:54.000Z
+401636380103915301,401636380,40163638013,7,3,8:46,Louisiana,Grambling,37,0,10,2,7,10,Passing Touchdown,Ben Wooldridge pass complete to Terrance Carter for 10 yds for a TD (Kenneth Almendares KICK),2.637530074102983,2024-09-01T02:00:10.000Z
+401636380103956401,401636380,40163638014,10,3,4:35,Grambling,Louisiana,7,37,1,1,1,1,Rushing Touchdown,Ke'travion Hargrove run for 1 yd for a TD (Reed Harradine KICK),0.938021275120443,2024-09-01T02:11:26.000Z
+401636380103915303,401636380,40163638014,1,3,8:46,Louisiana,Grambling,37,0,65,0,0,0,Kickoff,Tony Sterner kickoff for 57 yds,,2024-09-01T02:00:33.000Z
+401636380103915305,401636380,40163638014,2,3,8:46,Grambling,Louisiana,0,37,75,1,10,3,Rush,Ke'travion Hargrove run for 3 yds to the GRAM 28,-0.2957674139440157,2024-09-01T02:00:33.000Z
+401636380103919701,401636380,40163638014,3,3,8:02,Grambling,Louisiana,0,37,72,2,7,16,Rush,Ke'travion Hargrove run for 16 yds to the GRAM 44 for a 1ST down,2.0033397522860312,2024-09-01T01:47:54.000Z
+401636380103926903,401636380,40163638014,4,3,7:30,Grambling,Louisiana,0,37,56,1,10,1,Rush,Ke'travion Hargrove run for 1 yd to the GRAM 45,-0.9290991816818684,2024-09-01T01:47:54.000Z
+401636380103945301,401636380,40163638014,5,3,5:46,Grambling,Louisiana,0,37,55,2,9,0,Pass Incompletion,Myles Crawley pass incomplete,-0.9581774393485141,2024-09-01T01:47:54.000Z
+401636380103945901,401636380,40163638014,6,3,5:40,Grambling,Louisiana,0,37,55,3,9,25,Pass Reception,Myles Crawley pass complete to Nae'Saan Dickerson for 25 yds to the UL 30 for a 1ST down,3.4432162694869177,2024-09-01T01:47:54.000Z
+401636380103947701,401636380,40163638014,7,3,5:22,Grambling,Louisiana,0,37,30,1,10,16,Rush,Ke'travion Hargrove run for 16 yds to the UL 14 for a 1ST down,0.2659599577436895,2024-09-01T02:10:18.000Z
+401636380103947702,401636380,40163638014,8,3,5:22,Grambling,Louisiana,0,37,14,1,10,0,Pass Incompletion,Myles Crawley pass incomplete,-0.3125697195395781,2024-09-01T02:10:18.000Z
+401636380103954701,401636380,40163638014,9,3,4:52,Grambling,Louisiana,0,37,14,2,10,13,Pass Reception,Myles Crawley pass complete to Covadis Knighten for 13 yds to the UL 1 for a 1ST down,1.9228316195982167,2024-09-01T01:47:54.000Z
+401636380103956403,401636380,40163638015,1,3,4:35,Grambling,Louisiana,7,37,65,0,0,21,Kickoff Return (Offense),"Reed Harradine kickoff for 65 yds , Zylan Perry return for 21 yds to the UL 21",,2024-09-01T02:15:31.000Z
+401636380103968402,401636380,40163638015,4,3,3:15,Louisiana,Grambling,37,7,66,1,10,5,Penalty,"(03:15) WOOLDRIDGE, Ben pass deep up the middle intercepted by TALLEY, Quintin at the GSU50 intended for WILLIAMS, Robert. Talley return for 23 yards to the UL27, out of bounds, clock 03:13. PENALTY GSU Offsides on SCOTT, J'cobe enforced 5 yards from the UL34 to the UL39 [NHSG]. NO PLAY (replay the down).",,2024-09-01T01:47:54.000Z
+401636380103995802,401636380,40163638015,9,3,0:00,Louisiana,Grambling,37,7,25,0,3,3,End Period,End of 3rd Quarter,,2024-09-01T02:22:41.000Z
+401636380103957101,401636380,40163638015,2,3,4:28,Louisiana,Grambling,37,7,79,1,10,5,Rush,Zylan Perry run for 5 yds to the UL 26,0.0872959704547682,2024-09-01T01:47:54.000Z
+401636380103964901,401636380,40163638015,3,3,3:50,Louisiana,Grambling,37,7,74,2,5,8,Pass Reception,Ben Wooldridge pass complete to Ty Stamey for 8 yds to the UL 34 for a 1ST down,0.9064694296327734,2024-09-01T01:47:54.000Z
+401636380103974501,401636380,40163638015,5,3,2:54,Louisiana,Grambling,37,7,61,1,5,29,Rush,Zylan Perry run for 29 yds to the GRAM 32 for a 1ST down,0.9191378137084599,2024-09-01T01:47:54.000Z
+401636380103979101,401636380,40163638015,6,3,2:08,Louisiana,Grambling,37,7,32,1,10,2,Pass Reception,Ben Wooldridge pass complete to Ty Stamey for 2 yds to the GRAM 30,-0.3235476292174476,2024-09-01T01:47:54.000Z
+401636380103987101,401636380,40163638015,7,3,1:28,Louisiana,Grambling,37,7,30,2,8,5,Pass Reception,Ben Wooldridge pass complete to Robert Williams for 5 yds to the GRAM 25,0.0640392336493694,2024-09-01T01:47:54.000Z
+401636380103995801,401636380,40163638015,8,3,0:41,Louisiana,Grambling,37,7,25,3,3,3,Rush,Ben Wooldridge run for 3 yds to the GRAM 22 for a 1ST down,0.4834050545085806,2024-09-01T01:47:54.000Z
+401636380104854401,401636380,40163638015,10,4,14:55,Louisiana,Grambling,37,7,22,1,10,2,Pass Reception,Ben Wooldridge pass complete to Zylan Perry for 2 yds to the GRAM 20,-0.218895918192836,2024-09-01T02:26:46.000Z
+401636380104858301,401636380,40163638015,11,4,14:16,Louisiana,Grambling,37,7,20,2,8,7,Pass Reception,Ben Wooldridge pass complete to Tavion Smith for 7 yds to the GRAM 13,0.264181539924238,2024-09-01T02:26:46.000Z
+401636380104866501,401636380,40163638015,12,4,13:34,Louisiana,Grambling,37,7,13,3,1,2,Rush,Zylan Perry run for 2 yds to the GRAM 11 for a 1ST down,0.080597731549133,2024-09-01T02:26:46.000Z
+401636380104874201,401636380,40163638015,13,4,12:57,Louisiana,Grambling,37,7,11,1,10,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.291297448934314,2024-09-01T02:26:46.000Z
+401636380104874801,401636380,40163638015,14,4,12:51,Louisiana,Grambling,37,7,11,2,10,8,Rush,Zylan Perry run for 8 yds to the GRAM 3,0.25864923089374,2024-09-01T02:28:39.000Z
+401636380104879401,401636380,40163638015,15,4,12:05,Louisiana,Grambling,37,7,3,3,2,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.314517331249089,2024-09-01T02:26:46.000Z
+401636380104879801,401636380,40163638015,16,4,12:01,Louisiana,Grambling,37,7,3,4,2,-5,Sack,Ben Wooldridge sacked by Blake Davis for a loss of 5 yards to the GRAM 8,-4.131095037342412,2024-09-01T02:26:46.000Z
+401636380104897601,401636380,40163638016,3,4,10:23,Grambling,Louisiana,7,37,87,3,5,0,Timeout,"Timeout Grambling, clock 10:23",,2024-09-01T02:35:36.000Z
+401636380104906401,401636380,40163638016,5,4,9:35,Grambling,Louisiana,7,37,85,4,3,0,Punt,Johnny Schifano punt for 65 yds,,2024-09-01T02:26:46.000Z
+401636380104884601,401636380,40163638016,1,4,11:53,Grambling,Louisiana,7,37,92,1,10,5,Rush,Tre Bradford run for 5 yds to the GRAM 13,0.06731302715239185,2024-09-01T02:26:46.000Z
+401636380104897602,401636380,40163638016,4,4,10:23,Grambling,Louisiana,7,37,87,3,5,2,Pass Reception,Myles Crawley pass complete to Tre Bradford for 2 yds to the GRAM 15,-0.10060634830991068,2024-09-01T02:35:36.000Z
+401636380104888601,401636380,40163638016,2,4,11:13,Grambling,Louisiana,7,37,87,2,5,0,Rush,Tre Bradford run for no gain to the GRAM 13,-0.35877729134213876,2024-09-01T02:26:46.000Z
+401636380104935101,401636380,40163638017,5,4,6:48,Louisiana,Grambling,37,7,48,3,3,5,Penalty,"Grambling Penalty, Offsides (5 Yards) to the GRAM 43 for a 1ST down",,2024-09-01T02:43:29.000Z
+401636380104966601,401636380,40163638017,11,4,3:33,Louisiana,Grambling,40,7,10,4,5,27,Field Goal Good,Tony Sterner 27 yd FG GOOD,,2024-09-01T02:47:52.000Z
+401636380104915701,401636380,40163638017,2,4,8:42,Louisiana,Grambling,37,7,71,2,1,16,Pass Reception,Chandler Fields pass complete to Rhett Guidry for 16 yds to the UL 45 for a 1ST down,0.9967029754608632,2024-09-01T02:26:46.000Z
+401636380104907701,401636380,40163638017,1,4,9:22,Louisiana,Grambling,37,7,80,1,10,9,Pass Reception,Chandler Fields pass complete to Rahji Dennis for 9 yds to the UL 29,1.1127415828278746,2024-09-01T02:26:46.000Z
+401636380104919601,401636380,40163638017,3,4,8:03,Louisiana,Grambling,37,7,55,1,10,5,Rush,Kendrell Williams run for 5 yds to the 50 yard line,0.1079044232439195,2024-09-01T02:26:46.000Z
+401636380104926501,401636380,40163638017,4,4,7:34,Louisiana,Grambling,37,7,50,2,5,2,Rush,Chandler Fields run for 2 yds to the GRAM 48,-0.698710269438271,2024-09-01T02:26:46.000Z
+401636380104935102,401636380,40163638017,6,4,6:48,Louisiana,Grambling,37,7,43,1,10,6,Rush,Kendrell Williams run for 6 yds to the GRAM 37,0.2876660938940478,2024-09-01T02:43:29.000Z
+401636380104945401,401636380,40163638017,7,4,5:45,Louisiana,Grambling,37,7,37,2,4,22,Pass Reception,Chandler Fields pass complete to Dale Martin for 22 yds to the GRAM 15 for a 1ST down,0.5065049044717234,2024-09-01T02:26:46.000Z
+401636380104949401,401636380,40163638017,8,4,5:05,Louisiana,Grambling,37,7,15,1,10,8,Pass Reception,Chandler Fields pass complete to Landon Baptiste for 8 yds to the GRAM 7,0.448246443804154,2024-09-01T02:26:46.000Z
+401636380104957301,401636380,40163638017,9,4,4:26,Louisiana,Grambling,37,7,7,2,2,-3,Rush,Kendrell Williams run for a loss of 3 yards to the GRAM 10,-0.729804019147659,2024-09-01T02:26:46.000Z
+401636380104965801,401636380,40163638017,10,4,3:41,Louisiana,Grambling,37,7,10,3,5,0,Pass Incompletion,Chandler Fields pass incomplete,-0.3700472119473802,2024-09-01T02:26:46.000Z
+401636380104966602,401636380,40163638018,1,4,3:33,Louisiana,Grambling,40,7,65,0,0,32,Kickoff Return (Offense),"Tony Sterner kickoff for 62 yds , Javon Robinson return for 32 yds to the GRAM 35",,2024-09-01T02:50:13.000Z
+401636380104984401,401636380,40163638018,6,4,1:55,Grambling,Louisiana,10,40,33,4,13,50,Field Goal Good,Reed Harradine 50 yd FG GOOD,,2024-09-01T02:58:16.000Z
+401636380104968501,401636380,40163638018,2,4,3:14,Grambling,Louisiana,7,40,65,1,10,35,Pass Reception,Myles Crawley pass complete to Nicholas Howard for 35 yds to the UL 30 for a 1ST down,2.428473877768564,2024-09-01T02:52:10.000Z
+401636380104974802,401636380,40163638018,3,4,2:51,Grambling,Louisiana,7,40,30,1,10,-12,Pass Incompletion,"Myles Crawley pass incomplete Grambling Penalty, Intentional Grounding (Myles Crawley) to the UL 42",-2.8229333443515063,2024-09-01T02:26:46.000Z
+401636380104975401,401636380,40163638018,4,4,2:45,Grambling,Louisiana,7,40,42,2,22,8,Pass Reception,Myles Crawley pass complete to Jalen Johnson for 8 yds to the UL 34,0.6782069450826942,2024-09-01T02:26:46.000Z
+401636380104979101,401636380,40163638018,5,4,2:08,Grambling,Louisiana,7,40,34,3,14,1,Pass Reception,Myles Crawley pass complete to Dedrick Talbert for 1 yd to the UL 33,-0.7881458438934938,2024-09-01T02:26:46.000Z
+401636380104984402,401636380,40163638019,1,4,1:55,Grambling,Louisiana,10,40,65,0,0,0,Kickoff,Reed Harradine kickoff for 65 yds for a touchback,,2024-09-01T02:59:36.000Z
+401636380104999902,401636380,40163638019,5,4,0:00,Louisiana,Grambling,40,10,78,0,13,0,End of Game,End of 4th Quarter,,2024-09-01T03:02:39.000Z
+401636380104984404,401636380,40163638019,2,4,1:55,Louisiana,Grambling,40,10,75,1,10,-1,Rush,"(01:55) [NHSG] Kneel down by UL at UL24 (team loss of 1), clock 01:51.",-0.8014893508157099,2024-09-01T02:59:36.000Z
+401636380104987901,401636380,40163638019,3,4,1:20,Louisiana,Grambling,40,10,76,2,11,-1,Rush,"(01:20) [NHSG] Kneel down by UL at UL23 (team loss of 1), clock 01:16.",-0.3326773738532047,2024-09-01T02:26:46.000Z
+401636380104998101,401636380,40163638019,4,4,0:18,Louisiana,Grambling,40,10,77,3,12,-1,Rush,"(00:18) [NHSG] Kneel down by UL at UL22 (team loss of 1), clock 00:12.",-0.12600904024155746,2024-09-01T02:26:46.000Z

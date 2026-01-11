@@ -1,0 +1,141 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401641016101849905,401641016,4016410161,1,1,15:00,Louisiana,Kennesaw State,0,0,65,0,0,22,Kickoff,"Kenneth Almendares kickoff for 61 yds , Gabriel Benyard return for 22 yds to the KENN 26",,2024-09-07T22:56:08.000Z
+401641016101855701,401641016,4016410161,2,1,14:42,Kennesaw State,Louisiana,0,0,74,1,10,3,Rush,Michael Benefield run for 3 yds to the KENN 29,-0.30809127134716,2024-09-07T22:56:08.000Z
+401641016101858801,401641016,4016410161,3,1,14:11,Kennesaw State,Louisiana,0,0,71,2,7,0,Rush,Michael Benefield run for no gain to the KENN 29,-0.5873645894350776,2024-09-07T22:56:08.000Z
+401641016101866301,401641016,4016410161,4,1,13:36,Kennesaw State,Louisiana,0,0,71,3,7,7,Pass Reception,Davis Bryson pass complete to Blake Bohannon for 7 yds to the KENN 36 for a 1ST down,1.7550395654678725,2024-09-07T22:56:08.000Z
+401641016101869701,401641016,4016410161,5,1,13:02,Kennesaw State,Louisiana,0,0,64,1,10,2,Rush,Michael Benefield run for 2 yds to the KENN 38,-0.6439997383019928,2024-09-07T22:56:08.000Z
+401641016101877001,401641016,4016410161,6,1,12:29,Kennesaw State,Louisiana,0,0,62,2,8,5,Rush,Gabriel Benyard run for 5 yds to the KENN 43,0.0814745720156971,2024-09-07T22:56:08.000Z
+401641016101884801,401641016,4016410161,7,1,11:51,Kennesaw State,Louisiana,0,0,57,3,3,3,Rush,Preston Daniels run for 3 yds to the KENN 46 for a 1ST down,1.5248202363764187,2024-09-07T22:56:08.000Z
+401641016101888801,401641016,4016410161,8,1,11:11,Kennesaw State,Louisiana,0,0,54,1,10,0,Pass Incompletion,Davis Bryson pass incomplete,-1.1590089706435955,2024-09-07T23:09:28.000Z
+401641016101889501,401641016,4016410161,9,1,11:04,Kennesaw State,Louisiana,0,0,54,2,10,-3,Rush,Qua Ashley run for a loss of 3 yards to the KENN 43,-1.3428012967690872,2024-09-07T22:56:08.000Z
+401641016101898001,401641016,4016410161,10,1,10:19,Kennesaw State,Louisiana,0,0,57,3,13,16,Pass Reception,Davis Bryson pass complete to Tykeem Wallace for 16 yds to the UL 41 for a 1ST down,3.4461881792013713,2024-09-07T22:56:08.000Z
+401641016101906401,401641016,4016410161,11,1,9:35,Kennesaw State,Louisiana,0,0,41,1,10,5,Rush,Alexander Diggs run for 5 yds to the UL 36,0.0885892770886229,2024-09-07T22:56:08.000Z
+401641016101909301,401641016,4016410161,12,1,9:06,Kennesaw State,Louisiana,0,0,36,2,5,7,Rush,Davis Bryson run for 7 yds to the UL 29 for a 1ST down,0.3636291642097845,2024-09-07T22:56:08.000Z
+401641016101915901,401641016,4016410161,13,1,8:40,Kennesaw State,Louisiana,0,0,29,1,10,3,Rush,Tykeem Wallace run for 3 yds to the UL 26,-0.165753158468877,2024-09-07T22:56:08.000Z
+401641016101924001,401641016,4016410161,14,1,7:59,Kennesaw State,Louisiana,0,0,26,2,7,-2,Rush,Alexander Diggs run for a loss of 2 yards to the UL 28,-0.922781527549832,2024-09-07T22:56:08.000Z
+401641016101928001,401641016,4016410161,15,1,7:19,Kennesaw State,Louisiana,0,0,28,3,9,19,Pass Reception,Davis Bryson pass complete to Destun Thomas for 19 yds to the UL 9 for a 1ST down,1.452598046970353,2024-09-07T22:56:08.000Z
+401641016101935601,401641016,4016410161,16,1,6:43,Kennesaw State,Louisiana,0,0,9,1,9,6,Rush,Preston Daniels run for 6 yds to the UL 3,0.212813209686375,2024-09-07T22:56:08.000Z
+401641016101938001,401641016,4016410161,17,1,6:19,Kennesaw State,Louisiana,7,0,3,2,3,3,Rushing Touchdown,Preston Daniels run for 3 yds for a TD (Austin Welch KICK),2.211424613960093,2024-09-07T23:15:21.000Z
+401641016101999902,401641016,4016410162,12,1,0:00,Louisiana,Kennesaw State,0,7,16,0,10,0,End Period,End of 1st Quarter,,2024-09-07T23:27:57.000Z
+401641016101938003,401641016,4016410162,1,1,6:19,Kennesaw State,Louisiana,7,0,65,0,0,47,Kickoff Return (Offense),"Britton Williams kickoff for 65 yds , Zylan Perry return for 47 yds to the UL 18 Louisiana Penalty, Offensive Holding (Jaden Dugger) to the UL 13",,2024-09-07T23:15:54.000Z
+401641016101944101,401641016,4016410162,2,1,5:58,Louisiana,Kennesaw State,0,7,87,1,10,28,Rush,Zylan Perry run for 28 yds to the UL 41 for a 1ST down,2.0377832690692044,2024-09-07T22:56:08.000Z
+401641016101946801,401641016,4016410162,3,1,5:31,Louisiana,Kennesaw State,0,7,59,1,10,6,Pass Reception,Ben Wooldridge pass complete to Harvey Broussard for 6 yds to the UL 47,0.3989351639023673,2024-09-07T22:56:08.000Z
+401641016101954701,401641016,4016410162,4,1,4:52,Louisiana,Kennesaw State,0,7,53,2,4,15,Pass Reception,Ben Wooldridge pass complete to Jacob Bernard for 15 yds to the KENN 38 for a 1ST down,1.165484537310872,2024-09-07T22:56:08.000Z
+401641016101958201,401641016,4016410162,5,1,4:17,Louisiana,Kennesaw State,0,7,38,1,10,5,Pass Reception,Ben Wooldridge pass complete to Tavion Smith for 5 yds to the KENN 33,0.084800241468987,2024-09-07T22:56:08.000Z
+401641016101966301,401641016,4016410162,6,1,3:36,Louisiana,Kennesaw State,0,7,33,2,5,2,Rush,Elijah Davis run for 2 yds to the KENN 31,-0.431592525227627,2024-09-07T22:56:08.000Z
+401641016101974901,401641016,4016410162,7,1,2:50,Louisiana,Kennesaw State,0,7,31,3,3,2,Rush,Elijah Davis run for 2 yds to the KENN 29,-0.5030750936344754,2024-09-07T22:56:08.000Z
+401641016101979701,401641016,4016410162,8,1,2:02,Louisiana,Kennesaw State,0,7,29,4,1,3,Rush,Elijah Davis run for 3 yds to the KENN 26 for a 1ST down,1.2244579035701229,2024-09-07T22:56:08.000Z
+401641016101987401,401641016,4016410162,9,1,1:25,Louisiana,Kennesaw State,0,7,26,1,10,9,Pass Reception,Ben Wooldridge pass complete to Dalen Cambre for 9 yds to the KENN 17,0.6542321147630225,2024-09-07T22:56:08.000Z
+401641016101995701,401641016,4016410162,10,1,0:42,Louisiana,Kennesaw State,0,7,17,2,1,-5,Penalty,"Louisiana Penalty, False Start (Kaden Moreau) to the KENN 22",,2024-09-07T23:26:24.000Z
+401641016101997901,401641016,4016410162,11,1,0:20,Louisiana,Kennesaw State,0,7,22,2,6,6,Pass Reception,Ben Wooldridge pass complete to Terrance Carter for 6 yds to the KENN 16 for a 1ST down,0.1893091663959336,2024-09-07T23:27:57.000Z
+401641016101999903,401641016,4016410162,13,1,0:00,Louisiana,Kennesaw State,0,7,16,1,10,4,Rush,Ben Wooldridge run for 4 yds to the KENN 12,-0.0205045498028526,2024-09-07T23:32:03.000Z
+401641016102859901,401641016,4016410162,14,2,14:00,Louisiana,Kennesaw State,0,7,12,2,6,-1,Rush,Ben Wooldridge run for a loss of 1 yard to the KENN 13,-0.4252668558391303,2024-09-07T23:32:14.000Z
+401641016102859902,401641016,4016410162,15,2,14:00,Louisiana,Kennesaw State,0,7,13,3,7,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.4528101008787997,2024-09-07T23:32:14.000Z
+401641016102864401,401641016,4016410162,16,2,13:55,Louisiana,Kennesaw State,3,7,13,4,7,30,Field Goal Good,Kenneth Almendares 30 yd FG GOOD,,2024-09-07T23:37:08.000Z
+401641016102864402,401641016,4016410163,1,2,13:55,Louisiana,Kennesaw State,3,7,65,0,0,20,Kickoff Return (Offense),"Kenneth Almendares kickoff for 62 yds , Tykeem Wallace return for 20 yds to the KENN 23",,2024-09-07T23:37:08.000Z
+401641016102866301,401641016,4016410163,2,2,13:36,Kennesaw State,Louisiana,7,3,77,1,10,1,Rush,Qua Ashley run for 1 yd to the KENN 24,-0.5380287086286026,2024-09-07T23:32:14.000Z
+401641016102867701,401641016,4016410163,3,2,13:22,Kennesaw State,Louisiana,7,3,76,2,9,14,Rush,Davis Bryson run for 14 yds to the KENN 38 for a 1ST down,1.7953821621385089,2024-09-07T23:32:14.000Z
+401641016102875301,401641016,4016410163,4,2,12:46,Kennesaw State,Louisiana,7,3,62,1,10,1,Rush,Qua Ashley run for 1 yd to the KENN 39,-0.8867433222723466,2024-09-07T23:32:14.000Z
+401641016102878901,401641016,4016410163,5,2,12:10,Kennesaw State,Louisiana,7,3,61,2,9,16,Pass Reception,Davis Bryson pass complete to Christian Moss for 16 yds to the UL 45 for a 1ST down,2.3632328778847693,2024-09-07T23:32:14.000Z
+401641016102886501,401641016,4016410163,6,2,11:34,Kennesaw State,Louisiana,7,3,45,1,10,3,Rush,Qua Ashley run for 3 yds to the UL 42,-0.3299594446081446,2024-09-07T23:32:14.000Z
+401641016102889401,401641016,4016410163,7,2,11:05,Kennesaw State,Louisiana,7,3,42,3,7,0,Pass Incompletion,Davis Bryson pass incomplete,-1.026496477637295,2024-09-07T23:46:35.000Z
+401641016102889801,401641016,4016410163,8,2,11:01,Kennesaw State,Louisiana,7,3,42,2,7,0,Pass Incompletion,Davis Bryson pass incomplete,-1.062005649082046,2024-09-07T23:49:11.000Z
+401641016102889802,401641016,4016410163,9,2,11:01,Kennesaw State,Louisiana,7,3,42,4,7,-5,Penalty,"Kennesaw State Penalty, Delay Of Game (Davis Bryson) to the UL 47",,2024-09-07T23:49:11.000Z
+401641016102894801,401641016,4016410163,10,2,10:51,Kennesaw State,Louisiana,7,3,47,4,12,0,Punt,Jacob Ulrich punt for 47 yds for a touchback,,2024-09-07T23:32:14.000Z
+401641016102896001,401641016,4016410164,1,2,10:39,Louisiana,Kennesaw State,3,7,80,1,10,4,Rush,Elijah Davis run for 4 yds to the UL 24,-0.0884321258012219,2024-09-07T23:32:14.000Z
+401641016102904201,401641016,4016410164,2,2,9:57,Louisiana,Kennesaw State,3,7,76,2,6,10,Rush,Elijah Davis run for 10 yds to the UL 34 for a 1ST down,1.1377205316767105,2024-09-07T23:32:14.000Z
+401641016102907901,401641016,4016410164,3,2,9:20,Louisiana,Kennesaw State,3,7,66,2,10,3,Rush,Elijah Davis run for 3 yds to the UL 37,-0.2472652683788095,2024-09-07T23:56:06.000Z
+401641016102908401,401641016,4016410164,4,2,9:15,Louisiana,Kennesaw State,3,7,66,1,10,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.9864556271674072,2024-09-07T23:56:13.000Z
+401641016102917501,401641016,4016410164,5,2,8:24,Louisiana,Kennesaw State,3,7,63,3,7,6,Pass Reception,Ben Wooldridge pass complete to Tavion Smith for 6 yds to the UL 43,0.1968082066449677,2024-09-07T23:32:14.000Z
+401641016102925801,401641016,4016410164,6,2,7:41,Louisiana,Kennesaw State,3,7,57,4,1,3,Rush,Ben Wooldridge run for 3 yds to the UL 46 for a 1ST down,2.188784540945655,2024-09-07T23:32:14.000Z
+401641016102929901,401641016,4016410164,7,2,7:00,Louisiana,Kennesaw State,3,7,54,1,10,0,Pass Incompletion,Ben Wooldridge pass incomplete,-1.1590089706435955,2024-09-07T23:59:19.000Z
+401641016102934801,401641016,4016410164,8,2,6:51,Louisiana,Kennesaw State,3,7,54,2,10,49,Rush,Elijah Davis run for 49 yds to the KENN 5 for a 1ST down,3.4601256677699297,2024-09-08T00:00:04.000Z
+401641016102937001,401641016,4016410164,9,2,6:29,Louisiana,Kennesaw State,3,7,5,1,5,4,Rush,Elijah Davis run for 4 yds to the KENN 1,-0.016571396914132,2024-09-07T23:32:14.000Z
+401641016102939701,401641016,4016410164,10,2,6:02,Louisiana,Kennesaw State,10,7,1,2,1,1,Rushing Touchdown,Elijah Davis run for 1 yd for a TD (Kenneth Almendares KICK),1.900352237473006,2024-09-08T00:03:16.000Z
+401641016102939703,401641016,4016410165,1,2,6:02,Louisiana,Kennesaw State,10,7,65,0,0,17,Kickoff Return (Offense),"Kenneth Almendares kickoff for 65 yds , Tykeem Wallace return for 17 yds to the KENN 17",,2024-09-08T00:03:16.000Z
+401641016102967301,401641016,4016410165,7,2,3:26,Kennesaw State,Louisiana,7,10,64,4,4,0,Timeout,"Timeout Kennesaw State, clock 03:26",,2024-09-08T00:11:15.000Z
+401641016102944402,401641016,4016410165,2,2,5:55,Kennesaw State,Louisiana,7,10,83,1,10,3,Rush,Michael Benefield run for 3 yds to the KENN 20,-0.204908473427289,2024-09-08T00:07:12.000Z
+401641016102947901,401641016,4016410165,3,2,5:20,Kennesaw State,Louisiana,7,10,80,2,7,10,Rush,Michael Benefield run for 10 yds to the KENN 30 for a 1ST down,1.047304537074603,2024-09-07T23:32:14.000Z
+401641016102954501,401641016,4016410165,4,2,4:54,Kennesaw State,Louisiana,7,10,70,1,10,0,Pass Incompletion,Davis Bryson pass incomplete,-0.8627910327708888,2024-09-08T00:08:56.000Z
+401641016102955001,401641016,4016410165,5,2,4:49,Kennesaw State,Louisiana,7,10,70,2,10,2,Rush,Davis Bryson run for 2 yds to the KENN 32,-0.3016522111661706,2024-09-07T23:32:14.000Z
+401641016102958801,401641016,4016410165,6,2,4:11,Kennesaw State,Louisiana,7,10,68,3,8,4,Rush,Davis Bryson run for 4 yds to the KENN 36,-0.05766736923850502,2024-09-07T23:32:14.000Z
+401641016102968601,401641016,4016410165,8,2,3:13,Kennesaw State,Louisiana,7,10,64,4,4,0,Punt,"Jacob Ulrich punt for 49 yds, fair catch by Jacob Bernard at the UL 15",,2024-09-08T00:12:19.000Z
+401641016102968801,401641016,4016410166,1,2,3:11,Louisiana,Kennesaw State,10,7,85,1,10,8,Rush,Zylan Perry run for 8 yds to the UL 23,0.6856189176956029,2024-09-07T23:32:14.000Z
+401641016102976401,401641016,4016410166,2,2,2:35,Louisiana,Kennesaw State,10,7,77,2,2,52,Pass Reception,Ben Wooldridge pass complete to Jacob Bernard for 52 yds to the KENN 25 for a 1ST down,3.2352582699135493,2024-09-07T23:32:14.000Z
+401641016102984001,401641016,4016410166,3,2,1:59,Louisiana,Kennesaw State,10,7,25,1,10,6,Rush,Zylan Perry run for 6 yds to the KENN 19,0.1956069877394565,2024-09-07T23:32:14.000Z
+401641016102984501,401641016,4016410166,4,2,1:54,Louisiana,Kennesaw State,17,7,19,2,4,19,Rushing Touchdown,Zylan Perry run for 19 yds for a TD (Kenneth Almendares KICK),2.504477374526601,2024-09-08T00:17:12.000Z
+401641016102984503,401641016,4016410167,1,2,1:54,Louisiana,Kennesaw State,17,7,65,0,0,0,Kickoff,Kenneth Almendares kickoff for 65 yds for a touchback,,2024-09-08T00:17:25.000Z
+401641016102988101,401641016,4016410167,3,2,1:18,Kennesaw State,Louisiana,7,17,78,2,13,0,Timeout,"Timeout Louisiana, clock 01:18",,2024-09-08T00:20:36.000Z
+401641016102989501,401641016,4016410167,6,2,1:04,Kennesaw State,Louisiana,7,17,78,3,13,0,Timeout,"Timeout Louisiana, clock 01:04",,2024-09-08T00:22:35.000Z
+401641016102997301,401641016,4016410167,8,2,0:26,Kennesaw State,Louisiana,7,17,72,4,7,0,Timeout,"Timeout Kennesaw State, clock 00:26",,2024-09-08T00:25:12.000Z
+401641016102984505,401641016,4016410167,2,2,1:54,Kennesaw State,Louisiana,7,17,75,1,10,7,Rush,Qua Ashley run for 7 yds to the KENN 32,0.604642460086338,2024-09-08T00:17:25.000Z
+401641016102988802,401641016,4016410167,4,2,1:11,Kennesaw State,Louisiana,7,17,68,2,3,-10,Penalty,"(01:11) ASHLEY, Qua rush up the middle for a gain of 7 yards to the KSU39 (CLARK, Jalen), clock 01:18. PENALTY KSU Holding on PENNINGTON, J.T. enforced 10 yards from the KSU32 to the KSU22 [SG]. NO PLAY (replay the down).",,2024-09-08T00:20:44.000Z
+401641016102989001,401641016,4016410167,5,2,1:09,Kennesaw State,Louisiana,7,17,78,2,13,0,Rush,Qua Ashley run for no gain to the KENN 22,-0.21012438871067207,2024-09-07T23:32:14.000Z
+401641016102989502,401641016,4016410167,7,2,1:04,Kennesaw State,Louisiana,7,17,78,3,13,6,Rush,Navelle Dean run for 6 yds to the KENN 28,0.04532982403140195,2024-09-08T00:22:35.000Z
+401641016102999903,401641016,4016410168,4,2,0:00,Louisiana,Kennesaw State,17,7,65,0,0,0,End of Half,End of 2nd Quarter,,2024-09-08T00:28:34.000Z
+401641016102999001,401641016,4016410168,1,2,0:09,Louisiana,Kennesaw State,17,7,10,1,10,1,Pass Reception,Ben Wooldridge pass complete to Zylan Perry for 1 yd to the KENN 9,-0.22620936096334,2024-09-07T23:32:14.000Z
+401641016102999501,401641016,4016410168,2,2,0:04,Louisiana,Kennesaw State,17,7,9,2,9,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.270076451519454,2024-09-08T00:27:33.000Z
+401641016102999901,401641016,4016410168,3,2,0:00,Louisiana,Kennesaw State,20,7,9,3,9,26,Field Goal Good,Kenneth Almendares 26 yd FG GOOD,,2024-09-08T00:28:28.000Z
+401641016103849903,401641016,4016410169,1,3,15:00,Kennesaw State,Louisiana,7,20,65,0,0,0,Kickoff,Britton Williams kickoff for 65 yds for a touchback,,2024-09-07T00:00:00.000Z
+401641016103854801,401641016,4016410169,2,3,14:51,Louisiana,Kennesaw State,20,7,75,1,10,0,Pass Incompletion,Ben Wooldridge pass incomplete,-0.7029700220436519,2024-09-07T00:00:00.000Z
+401641016103855202,401641016,4016410169,3,3,14:47,Louisiana,Kennesaw State,20,7,75,2,10,-5,Penalty,"(14:47) WOOLDRIDGE, Ben pass up the middle complete for 5 yards to BERNARD, Jacob caught at the UL24 and advanced to the UL30 (HOPSON, Baron;WALKER, Pooda), clock 14:35. PENALTY Before the snap, UL False Start on DAVIS, Elijah enforced 5 yards from the end of the play at the UL30 to the UL25. NO PLAY (replay the down).",,2024-09-08T00:50:46.000Z
+401641016103865901,401641016,4016410169,4,3,13:40,Louisiana,Kennesaw State,20,7,75,3,10,7,Pass Reception,Ben Wooldridge pass complete to Terrance Carter for 7 yds to the UL 32,0.1469772246489116,2024-09-08T00:50:46.000Z
+401641016103869301,401641016,4016410169,5,3,13:06,Louisiana,Kennesaw State,20,7,68,4,3,0,Punt,"Nathan Torney punt for 40 yds, fair catch by Terrence Williams at the KENN 28",,2024-09-08T00:50:46.000Z
+401641016103868802,401641016,40164101610,1,3,13:11,Kennesaw State,Louisiana,7,20,72,1,10,5,Rush,Michael Benefield run for 5 yds to the KENN 33,0.0997589035143243,2024-09-08T00:53:19.000Z
+401641016103877501,401641016,40164101610,2,3,12:24,Kennesaw State,Louisiana,7,20,67,2,5,0,Rush,Davis Bryson run for no gain to the KENN 33,-0.849974004455623,2024-09-08T00:50:46.000Z
+401641016103885201,401641016,40164101610,3,3,11:47,Kennesaw State,Louisiana,7,20,67,3,5,0,Pass Incompletion,Davis Bryson pass incomplete,-0.4381545907354214,2024-09-08T00:55:31.000Z
+401641016103885601,401641016,40164101610,4,3,11:43,Kennesaw State,Louisiana,7,20,67,4,5,0,Punt,Jacob Ulrich punt for 38 yds,,2024-09-08T00:50:46.000Z
+401641016103886201,401641016,40164101611,1,3,11:37,Louisiana,Kennesaw State,20,7,71,1,10,4,Rush,Zylan Perry run for 4 yds to the UL 33,-0.1350508541150131,2024-09-08T00:50:46.000Z
+401641016103894701,401641016,40164101611,2,3,10:52,Louisiana,Kennesaw State,20,7,67,2,6,6,Rush,Zylan Perry run for 6 yds to the UL 39 for a 1ST down,1.0556516904051116,2024-09-08T00:50:46.000Z
+401641016103899401,401641016,40164101611,3,3,10:05,Louisiana,Kennesaw State,20,7,61,1,10,20,Pass Reception,Ben Wooldridge pass complete to Lance LeGendre for 20 yds to the KENN 41 for a 1ST down,1.6144964105683466,2024-09-08T00:50:46.000Z
+401641016103908001,401641016,40164101611,4,3,9:19,Louisiana,Kennesaw State,20,7,41,1,10,38,Pass Reception,Ben Wooldridge pass complete to Robert Williams for 38 yds to the KENN 3 for a 1ST down,1.7760678931651823,2024-09-08T00:50:46.000Z
+401641016103909701,401641016,40164101611,5,3,9:02,Louisiana,Kennesaw State,27,7,3,1,3,3,Passing Touchdown,Ben Wooldridge pass complete to Robert Williams for 3 yds for a TD (Kenneth Almendares KICK),1.464451732731337,2024-09-08T01:01:59.000Z
+401641016103909703,401641016,40164101612,1,3,9:02,Louisiana,Kennesaw State,27,7,65,0,0,27,Kickoff Return (Offense),"Kenneth Almendares kickoff for 56 yds , Tykeem Wallace return for 27 yds to the KENN 36",,2024-09-08T01:01:59.000Z
+401641016103914401,401641016,40164101612,2,3,8:55,Kennesaw State,Louisiana,7,27,64,1,10,0,Rush,Qua Ashley run for no gain to the KENN 36,-1.041155320344064,2024-09-08T00:50:46.000Z
+401641016103918401,401641016,40164101612,3,3,8:15,Kennesaw State,Louisiana,7,27,64,2,10,1,Rush,Davis Bryson run for 1 yd to the KENN 37,-0.5276196370423643,2024-09-08T00:50:46.000Z
+401641016103926701,401641016,40164101612,4,3,7:32,Kennesaw State,Louisiana,7,27,63,3,9,4,Pass Reception,Davis Bryson pass complete to Qua Ashley for 4 yds to the KENN 41,-0.07346940209261542,2024-09-08T00:50:46.000Z
+401641016103934501,401641016,40164101612,5,3,6:54,Kennesaw State,Louisiana,7,27,59,4,5,0,Punt,"Jacob Ulrich punt for 38 yds , Jacob Bernard returns for no gain to the UL 41 Louisiana Penalty, Offensive Holding (Courtline Flowers) to the UL 21",,2024-09-08T00:50:46.000Z
+401641016103934701,401641016,40164101612,6,3,6:52,Louisiana,Kennesaw State,27,7,79,1,10,15,Penalty,"Kennesaw State Penalty, Personal Foul (Preston Daniels) to the UL 36 for a 1ST down",,2024-09-08T01:08:52.000Z
+401641016103994701,401641016,40164101613,10,3,0:52,Louisiana,Kennesaw State,27,7,1,3,1,0,Timeout,"Timeout Kennesaw State, clock 00:52",,2024-09-08T01:17:40.000Z
+401641016103935701,401641016,40164101613,1,3,6:42,Louisiana,Kennesaw State,27,7,64,1,10,14,Rush,Ben Wooldridge run for 14 yds to the 50 yard line for a 1ST down,1.305780675653958,2024-09-08T01:11:03.000Z
+401641016103939401,401641016,40164101613,2,3,6:05,Louisiana,Kennesaw State,27,7,50,1,10,1,Rush,Elijah Davis run for 1 yd to the KENN 49,-0.873884986133115,2024-09-08T00:50:46.000Z
+401641016103946501,401641016,40164101613,3,3,5:34,Louisiana,Kennesaw State,27,7,49,2,9,12,Pass Reception,Ben Wooldridge pass complete to Jacob Bernard for 12 yds to the KENN 37 for a 1ST down,1.6638882867777447,2024-09-08T00:50:46.000Z
+401641016103954101,401641016,40164101613,4,3,4:58,Louisiana,Kennesaw State,27,7,37,1,10,3,Rush,Ben Wooldridge run for 3 yds to the KENN 34,-0.2366089144620603,2024-09-08T00:50:46.000Z
+401641016103958501,401641016,40164101613,5,3,4:14,Louisiana,Kennesaw State,27,7,34,2,7,-1,Rush,Zylan Perry run for a loss of 1 yard to the KENN 35,-1.0493985599088715,2024-09-08T00:50:46.000Z
+401641016103967101,401641016,40164101613,6,3,3:28,Louisiana,Kennesaw State,27,7,35,3,8,8,Rush,Ben Wooldridge run for 8 yds to the KENN 27 for a 1ST down,1.596135264456189,2024-09-08T00:50:46.000Z
+401641016103975401,401641016,40164101613,7,3,2:45,Louisiana,Kennesaw State,27,7,27,1,10,21,Rush,Zylan Perry run for 21 yds to the KENN 6 for a 1ST down,0.688791070326209,2024-09-08T00:50:46.000Z
+401641016103978601,401641016,40164101613,8,3,2:13,Louisiana,Kennesaw State,27,7,6,1,6,1,Rush,Zylan Perry run for 1 yd to the KENN 5,-0.386087920464643,2024-09-08T00:50:46.000Z
+401641016103988301,401641016,40164101613,9,3,1:16,Louisiana,Kennesaw State,27,7,5,2,5,4,Pass Reception,Ben Wooldridge pass complete to Terrance Carter for 4 yds to the KENN 1,-0.01542053764963,2024-09-08T00:50:46.000Z
+401641016103995001,401641016,40164101613,11,3,0:49,Louisiana,Kennesaw State,34,7,1,3,1,1,Rushing Touchdown,Elijah Davis run for 1 yd for a TD (Kenneth Almendares KICK),2.45399822917955,2024-09-08T01:20:49.000Z
+401641016104849902,401641016,40164101614,4,4,15:00,Kennesaw State,Louisiana,7,34,74,2,9,4,Rush,Preston Daniels run for 4 yds to the KENN 30,-0.07170781243074043,2024-09-08T01:28:17.000Z
+401641016104858301,401641016,40164101614,5,4,14:16,Kennesaw State,Louisiana,7,34,70,3,5,4,Rush,Preston Daniels run for 4 yds to the KENN 34,-0.06449296258092385,2024-09-08T01:28:17.000Z
+401641016104867101,401641016,40164101614,6,4,13:28,Kennesaw State,Louisiana,7,34,66,4,1,2,Rush,Preston Daniels run for 2 yds to the KENN 36 for a 1ST down,1.6542428300593404,2024-09-08T01:28:17.000Z
+401641016104874601,401641016,40164101614,7,4,12:53,Kennesaw State,Louisiana,7,34,64,1,10,18,Pass Reception,Davis Bryson pass complete to Tykeem Wallace for 18 yds to the UL 46 for a 1ST down,1.6039051996408666,2024-09-08T01:28:17.000Z
+401641016104879601,401641016,40164101614,9,4,12:03,Kennesaw State,Louisiana,7,34,28,1,10,0,Pass Incompletion,Davis Bryson pass incomplete,-0.512081873784803,2024-09-08T01:28:17.000Z
+401641016104884101,401641016,40164101614,10,4,11:58,Kennesaw State,Louisiana,7,34,28,2,10,0,Rush,Davis Bryson run for no gain to the UL 28,-0.7006450342354943,2024-09-08T01:31:59.000Z
+401641016104895801,401641016,40164101614,13,4,10:41,Kennesaw State,Louisiana,7,34,33,3,15,13,Pass Reception,Davis Bryson pass complete to Qua Ashley for 13 yds to the UL 20,1.5319297910100431,2024-09-08T01:28:17.000Z
+401641016104899101,401641016,40164101614,14,4,10:08,Kennesaw State,Louisiana,7,34,20,4,2,3,Rush,Preston Daniels run for 3 yds to the UL 17 for a 1ST down,0.8668884950461295,2024-09-08T01:28:17.000Z
+401641016104907301,401641016,40164101614,15,4,9:26,Kennesaw State,Louisiana,7,34,17,1,10,4,Rush,Michael Benefield run for 4 yds to the UL 13,-0.0217352641607655,2024-09-08T01:28:17.000Z
+401641016104919201,401641016,40164101614,17,4,8:07,Kennesaw State,Louisiana,7,34,13,3,6,1,Rush,Michael Benefield run for 1 yd to the UL 12,-0.3289950517809695,2024-09-08T01:28:17.000Z
+401641016103995003,401641016,40164101614,1,3,0:49,Louisiana,Kennesaw State,34,7,65,0,0,23,Kickoff Return (Offense),"Kenneth Almendares kickoff for 63 yds , Tykeem Wallace return for 23 yds to the KENN 25",,2024-09-08T01:22:48.000Z
+401641016103995703,401641016,40164101614,3,3,0:00,Kennesaw State,Louisiana,7,34,75,0,10,1,End Period,End of 3rd Quarter,,2024-09-08T01:24:33.000Z
+401641016104894701,401641016,40164101614,12,4,10:52,Kennesaw State,Louisiana,7,34,33,3,15,0,Timeout,"Timeout Kennesaw State, clock 10:52",,2024-09-08T01:34:17.000Z
+401641016103995702,401641016,40164101614,2,3,0:42,Kennesaw State,Louisiana,7,34,75,1,10,1,Rush,Davis Bryson run for 1 yd to the KENN 26,-0.5874795431016855,2024-09-08T01:23:01.000Z
+401641016104878201,401641016,40164101614,8,4,12:17,Kennesaw State,Louisiana,7,34,46,1,10,15,Penalty,"Louisiana Penalty, Unnecessary Roughness (Mason Narcisse) to the UL 28 for a 1ST down",,2024-09-08T01:28:17.000Z
+401641016104888301,401641016,40164101614,11,4,11:16,Kennesaw State,Louisiana,7,34,28,3,10,-5,Penalty,"Kennesaw State Penalty, False Start (JT Pennington) to the UL 33",,2024-09-08T01:33:26.000Z
+401641016104914801,401641016,40164101614,16,4,8:51,Kennesaw State,Louisiana,7,34,13,2,6,0,Rush,Preston Daniels run for no gain to the UL 13,-0.3580925615253695,2024-09-08T01:28:17.000Z
+401641016104926901,401641016,40164101614,18,4,7:30,Kennesaw State,Louisiana,10,34,12,4,5,30,Field Goal Good,Austin Welch 30 yd FG GOOD,,2024-09-08T01:40:40.000Z
+401641016104928601,401641016,40164101615,2,4,7:13,Louisiana,Kennesaw State,34,10,75,1,10,12,Rush,Zylan Perry run for 12 yds to the UL 37 for a 1ST down,1.0272443261435713,2024-09-08T01:28:17.000Z
+401641016104936601,401641016,40164101615,3,4,6:33,Louisiana,Kennesaw State,34,10,63,1,10,4,Rush,Tylon Citizen run for 4 yds to the UL 41,-0.1644248613169578,2024-09-08T01:28:17.000Z
+401641016104944801,401641016,40164101615,4,4,5:51,Louisiana,Kennesaw State,34,10,59,2,6,17,Rush,Tylon Citizen run for 17 yds to the KENN 42 for a 1ST down,1.920000183322584,2024-09-08T01:28:17.000Z
+401641016104949701,401641016,40164101615,5,4,5:02,Louisiana,Kennesaw State,34,10,42,1,10,3,Rush,Tylon Citizen run for 3 yds to the KENN 39,-0.2936970531139116,2024-09-08T01:28:17.000Z
+401641016104958201,401641016,40164101615,6,4,4:17,Louisiana,Kennesaw State,34,10,39,2,7,4,Rush,Tylon Citizen run for 4 yds to the KENN 35,-0.1206385563558249,2024-09-08T01:28:17.000Z
+401641016104966501,401641016,40164101615,7,4,3:34,Louisiana,Kennesaw State,34,10,35,3,3,6,Pass Reception,Chandler Fields pass complete to Dale Martin for 6 yds to the KENN 29 for a 1ST down,0.9209698964437485,2024-09-08T01:28:17.000Z
+401641016104976001,401641016,40164101615,8,4,2:39,Louisiana,Kennesaw State,34,10,29,1,10,3,Rush,Kendrell Williams run for 3 yds to the KENN 26,-0.165753158468877,2024-09-08T01:28:17.000Z
+401641016104979301,401641016,40164101615,9,4,2:06,Louisiana,Kennesaw State,34,10,26,2,7,2,Rush,Kendrell Williams run for 2 yds to the KENN 24,-0.3172555644127384,2024-09-08T01:28:17.000Z
+401641016104979901,401641016,40164101615,10,4,2:00,Louisiana,Kennesaw State,34,10,24,3,5,9,Rush,Chandler Fields run for 9 yds to the KENN 15 for a 1ST down,0.7131108179146444,2024-09-08T01:28:17.000Z
+401641016104986001,401641016,40164101615,11,4,1:39,Louisiana,Kennesaw State,34,10,15,1,10,1,Rush,Tylon Citizen run for 1 yd to the KENN 14,-0.25132662671843,2024-09-08T01:28:17.000Z
+401641016104994301,401641016,40164101615,12,4,0:56,Louisiana,Kennesaw State,34,10,14,2,9,2,Pass Reception,Chandler Fields pass complete to Dale Martin for 2 yds to the KENN 12,-0.179357105448736,2024-09-08T01:28:17.000Z
+401641016104998801,401641016,40164101615,13,4,0:11,Louisiana,Kennesaw State,34,10,12,3,7,-1,Rush,"(00:11) Kneel down by WOOLDRIDGE, Ben at KSU13 (team loss of 1), clock 00:05.",-0.5485529444453687,2024-09-08T01:28:17.000Z
+401641016104999902,401641016,40164101615,14,4,0:00,Louisiana,Kennesaw State,34,10,13,0,7,0,End of Game,End of 4th Quarter,,2024-09-08T01:55:48.000Z
+401641016104926902,401641016,40164101615,1,4,7:30,Kennesaw State,Louisiana,10,34,65,0,0,18,Kickoff Return (Offense),"Britton Williams kickoff for 58 yds , Zylan Perry return for 18 yds to the UL 25",,2024-09-08T01:43:15.000Z

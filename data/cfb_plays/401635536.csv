@@ -1,0 +1,199 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401635536101849903,401635536,4016355361,1,1,15:00,Miami,Florida A&M,0,0,65,0,0,0,Kickoff,Andres Borregales kickoff for 65 yds for a touchback,,2024-09-07T21:56:35.000Z
+401635536101854001,401635536,4016355361,2,1,14:59,Florida A&M,Miami,0,0,75,1,10,0,Pass Incompletion,Daniel Richardson pass incomplete,-0.7029700220436519,2024-09-07T21:56:58.000Z
+401635536101854501,401635536,4016355361,3,1,14:54,Florida A&M,Miami,0,0,75,2,10,1,Rush,Thad Franklin Jr. run for 1 yd to the FAMU 26,-0.29282347426074384,2024-09-07T21:56:58.000Z
+401635536101858101,401635536,4016355361,4,1,14:18,Florida A&M,Miami,0,0,74,3,9,0,Pass Interception Return,Daniel Richardson pass intercepted Wesley Bissainthe return for no gain to the FAMU 28,0.07354861602571727,2024-09-07T21:56:58.000Z
+401635536101858801,401635536,4016355362,1,1,14:11,Miami,Florida A&M,0,0,28,1,10,11,Rush,Damien Martinez run for 11 yds to the FAMU 17 for a 1ST down,0.184111371354017,2024-09-07T21:56:58.000Z
+401635536101865901,401635536,4016355362,2,1,13:40,Miami,Florida A&M,7,0,17,1,10,17,Passing Touchdown,Cam Ward pass complete to Elijah Arroyo for 17 yds for a TD (Andres Borregales KICK),2.579903102784414,2024-09-07T22:09:58.000Z
+401635536101897901,401635536,4016355363,7,1,10:20,Florida A&M,Miami,0,7,57,4,6,0,Punt,"Trey Wilhoit punt for 57 yds , Ray Ray Joseph returns for no gain to the MIA 0",,2024-09-07T21:56:58.000Z
+401635536101865903,401635536,4016355363,1,1,13:40,Miami,Florida A&M,7,0,65,0,0,0,Kickoff,Andres Borregales kickoff for 65 yds for a touchback,,2024-09-07T22:09:58.000Z
+401635536101866001,401635536,4016355363,2,1,13:39,Florida A&M,Miami,0,7,75,1,10,-1,Rush,Thad Franklin Jr. run for a loss of 1 yard to the FAMU 24,-0.8014893508157099,2024-09-07T21:56:58.000Z
+401635536101869801,401635536,4016355363,3,1,13:01,Florida A&M,Miami,0,7,76,2,11,15,Rush,Thad Franklin Jr. run for 15 yds to the FAMU 39 for a 1ST down,2.0242284340721657,2024-09-07T21:56:58.000Z
+401635536101877201,401635536,4016355363,4,1,12:27,Florida A&M,Miami,0,7,61,1,10,0,Pass Reception,Daniel Richardson pass complete to Jeremiah Pruitte for no gain to the FAMU 39,-1.1077677360468863,2024-09-07T21:56:58.000Z
+401635536101885401,401635536,4016355363,5,1,11:45,Florida A&M,Miami,0,7,61,2,10,-1,Rush,Daniel Richardson run for a loss of 1 yard to the FAMU 38,-0.8317382488496756,2024-09-07T21:56:58.000Z
+401635536101889401,401635536,4016355363,6,1,11:05,Florida A&M,Miami,0,7,62,3,11,5,Pass Reception,Daniel Richardson pass complete to Koby Gross for 5 yds to the FAMU 43,0.02885134217796458,2024-09-07T21:56:58.000Z
+401635536101899601,401635536,4016355364,1,1,10:03,Miami,Florida A&M,7,0,99,1,10,4,Rush,Damien Martinez run for 4 yds to the MIA 5,-0.026373985240724984,2024-09-07T21:56:58.000Z
+401635536101906101,401635536,4016355364,2,1,9:38,Miami,Florida A&M,7,0,95,2,6,1,Pass Reception,Cam Ward pass complete to Jacolby George for 1 yd to the MIA 6,-0.18992320648263306,2024-09-07T21:56:58.000Z
+401635536101909601,401635536,4016355364,3,1,9:03,Miami,Florida A&M,7,0,94,3,5,15,Pass Reception,Cam Ward pass complete to Damien Martinez for 15 yds to the MIA 21 for a 1ST down,0.8774422537756115,2024-09-07T21:56:58.000Z
+401635536101915901,401635536,4016355364,4,1,8:40,Miami,Florida A&M,7,0,79,1,10,-9,Sack,Cam Ward sacked by Simion Hines for a loss of 9 yards to the MIA 12,-0.9803772792530356,2024-09-07T21:56:58.000Z
+401635536101919501,401635536,4016355364,5,1,8:04,Miami,Florida A&M,7,0,88,2,19,11,Pass Reception,Cam Ward pass complete to Samuel Brown for 11 yds to the MIA 23,0.2129475989240834,2024-09-07T21:56:58.000Z
+401635536101927101,401635536,4016355364,6,1,7:28,Miami,Florida A&M,7,0,77,3,8,27,Pass Reception,Cam Ward pass complete to Riley Williams for 27 yds to the 50 yard line for a 1ST down,3.256552538024735,2024-09-07T21:56:58.000Z
+401635536101935901,401635536,4016355364,7,1,6:40,Miami,Florida A&M,15,0,50,1,10,50,Passing Touchdown,Cam Ward pass complete to Xavier Restrepo for 50 yds for a TD (R. Williams Run For Two-point Conversion),3.841411932121373,2024-09-07T22:21:41.000Z
+401635536101935903,401635536,4016355365,1,1,6:40,Miami,Florida A&M,15,0,65,0,0,0,Kickoff,Andres Borregales kickoff for 65 yds for a touchback,,2024-09-07T22:21:41.000Z
+401635536101986101,401635536,4016355365,9,1,1:38,Florida A&M,Miami,0,15,1,3,1,-4,Penalty,"Florida A&M Penalty, False Start (Thad Franklin Jr.) to the MIA 5",,2024-09-07T22:31:23.000Z
+401635536101986102,401635536,4016355365,10,1,1:38,Florida A&M,Miami,0,15,5,3,5,0,Timeout,"Timeout Florida A&M, clock 01:38",,2024-09-07T22:31:23.000Z
+401635536101986104,401635536,4016355365,11,1,1:38,Florida A&M,Miami,0,15,5,3,5,0,Timeout,"Timeout Florida A&M, clock 01:38",,2024-09-07T22:31:23.000Z
+401635536101995001,401635536,4016355365,13,1,0:49,Florida A&M,Miami,3,15,5,4,5,22,Field Goal Good,Cameron Gillis 22 yd FG GOOD,,2024-09-07T22:37:10.000Z
+401635536101936001,401635536,4016355365,2,1,6:39,Florida A&M,Miami,0,15,75,1,10,1,Pass Reception,Daniel Richardson pass complete to Karter Johnson for 1 yd to the FAMU 26,-0.5874795431016855,2024-09-07T21:56:58.000Z
+401635536101944301,401635536,4016355365,3,1,5:56,Florida A&M,Miami,0,15,74,2,9,29,Pass Reception,Daniel Richardson pass complete to Quan Lee for 29 yds to the MIA 45 for a 1ST down,3.188720577755939,2024-09-07T21:56:58.000Z
+401635536101947901,401635536,4016355365,4,1,5:20,Florida A&M,Miami,0,15,45,1,10,-3,Rush,Kelvin Dean run for a loss of 3 yards to the MIA 48,-1.6833384450519322,2024-09-07T21:56:58.000Z
+401635536101956201,401635536,4016355365,5,1,4:37,Florida A&M,Miami,0,15,48,2,13,34,Pass Reception,Daniel Richardson pass complete to Jamari Gassett for 34 yds to the MIA 14 for a 1ST down,2.6115693549399186,2024-09-07T21:56:58.000Z
+401635536101965201,401635536,4016355365,6,1,3:47,Florida A&M,Miami,0,15,14,1,10,10,Pass Reception,Daniel Richardson pass complete to Koby Gross for 10 yds to the MIA 4 for a 1ST down,0.8600926564651065,2024-09-07T21:56:58.000Z
+401635536101969301,401635536,4016355365,7,1,3:06,Florida A&M,Miami,0,15,2,1,2,1,Rush,Thad Franklin Jr. run for 1 yd to the MIA 1,-0.687116939800908,2024-09-07T21:56:58.000Z
+401635536101977201,401635536,4016355365,8,1,2:27,Florida A&M,Miami,0,15,1,2,1,0,Rush,Karter Johnson run for no gain to the MIA 1,-0.553645991706544,2024-09-07T21:56:58.000Z
+401635536101986201,401635536,4016355365,12,1,1:37,Florida A&M,Miami,0,15,5,3,5,0,Rush,Thad Franklin Jr. run for no gain to the MIA 5,-0.290992528642002,2024-09-07T21:56:58.000Z
+401635536101995002,401635536,4016355366,1,1,0:49,Florida A&M,Miami,3,15,65,0,0,0,Kickoff,Michael Smith kickoff for 65 yds for a touchback,,2024-09-07T22:37:10.000Z
+401635536101998602,401635536,4016355366,5,1,0:00,Miami,Florida A&M,15,3,74,0,9,33,End Period,End of 1st Quarter,,2024-09-07T21:56:58.000Z
+401635536101995101,401635536,4016355366,2,1,0:48,Miami,Florida A&M,15,3,75,1,10,1,Rush,Mark Fletcher Jr. run for 1 yd to the MIA 26,-0.5874795431016855,2024-09-07T21:56:58.000Z
+401635536101998301,401635536,4016355366,3,1,0:16,Miami,Florida A&M,15,3,74,2,9,0,Pass Incompletion,Cam Ward pass incomplete,-0.40831395320271024,2024-09-07T21:56:58.000Z
+401635536101998601,401635536,4016355366,4,1,0:13,Miami,Florida A&M,15,3,74,3,9,33,Pass Reception,Cam Ward pass complete to Xavier Restrepo for 33 yds to the FAMU 41 for a 1ST down,3.833028990129198,2024-09-07T21:56:58.000Z
+401635536102854101,401635536,4016355366,6,2,14:58,Miami,Florida A&M,15,3,41,1,10,27,Pass Reception,Cam Ward pass complete to Isaiah Horton for 27 yds to the FAMU 14 for a 1ST down,0.6922364507174379,2024-09-07T23:32:06.000Z
+401635536102858001,401635536,4016355366,7,2,14:19,Miami,Florida A&M,15,3,14,1,10,2,Rush,Mark Fletcher Jr. run for 2 yds to the FAMU 12,-0.1755370905391265,2024-09-07T23:32:06.000Z
+401635536102865901,401635536,4016355366,8,2,13:40,Miami,Florida A&M,15,3,12,2,8,3,Pass Reception,Cam Ward pass complete to Chris Johnson Jr. for 3 yds to the FAMU 9,-0.098057654473653,2024-09-07T23:32:06.000Z
+401635536102874101,401635536,4016355366,9,2,12:58,Miami,Florida A&M,22,3,9,3,5,9,Passing Touchdown,Cam Ward pass complete to Chris Johnson Jr. for 9 yds for a TD (Andres Borregales KICK),2.821877920191861,2024-09-07T22:46:20.000Z
+401635536102874103,401635536,4016355367,1,2,12:58,Miami,Florida A&M,22,3,65,0,0,0,Kickoff,Andres Borregales kickoff for 65 yds for a touchback,,2024-09-07T22:46:20.000Z
+401635536102895501,401635536,4016355367,5,2,10:44,Florida A&M,Miami,3,22,70,4,5,15,Punt,"Trey Wilhoit punt for 48 yds , Ray Ray Joseph returns for 15 yds to the MIA 37",,2024-09-07T23:32:06.000Z
+401635536102874301,401635536,4016355367,2,2,12:56,Florida A&M,Miami,3,22,75,1,10,0,Rush,Kelvin Dean run for no gain to the FAMU 25,-0.7029700220436519,2024-09-07T23:32:06.000Z
+401635536102878701,401635536,4016355367,3,2,12:12,Florida A&M,Miami,3,22,75,2,10,-1,Rush,Kelvin Dean run for a loss of 1 yard to the FAMU 24,-0.3927938356308358,2024-09-07T23:32:06.000Z
+401635536102887401,401635536,4016355367,4,2,11:25,Florida A&M,Miami,3,22,76,3,11,6,Pass Reception,Daniel Richardson pass complete to Jamari Gassett for 6 yds to the FAMU 30,0.06495259722591129,2024-09-07T23:32:06.000Z
+401635536102906901,401635536,4016355368,3,2,9:30,Miami,Florida A&M,22,3,47,1,10,8,Rush,Damien Martinez run for 8 yds to the FAMU 39,0.773497584431148,2024-09-07T23:32:06.000Z
+401635536102939601,401635536,4016355368,9,2,6:03,Miami,Florida A&M,22,3,19,4,13,0,Timeout,"Timeout Florida A&M, clock 06:03",,2024-09-07T22:58:25.000Z
+401635536102939602,401635536,4016355368,10,2,6:03,Miami,Florida A&M,22,3,19,4,13,0,Timeout,"Timeout Florida A&M, clock 06:03",,2024-09-07T22:58:25.000Z
+401635536102896502,401635536,4016355368,1,2,10:34,Miami,Florida A&M,22,3,63,1,10,7,Rush,Damien Martinez run for 7 yds to the MIA 44,0.7113806413121412,2024-09-07T22:53:00.000Z
+401635536102899601,401635536,4016355368,2,2,10:03,Miami,Florida A&M,22,3,56,2,3,9,Pass Reception,Cam Ward pass complete to Samuel Brown for 9 yds to the FAMU 47 for a 1ST down,0.725927910999179,2024-09-07T23:32:06.000Z
+401635536102909901,401635536,4016355368,4,2,9:00,Miami,Florida A&M,22,3,39,2,2,6,Rush,Damien Martinez run for 6 yds to the FAMU 33 for a 1ST down,-0.063370116666706,2024-09-07T23:32:06.000Z
+401635536102916801,401635536,4016355368,5,2,8:31,Miami,Florida A&M,22,3,33,1,10,17,Pass Reception,Cam Ward pass complete to Isaiah Horton for 17 yds to the FAMU 16 for a 1ST down,0.3343520522096136,2024-09-07T23:32:06.000Z
+401635536102924301,401635536,4016355368,6,2,7:56,Miami,Florida A&M,22,3,16,1,10,-5,Rush,Chris Johnson Jr. run for a loss of 5 yards to the FAMU 21,-0.7407682071036986,2024-09-07T23:32:06.000Z
+401635536102928201,401635536,4016355368,7,2,7:17,Miami,Florida A&M,22,3,21,2,15,8,Rush,Cam Ward run for 8 yds to the FAMU 13,0.2949968014617157,2024-09-07T23:32:06.000Z
+401635536102936301,401635536,4016355368,8,2,6:36,Miami,Florida A&M,22,3,13,3,7,4,Rush,Damien Martinez run for 4 yds to the FAMU 9,-0.0480895457723313,2024-09-07T23:32:06.000Z
+401635536102939701,401635536,4016355368,11,2,6:02,Miami,Florida A&M,22,3,9,4,3,-10,Penalty,"(06:02) WARD, Cameron pass to the left complete for 9 yards to HORTON, Isaiah caught at the FAM0 and advanced to the FAM0, TOUCHDOWN MIA, score nullified by penalty, clock 05:50 (Play was confirmed after review). PENALTY MIA Holding on BELL, Markel enforced 10 yards from the FAM9 to the FAM19 [NHSG]. NO PLAY (replay the down).",,2024-09-07T23:32:06.000Z
+401635536102945601,401635536,4016355368,12,2,5:43,Miami,Florida A&M,25,3,19,4,13,37,Field Goal Good,Andres Borregales 37 yd FG GOOD,,2024-09-07T23:08:42.000Z
+401635536102945801,401635536,4016355369,1,2,5:41,Miami,Florida A&M,25,3,65,0,0,12,Kickoff Return (Offense),"Andres Borregales kickoff for 65 yds , Goldie Lawrence return for 12 yds to the FAMU 12",,2024-09-07T23:09:01.000Z
+401635536102946101,401635536,4016355369,2,2,5:38,Florida A&M,Miami,3,25,88,1,10,-5,Sack,Daniel Richardson sacked by Justin Scott for a loss of 5 yards to the FAMU 7,-0.562450920732803,2024-09-07T23:32:06.000Z
+401635536102954501,401635536,4016355369,3,2,4:54,Florida A&M,Miami,3,25,93,2,15,0,Pass Incompletion,Daniel Richardson pass incomplete,-0.0664703321577882,2024-09-07T23:32:06.000Z
+401635536102954901,401635536,4016355369,4,2,4:50,Florida A&M,Miami,3,25,93,3,15,-5,Sack,Daniel Richardson sacked by Tyler Baron for a loss of 5 yards to the FAMU 2,-0.04135465264924586,2024-09-07T23:32:06.000Z
+401635536102959101,401635536,4016355369,5,2,4:08,Florida A&M,Miami,3,25,98,4,20,0,Punt,Trey Wilhoit punt for 18 yds,,2024-09-07T23:32:06.000Z
+401635536102974201,401635536,40163553610,4,2,2:57,Miami,Florida A&M,25,3,18,3,8,0,Timeout,"Timeout Florida A&M, clock 02:57",,2024-09-07T23:15:55.000Z
+401635536102959701,401635536,40163553610,1,2,4:02,Miami,Florida A&M,25,3,20,1,10,8,Rush,Damien Martinez run for 8 yds to the FAMU 12,0.458030162847379,2024-09-07T23:32:06.000Z
+401635536102967501,401635536,40163553610,2,2,3:24,Miami,Florida A&M,25,3,12,2,2,-6,Penalty,"Miami Penalty, False Start (Matthew McCoy) to the FAMU 18",,2024-09-07T23:13:55.000Z
+401635536102969401,401635536,40163553610,3,2,3:05,Miami,Florida A&M,25,3,18,2,8,0,Pass Incompletion,Cam Ward pass incomplete,-0.413744932811472,2024-09-07T23:32:06.000Z
+401635536102974301,401635536,40163553610,5,2,2:56,Miami,Florida A&M,25,3,18,3,8,4,Pass Reception,Cam Ward pass complete to Samuel Brown for 4 yds to the FAMU 14,-0.0716780811902124,2024-09-07T23:32:06.000Z
+401635536102978401,401635536,40163553610,6,2,2:15,Miami,Florida A&M,25,3,14,4,4,0,Pass Incompletion,Cam Ward pass incomplete,-3.6913544524969186,2024-09-07T23:32:06.000Z
+401635536102979902,401635536,40163553611,3,2,2:00,Florida A&M,Miami,3,25,78,2,2,0,Timeout,"Timeout Miami, clock 02:00",,2024-09-07T23:32:06.000Z
+401635536102988001,401635536,40163553611,9,2,1:19,Florida A&M,Miami,3,25,75,3,10,0,Timeout,"Timeout Miami, clock 01:19",,2024-09-07T23:25:24.000Z
+401635536102987101,401635536,40163553611,7,2,1:28,Florida A&M,Miami,3,25,82,2,17,0,Timeout,"Timeout Miami, clock 01:28",,2024-09-07T23:32:06.000Z
+401635536102979903,401635536,40163553611,4,2,2:00,Florida A&M,Miami,3,25,78,2,2,0,Timeout,"Timeout Miami, clock 02:00",,2024-09-07T22:44:11.000Z
+401635536102999903,401635536,40163553611,16,2,0:00,Miami,Florida A&M,25,3,28,0,1,-37,End of Half,End of 2nd Quarter,,2024-09-07T23:32:06.000Z
+401635536102979201,401635536,40163553611,1,2,2:07,Florida A&M,Miami,3,25,86,1,10,3,Pass Reception,Daniel Richardson pass complete to Kelvin Dean for 3 yds to the FAMU 17,-0.17692987996152973,2024-09-07T23:32:06.000Z
+401635536102979901,401635536,40163553611,2,2,2:00,Florida A&M,Miami,3,25,83,2,7,5,Penalty,"Miami Penalty, Delay Of Game (Francisco Mauigoa) to the FAMU 22",,2024-09-07T23:32:06.000Z
+401635536102984001,401635536,40163553611,5,2,1:59,Florida A&M,Miami,3,25,78,2,2,3,Pass Reception,Daniel Richardson pass complete to Quan Lee for 3 yds to the FAMU 25 for a 1ST down,-0.0819307649219895,2024-09-07T23:18:00.000Z
+401635536102986801,401635536,40163553611,6,2,1:31,Florida A&M,Miami,3,25,75,1,10,-7,Sack,Daniel Richardson sacked by Tyler Baron for a loss of 7 yards to the FAMU 18,-1.1457661500935084,2024-09-07T23:32:06.000Z
+401635536102987201,401635536,40163553611,8,2,1:27,Florida A&M,Miami,3,25,82,2,17,7,Pass Reception,Daniel Richardson pass complete to Ashton Grable for 7 yds to the FAMU 25,0.09569125092811782,2024-09-07T23:32:06.000Z
+401635536102988101,401635536,40163553611,10,2,1:18,Florida A&M,Miami,3,25,75,3,10,15,Fumble Recovery (Own),"Daniel Richardson pass complete to Jamari Gassett for 15 yds Jamari Gassett fumbled, recovered by FAMU for a 1ST down",2.3709294147430366,2024-09-07T23:32:06.000Z
+401635536102994801,401635536,40163553611,11,2,0:51,Florida A&M,Miami,3,25,64,1,10,15,Penalty,"Miami Penalty, Roughing the Passer on HORTON, Josh enforced (Isaiah Horton) to the MIA 43 for a 1ST down",,2024-09-07T23:32:06.000Z
+401635536102995701,401635536,40163553611,12,2,0:42,Florida A&M,Miami,3,25,43,1,10,0,Pass Incompletion,Daniel Richardson pass incomplete,-0.9391692565688832,2024-09-07T23:32:06.000Z
+401635536102996201,401635536,40163553611,13,2,0:37,Florida A&M,Miami,3,25,43,2,10,8,Rush,Daniel Richardson run for 8 yds to the MIA 35,0.7190243061398204,2024-09-07T23:32:06.000Z
+401635536102998601,401635536,40163553611,14,2,0:13,Florida A&M,Miami,3,25,35,3,2,16,Fumble Recovery (Own),"Daniel Richardson pass complete to Karter Johnson for 16 yds Karter Johnson fumbled, recovered by FAMU for a 1ST down",0.968067409722394,2024-09-07T23:32:06.000Z
+401635536102999901,401635536,40163553611,15,2,0:00,Florida A&M,Miami,6,25,19,1,10,36,Field Goal Good,Cameron Gillis 36 yd FG GOOD,,2024-09-07T23:32:06.000Z
+401635536103849902,401635536,40163553612,1,3,15:00,Florida A&M,Miami,6,25,65,0,0,0,Kickoff,Michael Smith kickoff for 65 yds for a touchback,,2024-09-07T23:52:56.000Z
+401635536103849903,401635536,40163553612,2,3,15:00,Florida A&M,Miami,6,25,65,0,0,0,Kickoff,Michael Smith kickoff for 65 yds for a touchback,,2024-09-07T23:52:56.000Z
+401635536103874301,401635536,40163553612,8,3,12:56,Miami,Florida A&M,25,6,4,1,10,0,Timeout,"Timeout Miami, clock 12:56",,2024-09-07T23:57:05.000Z
+401635536103874302,401635536,40163553612,9,3,12:56,Miami,Florida A&M,25,6,4,1,10,0,Timeout,"Timeout Miami, clock 12:56",,2024-09-07T23:57:05.000Z
+401635536103854001,401635536,40163553612,3,3,14:59,Miami,Florida A&M,25,6,75,1,10,6,Pass Reception,Cam Ward pass complete to Xavier Restrepo for 6 yds to the MIA 31,0.3333748010525683,2024-09-08T00:40:39.000Z
+401635536103856601,401635536,40163553612,4,3,14:33,Miami,Florida A&M,25,6,69,2,4,9,Pass Reception,Cam Ward pass complete to Jacolby George for 9 yds to the MIA 40 for a 1ST down,0.9874797145250778,2024-09-08T00:40:39.000Z
+401635536103858901,401635536,40163553612,5,3,14:10,Miami,Florida A&M,25,6,60,1,10,23,Rush,Mark Fletcher Jr. run for 23 yds to the FAMU 37 for a 1ST down,1.7054919726669322,2024-09-08T00:40:39.000Z
+401635536103865401,401635536,40163553612,6,3,13:45,Miami,Florida A&M,25,6,37,1,10,18,Pass Reception,Cam Ward pass complete to Jacolby George for 18 yds to the FAMU 19 for a 1ST down,0.4469610028392202,2024-09-08T00:40:39.000Z
+401635536103869101,401635536,40163553612,7,3,13:08,Miami,Florida A&M,25,6,19,1,10,15,Pass Reception,Cam Ward pass complete to Xavier Restrepo for 15 yds to the FAMU 4 for a 1ST down,0.916257109923548,2024-09-08T00:40:39.000Z
+401635536103875901,401635536,40163553612,10,3,12:40,Miami,Florida A&M,25,6,4,1,4,0,Pass Incompletion,Cam Ward pass incomplete,-0.6456997217339855,2024-09-08T00:40:39.000Z
+401635536103876601,401635536,40163553612,11,3,12:33,Miami,Florida A&M,32,6,4,2,4,4,Rushing Touchdown,Mark Fletcher Jr. run for 4 yds for a TD (Andres Borregales KICK),2.3338902404479605,2024-09-07T23:58:22.000Z
+401635536103876603,401635536,40163553613,1,3,12:33,Miami,Florida A&M,32,6,65,0,0,0,Timeout,"Timeout Miami, clock 12:33",,2024-09-07T23:58:22.000Z
+401635536103876605,401635536,40163553613,3,3,12:33,Miami,Florida A&M,32,6,65,0,0,0,Kickoff,Andres Borregales kickoff for 65 yds for a touchback,,2024-09-07T23:58:22.000Z
+401635536103876604,401635536,40163553613,2,3,12:33,Miami,Florida A&M,32,6,65,0,0,0,Kickoff,Andres Borregales kickoff for 65 yds for a touchback,,2024-09-07T23:58:22.000Z
+401635536103876701,401635536,40163553613,4,3,12:32,Florida A&M,Miami,6,32,75,1,10,-6,Sack,Daniel Richardson sacked by Elijah Alston for a loss of 6 yards to the FAMU 19,-1.1098077151473014,2024-09-08T00:40:39.000Z
+401635536103884401,401635536,40163553613,5,3,11:55,Florida A&M,Miami,6,32,81,2,16,1,Rush,Thad Franklin Jr. run for 1 yd to the FAMU 20,-0.10630475934940976,2024-09-08T00:40:39.000Z
+401635536103888201,401635536,40163553613,6,3,11:17,Florida A&M,Miami,6,32,80,3,15,-7,Sack,Daniel Richardson sacked by Tyler Baron for a loss of 7 yards to the FAMU 13,-0.10173364782834149,2024-09-08T00:40:39.000Z
+401635536103896101,401635536,40163553613,7,3,10:38,Florida A&M,Miami,6,32,87,4,22,1,Punt,"Trey Wilhoit punt for 61 yds , Ray Ray Joseph returns for 1 yd to the MIA 27",,2024-09-08T00:05:42.000Z
+401635536103908501,401635536,40163553614,5,3,9:14,Miami,Florida A&M,39,6,33,1,10,33,Rushing Touchdown,Damien Martinez run for 33 yds for a TD (Andres Borregales KICK),2.903074773501988,2024-09-08T00:11:43.000Z
+401635536103897401,401635536,40163553614,1,3,10:25,Miami,Florida A&M,32,6,73,1,10,0,Timeout,"Timeout Miami, clock 10:25",,2024-09-08T00:05:50.000Z
+401635536103897501,401635536,40163553614,2,3,10:24,Miami,Florida A&M,32,6,73,1,10,13,Pass Reception,Cam Ward pass complete to Isaiah Horton for 13 yds to the MIA 40 for a 1ST down,1.1758148300782612,2024-09-08T00:40:39.000Z
+401635536103899301,401635536,40163553614,3,3,10:06,Miami,Florida A&M,32,6,60,1,10,12,Rush,Mark Fletcher Jr. run for 12 yds to the FAMU 48 for a 1ST down,1.0706667678637185,2024-09-08T00:40:39.000Z
+401635536103907001,401635536,40163553614,4,3,9:29,Miami,Florida A&M,32,6,48,1,10,0,Penalty,"(09:29) WARD, Cameron pass deep to the right incomplete intended for RESTREPO, Xavier thrown to the FAM3, clock 09:22. PENALTY FAM Personal Foul on HORNE, Aric declined FAM Pass Interference on HINES, Simion enforced 15 yards to the FAM33 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,
+401635536103908701,401635536,40163553615,4,3,9:12,Florida A&M,Miami,6,39,75,1,10,44,Rush,"Kelvin Dean run for 29 yds to the MIA 46 for a 1ST down Miami Penalty, Personal Foul (Ahmad Moten Sr.) to the MIA 31 for a 1ST down",3.2358089496483733,2024-09-08T00:40:39.000Z
+401635536103915001,401635536,40163553615,5,3,8:49,Florida A&M,Miami,6,39,31,1,10,0,Pass Incompletion,Junior Muratovic pass incomplete,-0.5824837756999947,2024-09-08T00:40:39.000Z
+401635536103917701,401635536,40163553615,7,3,8:22,Florida A&M,Miami,6,39,27,3,6,0,Pass Reception,Junior Muratovic pass complete to Jamari Gassett for no gain to the MIA 27,-0.8474255838911784,2024-09-08T00:40:39.000Z
+401635536103908505,401635536,40163553615,3,3,9:14,Miami,Florida A&M,39,6,65,0,0,0,Kickoff,Andres Borregales kickoff for 65 yds for a touchback,,2024-09-08T00:11:43.000Z
+401635536103927001,401635536,40163553615,11,3,7:29,Florida A&M,Miami,9,39,32,4,11,49,Field Goal Good,Michael Smith 49 yd FG GOOD,,2024-09-08T00:23:00.000Z
+401635536103908504,401635536,40163553615,2,3,9:14,Miami,Florida A&M,39,6,65,0,0,0,Kickoff,Andres Borregales kickoff for 65 yds for a touchback,,2024-09-08T00:11:43.000Z
+401635536103908503,401635536,40163553615,1,3,9:14,Miami,Florida A&M,39,6,65,0,0,0,Timeout,"Timeout Miami, clock 09:14",,2024-09-08T00:11:43.000Z
+401635536103926501,401635536,40163553615,8,3,7:34,Florida A&M,Miami,6,39,27,4,6,0,Timeout,"Timeout Florida A&M, clock 07:34",,2024-09-08T00:20:22.000Z
+401635536103915601,401635536,40163553615,6,3,8:43,Florida A&M,Miami,6,39,31,2,10,4,Rush,Kelvin Dean run for 4 yds to the MIA 27,-0.0961995272051847,2024-09-08T00:40:39.000Z
+401635536103926701,401635536,40163553615,9,3,7:32,Florida A&M,Miami,6,39,27,4,6,-5,Penalty,"(07:32) GILLIS, Cameron field goal attempt from 44 yards NO GOOD (left upright) [kick was spotted at MIA34], clock 07:30. PENALTY Before the snap, FAM False Start on PHILIPPE, Elijah enforced 5 yards from the MIA27 to the MIA32. NO PLAY (replay the down).",,2024-09-08T00:40:39.000Z
+401635536103926702,401635536,40163553615,10,3,7:32,Florida A&M,Miami,6,39,27,4,6,-5,Penalty,"(07:32) GILLIS, Cameron field goal attempt from 44 yards NO GOOD (left upright) [kick was spotted at MIA34], clock 07:30. PENALTY Before the snap, FAM False Start on PHILIPPE, Elijah enforced 5 yards from the MIA27 to the MIA32. NO PLAY (replay the down).",,2024-09-07T23:52:56.000Z
+401635536103928301,401635536,40163553616,2,3,7:16,Miami,Florida A&M,39,9,60,1,10,11,Pass Reception,Cam Ward pass complete to Samuel Brown for 11 yds to the FAMU 49 for a 1ST down,0.994570052506427,2024-09-08T00:40:39.000Z
+401635536103947601,401635536,40163553616,6,3,5:23,Miami,Florida A&M,39,9,34,1,10,6,Rush,Cam Ward run for 6 yds to the FAMU 28,0.228690499805612,2024-09-08T00:40:39.000Z
+401635536103927002,401635536,40163553616,1,3,7:29,Florida A&M,Miami,9,39,65,0,0,40,Kickoff Return (Offense),"Michael Smith kickoff for 65 yds , Chris Johnson Jr. return for 40 yds to the MIA 40",,2024-09-08T00:23:00.000Z
+401635536103955301,401635536,40163553616,7,3,4:46,Miami,Florida A&M,39,9,28,2,4,17,Penalty,"(04:46) MARTINEZ, Damien rush up the middle for a gain of 1 yard to the FAM27 (COLLIER JR., Corey), clock 04:41. PENALTY FAM Personal Foul on TATE, Demorie enforced half the distance from the goal, 11 yards from the FAM22 to the FAM11 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-08T00:40:39.000Z
+401635536103955302,401635536,40163553616,8,3,4:46,Miami,Florida A&M,39,9,28,2,4,17,Penalty,"(04:46) MARTINEZ, Damien rush up the middle for a gain of 1 yard to the FAM27 (COLLIER JR., Corey), clock 04:41. PENALTY FAM Personal Foul on TATE, Demorie enforced half the distance from the goal, 11 yards from the FAM22 to the FAM11 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-09-07T23:52:56.000Z
+401635536103935401,401635536,40163553616,3,3,6:45,Miami,Florida A&M,39,9,49,1,10,9,Pass Reception,Cam Ward pass complete to Isaiah Horton for 9 yds to the FAMU 40,1.0659606614607482,2024-09-08T00:40:39.000Z
+401635536103939501,401635536,40163553616,4,3,6:04,Miami,Florida A&M,39,9,40,2,1,0,Pass Incompletion,Cam Ward pass incomplete,-1.100321562186114,2024-09-08T00:40:39.000Z
+401635536103944101,401635536,40163553616,5,3,5:58,Miami,Florida A&M,39,9,40,3,1,6,Rush,Damien Martinez run for 6 yds to the FAMU 34 for a 1ST down,0.859965291448944,2024-09-08T00:40:39.000Z
+401635536103956701,401635536,40163553616,9,3,4:32,Miami,Florida A&M,39,9,11,1,10,0,Pass Incompletion,Cam Ward pass incomplete,-0.291297448934314,2024-09-08T00:40:39.000Z
+401635536103957201,401635536,40163553616,10,3,4:27,Miami,Florida A&M,39,9,11,2,10,3,Rush,Damien Martinez run for 3 yds to the FAMU 8,-0.0895730518938025,2024-09-08T00:40:39.000Z
+401635536103965601,401635536,40163553616,11,3,3:43,Miami,Florida A&M,46,9,8,3,7,8,Rushing Touchdown,Cam Ward run for 8 yds for a TD (Andres Borregales KICK),2.9026099141960415,2024-09-08T00:30:53.000Z
+401635536103965603,401635536,40163553617,1,3,3:43,Miami,Florida A&M,46,9,65,0,0,18,Kickoff Return (Offense),"Andres Borregales kickoff for 65 yds , Goldie Lawrence return for 18 yds to the FAMU 18",,2024-09-08T00:30:53.000Z
+401635536103966401,401635536,40163553617,2,3,3:35,Florida A&M,Miami,9,46,82,1,10,-2,Rush,Kelvin Dean run for a loss of 2 yards to the FAMU 16,-0.6332666004473406,2024-09-08T00:40:39.000Z
+401635536103974501,401635536,40163553617,3,3,2:54,Florida A&M,Miami,9,46,84,2,12,0,Pass Incompletion,Junior Muratovic pass incomplete,-0.16317698926983581,2024-09-08T00:40:39.000Z
+401635536103974901,401635536,40163553617,4,3,2:50,Florida A&M,Miami,9,46,84,3,12,0,Pass Incompletion,Junior Muratovic pass incomplete,-0.07131012878120391,2024-09-08T00:40:39.000Z
+401635536103975401,401635536,40163553617,5,3,2:45,Florida A&M,Miami,9,46,84,4,12,20,Punt,"Trey Wilhoit punt for 47 yds , Ray Ray Joseph returns for 20 yds to the FAMU 43",,2024-09-08T00:40:39.000Z
+401635536103976702,401635536,40163553617,6,3,2:32,Miami,Florida A&M,46,9,43,1,10,5,Penalty,"(02:32) LYLE, Jordan rush to the left for a gain of 3 yards to the FAM40 (BOHLER, Kendall), clock 02:27. PENALTY Before the snap, FAM Illegal Substitution enforced 5 yards from the FAM43 to the FAM38. NO PLAY (replay the down).",,2024-09-07T23:52:56.000Z
+401635536103988701,401635536,40163553618,4,3,1:12,Miami,Florida A&M,46,9,26,2,7,0,Timeout,"Timeout Miami, clock 01:12",,2024-09-08T00:39:29.000Z
+401635536103997802,401635536,40163553618,7,3,0:00,Miami,Florida A&M,46,9,22,0,3,8,End Period,End of 3rd Quarter,,2024-09-08T00:40:39.000Z
+401635536104857601,401635536,40163553618,9,4,14:23,Miami,Florida A&M,53,9,1,1,1,1,Rushing Touchdown,Jordan Lyle run for 1 yd for a TD (Abram Murray KICK),0.938021275120443,2024-09-08T00:46:59.000Z
+401635536103976701,401635536,40163553618,1,3,2:32,Miami,Florida A&M,46,9,43,1,10,5,Penalty,"(02:32) LYLE, Jordan rush to the left for a gain of 3 yards to the FAM40 (BOHLER, Kendall), clock 02:27. PENALTY Before the snap, FAM Illegal Substitution enforced 5 yards from the FAM43 to the FAM38. NO PLAY (replay the down).",,2024-09-08T00:40:39.000Z
+401635536103978301,401635536,40163553618,2,3,2:16,Miami,Florida A&M,46,9,38,1,5,9,Rush,Reese Poffenbarger run for 9 yds to the FAMU 29 for a 1ST down,-0.402096986881985,2024-09-08T00:40:39.000Z
+401635536103985701,401635536,40163553618,3,3,1:42,Miami,Florida A&M,46,9,29,1,10,3,Rush,Jordan Lyle run for 3 yds to the FAMU 26,-0.165753158468877,2024-09-08T00:40:39.000Z
+401635536103989801,401635536,40163553618,5,3,1:01,Miami,Florida A&M,46,9,26,2,7,4,Pass Reception,Reese Poffenbarger pass complete to Joshisa Trader for 4 yds to the FAMU 22,-0.0585341577282323,2024-09-08T00:40:39.000Z
+401635536103997801,401635536,40163553618,6,3,0:21,Miami,Florida A&M,46,9,22,3,3,8,Pass Reception,Reese Poffenbarger pass complete to Ny Carr for 8 yds to the FAMU 14 for a 1ST down,0.4643053256161398,2024-09-08T00:40:39.000Z
+401635536104854001,401635536,40163553618,8,4,14:59,Miami,Florida A&M,46,9,14,1,10,13,Rush,Jordan Lyle run for 13 yds to the FAMU 1 for a 1ST down,1.6102619000586385,2024-09-08T00:44:44.000Z
+401635536104857603,401635536,40163553619,1,4,14:23,Miami,Florida A&M,53,9,65,0,0,0,Kickoff,Andres Borregales kickoff for 65 yds for a touchback,,2024-09-08T00:46:59.000Z
+401635536104857701,401635536,40163553619,2,4,14:22,Florida A&M,Miami,9,53,75,1,10,2,Rush,Dorian Collier run for 2 yds to the FAMU 27,-0.45260367932203766,2024-09-08T00:44:44.000Z
+401635536104865901,401635536,40163553619,3,4,13:40,Florida A&M,Miami,9,53,73,2,8,3,Rush,Dorian Collier run for 3 yds to the FAMU 30,-0.2065836762103883,2024-09-08T00:44:44.000Z
+401635536104869701,401635536,40163553619,4,4,13:02,Florida A&M,Miami,9,53,70,3,5,0,Pass Interception Return,Junior Muratovic pass intercepted Junior Muratovic return for no gain to the FAMU 32,-0.26305752474625255,2024-09-08T00:44:44.000Z
+401635536104874102,401635536,40163553620,1,4,12:58,Miami,Florida A&M,53,9,32,1,10,-1,Pass Reception,Reese Poffenbarger pass complete to Ray Ray Joseph for a loss of 1 yard to the FAMU 33,-0.7627693809348699,2024-09-08T00:49:50.000Z
+401635536104877701,401635536,40163553620,2,4,12:22,Miami,Florida A&M,53,9,33,2,11,3,Rush,Ajay Allen run for 3 yds to the FAMU 30,-0.2889629941808797,2024-09-08T00:44:44.000Z
+401635536104885201,401635536,40163553620,3,4,11:47,Miami,Florida A&M,53,9,30,3,8,4,Rush,Ajay Allen run for 4 yds to the FAMU 26,-0.133080050828701,2024-09-08T00:44:44.000Z
+401635536104888701,401635536,40163553620,4,4,11:12,Miami,Florida A&M,53,9,26,4,4,-9,Fumble Recovery (Opponent),"Reese Poffenbarger run for a loss of 9 yards to the FAMU 36 Reese Poffenbarger fumbled, recovered by MIA Reese Poffenbarger",-2.943668148466587,2024-09-08T00:44:44.000Z
+401635536104889403,401635536,40163553621,2,4,11:05,Florida A&M,Miami,9,53,69,1,15,0,Timeout,"Timeout Miami, clock 11:05",,2024-09-08T00:55:24.000Z
+401635536104889402,401635536,40163553621,1,4,11:05,Florida A&M,Miami,9,53,64,1,10,-5,Penalty,"Florida A&M Penalty, False Start (-5 Yards) to the FAMU 31",,2024-09-08T00:55:24.000Z
+401635536104889601,401635536,40163553621,3,4,11:03,Florida A&M,Miami,9,53,69,1,15,0,Pass Incompletion,Junior Muratovic pass incomplete,-0.6035125831550907,2024-09-08T00:44:44.000Z
+401635536104894001,401635536,40163553621,4,4,10:59,Florida A&M,Miami,9,53,69,2,15,7,Pass Reception,Junior Muratovic pass complete to Jalon Howard for 7 yds to the FAMU 38,0.24996888540774087,2024-09-08T00:44:44.000Z
+401635536104894002,401635536,40163553621,5,4,10:59,Florida A&M,Miami,9,53,69,2,15,7,Pass Reception,Junior Muratovic pass complete to Jalon Howard for 7 yds to the FAMU 38,0.24996888540774087,2024-09-08T00:44:44.000Z
+401635536104898401,401635536,40163553621,6,4,10:15,Florida A&M,Miami,9,53,62,3,8,0,Pass Incompletion,Junior Muratovic pass incomplete,-0.4362142328462131,2024-09-08T00:44:44.000Z
+401635536104898402,401635536,40163553621,7,4,10:15,Florida A&M,Miami,9,53,62,3,8,0,Pass Incompletion,Junior Muratovic pass incomplete,-0.4362142328462131,2024-09-08T00:44:44.000Z
+401635536104898801,401635536,40163553621,8,4,10:11,Florida A&M,Miami,9,53,62,4,8,0,Punt,"Trey Wilhoit punt for 41 yds, fair catch by Xavier Restrepo at the MIA 21",,2024-09-08T00:57:49.000Z
+401635536104898802,401635536,40163553621,9,4,10:11,Florida A&M,Miami,9,53,62,4,8,0,Punt,"Trey Wilhoit punt for 41 yds, fair catch by Xavier Restrepo at the MIA 21",,2024-09-08T00:57:49.000Z
+401635536104899501,401635536,40163553622,1,4,10:04,Miami,Florida A&M,53,9,79,1,10,0,Timeout,"Timeout Miami, clock 10:04",,2024-09-08T00:58:44.000Z
+401635536104926001,401635536,40163553622,12,4,7:39,Miami,Florida A&M,53,9,46,3,7,0,Timeout,"Timeout Miami, clock 07:39",,2024-09-08T01:04:31.000Z
+401635536104929601,401635536,40163553622,15,4,7:03,Miami,Florida A&M,53,9,37,1,10,0,Timeout,"Timeout Miami, clock 07:03",,2024-09-08T01:05:43.000Z
+401635536104899601,401635536,40163553622,2,4,10:03,Miami,Florida A&M,53,9,79,1,10,9,Rush,Jordan Lyle run for 9 yds to the MIA 30,1.142259890108818,2024-09-08T00:44:44.000Z
+401635536104899602,401635536,40163553622,3,4,10:03,Miami,Florida A&M,53,9,79,1,10,9,Rush,Jordan Lyle run for 9 yds to the MIA 30,1.142259890108818,2024-09-08T00:44:44.000Z
+401635536104907601,401635536,40163553622,4,4,9:23,Miami,Florida A&M,53,9,70,2,1,10,Rush,Jordan Lyle run for 10 yds to the MIA 40 for a 1ST down,0.4313742955646625,2024-09-08T00:44:44.000Z
+401635536104907602,401635536,40163553622,5,4,9:23,Miami,Florida A&M,53,9,70,2,1,10,Rush,Jordan Lyle run for 10 yds to the MIA 40 for a 1ST down,0.4313742955646625,2024-09-08T00:44:44.000Z
+401635536104915101,401635536,40163553622,6,4,8:48,Miami,Florida A&M,53,9,60,1,10,11,Rush,Reese Poffenbarger run for 11 yds to the FAMU 49 for a 1ST down,0.994570052506427,2024-09-08T00:44:44.000Z
+401635536104915102,401635536,40163553622,7,4,8:48,Miami,Florida A&M,53,9,60,1,10,11,Rush,Reese Poffenbarger run for 11 yds to the FAMU 49 for a 1ST down,0.994570052506427,2024-09-08T00:44:44.000Z
+401635536104919001,401635536,40163553622,8,4,8:09,Miami,Florida A&M,53,9,49,1,10,0,Pass Incompletion,Reese Poffenbarger pass incomplete,-1.0955888671820908,2024-09-08T00:44:44.000Z
+401635536104919002,401635536,40163553622,9,4,8:09,Miami,Florida A&M,53,9,49,1,10,0,Pass Incompletion,Reese Poffenbarger pass incomplete,-1.0955888671820908,2024-09-08T00:44:44.000Z
+401635536104919701,401635536,40163553622,10,4,8:02,Miami,Florida A&M,53,9,49,2,10,3,Pass Reception,Reese Poffenbarger pass complete to Elija Lofton for 3 yds to the FAMU 46,-0.400599071322029,2024-09-08T00:44:44.000Z
+401635536104919702,401635536,40163553622,11,4,8:02,Miami,Florida A&M,53,9,49,2,10,3,Pass Reception,Reese Poffenbarger pass complete to Elija Lofton for 3 yds to the FAMU 46,-0.400599071322029,2024-09-08T00:44:44.000Z
+401635536104927301,401635536,40163553622,13,4,7:26,Miami,Florida A&M,53,9,46,3,7,9,Rush,Reese Poffenbarger run for 9 yds to the FAMU 37 for a 1ST down,2.2071098586646247,2024-09-08T00:44:44.000Z
+401635536104927302,401635536,40163553622,14,4,7:26,Miami,Florida A&M,53,9,46,3,7,9,Rush,Reese Poffenbarger run for 9 yds to the FAMU 37 for a 1ST down,2.2071098586646247,2024-09-08T00:44:44.000Z
+401635536104934501,401635536,40163553622,16,4,6:54,Miami,Florida A&M,53,9,37,1,10,4,Rush,Jordan Lyle run for 4 yds to the FAMU 33,-0.0758857249965158,2024-09-08T00:44:44.000Z
+401635536104934502,401635536,40163553622,17,4,6:54,Miami,Florida A&M,53,9,37,1,10,4,Rush,Jordan Lyle run for 4 yds to the FAMU 33,-0.0758857249965158,2024-09-08T00:44:44.000Z
+401635536104938201,401635536,40163553622,18,4,6:17,Miami,Florida A&M,53,9,33,2,6,6,Pass Reception,Reese Poffenbarger pass complete to Ray Ray Joseph for 6 yds to the FAMU 27 for a 1ST down,0.386013515081773,2024-09-08T00:44:44.000Z
+401635536104945501,401635536,40163553622,19,4,5:44,Miami,Florida A&M,53,9,27,1,10,3,Rush,Ajay Allen run for 3 yds to the FAMU 24,-0.152495975717313,2024-09-08T00:44:44.000Z
+401635536104979901,401635536,40163553622,20,4,2:00,Miami,Florida A&M,53,9,24,2,7,14,Rush,Ajay Allen run for 14 yds to the FAMU 10 for a 1ST down,0.379949974859357,2024-09-08T01:15:41.000Z
+401635536104979902,401635536,40163553622,21,4,2:00,Miami,Florida A&M,53,9,10,1,10,1,Rush,Ajay Allen run for 1 yd to the FAMU 9,-0.22620936096334,2024-09-08T01:15:41.000Z
+401635536104979903,401635536,40163553622,22,4,2:00,Miami,Florida A&M,53,9,9,2,9,-5,Penalty,"Miami Penalty, False Start (-5 Yards) to the FAMU 14",,2024-09-08T01:15:41.000Z
+401635536104979904,401635536,40163553622,23,4,2:00,Miami,Florida A&M,53,9,14,2,14,0,Pass Reception,Reese Poffenbarger pass complete to Elija Lofton for no gain to the FAMU 14,-0.3938043411417487,2024-09-08T01:15:41.000Z
+401635536104979905,401635536,40163553622,24,4,2:00,Miami,Florida A&M,53,9,14,3,14,-7,Sack,Reese Poffenbarger sacked by Tyrese Gibson-Battles and James Ash for a loss of 7 yards to the FAMU 21,-2.073611067663329,2024-09-08T01:15:41.000Z
+401635536104979906,401635536,40163553622,25,4,2:00,Miami,Florida A&M,56,9,21,4,21,38,Field Goal Good,Abram Murray 38 yd FG GOOD,,2024-09-08T01:17:02.000Z
+401635536104979908,401635536,40163553623,1,4,2:00,Miami,Florida A&M,56,9,65,0,0,0,Timeout,"Timeout Miami, clock 02:00",,2024-09-08T01:17:02.000Z
+401635536104979909,401635536,40163553623,2,4,2:00,Miami,Florida A&M,56,9,65,0,0,0,Kickoff,Abram Murray kickoff for 65 yds for a touchback,,2024-09-08T01:17:02.000Z
+401635536104984001,401635536,40163553623,3,4,1:59,Florida A&M,Miami,9,56,75,1,10,0,Pass Incompletion,Junior Muratovic pass incomplete,-0.7029700220436519,2024-09-08T00:44:44.000Z
+401635536104984401,401635536,40163553623,4,4,1:55,Florida A&M,Miami,9,56,75,2,10,11,Rush,Dorian Collier run for 11 yds to the FAMU 36 for a 1ST down,1.6335325339896425,2024-09-08T00:44:44.000Z
+401635536104986901,401635536,40163553623,5,4,1:30,Florida A&M,Miami,9,56,64,1,10,0,Pass Incompletion,Junior Muratovic pass incomplete,-1.041155320344064,2024-09-08T00:44:44.000Z
+401635536104987301,401635536,40163553623,6,4,1:26,Florida A&M,Miami,9,56,64,2,10,8,Rush,Dorian Collier run for 8 yds to the FAMU 44,0.7214509551122265,2024-09-08T00:44:44.000Z
+401635536104995601,401635536,40163553623,7,4,0:43,Florida A&M,Miami,9,56,56,3,2,7,Rush,Dorian Collier run for 7 yds to the MIA 49 for a 1ST down,1.70456642136992,2024-09-08T00:44:44.000Z
+401635536104996601,401635536,40163553623,8,4,0:33,Florida A&M,Miami,9,56,49,1,10,25,Pass Interception Return,Junior Muratovic pass intercepted Adarius Hayes return for 25 yds to the FAMU 35,-3.2376694483627517,2024-09-08T00:44:44.000Z
+401635536104999902,401635536,40163553624,2,4,0:00,Miami,Florida A&M,56,9,28,0,10,0,End of Game,End of 4th Quarter,,2024-09-08T01:23:25.000Z
+401635536104997501,401635536,40163553624,1,4,0:24,Miami,Florida A&M,56,9,35,1,10,7,Rush,Chris Wheatley-Humphrey run for 7 yds to the FAMU 28,0.393521863681004,2024-09-08T00:44:44.000Z

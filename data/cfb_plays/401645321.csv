@@ -1,0 +1,154 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401645321101854701,401645321,4016453211,2,1,14:52,Memphis,North Alabama,0,0,70,1,10,8,Pass Reception,Seth Henigan pass complete to Sutton Smith for 8 yds to the MEM 38,0.9979151532889787,2024-08-31T23:00:44.000Z
+401645321101858601,401645321,4016453211,3,1,14:13,Memphis,North Alabama,0,0,62,2,2,1,Rush,Sutton Smith run for 1 yd to the MEM 39,-1.0377837904750302,2024-08-31T23:00:44.000Z
+401645321101866301,401645321,4016453211,4,1,13:36,Memphis,North Alabama,0,0,61,3,1,1,Rush,Mario Anderson Jr. run for 1 yd to the MEM 40 for a 1ST down,0.9757545519467196,2024-08-31T23:00:44.000Z
+401645321101874201,401645321,4016453211,5,1,12:57,Memphis,North Alabama,0,0,60,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-1.1247712359915258,2024-08-31T23:00:44.000Z
+401645321101875001,401645321,4016453211,6,1,12:49,Memphis,North Alabama,0,0,60,2,10,6,Rush,Sutton Smith run for 6 yds to the MEM 46,0.2893534138833207,2024-08-31T23:00:44.000Z
+401645321101878801,401645321,4016453211,7,1,12:11,Memphis,North Alabama,0,0,54,3,4,35,Pass Reception,Seth Henigan pass complete to Demeer Blankumsee for 35 yds to the UNA 19 for a 1ST down,2.9878707976143577,2024-08-31T23:00:44.000Z
+401645321101885401,401645321,4016453211,8,1,11:45,Memphis,North Alabama,0,0,19,1,10,0,Rush,Mario Anderson Jr. run for no gain to the UNA 19,-0.362321296557512,2024-08-31T23:00:44.000Z
+401645321101888501,401645321,4016453211,9,1,11:14,Memphis,North Alabama,0,0,19,2,10,5,Pass Reception,Seth Henigan pass complete to Sutton Smith for 5 yds to the UNA 14,0.041692539492061,2024-08-31T23:00:44.000Z
+401645321101896301,401645321,4016453211,10,1,10:36,Memphis,North Alabama,0,0,14,3,5,10,Rush,Seth Henigan run for 10 yds to the UNA 4 for a 1ST down,1.236885866988999,2024-08-31T23:00:44.000Z
+401645321101899401,401645321,4016453211,11,1,10:05,Memphis,North Alabama,7,0,4,1,4,4,Rushing Touchdown,Mario Anderson 4 Yd Run (Caden Costa Kick),1.688190518713975,2024-08-31T23:14:47.000Z
+401645321101849906,401645321,4016453211,1,1,15:00,North Alabama,Memphis,0,0,65,0,0,14,Kickoff Return (Offense),"Scott Payne kickoff for 49 yds , Mario Anderson Jr. return for 14 yds to the MEM 30",,2024-08-31T23:00:44.000Z
+401645321101899501,401645321,4016453212,2,1,10:04,North Alabama,Memphis,0,7,75,1,10,-2,Rush,Ari Patu run for a loss of 2 yards to the UNA 23,-0.8852575132705454,2024-08-31T23:00:44.000Z
+401645321101907001,401645321,4016453212,3,1,9:29,North Alabama,Memphis,0,7,77,2,12,1,Rush,Ari Patu run for 1 yd to the UNA 24,-0.21050634440394234,2024-08-31T23:00:44.000Z
+401645321101915801,401645321,4016453212,4,1,8:41,North Alabama,Memphis,0,7,76,3,11,23,Pass Reception,Ari Patu pass complete to Kobe Warden for 23 yds to the UNA 47 for a 1ST down,3.0782195438225015,2024-08-31T23:00:44.000Z
+401645321101899403,401645321,4016453212,1,1,10:05,Memphis,North Alabama,7,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-08-31T23:14:47.000Z
+401645321101919401,401645321,4016453212,5,1,8:05,North Alabama,Memphis,0,7,53,1,10,-3,Rush,Dennis Moody run for a loss of 3 yards to the UNA 44,-1.8008878089429494,2024-08-31T23:00:44.000Z
+401645321101927601,401645321,4016453212,6,1,7:23,North Alabama,Memphis,0,7,56,2,13,0,Pass Incompletion,Ari Patu pass incomplete,-0.7399589969529244,2024-08-31T23:00:44.000Z
+401645321101927901,401645321,4016453212,7,1,7:20,North Alabama,Memphis,0,7,56,3,13,6,Pass Reception,Ari Patu pass complete to Dennis Moody for 6 yds to the 50 yard line,0.1608959804684842,2024-08-31T23:17:17.000Z
+401645321101936201,401645321,4016453212,8,1,6:37,North Alabama,Memphis,0,7,50,4,7,0,Punt,"Adam Watford punt for 36 yds, fair catch by Koby Drake at the MEM 14",,2024-08-31T23:00:44.000Z
+401645321101936901,401645321,4016453213,1,1,6:30,Memphis,North Alabama,7,0,86,1,10,7,Pass Reception,Seth Henigan pass complete to Demeer Blankumsee for 7 yds to the MEM 21,0.4338898358306427,2024-08-31T23:00:44.000Z
+401645321101944601,401645321,4016453213,2,1,5:53,Memphis,North Alabama,7,0,79,2,3,-11,Sack,Seth Henigan sacked by Fred Vili for a loss of 11 yards to the MEM 10,-1.1161682923511105,2024-08-31T23:00:44.000Z
+401645321101947201,401645321,4016453213,3,1,5:27,Memphis,North Alabama,7,0,90,3,14,0,Pass Incompletion,Seth Henigan pass incomplete,-0.03865651527118974,2024-08-31T23:00:44.000Z
+401645321101947701,401645321,4016453213,4,1,5:22,Memphis,North Alabama,7,0,90,4,14,46,Punt,"Joshua Sloan punt for 46 yds , Logan Collier returns for a loss of 1 yard to the UNA 43",,2024-08-31T23:39:26.000Z
+401645321101948601,401645321,4016453214,1,1,5:13,North Alabama,Memphis,0,7,57,1,10,0,Pass Reception,Ari Patu pass complete to Takairee Kenebrew for no gain to the UNA 43,-1.15714755134967,2024-08-31T23:00:44.000Z
+401645321101956001,401645321,4016453214,2,1,4:39,North Alabama,Memphis,0,7,57,2,10,2,Pass Reception,TJ Smith pass complete to Dennis Moody for 2 yds to the UNA 45,-0.5369222363997892,2024-08-31T23:00:44.000Z
+401645321101964201,401645321,4016453214,3,1,3:57,North Alabama,Memphis,0,7,55,3,8,0,Pass Interception Return,Ari Patu pass intercepted Matt Hudson return for no gain to the MEM 48,-0.8406135147392142,2024-08-31T23:00:44.000Z
+401645321101964801,401645321,4016453215,1,1,3:51,Memphis,North Alabama,7,0,52,1,10,0,Rush,Mario Anderson Jr. run for no gain to the MEM 48,-1.1430602484821704,2024-08-31T23:00:44.000Z
+401645321101977601,401645321,4016453215,4,1,2:23,Memphis,North Alabama,7,0,18,2,3,0,Timeout,"Timeout Memphis, clock 02:23",,2024-08-31T23:32:08.000Z
+401645321101998502,401645321,4016453215,10,1,0:00,Memphis,North Alabama,7,0,1,0,1,-1,End Period,End of 1st Quarter,,2024-08-31T23:39:26.000Z
+401645321102854301,401645321,4016453215,11,2,14:56,Memphis,North Alabama,14,0,2,2,2,2,Passing Touchdown,Seth Henigan pass complete to Anthony Landphere for 2 yds for a TD (Caden Costa KICK),2.067936525322223,2024-08-31T23:42:06.000Z
+401645321101998501,401645321,4016453215,9,1,0:14,Memphis,North Alabama,7,0,1,1,1,-1,Rush,Brandon Thomas run for a loss of 1 yard to the UNA 2,-1.12991525020178,2024-08-31T23:00:44.000Z
+401645321101994601,401645321,4016453215,8,1,0:53,Memphis,North Alabama,7,0,8,2,4,7,Rush,Seth Henigan run for 7 yds to the UNA 1 for a 1ST down,1.429354834861046,2024-08-31T23:00:44.000Z
+401645321101988001,401645321,4016453215,7,1,1:19,Memphis,North Alabama,7,0,14,1,10,6,Rush,Mario Anderson Jr. run for 6 yds to the UNA 8,0.1809070651975925,2024-08-31T23:00:44.000Z
+401645321101979901,401645321,4016453215,6,1,2:00,Memphis,North Alabama,7,0,18,3,3,4,Pass Reception,Seth Henigan pass complete to Mario Anderson Jr. for 4 yds to the UNA 14 for a 1ST down,0.3379025760736705,2024-08-31T23:00:44.000Z
+401645321101977701,401645321,4016453215,5,1,2:22,Memphis,North Alabama,7,0,18,2,3,0,Rush,Sutton Smith run for no gain to the UNA 18,-0.514748598127481,2024-08-31T23:00:44.000Z
+401645321101968101,401645321,4016453215,2,1,3:18,Memphis,North Alabama,7,0,52,2,10,27,Pass Reception,Seth Henigan pass complete to Anthony Landphere for 27 yds to the UNA 25 for a 1ST down,2.4510301749265437,2024-08-31T23:00:44.000Z
+401645321101975601,401645321,4016453215,3,1,2:43,Memphis,North Alabama,7,0,25,1,10,7,Pass Reception,Seth Henigan pass complete to Roc Taylor for 7 yds to the UNA 18,0.3286472091407865,2024-08-31T23:00:44.000Z
+401645321102854303,401645321,4016453216,1,2,14:56,Memphis,North Alabama,14,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-08-31T23:42:06.000Z
+401645321102854401,401645321,4016453216,2,2,14:55,North Alabama,Memphis,0,14,75,1,10,6,Rush,TJ Smith run for 6 yds to the UNA 31,0.3333748010525683,2024-08-31T23:42:06.000Z
+401645321102858501,401645321,4016453216,3,2,14:14,North Alabama,Memphis,0,14,69,2,4,0,Fumble Recovery (Own),"Ari Patu run for no gain to the UNA 31 Ari Patu fumbled, recovered by UNA Ari Patu A. Patu return for 0 yds",-0.8681070846083454,2024-08-31T23:42:06.000Z
+401645321102866701,401645321,4016453216,4,2,13:32,North Alabama,Memphis,0,14,69,3,4,5,Rush,Dennis Moody run for 5 yds to the UNA 36 for a 1ST down,1.4652947955017677,2024-08-31T23:42:06.000Z
+401645321102875001,401645321,4016453216,5,2,12:49,North Alabama,Memphis,0,14,64,1,10,7,Rush,Dennis Moody run for 7 yds to the UNA 43,0.7106238902527534,2024-08-31T23:42:06.000Z
+401645321102879201,401645321,4016453216,6,2,12:07,North Alabama,Memphis,0,14,57,2,3,1,Rush,Justin Luke run for 1 yd to the UNA 44,-1.0303282554845907,2024-08-31T23:42:06.000Z
+401645321102887701,401645321,4016453216,7,2,11:22,North Alabama,Memphis,0,14,56,3,2,1,Rush,Ari Patu run for 1 yd to the UNA 45,-0.7793377428742323,2024-08-31T23:42:06.000Z
+401645321102895301,401645321,4016453216,8,2,10:46,North Alabama,Memphis,0,14,55,4,1,5,Penalty,"(10:46) QB Keeper PATU, Ari rush up the middle for a gain of 5 yards to the MEM50 (COFFEY, An'Darius), clock 10:41. PENALTY MEM Offsides on JONES, Adarious enforced 5 yards from the UNA45 to the UNA50 and results in a 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-31T23:42:06.000Z
+401645321102897201,401645321,4016453216,9,2,10:27,North Alabama,Memphis,0,14,50,1,10,-2,Rush,Dennis Moody run for a loss of 2 yards to the UNA 48,-1.5761553525750607,2024-08-31T23:42:06.000Z
+401645321102904601,401645321,4016453216,10,2,9:53,North Alabama,Memphis,0,14,52,2,12,7,Pass Interception Return,Ari Patu pass intercepted Davion Ross return for 7 yds to the MEM 46,-1.5824327153035664,2024-08-31T23:42:06.000Z
+401645321102905201,401645321,4016453217,1,2,9:47,Memphis,North Alabama,14,0,54,1,10,21,Pass Reception,Seth Henigan pass complete to Roc Taylor for 21 yds to the UNA 33 for a 1ST down,1.28182276418322,2024-09-01T00:26:51.000Z
+401645321102908801,401645321,4016453217,2,2,9:11,Memphis,North Alabama,14,0,33,1,10,1,Rush,Roc Taylor run for 1 yd to the UNA 32,-0.482852560268812,2024-09-01T00:26:51.000Z
+401645321102918801,401645321,4016453217,3,2,8:11,Memphis,North Alabama,21,0,32,2,9,32,Passing Touchdown,Seth Henigan pass complete to Brendan Doyle for 32 yds for a TD (Caden Costa KICK),3.3859273337708,2024-08-31T23:59:02.000Z
+401645321102918803,401645321,4016453218,1,2,8:11,Memphis,North Alabama,21,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-08-31T23:59:02.000Z
+401645321102918901,401645321,4016453218,2,2,8:10,North Alabama,Memphis,0,21,75,1,10,0,Pass Reception,Ari Patu pass complete to Takairee Kenebrew for no gain to the UNA 25,-0.7029700220436519,2024-08-31T23:42:06.000Z
+401645321102927101,401645321,4016453218,3,2,7:28,North Alabama,Memphis,0,21,75,2,10,3,Rush,Dennis Moody run for 3 yds to the UNA 28,-0.15222912011238687,2024-08-31T23:42:06.000Z
+401645321102935501,401645321,4016453218,4,2,6:44,North Alabama,Memphis,0,21,72,3,7,-2,Fumble Recovery (Opponent),"Dennis Moody run for a loss of 2 yards to the UNA 26 Dennis Moody fumbled, recovered by MEM Javon Denis J. Denis return for 0 yds",-0.0670457381226397,2024-08-31T23:42:06.000Z
+401645321102947902,401645321,4016453219,4,2,5:20,Memphis,North Alabama,21,0,3,0,0,-5,Penalty,"Memphis Penalty, False Start (Chris Adams) to the UNA 8",,2024-09-01T00:04:34.000Z
+401645321102936201,401645321,4016453219,1,2,6:37,Memphis,North Alabama,21,0,26,1,10,17,Rush,Mario Anderson Jr. run for 17 yds to the UNA 9 for a 1ST down,0.2957642987617125,2024-09-01T00:26:51.000Z
+401645321102939401,401645321,4016453219,2,2,6:05,Memphis,North Alabama,21,0,9,1,9,4,Pass Reception,Seth Henigan pass complete to Demeer Blankumsee for 4 yds to the UNA 5,-0.014339867883452,2024-09-01T00:26:51.000Z
+401645321102947901,401645321,4016453219,3,2,5:20,Memphis,North Alabama,28,0,5,2,5,5,Rushing Touchdown,Mario Anderson 5 Yd Run (Caden Costa Kick),2.43857769152992,2024-09-01T00:04:34.000Z
+401645321102968901,401645321,40164532110,6,2,3:10,North Alabama,Memphis,0,28,58,4,3,0,Punt,Adam Watford punt for 13 yds,,2024-08-31T23:42:06.000Z
+401645321102947904,401645321,40164532110,1,2,5:20,Memphis,North Alabama,28,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-09-01T00:04:34.000Z
+401645321102968701,401645321,40164532110,5,2,3:12,North Alabama,Memphis,0,28,58,3,3,0,Pass Incompletion,Ari Patu pass incomplete,-0.813051991048222,2024-08-31T23:42:06.000Z
+401645321102964301,401645321,40164532110,4,2,3:56,North Alabama,Memphis,0,28,60,2,5,2,Rush,Dennis Moody run for 2 yds to the UNA 42,-0.6596035226890641,2024-08-31T23:42:06.000Z
+401645321102956101,401645321,40164532110,3,2,4:38,North Alabama,Memphis,0,28,65,1,10,5,Rush,Dennis Moody run for 5 yds to the UNA 40,0.1088137823196469,2024-08-31T23:42:06.000Z
+401645321102948001,401645321,40164532110,2,2,5:19,North Alabama,Memphis,0,28,75,1,10,10,Rush,Dennis Moody run for 10 yds to the UNA 35 for a 1ST down,0.8350381090299867,2024-08-31T23:42:06.000Z
+401645321102969501,401645321,40164532111,1,2,3:04,Memphis,North Alabama,28,0,55,1,10,4,Rush,Greg Desrosiers Jr. run for 4 yds to the MEM 49,-0.1607620955039497,2024-08-31T23:42:06.000Z
+401645321102979901,401645321,40164532111,7,2,2:00,Memphis,North Alabama,28,0,35,1,10,0,Timeout,"Timeout Memphis, clock 02:00",,2024-09-01T00:16:53.000Z
+401645321102979102,401645321,40164532111,5,2,2:08,Memphis,North Alabama,28,0,51,3,6,0,Timeout,"Timeout Memphis, clock 02:08",,2024-09-01T00:14:39.000Z
+401645321102996001,401645321,40164532111,12,2,0:39,Memphis,North Alabama,28,0,20,4,7,0,Timeout,"Timeout Memphis, clock 00:39",,2024-09-01T00:22:57.000Z
+401645321102996501,401645321,40164532111,13,2,0:34,Memphis,North Alabama,31,0,20,4,7,38,Field Goal Good,Caden Costa 38 yd FG GOOD,,2024-09-01T00:23:59.000Z
+401645321102987701,401645321,40164532111,11,2,1:22,Memphis,North Alabama,28,0,21,3,8,1,Pass Reception,Seth Henigan pass complete to Greg Desrosiers Jr. for 1 yd to the UNA 20,-0.5334378512641074,2024-08-31T23:42:06.000Z
+401645321102986901,401645321,40164532111,10,2,1:30,Memphis,North Alabama,28,0,21,2,8,0,Pass Incompletion,Seth Henigan pass incomplete,-0.47794201886493,2024-08-31T23:42:06.000Z
+401645321102986301,401645321,40164532111,9,2,1:36,Memphis,North Alabama,28,0,23,1,10,2,Rush,Greg Desrosiers Jr. run for 2 yds to the UNA 21,-0.2265058372460335,2024-08-31T23:42:06.000Z
+401645321102984101,401645321,40164532111,8,2,1:58,Memphis,North Alabama,28,0,35,1,10,12,Pass Reception,Seth Henigan pass complete to Koby Drake for 12 yds to the UNA 23 for a 1ST down,0.3086111057057275,2024-08-31T23:42:06.000Z
+401645321102976402,401645321,40164532111,2,2,2:35,Memphis,North Alabama,28,0,51,2,6,-5,Penalty,"(02:35) HENIGAN, Seth pass to the left complete for 6 yards to DESROSIERS JR., Greg caught at the MEM47 and advanced to the UNA45 (REDDICK, Gregory), clock 02:26. PENALTY Before the snap, MEM Illegal Formation enforced 5 yards from the MEM49 to the MEM44. NO PLAY (replay the down).",,2024-08-31T23:42:06.000Z
+401645321102978701,401645321,40164532111,3,2,2:12,Memphis,North Alabama,28,0,56,2,11,0,Pass Incompletion,Seth Henigan pass incomplete,-0.832728914489671,2024-08-31T23:42:06.000Z
+401645321102979101,401645321,40164532111,4,2,2:08,Memphis,North Alabama,28,0,56,3,11,5,Penalty,"North Alabama Penalty, Offsides (Garrick Ponder) to the MEM 49",,2024-09-01T00:14:39.000Z
+401645321102979201,401645321,40164532111,6,2,2:07,Memphis,North Alabama,28,0,51,3,6,16,Pass Reception,Seth Henigan pass complete to Greg Desrosiers Jr. for 16 yds to the UNA 35 for a 1ST down,2.622944960824713,2024-08-31T23:42:06.000Z
+401645321102996502,401645321,40164532112,1,2,0:34,Memphis,North Alabama,31,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-09-01T00:23:59.000Z
+401645321102999902,401645321,40164532112,3,2,0:00,North Alabama,Memphis,0,31,71,0,10,0,End of Half,End of 2nd Quarter,,2024-09-01T00:26:46.000Z
+401645321102996601,401645321,40164532112,2,2,0:33,North Alabama,Memphis,0,31,75,1,10,4,Rush,Dennis Moody run for 4 yds to the UNA 29,-0.1142886249388964,2024-08-31T23:42:06.000Z
+401645321103877901,401645321,40164532113,7,3,12:20,North Alabama,Memphis,0,31,78,4,13,15,Punt,"Adam Watford punt for 52 yds , Koby Drake returns for 15 yds to the MEM 41",,2024-09-01T00:49:02.000Z
+401645321103877801,401645321,40164532113,6,3,12:21,North Alabama,Memphis,0,31,73,4,8,-5,Penalty,"North Alabama Penalty, Delay Of Game (TEAM) to the UNA 22",,2024-09-01T00:51:51.000Z
+401645321103866701,401645321,40164532113,4,3,13:32,North Alabama,Memphis,0,31,66,3,1,-5,Penalty,"North Alabama Penalty, False Start (-5 Yards) to the UNA 29",,2024-09-01T00:50:21.000Z
+401645321103849902,401645321,40164532113,1,3,15:00,Memphis,North Alabama,31,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-08-31T00:00:00.000Z
+401645321103854001,401645321,40164532113,2,3,14:59,North Alabama,Memphis,0,31,75,1,10,3,Rush,Ari Patu run for 3 yds to the UNA 28,-0.2957674139440157,2024-09-01T00:49:02.000Z
+401645321103858201,401645321,40164532113,3,3,14:17,North Alabama,Memphis,0,31,72,2,7,6,Rush,Jalen Fletcher run for 6 yds to the UNA 34,0.272733551995068,2024-09-01T00:49:02.000Z
+401645321103869001,401645321,40164532113,5,3,13:09,North Alabama,Memphis,0,31,71,3,6,-2,Rush,Logan Collier run for a loss of 2 yards to the UNA 27,-0.3904279700626718,2024-09-01T00:49:02.000Z
+401645321103879301,401645321,40164532114,1,3,12:06,Memphis,North Alabama,31,0,59,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-1.1387859939569847,2024-09-01T00:49:02.000Z
+401645321103879901,401645321,40164532114,2,3,12:00,Memphis,North Alabama,31,0,59,2,10,8,Pass Reception,Seth Henigan pass complete to Roc Taylor for 8 yds to the MEM 49,0.8042521100473597,2024-09-01T00:53:06.000Z
+401645321103915701,401645321,40164532114,10,3,8:42,Memphis,North Alabama,31,0,32,4,9,50,Field Goal Missed,Caden Costa 50 Yard Field Goal Missed,,2024-09-01T00:49:02.000Z
+401645321103887401,401645321,40164532114,3,3,11:25,Memphis,North Alabama,31,0,51,3,2,5,Penalty,"North Alabama Penalty, Illegal Substitution (TEAM) to the UNA 46 for a 1ST down",,2024-09-01T00:54:42.000Z
+401645321103888501,401645321,40164532114,4,3,11:14,Memphis,North Alabama,31,0,46,1,10,4,Rush,Mario Anderson Jr. run for 4 yds to the UNA 42,-0.1215209117621187,2024-09-01T00:49:02.000Z
+401645321103896301,401645321,40164532114,5,3,10:36,Memphis,North Alabama,31,0,42,2,6,0,Pass Incompletion,Seth Henigan pass incomplete,-1.066795924557951,2024-09-01T00:49:02.000Z
+401645321103897101,401645321,40164532114,6,3,10:28,Memphis,North Alabama,31,0,42,3,6,9,Rush,Mario Anderson Jr. run for 9 yds to the UNA 33 for a 1ST down,1.828529470952546,2024-09-01T00:49:02.000Z
+401645321103899501,401645321,40164532114,7,3,10:04,Memphis,North Alabama,31,0,33,1,10,0,Pass Incompletion,Seth Henigan pass incomplete,-0.6351269961541294,2024-09-01T00:49:02.000Z
+401645321103904101,401645321,40164532114,8,3,9:58,Memphis,North Alabama,31,0,33,2,10,6,Pass Reception,Seth Henigan pass complete to Roc Taylor for 6 yds to the UNA 27,0.2125044425736177,2024-09-01T00:49:02.000Z
+401645321103907701,401645321,40164532114,9,3,9:22,Memphis,North Alabama,31,0,27,3,4,-5,Rush,Greg Desrosiers Jr. run for a loss of 5 yards to the UNA 32,-1.8756362486172353,2024-09-01T00:49:02.000Z
+401645321103916101,401645321,40164532115,1,3,8:38,North Alabama,Memphis,0,31,68,1,10,2,Pass Reception,Ari Patu pass complete to Tanaka Scott for 2 yds to the UNA 34,-0.5836824413377926,2024-09-01T00:49:02.000Z
+401645321103924401,401645321,40164532115,2,3,7:55,North Alabama,Memphis,0,31,66,2,8,7,Rush,Takairee Kenebrew run for 7 yds to the UNA 41,0.537973758248219,2024-09-01T00:49:02.000Z
+401645321103927101,401645321,40164532115,3,3,7:28,North Alabama,Memphis,0,31,59,3,1,0,Timeout,"Timeout Memphis, clock 07:28",,2024-09-01T01:04:50.000Z
+401645321103927201,401645321,40164532115,4,3,7:27,North Alabama,Memphis,0,31,59,3,1,15,Pass Reception,Ari Patu pass complete to Jackson Bratton for 15 yds to the MEM 44 for a 1ST down,2.152137041221412,2024-09-01T01:25:23.000Z
+401645321103938501,401645321,40164532115,7,3,6:14,North Alabama,Memphis,0,31,39,3,5,-5,Penalty,"North Alabama Penalty, False Start (-5 Yards) to the MEM 44",,2024-09-01T01:09:28.000Z
+401645321103934401,401645321,40164532115,5,3,6:55,North Alabama,Memphis,0,31,44,1,10,0,Pass Incompletion,Ari Patu pass incomplete,-0.9690270974076257,2024-09-01T00:49:02.000Z
+401645321103935101,401645321,40164532115,6,3,6:48,North Alabama,Memphis,0,31,44,2,10,5,Pass Reception,Ari Patu pass complete to Kobe Warden for 5 yds to the MEM 39,0.071356038670963,2024-09-01T00:49:02.000Z
+401645321103945101,401645321,40164532115,8,3,5:48,North Alabama,Memphis,0,31,44,3,10,6,Pass Reception,Ari Patu pass complete to Kobe Warden for 6 yds to the MEM 38,0.2803784166976922,2024-09-01T00:49:02.000Z
+401645321103949901,401645321,40164532115,9,3,5:00,North Alabama,Memphis,0,31,38,4,4,0,Pass Incompletion,Ari Patu pass incomplete,-1.8326214186503798,2024-09-01T01:11:44.000Z
+401645321103957401,401645321,40164532116,2,3,4:25,Memphis,North Alabama,31,0,41,1,10,7,Pass Reception,Seth Henigan pass complete to Koby Drake for 7 yds to the UNA 34,0.4598399849082394,2024-09-01T00:49:02.000Z
+401645321103965401,401645321,40164532116,3,3,3:45,Memphis,North Alabama,31,0,34,2,3,30,Pass Reception,Seth Henigan pass complete to Marcello Bussey for 30 yds to the UNA 4 for a 1ST down,1.092489122274305,2024-09-01T00:49:02.000Z
+401645321103974301,401645321,40164532116,4,3,2:56,Memphis,North Alabama,31,0,4,1,4,1,Pass Reception,Seth Henigan pass complete to Brendan Doyle for 1 yd to the UNA 3,-0.523234095246118,2024-09-01T00:49:02.000Z
+401645321103978101,401645321,40164532116,5,3,2:18,Memphis,North Alabama,31,0,3,2,3,0,Rush,Mario Anderson Jr. run for no gain to the UNA 3,-0.413137785818898,2024-09-01T00:49:02.000Z
+401645321103954001,401645321,40164532116,1,3,4:59,Memphis,North Alabama,31,0,62,1,10,21,Pass Reception,Seth Henigan pass complete to Koby Drake for 21 yds to the UNA 41 for a 1ST down,1.7124840147829712,2024-09-01T00:49:02.000Z
+401645321103986401,401645321,40164532116,6,3,1:35,Memphis,North Alabama,31,0,3,3,3,0,Pass Incompletion,Seth Henigan pass incomplete,-0.291784144723391,2024-09-01T00:49:02.000Z
+401645321103987401,401645321,40164532116,7,3,1:25,Memphis,North Alabama,34,0,3,4,3,21,Field Goal Good,Caden Costa 21 yd FG GOOD,,2024-09-01T01:18:52.000Z
+401645321103987501,401645321,40164532117,2,3,1:24,North Alabama,Memphis,0,34,75,1,10,13,Pass Reception,TJ Smith pass complete to Ari Patu for 13 yds to the UNA 38 for a 1ST down,1.124751479041831,2024-09-01T00:49:02.000Z
+401645321103994501,401645321,40164532117,3,3,0:54,North Alabama,Memphis,0,34,62,1,10,1,Rush,Ari Patu run for 1 yd to the UNA 39,-0.8867433222723466,2024-09-01T00:49:02.000Z
+401645321103999001,401645321,40164532117,4,3,0:09,North Alabama,Memphis,0,34,61,2,9,0,Pass Incompletion,Ari Patu pass incomplete,-0.7796739034661835,2024-09-01T00:49:02.000Z
+401645321103999801,401645321,40164532117,5,3,0:01,North Alabama,Memphis,0,34,61,3,9,0,Pass Incompletion,Ari Patu pass incomplete,-0.4235741469021441,2024-09-01T01:25:23.000Z
+401645321103999802,401645321,40164532117,6,3,0:00,North Alabama,Memphis,0,34,61,0,9,0,End Period,End of 3rd Quarter,,2024-09-01T01:25:23.000Z
+401645321103987402,401645321,40164532117,1,3,1:25,Memphis,North Alabama,34,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 65 yds for a touchback,,2024-09-01T01:20:52.000Z
+401645321104849905,401645321,40164532117,7,4,15:00,North Alabama,Memphis,0,34,61,4,9,13,Punt,"Adam Watford punt for 37 yds , Koby Drake returns for 13 yds to the MEM 37",,2024-09-01T01:30:46.000Z
+401645321104855601,401645321,40164532118,1,4,14:43,Memphis,North Alabama,34,0,63,1,10,45,Pass Reception,Seth Henigan pass complete to Roc Taylor for 45 yds to the UNA 18 for a 1ST down,2.4587180845071592,2024-09-01T01:30:46.000Z
+401645321104864201,401645321,40164532118,2,4,13:57,Memphis,North Alabama,34,0,18,1,10,-1,Rush,Seth Henigan run for a loss of 1 yard to the UNA 24,-0.4304253303592076,2024-09-01T01:30:46.000Z
+401645321104867901,401645321,40164532118,3,4,13:20,Memphis,North Alabama,34,0,24,2,16,9,Pass Reception,Seth Henigan pass complete to Marcello Bussey for 9 yds to the UNA 15,0.4445618439830917,2024-09-01T01:30:46.000Z
+401645321104875101,401645321,40164532118,4,4,12:48,Memphis,North Alabama,34,0,15,3,7,5,Penalty,"North Alabama Penalty, Offsides (Garrick Ponder) to the UNA 10",,2024-09-01T01:33:22.000Z
+401645321104877002,401645321,40164532118,5,4,12:29,Memphis,North Alabama,34,0,10,3,2,5,Penalty,"HENIGAN, Seth pass to the right incomplete intended for DRAKE, Koby thrown to the UNA0, clock 12:29. PENALTY UNA Offsides on REDDICK, Gregory enforced 5 yards from the UNA10 to the UNA5 and results in a 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-01T01:33:42.000Z
+401645321104877003,401645321,40164532118,6,4,12:29,Memphis,North Alabama,40,0,5,1,5,5,Rushing Touchdown,Greg Desrosiers Jr. run for 5 yds for a TD (Caden Costa PAT MISSED),1.883780840558874,2024-09-01T01:33:42.000Z
+401645321104877005,401645321,40164532119,1,4,12:29,Memphis,North Alabama,40,0,65,0,0,0,Kickoff,Tristian Vandenberg kickoff for 62 yds,,2024-09-01T01:38:43.000Z
+401645321104877301,401645321,40164532119,2,4,12:26,North Alabama,Memphis,0,40,75,1,10,5,Pass Reception,Ari Patu pass complete to Takairee Kenebrew for 5 yds to the UNA 30,0.0945451165334843,2024-09-01T01:30:46.000Z
+401645321104884501,401645321,40164532119,3,4,11:54,North Alabama,Memphis,0,40,70,2,5,5,Rush,Dennis Moody run for 5 yds to the UNA 35 for a 1ST down,0.7404929924965024,2024-09-01T01:30:46.000Z
+401645321104889201,401645321,40164532119,4,4,11:07,North Alabama,Memphis,0,40,65,1,10,16,Pass Reception,Ari Patu pass complete to Dakota Warfield for 16 yds to the MEM 49 for a 1ST down,1.4803864590540865,2024-09-01T01:30:46.000Z
+401645321104896901,401645321,40164532119,5,4,10:30,North Alabama,Memphis,0,40,49,1,10,4,Rush,Dennis Moody run for 4 yds to the MEM 45,-0.1369390380115582,2024-09-01T01:30:46.000Z
+401645321104904301,401645321,40164532119,6,4,9:56,North Alabama,Memphis,0,40,45,2,6,-1,Pass Reception,Ari Patu pass complete to Takairee Kenebrew for a loss of 1 yard to the MEM 46,-1.3592489004925614,2024-09-01T01:30:46.000Z
+401645321104908501,401645321,40164532119,7,4,9:14,North Alabama,Memphis,0,40,46,3,7,5,Pass Reception,Ari Patu pass complete to Jalyn Daniels for 5 yds to the MEM 41,0.0682524139337897,2024-09-01T01:30:46.000Z
+401645321104916101,401645321,40164532119,8,4,8:38,North Alabama,Memphis,0,40,41,4,2,-15,Penalty,"North Alabama Penalty, Unsportsmanlike Conduct (Ryan Walker) to the UNA 46 for a 1ST down",,2024-09-01T01:30:46.000Z
+401645321104917501,401645321,40164532119,9,4,8:24,North Alabama,Memphis,0,40,54,1,10,0,Pass Incompletion,Ari Patu pass incomplete,-1.1590089706435955,2024-09-01T01:30:46.000Z
+401645321104917901,401645321,40164532119,10,4,8:20,North Alabama,Memphis,0,40,54,2,10,-7,Sack,Ari Patu sacked by Bryce Edmondson for a loss of 7 yards to the UNA 39,-1.6847477991191688,2024-09-01T01:30:46.000Z
+401645321104925801,401645321,40164532119,11,4,7:41,North Alabama,Memphis,0,40,61,3,17,3,Pass Reception,Ari Patu pass complete to Jalen Fletcher for 3 yds to the UNA 42,-0.0966799126351896,2024-09-01T01:30:46.000Z
+401645321104929901,401645321,40164532119,12,4,7:00,North Alabama,Memphis,0,40,58,4,14,-12,Fumble Recovery (Own),"Adam Watford run for a loss of 12 yards to the MEM 37 Chris Adams fumbled, recovered by UNA return for 33 yds for a 1ST down",0.12533422008316197,2024-09-01T01:30:46.000Z
+401645321104938501,401645321,40164532119,13,4,6:14,North Alabama,Memphis,0,40,37,1,10,0,Pass Incompletion,pass incomplete,-0.7519361608312708,2024-09-01T01:47:39.000Z
+401645321104939201,401645321,40164532119,14,4,6:07,North Alabama,Memphis,0,40,37,2,10,3,Rush,Ari Patu run for 3 yds to the MEM 34,-0.3270945869042413,2024-09-01T01:30:46.000Z
+401645321104947601,401645321,40164532119,15,4,5:23,North Alabama,Memphis,0,40,34,3,7,1,Rush,Dennis Moody run for 1 yd to the MEM 33,-0.8037200309087957,2024-09-01T01:30:46.000Z
+401645321104955901,401645321,40164532119,16,4,4:40,North Alabama,Memphis,0,40,33,4,6,14,Pass Reception,Ari Patu pass complete to Tanaka Scott for 14 yds to the MEM 19 for a 1ST down,2.329711781483528,2024-09-01T01:30:46.000Z
+401645321104959301,401645321,40164532119,17,4,4:06,North Alabama,Memphis,0,40,19,1,10,0,Pass Incompletion,Ari Patu pass incomplete,-0.362321296557512,2024-09-01T01:30:46.000Z
+401645321104959601,401645321,40164532119,18,4,4:03,North Alabama,Memphis,0,40,19,2,10,-6,Sack,TJ Smith sacked by Elijah Herring for a loss of 6 yards to the MEM 25,-1.3745925576007818,2024-09-01T01:30:46.000Z
+401645321104968001,401645321,40164532119,19,4,3:19,North Alabama,Memphis,0,40,25,3,16,-10,Sack,Ari Patu sacked by William Whitlow Jr. for a loss of 10 yards to the MEM 35,-2.519052083817855,2024-09-01T01:30:46.000Z
+401645321104976301,401645321,40164532119,20,4,2:36,North Alabama,Memphis,0,40,35,4,26,4,Pass Reception,Ari Patu pass complete to KJ Fields for 4 yds to the MEM 31,-0.13958643338632815,2024-09-01T01:30:46.000Z
+401645321104997501,401645321,40164532120,5,4,0:24,Memphis,North Alabama,40,0,69,4,10,0,Punt,"Joshua Sloan punt for 50 yds, downed at the UNA 19",,2024-09-01T01:30:46.000Z
+401645321104979901,401645321,40164532120,2,4,2:00,Memphis,North Alabama,40,0,67,2,8,0,Timeout,"Timeout Memphis, clock 02:00",,2024-09-01T01:56:11.000Z
+401645321104976901,401645321,40164532120,1,4,2:30,Memphis,North Alabama,40,0,69,1,10,2,Rush,Makari Bodiford run for 2 yds to the MEM 33,-0.5660789348414365,2024-09-01T01:30:46.000Z
+401645321104984201,401645321,40164532120,3,4,1:57,Memphis,North Alabama,40,0,67,2,8,-1,Rush,Makari Bodiford run for a loss of 1 yard to the MEM 32,-0.7376633653114135,2024-09-01T01:30:46.000Z
+401645321104989101,401645321,40164532120,4,4,1:08,Memphis,North Alabama,40,0,68,3,9,-1,Rush,Makari Bodiford run for a loss of 1 yard to the MEM 31,-0.3113421922126065,2024-09-01T01:30:46.000Z
+401645321104999902,401645321,40164532121,2,4,0:00,North Alabama,Memphis,0,40,78,0,10,0,End of Game,End of 4th Quarter,,2024-09-01T02:05:08.000Z
+401645321104998701,401645321,40164532121,1,4,0:12,North Alabama,Memphis,0,40,81,1,10,3,Rush,Jalyn Daniels run for 3 yds to the UNA 22,-0.2256553240907335,2024-09-01T02:05:08.000Z

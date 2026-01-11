@@ -1,0 +1,181 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628583101854403,401628583,4016285831,2,1,14:55,Eastern Washington,Monmouth,0,0,77,1,10,3,Rush,Tuna Altahir run for 3 yds to the EWU 26,-0.2714196551267518,2024-08-30T01:04:02.000Z
+401628583101854404,401628583,4016285831,3,1,14:55,Eastern Washington,Monmouth,0,0,74,2,7,10,Pass Reception,Kekoa Visperas pass complete to Efton Chism III for a 1ST down,1.3345841415408177,2024-08-30T01:04:02.000Z
+401628583101854405,401628583,4016285831,4,1,14:55,Eastern Washington,Monmouth,0,0,64,1,10,7,Rush,Tuna Altahir run for 7 yds to the EWU 43,0.7106238902527534,2024-08-30T01:04:02.000Z
+401628583101854406,401628583,4016285831,5,1,14:55,Eastern Washington,Monmouth,0,0,57,2,3,12,Rush,Tuna Altahir run for 12 yds to the MONM 45 for a 1ST down,0.9600546324555096,2024-08-30T01:04:02.000Z
+401628583101854407,401628583,4016285831,6,1,14:55,Eastern Washington,Monmouth,0,0,45,1,10,6,Pass Reception,Kekoa Visperas pass complete to Efton Chism III,0.3037840163725374,2024-08-30T01:04:02.000Z
+401628583101854408,401628583,4016285831,7,1,14:55,Eastern Washington,Monmouth,0,0,39,2,4,5,Rush,Michael Wortham run for 5 yds to the MONM 34 for a 1ST down,0.2360039077808606,2024-08-30T01:04:02.000Z
+401628583101854412,401628583,4016285831,8,1,14:55,Eastern Washington,Monmouth,0,0,34,1,10,4,Rush,"Jared Taylor run for 14 yds to the MONM 20 for a 1ST down Eastern Washington Penalty, Offensive Holding (-10 Yards) to the MONM 30 for a 1ST down",-0.063267952570744,2024-08-30T01:04:02.000Z
+401628583101885301,401628583,4016285831,9,1,11:46,Eastern Washington,Monmouth,7,0,30,1,10,30,Passing Touchdown,Efton Chism III 30 Yd pass from Kekoa Visperas (Soren McKee Kick),2.814243132922771,2024-08-30T01:09:02.000Z
+401628583101854401,401628583,4016285831,1,1,14:55,Monmouth,Eastern Washington,0,0,65,1,10,23,Kickoff Return (Offense),"Vincenzo Rea kickoff for 65 yds , Michael Wortham return for 23 yds to the EWU 23",,2024-08-30T01:04:02.000Z
+401628583101885305,401628583,4016285832,2,1,11:46,Monmouth,Eastern Washington,0,7,75,1,10,0,Pass Incompletion,Derek Robertson pass incomplete,-0.7029700220436519,2024-08-30T01:09:02.000Z
+401628583101885306,401628583,4016285832,3,1,11:46,Monmouth,Eastern Washington,0,7,75,2,10,5,Pass Reception,Derek Robertson pass complete to Josh Derry,0.04378266651122598,2024-08-30T01:10:14.000Z
+401628583101885307,401628583,4016285832,4,1,11:46,Monmouth,Eastern Washington,0,7,70,3,5,7,Pass Reception,Derek Robertson pass complete to Josh Derry for a 1ST down,1.6864316816759972,2024-08-30T01:10:14.000Z
+401628583101885308,401628583,4016285832,5,1,11:46,Monmouth,Eastern Washington,0,7,63,1,10,5,Pass Reception,Derek Robertson pass complete to Jack Neri,0.1100844824489312,2024-08-30T01:10:14.000Z
+401628583101885309,401628583,4016285832,6,1,11:46,Monmouth,Eastern Washington,0,7,58,2,5,0,Pass Incompletion,Derek Robertson pass incomplete,-1.113574478166404,2024-08-30T01:10:14.000Z
+401628583101885310,401628583,4016285832,7,1,11:46,Monmouth,Eastern Washington,0,7,58,3,5,0,Pass Incompletion,Derek Robertson pass incomplete,-0.69319973884107,2024-08-30T01:10:14.000Z
+401628583101885303,401628583,4016285832,1,1,11:46,Eastern Washington,Monmouth,7,0,65,1,10,0,Kickoff,Jackson Cleaver kickoff for 65 yds for a touchback,,2024-08-30T01:09:02.000Z
+401628583101904701,401628583,4016285832,8,1,9:52,Monmouth,Eastern Washington,0,7,58,4,5,0,Timeout,"Timeout Eastern Washington, clock 09:52",,2024-08-30T01:04:02.000Z
+401628583101905401,401628583,4016285832,9,1,9:45,Monmouth,Eastern Washington,0,7,58,4,5,0,Punt,"Luke Schabel punt for 38 yds, fair catch by Efton Chism III at the EWU 20",,2024-08-30T01:18:07.000Z
+401628583101905407,401628583,4016285833,5,1,9:45,Eastern Washington,Monmouth,7,0,64,2,7,35,Pass Reception,Kekoa Visperas pass complete to Efton Chism III for a 1ST down,3.0292426060094395,2024-08-30T01:18:07.000Z
+401628583101905408,401628583,4016285833,6,1,9:45,Eastern Washington,Monmouth,7,0,29,1,10,6,Pass Reception,Kekoa Visperas pass complete to Nolan Ulm,0.2073705301771515,2024-08-30T01:18:07.000Z
+401628583101905409,401628583,4016285833,7,1,9:45,Eastern Washington,Monmouth,7,0,23,2,4,6,Pass Reception,Kekoa Visperas pass complete to Miles Williams for a 1ST down,0.0010275516365465,2024-08-30T01:18:07.000Z
+401628583101905410,401628583,4016285833,8,1,9:45,Eastern Washington,Monmouth,7,0,17,1,10,8,Pass Reception,Kekoa Visperas pass complete to Malik Dotson,0.451122635393853,2024-08-30T01:18:07.000Z
+401628583101905404,401628583,4016285833,2,1,9:45,Eastern Washington,Monmouth,7,0,71,2,1,0,Rush,Malik Dotson run for no gain to the EWU 29,-1.1188507753418548,2024-08-30T01:18:07.000Z
+401628583101905403,401628583,4016285833,1,1,9:45,Eastern Washington,Monmouth,7,0,80,1,10,9,Rush,Malik Dotson run for 9 yds to the EWU 29,1.1127415828278746,2024-08-30T01:18:07.000Z
+401628583101905405,401628583,4016285833,3,1,9:45,Eastern Washington,Monmouth,7,0,71,3,1,4,Rush,Kekoa Visperas run for 4 yds to the EWU 33 for a 1ST down,0.9631103189779342,2024-08-30T01:18:07.000Z
+401628583101905406,401628583,4016285833,4,1,9:45,Eastern Washington,Monmouth,7,0,67,1,10,3,Pass Reception,Kekoa Visperas pass complete to Efton Chism III,-0.3884871214664028,2024-08-30T01:18:07.000Z
+401628583101946401,401628583,4016285833,9,1,5:35,Eastern Washington,Monmouth,14,0,9,2,2,9,Rushing Touchdown,Jared Taylor run for 9 yds for a TD (Soren McKee KICK),2.128780467390561,2024-08-30T01:22:52.000Z
+401628583101946403,401628583,4016285834,1,1,5:35,Eastern Washington,Monmouth,14,0,65,1,10,0,Kickoff,Jackson Cleaver kickoff for 65 yds for a touchback,,2024-08-30T01:26:37.000Z
+401628583101946410,401628583,4016285834,7,1,5:35,Monmouth,Eastern Washington,0,14,39,1,10,35,Pass Reception,Derek Robertson pass complete to Gavin Nelson for a 1ST down,1.452248036217576,2024-08-30T01:26:37.000Z
+401628583101946409,401628583,4016285834,6,1,5:35,Monmouth,Eastern Washington,0,14,61,2,10,22,Pass Reception,Derek Robertson pass complete to Max James for a 1ST down,2.8223452175802013,2024-08-30T01:26:37.000Z
+401628583101946408,401628583,4016285834,5,1,5:35,Monmouth,Eastern Washington,0,14,61,1,10,0,Pass Incompletion,Derek Robertson pass incomplete,-1.1077677360468863,2024-08-30T01:26:37.000Z
+401628583101946407,401628583,4016285834,4,1,5:35,Monmouth,Eastern Washington,0,14,66,3,1,5,Rush,Sone Ntoh run for 5 yds to the MONM 39 for a 1ST down,1.2457729452054032,2024-08-30T01:26:37.000Z
+401628583101946406,401628583,4016285834,3,1,5:35,Monmouth,Eastern Washington,0,14,72,2,7,6,Rush,Makhi Green run for 6 yds to the MONM 34,0.272733551995068,2024-08-30T01:26:37.000Z
+401628583101976701,401628583,4016285834,8,1,2:32,Monmouth,Eastern Washington,0,14,4,1,4,0,Timeout,"Timeout Eastern Washington, clock 02:32",,2024-08-30T01:04:02.000Z
+401628583101946405,401628583,4016285834,2,1,5:35,Monmouth,Eastern Washington,0,14,75,1,10,3,Rush,Makhi Green run for 3 yds to the MONM 28,-0.2957674139440157,2024-08-30T01:26:37.000Z
+401628583101976702,401628583,4016285834,9,1,2:32,Monmouth,Eastern Washington,0,14,4,1,4,2,Rush,Sone Ntoh run for 2 yds to the EWU 2,-0.379746006608248,2024-08-30T01:33:59.000Z
+401628583101985702,401628583,4016285834,10,1,1:42,Monmouth,Eastern Washington,7,14,2,2,2,2,Rushing Touchdown,"Sone Ntoh run for 2 yds for a TD Eastern Washington Penalty, Personal Foul (15 Yards) to the EWU 0 (Michael Calton Jr. KICK)",2.067936525322223,2024-08-30T01:35:18.000Z
+401628583101999901,401628583,4016285835,6,1,0:00,Eastern Washington,Monmouth,14,7,53,2,4,5,Pass Reception,Kekoa Visperas pass complete to Miles Williams for a 1ST down,0.573843349616103,2024-08-30T01:40:50.000Z
+401628583101999902,401628583,4016285835,7,1,0:00,Eastern Washington,Monmouth,14,7,53,0,4,5,End Period,End of 1st Quarter,,2024-08-30T01:40:50.000Z
+401628583101985704,401628583,4016285835,1,1,1:42,Monmouth,Eastern Washington,7,14,50,1,10,0,Kickoff,Vincenzo Rea kickoff for 50 yds for a touchback,,2024-08-30T01:35:18.000Z
+401628583101985706,401628583,4016285835,2,1,1:42,Eastern Washington,Monmouth,14,7,75,1,10,9,Rush,Tuna Altahir run for 9 yds to the EWU 34,1.252308359788624,2024-08-30T01:35:18.000Z
+401628583101985707,401628583,4016285835,3,1,1:42,Eastern Washington,Monmouth,14,7,66,2,1,2,Rush,Michael Wortham run for 2 yds to the EWU 32,-0.3217458478426334,2024-08-30T01:35:18.000Z
+401628583101985708,401628583,4016285835,4,1,1:42,Eastern Washington,Monmouth,14,7,68,3,3,9,Rush,Michael Wortham run for 9 yds to the EWU 41 for a 1ST down,1.8078969110380454,2024-08-30T01:35:18.000Z
+401628583101985709,401628583,4016285835,5,1,1:42,Eastern Washington,Monmouth,14,7,59,1,10,6,Rush,Tuna Altahir run for 6 yds to the EWU 47,0.3989351639023673,2024-08-30T01:35:18.000Z
+401628583102849902,401628583,4016285835,8,2,15:00,Eastern Washington,Monmouth,14,7,48,1,10,3,Rush,Tuna Altahir run for 3 yds to the MONM 45,-0.3648977045566397,2024-08-29T00:00:00.000Z
+401628583102849903,401628583,4016285835,9,2,15:00,Eastern Washington,Monmouth,14,7,45,2,7,4,Rush,Michael Wortham run for 4 yds to the MONM 41,-0.1497811901754087,2024-08-29T00:00:00.000Z
+401628583102849904,401628583,4016285835,10,2,15:00,Eastern Washington,Monmouth,14,7,41,3,3,1,Rush,Jared Taylor run for 1 yd to the MONM 42,-0.8920232965709366,2024-08-30T01:45:25.000Z
+401628583102869801,401628583,4016285835,11,2,13:01,Eastern Washington,Monmouth,14,7,42,4,4,0,Punt,"Landon Ogles punt for 37 yds, fair catch by Makhi Green at the MONM 5",,2024-08-30T01:45:25.000Z
+401628583102869806,401628583,4016285836,3,2,13:01,Monmouth,Eastern Washington,7,14,92,3,7,12,Pass Reception,Derek Robertson pass complete to Tra Neal for a 1ST down,0.8640253691579511,2024-08-30T01:50:02.000Z
+401628583102869810,401628583,4016285836,7,2,13:01,Monmouth,Eastern Washington,7,14,66,1,10,18,Pass Reception,Derek Robertson pass complete to Rodney Nelson for a 1ST down,1.6505355534496573,2024-08-30T01:50:02.000Z
+401628583102909302,401628583,4016285836,9,2,9:06,Monmouth,Eastern Washington,7,14,3,1,10,-5,Penalty,PENALTY MON Delay Of Game 5 yards from EWU03 to EWU08. NO PLAY.,,2024-08-30T01:54:18.000Z
+401628583102869804,401628583,4016285836,1,2,13:01,Monmouth,Eastern Washington,7,14,95,1,10,3,Rush,Rodney Nelson run for 3 yds to the MONM 8,-0.11533988478327295,2024-08-30T01:49:09.000Z
+401628583102869805,401628583,4016285836,2,2,13:01,Monmouth,Eastern Washington,7,14,92,2,7,0,Pass Incompletion,Derek Robertson pass incomplete,-0.21638123194497713,2024-08-30T01:50:02.000Z
+401628583102869807,401628583,4016285836,4,2,13:01,Monmouth,Eastern Washington,7,14,80,1,10,2,Rush,Sone Ntoh run for 2 yds to the MONM 22,-0.3623882030735057,2024-08-30T01:50:02.000Z
+401628583102869808,401628583,4016285836,5,2,13:01,Monmouth,Eastern Washington,7,14,78,2,8,6,Rush,Rodney Nelson run for 6 yds to the MONM 28,0.19367068890373407,2024-08-30T01:50:02.000Z
+401628583102869809,401628583,4016285836,6,2,13:01,Monmouth,Eastern Washington,7,14,72,3,2,6,Rush,Rodney Nelson run for 6 yds to the MONM 34 for a 1ST down,1.2180059200452602,2024-08-30T01:50:02.000Z
+401628583102909301,401628583,4016285836,8,2,9:06,Monmouth,Eastern Washington,14,14,48,1,10,48,Passing Touchdown,Josh Derry 48 Yd pass from Derek Robertson (Michael Calton Jr. Kick),3.686233836279957,2024-08-30T01:54:18.000Z
+401628583102909908,401628583,4016285837,7,2,9:00,Eastern Washington,Monmouth,14,14,56,3,3,19,Pass Reception,"Kekoa Visperas pass complete to Efton Chism III for a 1ST down Monmouth Penalty, Defensive Offside (Gavin Nelson) declined for a 1ST down",2.5719154164222235,2024-08-30T01:59:03.000Z
+401628583102909911,401628583,4016285837,10,2,9:00,Eastern Washington,Monmouth,14,14,9,1,9,5,Pass Reception,Kekoa Visperas pass complete to Nolan Ulm,0.0903475831985075,2024-08-30T01:59:03.000Z
+401628583102909903,401628583,4016285837,2,2,9:00,Eastern Washington,Monmouth,14,14,74,1,10,7,Pass Reception,Kekoa Visperas pass complete to Malik Dotson,0.6195700280317222,2024-08-30T01:59:03.000Z
+401628583102909904,401628583,4016285837,3,2,9:00,Eastern Washington,Monmouth,14,14,67,2,3,2,Rush,Kekoa Visperas run for 2 yds to the EWU 35,-0.6460888215113937,2024-08-30T01:59:03.000Z
+401628583102909905,401628583,4016285837,4,2,9:00,Eastern Washington,Monmouth,14,14,65,3,1,2,Rush,Jared Taylor run for 2 yds to the EWU 37 for a 1ST down,0.9827843123628872,2024-08-30T01:59:03.000Z
+401628583102909906,401628583,4016285837,5,2,9:00,Eastern Washington,Monmouth,14,14,63,1,10,6,Rush,Malik Dotson run for 6 yds to the EWU 43,0.4024109850387187,2024-08-30T01:59:03.000Z
+401628583102909901,401628583,4016285837,1,2,9:00,Monmouth,Eastern Washington,14,14,65,1,10,26,Kickoff Return (Offense),"Vincenzo Rea kickoff for 65 yds , Michael Wortham return for 26 yds to the EWU 26",,2024-08-30T01:59:03.000Z
+401628583102909907,401628583,4016285837,6,2,9:00,Eastern Washington,Monmouth,14,14,57,2,4,1,Rush,Malik Dotson run for 1 yd to the EWU 44,-0.9752242393599353,2024-08-30T01:59:03.000Z
+401628583102909909,401628583,4016285837,8,2,9:00,Eastern Washington,Monmouth,14,14,37,1,10,5,Pass Reception,Kekoa Visperas pass complete to Jett Carpenter,0.0836657996975912,2024-08-30T01:59:03.000Z
+401628583102909910,401628583,4016285837,9,2,9:00,Eastern Washington,Monmouth,14,14,32,2,5,23,Rush,Tuna Altahir run for 23 yds to the MONM 9 for a 1ST down,0.543505008132684,2024-08-30T01:59:03.000Z
+401628583102957601,401628583,4016285837,11,2,4:23,Eastern Washington,Monmouth,21,14,4,2,4,4,Passing Touchdown,Nolan Ulm 4 Yd pass from Kekoa Visperas (Soren McKee Kick),2.3338902404479605,2024-08-30T02:04:41.000Z
+401628583102958101,401628583,4016285838,1,2,4:18,Eastern Washington,Monmouth,21,14,65,1,10,17,Kickoff Return (Offense),"Jackson Cleaver kickoff for 60 yds , TJ Speight return for 17 yds to the MONM 22",,2024-08-30T02:08:37.000Z
+401628583102958103,401628583,4016285838,2,2,4:18,Monmouth,Eastern Washington,14,21,78,1,10,6,Rush,TJ Speight run for 6 yds to the MONM 28,0.3066560644610403,2024-08-30T02:08:37.000Z
+401628583102958104,401628583,4016285838,3,2,4:18,Monmouth,Eastern Washington,14,21,72,2,4,1,Rush,Rodney Nelson run for 1 yd to the MONM 27,-0.644979779209498,2024-08-30T02:10:04.000Z
+401628583102958105,401628583,4016285838,4,2,4:18,Monmouth,Eastern Washington,14,21,73,3,5,0,Pass Incompletion,Derek Robertson pass incomplete,-0.3149969292534509,2024-08-30T02:10:04.000Z
+401628583102975801,401628583,4016285838,5,2,2:41,Monmouth,Eastern Washington,14,21,73,4,5,5,Punt,"Luke Schabel punt for 52 yds , Efton Chism III returns for 5 yds to the EWU 26",,2024-08-30T02:11:37.000Z
+401628583102975810,401628583,4016285839,6,2,2:41,Eastern Washington,Monmouth,21,14,62,2,13,25,Pass Reception,Kekoa Visperas pass complete to Nolan Ulm for a 1ST down,3.2939973672014773,2024-08-30T02:11:37.000Z
+401628583102996101,401628583,4016285839,10,2,0:38,Eastern Washington,Monmouth,21,14,22,1,10,0,Timeout,"Timeout Eastern Washington, clock 00:38",,2024-08-30T01:45:25.000Z
+401628583102997601,401628583,4016285839,13,2,0:23,Eastern Washington,Monmouth,28,14,14,3,2,14,Passing Touchdown,Miles Williams 14 Yd pass from Kekoa Visperas (Soren McKee Kick),2.70992178912973,2024-08-30T02:21:38.000Z
+401628583102996103,401628583,4016285839,12,2,0:38,Eastern Washington,Monmouth,21,14,22,2,10,8,Pass Reception,Kekoa Visperas pass complete to Efton Chism III,0.340362998053692,2024-08-30T02:20:13.000Z
+401628583102996102,401628583,4016285839,11,2,0:38,Eastern Washington,Monmouth,21,14,22,1,10,0,Pass Incompletion,Kekoa Visperas pass incomplete,-0.402662020534962,2024-08-30T02:20:13.000Z
+401628583102975804,401628583,4016285839,1,2,2:41,Eastern Washington,Monmouth,21,14,74,1,10,5,Rush,Kekoa Visperas run for 5 yds to the EWU 31,0.0963261532824955,2024-08-30T02:11:37.000Z
+401628583102975805,401628583,4016285839,2,2,2:41,Eastern Washington,Monmouth,21,14,69,2,5,2,Rush,Tuna Altahir run for 2 yds to the EWU 33,-0.5029303025001761,2024-08-30T02:11:37.000Z
+401628583102975806,401628583,4016285839,3,2,2:41,Eastern Washington,Monmouth,21,14,67,3,3,8,Rush,Jared Taylor run for 8 yds to the EWU 41 for a 1ST down,1.7543681118802192,2024-08-30T02:11:37.000Z
+401628583102975807,401628583,4016285839,4,2,2:41,Eastern Washington,Monmouth,21,14,59,1,10,-10,Penalty,"No Huddle-Shotgun Visperas,Kekoa pass incomplete short right to Williams,Miles thrown to MON41 PENALTY EWU Holding 10 yards from EWU41 to EWU31. NO PLAY.",,2024-08-30T02:11:37.000Z
+401628583102975809,401628583,4016285839,5,2,2:41,Eastern Washington,Monmouth,21,14,69,1,20,7,Rush,Kekoa Visperas run for 7 yds to the EWU 38,0.3072101225329292,2024-08-30T02:11:37.000Z
+401628583102975811,401628583,4016285839,7,2,2:41,Eastern Washington,Monmouth,21,14,37,1,10,0,Pass Incompletion,Kekoa Visperas pass incomplete,-0.7519361608312708,2024-08-30T02:18:20.000Z
+401628583102975812,401628583,4016285839,8,2,2:41,Eastern Washington,Monmouth,21,14,37,2,10,8,Rush,Michael Wortham run for 8 yds to the MONM 29,0.592301568716506,2024-08-30T02:18:20.000Z
+401628583102975813,401628583,4016285839,9,2,2:41,Eastern Washington,Monmouth,21,14,29,3,2,7,Rush,Kekoa Visperas run for 7 yds to the MONM 22 for a 1ST down,0.563420456943048,2024-08-30T02:18:20.000Z
+401628583102998101,401628583,40162858310,1,2,0:18,Eastern Washington,Monmouth,28,14,65,1,10,16,Kickoff Return (Offense),"Jackson Cleaver kickoff for 61 yds , Makhi Green return for 16 yds to the MONM 20",,2024-08-30T02:23:58.000Z
+401628583102999902,401628583,40162858310,3,2,0:00,Monmouth,Eastern Washington,14,28,80,0,10,-2,End of Half,End of 2nd Quarter,,2024-08-30T02:24:33.000Z
+401628583102999901,401628583,40162858310,2,2,0:00,Monmouth,Eastern Washington,14,28,80,1,10,-2,Rush,Kneel down by Monmouth at MON18 for loss of 2 yards.,-0.6979456564143147,2024-08-30T02:24:33.000Z
+401628583103849906,401628583,40162858311,3,3,15:00,Monmouth,Eastern Washington,14,28,69,2,4,4,Pass Reception,Derek Robertson pass complete to Josh Derry for a 1ST down,0.5016633079774184,2024-08-30T02:47:43.000Z
+401628583103849908,401628583,40162858311,5,3,15:00,Monmouth,Eastern Washington,14,28,66,2,11,7,Pass Reception,Derek Robertson pass complete to Max James,0.4108178084428423,2024-08-30T02:47:43.000Z
+401628583103849909,401628583,40162858311,6,3,15:00,Monmouth,Eastern Washington,14,28,59,3,4,3,Pass Reception,Derek Robertson pass complete to Jack Neri,-0.304226090720321,2024-08-30T02:47:43.000Z
+401628583103849910,401628583,40162858311,7,3,15:00,Monmouth,Eastern Washington,14,28,56,4,1,3,Rush,Sone Ntoh run for 3 yds to the MONM 47 for a 1ST down,2.216227340532912,2024-08-30T02:47:43.000Z
+401628583103849913,401628583,40162858311,9,3,15:00,Monmouth,Eastern Washington,14,28,38,1,10,2,Rush,Makhi Green run for 2 yds to the EWU 36,-0.4188055231076804,2024-08-30T02:47:43.000Z
+401628583103849914,401628583,40162858311,10,3,15:00,Monmouth,Eastern Washington,14,28,36,2,8,1,Rush,Makhi Green run for 1 yd to the EWU 35,-0.7022977595232957,2024-08-30T02:47:43.000Z
+401628583103849915,401628583,40162858311,11,3,15:00,Monmouth,Eastern Washington,14,28,35,3,7,0,Pass Incompletion,Derek Robertson pass incomplete,-1.036920883871769,2024-08-30T02:47:43.000Z
+401628583103894601,401628583,40162858311,12,3,10:53,Monmouth,Eastern Washington,14,28,35,4,7,0,Pass Incompletion,Derek Robertson pass incomplete,-1.7473831849120671,2024-08-30T02:47:43.000Z
+401628583103849912,401628583,40162858311,8,3,15:00,Monmouth,Eastern Washington,14,28,53,1,10,15,Penalty,"No Huddle-Shotgun Robertson,Derek pass incomplete deep middle to Nelson,Gavin thrown to EWU08 QB hurried by Brown,Matthew PENALTY EWU Roughing The Passer 15 yards from MON47 to EWU38, 1ST DOWN. NO PLAY.",,2024-08-30T02:47:43.000Z
+401628583103849903,401628583,40162858311,1,3,15:00,Eastern Washington,Monmouth,28,14,65,1,10,0,Kickoff,Jackson Cleaver kickoff for 65 yds for a touchback,,2024-08-29T00:00:00.000Z
+401628583103849905,401628583,40162858311,2,3,15:00,Monmouth,Eastern Washington,14,28,75,1,10,6,Rush,Makhi Green run for 6 yds to the MONM 31,0.3333748010525683,2024-08-29T00:00:00.000Z
+401628583103849907,401628583,40162858311,4,3,15:00,Monmouth,Eastern Washington,14,28,65,1,10,1,Rush,Makhi Green run for 1 yd to the MONM 34,-0.8334176637748527,2024-08-30T02:47:43.000Z
+401628583103894604,401628583,40162858312,2,3,10:53,Eastern Washington,Monmouth,28,14,64,2,9,19,Pass Reception,Kekoa Visperas pass complete to Efton Chism III for a 1ST down,2.5996205893991196,2024-08-30T02:53:53.000Z
+401628583103894609,401628583,40162858312,7,3,10:53,Eastern Washington,Monmouth,28,14,29,1,10,11,Pass Reception,Kekoa Visperas pass complete to Miles Williams for a 1ST down,0.196508475527521,2024-08-30T02:53:53.000Z
+401628583103894610,401628583,40162858312,8,3,10:53,Eastern Washington,Monmouth,28,14,18,1,10,6,Pass Reception,Kekoa Visperas pass complete to Miles Williams,0.1838527971014785,2024-08-30T02:53:53.000Z
+401628583103894603,401628583,40162858312,1,3,10:53,Eastern Washington,Monmouth,28,14,65,1,10,1,Rush,Tuna Altahir run for 1 yd to the EWU 36,-0.8334176637748527,2024-08-30T02:53:53.000Z
+401628583103894605,401628583,40162858312,3,3,10:53,Eastern Washington,Monmouth,28,14,45,1,10,2,Rush,Jared Taylor run for 2 yds to the MONM 43,-0.548127712470997,2024-08-30T02:53:53.000Z
+401628583103894606,401628583,40162858312,4,3,10:53,Eastern Washington,Monmouth,28,14,43,2,8,5,Rush,Jared Taylor run for 5 yds to the MONM 38,0.0820437237924898,2024-08-30T02:53:53.000Z
+401628583103894607,401628583,40162858312,5,3,10:53,Eastern Washington,Monmouth,28,14,38,3,3,2,Rush,Jared Taylor run for 2 yds to the MONM 36,-0.6193629095729865,2024-08-30T02:53:53.000Z
+401628583103894608,401628583,40162858312,6,3,10:53,Eastern Washington,Monmouth,28,14,36,4,1,7,Rush,Malik Dotson run for 7 yds to the MONM 29 for a 1ST down,1.7736597987204497,2024-08-30T02:53:53.000Z
+401628583103894611,401628583,40162858312,9,3,10:53,Eastern Washington,Monmouth,28,14,12,2,4,0,Pass Reception,Kekoa Visperas pass complete to Nolan Ulm,-0.4099533784896095,2024-08-30T02:53:53.000Z
+401628583103944801,401628583,40162858312,10,3,5:51,Eastern Washington,Monmouth,35,14,12,3,4,12,Passing Touchdown,Efton Chism III 12 Yd pass from Kekoa Visperas (Soren McKee Kick),2.817893290458722,2024-08-30T02:58:59.000Z
+401628583103944805,401628583,40162858313,2,3,5:51,Monmouth,Eastern Washington,14,35,75,1,10,22,Pass Reception,Derek Robertson pass complete to TJ Speight for a 1ST down,1.9824556861480138,2024-08-30T03:02:43.000Z
+401628583103944809,401628583,40162858313,5,3,5:51,Monmouth,Eastern Washington,14,35,33,1,10,5,Pass Reception,Derek Robertson pass complete to Rodney Nelson,0.079824986683601,2024-08-30T03:07:12.000Z
+401628583103944806,401628583,40162858313,3,3,5:51,Monmouth,Eastern Washington,14,35,53,1,10,4,Rush,Derek Robertson run for 4 yds to the EWU 49,-0.1543469215353017,2024-08-30T03:02:43.000Z
+401628583103944803,401628583,40162858313,1,3,5:51,Eastern Washington,Monmouth,35,14,65,1,10,0,Kickoff,Jackson Cleaver kickoff for 65 yds for a touchback,,2024-08-30T03:02:43.000Z
+401628583103944807,401628583,40162858313,4,3,5:51,Monmouth,Eastern Washington,14,35,49,2,6,15,Penalty,"Eastern Washington Penalty, Face Mask (15 yards) (Derek Ganter Jr.) to the EWU 33 for a 1ST down",,2024-08-30T03:07:12.000Z
+401628583103944810,401628583,40162858313,6,3,5:51,Monmouth,Eastern Washington,14,35,28,2,5,0,Pass Incompletion,Derek Robertson pass incomplete,-0.658198642078979,2024-08-30T03:07:12.000Z
+401628583103944811,401628583,40162858313,7,3,5:51,Monmouth,Eastern Washington,14,35,28,3,5,0,Pass Reception,Derek Robertson pass complete to Josh Derry,-0.85944428771484,2024-08-30T03:07:12.000Z
+401628583103965801,401628583,40162858313,8,3,3:41,Monmouth,Eastern Washington,14,35,28,4,5,0,Pass Reception,Derek Robertson pass complete to Tra Neal,-2.659107283387794,2024-08-30T03:10:00.000Z
+401628583104878301,401628583,40162858314,14,4,12:16,Eastern Washington,Monmouth,42,14,16,2,7,16,Passing Touchdown,Efton Chism III 16 Yd pass from Kekoa Visperas (Soren McKee Kick),2.71913890503145,2024-08-30T03:24:02.000Z
+401628583103965807,401628583,40162858314,5,3,3:41,Eastern Washington,Monmouth,35,14,53,2,7,7,Pass Reception,Jared Taylor pass complete to Kekoa Visperas for a 1ST down,1.2549689948442317,2024-08-30T03:10:00.000Z
+401628583103965808,401628583,40162858314,6,3,3:41,Eastern Washington,Monmouth,35,14,46,1,10,9,Pass Reception,Kekoa Visperas pass complete to Efton Chism III,0.9832760023277703,2024-08-30T03:10:00.000Z
+401628583103999902,401628583,40162858314,8,3,0:00,Eastern Washington,Monmouth,35,14,37,0,1,7,End Period,End of 3rd Quarter,,2024-08-30T03:16:52.000Z
+401628583103965803,401628583,40162858314,1,3,3:41,Eastern Washington,Monmouth,35,14,76,1,10,6,Rush,Michael Wortham run for 6 yds to the EWU 30,0.3245554637561217,2024-08-30T03:10:00.000Z
+401628583103965804,401628583,40162858314,2,3,3:41,Eastern Washington,Monmouth,35,14,70,2,4,4,Rush,Kekoa Visperas run for 4 yds to the EWU 34 for a 1ST down,0.4842934899300548,2024-08-30T03:10:00.000Z
+401628583103965805,401628583,40162858314,3,3,3:41,Eastern Washington,Monmouth,35,14,66,1,10,10,Rush,Malik Dotson run for 10 yds to the EWU 44 for a 1ST down,0.9665866083503082,2024-08-30T03:10:00.000Z
+401628583103965806,401628583,40162858314,4,3,3:41,Eastern Washington,Monmouth,35,14,56,1,10,3,Rush,Malik Dotson run for 3 yds to the EWU 47,-0.42807362159939,2024-08-30T03:10:00.000Z
+401628583103999901,401628583,40162858314,7,3,0:00,Eastern Washington,Monmouth,35,14,37,2,1,7,Rush,Tuna Altahir run for 7 yds to the MONM 30 for a 1ST down,-0.254231727116077,2024-08-30T03:16:52.000Z
+401628583104849902,401628583,40162858314,9,4,15:00,Eastern Washington,Monmouth,35,14,30,1,10,0,Rush,Jared Taylor run for no gain to the MONM 30,-0.557844891990525,2024-08-29T00:00:00.000Z
+401628583104849903,401628583,40162858314,10,4,15:00,Eastern Washington,Monmouth,35,14,30,2,10,2,Rush,Tuna Altahir run for 2 yds to the MONM 28,-0.405951292164332,2024-08-29T00:00:00.000Z
+401628583104849904,401628583,40162858314,11,4,15:00,Eastern Washington,Monmouth,35,14,28,3,8,6,Pass Reception,Kekoa Visperas pass complete to Efton Chism III,0.2150513815052603,2024-08-29T00:00:00.000Z
+401628583104849905,401628583,40162858314,12,4,15:00,Eastern Washington,Monmouth,35,14,22,4,2,3,Rush,Jared Taylor run for 3 yds to the MONM 19 for a 1ST down,0.9585403069348447,2024-08-29T00:00:00.000Z
+401628583104849906,401628583,40162858314,13,4,15:00,Eastern Washington,Monmouth,35,14,19,1,10,3,Rush,Michael Wortham run for 3 yds to the MONM 16,-0.114691276393927,2024-08-30T03:22:54.000Z
+401628583104878306,401628583,40162858315,3,4,12:16,Monmouth,Eastern Washington,14,42,68,2,3,8,Pass Reception,Derek Robertson pass complete to Tra Neal for a 1ST down,0.7162120554913081,2024-08-30T03:24:02.000Z
+401628583104878307,401628583,40162858315,4,4,12:16,Monmouth,Eastern Washington,14,42,60,1,10,39,Pass Reception,Derek Robertson pass complete to Gavin Nelson for a 1ST down,2.1246037903481825,2024-08-30T03:24:02.000Z
+401628583104878303,401628583,40162858315,1,4,12:16,Eastern Washington,Monmouth,42,14,65,1,10,0,Kickoff,Jackson Cleaver kickoff for 65 yds for a touchback,,2024-08-30T03:24:02.000Z
+401628583104878305,401628583,40162858315,2,4,12:16,Monmouth,Eastern Washington,14,42,75,1,10,7,Pass Reception,Derek Robertson pass complete to Jack Neri,0.604642460086338,2024-08-30T03:24:02.000Z
+401628583104888401,401628583,40162858315,5,4,11:15,Monmouth,Eastern Washington,21,42,21,1,10,21,Passing Touchdown,Jack Neri 21 Yd pass from Derek Robertson (Michael Calton Jr. Kick),2.632296813795493,2024-08-30T03:29:32.000Z
+401628583104889003,401628583,40162858316,2,4,11:09,Eastern Washington,Monmouth,42,21,72,1,10,8,Rush,Tuna Altahir run for 8 yds to the EWU 36,0.9674797329724001,2024-08-30T03:33:36.000Z
+401628583104889004,401628583,40162858316,3,4,11:09,Eastern Washington,Monmouth,42,21,64,2,2,8,Rush,Tuna Altahir run for 8 yds to the EWU 44 for a 1ST down,0.5179701979143462,2024-08-30T03:33:36.000Z
+401628583104889005,401628583,40162858316,4,4,11:09,Eastern Washington,Monmouth,42,21,56,1,10,8,Rush,Tuna Altahir run for 8 yds to the MONM 48,0.960072550113445,2024-08-30T03:33:36.000Z
+401628583104889006,401628583,40162858316,5,4,11:09,Eastern Washington,Monmouth,42,21,48,2,2,7,Rush,Tuna Altahir run for 7 yds to the MONM 41 for a 1ST down,0.1695906053693416,2024-08-30T03:33:36.000Z
+401628583104889007,401628583,40162858316,6,4,11:09,Eastern Washington,Monmouth,42,21,41,1,10,1,Rush,Malik Dotson run for 1 yd to the MONM 40,-0.6717839246394793,2024-08-30T03:33:36.000Z
+401628583104889001,401628583,40162858316,1,4,11:09,Monmouth,Eastern Washington,21,42,65,1,10,27,Kickoff Return (Offense),"Vincenzo Rea kickoff for 64 yds , Michael Wortham return for 27 yds to the EWU 28",,2024-08-30T03:33:36.000Z
+401628583104889008,401628583,40162858316,7,4,11:09,Eastern Washington,Monmouth,42,21,40,2,9,4,Rush,Michael Wortham run for 4 yds to the MONM 36,-0.1374658107774033,2024-08-30T03:33:36.000Z
+401628583104889010,401628583,40162858316,8,4,11:09,Eastern Washington,Monmouth,42,21,36,3,5,-15,Penalty,"No Huddle-Shotgun Dotson,Malik rush right for 10 yards gain to the MON26 (Alexander,Ryan; Martin,Ayden) PENALTY EWU Chop Block 15 yards from MON36 to EWU49. NO PLAY.",,2024-08-30T03:33:36.000Z
+401628583104889011,401628583,40162858316,9,4,11:09,Eastern Washington,Monmouth,42,21,51,3,20,6,Rush,Jared Taylor run for 6 yds to the MONM 45,0.12553404212564256,2024-08-30T03:33:36.000Z
+401628583104938401,401628583,40162858316,10,4,6:15,Eastern Washington,Monmouth,42,21,45,4,14,0,Punt,"Landon Ogles punt for 34 yds, fair catch by Makhi Green at the MONM 11",,2024-08-30T03:42:46.000Z
+401628583104938403,401628583,40162858317,1,4,6:15,Monmouth,Eastern Washington,21,42,89,1,10,0,Pass Incompletion,Derek Robertson pass incomplete,-0.36548578366266504,2024-08-30T03:42:46.000Z
+401628583104938404,401628583,40162858317,2,4,6:15,Monmouth,Eastern Washington,21,42,89,2,10,3,Pass Reception,Derek Robertson pass complete to TJ Speight,-0.0681527905204522,2024-08-30T03:42:46.000Z
+401628583104938405,401628583,40162858317,3,4,6:15,Monmouth,Eastern Washington,21,42,86,3,7,20,Pass Reception,Derek Robertson pass complete to TJ Speight for a 1ST down,1.8604414925811747,2024-08-30T03:42:46.000Z
+401628583104938406,401628583,40162858317,4,4,6:15,Monmouth,Eastern Washington,21,42,66,1,10,2,Rush,Rodney Nelson run for 2 yds to the MONM 36,-0.6162239991596916,2024-08-30T03:42:46.000Z
+401628583104938407,401628583,40162858317,5,4,6:15,Monmouth,Eastern Washington,21,42,64,2,8,8,Pass Reception,Derek Robertson pass complete to Jack Neri for a 1ST down,1.5828106075099997,2024-08-30T03:42:46.000Z
+401628583104938408,401628583,40162858317,6,4,6:15,Monmouth,Eastern Washington,21,42,56,1,10,44,Pass Reception,Derek Robertson pass complete to TJ Speight for a 1ST down,1.8400882393433804,2024-08-30T03:42:46.000Z
+401628583104957501,401628583,40162858317,7,4,4:24,Monmouth,Eastern Washington,21,42,12,1,10,0,Timeout,"Timeout Eastern Washington, clock 04:24",,2024-08-30T03:22:54.000Z
+401628583104965801,401628583,40162858317,10,4,3:41,Monmouth,Eastern Washington,27,42,19,3,17,19,Passing Touchdown,Max James 19 Yd pass from Derek Robertson (Two-Point Pass Conversion Failed),3.9525148081693082,2024-08-30T03:49:17.000Z
+401628583104957503,401628583,40162858317,9,4,4:24,Monmouth,Eastern Washington,21,42,19,2,17,0,Pass Incompletion,Derek Robertson pass incomplete,-0.6134666370160886,2024-08-30T03:46:21.000Z
+401628583104957502,401628583,40162858317,8,4,4:24,Monmouth,Eastern Washington,21,42,12,1,10,-7,Sack,Derek Robertson sacked by Dishawn Misa for a loss of 7 yards to the EWU 19,-0.8089536291172941,2024-08-30T03:46:21.000Z
+401628583104965901,401628583,40162858318,1,4,3:40,Monmouth,Eastern Washington,27,42,65,1,10,0,Kickoff,Vincenzo Rea kickoff for 13 yds,,2024-08-30T03:51:20.000Z
+401628583104965903,401628583,40162858318,2,4,3:40,Eastern Washington,Monmouth,42,27,48,1,10,5,Rush,Jared Taylor run for 5 yds to the MONM 43,0.0988833853941654,2024-08-30T03:51:20.000Z
+401628583104966302,401628583,40162858318,4,4,3:36,Eastern Washington,Monmouth,42,27,43,2,5,9,Rush,Jared Taylor run for 9 yds to the MONM 34 for a 1ST down,0.6506242899721216,2024-08-30T03:53:07.000Z
+401628583104966301,401628583,40162858318,3,4,3:36,Eastern Washington,Monmouth,42,27,43,2,5,0,Timeout,"Timeout Monmouth, clock 03:36",,2024-08-30T03:22:54.000Z
+401628583104968801,401628583,40162858318,5,4,3:11,Eastern Washington,Monmouth,42,27,34,1,10,0,Timeout,"Timeout Monmouth, clock 03:11",,2024-08-30T03:55:44.000Z
+401628583104979101,401628583,40162858318,11,4,2:08,Eastern Washington,Monmouth,42,27,32,4,8,0,Punt,Landon Ogles punt for 25 yds,,2024-08-29T04:00:02.000Z
+401628583104969303,401628583,40162858318,9,4,3:06,Eastern Washington,Monmouth,42,27,32,3,8,0,Pass Incompletion,Kekoa Visperas pass incomplete,-1.000968551367478,2024-08-30T03:57:02.000Z
+401628583104969302,401628583,40162858318,8,4,3:06,Eastern Washington,Monmouth,42,27,32,2,8,0,Rush,Jared Taylor run for no gain to the MONM 32,-0.7911960031261193,2024-08-30T03:57:02.000Z
+401628583104968802,401628583,40162858318,6,4,3:11,Eastern Washington,Monmouth,42,27,34,1,10,2,Rush,Tuna Altahir run for 2 yds to the MONM 32,-0.3527156300054807,2024-08-30T03:55:44.000Z
+401628583104969301,401628583,40162858318,7,4,3:06,Eastern Washington,Monmouth,42,27,32,2,8,0,Timeout,"Timeout Monmouth, clock 03:06",,2024-08-30T03:57:02.000Z
+401628583104969304,401628583,40162858318,10,4,3:06,Eastern Washington,Monmouth,42,27,32,4,8,0,Penalty,"Eastern Washington Penalty, Delay Of Game (Yards) declined",,
+401628583104979110,401628583,40162858319,7,4,2:08,Monmouth,Eastern Washington,27,42,69,3,10,15,Penalty,"No Huddle-Shotgun Robertson,Derek pass incomplete deep left to Speight,TJ thrown to EWU40 PENALTY EWU Pass Interference 15 yards from MON31 to MON46, 1ST DOWN. NO PLAY.",,2024-08-29T04:00:02.000Z
+401628583104988701,401628583,40162858319,8,4,1:12,Monmouth,Eastern Washington,27,42,54,1,10,0,Interception,Derek Robertson pass intercepted,-2.815102462314792,2024-08-29T04:00:02.000Z
+401628583104979109,401628583,40162858319,6,4,2:08,Monmouth,Eastern Washington,27,42,69,2,10,0,Pass Incompletion,Derek Robertson pass incomplete,-0.48647765014911126,2024-08-29T04:00:02.000Z
+401628583104979108,401628583,40162858319,5,4,2:08,Monmouth,Eastern Washington,27,42,69,1,10,0,Pass Incompletion,Derek Robertson pass incomplete,-0.8947814664467213,2024-08-29T04:00:02.000Z
+401628583104979107,401628583,40162858319,4,4,2:08,Monmouth,Eastern Washington,27,42,82,1,10,13,Pass Reception,Derek Robertson pass complete to Gavin Nelson for a 1ST down,0.881007244177801,2024-08-29T04:00:02.000Z
+401628583104979106,401628583,40162858319,3,4,2:08,Monmouth,Eastern Washington,27,42,90,3,7,8,Pass Reception,Derek Robertson pass complete to TJ Speight for a 1ST down,0.746675612224851,2024-08-29T04:00:02.000Z
+401628583104979105,401628583,40162858319,2,4,2:08,Monmouth,Eastern Washington,27,42,90,2,7,0,Pass Incompletion,Derek Robertson pass incomplete,-0.23510611460733788,2024-08-29T04:00:02.000Z
+401628583104979104,401628583,40162858319,1,4,2:08,Monmouth,Eastern Washington,27,42,93,1,10,3,Pass Reception,Derek Robertson pass complete to Marcus Middleton,-0.12636053500831324,2024-08-29T04:00:02.000Z
+401628583104988703,401628583,40162858320,1,4,1:12,Eastern Washington,Monmouth,42,27,65,1,10,-5,Rush,Kneel down by Eastern Wash. at EWU30 for loss of 5 yards.,-1.6411798070728363,2024-08-29T04:00:02.000Z
+401628583104999902,401628583,40162858320,3,4,0:00,Eastern Washington,Monmouth,42,27,70,0,15,-5,End of Game,End of 4th Quarter,,2024-08-29T04:00:02.000Z
+401628583104999901,401628583,40162858320,2,4,0:00,Eastern Washington,Monmouth,42,27,70,2,15,-5,Rush,Kneel down by Eastern Wash. at EWU25 for loss of 5 yards.,-0.426172331886014,2024-08-29T04:00:02.000Z

@@ -1,0 +1,190 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401635532101857301,401635532,4016355321,3,1,14:26,Clemson,App State,0,0,77,2,12,1,Rush,Phil Mafah run for 1 yd to the CLEM 24,-0.21050634440394234,2024-09-08T00:07:33.000Z
+401635532101855301,401635532,4016355321,2,1,14:46,Clemson,App State,0,0,75,1,10,-2,Pass Reception,Cade Klubnik pass complete to Tyler Brown for a loss of 2 yards to the CLEM 23,-0.8852575132705454,2024-09-08T00:07:33.000Z
+401635532101865301,401635532,4016355321,4,1,13:46,Clemson,App State,7,0,76,3,11,76,Passing Touchdown,Cade Klubnik pass complete to Bryant Wesco Jr. for 76 yds for a TD (Nolan Hauser KICK),7.173518977395809,2024-09-08T00:08:22.000Z
+401635532101849903,401635532,4016355321,1,1,15:00,App State,Clemson,0,0,65,1,10,0,Kickoff,Michael Hughes kickoff for 65 yds for a touchback,,2024-09-08T00:07:33.000Z
+401635532101866201,401635532,4016355322,2,1,13:37,App State,Clemson,0,7,72,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.7982008475508557,2024-09-08T00:11:19.000Z
+401635532101866901,401635532,4016355322,3,1,13:30,App State,Clemson,0,7,72,2,10,2,Rush,Kanye Roberts run for 2 yds to the APP 26,-0.27038846711114406,2024-09-08T00:12:06.000Z
+401635532101875501,401635532,4016355322,4,1,12:44,App State,Clemson,0,7,74,3,12,17,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson for 17 yds to the APP 43 for a 1ST down,2.7015330738344856,2024-09-08T00:12:47.000Z
+401635532101878301,401635532,4016355322,5,1,12:16,App State,Clemson,0,7,57,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-1.15714755134967,2024-09-08T00:13:08.000Z
+401635532101879001,401635532,4016355322,6,1,12:09,App State,Clemson,0,7,57,2,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.851527740432628,2024-09-08T00:13:51.000Z
+401635532101879401,401635532,4016355322,7,1,12:05,App State,Clemson,0,7,57,3,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.491927477050429,2024-09-08T00:14:27.000Z
+401635532101884301,401635532,4016355322,8,1,11:56,App State,Clemson,0,7,57,4,10,0,Punt,"Mitchell Lake punt for 41 yds , Antonio Williams returns for no gain to the CLEM 16",,2024-09-08T00:15:21.000Z
+401635532101865801,401635532,4016355322,1,1,13:41,Clemson,App State,7,0,65,1,10,24,Kickoff Return (Offense),"Robert Gunn III kickoff for 61 yds , Kanye Roberts return for 24 yds to the APP 28",,2024-09-08T00:10:55.000Z
+401635532101885801,401635532,4016355323,1,1,11:41,Clemson,App State,7,0,84,1,10,14,Pass Reception,Cade Klubnik pass complete to Jake Briningstool for 14 yds to the CLEM 30 for a 1ST down,0.8865828082993312,2024-09-08T00:18:45.000Z
+401635532101887601,401635532,4016355323,2,1,11:23,Clemson,App State,7,0,70,1,10,7,Pass Reception,Cade Klubnik pass complete to Jake Briningstool for 7 yds to the CLEM 37,0.6714265021529684,2024-09-08T00:19:12.000Z
+401635532101894301,401635532,4016355323,3,1,10:56,Clemson,App State,7,0,63,2,3,7,Rush,Phil Mafah run for 7 yds to the CLEM 44 for a 1ST down,0.651177235372069,2024-09-08T00:19:41.000Z
+401635532101896301,401635532,4016355323,4,1,10:36,Clemson,App State,7,0,56,1,10,3,Pass Reception,Cade Klubnik pass complete to Bryant Wesco Jr. for 3 yds to the CLEM 47,-0.42807362159939,2024-09-08T00:07:33.000Z
+401635532101905701,401635532,4016355323,5,1,9:42,Clemson,App State,7,0,53,2,7,51,Pass Reception,Cade Klubnik pass complete to Bryant Wesco Jr. for 51 yds to the APP 2 for a 1ST down,3.585021105306598,2024-09-08T00:20:51.000Z
+401635532101905901,401635532,4016355323,6,1,9:40,Clemson,App State,14,0,2,1,2,2,Rushing Touchdown,Cade Klubnik run for 2 yds for a TD (Nolan Hauser KICK),1.213235297672098,2024-09-08T00:21:09.000Z
+401635532101907301,401635532,4016355324,2,1,9:26,App State,Clemson,0,14,77,1,10,5,Rush,Anderson Castle run for 5 yds to the APP 28,0.090922002905697,2024-09-08T00:23:30.000Z
+401635532101916601,401635532,4016355324,4,1,8:33,App State,Clemson,0,14,77,2,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.30950338122914456,2024-09-08T00:24:36.000Z
+401635532101917001,401635532,4016355324,5,1,8:29,App State,Clemson,0,14,77,3,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.13976427181835757,2024-09-08T00:25:11.000Z
+401635532101918102,401635532,4016355324,7,1,8:18,App State,Clemson,0,14,77,4,10,0,Punt,"Mitchell Lake punt for 61 yds , Antonio Williams returns for no gain to the CLEM 8",,2024-09-08T00:27:12.000Z
+401635532101918101,401635532,4016355324,6,1,8:18,App State,Clemson,0,14,77,4,10,0,Punt,"Mitchell Lake punt for 61 yds , Antonio Williams returns for no gain to the CLEM 16",,2024-09-08T00:27:12.000Z
+401635532101916201,401635532,4016355324,3,1,8:37,App State,Clemson,0,14,72,2,5,-5,Penalty,"PENALTY APP False Start (Shrader,Thomas) 5 yards from APP28 to APP23. NO PLAY.",,2024-09-08T00:24:29.000Z
+401635532101906501,401635532,4016355324,1,1,9:34,Clemson,App State,14,0,65,1,10,18,Kickoff Return (Offense),"Robert Gunn III kickoff for 60 yds , Kanye Roberts return for 18 yds to the APP 23",,2024-09-08T00:22:57.000Z
+401635532101919201,401635532,4016355325,1,1,8:07,Clemson,App State,14,0,92,1,10,6,Pass Reception,Cade Klubnik pass complete to T.J. Moore for 6 yds to the CLEM 14,0.19934433503655846,2024-09-08T00:29:50.000Z
+401635532101924801,401635532,4016355325,2,1,7:51,Clemson,App State,14,0,86,2,4,3,Rush,Phil Mafah run for 3 yds to the CLEM 17,-0.17621464262809017,2024-09-08T00:30:11.000Z
+401635532101929101,401635532,4016355325,3,1,7:08,Clemson,App State,21,0,83,3,1,83,Rushing Touchdown,Phil Mafah run for 83 yds for a TD (Nolan Hauser KICK),6.825575581782538,2024-09-08T00:30:46.000Z
+401635532101929104,401635532,4016355325,5,1,7:08,Clemson,App State,14,0,65,1,10,78,Kickoff,"Robert Gunn III kickoff for 65 yds for a touchback App State Penalty, UNR: Unnecessary Roughness (Kanen Hamlett)",,2024-09-08T00:30:46.000Z
+401635532101929103,401635532,4016355325,4,1,7:08,Clemson,App State,14,0,65,1,10,130,Kickoff,"Robert Gunn III kickoff for 65 yds for a touchback App State Penalty, UNR: Unnecessary Roughness (Kanen Hamlett)",,2024-09-08T00:30:46.000Z
+401635532101937401,401635532,4016355326,1,1,6:25,App State,Clemson,0,21,88,1,10,1,Rush,Maquel Haywood run for 1 yd to the APP 11,-0.32181812145469557,2024-09-08T00:34:38.000Z
+401635532101944001,401635532,4016355326,2,1,5:59,App State,Clemson,0,21,89,2,11,12,Pass Reception,Joey Aguilar pass complete to Christan Horn for 12 yds to the APP 23 for a 1ST down,0.9540530416680832,2024-09-08T00:35:03.000Z
+401635532101944002,401635532,4016355326,3,1,5:59,App State,Clemson,0,21,77,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.6425305871127751,2024-09-08T00:35:03.000Z
+401635532101946501,401635532,4016355326,4,1,5:34,App State,Clemson,0,21,77,2,10,14,Pass Reception,Joey Aguilar pass complete to Christan Horn for 14 yds to the APP 37 for a 1ST down,1.8023768877244217,2024-09-08T00:35:55.000Z
+401635532101948501,401635532,4016355326,5,1,5:14,App State,Clemson,0,21,63,1,10,2,Rush,Kanye Roberts run for 2 yds to the APP 35,-0.6556647600661254,2024-09-08T00:36:20.000Z
+401635532101956101,401635532,4016355326,6,1,4:38,App State,Clemson,0,21,65,2,12,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.5084520593696595,2024-09-08T00:36:53.000Z
+401635532101956501,401635532,4016355326,7,1,4:34,App State,Clemson,0,21,65,3,12,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.2508170853457674,2024-09-08T00:37:28.000Z
+401635532101957401,401635532,4016355326,8,1,4:25,App State,Clemson,0,21,65,4,12,8,Punt,"Mitchell Lake punt for 42 yds , Antonio Williams returns for 8 yds to the CLEM 31",,2024-09-08T00:38:36.000Z
+401635532101958501,401635532,4016355327,1,1,4:14,Clemson,App State,21,0,69,1,10,3,Pass Reception,Cade Klubnik pass complete to Jake Briningstool for 3 yds to the CLEM 34,-0.367641675563645,2024-09-08T00:41:39.000Z
+401635532101965101,401635532,4016355327,2,1,3:48,Clemson,App State,21,0,66,2,7,8,Rush,Jay Haynes run for 8 yds to the CLEM 42 for a 1ST down,1.4132294686393791,2024-09-08T00:42:10.000Z
+401635532101967401,401635532,4016355327,3,1,3:25,Clemson,App State,21,0,58,1,10,5,Pass Reception,Cade Klubnik pass complete to T.J. Moore for 5 yds to the CLEM 47,0.110039551743057,2024-09-08T00:42:45.000Z
+401635532101974901,401635532,4016355327,4,1,2:50,Clemson,App State,21,0,53,2,5,12,Rush,Cole Turner run for 12 yds to the APP 41 for a 1ST down,1.211144034399739,2024-09-08T00:43:06.000Z
+401635532101976501,401635532,4016355327,5,1,2:34,Clemson,App State,28,0,41,1,10,41,Passing Touchdown,Cade Klubnik pass complete to Jake Briningstool for 41 yds for a TD (Nolan Hauser KICK),3.2405196258965194,2024-09-08T00:43:19.000Z
+401635532101977601,401635532,4016355328,2,1,2:23,App State,Clemson,0,28,75,1,10,7,Pass Reception,Joey Aguilar pass complete to Eli Wilson for 7 yds to the APP 32,0.604642460086338,2024-09-08T00:45:52.000Z
+401635532101979301,401635532,4016355328,3,1,2:06,App State,Clemson,0,28,68,2,3,1,Rush,Kanye Roberts run for 1 yd to the APP 31,-0.824229914711947,2024-09-08T00:46:10.000Z
+401635532101987601,401635532,4016355328,5,1,1:23,App State,Clemson,0,28,84,4,19,0,Punt,"Mitchell Lake punt for 28 yds, punt out-of-bounds at the APP 44",,2024-09-08T00:48:47.000Z
+401635532101986901,401635532,4016355328,4,1,1:30,App State,Clemson,0,28,69,3,4,-15,Penalty,"App State Penalty, UNR: Unnecessary Roughness (Markell Samuel) to the APP 16",,2024-09-08T00:46:44.000Z
+401635532101976503,401635532,4016355328,1,1,2:34,Clemson,App State,28,0,65,1,10,0,Kickoff,Robert Gunn III kickoff for 65 yds for a touchback,,2024-09-08T00:43:19.000Z
+401635532101988801,401635532,4016355329,2,1,1:11,Clemson,App State,35,0,29,1,10,29,Passing Touchdown,Cade Klubnik pass complete to Antonio Williams for 29 yds for a TD (Nolan Hauser KICK),2.788301184598112,2024-09-08T00:50:27.000Z
+401635532101988201,401635532,4016355329,1,1,1:17,Clemson,App State,28,0,44,1,10,15,Penalty,"(01:23) No Huddle-Shotgun Klubnik,Cade pass incomplete deep middle to Williams,Antonio thrown to APP05 PENALTY APP Pass Interference (Favors,Jordan) 15 yards from APP44 to APP29, 1ST DOWN. NO PLAY.",,2024-09-08T00:49:16.000Z
+401635532101999903,401635532,40163553210,6,1,0:00,App State,Clemson,0,35,80,0,1,0,End Period,End of 1st Quarter,,2024-09-08T00:54:50.000Z
+401635532101994101,401635532,40163553210,2,1,0:58,App State,Clemson,0,35,89,1,10,5,Pass Reception,Joey Aguilar pass complete to Makai Jackson for 5 yds to the APP 16,0.07118409266078807,2024-09-08T00:52:45.000Z
+401635532101996601,401635532,40163553210,3,1,0:33,App State,Clemson,0,35,84,2,5,4,Pass Reception,Joey Aguilar pass complete to Eli Wilson for 4 yds to the APP 20,-0.05356091034655373,2024-09-08T00:53:08.000Z
+401635532101999501,401635532,40163553210,4,1,0:04,App State,Clemson,0,35,80,3,1,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.37784950184134125,2024-09-08T00:53:31.000Z
+401635532101999901,401635532,40163553210,5,1,0:00,App State,Clemson,0,35,80,4,1,25,Punt,"Mitchell Lake punt for 35 yds , Antonio Williams returns for 25 yds to the APP 30",,2024-09-08T00:54:50.000Z
+401635532101989201,401635532,40163553210,1,1,1:07,Clemson,App State,35,0,65,1,10,4,Kickoff Return (Offense),"Robert Gunn III kickoff for 58 yds , Kanye Roberts return for 4 yds to the APP 11",,2024-09-08T00:52:12.000Z
+401635532102874101,401635532,40163553211,5,2,12:58,Clemson,App State,42,0,3,3,3,3,Rushing Touchdown,Cade Klubnik run for 3 yds for a TD (Nolan Hauser KICK),2.624562399778991,2024-09-08T01:00:45.000Z
+401635532102854801,401635532,40163553211,1,2,14:51,Clemson,App State,35,0,30,1,10,6,Pass Reception,Cade Klubnik pass complete to Adam Randall for 6 yds to the APP 24,0.211009257059727,2024-09-08T00:58:26.000Z
+401635532102859401,401635532,40163553211,2,2,14:05,Clemson,App State,35,0,24,2,4,20,Pass Reception,Cade Klubnik pass complete to Adam Randall for 20 yds to the APP 4 for a 1ST down,0.915043357149069,2024-09-08T00:59:16.000Z
+401635532102866001,401635532,40163553211,3,2,13:39,Clemson,App State,35,0,4,1,4,0,Pass Incompletion,Cade Klubnik pass incomplete,-0.6456997217339855,2024-09-08T00:59:42.000Z
+401635532102866901,401635532,40163553211,4,2,13:30,Clemson,App State,35,0,4,2,4,1,Rush,Phil Mafah run for 1 yd to the APP 3,-0.2906721593310305,2024-09-08T01:00:29.000Z
+401635532102874104,401635532,40163553211,6,2,12:58,Clemson,App State,35,0,65,1,10,-15,Penalty,"PENALTY CLEM UNR: Unnecessary Roughness (Woods,Peter) 15 yards from CLEM35 to CLEM20. NO PLAY.",,2024-09-08T01:02:06.000Z
+401635532102875501,401635532,40163553212,2,2,12:44,App State,Clemson,0,42,63,1,10,11,Rush,Anderson Castle run for 11 yds to the APP 48 for a 1ST down,1.0424565048673191,2024-09-08T01:06:31.000Z
+401635532102877001,401635532,40163553212,3,2,12:29,App State,Clemson,0,42,52,1,10,10,Rush,Makai Jackson run for 10 yds to the CLEM 42 for a 1ST down,0.713118817138307,2024-09-08T01:09:32.000Z
+401635532102885301,401635532,40163553212,4,2,11:46,App State,Clemson,0,42,42,1,10,15,Pass Reception,Joey Aguilar pass complete to Eli Wilson for 15 yds to the CLEM 27 for a 1ST down,0.553654630180638,2024-09-08T01:10:09.000Z
+401635532102888902,401635532,40163553212,5,2,11:10,App State,Clemson,0,42,27,1,10,20,Rush,"Anderson Castle run for 12 yds to the CLEM 15 for a 1ST down Clemson Penalty, Face Mask (8 yards) (Sherrod Covil Jr.) to the CLEM 7 for a 1ST down",0.544526211064275,2024-09-08T01:11:52.000Z
+401635532102894901,401635532,40163553212,6,2,10:50,App State,Clemson,0,42,7,1,7,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.410393837690526,2024-09-08T01:12:47.000Z
+401635532102895501,401635532,40163553212,7,2,10:44,App State,Clemson,0,42,7,2,7,3,Penalty,"Clemson Penalty, Illegal Use Of Hands (Cade Denhoff) to the CLEM 4 for a 1ST down",,2024-09-08T01:14:10.000Z
+401635532102874601,401635532,40163553212,1,2,12:53,Clemson,App State,42,0,80,1,10,25,Kickoff Return (Offense),"Robert Gunn III kickoff for 68 yds , Kanye Roberts return for 25 yds to the APP 37",,2024-09-08T01:05:10.000Z
+401635532102895503,401635532,40163553212,8,2,10:44,App State,Clemson,0,42,4,1,4,0,Timeout,"Timeout Clemson, clock 10:44",,2024-09-08T01:14:10.000Z
+401635532102896001,401635532,40163553212,9,2,10:39,App State,Clemson,7,42,4,1,4,4,Rushing Touchdown,Anderson Castle run for 4 yds for a TD (Michael Hughes KICK),1.688190518713975,2024-09-08T01:17:40.000Z
+401635532102905701,401635532,40163553213,4,2,9:42,Clemson,App State,42,7,59,1,10,2,Rush,Phil Mafah run for 2 yds to the CLEM 43,-0.6841550241957303,2024-09-08T01:21:34.000Z
+401635532102896401,401635532,40163553213,1,2,10:35,App State,Clemson,7,42,65,1,10,7,Kickoff Return (Offense),"Michael Hughes kickoff for 43 yds , Ronan Hanafin return for 7 yds to the CLEM 29",,2024-09-08T01:20:14.000Z
+401635532102927601,401635532,40163553213,9,2,7:23,Clemson,App State,42,7,37,2,10,4,Rush,Phil Mafah run for 4 yds to the APP 33,-0.1280756940017084,2024-09-08T01:24:16.000Z
+401635532102926901,401635532,40163553213,8,2,7:30,Clemson,App State,42,7,37,1,10,0,Pass Incompletion,Cade Klubnik pass incomplete,-0.7519361608312708,2024-09-08T01:23:39.000Z
+401635532102924001,401635532,40163553213,7,2,7:59,Clemson,App State,42,7,43,2,5,6,Pass Reception,Cade Klubnik pass complete to Antonio Williams for 6 yds to the APP 37 for a 1ST down,0.5359418194090484,2024-09-08T01:22:59.000Z
+401635532102916001,401635532,40163553213,6,2,8:39,Clemson,App State,42,7,48,1,10,5,Rush,Phil Mafah run for 5 yds to the APP 43,0.0988833853941654,2024-09-08T01:22:33.000Z
+401635532102909701,401635532,40163553213,5,2,9:02,Clemson,App State,42,7,57,2,8,9,Pass Reception,Cade Klubnik pass complete to Antonio Williams for 9 yds to the APP 48 for a 1ST down,1.6569335377142007,2024-09-08T01:22:08.000Z
+401635532102899801,401635532,40163553213,3,2,10:01,Clemson,App State,42,7,67,2,6,8,Rush,Phil Mafah run for 8 yds to the CLEM 41 for a 1ST down,1.2516553770715504,2024-09-08T01:21:08.000Z
+401635532102897201,401635532,40163553213,2,2,10:27,Clemson,App State,42,7,71,1,10,4,Rush,Phil Mafah run for 4 yds to the CLEM 33,-0.1350508541150131,2024-09-08T01:20:47.000Z
+401635532102935101,401635532,40163553213,10,2,6:48,Clemson,App State,49,7,33,3,6,33,Passing Touchdown,Cade Klubnik pass complete to T.J. Moore for 33 yds for a TD (Nolan Hauser KICK),3.9314204863097224,2024-09-08T01:24:51.000Z
+401635532102935701,401635532,40163553214,1,2,6:42,Clemson,App State,49,7,65,1,10,25,Kickoff Return (Offense),"Robert Gunn III kickoff for 64 yds , Kanye Roberts return for 25 yds to the APP 26",,2024-09-08T01:26:39.000Z
+401635532102948201,401635532,40163553214,5,2,5:17,App State,Clemson,7,49,65,4,1,7,Punt,"Mitchell Lake punt for 41 yds , Antonio Williams returns for 7 yds to the CLEM 31 Antonio Williams fumbled, recovered by APP Andre Hamilton",,2024-09-08T01:30:25.000Z
+401635532102944601,401635532,40163553214,4,2,5:53,App State,Clemson,7,49,68,3,4,3,Pass Reception,Joey Aguilar pass complete to Makai Jackson for 3 yds to the APP 35,-0.1991230115496423,2024-09-08T01:28:32.000Z
+401635532102936901,401635532,40163553214,3,2,6:30,App State,Clemson,7,49,74,2,10,6,Rush,Ahmani Marshall run for 6 yds to the APP 32,0.17558259333746393,2024-09-08T01:28:01.000Z
+401635532102936101,401635532,40163553214,2,2,6:38,App State,Clemson,7,49,74,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.7342478781140684,2024-09-08T01:27:12.000Z
+401635532102967101,401635532,40163553215,7,2,3:28,App State,Clemson,10,49,19,4,15,36,Field Goal Good,Michael Hughes 36 yd FG GOOD,,2024-09-08T01:34:52.000Z
+401635532102957102,401635532,40163553215,3,2,4:28,App State,Clemson,7,49,14,1,10,-10,Penalty,"(04:34) No Huddle-Shotgun Castle,Anderson rush right for 14 yards gain to the CLEM00, End Of Play PENALTY APP Holding (Shrader,Thomas) 10 yards from CLEM14 to CLEM24. NO PLAY.",,2024-09-08T01:31:58.000Z
+401635532102958801,401635532,40163553215,6,2,4:11,App State,Clemson,7,49,24,3,20,5,Rush,Maquel Haywood run for 5 yds to the CLEM 19,0.0446373522532984,2024-09-08T01:34:22.000Z
+401635532102958101,401635532,40163553215,5,2,4:18,App State,Clemson,7,49,24,2,20,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.862550659285377,2024-09-08T01:33:37.000Z
+401635532102957501,401635532,40163553215,4,2,4:24,App State,Clemson,7,49,24,1,20,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.5609446262915,2024-09-08T01:33:18.000Z
+401635532102949401,401635532,40163553215,2,2,5:05,App State,Clemson,7,49,31,2,10,17,Rush,Anderson Castle run for 17 yds to the CLEM 14 for a 1ST down,0.8761467705938611,2024-09-08T01:31:06.000Z
+401635532102948601,401635532,40163553215,1,2,5:13,App State,Clemson,7,49,31,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.5824837756999947,2024-09-08T01:30:40.000Z
+401635532102967102,401635532,40163553216,1,2,3:28,App State,Clemson,10,49,65,1,10,0,Kickoff,Michael Hughes kickoff for 65 yds for a touchback,,2024-09-08T01:34:52.000Z
+401635532102994501,401635532,40163553216,10,2,0:54,Clemson,App State,56,10,17,3,6,17,Passing Touchdown,Cade Klubnik pass complete to Jake Briningstool for 17 yds for a TD (Nolan Hauser KICK),3.0727067244867463,2024-09-08T01:45:15.000Z
+401635532102989801,401635532,40163553216,9,2,1:01,Clemson,App State,49,10,16,2,5,-1,Pass Reception,Cade Klubnik pass complete to Troy Stellato for a loss of 1 yard to the APP 17,-0.5148985418817733,2024-09-08T01:44:51.000Z
+401635532102988301,401635532,40163553216,8,2,1:16,Clemson,App State,49,10,21,1,10,5,Pass Reception,Cade Klubnik pass complete to Cole Turner for 5 yds to the APP 16,0.07448863119052,2024-09-08T01:44:19.000Z
+401635532102986101,401635532,40163553216,7,2,1:38,Clemson,App State,49,10,39,2,1,18,Pass Reception,Cade Klubnik pass complete to Josh Sapp for 18 yds to the APP 21 for a 1ST down,0.016036151399888,2024-09-08T01:43:55.000Z
+401635532102984501,401635532,40163553216,6,2,1:54,Clemson,App State,49,10,48,1,10,9,Pass Reception,Cade Klubnik pass complete to Cole Turner for 9 yds to the APP 39,1.037900871084576,2024-09-08T01:43:14.000Z
+401635532102979901,401635532,40163553216,5,2,2:00,Clemson,App State,49,10,61,1,10,13,Pass Reception,Cade Klubnik pass complete to Jake Briningstool for 13 yds to the APP 48 for a 1ST down,1.168782200184909,2024-09-08T01:40:03.000Z
+401635532102977701,401635532,40163553216,4,2,2:22,Clemson,App State,49,10,71,3,6,10,Pass Reception,Cade Klubnik pass complete to Cole Turner for 10 yds to the CLEM 39 for a 1ST down,1.987932595106449,2024-09-08T01:39:46.000Z
+401635532102975201,401635532,40163553216,3,2,2:47,Clemson,App State,49,10,71,2,6,0,Pass Reception,Cade Klubnik pass complete to Adam Randall for no gain to the CLEM 29,-0.6509048869110972,2024-09-08T01:37:54.000Z
+401635532102967801,401635532,40163553216,2,2,3:21,Clemson,App State,49,10,75,1,10,4,Rush,Keith Adams Jr. run for 4 yds to the CLEM 29,-0.1142886249388964,2024-09-08T01:37:14.000Z
+401635532102994503,401635532,40163553217,1,2,0:54,Clemson,App State,56,10,65,1,10,0,Kickoff,Robert Gunn III kickoff for 65 yds for a touchback,,2024-09-08T01:46:47.000Z
+401635532102998002,401635532,40163553217,6,2,0:19,App State,Clemson,10,56,36,1,10,0,Timeout,"Timeout App State, clock 00:19",,2024-09-08T01:49:10.000Z
+401635532102999901,401635532,40163553217,9,2,0:00,App State,Clemson,13,56,17,2,10,35,Field Goal Good,Michael Hughes 35 yd FG GOOD,,2024-09-08T01:53:21.000Z
+401635532102999902,401635532,40163553217,10,2,0:00,App State,Clemson,13,56,17,0,10,-48,End of Half,End of 2nd Quarter,,2024-09-08T01:53:21.000Z
+401635532102999601,401635532,40163553217,8,2,0:03,App State,Clemson,10,56,17,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.340019558909725,2024-09-08T01:52:18.000Z
+401635532102999101,401635532,40163553217,7,2,0:08,App State,Clemson,10,56,36,1,10,19,Pass Reception,Joey Aguilar pass complete to Anderson Castle for 19 yds to the CLEM 17 for a 1ST down,0.430874992229382,2024-09-08T01:50:32.000Z
+401635532102998001,401635532,40163553217,5,2,0:19,App State,Clemson,10,56,57,2,10,21,Rush,Anderson Castle run for 21 yds to the CLEM 36 for a 1ST down,2.6116861538472005,2024-09-08T01:49:10.000Z
+401635532102997401,401635532,40163553217,4,2,0:25,App State,Clemson,10,56,57,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-1.15714755134967,2024-09-08T01:48:32.000Z
+401635532102995801,401635532,40163553217,3,2,0:41,App State,Clemson,10,56,75,2,10,18,Rush,Kanye Roberts run for 18 yds to the APP 43 for a 1ST down,2.315408444253647,2024-09-08T01:48:16.000Z
+401635532102995301,401635532,40163553217,2,2,0:46,App State,Clemson,10,56,75,1,10,0,Rush,Kanye Roberts run for no gain to the APP 25,-0.7029700220436519,2024-09-08T01:47:48.000Z
+401635532103849905,401635532,40163553218,2,3,15:00,App State,Clemson,13,56,75,1,10,29,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson for 29 yds to the CLEM 46 for a 1ST down,2.5344677115868572,2024-09-08T02:16:26.000Z
+401635532103849906,401635532,40163553218,3,3,15:00,App State,Clemson,13,56,46,1,10,0,Pass Incompletion,Joey Aguilar pass incomplete,-1.0250974847844603,2024-09-08T02:16:26.000Z
+401635532103849907,401635532,40163553218,4,3,15:00,App State,Clemson,13,56,46,2,10,10,Rush,Anderson Castle run for 10 yds to the CLEM 36 for a 1ST down,1.5576067979051287,2024-09-08T02:16:26.000Z
+401635532103849911,401635532,40163553218,6,3,15:00,App State,Clemson,13,56,31,1,20,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.7798708327481056,2024-09-08T02:16:26.000Z
+401635532103849912,401635532,40163553218,7,3,15:00,App State,Clemson,13,56,31,2,20,14,Pass Reception,Joey Aguilar pass complete to Makai Jackson for 14 yds to the CLEM 17,1.2952353891490807,2024-09-08T02:16:26.000Z
+401635532103876801,401635532,40163553218,8,3,12:31,App State,Clemson,20,56,17,3,6,17,Passing Touchdown,Joey Aguilar pass complete to Makai Jackson for 17 yds for a TD (Michael Hughes KICK),3.0727067244867463,2024-09-08T02:24:19.000Z
+401635532103849909,401635532,40163553218,5,3,15:00,App State,Clemson,13,56,21,1,10,-10,Penalty,"No Huddle-Shotgun Aguilar,Joey pass complete short left to Robinson,Kaedin caught at CLEM22, for 1 yard to the CLEM20 (Covil Jr.,Sherrod) PENALTY APP Holding (Wilson,Eli) 10 yards from CLEM21 to CLEM31. NO PLAY.",,2024-09-08T02:16:26.000Z
+401635532103849903,401635532,40163553218,1,3,15:00,Clemson,App State,56,13,65,1,10,0,Kickoff,Robert Gunn III kickoff for 65 yds for a touchback,,2024-09-08T02:16:26.000Z
+401635532103877503,401635532,40163553219,2,3,12:24,Clemson,App State,56,20,72,1,10,24,Pass Reception,Christopher Vizzina pass complete to Troy Stellato for 24 yds to the APP 48 for a 1ST down,2.1693988759860954,2024-09-08T02:16:26.000Z
+401635532103877504,401635532,40163553219,3,3,12:24,Clemson,App State,56,20,48,1,10,5,Pass Reception,Christopher Vizzina pass complete to Adam Randall for 5 yds to the APP 43,0.0988833853941654,2024-09-08T02:16:26.000Z
+401635532103877505,401635532,40163553219,4,3,12:24,Clemson,App State,56,20,43,2,5,5,Pass Reception,Christopher Vizzina pass complete to Jake Briningstool for 5 yds to the APP 38 for a 1ST down,0.4927578023006036,2024-09-08T02:16:26.000Z
+401635532103877506,401635532,40163553219,5,3,12:24,Clemson,App State,56,20,38,1,10,3,Fumble Recovery (Own),"Christopher Vizzina run for 3 yds to the APP 41 Christopher Vizzina fumbled, recovered by APP Christopher Vizzina",-0.247403115532039,2024-09-08T02:16:26.000Z
+401635532103877507,401635532,40163553219,6,3,12:24,Clemson,App State,56,20,41,2,13,0,Pass Incompletion,Christopher Vizzina pass incomplete,-1.0318343414699758,2024-09-08T02:16:26.000Z
+401635532103877513,401635532,40163553219,8,3,12:24,Clemson,App State,56,20,51,3,23,-3,Pass Reception,"Christopher Vizzina pass complete to Olsen Patt-Henry for 12 yds to the APP 39 Clemson Penalty, Personal Foul (-15 Yards) to the CLEM 46",-0.3409750904865856,2024-09-08T02:16:26.000Z
+401635532103909501,401635532,40163553219,9,3,9:04,Clemson,App State,56,20,54,4,26,0,Punt,Aidan Swanson punt for 54 yds for a touchback,,2024-09-08T02:16:26.000Z
+401635532103877508,401635532,40163553219,7,3,12:24,Clemson,App State,56,20,41,3,13,-10,Penalty,"No Huddle-Shotgun Vizzina,Christopher rush middle for 9 yards gain to the APP32 (Sullivan,Caden) PENALTY CLEM Holding (Sadler,Collin) 10 yards from APP41 to CLEM49. NO PLAY.",,2024-09-08T02:16:26.000Z
+401635532103877501,401635532,40163553219,1,3,12:24,App State,Clemson,20,56,65,1,10,28,Kickoff Return (Offense),"Michael Hughes kickoff for 65 yds , Jay Haynes return for 28 yds to the CLEM 28",,2024-09-08T02:16:26.000Z
+401635532103909504,401635532,40163553220,2,3,9:04,App State,Clemson,20,56,68,1,10,3,Rush,Ahmani Marshall run for 3 yds to the APP 35,-0.3783931239488095,2024-09-08T02:16:26.000Z
+401635532103909503,401635532,40163553220,1,3,9:04,App State,Clemson,20,56,80,1,10,12,Pass Reception,Joey Aguilar pass complete to Kaedin Robinson for 12 yds to the APP 32 for a 1ST down,0.8667470799632433,2024-09-08T02:16:26.000Z
+401635532103909505,401635532,40163553220,3,3,9:04,App State,Clemson,20,56,65,2,7,1,Rush,Ahmani Marshall run for 1 yd to the APP 36,-0.642390586087778,2024-09-08T02:16:26.000Z
+401635532103909506,401635532,40163553220,4,3,9:04,App State,Clemson,20,56,64,3,6,-7,Sack,Joey Aguilar sacked by Stephiylan Green for a loss of 7 yards to the APP 29,-0.7508066255979085,2024-09-08T02:16:26.000Z
+401635532103937401,401635532,40163553220,5,3,6:25,App State,Clemson,20,56,71,4,13,4,Punt,"Mitchell Lake punt for 36 yds , Cole Turner returns for 4 yds to the CLEM 39",,2024-09-08T02:16:26.000Z
+401635532103937403,401635532,40163553221,1,3,6:25,Clemson,App State,56,20,61,1,10,7,Rush,Christopher Vizzina run for 7 yds to the CLEM 46,0.7076562230979297,2024-09-08T02:16:26.000Z
+401635532103937404,401635532,40163553221,2,3,6:25,Clemson,App State,56,20,54,2,3,18,Rush,Christopher Vizzina run for 18 yds to the APP 36 for a 1ST down,1.1365817183531404,2024-09-08T02:16:26.000Z
+401635532103937405,401635532,40163553221,3,3,6:25,Clemson,App State,56,20,36,1,10,25,Pass Reception,Christopher Vizzina pass complete to Cole Turner for 25 yds to the APP 11 for a 1ST down,0.489038681645871,2024-09-08T02:16:26.000Z
+401635532103937406,401635532,40163553221,4,3,6:25,Clemson,App State,56,20,11,1,10,0,Pass Incompletion,Christopher Vizzina pass incomplete,-0.291297448934314,2024-09-08T02:16:26.000Z
+401635532103937407,401635532,40163553221,5,3,6:25,Clemson,App State,56,20,11,2,10,1,Rush,Keith Adams Jr. run for 1 yd to the APP 10,-0.221345182146331,2024-09-08T02:16:26.000Z
+401635532103937408,401635532,40163553221,6,3,6:25,Clemson,App State,56,20,10,3,9,5,Pass Reception,Christopher Vizzina pass complete to Noble Johnson for 5 yds to the APP 5,0.0280360872469493,2024-09-08T02:16:26.000Z
+401635532103968901,401635532,40163553221,7,3,3:10,Clemson,App State,63,20,5,4,4,5,Rushing Touchdown,Christopher Vizzina run for 5 yds for a TD (Nolan Hauser KICK),3.0063459572016207,2024-09-08T02:16:26.000Z
+401635532103976102,401635532,40163553222,5,3,2:38,Clemson,App State,63,20,23,3,13,4,Rush,Christopher Vizzina run for 4 yds to the APP 19,-0.126528829089519,2024-09-08T02:53:56.000Z
+401635532103969403,401635532,40163553222,2,3,3:05,Clemson,App State,63,20,20,1,10,0,Pass Incompletion,Christopher Vizzina pass incomplete,-0.374805786232315,2024-09-08T02:51:48.000Z
+401635532103969404,401635532,40163553222,3,3,3:05,Clemson,App State,63,20,20,2,10,3,Fumble Recovery (Own),"Keith Adams Jr. run for 3 yds to the APP 23 Keith Adams Jr. fumbled, recovered by APP Christopher Vizzina",-0.143592841589207,2024-09-08T02:51:48.000Z
+401635532103984801,401635532,40163553222,6,3,1:51,Clemson,App State,66,20,19,4,9,36,Field Goal Good,Nolan Hauser 36 yd FG GOOD,,2024-09-08T02:55:16.000Z
+401635532103976101,401635532,40163553222,4,3,2:38,Clemson,App State,63,20,23,3,13,0,Timeout,"Timeout Clemson, clock 02:38",,2024-09-08T02:16:26.000Z
+401635532103969401,401635532,40163553222,1,3,3:05,Clemson,App State,63,20,65,1,10,17,Kickoff Return (Offense),"Robert Gunn III kickoff for 62 yds , Kanye Roberts return for 17 yds to the APP 20 Kanye Roberts fumbled, recovered by APP Peter Nearn",,2024-09-08T02:51:48.000Z
+401635532104878301,401635532,40163553223,13,4,12:16,App State,Clemson,20,66,5,1,5,0,Interception,Kaedin Robinson pass intercepted,-5.116219159441126,2024-09-08T03:01:10.000Z
+401635532103984804,401635532,40163553223,2,3,1:51,App State,Clemson,20,66,75,1,10,4,Rush,Joey Aguilar run for 4 yds to the APP 29,-0.1142886249388964,2024-09-08T02:55:16.000Z
+401635532103984805,401635532,40163553223,3,3,1:51,App State,Clemson,20,66,71,2,6,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.6509048869110972,2024-09-08T02:57:22.000Z
+401635532103984806,401635532,40163553223,4,3,1:51,App State,Clemson,20,66,71,3,6,21,Pass Reception,Joey Aguilar pass complete to Christan Horn for 21 yds to the 50 yard line for a 1ST down,3.001536699449942,2024-09-08T02:57:22.000Z
+401635532103999901,401635532,40163553223,5,3,0:00,App State,Clemson,20,66,50,1,10,1,Rush,Maquel Haywood run for 1 yd to the CLEM 49,-0.873884986133115,2024-09-08T02:59:19.000Z
+401635532104849902,401635532,40163553223,7,4,15:00,App State,Clemson,20,66,49,2,9,11,Pass Reception,Joey Aguilar pass complete to Makai Jackson for 11 yds to the CLEM 38 for a 1ST down,1.6207042696693,2024-09-08T03:01:10.000Z
+401635532104849903,401635532,40163553223,8,4,15:00,App State,Clemson,20,66,38,1,10,14,Rush,Makai Jackson run for 14 yds to the CLEM 24 for a 1ST down,0.413154699978213,2024-09-08T03:01:10.000Z
+401635532104849904,401635532,40163553223,9,4,15:00,App State,Clemson,20,66,24,1,10,9,Pass Reception,Joey Aguilar pass complete to Maquel Haywood for 9 yds to the CLEM 15,0.641938297485138,2024-09-08T03:01:10.000Z
+401635532104849905,401635532,40163553223,10,4,15:00,App State,Clemson,20,66,15,2,1,4,Pass Reception,Joey Aguilar pass complete to Makai Jackson for 4 yds to the CLEM 11 for a 1ST down,-0.482239762246088,2024-09-08T03:01:10.000Z
+401635532103999902,401635532,40163553223,6,3,0:00,App State,Clemson,20,66,50,0,10,1,End Period,End of 3rd Quarter,,2024-09-08T02:59:19.000Z
+401635532104849907,401635532,40163553223,12,4,15:00,App State,Clemson,20,66,16,1,15,11,Penalty,"No Huddle-Shotgun Aguilar,Joey pass incomplete short left to Jackson,Makai thrown to CLEM06 PENALTY CLEM Pass Interference (Feagin,Tavoy) 11 yard from CLEM16 to CLEM05, 1ST DOWN. NO PLAY.",,2024-09-08T03:01:10.000Z
+401635532104849906,401635532,40163553223,11,4,15:00,App State,Clemson,20,66,11,1,10,-5,Penalty,"No Huddle-Shotgun Aguilar,Joey pass incomplete short right to Robinson,Kaedin thrown to CLEM00 broken up by Randall,Austin PENALTY APP Ineligible Downfield on Pass (Wilson,Eli) 5 yards from CLEM11 to CLEM16. NO PLAY.",,2024-09-08T03:01:10.000Z
+401635532103984802,401635532,40163553223,1,3,1:51,Clemson,App State,66,20,65,1,10,0,Kickoff,Robert Gunn III kickoff for 65 yds for a touchback,,2024-09-08T02:55:16.000Z
+401635532104878303,401635532,40163553224,1,4,12:16,Clemson,App State,66,20,99,1,10,3,Rush,Jay Haynes run for 3 yds to the CLEM 4,-0.09708351239242496,2024-09-08T03:11:02.000Z
+401635532104878304,401635532,40163553224,2,4,12:16,Clemson,App State,66,20,96,2,7,15,Rush,Jay Haynes run for 15 yds to the CLEM 19 for a 1ST down,0.6501438432590376,2024-09-08T03:11:02.000Z
+401635532104878305,401635532,40163553224,3,4,12:16,Clemson,App State,66,20,81,1,10,18,Rush,Jay Haynes run for 18 yds to the CLEM 37 for a 1ST down,1.3881087274250463,2024-09-08T03:11:02.000Z
+401635532104878306,401635532,40163553224,4,4,12:16,Clemson,App State,66,20,63,1,10,17,Rush,David Eziomume run for 17 yds to the APP 46 for a 1ST down,1.507223385443286,2024-09-08T03:11:02.000Z
+401635532104878307,401635532,40163553224,5,4,12:16,Clemson,App State,66,20,46,1,10,2,Rush,David Eziomume run for 2 yds to the APP 44,-0.5661525320140282,2024-09-08T03:11:02.000Z
+401635532104878308,401635532,40163553224,6,4,12:16,Clemson,App State,66,20,44,2,8,0,Pass Incompletion,Christopher Vizzina pass incomplete,-1.0871267868462624,2024-09-08T03:11:02.000Z
+401635532104878309,401635532,40163553224,7,4,12:16,Clemson,App State,66,20,44,3,8,2,Pass Reception,Christopher Vizzina pass complete to Jay Haynes for 2 yds to the APP 42,-0.5887868755406895,2024-09-08T03:14:54.000Z
+401635532104915801,401635532,40163553224,8,4,8:41,Clemson,App State,66,20,42,4,6,0,Rush,Christopher Vizzina run for no gain to the APP 42,-1.2146463974645556,2024-09-08T03:15:43.000Z
+401635532104915803,401635532,40163553225,1,4,8:41,App State,Clemson,20,66,58,1,10,3,Rush,Ahmani Marshall run for 3 yds to the APP 45,-0.4325374473860535,2024-09-08T03:15:43.000Z
+401635532104915804,401635532,40163553225,2,4,8:41,App State,Clemson,20,66,55,2,7,1,Pass Reception,Joey Aguilar pass complete to Ahmani Marshall for 1 yd to the APP 46,-0.8627334216371434,2024-09-08T03:15:43.000Z
+401635532104915805,401635532,40163553225,3,4,8:41,App State,Clemson,20,66,54,3,6,0,Pass Incompletion,Joey Aguilar pass incomplete,-0.767058733604892,2024-09-08T03:15:43.000Z
+401635532104928301,401635532,40163553225,4,4,7:16,App State,Clemson,20,66,54,4,6,0,Punt,"Mitchell Lake punt for 19 yds, punt out-of-bounds at the CLEM 35",,2024-09-08T03:20:44.000Z
+401635532104928304,401635532,40163553226,1,4,7:16,Clemson,App State,66,20,65,1,10,13,Rush,David Eziomume run for 13 yds to the CLEM 48 for a 1ST down,1.2346627219809039,2024-09-08T03:23:24.000Z
+401635532104928305,401635532,40163553226,2,4,7:16,Clemson,App State,66,20,52,1,10,2,Rush,David Eziomume run for 2 yds to the 50 yard line,-0.6553095017301357,2024-09-08T03:23:24.000Z
+401635532104928306,401635532,40163553226,3,4,7:16,Clemson,App State,66,20,50,2,8,4,Pass Reception,Trent Pearman pass complete to Clay Swinney for 4 yds to the APP 46,-0.1660604383548368,2024-09-08T03:23:24.000Z
+401635532104928307,401635532,40163553226,4,4,7:16,Clemson,App State,66,20,46,3,4,1,Rush,Trent Pearman run for 1 yd to the APP 45,-0.8668322207363292,2024-09-08T03:23:24.000Z
+401635532104956901,401635532,40163553226,5,4,4:30,Clemson,App State,66,20,45,4,3,0,Pass Incompletion,Trent Pearman pass incomplete,-1.3037435504682673,2024-09-08T03:26:53.000Z
+401635532104956904,401635532,40163553227,1,4,4:30,App State,Clemson,20,66,55,1,10,6,Rush,Ahmani Marshall run for 6 yds to the CLEM 49,0.38118862332173,2024-09-08T03:26:53.000Z
+401635532104956905,401635532,40163553227,2,4,4:30,App State,Clemson,20,66,49,2,4,3,Rush,Ahmani Marshall run for 3 yds to the CLEM 46,-0.43288757738774,2024-09-08T03:26:53.000Z
+401635532104956906,401635532,40163553227,3,4,4:30,App State,Clemson,20,66,46,3,1,6,Rush,Ahmani Marshall run for 6 yds to the CLEM 40 for a 1ST down,1.139263047445034,2024-09-08T03:26:53.000Z
+401635532104975601,401635532,40163553227,4,4,2:43,App State,Clemson,20,66,40,1,10,0,Interception,Billy Wiles pass intercepted,-3.810950856062659,2024-09-08T03:30:05.000Z
+401635532104975604,401635532,40163553228,1,4,2:43,Clemson,App State,66,20,59,1,10,1,Rush,David Eziomume run for 1 yd to the CLEM 40,-0.9199637917398017,2024-09-08T03:30:05.000Z
+401635532104979902,401635532,40163553228,3,4,2:00,Clemson,App State,66,20,60,2,11,5,Rush,Jay Haynes run for 5 yds to the CLEM 45,0.0597558626935956,2024-09-08T03:34:10.000Z
+401635532104979903,401635532,40163553228,4,4,2:00,Clemson,App State,66,20,55,3,6,1,Rush,Tristen Rigby run for 1 yd to the CLEM 46,-0.6115270160852759,2024-09-08T03:34:10.000Z
+401635532104996201,401635532,40163553228,5,4,0:37,Clemson,App State,66,20,54,4,5,0,Punt,"Jack Smith punt for 40 yds, fair catch by Kaedin Robinson at the APP 14",,2024-09-08T03:35:53.000Z
+401635532104979901,401635532,40163553228,2,4,2:00,Clemson,App State,66,20,60,2,11,0,Timeout,"Timeout Clemson, clock 02:00",,2024-09-08T03:01:10.000Z
+401635532104999902,401635532,40163553229,2,4,0:00,App State,Clemson,20,66,86,0,10,2,End of Game,End of 4th Quarter,,2024-09-08T03:37:16.000Z
+401635532104999901,401635532,40163553229,1,4,0:00,App State,Clemson,20,66,86,1,10,2,Rush,Jaylon Calhoun run for 2 yds to the APP 16,-0.27305302769881834,2024-09-08T03:37:16.000Z

@@ -1,0 +1,180 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401628591101854001,401628591,4016285911,2,1,14:59,Cincinnati,Towson,0,0,75,1,10,5,Pass Reception,Brendan Sorsby pass complete to Barry Jackson Jr. for 5 yds to the CIN 30,0.0945451165334843,2024-08-31T18:34:07.000Z
+401628591101857001,401628591,4016285911,3,1,14:29,Cincinnati,Towson,0,0,70,2,5,5,Rush,Corey Kiner run for 5 yds to the CIN 35 for a 1ST down,0.7404929924965024,2024-08-31T18:34:07.000Z
+401628591101864301,401628591,4016285911,4,1,13:56,Cincinnati,Towson,0,0,65,1,10,49,Pass Reception,Brendan Sorsby pass complete to Aaron Turner for 49 yds to the TOW 16 for a 1ST down,2.6739942893989603,2024-08-31T18:34:07.000Z
+401628591101868501,401628591,4016285911,5,1,13:14,Cincinnati,Towson,0,0,16,1,10,3,Rush,Corey Kiner run for 3 yds to the TOW 13,-0.1055990016463056,2024-08-31T18:34:07.000Z
+401628591101876201,401628591,4016285911,6,1,12:37,Cincinnati,Towson,0,0,13,2,7,2,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 2 yds to the TOW 11,-0.1846019824910105,2024-08-31T18:34:07.000Z
+401628591101884501,401628591,4016285911,7,1,11:54,Cincinnati,Towson,0,0,11,3,5,9,Pass Reception,Brendan Sorsby pass complete to Jamoi Mayes for 9 yds to the TOW 2 for a 1ST down,1.6456884077575924,2024-08-31T18:34:07.000Z
+401628591101888201,401628591,4016285911,8,1,11:17,Cincinnati,Towson,7,0,2,1,2,2,Rushing Touchdown,Brendan Sorsby run for 2 yds for a TD (Carter Brown KICK),1.213235297672098,2024-08-31T18:37:54.000Z
+401628591101849903,401628591,4016285911,1,1,15:00,Towson,Cincinnati,0,0,65,0,0,0,Kickoff,Keegan Vaughan kickoff for 47 yds,,2024-08-31T18:34:07.000Z
+401628591101888301,401628591,4016285912,2,1,11:16,Towson,Cincinnati,0,7,75,1,10,-4,Sack,Carlos Davis sacked by Jared Bartlett for a loss of 4 yards to the TOW 21,-1.0163607520985618,2024-08-31T18:34:07.000Z
+401628591101895901,401628591,4016285912,3,1,10:40,Towson,Cincinnati,0,7,79,2,14,3,Rush,Devin Matthews run for 3 yds to the TOW 24,-0.07940310557592589,2024-08-31T19:15:03.000Z
+401628591101904201,401628591,4016285912,4,1,9:57,Towson,Cincinnati,0,7,76,3,11,0,Pass Incompletion,Carlos Davis pass incomplete,-0.13329329160465786,2024-08-31T18:34:07.000Z
+401628591101888203,401628591,4016285912,1,1,11:17,Cincinnati,Towson,7,0,65,0,0,0,Kickoff,Nathan Hawks kickoff for 65 yds for a touchback,,2024-08-31T18:41:33.000Z
+401628591101906401,401628591,4016285912,7,1,9:35,Towson,Cincinnati,0,7,10,1,10,0,Timeout,"Timeout Towson, clock 09:35",,2024-08-31T18:45:40.000Z
+401628591101904801,401628591,4016285912,5,1,9:51,Towson,Cincinnati,0,7,76,4,11,54,Punt,"Bryce LaFollette punt for 54 yds , Michael Mussari returns for no gain to the CIN 20 , returns for no gain to the CIN 20",,2024-08-31T18:34:07.000Z
+401628591101905802,401628591,4016285912,6,1,9:41,Towson,Cincinnati,0,7,20,1,10,10,Penalty,"(09:41) DAVIS, Carlos pass deep to the right incomplete intended for RUNYON, Carter thrown to the CIN0, clock 09:35. PENALTY CIN Holding on YOUNG, Jordan enforced 10 yards from the CIN20 to the CIN10 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-31T18:34:07.000Z
+401628591101909401,401628591,4016285913,3,1,9:05,Towson,Cincinnati,0,7,5,3,5,-5,Penalty,"Towson Penalty, False Start (Florian Staehler) to the CIN 10",,2024-08-31T18:51:03.000Z
+401628591101916301,401628591,4016285913,4,1,8:36,Towson,Cincinnati,0,7,10,3,10,-5,Penalty,"Towson Penalty, Delay Of Game (John Dunmore) to the CIN 15",,2024-08-31T18:51:54.000Z
+401628591101919601,401628591,4016285913,6,1,8:03,Towson,Cincinnati,3,7,15,4,15,32,Field Goal Good,Keegan Vaughan 32 yd FG GOOD,,2024-08-31T18:53:12.000Z
+401628591101918501,401628591,4016285913,5,1,8:14,Towson,Cincinnati,0,7,15,3,15,0,Pass Incompletion,Carlos Davis pass incomplete,-0.733599810487368,2024-08-31T18:34:07.000Z
+401628591101906901,401628591,4016285913,2,1,9:30,Towson,Cincinnati,0,7,10,2,10,5,Rush,Devin Matthews run for 5 yds to the CIN 5,0.0376202723327946,2024-08-31T18:34:07.000Z
+401628591101906402,401628591,4016285913,1,1,9:35,Towson,Cincinnati,0,7,10,1,10,0,Pass Incompletion,Carlos Davis pass incomplete,-0.2853930592519426,2024-08-31T18:45:40.000Z
+401628591101919602,401628591,4016285914,1,1,8:03,Towson,Cincinnati,3,7,65,0,0,14,Kickoff Return (Offense),"Keegan Vaughan kickoff for 44 yds , Logan Wilson return for 14 yds to the CIN 35",,2024-08-31T18:53:12.000Z
+401628591101924201,401628591,4016285914,2,1,7:57,Cincinnati,Towson,7,3,65,1,10,2,Rush,Corey Kiner run for 2 yds to the CIN 37,-0.63079683335922,2024-08-31T18:34:07.000Z
+401628591101927701,401628591,4016285914,3,1,7:22,Cincinnati,Towson,7,3,63,2,8,21,Pass Reception,Brendan Sorsby pass complete to Joe Royer for 21 yds to the TOW 42 for a 1ST down,2.5785783724784306,2024-08-31T18:34:07.000Z
+401628591101929901,401628591,4016285914,4,1,7:00,Cincinnati,Towson,7,3,42,1,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.908489395271188,2024-08-31T18:34:07.000Z
+401628591101934901,401628591,4016285914,5,1,6:50,Cincinnati,Towson,14,3,42,2,10,42,Passing Touchdown,Brendan Sorsby pass complete to Xzavier Henderson for 42 yds for a TD (Carter Brown KICK),4.203424866843312,2024-08-31T18:56:53.000Z
+401628591101934903,401628591,4016285915,1,1,6:50,Cincinnati,Towson,14,3,65,0,0,0,Kickoff,Nathan Hawks kickoff for 65 yds for a touchback,,2024-08-31T18:57:17.000Z
+401628591101935001,401628591,4016285915,2,1,6:49,Towson,Cincinnati,3,14,75,1,10,6,Rush,Tyrell Greene Jr. run for 6 yds to the TOW 31,0.3333748010525683,2024-08-31T18:34:07.000Z
+401628591101937501,401628591,4016285915,3,1,6:24,Towson,Cincinnati,3,14,69,2,4,22,Pass Reception,Carlos Davis pass complete to Lukkas Londono for 22 yds to the CIN 47 for a 1ST down,2.131178077402323,2024-08-31T18:34:07.000Z
+401628591101939701,401628591,4016285915,4,1,6:02,Towson,Cincinnati,3,14,47,1,10,2,Rush,Tyrell Greene Jr. run for 2 yds to the CIN 45,-0.583582209593514,2024-08-31T18:34:07.000Z
+401628591101946801,401628591,4016285915,5,1,5:31,Towson,Cincinnati,3,14,45,2,8,0,Pass Incompletion,Carlos Davis pass incomplete,-1.0965479630049713,2024-08-31T18:34:07.000Z
+401628591101947601,401628591,4016285915,6,1,5:23,Towson,Cincinnati,3,14,45,3,8,0,Rush,Carlos Davis run for no gain to the CIN 45,-0.9358287613859683,2024-08-31T19:03:19.000Z
+401628591101955001,401628591,4016285915,7,1,4:49,Towson,Cincinnati,3,14,45,4,8,0,Punt,Bryce LaFollette punt for 45 yds for a touchback,,2024-08-31T18:34:07.000Z
+401628591101956401,401628591,4016285916,1,1,4:35,Cincinnati,Towson,14,3,75,1,10,3,Rush,Chance Williams run for 3 yds to the CIN 28,-0.2957674139440157,2024-08-31T18:34:07.000Z
+401628591101959901,401628591,4016285916,2,1,4:00,Cincinnati,Towson,14,3,72,2,7,11,Pass Reception,Brendan Sorsby pass complete to Joe Royer for 11 yds to the CIN 39 for a 1ST down,1.5185064972004712,2024-08-31T18:34:07.000Z
+401628591101968601,401628591,4016285916,3,1,3:13,Cincinnati,Towson,21,3,61,1,10,61,Passing Touchdown,Brendan Sorsby pass complete to Sterling Berkhalter for 61 yds for a TD (Carter Brown KICK),4.855016036464866,2024-08-31T19:07:37.000Z
+401628591101968603,401628591,4016285917,1,1,3:13,Cincinnati,Towson,21,3,65,0,0,0,Kickoff,Nathan Hawks kickoff for 61 yds,,2024-08-31T19:08:03.000Z
+401628591101999902,401628591,4016285917,11,1,0:00,Towson,Cincinnati,3,21,11,0,10,7,End Period,End of 1st Quarter,,2024-08-31T19:15:03.000Z
+401628591101969601,401628591,4016285917,2,1,3:03,Towson,Cincinnati,3,21,65,1,10,4,Pass Reception,Carlos Davis pass complete to Lukkas Londono for 4 yds to the TOW 39,-0.1595952673507188,2024-08-31T18:34:07.000Z
+401628591101974701,401628591,4016285917,3,1,2:52,Towson,Cincinnati,3,21,61,2,6,8,Pass Reception,Carlos Davis pass complete to Lukkas Londono for 8 yds to the TOW 47 for a 1ST down,1.3070128444687459,2024-08-31T18:34:07.000Z
+401628591101976401,401628591,4016285917,4,1,2:35,Towson,Cincinnati,3,21,53,1,10,-3,Fumble Recovery (Own),"Devin Matthews run for a loss of 3 yards to the TOW 45 Devin Matthews fumbled, recovered by TOW Devin Matthews D. Matthews return for 1 yds",-1.8008878089429494,2024-08-31T18:34:07.000Z
+401628591101985501,401628591,4016285917,5,1,1:44,Towson,Cincinnati,3,21,55,2,12,18,Rush,Tyrell Greene Jr. run for 18 yds to the CIN 37 for a 1ST down,2.6425184986478705,2024-08-31T18:34:07.000Z
+401628591101986901,401628591,4016285917,6,1,1:30,Towson,Cincinnati,3,21,37,1,10,-5,Penalty,"Towson Penalty, False Start (Florian Staehler) to the CIN 42",,2024-08-31T18:34:07.000Z
+401628591101989101,401628591,4016285917,7,1,1:08,Towson,Cincinnati,3,21,42,1,15,0,Pass Incompletion,Carlos Davis pass incomplete,-0.9629812872526866,2024-08-31T18:34:07.000Z
+401628591101989601,401628591,4016285917,8,1,1:03,Towson,Cincinnati,3,21,42,2,15,21,Pass Reception,Carlos Davis pass complete to Da'Kendall James for 21 yds to the CIN 21 for a 1ST down,2.1919579338019273,2024-08-31T18:34:07.000Z
+401628591101997201,401628591,4016285917,9,1,0:27,Towson,Cincinnati,3,21,21,1,10,10,Pass Reception,Carlos Davis pass complete to Carter Runyon for 10 yds to the CIN 11 for a 1ST down,0.110557400427568,2024-08-31T18:34:07.000Z
+401628591101999901,401628591,4016285917,10,1,0:00,Towson,Cincinnati,3,21,11,1,10,7,Rush,Christopher Watkins run for 7 yds to the CIN 4,0.30254910822179,2024-08-31T19:15:03.000Z
+401628591102849902,401628591,4016285917,12,2,15:00,Towson,Cincinnati,3,21,4,2,3,2,Rush,Devin Matthews run for 2 yds to the CIN 2,-0.243657987078908,2024-08-31T00:00:00.000Z
+401628591102856401,401628591,4016285917,13,2,14:35,Towson,Cincinnati,3,21,2,3,1,0,Rush,Devin Matthews run for no gain to the CIN 2,-0.338132506219479,2024-08-31T19:19:43.000Z
+401628591102857901,401628591,4016285917,14,2,14:20,Towson,Cincinnati,3,21,2,4,1,-1,Rush,Devin Matthews run for a loss of 1 yard to the CIN 3,-4.199019201555478,2024-08-31T19:19:43.000Z
+401628591102858302,401628591,4016285918,1,2,14:16,Cincinnati,Towson,21,3,97,1,10,13,Rush,Tony Johnson run for 13 yds to the CIN 16 for a 1ST down,0.3781492345362265,2024-08-31T19:20:01.000Z
+401628591102865901,401628591,4016285918,2,2,13:40,Cincinnati,Towson,21,3,84,1,10,5,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 5 yds to the CIN 21,0.07867780591471615,2024-08-31T19:19:43.000Z
+401628591102868901,401628591,4016285918,3,2,13:10,Cincinnati,Towson,21,3,79,2,5,18,Rush,Corey Kiner run for 18 yds to the CIN 39 for a 1ST down,1.6456754848240924,2024-08-31T19:19:43.000Z
+401628591102876301,401628591,4016285918,4,2,12:36,Cincinnati,Towson,21,3,61,1,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-1.1077677360468863,2024-08-31T19:19:43.000Z
+401628591102876801,401628591,4016285918,5,2,12:31,Cincinnati,Towson,21,3,61,2,10,-4,Rush,Manny Covey run for a loss of 4 yards to the CIN 35,-1.0706537181010223,2024-08-31T19:19:43.000Z
+401628591102885001,401628591,4016285918,6,2,11:49,Cincinnati,Towson,21,3,65,3,14,7,Pass Reception,Brendan Sorsby pass complete to Manny Covey for 7 yds to the CIN 42,0.17155054298525485,2024-08-31T19:19:43.000Z
+401628591102894001,401628591,4016285918,7,2,10:59,Cincinnati,Towson,21,3,58,4,7,0,Punt,"Mason Fletcher punt for 51 yds, fair catch by John Dunmore at the TOW 3",,2024-08-31T19:19:43.000Z
+401628591102894602,401628591,4016285919,1,2,10:53,Towson,Cincinnati,3,21,96,1,10,14,Pass Reception,Carlos Davis pass complete to Devin Matthews for 14 yds to the TOW 18 for a 1ST down,0.45030882975797315,2024-08-31T19:24:56.000Z
+401628591102896501,401628591,4016285919,2,2,10:34,Towson,Cincinnati,3,21,82,1,10,6,Rush,Devin Matthews run for 6 yds to the TOW 24,0.2714669258479434,2024-08-31T19:19:43.000Z
+401628591102899001,401628591,4016285919,3,2,10:09,Towson,Cincinnati,3,21,76,2,4,0,Pass Incompletion,Carlos Davis pass incomplete,-0.6545626180064668,2024-08-31T19:19:43.000Z
+401628591102904501,401628591,4016285919,4,2,9:54,Towson,Cincinnati,10,21,76,3,4,76,Passing Touchdown,Carlos Davis pass complete to Jaceon Doss for 76 yds for a TD (Keegan Vaughan KICK),6.871393941451374,2024-08-31T19:29:52.000Z
+401628591102904503,401628591,40162859110,1,2,9:54,Towson,Cincinnati,10,21,65,0,0,15,Kickoff Return (Offense),"Keegan Vaughan kickoff for 43 yds , Logan Wilson return for 15 yds to the CIN 37",,2024-08-31T19:33:52.000Z
+401628591102905002,401628591,40162859110,2,2,9:49,Cincinnati,Towson,21,10,63,1,10,18,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 18 yds to the TOW 45 for a 1ST down,1.5739967085106823,2024-08-31T19:34:03.000Z
+401628591102908901,401628591,40162859110,3,2,9:10,Cincinnati,Towson,21,10,45,1,10,38,Pass Reception,Brendan Sorsby pass complete to Joe Royer for 38 yds to the TOW 7 for a 1ST down,1.279759454739857,2024-08-31T19:19:43.000Z
+401628591102917301,401628591,40162859110,4,2,8:26,Cincinnati,Towson,21,10,7,1,7,4,Rush,Chance Williams run for 4 yds to the TOW 3,-0.014669983632882,2024-08-31T19:19:43.000Z
+401628591102925201,401628591,40162859110,5,2,7:47,Cincinnati,Towson,21,10,3,2,3,-9,Rush,Brendan Sorsby run for a loss of 9 yards to the TOW 12,-1.023559029148284,2024-08-31T19:19:43.000Z
+401628591102934301,401628591,40162859110,6,2,6:56,Cincinnati,Towson,28,10,12,3,12,12,Rushing Touchdown,Brendan Sorsby run for 12 yds for a TD (Carter Brown KICK),3.234983643108377,2024-08-31T19:37:43.000Z
+401628591102934303,401628591,40162859111,1,2,6:56,Cincinnati,Towson,28,10,65,0,0,0,Kickoff,Nathan Hawks kickoff for 65 yds for a touchback,,2024-08-31T19:41:35.000Z
+401628591102944401,401628591,40162859111,5,2,5:55,Towson,Cincinnati,10,28,67,4,2,12,Punt,"Bryce LaFollette punt for 45 yds , Michael Mussari returns for 12 yds to the CIN 34",,2024-08-31T19:43:31.000Z
+401628591102939801,401628591,40162859111,4,2,6:01,Towson,Cincinnati,10,28,67,3,2,0,Pass Incompletion,Carlos Davis pass incomplete,-0.6013143962559822,2024-08-31T19:19:43.000Z
+401628591102937401,401628591,40162859111,3,2,6:25,Towson,Cincinnati,10,28,69,2,4,2,Pass Reception,Carlos Davis pass complete to Carter Runyon for 2 yds to the TOW 33,-0.5529622556781773,2024-08-31T19:19:43.000Z
+401628591102934305,401628591,40162859111,2,2,6:56,Towson,Cincinnati,10,28,75,1,10,6,Rush,Tyrell Greene Jr. run for 6 yds to the TOW 31,0.3333748010525683,2024-08-31T19:41:35.000Z
+401628591102965001,401628591,40162859112,5,2,3:49,Cincinnati,Towson,28,10,20,1,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.374805786232315,2024-08-31T19:19:43.000Z
+401628591102945301,401628591,40162859112,1,2,5:46,Cincinnati,Towson,28,10,66,1,10,12,Rush,Corey Kiner run for 12 yds to the CIN 46 for a 1ST down,1.1518718520444062,2024-08-31T19:19:43.000Z
+401628591102948801,401628591,40162859112,2,2,5:11,Cincinnati,Towson,28,10,54,1,10,9,Pass Reception,Brendan Sorsby pass complete to Sterling Berkhalter for 9 yds to the TOW 45,1.20588179851595,2024-08-31T19:19:43.000Z
+401628591102956301,401628591,40162859112,3,2,4:36,Cincinnati,Towson,28,10,45,2,1,10,Rush,Corey Kiner run for 10 yds to the TOW 35 for a 1ST down,0.006426955392302,2024-08-31T19:19:43.000Z
+401628591102964402,401628591,40162859112,4,2,3:55,Cincinnati,Towson,28,10,35,1,10,15,Penalty,"(03:55) SORSBY, Brendan pass deep up the middle incomplete intended for BERKHALTER, Sterling thrown to the TOW0, clock 03:50. PENALTY TOW Pass Interference on GANT, Emiril enforced 15 yards to the TOW20 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-08-31T19:19:43.000Z
+401628591102965301,401628591,40162859112,6,2,3:46,Cincinnati,Towson,28,10,20,2,10,1,Rush,Corey Kiner run for 1 yd to the TOW 19,-0.352770739310687,2024-08-31T19:48:19.000Z
+401628591102969501,401628591,40162859112,7,2,3:04,Cincinnati,Towson,28,10,19,3,9,11,Pass Reception,Brendan Sorsby pass complete to Joe Royer for 11 yds to the TOW 8 for a 1ST down,1.025904685875009,2024-08-31T19:19:43.000Z
+401628591102977901,401628591,40162859112,8,2,2:20,Cincinnati,Towson,28,10,8,1,8,-10,Fumble Recovery (Own),"run for a loss of 10 yards to the TOW 13 fumbled, recovered by CIN Corey Kiner C. Kiner return for 5 yds",-1.032097528447805,2024-08-31T20:10:54.000Z
+401628591102979901,401628591,40162859112,9,2,2:00,Cincinnati,Towson,28,10,13,2,13,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.35399317212498,2024-08-31T19:19:43.000Z
+401628591102984501,401628591,40162859112,10,2,1:54,Cincinnati,Towson,28,10,13,3,13,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.6039382602387847,2024-08-31T19:54:04.000Z
+401628591102985001,401628591,40162859112,11,2,1:49,Cincinnati,Towson,28,10,13,4,13,31,Field Goal Missed,Carter Brown 31 yd FG MISSED,,2024-08-31T19:54:47.000Z
+401628591102987401,401628591,40162859113,2,2,1:25,Towson,Cincinnati,10,28,41,1,10,-5,Penalty,"Towson Penalty, False Start (Florian Staehler) to the CIN 46",,2024-08-31T19:57:05.000Z
+401628591102988201,401628591,40162859113,6,2,1:17,Towson,Cincinnati,10,28,50,2,19,7,Pass Reception,Carlos Davis pass complete to Carter Runyon for 7 yds to the CIN 43,0.4319158558218153,2024-08-31T19:19:43.000Z
+401628591102989901,401628591,40162859113,9,2,1:00,Towson,Cincinnati,10,28,36,4,5,8,Rush,Carlos Davis run for 8 yds to the CIN 28 for a 1ST down,2.337162962219061,2024-08-31T19:19:43.000Z
+401628591102996001,401628591,40162859113,10,2,0:39,Towson,Cincinnati,10,28,28,1,10,0,Pass Incompletion,Carlos Davis pass incomplete,-0.512081873784803,2024-08-31T19:19:43.000Z
+401628591102996601,401628591,40162859113,11,2,0:33,Towson,Cincinnati,10,28,28,2,10,0,Pass Incompletion,Carlos Davis pass incomplete,-0.7006450342354943,2024-08-31T19:19:43.000Z
+401628591102998001,401628591,40162859113,12,2,0:19,Towson,Cincinnati,17,28,28,3,10,28,Passing Touchdown,Carlos Davis pass complete to John Dunmore for 28 yds for a TD (Keegan Vaughan KICK),3.9767413821587283,2024-08-31T20:06:15.000Z
+401628591102988801,401628591,40162859113,7,2,1:11,Towson,Cincinnati,10,28,43,3,12,-5,Penalty,"Towson Penalty, False Start (Jaceon Doss) to the CIN 48",,2024-08-31T20:00:51.000Z
+401628591102987901,401628591,40162859113,5,2,1:20,Towson,Cincinnati,10,28,50,2,19,0,Timeout,"Timeout Cincinnati, clock 01:20",,2024-08-31T19:59:12.000Z
+401628591102987402,401628591,40162859113,3,2,1:25,Towson,Cincinnati,10,28,46,1,15,0,Timeout,"Timeout Towson, clock 01:25",,2024-08-31T19:57:05.000Z
+401628591102988802,401628591,40162859113,8,2,1:11,Towson,Cincinnati,10,28,48,3,17,12,Rush,Carlos Davis run for 12 yds to the CIN 36,1.35780066641426,2024-08-31T20:02:27.000Z
+401628591102985501,401628591,40162859113,1,2,1:44,Towson,Cincinnati,10,28,80,1,10,39,Rush,Christopher Watkins run for 39 yds to the CIN 41 for a 1ST down,3.1455381697085834,2024-08-31T19:19:43.000Z
+401628591102987501,401628591,40162859113,4,2,1:24,Towson,Cincinnati,10,28,46,1,15,-4,Sack,Carlos Davis sacked by Eric Phillips for a loss of 4 yards to the 50 yard line,-1.8404196658948582,2024-08-31T19:19:43.000Z
+401628591102998003,401628591,40162859114,1,2,0:19,Towson,Cincinnati,17,28,65,0,0,0,Kickoff,Keegan Vaughan kickoff for 35 yds,,2024-08-31T20:06:15.000Z
+401628591102999902,401628591,40162859114,6,2,0:00,Cincinnati,Towson,28,17,30,0,10,0,End of Half,End of 2nd Quarter,,2024-08-31T20:10:54.000Z
+401628591102998401,401628591,40162859114,3,2,0:15,Cincinnati,Towson,28,17,62,2,2,0,Pass Incompletion,Brendan Sorsby pass incomplete,-1.2693642680598085,2024-08-31T20:09:05.000Z
+401628591102998101,401628591,40162859114,2,2,0:18,Cincinnati,Towson,28,17,70,1,10,8,Pass Reception,Brendan Sorsby pass complete to Joe Royer for 8 yds to the CIN 38,0.9979151532889787,2024-08-31T19:19:43.000Z
+401628591102998901,401628591,40162859114,4,2,0:10,Cincinnati,Towson,28,17,62,3,2,13,Pass Reception,Brendan Sorsby pass complete to Evan Pryor for 13 yds to the TOW 49 for a 1ST down,2.201905082037925,2024-08-31T19:19:43.000Z
+401628591102999601,401628591,40162859114,5,2,0:03,Cincinnati,Towson,28,17,49,1,10,19,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 19 yds to the TOW 30 for a 1ST down,0.9480874187144773,2024-08-31T20:10:54.000Z
+401628591103849905,401628591,40162859115,2,3,15:00,Towson,Cincinnati,17,28,75,1,10,4,Rush,Tyrell Greene Jr. run for 4 yds to the TOW 29,-0.1142886249388964,2024-08-31T20:32:55.000Z
+401628591103858001,401628591,40162859115,5,3,14:19,Towson,Cincinnati,17,28,61,1,10,2,Rush,Devin Matthews run for 2 yds to the TOW 41,-0.673782181215797,2024-08-31T20:32:55.000Z
+401628591103865601,401628591,40162859115,6,3,13:43,Towson,Cincinnati,17,28,59,2,8,2,Rush,Devin Matthews run for 2 yds to the TOW 43,-0.5653729582051356,2024-08-31T20:32:55.000Z
+401628591103874001,401628591,40162859115,7,3,12:59,Towson,Cincinnati,17,28,57,3,6,11,Pass Reception,Carlos Davis pass complete to Devin Matthews for 11 yds to the CIN 46 for a 1ST down,2.5508837677513343,2024-08-31T20:32:55.000Z
+401628591103877601,401628591,40162859115,8,3,12:23,Towson,Cincinnati,17,28,46,1,10,8,Rush,Devin Matthews run for 8 yds to the CIN 38,0.7522360030063563,2024-08-31T20:32:55.000Z
+401628591103886101,401628591,40162859115,9,3,11:38,Towson,Cincinnati,17,28,38,2,2,15,Rush,Devin Matthews run for 15 yds to the CIN 23 for a 1ST down,0.1270737270568795,2024-08-31T20:32:55.000Z
+401628591103894301,401628591,40162859115,10,3,10:56,Towson,Cincinnati,17,28,23,1,10,7,Rush,Christopher Watkins run for 7 yds to the CIN 16,0.3212971064456235,2024-08-31T20:32:55.000Z
+401628591103857201,401628591,40162859115,4,3,14:27,Towson,Cincinnati,17,28,78,3,13,15,Penalty,"Cincinnati Penalty, Roughing the Passer on ROETHERFORD, Cameron enforced (Cam Roetherford) to the TOW 39 for a 1ST down",,2024-08-31T20:34:57.000Z
+401628591103856201,401628591,40162859115,3,3,14:37,Towson,Cincinnati,17,28,71,2,6,-7,Penalty,"Towson Penalty, Intentional Grounding (Carlos Davis) to the TOW 22",,2024-08-31T20:32:55.000Z
+401628591103849902,401628591,40162859115,1,3,15:00,Cincinnati,Towson,28,17,65,0,0,0,Kickoff,Nathan Hawks kickoff for 65 yds for a touchback,,2024-08-31T20:32:55.000Z
+401628591103897601,401628591,40162859115,11,3,10:23,Towson,Cincinnati,17,28,16,2,3,0,Pass Incompletion,Carlos Davis pass incomplete,-0.491765461251534,2024-08-31T20:32:55.000Z
+401628591103898101,401628591,40162859115,12,3,10:18,Towson,Cincinnati,17,28,16,3,3,0,Pass Incompletion,Carlos Davis pass incomplete,-0.4924412394571807,2024-08-31T20:32:55.000Z
+401628591103898901,401628591,40162859115,13,3,10:10,Towson,Cincinnati,20,28,16,4,3,33,Field Goal Good,Keegan Vaughan 33 yd FG GOOD,,2024-08-31T20:42:52.000Z
+401628591103898902,401628591,40162859116,1,3,10:10,Towson,Cincinnati,20,28,65,0,0,12,Kickoff Return (Offense),"Keegan Vaughan kickoff for 41 yds , Jake Golday return for 12 yds to the CIN 36",,2024-08-31T20:42:52.000Z
+401628591103904701,401628591,40162859116,2,3,9:52,Cincinnati,Towson,35,20,64,1,10,64,Rushing Touchdown,Evan Pryor run for 64 yds for a TD (Carter Brown KICK),5.147192607775331,2024-08-31T20:47:23.000Z
+401628591103904703,401628591,40162859117,1,3,9:52,Cincinnati,Towson,35,20,65,0,0,0,Kickoff,Nathan Hawks kickoff for 58 yds,,2024-08-31T20:51:49.000Z
+401628591103904705,401628591,40162859117,2,3,9:52,Towson,Cincinnati,20,35,75,1,10,8,Rush,Tyrell Greene Jr. run for 8 yds to the TOW 33,0.9104368550610653,2024-08-31T20:51:49.000Z
+401628591103907501,401628591,40162859117,3,3,9:24,Towson,Cincinnati,20,35,67,2,2,0,Pass Incompletion,Carlos Davis pass incomplete,-1.1300243096866742,2024-08-31T20:32:55.000Z
+401628591103908401,401628591,40162859117,4,3,9:15,Towson,Cincinnati,20,35,67,3,2,0,Rush,Carlos Davis run for no gain to the TOW 33,-0.6013143962559822,2024-08-31T20:32:55.000Z
+401628591103917401,401628591,40162859117,5,3,8:25,Towson,Cincinnati,20,35,67,4,2,0,Punt,"Bryce LaFollette punt for 48 yds, fair catch by Michael Mussari at the CIN 19",,2024-08-31T20:32:55.000Z
+401628591103918002,401628591,40162859118,1,3,8:19,Cincinnati,Towson,35,20,81,1,10,9,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 9 yds to the CIN 28,1.0829013043177111,2024-08-31T20:56:16.000Z
+401628591103924901,401628591,40162859118,2,3,7:50,Cincinnati,Towson,35,20,72,2,1,5,Rush,Manny Covey run for 5 yds to the CIN 33 for a 1ST down,-0.0733384524560634,2024-08-31T20:32:55.000Z
+401628591103927401,401628591,40162859118,3,3,7:25,Cincinnati,Towson,35,20,67,1,10,19,Pass Reception,Brendan Sorsby pass complete to Aaron Turner for 19 yds to the TOW 48 for a 1ST down,1.7428228328611919,2024-08-31T20:32:55.000Z
+401628591103934801,401628591,40162859118,4,3,6:51,Cincinnati,Towson,35,20,48,1,10,5,Rush,Manny Covey run for 5 yds to the TOW 43,0.0988833853941654,2024-08-31T20:32:55.000Z
+401628591103936901,401628591,40162859118,5,3,6:30,Cincinnati,Towson,35,20,43,2,5,6,Pass Reception,Brendan Sorsby pass complete to Xzavier Henderson for 6 yds to the TOW 37 for a 1ST down,0.5359418194090484,2024-08-31T20:32:55.000Z
+401628591103944201,401628591,40162859118,6,3,5:57,Cincinnati,Towson,35,20,37,1,10,7,Rush,Chance Williams run for 7 yds to the TOW 30,0.4132162669128242,2024-08-31T20:32:55.000Z
+401628591103948201,401628591,40162859118,7,3,5:17,Cincinnati,Towson,35,20,30,2,3,7,Pass Reception,Brendan Sorsby pass complete to Jamoi Mayes for 7 yds to the TOW 23 for a 1ST down,-0.0257853135073095,2024-08-31T20:32:55.000Z
+401628591103949101,401628591,40162859118,8,3,5:08,Cincinnati,Towson,35,20,23,1,10,5,Rush,Barry Jackson Jr. run for 5 yds to the TOW 18,0.0748292871583285,2024-08-31T20:32:55.000Z
+401628591103954501,401628591,40162859118,9,3,4:54,Cincinnati,Towson,35,20,18,2,5,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.4481008553640163,2024-08-31T20:32:55.000Z
+401628591103955201,401628591,40162859118,10,3,4:47,Cincinnati,Towson,35,20,18,3,5,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.554520316054294,2024-08-31T20:32:55.000Z
+401628591103956101,401628591,40162859118,11,3,4:38,Cincinnati,Towson,38,20,18,4,5,36,Field Goal Good,Carter Brown 36 yd FG GOOD,,2024-08-31T21:06:14.000Z
+401628591103956104,401628591,40162859119,2,3,4:38,Towson,Cincinnati,20,38,75,1,10,7,Rush,Devin Matthews run for 7 yds to the TOW 32,0.604642460086338,2024-08-31T21:06:14.000Z
+401628591103958501,401628591,40162859119,3,3,4:14,Towson,Cincinnati,20,38,68,2,3,4,Rush,Devin Matthews run for 4 yds to the TOW 36 for a 1ST down,0.3259200518596525,2024-08-31T20:32:55.000Z
+401628591103965601,401628591,40162859119,4,3,3:43,Towson,Cincinnati,20,38,64,1,10,6,Rush,Devin Matthews run for 6 yds to the TOW 42,0.4008542507084805,2024-08-31T20:32:55.000Z
+401628591103974101,401628591,40162859119,5,3,2:58,Towson,Cincinnati,20,38,58,2,4,-1,Pass Reception,Carlos Davis pass complete to Christopher Watkins for a loss of 1 yard to the TOW 41,-1.3813845567380474,2024-08-31T20:32:55.000Z
+401628591103956102,401628591,40162859119,1,3,4:38,Cincinnati,Towson,38,20,65,0,0,0,Kickoff,Nathan Hawks kickoff for 65 yds for a touchback,,2024-08-31T21:06:14.000Z
+401628591103974901,401628591,40162859119,6,3,2:50,Towson,Cincinnati,20,38,59,3,5,0,Timeout,"Timeout Towson, clock 02:50",,2024-08-31T21:10:08.000Z
+401628591103978901,401628591,40162859119,8,3,2:10,Towson,Cincinnati,20,38,59,4,5,0,Punt,"Bryce LaFollette punt for 39 yds, fair catch by Michael Mussari at the CIN 20",,2024-08-31T20:32:55.000Z
+401628591103978401,401628591,40162859119,7,3,2:15,Towson,Cincinnati,20,38,59,3,5,0,Pass Incompletion,Carlos Davis pass incomplete,-0.6617140534494768,2024-08-31T20:32:55.000Z
+401628591103995802,401628591,40162859120,5,3,0:00,Cincinnati,Towson,38,20,66,0,10,7,End Period,End of 3rd Quarter,,2024-08-31T21:16:19.000Z
+401628591103995801,401628591,40162859120,4,3,0:41,Cincinnati,Towson,38,20,66,2,10,7,Rush,Victor Dawson run for 7 yds to the CIN 41,0.4486960361195854,2024-08-31T20:32:55.000Z
+401628591103995101,401628591,40162859120,3,3,0:48,Cincinnati,Towson,38,20,66,1,10,0,Pass Incompletion,Brendan Sorsby pass incomplete,-0.9864556271674072,2024-08-31T20:32:55.000Z
+401628591103987101,401628591,40162859120,2,3,1:28,Cincinnati,Towson,38,20,80,2,10,14,Pass Reception,Brendan Sorsby pass complete to Francis Sherman for 14 yds to the CIN 34 for a 1ST down,1.6079577855480167,2024-08-31T20:32:55.000Z
+401628591103979502,401628591,40162859120,1,3,2:04,Cincinnati,Towson,38,20,80,1,10,0,Rush,Brendan Sorsby run for no gain to the CIN 20,-0.5586693796725282,2024-08-31T21:12:53.000Z
+401628591104854201,401628591,40162859120,6,4,14:57,Cincinnati,Towson,38,20,59,3,3,47,Fumble Recovery (Opponent),"Victor Dawson run for 47 yds to the TOW 12 Victor Dawson fumbled, recovered by TOW Xavier Terry X. Terry return for 0 yds",-1.125471019222564,2024-08-31T00:00:00.000Z
+401628591104866001,401628591,40162859121,3,4,13:39,Towson,Cincinnati,20,38,78,1,10,8,Pass Reception,Carlos Davis pass complete to Tyrell Greene Jr. for 8 yds to the TOW 30,0.8447170538042306,2024-08-31T21:20:55.000Z
+401628591104858201,401628591,40162859121,2,4,14:17,Towson,Cincinnati,20,38,84,2,6,6,Pass Reception,Carlos Davis pass complete to Da'Kendall James for 6 yds to the TOW 22 for a 1ST down,0.5137928158194791,2024-08-31T21:20:55.000Z
+401628591104855201,401628591,40162859121,1,4,14:47,Towson,Cincinnati,20,38,88,1,10,4,Rush,Tyrell Greene Jr. run for 4 yds to the TOW 16,-0.05451762657628478,2024-08-31T21:20:55.000Z
+401628591104869501,401628591,40162859121,4,4,13:04,Towson,Cincinnati,20,38,70,2,2,12,Fumble Recovery (Opponent),"Tyrell Greene Jr. run for 12 yds to the TOW 36 fumbled, recovered by CIN Darian Varner D. Varner return for 6 yds fumbled, recovered by TOW return for 6 yds for a 1ST down",-1.5727322514631084,2024-08-31T21:20:55.000Z
+401628591104876801,401628591,40162859122,1,4,12:31,Towson,Cincinnati,20,38,64,1,10,4,Rush,Christopher Watkins run for 4 yds to the TOW 40,-0.1622709044233037,2024-08-31T21:20:55.000Z
+401628591104889702,401628591,40162859122,4,4,11:02,Towson,Cincinnati,20,38,58,3,4,9,Pass Reception,Carlos Davis pass complete to Da'Kendall James for 9 yds to the CIN 49 for a 1ST down,2.167544524448786,2024-08-31T21:29:38.000Z
+401628591104897801,401628591,40162859122,5,4,10:21,Towson,Cincinnati,20,38,49,1,10,0,Pass Incompletion,Carlos Davis pass incomplete,-1.0955888671820908,2024-08-31T21:20:55.000Z
+401628591104898401,401628591,40162859122,6,4,10:15,Towson,Cincinnati,20,38,49,2,10,-1,Rush,Devin Matthews run for a loss of 1 yard to the 50 yard line,-1.2238355177572862,2024-08-31T21:34:05.000Z
+401628591104906601,401628591,40162859122,7,4,9:33,Towson,Cincinnati,20,38,50,3,11,0,Pass Incompletion,Carlos Davis pass incomplete,-0.6624434770970345,2024-08-31T21:20:55.000Z
+401628591104907201,401628591,40162859122,8,4,9:27,Towson,Cincinnati,20,38,50,4,11,39,Punt,"Bryce LaFollette punt for 39 yds , Michael Mussari returns for no gain to the CIN 13 , returns for no gain to the CIN 13",,2024-08-31T21:35:54.000Z
+401628591104885701,401628591,40162859122,3,4,11:42,Towson,Cincinnati,20,38,58,3,4,0,Timeout,"Timeout Towson, clock 11:42",,2024-08-31T21:28:36.000Z
+401628591104885101,401628591,40162859122,2,4,11:48,Towson,Cincinnati,20,38,60,2,6,2,Rush,Christopher Watkins run for 2 yds to the TOW 42,-0.6204115638873997,2024-08-31T21:20:55.000Z
+401628591104908001,401628591,40162859123,1,4,9:19,Cincinnati,Towson,38,20,87,1,10,8,Rush,Chance Williams run for 8 yds to the CIN 21,0.6434724471565767,2024-08-31T21:20:55.000Z
+401628591104915401,401628591,40162859123,2,4,8:45,Cincinnati,Towson,38,20,79,2,2,1,Rush,Chance Williams run for 1 yd to the CIN 22,-0.6301834569731488,2024-08-31T21:20:55.000Z
+401628591104918101,401628591,40162859123,3,4,8:18,Cincinnati,Towson,38,20,78,3,1,0,Rush,Brendan Sorsby run for no gain to the CIN 22,-0.41122256607169394,2024-08-31T21:20:55.000Z
+401628591104918601,401628591,40162859123,4,4,8:13,Cincinnati,Towson,38,20,78,4,1,0,Timeout,"Timeout Cincinnati, clock 08:13",,2024-08-31T21:40:27.000Z
+401628591104927401,401628591,40162859123,5,4,7:25,Cincinnati,Towson,38,20,78,4,1,-2,Punt,"Mason Fletcher punt for 54 yds , John Dunmore returns for a loss of 2 yards to the TOW 22",,2024-08-31T21:20:55.000Z
+401628591104939201,401628591,40162859124,3,4,6:07,Towson,Cincinnati,20,38,64,2,8,0,Pass Reception,Carlos Davis pass complete to Carter Runyon for no gain to the TOW 36,-0.7413256585321806,2024-08-31T21:20:55.000Z
+401628591104935601,401628591,40162859124,2,4,6:43,Towson,Cincinnati,20,38,66,1,10,2,Rush,Devin Matthews run for 2 yds to the TOW 36,-0.6162239991596916,2024-08-31T21:20:55.000Z
+401628591104928501,401628591,40162859124,1,4,7:14,Towson,Cincinnati,20,38,78,1,10,12,Rush,Devin Matthews run for 12 yds to the TOW 34 for a 1ST down,0.935215412611508,2024-08-31T21:20:55.000Z
+401628591104955601,401628591,40162859124,5,4,4:43,Towson,Cincinnati,20,38,36,1,10,-1,Pass Reception,Carlos Davis pass complete to Christopher Watkins for a loss of 1 yard to the CIN 37,-0.9031999321620817,2024-08-31T21:20:55.000Z
+401628591104976101,401628591,40162859124,9,4,2:38,Towson,Cincinnati,20,38,32,4,6,0,Pass Incompletion,Carlos Davis pass incomplete,-2.163122756607299,2024-08-31T21:20:55.000Z
+401628591104969401,401628591,40162859124,8,4,3:05,Towson,Cincinnati,20,38,32,4,6,0,Timeout,"Timeout Towson, clock 03:05",,2024-08-31T21:48:08.000Z
+401628591104947401,401628591,40162859124,4,4,5:25,Towson,Cincinnati,20,38,64,3,8,15,Penalty,"(05:25) DAVIS, Carlos pass to the right complete for 13 yards to DOSS, Jaceon caught at the TOW49 and advanced to the TOW49 (CARROLL, Kalen), clock 05:07. PENALTY CIN Roughing the Passer on SIMMS III, Brian enforced 15 yards from the TOW49 to the CIN36 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-31T21:20:55.000Z
+401628591104959701,401628591,40162859124,6,4,4:02,Towson,Cincinnati,20,38,37,2,11,-2,Pass Reception,Carlos Davis pass complete to Jaceon Doss for a loss of 2 yards to the CIN 39,-1.4135332660775486,2024-08-31T21:20:55.000Z
+401628591104968501,401628591,40162859124,7,4,3:14,Towson,Cincinnati,20,38,39,3,13,7,Pass Reception,Carlos Davis pass complete to John Dunmore for 7 yds to the CIN 32,0.4906340498607253,2024-08-31T21:20:55.000Z
+401628591104986001,401628591,40162859125,3,4,1:39,Cincinnati,Towson,38,20,59,3,1,9,Rush,Manny Covey run for 9 yds to the 50 yard line for a 1ST down,1.72360746661006,2024-08-31T21:20:55.000Z
+401628591104989301,401628591,40162859125,4,4,1:06,Cincinnati,Towson,38,20,50,1,10,11,Rush,Manny Covey run for 11 yds to the TOW 39 for a 1ST down,0.700973377189822,2024-08-31T21:20:55.000Z
+401628591104996401,401628591,40162859125,5,4,0:35,Cincinnati,Towson,38,20,39,1,10,32,Rush,Evan Pryor run for 32 yds to the TOW 7 for a 1ST down,0.94368392460434,2024-08-31T21:20:55.000Z
+401628591104997401,401628591,40162859125,6,4,0:25,Cincinnati,Towson,38,20,7,1,7,-2,Rush,"(00:25) [SG] Kneel down by CIN at TOW9 (team loss of 2), clock 00:23.",-0.543281572885571,2024-08-31T21:20:55.000Z
+401628591104997403,401628591,40162859125,7,4,0:00,Cincinnati,Towson,38,20,9,0,7,0,End of Game,End of 4th Quarter,,2024-08-31T21:58:02.000Z
+401628591104976301,401628591,40162859125,1,4,2:36,Cincinnati,Towson,38,20,68,1,10,4,Rush,Evan Pryor run for 4 yds to the CIN 36,-0.1488498506411844,2024-08-31T21:20:55.000Z
+401628591104979901,401628591,40162859125,2,4,2:00,Cincinnati,Towson,38,20,64,2,6,5,Rush,Evan Pryor run for 5 yds to the CIN 41,0.1031411675516108,2024-08-31T21:20:55.000Z

@@ -1,0 +1,160 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401644683101854201,401644683,4016446831,2,1,14:57,Northwestern,Miami (OH),0,0,75,1,10,20,Pass Reception,Mike Wright pass complete to Bryce Kirtz for 20 yds to the NU 45 for a 1ST down,1.8011418824049565,2024-08-31T19:42:15.000Z
+401644683101857001,401644683,4016446831,3,1,14:29,Northwestern,Miami (OH),0,0,55,1,10,4,Rush,Cam Porter run for 4 yds to the NU 49,-0.1607620955039497,2024-08-31T19:42:15.000Z
+401644683101864801,401644683,4016446831,4,1,13:51,Northwestern,Miami (OH),0,0,51,2,6,8,Pass Reception,Mike Wright pass complete to Frank Covey IV for 8 yds to the M-OH 43 for a 1ST down,1.0850052448894605,2024-08-31T19:42:15.000Z
+401644683101868701,401644683,4016446831,5,1,13:12,Northwestern,Miami (OH),0,0,43,1,10,-4,Pass Reception,Mike Wright pass complete to A.J. Henning for a loss of 4 yards to the M-OH 47,-1.8358586344621752,2024-08-31T19:42:15.000Z
+401644683101876301,401644683,4016446831,6,1,12:36,Northwestern,Miami (OH),0,0,47,2,14,0,Pass Incompletion,Mike Wright pass incomplete,-0.9500834188814746,2024-08-31T19:45:26.000Z
+401644683101877101,401644683,4016446831,7,1,12:28,Northwestern,Miami (OH),0,0,47,3,14,3,Pass Reception,Mike Wright pass complete to Thomas Gordon for 3 yds to the M-OH 44,-0.2755323926093434,2024-08-31T19:42:15.000Z
+401644683101884601,401644683,4016446831,8,1,11:53,Northwestern,Miami (OH),0,0,44,4,11,0,Punt,Luke Akers punt for 32 yds,,2024-08-31T19:42:15.000Z
+401644683101849907,401644683,4016446831,1,1,15:00,Miami (OH),Northwestern,0,0,65,0,0,0,Kickoff,Kellan McLaughlin kickoff for 65 yds for a touchback,,2024-08-31T19:42:15.000Z
+401644683101896801,401644683,4016446832,3,1,10:31,Miami (OH),Northwestern,0,0,76,1,10,4,Rush,Kevin Davis run for 4 yds to the M-OH 28,-0.1089877410850981,2024-08-31T19:42:15.000Z
+401644683101885601,401644683,4016446832,1,1,11:43,Miami (OH),Northwestern,0,0,88,1,10,5,Pass Reception,Brett Gabbert pass complete to Cade McDonald for 5 yds to the M-OH 17,0.07257903633006091,2024-08-31T19:42:15.000Z
+401644683101888901,401644683,4016446832,2,1,11:10,Miami (OH),Northwestern,0,0,83,2,5,7,Pass Reception,Brett Gabbert pass complete to Kevin Davis for 7 yds to the M-OH 24 for a 1ST down,0.5130626118384649,2024-08-31T19:42:15.000Z
+401644683101904601,401644683,4016446832,4,1,9:53,Miami (OH),Northwestern,0,0,72,2,6,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.6216897885891246,2024-08-31T19:42:15.000Z
+401644683101905202,401644683,4016446832,5,1,9:47,Miami (OH),Northwestern,0,0,72,3,6,-8,Penalty,"Miami (OH) Penalty, Intentional Grounding (Brett Gabbert) to the M-OH 20",,2024-08-31T19:53:06.000Z
+401644683101905801,401644683,4016446832,6,1,9:41,Miami (OH),Northwestern,0,0,80,4,14,0,Punt,punt for 28 yds,,2024-08-31T19:56:50.000Z
+401644683101906201,401644683,4016446833,1,1,9:37,Northwestern,Miami (OH),0,0,48,1,10,20,Rush,Mike Wright run for 20 yds to the M-OH 28 for a 1ST down,0.922219362141526,2024-08-31T19:42:15.000Z
+401644683101915301,401644683,4016446833,2,1,8:46,Northwestern,Miami (OH),0,0,28,1,10,-6,Pass Reception,Mike Wright pass complete to Frank Covey IV for a loss of 6 yards to the M-OH 34,-1.4426696366754188,2024-08-31T19:42:15.000Z
+401644683101919101,401644683,4016446833,3,1,8:08,Northwestern,Miami (OH),0,0,34,2,16,0,Pass Incompletion,Mike Wright pass incomplete,-0.9860437558686677,2024-08-31T19:58:52.000Z
+401644683101924401,401644683,4016446833,4,1,7:55,Northwestern,Miami (OH),0,0,34,3,16,6,Rush,Caleb Komolafe run for 6 yds to the M-OH 28,0.263206203000836,2024-08-31T19:42:15.000Z
+401644683101927801,401644683,4016446833,5,1,7:21,Northwestern,Miami (OH),3,0,28,4,10,45,Field Goal Good,Jack Olsen 45 yd FG GOOD,,2024-08-31T20:00:19.000Z
+401644683101929501,401644683,4016446834,2,1,7:04,Miami (OH),Northwestern,0,3,81,1,10,7,Rush,Dylan Downing run for 7 yds to the M-OH 26,0.5093405251529833,2024-08-31T19:42:15.000Z
+401644683101936301,401644683,4016446834,3,1,6:36,Miami (OH),Northwestern,0,3,74,2,3,0,Rush,Keyon Mozee run for no gain to the M-OH 26,-0.8006785198676463,2024-08-31T19:42:15.000Z
+401644683101944701,401644683,4016446834,4,1,5:52,Miami (OH),Northwestern,0,3,74,3,3,13,Pass Reception,Brett Gabbert pass complete to Javon Tracy for 13 yds to the M-OH 39 for a 1ST down,1.8749414792525936,2024-08-31T19:42:15.000Z
+401644683101948501,401644683,4016446834,5,1,5:14,Miami (OH),Northwestern,0,3,61,1,10,5,Pass Reception,Brett Gabbert pass complete to Cade McDonald for 5 yds to the M-OH 44,0.1106253034395996,2024-08-31T19:42:15.000Z
+401644683101957401,401644683,4016446834,6,1,4:25,Miami (OH),Northwestern,0,3,56,2,5,-5,Sack,Brett Gabbert sacked by Mac Uihlein for a loss of 5 yards to the M-OH 39,-1.9441082688238476,2024-08-31T19:42:15.000Z
+401644683101927802,401644683,4016446834,1,1,7:21,Northwestern,Miami (OH),3,0,65,0,0,16,Kickoff,"Luke Akers kickoff for 62 yds , Kevin Davis return for 16 yds to the M-OH 19",,2024-08-31T20:02:34.000Z
+401644683101977801,401644683,4016446834,9,1,2:21,Miami (OH),Northwestern,0,3,26,1,10,6,Rush,Keyon Mozee run for 6 yds to the NU 20,0.1981539364012105,2024-08-31T19:42:15.000Z
+401644683101978202,401644683,4016446834,10,1,2:17,Miami (OH),Northwestern,0,3,25,2,9,0,Timeout,"Timeout Miami (OH), clock 02:17",,2024-08-31T20:09:02.000Z
+401644683101986101,401644683,4016446834,11,1,1:38,Miami (OH),Northwestern,0,3,20,2,4,-5,Penalty,"Miami (OH) Penalty, False Start (-5 Yards) to the NU 25",,2024-08-31T20:12:59.000Z
+401644683101986601,401644683,4016446834,12,1,1:33,Miami (OH),Northwestern,0,3,25,2,9,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.591562465154757,2024-08-31T20:13:19.000Z
+401644683101987301,401644683,4016446834,14,1,1:26,Miami (OH),Northwestern,0,3,25,3,9,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.8562259914857897,2024-08-31T20:15:07.000Z
+401644683101987601,401644683,4016446834,15,1,1:23,Miami (OH),Northwestern,3,3,25,4,9,43,Field Goal Good,Dom Dzioban 43 yd FG GOOD,,2024-08-31T20:15:48.000Z
+401644683101986602,401644683,4016446834,13,1,1:33,Miami (OH),Northwestern,0,3,25,3,9,0,Timeout,"Timeout Northwestern, clock 01:33",,2024-08-31T20:13:19.000Z
+401644683101965801,401644683,4016446834,7,1,3:41,Miami (OH),Northwestern,0,3,61,3,10,23,Pass Reception,Brett Gabbert pass complete to Cade McDonald for 23 yds to the NU 38 for a 1ST down,3.593906353263926,2024-08-31T19:42:15.000Z
+401644683101974201,401644683,4016446834,8,1,2:57,Miami (OH),Northwestern,0,3,38,1,10,12,Pass Reception,Brett Gabbert pass complete to Kevin Davis for 12 yds to the NU 26 for a 1ST down,0.3745905261770075,2024-08-31T19:42:15.000Z
+401644683101988501,401644683,4016446835,3,1,1:14,Northwestern,Miami (OH),3,3,82,1,15,1,Rush,Cam Porter run for 1 yd to the NU 19,-0.24432887094748956,2024-08-31T19:42:15.000Z
+401644683101996501,401644683,4016446835,4,1,0:34,Northwestern,Miami (OH),3,3,81,2,14,13,Pass Reception,Mike Wright pass complete to Frank Covey IV for 13 yds to the NU 32,0.9067801244484572,2024-08-31T19:42:15.000Z
+401644683102854301,401644683,4016446835,6,2,14:56,Northwestern,Miami (OH),3,3,68,3,1,3,Rush,Cam Porter run for 3 yds to the NU 35 for a 1ST down,0.9837354236216775,2024-08-31T20:22:42.000Z
+401644683102856101,401644683,4016446835,7,2,14:38,Northwestern,Miami (OH),3,3,65,1,10,5,Rush,Cam Porter run for 5 yds to the NU 40,0.1088137823196469,2024-08-31T20:22:42.000Z
+401644683101996502,401644683,4016446835,5,1,0:00,Northwestern,Miami (OH),3,3,81,0,14,13,End Period,End of 1st Quarter,,2024-08-31T20:19:49.000Z
+401644683101988101,401644683,4016446835,2,1,1:18,Northwestern,Miami (OH),3,3,77,1,10,-5,Penalty,"Northwestern Penalty, False Start (-5 Yards) to the NU 18",,2024-08-31T20:17:20.000Z
+401644683101987901,401644683,4016446835,1,1,1:20,Miami (OH),Northwestern,3,3,65,0,0,23,Kickoff,"Kellan McLaughlin kickoff for 65 yds , Joseph Himon II return for 23 yds to the NU 23",,2024-08-31T19:42:15.000Z
+401644683102859801,401644683,4016446835,8,2,14:01,Northwestern,Miami (OH),3,3,60,2,5,-2,Fumble Recovery (Opponent),"Mike Wright run for a loss of 2 yards to the NU 38 Mike Wright fumbled, recovered by M-OH Brian Ugwu B. Ugwu return for 0 yds",-1.8660967716283121,2024-08-31T20:24:37.000Z
+401644683102864401,401644683,4016446836,1,2,13:55,Miami (OH),Northwestern,3,3,38,1,10,12,Pass Reception,Brett Gabbert pass complete to Kevin Davis for 12 yds to the NU 26 for a 1ST down,0.3745905261770075,2024-08-31T20:22:42.000Z
+401644683102865601,401644683,4016446836,2,2,13:43,Miami (OH),Northwestern,3,3,26,1,10,0,Timeout,"Timeout Miami (OH), clock 13:43",,2024-08-31T20:25:11.000Z
+401644683102867701,401644683,4016446836,3,2,13:22,Miami (OH),Northwestern,3,3,26,1,10,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.4710467974920665,2024-08-31T20:28:21.000Z
+401644683102868201,401644683,4016446836,4,2,13:17,Miami (OH),Northwestern,3,3,26,2,10,0,Rush,Keyon Mozee run for no gain to the NU 26,-0.6385710457423314,2024-08-31T20:22:42.000Z
+401644683102877001,401644683,4016446836,5,2,12:29,Miami (OH),Northwestern,3,3,26,3,10,-6,Sack,Brett Gabbert sacked by Kenny Soares Jr. and Anto Saka for a loss of 6 yards to the NU 32,-2.135882554848104,2024-08-31T20:22:42.000Z
+401644683102885001,401644683,4016446836,6,2,11:49,Miami (OH),Northwestern,3,3,32,4,16,50,Field Goal Missed,Dom Dzioban 50 yd FG MISSED,,2024-08-31T20:30:32.000Z
+401644683102905601,401644683,4016446837,7,2,9:43,Northwestern,Miami (OH),3,3,60,4,14,0,Punt,"Luke Akers punt for 44 yds, fair catch by Cade McDonald at the M-OH 16",,2024-08-31T20:37:36.000Z
+401644683102904801,401644683,4016446837,6,2,9:51,Northwestern,Miami (OH),3,3,60,3,14,0,Pass Incompletion,Mike Wright pass incomplete,-0.2928697561339817,2024-08-31T20:36:59.000Z
+401644683102904401,401644683,4016446837,5,2,9:55,Northwestern,Miami (OH),3,3,60,2,14,0,Pass Incompletion,Mike Wright pass incomplete,-0.5707374720778153,2024-08-31T20:36:09.000Z
+401644683102896601,401644683,4016446837,4,2,10:33,Northwestern,Miami (OH),3,3,56,1,10,-4,Rush,Mike Wright run for a loss of 4 yards to the NU 40,-1.9311778665492705,2024-08-31T20:22:42.000Z
+401644683102885601,401644683,4016446837,1,2,11:43,Northwestern,Miami (OH),3,3,68,1,10,3,Rush,Cam Porter run for 3 yds to the NU 35,-0.3783931239488095,2024-08-31T20:22:42.000Z
+401644683102888801,401644683,4016446837,2,2,11:11,Northwestern,Miami (OH),3,3,65,2,7,0,Pass Incompletion,Mike Wright pass incomplete,-0.7715709570940418,2024-08-31T20:34:07.000Z
+401644683102889201,401644683,4016446837,3,2,11:07,Northwestern,Miami (OH),3,3,65,3,7,9,Pass Reception,Mike Wright pass complete to Bryce Kirtz for 9 yds to the NU 44 for a 1ST down,2.299092015305405,2024-08-31T20:22:42.000Z
+401644683102926101,401644683,4016446838,4,2,7:38,Miami (OH),Northwestern,3,3,80,4,6,0,Punt,"Alec Bevelhimer punt for 40 yds, fair catch by A.J. Henning at the NU 40",,2024-08-31T20:22:42.000Z
+401644683102918101,401644683,4016446838,3,2,8:18,Miami (OH),Northwestern,3,3,81,3,7,1,Pass Reception,Brett Gabbert pass complete to Kevin Davis for 1 yd to the M-OH 20,-0.1337986388179839,2024-08-31T20:22:42.000Z
+401644683102914001,401644683,4016446838,2,2,8:59,Miami (OH),Northwestern,3,3,81,2,7,0,Rush,Keyon Mozee run for no gain to the M-OH 19,-0.3568712681634585,2024-08-31T20:22:42.000Z
+401644683102906101,401644683,4016446838,1,2,9:38,Miami (OH),Northwestern,3,3,84,1,10,3,Rush,Dylan Downing run for 3 yds to the M-OH 19,-0.1951535561947866,2024-08-31T20:22:42.000Z
+401644683102926401,401644683,4016446839,1,2,7:35,Northwestern,Miami (OH),3,3,60,1,10,4,Rush,Caleb Komolafe run for 4 yds to the NU 44,-0.1674744380827829,2024-08-31T20:22:42.000Z
+401644683102968001,401644683,4016446839,9,2,3:19,Northwestern,Miami (OH),3,3,26,1,10,16,Pass Reception,Mike Wright pass complete to Frank Covey IV for 16 yds to the M-OH 10 for a 1ST down,0.2061752801587385,2024-08-31T20:22:42.000Z
+401644683102975601,401644683,4016446839,10,2,2:43,Northwestern,Miami (OH),3,3,10,1,10,9,Rush,Cam Porter run for 9 yds to the M-OH 1,0.613474604776436,2024-08-31T20:22:42.000Z
+401644683102959801,401644683,4016446839,8,2,4:01,Northwestern,Miami (OH),3,3,26,1,10,0,Timeout,"Timeout Northwestern, clock 04:01",,2024-08-31T20:47:29.000Z
+401644683102935401,401644683,4016446839,2,2,6:45,Northwestern,Miami (OH),3,3,56,2,6,6,Pass Reception,Mike Wright pass complete to A.J. Henning for 6 yds to the 50 yard line for a 1ST down,1.0829631101050854,2024-08-31T20:22:42.000Z
+401644683102939301,401644683,4016446839,3,2,6:06,Northwestern,Miami (OH),3,3,50,1,10,7,Pass Reception,Mike Wright pass complete to Bryce Kirtz for 7 yds to the M-OH 43,0.590106702773282,2024-08-31T20:22:42.000Z
+401644683102946701,401644683,4016446839,4,2,5:32,Northwestern,Miami (OH),3,3,43,2,3,4,Rush,Caleb Komolafe run for 4 yds to the M-OH 39 for a 1ST down,0.11086667441654,2024-08-31T20:22:42.000Z
+401644683102955301,401644683,4016446839,5,2,4:46,Northwestern,Miami (OH),3,3,39,1,10,1,Rush,run for 1 yd to the M-OH 38,-0.6215061842869627,2024-08-31T20:22:42.000Z
+401644683102958801,401644683,4016446839,6,2,4:11,Northwestern,Miami (OH),3,3,38,2,9,0,Pass Incompletion,Mike Wright pass incomplete,-0.9790917484761117,2024-08-31T20:46:47.000Z
+401644683102959401,401644683,4016446839,7,2,4:05,Northwestern,Miami (OH),3,3,38,3,9,12,Rush,Cam Porter run for 12 yds to the M-OH 26 for a 1ST down,2.021034365286445,2024-08-31T20:22:42.000Z
+401644683102977801,401644683,4016446839,11,2,2:21,Northwestern,Miami (OH),3,3,1,2,1,0,Fumble Recovery (Opponent),"Mike Wright run for no gain to the M-OH 1 Mike Wright fumbled, recovered by M-OH Matt Salopek M. Salopek return for 0 yds",-5.099647762526994,2024-08-31T21:03:31.000Z
+401644683102984501,401644683,40164468310,2,2,1:54,Miami (OH),Northwestern,3,3,96,2,7,15,Rush,Jordan Brunson run for 15 yds to the M-OH 19 for a 1ST down,0.6501438432590376,2024-08-31T20:58:10.000Z
+401644683102987701,401644683,40164468310,3,2,1:22,Miami (OH),Northwestern,3,3,81,1,10,9,Pass Reception,Brett Gabbert pass complete to Cade McDonald for 9 yds to the M-OH 28,1.0829013043177111,2024-08-31T20:58:49.000Z
+401644683102988101,401644683,40164468310,4,2,1:18,Miami (OH),Northwestern,3,3,72,2,1,0,Pass Incompletion,Brett Gabbert pass incomplete,-1.0858653082630072,2024-08-31T20:59:31.000Z
+401644683102988102,401644683,40164468310,5,2,1:18,Miami (OH),Northwestern,3,3,72,3,1,0,Timeout,"Timeout Miami (OH), clock 01:18",,2024-08-31T20:59:31.000Z
+401644683102999902,401644683,40164468310,10,2,0:00,Miami (OH),Northwestern,3,3,66,0,4,0,End of Half,End of 2nd Quarter,,2024-08-31T21:03:31.000Z
+401644683102988501,401644683,40164468310,6,2,1:14,Miami (OH),Northwestern,3,3,72,3,1,1,Rush,Jordan Brunson run for 1 yd to the M-OH 29 for a 1ST down,0.665966652193128,2024-08-31T21:01:08.000Z
+401644683102979401,401644683,40164468310,1,2,2:05,Miami (OH),Northwestern,3,3,99,1,10,3,Rush,Jordan Brunson run for 3 yds to the M-OH 4,-0.09708351239242496,2024-08-31T20:22:42.000Z
+401644683102994901,401644683,40164468310,7,2,0:50,Miami (OH),Northwestern,3,3,71,1,10,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.8305196050291288,2024-08-31T20:22:42.000Z
+401644683102995601,401644683,40164468310,8,2,0:43,Miami (OH),Northwestern,3,3,71,2,10,6,Rush,Jordan Brunson run for 6 yds to the M-OH 35,0.1991203006172757,2024-08-31T20:22:42.000Z
+401644683102999801,401644683,40164468310,9,2,0:01,Miami (OH),Northwestern,3,3,65,3,4,-1,Rush,(00:01) [NHSG] Kneel down by MOH at MOH34 (team loss of 1).,-0.6122201183324849,2024-08-31T20:22:42.000Z
+401644683103854801,401644683,40164468311,2,3,14:51,Miami (OH),Northwestern,3,3,75,1,10,6,Rush,Jordan Brunson run for 6 yds to the M-OH 31,0.3333748010525683,2024-08-31T21:26:17.000Z
+401644683103858701,401644683,40164468311,3,3,14:12,Miami (OH),Northwestern,3,3,69,2,4,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.8681070846083454,2024-08-31T21:27:25.000Z
+401644683103859501,401644683,40164468311,4,3,14:04,Miami (OH),Northwestern,3,3,69,3,4,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.43770162015070735,2024-08-31T21:28:14.000Z
+401644683103859601,401644683,40164468311,5,3,14:03,Miami (OH),Northwestern,3,3,69,4,4,14,Punt,"Alec Bevelhimer punt for 45 yds , A.J. Henning returns for 14 yds to the NU 38",,2024-08-31T21:26:17.000Z
+401644683103854001,401644683,40164468311,1,3,14:59,Northwestern,Miami (OH),3,3,65,0,0,22,Kickoff,"Luke Akers kickoff for 62 yds , Kevin Davis return for 22 yds to the M-OH 25",,2024-08-31T21:26:17.000Z
+401644683103865401,401644683,40164468312,1,3,13:45,Northwestern,Miami (OH),3,3,62,1,10,12,Pass Reception,Mike Wright pass complete to A.J. Henning for 12 yds to the 50 yard line for a 1ST down,1.1115917085581175,2024-08-31T21:26:17.000Z
+401644683103869001,401644683,40164468312,2,3,13:09,Northwestern,Miami (OH),3,3,50,1,10,4,Rush,Cam Porter run for 4 yds to the M-OH 46,-0.141734208558013,2024-08-31T21:26:17.000Z
+401644683103876701,401644683,40164468312,3,3,12:32,Northwestern,Miami (OH),3,3,46,2,6,5,Pass Reception,Mike Wright pass complete to A.J. Henning for 5 yds to the M-OH 41,0.103923861723983,2024-08-31T21:26:17.000Z
+401644683103879901,401644683,40164468312,4,3,12:00,Northwestern,Miami (OH),3,3,41,3,1,3,Rush,Mike Wright run for 3 yds to the M-OH 38 for a 1ST down,0.784629630370215,2024-08-31T21:26:17.000Z
+401644683103887901,401644683,40164468312,5,3,11:20,Northwestern,Miami (OH),3,3,38,1,10,0,Pass Incompletion,Mike Wright pass incomplete,-0.7828922522763084,2024-08-31T21:32:12.000Z
+401644683103888501,401644683,40164468312,6,3,11:14,Northwestern,Miami (OH),3,3,38,2,10,0,Rush,Joseph Himon II run for no gain to the M-OH 38,-0.9886314711142071,2024-08-31T21:26:17.000Z
+401644683103897001,401644683,40164468312,7,3,10:29,Northwestern,Miami (OH),3,3,38,3,10,25,Pass Reception,Mike Wright pass complete to Thomas Gordon for 25 yds to the M-OH 13 for a 1ST down,2.3271871569298566,2024-08-31T21:26:17.000Z
+401644683103905701,401644683,40164468312,8,3,9:42,Northwestern,Miami (OH),10,3,13,1,10,13,Rushing Touchdown,Mike Wright run for 13 yds for a TD (Jack Olsen KICK),2.538929215045847,2024-08-31T21:34:27.000Z
+401644683103906801,401644683,40164468313,2,3,9:31,Miami (OH),Northwestern,3,10,85,1,10,4,Rush,Dylan Downing run for 4 yds to the M-OH 19,-0.0658646968869041,2024-08-31T21:26:17.000Z
+401644683103905703,401644683,40164468313,1,3,9:42,Northwestern,Miami (OH),10,3,65,0,0,13,Kickoff,"Luke Akers kickoff for 63 yds , Kevin Davis return for 13 yds to the M-OH 15",,2024-08-31T21:34:27.000Z
+401644683103914701,401644683,40164468313,3,3,8:52,Miami (OH),Northwestern,3,10,81,2,6,15,Pass Reception,Brett Gabbert pass complete to Cade McDonald for 15 yds to the M-OH 34 for a 1ST down,1.3500568570324996,2024-08-31T21:26:17.000Z
+401644683103918201,401644683,40164468313,4,3,8:17,Miami (OH),Northwestern,3,10,66,1,10,7,Rush,Keyon Mozee run for 7 yds to the M-OH 41,0.7039091622223153,2024-08-31T21:26:17.000Z
+401644683103926501,401644683,40164468313,5,3,7:34,Miami (OH),Northwestern,3,10,59,2,3,-6,Sack,Brett Gabbert sacked by Najee Story for a loss of 6 yards to the M-OH 35,-2.1686482655667696,2024-08-31T21:26:17.000Z
+401644683103935301,401644683,40164468313,6,3,6:46,Miami (OH),Northwestern,3,10,65,3,9,18,Pass Reception,Brett Gabbert pass complete to Cade McDonald for 18 yds to the NU 47 for a 1ST down,3.1883062518076386,2024-08-31T21:26:17.000Z
+401644683103939901,401644683,40164468313,7,3,6:00,Miami (OH),Northwestern,3,10,47,1,10,3,Pass Reception,Brett Gabbert pass complete to Dylan Downing for 3 yds to the NU 44,-0.3535783157576075,2024-08-31T21:26:17.000Z
+401644683103947701,401644683,40164468313,8,3,5:22,Miami (OH),Northwestern,3,10,44,2,7,-2,Rush,Keyon Mozee run for a loss of 2 yards to the NU 46,-1.5472836112288402,2024-08-31T21:26:17.000Z
+401644683103956101,401644683,40164468313,9,3,4:38,Miami (OH),Northwestern,3,10,46,3,9,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.8699475122976805,2024-08-31T21:46:17.000Z
+401644683103957001,401644683,40164468313,10,3,4:29,Miami (OH),Northwestern,3,10,46,4,9,0,Punt,Alec Bevelhimer punt for 43 yds,,2024-08-31T21:47:07.000Z
+401644683103997002,401644683,40164468314,9,3,0:00,Northwestern,Miami (OH),10,3,20,0,10,0,End Period,End of 3rd Quarter,,2024-08-31T21:55:21.000Z
+401644683103957501,401644683,40164468314,1,3,4:24,Northwestern,Miami (OH),10,3,97,1,10,5,Rush,Caleb Komolafe run for 5 yds to the NU 8,0.06184263743594176,2024-08-31T21:26:17.000Z
+401644683103966001,401644683,40164468314,2,3,3:39,Northwestern,Miami (OH),10,3,92,2,5,14,Pass Reception,Mike Wright pass complete to Bryce Kirtz for 14 yds to the NU 22 for a 1ST down,0.6236911219628372,2024-08-31T21:26:17.000Z
+401644683103974301,401644683,40164468314,3,3,2:56,Northwestern,Miami (OH),10,3,78,1,10,33,Pass Reception,Mike Wright pass complete to Bryce Kirtz for 33 yds to the M-OH 45 for a 1ST down,2.7954707172740543,2024-08-31T21:26:17.000Z
+401644683103976601,401644683,40164468314,4,3,2:33,Northwestern,Miami (OH),10,3,45,1,10,-1,Rush,Caleb Komolafe run for a loss of 1 yard to the M-OH 46,-1.2270097040600767,2024-08-31T21:26:17.000Z
+401644683103984802,401644683,40164468314,5,3,1:51,Northwestern,Miami (OH),10,3,46,2,11,10,Penalty,"WRIGHT, Mike pass to the left incomplete intended for JOHNSON II, Calvin broken up by STRADER, Raion at the MOH33, clock 01:51. PENALTY MOH Holding on STRADER, Raion enforced 10 yards from the MOH46 to the MOH36 and results in automatic 1ST DOWN [SG]. NO PLAY (replay the down).",,2024-08-31T21:52:37.000Z
+401644683103985401,401644683,40164468314,6,3,1:45,Northwestern,Miami (OH),10,3,36,1,10,7,Rush,Cam Porter run for 7 yds to the M-OH 29,0.40306460138266,2024-08-31T21:26:17.000Z
+401644683103989401,401644683,40164468314,7,3,1:05,Northwestern,Miami (OH),10,3,29,2,3,9,Pass Reception,Mike Wright pass complete to Calvin Johnson II for 9 yds to the M-OH 20 for a 1ST down,-0.010214235400563,2024-08-31T21:26:17.000Z
+401644683103997001,401644683,40164468314,8,3,0:29,Northwestern,Miami (OH),10,3,20,1,10,0,Rush,Mike Wright run for no gain to the M-OH 20,-0.374805786232315,2024-08-31T21:26:17.000Z
+401644683104854401,401644683,40164468314,10,4,14:55,Northwestern,Miami (OH),10,3,20,2,10,0,Pass Incompletion,Mike Wright pass incomplete,-0.4710097256430323,2024-08-31T21:58:28.000Z
+401644683104854801,401644683,40164468314,11,4,14:51,Northwestern,Miami (OH),10,3,20,3,10,0,Pass Incompletion,Mike Wright pass incomplete,-0.7313779022528557,2024-08-31T21:59:04.000Z
+401644683104855201,401644683,40164468314,12,4,14:47,Northwestern,Miami (OH),13,3,20,4,10,38,Field Goal Good,Jack Olsen 38 yd FG GOOD,,2024-08-31T21:59:40.000Z
+401644683104855401,401644683,40164468315,2,4,14:45,Miami (OH),Northwestern,3,13,75,1,10,10,Pass Reception,Brett Gabbert pass complete to Dylan Downing for 10 yds to the M-OH 35 for a 1ST down,0.8350381090299867,2024-08-31T21:58:28.000Z
+401644683104858901,401644683,40164468315,3,4,14:10,Miami (OH),Northwestern,3,13,65,1,10,-1,Rush,Jordan Brunson run for a loss of 1 yard to the M-OH 34,-1.1754014811374063,2024-08-31T21:58:28.000Z
+401644683104866501,401644683,40164468315,4,4,13:34,Miami (OH),Northwestern,3,13,66,2,11,16,Pass Reception,Brett Gabbert pass complete to Jack Coldiron for 16 yds to the 50 yard line for a 1ST down,2.576706559707368,2024-08-31T21:58:28.000Z
+401644683104874401,401644683,40164468315,5,4,12:55,Miami (OH),Northwestern,3,13,50,1,10,0,Pass Incompletion,Brett Gabbert pass incomplete,-1.1143038065675126,2024-08-31T22:07:28.000Z
+401644683104855202,401644683,40164468315,1,4,14:47,Northwestern,Miami (OH),13,3,65,0,0,0,Kickoff,Luke Akers kickoff for 65 yds for a touchback,,2024-08-31T22:02:35.000Z
+401644683104874901,401644683,40164468315,6,4,12:50,Miami (OH),Northwestern,3,13,50,2,10,0,Pass Incompletion,Brett Gabbert pass incomplete,-1.0237730924311421,2024-08-31T22:08:14.000Z
+401644683104875401,401644683,40164468315,7,4,12:45,Miami (OH),Northwestern,3,13,50,3,10,0,Pass Interception Return,Brett Gabbert pass intercepted Evan Smith return for no gain to the NU 33,-1.0205111688799722,2024-08-31T22:09:24.000Z
+401644683104876001,401644683,40164468316,1,4,12:39,Northwestern,Miami (OH),13,3,67,1,10,0,Pass Incompletion,Mike Wright pass incomplete,-0.956890163923906,2024-08-31T22:11:58.000Z
+401644683104879501,401644683,40164468316,3,4,12:04,Northwestern,Miami (OH),13,3,77,2,20,0,Pass Incompletion,Mike Wright pass incomplete,-0.10997404857171134,2024-08-31T22:13:50.000Z
+401644683104876602,401644683,40164468316,2,4,12:33,Northwestern,Miami (OH),13,3,67,2,10,-10,Penalty,"(12:33) HIMON II, Joseph rush to the left for a gain of 2 yards to the NWN35 (WISE, Ty), clock 12:34. PENALTY NWN Holding on HERZOG, Nick enforced 10 yards from the NWN33 to the NWN23 [SG]. NO PLAY (replay the down).",,2024-08-31T22:12:54.000Z
+401644683104884101,401644683,40164468316,4,4,11:58,Northwestern,Miami (OH),13,3,77,3,20,4,Rush,Joseph Himon II run for 4 yds to the NU 27,-0.0102944135130425,2024-08-31T21:58:28.000Z
+401644683104887601,401644683,40164468316,5,4,11:23,Northwestern,Miami (OH),13,3,73,4,16,-5,Penalty,"Northwestern Penalty, False Start (TEAM) to the NU 22",,2024-08-31T22:15:17.000Z
+401644683104888701,401644683,40164468316,6,4,11:12,Northwestern,Miami (OH),13,3,78,4,21,0,Punt,"Luke Akers punt for 47 yds, fair catch by Cade McDonald at the M-OH 31",,2024-08-31T21:58:28.000Z
+401644683104889001,401644683,40164468317,1,4,11:09,Miami (OH),Northwestern,3,13,69,1,10,10,Pass Reception,Brett Gabbert pass complete to Reggie Virgil for 10 yds to the M-OH 41 for a 1ST down,0.9482786553166224,2024-08-31T21:58:28.000Z
+401644683104896901,401644683,40164468317,2,4,10:30,Miami (OH),Northwestern,3,13,59,1,10,24,Pass Reception,Brett Gabbert pass complete to Cade McDonald for 24 yds to the NU 35 for a 1ST down,1.6864235660214713,2024-08-31T21:58:28.000Z
+401644683104899801,401644683,40164468317,3,4,10:01,Miami (OH),Northwestern,3,13,35,1,10,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.6918622905019662,2024-08-31T22:19:50.000Z
+401644683104914601,401644683,40164468317,5,4,8:53,Miami (OH),Northwestern,3,13,14,1,10,4,Pass Reception,Brett Gabbert pass complete to Jack Coldiron for 4 yds to the NU 10,-0.0183111493425885,2024-08-31T21:58:28.000Z
+401644683104916101,401644683,40164468317,6,4,8:38,Miami (OH),Northwestern,3,13,10,2,6,2,Rush,Jordan Brunson run for 2 yds to the NU 8,-0.18208601222419,2024-08-31T21:58:28.000Z
+401644683104919501,401644683,40164468317,7,4,8:04,Miami (OH),Northwestern,3,13,8,3,4,1,Rush,Jordan Brunson run for 1 yd to the NU 7,-0.2582574189333647,2024-08-31T21:58:28.000Z
+401644683104904301,401644683,40164468317,4,4,9:56,Miami (OH),Northwestern,3,13,35,2,10,15,Penalty,"Northwestern Penalty, Roughing the Passer on SAKA, Anto enforced (Anto Saka) to the NU 14 for a 1ST down",,2024-08-31T21:58:28.000Z
+401644683104919901,401644683,40164468317,8,4,8:00,Miami (OH),Northwestern,3,13,7,4,3,0,Timeout,"Timeout Northwestern, clock 08:00",,2024-08-31T22:23:23.000Z
+401644683104927101,401644683,40164468317,9,4,7:28,Miami (OH),Northwestern,6,13,7,4,3,26,Field Goal Good,Dom Dzioban 26 yd FG GOOD,,2024-08-31T22:26:18.000Z
+401644683104927201,401644683,40164468318,1,4,7:27,Miami (OH),Northwestern,6,13,65,0,0,30,Kickoff,"Kellan McLaughlin kickoff for 61 yds , Coco Azema return for 30 yds to the NU 34",,2024-08-31T21:58:28.000Z
+401644683104928201,401644683,40164468318,2,4,7:17,Northwestern,Miami (OH),13,6,66,1,10,1,Rush,Cam Porter run for 1 yd to the NU 35,-0.8121551588526277,2024-08-31T21:58:28.000Z
+401644683104936701,401644683,40164468318,3,4,6:32,Northwestern,Miami (OH),13,6,65,2,9,10,Rush,Cam Porter run for 10 yds to the NU 45 for a 1ST down,1.872311311265877,2024-08-31T21:58:28.000Z
+401644683104944201,401644683,40164468318,4,4,5:57,Northwestern,Miami (OH),13,6,55,1,10,1,Rush,Cam Porter run for 1 yd to the NU 46,-0.9265072803619887,2024-08-31T21:58:28.000Z
+401644683104948401,401644683,40164468318,5,4,5:15,Northwestern,Miami (OH),13,6,54,2,9,19,Rush,Mike Wright run for 19 yds to the M-OH 35 for a 1ST down,2.230531733901398,2024-08-31T21:58:28.000Z
+401644683104956301,401644683,40164468318,6,4,4:36,Northwestern,Miami (OH),13,6,35,1,10,0,Pass Incompletion,Mike Wright pass incomplete,-0.6918622905019662,2024-08-31T22:31:19.000Z
+401644683104956801,401644683,40164468318,7,4,4:31,Northwestern,Miami (OH),13,6,35,2,10,0,Pass Reception,Mike Wright pass complete to A.J. Henning for no gain to the M-OH 35,-0.9144980156718301,2024-08-31T21:58:28.000Z
+401644683104965901,401644683,40164468318,8,4,3:40,Northwestern,Miami (OH),13,6,35,3,10,8,Pass Reception,Mike Wright pass complete to Bryce Kirtz for 8 yds to the M-OH 27,0.6705095348916661,2024-08-31T21:58:28.000Z
+401644683104974301,401644683,40164468318,9,4,2:56,Northwestern,Miami (OH),13,6,27,4,2,45,Field Goal Missed,Jack Olsen 45 yd FG MISSED,,2024-08-31T22:33:41.000Z
+401644683104975001,401644683,40164468319,1,4,2:49,Miami (OH),Northwestern,6,13,73,1,10,4,Rush,Brett Gabbert run for 4 yds to the M-OH 31,-0.1248442803913914,2024-08-31T21:58:28.000Z
+401644683104977701,401644683,40164468319,2,4,2:22,Miami (OH),Northwestern,6,13,69,2,6,0,Pass Incompletion,Brett Gabbert pass incomplete,-0.7118036090130389,2024-08-31T22:35:02.000Z
+401644683104978401,401644683,40164468319,3,4,2:15,Miami (OH),Northwestern,6,13,69,3,6,11,Pass Reception,Brett Gabbert pass complete to Andre Johnson for 11 yds to the M-OH 42 for a 1ST down,2.2076601115870513,2024-08-31T21:58:28.000Z
+401644683104984601,401644683,40164468319,4,4,1:53,Miami (OH),Northwestern,6,13,58,1,10,12,Pass Reception,Brett Gabbert pass complete to Reggie Virgil for 12 yds to the NU 46 for a 1ST down,1.0184158039048512,2024-08-31T21:58:28.000Z
+401644683104987301,401644683,40164468319,5,4,1:26,Miami (OH),Northwestern,6,13,46,1,10,10,Pass Reception,Brett Gabbert pass complete to Reggie Virgil for 10 yds to the NU 36 for a 1ST down,0.5325093131206683,2024-08-31T21:58:28.000Z
+401644683104989701,401644683,40164468319,6,4,1:02,Miami (OH),Northwestern,6,13,36,1,10,1,Pass Reception,Brett Gabbert pass complete to Dylan Downing for 1 yd to the NU 35,-0.549055779913328,2024-08-31T22:40:06.000Z
+401644683104994201,401644683,40164468319,7,4,0:57,Miami (OH),Northwestern,6,13,35,2,9,0,Pass Interception Return,Brett Gabbert pass intercepted Robert Fitzgerald return for no gain to the NU 25,-3.440166125072876,2024-08-31T22:41:10.000Z
+401644683104999902,401644683,40164468320,6,4,0:00,Northwestern,Miami (OH),13,6,57,0,10,0,End of Game,End of 4th Quarter,,2024-08-31T22:45:31.000Z
+401644683104994602,401644683,40164468320,2,4,0:53,Northwestern,Miami (OH),13,6,72,2,7,0,Timeout,"Timeout Miami (OH), clock 00:53",,2024-08-31T22:42:05.000Z
+401644683104995202,401644683,40164468320,4,4,0:47,Northwestern,Miami (OH),13,6,56,1,10,0,Timeout,"Timeout Miami (OH), clock 00:47",,2024-08-31T22:43:17.000Z
+401644683104994601,401644683,40164468320,1,4,0:53,Northwestern,Miami (OH),13,6,75,1,10,3,Rush,Cam Porter run for 3 yds to the NU 28,-0.2957674139440157,2024-08-31T22:42:05.000Z
+401644683104995201,401644683,40164468320,3,4,0:47,Northwestern,Miami (OH),13,6,72,2,7,16,Rush,Mike Wright run for 16 yds to the NU 44 for a 1ST down,2.0033397522860312,2024-08-31T22:43:17.000Z
+401644683104995401,401644683,40164468320,5,4,0:45,Northwestern,Miami (OH),13,6,56,1,10,-1,Rush,"(00:45) [SG] Kneel down by WRIGHT, Mike at NWN43 (team loss of 1), clock 00:37.",-1.3786709298701574,2024-08-31T21:58:28.000Z

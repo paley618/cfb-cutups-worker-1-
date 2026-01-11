@@ -1,0 +1,161 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401634143101849910,401634143,4016341431,2,1,15:00,Presbyterian,Mercer,0,0,65,1,10,1,Rush,Quante Jennings run for 1 yd to the PRES 36,-0.8334176637748527,2024-08-29T22:50:07.000Z
+401634143101849913,401634143,4016341431,3,1,15:00,Presbyterian,Mercer,0,0,64,2,9,-4,Pass Reception,Ty Englehart pass complete to Cincere Gill for a loss of 4 yards to the PRES 32,-0.9992552058525668,2024-08-29T22:50:07.000Z
+401634143101849915,401634143,4016341431,4,1,15:00,Presbyterian,Mercer,0,0,68,3,13,0,Pass Incompletion,Ty Englehart pass incomplete,-0.1860843947833759,2024-08-29T22:50:07.000Z
+401634143101867201,401634143,4016341431,6,1,13:27,Presbyterian,Mercer,0,0,73,4,18,0,Punt,"Ezra King punt for 37 yds, downed at the MER 36",,2024-08-29T23:17:44.000Z
+401634143101849918,401634143,4016341431,5,1,15:00,Presbyterian,Mercer,0,0,68,4,13,-5,Penalty,"Presbyterian Penalty, Delay Of Game (-5 Yards) to the PRES 27",,2024-08-29T22:50:07.000Z
+401634143101849907,401634143,4016341431,1,1,15:00,Mercer,Presbyterian,0,0,65,0,0,0,Kickoff,Sully Croker kickoff for 53 yds,,2024-08-29T22:50:07.000Z
+401634143101867203,401634143,4016341432,1,1,13:27,Mercer,Presbyterian,0,0,64,1,10,21,Pass Reception,D.J. Smith pass complete to Kendall Harris for 21 yds to the PRES 43 for a 1ST down,1.7948225198444767,2024-08-29T23:17:44.000Z
+401634143101867204,401634143,4016341432,2,1,13:27,Mercer,Presbyterian,0,0,43,1,10,0,Rush,Dwayne Mcgee run for no gain to the PRES 43,-0.9391692565688832,2024-08-29T23:17:44.000Z
+401634143101867205,401634143,4016341432,3,1,13:27,Mercer,Presbyterian,0,0,43,2,10,29,Rush,D.J. Smith run for 29 yds to the PRES 14 for a 1ST down,1.7432561693206559,2024-08-29T23:17:44.000Z
+401634143101867206,401634143,4016341432,4,1,13:27,Mercer,Presbyterian,0,0,14,1,10,11,Rush,Dwayne Mcgee run for 11 yds to the PRES 3 for a 1ST down,1.0838314424477444,2024-08-29T23:17:44.000Z
+401634143101885701,401634143,4016341432,5,1,11:42,Mercer,Presbyterian,7,0,3,1,3,3,Rushing Touchdown,Dwayne Mcgee run for 3 yds for a TD (Reice Griffith KICK),1.464451732731337,2024-08-29T23:17:44.000Z
+401634143101886504,401634143,4016341433,3,1,11:34,Presbyterian,Mercer,0,7,55,1,15,6,Pass Reception,Ty Englehart pass complete to Dominic Kibby for 6 yds to the MER 49,0.309477991206677,2024-08-30T00:45:05.000Z
+401634143101886505,401634143,4016341433,4,1,11:34,Presbyterian,Mercer,0,7,49,2,9,1,Rush,Zach Switzer run for 1 yd to the MER 48,-0.8609667510410385,2024-08-30T00:45:05.000Z
+401634143101886506,401634143,4016341433,5,1,11:34,Presbyterian,Mercer,0,7,48,3,8,0,Pass Incompletion,Ty Englehart pass incomplete,-0.8552184337457032,2024-08-30T00:46:51.000Z
+401634143101899904,401634143,4016341433,7,1,10:00,Mercer,Presbyterian,7,0,80,1,10,-7,Penalty,"HARRIS, Kendall rush to the right for a gain of 7 yards to the MER27 (HAJDUK, Nathan). PENALTY MER Personal Foul on PARSONS, Kelin enforced half the distance from the goal, 10 yards from the MER20 to the MER10 [NHSG]. NO PLAY (replay the down).",,2024-08-30T00:48:11.000Z
+401634143101899901,401634143,4016341433,6,1,10:00,Presbyterian,Mercer,0,7,48,4,8,0,Punt,punt for 48 yds for a touchback,,2024-08-30T00:48:11.000Z
+401634143101886502,401634143,4016341433,2,1,11:34,Mercer,Presbyterian,7,0,65,0,0,45,Kickoff Return (Offense),"Sully Croker kickoff for 60 yds , Brooks Russ-Martin return for 45 yds to the 50 yard line",,2024-08-30T00:46:51.000Z
+401634143101886501,401634143,4016341433,1,1,11:34,Presbyterian,Mercer,0,7,50,1,10,-5,Penalty,"Presbyterian Penalty, False Start (Deverious Abercrombie) to the PRES 45",,2024-08-30T00:45:05.000Z
+401634143101899906,401634143,4016341434,1,1,10:00,Mercer,Presbyterian,7,0,90,1,20,4,Pass Reception,D.J. Smith pass complete to Brayden Smith for 4 yds to the MER 14,-0.01901528771783757,2024-08-30T00:48:11.000Z
+401634143101917301,401634143,4016341434,2,1,8:26,Mercer,Presbyterian,7,0,99,3,29,0,Timeout,"Timeout Presbyterian, clock 08:26",,2024-08-30T00:53:23.000Z
+401634143101926801,401634143,4016341434,5,1,7:31,Mercer,Presbyterian,7,0,85,4,15,0,Punt,"John McConnell punt for 48 yds , Cincere Gill returns for no gain to the PRES 37",,2024-08-30T00:55:44.000Z
+401634143101917303,401634143,4016341434,4,1,8:26,Mercer,Presbyterian,7,0,99,3,29,14,Rush,Micah Bell run for 14 yds to the MER 15,0.0289324791853085,2024-08-30T00:54:13.000Z
+401634143101917302,401634143,4016341434,3,1,8:26,Mercer,Presbyterian,7,0,86,2,16,-13,Sack,D.J. Smith sacked by Sebastian Conwell for a loss of 13 yards to the MER 1,-0.1523481528915065,2024-08-30T00:54:13.000Z
+401634143101926803,401634143,4016341435,1,1,7:31,Presbyterian,Mercer,0,7,63,1,10,0,Rush,Zach Switzer run for no gain to the PRES 37,-1.065701080215459,2024-08-30T00:55:44.000Z
+401634143101937201,401634143,4016341435,2,1,6:27,Presbyterian,Mercer,0,7,63,2,10,21,Pass Reception,Ty Englehart pass complete to Nathan Levicki for 21 yds to the MER 6 for a 1ST down,2.821276402221085,2024-08-30T01:00:08.000Z
+401634143101937202,401634143,4016341435,3,1,6:27,Presbyterian,Mercer,0,7,6,1,6,2,Rush,Zach Switzer run for 2 yds to the MER 4,-0.2814004693826835,2024-08-30T00:59:02.000Z
+401634143101937203,401634143,4016341435,4,1,6:27,Presbyterian,Mercer,0,7,4,2,4,-2,Rush,Ty Englehart run for a loss of 2 yards to the MER 6,-0.4898716097266875,2024-08-30T00:59:02.000Z
+401634143101937204,401634143,4016341435,5,1,6:27,Presbyterian,Mercer,0,7,6,3,6,-3,Sack,Ty Englehart sacked by Marques Thomas and Brayden Manley for a loss of 3 yards to the MER 9,-0.577396947358368,2024-08-30T01:00:08.000Z
+401634143101948201,401634143,4016341435,6,1,5:17,Presbyterian,Mercer,3,7,9,4,9,24,Field Goal Good,Mack Mikko 24 yd FG GOOD,,2024-08-30T01:00:47.000Z
+401634143101948901,401634143,4016341436,1,1,5:10,Presbyterian,Mercer,3,7,65,0,0,35,Kickoff Return (Offense),"Mack Mikko kickoff for 62 yds , Brayden Smith return for 35 yds to the MER 38",,2024-08-30T01:02:26.000Z
+401634143101948903,401634143,4016341436,2,1,5:10,Mercer,Presbyterian,7,3,62,1,10,2,Rush,CJ Miller run for 2 yds to the MER 40,-0.6656376494811928,2024-08-30T01:02:26.000Z
+401634143101948904,401634143,4016341436,3,1,5:10,Mercer,Presbyterian,7,3,60,2,8,9,Pass Reception,D.J. Smith pass complete to Kendall Harris for 9 yds to the MER 49 for a 1ST down,1.6952740862677442,2024-08-30T01:03:42.000Z
+401634143101948905,401634143,4016341436,4,1,5:10,Mercer,Presbyterian,7,3,51,1,10,15,Rush,CJ Miller run for 15 yds to the PRES 36 for a 1ST down,0.912589108879143,2024-08-30T01:03:42.000Z
+401634143101948906,401634143,4016341436,5,1,5:10,Mercer,Presbyterian,7,3,36,1,10,-1,Rush,CJ Miller run for a loss of 1 yard to the PRES 37,-0.9031999321620817,2024-08-30T01:03:42.000Z
+401634143101948907,401634143,4016341436,6,1,5:10,Mercer,Presbyterian,7,3,37,2,11,4,Pass Reception,D.J. Smith pass complete to CJ Miller for 4 yds to the PRES 33,-0.1338963923562613,2024-08-30T01:03:42.000Z
+401634143101948908,401634143,4016341436,7,1,5:10,Mercer,Presbyterian,7,3,33,3,7,22,Pass Reception,D.J. Smith pass complete to Kendall Harris for 22 yds to the PRES 11 for a 1ST down,1.526135006164214,2024-08-30T01:03:42.000Z
+401634143101948910,401634143,4016341436,8,1,5:10,Mercer,Presbyterian,7,3,11,1,10,-10,Penalty,"QB Keeper SMITH, DJ. rush to the left for a gain of 5 yards to the PRE6 (BROWN, Nigel). PENALTY MER Holding on PARSONS, Kelin enforced 10 yards from the PRE11 to the PRE21 [NHSG]. NO PLAY (replay the down).",,2024-08-30T01:03:42.000Z
+401634143101948911,401634143,4016341436,9,1,5:10,Mercer,Presbyterian,7,3,21,1,20,8,Pass Reception,D.J. Smith pass complete to Adjatay Dabbs for 8 yds to the PRES 13,0.2222795062853,2024-08-30T01:03:42.000Z
+401634143101989101,401634143,4016341436,10,1,1:08,Mercer,Presbyterian,14,3,13,2,12,13,Passing Touchdown,D.J. Smith pass complete to Kelin Parsons for 13 yds for a TD (Reice Griffith KICK),2.932044712283485,2024-08-30T01:07:46.000Z
+401634143101999902,401634143,4016341437,6,1,0:00,Presbyterian,Mercer,3,14,54,0,10,-1,End Period,End of 1st Quarter,,2024-08-29T23:17:44.000Z
+401634143101989701,401634143,4016341437,1,1,1:02,Mercer,Presbyterian,14,3,65,0,0,23,Kickoff Return (Offense),"Sully Croker kickoff for 57 yds , Zach Switzer return for 23 yds to the PRES 31",,2024-08-30T01:10:16.000Z
+401634143101989703,401634143,4016341437,2,1,1:02,Presbyterian,Mercer,3,14,69,1,10,0,Pass Incompletion,Ty Englehart pass incomplete,-0.8947814664467213,2024-08-30T01:10:16.000Z
+401634143101989705,401634143,4016341437,3,1,1:02,Presbyterian,Mercer,3,14,69,2,10,15,Penalty,"WRIGHT, Antonio rush up the middle for no gain to the PRE31 (WASHBURN, Isaiah). PENALTY MER Personal Foul on WASHBURN, Isaiah enforced 15 yards from the PRE31 to the PRE46 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-08-30T01:10:16.000Z
+401634143101989706,401634143,4016341437,4,1,1:02,Presbyterian,Mercer,3,14,54,1,10,0,Pass Incompletion,Ty Englehart pass incomplete,-1.1590089706435955,2024-08-30T01:10:16.000Z
+401634143101999901,401634143,4016341437,5,1,0:00,Presbyterian,Mercer,3,14,54,2,10,-1,Rush,Antonio Wright run for a loss of 1 yard to the PRES 45,-1.0885529427695593,2024-08-30T01:17:37.000Z
+401634143102849902,401634143,4016341437,7,2,15:00,Presbyterian,Mercer,3,14,55,3,11,1,Pass Reception,Ty Englehart pass complete to Cincere Gill for 1 yd to the PRES 46,-0.42809690761803854,2024-08-29T00:00:00.000Z
+401634143102859201,401634143,4016341437,8,2,14:07,Presbyterian,Mercer,3,14,54,4,10,0,Punt,"Ezra King punt for 37 yds, fair catch by Brayden Smith at the MER 17",,2024-08-30T01:17:44.000Z
+401634143102859205,401634143,4016341438,3,2,14:07,Mercer,Presbyterian,14,3,71,1,10,6,Rush,D.J. Smith run for 6 yds to the MER 35,0.366045681425021,2024-08-30T01:18:45.000Z
+401634143102859203,401634143,4016341438,1,2,14:07,Mercer,Presbyterian,14,3,83,1,10,8,Rush,Dwayne Mcgee run for 8 yds to the MER 25,0.7299114161837501,2024-08-30T01:18:45.000Z
+401634143102859204,401634143,4016341438,2,2,14:07,Mercer,Presbyterian,14,3,75,2,2,4,Rush,Dwayne Mcgee run for 4 yds to the MER 29 for a 1ST down,0.0296542936129427,2024-08-30T01:18:45.000Z
+401634143102859207,401634143,4016341438,4,2,14:07,Mercer,Presbyterian,14,3,65,2,4,-5,Penalty,"SMITH, DJ. pass to the left complete for 6 yards to WROBLE, Parker caught at the MER35 and advanced to the MER41 (LEWIS, Malik). PENALTY Before the snap, MER Illegal Formation enforced 5 yards from the MER35 to the MER30. NO PLAY (replay the down).",,2024-08-30T01:18:45.000Z
+401634143102859208,401634143,4016341438,5,2,14:07,Mercer,Presbyterian,14,3,70,2,9,0,Pass Incompletion,D.J. Smith pass incomplete,-0.5068450753670621,2024-08-30T01:18:45.000Z
+401634143102859209,401634143,4016341438,6,2,14:07,Mercer,Presbyterian,14,3,70,3,9,13,Pass Reception,D.J. Smith pass complete to Adjatay Dabbs for 13 yds to the MER 43 for a 1ST down,2.507519124259595,2024-08-30T01:18:45.000Z
+401634143102859210,401634143,4016341438,7,2,14:07,Mercer,Presbyterian,14,3,57,1,10,4,Rush,Micah Bell run for 4 yds to the MER 47,-0.1651640993405828,2024-08-30T01:18:45.000Z
+401634143102859211,401634143,4016341438,8,2,14:07,Mercer,Presbyterian,14,3,53,2,6,10,Rush,D.J. Smith run for 10 yds to the PRES 43 for a 1ST down,1.278110708921055,2024-08-30T01:18:45.000Z
+401634143102859212,401634143,4016341438,9,2,14:07,Mercer,Presbyterian,14,3,43,1,10,2,Rush,Micah Bell run for 2 yds to the PRES 41,-0.5109950870570472,2024-08-30T01:23:43.000Z
+401634143102895801,401634143,4016341438,10,2,10:41,Mercer,Presbyterian,14,3,41,2,8,6,Pass Interception Return,D.J. Smith pass intercepted Alex Herriott return for 6 yds to the PRES 40,-3.1366348250120986,2024-08-30T01:26:00.000Z
+401634143102897401,401634143,4016341439,1,2,10:25,Presbyterian,Mercer,3,14,60,1,10,63,Pass Interception Return,"Ty Englehart pass intercepted for a 1ST down Myles Redding return for 48 yds to the MER 12 for a 1ST down Mercer Penalty, Personal Foul (Brayden Manley) to the PRES 47 for a 1ST down",-2.2430993958563246,2024-08-30T01:28:12.000Z
+401634143102915901,401634143,40163414310,4,2,8:40,Mercer,Presbyterian,21,3,1,1,1,1,Rushing Touchdown,D.J. Smith run for 1 yd for a TD (Reice Griffith KICK),0.938021275120443,2024-08-30T01:31:42.000Z
+401634143102897405,401634143,40163414310,3,2,10:25,Mercer,Presbyterian,14,3,11,2,10,10,Pass Reception,D.J. Smith pass complete to Sawyer Burt for 10 yds to the PRES 1 for a 1ST down,1.875015587181796,2024-08-30T01:28:12.000Z
+401634143102897404,401634143,40163414310,2,2,10:25,Mercer,Presbyterian,14,3,11,1,10,0,Rush,Tyrell Coard run for no gain to the PRES 11,-0.291297448934314,2024-08-30T01:28:12.000Z
+401634143102897403,401634143,40163414310,1,2,10:25,Mercer,Presbyterian,14,3,47,1,10,36,Pass Reception,D.J. Smith pass complete to Kelin Parsons for 36 yds to the PRES 11 for a 1ST down,1.091462827898505,2024-08-30T01:28:12.000Z
+401634143102916601,401634143,40163414311,1,2,8:33,Mercer,Presbyterian,21,3,65,0,0,11,Kickoff Return (Offense),"Sully Croker kickoff for 50 yds , Brooks Russ-Martin return for 11 yds to the PRES 26",,2024-08-30T01:35:37.000Z
+401634143102939301,401634143,40163414311,7,2,6:06,Presbyterian,Mercer,3,21,65,3,16,4,Pass Reception,Ty Englehart pass complete to Cincere Gill for 4 yds to the PRES 39,-0.03667422616698968,2024-08-30T01:39:24.000Z
+401634143102934402,401634143,40163414311,6,2,6:55,Presbyterian,Mercer,3,21,65,2,16,0,Pass Incompletion,Ty Englehart pass incomplete,-0.36363581168775383,2024-08-30T01:38:15.000Z
+401634143102934401,401634143,40163414311,5,2,6:55,Presbyterian,Mercer,3,21,59,1,10,-6,Sack,Ty Englehart sacked by Carson Griffin for a loss of 6 yards to the PRES 35,-2.0756713262890445,2024-08-30T01:17:44.000Z
+401634143102916605,401634143,40163414311,4,2,8:33,Presbyterian,Mercer,3,21,70,3,6,11,Rush,Ty Englehart run for 11 yds to the PRES 41 for a 1ST down,2.1483298390463546,2024-08-30T01:35:37.000Z
+401634143102916604,401634143,40163414311,3,2,8:33,Presbyterian,Mercer,3,21,73,2,9,3,Rush,Ty Englehart run for 3 yds to the PRES 30,-0.18765496019597983,2024-08-30T01:35:37.000Z
+401634143102916603,401634143,40163414311,2,2,8:33,Presbyterian,Mercer,3,21,74,1,10,1,Rush,Ty Englehart run for 1 yd to the PRES 27,-0.6129109161878361,2024-08-30T01:35:37.000Z
+401634143102948301,401634143,40163414311,8,2,5:16,Presbyterian,Mercer,3,21,61,4,12,0,Punt,Ezra King punt for 32 yds,,2024-08-30T01:40:26.000Z
+401634143102979902,401634143,40163414312,8,2,2:00,Mercer,Presbyterian,21,3,35,1,10,12,Pass Reception,D.J. Smith pass complete to Apollos Cook for 12 yds to the PRES 23 for a 1ST down,0.3086111057057275,2024-08-30T01:46:11.000Z
+401634143102979903,401634143,40163414312,9,2,2:00,Mercer,Presbyterian,21,3,23,1,10,8,Pass Reception,D.J. Smith pass complete to Dwayne Mcgee for 8 yds to the PRES 15,0.4686479074717325,2024-08-30T01:46:11.000Z
+401634143102979901,401634143,40163414312,7,2,2:00,Mercer,Presbyterian,21,3,23,1,10,0,Timeout,"Timeout Mercer, clock 02:00",,2024-08-30T01:46:11.000Z
+401634143102948303,401634143,40163414312,1,2,5:16,Mercer,Presbyterian,21,3,71,1,10,-3,Rush,Dwayne Mcgee run for a loss of 3 yards to the MER 26,-1.1451131808901334,2024-08-30T01:42:16.000Z
+401634143102948304,401634143,40163414312,2,2,5:16,Mercer,Presbyterian,21,3,74,2,13,11,Pass Reception,D.J. Smith pass complete to Kendall Harris for 11 yds to the MER 37,0.8836518211612594,2024-08-30T01:42:16.000Z
+401634143102948305,401634143,40163414312,3,2,5:16,Mercer,Presbyterian,21,3,63,3,2,4,Rush,Dwayne Mcgee run for 4 yds to the MER 41 for a 1ST down,1.3780658826854113,2024-08-30T01:42:16.000Z
+401634143102948306,401634143,40163414312,4,2,5:16,Mercer,Presbyterian,21,3,59,1,10,11,Pass Reception,D.J. Smith pass complete to Brayden Smith for 11 yds to the PRES 48 for a 1ST down,0.9727785135184703,2024-08-30T01:42:16.000Z
+401634143102948307,401634143,40163414312,5,2,5:16,Mercer,Presbyterian,21,3,48,1,10,4,Rush,Dwayne Mcgee run for 4 yds to the PRES 44,-0.1319374071745773,2024-08-30T01:42:16.000Z
+401634143102948308,401634143,40163414312,6,2,5:16,Mercer,Presbyterian,21,3,44,2,6,9,Pass Reception,D.J. Smith pass complete to Kendall Harris for 9 yds to the PRES 35 for a 1ST down,0.8455824596775783,2024-08-30T01:42:16.000Z
+401634143102979904,401634143,40163414312,10,2,2:00,Mercer,Presbyterian,21,3,15,2,2,11,Rush,Brayden Smith run for 11 yds to the PRES 4 for a 1ST down,0.507139251885521,2024-08-30T01:46:11.000Z
+401634143102988301,401634143,40163414312,11,2,1:16,Mercer,Presbyterian,28,3,4,1,4,4,Rushing Touchdown,Tyrell Coard run for 4 yds for a TD (Reice Griffith KICK),1.688190518713975,2024-08-30T01:49:47.000Z
+401634143102999903,401634143,40163414313,5,2,0:00,Presbyterian,Mercer,3,28,72,0,11,0,End of Half,End of 2nd Quarter,,2024-08-30T01:54:23.000Z
+401634143102988701,401634143,40163414313,1,2,1:12,Mercer,Presbyterian,28,3,65,0,0,22,Kickoff Return (Offense),"Sully Croker kickoff for 62 yds , Brooks Russ-Martin return for 22 yds to the PRES 25",,2024-08-30T01:52:05.000Z
+401634143102988703,401634143,40163414313,2,2,1:12,Presbyterian,Mercer,3,28,75,1,10,0,Pass Incompletion,Ty Englehart pass incomplete,-0.7029700220436519,2024-08-30T01:52:05.000Z
+401634143102988704,401634143,40163414313,3,2,1:12,Presbyterian,Mercer,3,28,75,2,10,-1,Rush,Antonio Wright run for a loss of 1 yard to the PRES 24,-0.3927938356308358,2024-08-30T01:52:05.000Z
+401634143102999901,401634143,40163414313,4,2,0:00,Presbyterian,Mercer,3,28,76,3,11,4,Rush,Zach Switzer run for 4 yds to the PRES 28,-0.02531409608192891,2024-08-30T01:54:23.000Z
+401634143103865401,401634143,40163414314,4,3,13:45,Mercer,Presbyterian,35,3,68,3,1,68,Passing Touchdown,D.J. Smith pass complete to Brayden Smith for 68 yds for a TD (Reice Griffith KICK),6.226452434313012,2024-08-30T02:19:02.000Z
+401634143103854403,401634143,40163414314,2,3,14:55,Mercer,Presbyterian,28,3,77,1,10,5,Rush,Dwayne Mcgee run for 5 yds to the MER 28,0.090922002905697,2024-08-30T02:16:59.000Z
+401634143103854404,401634143,40163414314,3,3,14:55,Mercer,Presbyterian,28,3,72,2,5,4,Rush,Micah Bell run for 4 yds to the MER 32,-0.1070173430293124,2024-08-30T02:18:21.000Z
+401634143103854401,401634143,40163414314,1,3,14:55,Presbyterian,Mercer,3,28,65,0,0,16,Kickoff Return (Offense),"Mack Mikko kickoff for 58 yds , Brayden Smith return for 16 yds to the MER 23",,2024-08-30T02:16:59.000Z
+401634143103865404,401634143,40163414314,5,3,13:45,Mercer,Presbyterian,28,3,65,0,0,0,Timeout,"Timeout Mercer, clock 13:45",,2024-08-30T02:19:02.000Z
+401634143103866003,401634143,40163414315,2,3,13:39,Presbyterian,Mercer,3,35,69,1,10,0,Pass Incompletion,Ty Englehart pass incomplete,-0.8947814664467213,2024-08-30T02:23:10.000Z
+401634143103866004,401634143,40163414315,3,3,13:39,Presbyterian,Mercer,3,35,69,2,10,0,Pass Incompletion,Ty Englehart pass incomplete,-0.48647765014911126,2024-08-30T02:23:10.000Z
+401634143103866001,401634143,40163414315,1,3,13:39,Mercer,Presbyterian,35,3,65,0,0,23,Kickoff Return (Offense),"Sully Croker kickoff for 57 yds , Brooks Russ-Martin return for 23 yds to the PRES 31",,2024-08-30T02:23:10.000Z
+401634143103876501,401634143,40163414315,5,3,12:34,Presbyterian,Mercer,3,35,65,4,6,0,Punt,Ezra King punt for 48 yds,,2024-08-30T02:26:16.000Z
+401634143103866005,401634143,40163414315,4,3,13:39,Presbyterian,Mercer,3,35,69,3,10,4,Pass Reception,Ty Englehart pass complete to Dominic Kibby for 4 yds to the PRES 35,-0.045726893384339995,2024-08-30T02:23:10.000Z
+401634143103876508,401634143,40163414316,6,3,12:34,Mercer,Presbyterian,35,3,45,2,5,11,Rush,Dwayne Mcgee run for 11 yds to the PRES 34 for a 1ST down,0.8028658968519428,2024-08-30T02:27:47.000Z
+401634143103876509,401634143,40163414316,7,3,12:34,Mercer,Presbyterian,35,3,34,1,10,-1,Rush,Dwayne Mcgee run for a loss of 1 yard to the PRES 35,-0.83111511535939,2024-08-30T02:27:47.000Z
+401634143103876511,401634143,40163414316,9,3,12:34,Mercer,Presbyterian,35,3,33,3,9,15,Pass Reception,D.J. Smith pass complete to Parker Wroble for 15 yds to the PRES 18 for a 1ST down,1.687441239891436,2024-08-30T02:27:47.000Z
+401634143103876512,401634143,40163414316,10,3,12:34,Mercer,Presbyterian,35,3,18,1,10,6,Rush,Micah Bell run for 6 yds to the PRES 12,0.1838527971014785,2024-08-30T02:27:47.000Z
+401634143103876513,401634143,40163414316,11,3,12:34,Mercer,Presbyterian,35,3,12,2,4,6,Rush,Dwayne Mcgee run for 6 yds to the PRES 6 for a 1ST down,0.3554501409038355,2024-08-30T02:27:47.000Z
+401634143103876514,401634143,40163414316,12,3,12:34,Mercer,Presbyterian,35,3,6,1,6,0,Pass Incompletion,D.J. Smith pass incomplete,-0.476177221716661,2024-08-30T02:27:47.000Z
+401634143103876515,401634143,40163414316,13,3,12:34,Mercer,Presbyterian,35,3,6,2,6,-3,Rush,Dwayne Mcgee run for a loss of 3 yards to the PRES 9,-0.481445661950298,2024-08-30T02:27:47.000Z
+401634143103876504,401634143,40163414316,2,3,12:34,Mercer,Presbyterian,35,3,82,2,9,-5,Penalty,"Mercer Penalty, Encroachment on PARSONS, Kelin enforced (Kelin Parsons) to the MER 13",,2024-08-30T02:27:47.000Z
+401634143103876503,401634143,40163414316,1,3,12:34,Mercer,Presbyterian,35,3,83,1,10,1,Rush,Dwayne Mcgee run for 1 yd to the MER 18,-0.40702717159742274,2024-08-30T02:26:16.000Z
+401634143103876505,401634143,40163414316,3,3,12:34,Mercer,Presbyterian,35,3,87,2,14,10,Pass Reception,D.J. Smith pass complete to Apollos Cook for 10 yds to the MER 23,0.3216698777868805,2024-08-30T02:27:47.000Z
+401634143103876506,401634143,40163414316,4,3,12:34,Mercer,Presbyterian,35,3,77,3,4,27,Pass Reception,D.J. Smith pass complete to Tyrell Coard for 27 yds to the 50 yard line for a 1ST down,3.0582367960753523,2024-08-30T02:27:47.000Z
+401634143103876507,401634143,40163414316,5,3,12:34,Mercer,Presbyterian,35,3,50,1,10,5,Rush,Tyrell Coard run for 5 yds to the PRES 45,0.1018198743557602,2024-08-30T02:27:47.000Z
+401634143103876510,401634143,40163414316,8,3,12:34,Mercer,Presbyterian,35,3,35,2,11,2,Rush,Dwayne Mcgee run for 2 yds to the PRES 33,-0.511392672688967,2024-08-30T02:27:47.000Z
+401634143103954201,401634143,40163414316,14,3,4:57,Mercer,Presbyterian,42,3,9,3,9,9,Passing Touchdown,D.J. Smith pass complete to Tyrell Coard for 9 yds for a TD (Reice Griffith KICK),3.010112654732236,2024-08-30T02:37:46.000Z
+401634143103966501,401634143,40163414317,7,3,3:34,Presbyterian,Mercer,10,42,24,2,10,24,Passing Touchdown,Ty Englehart pass complete to Cincere Gill for 24 yds for a TD (Mack Mikko KICK),3.1160829863409187,2024-08-30T02:44:08.000Z
+401634143103954203,401634143,40163414317,1,3,4:57,Mercer,Presbyterian,42,3,65,0,0,0,Kickoff,Sully Croker kickoff for 58 yds,,2024-08-30T02:37:46.000Z
+401634143103954205,401634143,40163414317,2,3,4:57,Presbyterian,Mercer,3,42,75,1,10,0,Pass Incompletion,Ty Englehart pass incomplete,-0.7029700220436519,2024-08-30T02:37:46.000Z
+401634143103954206,401634143,40163414317,3,3,4:57,Presbyterian,Mercer,3,42,75,2,10,-3,Rush,Antonio Wright run for a loss of 3 yards to the PRES 22,-0.4634377557441667,2024-08-30T02:37:46.000Z
+401634143103954207,401634143,40163414317,4,3,4:57,Presbyterian,Mercer,3,42,78,3,13,5,Penalty,"Mercer Penalty, Offsides (Andrew Zock) to the PRES 27",,2024-08-30T02:37:46.000Z
+401634143103954208,401634143,40163414317,5,3,4:57,Presbyterian,Mercer,3,42,73,3,8,49,Pass Reception,Ty Englehart pass complete to Antonio Wright for 49 yds to the MER 24 for a 1ST down,4.327728366573013,2024-08-30T02:37:46.000Z
+401634143103954209,401634143,40163414317,6,3,4:57,Presbyterian,Mercer,3,42,24,1,10,0,Pass Incompletion,Ty Englehart pass incomplete,-0.4346450377339437,2024-08-30T02:37:46.000Z
+401634143103967201,401634143,40163414318,1,3,3:27,Presbyterian,Mercer,10,42,65,0,0,0,Kickoff Return (Offense),"Mack Mikko kickoff for 58 yds , Brayden Smith return for no gain to the MER 15",,2024-08-30T02:47:50.000Z
+401634143103967203,401634143,40163414318,2,3,3:27,Mercer,Presbyterian,42,10,85,1,10,5,Rush,Dwayne Mcgee run for 5 yds to the MER 20,0.07707751106059126,2024-08-30T02:47:50.000Z
+401634143103984701,401634143,40163414318,5,3,1:52,Mercer,Presbyterian,42,10,88,4,13,0,Punt,"John McConnell punt for 47 yds , Brooks Russ-Martin returns for no gain to the PRES 41",,2024-08-30T02:51:05.000Z
+401634143103967204,401634143,40163414318,3,3,3:27,Mercer,Presbyterian,42,10,80,2,5,0,Pass Incompletion,D.J. Smith pass incomplete,-0.4843998177690336,2024-08-30T02:47:50.000Z
+401634143103967205,401634143,40163414318,4,3,3:27,Mercer,Presbyterian,42,10,80,3,5,-8,Sack,D.J. Smith sacked by Dalton Epps for a loss of 8 yards to the MER 12,-0.3445903527918004,2024-08-30T02:47:50.000Z
+401634143103999902,401634143,40163414319,4,3,0:00,Presbyterian,Mercer,10,42,46,0,9,-3,End Period,End of 3rd Quarter,,2024-08-30T02:16:59.000Z
+401634143103984703,401634143,40163414319,1,3,1:52,Presbyterian,Mercer,10,42,59,1,10,12,Rush,Antonio Wright run for 12 yds to the MER 47 for a 1ST down,1.0458101085319973,2024-08-30T02:51:05.000Z
+401634143103984704,401634143,40163414319,2,3,1:52,Presbyterian,Mercer,10,42,47,1,10,1,Rush,Antonio Wright run for 1 yd to the MER 46,-0.8163903948325457,2024-08-30T02:51:05.000Z
+401634143103999901,401634143,40163414319,3,3,0:00,Presbyterian,Mercer,10,42,46,2,9,-3,Sack,Ty Englehart sacked by Ken Standley for a loss of 3 yards to the MER 49,-1.672584240241842,2024-08-30T02:16:59.000Z
+401634143104854601,401634143,40163414319,5,4,14:53,Presbyterian,Mercer,10,42,49,3,12,13,Pass Interception Return,Ty Englehart pass intercepted Isaac Dowling return for 13 yds to the PRES 37,-0.8978231236591823,2024-08-30T03:00:11.000Z
+401634143104879001,401634143,40163414320,6,4,12:09,Mercer,Presbyterian,42,10,13,1,10,0,Pass Incompletion,Hess Horne pass incomplete,-0.3048472994988835,2024-08-30T03:01:23.000Z
+401634143104854603,401634143,40163414320,1,4,14:53,Mercer,Presbyterian,42,10,37,1,10,2,Pass Reception,Hess Horne pass complete to Javarius George for 2 yds to the PRES 35,-0.4014146126260343,2024-08-30T02:57:27.000Z
+401634143104854604,401634143,40163414320,2,4,14:53,Mercer,Presbyterian,42,10,35,2,8,7,Pass Reception,Hess Horne pass complete to Cole Shaw for 7 yds to the PRES 28,0.4109441938167322,2024-08-30T02:57:27.000Z
+401634143104854605,401634143,40163414320,3,4,14:53,Mercer,Presbyterian,42,10,28,3,1,0,Rush,Micah Bell run for no gain to the PRES 28,-0.8246901229167243,2024-08-30T02:57:27.000Z
+401634143104854606,401634143,40163414320,4,4,14:53,Mercer,Presbyterian,42,10,28,4,1,2,Rush,Hess Horne run for 2 yds to the PRES 26 for a 1ST down,1.146567050794589,2024-08-30T03:00:11.000Z
+401634143104854607,401634143,40163414320,5,4,14:53,Mercer,Presbyterian,42,10,26,1,10,13,Pass Reception,Hess Horne pass complete to Javarius George for 13 yds to the PRES 13 for a 1ST down,0.1810729073623335,2024-08-30T03:00:11.000Z
+401634143104879002,401634143,40163414320,7,4,12:09,Mercer,Presbyterian,42,10,13,2,10,1,Pass Reception,Hess Horne pass complete to Cole Shaw for 1 yd to the PRES 12,-0.2445355355916945,2024-08-30T03:01:23.000Z
+401634143104879004,401634143,40163414320,8,4,12:09,Mercer,Presbyterian,42,10,12,3,9,5,Penalty,"HORNE, Hess sacked for a loss of 8 yards at the PRE20 (WARD, Alex). PENALTY PRE Offsides on LEWIS, Cade enforced 5 yards from the PRE12 to the PRE7 [NH]. NO PLAY (replay the down).",,2024-08-30T03:01:23.000Z
+401634143104895101,401634143,40163414320,9,4,10:48,Mercer,Presbyterian,49,10,7,3,4,7,Passing Touchdown,Hess Horne pass complete to Parker Wroble for 7 yds for a TD (Reice Griffith KICK),2.734137855577131,2024-08-30T03:03:55.000Z
+401634143104964103,401634143,40163414321,13,4,3:58,Presbyterian,Mercer,10,56,52,4,16,20,Punt Return Touchdown,Chris Joines 20 Yd Punt Return (Reice Griffith Kick),-6.961518152663421,2024-08-30T03:19:52.000Z
+401634143104895103,401634143,40163414321,1,4,10:48,Mercer,Presbyterian,49,10,65,0,0,21,Kickoff Return (Offense),"Sully Croker kickoff for 56 yds , Brooks Russ-Martin return for 21 yds to the PRES 30",,2024-08-30T03:06:42.000Z
+401634143104895603,401634143,40163414321,3,4,10:43,Presbyterian,Mercer,10,49,69,2,9,7,Rush,Ty Englehart run for 7 yds to the PRES 38,0.4445663660529781,2024-08-30T03:08:20.000Z
+401634143104895602,401634143,40163414321,2,4,10:43,Presbyterian,Mercer,10,49,70,1,10,1,Rush,Denim Edwards run for 1 yd to the PRES 31,-0.716015480823808,2024-08-30T03:08:20.000Z
+401634143104895604,401634143,40163414321,4,4,10:43,Presbyterian,Mercer,10,49,62,3,2,3,Rush,Denim Edwards run for 3 yds to the PRES 41 for a 1ST down,1.305223283876746,2024-08-30T03:08:20.000Z
+401634143104895605,401634143,40163414321,5,4,10:43,Presbyterian,Mercer,10,49,59,1,10,2,Rush,Quante Jennings run for 2 yds to the PRES 43,-0.6841550241957303,2024-08-30T03:08:20.000Z
+401634143104895606,401634143,40163414321,6,4,10:43,Presbyterian,Mercer,10,49,57,2,8,7,Rush,Collin Hurst run for 7 yds to the 50 yard line,0.6272703494057906,2024-08-30T03:08:20.000Z
+401634143104895607,401634143,40163414321,7,4,10:43,Presbyterian,Mercer,10,49,50,3,1,0,Pass Incompletion,Collin Hurst pass incomplete,-1.1574409812242905,2024-08-30T03:08:20.000Z
+401634143104895608,401634143,40163414321,8,4,10:43,Presbyterian,Mercer,10,49,50,4,1,4,Pass Reception,Collin Hurst pass complete to Dominic Kibby for 4 yds to the MER 46 for a 1ST down,2.330050597678193,2024-08-30T03:08:20.000Z
+401634143104895609,401634143,40163414321,9,4,10:43,Presbyterian,Mercer,10,49,46,1,10,-2,Rush,Collin Hurst run for a loss of 2 yards to the MER 48,-1.4874342230987914,2024-08-30T03:08:20.000Z
+401634143104895610,401634143,40163414321,10,4,10:43,Presbyterian,Mercer,10,49,48,2,12,-5,Sack,Collin Hurst sacked by Brayden Dudley and Carson Griffin for a loss of 5 yards to the PRES 47,-1.7015470876129282,2024-08-30T03:08:20.000Z
+401634143104895611,401634143,40163414321,11,4,10:43,Presbyterian,Mercer,10,49,53,3,17,-5,Penalty,"Presbyterian Penalty, Delay Of Game (Collin Hurst) to the PRES 42",,2024-08-30T03:08:20.000Z
+401634143104895612,401634143,40163414321,12,4,10:43,Presbyterian,Mercer,10,49,58,3,22,6,Rush,Antonio Wright run for 6 yds to the PRES 48,0.06810032330518732,2024-08-30T03:08:20.000Z
+401634143104964801,401634143,40163414322,1,4,3:51,Mercer,Presbyterian,56,10,65,0,0,40,Kickoff Return (Offense),"Sully Croker kickoff for 58 yds , Brooks Russ-Martin return for 40 yds to the PRES 28",,2024-08-30T03:22:25.000Z
+401634143104979901,401634143,40163414322,4,4,2:00,Presbyterian,Mercer,10,56,77,4,15,0,Timeout,"Timeout Mercer, clock 02:00",,2024-08-30T03:24:24.000Z
+401634143104964803,401634143,40163414322,2,4,3:51,Presbyterian,Mercer,10,56,72,1,10,2,Rush,Marlon Leslie run for 2 yds to the PRES 30,-0.5100717857614772,2024-08-30T03:22:25.000Z
+401634143104964804,401634143,40163414322,3,4,3:51,Presbyterian,Mercer,10,56,70,2,8,-1,Rush,BJ Atkins run for a loss of 1 yard to the PRES 29,-0.6350073572660033,2024-08-30T03:22:25.000Z
+401634143104979902,401634143,40163414322,5,4,2:00,Presbyterian,Mercer,10,56,71,3,9,-6,Sack,Collin Hurst sacked by RJ Evans for a loss of 6 yards to the PRES 23,-0.3468552112449581,2024-08-30T03:24:24.000Z
+401634143104986001,401634143,40163414322,6,4,1:39,Presbyterian,Mercer,10,63,77,4,15,75,Punt,"Ezra King punt for 52 yds , Brayden Smith returns for 75 yds for a TD (Reice Griffith KICK)",,2024-08-30T03:27:20.000Z
+401634143104999903,401634143,40163414323,5,4,0:00,Presbyterian,Mercer,10,63,72,0,4,0,End of Game,End of 4th Quarter,,2024-08-30T03:33:54.000Z
+401634143104986501,401634143,40163414323,1,4,1:34,Mercer,Presbyterian,63,10,65,0,0,15,Kickoff Return (Offense),"Sully Croker kickoff for 61 yds , Brooks Russ-Martin return for 15 yds to the PRES 19",,2024-08-30T03:30:59.000Z
+401634143104986503,401634143,40163414323,2,4,1:34,Presbyterian,Mercer,10,63,81,1,10,3,Rush,Denim Edwards run for 3 yds to the PRES 22,-0.2256553240907335,2024-08-30T03:30:59.000Z
+401634143104986504,401634143,40163414323,3,4,1:34,Presbyterian,Mercer,10,63,78,2,7,3,Rush,Denim Edwards run for 3 yds to the PRES 25,-0.17690515231425327,2024-08-30T03:30:59.000Z
+401634143104999901,401634143,40163414323,4,4,0:00,Presbyterian,Mercer,10,63,75,3,4,3,Rush,Denim Edwards run for 3 yds to the PRES 28,-0.1368640346785659,2024-08-30T03:33:54.000Z

@@ -1,0 +1,190 @@
+id,game_id,drive_id,play_number,period,clock,offense,defense,offense_score,defense_score,yards_to_goal,down,distance,yards_gained,play_type,play_text,ppa,wallclock
+401643781101854303,401643781,4016437811,2,1,14:56,South Alabama,Ohio,0,0,87,1,10,-2,Rush,Kentrel Bullock run for a loss of 2 yards to the USA 11,-0.4978496931424319,2024-09-07T22:03:21.000Z
+401643781101854301,401643781,4016437811,1,1,14:56,Ohio,South Alabama,0,0,65,0,0,13,Kickoff Return (Offense),"Gianni Spetic kickoff for 65 yds , Shamar Sandgren return for 13 yds to the USA 13",,2024-09-07T22:03:21.000Z
+401643781101854304,401643781,4016437811,3,1,14:56,South Alabama,Ohio,0,0,89,2,12,10,Pass Reception,Bishop Davenport pass complete to Jeremiah Webb for 10 yds to the USA 21,0.38762786928226767,2024-09-07T22:05:48.000Z
+401643781101854305,401643781,4016437811,4,1,14:56,South Alabama,Ohio,0,0,79,3,2,2,Pass Reception,Bishop Davenport pass complete to DJ Thomas-Jones for 2 yds to the USA 23 for a 1ST down,0.596660348538399,2024-09-07T22:03:21.000Z
+401643781101854306,401643781,4016437811,5,1,14:56,South Alabama,Ohio,0,0,77,1,10,14,Pass Reception,Bishop Davenport pass complete to Devin Voisin for 14 yds to the USA 37 for a 1ST down,1.1598463006116466,2024-09-07T22:03:21.000Z
+401643781101854307,401643781,4016437811,6,1,14:56,South Alabama,Ohio,0,0,63,1,10,3,Rush,Bishop Davenport run for 3 yds to the USA 40,-0.4199785122886155,2024-09-07T22:05:48.000Z
+401643781101854308,401643781,4016437811,7,1,14:56,South Alabama,Ohio,0,0,60,2,7,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.9294870713655641,2024-09-07T22:05:48.000Z
+401643781101854309,401643781,4016437811,8,1,14:56,South Alabama,Ohio,0,0,60,3,7,3,Pass Reception,Bishop Davenport pass complete to PJ Martin for 3 yds to the USA 43,-0.23230244616271634,2024-09-07T22:05:48.000Z
+401643781101887101,401643781,4016437811,9,1,11:28,South Alabama,Ohio,0,0,57,4,4,0,Punt,"Aleksi Pulkkinen punt for 36 yds , Tony Mathis returns for no gain to the OHIO 21",,2024-09-07T22:07:43.000Z
+401643781101887103,401643781,4016437812,1,1,11:28,Ohio,South Alabama,0,0,79,1,10,-2,Rush,Anthony Tyus III run for a loss of 2 yards to the OHIO 19,-0.7325616754847815,2024-09-07T22:07:43.000Z
+401643781101919402,401643781,4016437812,8,1,8:05,South Alabama,Ohio,0,0,89,1,10,0,Timeout,"Timeout Ohio, clock 08:05",,2024-09-07T22:02:49.000Z
+401643781101887104,401643781,4016437812,2,1,11:28,Ohio,South Alabama,0,0,81,2,12,11,Fumble Recovery (Own),"Parker Navarro pass complete to Rodney Harris II for 11 yds fumbled, forced by Blayne Myrick, recovered by OHIO Rodney Harris II R. Harris II return for 0 yds",0.7232055999348068,2024-09-07T22:07:43.000Z
+401643781101887105,401643781,4016437812,3,1,11:28,Ohio,South Alabama,0,0,70,3,1,2,Rush,Anthony Tyus III run for 2 yds to the OHIO 32 for a 1ST down,0.8205801497252709,2024-09-07T22:07:43.000Z
+401643781101887106,401643781,4016437812,4,1,11:28,Ohio,South Alabama,0,0,68,1,10,0,Pass Incompletion,Parker Navarro pass incomplete,-0.9262377870973815,2024-09-07T22:07:43.000Z
+401643781101887107,401643781,4016437812,5,1,11:28,Ohio,South Alabama,0,0,68,2,10,1,Rush,Parker Navarro run for 1 yd to the OHIO 33,-0.43133289269019487,2024-09-07T22:07:43.000Z
+401643781101887108,401643781,4016437812,6,1,11:28,Ohio,South Alabama,0,0,67,3,9,7,Pass Reception,Parker Navarro pass complete to Coleman Owen for 7 yds to the OHIO 40,0.25079560166534964,2024-09-07T22:07:43.000Z
+401643781101919401,401643781,4016437812,7,1,8:05,Ohio,South Alabama,0,0,60,4,2,0,Punt,Jack Wilson punt for 49 yds,,2024-09-07T22:02:49.000Z
+401643781101956102,401643781,4016437813,11,1,4:38,Ohio,South Alabama,0,0,81,1,10,0,Timeout,"Timeout Ohio, clock 04:38",,2024-09-07T22:02:49.000Z
+401643781101956101,401643781,4016437813,10,1,4:38,South Alabama,Ohio,0,0,44,4,11,0,Punt,Aleksi Pulkkinen punt for 25 yds,,2024-09-07T22:02:49.000Z
+401643781101919408,401643781,4016437813,4,1,8:05,South Alabama,Ohio,0,0,68,1,10,2,Rush,Fluff Bothwell run for 2 yds to the USA 34,-0.5836824413377926,2024-09-07T22:16:09.000Z
+401643781101919407,401643781,4016437813,3,1,8:05,South Alabama,Ohio,0,0,86,2,7,18,Rush,Fluff Bothwell run for 18 yds to the USA 32 for a 1ST down,1.3970777716197658,2024-09-07T22:16:09.000Z
+401643781101919404,401643781,4016437813,1,1,8:05,South Alabama,Ohio,0,0,89,1,10,8,Rush,Bishop Davenport run for 8 yds to the USA 19,0.6039486313732949,2024-09-07T22:16:09.000Z
+401643781101919406,401643781,4016437813,2,1,8:05,South Alabama,Ohio,0,0,81,2,2,-5,Penalty,"BOTHWELL, Fluff rush to the right for a gain of 12 yards to the USA31 (BRAWLEY, Austin). PENALTY Before the snap, USA Illegal Shift enforced 5 yards from the USA19 to the USA14. NO PLAY (replay the down).",,2024-09-07T22:16:09.000Z
+401643781101919409,401643781,4016437813,5,1,8:05,South Alabama,Ohio,0,0,66,2,8,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.6778990972831398,2024-09-07T22:16:09.000Z
+401643781101919410,401643781,4016437813,6,1,8:05,South Alabama,Ohio,0,0,66,3,8,23,Pass Reception,Bishop Davenport pass complete to PJ Martin for 23 yds to the OHIO 43 for a 1ST down,3.4285221663319376,2024-09-07T22:16:09.000Z
+401643781101919411,401643781,4016437813,7,1,8:05,South Alabama,Ohio,0,0,43,1,10,-1,Rush,Iverson Celestine run for a loss of 1 yard to the OHIO 44,-1.1611287423243868,2024-09-07T22:16:09.000Z
+401643781101919412,401643781,4016437813,8,1,8:05,South Alabama,Ohio,0,0,44,2,11,0,Pass Incompletion,Bishop Davenport pass incomplete,-1.053107660949898,2024-09-07T22:16:09.000Z
+401643781101919413,401643781,4016437813,9,1,8:05,South Alabama,Ohio,0,0,44,3,11,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.8472380426787085,2024-09-07T22:16:09.000Z
+401643781101956104,401643781,4016437814,1,1,4:38,Ohio,South Alabama,0,0,81,1,10,59,Rush,Rickey Hunt Jr. run for 59 yds to the USA 22 for a 1ST down,3.7909967543543366,2024-09-07T22:26:15.000Z
+401643781101956105,401643781,4016437814,2,1,4:38,Ohio,South Alabama,0,0,22,1,10,0,Pass Incompletion,Parker Navarro pass incomplete,-0.402662020534962,2024-09-07T22:26:15.000Z
+401643781101965901,401643781,4016437814,3,1,3:40,Ohio,South Alabama,0,0,22,3,10,0,Timeout,"Timeout Ohio, clock 03:40",,2024-09-07T22:02:49.000Z
+401643781101965902,401643781,4016437814,4,1,3:40,Ohio,South Alabama,0,0,22,2,10,0,Pass Incompletion,Parker Navarro pass incomplete,-0.5229247355568223,2024-09-07T22:02:49.000Z
+401643781101965903,401643781,4016437814,5,1,3:40,Ohio,South Alabama,0,0,22,3,10,-5,Sack,Parker Navarro sacked by Jordan Norman and TEAM for a loss of 5 yards to the USA 27,-1.8356727211795185,2024-09-07T22:02:49.000Z
+401643781101969601,401643781,4016437814,6,1,3:03,Ohio,South Alabama,3,0,27,4,15,45,Field Goal Good,Gianni Spetic 45 yd FG GOOD,,2024-09-07T22:02:49.000Z
+401643781101969602,401643781,4016437815,1,1,3:03,Ohio,South Alabama,3,0,65,0,0,0,Kickoff,Gianni Spetic kickoff for 65 yds for a touchback,,2024-09-07T22:34:00.000Z
+401643781101999902,401643781,4016437815,11,1,0:00,South Alabama,Ohio,0,3,44,0,14,0,End Period,End of 1st Quarter,,2024-09-07T22:44:07.000Z
+401643781101969604,401643781,4016437815,2,1,3:03,South Alabama,Ohio,0,3,75,1,10,22,Rush,Kentrel Bullock run for 22 yds to the USA 47 for a 1ST down,1.9824556861480138,2024-09-07T22:34:00.000Z
+401643781101969605,401643781,4016437815,3,1,3:03,South Alabama,Ohio,0,3,53,1,10,-2,Rush,Bishop Davenport run for a loss of 2 yards to the USA 45,-1.598627696551306,2024-09-07T22:36:20.000Z
+401643781101969606,401643781,4016437815,4,1,3:03,South Alabama,Ohio,0,3,55,2,12,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.8164924833490277,2024-09-07T22:36:20.000Z
+401643781101969607,401643781,4016437815,5,1,3:03,South Alabama,Ohio,0,3,55,3,12,15,Pass Reception,Bishop Davenport pass complete to Devin Voisin for 15 yds to the OHIO 40 for a 1ST down,3.3213704695363004,2024-09-07T22:36:20.000Z
+401643781101969608,401643781,4016437815,6,1,3:03,South Alabama,Ohio,0,3,40,1,10,3,Pass Reception,Bishop Davenport pass complete to Jamaal Pritchett for 3 yds to the OHIO 37,-0.270025967249902,2024-09-07T22:36:20.000Z
+401643781101969609,401643781,4016437815,7,1,3:03,South Alabama,Ohio,0,3,37,2,7,3,Pass Reception,Bishop Davenport pass complete to Jamaal Pritchett for 3 yds to the OHIO 34,-0.3062678324279168,2024-09-07T22:36:20.000Z
+401643781101969611,401643781,4016437815,8,1,3:03,South Alabama,Ohio,0,3,34,3,4,-10,Penalty,"DAVENPORT, Bishop pass to the right incomplete intended for SANDGREN, Shamar broken up by WALKER, DJ at the OHI34. PENALTY USA Holding on CARNEY, Malachi enforced 10 yards from the OHI34 to the OHI44 [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:36:20.000Z
+401643781101969612,401643781,4016437815,9,1,3:03,South Alabama,Ohio,0,3,44,3,14,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.7301999573337099,2024-09-07T22:36:20.000Z
+401643781101999901,401643781,4016437815,10,1,0:00,South Alabama,Ohio,0,3,44,4,14,0,Punt,"Aleksi Pulkkinen punt for 29 yds, fair catch by Coleman Owen at the OHIO 30",,2024-09-07T22:44:07.000Z
+401643781102849909,401643781,4016437816,3,2,15:00,Ohio,South Alabama,3,0,61,3,1,-5,Penalty,"Ohio Penalty, False Start (TEAM) to the OHIO 34",,2024-09-07T22:46:35.000Z
+401643781102849914,401643781,4016437816,5,2,15:00,Ohio,South Alabama,3,0,57,1,10,5,Penalty,"South Alabama Penalty, Offsides (5 Yards) to the OHIO 48",,2024-09-07T22:46:35.000Z
+401643781102849903,401643781,4016437816,1,2,15:00,Ohio,South Alabama,3,0,70,1,10,0,Pass Incompletion,Parker Navarro pass incomplete,-0.8627910327708888,2024-09-07T22:46:35.000Z
+401643781102849906,401643781,4016437816,2,2,15:00,Ohio,South Alabama,3,0,70,2,10,9,Pass Reception,Parker Navarro pass complete to Eian Pugh for 9 yds to the OHIO 39,0.8229223955848372,2024-09-07T22:46:35.000Z
+401643781102849911,401643781,4016437816,4,2,15:00,Ohio,South Alabama,3,0,66,3,6,9,Pass Reception,Parker Navarro pass complete to Coleman Owen for 9 yds to the OHIO 43 for a 1ST down,2.174771550377619,2024-09-07T22:46:35.000Z
+401643781102849919,401643781,4016437816,6,2,15:00,Ohio,South Alabama,3,0,52,1,5,-10,Penalty,"TYUS III, Anthony rush to the left for a gain of 23 yards to the USA29 (MILLER, Wesley), out of bounds. PENALTY OHI Holding on ATKINSON, Christophe enforced 10 yards from the OHI48 to the OHI38 [NHSG]. NO PLAY (replay the down).",,2024-09-07T22:46:35.000Z
+401643781102849921,401643781,4016437816,7,2,15:00,Ohio,South Alabama,3,0,62,1,15,10,Rush,Anthony Tyus III run for 10 yds to the OHIO 48,1.3313046608073262,2024-09-07T22:46:35.000Z
+401643781102849924,401643781,4016437816,8,2,15:00,Ohio,South Alabama,3,0,52,2,5,2,Rush,Anthony Tyus III run for 2 yds to the 50 yard line,-0.7072652772195055,2024-09-07T22:46:35.000Z
+401643781102849925,401643781,4016437816,9,2,15:00,Ohio,South Alabama,3,0,50,3,3,0,Pass Incompletion,Parker Navarro pass incomplete,-1.0436650709663402,2024-09-07T22:46:35.000Z
+401643781102879201,401643781,4016437816,10,2,12:07,Ohio,South Alabama,3,0,50,4,3,35,Punt,"Jack Wilson punt for 35 yds , Jamaal Pritchett returns for no gain to the USA 20 , returns for no gain to the USA 20",,2024-09-07T22:46:35.000Z
+401643781102895604,401643781,4016437817,4,2,10:43,Ohio,South Alabama,3,0,65,0,0,0,Timeout,"Timeout Ohio, clock 10:43",,2024-09-07T23:01:29.000Z
+401643781102879203,401643781,4016437817,1,2,12:07,Ohio,South Alabama,3,0,20,1,10,5,Rush,Anthony Tyus III run for 5 yds to the USA 15,0.07438453789675,2024-09-07T22:46:35.000Z
+401643781102879204,401643781,4016437817,2,2,12:07,Ohio,South Alabama,3,0,15,2,5,8,Pass Reception,Parker Navarro pass complete to Mason Williams for 8 yds to the USA 7 for a 1ST down,0.346788560807738,2024-09-07T22:46:35.000Z
+401643781102895601,401643781,4016437817,3,2,10:43,Ohio,South Alabama,10,0,7,1,7,7,Rushing Touchdown,Anthony Tyus III run for 7 yds for a TD (Gianni Spetic KICK),2.196754630327211,2024-09-07T22:46:35.000Z
+401643781102896304,401643781,4016437818,3,2,10:36,South Alabama,Ohio,0,10,76,2,5,12,Pass Reception,Bishop Davenport pass complete to Jamaal Pritchett for 12 yds to the USA 36 for a 1ST down,1.2076826205866897,2024-09-07T23:02:35.000Z
+401643781102896305,401643781,4016437818,4,2,10:36,South Alabama,Ohio,0,10,64,1,10,0,Pass Incompletion,Bishop Davenport pass incomplete,-1.041155320344064,2024-09-07T23:02:35.000Z
+401643781102896301,401643781,4016437818,1,2,10:36,Ohio,South Alabama,10,0,65,0,0,14,Kickoff Return (Offense),"Gianni Spetic kickoff for 60 yds , Shamar Sandgren return for 14 yds to the USA 19",,2024-09-07T23:02:05.000Z
+401643781102909001,401643781,4016437818,5,2,9:09,South Alabama,Ohio,0,10,56,3,2,0,Timeout,"Timeout Ohio, clock 09:09",,2024-09-07T23:04:39.000Z
+401643781102909002,401643781,4016437818,6,2,9:09,South Alabama,Ohio,0,10,64,2,10,8,Rush,Fluff Bothwell run for 8 yds to the USA 44,0.7214509551122265,2024-09-07T23:04:39.000Z
+401643781102896303,401643781,4016437818,2,2,10:36,South Alabama,Ohio,0,10,81,1,10,5,Pass Reception,Bishop Davenport pass complete to Jamaal Pritchett for 5 yds to the USA 24,0.0837442926407759,2024-09-07T23:02:05.000Z
+401643781102909003,401643781,4016437818,7,2,9:09,South Alabama,Ohio,0,10,56,3,2,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.9437392693498694,2024-09-07T23:04:39.000Z
+401643781102914101,401643781,4016437818,8,2,8:58,South Alabama,Ohio,0,10,56,4,2,0,Punt,"Aleksi Pulkkinen punt for 47 yds, fair catch by Coleman Owen at the OHIO 9",,2024-09-07T23:08:45.000Z
+401643781102934502,401643781,4016437819,5,2,6:54,South Alabama,Ohio,0,10,64,1,10,0,Timeout,"Timeout Ohio, clock 06:54",,2024-09-07T23:11:41.000Z
+401643781102914103,401643781,4016437819,1,2,8:58,Ohio,South Alabama,10,0,91,1,10,-1,Rush,Rickey Hunt Jr. run for a loss of 1 yard to the OHIO 8,-0.3779970644674062,2024-09-07T23:08:45.000Z
+401643781102914104,401643781,4016437819,2,2,8:58,Ohio,South Alabama,10,0,92,2,11,1,Pass Reception,Parker Navarro pass complete to Rickey Hunt Jr. for 1 yd to the OHIO 9,-0.1013800835086798,2024-09-07T23:08:45.000Z
+401643781102914105,401643781,4016437819,3,2,8:58,Ohio,South Alabama,10,0,91,3,10,9,Rush,Parker Navarro run for 9 yds to the OHIO 18,0.15257934498296777,2024-09-07T23:08:45.000Z
+401643781102934501,401643781,4016437819,4,2,6:54,Ohio,South Alabama,10,0,82,4,1,0,Punt,"Jack Wilson punt for 46 yds, fair catch by Jamaal Pritchett at the USA 36",,2024-09-07T23:11:41.000Z
+401643781102934504,401643781,40164378110,1,2,6:54,South Alabama,Ohio,0,10,64,1,10,13,Pass Reception,Bishop Davenport pass complete to Shamar Sandgren for 13 yds to the USA 49 for a 1ST down,1.223825403882392,2024-09-07T23:12:15.000Z
+401643781102934508,401643781,40164378110,2,2,6:54,South Alabama,Ohio,0,10,14,1,10,1,Rush,Kentrel Bullock run for 1 yd to the OHIO 13,-0.2453531896168325,2024-09-07T23:12:15.000Z
+401643781102934509,401643781,40164378110,3,2,6:54,South Alabama,Ohio,0,10,13,2,9,0,Pass Reception,Bishop Davenport pass complete to Iverson Celestine for no gain to the OHIO 13,-0.3245566957386374,2024-09-07T23:12:15.000Z
+401643781102934510,401643781,40164378110,4,2,6:54,South Alabama,Ohio,0,10,13,3,9,3,Rush,Bishop Davenport run for 3 yds to the OHIO 10,-0.1495238541257819,2024-09-07T23:12:15.000Z
+401643781102957001,401643781,40164378110,5,2,4:29,South Alabama,Ohio,3,10,10,4,6,28,Field Goal Good,Laith Marjan 28 yd FG GOOD,,2024-09-07T23:17:58.000Z
+401643781102957006,401643781,40164378111,4,2,4:29,Ohio,South Alabama,10,3,73,3,8,0,Pass Incompletion,Parker Navarro pass incomplete,-0.22421028645399854,2024-09-07T23:19:23.000Z
+401643781102957004,401643781,40164378111,2,2,4:29,Ohio,South Alabama,10,3,75,1,10,3,Rush,Anthony Tyus III run for 3 yds to the OHIO 28,-0.2957674139440157,2024-09-07T23:19:23.000Z
+401643781102957005,401643781,40164378111,3,2,4:29,Ohio,South Alabama,10,3,72,2,7,-1,Rush,Anthony Tyus III run for a loss of 1 yard to the OHIO 27,-0.6356437815146512,2024-09-07T23:19:23.000Z
+401643781102968101,401643781,40164378111,5,2,3:18,Ohio,South Alabama,10,3,73,4,8,0,Punt,"Jack Wilson punt for 33 yds, downed at the USA 40",,2024-09-07T23:24:05.000Z
+401643781102957002,401643781,40164378111,1,2,4:29,South Alabama,Ohio,3,10,65,0,0,0,Kickoff,Laith Marjan kickoff for 65 yds for a touchback,,2024-09-07T23:19:23.000Z
+401643781102968103,401643781,40164378112,1,2,3:18,South Alabama,Ohio,3,10,60,1,10,8,Rush,Bishop Davenport run for 8 yds to the USA 48,1.0159674518504005,2024-09-07T23:24:05.000Z
+401643781102968106,401643781,40164378112,3,2,3:18,South Alabama,Ohio,3,10,37,1,10,13,Rush,Fluff Bothwell run for 13 yds to the OHIO 24 for a 1ST down,0.3699706828697682,2024-09-07T23:25:23.000Z
+401643781102984301,401643781,40164378112,4,2,1:56,South Alabama,Ohio,3,10,15,2,1,0,Timeout,"Timeout Ohio, clock 01:56",,2024-09-07T23:27:10.000Z
+401643781102968105,401643781,40164378112,2,2,3:18,South Alabama,Ohio,3,10,52,2,2,15,Penalty,"DAVENPORT, Bishop pass to the left intercepted by BOWMAN, Stellan at the OHI44 intended for BOTHWELL, Fluff. Bowman return for 6 yards to the USA50 (BOTHWELL, Fluff). PENALTY OHI Roughing the Passer on DOGGETTE, CJ enforced 15 yards from the USA48 to the OHI37 and results in automatic 1ST DOWN [NHSG]. NO PLAY (replay the down).",,2024-09-07T23:25:23.000Z
+401643781102984302,401643781,40164378112,5,2,1:56,South Alabama,Ohio,3,10,24,1,10,9,Rush,Fluff Bothwell run for 9 yds to the OHIO 15,0.641938297485138,2024-09-07T23:27:10.000Z
+401643781102984303,401643781,40164378112,6,2,1:56,South Alabama,Ohio,3,10,15,2,1,7,Rush,Fluff Bothwell run for 7 yds to the OHIO 8 for a 1ST down,-0.280099917577855,2024-09-07T23:27:10.000Z
+401643781102987401,401643781,40164378112,7,2,1:25,South Alabama,Ohio,10,10,8,1,8,8,Rushing Touchdown,Fluff Bothwell run for 8 yds for a TD (Laith Marjan KICK),2.319599568699692,2024-09-07T23:31:03.000Z
+401643781102987403,401643781,40164378113,1,2,1:25,South Alabama,Ohio,10,10,50,0,0,0,Kickoff,Laith Marjan kickoff for 50 yds for a touchback,,2024-09-07T23:32:16.000Z
+401643781102987405,401643781,40164378113,2,2,1:25,Ohio,South Alabama,10,10,75,1,10,6,Pass Reception,Parker Navarro pass complete to Caleb Gossett for 6 yds to the OHIO 31,0.3333748010525683,2024-09-07T23:34:21.000Z
+401643781102987406,401643781,40164378113,3,2,1:25,Ohio,South Alabama,10,10,69,2,4,4,Pass Reception,Parker Navarro pass complete to Coleman Owen for 4 yds to the OHIO 35 for a 1ST down,0.5016633079774184,2024-09-07T23:34:21.000Z
+401643781102987407,401643781,40164378113,4,2,1:25,Ohio,South Alabama,10,10,65,1,10,15,Pass Reception,Parker Navarro pass complete to Caleb Gossett for 15 yds to the 50 yard line for a 1ST down,1.401305078569962,2024-09-07T23:34:21.000Z
+401643781102987408,401643781,40164378113,5,2,1:25,Ohio,South Alabama,10,10,50,1,10,0,Pass Incompletion,Parker Navarro pass incomplete,-1.1143038065675126,2024-09-07T23:34:21.000Z
+401643781102987409,401643781,40164378113,6,2,1:25,Ohio,South Alabama,10,10,50,2,10,8,Pass Reception,Parker Navarro pass complete to Rodney Harris II for 8 yds to the USA 42,0.8233244266089327,2024-09-07T23:34:21.000Z
+401643781102987410,401643781,40164378113,7,2,1:25,Ohio,South Alabama,10,10,42,3,2,9,Pass Reception,Parker Navarro pass complete to Coleman Owen for 9 yds to the USA 33 for a 1ST down,1.229316538577965,2024-09-07T23:34:21.000Z
+401643781102996301,401643781,40164378113,8,2,0:36,Ohio,South Alabama,17,10,33,1,10,33,Passing Touchdown,Parker Navarro pass complete to Chase Hendricks for 33 yds for a TD (Gianni Spetic KICK),2.903074773501988,2024-09-07T23:37:59.000Z
+401643781102996303,401643781,40164378114,1,2,0:36,Ohio,South Alabama,17,10,65,0,0,0,Kickoff,Gianni Spetic kickoff for 61 yds,,2024-09-07T23:38:20.000Z
+401643781102996306,401643781,40164378114,3,2,0:36,South Alabama,Ohio,10,17,65,2,10,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.6004605992346148,2024-09-07T23:38:20.000Z
+401643781102996305,401643781,40164378114,2,2,0:36,South Alabama,Ohio,10,17,65,1,10,0,Pass Incompletion,Bishop Davenport pass incomplete,-1.0146424556055624,2024-09-07T23:38:20.000Z
+401643781102998502,401643781,40164378114,5,2,0:14,South Alabama,Ohio,10,17,65,3,10,2,Rush,Kentrel Bullock run for 2 yds to the USA 37,-0.20058698378203665,2024-09-07T23:42:21.000Z
+401643781102999101,401643781,40164378114,6,2,0:08,South Alabama,Ohio,10,17,63,4,8,0,Punt,"Aleksi Pulkkinen punt for 38 yds , Coleman Owen returns for no gain to the OHIO 25",,2024-09-07T23:43:50.000Z
+401643781102998501,401643781,40164378114,4,2,0:14,South Alabama,Ohio,10,17,63,4,8,0,Timeout,"Timeout Ohio, clock 00:14",,2024-09-07T23:42:21.000Z
+401643781102999903,401643781,40164378115,2,2,0:00,Ohio,South Alabama,17,10,75,1,10,-2,Rush,"[NHSG] Kneel down by NAVARRO, Parker at OHI23 (team loss of 2), clock 00:00.",-0.8852575132705454,2024-09-07T23:44:28.000Z
+401643781102999902,401643781,40164378115,1,2,0:00,Ohio,South Alabama,17,10,77,0,12,2,End of Half,End of 2nd Quarter,,2024-09-07T23:44:28.000Z
+401643781103854613,401643781,40164378116,12,3,14:53,Ohio,South Alabama,17,10,25,2,13,15,Pass Reception,Parker Navarro pass complete to Chase Hendricks for 15 yds to the USA 10 for a 1ST down,0.845356919814621,2024-09-08T00:08:23.000Z
+401643781103916001,401643781,40164378116,13,3,8:39,Ohio,South Alabama,24,10,10,1,10,10,Rushing Touchdown,Parker Navarro run for 10 yds for a TD (Gianni Spetic KICK),2.513826842249442,2024-09-08T00:14:02.000Z
+401643781103854605,401643781,40164378116,4,3,14:53,Ohio,South Alabama,17,10,66,1,10,-5,Penalty,"Ohio Penalty, False Start (Jacob Dennison) to the OHIO 29",,2024-09-08T00:06:30.000Z
+401643781103854601,401643781,40164378116,1,3,14:53,South Alabama,Ohio,10,17,65,0,0,13,Kickoff Return (Offense),"Laith Marjan kickoff for 54 yds , Tank Pearson return for 13 yds to the OHIO 24",,2024-09-08T00:06:30.000Z
+401643781103854603,401643781,40164378116,2,3,14:53,Ohio,South Alabama,17,10,76,1,10,6,Rush,Anthony Tyus III run for 6 yds to the OHIO 30,0.3245554637561217,2024-09-08T00:06:30.000Z
+401643781103854604,401643781,40164378116,3,3,14:53,Ohio,South Alabama,17,10,70,2,4,4,Rush,Anthony Tyus III run for 4 yds to the OHIO 34 for a 1ST down,0.4842934899300548,2024-09-08T00:06:30.000Z
+401643781103854606,401643781,40164378116,5,3,14:53,Ohio,South Alabama,17,10,71,1,15,5,Rush,Parker Navarro run for 5 yds to the OHIO 34,0.0516118780680941,2024-09-08T00:08:23.000Z
+401643781103854607,401643781,40164378116,6,3,14:53,Ohio,South Alabama,17,10,66,2,10,9,Pass Reception,Parker Navarro pass complete to Caleb Gossett for 9 yds to the OHIO 43,0.935849687412519,2024-09-08T00:08:23.000Z
+401643781103854608,401643781,40164378116,7,3,14:53,Ohio,South Alabama,17,10,57,3,1,14,Rush,Parker Navarro run for 14 yds to the USA 43 for a 1ST down,2.035005241553648,2024-09-08T00:08:23.000Z
+401643781103854609,401643781,40164378116,8,3,14:53,Ohio,South Alabama,17,10,43,1,10,9,Pass Reception,Parker Navarro pass complete to Rodney Harris II for 9 yds to the USA 34,0.9071042242020542,2024-09-08T00:08:23.000Z
+401643781103854610,401643781,40164378116,9,3,14:53,Ohio,South Alabama,17,10,34,2,1,2,Rush,Anthony Tyus III run for 2 yds to the USA 32 for a 1ST down,-0.4262535618601624,2024-09-08T00:08:23.000Z
+401643781103854611,401643781,40164378116,10,3,14:53,Ohio,South Alabama,17,10,32,1,10,10,Pass Reception,Parker Navarro pass complete to Chase Hendricks for 10 yds to the USA 22 for a 1ST down,0.2238966589405024,2024-09-08T00:08:23.000Z
+401643781103854612,401643781,40164378116,11,3,14:53,Ohio,South Alabama,17,10,22,1,10,-3,Rush,Parker Navarro run for a loss of 3 yards to the USA 25,-0.711560995415603,2024-09-08T00:08:23.000Z
+401643781103916004,401643781,40164378117,1,3,8:39,Ohio,South Alabama,24,10,65,0,0,0,Timeout,"Timeout Ohio, clock 08:39",,2024-09-08T00:17:28.000Z
+401643781103916005,401643781,40164378117,2,3,8:39,Ohio,South Alabama,24,10,65,0,0,0,Kickoff,Gianni Spetic kickoff for 65 yds for a touchback,,2024-09-08T00:17:28.000Z
+401643781103916013,401643781,40164378117,8,3,8:39,South Alabama,Ohio,10,24,46,1,10,-14,Penalty,"South Alabama Penalty, Intentional Grounding (Bishop Davenport) to the USA 40",,2024-09-08T00:17:28.000Z
+401643781103984701,401643781,40164378117,15,3,1:52,South Alabama,Ohio,17,24,9,1,9,9,Passing Touchdown,Bishop Davenport pass complete to Jamaal Pritchett for 9 yds for a TD (Laith Marjan KICK),2.424237823646468,2024-09-08T00:30:30.000Z
+401643781103984704,401643781,40164378117,16,3,1:52,South Alabama,Ohio,10,24,65,0,0,0,Timeout,"Timeout Ohio, clock 01:52",,2024-09-08T00:31:00.000Z
+401643781103916007,401643781,40164378117,3,3,8:39,South Alabama,Ohio,10,24,75,1,10,5,Rush,Kentrel Bullock run for 5 yds to the USA 30,0.0945451165334843,2024-09-08T00:17:28.000Z
+401643781103916008,401643781,40164378117,4,3,8:39,South Alabama,Ohio,10,24,70,2,5,13,Pass Reception,Bishop Davenport pass complete to Devin Voisin for 13 yds to the USA 43 for a 1ST down,1.5178933056765107,2024-09-08T00:17:28.000Z
+401643781103916009,401643781,40164378117,5,3,8:39,South Alabama,Ohio,10,24,57,1,10,7,Pass Reception,Bishop Davenport pass complete to Shamar Sandgren for 7 yds to the 50 yard line,0.6806591914994475,2024-09-08T00:17:28.000Z
+401643781103916010,401643781,40164378117,6,3,8:39,South Alabama,Ohio,10,24,50,2,3,0,Rush,Kentrel Bullock run for no gain to the 50 yard line,-1.2784367654982185,2024-09-08T00:17:28.000Z
+401643781103916011,401643781,40164378117,7,3,8:39,South Alabama,Ohio,10,24,50,3,3,4,Rush,Bishop Davenport run for 4 yds to the OHIO 46 for a 1ST down,1.5198068633756332,2024-09-08T00:17:28.000Z
+401643781103916014,401643781,40164378117,9,3,8:39,South Alabama,Ohio,10,24,60,2,24,3,Pass Reception,Bishop Davenport pass complete to Kentrel Bullock for 3 yds to the USA 43,-0.11950382385278768,2024-09-08T00:17:28.000Z
+401643781103916015,401643781,40164378117,10,3,8:39,South Alabama,Ohio,10,24,57,3,21,18,Pass Reception,Bishop Davenport pass complete to Devin Voisin for 18 yds to the OHIO 39,1.9196704692020194,2024-09-08T00:17:28.000Z
+401643781103916016,401643781,40164378117,11,3,8:39,South Alabama,Ohio,10,24,39,4,3,6,Pass Reception,Bishop Davenport pass complete to Fluff Bothwell for 6 yds to the OHIO 33 for a 1ST down,2.2293371476680015,2024-09-08T00:17:28.000Z
+401643781103916017,401643781,40164378117,12,3,8:39,South Alabama,Ohio,10,24,33,1,10,3,Rush,Bishop Davenport run for 3 yds to the OHIO 30,-0.1975844330204505,2024-09-08T00:17:28.000Z
+401643781103916018,401643781,40164378117,13,3,8:39,South Alabama,Ohio,10,24,30,2,7,4,Rush,Fluff Bothwell run for 4 yds to the OHIO 26,-0.0749572321534195,2024-09-08T00:17:28.000Z
+401643781103916019,401643781,40164378117,14,3,8:39,South Alabama,Ohio,10,24,26,3,3,17,Pass Reception,Bishop Davenport pass complete to Devin Voisin for 17 yds to the OHIO 9 for a 1ST down,0.75137861502939,2024-09-08T00:17:28.000Z
+401643781103986301,401643781,40164378118,2,3,1:36,Ohio,South Alabama,24,17,63,1,10,-4,Sack,"Parker Navarro sacked for a loss of 4 yards to the OHIO 41 Parker Navarro fumbled, recovered by USA Carlos Johnson Jr. , return for 0 yards",-1.6521497004281738,2024-09-08T00:36:43.000Z
+401643781103985401,401643781,40164378118,1,3,1:45,South Alabama,Ohio,17,24,65,0,0,31,Kickoff Return (Offense),"Davis Little kickoff for 59 yds , Tank Pearson return for 31 yds to the OHIO 37",,2024-09-08T00:35:09.000Z
+401643781103986303,401643781,40164378119,1,3,1:36,South Alabama,Ohio,17,24,41,1,10,4,Rush,Fluff Bothwell run for 4 yds to the OHIO 37,-0.0951556089752721,2024-09-08T00:36:43.000Z
+401643781103986304,401643781,40164378119,2,3,1:36,South Alabama,Ohio,17,24,37,2,6,15,Pass Reception,Bishop Davenport pass complete to Shamar Sandgren for 15 yds to the OHIO 22 for a 1ST down,0.6880524682233315,2024-09-08T00:36:43.000Z
+401643781103999902,401643781,40164378119,5,3,0:00,South Alabama,Ohio,17,24,25,0,13,3,End Period,End of 3rd Quarter,,2024-09-08T00:39:28.000Z
+401643781104858403,401643781,40164378119,8,4,14:15,South Alabama,Ohio,17,24,65,0,0,0,Timeout,"Timeout Ohio, clock 14:15",,2024-09-08T00:46:37.000Z
+401643781103986305,401643781,40164378119,3,3,1:36,South Alabama,Ohio,17,24,22,1,10,-3,Rush,Fluff Bothwell run for a loss of 3 yards to the OHIO 25,-0.711560995415603,2024-09-08T00:36:43.000Z
+401643781103999901,401643781,40164378119,4,3,0:00,South Alabama,Ohio,17,24,25,2,13,3,Rush,Bishop Davenport run for 3 yds to the OHIO 22,-0.2140257606761813,2024-09-08T00:39:28.000Z
+401643781104849902,401643781,40164378119,6,4,15:00,South Alabama,Ohio,17,24,22,3,10,2,Pass Reception,Bishop Davenport pass complete to Jamaal Pritchett for 2 yds to the OHIO 20,-0.4240112559935287,2024-09-08T00:42:54.000Z
+401643781104858401,401643781,40164378119,7,4,14:15,South Alabama,Ohio,20,24,20,4,8,38,Field Goal Good,Laith Marjan 38 yd FG GOOD,,2024-09-08T00:43:42.000Z
+401643781104859001,401643781,40164378120,1,4,14:09,South Alabama,Ohio,20,24,65,0,0,20,Kickoff Return (Offense),"Davis Little kickoff for 62 yds , Tank Pearson return for 20 yds to the OHIO 23",,2024-09-08T00:47:05.000Z
+401643781104859003,401643781,40164378120,2,4,14:09,Ohio,South Alabama,24,20,77,1,10,1,Rush,Anthony Tyus III run for 1 yd to the OHIO 24,-0.5380287086286026,2024-09-08T00:47:05.000Z
+401643781104859004,401643781,40164378120,3,4,14:09,Ohio,South Alabama,24,20,76,2,9,7,Rush,Anthony Tyus III run for 7 yds to the OHIO 31,0.3393675916144341,2024-09-08T00:49:19.000Z
+401643781104859005,401643781,40164378120,4,4,14:09,Ohio,South Alabama,24,20,69,3,2,1,Rush,Anthony Tyus III run for 1 yd to the OHIO 32,-0.4593366533481751,2024-09-08T00:49:19.000Z
+401643781104859006,401643781,40164378120,5,4,14:09,Ohio,South Alabama,24,20,68,4,1,-15,Penalty,"Ohio Penalty, Unnecessary Roughness (Carson Heidecker) to the OHIO 17",,2024-09-08T00:49:19.000Z
+401643781104879601,401643781,40164378120,6,4,12:03,Ohio,South Alabama,24,20,83,4,16,0,Punt,"Jack Wilson punt for 32 yds, downed at the OHIO 49",,2024-09-08T00:51:52.000Z
+401643781104879603,401643781,40164378121,1,4,12:03,South Alabama,Ohio,20,24,49,1,10,-4,Fumble Recovery (Own),"Bishop Davenport run for a loss of 4 yards to the USA 47 Bishop Davenport fumbled, recovered by USA Bishop Davenport B. Davenport return for 0 yds",-1.988080942585393,2024-09-08T00:51:52.000Z
+401643781104879604,401643781,40164378121,2,4,12:03,South Alabama,Ohio,20,24,53,2,14,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.7899391484631364,2024-09-08T00:51:52.000Z
+401643781104879605,401643781,40164378121,3,4,12:03,South Alabama,Ohio,20,24,53,3,14,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.45699393645965714,2024-09-08T00:51:52.000Z
+401643781104889001,401643781,40164378121,4,4,11:09,South Alabama,Ohio,20,24,53,4,14,7,Punt,"Aleksi Pulkkinen punt for 46 yds , Coleman Owen returns for 7 yds to the OHIO 14",,2024-09-08T00:56:57.000Z
+401643781104889003,401643781,40164378122,1,4,11:09,Ohio,South Alabama,24,20,86,1,10,5,Rush,Rickey Hunt Jr. run for 5 yds to the OHIO 19,0.07552653853059345,2024-09-08T00:57:59.000Z
+401643781104889005,401643781,40164378122,3,4,11:09,Ohio,South Alabama,24,20,81,2,5,7,Pass Reception,Parker Navarro pass complete to Chase Hendricks for 7 yds to the OHIO 26 for a 1ST down,0.5777639653373399,2024-09-08T00:57:59.000Z
+401643781104889006,401643781,40164378122,4,4,11:09,Ohio,South Alabama,24,20,74,1,10,4,Pass Reception,Parker Navarro pass complete to Coleman Owen for 4 yds to the OHIO 30,-0.119587621105615,2024-09-08T00:57:59.000Z
+401643781104889007,401643781,40164378122,5,4,11:09,Ohio,South Alabama,24,20,70,2,6,0,Pass Incompletion,Parker Navarro pass incomplete,-0.6809782552782009,2024-09-08T00:57:59.000Z
+401643781104889008,401643781,40164378122,6,4,11:09,Ohio,South Alabama,24,20,70,3,6,18,Rush,Parker Navarro run for 18 yds to the OHIO 48 for a 1ST down,2.7992879001343507,2024-09-08T00:57:59.000Z
+401643781104889014,401643781,40164378122,12,4,11:09,Ohio,South Alabama,24,20,13,1,10,0,Rush,Parker Navarro run for no gain to the USA 13,-0.3048472994988835,2024-09-08T00:57:59.000Z
+401643781104889004,401643781,40164378122,2,4,11:09,Ohio,South Alabama,24,20,81,2,5,0,Timeout,"Timeout Ohio, clock 11:09",,2024-09-08T00:57:59.000Z
+401643781104959701,401643781,40164378122,13,4,4:02,Ohio,South Alabama,24,20,11,3,8,0,Timeout,"Timeout Ohio, clock 04:02",,2024-09-08T01:09:28.000Z
+401643781104959703,401643781,40164378122,15,4,4:02,Ohio,South Alabama,24,20,11,3,8,3,Rush,Rickey Hunt Jr. run for 3 yds to the USA 8,-0.127009018118839,2024-09-08T01:09:28.000Z
+401643781104959702,401643781,40164378122,14,4,4:02,Ohio,South Alabama,24,20,13,2,10,2,Rush,Parker Navarro run for 2 yds to the USA 11,-0.1697213264249448,2024-09-08T01:09:28.000Z
+401643781104889009,401643781,40164378122,7,4,11:09,Ohio,South Alabama,24,20,52,1,10,2,Rush,Rickey Hunt Jr. run for 2 yds to the 50 yard line,-0.6553095017301357,2024-09-08T00:57:59.000Z
+401643781104889010,401643781,40164378122,8,4,11:09,Ohio,South Alabama,24,20,50,2,8,2,Rush,Parker Navarro run for 2 yds to the USA 48,-0.6520491429801147,2024-09-08T00:57:59.000Z
+401643781104889011,401643781,40164378122,9,4,11:09,Ohio,South Alabama,24,20,48,3,6,5,Rush,Rickey Hunt Jr. run for 5 yds to the USA 43,0.0731869917404317,2024-09-08T00:57:59.000Z
+401643781104889012,401643781,40164378122,10,4,11:09,Ohio,South Alabama,24,20,43,4,1,15,Pass Reception,Parker Navarro pass complete to Mason Williams for 15 yds to the USA 28 for a 1ST down,2.4782114675418185,2024-09-08T00:57:59.000Z
+401643781104889013,401643781,40164378122,11,4,11:09,Ohio,South Alabama,24,20,28,1,10,15,Pass Reception,Parker Navarro pass complete to Rodney Harris II for 15 yds to the USA 13 for a 1ST down,0.225085259092584,2024-09-08T00:57:59.000Z
+401643781104968301,401643781,40164378122,16,4,3:16,Ohio,South Alabama,27,20,8,4,5,26,Field Goal Good,Gianni Spetic 26 yd FG GOOD,,2024-09-08T01:11:31.000Z
+401643781104968801,401643781,40164378123,1,4,3:11,Ohio,South Alabama,27,20,65,0,0,18,Kickoff Return (Offense),"Gianni Spetic kickoff for 64 yds , Shamar Sandgren return for 18 yds to the USA 19",,2024-09-08T01:13:35.000Z
+401643781104968803,401643781,40164378123,2,4,3:11,South Alabama,Ohio,20,27,81,1,10,7,Pass Reception,Bishop Davenport pass complete to Jamaal Pritchett for 7 yds to the USA 26,0.5093405251529833,2024-09-08T01:14:07.000Z
+401643781104968804,401643781,40164378123,3,4,3:11,South Alabama,Ohio,20,27,74,2,3,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.8006785198676463,2024-09-08T01:14:07.000Z
+401643781104968805,401643781,40164378123,4,4,3:11,South Alabama,Ohio,20,27,74,3,3,-5,Penalty,"South Alabama Penalty, False Start (Malachi Carney) to the USA 21",,2024-09-08T01:14:07.000Z
+401643781104968807,401643781,40164378123,5,4,3:11,South Alabama,Ohio,20,27,79,3,8,-10,Penalty,"South Alabama Penalty, Offensive Holding (Reed Buys) to the USA 12",,2024-09-08T01:14:07.000Z
+401643781104968808,401643781,40164378123,6,4,3:11,South Alabama,Ohio,20,27,88,3,17,0,Pass Incompletion,Bishop Davenport pass incomplete,-0.03055811460695336,2024-09-08T01:16:57.000Z
+401643781104979101,401643781,40164378123,7,4,2:08,South Alabama,Ohio,20,27,88,4,17,0,Punt,"Aleksi Pulkkinen punt for 47 yds, downed at the OHIO 31",,2024-09-08T01:18:01.000Z
+401643781104984102,401643781,40164378124,2,4,1:58,Ohio,South Alabama,27,20,69,1,10,12,Rush,Anthony Tyus III run for 12 yds to the OHIO 43 for a 1ST down,1.1419743076037232,2024-09-08T01:23:14.000Z
+401643781104985001,401643781,40164378124,5,4,1:49,Ohio,South Alabama,27,20,52,3,5,0,Timeout,"Timeout South Alabama, clock 01:49",,2024-09-08T01:25:09.000Z
+401643781104984501,401643781,40164378124,3,4,1:54,Ohio,South Alabama,27,20,57,2,10,0,Timeout,"Timeout South Alabama, clock 01:54",,2024-09-08T01:24:08.000Z
+401643781104984101,401643781,40164378124,1,4,1:58,Ohio,South Alabama,27,20,57,1,10,0,Timeout,"Timeout Ohio, clock 01:58",,2024-09-08T01:20:47.000Z
+401643781104986201,401643781,40164378124,7,4,1:37,Ohio,South Alabama,27,20,37,1,10,0,Timeout,"Timeout South Alabama, clock 01:37",,2024-09-08T01:26:59.000Z
+401643781104999903,401643781,40164378124,12,4,0:00,Ohio,South Alabama,27,20,44,0,15,0,End of Game,End of 4th Quarter,,2024-09-08T01:29:07.000Z
+401643781104999901,401643781,40164378124,11,4,0:00,Ohio,South Alabama,27,20,42,3,15,-2,Rush,"[NHSG] Kneel down by NAVARRO, Parker at USA44 (team loss of 2), clock 00:00.",-0.9705897249911074,2024-09-08T01:29:07.000Z
+401643781104986204,401643781,40164378124,10,4,1:37,Ohio,South Alabama,27,20,39,2,12,-3,Rush,"[NHSG] Kneel down by NAVARRO, Parker at USA42 (team loss of 3).",-1.639052920828142,2024-09-08T01:26:59.000Z
+401643781104986203,401643781,40164378124,9,4,1:37,Ohio,South Alabama,27,20,37,1,10,-2,Rush,"[NHSG] Kneel down by NAVARRO, Parker at USA39 (team loss of 2).",-1.1376140216478048,2024-09-08T01:26:59.000Z
+401643781104986202,401643781,40164378124,8,4,1:37,Ohio,South Alabama,27,20,52,3,5,15,Rush,Anthony Tyus III run for 15 yds to the USA 37 for a 1ST down,2.5006056825528553,2024-09-08T01:26:59.000Z
+401643781104985002,401643781,40164378124,6,4,1:49,Ohio,South Alabama,27,20,57,2,10,5,Rush,Parker Navarro run for 5 yds to the OHIO 48,0.070449934831398,2024-09-08T01:25:09.000Z
+401643781104984502,401643781,40164378124,4,4,1:54,Ohio,South Alabama,27,20,57,1,10,0,Rush,Anthony Tyus III run for no gain to the OHIO 43,-1.15714755134967,2024-09-08T01:24:08.000Z
